@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: light; font-synthesis: none; text-rendering: optimizeLegibility; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: hidden; background: #090612; color: #fff; }
+  * { box-sizing: border-box; }
+  ::selection { background: #ddd6fe; color: #4c1d95; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button:focus-visible, a:focus-visible { outline: 3px solid #c4b5fd; outline-offset: 3px; }
+}
+
+@keyframes nova-pulse {
+  0%, 100% { box-shadow: 0 0 25px rgba(34, 211, 238, .22), 0 0 60px rgba(139, 92, 246, .2); transform: translateY(0) scale(1); }
+  50% { box-shadow: 0 0 38px rgba(34, 211, 238, .38), 0 0 85px rgba(236, 72, 153, .25); transform: translateY(-5px) scale(1.03); }
+}
+
+.nova-orb {
+  background: conic-gradient(from 210deg, rgba(34,211,238,.55), rgba(139,92,246,.65), rgba(236,72,153,.58), rgba(34,211,238,.55));
+  animation: nova-pulse 3.8s ease-in-out infinite;
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .h-18 { height: 4.5rem; }
+}
