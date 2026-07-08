@@ -1,0 +1,57 @@
+import type { NativeLanguage, SupportedUILanguage } from "./types.js";
+
+type Seed = [code: string, name: string, nativeName: string, region?: string, direction?: "ltr" | "rtl"];
+const seeds: Seed[] = [
+  ["en","English","English","Global"],["vi","Vietnamese","Tiếng Việt","Vietnam"],["ja","Japanese","日本語","Japan"],["es","Spanish","Español","Global"],
+  ["ko","Korean","한국어","Korea"],["zh-CN","Chinese Simplified","简体中文","China"],["zh-TW","Chinese Traditional","繁體中文","Taiwan"],["fr","French","Français","Global"],
+  ["de","German","Deutsch","Europe"],["it","Italian","Italiano","Italy"],["pt","Portuguese","Português","Global"],["ru","Russian","Русский","Eurasia"],
+  ["uk","Ukrainian","Українська","Ukraine"],["pl","Polish","Polski","Poland"],["nl","Dutch","Nederlands","Netherlands"],["sv","Swedish","Svenska","Sweden"],
+  ["no","Norwegian","Norsk","Norway"],["da","Danish","Dansk","Denmark"],["fi","Finnish","Suomi","Finland"],["cs","Czech","Čeština","Czechia"],
+  ["sk","Slovak","Slovenčina","Slovakia"],["hu","Hungarian","Magyar","Hungary"],["ro","Romanian","Română","Romania"],["el","Greek","Ελληνικά","Greece"],
+  ["tr","Turkish","Türkçe","Türkiye"],["ar","Arabic","العربية","Middle East and North Africa","rtl"],["he","Hebrew","עברית","Israel","rtl"],["fa","Persian","فارسی","Iran","rtl"],
+  ["hi","Hindi","हिन्दी","India"],["ur","Urdu","اردو","South Asia","rtl"],["bn","Bengali","বাংলা","South Asia"],["pa","Punjabi","ਪੰਜਾਬੀ","South Asia"],
+  ["ta","Tamil","தமிழ்","South Asia"],["te","Telugu","తెలుగు","India"],["mr","Marathi","मराठी","India"],["gu","Gujarati","ગુજરાતી","India"],
+  ["kn","Kannada","ಕನ್ನಡ","India"],["ml","Malayalam","മലയാളം","India"],["th","Thai","ไทย","Thailand"],["id","Indonesian","Bahasa Indonesia","Indonesia"],
+  ["ms","Malay","Bahasa Melayu","Southeast Asia"],["tl","Filipino / Tagalog","Filipino","Philippines"],["my","Burmese","မြန်မာဘာသာ","Myanmar"],["km","Khmer","ភាសាខ្មែរ","Cambodia"],
+  ["lo","Lao","ພາສາລາວ","Laos"],["mn","Mongolian","Монгол","Mongolia"],["kk","Kazakh","Қазақ тілі","Kazakhstan"],["uz","Uzbek","O‘zbekcha","Uzbekistan"],
+  ["sw","Swahili","Kiswahili","East Africa"],["af","Afrikaans","Afrikaans","Southern Africa"],["zu","Zulu","isiZulu","South Africa"],["xh","Xhosa","isiXhosa","South Africa"],
+  ["am","Amharic","አማርኛ","Ethiopia"],["yo","Yoruba","Yorùbá","West Africa"],["ig","Igbo","Igbo","Nigeria"],["ha","Hausa","Hausa","West Africa"],
+  ["so","Somali","Soomaali","Horn of Africa"],["ne","Nepali","नेपाली","Nepal"],["si","Sinhala","සිංහල","Sri Lanka"],["ka","Georgian","ქართული","Georgia"],
+  ["hy","Armenian","Հայերեն","Armenia"],["az","Azerbaijani","Azərbaycanca","Azerbaijan"],["sr","Serbian","Српски","Serbia"],["hr","Croatian","Hrvatski","Croatia"],
+  ["bg","Bulgarian","Български","Bulgaria"],["sl","Slovenian","Slovenščina","Slovenia"],["lt","Lithuanian","Lietuvių","Lithuania"],["lv","Latvian","Latviešu","Latvia"],
+  ["et","Estonian","Eesti","Estonia"],["is","Icelandic","Íslenska","Iceland"],["ga","Irish","Gaeilge","Ireland"],["cy","Welsh","Cymraeg","Wales"],
+  ["ca","Catalan","Català","Spain"],["eu","Basque","Euskara","Spain"],["gl","Galician","Galego","Spain"],["la","Latin","Latina","Historical"],["eo","Esperanto","Esperanto","International"],
+  ["sq","Albanian","Shqip","Albania"],["mk","Macedonian","Македонски","North Macedonia"],["bs","Bosnian","Bosanski","Bosnia and Herzegovina"],["mt","Maltese","Malti","Malta"],
+  ["be","Belarusian","Беларуская","Belarus"],["tt","Tatar","Татарча","Russia"],["ba","Bashkir","Башҡортса","Russia"],["cv","Chuvash","Чӑвашла","Russia"],
+  ["ce","Chechen","Нохчийн","Caucasus"],["os","Ossetian","Ирон","Caucasus"],["ky","Kyrgyz","Кыргызча","Kyrgyzstan"],["tg","Tajik","Тоҷикӣ","Tajikistan"],
+  ["tk","Turkmen","Türkmençe","Turkmenistan"],["ps","Pashto","پښتو","Afghanistan","rtl"],["ku","Kurdish","Kurdî","Middle East"],["ckb","Central Kurdish","کوردیی ناوەندی","Iraq","rtl"],
+  ["dv","Dhivehi","ދިވެހި","Maldives","rtl"],["sd","Sindhi","سنڌي","South Asia","rtl"],["or","Odia","ଓଡ଼ିଆ","India"],["as","Assamese","অসমীয়া","India"],
+  ["mai","Maithili","मैथिली","South Asia"],["bho","Bhojpuri","भोजपुरी","South Asia"],["sa","Sanskrit","संस्कृतम्","South Asia"],["ks","Kashmiri","کٲشُر","South Asia","rtl"],
+  ["kok","Konkani","कोंकणी","India"],["mni","Meitei","ꯃꯤꯇꯩ ꯂꯣꯟ","India"],["bo","Tibetan","བོད་ཡིག","Tibet"],["dz","Dzongkha","རྫོང་ཁ","Bhutan"],
+  ["ug","Uyghur","ئۇيغۇرچە","Central Asia","rtl"],["jv","Javanese","Basa Jawa","Indonesia"],["su","Sundanese","Basa Sunda","Indonesia"],["ceb","Cebuano","Cebuano","Philippines"],
+  ["ilo","Ilocano","Ilokano","Philippines"],["haw","Hawaiian","ʻŌlelo Hawaiʻi","Hawaii"],["mi","Māori","Te Reo Māori","New Zealand"],["sm","Samoan","Gagana Sāmoa","Samoa"],
+  ["to","Tongan","Lea Faka-Tonga","Tonga"],["fj","Fijian","Vosa Vakaviti","Fiji"],["mg","Malagasy","Malagasy","Madagascar"],["rw","Kinyarwanda","Ikinyarwanda","Rwanda"],
+  ["rn","Kirundi","Ikirundi","Burundi"],["ny","Chichewa","Chichewa","Southern Africa"],["sn","Shona","ChiShona","Zimbabwe"],["st","Southern Sotho","Sesotho","Southern Africa"],
+  ["tn","Tswana","Setswana","Southern Africa"],["ts","Tsonga","itsonga","Southern Africa"],["ss","Swati","SiSwati","Southern Africa"],["ve","Venda","Tshivenḓa","South Africa"],
+  ["nso","Northern Sotho","Sepedi","South Africa"],["ak","Akan","Akan","Ghana"],["tw","Twi","Twi","Ghana"],["ee","Ewe","Eʋegbe","West Africa"],
+  ["fon","Fon","Fɔ̀ngbè","Benin"],["wo","Wolof","Wolof","Senegal"],["ff","Fula","Fulfulde","West Africa"],["bm","Bambara","Bamanankan","Mali"],
+  ["ln","Lingala","Lingála","Central Africa"],["lg","Ganda","Luganda","Uganda"],["om","Oromo","Afaan Oromoo","Ethiopia"],["ti","Tigrinya","ትግርኛ","Horn of Africa"],
+  ["aa","Afar","Qafar af","Horn of Africa"],["ber","Tamazight","Tamaziɣt","North Africa"],["kab","Kabyle","Taqbaylit","Algeria"],["ht","Haitian Creole","Kreyòl ayisyen","Haiti"],
+  ["pap","Papiamento","Papiamentu","Caribbean"],["qu","Quechua","Runa Simi","Andes"],["ay","Aymara","Aymar aru","Andes"],["gn","Guaraní","Avañe'ẽ","South America"],
+  ["nah","Nahuatl","Nāhuatl","Mexico"],["yua","Yucatec Maya","Màaya t'àan","Mexico"],["chr","Cherokee","ᏣᎳᎩ","North America"],["nv","Navajo","Diné bizaad","North America"],
+  ["iu","Inuktitut","ᐃᓄᒃᑎᑐᑦ","Canada"],["kl","Greenlandic","Kalaallisut","Greenland"],["gd","Scottish Gaelic","Gàidhlig","Scotland"],["br","Breton","Brezhoneg","France"],
+  ["co","Corsican","Corsu","Corsica"],["fy","West Frisian","Frysk","Netherlands"],["lb","Luxembourgish","Lëtzebuergesch","Luxembourg"],["rm","Romansh","Rumantsch","Switzerland"],
+  ["oc","Occitan","Occitan","France"],["sc","Sardinian","Sardu","Italy"],["fur","Friulian","Furlan","Italy"],["vec","Venetian","Vèneto","Italy"],
+  ["nap","Neapolitan","Napulitano","Italy"],["an","Aragonese","Aragonés","Spain"],["ast","Asturian","Asturianu","Spain"],["fo","Faroese","Føroyskt","Faroe Islands"],
+  ["se","Northern Sami","Davvisámegiella","Northern Europe"],["sma","Southern Sami","Åarjelsaemien gïele","Northern Europe"],["nds","Low German","Plattdüütsch","Europe"],["yi","Yiddish","ייִדיש","Global","rtl"],
+  ["lad","Ladino","Judeo-Español","Mediterranean"],["rup","Aromanian","Armãneashce","Balkans"],["tet","Tetum","Tetun","Timor-Leste"],["bi","Bislama","Bislama","Vanuatu"],
+  ["ty","Tahitian","Reo Tahiti","French Polynesia"],["ch","Chamorro","Chamoru","Guam"],["mh","Marshallese","Kajin M̧ajeļ","Marshall Islands"],["pau","Palauan","Tekoi er a Belau","Palau"],
+  ["gil","Gilbertese","Taetae ni Kiribati","Kiribati"],["crs","Seychellois Creole","Kreol Seselwa","Seychelles"],["mfe","Mauritian Creole","Kreol Morisien","Mauritius"],["gag","Gagauz","Gagauz dili","Moldova"],
+  ["sah","Yakut","Саха тыла","Russia"],["bua","Buryat","Буряад хэлэн","Russia"],["alt","Southern Altai","Алтай тил","Russia"],["tyv","Tuvan","Тыва дыл","Russia"],
+  ["krc","Karachay-Balkar","Къарачай-малкъар","Caucasus"],["ady","Adyghe","Адыгабзэ","Caucasus"],["ab","Abkhaz","Аҧсуа","Caucasus"],["av","Avar","Авар мацӀ","Caucasus"],
+  ["lez","Lezgin","Лезги чӀал","Caucasus"],["lmo","Lombard","Lumbaart","Italy"],["pms","Piedmontese","Piemontèis","Italy"],["lij","Ligurian","Ligure","Italy"],["wa","Walloon","Walon","Belgium"]
+];
+
+const supported = new Set<SupportedUILanguage>(["en", "vi", "ja", "es"]);
+export const nativeLanguages: NativeLanguage[] = seeds.map(([code, name, nativeName, region, direction = "ltr"]) => ({ code, name, nativeName, region, direction, uiSupported: supported.has(code as SupportedUILanguage) }));
+export const popularNativeLanguageCodes = ["en","vi","ja","ko","zh-CN","zh-TW","es","fr","de","pt","ru","ar","hi","th","id"];

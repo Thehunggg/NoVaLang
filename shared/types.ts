@@ -1,0 +1,215 @@
+export type LearningLanguageCode = "en" | "ja" | "es";
+export type LanguageCode = LearningLanguageCode;
+export type SupportedUILanguage = "en" | "vi" | "ja" | "es";
+export type NativeLanguageCode = string;
+export type LevelId = "A0" | "A1_1" | "A1_2" | "A2_1" | "A2_2" | "B1_1" | "B1_2" | "B2";
+export type LessonType = "pronunciation" | "vocabulary" | "grammar" | "dialogue" | "review" | "checkpoint" | "culture" | "speaking_placeholder" | "listening_placeholder";
+export type Difficulty = "easy" | "medium" | "hard";
+export type ExerciseType = "multiple_choice" | "translation" | "fill_blank" | "match_pairs" | "sentence_builder" | "choose_correct_sound" | "choose_correct_letter" | "choose_word_starting_with_letter" | "match_character_to_pronunciation" | "listening_placeholder" | "speaking_placeholder" | "dialogue_choice" | "choose_correct_reading" | "choose_word_starting_with_kana" | "match_kana_reading" | "choose_meaning" | "type_meaning" | "match_vocab_meaning" | "choose_correct_sentence" | "translate_sentence" | "read_short_sentence" | "answer_question" | "choose_summary" | "listen_and_choose_meaning" | "listen_and_choose_sentence";
+export type TrackType = "exam" | "general";
+export type ExamTrack = "JLPT" | "TOEIC" | "IELTS" | "TOEFL" | "DELE";
+export type ExamLevel = "KANA_STARTER" | "JLPT_N5" | "JLPT_N4" | "JLPT_N3" | "JLPT_N2" | "JLPT_N1" | "GENERAL_ENGLISH" | "GENERAL_SPANISH" | "TOEIC" | "IELTS" | "TOEFL" | "DELE_A1" | "DELE_A2" | "DELE_B1" | "DELE_B2";
+export type TrackSkill = "kana" | "vocabulary" | "kanji" | "grammar" | "reading" | "listening" | "mock_test" | "mistake_review" | "speaking" | "general";
+export type ReviewedStatus = "reviewed" | "draft" | "needs_review";
+export type LocalizedText = string | Partial<Record<SupportedUILanguage, string>>;
+export type LocalizedAnswers = Partial<Record<SupportedUILanguage, string[]>>;
+
+export interface NativeLanguage { code: string; name: string; nativeName: string; region?: string; direction?: "ltr" | "rtl"; uiSupported: boolean; }
+export interface Language { code: LanguageCode; name: string; nativeName: string; flag: string; color: string; greeting: string; description: string; }
+export interface ExampleSentence { text: string; translation: string; note?: string; }
+export type LessonExample = ExampleSentence;
+export interface MatchPair { left: string; right: string; }
+
+export interface Exercise {
+  id: string;
+  type: ExerciseType;
+  level: LevelId;
+  question: string;
+  options?: string[];
+  pairs?: MatchPair[];
+  words?: string[];
+  audioText?: string;
+  correctAnswer: string | string[];
+  explanation: string;
+  hint?: string;
+  targetLanguage: LanguageCode;
+  nativeTranslation: string;
+  difficulty: Difficulty;
+  relatedIds?: string[];
+  relatedVocabularyIds?: string[];
+  relatedGrammarIds?: string[];
+  relatedPronunciationIds?: string[];
+  nativeLanguageMode?: boolean;
+  targetKana?: string;
+  matchPairMode?: "kana_reading" | "vocabulary_meaning";
+  trackType?: TrackType;
+  examTrack?: ExamTrack;
+  examLevel?: ExamLevel;
+  skill?: TrackSkill;
+  reviewedStatus?: ReviewedStatus;
+  acceptedAnswers?: LocalizedAnswers;
+  meanings?: LocalizedAnswers;
+  questionTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  optionTranslations?: Partial<Record<SupportedUILanguage, string[]>>;
+  pairTranslations?: Partial<Record<SupportedUILanguage, MatchPair[]>>;
+  explanationTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  hintTranslations?: Partial<Record<SupportedUILanguage, string>>;
+}
+
+export interface PronunciationItem {
+  kind: "pronunciation";
+  id: string;
+  symbol: string;
+  pronunciation: string;
+  exampleWord: string;
+  meaning: string;
+  exampleSentence: string;
+  sentenceTranslation: string;
+  note?: string;
+  practice?: Exercise;
+  displayText?: string;
+  reading?: string;
+  kanji?: string;
+  kana?: string;
+  speechText?: string;
+  meanings?: LocalizedAnswers;
+  exampleDisplay?: string;
+  exampleSpeechText?: string;
+  exampleTranslations?: Partial<Record<SupportedUILanguage, string>>;
+}
+
+export interface VocabularyItem {
+  kind: "vocabulary";
+  id: string;
+  word: string;
+  reading?: string;
+  pronunciation?: string;
+  meaning: string;
+  exampleSentence: string;
+  sentenceTranslation: string;
+  tags?: string[];
+  term: string;
+  translation: string;
+  example: string;
+  target?: string;
+  displayText?: string;
+  kanji?: string;
+  kana?: string;
+  speechText?: string;
+  partOfSpeech?: string;
+  meanings?: LocalizedAnswers;
+  acceptedAnswers?: LocalizedAnswers;
+  exampleDisplay?: string;
+  exampleSpeechText?: string;
+  exampleTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  note?: string;
+}
+
+export interface GrammarPoint {
+  kind: "grammar";
+  id: string;
+  title: string;
+  pattern: string;
+  explanation: string;
+  examples: ExampleSentence[];
+  explanationTranslations?: Partial<Record<SupportedUILanguage, string>>;
+}
+
+export interface DialogueLine {
+  kind: "dialogue";
+  id: string;
+  speaker: string;
+  text: string;
+  translation: string;
+  audioPlaceholder?: string;
+  speechText?: string;
+  translations?: Partial<Record<SupportedUILanguage, string>>;
+}
+
+export type ContentItem = PronunciationItem | VocabularyItem | GrammarPoint | DialogueLine;
+
+export interface MicroLesson {
+  id: string;
+  lessonId: string;
+  title: string;
+  objective: string;
+  explanation: string;
+  contentItems: ContentItem[];
+  exercises: Exercise[];
+  xpReward: number;
+  order: number;
+  estimatedMinutes: number;
+  unlockStatus: "locked" | "available";
+  titleTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  objectiveTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  explanationTranslations?: Partial<Record<SupportedUILanguage, string>>;
+}
+
+export interface QuizQuestion { id: string; prompt: string; options: string[]; correctAnswer: string; explanation: string; wrongAnswerExplanation: string; }
+
+export interface Lesson {
+  id: string;
+  language: LanguageCode;
+  levelId: LevelId;
+  unitId: string;
+  type: LessonType;
+  title: string;
+  objective: string;
+  canDo: string;
+  description: string;
+  microLessons: MicroLesson[];
+  pronunciationItems?: PronunciationItem[];
+  vocabulary: VocabularyItem[];
+  grammarPoints?: GrammarPoint[];
+  dialogue?: DialogueLine[];
+  examples: ExampleSentence[];
+  exercises: Exercise[];
+  xpReward: number;
+  order: number;
+  unlockRule?: string;
+  requiredHearts: number;
+  durationMinutes: number;
+  level: "Beginner" | "Elementary" | "Intermediate" | "Upper Intermediate";
+  subtitle: string;
+  explanation: string;
+  quiz: QuizQuestion[];
+  trackType?: TrackType;
+  examTrack?: ExamTrack;
+  examLevel?: ExamLevel;
+  skill?: TrackSkill;
+  reviewedStatus?: ReviewedStatus;
+  titleTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  objectiveTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  canDoTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  descriptionTranslations?: Partial<Record<SupportedUILanguage, string>>;
+}
+
+export interface Unit {
+  id: string;
+  language: LanguageCode;
+  levelId: LevelId;
+  title: string;
+  communicationGoal: string;
+  description: string;
+  estimatedMinutes: number;
+  order: number;
+  lessons: Lesson[];
+  trackType?: TrackType;
+  examTrack?: ExamTrack;
+  examLevel?: ExamLevel;
+  skill?: TrackSkill;
+  reviewedStatus?: ReviewedStatus;
+  comingSoon?: boolean;
+}
+
+export interface CourseLevel { id: LevelId; title: string; description: string; cefr?: string; jlpt?: string; units: Unit[]; trackType?: TrackType; examTrack?: ExamTrack; examLevel?: ExamLevel; reviewedStatus?: ReviewedStatus; comingSoon?: boolean; comingSoonLabel?: string; }
+export interface ExamTrackOption { id: string; language: LanguageCode; title: string; description: string; trackType: TrackType; examTrack?: ExamTrack; examLevel?: ExamLevel; levelId?: LevelId; comingSoon?: boolean; }
+export interface Course { id: string; language: LanguageCode; title: string; description: string; nativeLanguageSupport: NativeLanguageCode[]; mapping: string; levels: CourseLevel[]; units: Unit[]; placementTest: PlacementQuestion[]; examTracks?: ExamTrackOption[]; }
+
+export interface PlacementQuestion extends Exercise { placementScore: number; }
+export interface PlacementResult { completed: boolean; score: number; level: LevelId; date: string; startingUnitId: string; startingLessonId: string; }
+export interface ReviewItem { id: string; language: LanguageCode; itemType: "vocabulary" | "pronunciation" | "grammar" | "sentence"; itemId: string; label: string; meaning: string; easeScore: number; correctCount: number; wrongCount: number; lastReviewedAt?: string; nextReviewAt: string; intervalDays: number; meaningTranslations?: LocalizedAnswers; speechText?: string; }
+
+export interface PracticeSet { language: LanguageCode; title: string; exercises: Exercise[]; questions: QuizQuestion[]; potentialXp: number; dataVersion?: string; }
+export interface MistakeRecord { exercise: Exercise; lessonId: string; attempts: number; createdAt: string; improved: boolean; }
+export interface SavedFlashcard extends VocabularyItem { lessonId: string; language: LanguageCode; savedAt: string; }

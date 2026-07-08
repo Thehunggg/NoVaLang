@@ -1,0 +1,6 @@
+import { BookOpen, Brain, CircleUserRound, CreditCard, Repeat2 } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import { useApp } from "../../context/AppContext";
+import { useTranslation } from "../../i18n/useTranslation";
+const itemClass = ({ isActive }: { isActive: boolean }) => `flex min-w-0 flex-1 flex-col items-center gap-1 py-2 text-[9px] font-black transition ${isActive ? "text-cyan-300" : "text-slate-600"}`;
+export function MobileNav() { const { progress } = useApp(); const { t } = useTranslation(); return <nav className="fixed inset-x-0 bottom-0 z-40 flex border-t border-white/10 bg-[#0b0714]/95 px-2 pb-[max(.35rem,env(safe-area-inset-bottom))] backdrop-blur-xl lg:hidden"><NavLink to="/" end className={itemClass}><BookOpen size={20} />{t("learn")}</NavLink><NavLink to={`/practice/${progress.selectedLanguage}`} className={itemClass}><Brain size={20} />{t("practice")}</NavLink><NavLink to="/review" className={itemClass}><Repeat2 size={20} />{t("review")}</NavLink><NavLink to="/flashcards" className={itemClass}><CreditCard size={20} />{t("flashcards")}</NavLink><NavLink to="/profile" className={itemClass}><CircleUserRound size={20} />{t("profile")}</NavLink></nav>; }

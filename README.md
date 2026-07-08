@@ -7,7 +7,7 @@ NovaLang is a complete neon-styled language-learning MVP for English, Japanese, 
 Requirements: Node.js 20+ and npm.
 
 ```powershell
-cd linguaquest-ai
+cd C:\Users\thehu\OneDrive\Desktop\NovaLang\novalang
 npm run install:all
 npm run dev
 ```
@@ -22,12 +22,13 @@ If either port is already occupied, stop the earlier development terminal with `
 Language → Course → Level → Unit → Lesson → MicroLesson → Exercises
 ```
 
-- Levels: A0, A1.1, A1.2, A2.1, and A2.2.
-- Full detailed A0 and A1.1 paths for all three languages.
+- Internal level codes stay stable from A0 to B2, while user-facing labels are language-specific.
+- Japanese shows an exam track: Kana Starter and JLPT N5 sample modules, with JLPT N4, N3, N2, and N1 shown as roadmap items.
+- English and Spanish keep general CEFR-style A0/A1/A2/B1/B2 labels, with exam placeholders such as TOEIC, IELTS, TOEFL, and DELE marked coming soon.
 - Every normal lesson has 3–5 micro-lessons; alphabet/pronunciation lessons have 4–6; reviews have 2–3; checkpoints use one test micro-lesson.
 - Every micro-lesson contains 5–8 functional exercises and grants XP.
 - English and Spanish alphabet lessons and Japanese hiragana lessons contain symbol, sound, example word, meaning, example sentence, translation, and practice.
-- Higher levels retain complete course/unit structure with at least one real sample lesson per unit. More higher-level lessons are planned for the future roadmap.
+- Higher Japanese exam levels are locked roadmap stages until their reviewed local content is ready.
 
 ## Features
 
@@ -35,7 +36,7 @@ Language → Course → Level → Unit → Lesson → MicroLesson → Exercises
 - A searchable catalog of 150+ native languages, stored separately from the learning language.
 - Complete local UI translations for English, Vietnamese, Japanese, and Spanish.
 - Other native languages can still be selected and saved; the interface safely falls back to English without deleting progress.
-- 15-question placement tests with A0–A2 recommendations.
+- Placement tests use the same language-specific level display helper as the course path.
 - Sequential lesson and micro-lesson unlocking.
 - XP, hearts, streaks, daily goals, mistakes, achievements, flashcards, practice, and spaced review.
 - Progress stored locally in the browser.
