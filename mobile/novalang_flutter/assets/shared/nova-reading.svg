@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-labelledby="title desc">
+  <title id="title">Nova reading a book</title>
+  <desc id="desc">A friendly unicorn reading an open book</desc>
+  <path fill="#8b5cf6" d="M112 42 135 8l7 44z"/>
+  <path fill="#f8fafc" stroke="#c4b5fd" stroke-width="6" d="M62 95c0-39 23-67 61-67s63 29 63 68c0 38-27 68-64 68S62 133 62 95z"/>
+  <path fill="#22d3ee" d="M69 74c9-36 31-53 64-46-17 7-27 21-30 43z"/>
+  <path fill="#f0abfc" d="M172 62c22 8 27 21 15 39-2-17-10-25-25-27z"/>
+  <circle cx="99" cy="94" r="6" fill="#312e81"/>
+  <circle cx="151" cy="94" r="6" fill="#312e81"/>
+  <path fill="none" stroke="#7c3aed" stroke-linecap="round" stroke-width="5" d="M113 116c8 7 17 7 25 0"/>
+  <path fill="#0f172a" stroke="#67e8f9" stroke-linejoin="round" stroke-width="5" d="m31 132 87 15v46l-87-18zm178 0-87 15v46l87-18z"/>
+  <path fill="none" stroke="#a78bfa" stroke-width="4" d="M120 148v44"/>
+  <path fill="#facc15" d="m39 34 4 10 10 4-10 4-4 10-4-10-10-4 10-4zm163 43 3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+</svg>

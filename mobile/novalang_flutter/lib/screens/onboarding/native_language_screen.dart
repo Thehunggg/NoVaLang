@@ -74,6 +74,6 @@ class _NativeLanguageScreenState extends ConsumerState<NativeLanguageScreen> {
   Future<void> _choose(LanguageOption language) async {
     await ref.read(profileProvider.notifier).setNativeLanguage(language.code);
     if (!mounted) return;
-    context.go('/onboarding/basic');
+    context.push('/onboarding/basic');
   }
 }

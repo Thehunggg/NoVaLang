@@ -23,7 +23,10 @@ class LanguageOptionTile extends StatelessWidget {
         children: [
           CircleAvatar(
             backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-            child: Text(language.code.toUpperCase()),
+            child: Text(
+              language.flagEmoji,
+              style: const TextStyle(fontSize: 22),
+            ),
           ),
           const SizedBox(width: 14),
           Expanded(

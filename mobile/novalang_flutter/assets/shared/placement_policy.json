@@ -1,0 +1,10 @@
+{
+  "questionCount": 15,
+  "bands": [
+    {"min":0,"max":3,"levelCode":"A0"},
+    {"min":4,"max":7,"levelCode":"A1_1"},
+    {"min":8,"max":11,"levelCode":"A1_2"},
+    {"min":12,"max":14,"levelCode":"A2_1"},
+    {"min":15,"max":15,"levelCode":"A2_2"}
+  ]
+}

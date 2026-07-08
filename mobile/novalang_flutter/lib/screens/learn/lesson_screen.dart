@@ -1,71 +1,301 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../core/utils/level_display.dart';
 import '../../core/utils/localization.dart';
 import '../../models/lesson.dart';
+import '../../state/lesson_provider.dart';
 import '../../state/profile_provider.dart';
+import '../../widgets/common/app_button.dart';
 import '../../widgets/common/app_card.dart';
 import '../../widgets/common/app_scaffold.dart';
+import '../../widgets/common/nova_mascot.dart';
 import '../../widgets/common/responsive_page.dart';
 import '../../widgets/lesson/exercise_card.dart';
 
-class LessonScreen extends ConsumerWidget {
+class LessonScreen extends ConsumerStatefulWidget {
   const LessonScreen({super.key, required this.lesson});
-
   final Lesson? lesson;
+  @override
+  ConsumerState<LessonScreen> createState() => _LessonScreenState();
+}
+
+class _LessonScreenState extends ConsumerState<LessonScreen> {
+  int stepIndex = 0;
+  bool answered = false;
+  bool completed = false;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final profile = ref.watch(profileProvider);
-    final native = profile.nativeLanguageCode;
+  void initState() {
+    super.initState();
+    final lesson = widget.lesson;
+    if (lesson != null) {
+      final session = ref.read(profileProvider).lessonSessions[lesson.id];
+      stepIndex = (session?['currentStepIndex'] as int? ?? 0).clamp(
+        0,
+        lesson.exercises.isEmpty ? 0 : lesson.exercises.length - 1,
+      );
+      completed = session?['completedAt'] != null;
+    }
+  }
 
+  @override
+  Widget build(BuildContext context) {
+    final profile = ref.watch(profileProvider);
+    final locale = profile.uiLanguageCode;
+    final lesson = widget.lesson;
     if (lesson == null) {
       return AppScaffold(
-        title: L10n.text('learn', native),
+        title: L10n.text('learn', locale),
         showBack: true,
-        selectedNavIndex: 0,
-        child: const ResponsivePage(
-          child: Center(child: Text('Lesson not found')),
+        backPath: '/learn',
+        child: ResponsivePage(
+          child: Center(child: Text(L10n.text('lessonNotFound', locale))),
         ),
       );
     }
 
     return AppScaffold(
-      title: lesson!.title,
+      title: lesson.localizedTitle(locale),
       showBack: true,
+      backPath: '/learn',
       selectedNavIndex: 0,
       child: ResponsivePage(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Row(
+              children: [
+                Expanded(
+                  child: TextButton.icon(
+                    onPressed: () => context.go('/learn'),
+                    icon: const Icon(Icons.arrow_back),
+                    label: Text(L10n.text('courseBack', locale)),
+                  ),
+                ),
+                if (stepIndex > 0)
+                  Expanded(
+                    child: TextButton.icon(
+                      onPressed: _previous,
+                      icon: const Icon(Icons.history),
+                      label: Text(L10n.text('previousStep', locale)),
+                    ),
+                  ),
+              ],
+            ),
             AppCard(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    lesson!.title,
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.w900,
-                    ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              getLevelDisplayName(
+                                lesson.level,
+                                profile.learningLanguageCode,
+                              ),
+                              style: const TextStyle(
+                                color: Color(0xFF67E8F9),
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                            const SizedBox(height: 6),
+                            Text(
+                              lesson.localizedTitle(locale),
+                              style: Theme.of(context).textTheme.headlineSmall
+                                  ?.copyWith(fontWeight: FontWeight.w900),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(lesson.localizedDescription(locale)),
+                          ],
+                        ),
+                      ),
+                      const NovaMascot(size: 82),
+                    ],
                   ),
-                  const SizedBox(height: 8),
-                  Text(lesson!.description),
+                  if (profile.lessonSessions[lesson.id] != null &&
+                      !completed) ...[
+                    const SizedBox(height: 12),
+                    Text(
+                      L10n.text('resume', locale),
+                      style: const TextStyle(
+                        color: Color(0xFFC4B5FD),
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
-            const SizedBox(height: 12),
-            if (lesson!.comingSoon)
-              AppCard(child: Text(L10n.text('comingSoon', native)))
-            else if (lesson!.exercises.isEmpty)
-              const AppCard(child: Text('Coming soon'))
-            else
-              for (final exercise in lesson!.exercises) ...[
-                ExerciseCard(exercise: exercise, nativeLanguageCode: native),
-                const SizedBox(height: 12),
-              ],
+            const SizedBox(height: 14),
+            if (lesson.comingSoon)
+              AppCard(child: Text(L10n.text('comingSoon', locale)))
+            else if (lesson.exercises.isEmpty)
+              _intro(context, lesson, locale)
+            else if (completed)
+              _completion(context, lesson, locale)
+            else ...[
+              LinearProgressIndicator(
+                value: (stepIndex + 1) / lesson.exercises.length,
+              ),
+              const SizedBox(height: 12),
+              ExerciseCard(
+                key: ValueKey('${lesson.id}-$stepIndex'),
+                exercise: lesson.exercises[stepIndex],
+                nativeLanguageCode: locale,
+                onChecked: (_) => setState(() => answered = true),
+              ),
+              const SizedBox(height: 12),
+              AppButton(
+                label: L10n.text('next', locale),
+                icon: Icons.arrow_forward,
+                onPressed: answered ? _next : null,
+              ),
+            ],
           ],
         ),
       ),
     );
+  }
+
+  Widget _intro(BuildContext context, Lesson lesson, String locale) => AppCard(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        for (final point in lesson.localizedIntroPoints(locale))
+          Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 3),
+                  child: Icon(
+                    Icons.auto_awesome,
+                    size: 17,
+                    color: Color(0xFF67E8F9),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Text(point, style: const TextStyle(height: 1.5)),
+                ),
+              ],
+            ),
+          ),
+        const SizedBox(height: 8),
+        AppButton(
+          label: L10n.text('next', locale),
+          icon: Icons.arrow_forward,
+          onPressed: completed ? _nextLesson : _completeIntro,
+        ),
+      ],
+    ),
+  );
+
+  Widget _completion(BuildContext context, Lesson lesson, String locale) =>
+      AppCard(
+        child: Column(
+          children: [
+            const NovaMascot(size: 112),
+            Text(
+              L10n.text('reviewLesson', locale),
+              style: Theme.of(
+                context,
+              ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900),
+            ),
+            const SizedBox(height: 14),
+            AppButton(
+              label: L10n.text('reviewLesson', locale),
+              outlined: true,
+              onPressed: () => setState(() {
+                completed = false;
+                stepIndex = 0;
+                answered = false;
+              }),
+            ),
+            const SizedBox(height: 10),
+            AppButton(label: L10n.text('next', locale), onPressed: _nextLesson),
+          ],
+        ),
+      );
+
+  void _previous() => setState(() {
+    stepIndex--;
+    answered = true;
+  });
+
+  Future<void> _next() async {
+    final lesson = widget.lesson!;
+    final isLast = stepIndex == lesson.exercises.length - 1;
+    final rewarded = await ref
+        .read(profileProvider.notifier)
+        .completeLessonStep(
+          lessonId: lesson.id,
+          stepId: lesson.exercises[stepIndex].id,
+          currentStepIndex: isLast ? stepIndex : stepIndex + 1,
+          lessonComplete: isLast,
+          estimatedMinutes: (lesson.estimatedMinutes / lesson.exercises.length)
+              .ceil(),
+        );
+    if (!mounted) return;
+    if (rewarded) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            L10n.text('goalReward', ref.read(profileProvider).uiLanguageCode),
+          ),
+        ),
+      );
+    }
+    setState(() {
+      answered = false;
+      if (isLast) {
+        completed = true;
+      } else {
+        stepIndex++;
+      }
+    });
+  }
+
+  Future<void> _completeIntro() async {
+    final lesson = widget.lesson!;
+    final rewarded = await ref
+        .read(profileProvider.notifier)
+        .completeLessonStep(
+          lessonId: lesson.id,
+          stepId: 'intro',
+          currentStepIndex: 0,
+          lessonComplete: true,
+          estimatedMinutes: lesson.estimatedMinutes,
+        );
+    if (!mounted) return;
+    if (rewarded) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            L10n.text('goalReward', ref.read(profileProvider).uiLanguageCode),
+          ),
+        ),
+      );
+    }
+    setState(() => completed = true);
+    _nextLesson();
+  }
+
+  void _nextLesson() {
+    final lessons = ref.read(lessonProvider);
+    final index = lessons.indexWhere((item) => item.id == widget.lesson!.id);
+    if (index >= 0 && index + 1 < lessons.length) {
+      context.go('/learn/${lessons[index + 1].id}');
+    } else {
+      context.go('/learn');
+    }
   }
 }

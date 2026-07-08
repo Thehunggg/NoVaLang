@@ -52,6 +52,75 @@ class ProfileNotifier extends Notifier<UserProfile> {
   Future<void> finishOnboarding() =>
       _commit(state.copyWith(onboardingComplete: true));
 
+  Future<void> setPlacementResult(String levelCode) => _commit(
+    state.copyWith(levelCode: levelCode, placementResultLevel: levelCode),
+  );
+
+  Future<void> saveLessonStep(String lessonId, int currentStepIndex) {
+    final sessions = Map<String, Map<String, dynamic>>.from(
+      state.lessonSessions,
+    );
+    final current = Map<String, dynamic>.from(sessions[lessonId] ?? const {});
+    sessions[lessonId] = {
+      'lessonId': lessonId,
+      'currentStepIndex': currentStepIndex,
+      'completedStepIds': current['completedStepIds'] ?? <String>[],
+      if (current['completedAt'] != null) 'completedAt': current['completedAt'],
+    };
+    return _commit(state.copyWith(lessonSessions: sessions));
+  }
+
+  Future<bool> completeLessonStep({
+    required String lessonId,
+    required String stepId,
+    required int currentStepIndex,
+    required bool lessonComplete,
+    int estimatedMinutes = 2,
+  }) async {
+    final today = DateTime.now().toIso8601String().substring(0, 10);
+    final isNewDay = state.lastStudyDate != today;
+    final sessions = Map<String, Map<String, dynamic>>.from(
+      state.lessonSessions,
+    );
+    final current = Map<String, dynamic>.from(sessions[lessonId] ?? const {});
+    final completed = List<String>.from(
+      current['completedStepIds'] as List? ?? const [],
+    );
+    final isNewStep = !completed.contains(stepId);
+    if (isNewStep) completed.add(stepId);
+    final minutes =
+        (isNewDay ? 0 : state.studyMinutesToday) +
+        (isNewStep ? estimatedMinutes : 0);
+    final rewarded =
+        minutes >= state.dailyGoalMinutes &&
+        state.dailyGoalRewardClaimedDate != today;
+    sessions[lessonId] = {
+      'lessonId': lessonId,
+      'currentStepIndex': currentStepIndex,
+      'completedStepIds': completed,
+      if (lessonComplete) 'completedAt': DateTime.now().toIso8601String(),
+    };
+    final completedLessons = List<String>.from(state.completedLessonIds);
+    if (lessonComplete && !completedLessons.contains(lessonId)) {
+      completedLessons.add(lessonId);
+    }
+    await _commit(
+      state.copyWith(
+        lessonSessions: sessions,
+        completedLessonIds: completedLessons,
+        studyMinutesToday: minutes,
+        lastStudyDate: today,
+        hearts: rewarded
+            ? (state.hearts >= 5 ? 5 : state.hearts + 1)
+            : state.hearts,
+        dailyGoalRewardClaimedDate: rewarded
+            ? today
+            : state.dailyGoalRewardClaimedDate,
+      ),
+    );
+    return rewarded;
+  }
+
   Future<void> setNiches(
     List<String> selected,
     String? primary, {

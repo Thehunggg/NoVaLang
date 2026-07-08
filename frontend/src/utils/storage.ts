@@ -8,7 +8,7 @@ const OLD_STORAGE_KEY = "linguaquest-ai-progress-v2";
 const NATIVE_LANGUAGE_KEY = "nativeLanguage";
 const UI_LANGUAGE_KEY = "effectiveUILanguage";
 const LEARNING_LANGUAGE_KEY = "learningLanguage";
-export const CONTENT_VERSION = "template-engine-profile-i18n-v3";
+export const CONTENT_VERSION = "cross-platform-onboarding-v4";
 
 export { getEffectiveUILanguage, isUISupportedForNativeLanguage };
 
@@ -46,7 +46,8 @@ export const initialAppProgress: AppProgress = {
   completedLessonIds: [], completedMicroLessonIds: [],
   unlockedLessonIds: ["en-a0-u1-l1", "ja-a0-u1-l1", "es-a0-u1-l1"], placedLessonIds: [],
   currentLessonId: null, currentMicroLessonId: null, reviewItems: [], mistakes: [], improvedMistakeIds: [],
-  savedFlashcards: [], achievements: [], perfectLessonIds: [], completedPracticeCount: 0, lessonsCompletedToday: 0
+  savedFlashcards: [], achievements: [], perfectLessonIds: [], completedPracticeCount: 0, lessonsCompletedToday: 0,
+  studyMinutesToday: 0, dailyGoalRewardClaimedDate: null, lessonSessions: {}
 };
 
 export const getProgress = (): AppProgress => {
@@ -73,6 +74,9 @@ export const getProgress = (): AppProgress => {
       currentLevel: normalizeLevel(value.currentLevel),
       xpToday: value.lastActiveDate === today ? value.xpToday ?? 0 : 0,
       lessonsCompletedToday: value.lastActiveDate === today ? value.lessonsCompletedToday ?? 0 : 0,
+      studyMinutesToday: value.lastActiveDate === today ? value.studyMinutesToday ?? 0 : 0,
+      dailyGoalRewardClaimedDate: value.dailyGoalRewardClaimedDate ?? null,
+      lessonSessions: value.lessonSessions ?? {},
       completedMicroLessonIds: value.completedMicroLessonIds ?? [],
       reviewItems: value.reviewItems ?? [],
       placedLessonIds: value.placedLessonIds ?? [],

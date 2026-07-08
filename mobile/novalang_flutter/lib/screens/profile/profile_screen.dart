@@ -3,12 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/utils/localization.dart';
+import '../../core/utils/level_display.dart';
 import '../../data/language_options.dart';
 import '../../state/profile_provider.dart';
 import '../../widgets/common/app_button.dart';
 import '../../widgets/common/app_card.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/responsive_page.dart';
+import '../../widgets/common/nova_mascot.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -17,10 +19,11 @@ class ProfileScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final profile = ref.watch(profileProvider);
     final native = profile.uiLanguageCode;
-    final nativeName = languageByCode(profile.nativeLanguageCode).nativeName;
-    final learningName = languageByCode(
-      profile.learningLanguageCode,
-    ).englishName;
+    final nativeOption = languageByCode(profile.nativeLanguageCode);
+    final learningOption = languageByCode(profile.learningLanguageCode);
+    final nativeName = '${nativeOption.flagEmoji} ${nativeOption.nativeName}';
+    final learningName =
+        '${learningOption.flagEmoji} ${learningOption.nativeName}';
     final displayName = profile.displayName.isEmpty
         ? 'Nova learner'
         : profile.displayName;
@@ -38,6 +41,8 @@ class ProfileScreen extends ConsumerWidget {
             AppCard(
               child: Row(
                 children: [
+                  const NovaMascot(size: 72),
+                  const SizedBox(width: 10),
                   CircleAvatar(radius: 28, child: Text(initial)),
                   const SizedBox(width: 14),
                   Expanded(
@@ -50,7 +55,7 @@ class ProfileScreen extends ConsumerWidget {
                               ?.copyWith(fontWeight: FontWeight.w900),
                         ),
                         Text(
-                          '${profile.levelCode} · ${profile.dailyGoalMinutes} min/day',
+                          '${getLevelDisplayName(profile.levelCode, profile.learningLanguageCode)} · ${profile.dailyGoalMinutes} ${L10n.text('minutesDay', native)}',
                         ),
                       ],
                     ),
@@ -89,7 +94,7 @@ class ProfileScreen extends ConsumerWidget {
               context,
               native == 'vi' ? 'Cài đặt ngôn ngữ' : 'Language Settings',
               [
-                _row('Native/UI', nativeName),
+                _row(L10n.text('nativeUi', native), nativeName),
                 _row(
                   native == 'vi' ? 'Ngôn ngữ học' : 'Learning',
                   learningName,
@@ -129,7 +134,7 @@ class ProfileScreen extends ConsumerWidget {
               _row('XP', '0'),
               _row(
                 native == 'vi' ? 'Bài đã hoàn thành' : 'Completed lessons',
-                '0',
+                '${profile.completedLessonIds.length}',
               ),
               _row(
                 native == 'vi' ? 'Tóm tắt lỗi sai' : 'Mistakes summary',

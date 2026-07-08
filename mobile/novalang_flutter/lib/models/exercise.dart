@@ -19,6 +19,7 @@ class Exercise {
     required this.id,
     required this.type,
     required this.prompt,
+    this.promptVi,
     this.displayText,
     this.speechText,
     this.options = const [],
@@ -33,6 +34,7 @@ class Exercise {
   final String id;
   final ExerciseType type;
   final String prompt;
+  final String? promptVi;
   final String? displayText;
   final String? speechText;
   final List<String> options;
@@ -51,6 +53,8 @@ class Exercise {
       : acceptedAnswers;
   List<MatchPair> localizedPairs(String nativeLanguageCode) =>
       nativeLanguageCode == 'vi' && pairsVi.isNotEmpty ? pairsVi : pairs;
+  String localizedPrompt(String nativeLanguageCode) =>
+      nativeLanguageCode == 'vi' && promptVi != null ? promptVi! : prompt;
 
   bool check(Object answer, String nativeLanguageCode) {
     if (type == ExerciseType.matchPairs) {

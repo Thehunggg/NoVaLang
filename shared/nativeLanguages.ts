@@ -53,5 +53,6 @@ const seeds: Seed[] = [
 ];
 
 const supported = new Set<SupportedUILanguage>(["en", "vi", "ja", "es"]);
-export const nativeLanguages: NativeLanguage[] = seeds.map(([code, name, nativeName, region, direction = "ltr"]) => ({ code, name, nativeName, region, direction, uiSupported: supported.has(code as SupportedUILanguage) }));
+const flagFor = (code: string): string => ({ en: "🌐", vi: "🇻🇳", ja: "🇯🇵", es: "🌐", ko: "🇰🇷", "zh-CN": "🇨🇳", "zh-TW": "🇹🇼" } as Record<string, string>)[code] ?? "🌐";
+export const nativeLanguages: NativeLanguage[] = seeds.map(([code, name, nativeName, region, direction = "ltr"]) => ({ code, name, nativeName, flagEmoji: flagFor(code), region, direction, uiSupported: supported.has(code as SupportedUILanguage) }));
 export const popularNativeLanguageCodes = ["en","vi","ja","ko","zh-CN","zh-TW","es","fr","de","pt","ru","ar","hi","th","id"];

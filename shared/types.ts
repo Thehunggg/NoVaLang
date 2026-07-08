@@ -14,7 +14,7 @@ export type ReviewedStatus = "reviewed" | "draft" | "needs_review";
 export type LocalizedText = string | Partial<Record<SupportedUILanguage, string>>;
 export type LocalizedAnswers = Partial<Record<SupportedUILanguage, string[]>>;
 
-export interface NativeLanguage { code: string; name: string; nativeName: string; region?: string; direction?: "ltr" | "rtl"; uiSupported: boolean; }
+export interface NativeLanguage { code: string; name: string; nativeName: string; flagEmoji: string; region?: string; direction?: "ltr" | "rtl"; uiSupported: boolean; }
 export interface Language { code: LanguageCode; name: string; nativeName: string; flag: string; color: string; greeting: string; description: string; }
 export interface ExampleSentence { text: string; translation: string; note?: string; }
 export type LessonExample = ExampleSentence;

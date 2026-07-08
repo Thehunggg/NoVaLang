@@ -48,8 +48,9 @@ class _BasicInfoScreenState extends ConsumerState<BasicInfoScreen> {
     final native = ref.watch(profileProvider).nativeLanguageCode;
     final isVi = native == 'vi';
     return AppScaffold(
-      title: isVi ? 'Thông tin cơ bản' : 'Basic user information',
+      title: L10n.text('basicInfo', native),
       showBack: true,
+      backPath: '/onboarding/native',
       child: ResponsivePage(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -63,28 +64,31 @@ class _BasicInfoScreenState extends ConsumerState<BasicInfoScreen> {
               ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w900),
             ),
             const SizedBox(height: 16),
-            _field(displayName, isVi ? 'Tên hiển thị' : 'Display name'),
+            _field(
+              displayName,
+              L10n.text('displayName', native),
+              L10n.text('displayNameHint', native),
+              required: true,
+            ),
             _field(
               ageRange,
-              isVi ? 'Độ tuổi (không bắt buộc)' : 'Age range (optional)',
+              L10n.text('age', native),
+              L10n.text('optional', native),
             ),
             _field(
               country,
-              isVi
-                  ? 'Quốc gia/khu vực (không bắt buộc)'
-                  : 'Country/region (optional)',
+              L10n.text('country', native),
+              L10n.text('countryHint', native),
             ),
             _field(
               region,
-              isVi
-                  ? 'Thành phố/tỉnh (không bắt buộc)'
-                  : 'City/prefecture (optional)',
+              L10n.text('region', native),
+              L10n.text('optional', native),
             ),
             _field(
               occupationStatus,
-              isVi
-                  ? 'Nghề nghiệp/học tập (không bắt buộc)'
-                  : 'Occupation/student status (optional)',
+              L10n.text('occupation', native),
+              L10n.text('occupationHint', native),
             ),
             const SizedBox(height: 12),
             AppButton(
@@ -97,13 +101,31 @@ class _BasicInfoScreenState extends ConsumerState<BasicInfoScreen> {
     );
   }
 
-  Widget _field(TextEditingController controller, String label) {
+  Widget _field(
+    TextEditingController controller,
+    String label,
+    String hint, {
+    bool required = false,
+  }) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: TextField(
-        controller: controller,
-        onChanged: (_) => setState(() {}),
-        decoration: InputDecoration(labelText: label),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            '$label${required ? ' *' : ''}',
+            style: const TextStyle(
+              fontWeight: FontWeight.w800,
+              color: Color(0xFFBFF5FF),
+            ),
+          ),
+          const SizedBox(height: 7),
+          TextField(
+            controller: controller,
+            onChanged: (_) => setState(() {}),
+            decoration: InputDecoration(hintText: hint),
+          ),
+        ],
       ),
     );
   }
@@ -119,6 +141,6 @@ class _BasicInfoScreenState extends ConsumerState<BasicInfoScreen> {
           occupationStatus: occupationStatus.text.trim(),
         );
     if (!mounted) return;
-    context.go('/onboarding/learning');
+    context.push('/onboarding/learning');
   }
 }

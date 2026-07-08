@@ -1,4 +1,5 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
+import { authService } from "../services/auth";
 
 export interface AuthUser {
   name: string;
@@ -42,10 +43,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const value = useMemo<AuthContextValue>(() => ({
     user,
     signIn: (email) => {
-      const name = email.split("@")[0].replace(/[._-]+/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase()) || "Explorer";
-      saveUser({ name, email, avatar: initials(name) });
+      const identity = authService.signInWithEmail(email);
+      saveUser({ ...identity, avatar: initials(identity.name) });
     },
-    signUp: (name, email) => saveUser({ name: name.trim(), email, avatar: initials(name) }),
+    signUp: (name, email) => { const identity = authService.signUpWithEmail(name, email); saveUser({ ...identity, avatar: initials(identity.name) }); },
     continueAsGuest: () => saveUser({ name: "Language Explorer", email: "guest@novalang.local", avatar: "NE" }),
     signOut: () => saveUser(null)
   }), [user]);

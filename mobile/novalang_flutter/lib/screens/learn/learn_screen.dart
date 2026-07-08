@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/utils/localization.dart';
 import '../../state/lesson_provider.dart';
 import '../../state/profile_provider.dart';
+import '../../data/language_options.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/responsive_page.dart';
 import '../../widgets/lesson/lesson_card.dart';
@@ -26,7 +27,7 @@ class LearnScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Japanese · JLPT',
+              '${languageByCode(profile.learningLanguageCode).flagEmoji} ${languageByCode(profile.learningLanguageCode).nativeName} · JLPT',
               style: Theme.of(
                 context,
               ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w900),
@@ -39,11 +40,13 @@ class LearnScreen extends ConsumerWidget {
             ),
             const SizedBox(height: 18),
             if (profile.learningLanguageCode != 'ja')
-              const Center(child: Text('Coming soon'))
+              Center(child: Text(L10n.text('comingSoon', native)))
             else
               for (final lesson in lessons) ...[
                 LessonCard(
                   lesson: lesson,
+                  locale: native,
+                  learningLanguage: profile.learningLanguageCode,
                   onTap: () => context.go('/learn/${lesson.id}'),
                 ),
                 const SizedBox(height: 12),

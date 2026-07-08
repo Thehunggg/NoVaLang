@@ -33,6 +33,7 @@ class _LearningLanguageScreenState
     return AppScaffold(
       title: L10n.text('learningLanguage', profile.nativeLanguageCode),
       showBack: true,
+      backPath: '/onboarding/basic',
       child: ResponsivePage(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -58,7 +59,7 @@ class _LearningLanguageScreenState
 
   Widget _status(LanguageOption language) {
     if (language.code == 'ja') {
-      return const Chip(label: Text('JLPT ready'));
+      return Chip(label: Text(language.code == 'ja' ? 'JLPT' : ''));
     }
     if (language.code == 'en') {
       return const Chip(label: Text('TOEIC · IELTS · TOEFL'));
@@ -72,6 +73,6 @@ class _LearningLanguageScreenState
   Future<void> _choose(LanguageOption language) async {
     await ref.read(profileProvider.notifier).setLearningLanguage(language.code);
     if (!mounted) return;
-    context.go('/onboarding/goal');
+    context.push('/onboarding/goal');
   }
 }

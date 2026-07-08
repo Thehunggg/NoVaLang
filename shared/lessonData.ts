@@ -236,7 +236,7 @@ const specialPronunciationGroups = (language: LanguageCode, lessonTitle: string)
     groups.push({ title: "Sound Review", seeds });
     return groups.slice(0, 6);
   }
-  if (language === "ja" && lessonTitle === "What is Hiragana?") return [{ title: "Hiragana is a sound script", seeds: jaKana.slice(0, 2) }, { title: "One symbol, one beat", seeds: jaKana.slice(2, 4) }, { title: "Read left to right", seeds: jaKana.slice(4, 6) }, { title: "First recognition", seeds: jaKana.slice(0, 6) }];
+  if (language === "ja" && lessonTitle === "What is Hiragana?") return [{ title: "Hiragana is a sound script", seeds: [] }];
   return null;
 };
 
@@ -247,7 +247,8 @@ const makeMicroLessons = (language: LanguageCode, level: LevelId, lessonId: stri
   return groups.map((group, index) => {
     const id = `${lessonId}-m${index + 1}`;
     let items: ContentItem[];
-    if (group.seeds.length) { items = group.seeds.map((seed, itemIndex) => makePronunciationItem(seed, `${id}-p${itemIndex + 1}`, language, level)); if (language === "ja" && title === "What is Hiragana?" && index < 3) items.push(...makeAmbiguousJapaneseVocabulary(id, index)); }
+    if (language === "ja" && title === "What is Hiragana?") items = [];
+    else if (group.seeds.length) items = group.seeds.map((seed, itemIndex) => makePronunciationItem(seed, `${id}-p${itemIndex + 1}`, language, level));
     else if (type === "grammar") {
       const vocab = makeVocabularyItems(language, title, id);
       const grammar: GrammarPoint = { kind: "grammar", id: `${id}-g1`, title, pattern: title, explanation: `Use the ${title} pattern in a short, clear beginner sentence.`, examples: [{ text: vocab[0].exampleSentence, translation: vocab[0].sentenceTranslation }] };
@@ -257,12 +258,13 @@ const makeMicroLessons = (language: LanguageCode, level: LevelId, lessonId: stri
       const lines: DialogueLine[] = vocab.slice(0, 2).map((item, lineIndex) => ({ kind: "dialogue", id: `${id}-d${lineIndex + 1}`, speaker: lineIndex ? "Nova" : "You", text: item.exampleSentence, speechText: item.exampleSpeechText ?? item.exampleSentence, translation: item.sentenceTranslation, translations: item.exampleTranslations, audioPlaceholder: item.word }));
       items = [...lines, ...vocab.slice(0, 2)];
     } else items = makeVocabularyItems(language, title, id);
-    const exercises = makeExercises(items, language, level, id); const ambiguityItems = items.filter((item): item is VocabularyItem => item.kind === "vocabulary" && item.id.includes("-amb"));
+    const exercises = language === "ja" && title === "What is Hiragana?" ? [] : makeExercises(items, language, level, id); const ambiguityItems = items.filter((item): item is VocabularyItem => item.kind === "vocabulary" && item.id.includes("-amb"));
     ambiguityItems.forEach((item, ambiguityIndex) => { const meanings = item.meanings!; exercises[3 + ambiguityIndex] = { id: `${id}-ambiguity-${ambiguityIndex + 1}`, type: language === "ja" ? "type_meaning" : "translation", level, question: `What does ${item.displayText ?? item.word} mean?`, questionTranslations: { vi: `${item.displayText ?? item.word} nghĩa là gì?`, ja: `${item.displayText ?? item.word}の意味は何ですか？`, es: `¿Qué significa ${item.displayText ?? item.word}?` }, correctAnswer: meanings.en![0], acceptedAnswers: meanings, meanings, explanation: `${item.displayText ?? item.word} means ${meanings.en![0]}.`, explanationTranslations: { vi: `${item.displayText ?? item.word} có nghĩa là ${meanings.vi![0]}.`, ja: `${item.displayText ?? item.word}は${meanings.ja![0]}という意味です。`, es: `${item.displayText ?? item.word} significa ${meanings.es![0]}.` }, hint: `Use the kanji context and reading ${item.reading}.`, hintTranslations: { vi: `Hãy dựa vào chữ kanji và cách đọc ${item.reading}.`, ja: `漢字と読み方${item.reading}を確認しましょう。`, es: `Usa el kanji y la lectura ${item.reading}.` }, targetLanguage: language, nativeTranslation: meanings.en![0], difficulty: "easy", relatedIds: [item.id], nativeLanguageMode: true, trackType: language === "ja" ? "exam" : "general", examTrack: language === "ja" ? "JLPT" : undefined, examLevel: examLevelFor(language, level), skill: "vocabulary", reviewedStatus: "reviewed" }; });
     const vocabularyMatch = makeVocabularyMatchExercise(ambiguityItems, language, level, id);
     if (vocabularyMatch) exercises.push(vocabularyMatch);
     const titleTranslations = translatedLabel(group.title); const lessonTitleTranslations = translatedLabel(title);
-    return { id, lessonId, title: group.title, titleTranslations, objective: `Complete a small step in ${title}.`, objectiveTranslations: { en: `Complete a small step in ${title}.`, vi: `Hoàn thành một bước nhỏ trong bài “${lessonTitleTranslations.vi}”.`, ja: `${title}の小さなステップを完了しましょう。`, es: `Completa un pequeño paso de ${title}.` }, explanation: group.seeds.length ? `Focus on the sound, example word, and recognition of ${group.title}.` : `Learn this part through recognition, guided practice, and recall.`, explanationTranslations: { en: group.seeds.length ? `Focus on the sound, example word, and recognition of ${group.title}.` : `Learn this part through recognition, guided practice, and recall.`, vi: group.seeds.length ? `Tập trung vào âm, từ ví dụ và cách nhận biết ${titleTranslations.vi}.` : "Học phần này qua nhận biết, luyện tập có hướng dẫn và ghi nhớ.", ja: group.seeds.length ? `${group.title}の音、例の単語、見分け方に集中しましょう。` : "認識、ガイド練習、復習で学びましょう。", es: group.seeds.length ? `Concéntrate en el sonido, la palabra de ejemplo y el reconocimiento de ${group.title}.` : "Aprende mediante reconocimiento, práctica guiada y recuerdo." }, contentItems: items, exercises, xpReward: 8 + Math.min(index, 3), order: index + 1, estimatedMinutes: 3 + Math.min(index, 2), unlockStatus: index === 0 ? "available" : "locked" };
+    const isHiraganaIntro = language === "ja" && title === "What is Hiragana?";
+    return { id, lessonId, title: group.title, titleTranslations, objective: isHiraganaIntro ? "Understand what Hiragana is before practicing kana." : `Complete a small step in ${title}.`, objectiveTranslations: isHiraganaIntro ? { en: "Understand what Hiragana is before practicing kana.", vi: "Hiểu Hiragana là gì trước khi luyện từng chữ Kana.", ja: "かなを練習する前に、ひらがなとは何かを理解しましょう。", es: "Comprende qué es Hiragana antes de practicar kana." } : { en: `Complete a small step in ${title}.`, vi: `Hoàn thành một bước nhỏ trong bài “${lessonTitleTranslations.vi}”.`, ja: `${title}の小さなステップを完了しましょう。`, es: `Completa un pequeño paso de ${title}.` }, explanation: isHiraganaIntro ? "Hiragana is a Japanese phonetic script. Each character represents a sound rather than a meaning by itself. The next lesson teaches あ, い, う, え, and お." : group.seeds.length ? `Focus on the sound, example word, and recognition of ${group.title}.` : `Learn this part through recognition, guided practice, and recall.`, explanationTranslations: isHiraganaIntro ? { en: "Hiragana is a Japanese phonetic script. Each character represents a sound rather than a meaning by itself. The next lesson teaches あ, い, う, え, and お.", vi: "Hiragana là hệ chữ biểu âm của tiếng Nhật. Mỗi chữ biểu thị một âm và tự nó không mang nghĩa. Bài tiếp theo sẽ dạy あ, い, う, え và お.", ja: "ひらがなは日本語の表音文字です。一文字ずつ音を表し、文字だけでは意味を持ちません。次のレッスンでは、あ・い・う・え・おを学びます。", es: "Hiragana es una escritura fonética japonesa. Cada carácter representa un sonido, no un significado por sí solo. La siguiente lección enseña あ, い, う, え y お." } : { en: group.seeds.length ? `Focus on the sound, example word, and recognition of ${group.title}.` : `Learn this part through recognition, guided practice, and recall.`, vi: group.seeds.length ? `Tập trung vào âm, từ ví dụ và cách nhận biết ${titleTranslations.vi}.` : "Học phần này qua nhận biết, luyện tập có hướng dẫn và ghi nhớ.", ja: group.seeds.length ? `${group.title}の音、例の単語、見分け方に集中しましょう。` : "認識、ガイド練習、復習で学びましょう。", es: group.seeds.length ? `Concéntrate en el sonido, la palabra de ejemplo y el reconocimiento de ${group.title}.` : "Aprende mediante reconocimiento, práctica guiada y recuerdo." }, contentItems: items, exercises, xpReward: 8 + Math.min(index, 3), order: index + 1, estimatedMinutes: 3 + Math.min(index, 2), unlockStatus: index === 0 ? "available" : "locked" };
   });
 };
 
@@ -340,14 +342,13 @@ const makeCourse = (language: LanguageCode): Course => {
   return course;
 };
 
-const placementCounts: Record<LevelId, number> = { A0: 4, A1_1: 4, A1_2: 3, A2_1: 2, A2_2: 2, B1_1: 1, B1_2: 1, B2: 1 };
-const placementPoints: Record<LevelId, number> = { A0: 1, A1_1: 2, A1_2: 3, A2_1: 4, A2_2: 5, B1_1: 6, B1_2: 7, B2: 8 };
+const placementCounts: Partial<Record<LevelId, number>> = { A0: 3, A1_1: 3, A1_2: 3, A2_1: 3, A2_2: 3 };
 function makePlacementTest(course: Course): PlacementQuestion[] {
-  return course.levels.filter((level) => level.units.length).flatMap((level) => {
+  return course.levels.filter((level) => level.units.length && placementCounts[level.id]).flatMap((level) => {
     const pool = level.units.flatMap((unit) => unit.lessons.flatMap((lesson) => lesson.exercises));
     if (!pool.length) return [];
-    return Array.from({ length: placementCounts[level.id] }, (_, index) => ({ ...pool[index % pool.length], id: `${course.language}-placement-${level.id}-${index + 1}`, placementScore: placementPoints[level.id] }));
-  });
+    return Array.from({ length: placementCounts[level.id] ?? 0 }, (_, index) => ({ ...pool[index % pool.length], id: `${course.language}-placement-${level.id}-${index + 1}`, placementScore: 1 }));
+  }).slice(0, 15);
 }
 
 export const courses: Course[] = (["en", "ja", "es"] as LanguageCode[]).map(makeCourse);

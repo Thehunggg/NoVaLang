@@ -1,10 +1,12 @@
-import { ArrowRight, Check, Eye, EyeOff, Globe2, LockKeyhole, Mail, Sparkles, UserRound } from "lucide-react";
+import { Apple, ArrowRight, AtSign, Camera, Check, Eye, EyeOff, Globe2, LockKeyhole, Mail, Sparkles, UserRound, Users } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { Mascot } from "../components/learning/Mascot";
 import { NativeLanguageSelector } from "../components/NativeLanguageSelector";
 import { useAuth } from "../context/AuthContext";
+import { useApp } from "../context/AppContext";
+import { authProviders, localizedConfigLabel } from "../data/sharedConfig";
 import { useTranslation } from "../i18n/useTranslation";
 
 type Mode = "login" | "signup" | "reset";
@@ -18,7 +20,10 @@ export function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [resetSent, setResetSent] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
+  const [notice, setNotice] = useState("");
   const { user, signIn, signUp, continueAsGuest } = useAuth();
+  const { progress } = useApp();
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
@@ -48,6 +53,8 @@ export function LoginPage() {
     navigate(destination, { replace: true });
   };
 
+  const providerIcon = (id: string) => id === "facebook" ? <Users size={18} /> : id === "instagram" ? <Camera size={18} /> : id === "apple" ? <Apple size={18} /> : id === "email" ? <Mail size={18} /> : id === "guest" ? <Globe2 size={18} /> : <AtSign size={18} />;
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#080510] text-white">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(168,85,247,.24),transparent_28%),radial-gradient(circle_at_85%_20%,rgba(34,211,238,.18),transparent_25%),radial-gradient(circle_at_65%_90%,rgba(236,72,153,.18),transparent_30%)]" />
@@ -58,9 +65,9 @@ export function LoginPage() {
             <Mascot size="lg" />
             <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-sm font-black text-cyan-200"><Sparkles size={16} /> {t("novaWelcome")}</div>
             <h1 className="mt-6 font-display text-6xl font-black leading-tight">{t("tagline")}</h1>
-            <p className="mt-5 max-w-lg text-lg leading-8 text-slate-400">CEFR and JLPT-style paths, micro-lessons, placement, and spaced review kept together in one bright learning signal.</p>
+            <p className="mt-5 max-w-lg text-lg leading-8 text-slate-400">{t("placementDescription")}</p>
           </div>
-          <p className="text-sm font-bold text-slate-600">English / Japanese / Spanish</p>
+          <p className="text-sm font-bold text-slate-600">{t("english")} / {t("japanese")} / {t("spanish")}</p>
         </section>
         <section className="flex min-h-screen items-center justify-center p-4 sm:p-8">
           <div className="w-full max-w-md">
@@ -68,19 +75,30 @@ export function LoginPage() {
             <div className="rounded-[2rem] border border-white/10 bg-white/[.075] p-6 shadow-2xl backdrop-blur-2xl sm:p-8">
               <NativeLanguageSelector compact />
               <div className="my-6 h-px bg-white/10" />
+              {!showEmail && !resetSent && <div className="grid gap-3">
+                {authProviders.map((provider) => <button key={provider.id} onClick={() => {
+                  setNotice("");
+                  if (provider.id === "guest") return guest();
+                  if (provider.id === "email") return setShowEmail(true);
+                  setNotice(t("providerLater"));
+                }} className={`flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border px-4 text-sm font-black transition ${provider.id === "google" ? "border-violet-400/30 bg-violet-500/15 text-white hover:bg-violet-500/25" : "border-white/10 bg-white/5 text-slate-100 hover:bg-white/10"}`}>
+                  {providerIcon(provider.id)}{localizedConfigLabel(provider.label, progress.effectiveUILanguage)}
+                </button>)}
+                {notice && <p className="rounded-xl border border-cyan-300/20 bg-cyan-300/10 p-3 text-center text-sm font-bold text-cyan-100">{notice}</p>}
+              </div>}
               {resetSent ? (
                 <div className="rounded-2xl border border-emerald-300/25 bg-emerald-300/10 p-5">
                   <Check className="text-emerald-300" />
-                  <h2 className="mt-3 font-display text-xl font-black">Reset path prepared</h2>
-                  <p className="mt-2 text-sm text-slate-400">This local MVP does not send email. Return and use any six-character password.</p>
+                  <h2 className="mt-3 font-display text-xl font-black">{t("forgotPassword")}</h2>
+                  <p className="mt-2 text-sm text-slate-400">{t("providerLater")}</p>
                   <button onClick={() => switchMode("login")} className="mt-5 w-full rounded-xl bg-emerald-300 py-3 font-black text-emerald-950">{t("back")}</button>
                 </div>
-              ) : (
+              ) : showEmail ? (
                 <>
                   <p className="text-xs font-black uppercase tracking-[.16em] text-cyan-300">{mode === "login" ? t("welcomeBack") : mode === "signup" ? t("createProfile") : t("forgotPassword")}</p>
                   <h1 className="mt-2 font-display text-3xl font-black">{mode === "login" ? t("continueStreak") : mode === "signup" ? t("createProfile") : t("forgotPassword")}</h1>
                   <form onSubmit={submit} className="mt-6 space-y-4">
-                    {mode === "signup" && <label className="flex h-14 items-center gap-3 rounded-2xl border border-white/10 bg-black/20 px-4"><UserRound className="text-fuchsia-300" size={18} /><input value={name} onChange={(event) => setName(event.target.value)} placeholder="Display name" className="min-w-0 flex-1 bg-transparent text-sm font-bold outline-none" /></label>}
+                    {mode === "signup" && <label className="flex h-14 items-center gap-3 rounded-2xl border border-white/10 bg-black/20 px-4"><UserRound className="text-fuchsia-300" size={18} /><input value={name} onChange={(event) => setName(event.target.value)} placeholder={t("displayName")} className="min-w-0 flex-1 bg-transparent text-sm font-bold outline-none" /></label>}
                     <label className="flex h-14 items-center gap-3 rounded-2xl border border-white/10 bg-black/20 px-4"><Mail className="text-cyan-300" size={18} /><input value={email} onChange={(event) => setEmail(event.target.value)} placeholder={t("email")} type="email" className="min-w-0 flex-1 bg-transparent text-sm font-bold outline-none" /></label>
                     {mode !== "reset" && <label className="flex h-14 items-center gap-3 rounded-2xl border border-white/10 bg-black/20 px-4"><LockKeyhole className="text-violet-300" size={18} /><input value={password} onChange={(event) => setPassword(event.target.value)} placeholder={t("password")} type={showPassword ? "text" : "password"} className="min-w-0 flex-1 bg-transparent text-sm font-bold outline-none" /><button type="button" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <EyeOff size={18} /> : <Eye size={18} />}</button></label>}
                     {mode === "login" && <button type="button" onClick={() => switchMode("reset")} className="block w-full text-right text-xs font-black text-cyan-300">{t("forgotPassword")}</button>}
@@ -89,12 +107,12 @@ export function LoginPage() {
                   </form>
                   {mode !== "reset" && (
                     <>
-                      <button onClick={guest} className="mt-4 flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 text-sm font-black"><Globe2 size={17} className="text-cyan-300" />{t("continueExplorer")}</button>
+                      <button onClick={() => setShowEmail(false)} className="mt-4 flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 text-sm font-black"><ArrowRight className="rotate-180 text-cyan-300" size={17} />{t("back")}</button>
                       <p className="mt-5 text-center text-sm text-slate-500"><button onClick={() => switchMode(mode === "login" ? "signup" : "login")} className="font-black text-fuchsia-300">{mode === "login" ? t("createProfile") : t("signIn")}</button></p>
                     </>
                   )}
                 </>
-              )}
+              ) : null}
             </div>
           </div>
         </section>
@@ -102,4 +120,3 @@ export function LoginPage() {
     </main>
   );
 }
-

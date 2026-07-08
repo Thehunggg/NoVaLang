@@ -1,6 +1,6 @@
 import { BookOpen, CreditCard, Flame, Heart, Languages as LanguagesIcon, LogOut, RotateCcw, Settings, Sparkles, Star, Trophy, UserRound, Volume2, Zap } from "lucide-react";
 import { useState, type ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AchievementBadge, achievementCatalog } from "../components/learning/AchievementBadge";
 import { StatCard } from "../components/learning/StatCard";
 import { PageContainer } from "../components/layout/PageContainer";
@@ -11,19 +11,20 @@ import { Card } from "../components/ui/Card";
 import { Modal } from "../components/ui/Modal";
 import { useApp } from "../context/AppContext";
 import { useAuth } from "../context/AuthContext";
-import { getLevelDisplayName, languages } from "../data/fallbackCourses";
+import { courses, getLevelDisplayName, languages } from "../data/fallbackCourses";
 import { groupedNiches, nicheCategory, nicheTitle } from "../data/niches";
 import { useTranslation } from "../i18n/useTranslation";
 import type { LanguageCode, LevelDecisionAfterNicheChange } from "../types/index";
 import { getNativeLanguageInfo } from "../utils/storage";
 
 export function ProfilePage() {
-  const { progress, resetProgress, selectLanguage, updateProfileInfo, updateNiches } = useApp();
+  const { progress, resetProgress, selectLanguage, updateProfileInfo, updateNiches, applyPlacement } = useApp();
   const { user, signOut } = useAuth(); const { t } = useTranslation();
   const [confirmReset, setConfirmReset] = useState(false); const [pendingLanguage, setPendingLanguage] = useState<LanguageCode>();
   const [editingNiche, setEditingNiche] = useState(false); const [decisionOpen, setDecisionOpen] = useState(false);
   const [draftNiches, setDraftNiches] = useState<Set<string>>(new Set(progress.selectedNiches));
   const [draftPrimary, setDraftPrimary] = useState<string | null>(progress.primaryNiche);
+  const navigate = useNavigate();
   const language = languages.find((item) => item.code === progress.selectedLanguage) ?? languages[0];
   const nativeLanguage = getNativeLanguageInfo(progress.nativeLanguage); const currentLevelName = getLevelDisplayName(progress.currentLevel, progress.learningLanguage, progress.nativeLanguage);
   const displayName = progress.displayName || user?.name || "Nova learner";
@@ -44,7 +45,16 @@ export function ProfilePage() {
     });
   };
   const saveNicheChange = () => { updateNiches([...draftNiches], draftPrimary); setEditingNiche(false); setDecisionOpen(true); };
-  const chooseDecision = (decision: LevelDecisionAfterNicheChange) => { updateNiches([...draftNiches], draftPrimary, decision); setDecisionOpen(false); };
+  const chooseDecision = (decision: LevelDecisionAfterNicheChange) => {
+    updateNiches([...draftNiches], draftPrimary, decision); setDecisionOpen(false);
+    if (decision === "placement") navigate(`/placement/${progress.selectedLanguage}`);
+    if (decision === "manual") navigate("/onboarding");
+    if (decision === "restart") {
+      const course = courses.find((item) => item.language === progress.selectedLanguage)!;
+      const first = course.levels[0].units[0].lessons[0];
+      applyPlacement({ completed: true, score: 0, level: "A0", date: new Date().toISOString(), startingUnitId: first.unitId, startingLessonId: first.id }, true);
+    }
+  };
 
   return <PageContainer className="py-8 sm:py-11"><section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-violet-400/15 via-fuchsia-400/[.08] to-cyan-300/[.08] p-6 sm:p-9"><div className="relative flex flex-col gap-6 sm:flex-row sm:items-center"><div className="grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-cyan-400 via-violet-500 to-fuchsia-500 text-2xl font-black">{avatar}</div><div className="flex-1"><Badge tone="cyan">{t("profileTitle")}</Badge><h1 className="mt-3 font-display text-3xl font-black">{displayName}</h1><p className="mt-1 text-sm text-slate-500">{user?.email}</p><p className="mt-4 text-sm font-extrabold text-cyan-200">{language.flag} {languageName(language.code)} · {currentLevelName} · {progress.dailyGoalMinutes} {t("minutesDay")}</p></div><Button variant="ghost" onClick={signOut}><LogOut size={17} />{t("signOut")}</Button></div></section>
 
@@ -56,7 +66,7 @@ export function ProfilePage() {
     </SettingsCard>
 
     <SettingsCard icon={<LanguagesIcon />} title={t("languageSettingsSection")} eyebrow={t("settings")}>
-      <div className="grid gap-3 sm:grid-cols-3"><InfoTile label={t("nativeLanguage")} value={nativeLanguage.nativeName} sub={nativeLanguage.name} /><InfoTile label={t("uiLanguage")} value={progress.effectiveUILanguage === "vi" ? t("vietnamese") : progress.effectiveUILanguage === "ja" ? t("japanese") : progress.effectiveUILanguage === "es" ? t("spanish") : t("english")} sub={progress.effectiveUILanguage.toUpperCase()} /><InfoTile label={t("learningLanguage")} value={languageName(progress.learningLanguage)} sub={progress.learningLanguage.toUpperCase()} /></div>
+      <div className="grid gap-3 sm:grid-cols-3"><InfoTile label={t("nativeLanguage")} value={`${nativeLanguage.flagEmoji} ${nativeLanguage.nativeName}`} sub={nativeLanguage.name} /><InfoTile label={t("uiLanguage")} value={progress.effectiveUILanguage === "vi" ? t("vietnamese") : progress.effectiveUILanguage === "ja" ? t("japanese") : progress.effectiveUILanguage === "es" ? t("spanish") : t("english")} sub={progress.effectiveUILanguage.toUpperCase()} /><InfoTile label={t("learningLanguage")} value={`${language.flag} ${languageName(progress.learningLanguage)}`} sub={progress.learningLanguage.toUpperCase()} /></div>
       <div className="mt-5"><NativeLanguageSelector compact /></div>
       <div className="mt-5 grid gap-2 sm:grid-cols-3">{languages.map((item) => <button key={item.code} onClick={() => item.code !== progress.selectedLanguage && setPendingLanguage(item.code)} className={`rounded-2xl border p-3 text-left text-sm font-black ${item.code === progress.selectedLanguage ? "border-violet-300/45 bg-violet-300/10" : "border-white/10 bg-white/[.035]"}`}>{item.flag} {languageName(item.code)}</button>)}</div>
     </SettingsCard>

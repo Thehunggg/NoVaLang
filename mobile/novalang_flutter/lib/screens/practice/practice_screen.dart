@@ -28,14 +28,14 @@ class PracticeScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Template practice',
+              L10n.text('practiceTitle', profile.uiLanguageCode),
               style: Theme.of(
                 context,
               ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w900),
             ),
             const SizedBox(height: 12),
             if (exercises.isEmpty)
-              const Text('Coming soon')
+              Text(L10n.text('comingSoon', profile.uiLanguageCode))
             else
               for (final exercise in exercises) ...[
                 ExerciseCard(

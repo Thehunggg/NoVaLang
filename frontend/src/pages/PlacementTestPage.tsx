@@ -10,14 +10,12 @@ import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { ProgressBar } from "../components/ui/ProgressBar";
 import { courses, getLevelDisplayName, isLanguageCode } from "../data/fallbackCourses";
+import { placementLevelFromScore } from "../data/sharedConfig";
 import { useApp } from "../context/AppContext";
 import { useTranslation } from "../i18n/useTranslation";
 import { fetchPlacement } from "../services/api";
-import type { LanguageCode, LevelId, PlacementQuestion, PlacementResult } from "../types/index";
+import type { LanguageCode, PlacementQuestion, PlacementResult } from "../types/index";
 import { getExerciseExplanation, getExerciseQuestion } from "../utils/checkAnswer";
-
-const levelFromScore = (score: number): LevelId =>
-  score <= 5 ? "A0" : score <= 15 ? "A1_1" : score <= 26 ? "A1_2" : score <= 36 ? "A2_1" : score <= 44 ? "A2_2" : score <= 51 ? "B1_1" : score <= 56 ? "B1_2" : "B2";
 
 export function PlacementTestPage() {
   const { language = "" } = useParams();
@@ -39,7 +37,7 @@ export function PlacementTestPage() {
 
   const question = questions[index];
   const finish = () => {
-    const level = levelFromScore(score);
+    const level = placementLevelFromScore(score);
     const course = courses.find((item) => item.language === code)!;
     const first = course.levels.find((item) => item.id === level)?.units[0]?.lessons[0] ?? course.levels[0].units[0].lessons[0];
     const result: PlacementResult = { completed: true, score, level, date: new Date().toISOString(), startingUnitId: first.unitId, startingLessonId: first.id };
@@ -53,7 +51,7 @@ export function PlacementTestPage() {
       <Card className="max-w-2xl overflow-hidden">
         <div className="bg-gradient-to-br from-violet-400/15 to-cyan-300/10 p-8 text-center sm:p-10">
           <Mascot size="md" />
-          <Badge tone="cyan"><Gauge size={13} /> {questions.length} questions</Badge>
+          <Badge tone="cyan"><Gauge size={13} /> {t("questionsCount", { count: questions.length })}</Badge>
           <h1 className="mt-5 font-display text-3xl font-black sm:text-4xl">{t("placementTitle")}</h1>
           <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-slate-400">{t("placementDescription")}</p>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">

@@ -3,6 +3,7 @@ class LanguageOption {
     required this.code,
     required this.englishName,
     required this.nativeName,
+    this.flagEmoji = '🌐',
     required this.aliases,
     required this.isSupportedAsNative,
     required this.isSupportedAsLearning,
@@ -11,6 +12,7 @@ class LanguageOption {
   final String code;
   final String englishName;
   final String nativeName;
+  final String flagEmoji;
   final List<String> aliases;
   final bool isSupportedAsNative;
   final bool isSupportedAsLearning;

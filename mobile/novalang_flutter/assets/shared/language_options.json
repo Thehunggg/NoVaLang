@@ -3,6 +3,7 @@
     "code": "en",
     "englishName": "English",
     "nativeName": "English",
+    "flagEmoji": "🌐",
     "aliases": ["eng", "american", "british", "e"],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": true
@@ -11,6 +12,7 @@
     "code": "vi",
     "englishName": "Vietnamese",
     "nativeName": "Tiếng Việt",
+    "flagEmoji": "🇻🇳",
     "aliases": ["tieng viet", "viet", "vietnam", "v"],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": false
@@ -19,6 +21,7 @@
     "code": "ja",
     "englishName": "Japanese",
     "nativeName": "日本語",
+    "flagEmoji": "🇯🇵",
     "aliases": ["nihongo", "nihon", "japan", "日本", "にほんご", "j"],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": true
@@ -27,15 +30,17 @@
     "code": "ko",
     "englishName": "Korean",
     "nativeName": "한국어",
+    "flagEmoji": "🇰🇷",
     "aliases": ["hangul", "hangeul", "korea", "korean", "한국", "k"],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": false
   },
   {
-    "code": "zh",
-    "englishName": "Chinese",
-    "nativeName": "中文",
-    "aliases": ["mandarin", "putonghua", "hanzi", "中国", "中文", "z"],
+    "code": "zh-CN",
+    "englishName": "Chinese Simplified",
+    "nativeName": "简体中文",
+    "flagEmoji": "🇨🇳",
+    "aliases": ["mandarin", "putonghua", "hanzi", "中国", "中文", "simplified", "z"],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": false
   },
@@ -43,6 +48,7 @@
     "code": "es",
     "englishName": "Spanish",
     "nativeName": "Español",
+    "flagEmoji": "🌐",
     "aliases": ["espanol", "castellano", "spain", "latin america", "s"],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": true

@@ -28,10 +28,12 @@ Android-first Flutter version of NovaLang. This app is separate from the existin
 
 - App name: NovaLang
 - Android package name: `com.novalang.app`
-- Main flow: Splash, mock auth, native language, learning language, goal/exam track, niche, level, Learn, Practice, Review, Flashcards, Profile.
+- Main flow: Splash, mock auth, native language, basic profile, learning language, daily goal, niche, placement/manual level, Learn, Practice, Review, Flashcards, Profile.
 - Current sample content focuses on Japanese Kana Starter and JLPT N5.
 - TOEIC, IELTS, TOEFL, DELE, JLPT N4-N1 are intentionally marked Coming soon.
-- Shared JSON mirrors live in `assets/shared/`. Canonical cross-platform copies are under the repository root `shared/config`, `shared/content`, and `shared/i18n`.
+- Shared JSON mirrors live in `assets/shared/`. Canonical cross-platform copies are under the repository root `shared/config`, `shared/content`, `shared/i18n`, and `shared/assets`.
+- Auth providers, daily-goal options, placement score bands, language flags, Japanese lesson structure, and Nova mascot metadata/assets are mirrored from those canonical files. Web imports canonical shared sources directly where its toolchain supports it; Flutter keeps package-local asset mirrors and matching typed Dart models.
+- Internal learning levels remain `A0`, `A1_1`, `A1_2`, `A2_1`, `A2_2`, `B1_1`, `B1_2`, and `B2`. Japanese screens display JLPT-style names through `lib/core/utils/level_display.dart`.
 
 ## Troubleshooting
 

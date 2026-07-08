@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/utils/localization.dart';
 import '../../data/niche_options.dart';
@@ -40,6 +41,7 @@ class _LearningPreferencesScreenState
           ? 'Tùy chọn học'
           : 'Learning preferences',
       showBack: true,
+      backPath: '/profile',
       selectedNavIndex: 4,
       child: ResponsivePage(
         child: Column(
@@ -90,7 +92,7 @@ class _LearningPreferencesScreenState
     if (!mounted) return;
     await showDialog<void>(
       context: context,
-      builder: (context) {
+      builder: (dialogContext) {
         final native = ref.read(profileProvider).nativeLanguageCode;
         final isVi = native == 'vi';
         final options = isVi
@@ -122,7 +124,16 @@ class _LearningPreferencesScreenState
                           primaryId,
                           decision: entry.key,
                         );
-                    if (context.mounted) Navigator.of(context).pop();
+                    if (dialogContext.mounted)
+                      Navigator.of(dialogContext).pop();
+                    if (!mounted) return;
+                    if (entry.key == 'placement') {
+                      context.go('/placement');
+                    } else if (entry.key == 'manual') {
+                      context.go('/onboarding/level');
+                    } else if (entry.key == 'restart') {
+                      await ref.read(profileProvider.notifier).setLevel('A0');
+                    }
                   },
                 ),
             ],

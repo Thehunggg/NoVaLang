@@ -1,0 +1,199 @@
+---
+description: NovaLang Android Flutter rules
+globs:
+  - "mobile/novalang_flutter/**"
+  - "shared/**"
+alwaysApply: true
+---
+
+# NovaLang Cursor Rules
+
+## Main role
+
+Cursor mainly handles the Android Flutter app.
+
+Main folder:
+
+mobile/novalang_flutter/
+
+Do not edit Web React unless the task explicitly requires Web + Flutter sync.
+
+Web React lives in:
+
+frontend/
+
+Shared source of truth lives in:
+
+shared/
+
+## Project path
+
+Work only inside:
+
+C:\Users\thehu\OneDrive\Desktop\NovaLang\novalang
+
+Do not work inside:
+
+C:\Users\thehu\Documents\Codex
+
+Do not create or edit:
+
+linguaquest-ai
+
+## Flutter UI-only tasks
+
+For Android/Flutter UI-only tasks, edit only:
+
+mobile/novalang_flutter/
+
+Examples:
+
+- Flutter screen layout
+- Android responsive UI
+- Flutter bottom navigation
+- Flutter card/button styling
+- Flutter onboarding UI
+- Flutter lesson UI
+- Flutter back button behavior
+
+Do not touch frontend/.
+
+Do not touch shared/ unless the task requires shared data or shared logic.
+
+## Shared data / logic tasks
+
+If the task affects shared data, learning logic, product logic, or business logic, update shared/ first.
+
+Shared logic includes:
+
+- language list
+- language aliases
+- flags/language icons
+- i18n/localization
+- niche list
+- exam tracks
+- level system
+- lesson data
+- vocabulary data
+- grammar data
+- kana/kanji data
+- exercise data
+- exercise builder logic
+- answer checking logic
+- accepted answers
+- placement test
+- daily goal
+- heart/streak rules
+- profile schema
+- onboarding choices
+- subscription plans
+- AI quota rules
+
+Do not create Flutter-only data that conflicts with Web.
+
+If Flutter cannot directly consume shared JSON, mirror the same JSON into Flutter assets and document the sync.
+
+## Localization rule
+
+If uiLanguage = vi, all user-facing text must be Vietnamese.
+
+Target learning language text stays in the learning language.
+
+Example:
+
+Japanese target:
+
+こんにちは
+
+Vietnamese UI/options:
+
+xin chào
+tạm biệt
+cảm ơn
+làm ơn
+
+Do not show English UI/options when Vietnamese UI is selected.
+
+## Exercise rules
+
+Single-choice exercises must have:
+
+- exactly 4 unique options when enough data exists
+- exactly 1 correct answer
+- no duplicate labels
+- no duplicate values
+- no distractor that is also correct
+
+Match-pairs exercises must:
+
+- check every pair exactly
+- not mark correct just because a value was selected
+- kana reading match must use kana → reading
+- vocabulary meaning match must use vocabulary → meaning
+
+Typed answers must:
+
+- use acceptedAnswers
+- normalize input before checking
+
+Japanese TTS:
+
+- use speechText when available
+- do not send ambiguous kanji alone
+- 雨（あめ） should speak あめ
+
+## Android UI rules
+
+NovaLang is Android-first.
+
+Use mobile-first Flutter UI:
+
+- SafeArea
+- LayoutBuilder
+- MediaQuery
+- responsive spacing
+- full-width cards on small screens
+- visible back buttons
+- bottom navigation with max 5 tabs
+- no fixed phone width/height
+- no layout designed only for one screen size
+
+Do not use fixed page sizes like:
+
+width: 390
+height: 844
+
+Small fixed icon sizes are okay.
+
+## Commands
+
+Before editing, check:
+
+pwd
+dir
+git status --short
+
+For Flutter tasks, run:
+
+cd mobile/novalang_flutter
+flutter pub get
+flutter analyze
+
+If possible, run:
+
+flutter build apk --debug
+
+If Flutter SDK is missing, report it clearly.
+
+## Final report
+
+Always report:
+
+1. Current working directory
+2. Task type: Flutter UI-only or shared-data/business-logic
+3. Files changed in mobile/novalang_flutter/
+4. Files changed in shared/
+5. Whether Web sync is needed
+6. Flutter analyze result
+7. Flutter build result if run
+8. Any SDK/config issue

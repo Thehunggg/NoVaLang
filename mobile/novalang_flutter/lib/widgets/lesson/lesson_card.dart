@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 
 import '../../models/lesson.dart';
+import '../../core/utils/level_display.dart';
+import '../../core/utils/localization.dart';
 import '../common/app_card.dart';
 
 class LessonCard extends StatelessWidget {
-  const LessonCard({super.key, required this.lesson, required this.onTap});
+  const LessonCard({
+    super.key,
+    required this.lesson,
+    required this.onTap,
+    required this.locale,
+    required this.learningLanguage,
+  });
 
   final Lesson lesson;
   final VoidCallback onTap;
+  final String locale;
+  final String learningLanguage;
 
   @override
   Widget build(BuildContext context) {
@@ -27,21 +37,25 @@ class LessonCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  lesson.title,
+                  lesson.localizedTitle(locale),
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w900,
                   ),
                 ),
                 const SizedBox(height: 6),
-                Text(lesson.description),
+                Text(lesson.localizedDescription(locale)),
                 const SizedBox(height: 10),
                 Wrap(
                   spacing: 8,
                   runSpacing: 8,
                   children: [
-                    Chip(label: Text(lesson.level)),
+                    Chip(
+                      label: Text(
+                        getLevelDisplayName(lesson.level, learningLanguage),
+                      ),
+                    ),
                     if (lesson.comingSoon)
-                      const Chip(label: Text('Coming soon')),
+                      Chip(label: Text(L10n.text('comingSoon', locale))),
                   ],
                 ),
               ],

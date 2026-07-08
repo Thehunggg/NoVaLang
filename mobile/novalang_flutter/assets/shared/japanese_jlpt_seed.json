@@ -1,11 +1,17 @@
 {
   "tracks": [
-    {"title": "Kana Starter", "levelCode": "KANA_STARTER", "comingSoon": false},
-    {"title": "JLPT N5", "levelCode": "JLPT_N5", "comingSoon": false},
-    {"title": "JLPT N4", "levelCode": "JLPT_N4", "comingSoon": true},
-    {"title": "JLPT N3", "levelCode": "JLPT_N3", "comingSoon": true},
-    {"title": "JLPT N2", "levelCode": "JLPT_N2", "comingSoon": true},
-    {"title": "JLPT N1", "levelCode": "JLPT_N1", "comingSoon": true}
+    {"title": "Kana Starter", "levelCode": "A0", "comingSoon": false},
+    {"title": "JLPT N5 Early", "levelCode": "A1_1", "comingSoon": false},
+    {"title": "JLPT N5", "levelCode": "A1_2", "comingSoon": false},
+    {"title": "JLPT N4 Early", "levelCode": "A2_1", "comingSoon": true},
+    {"title": "JLPT N4", "levelCode": "A2_2", "comingSoon": true},
+    {"title": "JLPT N3 Early", "levelCode": "B1_1", "comingSoon": true},
+    {"title": "JLPT N3", "levelCode": "B1_2", "comingSoon": true},
+    {"title": "JLPT N2", "levelCode": "B2", "comingSoon": true}
+  ],
+  "lessons": [
+    {"id":"hiragana-intro","levelCode":"A0","title":{"en":"What is Hiragana?","vi":"Hiragana là gì?"},"graded":false,"content":{"en":["Hiragana is a Japanese phonetic script.","Each character represents a sound, not a meaning by itself.","The next lesson teaches あ, い, う, え, and お."],"vi":["Hiragana là hệ chữ biểu âm của tiếng Nhật.","Mỗi chữ biểu thị một âm và tự nó không mang nghĩa.","Bài tiếp theo sẽ dạy あ, い, う, え và お."]}},
+    {"id":"kana-aio","levelCode":"A0","title":{"en":"あいうえお","vi":"あいうえお"},"graded":true}
   ],
   "kana": [
     {"displayText": "あ", "reading": "a"},

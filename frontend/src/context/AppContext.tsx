@@ -18,7 +18,8 @@ interface AppContextValue {
   applyPlacement: (result: PlacementResult, startFromZero?: boolean) => void;
   setCurrentLesson: (lessonId: string | null) => void;
   setCurrentMicroLesson: (microLessonId: string | null) => void;
-  completeMicroLesson: (micro: MicroLesson, lesson: Lesson, score: number, total: number) => { xpEarned: number; nextMicroLessonId: string | null; lessonCompleted: boolean; nextLessonId: string | null };
+  saveLessonStep: (lessonId: string, stepIndex: number) => void;
+  completeMicroLesson: (micro: MicroLesson, lesson: Lesson, score: number, total: number) => { xpEarned: number; nextMicroLessonId: string | null; lessonCompleted: boolean; nextLessonId: string | null; dailyGoalRewarded: boolean };
   completeLesson: (lesson: Lesson, score: number, total: number) => { xpEarned: number; nextLessonId: string | null };
   addXP: (amount: number) => void;
   loseHeart: () => void;
@@ -38,7 +39,17 @@ interface AppContextValue {
 
 const AppContext = createContext<AppContextValue | null>(null);
 const withAchievements = (progress: AppProgress): AppProgress => ({ ...progress, achievements: checkAchievements(progress) });
-const withActivity = (progress: AppProgress): AppProgress => ({ ...progress, ...updateStreak(progress.lastActiveDate, progress.streak) });
+const withActivity = (progress: AppProgress): AppProgress => {
+  const today = new Date().toISOString().slice(0, 10);
+  const isNewDay = progress.lastActiveDate !== today;
+  return {
+    ...progress,
+    ...updateStreak(progress.lastActiveDate, progress.streak),
+    xpToday: isNewDay ? 0 : progress.xpToday,
+    lessonsCompletedToday: isNewDay ? 0 : progress.lessonsCompletedToday,
+    studyMinutesToday: isNewDay ? 0 : progress.studyMinutesToday
+  };
+};
 
 export function AppProvider({ children }: { children: ReactNode }) {
   const [progress, setProgress] = useState<AppProgress>(getProgress);
@@ -96,6 +107,18 @@ export function AppProvider({ children }: { children: ReactNode }) {
       }),
       setCurrentLesson: (currentLessonId) => setProgress((current) => ({ ...current, currentLessonId })),
       setCurrentMicroLesson: (currentMicroLessonId) => setProgress((current) => ({ ...current, currentMicroLessonId })),
+      saveLessonStep: (lessonId, currentStepIndex) => setProgress((current) => ({
+        ...current,
+        currentLessonId: lessonId,
+        lessonSessions: {
+          ...current.lessonSessions,
+          [lessonId]: {
+            lessonId,
+            currentStepIndex,
+            completedStepIds: current.lessonSessions[lessonId]?.completedStepIds ?? []
+          }
+        }
+      })),
       completeMicroLesson: (micro, lesson, score, total) => {
         const newMicro = !progress.completedMicroLessonIds.includes(micro.id);
         const completedMicroIds = newMicro ? [...progress.completedMicroLessonIds, micro.id] : progress.completedMicroLessonIds;
@@ -106,12 +129,19 @@ export function AppProvider({ children }: { children: ReactNode }) {
         const nextLessonId = newlyCompletedLesson ? unlockNextLesson(course, lesson.id) : null;
         const perfect = score === total;
         const xpEarned = (newMicro ? micro.xpReward : 2) + (newlyCompletedLesson ? 15 : 0);
+        const today = new Date().toISOString().slice(0, 10);
+        const dailyGoalRewarded = progress.studyMinutesToday + (newMicro ? micro.estimatedMinutes : 0) >= progress.dailyGoalMinutes && progress.dailyGoalRewardClaimedDate !== today;
         setProgress((current) => {
-          let next = withActivity(addXpPure(current, xpEarned));
+          let next = addXpPure(withActivity(current), xpEarned);
           let reviewItems = next.reviewItems;
           micro.contentItems.forEach((item) => { reviewItems = scheduleReviewItem(reviewItems, item, lesson.language); });
+          const studyMinutesToday = next.studyMinutesToday + (newMicro ? micro.estimatedMinutes : 0);
+          const sessionCompletedIds = next.lessonSessions[lesson.id]?.completedStepIds ?? [];
           next = {
             ...next, reviewItems,
+            studyMinutesToday,
+            hearts: dailyGoalRewarded ? Math.min(5, next.hearts + 1) : next.hearts,
+            dailyGoalRewardClaimedDate: dailyGoalRewarded ? today : next.dailyGoalRewardClaimedDate,
             completedMicroLessonIds: next.completedMicroLessonIds.includes(micro.id) ? next.completedMicroLessonIds : [...next.completedMicroLessonIds, micro.id],
             completedLessonIds: newlyCompletedLesson && !next.completedLessonIds.includes(lesson.id) ? [...next.completedLessonIds, lesson.id] : next.completedLessonIds,
             unlockedLessonIds: nextLessonId && !next.unlockedLessonIds.includes(nextLessonId) ? [...next.unlockedLessonIds, nextLessonId] : next.unlockedLessonIds,
@@ -120,11 +150,20 @@ export function AppProvider({ children }: { children: ReactNode }) {
             currentLessonId: nextLessonId ?? lesson.id,
             currentMicroLessonId: nextMicroLessonId,
             currentLevel: nextLessonId ? course.units.flatMap((unit) => unit.lessons).find((item) => item.id === nextLessonId)?.levelId ?? lesson.levelId : lesson.levelId,
-            currentUnitId: nextLessonId ? course.units.flatMap((unit) => unit.lessons).find((item) => item.id === nextLessonId)?.unitId ?? lesson.unitId : lesson.unitId
+            currentUnitId: nextLessonId ? course.units.flatMap((unit) => unit.lessons).find((item) => item.id === nextLessonId)?.unitId ?? lesson.unitId : lesson.unitId,
+            lessonSessions: {
+              ...next.lessonSessions,
+              [lesson.id]: {
+                lessonId: lesson.id,
+                currentStepIndex: Math.min(micro.order, lesson.microLessons.length - 1),
+                completedStepIds: sessionCompletedIds.includes(micro.id) ? sessionCompletedIds : [...sessionCompletedIds, micro.id],
+                completedAt: lessonCompleted ? new Date().toISOString() : undefined
+              }
+            }
           };
           return withAchievements(next);
         });
-        return { xpEarned, nextMicroLessonId, lessonCompleted, nextLessonId };
+        return { xpEarned, nextMicroLessonId, lessonCompleted, nextLessonId, dailyGoalRewarded };
       },
       completeLesson: (lesson, score, total) => {
         const course = courses.find((item) => item.language === lesson.language)!;
@@ -133,10 +172,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
         setProgress((current) => withAchievements(addXpPure(current, xpEarned)));
         return { xpEarned, nextLessonId };
       },
-      addXP: (amount) => setProgress((current) => withAchievements(withActivity(addXpPure(current, amount)))),
+      addXP: (amount) => setProgress((current) => withAchievements(addXpPure(withActivity(current), amount))),
       loseHeart: () => setProgress((current) => loseHeartPure(current)),
       restoreHeart: () => setProgress((current) => restoreHeartPure(current)),
-      completePractice: (score, total) => setProgress((current) => { const xp = Math.max(5, Math.round((score / Math.max(1, total)) * 15)); const next = { ...restoreHeartPure(withActivity(addXpPure(current, xp))), completedPracticeCount: current.completedPracticeCount + 1 }; return withAchievements(next); }),
+      completePractice: (score, total) => setProgress((current) => { const xp = Math.max(5, Math.round((score / Math.max(1, total)) * 15)); const next = { ...restoreHeartPure(addXpPure(withActivity(current), xp)), completedPracticeCount: current.completedPracticeCount + 1 }; return withAchievements(next); }),
       addMistake: (exercise, lessonId) => setProgress((current) => { const existing = current.mistakes.find((item) => item.exercise.id === exercise.id); const mistakes = existing ? current.mistakes.map((item) => item.exercise.id === exercise.id ? { ...item, attempts: item.attempts + 1, improved: false } : item) : [{ exercise, lessonId, attempts: 1, createdAt: new Date().toISOString(), improved: false }, ...current.mistakes]; return { ...current, mistakes }; }),
       markMistakeImproved: (exerciseId) => setProgress((current) => ({ ...current, mistakes: current.mistakes.map((item) => item.exercise.id === exerciseId ? { ...item, improved: true } : item), improvedMistakeIds: current.improvedMistakeIds.includes(exerciseId) ? current.improvedMistakeIds : [...current.improvedMistakeIds, exerciseId] })),
       addFlashcard: (vocabulary, lessonId, language) => setProgress((current) => current.savedFlashcards.some((card) => card.id === vocabulary.id) ? current : withAchievements({ ...current, savedFlashcards: [...current.savedFlashcards, { ...vocabulary, lessonId, language, savedAt: new Date().toISOString() }] })),

@@ -6,6 +6,7 @@ import '../../state/profile_provider.dart';
 import '../../widgets/common/app_card.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/responsive_page.dart';
+import '../../widgets/common/nova_mascot.dart';
 
 class ReviewScreen extends ConsumerWidget {
   const ReviewScreen({super.key});
@@ -34,14 +35,16 @@ class ReviewScreen extends ConsumerWidget {
                   const SizedBox(height: 8),
                   Text(
                     native == 'vi'
-                        ? 'Tính năng lưu lỗi sẽ được nối với tiến độ local sau.'
-                        : 'Saved mistakes will be connected to local progress later.',
+                        ? 'Các lỗi đã lưu sẽ xuất hiện tại đây để bạn ôn tập tập trung.'
+                        : 'Your saved mistakes will appear here for focused review.',
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 12),
-            const AppCard(child: Text('Coming soon')),
+            AppCard(child: Text(L10n.text('comingSoon', native))),
+            const SizedBox(height: 12),
+            const Center(child: NovaMascot(size: 88)),
           ],
         ),
       ),

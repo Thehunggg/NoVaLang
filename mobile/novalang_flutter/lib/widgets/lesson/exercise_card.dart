@@ -11,10 +11,12 @@ class ExerciseCard extends StatefulWidget {
     super.key,
     required this.exercise,
     required this.nativeLanguageCode,
+    this.onChecked,
   });
 
   final Exercise exercise;
   final String nativeLanguageCode;
+  final ValueChanged<bool>? onChecked;
 
   @override
   State<ExerciseCard> createState() => _ExerciseCardState();
@@ -38,7 +40,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
             children: [
               Expanded(
                 child: Text(
-                  exercise.prompt,
+                  exercise.localizedPrompt(widget.nativeLanguageCode),
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w900,
                   ),
@@ -60,11 +62,22 @@ class _ExerciseCardState extends State<ExerciseCard> {
           const SizedBox(height: 16),
           _buildAnswerArea(context),
           const SizedBox(height: 16),
-          AppButton(label: 'Check answer', onPressed: _check),
+          AppButton(
+            label: widget.nativeLanguageCode == 'vi'
+                ? 'Kiểm tra'
+                : 'Check answer',
+            onPressed: _check,
+          ),
           if (correct != null) ...[
             const SizedBox(height: 12),
             Text(
-              correct! ? 'Correct' : 'Not quite',
+              correct!
+                  ? (widget.nativeLanguageCode == 'vi'
+                        ? 'Chính xác'
+                        : 'Correct')
+                  : (widget.nativeLanguageCode == 'vi'
+                        ? 'Chưa đúng'
+                        : 'Not quite'),
               style: TextStyle(
                 color: correct!
                     ? Colors.greenAccent
@@ -111,9 +124,11 @@ class _ExerciseCardState extends State<ExerciseCard> {
                       onChanged: (value) => setState(() {
                         if (value != null) pairAnswers[pair.left] = value;
                       }),
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         prefixIcon: Icon(Icons.swap_horiz),
-                        hintText: 'Match',
+                        hintText: widget.nativeLanguageCode == 'vi'
+                            ? 'Ghép cặp'
+                            : 'Match',
                       ),
                     ),
                   ),
@@ -156,6 +171,8 @@ class _ExerciseCardState extends State<ExerciseCard> {
       ExerciseType.typeAnswer || ExerciseType.fillBlank => typedAnswer,
       _ => selectedAnswer ?? '',
     };
-    setState(() => correct = exercise.check(answer, widget.nativeLanguageCode));
+    final result = exercise.check(answer, widget.nativeLanguageCode);
+    setState(() => correct = result);
+    widget.onChecked?.call(result);
   }
 }

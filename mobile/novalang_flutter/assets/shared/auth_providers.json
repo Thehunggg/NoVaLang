@@ -1,0 +1,8 @@
+[
+  {"id":"google","label":{"en":"Continue with Google","vi":"Tiếp tục với Google"},"implemented":false},
+  {"id":"facebook","label":{"en":"Continue with Facebook","vi":"Tiếp tục với Facebook"},"implemented":false},
+  {"id":"instagram","label":{"en":"Continue with Instagram","vi":"Tiếp tục với Instagram"},"implemented":false},
+  {"id":"apple","label":{"en":"Continue with Apple","vi":"Tiếp tục với Apple"},"implemented":false},
+  {"id":"email","label":{"en":"Continue with Email","vi":"Tiếp tục bằng Email"},"implemented":true},
+  {"id":"guest","label":{"en":"Continue as Guest","vi":"Tiếp tục với tư cách người khám phá"},"implemented":true}
+]

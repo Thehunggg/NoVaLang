@@ -37,6 +37,7 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
     return AppScaffold(
       title: L10n.text('niche', profile.nativeLanguageCode),
       showBack: true,
+      backPath: '/onboarding/goal',
       child: ResponsivePage(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -88,6 +89,6 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
         .read(profileProvider.notifier)
         .setNiches(selectedIds.toList(), primaryId);
     if (!mounted) return;
-    context.go('/onboarding/level');
+    context.push('/onboarding/level');
   }
 }

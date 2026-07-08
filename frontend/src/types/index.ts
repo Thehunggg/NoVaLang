@@ -6,9 +6,16 @@ export type {
 } from "../../../shared/types";
 
 import type { LanguageCode, LevelId, MistakeRecord, NativeLanguageCode, PlacementResult, ReviewItem, SavedFlashcard, SupportedUILanguage } from "../../../shared/types";
-export type DailyGoal = 5 | 10 | 20;
+export type DailyGoal = 5 | 10 | 15 | 20 | 25 | 30;
 export type ExperienceLevel = "beginner" | "elementary" | "intermediate";
 export type LevelDecisionAfterNicheChange = "placement" | "manual" | "restart" | "keep";
+
+export interface LessonSessionProgress {
+  lessonId: string;
+  currentStepIndex: number;
+  completedStepIds: string[];
+  completedAt?: string;
+}
 
 export interface AppProgress {
   contentVersion: string;
@@ -52,4 +59,7 @@ export interface AppProgress {
   perfectLessonIds: string[];
   completedPracticeCount: number;
   lessonsCompletedToday: number;
+  studyMinutesToday: number;
+  dailyGoalRewardClaimedDate: string | null;
+  lessonSessions: Record<string, LessonSessionProgress>;
 }

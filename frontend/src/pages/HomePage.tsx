@@ -21,7 +21,7 @@ export function HomePage() {
   const [course, setCourse] = useState<Course>();
   const [offline, setOffline] = useState(false);
   const language = languages.find((item) => item.code === progress.selectedLanguage)!;
-  const minutesToday = progress.lessonsCompletedToday * 8;
+  const minutesToday = progress.studyMinutesToday;
   const currentLevelName = getLevelDisplayName(progress.currentLevel, progress.selectedLanguage, progress.nativeLanguage);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export function HomePage() {
         <Card className="p-4 sm:p-6">
           <div className="mb-6">
             <p className="text-xs font-black uppercase tracking-[.16em] text-fuchsia-300">{t("coursePath")}</p>
-            <h2 className="mt-2 font-display text-2xl font-black">{course?.title ?? t("loading")}</h2>
+            <h2 className="mt-2 font-display text-2xl font-black">{course ? `${label(language.code)} · ${t("coursePath")}` : t("loading")}</h2>
           </div>
           {course && <CoursePath course={course} completedIds={progress.completedLessonIds} unlockedIds={progress.unlockedLessonIds} placedIds={progress.placedLessonIds} currentLessonId={progress.currentLessonId} nativeLanguage={progress.nativeLanguage} />}
         </Card>
