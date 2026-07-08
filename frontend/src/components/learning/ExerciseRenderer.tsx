@@ -30,7 +30,7 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
 
   const choiceTypes = ["multiple_choice", "fill_blank", "listening_placeholder", "choose_correct_sound", "choose_correct_letter", "choose_word_starting_with_letter", "choose_word_starting_with_kana", "choose_correct_reading", "choose_meaning", "choose_correct_sentence", "read_short_sentence", "answer_question", "choose_summary", "listen_and_choose_meaning", "listen_and_choose_sentence", "match_character_to_pronunciation", "dialogue_choice"];
   const isChoice = choiceTypes.includes(exercise.type);
-  const options = getExerciseOptions(exercise, progress.nativeLanguage) ?? [];
+  const options = [...new Set(getExerciseOptions(exercise, progress.nativeLanguage) ?? [])];
   const hint = getExerciseHint(exercise, progress.nativeLanguage);
   const pairs = exercise.pairTranslations?.[progress.nativeLanguage as SupportedUILanguage] ?? exercise.pairTranslations?.en ?? exercise.pairs ?? [];
   const pairOptions = [...new Set(pairs.map((pair) => pair.right))];
@@ -50,12 +50,14 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
       {exercise.type === "speaking_placeholder" && (
         <div className="text-center">
           <div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 text-fuchsia-300"><Mic size={32} /></div>
-          <p className="mt-4 text-sm text-slate-400">Speaking placeholder: say the phrase aloud, then continue.</p>
+          <p className="mt-4 text-sm text-slate-400">{t("speaking")} · {t("continue")}</p>
           <Button className="mt-5" onClick={() => submit(exercise.correctAnswer)}>{t("checkAnswer")}</Button>
         </div>
       )}
 
-      {isChoice && (
+      {isChoice && options.length < 2 && <p className="rounded-2xl border border-amber-300/20 bg-amber-300/10 p-4 text-sm font-bold text-amber-100">{t("moreRoadmap")}</p>}
+
+      {isChoice && options.length >= 2 && (
         <div className="grid gap-3 sm:grid-cols-2">
           {options.map((option) => (
             <button key={option} disabled={submitted} onClick={() => submit(option)} className="min-h-14 rounded-2xl border border-white/10 bg-white/[.045] p-4 text-left text-sm font-extrabold text-slate-200 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 disabled:opacity-60">

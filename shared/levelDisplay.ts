@@ -25,7 +25,19 @@ const japaneseDisplay: Record<LevelId, string> = {
 };
 
 export function getLevelDisplayName(levelCode: LevelId, learningLanguage: LanguageCode, nativeLanguage?: NativeLanguageCode): string {
-  void nativeLanguage;
+  if (learningLanguage === "ja" && nativeLanguage === "vi") {
+    const viDisplay: Record<LevelId, string> = {
+      A0: "Nhập môn Kana",
+      A1_1: "JLPT N5 sớm",
+      A1_2: "JLPT N5",
+      A2_1: "JLPT N4 sớm",
+      A2_2: "JLPT N4",
+      B1_1: "JLPT N3 sớm",
+      B1_2: "JLPT N3",
+      B2: "JLPT N2"
+    };
+    return viDisplay[levelCode];
+  }
   if (learningLanguage === "ja") return japaneseDisplay[levelCode];
   return cefrDisplay[levelCode];
 }

@@ -25,7 +25,22 @@ class ProfileNotifier extends Notifier<UserProfile> {
   }
 
   Future<void> setNativeLanguage(String code) =>
-      _commit(state.copyWith(nativeLanguageCode: code));
+      _commit(state.copyWith(nativeLanguageCode: code, uiLanguageCode: code));
+  Future<void> setUserInfo({
+    required String displayName,
+    String? ageRange,
+    String? country,
+    String? region,
+    String? occupationStatus,
+  }) => _commit(
+    state.copyWith(
+      displayName: displayName,
+      ageRange: ageRange,
+      country: country,
+      region: region,
+      occupationStatus: occupationStatus,
+    ),
+  );
   Future<void> setLearningLanguage(String code) =>
       _commit(state.copyWith(learningLanguageCode: code));
   Future<void> setGoal(int minutes) =>
@@ -37,9 +52,18 @@ class ProfileNotifier extends Notifier<UserProfile> {
   Future<void> finishOnboarding() =>
       _commit(state.copyWith(onboardingComplete: true));
 
-  Future<void> setNiches(List<String> selected, String? primary) {
+  Future<void> setNiches(
+    List<String> selected,
+    String? primary, {
+    String? decision,
+  }) {
     return _commit(
-      state.copyWith(selectedNiches: selected, primaryNiche: primary),
+      state.copyWith(
+        selectedNiches: selected,
+        primaryNiche: primary,
+        nicheUpdatedAt: DateTime.now().toIso8601String(),
+        levelDecisionAfterNicheChange: decision,
+      ),
     );
   }
 }

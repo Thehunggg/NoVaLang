@@ -1,6 +1,6 @@
 ﻿import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { courses } from "../data/fallbackCourses";
-import type { AppProgress, ContentItem, DailyGoal, Exercise, ExperienceLevel, LanguageCode, Lesson, MicroLesson, NativeLanguageCode, PlacementResult, ReviewItem, VocabularyItem } from "../types/index";
+import type { AppProgress, ContentItem, DailyGoal, Exercise, ExperienceLevel, LanguageCode, Lesson, LevelDecisionAfterNicheChange, MicroLesson, NativeLanguageCode, PlacementResult, ReviewItem, VocabularyItem } from "../types/index";
 import { firstIncompleteMicroLesson, isLessonCompletedFromMicroLessons, unlockNextLesson, unlockNextMicroLesson, unlockStartingPointFromPlacement } from "../utils/lessonEngine";
 import { addXP as addXpPure, checkAchievements, getDueReviewItems, loseHeart as loseHeartPure, restoreHeart as restoreHeartPure, scheduleReviewItem, updateReviewAfterAnswer } from "../utils/progress";
 import { getNativeLanguage, getProgress, resetProgress as resetStoredProgress, saveAppProgress, setNativeLanguage as saveNativeLanguage, setLearningLanguage } from "../utils/storage";
@@ -11,7 +11,9 @@ interface AppContextValue {
   setNativeLanguage: (language: NativeLanguageCode) => void;
   getNativeLanguage: () => NativeLanguageCode;
   updateNativeLanguage: (language: NativeLanguageCode) => void;
-  finishOnboarding: (language: LanguageCode, level: AppProgress["selectedLevel"], goal: DailyGoal) => void;
+  updateProfileInfo: (info: Partial<Pick<AppProgress, "displayName" | "ageRange" | "country" | "region" | "occupationStatus">>) => void;
+  updateNiches: (selectedNiches: string[], primaryNiche: string | null, decision?: LevelDecisionAfterNicheChange) => void;
+  finishOnboarding: (language: LanguageCode, level: AppProgress["selectedLevel"], goal: DailyGoal, profileInfo?: Partial<Pick<AppProgress, "displayName" | "ageRange" | "country" | "region" | "occupationStatus">>, nicheInfo?: { selectedNiches: string[]; primaryNiche: string | null }) => void;
   selectLanguage: (language: LanguageCode) => void;
   applyPlacement: (result: PlacementResult, startFromZero?: boolean) => void;
   setCurrentLesson: (lessonId: string | null) => void;
@@ -43,13 +45,21 @@ export function AppProvider({ children }: { children: ReactNode }) {
   useEffect(() => { saveAppProgress(progress); document.documentElement.lang = progress.effectiveUILanguage; document.documentElement.dir = "ltr"; }, [progress]);
 
   const value = useMemo<AppContextValue>(() => {
-    const setNative = (nativeLanguage: NativeLanguageCode) => { const effectiveUILanguage = saveNativeLanguage(nativeLanguage); setProgress((current) => ({ ...current, nativeLanguage, effectiveUILanguage })); };
+    const setNative = (nativeLanguage: NativeLanguageCode) => { const effectiveUILanguage = saveNativeLanguage(nativeLanguage); setProgress((current) => ({ ...current, nativeLanguage, uiLanguage: effectiveUILanguage, effectiveUILanguage })); };
     return {
       progress,
       setNativeLanguage: setNative,
       getNativeLanguage: () => progress.nativeLanguage,
       updateNativeLanguage: setNative,
-      finishOnboarding: (selectedLanguage, selectedLevel, dailyGoalMinutes) => {
+      updateProfileInfo: (info) => setProgress((current) => ({ ...current, ...info })),
+      updateNiches: (selectedNiches, primaryNiche, decision) => setProgress((current) => ({
+        ...current,
+        selectedNiches,
+        primaryNiche,
+        nicheUpdatedAt: new Date().toISOString(),
+        levelDecisionAfterNicheChange: decision ?? current.levelDecisionAfterNicheChange
+      })),
+      finishOnboarding: (selectedLanguage, selectedLevel, dailyGoalMinutes, profileInfo, nicheInfo) => {
         setLearningLanguage(selectedLanguage);
         setProgress((current) => {
           const course = courses.find((item) => item.language === selectedLanguage)!;
@@ -59,6 +69,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
           return {
             ...current,
             onboardingCompleted: true,
+            ...profileInfo,
+            selectedNiches: nicheInfo?.selectedNiches?.length ? nicheInfo.selectedNiches : current.selectedNiches,
+            primaryNiche: nicheInfo?.primaryNiche ?? current.primaryNiche,
             selectedLanguage,
             learningLanguage: selectedLanguage,
             experienceLevel,

@@ -53,6 +53,7 @@ class _LearningPreferencesScreenState
                 primaryId: primaryId,
                 onToggle: _toggle,
                 onPrimary: (id) => setState(() => primaryId = id),
+                languageCode: profile.uiLanguageCode,
               ),
               const SizedBox(height: 12),
             ],
@@ -93,27 +94,36 @@ class _LearningPreferencesScreenState
         final native = ref.read(profileProvider).nativeLanguageCode;
         final isVi = native == 'vi';
         final options = isVi
-            ? const [
-                'Làm bài kiểm tra trình độ',
-                'Nhập trình độ thủ công',
-                'Bắt đầu lại từ đầu',
-                'Giữ trình độ hiện tại',
-              ]
-            : const [
-                'Take a placement test',
-                'Enter my level manually',
-                'Start from the beginning',
-                'Keep my current level',
-              ];
+            ? const {
+                'placement': 'Làm bài kiểm tra trình độ',
+                'manual': 'Nhập trình độ thủ công',
+                'restart': 'Bắt đầu lại từ đầu',
+                'keep': 'Giữ trình độ hiện tại',
+              }
+            : const {
+                'placement': 'Take a placement test',
+                'manual': 'Enter my level manually',
+                'restart': 'Start from the beginning',
+                'keep': 'Keep my current level',
+              };
         return AlertDialog(
           title: Text(L10n.text('changeFocusQuestion', native)),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              for (final option in options)
+              for (final entry in options.entries)
                 ListTile(
-                  title: Text(option),
-                  onTap: () => Navigator.of(context).pop(),
+                  title: Text(entry.value),
+                  onTap: () async {
+                    await ref
+                        .read(profileProvider.notifier)
+                        .setNiches(
+                          selectedIds.toList(),
+                          primaryId,
+                          decision: entry.key,
+                        );
+                    if (context.mounted) Navigator.of(context).pop();
+                  },
                 ),
             ],
           ),

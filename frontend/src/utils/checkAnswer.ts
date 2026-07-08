@@ -1,7 +1,7 @@
 import type { Exercise, SupportedUILanguage } from "../types/index";
 import { getLocalizedAnswers, getLocalizedText } from "./localizedText";
 
-export const normalizeUserAnswer = (value: string): string => value.toLocaleLowerCase().normalize("NFC").replace(/[.!?¡¿。、「」“”’']/g, "").replace(/\s+/g, " ").trim();
+export const normalizeUserAnswer = (value: string): string => value.toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[.!?¡¿。、「」“”’']/g, "").replace(/\s+/g, " ").trim();
 
 export interface AnswerCheckResult { correct: boolean; explanation: string; acceptedAnswers: string[]; }
 export const isMatchPairExercise = (type: Exercise["type"]) => type === "match_pairs" || type === "match_kana_reading" || type === "match_vocab_meaning";

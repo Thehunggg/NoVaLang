@@ -13,6 +13,7 @@ class NicheGroupCard extends StatelessWidget {
     required this.primaryId,
     required this.onToggle,
     required this.onPrimary,
+    required this.languageCode,
   });
 
   final String category;
@@ -21,6 +22,7 @@ class NicheGroupCard extends StatelessWidget {
   final String? primaryId;
   final void Function(String id, bool selected) onToggle;
   final ValueChanged<String> onPrimary;
+  final String languageCode;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,9 @@ class NicheGroupCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            category,
+            niches.isEmpty
+                ? category
+                : niches.first.localizedCategory(languageCode),
             style: Theme.of(
               context,
             ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w900),
@@ -46,6 +50,7 @@ class NicheGroupCard extends StatelessWidget {
                   primary: primaryId == niche.id,
                   onSelected: (value) => onToggle(niche.id, value),
                   onPrimary: () => onPrimary(niche.id),
+                  languageCode: languageCode,
                 ),
             ],
           ),

@@ -10,6 +10,7 @@ class NicheChip extends StatelessWidget {
     required this.primary,
     required this.onSelected,
     required this.onPrimary,
+    required this.languageCode,
   });
 
   final Niche niche;
@@ -17,10 +18,13 @@ class NicheChip extends StatelessWidget {
   final bool primary;
   final ValueChanged<bool> onSelected;
   final VoidCallback onPrimary;
+  final String languageCode;
 
   @override
   Widget build(BuildContext context) {
-    final label = niche.isReady ? niche.title : '${niche.title} · Coming soon';
+    final title = niche.localizedTitle(languageCode);
+    final comingSoon = languageCode == 'vi' ? 'Sắp ra mắt' : 'Coming soon';
+    final label = niche.isReady ? title : '$title · $comingSoon';
     return InputChip(
       selected: selected,
       avatar: primary ? const Icon(Icons.star, size: 18) : null,

@@ -42,6 +42,7 @@ export function HomePage() {
               <Badge tone="cyan">{t("currentLevel")} {currentLevelName}</Badge>
               {offline && <Badge tone="amber"><CloudOff size={12} /> {t("offlinePack")}</Badge>}
             </div>
+            {progress.displayName && <p className="mb-2 text-sm font-black text-cyan-200">{t("welcomeBack")}, {progress.displayName}</p>}
             <h1 className="font-display text-3xl font-black sm:text-4xl">{t("signalLive", { language: label(language.code) })}</h1>
             <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400">{t("signalDescription")}</p>
             <div className="mt-5 flex flex-wrap gap-2">
@@ -101,4 +102,3 @@ export function HomePage() {
     </PageContainer>
   );
 }
-

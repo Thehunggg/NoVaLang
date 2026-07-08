@@ -8,6 +8,7 @@ import '../screens/home/home_screen.dart';
 import '../screens/learn/learn_screen.dart';
 import '../screens/learn/lesson_screen.dart';
 import '../screens/onboarding/goal_screen.dart';
+import '../screens/onboarding/basic_info_screen.dart';
 import '../screens/onboarding/learning_language_screen.dart';
 import '../screens/onboarding/level_screen.dart';
 import '../screens/onboarding/native_language_screen.dart';
@@ -31,6 +32,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/onboarding/native',
         builder: (context, state) => const NativeLanguageScreen(),
+      ),
+      GoRoute(
+        path: '/onboarding/basic',
+        builder: (context, state) => const BasicInfoScreen(),
       ),
       GoRoute(
         path: '/onboarding/learning',

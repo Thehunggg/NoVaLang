@@ -8,11 +8,23 @@ export type {
 import type { LanguageCode, LevelId, MistakeRecord, NativeLanguageCode, PlacementResult, ReviewItem, SavedFlashcard, SupportedUILanguage } from "../../../shared/types";
 export type DailyGoal = 5 | 10 | 20;
 export type ExperienceLevel = "beginner" | "elementary" | "intermediate";
+export type LevelDecisionAfterNicheChange = "placement" | "manual" | "restart" | "keep";
 
 export interface AppProgress {
+  contentVersion: string;
+  displayName: string;
+  ageRange: string;
+  country: string;
+  region: string;
+  occupationStatus: string;
   nativeLanguage: NativeLanguageCode;
+  uiLanguage: SupportedUILanguage;
   effectiveUILanguage: SupportedUILanguage;
   learningLanguage: LanguageCode;
+  selectedNiches: string[];
+  primaryNiche: string | null;
+  nicheUpdatedAt: string | null;
+  levelDecisionAfterNicheChange: LevelDecisionAfterNicheChange | null;
   onboardingCompleted: boolean;
   selectedLanguage: LanguageCode;
   experienceLevel: ExperienceLevel;

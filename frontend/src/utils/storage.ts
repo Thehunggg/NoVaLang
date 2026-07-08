@@ -8,6 +8,7 @@ const OLD_STORAGE_KEY = "linguaquest-ai-progress-v2";
 const NATIVE_LANGUAGE_KEY = "nativeLanguage";
 const UI_LANGUAGE_KEY = "effectiveUILanguage";
 const LEARNING_LANGUAGE_KEY = "learningLanguage";
+export const CONTENT_VERSION = "template-engine-profile-i18n-v3";
 
 export { getEffectiveUILanguage, isUISupportedForNativeLanguage };
 
@@ -35,7 +36,10 @@ export const getLearningLanguage = (): LanguageCode => { try { return normalizeL
 export const setLearningLanguage = (language: LanguageCode): void => { try { localStorage.setItem(LEARNING_LANGUAGE_KEY, language); } catch { /* In-memory state remains functional. */ } };
 
 export const initialAppProgress: AppProgress = {
-  nativeLanguage: "en", effectiveUILanguage: "en", learningLanguage: "en",
+  contentVersion: CONTENT_VERSION,
+  displayName: "", ageRange: "", country: "", region: "", occupationStatus: "",
+  nativeLanguage: "en", uiLanguage: "en", effectiveUILanguage: "en", learningLanguage: "en",
+  selectedNiches: ["jlpt"], primaryNiche: "jlpt", nicheUpdatedAt: null, levelDecisionAfterNicheChange: null,
   onboardingCompleted: false, selectedLanguage: "en", experienceLevel: "beginner",
   selectedLevel: "A0", currentLevel: "A0", currentUnitId: null, dailyGoalMinutes: 10, placementResult: null,
   totalXp: 0, xpToday: 0, streak: 0, lastActiveDate: null, hearts: 5,
@@ -52,18 +56,33 @@ export const getProgress = (): AppProgress => {
     const nativeLanguage = getNativeLanguage();
     const effectiveUILanguage = getEffectiveUILanguage(nativeLanguage);
     const learningLanguage = normalizeLearningLanguage(value.learningLanguage ?? value.selectedLanguage ?? localStorage.getItem(LEARNING_LANGUAGE_KEY));
+    const staleContent = value.contentVersion !== CONTENT_VERSION;
     const today = new Date().toISOString().slice(0, 10);
     return {
-      ...initialAppProgress, ...value, nativeLanguage, effectiveUILanguage, learningLanguage, selectedLanguage: learningLanguage,
+      ...initialAppProgress, ...value, contentVersion: CONTENT_VERSION, nativeLanguage, uiLanguage: effectiveUILanguage, effectiveUILanguage, learningLanguage, selectedLanguage: learningLanguage,
+      displayName: value.displayName ?? "",
+      ageRange: value.ageRange ?? "",
+      country: value.country ?? "",
+      region: value.region ?? "",
+      occupationStatus: value.occupationStatus ?? "",
+      selectedNiches: value.selectedNiches?.length ? value.selectedNiches : ["jlpt"],
+      primaryNiche: value.primaryNiche ?? value.selectedNiches?.[0] ?? "jlpt",
+      nicheUpdatedAt: value.nicheUpdatedAt ?? null,
+      levelDecisionAfterNicheChange: value.levelDecisionAfterNicheChange ?? null,
       selectedLevel: normalizeLevel(value.selectedLevel),
       currentLevel: normalizeLevel(value.currentLevel),
       xpToday: value.lastActiveDate === today ? value.xpToday ?? 0 : 0,
       lessonsCompletedToday: value.lastActiveDate === today ? value.lessonsCompletedToday ?? 0 : 0,
-      completedMicroLessonIds: value.completedMicroLessonIds ?? [], reviewItems: value.reviewItems ?? [], placedLessonIds: value.placedLessonIds ?? []
+      completedMicroLessonIds: value.completedMicroLessonIds ?? [],
+      reviewItems: value.reviewItems ?? [],
+      placedLessonIds: value.placedLessonIds ?? [],
+      currentMicroLessonId: staleContent ? null : value.currentMicroLessonId ?? null,
+      mistakes: staleContent ? [] : value.mistakes ?? []
     };
   } catch {
     const nativeLanguage = getNativeLanguage(); const learningLanguage = getLearningLanguage();
-    return { ...initialAppProgress, nativeLanguage, effectiveUILanguage: getEffectiveUILanguage(nativeLanguage), learningLanguage, selectedLanguage: learningLanguage };
+    const effectiveUILanguage = getEffectiveUILanguage(nativeLanguage);
+    return { ...initialAppProgress, nativeLanguage, uiLanguage: effectiveUILanguage, effectiveUILanguage, learningLanguage, selectedLanguage: learningLanguage };
   }
 };
 
@@ -75,5 +94,5 @@ export const saveAppProgress = (progress: AppProgress): void => {
 export const resetProgress = (): AppProgress => {
   const nativeLanguage = getNativeLanguage(); const effectiveUILanguage = getEffectiveUILanguage(nativeLanguage); const learningLanguage = getLearningLanguage();
   try { localStorage.removeItem(APP_STORAGE_KEY); localStorage.removeItem(OLD_STORAGE_KEY); } catch { /* No-op. */ }
-  return { ...initialAppProgress, nativeLanguage, effectiveUILanguage, learningLanguage, selectedLanguage: learningLanguage };
+  return { ...initialAppProgress, nativeLanguage, uiLanguage: effectiveUILanguage, effectiveUILanguage, learningLanguage, selectedLanguage: learningLanguage };
 };

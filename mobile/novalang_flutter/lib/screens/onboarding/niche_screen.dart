@@ -55,6 +55,7 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
                 primaryId: primaryId,
                 onToggle: _toggle,
                 onPrimary: (id) => setState(() => primaryId = id),
+                languageCode: profile.uiLanguageCode,
               ),
               const SizedBox(height: 12),
             ],

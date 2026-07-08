@@ -11,7 +11,15 @@ class LocalStorageService {
     final prefs = await SharedPreferences.getInstance();
     final raw = prefs.getString(_profileKey);
     if (raw == null) return UserProfile.defaults();
-    return UserProfile.fromJson(jsonDecode(raw) as Map<String, dynamic>);
+    final profile = UserProfile.fromJson(
+      jsonDecode(raw) as Map<String, dynamic>,
+    );
+    if (profile.contentVersion != UserProfile.currentContentVersion) {
+      return profile.copyWith(
+        contentVersion: UserProfile.currentContentVersion,
+      );
+    }
+    return profile;
   }
 
   Future<void> saveProfile(UserProfile profile) async {

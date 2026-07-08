@@ -61,11 +61,13 @@ const japaneseLessons = <Lesson>[
           MatchPair(left: 'あ', right: 'a'),
           MatchPair(left: 'い', right: 'i'),
           MatchPair(left: 'う', right: 'u'),
+          MatchPair(left: 'え', right: 'e'),
         ],
         pairsVi: [
           MatchPair(left: 'あ', right: 'a'),
           MatchPair(left: 'い', right: 'i'),
           MatchPair(left: 'う', right: 'u'),
+          MatchPair(left: 'え', right: 'e'),
         ],
       ),
     ],
