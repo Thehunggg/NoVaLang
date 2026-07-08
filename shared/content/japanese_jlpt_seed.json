@@ -1,0 +1,29 @@
+{
+  "tracks": [
+    {"title": "Kana Starter", "levelCode": "KANA_STARTER", "comingSoon": false},
+    {"title": "JLPT N5", "levelCode": "JLPT_N5", "comingSoon": false},
+    {"title": "JLPT N4", "levelCode": "JLPT_N4", "comingSoon": true},
+    {"title": "JLPT N3", "levelCode": "JLPT_N3", "comingSoon": true},
+    {"title": "JLPT N2", "levelCode": "JLPT_N2", "comingSoon": true},
+    {"title": "JLPT N1", "levelCode": "JLPT_N1", "comingSoon": true}
+  ],
+  "kana": [
+    {"displayText": "あ", "reading": "a"},
+    {"displayText": "い", "reading": "i"},
+    {"displayText": "う", "reading": "u"},
+    {"displayText": "え", "reading": "e"},
+    {"displayText": "お", "reading": "o"}
+  ],
+  "vocabulary": [
+    {"displayText": "こんにちは", "speechText": "こんにちは", "meaning": {"en": "hello", "vi": "xin chào"}},
+    {"displayText": "さようなら", "speechText": "さようなら", "meaning": {"en": "goodbye", "vi": "tạm biệt"}},
+    {"displayText": "ありがとう", "speechText": "ありがとう", "meaning": {"en": "thank you", "vi": "cảm ơn"}},
+    {"displayText": "おねがいします", "speechText": "おねがいします", "meaning": {"en": "please", "vi": "làm ơn / xin vui lòng"}},
+    {"displayText": "雨（あめ）", "speechText": "あめ", "meaning": {"en": "rain", "vi": "mưa"}},
+    {"displayText": "飴（あめ）", "speechText": "あめ", "meaning": {"en": "candy", "vi": "kẹo"}},
+    {"displayText": "いぬ", "speechText": "いぬ", "meaning": {"en": "dog", "vi": "chó"}},
+    {"displayText": "えき", "speechText": "えき", "meaning": {"en": "station", "vi": "nhà ga"}},
+    {"displayText": "橋（はし）", "speechText": "はし", "meaning": {"en": "bridge", "vi": "cây cầu / cầu"}},
+    {"displayText": "箸（はし）", "speechText": "はし", "meaning": {"en": "chopsticks", "vi": "đũa"}}
+  ]
+}

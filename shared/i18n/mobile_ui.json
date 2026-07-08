@@ -1,0 +1,12 @@
+{
+  "continue": {"en": "Continue", "vi": "Tiếp tục"},
+  "nativeLanguage": {"en": "Native/UI language", "vi": "Ngôn ngữ mẹ đẻ / giao diện"},
+  "learningLanguage": {"en": "Learning language", "vi": "Ngôn ngữ muốn học"},
+  "goalTrack": {"en": "Goal and exam track", "vi": "Mục tiêu và lộ trình thi"},
+  "niche": {"en": "Learning focus", "vi": "Trọng tâm học"},
+  "level": {"en": "Starting level", "vi": "Trình độ bắt đầu"},
+  "changeFocusQuestion": {
+    "en": "You changed your learning focus. What would you like to do?",
+    "vi": "Bạn đã đổi mục tiêu học. Bạn muốn bắt đầu như thế nào?"
+  }
+}

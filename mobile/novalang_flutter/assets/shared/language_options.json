@@ -1,0 +1,50 @@
+[
+  {
+    "code": "en",
+    "englishName": "English",
+    "nativeName": "English",
+    "aliases": ["eng", "american", "british", "e"],
+    "isSupportedAsNative": true,
+    "isSupportedAsLearning": true
+  },
+  {
+    "code": "vi",
+    "englishName": "Vietnamese",
+    "nativeName": "Tiếng Việt",
+    "aliases": ["tieng viet", "viet", "vietnam", "v"],
+    "isSupportedAsNative": true,
+    "isSupportedAsLearning": false
+  },
+  {
+    "code": "ja",
+    "englishName": "Japanese",
+    "nativeName": "日本語",
+    "aliases": ["nihongo", "nihon", "japan", "日本", "にほんご", "j"],
+    "isSupportedAsNative": true,
+    "isSupportedAsLearning": true
+  },
+  {
+    "code": "ko",
+    "englishName": "Korean",
+    "nativeName": "한국어",
+    "aliases": ["hangul", "hangeul", "korea", "korean", "한국", "k"],
+    "isSupportedAsNative": true,
+    "isSupportedAsLearning": false
+  },
+  {
+    "code": "zh",
+    "englishName": "Chinese",
+    "nativeName": "中文",
+    "aliases": ["mandarin", "putonghua", "hanzi", "中国", "中文", "z"],
+    "isSupportedAsNative": true,
+    "isSupportedAsLearning": false
+  },
+  {
+    "code": "es",
+    "englishName": "Spanish",
+    "nativeName": "Español",
+    "aliases": ["espanol", "castellano", "spain", "latin america", "s"],
+    "isSupportedAsNative": true,
+    "isSupportedAsLearning": true
+  }
+]

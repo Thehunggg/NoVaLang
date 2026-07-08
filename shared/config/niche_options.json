@@ -1,0 +1,17 @@
+[
+  {"id": "everyday", "category": "Daily Communication", "title": "Everyday Conversation", "description": "Daily greetings, small talk, and survival phrases.", "isReady": true},
+  {"id": "travel", "category": "Daily Communication", "title": "Travel & Living Abroad", "description": "Airports, transport, housing, and local life.", "isReady": false},
+  {"id": "culture", "category": "Daily Communication", "title": "Culture & Entertainment", "description": "Movies, shows, music, games, and fandom.", "isReady": false},
+  {"id": "social", "category": "Daily Communication", "title": "Social / Friends / Dating", "description": "Casual messaging and friendly conversation.", "isReady": false},
+  {"id": "shopping", "category": "Daily Communication", "title": "Shopping / Restaurant / Services", "description": "Orders, prices, bookings, and service counters.", "isReady": false},
+  {"id": "jlpt", "category": "Exam Preparation", "title": "JLPT", "description": "Japanese exam track from Kana Starter to JLPT N5.", "isReady": true},
+  {"id": "toeic", "category": "Exam Preparation", "title": "TOEIC", "description": "English workplace test preparation.", "isReady": false},
+  {"id": "ielts", "category": "Exam Preparation", "title": "IELTS", "description": "Academic and general English test preparation.", "isReady": false},
+  {"id": "toefl", "category": "Exam Preparation", "title": "TOEFL", "description": "University-focused English exam practice.", "isReady": false},
+  {"id": "other_exams", "category": "Exam Preparation", "title": "DELE / HSK / Other Exams", "description": "Other exam tracks on the roadmap.", "isReady": false},
+  {"id": "business", "category": "Career / Specialized Fields", "title": "Business / Office / Email", "description": "Meetings, email, and professional language.", "isReady": false},
+  {"id": "it", "category": "Career / Specialized Fields", "title": "IT / Programming", "description": "Software, tools, tickets, and standups.", "isReady": false},
+  {"id": "engineering", "category": "Career / Specialized Fields", "title": "Engineering / Manufacturing", "description": "Factory, process, and technical communication.", "isReady": false},
+  {"id": "ai_data", "category": "Career / Specialized Fields", "title": "AI / Data Science / Robotics", "description": "AI, data, models, robotics, and research terms.", "isReady": false},
+  {"id": "healthcare", "category": "Career / Specialized Fields", "title": "Healthcare / Nursing / Caregiving", "description": "Care, symptoms, and patient communication.", "isReady": false}
+]
