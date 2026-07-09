@@ -1,0 +1,159 @@
+{
+  "ja": [
+    {
+      "id": "ja-kana-starter",
+      "language": "ja",
+      "title": "Kana Starter",
+      "description": "Hiragana, katakana signals, basic sounds, and first words.",
+      "trackType": "exam",
+      "examTrack": "JLPT",
+      "examLevel": "KANA_STARTER",
+      "levelId": "A0"
+    },
+    {
+      "id": "ja-jlpt-n5",
+      "language": "ja",
+      "title": "JLPT N5",
+      "description": "Vocabulary, kanji, grammar, reading, listening, mini tests, and mistake review.",
+      "trackType": "exam",
+      "examTrack": "JLPT",
+      "examLevel": "JLPT_N5",
+      "levelId": "A1_1"
+    },
+    {
+      "id": "ja-jlpt-n4",
+      "language": "ja",
+      "title": "JLPT N4",
+      "description": "Coming soon after the N5 sample track is stable.",
+      "trackType": "exam",
+      "examTrack": "JLPT",
+      "examLevel": "JLPT_N4",
+      "levelId": "A2_1",
+      "comingSoon": true
+    },
+    {
+      "id": "ja-jlpt-n3",
+      "language": "ja",
+      "title": "JLPT N3",
+      "description": "Coming soon.",
+      "trackType": "exam",
+      "examTrack": "JLPT",
+      "examLevel": "JLPT_N3",
+      "levelId": "B1_1",
+      "comingSoon": true
+    },
+    {
+      "id": "ja-jlpt-n2",
+      "language": "ja",
+      "title": "JLPT N2",
+      "description": "Coming soon.",
+      "trackType": "exam",
+      "examTrack": "JLPT",
+      "examLevel": "JLPT_N2",
+      "levelId": "B2",
+      "comingSoon": true
+    },
+    {
+      "id": "ja-jlpt-n1",
+      "language": "ja",
+      "title": "JLPT N1",
+      "description": "Roadmap placeholder.",
+      "trackType": "exam",
+      "examTrack": "JLPT",
+      "examLevel": "JLPT_N1",
+      "comingSoon": true
+    }
+  ],
+  "en": [
+    {
+      "id": "en-general",
+      "language": "en",
+      "title": "General English",
+      "description": "General English foundations and CEFR-style progress.",
+      "trackType": "general",
+      "examLevel": "GENERAL_ENGLISH",
+      "levelId": "A0"
+    },
+    {
+      "id": "en-toeic",
+      "language": "en",
+      "title": "TOEIC",
+      "description": "Coming soon.",
+      "trackType": "exam",
+      "examTrack": "TOEIC",
+      "examLevel": "TOEIC",
+      "comingSoon": true
+    },
+    {
+      "id": "en-ielts",
+      "language": "en",
+      "title": "IELTS",
+      "description": "Coming soon.",
+      "trackType": "exam",
+      "examTrack": "IELTS",
+      "examLevel": "IELTS",
+      "comingSoon": true
+    },
+    {
+      "id": "en-toefl",
+      "language": "en",
+      "title": "TOEFL",
+      "description": "Coming soon.",
+      "trackType": "exam",
+      "examTrack": "TOEFL",
+      "examLevel": "TOEFL",
+      "comingSoon": true
+    }
+  ],
+  "es": [
+    {
+      "id": "es-general",
+      "language": "es",
+      "title": "General Spanish",
+      "description": "General Spanish foundations and CEFR-style progress.",
+      "trackType": "general",
+      "examLevel": "GENERAL_SPANISH",
+      "levelId": "A0"
+    },
+    {
+      "id": "es-dele-a1",
+      "language": "es",
+      "title": "DELE A1",
+      "description": "Coming soon.",
+      "trackType": "exam",
+      "examTrack": "DELE",
+      "examLevel": "DELE_A1",
+      "comingSoon": true
+    },
+    {
+      "id": "es-dele-a2",
+      "language": "es",
+      "title": "DELE A2",
+      "description": "Coming soon.",
+      "trackType": "exam",
+      "examTrack": "DELE",
+      "examLevel": "DELE_A2",
+      "comingSoon": true
+    },
+    {
+      "id": "es-dele-b1",
+      "language": "es",
+      "title": "DELE B1",
+      "description": "Coming soon.",
+      "trackType": "exam",
+      "examTrack": "DELE",
+      "examLevel": "DELE_B1",
+      "comingSoon": true
+    },
+    {
+      "id": "es-dele-b2",
+      "language": "es",
+      "title": "DELE B2",
+      "description": "Coming soon.",
+      "trackType": "exam",
+      "examTrack": "DELE",
+      "examLevel": "DELE_B2",
+      "comingSoon": true
+    }
+  ]
+}

@@ -5,7 +5,10 @@ import 'package:go_router/go_router.dart';
 import '../../core/utils/localization.dart';
 import '../../state/profile_provider.dart';
 import '../../widgets/common/app_button.dart';
+import '../../widgets/common/app_card.dart';
 import '../../widgets/common/app_scaffold.dart';
+import '../../widgets/common/onboarding_form_field.dart';
+import '../../widgets/common/onboarding_header.dart';
 import '../../widgets/common/responsive_page.dart';
 
 class BasicInfoScreen extends ConsumerStatefulWidget {
@@ -46,51 +49,56 @@ class _BasicInfoScreenState extends ConsumerState<BasicInfoScreen> {
   @override
   Widget build(BuildContext context) {
     final native = ref.watch(profileProvider).nativeLanguageCode;
-    final isVi = native == 'vi';
     return AppScaffold(
       title: L10n.text('basicInfo', native),
       showBack: true,
       backPath: '/onboarding/native',
+      languageCode: native,
+      onBeforeBack: _saveDraft,
       child: ResponsivePage(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              isVi
-                  ? 'Bạn muốn NovaLang gọi bạn là gì?'
-                  : 'What should NovaLang call you?',
-              style: Theme.of(
-                context,
-              ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w900),
+            OnboardingHeader(
+              title: L10n.text('basicInfo', native),
+              subtitle: L10n.text('basicInfoSubtitle', native),
             ),
-            const SizedBox(height: 16),
-            _field(
-              displayName,
-              L10n.text('displayName', native),
-              L10n.text('displayNameHint', native),
-              required: true,
+            const SizedBox(height: 20),
+            AppCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  OnboardingFormField(
+                    label: L10n.text('displayName', native),
+                    hint: L10n.text('displayNameHint', native),
+                    controller: displayName,
+                    required: true,
+                    onChanged: (_) => setState(() {}),
+                  ),
+                  OnboardingFormField(
+                    label: L10n.text('age', native),
+                    hint: L10n.text('optional', native),
+                    controller: ageRange,
+                  ),
+                  OnboardingFormField(
+                    label: L10n.text('country', native),
+                    hint: L10n.text('countryHint', native),
+                    controller: country,
+                  ),
+                  OnboardingFormField(
+                    label: L10n.text('region', native),
+                    hint: L10n.text('optional', native),
+                    controller: region,
+                  ),
+                  OnboardingFormField(
+                    label: L10n.text('occupation', native),
+                    hint: L10n.text('occupationHint', native),
+                    controller: occupationStatus,
+                  ),
+                ],
+              ),
             ),
-            _field(
-              ageRange,
-              L10n.text('age', native),
-              L10n.text('optional', native),
-            ),
-            _field(
-              country,
-              L10n.text('country', native),
-              L10n.text('countryHint', native),
-            ),
-            _field(
-              region,
-              L10n.text('region', native),
-              L10n.text('optional', native),
-            ),
-            _field(
-              occupationStatus,
-              L10n.text('occupation', native),
-              L10n.text('occupationHint', native),
-            ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 20),
             AppButton(
               label: L10n.text('continue', native),
               onPressed: displayName.text.trim().length < 2 ? null : _save,
@@ -101,45 +109,18 @@ class _BasicInfoScreenState extends ConsumerState<BasicInfoScreen> {
     );
   }
 
-  Widget _field(
-    TextEditingController controller,
-    String label,
-    String hint, {
-    bool required = false,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            '$label${required ? ' *' : ''}',
-            style: const TextStyle(
-              fontWeight: FontWeight.w800,
-              color: Color(0xFFBFF5FF),
-            ),
-          ),
-          const SizedBox(height: 7),
-          TextField(
-            controller: controller,
-            onChanged: (_) => setState(() {}),
-            decoration: InputDecoration(hintText: hint),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Future<void> _save() async {
-    await ref
-        .read(profileProvider.notifier)
-        .setUserInfo(
+  Future<void> _saveDraft() async {
+    await ref.read(profileProvider.notifier).setUserInfo(
           displayName: displayName.text.trim(),
           ageRange: ageRange.text.trim(),
           country: country.text.trim(),
           region: region.text.trim(),
           occupationStatus: occupationStatus.text.trim(),
         );
+  }
+
+  Future<void> _save() async {
+    await _saveDraft();
     if (!mounted) return;
     context.push('/onboarding/learning');
   }

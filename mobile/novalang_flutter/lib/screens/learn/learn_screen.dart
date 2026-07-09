@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/utils/localization.dart';
 import '../../state/lesson_provider.dart';
 import '../../state/profile_provider.dart';
-import '../../data/language_options.dart';
+import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/responsive_page.dart';
 import '../../widgets/lesson/lesson_card.dart';
@@ -18,6 +18,18 @@ class LearnScreen extends ConsumerWidget {
     final profile = ref.watch(profileProvider);
     final lessons = ref.watch(lessonProvider);
     final native = profile.nativeLanguageCode;
+    final learningOption = ref.watch(
+      languageByCodeProvider(profile.learningLanguageCode),
+    );
+    final trackAsync = ref.watch(
+      availableExamTracksProvider(profile.learningLanguageCode),
+    );
+    final selectedTrack = trackAsync.maybeWhen(
+      data: (tracks) =>
+          tracks.where((item) => item.id == profile.selectedTrack).firstOrNull ??
+          tracks.firstOrNull,
+      orElse: () => null,
+    );
 
     return AppScaffold(
       title: L10n.text('learn', native),
@@ -27,7 +39,7 @@ class LearnScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              '${languageByCode(profile.learningLanguageCode).flagEmoji} ${languageByCode(profile.learningLanguageCode).nativeName} · JLPT',
+              '${learningOption.flagEmoji} ${learningOption.nativeName}${selectedTrack == null ? '' : ' · ${selectedTrack.title}'}',
               style: Theme.of(
                 context,
               ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w900),

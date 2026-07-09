@@ -17,6 +17,16 @@ class LanguageOption {
   final bool isSupportedAsNative;
   final bool isSupportedAsLearning;
 
+  factory LanguageOption.fromJson(Map<String, dynamic> json) => LanguageOption(
+    code: json['code'] as String,
+    englishName: json['englishName'] as String,
+    nativeName: json['nativeName'] as String,
+    flagEmoji: json['flagEmoji'] as String? ?? '🌐',
+    aliases: (json['aliases'] as List<dynamic>).cast<String>(),
+    isSupportedAsNative: json['isSupportedAsNative'] as bool,
+    isSupportedAsLearning: json['isSupportedAsLearning'] as bool,
+  );
+
   bool matches(String rawQuery) {
     final query = rawQuery.trim().toLowerCase();
     if (query.isEmpty) return true;

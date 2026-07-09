@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/utils/localization.dart';
 import '../../core/utils/level_display.dart';
-import '../../data/language_options.dart';
 import '../../state/profile_provider.dart';
+import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_button.dart';
 import '../../widgets/common/app_card.dart';
 import '../../widgets/common/app_scaffold.dart';
@@ -19,8 +19,12 @@ class ProfileScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final profile = ref.watch(profileProvider);
     final native = profile.uiLanguageCode;
-    final nativeOption = languageByCode(profile.nativeLanguageCode);
-    final learningOption = languageByCode(profile.learningLanguageCode);
+    final nativeOption = ref.watch(
+      languageByCodeProvider(profile.nativeLanguageCode),
+    );
+    final learningOption = ref.watch(
+      languageByCodeProvider(profile.learningLanguageCode),
+    );
     final nativeName = '${nativeOption.flagEmoji} ${nativeOption.nativeName}';
     final learningName =
         '${learningOption.flagEmoji} ${learningOption.nativeName}';

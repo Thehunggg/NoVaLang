@@ -18,7 +18,18 @@ class AppCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
     return Card(
-      color: selected ? colors.primaryContainer.withValues(alpha: 0.42) : null,
+      color: selected
+          ? colors.primaryContainer.withValues(alpha: 0.38)
+          : Colors.white.withValues(alpha: 0.045),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+        side: BorderSide(
+          color: selected
+              ? const Color(0xFF22D3EE).withValues(alpha: 0.55)
+              : Colors.white.withValues(alpha: 0.08),
+          width: selected ? 1.4 : 1,
+        ),
+      ),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(24),

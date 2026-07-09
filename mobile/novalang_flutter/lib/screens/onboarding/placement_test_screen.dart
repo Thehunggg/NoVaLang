@@ -6,10 +6,12 @@ import '../../core/utils/level_display.dart';
 import '../../core/utils/localization.dart';
 import '../../data/japanese_jlpt_seed.dart';
 import '../../state/profile_provider.dart';
+import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_button.dart';
 import '../../widgets/common/app_card.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/nova_mascot.dart';
+import '../../widgets/common/onboarding_header.dart';
 import '../../widgets/common/responsive_page.dart';
 
 class PlacementTestScreen extends ConsumerStatefulWidget {
@@ -38,23 +40,22 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
       title: L10n.text('placementTitle', locale),
       showBack: true,
       backPath: '/onboarding/level',
+      languageCode: locale,
       child: ResponsivePage(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              children: [
-                Expanded(
-                  child: LinearProgressIndicator(
-                    value: (index + 1) / japanesePlacementQuestions.length,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Text(
-                  '${index + 1}/15',
-                  style: const TextStyle(fontWeight: FontWeight.w900),
-                ),
-              ],
+            OnboardingHeader(
+              title: L10n.text('placementTitle', locale),
+              subtitle: '${index + 1}/15',
+            ),
+            const SizedBox(height: 16),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(99),
+              child: LinearProgressIndicator(
+                value: (index + 1) / japanesePlacementQuestions.length,
+                minHeight: 6,
+              ),
             ),
             const SizedBox(height: 20),
             AppCard(
@@ -91,7 +92,7 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
                 ],
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
             AppButton(
               label: index == 14
                   ? L10n.text('placementResult', locale)
@@ -112,9 +113,10 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
     );
     final nextScore = score + (correct ? 1 : 0);
     if (index == 14) {
+      final policy = ref.read(placementPolicyProvider).value;
       setState(() {
         score = nextScore;
-        resultLevel = _levelFor(nextScore);
+        resultLevel = policy?.levelForScore(nextScore) ?? 'A0';
         answer = null;
       });
     } else {
@@ -132,17 +134,16 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
       title: L10n.text('placementResult', locale),
       showBack: true,
       backPath: '/onboarding/level',
+      languageCode: locale,
       child: ResponsivePage(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Center(child: NovaMascot(size: 140)),
-            Text(
-              '${L10n.text('placementResult', locale)}: $display',
-              textAlign: TextAlign.center,
-              style: Theme.of(
-                context,
-              ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w900),
+            const SizedBox(height: 16),
+            OnboardingHeader(
+              title: L10n.text('placementResult', locale),
+              subtitle: display,
             ),
             const SizedBox(height: 8),
             Text(
@@ -158,6 +159,7 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
             Text(
               '${L10n.text('recommended', locale)}: $display',
               textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white.withValues(alpha: 0.72)),
             ),
             const SizedBox(height: 24),
             AppButton(
@@ -182,14 +184,4 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
     await ref.read(profileProvider.notifier).finishOnboarding();
     if (mounted) context.go('/learn');
   }
-
-  String _levelFor(int value) => value <= 3
-      ? 'A0'
-      : value <= 7
-      ? 'A1_1'
-      : value <= 11
-      ? 'A1_2'
-      : value <= 14
-      ? 'A2_1'
-      : 'A2_2';
 }

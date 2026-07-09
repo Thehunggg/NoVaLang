@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/utils/localization.dart';
-import '../../data/niche_options.dart';
 import '../../state/profile_provider.dart';
+import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_button.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/responsive_page.dart';
@@ -34,7 +34,7 @@ class _LearningPreferencesScreenState
   @override
   Widget build(BuildContext context) {
     final profile = ref.watch(profileProvider);
-    final groups = groupedNiches();
+    final groupsAsync = ref.watch(groupedNichesProvider);
 
     return AppScaffold(
       title: profile.nativeLanguageCode == 'vi'
@@ -42,30 +42,35 @@ class _LearningPreferencesScreenState
           : 'Learning preferences',
       showBack: true,
       backPath: '/profile',
+      languageCode: profile.uiLanguageCode,
       selectedNavIndex: 4,
       child: ResponsivePage(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            for (final entry in groups.entries) ...[
-              NicheGroupCard(
-                category: entry.key,
-                niches: entry.value,
-                selectedIds: selectedIds,
-                primaryId: primaryId,
-                onToggle: _toggle,
-                onPrimary: (id) => setState(() => primaryId = id),
-                languageCode: profile.uiLanguageCode,
+        child: groupsAsync.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (error, _) => Text(error.toString()),
+          data: (groups) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              for (final entry in groups.entries) ...[
+                NicheGroupCard(
+                  category: entry.key,
+                  niches: entry.value,
+                  selectedIds: selectedIds,
+                  primaryId: primaryId,
+                  onToggle: _toggle,
+                  onPrimary: (id) => setState(() => primaryId = id),
+                  languageCode: profile.uiLanguageCode,
+                ),
+                const SizedBox(height: 12),
+              ],
+              AppButton(
+                label: profile.nativeLanguageCode == 'vi'
+                    ? 'Lưu thay đổi'
+                    : 'Save changes',
+                onPressed: selectedIds.isEmpty ? null : _save,
               ),
-              const SizedBox(height: 12),
             ],
-            AppButton(
-              label: profile.nativeLanguageCode == 'vi'
-                  ? 'Lưu thay đổi'
-                  : 'Save changes',
-              onPressed: selectedIds.isEmpty ? null : _save,
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -124,8 +129,9 @@ class _LearningPreferencesScreenState
                           primaryId,
                           decision: entry.key,
                         );
-                    if (dialogContext.mounted)
+                    if (dialogContext.mounted) {
                       Navigator.of(dialogContext).pop();
+                    }
                     if (!mounted) return;
                     if (entry.key == 'placement') {
                       context.go('/placement');

@@ -2,6 +2,7 @@
 
 import type { ExamLevel, ExamTrackOption, TrackSkill } from "./types.js";
 import { getLevelDisplayName, levelOrder } from "./levelDisplay.js";
+import examTracksConfig from "./config/exam_tracks.json" with { type: "json" };
 
 export { nativeLanguages } from "./nativeLanguages.js";
 
@@ -281,29 +282,8 @@ const levelMeta: Record<LevelId, { title: string; description: string; cefr: str
   B2: { title: "Advanced Communication", description: "Nuance, longer reading, academic, and workplace communication.", cefr: "CEFR B2", jlpt: "JLPT N2" }
 };
 
-const examTracksFor = (language: LanguageCode): ExamTrackOption[] => {
-  if (language === "ja") return [
-    { id: "ja-kana-starter", language, title: "Kana Starter", description: "Hiragana, katakana signals, basic sounds, and first words.", trackType: "exam", examTrack: "JLPT", examLevel: "KANA_STARTER", levelId: "A0" },
-    { id: "ja-jlpt-n5", language, title: "JLPT N5", description: "Vocabulary, kanji, grammar, reading, listening, mini tests, and mistake review.", trackType: "exam", examTrack: "JLPT", examLevel: "JLPT_N5", levelId: "A1_1" },
-    { id: "ja-jlpt-n4", language, title: "JLPT N4", description: "Coming soon after the N5 sample track is stable.", trackType: "exam", examTrack: "JLPT", examLevel: "JLPT_N4", levelId: "A2_1", comingSoon: true },
-    { id: "ja-jlpt-n3", language, title: "JLPT N3", description: "Coming soon.", trackType: "exam", examTrack: "JLPT", examLevel: "JLPT_N3", levelId: "B1_1", comingSoon: true },
-    { id: "ja-jlpt-n2", language, title: "JLPT N2", description: "Coming soon.", trackType: "exam", examTrack: "JLPT", examLevel: "JLPT_N2", levelId: "B2", comingSoon: true },
-    { id: "ja-jlpt-n1", language, title: "JLPT N1", description: "Roadmap placeholder.", trackType: "exam", examTrack: "JLPT", examLevel: "JLPT_N1", comingSoon: true }
-  ];
-  if (language === "en") return [
-    { id: "en-general", language, title: "General English", description: "General English foundations and CEFR-style progress.", trackType: "general", examLevel: "GENERAL_ENGLISH", levelId: "A0" },
-    { id: "en-toeic", language, title: "TOEIC", description: "Coming soon.", trackType: "exam", examTrack: "TOEIC", examLevel: "TOEIC", comingSoon: true },
-    { id: "en-ielts", language, title: "IELTS", description: "Coming soon.", trackType: "exam", examTrack: "IELTS", examLevel: "IELTS", comingSoon: true },
-    { id: "en-toefl", language, title: "TOEFL", description: "Coming soon.", trackType: "exam", examTrack: "TOEFL", examLevel: "TOEFL", comingSoon: true }
-  ];
-  return [
-    { id: "es-general", language, title: "General Spanish", description: "General Spanish foundations and CEFR-style progress.", trackType: "general", examLevel: "GENERAL_SPANISH", levelId: "A0" },
-    { id: "es-dele-a1", language, title: "DELE A1", description: "Coming soon.", trackType: "exam", examTrack: "DELE", examLevel: "DELE_A1", comingSoon: true },
-    { id: "es-dele-a2", language, title: "DELE A2", description: "Coming soon.", trackType: "exam", examTrack: "DELE", examLevel: "DELE_A2", comingSoon: true },
-    { id: "es-dele-b1", language, title: "DELE B1", description: "Coming soon.", trackType: "exam", examTrack: "DELE", examLevel: "DELE_B1", comingSoon: true },
-    { id: "es-dele-b2", language, title: "DELE B2", description: "Coming soon.", trackType: "exam", examTrack: "DELE", examLevel: "DELE_B2", comingSoon: true }
-  ];
-};
+const examTracksFor = (language: LanguageCode): ExamTrackOption[] =>
+  (examTracksConfig as Record<LanguageCode, ExamTrackOption[]>)[language] ?? [];
 
 const makeCourse = (language: LanguageCode): Course => {
   let lessonOrder = 0;

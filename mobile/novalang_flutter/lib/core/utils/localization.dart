@@ -50,7 +50,11 @@ class L10n {
       'en': 'Continue as Guest',
       'vi': 'Tiếp tục với tư cách người khám phá',
     },
-    'basicInfo': {'en': 'Basic user information', 'vi': 'Thông tin cơ bản'},
+    'basicInfo': {'en': 'Basic information', 'vi': 'Thông tin cơ bản'},
+    'basicInfoSubtitle': {
+      'en': 'Tell NovaLang a little about you. Only your display name is required.',
+      'vi': 'Cho NovaLang biết một chút về bạn. Chỉ cần điền tên hiển thị.',
+    },
     'displayName': {'en': 'Display name', 'vi': 'Tên hiển thị'},
     'displayNameHint': {
       'en': 'What should NovaLang call you?',
@@ -73,6 +77,20 @@ class L10n {
       'vi': 'Ví dụ: sinh viên, kỹ sư, nhân viên văn phòng...',
     },
     'dailyGoal': {'en': 'Daily goal', 'vi': 'Mục tiêu hằng ngày'},
+    'dailyGoalSubtitle': {
+      'en': 'How many minutes do you want to study each day?',
+      'vi': 'Bạn muốn học bao nhiêu phút mỗi ngày?',
+    },
+    'nicheInstruction': {
+      'en':
+          'Choose multiple focuses, then tap a selected item again to make it primary.',
+      'vi':
+          'Chọn nhiều mục tiêu, rồi chạm lại để đặt trọng tâm chính.',
+    },
+    'learningLanguageSubtitle': {
+      'en': 'Pick the language you want to learn with NovaLang.',
+      'vi': 'Chọn ngôn ngữ bạn muốn học với NovaLang.',
+    },
     'minutesDay': {'en': 'minutes/day', 'vi': 'phút/ngày'},
     'placementChoice': {
       'en': 'Do you want to take a placement test?',

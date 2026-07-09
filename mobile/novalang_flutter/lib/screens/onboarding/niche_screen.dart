@@ -3,10 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/utils/localization.dart';
-import '../../data/niche_options.dart';
 import '../../state/profile_provider.dart';
+import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_button.dart';
 import '../../widgets/common/app_scaffold.dart';
+import '../../widgets/common/onboarding_header.dart';
 import '../../widgets/common/responsive_page.dart';
 import '../../widgets/niche/niche_group_card.dart';
 
@@ -32,39 +33,46 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
   @override
   Widget build(BuildContext context) {
     final profile = ref.watch(profileProvider);
-    final groups = groupedNiches();
+    final locale = profile.uiLanguageCode;
+    final groupsAsync = ref.watch(groupedNichesProvider);
 
     return AppScaffold(
-      title: L10n.text('niche', profile.nativeLanguageCode),
+      title: L10n.text('niche', locale),
       showBack: true,
       backPath: '/onboarding/goal',
+      languageCode: locale,
+      onBeforeBack: _saveDraft,
       child: ResponsivePage(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              profile.nativeLanguageCode == 'vi'
-                  ? 'Chọn nhiều mục tiêu, rồi chạm lại để đặt trọng tâm chính.'
-                  : 'Choose multiple focuses, then tap a selected item again to make it primary.',
-            ),
-            const SizedBox(height: 16),
-            for (final entry in groups.entries) ...[
-              NicheGroupCard(
-                category: entry.key,
-                niches: entry.value,
-                selectedIds: selectedIds,
-                primaryId: primaryId,
-                onToggle: _toggle,
-                onPrimary: (id) => setState(() => primaryId = id),
-                languageCode: profile.uiLanguageCode,
+        child: groupsAsync.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (error, _) => Text(error.toString()),
+          data: (groups) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              OnboardingHeader(
+                title: L10n.text('niche', locale),
+                subtitle: L10n.text('nicheInstruction', locale),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 20),
+              for (final entry in groups.entries) ...[
+                NicheGroupCard(
+                  category: entry.key,
+                  niches: entry.value,
+                  selectedIds: selectedIds,
+                  primaryId: primaryId,
+                  onToggle: _toggle,
+                  onPrimary: (id) => setState(() => primaryId = id),
+                  languageCode: locale,
+                ),
+                const SizedBox(height: 12),
+              ],
+              const SizedBox(height: 8),
+              AppButton(
+                label: L10n.text('continue', locale),
+                onPressed: selectedIds.isEmpty ? null : _saveAndContinue,
+              ),
             ],
-            AppButton(
-              label: L10n.text('continue', profile.nativeLanguageCode),
-              onPressed: selectedIds.isEmpty ? null : _saveAndContinue,
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -84,10 +92,14 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
     });
   }
 
-  Future<void> _saveAndContinue() async {
+  Future<void> _saveDraft() async {
     await ref
         .read(profileProvider.notifier)
         .setNiches(selectedIds.toList(), primaryId);
+  }
+
+  Future<void> _saveAndContinue() async {
+    await _saveDraft();
     if (!mounted) return;
     context.push('/onboarding/level');
   }

@@ -1,0 +1,24 @@
+{
+  "titles": {
+    "everyday": "Giao tiếp hằng ngày",
+    "travel": "Du lịch & sống ở nước ngoài",
+    "culture": "Văn hóa & giải trí",
+    "social": "Xã hội / bạn bè / hẹn hò",
+    "shopping": "Mua sắm / nhà hàng / dịch vụ",
+    "jlpt": "JLPT",
+    "toeic": "TOEIC",
+    "ielts": "IELTS",
+    "toefl": "TOEFL",
+    "other_exams": "DELE / HSK / kỳ thi khác",
+    "business": "Kinh doanh / văn phòng / email",
+    "it": "IT / Lập trình",
+    "engineering": "Kỹ thuật / Sản xuất",
+    "ai_data": "AI / Khoa học dữ liệu / Robot",
+    "healthcare": "Y tế / điều dưỡng / chăm sóc"
+  },
+  "categories": {
+    "Daily Communication": "Giao tiếp hằng ngày",
+    "Exam Preparation": "Luyện thi",
+    "Career / Specialized Fields": "Nghề nghiệp / Lĩnh vực chuyên môn"
+  }
+}

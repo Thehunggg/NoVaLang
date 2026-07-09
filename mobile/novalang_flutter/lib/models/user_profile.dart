@@ -67,7 +67,7 @@ class UserProfile {
     selectedNiches: ['jlpt'],
     primaryNiche: 'jlpt',
     levelCode: 'A0',
-    selectedTrack: 'JLPT',
+    selectedTrack: 'ja-kana-starter',
     nicheUpdatedAt: null,
     levelDecisionAfterNicheChange: null,
     onboardingComplete: false,
@@ -157,7 +157,7 @@ class UserProfile {
               .cast<String>(),
       primaryNiche: json['primaryNiche'] as String?,
       levelCode: _normalizeLevel(json['levelCode'] as String?),
-      selectedTrack: json['selectedTrack'] as String? ?? 'JLPT',
+      selectedTrack: json['selectedTrack'] as String? ?? 'ja-kana-starter',
       nicheUpdatedAt: json['nicheUpdatedAt'] as String?,
       levelDecisionAfterNicheChange:
           json['levelDecisionAfterNicheChange'] as String?,

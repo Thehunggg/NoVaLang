@@ -49,6 +49,22 @@ class ProfileNotifier extends Notifier<UserProfile> {
       _commit(state.copyWith(levelCode: levelCode));
   Future<void> setTrack(String track) =>
       _commit(state.copyWith(selectedTrack: track));
+
+  Future<void> setExamTrack({
+    required String trackId,
+    String? levelCode,
+  }) => _commit(
+    state.copyWith(
+      selectedTrack: trackId,
+      levelCode: levelCode ?? state.levelCode,
+    ),
+  );
+
+  Future<void> resetSession() async {
+    state = UserProfile.defaults();
+    await ref.read(localStorageServiceProvider).saveProfile(state);
+  }
+
   Future<void> finishOnboarding() =>
       _commit(state.copyWith(onboardingComplete: true));
 

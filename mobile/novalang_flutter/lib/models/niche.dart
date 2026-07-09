@@ -17,6 +17,20 @@ class Niche {
   final String description;
   final bool isReady;
 
+  factory Niche.fromSharedJson(
+    Map<String, dynamic> json, {
+    required String categoryVi,
+    required String titleVi,
+  }) => Niche(
+    id: json['id'] as String,
+    category: json['category'] as String,
+    categoryVi: categoryVi,
+    title: json['title'] as String,
+    titleVi: titleVi,
+    description: json['description'] as String,
+    isReady: json['isReady'] as bool? ?? false,
+  );
+
   String localizedCategory(String languageCode) =>
       languageCode == 'vi' ? categoryVi : category;
   String localizedTitle(String languageCode) =>

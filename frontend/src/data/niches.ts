@@ -1,4 +1,5 @@
 import rawNiches from "../../../shared/config/niche_options.json";
+import nicheLabels from "../../../shared/i18n/niche_labels.json";
 import type { SupportedUILanguage } from "../types/index";
 
 export interface NicheOption {
@@ -9,29 +10,8 @@ export interface NicheOption {
   isReady: boolean;
 }
 
-const titleVi: Record<string, string> = {
-  everyday: "Giao tiếp hằng ngày",
-  travel: "Du lịch & sống ở nước ngoài",
-  culture: "Văn hóa & giải trí",
-  social: "Xã hội / bạn bè / hẹn hò",
-  shopping: "Mua sắm / nhà hàng / dịch vụ",
-  jlpt: "JLPT",
-  toeic: "TOEIC",
-  ielts: "IELTS",
-  toefl: "TOEFL",
-  other_exams: "DELE / HSK / kỳ thi khác",
-  business: "Kinh doanh / văn phòng / email",
-  it: "IT / Lập trình",
-  engineering: "Kỹ thuật / Sản xuất",
-  ai_data: "AI / Khoa học dữ liệu / Robot",
-  healthcare: "Y tế / điều dưỡng / chăm sóc"
-};
-
-const categoryVi: Record<string, string> = {
-  "Daily Communication": "Giao tiếp hằng ngày",
-  "Exam Preparation": "Luyện thi",
-  "Career / Specialized Fields": "Nghề nghiệp / Lĩnh vực chuyên môn"
-};
+const titleVi = nicheLabels.titles as Record<string, string>;
+const categoryVi = nicheLabels.categories as Record<string, string>;
 
 export const nicheOptions = rawNiches as NicheOption[];
 
