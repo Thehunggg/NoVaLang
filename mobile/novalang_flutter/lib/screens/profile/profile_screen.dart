@@ -34,7 +34,7 @@ class ProfileScreen extends ConsumerWidget {
     final learningName =
         '${learningOption.flagEmoji} ${learningOption.nativeName}';
     final displayName = profile.displayName.isEmpty
-        ? 'Nova learner'
+        ? L10n.text('novaLearner', native)
         : profile.displayName;
     final initial = displayName.trim().isEmpty
         ? 'N'
@@ -75,24 +75,19 @@ class ProfileScreen extends ConsumerWidget {
             const SizedBox(height: 12),
             _section(
               context,
-              native == 'vi' ? 'Thông tin người dùng' : 'User Information',
+              L10n.text('userInfo', native),
               [
+                _row(L10n.text('displayName', native), displayName),
                 _row(
-                  native == 'vi' ? 'Tên hiển thị' : 'Display name',
-                  displayName,
-                ),
-                _row(
-                  native == 'vi' ? 'Độ tuổi' : 'Age range',
+                  L10n.text('age', native),
                   profile.ageRange.isEmpty ? '-' : profile.ageRange,
                 ),
                 _row(
-                  native == 'vi' ? 'Quốc gia/khu vực' : 'Country/region',
+                  L10n.text('country', native),
                   profile.country.isEmpty ? '-' : profile.country,
                 ),
                 _row(
-                  native == 'vi'
-                      ? 'Nghề nghiệp/học tập'
-                      : 'Occupation/student status',
+                  L10n.text('profileOccupation', native),
                   profile.occupationStatus.isEmpty
                       ? '-'
                       : profile.occupationStatus,
@@ -101,13 +96,10 @@ class ProfileScreen extends ConsumerWidget {
             ),
             _section(
               context,
-              native == 'vi' ? 'Cài đặt ngôn ngữ' : 'Language Settings',
+              L10n.text('languageSettings', native),
               [
                 _row(L10n.text('nativeUi', native), nativeName),
-                _row(
-                  native == 'vi' ? 'Ngôn ngữ học' : 'Learning',
-                  learningName,
-                ),
+                _row(L10n.text('learningLanguageShort', native), learningName),
               ],
             ),
             AppCard(
@@ -115,20 +107,20 @@ class ProfileScreen extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    native == 'vi' ? 'Tùy chọn học' : 'Learning Preferences',
+                    L10n.text('learningPreferences', native),
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                   const SizedBox(height: 10),
                   _row(
-                    native == 'vi' ? 'Trọng tâm chính' : 'Primary focus',
+                    L10n.text('primaryFocus', native),
                     profile.primaryNiche == null
                         ? '-'
                         : nicheLabel(profile.primaryNiche!),
                   ),
                   _row(
-                    native == 'vi' ? 'Các niche đã chọn' : 'Selected niches',
+                    L10n.text('selectedNiches', native),
                     profile.selectedNiches.isEmpty
                         ? '-'
                         : profile.selectedNiches
@@ -137,7 +129,7 @@ class ProfileScreen extends ConsumerWidget {
                   ),
                   const SizedBox(height: 10),
                   AppButton(
-                    label: native == 'vi' ? 'Đổi mục tiêu học' : 'Change niche',
+                    label: L10n.text('changeNiche', native),
                     icon: Icons.tune,
                     onPressed: () => context.go('/profile/preferences'),
                   ),
@@ -145,49 +137,45 @@ class ProfileScreen extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 12),
-            _section(context, native == 'vi' ? 'Tiến độ' : 'Progress', [
-              _row('XP', '0'),
+            _section(context, L10n.text('progress', native), [
+              _row(L10n.text('xp', native), '0'),
               _row(
-                native == 'vi' ? 'Bài đã hoàn thành' : 'Completed lessons',
+                L10n.text('completedLessons', native),
                 '${profile.completedLessonIds.length}',
               ),
               _row(
-                native == 'vi' ? 'Tóm tắt lỗi sai' : 'Mistakes summary',
-                native == 'vi' ? 'Sắp kết nối' : 'Coming soon',
+                L10n.text('mistakesSummary', native),
+                L10n.text('comingSoonConnected', native),
               ),
             ]),
             _section(
               context,
-              native == 'vi' ? 'Cài đặt ứng dụng' : 'App Settings',
+              L10n.text('appSettings', native),
               [
                 _row(
-                  native == 'vi'
-                      ? 'Âm thanh / phát âm'
-                      : 'Sound / pronunciation',
-                  native == 'vi' ? 'Đang bật' : 'Enabled',
+                  L10n.text('soundPronunciation', native),
+                  L10n.text('enabled', native),
                 ),
               ],
             ),
-            _section(context, native == 'vi' ? 'Pháp lý' : 'Legal', [
+            _section(context, L10n.text('legal', native), [
               _row(
-                native == 'vi' ? 'Điều khoản dịch vụ' : 'Terms of Service',
-                native == 'vi' ? 'Sẽ được thêm sau' : 'Will be added later',
+                L10n.text('termsOfService', native),
+                L10n.text('willBeAddedLater', native),
               ),
               _row(
-                native == 'vi' ? 'Chính sách quyền riêng tư' : 'Privacy Policy',
-                native == 'vi' ? 'Sẽ được thêm sau' : 'Will be added later',
+                L10n.text('privacyPolicy', native),
+                L10n.text('willBeAddedLater', native),
               ),
             ]),
-            _section(context, native == 'vi' ? 'Tài khoản' : 'Account', [
+            _section(context, L10n.text('account', native), [
               _row(
-                native == 'vi' ? 'Đăng xuất' : 'Logout',
-                native == 'vi' ? 'Sẽ nối sau' : 'Coming soon',
+                L10n.text('logout', native),
+                L10n.text('comingSoonLinked', native),
               ),
               _row(
-                native == 'vi'
-                    ? 'Xóa/đặt lại dữ liệu local'
-                    : 'Delete/reset local data',
-                native == 'vi' ? 'Sẽ nối sau' : 'Coming soon',
+                L10n.text('deleteResetLocalData', native),
+                L10n.text('comingSoonLinked', native),
               ),
             ]),
           ],

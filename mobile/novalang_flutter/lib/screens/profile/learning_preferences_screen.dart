@@ -34,15 +34,14 @@ class _LearningPreferencesScreenState
   @override
   Widget build(BuildContext context) {
     final profile = ref.watch(profileProvider);
+    final locale = profile.uiLanguageCode;
     final groupsAsync = ref.watch(groupedNichesProvider);
 
     return AppScaffold(
-      title: profile.nativeLanguageCode == 'vi'
-          ? 'Tùy chọn học'
-          : 'Learning preferences',
+      title: L10n.text('learningPreferences', locale),
       showBack: true,
       backPath: '/profile',
-      languageCode: profile.uiLanguageCode,
+      languageCode: locale,
       selectedNavIndex: 4,
       child: ResponsivePage(
         child: groupsAsync.when(
@@ -59,14 +58,12 @@ class _LearningPreferencesScreenState
                   primaryId: primaryId,
                   onToggle: _toggle,
                   onPrimary: (id) => setState(() => primaryId = id),
-                  languageCode: profile.uiLanguageCode,
+                  languageCode: locale,
                 ),
                 const SizedBox(height: 12),
               ],
               AppButton(
-                label: profile.nativeLanguageCode == 'vi'
-                    ? 'Lưu thay đổi'
-                    : 'Save changes',
+                label: L10n.text('saveChanges', locale),
                 onPressed: selectedIds.isEmpty ? null : _save,
               ),
             ],
@@ -98,23 +95,15 @@ class _LearningPreferencesScreenState
     await showDialog<void>(
       context: context,
       builder: (dialogContext) {
-        final native = ref.read(profileProvider).nativeLanguageCode;
-        final isVi = native == 'vi';
-        final options = isVi
-            ? const {
-                'placement': 'Làm bài kiểm tra trình độ',
-                'manual': 'Nhập trình độ thủ công',
-                'restart': 'Bắt đầu lại từ đầu',
-                'keep': 'Giữ trình độ hiện tại',
-              }
-            : const {
-                'placement': 'Take a placement test',
-                'manual': 'Enter my level manually',
-                'restart': 'Start from the beginning',
-                'keep': 'Keep my current level',
-              };
+        final locale = ref.read(profileProvider).uiLanguageCode;
+        final options = <String, String>{
+          'placement': L10n.text('changeFocusPlacement', locale),
+          'manual': L10n.text('changeFocusManual', locale),
+          'restart': L10n.text('startBeginning', locale),
+          'keep': L10n.text('changeFocusKeep', locale),
+        };
         return AlertDialog(
-          title: Text(L10n.text('changeFocusQuestion', native)),
+          title: Text(L10n.text('changeFocusQuestion', locale)),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

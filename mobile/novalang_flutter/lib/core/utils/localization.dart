@@ -161,6 +161,76 @@ class L10n {
       'en': 'You changed your learning focus. What would you like to do?',
       'vi': 'Bạn đã đổi mục tiêu học. Bạn muốn bắt đầu như thế nào?',
     },
+    'novaLearner': {'en': 'Nova learner', 'vi': 'Người học Nova'},
+    'userInfo': {'en': 'User Information', 'vi': 'Thông tin người dùng'},
+    'profileOccupation': {
+      'en': 'Occupation/student status',
+      'vi': 'Nghề nghiệp/học tập',
+    },
+    'languageSettings': {'en': 'Language Settings', 'vi': 'Cài đặt ngôn ngữ'},
+    'learningLanguageShort': {'en': 'Learning', 'vi': 'Ngôn ngữ học'},
+    'learningPreferences': {'en': 'Learning preferences', 'vi': 'Tùy chọn học'},
+    'primaryFocus': {'en': 'Primary focus', 'vi': 'Trọng tâm chính'},
+    'selectedNiches': {'en': 'Selected niches', 'vi': 'Các niche đã chọn'},
+    'changeNiche': {'en': 'Change niche', 'vi': 'Đổi mục tiêu học'},
+    'progress': {'en': 'Progress', 'vi': 'Tiến độ'},
+    'xp': {'en': 'XP', 'vi': 'XP'},
+    'completedLessons': {'en': 'Completed lessons', 'vi': 'Bài đã hoàn thành'},
+    'mistakesSummary': {'en': 'Mistakes summary', 'vi': 'Tóm tắt lỗi sai'},
+    'comingSoonConnected': {'en': 'Coming soon', 'vi': 'Sắp kết nối'},
+    'appSettings': {'en': 'App Settings', 'vi': 'Cài đặt ứng dụng'},
+    'soundPronunciation': {
+      'en': 'Sound / pronunciation',
+      'vi': 'Âm thanh / phát âm',
+    },
+    'enabled': {'en': 'Enabled', 'vi': 'Đang bật'},
+    'legal': {'en': 'Legal', 'vi': 'Pháp lý'},
+    'termsOfService': {'en': 'Terms of Service', 'vi': 'Điều khoản dịch vụ'},
+    'willBeAddedLater': {
+      'en': 'Will be added later',
+      'vi': 'Sẽ được thêm sau',
+    },
+    'privacyPolicy': {
+      'en': 'Privacy Policy',
+      'vi': 'Chính sách quyền riêng tư',
+    },
+    'account': {'en': 'Account', 'vi': 'Tài khoản'},
+    'logout': {'en': 'Logout', 'vi': 'Đăng xuất'},
+    'comingSoonLinked': {'en': 'Coming soon', 'vi': 'Sẽ nối sau'},
+    'deleteResetLocalData': {
+      'en': 'Delete/reset local data',
+      'vi': 'Xóa/đặt lại dữ liệu local',
+    },
+    'saveChanges': {'en': 'Save changes', 'vi': 'Lưu thay đổi'},
+    'changeFocusPlacement': {
+      'en': 'Take a placement test',
+      'vi': 'Làm bài kiểm tra trình độ',
+    },
+    'changeFocusManual': {
+      'en': 'Enter my level manually',
+      'vi': 'Nhập trình độ thủ công',
+    },
+    'changeFocusKeep': {
+      'en': 'Keep my current level',
+      'vi': 'Giữ trình độ hiện tại',
+    },
+    'learnSubtitle': {
+      'en': 'Kana Starter & JLPT N5 content. Tap a lesson to start.',
+      'vi': 'Nội dung Kana Starter & JLPT N5. Bấm vào bài để bắt đầu.',
+    },
+    'lessonsCompletedSingular': {
+      'en': '{n} lesson completed',
+      'vi': '{n} bài đã hoàn thành',
+    },
+    'lessonsCompletedPlural': {
+      'en': '{n} lessons completed',
+      'vi': '{n} bài đã hoàn thành',
+    },
+    'authProvidersError': {
+      'en': 'Could not load login providers.',
+      'vi': 'Không tải được nhà cung cấp đăng nhập.',
+    },
+    'mistakeReview': {'en': 'Mistake review', 'vi': 'Ôn lỗi sai'},
   };
 
   static String text(String key, String languageCode) {

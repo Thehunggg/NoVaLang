@@ -73,11 +73,7 @@ class AuthScreen extends ConsumerWidget {
                     ),
                   ),
                   error: (error, _) => Center(
-                    child: Text(
-                      locale == 'vi'
-                          ? 'Không tải được nhà cung cấp đăng nhập.'
-                          : 'Could not load login providers.',
-                    ),
+                    child: Text(L10n.text('authProvidersError', locale)),
                   ),
                   data: (providers) => Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,

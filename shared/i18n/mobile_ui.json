@@ -137,5 +137,87 @@
     "en": "Native/UI language",
     "vi": "Ngôn ngữ mẹ đẻ / giao diện",
     "ja": "母国語 / UI言語"
-  }
+  },
+  "novaLearner": {"en": "Nova learner", "vi": "Người học Nova", "ja": "Nova学習者"},
+  "userInfo": {"en": "User Information", "vi": "Thông tin người dùng", "ja": "ユーザー情報"},
+  "profileOccupation": {
+    "en": "Occupation/student status",
+    "vi": "Nghề nghiệp/học tập",
+    "ja": "職業・学生状況"
+  },
+  "languageSettings": {"en": "Language Settings", "vi": "Cài đặt ngôn ngữ", "ja": "言語設定"},
+  "learningLanguageShort": {"en": "Learning", "vi": "Ngôn ngữ học", "ja": "学習言語"},
+  "learningPreferences": {
+    "en": "Learning preferences",
+    "vi": "Tùy chọn học",
+    "ja": "学習設定"
+  },
+  "primaryFocus": {"en": "Primary focus", "vi": "Trọng tâm chính", "ja": "メインフォーカス"},
+  "selectedNiches": {"en": "Selected niches", "vi": "Các niche đã chọn", "ja": "選択したニッチ"},
+  "changeNiche": {"en": "Change niche", "vi": "Đổi mục tiêu học", "ja": "学習目標を変更"},
+  "progress": {"en": "Progress", "vi": "Tiến độ", "ja": "進捗"},
+  "xp": {"en": "XP", "vi": "XP", "ja": "XP"},
+  "completedLessons": {"en": "Completed lessons", "vi": "Bài đã hoàn thành", "ja": "完了レッスン"},
+  "mistakesSummary": {"en": "Mistakes summary", "vi": "Tóm tắt lỗi sai", "ja": "間違いの概要"},
+  "comingSoonConnected": {"en": "Coming soon", "vi": "Sắp kết nối", "ja": "近日接続"},
+  "appSettings": {"en": "App Settings", "vi": "Cài đặt ứng dụng", "ja": "アプリ設定"},
+  "soundPronunciation": {
+    "en": "Sound / pronunciation",
+    "vi": "Âm thanh / phát âm",
+    "ja": "音声 / 発音"
+  },
+  "enabled": {"en": "Enabled", "vi": "Đang bật", "ja": "有効"},
+  "legal": {"en": "Legal", "vi": "Pháp lý", "ja": "法的情報"},
+  "termsOfService": {"en": "Terms of Service", "vi": "Điều khoản dịch vụ", "ja": "利用規約"},
+  "willBeAddedLater": {
+    "en": "Will be added later",
+    "vi": "Sẽ được thêm sau",
+    "ja": "後日追加予定"
+  },
+  "privacyPolicy": {"en": "Privacy Policy", "vi": "Chính sách quyền riêng tư", "ja": "プライバシーポリシー"},
+  "account": {"en": "Account", "vi": "Tài khoản", "ja": "アカウント"},
+  "logout": {"en": "Logout", "vi": "Đăng xuất", "ja": "ログアウト"},
+  "comingSoonLinked": {"en": "Coming soon", "vi": "Sẽ nối sau", "ja": "近日接続"},
+  "deleteResetLocalData": {
+    "en": "Delete/reset local data",
+    "vi": "Xóa/đặt lại dữ liệu local",
+    "ja": "ローカルデータを削除/リセット"
+  },
+  "saveChanges": {"en": "Save changes", "vi": "Lưu thay đổi", "ja": "変更を保存"},
+  "changeFocusPlacement": {
+    "en": "Take a placement test",
+    "vi": "Làm bài kiểm tra trình độ",
+    "ja": "レベル判定テストを受ける"
+  },
+  "changeFocusManual": {
+    "en": "Enter my level manually",
+    "vi": "Nhập trình độ thủ công",
+    "ja": "レベルを手動で入力"
+  },
+  "changeFocusKeep": {
+    "en": "Keep my current level",
+    "vi": "Giữ trình độ hiện tại",
+    "ja": "現在のレベルを維持"
+  },
+  "learnSubtitle": {
+    "en": "Kana Starter & JLPT N5 content. Tap a lesson to start.",
+    "vi": "Nội dung Kana Starter & JLPT N5. Bấm vào bài để bắt đầu.",
+    "ja": "かな入門とJLPT N5の内容。レッスンをタップして開始。"
+  },
+  "lessonsCompletedSingular": {
+    "en": "{n} lesson completed",
+    "vi": "{n} bài đã hoàn thành",
+    "ja": "{n}レッスン完了"
+  },
+  "lessonsCompletedPlural": {
+    "en": "{n} lessons completed",
+    "vi": "{n} bài đã hoàn thành",
+    "ja": "{n}レッスン完了"
+  },
+  "authProvidersError": {
+    "en": "Could not load login providers.",
+    "vi": "Không tải được nhà cung cấp đăng nhập.",
+    "ja": "ログインプロバイダーを読み込めませんでした。"
+  },
+  "mistakeReview": {"en": "Mistake review", "vi": "Ôn lỗi sai", "ja": "間違い復習"}
 }

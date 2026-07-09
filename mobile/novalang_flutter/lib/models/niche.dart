@@ -31,8 +31,15 @@ class Niche {
     isReady: json['isReady'] as bool? ?? false,
   );
 
-  String localizedCategory(String languageCode) =>
-      languageCode == 'vi' ? categoryVi : category;
-  String localizedTitle(String languageCode) =>
-      languageCode == 'vi' ? titleVi : title;
+  String localizedCategory(String languageCode) => switch (languageCode) {
+    'vi' => categoryVi,
+    'ja' => category,
+    _ => category,
+  };
+
+  String localizedTitle(String languageCode) => switch (languageCode) {
+    'vi' => titleVi,
+    'ja' => title,
+    _ => title,
+  };
 }

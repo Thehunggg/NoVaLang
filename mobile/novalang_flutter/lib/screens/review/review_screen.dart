@@ -27,7 +27,7 @@ class ReviewScreen extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    native == 'vi' ? 'Ôn lỗi sai' : 'Mistake review',
+                    L10n.text('mistakeReview', native),
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w900,
                     ),

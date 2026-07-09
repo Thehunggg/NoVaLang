@@ -109,8 +109,6 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isVi = locale == 'vi';
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -124,9 +122,7 @@ class _Header extends StatelessWidget {
         ),
         const SizedBox(height: 6),
         Text(
-          isVi
-              ? 'Nội dung Kana Starter & JLPT N5. Bấm vào bài để bắt đầu.'
-              : 'Kana Starter & JLPT N5 content. Tap a lesson to start.',
+          L10n.text('learnSubtitle', locale),
           style: Theme.of(context)
               .textTheme
               .bodyMedium
@@ -143,9 +139,12 @@ class _Header extends StatelessWidget {
               ),
               const SizedBox(width: 6),
               Text(
-                isVi
-                    ? '$completedCount bài đã hoàn thành'
-                    : '$completedCount lesson${completedCount == 1 ? '' : 's'} completed',
+                L10n.text(
+                  completedCount == 1
+                      ? 'lessonsCompletedSingular'
+                      : 'lessonsCompletedPlural',
+                  locale,
+                ).replaceAll('{n}', '$completedCount'),
                 style: const TextStyle(
                   color: Color(0xFF22D3EE),
                   fontWeight: FontWeight.w700,
