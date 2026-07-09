@@ -1,3 +1,5 @@
+import '../services/mock_auth_service.dart';
+
 /// Auth provider entry from shared/config/auth_providers.json.
 /// Source of truth: shared/config/auth_providers.json
 class AuthProviderOption {
@@ -30,4 +32,6 @@ class AuthProviderOption {
       languageCode == 'vi' ? labelVi : labelEn;
 
   bool get isGuest => id == 'guest';
+
+  bool get supportsMockLogin => MockAuthService.isMockableProvider(id);
 }

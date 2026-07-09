@@ -5,10 +5,9 @@ import 'package:go_router/go_router.dart';
 import '../../core/utils/localization.dart';
 import '../../state/profile_provider.dart';
 import '../../state/shared_data_provider.dart';
-import '../../widgets/common/app_button.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/onboarding_header.dart';
-import '../../widgets/common/responsive_page.dart';
+import '../../widgets/niche/focus_selection_layout.dart';
 import '../../widgets/niche/niche_group_card.dart';
 
 class NicheScreen extends ConsumerStatefulWidget {
@@ -35,6 +34,10 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
     final profile = ref.watch(profileProvider);
     final locale = profile.uiLanguageCode;
     final groupsAsync = ref.watch(groupedNichesProvider);
+    final hasSelection = selectedIds.isNotEmpty;
+    final actionLabel = profile.onboardingComplete
+        ? L10n.text('goLearn', locale)
+        : L10n.text('continue', locale);
 
     return AppScaffold(
       title: L10n.text('niche', locale),
@@ -42,18 +45,22 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
       backPath: '/onboarding/goal',
       languageCode: locale,
       onBeforeBack: _saveDraft,
-      child: ResponsivePage(
-        child: groupsAsync.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (error, _) => Text(error.toString()),
-          data: (groups) => Column(
+      child: groupsAsync.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (error, _) => Center(child: Text(error.toString())),
+        data: (groups) => FocusSelectionLayout(
+          locale: locale,
+          hasSelection: hasSelection,
+          actionLabel: actionLabel,
+          onAction: hasSelection ? _saveAndContinue : null,
+          hintWhenEmpty: L10n.text('chooseFocusToContinue', locale),
+          header: OnboardingHeader(
+            title: L10n.text('niche', locale),
+            subtitle: L10n.text('nicheInstruction', locale),
+          ),
+          body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              OnboardingHeader(
-                title: L10n.text('niche', locale),
-                subtitle: L10n.text('nicheInstruction', locale),
-              ),
-              const SizedBox(height: 20),
               for (final entry in groups.entries) ...[
                 NicheGroupCard(
                   category: entry.key,
@@ -66,11 +73,6 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
                 ),
                 const SizedBox(height: 12),
               ],
-              const SizedBox(height: 8),
-              AppButton(
-                label: L10n.text('continue', locale),
-                onPressed: selectedIds.isEmpty ? null : _saveAndContinue,
-              ),
             ],
           ),
         ),
@@ -101,6 +103,12 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
   Future<void> _saveAndContinue() async {
     await _saveDraft();
     if (!mounted) return;
+
+    final profile = ref.read(profileProvider);
+    if (profile.onboardingComplete) {
+      context.go('/learn');
+      return;
+    }
     context.push('/onboarding/level');
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -5,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/utils/localization.dart';
 import '../../models/auth_provider_option.dart';
+import '../../services/mock_auth_service.dart';
 import '../../state/profile_provider.dart';
 import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_button.dart';
@@ -24,6 +27,19 @@ class AuthScreen extends ConsumerWidget {
     _ => Icons.login,
   };
 
+  static List<AuthProviderOption> _visibleProviders(
+    List<AuthProviderOption> providers,
+  ) =>
+      providers
+          .where((provider) => provider.id != 'apple' || Platform.isIOS)
+          .toList(growable: false);
+
+  static void _redirectAfterAuth(BuildContext context, WidgetRef ref) {
+    final profile = ref.read(profileProvider);
+    if (!context.mounted) return;
+    context.go(profile.onboardingComplete ? '/learn' : '/onboarding/native');
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = ref.watch(profileProvider).uiLanguageCode;
@@ -32,6 +48,36 @@ class AuthScreen extends ConsumerWidget {
     void showLater() => ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(L10n.text('providerLater', locale))),
     );
+
+    Future<void> handleProvider(AuthProviderOption provider) async {
+      if (provider.isGuest) {
+        await ref.read(profileProvider.notifier).signInGuest();
+        if (!context.mounted) return;
+        _redirectAfterAuth(context, ref);
+        return;
+      }
+
+      if (!MockAuthService.enabled || !provider.supportsMockLogin) {
+        showLater();
+        return;
+      }
+
+      switch (provider.id) {
+        case 'google':
+          await ref.read(profileProvider.notifier).signInGoogleMock();
+          if (!context.mounted) return;
+          _redirectAfterAuth(context, ref);
+        case 'facebook':
+          await ref.read(profileProvider.notifier).signInFacebookMock();
+          if (!context.mounted) return;
+          _redirectAfterAuth(context, ref);
+        case 'email':
+          if (!context.mounted) return;
+          await _showEmailMockDialog(context, ref, locale);
+        default:
+          showLater();
+      }
+    }
 
     return Scaffold(
       body: Container(
@@ -64,6 +110,16 @@ class AuthScreen extends ConsumerWidget {
                     context,
                   ).textTheme.bodyLarge?.copyWith(color: Colors.white70),
                 ),
+                if (MockAuthService.enabled) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    L10n.text('mockAuthDevNote', locale),
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Colors.white38,
+                    ),
+                  ),
+                ],
                 const SizedBox(height: 28),
                 providersAsync.when(
                   loading: () => const Center(
@@ -75,23 +131,24 @@ class AuthScreen extends ConsumerWidget {
                   error: (error, _) => Center(
                     child: Text(L10n.text('authProvidersError', locale)),
                   ),
-                  data: (providers) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      for (var index = 0; index < providers.length; index++) ...[
-                        _ProviderButton(
-                          provider: providers[index],
-                          locale: locale,
-                          outlined: index != 0,
-                          onPressed: providers[index].isGuest
-                              ? () => context.go('/onboarding/native')
-                              : showLater,
-                        ),
-                        if (index != providers.length - 1)
-                          const SizedBox(height: 10),
+                  data: (providers) {
+                    final visible = _visibleProviders(providers);
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        for (var index = 0; index < visible.length; index++) ...[
+                          _ProviderButton(
+                            provider: visible[index],
+                            locale: locale,
+                            outlined: index != 0,
+                            onPressed: () => handleProvider(visible[index]),
+                          ),
+                          if (index != visible.length - 1)
+                            const SizedBox(height: 10),
+                        ],
                       ],
-                    ],
-                  ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -99,6 +156,44 @@ class AuthScreen extends ConsumerWidget {
         ),
       ),
     );
+  }
+
+  static Future<void> _showEmailMockDialog(
+    BuildContext context,
+    WidgetRef ref,
+    String locale,
+  ) async {
+    final controller = TextEditingController();
+    final email = await showDialog<String>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(L10n.text('emailMockTitle', locale)),
+        content: TextField(
+          controller: controller,
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+            hintText: L10n.text('emailMockHint', locale),
+          ),
+          autofocus: true,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(''),
+            child: Text(L10n.text('emailMockSkip', locale)),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(controller.text),
+            child: Text(L10n.text('continue', locale)),
+          ),
+        ],
+      ),
+    );
+    controller.dispose();
+    if (!context.mounted || email == null) return;
+
+    await ref.read(profileProvider.notifier).signInEmailMock(email);
+    if (!context.mounted) return;
+    _redirectAfterAuth(context, ref);
   }
 }
 

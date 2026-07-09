@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/user_profile.dart';
 import '../services/local_storage_service.dart';
+import '../services/mock_auth_service.dart';
 
 final localStorageServiceProvider = Provider<LocalStorageService>(
   (ref) => LocalStorageService(),
@@ -41,8 +42,11 @@ class ProfileNotifier extends Notifier<UserProfile> {
       occupationStatus: occupationStatus,
     ),
   );
-  Future<void> setLearningLanguage(String code) =>
-      _commit(state.copyWith(learningLanguageCode: code));
+  Future<void> setLearningLanguage(String code) => _commit(
+    state.copyWith(
+      learningLanguageCode: UserProfile.normalizeLearningLanguageCode(code),
+    ),
+  );
   Future<void> setGoal(int minutes) =>
       _commit(state.copyWith(dailyGoalMinutes: minutes));
   Future<void> setLevel(String levelCode) =>
@@ -61,9 +65,41 @@ class ProfileNotifier extends Notifier<UserProfile> {
   );
 
   Future<void> resetSession() async {
-    state = UserProfile.defaults();
-    await ref.read(localStorageServiceProvider).saveProfile(state);
+    final fresh = _templateForCurrentUser();
+    await _commit(fresh);
   }
+
+  /// Signs out without deleting saved profiles for mock users.
+  Future<void> signOut() async {
+    state = UserProfile.defaults();
+    await ref.read(localStorageServiceProvider).clearActiveUser();
+  }
+
+  /// Mock auth is for local development only. Replace with Supabase Auth before production.
+  Future<void> signInGuest() => _signInWithTemplate(MockAuthService.guestTemplate());
+
+  Future<void> signInGoogleMock() =>
+      _signInWithTemplate(MockAuthService.googleTemplate());
+
+  Future<void> signInFacebookMock() =>
+      _signInWithTemplate(MockAuthService.facebookTemplate());
+
+  Future<void> signInEmailMock(String email) =>
+      _signInWithTemplate(MockAuthService.emailTemplate(email));
+
+  Future<void> _signInWithTemplate(UserProfile template) async {
+    final storage = ref.read(localStorageServiceProvider);
+    final existing = await storage.loadProfileForUser(template.userId);
+    final profile = existing ?? template;
+    await _commit(profile);
+  }
+
+  UserProfile _templateForCurrentUser() => switch (state.authProvider) {
+    'google_mock' => MockAuthService.googleTemplate(),
+    'facebook_mock' => MockAuthService.facebookTemplate(),
+    'email_mock' => MockAuthService.emailTemplate(state.email ?? MockAuthService.defaultEmail),
+    _ => MockAuthService.guestTemplate(),
+  };
 
   Future<void> finishOnboarding() =>
       _commit(state.copyWith(onboardingComplete: true));

@@ -24,6 +24,9 @@ class UserProfile {
     required this.placementResultLevel,
     required this.completedLessonIds,
     required this.lessonSessions,
+    required this.userId,
+    required this.authProvider,
+    this.email,
   });
 
   static const currentContentVersion = 'cross-platform-onboarding-v4';
@@ -52,6 +55,9 @@ class UserProfile {
   final String? placementResultLevel;
   final List<String> completedLessonIds;
   final Map<String, Map<String, dynamic>> lessonSessions;
+  final String userId;
+  final String authProvider;
+  final String? email;
 
   factory UserProfile.defaults() => const UserProfile(
     contentVersion: currentContentVersion,
@@ -78,6 +84,9 @@ class UserProfile {
     placementResultLevel: null,
     completedLessonIds: [],
     lessonSessions: {},
+    userId: 'mock_guest_user',
+    authProvider: 'guest',
+    email: null,
   );
 
   UserProfile copyWith({
@@ -105,6 +114,9 @@ class UserProfile {
     String? placementResultLevel,
     List<String>? completedLessonIds,
     Map<String, Map<String, dynamic>>? lessonSessions,
+    String? userId,
+    String? authProvider,
+    String? email,
   }) => UserProfile(
     contentVersion: contentVersion ?? this.contentVersion,
     displayName: displayName ?? this.displayName,
@@ -132,7 +144,42 @@ class UserProfile {
     placementResultLevel: placementResultLevel ?? this.placementResultLevel,
     completedLessonIds: completedLessonIds ?? this.completedLessonIds,
     lessonSessions: lessonSessions ?? this.lessonSessions,
+    userId: userId ?? this.userId,
+    authProvider: authProvider ?? this.authProvider,
+    email: email ?? this.email,
   );
+
+  static String normalizeLearningLanguageCode(String? raw) {
+    final trimmed = (raw ?? '').trim();
+    if (trimmed.isEmpty) return 'ja';
+
+    final lower = trimmed.toLowerCase();
+    return switch (lower) {
+      'ja' || 'japanese' || 'jp' || 'nihongo' || 'nihon' || '日本語' || '日本' => 'ja',
+      'en' || 'english' || 'eng' => 'en',
+      'vi' || 'vietnamese' || 'vietnam' => 'vi',
+      'es' || 'spanish' || 'espanol' || 'español' => 'es',
+      _ when trimmed.length <= 3 => lower,
+      _ => trimmed,
+    };
+  }
+
+  static String? _readLearningLanguageRaw(Map<String, dynamic> json) {
+    final direct = json['learningLanguageCode'];
+    if (direct is String && direct.trim().isNotEmpty) return direct;
+
+    final legacy = json['learningLanguage'];
+    if (legacy is String && legacy.trim().isNotEmpty) return legacy;
+    if (legacy is Map) {
+      final code = legacy['code'];
+      if (code is String && code.trim().isNotEmpty) return code;
+    }
+
+    final selected = json['selectedLanguage'];
+    if (selected is String && selected.trim().isNotEmpty) return selected;
+
+    return null;
+  }
 
   factory UserProfile.fromJson(Map<String, dynamic> json) {
     final rawSessions =
@@ -150,7 +197,9 @@ class UserProfile {
           json['uiLanguageCode'] as String? ??
           json['nativeLanguageCode'] as String? ??
           'en',
-      learningLanguageCode: json['learningLanguageCode'] as String? ?? 'ja',
+      learningLanguageCode: normalizeLearningLanguageCode(
+        _readLearningLanguageRaw(json),
+      ),
       dailyGoalMinutes: json['dailyGoalMinutes'] as int? ?? 10,
       selectedNiches:
           (json['selectedNiches'] as List<dynamic>? ?? const ['jlpt'])
@@ -173,6 +222,9 @@ class UserProfile {
       lessonSessions: rawSessions.map(
         (key, value) => MapEntry(key, Map<String, dynamic>.from(value as Map)),
       ),
+      userId: json['userId'] as String? ?? '',
+      authProvider: json['authProvider'] as String? ?? 'guest',
+      email: json['email'] as String?,
     );
   }
 
@@ -201,6 +253,9 @@ class UserProfile {
     'placementResultLevel': placementResultLevel,
     'completedLessonIds': completedLessonIds,
     'lessonSessions': lessonSessions,
+    'userId': userId,
+    'authProvider': authProvider,
+    if (email != null) 'email': email,
   };
 
   static String _normalizeLevel(String? value) => switch (value) {

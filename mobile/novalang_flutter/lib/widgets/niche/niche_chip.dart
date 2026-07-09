@@ -28,11 +28,34 @@ class NicheChip extends StatelessWidget {
     final label = niche.isReady ? title : '$title · $comingSoon';
     return InputChip(
       selected: selected,
-      avatar: primary ? const Icon(Icons.star, size: 18) : null,
-      label: Text(label),
+      showCheckmark: true,
+      avatar: primary
+          ? const Icon(Icons.star, size: 18, color: Color(0xFF22D3EE))
+          : null,
+      label: Text(
+        label,
+        style: TextStyle(
+          fontWeight: primary
+              ? FontWeight.w800
+              : selected
+              ? FontWeight.w700
+              : FontWeight.w500,
+          color: selected ? Colors.white : Colors.white70,
+        ),
+      ),
+      selectedColor: const Color(0xFF22D3EE).withValues(alpha: 0.24),
+      backgroundColor: Colors.white.withValues(alpha: 0.06),
+      checkmarkColor: const Color(0xFF22D3EE),
+      side: BorderSide(
+        color: primary
+            ? const Color(0xFF22D3EE)
+            : selected
+            ? const Color(0xFF22D3EE).withValues(alpha: 0.55)
+            : Colors.white.withValues(alpha: 0.14),
+        width: primary ? 2 : 1,
+      ),
       onSelected: onSelected,
       onPressed: selected ? onPrimary : null,
-      showCheckmark: true,
     );
   }
 }

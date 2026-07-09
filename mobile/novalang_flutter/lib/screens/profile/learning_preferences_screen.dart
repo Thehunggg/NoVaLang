@@ -5,9 +5,8 @@ import 'package:go_router/go_router.dart';
 import '../../core/utils/localization.dart';
 import '../../state/profile_provider.dart';
 import '../../state/shared_data_provider.dart';
-import '../../widgets/common/app_button.dart';
 import '../../widgets/common/app_scaffold.dart';
-import '../../widgets/common/responsive_page.dart';
+import '../../widgets/niche/focus_selection_layout.dart';
 import '../../widgets/niche/niche_group_card.dart';
 
 class LearningPreferencesScreen extends ConsumerStatefulWidget {
@@ -22,6 +21,8 @@ class _LearningPreferencesScreenState
     extends ConsumerState<LearningPreferencesScreen> {
   late Set<String> selectedIds;
   late String? primaryId;
+  late List<String> initialSelectedIds;
+  late String? initialPrimaryId;
 
   @override
   void initState() {
@@ -29,6 +30,18 @@ class _LearningPreferencesScreenState
     final profile = ref.read(profileProvider);
     selectedIds = profile.selectedNiches.toSet();
     primaryId = profile.primaryNiche;
+    initialSelectedIds = List<String>.from(profile.selectedNiches);
+    initialPrimaryId = profile.primaryNiche;
+  }
+
+  bool get _focusChanged {
+    final current = selectedIds.toList()..sort();
+    final initial = List<String>.from(initialSelectedIds)..sort();
+    if (current.length != initial.length) return true;
+    for (var i = 0; i < current.length; i++) {
+      if (current[i] != initial[i]) return true;
+    }
+    return primaryId != initialPrimaryId;
   }
 
   @override
@@ -36,6 +49,7 @@ class _LearningPreferencesScreenState
     final profile = ref.watch(profileProvider);
     final locale = profile.uiLanguageCode;
     final groupsAsync = ref.watch(groupedNichesProvider);
+    final hasSelection = selectedIds.isNotEmpty;
 
     return AppScaffold(
       title: L10n.text('learningPreferences', locale),
@@ -43,11 +57,16 @@ class _LearningPreferencesScreenState
       backPath: '/profile',
       languageCode: locale,
       selectedNavIndex: 4,
-      child: ResponsivePage(
-        child: groupsAsync.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (error, _) => Text(error.toString()),
-          data: (groups) => Column(
+      child: groupsAsync.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (error, _) => Center(child: Text(error.toString())),
+        data: (groups) => FocusSelectionLayout(
+          locale: locale,
+          hasSelection: hasSelection,
+          actionLabel: L10n.text('goLearn', locale),
+          onAction: hasSelection ? _saveAndContinue : null,
+          hintWhenEmpty: L10n.text('chooseFocusToContinue', locale),
+          body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               for (final entry in groups.entries) ...[
@@ -62,10 +81,6 @@ class _LearningPreferencesScreenState
                 ),
                 const SizedBox(height: 12),
               ],
-              AppButton(
-                label: L10n.text('saveChanges', locale),
-                onPressed: selectedIds.isEmpty ? null : _save,
-              ),
             ],
           ),
         ),
@@ -87,15 +102,28 @@ class _LearningPreferencesScreenState
     });
   }
 
-  Future<void> _save() async {
+  void _showSavedSnackBar(String locale) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(L10n.text('focusSaved', locale))),
+    );
+  }
+
+  Future<void> _saveAndContinue() async {
     await ref
         .read(profileProvider.notifier)
         .setNiches(selectedIds.toList(), primaryId);
     if (!mounted) return;
+
+    final locale = ref.read(profileProvider).uiLanguageCode;
+    if (!_focusChanged) {
+      _showSavedSnackBar(locale);
+      context.go('/learn');
+      return;
+    }
+
     await showDialog<void>(
       context: context,
       builder: (dialogContext) {
-        final locale = ref.read(profileProvider).uiLanguageCode;
         final options = <String, String>{
           'placement': L10n.text('changeFocusPlacement', locale),
           'manual': L10n.text('changeFocusManual', locale),
@@ -111,9 +139,7 @@ class _LearningPreferencesScreenState
                 ListTile(
                   title: Text(entry.value),
                   onTap: () async {
-                    await ref
-                        .read(profileProvider.notifier)
-                        .setNiches(
+                    await ref.read(profileProvider.notifier).setNiches(
                           selectedIds.toList(),
                           primaryId,
                           decision: entry.key,
@@ -122,12 +148,19 @@ class _LearningPreferencesScreenState
                       Navigator.of(dialogContext).pop();
                     }
                     if (!mounted) return;
-                    if (entry.key == 'placement') {
-                      context.go('/placement');
-                    } else if (entry.key == 'manual') {
-                      context.go('/onboarding/level');
-                    } else if (entry.key == 'restart') {
-                      await ref.read(profileProvider.notifier).setLevel('A0');
+
+                    _showSavedSnackBar(locale);
+                    switch (entry.key) {
+                      case 'placement':
+                        context.go('/placement');
+                      case 'manual':
+                        context.go('/onboarding/level');
+                      case 'restart':
+                        await ref.read(profileProvider.notifier).setLevel('A0');
+                        if (!mounted) return;
+                        context.go('/learn');
+                      default:
+                        context.go('/learn');
                     }
                   },
                 ),

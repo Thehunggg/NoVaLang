@@ -26,7 +26,13 @@ class NicheGroupCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final containsPrimary =
+        primaryId != null && niches.any((niche) => niche.id == primaryId);
+    final containsSelection =
+        niches.any((niche) => selectedIds.contains(niche.id));
+
     return AppCard(
+      selected: containsPrimary || containsSelection,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

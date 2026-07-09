@@ -96,7 +96,7 @@ class _NativeLanguageScreenState extends ConsumerState<NativeLanguageScreen> {
   }
 
   Future<void> _returnToLogin() async {
-    await ref.read(profileProvider.notifier).resetSession();
+    await ref.read(profileProvider.notifier).signOut();
   }
 
   Future<void> _choose(LanguageOption language) async {

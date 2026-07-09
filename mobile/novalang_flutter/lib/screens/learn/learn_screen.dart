@@ -1,8 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/utils/localization.dart';
+import '../../data/japanese_course_data.dart';
+import '../../models/user_profile.dart';
 import '../../state/lesson_provider.dart';
 import '../../state/profile_provider.dart';
 import '../../state/shared_data_provider.dart';
@@ -16,9 +19,26 @@ class LearnScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final profile = ref.watch(profileProvider);
-    final units = ref.watch(courseUnitsProvider);
     final locale = profile.uiLanguageCode;
-    final learningCode = profile.learningLanguageCode;
+    final learningCode = UserProfile.normalizeLearningLanguageCode(
+      profile.learningLanguageCode,
+    );
+    final units = ref.watch(courseUnitsProvider);
+    final visibleUnits = learningCode == 'ja' && units.isEmpty
+        ? japaneseCourseUnits
+        : units;
+    final visibleLessonCount = visibleUnits.fold<int>(
+      0,
+      (sum, unit) => sum + unit.lessons.length,
+    );
+
+    if (kDebugMode) {
+      debugPrint(
+        '[Learn] language=$learningCode raw=${profile.learningLanguageCode} '
+        'level=${profile.levelCode} units=${visibleUnits.length} '
+        'lessons=$visibleLessonCount',
+      );
+    }
 
     final learningOption = ref.watch(languageByCodeProvider(learningCode));
     final trackAsync = ref.watch(availableExamTracksProvider(learningCode));
@@ -43,7 +63,6 @@ class LearnScreen extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // ── Header ──────────────────────────────────────────────────────
             _Header(
               locale: locale,
               learningOption: learningOption,
@@ -51,42 +70,82 @@ class LearnScreen extends ConsumerWidget {
               completedCount: completedIds.length,
             ),
             const SizedBox(height: 20),
-
-            // ── Course units or coming-soon ─────────────────────────────────
             if (learningCode != 'ja')
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 40),
-                  child: Column(
-                    children: [
-                      const Icon(
-                        Icons.construction,
-                        size: 48,
-                        color: Colors.white38,
-                      ),
-                      const SizedBox(height: 16),
-                      Text(
-                        L10n.text('comingSoon', locale),
-                        style: Theme.of(context).textTheme.titleMedium
-                            ?.copyWith(color: Colors.white54),
-                      ),
-                    ],
-                  ),
-                ),
+              _EmptyState(
+                locale: locale,
+                message: L10n.text('noLessonsForLanguage', locale),
+                debugLine: kDebugMode
+                    ? 'language=$learningCode · level=${profile.levelCode}'
+                    : null,
+              )
+            else if (visibleUnits.isEmpty)
+              _EmptyState(
+                locale: locale,
+                message: L10n.text('noLessonsForLanguage', locale),
+                debugLine: kDebugMode
+                    ? 'language=$learningCode · level=${profile.levelCode} · units=0'
+                    : null,
               )
             else
-              for (int i = 0; i < units.length; i++) ...[
+              for (int i = 0; i < visibleUnits.length; i++) ...[
                 CourseUnitCard(
-                  unit: units[i],
+                  unit: visibleUnits[i],
                   locale: locale,
                   learningLanguage: learningCode,
                   completedLessonIds: completedIds,
                   initiallyExpanded: i == 0,
-                  onLessonTap: (lesson) =>
-                      context.go('/learn/${lesson.id}'),
+                  onLessonTap: (lesson) => context.go('/learn/${lesson.id}'),
                 ),
                 const SizedBox(height: 12),
               ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _EmptyState extends StatelessWidget {
+  const _EmptyState({
+    required this.locale,
+    required this.message,
+    this.debugLine,
+  });
+
+  final String locale;
+  final String message;
+  final String? debugLine;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 40),
+        child: Column(
+          children: [
+            const Icon(
+              Icons.construction,
+              size: 48,
+              color: Colors.white38,
+            ),
+            const SizedBox(height: 16),
+            Text(
+              message,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: Colors.white54,
+              ),
+            ),
+            if (debugLine != null) ...[
+              const SizedBox(height: 8),
+              Text(
+                debugLine!,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Colors.white30,
+                ),
+              ),
+            ],
           ],
         ),
       ),

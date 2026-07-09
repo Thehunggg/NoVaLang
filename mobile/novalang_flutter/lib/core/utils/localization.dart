@@ -231,6 +231,34 @@ class L10n {
       'vi': 'Không tải được nhà cung cấp đăng nhập.',
     },
     'mistakeReview': {'en': 'Mistake review', 'vi': 'Ôn lỗi sai'},
+    'noLessonsForLanguage': {
+      'en': 'No lessons available for this language yet',
+      'vi': 'Chưa có bài học cho ngôn ngữ này',
+    },
+    'emailMockTitle': {
+      'en': 'Sign in with Email (dev)',
+      'vi': 'Đăng nhập Email (dev)',
+    },
+    'emailMockHint': {
+      'en': 'demo@novalang.local',
+      'vi': 'demo@novalang.local',
+    },
+    'emailMockSkip': {
+      'en': 'Use demo email',
+      'vi': 'Dùng email demo',
+    },
+    'mockAuthDevNote': {
+      'en': 'Mock login enabled for local development.',
+      'vi': 'Đăng nhập giả đang bật cho phát triển local.',
+    },
+    'chooseFocusToContinue': {
+      'en': 'Select a focus to continue',
+      'vi': 'Chọn một mục để tiếp tục',
+    },
+    'focusSaved': {
+      'en': 'Learning focus saved',
+      'vi': 'Đã lưu trọng tâm học',
+    },
   };
 
   static String text(String key, String languageCode) {
