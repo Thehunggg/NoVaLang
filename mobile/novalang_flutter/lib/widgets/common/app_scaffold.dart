@@ -52,9 +52,9 @@ class AppScaffold extends StatelessWidget {
             ? TextButton(
                 onPressed: () => _handleBack(context),
                 style: TextButton.styleFrom(
-                  padding: const EdgeInsets.only(left: 8, right: 4),
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  minimumSize: const Size(48, 48),
                   foregroundColor: const Color(0xFF9EEAF9),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,

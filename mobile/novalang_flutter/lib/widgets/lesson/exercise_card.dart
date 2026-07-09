@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/exercise.dart';
+import '../../core/utils/localization.dart';
 import '../common/app_button.dart';
 import '../common/app_card.dart';
 import '../common/app_text_field.dart';
@@ -31,6 +32,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
   @override
   Widget build(BuildContext context) {
     final exercise = widget.exercise;
+    final locale = widget.nativeLanguageCode;
     return AppCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,21 +65,15 @@ class _ExerciseCardState extends State<ExerciseCard> {
           _buildAnswerArea(context),
           const SizedBox(height: 16),
           AppButton(
-            label: widget.nativeLanguageCode == 'vi'
-                ? 'Kiểm tra'
-                : 'Check answer',
+            label: L10n.text('checkAnswer', locale),
             onPressed: _check,
           ),
           if (correct != null) ...[
             const SizedBox(height: 12),
             Text(
               correct!
-                  ? (widget.nativeLanguageCode == 'vi'
-                        ? 'Chính xác'
-                        : 'Correct')
-                  : (widget.nativeLanguageCode == 'vi'
-                        ? 'Chưa đúng'
-                        : 'Not quite'),
+                  ? L10n.text('correct', locale)
+                  : L10n.text('tryAgain', locale),
               style: TextStyle(
                 color: correct!
                     ? Colors.greenAccent
@@ -93,6 +89,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
 
   Widget _buildAnswerArea(BuildContext context) {
     final exercise = widget.exercise;
+    final locale = widget.nativeLanguageCode;
     if (exercise.type == ExerciseType.matchPairs) {
       final pairs = exercise.localizedPairs(widget.nativeLanguageCode);
       final rights = pairs.map((pair) => pair.right).toList();
@@ -126,9 +123,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
                       }),
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.swap_horiz),
-                        hintText: widget.nativeLanguageCode == 'vi'
-                            ? 'Ghép cặp'
-                            : 'Match',
+                        hintText: L10n.text('match', locale),
                       ),
                     ),
                   ),
@@ -142,9 +137,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
     if (exercise.type == ExerciseType.typeAnswer ||
         exercise.type == ExerciseType.fillBlank) {
       return AppTextField(
-        hint: widget.nativeLanguageCode == 'vi'
-            ? 'Nhập câu trả lời'
-            : 'Type your answer',
+        hint: L10n.text('answerHint', locale),
         onChanged: (value) => typedAnswer = value,
       );
     }

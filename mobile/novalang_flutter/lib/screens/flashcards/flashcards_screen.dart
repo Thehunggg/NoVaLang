@@ -14,7 +14,7 @@ class FlashcardsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final profile = ref.watch(profileProvider);
-    final native = profile.nativeLanguageCode;
+    final native = profile.uiLanguageCode;
     final cards = native == 'vi'
         ? const [
             ('雨（あめ）', 'mưa', 'あめ'),

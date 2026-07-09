@@ -21,7 +21,7 @@ class PracticeScreen extends ConsumerWidget {
         .toList();
 
     return AppScaffold(
-      title: L10n.text('practice', profile.nativeLanguageCode),
+      title: L10n.text('practice', profile.uiLanguageCode),
       selectedNavIndex: 1,
       child: ResponsivePage(
         child: Column(

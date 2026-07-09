@@ -1,15 +1,141 @@
 {
-  "continue": {"en": "Continue", "vi": "Tiếp tục"},
-  "nativeLanguage": {"en": "Native/UI language", "vi": "Ngôn ngữ mẹ đẻ / giao diện"},
-  "learningLanguage": {"en": "Learning language", "vi": "Ngôn ngữ muốn học"},
-  "dailyGoal": {"en": "Daily goal", "vi": "Mục tiêu hằng ngày"},
-  "niche": {"en": "Learning focus", "vi": "Trọng tâm học"},
-  "level": {"en": "Starting level", "vi": "Trình độ bắt đầu"},
-  "placementChoice": {"en":"Do you want to take a placement test?","vi":"Bạn có muốn làm bài kiểm tra trình độ không?"},
-  "goalReward": {"en":"You completed today's goal! +1 heart","vi":"Bạn đã hoàn thành mục tiêu hôm nay! +1 tim"},
-  "resume": {"en":"Resume where you left off","vi":"Tiếp tục từ chỗ đã dừng"},
+  "back": {"en": "Back", "vi": "Quay lại", "ja": "戻る"},
+  "continue": {"en": "Continue", "vi": "Tiếp tục", "ja": "続ける"},
+  "next": {"en": "Next", "vi": "Tiếp theo", "ja": "次へ"},
+  "nativeLanguage": {"en": "Native/UI language", "vi": "Ngôn ngữ mẹ đẻ / giao diện", "ja": "母国語 / UI言語"},
+  "learningLanguage": {"en": "Learning language", "vi": "Ngôn ngữ muốn học", "ja": "学習言語"},
+  "learningLanguageSubtitle": {
+    "en": "Pick the language you want to learn with NovaLang.",
+    "vi": "Chọn ngôn ngữ bạn muốn học với NovaLang.",
+    "ja": "NovaLangで学びたい言語を選んでください。"
+  },
+  "goalTrack": {"en": "Goal and exam track", "vi": "Mục tiêu và lộ trình thi", "ja": "目標と試験コース"},
+  "dailyGoal": {"en": "Daily goal", "vi": "Mục tiêu hằng ngày", "ja": "毎日の目標"},
+  "dailyGoalSubtitle": {
+    "en": "How many minutes do you want to study each day?",
+    "vi": "Bạn muốn học bao nhiêu phút mỗi ngày?",
+    "ja": "1日に何分勉強しますか？"
+  },
+  "niche": {"en": "Learning focus", "vi": "Trọng tâm học", "ja": "学習フォーカス"},
+  "nicheInstruction": {
+    "en": "Choose multiple focuses, then tap a selected item again to make it primary.",
+    "vi": "Chọn nhiều mục tiêu, rồi chạm lại để đặt trọng tâm chính.",
+    "ja": "複数選択し、もう一度タップしてメインに設定してください。"
+  },
+  "level": {"en": "Starting level", "vi": "Trình độ bắt đầu", "ja": "開始レベル"},
+  "placementChoice": {
+    "en": "Do you want to take a placement test?",
+    "vi": "Bạn có muốn làm bài kiểm tra trình độ không?",
+    "ja": "レベル判定テストを受けますか？"
+  },
+  "takePlacement": {"en": "Take placement test", "vi": "Làm bài kiểm tra trình độ", "ja": "レベル判定を受ける"},
+  "manualLevel": {"en": "Choose level manually", "vi": "Chọn trình độ thủ công", "ja": "レベルを手動で選ぶ"},
+  "startBeginning": {"en": "Start from the beginning", "vi": "Bắt đầu từ đầu", "ja": "最初から始める"},
+  "placementTitle": {"en": "Placement test", "vi": "Kiểm tra trình độ", "ja": "レベル判定"},
+  "placementResult": {"en": "Your result", "vi": "Kết quả của bạn", "ja": "あなたの結果"},
+  "recommended": {
+    "en": "NovaLang recommends starting from",
+    "vi": "NovaLang khuyến nghị bạn bắt đầu từ",
+    "ja": "NovaLangのおすすめ開始レベル"
+  },
+  "startRecommended": {
+    "en": "Start recommended path",
+    "vi": "Bắt đầu lộ trình được đề xuất",
+    "ja": "おすすめコースを始める"
+  },
+  "basicInfo": {"en": "Basic information", "vi": "Thông tin cơ bản", "ja": "基本情報"},
+  "basicInfoSubtitle": {
+    "en": "Tell NovaLang a little about you. Only your display name is required.",
+    "vi": "Cho NovaLang biết một chút về bạn. Chỉ cần điền tên hiển thị.",
+    "ja": "あなたについて教えてください。表示名のみ必須です。"
+  },
+  "displayName": {"en": "Display name", "vi": "Tên hiển thị", "ja": "表示名"},
+  "displayNameHint": {
+    "en": "What should NovaLang call you?",
+    "vi": "Bạn muốn NovaLang gọi bạn là gì?",
+    "ja": "NovaLangは何と呼びますか？"
+  },
+  "age": {"en": "Age range", "vi": "Độ tuổi", "ja": "年齢層"},
+  "optional": {"en": "Optional", "vi": "Không bắt buộc", "ja": "任意"},
+  "country": {"en": "Country/region", "vi": "Quốc gia/khu vực", "ja": "国・地域"},
+  "countryHint": {
+    "en": "For example: Japan, Vietnam...",
+    "vi": "Ví dụ: Nhật Bản, Việt Nam...",
+    "ja": "例：日本、ベトナム..."
+  },
+  "region": {"en": "City/prefecture", "vi": "Thành phố/tỉnh", "ja": "市区町村"},
+  "occupation": {
+    "en": "Occupation or student status",
+    "vi": "Nghề nghiệp hoặc tình trạng học tập",
+    "ja": "職業または学生状況"
+  },
+  "occupationHint": {
+    "en": "For example: student, engineer, office worker...",
+    "vi": "Ví dụ: sinh viên, kỹ sư, nhân viên văn phòng...",
+    "ja": "例：学生、エンジニア、会社員..."
+  },
+  "tagline": {
+    "en": "Master languages through AI-powered quests.",
+    "vi": "Làm chủ ngôn ngữ qua những hành trình học tập được hỗ trợ bởi AI.",
+    "ja": "AIクエストで言語をマスターしよう。"
+  },
+  "providerLater": {
+    "en": "This login provider will be connected later.",
+    "vi": "Nhà cung cấp đăng nhập này sẽ được kết nối sau.",
+    "ja": "このログイン方法は後で接続されます。"
+  },
+  "goalReward": {
+    "en": "You completed today's goal! +1 heart",
+    "vi": "Bạn đã hoàn thành mục tiêu hôm nay! +1 tim",
+    "ja": "今日の目標を達成しました！ハート+1"
+  },
+  "resume": {
+    "en": "Resume where you left off",
+    "vi": "Tiếp tục từ chỗ đã dừng",
+    "ja": "前回の続きから再開"
+  },
   "changeFocusQuestion": {
     "en": "You changed your learning focus. What would you like to do?",
-    "vi": "Bạn đã đổi mục tiêu học. Bạn muốn bắt đầu như thế nào?"
+    "vi": "Bạn đã đổi mục tiêu học. Bạn muốn bắt đầu như thế nào?",
+    "ja": "学習フォーカスを変更しました。どう始めますか？"
+  },
+  "home": {"en": "Home", "vi": "Trang chủ", "ja": "ホーム"},
+  "learn": {"en": "Learn", "vi": "Học", "ja": "学習"},
+  "practice": {"en": "Practice", "vi": "Luyện tập", "ja": "練習"},
+  "review": {"en": "Review", "vi": "Ôn tập", "ja": "復習"},
+  "flashcards": {"en": "Flashcards", "vi": "Thẻ ghi nhớ", "ja": "フラッシュカード"},
+  "profile": {"en": "Profile", "vi": "Hồ sơ", "ja": "プロフィール"},
+  "searchLanguage": {
+    "en": "Search by name, native name, alias, or script",
+    "vi": "Tìm theo tên, tên bản địa, bí danh hoặc chữ viết",
+    "ja": "名前・別名・文字で検索"
+  },
+  "checkAnswer": {"en": "Check answer", "vi": "Kiểm tra", "ja": "答えを確認"},
+  "correct": {"en": "Correct", "vi": "Chính xác", "ja": "正解"},
+  "tryAgain": {"en": "Not quite", "vi": "Chưa đúng", "ja": "もう一度"},
+  "answerHint": {"en": "Type your answer", "vi": "Nhập câu trả lời", "ja": "答えを入力"},
+  "match": {"en": "Match", "vi": "Ghép cặp", "ja": "組み合わせ"},
+  "courseBack": {"en": "Back to course", "vi": "Quay lại lộ trình", "ja": "コースに戻る"},
+  "previousStep": {"en": "Review previous step", "vi": "Xem lại bước trước", "ja": "前のステップを見る"},
+  "reviewLesson": {"en": "Review lesson", "vi": "Xem lại bài học", "ja": "レッスンを復習"},
+  "lessonNotFound": {"en": "Lesson not found", "vi": "Không tìm thấy bài học", "ja": "レッスンが見つかりません"},
+  "comingSoon": {"en": "Coming soon", "vi": "Sắp ra mắt", "ja": "近日公開"},
+  "minutesDay": {"en": "minutes/day", "vi": "phút/ngày", "ja": "分/日"},
+  "homeReady": {
+    "en": "Your mobile learning space is ready.",
+    "vi": "Không gian học trên điện thoại đã sẵn sàng.",
+    "ja": "モバイル学習の準備ができました。"
+  },
+  "goLearn": {"en": "Go to Learn", "vi": "Đi đến bài học", "ja": "学習へ進む"},
+  "practiceTitle": {"en": "Template practice", "vi": "Luyện tập theo mẫu", "ja": "テンプレート練習"},
+  "mistakeHelp": {
+    "en": "Your saved mistakes will appear here for focused review.",
+    "vi": "Các lỗi đã lưu sẽ xuất hiện tại đây để bạn ôn tập tập trung.",
+    "ja": "保存した間違いがここに表示されます。"
+  },
+  "nativeUi": {
+    "en": "Native/UI language",
+    "vi": "Ngôn ngữ mẹ đẻ / giao diện",
+    "ja": "母国語 / UI言語"
   }
 }

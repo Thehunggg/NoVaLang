@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/utils/localization.dart';
 import '../../core/utils/level_display.dart';
 import '../../state/profile_provider.dart';
+import '../../models/niche.dart';
 import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_button.dart';
 import '../../widgets/common/app_card.dart';
@@ -19,6 +20,10 @@ class ProfileScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final profile = ref.watch(profileProvider);
     final native = profile.uiLanguageCode;
+    final niches = ref.watch(nicheCatalogProvider).value ?? const <Niche>[];
+    String nicheLabel(String id) =>
+        niches.where((n) => n.id == id).firstOrNull?.localizedTitle(native) ??
+        id;
     final nativeOption = ref.watch(
       languageByCodeProvider(profile.nativeLanguageCode),
     );
@@ -118,11 +123,17 @@ class ProfileScreen extends ConsumerWidget {
                   const SizedBox(height: 10),
                   _row(
                     native == 'vi' ? 'Trọng tâm chính' : 'Primary focus',
-                    profile.primaryNiche ?? '-',
+                    profile.primaryNiche == null
+                        ? '-'
+                        : nicheLabel(profile.primaryNiche!),
                   ),
                   _row(
                     native == 'vi' ? 'Các niche đã chọn' : 'Selected niches',
-                    profile.selectedNiches.join(', '),
+                    profile.selectedNiches.isEmpty
+                        ? '-'
+                        : profile.selectedNiches
+                            .map(nicheLabel)
+                            .join(', '),
                   ),
                   const SizedBox(height: 10),
                   AppButton(

@@ -14,7 +14,7 @@ class ReviewScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final profile = ref.watch(profileProvider);
-    final native = profile.nativeLanguageCode;
+    final native = profile.uiLanguageCode;
     return AppScaffold(
       title: L10n.text('review', native),
       selectedNavIndex: 2,
@@ -33,11 +33,7 @@ class ReviewScreen extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Text(
-                    native == 'vi'
-                        ? 'Các lỗi đã lưu sẽ xuất hiện tại đây để bạn ôn tập tập trung.'
-                        : 'Your saved mistakes will appear here for focused review.',
-                  ),
+                  Text(L10n.text('mistakeHelp', native)),
                 ],
               ),
             ),

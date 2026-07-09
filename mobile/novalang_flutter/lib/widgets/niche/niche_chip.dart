@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/utils/localization.dart';
 import '../../models/niche.dart';
 
 class NicheChip extends StatelessWidget {
@@ -23,7 +24,7 @@ class NicheChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = niche.localizedTitle(languageCode);
-    final comingSoon = languageCode == 'vi' ? 'Sắp ra mắt' : 'Coming soon';
+    final comingSoon = L10n.text('comingSoon', languageCode);
     final label = niche.isReady ? title : '$title · $comingSoon';
     return InputChip(
       selected: selected,

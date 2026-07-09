@@ -1,7 +1,14 @@
+import 'mobile_ui_strings.dart';
+
+/// Localized UI text for Flutter Android.
+///
+/// Priority strings are loaded from `assets/shared/mobile_ui.json`
+/// (mirrored from `shared/i18n/mobile_ui.json`).
+/// Remaining keys fall back to the inline Dart catalog below.
 class L10n {
   const L10n._();
 
-  static const _strings = <String, Map<String, String>>{
+  static const _fallback = <String, Map<String, String>>{
     'continue': {'en': 'Continue', 'vi': 'Tiếp tục'},
     'back': {'en': 'Back', 'vi': 'Quay lại'},
     'searchLanguage': {
@@ -157,7 +164,13 @@ class L10n {
   };
 
   static String text(String key, String languageCode) {
+    final fromJson = MobileUiStrings.instance.lookup(key, languageCode);
+    if (fromJson != null) return fromJson;
+    return _fallbackText(key, languageCode);
+  }
+
+  static String _fallbackText(String key, String languageCode) {
     final locale = languageCode == 'vi' ? 'vi' : 'en';
-    return _strings[key]?[locale] ?? _strings[key]?['en'] ?? key;
+    return _fallback[key]?[locale] ?? _fallback[key]?['en'] ?? key;
   }
 }
