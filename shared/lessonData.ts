@@ -3,14 +3,13 @@
 import type { ExamLevel, ExamTrackOption, TrackSkill } from "./types.js";
 import { getLevelDisplayName, levelOrder } from "./levelDisplay.js";
 import examTracksConfig from "./config/exam_tracks.json" with { type: "json" };
+import { learningLanguages } from "./languageOptions.js";
 
 export { nativeLanguages } from "./nativeLanguages.js";
+export { languageOptions, learningLanguages, getLanguageOption, getLearningLanguage } from "./languageOptions.js";
 
-export const languages: Language[] = [
-  { code: "en", name: "English", nativeName: "English", flag: "🇬🇧", color: "#22d3ee", greeting: "Hello!", description: "CEFR-inspired English from alphabet and sounds to practical B2 communication." },
-  { code: "ja", name: "Japanese", nativeName: "日本語", flag: "🇯🇵", color: "#f472b6", greeting: "こんにちは！", description: "Kana-first Japanese progressing through a JLPT N5 to N2 path." },
-  { code: "es", name: "Spanish", nativeName: "Español", flag: "🇪🇸", color: "#fbbf24", greeting: "¡Hola!", description: "CEFR-inspired Spanish beginning with alphabet, vowels, and practical B2 communication." }
-];
+/** Learning languages — sourced from shared/config/language_options.json */
+export const languages: Language[] = learningLanguages;
 
 type PronSeed = [symbol: string, pronunciation: string, word: string, meaning: string, sentence: string, translation: string];
 const enAlphabet: PronSeed[] = [

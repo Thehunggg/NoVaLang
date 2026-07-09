@@ -4,7 +4,9 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/constants/app_constants.dart';
 import '../../core/utils/localization.dart';
+import '../../models/auth_provider_option.dart';
 import '../../state/profile_provider.dart';
+import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_button.dart';
 import '../../widgets/common/nova_mascot.dart';
 import '../../widgets/common/responsive_page.dart';
@@ -12,20 +14,24 @@ import '../../widgets/common/responsive_page.dart';
 class AuthScreen extends ConsumerWidget {
   const AuthScreen({super.key});
 
+  static IconData _iconFor(String id) => switch (id) {
+    'google' => Icons.alternate_email,
+    'facebook' => Icons.groups_outlined,
+    'instagram' => Icons.camera_alt_outlined,
+    'apple' => Icons.apple,
+    'email' => Icons.mail_outline,
+    'guest' => Icons.person_outline,
+    _ => Icons.login,
+  };
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = ref.watch(profileProvider).uiLanguageCode;
-    void showLater() => ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(L10n.text('providerLater', locale))));
-    final providers = <({String key, IconData icon, bool guest})>[
-      (key: 'google', icon: Icons.alternate_email, guest: false),
-      (key: 'facebook', icon: Icons.groups_outlined, guest: false),
-      (key: 'instagram', icon: Icons.camera_alt_outlined, guest: false),
-      (key: 'apple', icon: Icons.apple, guest: false),
-      (key: 'email', icon: Icons.mail_outline, guest: false),
-      (key: 'explorer', icon: Icons.person_outline, guest: true),
-    ];
+    final providersAsync = ref.watch(authProvidersProvider);
+
+    void showLater() => ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(L10n.text('providerLater', locale))),
+    );
 
     return Scaffold(
       body: Container(
@@ -59,22 +65,67 @@ class AuthScreen extends ConsumerWidget {
                   ).textTheme.bodyLarge?.copyWith(color: Colors.white70),
                 ),
                 const SizedBox(height: 28),
-                for (var index = 0; index < providers.length; index++) ...[
-                  AppButton(
-                    label: L10n.text(providers[index].key, locale),
-                    icon: providers[index].icon,
-                    outlined: index != 0,
-                    onPressed: providers[index].guest
-                        ? () => context.go('/onboarding/native')
-                        : showLater,
+                providersAsync.when(
+                  loading: () => const Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 24),
+                      child: CircularProgressIndicator(),
+                    ),
                   ),
-                  if (index != providers.length - 1) const SizedBox(height: 10),
-                ],
+                  error: (error, _) => Center(
+                    child: Text(
+                      locale == 'vi'
+                          ? 'Không tải được nhà cung cấp đăng nhập.'
+                          : 'Could not load login providers.',
+                    ),
+                  ),
+                  data: (providers) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      for (var index = 0; index < providers.length; index++) ...[
+                        _ProviderButton(
+                          provider: providers[index],
+                          locale: locale,
+                          outlined: index != 0,
+                          onPressed: providers[index].isGuest
+                              ? () => context.go('/onboarding/native')
+                              : showLater,
+                        ),
+                        if (index != providers.length - 1)
+                          const SizedBox(height: 10),
+                      ],
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class _ProviderButton extends StatelessWidget {
+  const _ProviderButton({
+    required this.provider,
+    required this.locale,
+    required this.outlined,
+    required this.onPressed,
+  });
+
+  final AuthProviderOption provider;
+  final String locale;
+  final bool outlined;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppButton(
+      label: provider.localizedLabel(locale),
+      icon: AuthScreen._iconFor(provider.id),
+      outlined: outlined,
+      onPressed: onPressed,
     );
   }
 }

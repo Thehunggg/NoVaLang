@@ -59,7 +59,7 @@ class ProfileScreen extends ConsumerWidget {
                               ?.copyWith(fontWeight: FontWeight.w900),
                         ),
                         Text(
-                          '${getLevelDisplayName(profile.levelCode, profile.learningLanguageCode)} · ${profile.dailyGoalMinutes} ${L10n.text('minutesDay', native)}',
+                          '${getLevelDisplayName(profile.levelCode, profile.learningLanguageCode, nativeLanguage: profile.nativeLanguageCode)} · ${profile.dailyGoalMinutes} ${L10n.text('minutesDay', native)}',
                         ),
                       ],
                     ),

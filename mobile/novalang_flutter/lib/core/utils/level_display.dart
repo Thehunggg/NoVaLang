@@ -1,26 +1,22 @@
-String getLevelDisplayName(String levelCode, String learningLanguage) {
-  if (learningLanguage == 'ja') {
-    return const {
-          'A0': 'Kana Starter',
-          'A1_1': 'JLPT N5 Early',
-          'A1_2': 'JLPT N5',
-          'A2_1': 'JLPT N4 Early',
-          'A2_2': 'JLPT N4',
-          'B1_1': 'JLPT N3 Early',
-          'B1_2': 'JLPT N3',
-          'B2': 'JLPT N2',
-        }[levelCode] ??
-        levelCode;
-  }
-  return const {
-        'A0': 'CEFR Pre-A1',
-        'A1_1': 'CEFR A1 Early',
-        'A1_2': 'CEFR A1',
-        'A2_1': 'CEFR A2 Early',
-        'A2_2': 'CEFR A2',
-        'B1_1': 'CEFR B1 Early',
-        'B1_2': 'CEFR B1',
-        'B2': 'CEFR B2',
-      }[levelCode] ??
-      levelCode;
+import 'level_display_labels.dart';
+
+/// Display name for a level code.
+///
+/// Labels are loaded from `assets/shared/level_labels.json`
+/// (mirrored from `shared/i18n/level_labels.json`).
+///
+/// [nativeLanguage] is used for Japanese + Vietnamese labels,
+/// matching Web `getLevelDisplayName()` behavior.
+String getLevelDisplayName(
+  String levelCode,
+  String learningLanguage, {
+  String? nativeLanguage,
+}) {
+  return LevelDisplayLabels.instance.displayName(
+    levelCode,
+    learningLanguage,
+    nativeLanguage: nativeLanguage,
+  );
 }
+
+List<String> get levelOrder => LevelDisplayLabels.instance.levelOrder;

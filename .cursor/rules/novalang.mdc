@@ -93,6 +93,44 @@ Do not create Flutter-only data that conflicts with Web.
 
 If Flutter cannot directly consume shared JSON, mirror the same JSON into Flutter assets and document the sync.
 
+## Shared data sync workflow
+
+Any change affecting shared data or business logic must be made in `shared/` first.
+
+Shared data includes:
+
+- lesson data
+- exercise logic
+- language list
+- native language list
+- niche / learning focus list
+- level system
+- exam tracks
+- onboarding options
+- localization / i18n catalog
+- placement policy
+- auth provider catalog
+- profile schema
+- answer checking rules
+
+Do not fix shared business logic only in Web or only in Flutter.
+
+After changing JSON under `shared/config/` or `shared/i18n/`, run:
+
+```powershell
+npm run sync:flutter-assets
+```
+
+This copies shared JSON into `mobile/novalang_flutter/assets/shared/`.
+
+If lesson/content generation is added later, run the future generate script before syncing Flutter assets.
+
+Do not manually edit copied files under `mobile/novalang_flutter/assets/shared/` unless explicitly instructed. Update `shared/` and run the sync script instead.
+
+UI-only changes may target only the specified platform.
+
+Android-first design is allowed for mobile UI, but shared data must remain platform-independent.
+
 ## Localization rule
 
 If uiLanguage = vi, all user-facing text must be Vietnamese.

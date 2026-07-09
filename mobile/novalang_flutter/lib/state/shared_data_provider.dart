@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../models/auth_provider_option.dart';
 import '../models/daily_goal_option.dart';
 import '../models/exam_track.dart';
 import '../models/language_option.dart';
@@ -10,7 +11,8 @@ import '../services/shared_asset_loader.dart';
 /// Shared catalog providers.
 ///
 /// Data is loaded from `assets/shared/*.json`, mirrored from `shared/config/`
-/// and `shared/i18n/`. Update shared/ first, then re-copy assets.
+/// and `shared/i18n/`. Update shared/ first, then run:
+/// `npm run sync:flutter-assets`
 final nicheCatalogProvider = FutureProvider<List<Niche>>((ref) async {
   final rawNiches = await SharedAssetLoader.loadList('niche_options.json');
   final labels = await SharedAssetLoader.loadMap('niche_labels.json');
@@ -77,6 +79,13 @@ final availableExamTracksProvider =
 final placementPolicyProvider = FutureProvider<PlacementPolicy>((ref) async {
   final raw = await SharedAssetLoader.loadMap('placement_policy.json');
   return PlacementPolicy.fromJson(raw);
+});
+
+final authProvidersProvider = FutureProvider<List<AuthProviderOption>>((ref) async {
+  final raw = await SharedAssetLoader.loadList('auth_providers.json');
+  return raw
+      .map((item) => AuthProviderOption.fromJson(item as Map<String, dynamic>))
+      .toList(growable: false);
 });
 
 LanguageOption fallbackLanguage(String code) => LanguageOption(

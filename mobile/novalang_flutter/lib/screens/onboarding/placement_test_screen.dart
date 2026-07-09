@@ -32,7 +32,12 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
     final profile = ref.watch(profileProvider);
     final locale = profile.uiLanguageCode;
     if (resultLevel != null) {
-      return _result(context, locale, profile.learningLanguageCode);
+      return _result(
+        context,
+        locale,
+        profile.learningLanguageCode,
+        profile.nativeLanguageCode,
+      );
     }
     final question = japanesePlacementQuestions[index];
     final options = question.localizedOptions(locale);
@@ -128,8 +133,17 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
     }
   }
 
-  Widget _result(BuildContext context, String locale, String learningLanguage) {
-    final display = getLevelDisplayName(resultLevel!, learningLanguage);
+  Widget _result(
+    BuildContext context,
+    String locale,
+    String learningLanguage,
+    String nativeLanguage,
+  ) {
+    final display = getLevelDisplayName(
+      resultLevel!,
+      learningLanguage,
+      nativeLanguage: nativeLanguage,
+    );
     return AppScaffold(
       title: L10n.text('placementResult', locale),
       showBack: true,

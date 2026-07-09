@@ -79,6 +79,63 @@ Preferred shared folders:
 
 If Flutter cannot directly read shared JSON, mirror the same JSON into Flutter assets and document the sync.
 
+## Shared data sync workflow
+
+### For shared config / i18n data
+
+1. Edit files under `shared/config/` or `shared/i18n/`.
+2. Run:
+
+```powershell
+npm run sync:flutter-assets
+```
+
+3. Verify Flutter still works:
+
+```powershell
+cd mobile/novalang_flutter
+flutter analyze
+flutter build apk --debug
+```
+
+Do not manually edit copied files under `mobile/novalang_flutter/assets/shared/` unless explicitly instructed. Update `shared/` and run the sync script instead.
+
+### For lessons / courses
+
+Do not migrate lesson data unless the task explicitly requires it.
+
+Current Flutter lesson data remains in `mobile/novalang_flutter/lib/data/japanese_course_data.dart`.
+
+Future migration should use `shared/generated/` JSON or generated Dart files, not hand-edited Flutter-only copies.
+
+If lesson/content generation is added later, run the future generate script before syncing Flutter assets.
+
+### Shared data scope
+
+Any change affecting shared data or business logic must be made in `shared/` first.
+
+Shared data includes:
+
+- lesson data
+- exercise logic
+- language list
+- native language list
+- niche / learning focus list
+- level system
+- exam tracks
+- onboarding options
+- localization / i18n catalog
+- placement policy
+- auth provider catalog
+- profile schema
+- answer checking rules
+
+Do not fix shared business logic only in Web or only in Flutter.
+
+UI-only changes may target only the requested platform.
+
+Android-first design is allowed for mobile UI, but shared data must remain platform-independent.
+
 ## Codex role
 
 Codex mainly handles the Web React app.

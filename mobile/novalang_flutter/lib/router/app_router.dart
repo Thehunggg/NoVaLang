@@ -19,7 +19,7 @@ import '../screens/profile/learning_preferences_screen.dart';
 import '../screens/profile/profile_screen.dart';
 import '../screens/review/review_screen.dart';
 import '../screens/splash_screen.dart';
-import '../state/lesson_provider.dart';
+import '../data/japanese_course_data.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -64,10 +64,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/learn/:lessonId',
         builder: (context, state) {
           final lessonId = state.pathParameters['lessonId'] ?? '';
-          final lessons = ref.read(lessonProvider);
-          final lesson = lessons
-              .where((item) => item.id == lessonId)
-              .firstOrNull;
+          // Lookup from the full catalog (all languages).
+          final lesson = lessonById(lessonId);
           return LessonScreen(lesson: lesson);
         },
       ),

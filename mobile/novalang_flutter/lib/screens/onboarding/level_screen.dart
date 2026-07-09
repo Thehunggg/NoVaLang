@@ -116,6 +116,7 @@ class _LevelScreenState extends ConsumerState<LevelScreen> {
                               : getLevelDisplayName(
                                   track.levelId!,
                                   profile.learningLanguageCode,
+                                  nativeLanguage: profile.nativeLanguageCode,
                                 ),
                           style: const TextStyle(
                             fontWeight: FontWeight.w900,

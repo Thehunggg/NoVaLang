@@ -12,12 +12,14 @@ class LessonCard extends StatelessWidget {
     required this.onTap,
     required this.locale,
     required this.learningLanguage,
+    this.nativeLanguage,
   });
 
   final Lesson lesson;
   final VoidCallback onTap;
   final String locale;
   final String learningLanguage;
+  final String? nativeLanguage;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,11 @@ class LessonCard extends StatelessWidget {
                   children: [
                     Chip(
                       label: Text(
-                        getLevelDisplayName(lesson.level, learningLanguage),
+                        getLevelDisplayName(
+                          lesson.level,
+                          learningLanguage,
+                          nativeLanguage: nativeLanguage,
+                        ),
                       ),
                     ),
                     if (lesson.comingSoon)

@@ -74,5 +74,22 @@ All translations are local TypeScript objects. This MVP does not use OpenAI, Goo
 - `npm run dev` starts frontend and backend together.
 - `npm run build` type-checks and builds both applications.
 - `npm run dev:frontend` or `npm run dev:backend` starts one side only.
+- `npm run sync:flutter-assets` copies shared JSON from `shared/config/` and `shared/i18n/` into `mobile/novalang_flutter/assets/shared/`.
+
+## Shared data workflow
+
+Shared config and i18n live in `shared/`. Edit those files first, then sync to Flutter assets:
+
+```powershell
+# 1. Edit shared/config/*.json or shared/i18n/*.json
+npm run sync:flutter-assets
+
+# 2. Verify Flutter
+cd mobile/novalang_flutter
+flutter analyze
+flutter build apk --debug
+```
+
+Do not manually edit `mobile/novalang_flutter/assets/shared/` unless explicitly instructed.
 
 No API key, paid service, or copyrighted asset is required.

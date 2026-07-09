@@ -3,10 +3,13 @@
     "code": "en",
     "englishName": "English",
     "nativeName": "English",
-    "flagEmoji": "🌐",
+    "flagEmoji": "🇬🇧",
     "aliases": ["eng", "american", "british", "e"],
     "isSupportedAsNative": true,
-    "isSupportedAsLearning": true
+    "isSupportedAsLearning": true,
+    "color": "#22d3ee",
+    "greeting": "Hello!",
+    "description": "CEFR-inspired English from alphabet and sounds to practical B2 communication."
   },
   {
     "code": "vi",
@@ -24,7 +27,10 @@
     "flagEmoji": "🇯🇵",
     "aliases": ["nihongo", "nihon", "japan", "日本", "にほんご", "j"],
     "isSupportedAsNative": true,
-    "isSupportedAsLearning": true
+    "isSupportedAsLearning": true,
+    "color": "#f472b6",
+    "greeting": "こんにちは！",
+    "description": "Kana-first Japanese progressing through a JLPT N5 to N2 path."
   },
   {
     "code": "ko",
@@ -48,9 +54,12 @@
     "code": "es",
     "englishName": "Spanish",
     "nativeName": "Español",
-    "flagEmoji": "🌐",
+    "flagEmoji": "🇪🇸",
     "aliases": ["espanol", "castellano", "spain", "latin america", "s"],
     "isSupportedAsNative": true,
-    "isSupportedAsLearning": true
+    "isSupportedAsLearning": true,
+    "color": "#fbbf24",
+    "greeting": "¡Hola!",
+    "description": "CEFR-inspired Spanish beginning with alphabet, vowels, and practical B2 communication."
   }
 ]

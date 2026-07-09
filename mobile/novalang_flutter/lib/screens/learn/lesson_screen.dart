@@ -99,6 +99,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                               getLevelDisplayName(
                                 lesson.level,
                                 profile.learningLanguageCode,
+                                nativeLanguage: profile.nativeLanguageCode,
                               ),
                               style: const TextStyle(
                                 color: Color(0xFF67E8F9),
@@ -291,11 +292,17 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
 
   void _nextLesson() {
     final lessons = ref.read(lessonProvider);
-    final index = lessons.indexWhere((item) => item.id == widget.lesson!.id);
-    if (index >= 0 && index + 1 < lessons.length) {
-      context.go('/learn/${lessons[index + 1].id}');
-    } else {
-      context.go('/learn');
+    final currentId = widget.lesson!.id;
+    // Find the next non-coming-soon lesson in the catalog.
+    final index = lessons.indexWhere((l) => l.id == currentId);
+    if (index >= 0) {
+      for (int i = index + 1; i < lessons.length; i++) {
+        if (!lessons[i].comingSoon) {
+          context.go('/learn/${lessons[i].id}');
+          return;
+        }
+      }
     }
+    context.go('/learn');
   }
 }

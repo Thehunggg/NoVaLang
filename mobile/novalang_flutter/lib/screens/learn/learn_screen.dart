@@ -8,7 +8,7 @@ import '../../state/profile_provider.dart';
 import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/responsive_page.dart';
-import '../../widgets/lesson/lesson_card.dart';
+import '../../widgets/lesson/course_unit_card.dart';
 
 class LearnScreen extends ConsumerWidget {
   const LearnScreen({super.key});
@@ -16,56 +16,146 @@ class LearnScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final profile = ref.watch(profileProvider);
-    final lessons = ref.watch(lessonProvider);
-    final native = profile.nativeLanguageCode;
-    final learningOption = ref.watch(
-      languageByCodeProvider(profile.learningLanguageCode),
-    );
-    final trackAsync = ref.watch(
-      availableExamTracksProvider(profile.learningLanguageCode),
-    );
+    final units = ref.watch(courseUnitsProvider);
+    final locale = profile.uiLanguageCode;
+    final learningCode = profile.learningLanguageCode;
+
+    final learningOption = ref.watch(languageByCodeProvider(learningCode));
+    final trackAsync = ref.watch(availableExamTracksProvider(learningCode));
     final selectedTrack = trackAsync.maybeWhen(
       data: (tracks) =>
-          tracks.where((item) => item.id == profile.selectedTrack).firstOrNull ??
+          tracks.where((t) => t.id == profile.selectedTrack).firstOrNull ??
           tracks.firstOrNull,
       orElse: () => null,
     );
 
+    // Collect completed lesson IDs from saved sessions.
+    final sessions = profile.lessonSessions;
+    final completedIds = sessions.entries
+        .where((e) => e.value['completedAt'] != null)
+        .map((e) => e.key)
+        .toSet();
+
     return AppScaffold(
-      title: L10n.text('learn', native),
+      title: L10n.text('learn', locale),
       selectedNavIndex: 0,
       child: ResponsivePage(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              '${learningOption.flagEmoji} ${learningOption.nativeName}${selectedTrack == null ? '' : ' · ${selectedTrack.title}'}',
-              style: Theme.of(
-                context,
-              ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w900),
+            // ── Header ──────────────────────────────────────────────────────
+            _Header(
+              locale: locale,
+              learningOption: learningOption,
+              selectedTrack: selectedTrack?.title,
+              completedCount: completedIds.length,
             ),
-            const SizedBox(height: 6),
-            Text(
-              native == 'vi'
-                  ? 'Mẫu nội dung hiện tập trung vào Kana Starter và JLPT N5.'
-                  : 'Sample content focuses on Kana Starter and JLPT N5.',
-            ),
-            const SizedBox(height: 18),
-            if (profile.learningLanguageCode != 'ja')
-              Center(child: Text(L10n.text('comingSoon', native)))
+            const SizedBox(height: 20),
+
+            // ── Course units or coming-soon ─────────────────────────────────
+            if (learningCode != 'ja')
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 40),
+                  child: Column(
+                    children: [
+                      const Icon(
+                        Icons.construction,
+                        size: 48,
+                        color: Colors.white38,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        L10n.text('comingSoon', locale),
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(color: Colors.white54),
+                      ),
+                    ],
+                  ),
+                ),
+              )
             else
-              for (final lesson in lessons) ...[
-                LessonCard(
-                  lesson: lesson,
-                  locale: native,
-                  learningLanguage: profile.learningLanguageCode,
-                  onTap: () => context.go('/learn/${lesson.id}'),
+              for (int i = 0; i < units.length; i++) ...[
+                CourseUnitCard(
+                  unit: units[i],
+                  locale: locale,
+                  learningLanguage: learningCode,
+                  completedLessonIds: completedIds,
+                  initiallyExpanded: i == 0,
+                  onLessonTap: (lesson) =>
+                      context.go('/learn/${lesson.id}'),
                 ),
                 const SizedBox(height: 12),
               ],
           ],
         ),
       ),
+    );
+  }
+}
+
+class _Header extends StatelessWidget {
+  const _Header({
+    required this.locale,
+    required this.learningOption,
+    required this.selectedTrack,
+    required this.completedCount,
+  });
+
+  final String locale;
+  final dynamic learningOption;
+  final String? selectedTrack;
+  final int completedCount;
+
+  @override
+  Widget build(BuildContext context) {
+    final isVi = locale == 'vi';
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          '${learningOption.flagEmoji} ${learningOption.nativeName}'
+          '${selectedTrack != null ? ' · $selectedTrack' : ''}',
+          style: Theme.of(context)
+              .textTheme
+              .headlineSmall
+              ?.copyWith(fontWeight: FontWeight.w900),
+        ),
+        const SizedBox(height: 6),
+        Text(
+          isVi
+              ? 'Nội dung Kana Starter & JLPT N5. Bấm vào bài để bắt đầu.'
+              : 'Kana Starter & JLPT N5 content. Tap a lesson to start.',
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium
+              ?.copyWith(color: Colors.white70),
+        ),
+        if (completedCount > 0) ...[
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              const Icon(
+                Icons.auto_awesome,
+                size: 15,
+                color: Color(0xFF22D3EE),
+              ),
+              const SizedBox(width: 6),
+              Text(
+                isVi
+                    ? '$completedCount bài đã hoàn thành'
+                    : '$completedCount lesson${completedCount == 1 ? '' : 's'} completed',
+                style: const TextStyle(
+                  color: Color(0xFF22D3EE),
+                  fontWeight: FontWeight.w700,
+                  fontSize: 13,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ],
     );
   }
 }
