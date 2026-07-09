@@ -1,0 +1,47 @@
+[
+  {
+    "code": "vi",
+    "englishName": "Vietnamese",
+    "nativeName": "Tiếng Việt",
+    "flagEmoji": "🇻🇳",
+    "aliases": ["tieng viet", "viet", "vietnam", "v"],
+    "direction": "ltr",
+    "isSupportedAsNative": true
+  },
+  {
+    "code": "en",
+    "englishName": "English",
+    "nativeName": "English",
+    "flagEmoji": "🇬🇧",
+    "aliases": ["eng", "american", "british", "e"],
+    "direction": "ltr",
+    "isSupportedAsNative": true
+  },
+  {
+    "code": "ja",
+    "englishName": "Japanese",
+    "nativeName": "日本語",
+    "flagEmoji": "🇯🇵",
+    "aliases": ["nihongo", "nihon", "japan", "日本", "にほんご", "j"],
+    "direction": "ltr",
+    "isSupportedAsNative": true
+  },
+  {
+    "code": "ko",
+    "englishName": "Korean",
+    "nativeName": "한국어",
+    "flagEmoji": "🇰🇷",
+    "aliases": ["hangul", "hangeul", "korea", "korean", "한국", "k"],
+    "direction": "ltr",
+    "isSupportedAsNative": true
+  },
+  {
+    "code": "zh",
+    "englishName": "Chinese",
+    "nativeName": "中文",
+    "flagEmoji": "🇨🇳",
+    "aliases": ["zh-CN", "zh-TW", "mandarin", "putonghua", "hanzi", "中国", "中文", "chinese", "z"],
+    "direction": "ltr",
+    "isSupportedAsNative": true
+  }
+]

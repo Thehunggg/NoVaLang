@@ -46,7 +46,13 @@ class _LearningLanguageScreenState
                 .where(
                   (item) => item.isSupportedAsLearning && item.matches(query),
                 )
-                .toList();
+                .toList()
+              ..sort((a, b) {
+                final byAvailability =
+                    (b.isCourseAvailable ? 1 : 0) - (a.isCourseAvailable ? 1 : 0);
+                if (byAvailability != 0) return byAvailability;
+                return a.englishName.compareTo(b.englishName);
+              });
             final tracks = tracksAsync.maybeWhen(
               data: (value) => value,
               orElse: () => const <String, List<ExamTrack>>{},
@@ -68,7 +74,8 @@ class _LearningLanguageScreenState
                 for (final language in items) ...[
                   LanguageOptionTile(
                     language: language,
-                    trailing: _status(language, tracks),
+                    languageCode: locale,
+                    trailing: _status(language, tracks, locale),
                     onTap: () => _choose(language),
                   ),
                   const SizedBox(height: 10),
@@ -84,17 +91,26 @@ class _LearningLanguageScreenState
   Widget _status(
     LanguageOption language,
     Map<String, List<ExamTrack>> tracks,
+    String locale,
   ) {
+    if (!language.isCourseAvailable) {
+      return Chip(
+        label: Text(L10n.text('comingSoon', locale)),
+        backgroundColor: Colors.orangeAccent.withValues(alpha: 0.16),
+      );
+    }
     final languageTracks = tracks[language.code] ?? const <ExamTrack>[];
     if (languageTracks.isEmpty) {
-      return const SizedBox.shrink();
+      return Chip(label: Text(L10n.text('availableNow', locale)));
     }
     final labels = languageTracks
         .where((track) => track.examTrack != null)
         .map((track) => track.examTrack!)
         .toSet()
         .join(' · ');
-    if (labels.isEmpty) return const SizedBox.shrink();
+    if (labels.isEmpty) {
+      return Chip(label: Text(L10n.text('availableNow', locale)));
+    }
     return Chip(label: Text(labels));
   }
 

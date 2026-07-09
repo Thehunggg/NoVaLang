@@ -75,6 +75,12 @@ class ProfileNotifier extends Notifier<UserProfile> {
     await ref.read(localStorageServiceProvider).clearActiveUser();
   }
 
+  /// Debug-only: wipe all local profiles and progress, then return to auth.
+  Future<void> resetLocalTestData() async {
+    await ref.read(localStorageServiceProvider).clearAllLocalTestData();
+    state = UserProfile.defaults();
+  }
+
   /// Mock auth is for local development only. Replace with Supabase Auth before production.
   Future<void> signInGuest() => _signInWithTemplate(MockAuthService.guestTemplate());
 

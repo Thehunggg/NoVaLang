@@ -85,6 +85,15 @@ class LocalStorageService {
     await prefs.remove(_activeUserIdKey);
   }
 
+  /// Clears all local test data (profiles, active user, legacy profile).
+  /// Lesson progress and mock auth state live inside profile JSON.
+  Future<void> clearAllLocalTestData() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_profilesKey);
+    await prefs.remove(_activeUserIdKey);
+    await prefs.remove(_legacyProfileKey);
+  }
+
   Future<UserProfile?> loadProfileForUser(String userId) async {
     final profiles = await _loadProfileMap();
     return profiles[userId];

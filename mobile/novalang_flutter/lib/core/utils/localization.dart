@@ -33,6 +33,20 @@ class L10n {
     'flashcards': {'en': 'Flashcards', 'vi': 'Thẻ ghi nhớ'},
     'profile': {'en': 'Profile', 'vi': 'Hồ sơ'},
     'comingSoon': {'en': 'Coming soon', 'vi': 'Sắp ra mắt'},
+    'availableNow': {'en': 'Available', 'vi': 'Có sẵn'},
+    'lessonsAvailableCount': {'en': '{n} lessons', 'vi': '{n} bài học'},
+    'curriculumLanguageComingSoon': {
+      'en':
+          '{language} courses are coming soon. Pick English, Japanese, or Spanish to start learning now.',
+      'vi':
+          'Khóa học {language} sắp ra mắt. Chọn English, Japanese hoặc Spanish để học ngay.',
+    },
+    'curriculumNicheComingSoon': {
+      'en':
+          'Lessons for {niche} are coming soon. Try Daily Life, Travel & Hotel, or Restaurant & Food Service.',
+      'vi':
+          'Bài học cho {niche} sắp ra mắt. Thử Đời sống hàng ngày, Du lịch & khách sạn, hoặc Nhà hàng & dịch vụ ăn uống.',
+    },
     'checkAnswer': {'en': 'Check answer', 'vi': 'Kiểm tra'},
     'correct': {'en': 'Correct', 'vi': 'Chính xác'},
     'tryAgain': {'en': 'Not quite', 'vi': 'Chưa đúng'},
@@ -201,6 +215,23 @@ class L10n {
       'en': 'Delete/reset local data',
       'vi': 'Xóa/đặt lại dữ liệu local',
     },
+    'devTestSection': {'en': 'Dev / Test', 'vi': 'Dev / Test'},
+    'resetLocalTestData': {
+      'en': 'Reset local test data',
+      'vi': 'Xóa dữ liệu test local',
+    },
+    'resetLocalTestDataConfirmTitle': {
+      'en': 'Reset local test data?',
+      'vi': 'Xóa dữ liệu test local?',
+    },
+    'resetLocalTestDataConfirmMessage': {
+      'en':
+          'This removes all saved profiles, lesson progress, and mock auth data on this device. Shared lesson assets are not affected.',
+      'vi':
+          'Thao tác này xóa toàn bộ hồ sơ, tiến độ bài học và dữ liệu đăng nhập mock trên thiết bị. Dữ liệu bài học dùng chung không bị ảnh hưởng.',
+    },
+    'cancel': {'en': 'Cancel', 'vi': 'Hủy'},
+    'confirm': {'en': 'Reset', 'vi': 'Xóa'},
     'saveChanges': {'en': 'Save changes', 'vi': 'Lưu thay đổi'},
     'changeFocusPlacement': {
       'en': 'Take a placement test',

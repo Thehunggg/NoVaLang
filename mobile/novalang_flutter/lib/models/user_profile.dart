@@ -70,8 +70,8 @@ class UserProfile {
     uiLanguageCode: 'en',
     learningLanguageCode: 'ja',
     dailyGoalMinutes: 10,
-    selectedNiches: ['jlpt'],
-    primaryNiche: 'jlpt',
+    selectedNiches: ['daily_life'],
+    primaryNiche: 'daily_life',
     levelCode: 'A0',
     selectedTrack: 'ja-kana-starter',
     nicheUpdatedAt: null,
@@ -201,10 +201,11 @@ class UserProfile {
         _readLearningLanguageRaw(json),
       ),
       dailyGoalMinutes: json['dailyGoalMinutes'] as int? ?? 10,
-      selectedNiches:
-          (json['selectedNiches'] as List<dynamic>? ?? const ['jlpt'])
-              .cast<String>(),
-      primaryNiche: json['primaryNiche'] as String?,
+      selectedNiches: _normalizeNicheList(
+        (json['selectedNiches'] as List<dynamic>? ?? const ['daily_life'])
+            .cast<String>(),
+      ),
+      primaryNiche: _normalizeNicheId(json['primaryNiche'] as String?),
       levelCode: _normalizeLevel(json['levelCode'] as String?),
       selectedTrack: json['selectedTrack'] as String? ?? 'ja-kana-starter',
       nicheUpdatedAt: json['nicheUpdatedAt'] as String?,
@@ -274,4 +275,33 @@ class UserProfile {
     'B2' => value!,
     _ => 'A0',
   };
+
+  /// Maps legacy niche IDs from older profiles onto the shared niche catalog.
+  static const nicheLegacyIdMap = <String, String>{
+    'everyday': 'daily_life',
+    'travel': 'travel_hotel',
+    'shopping': 'restaurant_food_service',
+    'culture': 'daily_life',
+    'social': 'daily_life',
+    'jlpt': 'daily_life',
+    'toeic': 'daily_life',
+    'ielts': 'daily_life',
+    'toefl': 'daily_life',
+    'other_exams': 'daily_life',
+    'business': 'business_office',
+    'it': 'it_programming',
+    'engineering': 'manufacturing_engineering',
+    'ai_data': 'ai_data_analytics',
+    'healthcare': 'healthcare',
+  };
+
+  static String _normalizeNicheId(String? raw) {
+    if (raw == null || raw.trim().isEmpty) return 'daily_life';
+    return nicheLegacyIdMap[raw] ?? raw;
+  }
+
+  static List<String> _normalizeNicheList(List<String> raw) {
+    final mapped = raw.map(_normalizeNicheId).toSet().toList(growable: false);
+    return mapped.isEmpty ? const ['daily_life'] : mapped;
+  }
 }

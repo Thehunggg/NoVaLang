@@ -27,8 +27,8 @@ export function OnboardingPage() {
   const [language, setLanguage] = useState<LanguageCode>(progress.learningLanguage || "ja");
   const [level, setLevel] = useState<LevelId>(progress.currentLevel || "A0");
   const [goal, setGoal] = useState<DailyGoal>(progress.dailyGoalMinutes);
-  const [selectedNiches, setSelectedNiches] = useState<Set<string>>(new Set(progress.selectedNiches.length ? progress.selectedNiches : ["jlpt"]));
-  const [primaryNiche, setPrimaryNiche] = useState<string | null>(progress.primaryNiche ?? "jlpt");
+  const [selectedNiches, setSelectedNiches] = useState<Set<string>>(new Set(progress.selectedNiches.length ? progress.selectedNiches : ["daily_life"]));
+  const [primaryNiche, setPrimaryNiche] = useState<string | null>(progress.primaryNiche ?? "daily_life");
   const course = courses.find((item) => item.language === language)!;
   const trackOptions: ExamTrackOption[] = course.examTracks?.filter((item) => !item.comingSoon) ?? course.levels.filter((item) => item.units.length).map((item) => ({ id: item.id, language, title: getLevelDisplayName(item.id, language, progress.nativeLanguage), description: item.description, trackType: "general" as const, levelId: item.id, comingSoon: false }));
   const groups = groupedNiches();

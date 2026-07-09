@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -173,11 +174,33 @@ class ProfileScreen extends ConsumerWidget {
                 L10n.text('logout', native),
                 L10n.text('comingSoonLinked', native),
               ),
-              _row(
-                L10n.text('deleteResetLocalData', native),
-                L10n.text('comingSoonLinked', native),
-              ),
             ]),
+            if (kDebugMode) ...[
+              AppCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      L10n.text('devTestSection', native),
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    AppButton(
+                      label: L10n.text('resetLocalTestData', native),
+                      icon: Icons.delete_forever_outlined,
+                      outlined: true,
+                      onPressed: () => _confirmResetLocalTestData(
+                        context,
+                        ref,
+                        native,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ],
         ),
       ),
@@ -203,6 +226,34 @@ class ProfileScreen extends ConsumerWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _confirmResetLocalTestData(
+    BuildContext context,
+    WidgetRef ref,
+    String native,
+  ) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(L10n.text('resetLocalTestDataConfirmTitle', native)),
+        content: Text(L10n.text('resetLocalTestDataConfirmMessage', native)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(L10n.text('cancel', native)),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(L10n.text('confirm', native)),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !context.mounted) return;
+    await ref.read(profileProvider.notifier).resetLocalTestData();
+    if (!context.mounted) return;
+    context.go('/auth');
   }
 
   Widget _row(String label, String value) {

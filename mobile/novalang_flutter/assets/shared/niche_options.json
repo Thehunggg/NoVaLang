@@ -1,17 +1,107 @@
 [
-  {"id": "everyday", "category": "Daily Communication", "title": "Everyday Conversation", "description": "Daily greetings, small talk, and survival phrases.", "isReady": true},
-  {"id": "travel", "category": "Daily Communication", "title": "Travel & Living Abroad", "description": "Airports, transport, housing, and local life.", "isReady": false},
-  {"id": "culture", "category": "Daily Communication", "title": "Culture & Entertainment", "description": "Movies, shows, music, games, and fandom.", "isReady": false},
-  {"id": "social", "category": "Daily Communication", "title": "Social / Friends / Dating", "description": "Casual messaging and friendly conversation.", "isReady": false},
-  {"id": "shopping", "category": "Daily Communication", "title": "Shopping / Restaurant / Services", "description": "Orders, prices, bookings, and service counters.", "isReady": false},
-  {"id": "jlpt", "category": "Exam Preparation", "title": "JLPT", "description": "Japanese exam track from Kana Starter to JLPT N5.", "isReady": true},
-  {"id": "toeic", "category": "Exam Preparation", "title": "TOEIC", "description": "English workplace test preparation.", "isReady": false},
-  {"id": "ielts", "category": "Exam Preparation", "title": "IELTS", "description": "Academic and general English test preparation.", "isReady": false},
-  {"id": "toefl", "category": "Exam Preparation", "title": "TOEFL", "description": "University-focused English exam practice.", "isReady": false},
-  {"id": "other_exams", "category": "Exam Preparation", "title": "DELE / HSK / Other Exams", "description": "Other exam tracks on the roadmap.", "isReady": false},
-  {"id": "business", "category": "Career / Specialized Fields", "title": "Business / Office / Email", "description": "Meetings, email, and professional language.", "isReady": false},
-  {"id": "it", "category": "Career / Specialized Fields", "title": "IT / Programming", "description": "Software, tools, tickets, and standups.", "isReady": false},
-  {"id": "engineering", "category": "Career / Specialized Fields", "title": "Engineering / Manufacturing", "description": "Factory, process, and technical communication.", "isReady": false},
-  {"id": "ai_data", "category": "Career / Specialized Fields", "title": "AI / Data Science / Robotics", "description": "AI, data, models, robotics, and research terms.", "isReady": false},
-  {"id": "healthcare", "category": "Career / Specialized Fields", "title": "Healthcare / Nursing / Caregiving", "description": "Care, symptoms, and patient communication.", "isReady": false}
+  {
+    "id": "daily_life",
+    "category": "Daily Communication",
+    "title": "Daily Life",
+    "description": "Greetings, home, shopping, transport, health, and everyday conversation.",
+    "isReady": true
+  },
+  {
+    "id": "travel_hotel",
+    "category": "Daily Communication",
+    "title": "Travel & Hotel",
+    "description": "Airport, immigration, hotels, tickets, directions, and travel help.",
+    "isReady": true
+  },
+  {
+    "id": "restaurant_food_service",
+    "category": "Daily Communication",
+    "title": "Restaurant & Food Service",
+    "description": "Ordering, allergies, recommendations, payment, and polite service phrases.",
+    "isReady": true
+  },
+  {
+    "id": "it_programming",
+    "category": "Career / Specialized Fields",
+    "title": "IT & Programming",
+    "description": "Software, tools, tickets, standups, and technical collaboration.",
+    "isReady": false
+  },
+  {
+    "id": "ai_data_analytics",
+    "category": "Career / Specialized Fields",
+    "title": "AI, Data & Analytics",
+    "description": "AI, data, models, analytics, and research communication.",
+    "isReady": false
+  },
+  {
+    "id": "healthcare",
+    "category": "Career / Specialized Fields",
+    "title": "Healthcare",
+    "description": "Symptoms, care, patient communication, and medical basics.",
+    "isReady": false
+  },
+  {
+    "id": "business_office",
+    "category": "Career / Specialized Fields",
+    "title": "Business & Office",
+    "description": "Meetings, email, scheduling, and professional workplace language.",
+    "isReady": false
+  },
+  {
+    "id": "sales_customer_service",
+    "category": "Career / Specialized Fields",
+    "title": "Sales & Customer Service",
+    "description": "Sales conversations, complaints, and customer care phrases.",
+    "isReady": false
+  },
+  {
+    "id": "education_school",
+    "category": "Career / Specialized Fields",
+    "title": "Education & School",
+    "description": "Classroom language, campus life, and academic communication.",
+    "isReady": false
+  },
+  {
+    "id": "manufacturing_engineering",
+    "category": "Career / Specialized Fields",
+    "title": "Manufacturing & Engineering",
+    "description": "Factory, process, safety, and technical engineering language.",
+    "isReady": false
+  },
+  {
+    "id": "construction_real_estate",
+    "category": "Career / Specialized Fields",
+    "title": "Construction & Real Estate",
+    "description": "Sites, housing, contracts, and property conversations.",
+    "isReady": false
+  },
+  {
+    "id": "logistics_delivery",
+    "category": "Career / Specialized Fields",
+    "title": "Logistics & Delivery",
+    "description": "Shipping, warehouses, routes, and delivery communication.",
+    "isReady": false
+  },
+  {
+    "id": "finance_accounting",
+    "category": "Career / Specialized Fields",
+    "title": "Finance & Accounting",
+    "description": "Banking, invoices, budgets, and accounting basics.",
+    "isReady": false
+  },
+  {
+    "id": "marketing_content_creation",
+    "category": "Career / Specialized Fields",
+    "title": "Marketing & Content Creation",
+    "description": "Campaigns, social content, branding, and creative briefs.",
+    "isReady": false
+  },
+  {
+    "id": "environment_energy_agriculture",
+    "category": "Career / Specialized Fields",
+    "title": "Environment, Energy & Agriculture",
+    "description": "Sustainability, energy, farming, and environmental topics.",
+    "isReady": false
+  }
 ]

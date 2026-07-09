@@ -10,16 +10,35 @@ export interface NicheOption {
   isReady: boolean;
 }
 
-const titleVi = nicheLabels.titles as Record<string, string>;
-const categoryVi = nicheLabels.categories as Record<string, string>;
+type LocalizedMap = Record<string, string | Record<string, string>>;
+
+const titles = nicheLabels.titles as LocalizedMap;
+const categories = nicheLabels.categories as LocalizedMap;
+export const nicheLegacyIdMap =
+  ((nicheLabels as { legacyIdMap?: Record<string, string> }).legacyIdMap ??
+    {}) as Record<string, string>;
+
+const pickLabel = (value: string | Record<string, string> | undefined, language: SupportedUILanguage, fallback: string) => {
+  if (!value) return fallback;
+  if (typeof value === "string") return language === "vi" ? value : fallback;
+  return value[language] ?? value.en ?? fallback;
+};
 
 export const nicheOptions = rawNiches as NicheOption[];
 
-export const nicheTitle = (niche: NicheOption, language: SupportedUILanguage) => language === "vi" ? titleVi[niche.id] ?? niche.title : niche.title;
-export const nicheCategory = (category: string, language: SupportedUILanguage) => language === "vi" ? categoryVi[category] ?? category : category;
+export const normalizeNicheId = (id: string | null | undefined) => {
+  if (!id) return id;
+  return nicheLegacyIdMap[id] ?? id;
+};
 
-export const groupedNiches = () => nicheOptions.reduce<Record<string, NicheOption[]>>((groups, niche) => {
-  groups[niche.category] = [...(groups[niche.category] ?? []), niche];
-  return groups;
-}, {});
+export const nicheTitle = (niche: NicheOption, language: SupportedUILanguage) =>
+  pickLabel(titles[niche.id], language, niche.title);
 
+export const nicheCategory = (category: string, language: SupportedUILanguage) =>
+  pickLabel(categories[category], language, category);
+
+export const groupedNiches = () =>
+  nicheOptions.reduce<Record<string, NicheOption[]>>((groups, niche) => {
+    groups[niche.category] = [...(groups[niche.category] ?? []), niche];
+    return groups;
+  }, {});

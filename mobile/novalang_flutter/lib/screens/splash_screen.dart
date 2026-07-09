@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/constants/app_constants.dart';
+import '../state/lesson_provider.dart';
 import '../state/profile_provider.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
@@ -18,7 +19,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     super.initState();
     Future.microtask(() async {
       await ref.read(profileProvider.notifier).load();
-      await Future<void>.delayed(const Duration(milliseconds: 450));
+      // Prefetch shared curriculum (falls back to japanese_course_data.dart).
+      await ref.read(curriculumCatalogProvider.future);
+      await Future<void>.delayed(const Duration(milliseconds: 350));
       if (!mounted) return;
       final profile = ref.read(profileProvider);
       context.go(profile.onboardingComplete ? '/learn' : '/auth');

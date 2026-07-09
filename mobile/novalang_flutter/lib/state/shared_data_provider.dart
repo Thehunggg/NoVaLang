@@ -6,28 +6,43 @@ import '../models/exam_track.dart';
 import '../models/language_option.dart';
 import '../models/niche.dart';
 import '../models/placement_policy.dart';
+import '../models/user_profile.dart';
 import '../services/shared_asset_loader.dart';
+
+String _labelFromLocalized(
+  dynamic value,
+  String locale,
+  String fallback,
+) {
+  if (value == null) return fallback;
+  if (value is String) return locale == 'vi' ? value : fallback;
+  if (value is Map) {
+    final map = value.map((key, item) => MapEntry(key.toString(), item.toString()));
+    return map[locale] ?? map['en'] ?? fallback;
+  }
+  return fallback;
+}
 
 /// Shared catalog providers.
 ///
-/// Data is loaded from `assets/shared/*.json`, mirrored from `shared/config/`
-/// and `shared/i18n/`. Update shared/ first, then run:
-/// `npm run sync:flutter-assets`
+/// Data is loaded from `assets/shared/*.json`, mirrored from `shared/`.
+/// Update shared/ first, then run: `npm run sync:flutter-assets`
 final nicheCatalogProvider = FutureProvider<List<Niche>>((ref) async {
   final rawNiches = await SharedAssetLoader.loadList('niche_options.json');
   final labels = await SharedAssetLoader.loadMap('niche_labels.json');
-  final titlesVi = Map<String, String>.from(labels['titles'] as Map);
-  final categoriesVi = Map<String, String>.from(labels['categories'] as Map);
+  final titles = labels['titles'] as Map? ?? const {};
+  final categories = labels['categories'] as Map? ?? const {};
 
   return rawNiches
       .map((item) {
         final json = item as Map<String, dynamic>;
         final category = json['category'] as String;
         final id = json['id'] as String;
+        final title = json['title'] as String;
         return Niche.fromSharedJson(
           json,
-          categoryVi: categoriesVi[category] ?? category,
-          titleVi: titlesVi[id] ?? json['title'] as String,
+          categoryVi: _labelFromLocalized(categories[category], 'vi', category),
+          titleVi: _labelFromLocalized(titles[id], 'vi', title),
         );
       })
       .toList(growable: false);
@@ -47,6 +62,25 @@ final languageCatalogProvider = FutureProvider<List<LanguageOption>>((ref) async
   return raw
       .map((item) => LanguageOption.fromJson(item as Map<String, dynamic>))
       .toList(growable: false);
+});
+
+/// Native/UI languages from shared/config/native_language_options.json (5 for now).
+final nativeLanguageCatalogProvider = FutureProvider<List<LanguageOption>>((ref) async {
+  try {
+    final raw = await SharedAssetLoader.loadList('native_language_options.json');
+    return raw
+        .map((item) {
+          final json = Map<String, dynamic>.from(item as Map);
+          json['isSupportedAsLearning'] = false;
+          json['isSupportedAsNative'] = true;
+          return LanguageOption.fromJson(json);
+        })
+        .toList(growable: false);
+  } catch (_) {
+    // Fallback: filter learning catalog for native-capable entries.
+    final all = await ref.watch(languageCatalogProvider.future);
+    return all.where((item) => item.isSupportedAsNative).toList(growable: false);
+  }
 });
 
 final dailyGoalCatalogProvider = FutureProvider<List<DailyGoalOption>>((ref) async {
@@ -105,3 +139,7 @@ final languageByCodeProvider = Provider.family<LanguageOption, String>((ref, cod
     orElse: () => fallbackLanguage(code),
   );
 });
+
+/// Normalize niche id using the shared legacy map on [UserProfile].
+String normalizeSharedNicheId(String? raw) =>
+    UserProfile.nicheLegacyIdMap[raw] ?? raw ?? 'daily_life';

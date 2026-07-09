@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 /**
- * Sync shared JSON assets from shared/config/ and shared/i18n/
- * to mobile/novalang_flutter/assets/shared/.
+ * Sync shared JSON assets to mobile/novalang_flutter/assets/shared/.
+ *
+ * Sources:
+ *   shared/config/*.json
+ *   shared/i18n/*.json
+ *   shared/generated/*.json  (curriculum)
+ *   shared/content/*.json    (seed content, flat only)
  *
  * Run: npm run sync:flutter-assets
- *
- * Edit shared/ first — never copy assets by hand.
  */
 
 import { copyFile, mkdir, readdir, stat } from 'node:fs/promises';
@@ -18,6 +21,8 @@ const ROOT = path.resolve(__dirname, '..');
 const SOURCE_DIRS = [
   { label: 'shared/config', dir: path.join(ROOT, 'shared', 'config') },
   { label: 'shared/i18n', dir: path.join(ROOT, 'shared', 'i18n') },
+  { label: 'shared/generated', dir: path.join(ROOT, 'shared', 'generated') },
+  { label: 'shared/content', dir: path.join(ROOT, 'shared', 'content'), flatOnly: true },
 ];
 
 const DEST_DIR = path.join(
@@ -28,7 +33,7 @@ const DEST_DIR = path.join(
   'shared',
 );
 
-async function listJsonFiles(dir) {
+async function listJsonFiles(dir, { flatOnly = false } = {}) {
   const entries = await readdir(dir);
   const files = [];
   for (const entry of entries) {
@@ -36,6 +41,8 @@ async function listJsonFiles(dir) {
     const info = await stat(fullPath);
     if (info.isFile() && entry.endsWith('.json')) {
       files.push(fullPath);
+    } else if (info.isDirectory() && !flatOnly) {
+      // skip nested dirs for content; generated is flat
     }
   }
   return files.sort();
@@ -47,8 +54,14 @@ async function main() {
   let copied = 0;
   const copiedFiles = [];
 
-  for (const { label, dir } of SOURCE_DIRS) {
-    const files = await listJsonFiles(dir);
+  for (const { label, dir, flatOnly } of SOURCE_DIRS) {
+    let files = [];
+    try {
+      files = await listJsonFiles(dir, { flatOnly });
+    } catch {
+      console.log(`[skip] ${label}: directory missing`);
+      continue;
+    }
     if (files.length === 0) {
       console.log(`[skip] ${label}: no JSON files found`);
       continue;
@@ -59,8 +72,13 @@ async function main() {
       const destPath = path.join(DEST_DIR, fileName);
       await copyFile(sourcePath, destPath);
       copied += 1;
-      copiedFiles.push({ source: path.relative(ROOT, sourcePath), dest: path.relative(ROOT, destPath) });
-      console.log(`[copy] ${path.relative(ROOT, sourcePath)} -> ${path.relative(ROOT, destPath)}`);
+      copiedFiles.push({
+        source: path.relative(ROOT, sourcePath),
+        dest: path.relative(ROOT, destPath),
+      });
+      console.log(
+        `[copy] ${path.relative(ROOT, sourcePath)} -> ${path.relative(ROOT, destPath)}`,
+      );
     }
   }
 

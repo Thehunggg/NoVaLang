@@ -29,7 +29,7 @@ class _NativeLanguageScreenState extends ConsumerState<NativeLanguageScreen> {
   Widget build(BuildContext context) {
     final profile = ref.watch(profileProvider);
     final locale = profile.nativeLanguageCode;
-    final catalogAsync = ref.watch(languageCatalogProvider);
+    final catalogAsync = ref.watch(nativeLanguageCatalogProvider);
 
     return AppScaffold(
       title: L10n.text('nativeLanguage', locale),

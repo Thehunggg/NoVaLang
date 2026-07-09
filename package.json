@@ -12,7 +12,9 @@
     "build:frontend": "npm run build --prefix frontend",
     "build:backend": "npm run build --prefix backend",
     "start": "npm run start --prefix backend",
-    "sync:flutter-assets": "node scripts/sync-shared-assets.mjs"
+    "generate:curriculum": "node scripts/generate-curriculum.mjs",
+    "sync:flutter-assets": "node scripts/sync-shared-assets.mjs",
+    "sync:curriculum": "npm run generate:curriculum && npm run sync:flutter-assets"
   },
   "devDependencies": { "concurrently": "^9.1.2" }
 }

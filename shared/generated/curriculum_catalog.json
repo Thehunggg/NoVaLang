@@ -1,0 +1,91 @@
+{
+  "version": "curriculum-v2",
+  "generatedAt": "2026-07-09T08:52:59.583Z",
+  "languages": [
+    "en",
+    "ja",
+    "es"
+  ],
+  "niches": [
+    "daily_life",
+    "travel_hotel",
+    "restaurant_food_service"
+  ],
+  "courseCount": 9,
+  "lessonCount": 81,
+  "unitCount": 19,
+  "courses": [
+    {
+      "id": "ja-daily_life",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "title": "Japanese · Daily Life",
+      "lessonCount": 17,
+      "playableLessonCount": 17
+    },
+    {
+      "id": "ja-travel_hotel",
+      "languageCode": "ja",
+      "nicheId": "travel_hotel",
+      "title": "Japanese · Travel & Hotel",
+      "lessonCount": 8,
+      "playableLessonCount": 8
+    },
+    {
+      "id": "ja-restaurant_food_service",
+      "languageCode": "ja",
+      "nicheId": "restaurant_food_service",
+      "title": "Japanese · Restaurant & Food Service",
+      "lessonCount": 8,
+      "playableLessonCount": 8
+    },
+    {
+      "id": "en-daily_life",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "title": "English · Daily Life",
+      "lessonCount": 8,
+      "playableLessonCount": 8
+    },
+    {
+      "id": "en-travel_hotel",
+      "languageCode": "en",
+      "nicheId": "travel_hotel",
+      "title": "English · Travel & Hotel",
+      "lessonCount": 8,
+      "playableLessonCount": 8
+    },
+    {
+      "id": "en-restaurant_food_service",
+      "languageCode": "en",
+      "nicheId": "restaurant_food_service",
+      "title": "English · Restaurant & Food Service",
+      "lessonCount": 8,
+      "playableLessonCount": 8
+    },
+    {
+      "id": "es-daily_life",
+      "languageCode": "es",
+      "nicheId": "daily_life",
+      "title": "Spanish · Daily Life",
+      "lessonCount": 8,
+      "playableLessonCount": 8
+    },
+    {
+      "id": "es-travel_hotel",
+      "languageCode": "es",
+      "nicheId": "travel_hotel",
+      "title": "Spanish · Travel & Hotel",
+      "lessonCount": 8,
+      "playableLessonCount": 8
+    },
+    {
+      "id": "es-restaurant_food_service",
+      "languageCode": "es",
+      "nicheId": "restaurant_food_service",
+      "title": "Spanish · Restaurant & Food Service",
+      "lessonCount": 8,
+      "playableLessonCount": 8
+    }
+  ]
+}

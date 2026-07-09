@@ -32,6 +32,34 @@ export const updateNativeLanguage = setNativeLanguage;
 
 const normalizeLearningLanguage = (value?: string | null): LanguageCode => value === "ja" || value === "japanese" ? "ja" : value === "es" || value === "spanish" ? "es" : "en";
 const normalizeLevel = (value?: string | null) => levelOrder.includes(value as AppProgress["currentLevel"]) ? value as AppProgress["currentLevel"] : "A0";
+
+const nicheLegacyIdMap: Record<string, string> = {
+  everyday: "daily_life",
+  travel: "travel_hotel",
+  shopping: "restaurant_food_service",
+  culture: "daily_life",
+  social: "daily_life",
+  jlpt: "daily_life",
+  toeic: "daily_life",
+  ielts: "daily_life",
+  toefl: "daily_life",
+  other_exams: "daily_life",
+  business: "business_office",
+  it: "it_programming",
+  engineering: "manufacturing_engineering",
+  ai_data: "ai_data_analytics",
+  healthcare: "healthcare",
+};
+
+const normalizeNicheId = (value?: string | null) => {
+  if (!value) return "daily_life";
+  return nicheLegacyIdMap[value] ?? value;
+};
+
+const normalizeNicheList = (values?: string[] | null) => {
+  const mapped = [...new Set((values ?? []).map(normalizeNicheId))];
+  return mapped.length ? mapped : ["daily_life"];
+};
 export const getLearningLanguage = (): LanguageCode => { try { return normalizeLearningLanguage(localStorage.getItem(LEARNING_LANGUAGE_KEY)); } catch { return "en"; } };
 export const setLearningLanguage = (language: LanguageCode): void => { try { localStorage.setItem(LEARNING_LANGUAGE_KEY, language); } catch { /* In-memory state remains functional. */ } };
 
@@ -39,7 +67,7 @@ export const initialAppProgress: AppProgress = {
   contentVersion: CONTENT_VERSION,
   displayName: "", ageRange: "", country: "", region: "", occupationStatus: "",
   nativeLanguage: "en", uiLanguage: "en", effectiveUILanguage: "en", learningLanguage: "en",
-  selectedNiches: ["jlpt"], primaryNiche: "jlpt", nicheUpdatedAt: null, levelDecisionAfterNicheChange: null,
+  selectedNiches: ["daily_life"], primaryNiche: "daily_life", nicheUpdatedAt: null, levelDecisionAfterNicheChange: null,
   onboardingCompleted: false, selectedLanguage: "en", experienceLevel: "beginner",
   selectedLevel: "A0", currentLevel: "A0", currentUnitId: null, dailyGoalMinutes: 10, placementResult: null,
   totalXp: 0, xpToday: 0, streak: 0, lastActiveDate: null, hearts: 5,
@@ -66,8 +94,8 @@ export const getProgress = (): AppProgress => {
       country: value.country ?? "",
       region: value.region ?? "",
       occupationStatus: value.occupationStatus ?? "",
-      selectedNiches: value.selectedNiches?.length ? value.selectedNiches : ["jlpt"],
-      primaryNiche: value.primaryNiche ?? value.selectedNiches?.[0] ?? "jlpt",
+      selectedNiches: normalizeNicheList(value.selectedNiches),
+      primaryNiche: normalizeNicheId(value.primaryNiche ?? value.selectedNiches?.[0]),
       nicheUpdatedAt: value.nicheUpdatedAt ?? null,
       levelDecisionAfterNicheChange: value.levelDecisionAfterNicheChange ?? null,
       selectedLevel: normalizeLevel(value.selectedLevel),

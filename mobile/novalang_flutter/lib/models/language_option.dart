@@ -7,6 +7,11 @@ class LanguageOption {
     required this.aliases,
     required this.isSupportedAsNative,
     required this.isSupportedAsLearning,
+    this.courseStatus = 'coming_soon',
+    this.color,
+    this.greeting,
+    this.description,
+    this.direction = 'ltr',
   });
 
   final String code;
@@ -16,15 +21,30 @@ class LanguageOption {
   final List<String> aliases;
   final bool isSupportedAsNative;
   final bool isSupportedAsLearning;
+  final String courseStatus;
+  final String? color;
+  final String? greeting;
+  final String? description;
+  final String direction;
+
+  bool get isCourseAvailable => courseStatus == 'available';
 
   factory LanguageOption.fromJson(Map<String, dynamic> json) => LanguageOption(
     code: json['code'] as String,
     englishName: json['englishName'] as String,
     nativeName: json['nativeName'] as String,
     flagEmoji: json['flagEmoji'] as String? ?? '🌐',
-    aliases: (json['aliases'] as List<dynamic>).cast<String>(),
-    isSupportedAsNative: json['isSupportedAsNative'] as bool,
-    isSupportedAsLearning: json['isSupportedAsLearning'] as bool,
+    aliases: (json['aliases'] as List<dynamic>? ?? const []).cast<String>(),
+    isSupportedAsNative: json['isSupportedAsNative'] as bool? ?? false,
+    isSupportedAsLearning: json['isSupportedAsLearning'] as bool? ?? false,
+    courseStatus: json['courseStatus'] as String? ??
+        ((json['isSupportedAsLearning'] as bool? ?? false)
+            ? 'coming_soon'
+            : 'coming_soon'),
+    color: json['color'] as String?,
+    greeting: json['greeting'] as String?,
+    description: json['description'] as String?,
+    direction: json['direction'] as String? ?? 'ltr',
   );
 
   bool matches(String rawQuery) {

@@ -4,6 +4,11 @@ import type { ExamLevel, ExamTrackOption, TrackSkill } from "./types.js";
 import { getLevelDisplayName, levelOrder } from "./levelDisplay.js";
 import examTracksConfig from "./config/exam_tracks.json" with { type: "json" };
 import { learningLanguages } from "./languageOptions.js";
+import {
+  curriculumCourses,
+  curriculumLessons,
+  getCurriculumLessonById,
+} from "./curriculumJson.js";
 
 export { nativeLanguages } from "./nativeLanguages.js";
 export { languageOptions, learningLanguages, getLanguageOption, getLearningLanguage } from "./languageOptions.js";
@@ -330,14 +335,50 @@ function makePlacementTest(course: Course): PlacementQuestion[] {
   }).slice(0, 15);
 }
 
-export const courses: Course[] = (["en", "ja", "es"] as LanguageCode[]).map(makeCourse);
-export const lessons: Lesson[] = courses.flatMap((course) => course.units.flatMap((unit) => unit.lessons));
+/** Legacy blueprint-generated courses (kept for ID fallback / placement depth). */
+const legacyCourses: Course[] = (["en", "ja", "es"] as LanguageCode[]).map(makeCourse);
+const legacyLessons: Lesson[] = legacyCourses.flatMap((course) =>
+  course.units.flatMap((unit) => unit.lessons),
+);
+
+/**
+ * Shared source of truth: shared/generated/*.json via curriculumJson.ts.
+ * Legacy blueprint lessons remain as lookup fallback so old IDs still resolve.
+ */
+export const courses: Course[] =
+  curriculumCourses.length > 0 ? curriculumCourses : legacyCourses;
+export const lessons: Lesson[] = (() => {
+  const byId = new Map<string, Lesson>();
+  for (const lesson of curriculumLessons) byId.set(lesson.id, lesson);
+  for (const lesson of legacyLessons) {
+    if (!byId.has(lesson.id)) byId.set(lesson.id, lesson);
+  }
+  return [...byId.values()];
+})();
 export const microLessons: MicroLesson[] = lessons.flatMap((lesson) => lesson.microLessons);
-export const getCourseByLanguage = (language: string) => courses.find((course) => course.language === language);
-export const getLessonsByLanguage = (language: string) => getCourseByLanguage(language)?.units.flatMap((unit) => unit.lessons) ?? [];
-export const getLessonById = (lessonId: string) => lessons.find((lesson) => lesson.id === lessonId);
-export const getPlacementByLanguage = (language: string) => getCourseByLanguage(language)?.placementTest ?? [];
-export const isLanguageCode = (value: string): value is LanguageCode => languages.some((language) => language.code === value);
+export const getCourseByLanguage = (language: string) =>
+  courses.find((course) => course.language === language) ??
+  legacyCourses.find((course) => course.language === language);
+export const getLessonsByLanguage = (language: string) =>
+  getCourseByLanguage(language)?.units.flatMap((unit) => unit.lessons) ?? [];
+export const getLessonById = (lessonId: string) =>
+  getCurriculumLessonById(lessonId) ??
+  lessons.find((lesson) => lesson.id === lessonId) ??
+  legacyLessons.find((lesson) => lesson.id === lessonId);
+export const getPlacementByLanguage = (language: string) => {
+  const fromCurriculum = getCourseByLanguage(language)?.placementTest ?? [];
+  if (fromCurriculum.length > 0) return fromCurriculum;
+  return legacyCourses.find((course) => course.language === language)?.placementTest ?? [];
+};
+export const isLanguageCode = (value: string): value is LanguageCode =>
+  languages.some((language) => language.code === value);
+
+export {
+  curriculumCatalog,
+  flatCourses,
+  flatLessons,
+  getFlatCoursesByNiche,
+} from "./curriculumJson.js";
 
 export const makePracticeSet = (language: LanguageCode, completedLessonIds?: string[]): PracticeSet => {
   const languageLessons = getLessonsByLanguage(language);

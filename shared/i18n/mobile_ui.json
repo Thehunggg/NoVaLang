@@ -120,6 +120,7 @@
   "reviewLesson": {"en": "Review lesson", "vi": "Xem lại bài học", "ja": "レッスンを復習"},
   "lessonNotFound": {"en": "Lesson not found", "vi": "Không tìm thấy bài học", "ja": "レッスンが見つかりません"},
   "comingSoon": {"en": "Coming soon", "vi": "Sắp ra mắt", "ja": "近日公開"},
+  "availableNow": {"en": "Available", "vi": "Có sẵn", "ja": "利用可能"},
   "minutesDay": {"en": "minutes/day", "vi": "phút/ngày", "ja": "分/日"},
   "homeReady": {
     "en": "Your mobile learning space is ready.",
@@ -183,6 +184,28 @@
     "vi": "Xóa/đặt lại dữ liệu local",
     "ja": "ローカルデータを削除/リセット"
   },
+  "devTestSection": {
+    "en": "Dev / Test",
+    "vi": "Dev / Test",
+    "ja": "Dev / Test"
+  },
+  "resetLocalTestData": {
+    "en": "Reset local test data",
+    "vi": "Xóa dữ liệu test local",
+    "ja": "ローカルテストデータをリセット"
+  },
+  "resetLocalTestDataConfirmTitle": {
+    "en": "Reset local test data?",
+    "vi": "Xóa dữ liệu test local?",
+    "ja": "ローカルテストデータをリセットしますか？"
+  },
+  "resetLocalTestDataConfirmMessage": {
+    "en": "This removes all saved profiles, lesson progress, and mock auth data on this device. Shared lesson assets are not affected.",
+    "vi": "Thao tác này xóa toàn bộ hồ sơ, tiến độ bài học và dữ liệu đăng nhập mock trên thiết bị. Dữ liệu bài học dùng chung không bị ảnh hưởng.",
+    "ja": "この端末の保存済みプロフィール、レッスン進捗、モック認証データをすべて削除します。共有レッスンアセットは影響を受けません。"
+  },
+  "cancel": {"en": "Cancel", "vi": "Hủy", "ja": "キャンセル"},
+  "confirm": {"en": "Reset", "vi": "Xóa", "ja": "リセット"},
   "saveChanges": {"en": "Save changes", "vi": "Lưu thay đổi", "ja": "変更を保存"},
   "changeFocusPlacement": {
     "en": "Take a placement test",
@@ -200,9 +223,24 @@
     "ja": "現在のレベルを維持"
   },
   "learnSubtitle": {
-    "en": "Kana Starter & JLPT N5 content. Tap a lesson to start.",
-    "vi": "Nội dung Kana Starter & JLPT N5. Bấm vào bài để bắt đầu.",
-    "ja": "かな入門とJLPT N5の内容。レッスンをタップして開始。"
+    "en": "Follow your language and focus path. Tap a lesson to start.",
+    "vi": "Theo lộ trình ngôn ngữ và trọng tâm của bạn. Bấm vào bài để bắt đầu.",
+    "ja": "言語とフォーカスの学習パスを進みましょう。レッスンをタップして開始。"
+  },
+  "lessonsAvailableCount": {
+    "en": "{n} lessons",
+    "vi": "{n} bài học",
+    "ja": "{n}レッスン"
+  },
+  "curriculumLanguageComingSoon": {
+    "en": "{language} courses are coming soon. Pick English, Japanese, or Spanish to start learning now.",
+    "vi": "Khóa học {language} sắp ra mắt. Chọn English, Japanese hoặc Spanish để học ngay.",
+    "ja": "{language}のコースは近日公開です。今は英語・日本語・スペイン語を選べます。"
+  },
+  "curriculumNicheComingSoon": {
+    "en": "Lessons for {niche} are coming soon. Try Daily Life, Travel & Hotel, or Restaurant & Food Service.",
+    "vi": "Bài học cho {niche} sắp ra mắt. Thử Đời sống hàng ngày, Du lịch & khách sạn, hoặc Nhà hàng & dịch vụ ăn uống.",
+    "ja": "{niche}のレッスンは近日公開です。日常生活・旅行・飲食から始めてください。"
   },
   "lessonsCompletedSingular": {
     "en": "{n} lesson completed",
