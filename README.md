@@ -24,4 +24,8 @@ Commands:
 npm run generate:curriculum
 npm run validate:curriculum
 npm run sync:flutter-assets
+npm run smoke:curriculum
 npm run build
+```
+
+`npm run smoke:curriculum` checks the generated curriculum and core learning-flow data from the command line. It reduces repetitive manual testing, but it does not replace final Web/Android visual UI checks.
