@@ -246,9 +246,30 @@ class L10n {
       'vi': 'Giữ trình độ hiện tại',
     },
     'learnSubtitle': {
-      'en': 'Kana Starter & JLPT N5 content. Tap a lesson to start.',
-      'vi': 'Nội dung Kana Starter & JLPT N5. Bấm vào bài để bắt đầu.',
+      'en':
+          'Follow your language path. Absolute beginners start with Core Foundation.',
+      'vi':
+          'Theo lộ trình ngôn ngữ của bạn. Người mới bắt đầu từ Core Foundation.',
     },
+    'coreFoundationRequired': {
+      'en': 'Start with Core Foundation',
+      'vi': 'Bắt đầu với Core Foundation',
+    },
+    'coreFoundationRequiredHelp': {
+      'en':
+          'A0 learners practice letters and sounds first. Daily Life greetings unlock after you finish or skip this step.',
+      'vi':
+          'Người học A0 luyện chữ cái và âm trước. Daily Life (chào hỏi) mở sau khi bạn hoàn thành hoặc bỏ qua bước này.',
+    },
+    'skipCoreFoundation': {
+      'en': 'Skip Core Foundation',
+      'vi': 'Bỏ qua Core Foundation',
+    },
+    'vocabulary': {'en': 'Vocabulary', 'vi': 'Từ vựng'},
+    'vocabReading': {'en': 'Reading', 'vi': 'Cách đọc'},
+    'vocabMeaning': {'en': 'Meaning', 'vi': 'Nghĩa'},
+    'vocabExample': {'en': 'Example', 'vi': 'Ví dụ'},
+    'vocabTranslation': {'en': 'Translation', 'vi': 'Dịch'},
     'lessonsCompletedSingular': {
       'en': '{n} lesson completed',
       'vi': '{n} bài đã hoàn thành',

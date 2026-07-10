@@ -16,6 +16,7 @@ interface AppContextValue {
   finishOnboarding: (language: LanguageCode, level: AppProgress["selectedLevel"], goal: DailyGoal, profileInfo?: Partial<Pick<AppProgress, "displayName" | "ageRange" | "country" | "region" | "occupationStatus">>, nicheInfo?: { selectedNiches: string[]; primaryNiche: string | null }) => void;
   selectLanguage: (language: LanguageCode) => void;
   applyPlacement: (result: PlacementResult, startFromZero?: boolean) => void;
+  skipCoreFoundation: () => void;
   setCurrentLesson: (lessonId: string | null) => void;
   setCurrentMicroLesson: (microLessonId: string | null) => void;
   saveLessonStep: (lessonId: string, stepIndex: number) => void;
@@ -93,7 +94,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
             currentLessonId: starting.unlockedLessonId,
             currentMicroLessonId: null,
             unlockedLessonIds: starting.unlockedLessonId && !current.unlockedLessonIds.includes(starting.unlockedLessonId) ? [...current.unlockedLessonIds, starting.unlockedLessonId] : current.unlockedLessonIds,
-            placedLessonIds: starting.placedLessonIds
+            placedLessonIds: starting.placedLessonIds,
+            coreFoundationCompleted: selectedLevel !== "A0",
+            coreFoundationSkipped: selectedLevel !== "A0",
           };
         });
       },
@@ -103,8 +106,24 @@ export function AppProvider({ children }: { children: ReactNode }) {
         const firstLesson = course.levels[0].units[0].lessons[0];
         const result = startFromZero ? { ...incomingResult, level: "A0" as const, startingUnitId: firstLesson.unitId, startingLessonId: firstLesson.id } : incomingResult;
         const starting = unlockStartingPointFromPlacement(course, result);
-        return { ...current, placementResult: result, selectedLevel: result.level, currentLevel: result.level, currentUnitId: starting.currentUnitId, currentLessonId: starting.unlockedLessonId, unlockedLessonIds: starting.unlockedLessonId && !current.unlockedLessonIds.includes(starting.unlockedLessonId) ? [...current.unlockedLessonIds, starting.unlockedLessonId] : current.unlockedLessonIds, placedLessonIds: starting.placedLessonIds };
+        const isA0 = result.level === "A0";
+        return {
+          ...current,
+          placementResult: result,
+          selectedLevel: result.level,
+          currentLevel: result.level,
+          currentUnitId: starting.currentUnitId,
+          currentLessonId: starting.unlockedLessonId,
+          unlockedLessonIds: starting.unlockedLessonId && !current.unlockedLessonIds.includes(starting.unlockedLessonId) ? [...current.unlockedLessonIds, starting.unlockedLessonId] : current.unlockedLessonIds,
+          placedLessonIds: starting.placedLessonIds,
+          coreFoundationCompleted: !isA0,
+          coreFoundationSkipped: !isA0,
+        };
       }),
+      skipCoreFoundation: () => setProgress((current) => ({
+        ...current,
+        coreFoundationSkipped: true,
+      })),
       setCurrentLesson: (currentLessonId) => setProgress((current) => ({ ...current, currentLessonId })),
       setCurrentMicroLesson: (currentMicroLessonId) => setProgress((current) => ({ ...current, currentMicroLessonId })),
       saveLessonStep: (lessonId, currentStepIndex) => setProgress((current) => ({
@@ -161,6 +180,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
               }
             }
           };
+          const completedIds = next.completedLessonIds;
+          const foundationDone =
+            next.coreFoundationCompleted ||
+            (completedIds.includes("ja-hiragana-u1-l6") &&
+              completedIds.includes("ja-katakana-u4-l6")) ||
+            completedIds.includes("en-alphabet-u1-l6");
+          if (foundationDone) next = { ...next, coreFoundationCompleted: true };
           return withAchievements(next);
         });
         return { xpEarned, nextMicroLessonId, lessonCompleted, nextLessonId, dailyGoalRewarded };

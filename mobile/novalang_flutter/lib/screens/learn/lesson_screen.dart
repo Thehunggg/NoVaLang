@@ -13,6 +13,7 @@ import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/nova_mascot.dart';
 import '../../widgets/common/responsive_page.dart';
 import '../../widgets/lesson/exercise_card.dart';
+import '../../widgets/lesson/speaker_button.dart';
 
 class LessonScreen extends ConsumerStatefulWidget {
   const LessonScreen({super.key, required this.lesson});
@@ -165,40 +166,158 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     );
   }
 
-  Widget _intro(BuildContext context, Lesson lesson, String locale) => AppCard(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        for (final point in lesson.localizedIntroPoints(locale))
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 3),
-                  child: Icon(
-                    Icons.auto_awesome,
-                    size: 17,
+  Widget _intro(BuildContext context, Lesson lesson, String locale) {
+    return AppCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (lesson.vocabulary.isNotEmpty) ...[
+            Text(
+              L10n.text('vocabulary', locale),
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            const SizedBox(height: 10),
+            for (final item in lesson.vocabulary)
+              _vocabCard(context, item, locale),
+            const SizedBox(height: 8),
+          ] else
+            for (final point in lesson.localizedIntroPoints(locale))
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(top: 3),
+                      child: Icon(
+                        Icons.auto_awesome,
+                        size: 17,
+                        color: Color(0xFF67E8F9),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Text(point, style: const TextStyle(height: 1.5)),
+                    ),
+                  ],
+                ),
+              ),
+          const SizedBox(height: 8),
+          AppButton(
+            label: L10n.text('next', locale),
+            icon: Icons.arrow_forward,
+            onPressed: completed ? _nextLesson : _completeIntro,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _vocabCard(
+    BuildContext context,
+    LessonVocabCard item,
+    String locale,
+  ) {
+    final example = item.exampleText;
+    final exampleReading = item.exampleReading ?? item.exampleRomanization;
+    final exampleTranslation = item.exampleTranslation;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: const Color(0x3340E0D0)),
+          color: const Color(0x1400BCD4),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      item.displayText,
+                      style: Theme.of(context).textTheme.headlineSmall
+                          ?.copyWith(fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                  SpeakerButton(speechText: item.speechText),
+                ],
+              ),
+              if (item.reading != null && item.reading!.isNotEmpty) ...[
+                const SizedBox(height: 6),
+                Text(
+                  '${L10n.text('vocabReading', locale)}: ${item.reading}',
+                  style: const TextStyle(
                     color: Color(0xFF67E8F9),
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Text(point, style: const TextStyle(height: 1.5)),
+              ],
+              const SizedBox(height: 6),
+              Text(
+                '${L10n.text('vocabMeaning', locale)}: ${item.meaning}',
+                style: const TextStyle(fontWeight: FontWeight.w700),
+              ),
+              if (example != null &&
+                  example.isNotEmpty &&
+                  example != item.displayText) ...[
+                const SizedBox(height: 10),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '${L10n.text('vocabExample', locale)}: $example',
+                            style: const TextStyle(fontWeight: FontWeight.w800),
+                          ),
+                          if (exampleReading != null &&
+                              exampleReading.isNotEmpty)
+                            Padding(
+                              padding: const EdgeInsets.only(top: 4),
+                              child: Text(
+                                '${L10n.text('vocabReading', locale)}: $exampleReading',
+                                style: const TextStyle(
+                                  color: Color(0xFF67E8F9),
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ),
+                          if (exampleTranslation != null &&
+                              exampleTranslation.isNotEmpty &&
+                              exampleTranslation != item.meaning)
+                            Padding(
+                              padding: const EdgeInsets.only(top: 4),
+                              child: Text(
+                                '${L10n.text('vocabTranslation', locale)}: $exampleTranslation',
+                                style: const TextStyle(
+                                  color: Color(0xFFA5F3FC),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                    SpeakerButton(
+                      speechText: item.exampleSpeechText ?? example,
+                    ),
+                  ],
                 ),
               ],
-            ),
+            ],
           ),
-        const SizedBox(height: 8),
-        AppButton(
-          label: L10n.text('next', locale),
-          icon: Icons.arrow_forward,
-          onPressed: completed ? _nextLesson : _completeIntro,
         ),
-      ],
-    ),
-  );
+      ),
+    );
+  }
 
   Widget _completion(BuildContext context, Lesson lesson, String locale) =>
       AppCard(

@@ -100,6 +100,9 @@ export interface VocabularyItem {
   partOfSpeech?: string;
   meanings?: LocalizedAnswers;
   acceptedAnswers?: LocalizedAnswers;
+  exampleText?: string;
+  exampleReading?: string;
+  exampleRomanization?: string;
   exampleDisplay?: string;
   exampleSpeechText?: string;
   exampleTranslations?: Partial<Record<SupportedUILanguage, string>>;

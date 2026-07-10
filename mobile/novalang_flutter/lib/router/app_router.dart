@@ -21,6 +21,7 @@ import '../screens/review/review_screen.dart';
 import '../screens/splash_screen.dart';
 import '../data/curriculum_repository.dart';
 import '../data/japanese_course_data.dart';
+import '../state/profile_provider.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -65,9 +66,15 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/learn/:lessonId',
         builder: (context, state) {
           final lessonId = state.pathParameters['lessonId'] ?? '';
+          final native =
+              ref.read(profileProvider).nativeLanguageCode;
           // Shared curriculum first, then japanese_course_data.dart fallback.
           final lesson =
-              CurriculumRepository.findLesson(lessonId) ?? lessonById(lessonId);
+              CurriculumRepository.findLesson(
+                lessonId,
+                nativeLanguage: native,
+              ) ??
+              lessonById(lessonId);
           return LessonScreen(lesson: lesson);
         },
       ),

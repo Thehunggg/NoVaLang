@@ -48,8 +48,10 @@ class CurriculumRepository {
 
   static CurriculumCatalog? peek() => _cache;
 
-  static Lesson? findLesson(String id) {
-    final fromShared = _cache?.findLesson(id)?.toLesson();
+  static Lesson? findLesson(String id, {String nativeLanguage = 'en'}) {
+    final fromShared = _cache?.findLesson(id)?.toLesson(
+      nativeLanguage: nativeLanguage,
+    );
     if (fromShared != null) return fromShared;
     return lessonById(id);
   }
@@ -57,6 +59,8 @@ class CurriculumRepository {
   static List<CourseUnit> unitsFor({
     required String languageCode,
     String? nicheId,
+    bool includeNiche = true,
+    String nativeLanguage = 'en',
   }) {
     final catalog = _cache;
     if (catalog == null || catalog.isEmpty || _usedFallback) {
@@ -64,17 +68,32 @@ class CurriculumRepository {
       return const [];
     }
 
-    final courses = catalog.coursesFor(
-      languageCode: languageCode,
-      nicheId: nicheId,
-    );
-    if (courses.isEmpty) return const [];
+    // Absolute beginners see Core Foundation first; niche unlocks after.
+    final courses = <CurriculumCourse>[
+      ...catalog.coursesFor(
+        languageCode: languageCode,
+        nicheId: 'core_foundation',
+      ),
+      if (includeNiche)
+        ...catalog.coursesFor(
+          languageCode: languageCode,
+          nicheId: nicheId,
+        ),
+    ];
+    // De-dupe by course id while preserving order.
+    final seen = <String>{};
+    final orderedCourses = courses.where((c) => seen.add(c.id)).toList();
+    if (orderedCourses.isEmpty) return const [];
 
     final units = <CourseUnit>[];
-    for (final course in courses) {
+    for (final course in orderedCourses) {
       for (final unit in course.units) {
         final lessons = unit.lessonIds
-            .map((id) => catalog.findLesson(id)?.toLesson())
+            .map(
+              (id) => catalog
+                  .findLesson(id)
+                  ?.toLesson(nativeLanguage: nativeLanguage),
+            )
             .whereType<Lesson>()
             .toList(growable: false);
         if (lessons.isEmpty) continue;

@@ -180,6 +180,17 @@ function validateExercise(lesson, ex, index) {
   }
 }
 
+function isKanaFoundationLesson(lesson) {
+  return (
+    lesson.languageCode === "ja" &&
+    lesson.nicheId === "core_foundation" &&
+    (lesson.moduleId === "hiragana_starter" ||
+      lesson.moduleId === "katakana_starter" ||
+      String(lesson.id).includes("hiragana") ||
+      String(lesson.id).includes("katakana"))
+  );
+}
+
 function validateJapaneseItem(lesson, item, label) {
   if (lesson.languageCode !== "ja") return;
   if (!item.reading) fail(`${label}: missing reading`);
@@ -187,6 +198,38 @@ function validateJapaneseItem(lesson, item, label) {
   if (!item.speechText) fail(`${label}: missing speechText`);
   if (item.translations) validateTranslations(item.translations, `${label} translations`);
   else fail(`${label}: missing translations vi/en/ja/ko/zh`);
+
+  if (!isKanaFoundationLesson(lesson)) return;
+
+  const text = item.displayText || item.text || "";
+  const exampleText = item.exampleText || item.exampleSentence || item.exampleDisplay || "";
+  if (!exampleText) fail(`${label}: missing exampleText`);
+  if (exampleText === text) {
+    fail(`${label}: exampleText must not be identical to kana text "${text}"`);
+  }
+  if (!item.exampleReading && !item.exampleText) {
+    fail(`${label}: missing exampleReading`);
+  } else if (!item.exampleReading && item.exampleText) {
+    // exampleReading may equal exampleText for kana words
+  }
+  if (!item.exampleReading) fail(`${label}: missing exampleReading`);
+  if (!item.exampleRomanization) fail(`${label}: missing exampleRomanization`);
+  if (!item.exampleSpeechText && !item.exampleSpeechTextLegacy) {
+    fail(`${label}: missing exampleSpeechText`);
+  }
+  if (item.exampleTranslations) {
+    validateTranslations(item.exampleTranslations, `${label} exampleTranslations`);
+  } else {
+    fail(`${label}: missing exampleTranslations vi/en/ja/ko/zh`);
+  }
+
+  const meaningEn = item.meaningEn || item.translations?.en || "";
+  const exampleEn = item.exampleTranslations?.en || "";
+  if (meaningEn && exampleEn && meaningEn === exampleEn) {
+    fail(
+      `${label}: example translation must not reuse kana meaning ("${meaningEn}")`,
+    );
+  }
 }
 
 async function main() {
@@ -227,12 +270,13 @@ async function main() {
     }
   }
 
+  const allowedNiches = new Set(["daily_life", "core_foundation"]);
   for (const lesson of lessons) {
     if (!["en", "ja"].includes(lesson.languageCode)) {
       fail(`${lesson.id}: only en/ja playable lessons allowed in this scope`);
     }
-    if (lesson.nicheId !== "daily_life") {
-      fail(`${lesson.id}: only daily_life niche is playable in this scope`);
+    if (!allowedNiches.has(lesson.nicheId)) {
+      fail(`${lesson.id}: unexpected nicheId ${lesson.nicheId}`);
     }
     if ((lesson.exercises ?? []).length !== 10) {
       fail(`${lesson.id}: must have exactly 10 exercises (got ${(lesson.exercises ?? []).length})`);
@@ -241,11 +285,110 @@ async function main() {
     for (const vocab of lesson.vocabulary ?? []) {
       validateJapaneseItem(lesson, vocab, `${lesson.id} vocab ${vocab.id}`);
       if (vocab.translations) validateTranslations(vocab.translations, `${lesson.id} vocab ${vocab.id}`);
+      if (vocab.displayText === "こんにちわ" || vocab.text === "こんにちわ") {
+        fail(`${lesson.id}: use こんにちは, not こんにちわ`);
+      }
     }
   }
 
-  if (lessons.length !== 12) {
-    fail(`Expected 12 playable lessons (6 en + 6 ja), got ${lessons.length}`);
+  // Japanese Core Foundation Unit 1 Lesson 1 must teach individual kana, not greetings.
+  const hiraganaL1 = lessonById.get("ja-hiragana-u1-l1");
+  if (!hiraganaL1) {
+    fail("Missing Japanese Core Foundation lesson ja-hiragana-u1-l1");
+  } else {
+    const bannedPhrases = ["こんにちは", "ありがとう", "さようなら", "こんにちわ"];
+    const texts = (hiraganaL1.vocabulary ?? []).map((v) => v.displayText || v.text || "");
+    if (texts.join("") !== "あいうえお") {
+      fail(
+        `ja-hiragana-u1-l1 must teach only あいうえお as individual characters, got [${texts.join(", ")}]`,
+      );
+    }
+    for (const phrase of bannedPhrases) {
+      if (texts.some((t) => t.includes(phrase) && t.length > 1)) {
+        fail(`ja-hiragana-u1-l1 must not include greeting phrase ${phrase}`);
+      }
+    }
+    for (const text of texts) {
+      if ([...text].length !== 1) {
+        fail(`ja-hiragana-u1-l1 item "${text}" must be a single hiragana character`);
+      }
+    }
+  }
+
+  const katakanaL1 = lessonById.get("ja-katakana-u4-l1");
+  if (!katakanaL1) {
+    fail("Missing Japanese Core Foundation Katakana Basics lesson ja-katakana-u4-l1");
+  } else {
+    const texts = (katakanaL1.vocabulary ?? []).map((v) => v.displayText || v.text || "");
+    if (texts.join("") !== "アイウエオ") {
+      fail(
+        `ja-katakana-u4-l1 must teach only アイウエオ as individual characters, got [${texts.join(", ")}]`,
+      );
+    }
+  }
+
+  const hasHiragana = lessons.some(
+    (l) => l.languageCode === "ja" && String(l.id).includes("hiragana"),
+  );
+  const hasKatakana = lessons.some(
+    (l) => l.languageCode === "ja" && String(l.id).includes("katakana"),
+  );
+  if (hasHiragana && !hasKatakana) {
+    fail("Japanese Core Foundation has Hiragana but no Katakana Basics");
+  }
+
+  const katakanaLessons = lessons.filter(
+    (l) => l.languageCode === "ja" && String(l.id).includes("katakana"),
+  );
+  if (katakanaLessons.length !== 6) {
+    fail(`Expected 6 Katakana Basics lessons, got ${katakanaLessons.length}`);
+  }
+  for (const lesson of katakanaLessons) {
+    if ((lesson.exercises ?? []).length !== 10) {
+      fail(`${lesson.id}: playable Katakana lesson must have exactly 10 exercises`);
+    }
+  }
+
+  // 6 hiragana + 6 katakana + 6 alphabet + 6 en greetings + 6 ja greetings
+  if (lessons.length !== 30) {
+    fail(
+      `Expected 30 playable lessons (18 foundation + 12 greetings), got ${lessons.length}`,
+    );
+  }
+
+  const enAlphabetL1 = lessonById.get("en-alphabet-u1-l1");
+  if (!enAlphabetL1) {
+    fail("Missing English Core Foundation lesson en-alphabet-u1-l1");
+  } else {
+    const texts = (enAlphabetL1.vocabulary ?? []).map((v) => v.displayText || v.text || "");
+    if (texts.join("") !== "AEIOU") {
+      fail(`en-alphabet-u1-l1 must teach A E I O U, got [${texts.join(", ")}]`);
+    }
+    for (const banned of ["Hello", "Goodbye", "Nice to meet you"]) {
+      if (texts.some((t) => t.includes(banned))) {
+        fail(`en-alphabet-u1-l1 must not include phrase ${banned}`);
+      }
+    }
+  }
+
+  const alphabetLessons = lessons.filter(
+    (l) => l.languageCode === "en" && String(l.id).startsWith("en-alphabet-u1-"),
+  );
+  const alphabetLetters = new Set();
+  for (const lesson of alphabetLessons) {
+    if (String(lesson.id).endsWith("-l6")) continue; // checkpoint may repeat
+    for (const vocab of lesson.vocabulary ?? []) {
+      const letter = String(vocab.displayText || vocab.text || "").toUpperCase();
+      if (/^[A-Z]$/.test(letter)) alphabetLetters.add(letter);
+    }
+  }
+  const missingLetters = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"].filter(
+    (ch) => !alphabetLetters.has(ch),
+  );
+  if (missingLetters.length) {
+    fail(
+      `English Alphabet Starter must include all A–Z; missing: ${missingLetters.join(", ")}`,
+    );
   }
 
   // After sync, Flutter assets should match; warn only (generate→validate→sync order).

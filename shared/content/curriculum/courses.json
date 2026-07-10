@@ -1,7 +1,127 @@
 {
   "version": "curriculum-v3",
-  "generatedAt": "2026-07-10T01:54:15.646Z",
+  "generatedAt": "2026-07-10T15:34:47.791Z",
   "courses": [
+    {
+      "id": "ja-core_foundation",
+      "languageCode": "ja",
+      "nicheId": "core_foundation",
+      "branch": "core_foundation",
+      "moduleId": "hiragana_starter",
+      "moduleTitle": "Hiragana Starter",
+      "moduleTitleVi": "Hiragana Starter",
+      "title": "Japanese · Core Foundation",
+      "titleVi": "Tiếng Nhật · Nền tảng",
+      "description": "Start with individual hiragana characters before phrases.",
+      "descriptionVi": "Bắt đầu với từng chữ hiragana trước khi học cụm từ.",
+      "levelCode": "A0",
+      "order": 0,
+      "unitIds": [
+        "ja-core-foundation-hiragana-u1"
+      ],
+      "isComingSoon": false,
+      "units": [
+        {
+          "id": "ja-core-foundation-hiragana-u1",
+          "title": "Unit 1: Hiragana basics",
+          "titleVi": "Unit 1: Hiragana cơ bản",
+          "levelCode": "A0",
+          "trackId": "ja-core_foundation",
+          "moduleId": "hiragana_starter",
+          "goal": "Recognize the first five hiragana rows as individual characters.",
+          "goalVi": "Nhận biết năm hàng hiragana đầu dưới dạng từng chữ cái.",
+          "order": 1,
+          "lessonIds": [
+            "ja-hiragana-u1-l1",
+            "ja-hiragana-u1-l2",
+            "ja-hiragana-u1-l3",
+            "ja-hiragana-u1-l4",
+            "ja-hiragana-u1-l5",
+            "ja-hiragana-u1-l6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-core_foundation",
+      "languageCode": "ja",
+      "nicheId": "core_foundation",
+      "branch": "core_foundation",
+      "moduleId": "katakana_starter",
+      "moduleTitle": "Katakana Basics",
+      "moduleTitleVi": "Katakana cơ bản",
+      "title": "Japanese · Core Foundation · Katakana",
+      "titleVi": "Tiếng Nhật · Nền tảng · Katakana",
+      "description": "Learn individual katakana characters with short loanword examples.",
+      "descriptionVi": "Học từng chữ katakana với ví dụ từ mượn ngắn.",
+      "levelCode": "A0",
+      "order": 1,
+      "unitIds": [
+        "ja-core-foundation-katakana-u4"
+      ],
+      "isComingSoon": false,
+      "units": [
+        {
+          "id": "ja-core-foundation-katakana-u4",
+          "title": "Unit 4: Katakana Basics",
+          "titleVi": "Unit 4: Katakana cơ bản",
+          "levelCode": "A0",
+          "trackId": "ja-core_foundation",
+          "moduleId": "katakana_starter",
+          "goal": "Recognize the first five katakana rows as individual characters.",
+          "goalVi": "Nhận biết năm hàng katakana đầu dưới dạng từng chữ cái.",
+          "order": 4,
+          "lessonIds": [
+            "ja-katakana-u4-l1",
+            "ja-katakana-u4-l2",
+            "ja-katakana-u4-l3",
+            "ja-katakana-u4-l4",
+            "ja-katakana-u4-l5",
+            "ja-katakana-u4-l6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-core_foundation",
+      "languageCode": "en",
+      "nicheId": "core_foundation",
+      "branch": "core_foundation",
+      "moduleId": "alphabet_starter",
+      "moduleTitle": "Alphabet Starter",
+      "moduleTitleVi": "Alphabet Starter",
+      "title": "English · Core Foundation",
+      "titleVi": "Tiếng Anh · Nền tảng",
+      "description": "Start with individual English letters before phrases.",
+      "descriptionVi": "Bắt đầu với từng chữ cái tiếng Anh trước khi học cụm từ.",
+      "levelCode": "A0",
+      "order": 0,
+      "unitIds": [
+        "en-core-foundation-alphabet-u1"
+      ],
+      "isComingSoon": false,
+      "units": [
+        {
+          "id": "en-core-foundation-alphabet-u1",
+          "title": "Unit 1: Alphabet basics",
+          "titleVi": "Unit 1: Alphabet cơ bản",
+          "levelCode": "A0",
+          "trackId": "en-core_foundation",
+          "moduleId": "alphabet_starter",
+          "goal": "Recognize English vowels and consonants as individual letters.",
+          "goalVi": "Nhận biết nguyên âm và phụ âm tiếng Anh dưới dạng từng chữ cái.",
+          "order": 1,
+          "lessonIds": [
+            "en-alphabet-u1-l1",
+            "en-alphabet-u1-l2",
+            "en-alphabet-u1-l3",
+            "en-alphabet-u1-l4",
+            "en-alphabet-u1-l5",
+            "en-alphabet-u1-l6"
+          ]
+        }
+      ]
+    },
     {
       "id": "en-daily_life",
       "languageCode": "en",

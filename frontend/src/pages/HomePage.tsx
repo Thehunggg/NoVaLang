@@ -1,5 +1,5 @@
 import { BookOpen, Brain, CloudOff, Flame, Heart, Repeat2, Target, TriangleAlert, Zap } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { CoursePath } from "../components/learning/CoursePath";
 import { Mascot } from "../components/learning/Mascot";
@@ -16,13 +16,17 @@ import { fetchCourse } from "../services/api";
 import type { Course, LanguageCode } from "../types/index";
 
 export function HomePage() {
-  const { progress, selectLanguage, dueReviewItems } = useApp();
+  const { progress, selectLanguage, dueReviewItems, skipCoreFoundation } = useApp();
   const { t } = useTranslation();
   const [course, setCourse] = useState<Course>();
   const [offline, setOffline] = useState(false);
   const language = languages.find((item) => item.code === progress.selectedLanguage)!;
   const minutesToday = progress.studyMinutesToday;
   const currentLevelName = getLevelDisplayName(progress.currentLevel, progress.selectedLanguage, progress.nativeLanguage);
+  const needsCoreFoundation =
+    progress.currentLevel === "A0" &&
+    !progress.coreFoundationCompleted &&
+    !progress.coreFoundationSkipped;
 
   useEffect(() => {
     fetchCourse(progress.selectedLanguage).then((result) => {
@@ -30,6 +34,26 @@ export function HomePage() {
       setOffline(result.source === "fallback");
     });
   }, [progress.selectedLanguage]);
+
+  const visibleCourse = useMemo(() => {
+    if (!course) return undefined;
+    if (!needsCoreFoundation) return course;
+    const foundationUnits = course.units.filter(
+      (unit) =>
+        unit.id.includes("core-foundation") ||
+        unit.id.includes("hiragana") ||
+        unit.id.includes("alphabet"),
+    );
+    if (!foundationUnits.length) return course;
+    return {
+      ...course,
+      units: foundationUnits,
+      levels: course.levels.map((level) => ({
+        ...level,
+        units: level.units.filter((unit) => foundationUnits.some((item) => item.id === unit.id)),
+      })),
+    };
+  }, [course, needsCoreFoundation]);
 
   const label = (code: LanguageCode) => code === "en" ? t("english") : code === "ja" ? t("japanese") : t("spanish");
 
@@ -57,6 +81,14 @@ export function HomePage() {
         </div>
       </section>
 
+      {needsCoreFoundation && (
+        <Card className="mt-5 p-5">
+          <h3 className="font-display text-xl font-black">Start with Core Foundation</h3>
+          <p className="mt-2 text-sm text-slate-400">A0 learners practice letters and sounds first. Daily Life greetings unlock after you finish or skip this step.</p>
+          <Button className="mt-4" variant="secondary" onClick={skipCoreFoundation}>Skip Core Foundation</Button>
+        </Card>
+      )}
+
       <section className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatCard icon={Zap} label={t("totalXp")} value={progress.totalXp} color="text-violet-300" />
         <StatCard icon={Flame} label={t("streak")} value={progress.streak} color="text-orange-300" />
@@ -68,9 +100,9 @@ export function HomePage() {
         <Card className="p-4 sm:p-6">
           <div className="mb-6">
             <p className="text-xs font-black uppercase tracking-[.16em] text-fuchsia-300">{t("coursePath")}</p>
-            <h2 className="mt-2 font-display text-2xl font-black">{course ? `${label(language.code)} · ${t("coursePath")}` : t("loading")}</h2>
+            <h2 className="mt-2 font-display text-2xl font-black">{visibleCourse ? `${label(language.code)} · ${t("coursePath")}` : t("loading")}</h2>
           </div>
-          {course && <CoursePath course={course} completedIds={progress.completedLessonIds} unlockedIds={progress.unlockedLessonIds} placedIds={progress.placedLessonIds} currentLessonId={progress.currentLessonId} nativeLanguage={progress.nativeLanguage} />}
+          {visibleCourse && <CoursePath course={visibleCourse} completedIds={progress.completedLessonIds} unlockedIds={progress.unlockedLessonIds} placedIds={progress.placedLessonIds} currentLessonId={progress.currentLessonId} nativeLanguage={progress.nativeLanguage} />}
         </Card>
 
         <aside className="space-y-5">

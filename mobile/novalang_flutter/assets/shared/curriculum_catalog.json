@@ -1,10 +1,10 @@
 {
   "version": "curriculum-v3",
-  "generatedAt": "2026-07-10T01:54:15.646Z",
+  "generatedAt": "2026-07-10T15:34:47.791Z",
   "architecture": {
     "coreFoundation": {
-      "status": "placeholder",
-      "note": "Alphabet/script basics by language — not built yet."
+      "status": "partial",
+      "note": "Japanese Hiragana + Katakana Basics and English Alphabet Starter (A–Z) are playable. A0 users must finish or skip Core Foundation before niche lessons."
     },
     "mainNiches": [
       "daily_life",
@@ -55,19 +55,53 @@
     "ja"
   ],
   "nichesPlayable": [
+    "core_foundation",
     "daily_life"
   ],
   "modulesPlayable": [
+    "hiragana_starter",
+    "alphabet_starter",
     "greetings"
   ],
-  "courseCount": 2,
-  "lessonCount": 12,
-  "unitCount": 2,
+  "courseCount": 5,
+  "lessonCount": 30,
+  "unitCount": 5,
   "courses": [
+    {
+      "id": "ja-core_foundation",
+      "languageCode": "ja",
+      "nicheId": "core_foundation",
+      "branch": "core_foundation",
+      "moduleId": "hiragana_starter",
+      "title": "Japanese · Core Foundation",
+      "lessonCount": 6,
+      "playableLessonCount": 6
+    },
+    {
+      "id": "ja-core_foundation",
+      "languageCode": "ja",
+      "nicheId": "core_foundation",
+      "branch": "core_foundation",
+      "moduleId": "katakana_starter",
+      "title": "Japanese · Core Foundation · Katakana",
+      "lessonCount": 6,
+      "playableLessonCount": 6
+    },
+    {
+      "id": "en-core_foundation",
+      "languageCode": "en",
+      "nicheId": "core_foundation",
+      "branch": "core_foundation",
+      "moduleId": "alphabet_starter",
+      "title": "English · Core Foundation",
+      "lessonCount": 6,
+      "playableLessonCount": 6
+    },
     {
       "id": "en-daily_life",
       "languageCode": "en",
       "nicheId": "daily_life",
+      "branch": "niche",
       "moduleId": "greetings",
       "title": "English · Daily Life",
       "lessonCount": 6,
@@ -77,6 +111,7 @@
       "id": "ja-daily_life",
       "languageCode": "ja",
       "nicheId": "daily_life",
+      "branch": "niche",
       "moduleId": "greetings",
       "title": "Japanese · Daily Life",
       "lessonCount": 6,

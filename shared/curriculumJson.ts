@@ -78,8 +78,18 @@ type FlatLesson = {
     speechText: string;
     meaningEn: string;
     meaningVi: string;
+    meaningJa?: string;
+    meaningKo?: string;
+    meaningZh?: string;
+    translations?: Record<string, string>;
+    exampleText?: string;
+    exampleReading?: string;
+    exampleRomanization?: string;
+    exampleSpeechText?: string;
+    exampleTranslations?: Record<string, string>;
     exampleSentence?: string;
     exampleSentenceVi?: string;
+    exampleDisplay?: string;
   }>;
   keyPhrases?: Array<{
     id: string;
@@ -129,6 +139,7 @@ type FlatCourse = {
   id: string;
   languageCode: string;
   nicheId: string;
+  branch?: string;
   title: string;
   titleVi?: string;
   description: string;
@@ -236,24 +247,62 @@ const mapExercise = (ex: FlatExercise, language: LanguageCode, levelId: LevelId)
 };
 
 const mapVocabulary = (lesson: FlatLesson): VocabularyItem[] =>
-  (lesson.vocabulary ?? []).map((item) => ({
-    kind: "vocabulary",
-    id: item.id,
-    word: item.displayText,
-    term: item.displayText,
-    reading: item.reading,
-    pronunciation: item.romanization ?? item.reading,
-    meaning: item.meaningEn,
-    translation: item.meaningEn,
-    exampleSentence: item.displayText,
-    example: item.displayText,
-    sentenceTranslation: item.meaningEn,
-    displayText: item.displayText,
-    speechText: item.speechText,
-    kana: item.reading,
-    meanings: { en: [item.meaningEn], vi: [item.meaningVi] },
-    acceptedAnswers: { en: [item.meaningEn], vi: [item.meaningVi] },
-  }));
+  (lesson.vocabulary ?? []).map((item) => {
+    const meaningEn = item.meaningEn || item.translations?.en || "";
+    const meaningVi = item.meaningVi || item.translations?.vi || meaningEn;
+    const meaningJa = item.meaningJa || item.translations?.ja || meaningEn;
+    const meaningKo = item.meaningKo || item.translations?.ko || meaningEn;
+    const meaningZh = item.meaningZh || item.translations?.zh || meaningEn;
+    const exampleText =
+      item.exampleText || item.exampleDisplay || item.exampleSentence || "";
+    const exampleEn = item.exampleTranslations?.en || "";
+    const exampleVi = item.exampleTranslations?.vi || item.exampleSentenceVi || exampleEn;
+    const exampleJa = item.exampleTranslations?.ja || exampleEn;
+    const exampleKo = item.exampleTranslations?.ko || exampleEn;
+    const exampleZh = item.exampleTranslations?.zh || exampleEn;
+    return {
+      kind: "vocabulary" as const,
+      id: item.id,
+      word: item.displayText,
+      term: item.displayText,
+      reading: item.reading,
+      pronunciation: item.romanization ?? item.reading,
+      meaning: meaningEn,
+      translation: meaningEn,
+      exampleSentence: exampleText,
+      example: exampleText,
+      exampleText,
+      exampleReading: item.exampleReading || exampleText,
+      exampleRomanization: item.exampleRomanization,
+      exampleDisplay: exampleText,
+      exampleSpeechText: item.exampleSpeechText || exampleText,
+      sentenceTranslation: exampleEn,
+      exampleTranslations: {
+        en: exampleEn,
+        vi: exampleVi,
+        ja: exampleJa,
+        ko: exampleKo,
+        zh: exampleZh,
+      },
+      displayText: item.displayText,
+      speechText: item.speechText,
+      kana: item.reading,
+      meanings: {
+        en: [meaningEn],
+        vi: [meaningVi],
+        ja: [meaningJa],
+        ko: [meaningKo],
+        zh: [meaningZh],
+      },
+      acceptedAnswers: {
+        en: [meaningEn],
+        vi: [meaningVi],
+        ja: [meaningJa],
+        ko: [meaningKo],
+        zh: [meaningZh],
+      },
+    };
+  });
 
 const mapDialogue = (lesson: FlatLesson): DialogueLine[] =>
   (lesson.dialogue ?? []).map((item) => ({
@@ -390,9 +439,17 @@ const examTracksFor = (language: LanguageCode): ExamTrackOption[] =>
   (examTracksConfig as Record<LanguageCode, ExamTrackOption[]>)[language] ?? [];
 
 const buildCourseForLanguage = (language: LanguageCode): Course => {
-  const nicheCourses = flatCourses.filter((c) => c.languageCode === language);
+  const nicheCourses = flatCourses
+    .filter((c) => c.languageCode === language)
+    .slice()
+    .sort((a, b) => {
+      const aRank = a.nicheId === "core_foundation" || a.branch === "core_foundation" ? 0 : 1;
+      const bRank = b.nicheId === "core_foundation" || b.branch === "core_foundation" ? 0 : 1;
+      if (aRank !== bRank) return aRank - bRank;
+      return (a.order ?? 0) - (b.order ?? 0);
+    });
   const lessonById = new Map(flatLessons.map((l) => [l.id, l]));
-  const units: Unit[] = nicheCourses.flatMap((course) =>
+  const units: Unit[] = nicheCourses.flatMap((course, courseIndex) =>
     course.units.map((unit) => {
       const lessons = unit.lessonIds
         .map((id) => lessonById.get(id))
@@ -406,10 +463,10 @@ const buildCourseForLanguage = (language: LanguageCode): Course => {
         communicationGoal: unit.goal,
         description: unit.goalVi ?? unit.goal,
         estimatedMinutes: lessons.reduce((sum, l) => sum + l.durationMinutes, 0),
-        order: unit.order,
+        order: courseIndex * 100 + unit.order,
         lessons,
         trackType: "general",
-        skill: "general",
+        skill: course.nicheId === "core_foundation" ? "kana" : "general",
         reviewedStatus: "reviewed",
       } satisfies Unit;
     }),

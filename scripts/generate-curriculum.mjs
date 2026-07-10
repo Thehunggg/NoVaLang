@@ -493,33 +493,474 @@ function makeLesson(fields) {
   return {
     ...fields,
     moduleId: fields.moduleId ?? "greetings",
-    branch: "niche",
+    branch: fields.branch ?? "niche",
     comingSoon: false,
   };
 }
 
-function makeCourse({ languageCode, nicheId, title, titleVi, description, descriptionVi, units, lessons }) {
+function makeCourse({
+  languageCode,
+  nicheId,
+  branch = "niche",
+  moduleId = "greetings",
+  moduleTitle = "Greetings",
+  moduleTitleVi = "Chào hỏi",
+  title,
+  titleVi,
+  description,
+  descriptionVi,
+  order = 1,
+  units,
+  lessons,
+}) {
   return {
     course: {
       id: `${languageCode}-${nicheId}`,
       languageCode,
       nicheId,
-      branch: "niche",
-      moduleId: "greetings",
-      moduleTitle: "Greetings",
-      moduleTitleVi: "Chào hỏi",
+      branch,
+      moduleId,
+      moduleTitle,
+      moduleTitleVi,
       title,
       titleVi,
       description,
       descriptionVi,
       levelCode: "A0",
-      order: 1,
+      order,
       unitIds: units.map((u) => u.id),
       isComingSoon: false,
       units,
     },
     lessons,
   };
+}
+
+function kanaExample(ex) {
+  const translations = t(ex.translations);
+  return {
+    exampleText: ex.text,
+    exampleReading: ex.reading ?? ex.text,
+    exampleRomanization: ex.romanization,
+    exampleSpeechText: ex.speechText ?? ex.reading ?? ex.text,
+    exampleTranslations: translations,
+    // Legacy aliases used by older adapters / UI.
+    exampleSentence: ex.text,
+    exampleSentenceVi: translations.vi,
+    exampleDisplay: ex.text,
+    exampleSpeechTextLegacy: ex.speechText ?? ex.text,
+  };
+}
+
+function kanaItem(char, romaji, example, { script = "hiragana", idPrefix = "ja-kana" } = {}) {
+  const meaning =
+    script === "katakana"
+      ? {
+          en: `katakana sound ${romaji}`,
+          vi: `âm ${romaji} trong katakana`,
+          ja: `カタカナの${char}`,
+          ko: `가타카나 ${romaji} 소리`,
+          zh: `片假名 ${romaji} 音`,
+        }
+      : {
+          en: `sound ${romaji}`,
+          vi: `âm ${romaji}`,
+          ja: `${char}の音`,
+          ko: `${romaji} 소리`,
+          zh: `${romaji} 音`,
+        };
+  const base = item(
+    `${idPrefix}-${romaji}`,
+    char,
+    meaning,
+    { reading: char, romanization: romaji, speechText: char },
+  );
+  if (!example) {
+    throw new Error(`kanaItem ${char}: example word is required`);
+  }
+  if (example.text === char) {
+    throw new Error(`kanaItem ${char}: exampleText must not equal the kana character`);
+  }
+  return {
+    ...base,
+    ...kanaExample(example),
+  };
+}
+
+function buildKanaLesson({
+  id,
+  unitId,
+  order,
+  title,
+  titleVi,
+  chars,
+  isCheckpoint = false,
+  script = "hiragana",
+  moduleId = "hiragana_starter",
+}) {
+  const vocab = chars.map(([char, romaji, example]) =>
+    kanaItem(char, romaji, example, {
+      script,
+      idPrefix: script === "katakana" ? "ja-kata" : "ja-kana",
+    }),
+  );
+  const [c0, c1, c2, c3, c4] = vocab;
+  const focus = c0;
+  const allChars = vocab.map((v) => v.displayText);
+  const fillBlankWord = c0.displayText;
+  const fillOptions = allChars.slice(0, 4);
+  const chooseCorrect = c1?.displayText ?? c0.displayText;
+  const chooseDistractors = allChars.filter((ch) => ch !== chooseCorrect).slice(0, 3);
+  const rowSpeech = allChars.join(" ");
+  const fillSentence = `___ ${allChars.slice(1).join(" ")}`;
+  const scriptLabel = script === "katakana" ? "katakana" : "hiragana";
+  const scriptLabelVi = script === "katakana" ? "katakana" : "hiragana";
+
+  return makeLesson({
+    id,
+    languageCode: "ja",
+    nicheId: "core_foundation",
+    branch: "core_foundation",
+    moduleId,
+    unitId,
+    order,
+    level: "A0",
+    template: isCheckpoint ? "miniTestLesson" : "kanaLesson",
+    title,
+    titleVi,
+    description: `Learn the ${scriptLabel} characters ${allChars.join(" / ")}.`,
+    descriptionVi: `Học các chữ ${scriptLabelVi} ${allChars.join(" / ")}.`,
+    canDoObjective: `I can recognize ${allChars.join(", ")}.`,
+    canDoObjectiveVi: `Tôi có thể nhận biết ${allChars.join(", ")}.`,
+    estimatedMinutes: isCheckpoint ? 10 : 8,
+    track: "ja-core_foundation",
+    vocabulary: vocab,
+    keyPhrases: [],
+    introPoints: vocab.map(
+      (v) =>
+        `${v.displayText} (${v.romanization}) — ${v.exampleText} = ${v.exampleTranslations.en}`,
+    ),
+    introPointsVi: vocab.map(
+      (v) =>
+        `${v.displayText} (${v.romanization}) — ${v.exampleText} = ${v.exampleTranslations.vi}`,
+    ),
+    exercises: buildTenExercises({
+      id,
+      vocab,
+      focus,
+      fill: {
+        sentence: fillSentence,
+        blankWord: fillBlankWord,
+        options: fillOptions,
+        speechText: rowSpeech,
+      },
+      chooseSentence: {
+        prompt: t({
+          en: `Which character is “${c1?.romanization ?? c0.romanization}”?`,
+          vi: `Chữ nào đọc là “${c1?.romanization ?? c0.romanization}”?`,
+          ja: `「${c1?.romanization ?? c0.romanization}」の文字はどれですか？`,
+          ko: `“${c1?.romanization ?? c0.romanization}”에 해당하는 글자는?`,
+          zh: `哪个字读作 “${c1?.romanization ?? c0.romanization}”？`,
+          displayText: c1?.romanization ?? c0.romanization,
+          speechText: c1?.speechText ?? c0.speechText,
+        }),
+        correct: chooseCorrect,
+        distractors: chooseDistractors,
+      },
+      listenIndex: 2,
+      gapSentences: [
+        {
+          text: `___ ${c1.displayText} ${c2.displayText}`,
+          blankWord: c0.displayText,
+          speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
+        },
+        {
+          text: `${c0.displayText} ___ ${c2.displayText}`,
+          blankWord: c1.displayText,
+          speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
+        },
+        {
+          text: `${c2.displayText} ${c3.displayText} ___`,
+          blankWord: c4.displayText,
+          speechText: `${c2.displayText} ${c3.displayText} ${c4.displayText}`,
+        },
+      ],
+      aiQuestion: {
+        en: `Name the five ${scriptLabel} characters in this lesson in order.`,
+        vi: `Nêu 5 chữ ${scriptLabelVi} trong bài theo thứ tự.`,
+        ja: `このレッスンの${script === "katakana" ? "カタカナ" : "ひらがな"}5文字を順番に言ってください。`,
+        ko: `이 수업의 ${script === "katakana" ? "가타카나" : "히라가나"} 5글자를 순서대로 말하세요.`,
+        zh: `按顺序说出本课的五个${script === "katakana" ? "片假名" : "平假名"}。`,
+      },
+    }),
+  });
+}
+
+function jaHiraganaFoundationUnit1() {
+  const unitId = "ja-core-foundation-hiragana-u1";
+  const rows = [
+    {
+      id: "ja-hiragana-u1-l1",
+      order: 1,
+      title: "あ / い / う / え / お",
+      titleVi: "あ / い / う / え / お",
+      chars: [
+        ["あ", "a", { text: "あめ", romanization: "ame", translations: { en: "rain", vi: "mưa", ja: "雨", ko: "비", zh: "雨" } }],
+        ["い", "i", { text: "いえ", romanization: "ie", translations: { en: "house", vi: "nhà", ja: "家", ko: "집", zh: "家" } }],
+        ["う", "u", { text: "うみ", romanization: "umi", translations: { en: "sea", vi: "biển", ja: "海", ko: "바다", zh: "海" } }],
+        ["え", "e", { text: "えき", romanization: "eki", translations: { en: "station", vi: "nhà ga", ja: "駅", ko: "역", zh: "车站" } }],
+        ["お", "o", { text: "おに", romanization: "oni", translations: { en: "demon", vi: "quỷ", ja: "鬼", ko: "도깨비", zh: "鬼" } }],
+      ],
+    },
+    {
+      id: "ja-hiragana-u1-l2",
+      order: 2,
+      title: "か / き / く / け / こ",
+      titleVi: "か / き / く / け / こ",
+      chars: [
+        ["か", "ka", { text: "かさ", romanization: "kasa", translations: { en: "umbrella", vi: "ô", ja: "傘", ko: "우산", zh: "伞" } }],
+        ["き", "ki", { text: "きく", romanization: "kiku", translations: { en: "chrysanthemum", vi: "cúc", ja: "菊", ko: "국화", zh: "菊" } }],
+        ["く", "ku", { text: "くるま", romanization: "kuruma", translations: { en: "car", vi: "xe hơi", ja: "車", ko: "자동차", zh: "车" } }],
+        ["け", "ke", { text: "けむり", romanization: "kemuri", translations: { en: "smoke", vi: "khói", ja: "煙", ko: "연기", zh: "烟" } }],
+        ["こ", "ko", { text: "こども", romanization: "kodomo", translations: { en: "child", vi: "trẻ em", ja: "子供", ko: "아이", zh: "孩子" } }],
+      ],
+    },
+    {
+      id: "ja-hiragana-u1-l3",
+      order: 3,
+      title: "さ / し / す / せ / そ",
+      titleVi: "さ / し / す / せ / そ",
+      chars: [
+        ["さ", "sa", { text: "さかな", romanization: "sakana", translations: { en: "fish", vi: "cá", ja: "魚", ko: "물고기", zh: "鱼" } }],
+        ["し", "shi", { text: "しろ", romanization: "shiro", translations: { en: "castle", vi: "lâu đài", ja: "城", ko: "성", zh: "城" } }],
+        ["す", "su", { text: "すし", romanization: "sushi", translations: { en: "sushi", vi: "sushi", ja: "寿司", ko: "스시", zh: "寿司" } }],
+        ["せ", "se", { text: "せんせい", romanization: "sensei", translations: { en: "teacher", vi: "giáo viên", ja: "先生", ko: "선생님", zh: "老师" } }],
+        ["そ", "so", { text: "そら", romanization: "sora", translations: { en: "sky", vi: "bầu trời", ja: "空", ko: "하늘", zh: "天空" } }],
+      ],
+    },
+    {
+      id: "ja-hiragana-u1-l4",
+      order: 4,
+      title: "た / ち / つ / て / と",
+      titleVi: "た / ち / つ / て / と",
+      chars: [
+        ["た", "ta", { text: "たまご", romanization: "tamago", translations: { en: "egg", vi: "trứng", ja: "卵", ko: "달걀", zh: "蛋" } }],
+        ["ち", "chi", { text: "ちず", romanization: "chizu", translations: { en: "map", vi: "bản đồ", ja: "地図", ko: "지도", zh: "地图" } }],
+        ["つ", "tsu", { text: "つき", romanization: "tsuki", translations: { en: "moon", vi: "mặt trăng", ja: "月", ko: "달", zh: "月亮" } }],
+        ["て", "te", { text: "てがみ", romanization: "tegami", translations: { en: "letter", vi: "lá thư", ja: "手紙", ko: "편지", zh: "信" } }],
+        ["と", "to", { text: "とり", romanization: "tori", translations: { en: "bird", vi: "chim", ja: "鳥", ko: "새", zh: "鸟" } }],
+      ],
+    },
+    {
+      id: "ja-hiragana-u1-l5",
+      order: 5,
+      title: "な / に / ぬ / ね / の",
+      titleVi: "な / に / ぬ / ね / の",
+      chars: [
+        ["な", "na", { text: "なつ", romanization: "natsu", translations: { en: "summer", vi: "mùa hè", ja: "夏", ko: "여름", zh: "夏天" } }],
+        ["に", "ni", { text: "にく", romanization: "niku", translations: { en: "meat", vi: "thịt", ja: "肉", ko: "고기", zh: "肉" } }],
+        ["ぬ", "nu", { text: "ぬの", romanization: "nuno", translations: { en: "cloth", vi: "vải", ja: "布", ko: "천", zh: "布" } }],
+        ["ね", "ne", { text: "ねこ", romanization: "neko", translations: { en: "cat", vi: "mèo", ja: "猫", ko: "고양이", zh: "猫" } }],
+        ["の", "no", { text: "のり", romanization: "nori", translations: { en: "seaweed", vi: "rong biển", ja: "海苔", ko: "김", zh: "紫菜" } }],
+      ],
+    },
+  ];
+
+  const lessons = rows.map((row) =>
+    buildKanaLesson({
+      id: row.id,
+      unitId,
+      order: row.order,
+      title: row.title,
+      titleVi: row.titleVi,
+      chars: row.chars,
+      script: "hiragana",
+      moduleId: "hiragana_starter",
+    }),
+  );
+
+  const checkpointChars = [
+    ["あ", "a", { text: "あめ", romanization: "ame", translations: { en: "rain", vi: "mưa", ja: "雨", ko: "비", zh: "雨" } }],
+    ["か", "ka", { text: "かさ", romanization: "kasa", translations: { en: "umbrella", vi: "ô", ja: "傘", ko: "우산", zh: "伞" } }],
+    ["さ", "sa", { text: "さかな", romanization: "sakana", translations: { en: "fish", vi: "cá", ja: "魚", ko: "물고기", zh: "鱼" } }],
+    ["た", "ta", { text: "たまご", romanization: "tamago", translations: { en: "egg", vi: "trứng", ja: "卵", ko: "달걀", zh: "蛋" } }],
+    ["な", "na", { text: "なつ", romanization: "natsu", translations: { en: "summer", vi: "mùa hè", ja: "夏", ko: "여름", zh: "夏天" } }],
+  ];
+  lessons.push(
+    buildKanaLesson({
+      id: "ja-hiragana-u1-l6",
+      unitId,
+      order: 6,
+      title: "Unit checkpoint: Hiragana basics",
+      titleVi: "Kiểm tra unit: Hiragana cơ bản",
+      chars: checkpointChars,
+      isCheckpoint: true,
+      script: "hiragana",
+      moduleId: "hiragana_starter",
+    }),
+  );
+
+  const unit = {
+    id: unitId,
+    title: "Unit 1: Hiragana basics",
+    titleVi: "Unit 1: Hiragana cơ bản",
+    levelCode: "A0",
+    trackId: "ja-core_foundation",
+    moduleId: "hiragana_starter",
+    goal: "Recognize the first five hiragana rows as individual characters.",
+    goalVi: "Nhận biết năm hàng hiragana đầu dưới dạng từng chữ cái.",
+    order: 1,
+    lessonIds: lessons.map((l) => l.id),
+  };
+
+  return makeCourse({
+    languageCode: "ja",
+    nicheId: "core_foundation",
+    branch: "core_foundation",
+    moduleId: "hiragana_starter",
+    moduleTitle: "Hiragana Starter",
+    moduleTitleVi: "Hiragana Starter",
+    title: "Japanese · Core Foundation",
+    titleVi: "Tiếng Nhật · Nền tảng",
+    description: "Start with individual hiragana characters before phrases.",
+    descriptionVi: "Bắt đầu với từng chữ hiragana trước khi học cụm từ.",
+    order: 0,
+    units: [unit],
+    lessons,
+  });
+}
+
+function jaKatakanaFoundationUnit4() {
+  const unitId = "ja-core-foundation-katakana-u4";
+  const rows = [
+    {
+      id: "ja-katakana-u4-l1",
+      order: 1,
+      title: "ア / イ / ウ / エ / オ",
+      titleVi: "ア / イ / ウ / エ / オ",
+      chars: [
+        ["ア", "a", { text: "アイス", romanization: "aisu", translations: { en: "ice cream", vi: "kem", ja: "アイス", ko: "아이스크림", zh: "冰淇淋" } }],
+        ["イ", "i", { text: "イス", romanization: "isu", translations: { en: "chair", vi: "ghế", ja: "椅子", ko: "의자", zh: "椅子" } }],
+        ["ウ", "u", { text: "ウール", romanization: "uuru", translations: { en: "wool", vi: "len", ja: "ウール", ko: "울", zh: "羊毛" } }],
+        ["エ", "e", { text: "エアコン", romanization: "eakon", translations: { en: "air conditioner", vi: "máy lạnh", ja: "エアコン", ko: "에어컨", zh: "空调" } }],
+        ["オ", "o", { text: "オレンジ", romanization: "orenji", translations: { en: "orange", vi: "cam", ja: "オレンジ", ko: "오렌지", zh: "橙子" } }],
+      ],
+    },
+    {
+      id: "ja-katakana-u4-l2",
+      order: 2,
+      title: "カ / キ / ク / ケ / コ",
+      titleVi: "カ / キ / ク / ケ / コ",
+      chars: [
+        ["カ", "ka", { text: "カメラ", romanization: "kamera", translations: { en: "camera", vi: "máy ảnh", ja: "カメラ", ko: "카메라", zh: "相机" } }],
+        ["キ", "ki", { text: "キス", romanization: "kisu", translations: { en: "kiss", vi: "hôn", ja: "キス", ko: "키스", zh: "吻" } }],
+        ["ク", "ku", { text: "クラス", romanization: "kurasu", translations: { en: "class", vi: "lớp học", ja: "クラス", ko: "클래스", zh: "班级" } }],
+        ["ケ", "ke", { text: "ケーキ", romanization: "keeki", translations: { en: "cake", vi: "bánh ngọt", ja: "ケーキ", ko: "케이크", zh: "蛋糕" } }],
+        ["コ", "ko", { text: "コーヒー", romanization: "koohii", translations: { en: "coffee", vi: "cà phê", ja: "コーヒー", ko: "커피", zh: "咖啡" } }],
+      ],
+    },
+    {
+      id: "ja-katakana-u4-l3",
+      order: 3,
+      title: "サ / シ / ス / セ / ソ",
+      titleVi: "サ / シ / ス / セ / ソ",
+      chars: [
+        ["サ", "sa", { text: "サラダ", romanization: "sarada", translations: { en: "salad", vi: "salad", ja: "サラダ", ko: "샐러드", zh: "沙拉" } }],
+        ["シ", "shi", { text: "シャツ", romanization: "shatsu", translations: { en: "shirt", vi: "áo sơ mi", ja: "シャツ", ko: "셔츠", zh: "衬衫" } }],
+        ["ス", "su", { text: "スーパー", romanization: "suupaa", translations: { en: "supermarket", vi: "siêu thị", ja: "スーパー", ko: "슈퍼", zh: "超市" } }],
+        ["セ", "se", { text: "セーター", romanization: "seetaa", translations: { en: "sweater", vi: "áo len", ja: "セーター", ko: "스웨터", zh: "毛衣" } }],
+        ["ソ", "so", { text: "ソファ", romanization: "sofa", translations: { en: "sofa", vi: "ghế sofa", ja: "ソファ", ko: "소파", zh: "沙发" } }],
+      ],
+    },
+    {
+      id: "ja-katakana-u4-l4",
+      order: 4,
+      title: "タ / チ / ツ / テ / ト",
+      titleVi: "タ / チ / ツ / テ / ト",
+      chars: [
+        ["タ", "ta", { text: "タクシー", romanization: "takushii", translations: { en: "taxi", vi: "taxi", ja: "タクシー", ko: "택시", zh: "出租车" } }],
+        ["チ", "chi", { text: "チーズ", romanization: "chiizu", translations: { en: "cheese", vi: "phô mai", ja: "チーズ", ko: "치즈", zh: "奶酪" } }],
+        ["ツ", "tsu", { text: "ツアー", romanization: "tsuaa", translations: { en: "tour", vi: "tour", ja: "ツアー", ko: "투어", zh: "旅行团" } }],
+        ["テ", "te", { text: "テスト", romanization: "tesuto", translations: { en: "test", vi: "bài kiểm tra", ja: "テスト", ko: "테스트", zh: "测验" } }],
+        ["ト", "to", { text: "トマト", romanization: "tomato", translations: { en: "tomato", vi: "cà chua", ja: "トマト", ko: "토마토", zh: "番茄" } }],
+      ],
+    },
+    {
+      id: "ja-katakana-u4-l5",
+      order: 5,
+      title: "ナ / ニ / ヌ / ネ / ノ",
+      titleVi: "ナ / ニ / ヌ / ネ / ノ",
+      chars: [
+        ["ナ", "na", { text: "ナイフ", romanization: "naifu", translations: { en: "knife", vi: "dao", ja: "ナイフ", ko: "나이프", zh: "刀" } }],
+        ["ニ", "ni", { text: "ニュース", romanization: "nyuusu", translations: { en: "news", vi: "tin tức", ja: "ニュース", ko: "뉴스", zh: "新闻" } }],
+        ["ヌ", "nu", { text: "ヌードル", romanization: "nuudoru", translations: { en: "noodles", vi: "mì", ja: "ヌードル", ko: "누들", zh: "面条" } }],
+        ["ネ", "ne", { text: "ネクタイ", romanization: "nekutai", translations: { en: "necktie", vi: "cà vạt", ja: "ネクタイ", ko: "넥타이", zh: "领带" } }],
+        ["ノ", "no", { text: "ノート", romanization: "nooto", translations: { en: "notebook", vi: "vở", ja: "ノート", ko: "노트", zh: "笔记本" } }],
+      ],
+    },
+  ];
+
+  const lessons = rows.map((row) =>
+    buildKanaLesson({
+      id: row.id,
+      unitId,
+      order: row.order,
+      title: row.title,
+      titleVi: row.titleVi,
+      chars: row.chars,
+      script: "katakana",
+      moduleId: "katakana_starter",
+    }),
+  );
+
+  lessons.push(
+    buildKanaLesson({
+      id: "ja-katakana-u4-l6",
+      unitId,
+      order: 6,
+      title: "Unit checkpoint: Katakana basics",
+      titleVi: "Kiểm tra unit: Katakana cơ bản",
+      chars: [
+        ["ア", "a", { text: "アイス", romanization: "aisu", translations: { en: "ice cream", vi: "kem", ja: "アイス", ko: "아이스크림", zh: "冰淇淋" } }],
+        ["カ", "ka", { text: "カメラ", romanization: "kamera", translations: { en: "camera", vi: "máy ảnh", ja: "カメラ", ko: "카메라", zh: "相机" } }],
+        ["サ", "sa", { text: "サラダ", romanization: "sarada", translations: { en: "salad", vi: "salad", ja: "サラダ", ko: "샐러드", zh: "沙拉" } }],
+        ["タ", "ta", { text: "タクシー", romanization: "takushii", translations: { en: "taxi", vi: "taxi", ja: "タクシー", ko: "택시", zh: "出租车" } }],
+        ["ナ", "na", { text: "ナイフ", romanization: "naifu", translations: { en: "knife", vi: "dao", ja: "ナイフ", ko: "나이프", zh: "刀" } }],
+      ],
+      isCheckpoint: true,
+      script: "katakana",
+      moduleId: "katakana_starter",
+    }),
+  );
+
+  const unit = {
+    id: unitId,
+    title: "Unit 4: Katakana Basics",
+    titleVi: "Unit 4: Katakana cơ bản",
+    levelCode: "A0",
+    trackId: "ja-core_foundation",
+    moduleId: "katakana_starter",
+    goal: "Recognize the first five katakana rows as individual characters.",
+    goalVi: "Nhận biết năm hàng katakana đầu dưới dạng từng chữ cái.",
+    order: 4,
+    lessonIds: lessons.map((l) => l.id),
+  };
+
+  return makeCourse({
+    languageCode: "ja",
+    nicheId: "core_foundation",
+    branch: "core_foundation",
+    moduleId: "katakana_starter",
+    moduleTitle: "Katakana Basics",
+    moduleTitleVi: "Katakana cơ bản",
+    title: "Japanese · Core Foundation · Katakana",
+    titleVi: "Tiếng Nhật · Nền tảng · Katakana",
+    description: "Learn individual katakana characters with short loanword examples.",
+    descriptionVi: "Học từng chữ katakana với ví dụ từ mượn ngắn.",
+    order: 1,
+    units: [unit],
+    lessons,
+  });
 }
 
 // ── English Daily Life → Greetings → Unit 1 ─────────────────────────
@@ -1426,8 +1867,248 @@ function jaGreetingsUnit1() {
   });
 }
 
+function letterItem(letter, sound) {
+  const lower = letter.toLowerCase();
+  return item(
+    `en-letter-${lower}`,
+    letter,
+    {
+      en: `letter ${letter} (sound ${sound})`,
+      vi: `chữ ${letter} (âm ${sound})`,
+      ja: `文字 ${letter}（音 ${sound}）`,
+      ko: `글자 ${letter} (${sound} 소리)`,
+      zh: `字母 ${letter}（音 ${sound}）`,
+    },
+    { reading: letter, romanization: sound, speechText: letter },
+  );
+}
+
+function buildAlphabetLesson({
+  id,
+  unitId,
+  order,
+  title,
+  titleVi,
+  letters,
+  isCheckpoint = false,
+}) {
+  const vocab = letters.map(([letter, sound]) => letterItem(letter, sound));
+  // Exercises use five focus letters; vocabulary may include a sixth (Z).
+  const focusVocab = vocab.length >= 5 ? vocab.slice(0, 5) : vocab;
+  const [c0, c1, c2, c3, c4] = focusVocab;
+  const all = vocab.map((v) => v.displayText);
+  const focusLetters = focusVocab.map((v) => v.displayText);
+  const fillSentence = `___ ${focusLetters.slice(1).join(" ")}`;
+  return makeLesson({
+    id,
+    languageCode: "en",
+    nicheId: "core_foundation",
+    branch: "core_foundation",
+    moduleId: "alphabet_starter",
+    unitId,
+    order,
+    level: "A0",
+    template: isCheckpoint ? "miniTestLesson" : "vocabularyLesson",
+    title,
+    titleVi,
+    description: `Learn the English letters ${all.join(" / ")}.`,
+    descriptionVi: `Học các chữ cái tiếng Anh ${all.join(" / ")}.`,
+    canDoObjective: `I can recognize ${all.join(", ")}.`,
+    canDoObjectiveVi: `Tôi có thể nhận biết ${all.join(", ")}.`,
+    estimatedMinutes: isCheckpoint ? 10 : 8,
+    track: "en-core_foundation",
+    vocabulary: vocab,
+    keyPhrases: [],
+    exercises: buildTenExercises({
+      id,
+      vocab: focusVocab,
+      focus: c0,
+      fill: {
+        sentence: fillSentence,
+        blankWord: c0.displayText,
+        options: focusLetters.slice(0, 4),
+        speechText: focusLetters.join(" "),
+      },
+      chooseSentence: {
+        prompt: t({
+          en: `Which letter makes the “${c1.romanization}” sound?`,
+          vi: `Chữ nào có âm “${c1.romanization}”?`,
+          ja: `「${c1.romanization}」の音の文字はどれですか？`,
+          ko: `“${c1.romanization}” 소리의 글자는?`,
+          zh: `哪个字母发 “${c1.romanization}” 音？`,
+          displayText: c1.romanization,
+          speechText: c1.speechText,
+        }),
+        correct: c1.displayText,
+        distractors: focusLetters.filter((ch) => ch !== c1.displayText).slice(0, 3),
+      },
+      listenIndex: 2,
+      gapSentences: [
+        {
+          text: `___ ${c1.displayText} ${c2.displayText}`,
+          blankWord: c0.displayText,
+          speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
+        },
+        {
+          text: `${c0.displayText} ___ ${c2.displayText}`,
+          blankWord: c1.displayText,
+          speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
+        },
+        {
+          text: `${c2.displayText} ${c3.displayText} ___`,
+          blankWord: c4.displayText,
+          speechText: `${c2.displayText} ${c3.displayText} ${c4.displayText}`,
+        },
+      ],
+      aiQuestion: {
+        en: `Say these letters in order: ${all.join(", ")}.`,
+        vi: `Nêu các chữ cái này theo thứ tự: ${all.join(", ")}.`,
+        ja: `この文字を順番に言ってください：${all.join(", ")}。`,
+        ko: `이 글자들을 순서대로 말하세요: ${all.join(", ")}.`,
+        zh: `按顺序说出这些字母：${all.join(", ")}。`,
+      },
+    }),
+  });
+}
+
+function enAlphabetFoundationUnit1() {
+  const unitId = "en-core-foundation-alphabet-u1";
+  const rows = [
+    {
+      id: "en-alphabet-u1-l1",
+      order: 1,
+      title: "Vowels: A / E / I / O / U",
+      titleVi: "Nguyên âm: A / E / I / O / U",
+      letters: [
+        ["A", "a"],
+        ["E", "e"],
+        ["I", "i"],
+        ["O", "o"],
+        ["U", "u"],
+      ],
+    },
+    {
+      id: "en-alphabet-u1-l2",
+      order: 2,
+      title: "Consonants: B / C / D / F / G",
+      titleVi: "Phụ âm: B / C / D / F / G",
+      letters: [
+        ["B", "b"],
+        ["C", "c"],
+        ["D", "d"],
+        ["F", "f"],
+        ["G", "g"],
+      ],
+    },
+    {
+      id: "en-alphabet-u1-l3",
+      order: 3,
+      title: "Consonants: H / J / K / L / M",
+      titleVi: "Phụ âm: H / J / K / L / M",
+      letters: [
+        ["H", "h"],
+        ["J", "j"],
+        ["K", "k"],
+        ["L", "l"],
+        ["M", "m"],
+      ],
+    },
+    {
+      id: "en-alphabet-u1-l4",
+      order: 4,
+      title: "Consonants: N / P / Q / R / S",
+      titleVi: "Phụ âm: N / P / Q / R / S",
+      letters: [
+        ["N", "n"],
+        ["P", "p"],
+        ["Q", "q"],
+        ["R", "r"],
+        ["S", "s"],
+      ],
+    },
+    {
+      id: "en-alphabet-u1-l5",
+      order: 5,
+      title: "Consonants: T / V / W / X / Y / Z",
+      titleVi: "Phụ âm: T / V / W / X / Y / Z",
+      letters: [
+        ["T", "t"],
+        ["V", "v"],
+        ["W", "w"],
+        ["X", "x"],
+        ["Y", "y"],
+        ["Z", "z"],
+      ],
+    },
+  ];
+
+  const lessons = rows.map((row) =>
+    buildAlphabetLesson({
+      id: row.id,
+      unitId,
+      order: row.order,
+      title: row.title,
+      titleVi: row.titleVi,
+      letters: row.letters,
+    }),
+  );
+
+  lessons.push(
+    buildAlphabetLesson({
+      id: "en-alphabet-u1-l6",
+      unitId,
+      order: 6,
+      title: "Unit checkpoint: Alphabet basics",
+      titleVi: "Kiểm tra unit: Alphabet cơ bản",
+      letters: [
+        ["A", "a"],
+        ["M", "m"],
+        ["S", "s"],
+        ["Y", "y"],
+        ["Z", "z"],
+      ],
+      isCheckpoint: true,
+    }),
+  );
+
+  const unit = {
+    id: unitId,
+    title: "Unit 1: Alphabet basics",
+    titleVi: "Unit 1: Alphabet cơ bản",
+    levelCode: "A0",
+    trackId: "en-core_foundation",
+    moduleId: "alphabet_starter",
+    goal: "Recognize English vowels and consonants as individual letters.",
+    goalVi: "Nhận biết nguyên âm và phụ âm tiếng Anh dưới dạng từng chữ cái.",
+    order: 1,
+    lessonIds: lessons.map((l) => l.id),
+  };
+
+  return makeCourse({
+    languageCode: "en",
+    nicheId: "core_foundation",
+    branch: "core_foundation",
+    moduleId: "alphabet_starter",
+    moduleTitle: "Alphabet Starter",
+    moduleTitleVi: "Alphabet Starter",
+    title: "English · Core Foundation",
+    titleVi: "Tiếng Anh · Nền tảng",
+    description: "Start with individual English letters before phrases.",
+    descriptionVi: "Bắt đầu với từng chữ cái tiếng Anh trước khi học cụm từ.",
+    order: 0,
+    units: [unit],
+    lessons,
+  });
+}
+
 async function main() {
-  const packs = [enGreetingsUnit1(), jaGreetingsUnit1()];
+  const packs = [
+    jaHiraganaFoundationUnit1(),
+    jaKatakanaFoundationUnit4(),
+    enAlphabetFoundationUnit1(),
+    enGreetingsUnit1(),
+    jaGreetingsUnit1(),
+  ];
   const courses = packs.map((p) => p.course);
   const lessons = packs.flatMap((p) => p.lessons);
   const generatedAt = new Date().toISOString();
@@ -1437,7 +2118,10 @@ async function main() {
     version: VERSION,
     generatedAt,
     architecture: {
-      coreFoundation: { status: "placeholder", note: "Alphabet/script basics by language — not built yet." },
+      coreFoundation: {
+        status: "partial",
+        note: "Japanese Hiragana + Katakana Basics and English Alphabet Starter (A–Z) are playable. A0 users must finish or skip Core Foundation before niche lessons.",
+      },
       mainNiches: [
         "daily_life",
         "travel_hotel",
@@ -1459,8 +2143,8 @@ async function main() {
     },
     languages: LEARNING_CATALOG,
     playableLanguages: PLAYABLE_LANGUAGES,
-    nichesPlayable: ["daily_life"],
-    modulesPlayable: ["greetings"],
+    nichesPlayable: ["core_foundation", "daily_life"],
+    modulesPlayable: ["hiragana_starter", "alphabet_starter", "greetings"],
     courseCount: courses.length,
     lessonCount: lessons.length,
     unitCount,
@@ -1470,6 +2154,7 @@ async function main() {
         id: c.id,
         languageCode: c.languageCode,
         nicheId: c.nicheId,
+        branch: c.branch,
         moduleId: c.moduleId,
         title: c.title,
         lessonCount: courseLessons.length,
@@ -1485,15 +2170,10 @@ async function main() {
 
 Generated by \`scripts/generate-curriculum.mjs\`.
 
-Current playable scope (review before expanding):
-- Learning languages available: en, ja
-- Other 18 catalog languages: comingSoon only
-- Niche: daily_life → module greetings → Unit 1 only
+Current playable scope:
+- Core Foundation first for A0: JA hiragana + EN alphabet
+- Daily Life → Greetings Unit 1 after foundation complete/skip
 - Each lesson: exactly 10 exercises (1–7 free, 8–10 Plus)
-- Exam Preparation: placeholder only
-
-Do not hand-edit JSON under \`shared/generated/\`.
-Edit the generator, then run:
 
 \`\`\`bash
 npm run generate:curriculum

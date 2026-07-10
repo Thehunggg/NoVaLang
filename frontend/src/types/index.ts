@@ -40,6 +40,8 @@ export interface AppProgress {
   currentUnitId: string | null;
   dailyGoalMinutes: DailyGoal;
   placementResult: PlacementResult | null;
+  coreFoundationCompleted: boolean;
+  coreFoundationSkipped: boolean;
   totalXp: number;
   xpToday: number;
   streak: number;

@@ -22,6 +22,8 @@ class UserProfile {
     required this.lastStudyDate,
     required this.dailyGoalRewardClaimedDate,
     required this.placementResultLevel,
+    required this.coreFoundationCompleted,
+    required this.coreFoundationSkipped,
     required this.completedLessonIds,
     required this.lessonSessions,
     required this.userId,
@@ -29,7 +31,7 @@ class UserProfile {
     this.email,
   });
 
-  static const currentContentVersion = 'cross-platform-onboarding-v4';
+  static const currentContentVersion = 'cross-platform-onboarding-v5';
 
   final String contentVersion;
   final String displayName;
@@ -53,11 +55,20 @@ class UserProfile {
   final String? lastStudyDate;
   final String? dailyGoalRewardClaimedDate;
   final String? placementResultLevel;
+  final bool coreFoundationCompleted;
+  final bool coreFoundationSkipped;
   final List<String> completedLessonIds;
   final Map<String, Map<String, dynamic>> lessonSessions;
   final String userId;
   final String authProvider;
   final String? email;
+
+  /// Absolute beginners (A0 / low placement) must finish or skip Core Foundation
+  /// before niche lessons such as Daily Life greetings.
+  bool get needsCoreFoundation {
+    if (coreFoundationCompleted || coreFoundationSkipped) return false;
+    return levelCode == 'A0';
+  }
 
   factory UserProfile.defaults() => const UserProfile(
     contentVersion: currentContentVersion,
@@ -82,6 +93,8 @@ class UserProfile {
     lastStudyDate: null,
     dailyGoalRewardClaimedDate: null,
     placementResultLevel: null,
+    coreFoundationCompleted: false,
+    coreFoundationSkipped: false,
     completedLessonIds: [],
     lessonSessions: {},
     userId: 'mock_guest_user',
@@ -112,6 +125,8 @@ class UserProfile {
     String? lastStudyDate,
     String? dailyGoalRewardClaimedDate,
     String? placementResultLevel,
+    bool? coreFoundationCompleted,
+    bool? coreFoundationSkipped,
     List<String>? completedLessonIds,
     Map<String, Map<String, dynamic>>? lessonSessions,
     String? userId,
@@ -142,6 +157,9 @@ class UserProfile {
     dailyGoalRewardClaimedDate:
         dailyGoalRewardClaimedDate ?? this.dailyGoalRewardClaimedDate,
     placementResultLevel: placementResultLevel ?? this.placementResultLevel,
+    coreFoundationCompleted:
+        coreFoundationCompleted ?? this.coreFoundationCompleted,
+    coreFoundationSkipped: coreFoundationSkipped ?? this.coreFoundationSkipped,
     completedLessonIds: completedLessonIds ?? this.completedLessonIds,
     lessonSessions: lessonSessions ?? this.lessonSessions,
     userId: userId ?? this.userId,
@@ -217,6 +235,9 @@ class UserProfile {
       lastStudyDate: json['lastStudyDate'] as String?,
       dailyGoalRewardClaimedDate: json['dailyGoalRewardClaimedDate'] as String?,
       placementResultLevel: json['placementResultLevel'] as String?,
+      coreFoundationCompleted:
+          json['coreFoundationCompleted'] as bool? ?? false,
+      coreFoundationSkipped: json['coreFoundationSkipped'] as bool? ?? false,
       completedLessonIds:
           (json['completedLessonIds'] as List<dynamic>? ?? const [])
               .cast<String>(),
@@ -252,6 +273,8 @@ class UserProfile {
     'lastStudyDate': lastStudyDate,
     'dailyGoalRewardClaimedDate': dailyGoalRewardClaimedDate,
     'placementResultLevel': placementResultLevel,
+    'coreFoundationCompleted': coreFoundationCompleted,
+    'coreFoundationSkipped': coreFoundationSkipped,
     'completedLessonIds': completedLessonIds,
     'lessonSessions': lessonSessions,
     'userId': userId,

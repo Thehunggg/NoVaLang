@@ -49,8 +49,15 @@ class ProfileNotifier extends Notifier<UserProfile> {
   );
   Future<void> setGoal(int minutes) =>
       _commit(state.copyWith(dailyGoalMinutes: minutes));
-  Future<void> setLevel(String levelCode) =>
-      _commit(state.copyWith(levelCode: levelCode));
+  Future<void> setLevel(String levelCode) => _commit(
+    state.copyWith(
+      levelCode: levelCode,
+      coreFoundationSkipped:
+          levelCode != 'A0' ? true : state.coreFoundationSkipped,
+      coreFoundationCompleted:
+          levelCode != 'A0' ? true : state.coreFoundationCompleted,
+    ),
+  );
   Future<void> setTrack(String track) =>
       _commit(state.copyWith(selectedTrack: track));
 
@@ -61,6 +68,14 @@ class ProfileNotifier extends Notifier<UserProfile> {
     state.copyWith(
       selectedTrack: trackId,
       levelCode: levelCode ?? state.levelCode,
+      coreFoundationSkipped:
+          (levelCode ?? state.levelCode) != 'A0'
+              ? true
+              : state.coreFoundationSkipped,
+      coreFoundationCompleted:
+          (levelCode ?? state.levelCode) != 'A0'
+              ? true
+              : state.coreFoundationCompleted,
     ),
   );
 
@@ -111,8 +126,21 @@ class ProfileNotifier extends Notifier<UserProfile> {
       _commit(state.copyWith(onboardingComplete: true));
 
   Future<void> setPlacementResult(String levelCode) => _commit(
-    state.copyWith(levelCode: levelCode, placementResultLevel: levelCode),
+    state.copyWith(
+      levelCode: levelCode,
+      placementResultLevel: levelCode,
+      coreFoundationSkipped:
+          levelCode != 'A0' ? true : state.coreFoundationSkipped,
+      coreFoundationCompleted:
+          levelCode != 'A0' ? true : state.coreFoundationCompleted,
+    ),
   );
+
+  Future<void> completeCoreFoundation() =>
+      _commit(state.copyWith(coreFoundationCompleted: true));
+
+  Future<void> skipCoreFoundation() =>
+      _commit(state.copyWith(coreFoundationSkipped: true));
 
   Future<void> saveLessonStep(String lessonId, int currentStepIndex) {
     final sessions = Map<String, Map<String, dynamic>>.from(
@@ -162,6 +190,11 @@ class ProfileNotifier extends Notifier<UserProfile> {
     if (lessonComplete && !completedLessons.contains(lessonId)) {
       completedLessons.add(lessonId);
     }
+    final foundationDone =
+        state.coreFoundationCompleted ||
+        (completedLessons.contains('ja-hiragana-u1-l6') &&
+            completedLessons.contains('ja-katakana-u4-l6')) ||
+        completedLessons.contains('en-alphabet-u1-l6');
     await _commit(
       state.copyWith(
         lessonSessions: sessions,
@@ -174,6 +207,7 @@ class ProfileNotifier extends Notifier<UserProfile> {
         dailyGoalRewardClaimedDate: rewarded
             ? today
             : state.dailyGoalRewardClaimedDate,
+        coreFoundationCompleted: foundationDone,
       ),
     );
     return rewarded;

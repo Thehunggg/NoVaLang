@@ -11,8 +11,14 @@ class VocabularyItem {
     required this.meaningVi,
     this.reading,
     this.romanization,
+    this.exampleText,
+    this.exampleReading,
+    this.exampleRomanization,
+    this.exampleSpeechText,
     this.exampleSentence,
     this.exampleSentenceVi,
+    this.exampleTranslations = const {},
+    this.translations = const {},
   });
 
   final String id;
@@ -22,24 +28,73 @@ class VocabularyItem {
   final String meaningVi;
   final String? reading;
   final String? romanization;
+  final String? exampleText;
+  final String? exampleReading;
+  final String? exampleRomanization;
+  final String? exampleSpeechText;
   final String? exampleSentence;
   final String? exampleSentenceVi;
+  final Map<String, String> exampleTranslations;
+  final Map<String, String> translations;
 
-  factory VocabularyItem.fromJson(Map<String, dynamic> json) => VocabularyItem(
-    id: json['id'] as String? ?? '',
-    displayText: json['displayText'] as String? ?? '',
-    speechText:
-        json['speechText'] as String? ?? json['displayText'] as String? ?? '',
-    meaningEn: json['meaningEn'] as String? ?? '',
-    meaningVi: json['meaningVi'] as String? ?? '',
-    reading: json['reading'] as String?,
-    romanization: json['romanization'] as String?,
-    exampleSentence: json['exampleSentence'] as String?,
-    exampleSentenceVi: json['exampleSentenceVi'] as String?,
-  );
+  factory VocabularyItem.fromJson(Map<String, dynamic> json) {
+    Map<String, String> asStringMap(dynamic value) {
+      if (value is! Map) return const {};
+      return value.map(
+        (key, item) => MapEntry(key.toString(), item?.toString() ?? ''),
+      );
+    }
 
-  String localizedMeaning(String locale) =>
-      locale == 'vi' ? meaningVi : meaningEn;
+    final translations = asStringMap(json['translations']);
+    final exampleTranslations = asStringMap(json['exampleTranslations']);
+    final exampleText =
+        json['exampleText'] as String? ??
+        json['exampleDisplay'] as String? ??
+        json['exampleSentence'] as String?;
+
+    return VocabularyItem(
+      id: json['id'] as String? ?? '',
+      displayText: json['displayText'] as String? ?? '',
+      speechText:
+          json['speechText'] as String? ?? json['displayText'] as String? ?? '',
+      meaningEn:
+          json['meaningEn'] as String? ?? translations['en'] ?? '',
+      meaningVi:
+          json['meaningVi'] as String? ?? translations['vi'] ?? '',
+      reading: json['reading'] as String?,
+      romanization: json['romanization'] as String?,
+      exampleText: exampleText,
+      exampleReading: json['exampleReading'] as String? ?? exampleText,
+      exampleRomanization: json['exampleRomanization'] as String?,
+      exampleSpeechText:
+          json['exampleSpeechText'] as String? ?? exampleText,
+      exampleSentence: json['exampleSentence'] as String? ?? exampleText,
+      exampleSentenceVi:
+          json['exampleSentenceVi'] as String? ??
+          exampleTranslations['vi'],
+      exampleTranslations: exampleTranslations,
+      translations: translations,
+    );
+  }
+
+  String localizedMeaning(String locale) {
+    if (translations[locale]?.isNotEmpty == true) return translations[locale]!;
+    if (locale == 'vi' && meaningVi.isNotEmpty) return meaningVi;
+    return meaningEn;
+  }
+
+  String localizedExampleTranslation(String locale) {
+    if (exampleTranslations[locale]?.isNotEmpty == true) {
+      return exampleTranslations[locale]!;
+    }
+    if (locale == 'vi' && (exampleSentenceVi?.isNotEmpty ?? false)) {
+      return exampleSentenceVi!;
+    }
+    return exampleTranslations['en'] ?? exampleSentenceVi ?? '';
+  }
+
+  String get resolvedExampleText =>
+      exampleText ?? exampleSentence ?? '';
 }
 
 class KeyPhrase {
@@ -254,7 +309,7 @@ class CurriculumLesson {
   }
 
   /// Convert to the existing Flutter [Lesson] model used by lesson UI.
-  Lesson toLesson() => Lesson(
+  Lesson toLesson({String nativeLanguage = 'en'}) => Lesson(
     id: id,
     title: title,
     titleVi: titleVi,
@@ -272,6 +327,27 @@ class CurriculumLesson {
     introPointsVi: introPointsVi.isNotEmpty
         ? introPointsVi
         : (canDoObjectiveVi.isNotEmpty ? [canDoObjectiveVi] : const []),
+    vocabulary: vocabulary
+        .map(
+          (item) => LessonVocabCard(
+            displayText: item.displayText,
+            speechText: item.speechText,
+            meaning: item.localizedMeaning(nativeLanguage),
+            reading: item.reading,
+            romanization: item.romanization,
+            exampleText: item.resolvedExampleText.isEmpty
+                ? null
+                : item.resolvedExampleText,
+            exampleReading: item.exampleReading,
+            exampleRomanization: item.exampleRomanization,
+            exampleSpeechText:
+                item.exampleSpeechText ?? item.resolvedExampleText,
+            exampleTranslation: item.localizedExampleTranslation(
+              nativeLanguage,
+            ),
+          ),
+        )
+        .toList(growable: false),
     estimatedMinutes: estimatedMinutes,
     comingSoon: comingSoon,
   );

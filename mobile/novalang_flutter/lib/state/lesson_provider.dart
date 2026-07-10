@@ -55,6 +55,7 @@ final curriculumCatalogProvider = FutureProvider<CurriculumCatalog>((ref) async 
 final lessonProvider = Provider<List<Lesson>>((ref) {
   final language = _effectiveLearningLanguage(ref);
   final nicheId = _effectiveNicheId(ref);
+  final profile = ref.watch(profileProvider);
   final catalogAsync = ref.watch(curriculumCatalogProvider);
 
   return catalogAsync.maybeWhen(
@@ -62,6 +63,8 @@ final lessonProvider = Provider<List<Lesson>>((ref) {
       final units = CurriculumRepository.unitsFor(
         languageCode: language,
         nicheId: nicheId,
+        includeNiche: !profile.needsCoreFoundation,
+        nativeLanguage: profile.nativeLanguageCode,
       );
       if (units.isNotEmpty) {
         return units.expand((unit) => unit.lessons).toList(growable: false);
@@ -81,6 +84,7 @@ final lessonProvider = Provider<List<Lesson>>((ref) {
 final courseUnitsProvider = Provider<List<CourseUnit>>((ref) {
   final language = _effectiveLearningLanguage(ref);
   final nicheId = _effectiveNicheId(ref);
+  final profile = ref.watch(profileProvider);
   final catalogAsync = ref.watch(curriculumCatalogProvider);
 
   return catalogAsync.maybeWhen(
@@ -88,6 +92,8 @@ final courseUnitsProvider = Provider<List<CourseUnit>>((ref) {
       final units = CurriculumRepository.unitsFor(
         languageCode: language,
         nicheId: nicheId,
+        includeNiche: !profile.needsCoreFoundation,
+        nativeLanguage: profile.nativeLanguageCode,
       );
       if (units.isNotEmpty) return units;
       if (language == 'ja') return japaneseCourseUnits;
@@ -106,7 +112,7 @@ final curriculumComingSoonProvider = Provider<bool>((ref) {
   final units = ref.watch(courseUnitsProvider);
   if (units.isNotEmpty) return false;
   // Available languages without matching niche still show coming soon.
-  const available = {'en', 'ja', 'es'};
+  const available = {'en', 'ja'};
   if (!available.contains(language)) return true;
   return true;
 });

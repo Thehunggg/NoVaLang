@@ -9,6 +9,8 @@ import '../../models/user_profile.dart';
 import '../../state/lesson_provider.dart';
 import '../../state/profile_provider.dart';
 import '../../state/shared_data_provider.dart';
+import '../../widgets/common/app_button.dart';
+import '../../widgets/common/app_card.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/responsive_page.dart';
 import '../../widgets/lesson/course_unit_card.dart';
@@ -70,6 +72,32 @@ class LearnScreen extends ConsumerWidget {
               lessonCount: visibleLessonCount,
             ),
             const SizedBox(height: 20),
+            if (profile.needsCoreFoundation) ...[
+              AppCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      L10n.text('coreFoundationRequired', locale),
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(L10n.text('coreFoundationRequiredHelp', locale)),
+                    const SizedBox(height: 12),
+                    AppButton(
+                      label: L10n.text('skipCoreFoundation', locale),
+                      outlined: true,
+                      onPressed: () => ref
+                          .read(profileProvider.notifier)
+                          .skipCoreFoundation(),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+            ],
             if (catalogAsync.isLoading)
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 48),

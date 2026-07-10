@@ -223,9 +223,24 @@
     "ja": "現在のレベルを維持"
   },
   "learnSubtitle": {
-    "en": "Follow your language and focus path. Tap a lesson to start.",
-    "vi": "Theo lộ trình ngôn ngữ và trọng tâm của bạn. Bấm vào bài để bắt đầu.",
-    "ja": "言語とフォーカスの学習パスを進みましょう。レッスンをタップして開始。"
+    "en": "Follow your language path. Absolute beginners start with Core Foundation.",
+    "vi": "Theo lộ trình ngôn ngữ của bạn. Người mới bắt đầu từ Core Foundation.",
+    "ja": "学習パスに沿って進みます。初心者はCore Foundationから始めます。"
+  },
+  "coreFoundationRequired": {
+    "en": "Start with Core Foundation",
+    "vi": "Bắt đầu với Core Foundation",
+    "ja": "Core Foundationから始める"
+  },
+  "coreFoundationRequiredHelp": {
+    "en": "A0 learners practice letters and sounds first. Daily Life greetings unlock after you finish or skip this step.",
+    "vi": "Người học A0 luyện chữ cái và âm trước. Daily Life (chào hỏi) mở sau khi bạn hoàn thành hoặc bỏ qua bước này.",
+    "ja": "A0学習者はまず文字と音を練習します。日常生活のあいさつは完了またはスキップ後に開放されます。"
+  },
+  "skipCoreFoundation": {
+    "en": "Skip Core Foundation",
+    "vi": "Bỏ qua Core Foundation",
+    "ja": "Core Foundationをスキップ"
   },
   "lessonsAvailableCount": {
     "en": "{n} lessons",
@@ -292,5 +307,30 @@
     "en": "Learning focus saved",
     "vi": "Đã lưu trọng tâm học",
     "ja": "学習フォーカスを保存しました"
+  },
+  "vocabReading": {
+    "en": "Reading",
+    "vi": "Cách đọc",
+    "ja": "読み方"
+  },
+  "vocabMeaning": {
+    "en": "Meaning",
+    "vi": "Nghĩa",
+    "ja": "意味"
+  },
+  "vocabExample": {
+    "en": "Example",
+    "vi": "Ví dụ",
+    "ja": "例"
+  },
+  "vocabTranslation": {
+    "en": "Translation",
+    "vi": "Dịch",
+    "ja": "翻訳"
+  },
+  "vocabulary": {
+    "en": "Vocabulary",
+    "vi": "Từ vựng",
+    "ja": "単語"
   }
 }

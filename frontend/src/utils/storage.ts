@@ -8,7 +8,7 @@ const OLD_STORAGE_KEY = "linguaquest-ai-progress-v2";
 const NATIVE_LANGUAGE_KEY = "nativeLanguage";
 const UI_LANGUAGE_KEY = "effectiveUILanguage";
 const LEARNING_LANGUAGE_KEY = "learningLanguage";
-export const CONTENT_VERSION = "cross-platform-onboarding-v4";
+export const CONTENT_VERSION = "cross-platform-onboarding-v5";
 
 export { getEffectiveUILanguage, isUISupportedForNativeLanguage };
 
@@ -71,9 +71,10 @@ export const initialAppProgress: AppProgress = {
   selectedNiches: ["daily_life"], primaryNiche: "daily_life", nicheUpdatedAt: null, levelDecisionAfterNicheChange: null,
   onboardingCompleted: false, selectedLanguage: "en", experienceLevel: "beginner",
   selectedLevel: "A0", currentLevel: "A0", currentUnitId: null, dailyGoalMinutes: 10, placementResult: null,
+  coreFoundationCompleted: false, coreFoundationSkipped: false,
   totalXp: 0, xpToday: 0, streak: 0, lastActiveDate: null, hearts: 5,
   completedLessonIds: [], completedMicroLessonIds: [],
-  unlockedLessonIds: ["en-a0-u1-l1", "ja-a0-u1-l1", "es-a0-u1-l1"], placedLessonIds: [],
+  unlockedLessonIds: ["en-alphabet-u1-l1", "ja-hiragana-u1-l1"], placedLessonIds: [],
   currentLessonId: null, currentMicroLessonId: null, reviewItems: [], mistakes: [], improvedMistakeIds: [],
   savedFlashcards: [], achievements: [], perfectLessonIds: [], completedPracticeCount: 0, lessonsCompletedToday: 0,
   studyMinutesToday: 0, dailyGoalRewardClaimedDate: null, lessonSessions: {}
@@ -110,7 +111,9 @@ export const getProgress = (): AppProgress => {
       reviewItems: value.reviewItems ?? [],
       placedLessonIds: value.placedLessonIds ?? [],
       currentMicroLessonId: staleContent ? null : value.currentMicroLessonId ?? null,
-      mistakes: staleContent ? [] : value.mistakes ?? []
+      mistakes: staleContent ? [] : value.mistakes ?? [],
+      coreFoundationCompleted: value.coreFoundationCompleted ?? false,
+      coreFoundationSkipped: value.coreFoundationSkipped ?? false,
     };
   } catch {
     const nativeLanguage = getNativeLanguage(); const learningLanguage = getLearningLanguage();

@@ -9,6 +9,33 @@ enum LessonTemplate {
   miniTestLesson,
 }
 
+/// Slim vocab card model for lesson intro UI (avoids circular imports).
+class LessonVocabCard {
+  const LessonVocabCard({
+    required this.displayText,
+    required this.speechText,
+    required this.meaning,
+    this.reading,
+    this.romanization,
+    this.exampleText,
+    this.exampleReading,
+    this.exampleRomanization,
+    this.exampleSpeechText,
+    this.exampleTranslation,
+  });
+
+  final String displayText;
+  final String speechText;
+  final String meaning;
+  final String? reading;
+  final String? romanization;
+  final String? exampleText;
+  final String? exampleReading;
+  final String? exampleRomanization;
+  final String? exampleSpeechText;
+  final String? exampleTranslation;
+}
+
 class Lesson {
   const Lesson({
     required this.id,
@@ -22,6 +49,7 @@ class Lesson {
     required this.exercises,
     this.introPoints = const [],
     this.introPointsVi = const [],
+    this.vocabulary = const [],
     this.estimatedMinutes = 5,
     this.comingSoon = false,
   });
@@ -37,6 +65,7 @@ class Lesson {
   final List<Exercise> exercises;
   final List<String> introPoints;
   final List<String> introPointsVi;
+  final List<LessonVocabCard> vocabulary;
   final int estimatedMinutes;
   final bool comingSoon;
 
