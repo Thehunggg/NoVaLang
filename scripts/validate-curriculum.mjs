@@ -38,6 +38,9 @@ const EXPECTED_SLOT_TYPES = [
   "controlledAiQa",
   "aiFeedbackReview",
 ];
+const EXPECTED_HIRAGANA_46 = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
+const EXPECTED_KATAKANA_46 = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン".split("");
+const EXPECTED_ALPHABET_26 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 const errors = [];
 const fail = (msg) => errors.push(msg);
@@ -232,6 +235,73 @@ function validateJapaneseItem(lesson, item, label) {
   }
 }
 
+function validateKanaCoverage(lessons, { script, moduleId, expected }) {
+  const items = lessons
+    .filter((lesson) => lesson.languageCode === "ja" && lesson.moduleId === moduleId)
+    .flatMap((lesson) =>
+      (lesson.vocabulary ?? [])
+        .filter((item) => item.isBasicKana === true || item.kanaScript === script)
+        .map((item) => ({ lesson, item })),
+    );
+
+  const byOrder = new Map();
+  const seenChars = new Map();
+  for (const { lesson, item } of items) {
+    const kana = item.displayText || item.text || "";
+    const actualOrder = item.characterOrder ?? item.displayOrder;
+    if (!Number.isInteger(actualOrder)) {
+      fail(`${lesson.id}: ${kana}: missing characterOrder/displayOrder`);
+      continue;
+    }
+    const expectedOrder = expected.indexOf(kana) + 1;
+    if (expectedOrder <= 0) {
+      fail(`${lesson.id}: ${kana}: not part of canonical ${script} basic 46`);
+      continue;
+    }
+    if (actualOrder !== expectedOrder || item.displayOrder !== expectedOrder) {
+      fail(`${lesson.id}: ${kana}: expectedOrder=${expectedOrder}, actualOrder=${actualOrder}, displayOrder=${item.displayOrder}`);
+    }
+    if (byOrder.has(actualOrder)) {
+      fail(`${lesson.id}: ${kana}: duplicate ${script} order ${actualOrder} also used by ${byOrder.get(actualOrder)}`);
+    }
+    byOrder.set(actualOrder, kana);
+    if (seenChars.has(kana)) {
+      fail(`${lesson.id}: ${kana}: duplicate ${script} character also in ${seenChars.get(kana)}`);
+    }
+    seenChars.set(kana, lesson.id);
+  }
+
+  const actual = [...byOrder.entries()].sort((a, b) => a[0] - b[0]).map(([, kana]) => kana);
+  const missing = expected.filter((kana) => !seenChars.has(kana));
+  if (missing.length) fail(`${script}: missing basic kana: ${missing.join(", ")}`);
+  if (actual.join("") !== expected.join("")) {
+    fail(`${script}: canonical order mismatch; expected ${expected.join("")}, got ${actual.join("")}`);
+  }
+  if (items.length !== expected.length) {
+    fail(`${script}: expected ${expected.length} basic kana items, got ${items.length}`);
+  }
+}
+
+function validateAlphabetCoverage(lessons) {
+  const seen = new Map();
+  for (const lesson of lessons.filter((l) => l.languageCode === "en" && l.moduleId === "alphabet_starter")) {
+    for (const item of lesson.vocabulary ?? []) {
+      const letter = String(item.displayText || item.text || "").toUpperCase();
+      if (!/^[A-Z]$/.test(letter)) continue;
+      const expectedOrder = EXPECTED_ALPHABET_26.indexOf(letter) + 1;
+      const actualOrder = item.characterOrder ?? item.displayOrder;
+      if (actualOrder !== expectedOrder || item.displayOrder !== expectedOrder) {
+        fail(`${lesson.id}: ${letter}: expected alphabet order ${expectedOrder}, got ${actualOrder}/${item.displayOrder}`);
+      }
+      if (String(lesson.id).endsWith("-l6")) continue;
+      if (seen.has(letter)) fail(`${lesson.id}: duplicate alphabet letter ${letter} also in ${seen.get(letter)}`);
+      seen.set(letter, lesson.id);
+    }
+  }
+  const missing = EXPECTED_ALPHABET_26.filter((letter) => !seen.has(letter));
+  if (missing.length) fail(`English Alphabet Starter must include all A-Z; missing: ${missing.join(", ")}`);
+}
+
 async function main() {
   const coursesPayload = await loadJson("shared/generated/courses.json");
   const lessonsPayload = await loadJson("shared/generated/lessons.json");
@@ -247,6 +317,10 @@ async function main() {
   if (!courses.length || !lessons.length) fail("Courses/lessons empty — Web/Flutter cannot load curriculum");
 
   const lessonById = new Map(lessons.map((l) => [l.id, l]));
+  const courseIds = courses.map((course) => course.id);
+  if (!hasUnique(courseIds)) {
+    fail(`Course IDs must be unique; got [${courseIds.join(", ")}]`);
+  }
 
   if (catalog.playableLanguages?.join(",") !== "en,ja") {
     fail(`playableLanguages must be en,ja — got ${catalog.playableLanguages}`);
@@ -392,6 +466,18 @@ async function main() {
   }
 
   // After sync, Flutter assets should match; warn only (generate→validate→sync order).
+  validateKanaCoverage(lessons, {
+    script: "hiragana",
+    moduleId: "hiragana_starter",
+    expected: EXPECTED_HIRAGANA_46,
+  });
+  validateKanaCoverage(lessons, {
+    script: "katakana",
+    moduleId: "katakana_starter",
+    expected: EXPECTED_KATAKANA_46,
+  });
+  validateAlphabetCoverage(lessons);
+
   try {
     const flutterLessons = await loadJson(
       "mobile/novalang_flutter/assets/shared/lessons.json",

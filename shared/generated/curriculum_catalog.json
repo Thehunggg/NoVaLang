@@ -68,17 +68,17 @@
   "unitCount": 5,
   "courses": [
     {
-      "id": "ja-core_foundation",
+      "id": "ja-core_foundation-hiragana",
       "languageCode": "ja",
       "nicheId": "core_foundation",
       "branch": "core_foundation",
       "moduleId": "hiragana_starter",
-      "title": "Japanese · Core Foundation",
+      "title": "Japanese · Core Foundation · Hiragana",
       "lessonCount": 6,
       "playableLessonCount": 6
     },
     {
-      "id": "ja-core_foundation",
+      "id": "ja-core_foundation-katakana",
       "languageCode": "ja",
       "nicheId": "core_foundation",
       "branch": "core_foundation",

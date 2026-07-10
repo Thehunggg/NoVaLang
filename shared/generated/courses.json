@@ -3,17 +3,17 @@
   "generatedAt": "2026-07-10T00:00:00.000Z",
   "courses": [
     {
-      "id": "ja-core_foundation",
+      "id": "ja-core_foundation-hiragana",
       "languageCode": "ja",
       "nicheId": "core_foundation",
       "branch": "core_foundation",
       "moduleId": "hiragana_starter",
       "moduleTitle": "Hiragana Starter",
       "moduleTitleVi": "Hiragana Starter",
-      "title": "Japanese · Core Foundation",
-      "titleVi": "Tiếng Nhật · Nền tảng",
-      "description": "Start with individual hiragana characters before phrases.",
-      "descriptionVi": "Bắt đầu với từng chữ hiragana trước khi học cụm từ.",
+      "title": "Japanese · Core Foundation · Hiragana",
+      "titleVi": "Tiếng Nhật · Nền tảng · Hiragana",
+      "description": "Start with all 46 basic hiragana characters before phrases.",
+      "descriptionVi": "Bắt đầu với đủ 46 chữ hiragana cơ bản trước khi học cụm từ.",
       "levelCode": "A0",
       "order": 0,
       "unitIds": [
@@ -28,8 +28,8 @@
           "levelCode": "A0",
           "trackId": "ja-core_foundation",
           "moduleId": "hiragana_starter",
-          "goal": "Recognize the first five hiragana rows as individual characters.",
-          "goalVi": "Nhận biết năm hàng hiragana đầu dưới dạng từng chữ cái.",
+          "goal": "Recognize all 46 basic hiragana characters in gojuon order.",
+          "goalVi": "Nhận biết đủ 46 chữ hiragana cơ bản theo thứ tự gojuon.",
           "order": 1,
           "lessonIds": [
             "ja-hiragana-u1-l1",
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "id": "ja-core_foundation",
+      "id": "ja-core_foundation-katakana",
       "languageCode": "ja",
       "nicheId": "core_foundation",
       "branch": "core_foundation",
@@ -52,8 +52,8 @@
       "moduleTitleVi": "Katakana cơ bản",
       "title": "Japanese · Core Foundation · Katakana",
       "titleVi": "Tiếng Nhật · Nền tảng · Katakana",
-      "description": "Learn individual katakana characters with short loanword examples.",
-      "descriptionVi": "Học từng chữ katakana với ví dụ từ mượn ngắn.",
+      "description": "Learn all 46 basic katakana characters with short loanword examples.",
+      "descriptionVi": "Học đủ 46 chữ katakana cơ bản với ví dụ từ mượn ngắn.",
       "levelCode": "A0",
       "order": 1,
       "unitIds": [
@@ -68,8 +68,8 @@
           "levelCode": "A0",
           "trackId": "ja-core_foundation",
           "moduleId": "katakana_starter",
-          "goal": "Recognize the first five katakana rows as individual characters.",
-          "goalVi": "Nhận biết năm hàng katakana đầu dưới dạng từng chữ cái.",
+          "goal": "Recognize all 46 basic katakana characters in gojuon order.",
+          "goalVi": "Nhận biết đủ 46 chữ katakana cơ bản theo thứ tự gojuon.",
           "order": 4,
           "lessonIds": [
             "ja-katakana-u4-l1",

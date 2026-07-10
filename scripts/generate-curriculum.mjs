@@ -500,6 +500,7 @@ function makeLesson(fields) {
 }
 
 function makeCourse({
+  courseId,
   languageCode,
   nicheId,
   branch = "niche",
@@ -516,7 +517,7 @@ function makeCourse({
 }) {
   return {
     course: {
-      id: `${languageCode}-${nicheId}`,
+      id: courseId ?? `${languageCode}-${nicheId}`,
       languageCode,
       nicheId,
       branch,
@@ -553,7 +554,7 @@ function kanaExample(ex) {
   };
 }
 
-function kanaItem(char, romaji, example, { script = "hiragana", idPrefix = "ja-kana" } = {}) {
+function kanaItem(char, romaji, example, { script = "hiragana", idPrefix = "ja-kana", order, row } = {}) {
   const meaning =
     script === "katakana"
       ? {
@@ -584,6 +585,11 @@ function kanaItem(char, romaji, example, { script = "hiragana", idPrefix = "ja-k
   }
   return {
     ...base,
+    characterOrder: order,
+    displayOrder: order,
+    row,
+    kanaScript: script,
+    isBasicKana: Number.isInteger(order) && order >= 1 && order <= 46,
     ...kanaExample(example),
   };
 }
@@ -599,10 +605,11 @@ function buildKanaLesson({
   script = "hiragana",
   moduleId = "hiragana_starter",
 }) {
-  const vocab = chars.map(([char, romaji, example]) =>
+  const vocab = chars.map(([char, romaji, example, metadata = {}]) =>
     kanaItem(char, romaji, example, {
       script,
       idPrefix: script === "katakana" ? "ja-kata" : "ja-kana",
+      ...metadata,
     }),
   );
   const [c0, c1, c2, c3, c4] = vocab;
@@ -1870,7 +1877,7 @@ function jaGreetingsUnit1() {
 
 function letterItem(letter, sound) {
   const lower = letter.toLowerCase();
-  return item(
+  const base = item(
     `en-letter-${lower}`,
     letter,
     {
@@ -1882,6 +1889,13 @@ function letterItem(letter, sound) {
     },
     { reading: letter, romanization: sound, speechText: letter },
   );
+  const order = letter.charCodeAt(0) - 64;
+  return {
+    ...base,
+    characterOrder: order,
+    displayOrder: order,
+    alphabet: "latin",
+  };
 }
 
 function buildAlphabetLesson({
@@ -2102,10 +2116,243 @@ function enAlphabetFoundationUnit1() {
   });
 }
 
+function kanaExampleWord(text, romanization, en, vi, ja, ko, zh) {
+  return { text, romanization, translations: { en, vi, ja, ko, zh } };
+}
+
+function orderedKanaDefs(defs) {
+  return defs.map((def, index) => ({ ...def, order: index + 1 }));
+}
+
+function kanaChars(defs, start, end) {
+  return defs
+    .slice(start - 1, end)
+    .map((def) => [
+      def.char,
+      def.romanization,
+      def.example,
+      { order: def.order, row: def.row },
+    ]);
+}
+
+function kanaDef(char, romanization, row, example) {
+  return { char, romanization, row, example };
+}
+
+const HIRAGANA_BASIC_46 = orderedKanaDefs([
+  kanaDef("あ", "a", "a-row", kanaExampleWord("あめ", "ame", "rain", "mưa", "雨", "비", "雨")),
+  kanaDef("い", "i", "a-row", kanaExampleWord("いえ", "ie", "house", "nhà", "家", "집", "家")),
+  kanaDef("う", "u", "a-row", kanaExampleWord("うみ", "umi", "sea", "biển", "海", "바다", "海")),
+  kanaDef("え", "e", "a-row", kanaExampleWord("えき", "eki", "station", "nhà ga", "駅", "역", "车站")),
+  kanaDef("お", "o", "a-row", kanaExampleWord("おちゃ", "ocha", "tea", "trà", "お茶", "차", "茶")),
+  kanaDef("か", "ka", "ka-row", kanaExampleWord("かさ", "kasa", "umbrella", "ô", "傘", "우산", "伞")),
+  kanaDef("き", "ki", "ka-row", kanaExampleWord("きって", "kitte", "stamp", "tem thư", "切手", "우표", "邮票")),
+  kanaDef("く", "ku", "ka-row", kanaExampleWord("くつ", "kutsu", "shoes", "giày", "靴", "신발", "鞋子")),
+  kanaDef("け", "ke", "ka-row", kanaExampleWord("けむり", "kemuri", "smoke", "khói", "煙", "연기", "烟")),
+  kanaDef("こ", "ko", "ka-row", kanaExampleWord("こえ", "koe", "voice", "giọng nói", "声", "목소리", "声音")),
+  kanaDef("さ", "sa", "sa-row", kanaExampleWord("さとう", "satou", "sugar", "đường", "砂糖", "설탕", "糖")),
+  kanaDef("し", "shi", "sa-row", kanaExampleWord("しお", "shio", "salt", "muối", "塩", "소금", "盐")),
+  kanaDef("す", "su", "sa-row", kanaExampleWord("すし", "sushi", "sushi", "sushi", "寿司", "스시", "寿司")),
+  kanaDef("せ", "se", "sa-row", kanaExampleWord("せき", "seki", "seat", "chỗ ngồi", "席", "자리", "座位")),
+  kanaDef("そ", "so", "sa-row", kanaExampleWord("そら", "sora", "sky", "bầu trời", "空", "하늘", "天空")),
+  kanaDef("た", "ta", "ta-row", kanaExampleWord("たまご", "tamago", "egg", "trứng", "卵", "달걀", "蛋")),
+  kanaDef("ち", "chi", "ta-row", kanaExampleWord("ちず", "chizu", "map", "bản đồ", "地図", "지도", "地图")),
+  kanaDef("つ", "tsu", "ta-row", kanaExampleWord("つき", "tsuki", "moon", "mặt trăng", "月", "달", "月亮")),
+  kanaDef("て", "te", "ta-row", kanaExampleWord("てがみ", "tegami", "letter", "lá thư", "手紙", "편지", "信")),
+  kanaDef("と", "to", "ta-row", kanaExampleWord("とけい", "tokei", "clock", "đồng hồ", "時計", "시계", "钟表")),
+  kanaDef("な", "na", "na-row", kanaExampleWord("なつ", "natsu", "summer", "mùa hè", "夏", "여름", "夏天")),
+  kanaDef("に", "ni", "na-row", kanaExampleWord("にく", "niku", "meat", "thịt", "肉", "고기", "肉")),
+  kanaDef("ぬ", "nu", "na-row", kanaExampleWord("ぬの", "nuno", "cloth", "vải", "布", "천", "布")),
+  kanaDef("ね", "ne", "na-row", kanaExampleWord("ねつ", "netsu", "fever", "sốt", "熱", "열", "发烧")),
+  kanaDef("の", "no", "na-row", kanaExampleWord("のり", "nori", "seaweed", "rong biển", "海苔", "김", "紫菜")),
+  kanaDef("は", "ha", "ha-row", kanaExampleWord("はな", "hana", "flower", "hoa", "花", "꽃", "花")),
+  kanaDef("ひ", "hi", "ha-row", kanaExampleWord("ひる", "hiru", "noon", "buổi trưa", "昼", "낮", "中午")),
+  kanaDef("ふ", "fu", "ha-row", kanaExampleWord("ふね", "fune", "ship", "tàu", "船", "배", "船")),
+  kanaDef("へ", "he", "ha-row", kanaExampleWord("へや", "heya", "room", "phòng", "部屋", "방", "房间")),
+  kanaDef("ほ", "ho", "ha-row", kanaExampleWord("ほし", "hoshi", "star", "ngôi sao", "星", "별", "星星")),
+  kanaDef("ま", "ma", "ma-row", kanaExampleWord("まど", "mado", "window", "cửa sổ", "窓", "창문", "窗户")),
+  kanaDef("み", "mi", "ma-row", kanaExampleWord("みず", "mizu", "water", "nước", "水", "물", "水")),
+  kanaDef("む", "mu", "ma-row", kanaExampleWord("むら", "mura", "village", "ngôi làng", "村", "마을", "村庄")),
+  kanaDef("め", "me", "ma-row", kanaExampleWord("めがね", "megane", "glasses", "kính", "眼鏡", "안경", "眼镜")),
+  kanaDef("も", "mo", "ma-row", kanaExampleWord("もり", "mori", "forest", "rừng", "森", "숲", "森林")),
+  kanaDef("や", "ya", "ya-row", kanaExampleWord("やま", "yama", "mountain", "núi", "山", "산", "山")),
+  kanaDef("ゆ", "yu", "ya-row", kanaExampleWord("ゆき", "yuki", "snow", "tuyết", "雪", "눈", "雪")),
+  kanaDef("よ", "yo", "ya-row", kanaExampleWord("よる", "yoru", "night", "đêm", "夜", "밤", "夜晚")),
+  kanaDef("ら", "ra", "ra-row", kanaExampleWord("らく", "raku", "comfort", "sự thoải mái", "楽", "편안함", "轻松")),
+  kanaDef("り", "ri", "ra-row", kanaExampleWord("りんご", "ringo", "apple", "táo", "りんご", "사과", "苹果")),
+  kanaDef("る", "ru", "ra-row", kanaExampleWord("るす", "rusu", "absence", "vắng nhà", "留守", "부재", "不在家")),
+  kanaDef("れ", "re", "ra-row", kanaExampleWord("れい", "rei", "zero", "số không", "零", "영", "零")),
+  kanaDef("ろ", "ro", "ra-row", kanaExampleWord("ろうか", "rouka", "hallway", "hành lang", "廊下", "복도", "走廊")),
+  kanaDef("わ", "wa", "wa-row", kanaExampleWord("わたし", "watashi", "I / me", "tôi", "私", "나", "我")),
+  kanaDef("を", "wo", "wa-row", kanaExampleWord("みずを", "mizu o", "water + object marker", "nước + trợ từ tân ngữ", "水を", "물을", "水 + 宾语助词")),
+  kanaDef("ん", "n", "n-row", kanaExampleWord("ほん", "hon", "book", "sách", "本", "책", "书")),
+]);
+
+const KATAKANA_BASIC_46 = orderedKanaDefs([
+  kanaDef("ア", "a", "a-row", kanaExampleWord("アイス", "aisu", "ice cream", "kem", "アイス", "아이스크림", "冰淇淋")),
+  kanaDef("イ", "i", "a-row", kanaExampleWord("イス", "isu", "chair", "ghế", "椅子", "의자", "椅子")),
+  kanaDef("ウ", "u", "a-row", kanaExampleWord("ウール", "uuru", "wool", "len", "ウール", "울", "羊毛")),
+  kanaDef("エ", "e", "a-row", kanaExampleWord("エアコン", "eakon", "air conditioner", "máy lạnh", "エアコン", "에어컨", "空调")),
+  kanaDef("オ", "o", "a-row", kanaExampleWord("オレンジ", "orenji", "orange", "cam", "オレンジ", "오렌지", "橙子")),
+  kanaDef("カ", "ka", "ka-row", kanaExampleWord("カメラ", "kamera", "camera", "máy ảnh", "カメラ", "카메라", "相机")),
+  kanaDef("キ", "ki", "ka-row", kanaExampleWord("キロ", "kiro", "kilo", "ki-lô", "キロ", "킬로", "千克")),
+  kanaDef("ク", "ku", "ka-row", kanaExampleWord("クラス", "kurasu", "class", "lớp học", "クラス", "클래스", "班级")),
+  kanaDef("ケ", "ke", "ka-row", kanaExampleWord("ケーキ", "keeki", "cake", "bánh ngọt", "ケーキ", "케이크", "蛋糕")),
+  kanaDef("コ", "ko", "ka-row", kanaExampleWord("コーヒー", "koohii", "coffee", "cà phê", "コーヒー", "커피", "咖啡")),
+  kanaDef("サ", "sa", "sa-row", kanaExampleWord("サラダ", "sarada", "salad", "salad", "サラダ", "샐러드", "沙拉")),
+  kanaDef("シ", "shi", "sa-row", kanaExampleWord("シャツ", "shatsu", "shirt", "áo sơ mi", "シャツ", "셔츠", "衬衫")),
+  kanaDef("ス", "su", "sa-row", kanaExampleWord("スープ", "suupu", "soup", "súp", "スープ", "수프", "汤")),
+  kanaDef("セ", "se", "sa-row", kanaExampleWord("セーター", "seetaa", "sweater", "áo len", "セーター", "스웨터", "毛衣")),
+  kanaDef("ソ", "so", "sa-row", kanaExampleWord("ソファ", "sofa", "sofa", "ghế sofa", "ソファ", "소파", "沙发")),
+  kanaDef("タ", "ta", "ta-row", kanaExampleWord("タクシー", "takushii", "taxi", "taxi", "タクシー", "택시", "出租车")),
+  kanaDef("チ", "chi", "ta-row", kanaExampleWord("チーズ", "chiizu", "cheese", "phô mai", "チーズ", "치즈", "奶酪")),
+  kanaDef("ツ", "tsu", "ta-row", kanaExampleWord("ツアー", "tsuaa", "tour", "tour", "ツアー", "투어", "旅行团")),
+  kanaDef("テ", "te", "ta-row", kanaExampleWord("テスト", "tesuto", "test", "bài kiểm tra", "テスト", "테스트", "测验")),
+  kanaDef("ト", "to", "ta-row", kanaExampleWord("トマト", "tomato", "tomato", "cà chua", "トマト", "토마토", "番茄")),
+  kanaDef("ナ", "na", "na-row", kanaExampleWord("ナイフ", "naifu", "knife", "dao", "ナイフ", "나이프", "刀")),
+  kanaDef("ニ", "ni", "na-row", kanaExampleWord("ニュース", "nyuusu", "news", "tin tức", "ニュース", "뉴스", "新闻")),
+  kanaDef("ヌ", "nu", "na-row", kanaExampleWord("ヌードル", "nuudoru", "noodles", "mì", "ヌードル", "누들", "面条")),
+  kanaDef("ネ", "ne", "na-row", kanaExampleWord("ネクタイ", "nekutai", "necktie", "cà vạt", "ネクタイ", "넥타이", "领带")),
+  kanaDef("ノ", "no", "na-row", kanaExampleWord("ノート", "nooto", "notebook", "vở", "ノート", "노트", "笔记本")),
+  kanaDef("ハ", "ha", "ha-row", kanaExampleWord("ハンバーガー", "hanbaagaa", "hamburger", "hamburger", "ハンバーガー", "햄버거", "汉堡包")),
+  kanaDef("ヒ", "hi", "ha-row", kanaExampleWord("ヒーター", "hiitaa", "heater", "máy sưởi", "ヒーター", "히터", "暖气机")),
+  kanaDef("フ", "fu", "ha-row", kanaExampleWord("フォーク", "fooku", "fork", "nĩa", "フォーク", "포크", "叉子")),
+  kanaDef("ヘ", "he", "ha-row", kanaExampleWord("ヘルメット", "herumetto", "helmet", "mũ bảo hiểm", "ヘルメット", "헬멧", "头盔")),
+  kanaDef("ホ", "ho", "ha-row", kanaExampleWord("ホテル", "hoteru", "hotel", "khách sạn", "ホテル", "호텔", "酒店")),
+  kanaDef("マ", "ma", "ma-row", kanaExampleWord("マスク", "masuku", "mask", "khẩu trang", "マスク", "마스크", "口罩")),
+  kanaDef("ミ", "mi", "ma-row", kanaExampleWord("ミルク", "miruku", "milk", "sữa", "ミルク", "우유", "牛奶")),
+  kanaDef("ム", "mu", "ma-row", kanaExampleWord("ムービー", "muubii", "movie", "phim", "ムービー", "무비", "电影")),
+  kanaDef("メ", "me", "ma-row", kanaExampleWord("メニュー", "menyuu", "menu", "thực đơn", "メニュー", "메뉴", "菜单")),
+  kanaDef("モ", "mo", "ma-row", kanaExampleWord("モデル", "moderu", "model", "mẫu", "モデル", "모델", "模特")),
+  kanaDef("ヤ", "ya", "ya-row", kanaExampleWord("ヤード", "yaado", "yard", "thước yard", "ヤード", "야드", "码")),
+  kanaDef("ユ", "yu", "ya-row", kanaExampleWord("ユーロ", "yuuro", "euro", "euro", "ユーロ", "유로", "欧元")),
+  kanaDef("ヨ", "yo", "ya-row", kanaExampleWord("ヨガ", "yoga", "yoga", "yoga", "ヨガ", "요가", "瑜伽")),
+  kanaDef("ラ", "ra", "ra-row", kanaExampleWord("ラジオ", "rajio", "radio", "radio", "ラジオ", "라디오", "收音机")),
+  kanaDef("リ", "ri", "ra-row", kanaExampleWord("リモコン", "rimokon", "remote control", "điều khiển từ xa", "リモコン", "리모컨", "遥控器")),
+  kanaDef("ル", "ru", "ra-row", kanaExampleWord("ルール", "ruuru", "rule", "quy tắc", "ルール", "규칙", "规则")),
+  kanaDef("レ", "re", "ra-row", kanaExampleWord("レモン", "remon", "lemon", "chanh vàng", "レモン", "레몬", "柠檬")),
+  kanaDef("ロ", "ro", "ra-row", kanaExampleWord("ロボット", "robotto", "robot", "robot", "ロボット", "로봇", "机器人")),
+  kanaDef("ワ", "wa", "wa-row", kanaExampleWord("ワイン", "wain", "wine", "rượu vang", "ワイン", "와인", "葡萄酒")),
+  kanaDef("ヲ", "wo", "wa-row", kanaExampleWord("ヲタク", "wotaku", "otaku fan", "người hâm mộ otaku", "ヲタク", "오타쿠 팬", "御宅族粉丝")),
+  kanaDef("ン", "n", "n-row", kanaExampleWord("ペン", "pen", "pen", "bút", "ペン", "펜", "笔")),
+]);
+
+function jaHiraganaFoundationUnitV2() {
+  const unitId = "ja-core-foundation-hiragana-u1";
+  const rows = [
+    { id: "ja-hiragana-u1-l1", order: 1, title: "Hiragana 1: あ〜お", titleVi: "Hiragana 1: あ〜お", chars: kanaChars(HIRAGANA_BASIC_46, 1, 5) },
+    { id: "ja-hiragana-u1-l2", order: 2, title: "Hiragana 2: か〜そ", titleVi: "Hiragana 2: か〜そ", chars: kanaChars(HIRAGANA_BASIC_46, 6, 15) },
+    { id: "ja-hiragana-u1-l3", order: 3, title: "Hiragana 3: た〜の", titleVi: "Hiragana 3: た〜の", chars: kanaChars(HIRAGANA_BASIC_46, 16, 25) },
+    { id: "ja-hiragana-u1-l4", order: 4, title: "Hiragana 4: は〜も", titleVi: "Hiragana 4: は〜も", chars: kanaChars(HIRAGANA_BASIC_46, 26, 35) },
+    { id: "ja-hiragana-u1-l5", order: 5, title: "Hiragana 5: や〜る", titleVi: "Hiragana 5: や〜る", chars: kanaChars(HIRAGANA_BASIC_46, 36, 41) },
+    { id: "ja-hiragana-u1-l6", order: 6, title: "Hiragana 6: れ〜ん", titleVi: "Hiragana 6: れ〜ん", chars: kanaChars(HIRAGANA_BASIC_46, 42, 46), isCheckpoint: true },
+  ];
+
+  const lessons = rows.map((row) =>
+    buildKanaLesson({
+      id: row.id,
+      unitId,
+      order: row.order,
+      title: row.title,
+      titleVi: row.titleVi,
+      chars: row.chars,
+      isCheckpoint: row.isCheckpoint,
+      script: "hiragana",
+      moduleId: "hiragana_starter",
+    }),
+  );
+
+  const unit = {
+    id: unitId,
+    title: "Unit 1: Hiragana basics",
+    titleVi: "Unit 1: Hiragana cơ bản",
+    levelCode: "A0",
+    trackId: "ja-core_foundation",
+    moduleId: "hiragana_starter",
+    goal: "Recognize all 46 basic hiragana characters in gojuon order.",
+    goalVi: "Nhận biết đủ 46 chữ hiragana cơ bản theo thứ tự gojuon.",
+    order: 1,
+    lessonIds: lessons.map((l) => l.id),
+  };
+
+  return makeCourse({
+    courseId: "ja-core_foundation-hiragana",
+    languageCode: "ja",
+    nicheId: "core_foundation",
+    branch: "core_foundation",
+    moduleId: "hiragana_starter",
+    moduleTitle: "Hiragana Starter",
+    moduleTitleVi: "Hiragana Starter",
+    title: "Japanese · Core Foundation · Hiragana",
+    titleVi: "Tiếng Nhật · Nền tảng · Hiragana",
+    description: "Start with all 46 basic hiragana characters before phrases.",
+    descriptionVi: "Bắt đầu với đủ 46 chữ hiragana cơ bản trước khi học cụm từ.",
+    order: 0,
+    units: [unit],
+    lessons,
+  });
+}
+
+function jaKatakanaFoundationUnitV2() {
+  const unitId = "ja-core-foundation-katakana-u4";
+  const rows = [
+    { id: "ja-katakana-u4-l1", order: 1, title: "Katakana 1: ア〜オ", titleVi: "Katakana 1: ア〜オ", chars: kanaChars(KATAKANA_BASIC_46, 1, 5) },
+    { id: "ja-katakana-u4-l2", order: 2, title: "Katakana 2: カ〜ソ", titleVi: "Katakana 2: カ〜ソ", chars: kanaChars(KATAKANA_BASIC_46, 6, 15) },
+    { id: "ja-katakana-u4-l3", order: 3, title: "Katakana 3: タ〜ノ", titleVi: "Katakana 3: タ〜ノ", chars: kanaChars(KATAKANA_BASIC_46, 16, 25) },
+    { id: "ja-katakana-u4-l4", order: 4, title: "Katakana 4: ハ〜モ", titleVi: "Katakana 4: ハ〜モ", chars: kanaChars(KATAKANA_BASIC_46, 26, 35) },
+    { id: "ja-katakana-u4-l5", order: 5, title: "Katakana 5: ヤ〜ル", titleVi: "Katakana 5: ヤ〜ル", chars: kanaChars(KATAKANA_BASIC_46, 36, 41) },
+    { id: "ja-katakana-u4-l6", order: 6, title: "Katakana 6: レ〜ン", titleVi: "Katakana 6: レ〜ン", chars: kanaChars(KATAKANA_BASIC_46, 42, 46), isCheckpoint: true },
+  ];
+
+  const lessons = rows.map((row) =>
+    buildKanaLesson({
+      id: row.id,
+      unitId,
+      order: row.order,
+      title: row.title,
+      titleVi: row.titleVi,
+      chars: row.chars,
+      isCheckpoint: row.isCheckpoint,
+      script: "katakana",
+      moduleId: "katakana_starter",
+    }),
+  );
+
+  const unit = {
+    id: unitId,
+    title: "Unit 4: Katakana Basics",
+    titleVi: "Unit 4: Katakana cơ bản",
+    levelCode: "A0",
+    trackId: "ja-core_foundation",
+    moduleId: "katakana_starter",
+    goal: "Recognize all 46 basic katakana characters in gojuon order.",
+    goalVi: "Nhận biết đủ 46 chữ katakana cơ bản theo thứ tự gojuon.",
+    order: 4,
+    lessonIds: lessons.map((l) => l.id),
+  };
+
+  return makeCourse({
+    courseId: "ja-core_foundation-katakana",
+    languageCode: "ja",
+    nicheId: "core_foundation",
+    branch: "core_foundation",
+    moduleId: "katakana_starter",
+    moduleTitle: "Katakana Basics",
+    moduleTitleVi: "Katakana cơ bản",
+    title: "Japanese · Core Foundation · Katakana",
+    titleVi: "Tiếng Nhật · Nền tảng · Katakana",
+    description: "Learn all 46 basic katakana characters with short loanword examples.",
+    descriptionVi: "Học đủ 46 chữ katakana cơ bản với ví dụ từ mượn ngắn.",
+    order: 1,
+    units: [unit],
+    lessons,
+  });
+}
+
 async function main() {
   const packs = [
-    jaHiraganaFoundationUnit1(),
-    jaKatakanaFoundationUnit4(),
+    jaHiraganaFoundationUnitV2(),
+    jaKatakanaFoundationUnitV2(),
     enAlphabetFoundationUnit1(),
     enGreetingsUnit1(),
     jaGreetingsUnit1(),

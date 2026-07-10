@@ -16,6 +16,9 @@ const ROOT = path.resolve(__dirname, "..");
 const EXPECTED_VERSION = "curriculum-v3";
 const EXPECTED_COURSE_COUNT = 5;
 const EXPECTED_LESSON_COUNT = 30;
+const EXPECTED_HIRAGANA_46 = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
+const EXPECTED_KATAKANA_46 = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン".split("");
+const EXPECTED_ALPHABET_26 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const NATIVE_CODES = ["vi", "ja", "ko", "zh"];
 const MEANING_CHOICE_TYPES = new Set(["chooseMeaning", "listenAndChoose"]);
 const SUPPORTED_TYPES = new Set([
@@ -48,6 +51,9 @@ function fail(section, context, reason) {
     context.courseId && `courseId=${context.courseId}`,
     context.lessonId && `lessonId=${context.lessonId}`,
     context.exerciseIndex && `exerciseIndex=${context.exerciseIndex}`,
+    context.kana && `kana=${context.kana}`,
+    context.expectedOrder !== undefined && `expectedOrder=${context.expectedOrder}`,
+    context.actualOrder !== undefined && `actualOrder=${context.actualOrder}`,
   ].filter(Boolean).join(" ");
   console.log(`FAIL [${section}] ${where} ${reason}`.trim());
 }
@@ -188,6 +194,93 @@ function checkRouting(courses, catalog) {
   }
 }
 
+function courseIdForModule(courses, languageCode, moduleId) {
+  return courses.find((course) => course.languageCode === languageCode && course.moduleId === moduleId)?.id;
+}
+
+function checkKanaCoverageAndOrder(lessons, courses, { sectionName, script, moduleId, expected }) {
+  const section = sectionName;
+  const courseId = courseIdForModule(courses, "ja", moduleId);
+  const items = lessons
+    .filter((lesson) => lesson.languageCode === "ja" && lesson.moduleId === moduleId)
+    .flatMap((lesson) =>
+      (lesson.vocabulary ?? [])
+        .filter((item) => item.isBasicKana === true || item.kanaScript === script)
+        .map((item) => ({ lesson, item })),
+    );
+
+  const seenChars = new Map();
+  const byOrder = new Map();
+  for (const { lesson, item } of items) {
+    const kana = item.displayText || item.text || "";
+    const actualOrder = item.characterOrder ?? item.displayOrder;
+    const expectedOrder = expected.indexOf(kana) + 1;
+
+    if (expectedOrder <= 0) {
+      fail(section, { courseId, lessonId: lesson.id, kana, actualOrder }, `not part of canonical ${script} basic 46`);
+      continue;
+    }
+    if (!Number.isInteger(actualOrder)) {
+      fail(section, { courseId, lessonId: lesson.id, kana, expectedOrder, actualOrder }, "missing characterOrder/displayOrder");
+      continue;
+    }
+    if (actualOrder !== expectedOrder || item.displayOrder !== expectedOrder) {
+      fail(section, { courseId, lessonId: lesson.id, kana, expectedOrder, actualOrder }, `wrong ${script} order metadata`);
+    }
+    if (byOrder.has(actualOrder)) {
+      fail(section, { courseId, lessonId: lesson.id, kana, expectedOrder, actualOrder }, `duplicate order already used by ${byOrder.get(actualOrder)}`);
+    }
+    byOrder.set(actualOrder, kana);
+    if (seenChars.has(kana)) {
+      fail(section, { courseId, lessonId: lesson.id, kana, expectedOrder, actualOrder }, `duplicate kana already in ${seenChars.get(kana)}`);
+    }
+    seenChars.set(kana, lesson.id);
+  }
+
+  for (let i = 0; i < expected.length; i += 1) {
+    const kana = expected[i];
+    if (!seenChars.has(kana)) {
+      fail(section, { courseId, kana, expectedOrder: i + 1 }, "missing canonical basic kana");
+    }
+  }
+
+  const ordered = [...byOrder.entries()].sort((a, b) => a[0] - b[0]).map(([, kana]) => kana);
+  if (ordered.join("") === expected.join("") && items.length === expected.length) {
+    pass(section, `${script} basic 46 are complete, unique, and canonical`);
+  } else {
+    fail(section, { courseId }, `canonical order mismatch or wrong count; expected ${expected.length}, got ${items.length}`);
+  }
+}
+
+function checkEnglishAlphabetCoverageAndOrder(lessons, courses) {
+  const section = "English alphabet coverage/order";
+  const courseId = courseIdForModule(courses, "en", "alphabet_starter");
+  const seen = new Map();
+  for (const lesson of lessons.filter((l) => l.languageCode === "en" && l.moduleId === "alphabet_starter")) {
+    if (String(lesson.id).endsWith("-l6")) continue;
+    for (const item of lesson.vocabulary ?? []) {
+      const letter = String(item.displayText || item.text || "").toUpperCase();
+      if (!/^[A-Z]$/.test(letter)) continue;
+      const expectedOrder = EXPECTED_ALPHABET_26.indexOf(letter) + 1;
+      const actualOrder = item.characterOrder ?? item.displayOrder;
+      if (actualOrder !== expectedOrder || item.displayOrder !== expectedOrder) {
+        fail(section, { courseId, lessonId: lesson.id, kana: letter, expectedOrder, actualOrder }, "wrong alphabet order metadata");
+      }
+      if (seen.has(letter)) {
+        fail(section, { courseId, lessonId: lesson.id, kana: letter, expectedOrder, actualOrder }, `duplicate alphabet letter already in ${seen.get(letter)}`);
+      }
+      seen.set(letter, lesson.id);
+    }
+  }
+  for (let i = 0; i < EXPECTED_ALPHABET_26.length; i += 1) {
+    const letter = EXPECTED_ALPHABET_26[i];
+    if (!seen.has(letter)) fail(section, { courseId, kana: letter, expectedOrder: i + 1 }, "missing alphabet letter");
+  }
+  if (seen.size === EXPECTED_ALPHABET_26.length) {
+    pass(section, "English A-Z are complete, unique, and ordered");
+  }
+}
+
 function checkJapaneseFoundationSafety(lessons) {
   const section = "Japanese foundation safety";
   const serialized = JSON.stringify(lessons);
@@ -312,6 +405,19 @@ async function main() {
   checkLessonExercises(lessons);
   checkAiRules(lessons);
   checkRouting(courses, catalogJson);
+  checkKanaCoverageAndOrder(lessons, courses, {
+    sectionName: "Hiragana coverage/order",
+    script: "hiragana",
+    moduleId: "hiragana_starter",
+    expected: EXPECTED_HIRAGANA_46,
+  });
+  checkKanaCoverageAndOrder(lessons, courses, {
+    sectionName: "Katakana coverage/order",
+    script: "katakana",
+    moduleId: "katakana_starter",
+    expected: EXPECTED_KATAKANA_46,
+  });
+  checkEnglishAlphabetCoverageAndOrder(lessons, courses);
   checkJapaneseFoundationSafety(lessons);
   checkNativeLanguageOptions(lessons);
   checkExerciseTypes(lessons);
