@@ -24,6 +24,7 @@ const OUT_DIRS = [
 ];
 
 const VERSION = "curriculum-v3";
+const GENERATED_AT = "2026-07-10T00:00:00.000Z";
 const NATIVE_CODES = ["vi", "en", "ja", "ko", "zh"];
 const LEARNING_CATALOG = [
   "en", "ja", "es", "ko", "zh", "fr", "de", "it", "pt", "vi",
@@ -2111,7 +2112,7 @@ async function main() {
   ];
   const courses = packs.map((p) => p.course);
   const lessons = packs.flatMap((p) => p.lessons);
-  const generatedAt = new Date().toISOString();
+  const generatedAt = GENERATED_AT;
   const unitCount = courses.reduce((sum, c) => sum + c.units.length, 0);
 
   const catalog = {
