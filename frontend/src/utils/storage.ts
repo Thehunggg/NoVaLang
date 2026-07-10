@@ -30,7 +30,8 @@ export const setNativeLanguage = (language: NativeLanguageCode): SupportedUILang
 
 export const updateNativeLanguage = setNativeLanguage;
 
-const normalizeLearningLanguage = (value?: string | null): LanguageCode => value === "ja" || value === "japanese" ? "ja" : value === "es" || value === "spanish" ? "es" : "en";
+const normalizeLearningLanguage = (value?: string | null): LanguageCode =>
+  value === "ja" || value === "japanese" ? "ja" : "en";
 const normalizeLevel = (value?: string | null) => levelOrder.includes(value as AppProgress["currentLevel"]) ? value as AppProgress["currentLevel"] : "A0";
 
 const nicheLegacyIdMap: Record<string, string> = {

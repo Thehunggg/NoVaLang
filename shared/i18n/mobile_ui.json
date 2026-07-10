@@ -233,14 +233,14 @@
     "ja": "{n}レッスン"
   },
   "curriculumLanguageComingSoon": {
-    "en": "{language} courses are coming soon. Pick English, Japanese, or Spanish to start learning now.",
-    "vi": "Khóa học {language} sắp ra mắt. Chọn English, Japanese hoặc Spanish để học ngay.",
+    "en": "{language} courses are coming soon. Pick English or Japanese to start learning now.",
+    "vi": "Khóa học {language} sắp ra mắt. Chọn English hoặc Japanese để học ngay.",
     "ja": "{language}のコースは近日公開です。今は英語・日本語・スペイン語を選べます。"
   },
   "curriculumNicheComingSoon": {
-    "en": "Lessons for {niche} are coming soon. Try Daily Life, Travel & Hotel, or Restaurant & Food Service.",
-    "vi": "Bài học cho {niche} sắp ra mắt. Thử Đời sống hàng ngày, Du lịch & khách sạn, hoặc Nhà hàng & dịch vụ ăn uống.",
-    "ja": "{niche}のレッスンは近日公開です。日常生活・旅行・飲食から始めてください。"
+    "en": "Lessons for {niche} are coming soon. Start with Daily Life → Greetings for now.",
+    "vi": "Bài học cho {niche} sắp ra mắt. Hiện chỉ có Đời sống hàng ngày → Chào hỏi.",
+    "ja": "{niche}のレッスンは近日公開です。今は日常生活→あいさつから始めてください。"
   },
   "lessonsCompletedSingular": {
     "en": "{n} lesson completed",

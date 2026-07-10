@@ -1,10 +1,15 @@
 enum ExerciseType {
   chooseMeaning,
   chooseReading,
+  chooseVocabulary,
+  chooseCorrectAnswer,
   matchPairs,
   typeAnswer,
   fillBlank,
   listenAndChoose,
+  listeningGapFill,
+  controlledAiQa,
+  aiFeedbackReview,
 }
 
 class MatchPair {
@@ -20,41 +25,78 @@ class Exercise {
     required this.type,
     required this.prompt,
     this.promptVi,
+    this.prompts = const {},
     this.displayText,
     this.speechText,
     this.options = const [],
     this.optionsVi = const [],
+    this.optionsByNative = const {},
     this.correctAnswer = '',
     this.acceptedAnswers = const [],
     this.acceptedAnswersVi = const [],
+    this.acceptedAnswersByNative = const {},
     this.pairs = const [],
     this.pairsVi = const [],
+    this.pairsByNative = const {},
+    this.plusOnly = false,
+    this.usesAi = false,
+    this.reusesPreviousAiFeedback = false,
+    this.triggerExtraAiCallByDefault = false,
+    this.maxUserChars = 400,
   });
 
   final String id;
   final ExerciseType type;
   final String prompt;
   final String? promptVi;
+  final Map<String, String> prompts;
   final String? displayText;
   final String? speechText;
   final List<String> options;
   final List<String> optionsVi;
+  final Map<String, List<String>> optionsByNative;
   final String correctAnswer;
   final List<String> acceptedAnswers;
   final List<String> acceptedAnswersVi;
+  final Map<String, List<String>> acceptedAnswersByNative;
   final List<MatchPair> pairs;
   final List<MatchPair> pairsVi;
+  final Map<String, List<MatchPair>> pairsByNative;
+  final bool plusOnly;
+  final bool usesAi;
+  final bool reusesPreviousAiFeedback;
+  final bool triggerExtraAiCallByDefault;
+  final int maxUserChars;
 
-  List<String> localizedOptions(String nativeLanguageCode) =>
-      nativeLanguageCode == 'vi' && optionsVi.isNotEmpty ? optionsVi : options;
-  List<String> localizedAccepted(String nativeLanguageCode) =>
-      nativeLanguageCode == 'vi' && acceptedAnswersVi.isNotEmpty
-      ? acceptedAnswersVi
-      : acceptedAnswers;
-  List<MatchPair> localizedPairs(String nativeLanguageCode) =>
-      nativeLanguageCode == 'vi' && pairsVi.isNotEmpty ? pairsVi : pairs;
-  String localizedPrompt(String nativeLanguageCode) =>
-      nativeLanguageCode == 'vi' && promptVi != null ? promptVi! : prompt;
+  List<String> localizedOptions(String nativeLanguageCode) {
+    final byNative = optionsByNative[nativeLanguageCode];
+    if (byNative != null && byNative.isNotEmpty) return byNative;
+    if (nativeLanguageCode == 'vi' && optionsVi.isNotEmpty) return optionsVi;
+    return options;
+  }
+
+  List<String> localizedAccepted(String nativeLanguageCode) {
+    final byNative = acceptedAnswersByNative[nativeLanguageCode];
+    if (byNative != null && byNative.isNotEmpty) return byNative;
+    if (nativeLanguageCode == 'vi' && acceptedAnswersVi.isNotEmpty) {
+      return acceptedAnswersVi;
+    }
+    return acceptedAnswers;
+  }
+
+  List<MatchPair> localizedPairs(String nativeLanguageCode) {
+    final byNative = pairsByNative[nativeLanguageCode];
+    if (byNative != null && byNative.isNotEmpty) return byNative;
+    if (nativeLanguageCode == 'vi' && pairsVi.isNotEmpty) return pairsVi;
+    return pairs;
+  }
+
+  String localizedPrompt(String nativeLanguageCode) {
+    final byNative = prompts[nativeLanguageCode];
+    if (byNative != null && byNative.isNotEmpty) return byNative;
+    if (nativeLanguageCode == 'vi' && promptVi != null) return promptVi!;
+    return prompt;
+  }
 
   bool check(Object answer, String nativeLanguageCode) {
     if (type == ExerciseType.matchPairs) {
@@ -67,6 +109,29 @@ class Exercise {
         (pair) =>
             normalize(submitted[pair.left] ?? '') == normalize(pair.right),
       );
+    }
+    if (type == ExerciseType.listeningGapFill) {
+      final accepted = localizedAccepted(nativeLanguageCode);
+      if (answer is List) {
+        if (answer.length != accepted.length) return false;
+        for (var i = 0; i < accepted.length; i += 1) {
+          if (normalize(answer[i].toString()) != normalize(accepted[i])) {
+            return false;
+          }
+        }
+        return true;
+      }
+      final parts = answer.toString().split('|');
+      if (parts.length != accepted.length) return false;
+      for (var i = 0; i < accepted.length; i += 1) {
+        if (normalize(parts[i]) != normalize(accepted[i])) return false;
+      }
+      return true;
+    }
+    if (type == ExerciseType.controlledAiQa ||
+        type == ExerciseType.aiFeedbackReview) {
+      final text = answer.toString().trim();
+      return text.isNotEmpty && text.length <= maxUserChars;
     }
     final accepted = localizedAccepted(nativeLanguageCode);
     final value = normalize(answer.toString());

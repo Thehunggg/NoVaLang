@@ -21,20 +21,32 @@ import type { ExamTrackOption } from "./types.js";
 type FlatExercise = {
   id: string;
   type: string;
+  access?: "free" | "plus";
+  plusOnly?: boolean;
+  usesAi?: boolean;
+  reusesPreviousAiFeedback?: boolean;
+  triggerExtraAiCallByDefault?: boolean;
   prompt: string;
   promptVi?: string;
+  prompts?: Record<string, string>;
   displayText?: string;
   speechText?: string;
   options?: string[];
   optionsVi?: string[];
+  optionsByNative?: Record<string, string[]>;
   correctAnswer: string;
   acceptedAnswers?: string[];
   acceptedAnswersVi?: string[];
+  acceptedAnswersByNative?: Record<string, string[]>;
   pairs?: Array<{ left: string; right: string }>;
   pairsVi?: Array<{ left: string; right: string }>;
+  pairsByNative?: Record<string, Array<{ left: string; right: string }>>;
   explanation?: string;
   explanationVi?: string;
   skill?: string;
+  aiMode?: string;
+  maxUserChars?: number;
+  openEndedChat?: boolean;
 };
 
 type FlatLesson = {
@@ -138,14 +150,21 @@ const mapExerciseType = (type: string): Exercise["type"] => {
       return "choose_meaning";
     case "chooseReading":
       return "choose_correct_reading";
+    case "chooseVocabulary":
+    case "chooseCorrectAnswer":
+      return "multiple_choice";
     case "matchPairs":
       return "match_pairs";
     case "typeAnswer":
       return "type_meaning";
     case "fillBlank":
+    case "listeningGapFill":
       return "fill_blank";
     case "listenAndChoose":
       return "listen_and_choose_meaning";
+    case "controlledAiQa":
+    case "aiFeedbackReview":
+      return "answer_question";
     default:
       return "multiple_choice";
   }
@@ -158,35 +177,57 @@ const toLevelId = (value: string): LevelId => {
 
 const mapExercise = (ex: FlatExercise, language: LanguageCode, levelId: LevelId): Exercise => {
   const isMatch = ex.type === "matchPairs";
+  const optionsEn = ex.optionsByNative?.en ?? ex.options;
+  const optionsVi = ex.optionsByNative?.vi ?? ex.optionsVi ?? ex.options;
+  const acceptedEn =
+    ex.acceptedAnswersByNative?.en ??
+    ex.acceptedAnswers ??
+    (ex.correctAnswer ? [ex.correctAnswer] : []);
+  const acceptedVi =
+    ex.acceptedAnswersByNative?.vi ?? ex.acceptedAnswersVi ?? acceptedEn;
   return {
     id: ex.id,
     type: mapExerciseType(ex.type),
     level: levelId,
-    question: ex.prompt,
-    options: ex.options,
-    pairs: ex.pairs,
+    question: ex.prompts?.en ?? ex.prompt,
+    options: optionsEn,
+    pairs: ex.pairsByNative?.en ?? ex.pairs,
     correctAnswer: isMatch
-      ? (ex.pairs?.map((p) => p.right) ?? [])
+      ? ((ex.pairsByNative?.en ?? ex.pairs)?.map((p) => p.right) ?? [])
       : ex.correctAnswer,
     explanation: ex.explanation ?? "",
     targetLanguage: language,
-    nativeTranslation: ex.promptVi ?? ex.prompt,
+    nativeTranslation: ex.prompts?.vi ?? ex.promptVi ?? ex.prompt,
     difficulty: "easy",
     matchPairMode: isMatch ? "vocabulary_meaning" : undefined,
     acceptedAnswers: {
-      en: ex.acceptedAnswers ?? (ex.correctAnswer ? [ex.correctAnswer] : []),
-      vi: ex.acceptedAnswersVi ?? ex.acceptedAnswers ?? [],
+      en: acceptedEn,
+      vi: acceptedVi,
+      ja: ex.acceptedAnswersByNative?.ja ?? acceptedEn,
+      ko: ex.acceptedAnswersByNative?.ko ?? acceptedEn,
+      zh: ex.acceptedAnswersByNative?.zh ?? acceptedEn,
     },
     questionTranslations: {
-      en: ex.prompt,
-      vi: ex.promptVi ?? ex.prompt,
+      en: ex.prompts?.en ?? ex.prompt,
+      vi: ex.prompts?.vi ?? ex.promptVi ?? ex.prompt,
+      ja: ex.prompts?.ja ?? ex.prompt,
+      ko: ex.prompts?.ko ?? ex.prompt,
+      zh: ex.prompts?.zh ?? ex.prompt,
     },
-    optionTranslations: ex.optionsVi
-      ? { en: ex.options, vi: ex.optionsVi }
-      : undefined,
-    pairTranslations: ex.pairsVi
-      ? { en: ex.pairs, vi: ex.pairsVi }
-      : undefined,
+    optionTranslations: {
+      en: optionsEn,
+      vi: optionsVi,
+      ja: ex.optionsByNative?.ja ?? optionsEn,
+      ko: ex.optionsByNative?.ko ?? optionsEn,
+      zh: ex.optionsByNative?.zh ?? optionsEn,
+    },
+    pairTranslations: {
+      en: ex.pairsByNative?.en ?? ex.pairs,
+      vi: ex.pairsByNative?.vi ?? ex.pairsVi ?? ex.pairs,
+      ja: ex.pairsByNative?.ja ?? ex.pairs,
+      ko: ex.pairsByNative?.ko ?? ex.pairs,
+      zh: ex.pairsByNative?.zh ?? ex.pairs,
+    },
     explanationTranslations: ex.explanationVi
       ? { en: ex.explanation ?? "", vi: ex.explanationVi }
       : undefined,
@@ -398,7 +439,7 @@ const buildCourseForLanguage = (language: LanguageCode): Course => {
     language,
     title: `${meta?.name ?? language} Complete Path`,
     description: meta?.description ?? "",
-    nativeLanguageSupport: ["en", "vi", "ja", "es"],
+    nativeLanguageSupport: ["en", "vi", "ja", "ko", "zh"],
     mapping: "Shared curriculum JSON (practical niche tracks; exam tracks separate)",
     levels,
     units,
@@ -407,7 +448,7 @@ const buildCourseForLanguage = (language: LanguageCode): Course => {
   };
 };
 
-export const curriculumCourses: Course[] = (["en", "ja", "es"] as LanguageCode[]).map(
+export const curriculumCourses: Course[] = (["en", "ja"] as LanguageCode[]).map(
   buildCourseForLanguage,
 );
 

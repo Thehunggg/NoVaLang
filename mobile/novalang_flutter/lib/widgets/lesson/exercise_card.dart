@@ -135,24 +135,81 @@ class _ExerciseCardState extends State<ExerciseCard> {
     }
 
     if (exercise.type == ExerciseType.typeAnswer ||
-        exercise.type == ExerciseType.fillBlank) {
-      return AppTextField(
-        hint: L10n.text('answerHint', locale),
-        onChanged: (value) => typedAnswer = value,
+        exercise.type == ExerciseType.fillBlank ||
+        exercise.type == ExerciseType.listeningGapFill ||
+        exercise.type == ExerciseType.controlledAiQa) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (exercise.plusOnly)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Text(
+                locale == 'vi' ? 'Plus · bài nâng cao' : 'Plus · advanced step',
+                style: const TextStyle(
+                  color: Color(0xFFFBBF24),
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+          AppTextField(
+            hint: L10n.text('answerHint', locale),
+            onChanged: (value) => typedAnswer = value,
+          ),
+        ],
+      );
+    }
+
+    if (exercise.type == ExerciseType.aiFeedbackReview) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            locale == 'vi'
+                ? 'Plus · xem lại phản hồi AI (không gọi thêm).'
+                : 'Plus · review AI feedback (no extra call).',
+            style: const TextStyle(
+              color: Color(0xFFFBBF24),
+              fontWeight: FontWeight.w800,
+            ),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            locale == 'vi'
+                ? 'Bước này tái sử dụng kết quả Exercise 9.'
+                : 'This step reuses the Exercise 9 result.',
+          ),
+        ],
       );
     }
 
     final options = exercise.localizedOptions(widget.nativeLanguageCode);
-    return Wrap(
-      spacing: 10,
-      runSpacing: 10,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        for (final option in options)
-          ChoiceChip(
-            label: Text(option),
-            selected: selectedAnswer == option,
-            onSelected: (_) => setState(() => selectedAnswer = option),
+        if (exercise.plusOnly)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Text(
+              locale == 'vi' ? 'Plus · bài nâng cao' : 'Plus · advanced step',
+              style: const TextStyle(
+                color: Color(0xFFFBBF24),
+                fontWeight: FontWeight.w800,
+              ),
+            ),
           ),
+        Wrap(
+          spacing: 10,
+          runSpacing: 10,
+          children: [
+            for (final option in options)
+              ChoiceChip(
+                label: Text(option),
+                selected: selectedAnswer == option,
+                onSelected: (_) => setState(() => selectedAnswer = option),
+              ),
+          ],
+        ),
       ],
     );
   }
@@ -161,10 +218,17 @@ class _ExerciseCardState extends State<ExerciseCard> {
     final exercise = widget.exercise;
     final Object answer = switch (exercise.type) {
       ExerciseType.matchPairs => pairAnswers,
-      ExerciseType.typeAnswer || ExerciseType.fillBlank => typedAnswer,
+      ExerciseType.typeAnswer ||
+      ExerciseType.fillBlank ||
+      ExerciseType.listeningGapFill ||
+      ExerciseType.controlledAiQa =>
+        typedAnswer,
+      ExerciseType.aiFeedbackReview => 'reviewed',
       _ => selectedAnswer ?? '',
     };
-    final result = exercise.check(answer, widget.nativeLanguageCode);
+    final result = exercise.type == ExerciseType.aiFeedbackReview
+        ? true
+        : exercise.check(answer, widget.nativeLanguageCode);
     setState(() => correct = result);
     widget.onChecked?.call(result);
   }

@@ -27,7 +27,7 @@ export type NativeLanguageOptionRecord = {
   isSupportedAsNative: boolean;
 };
 
-/** All learning-language catalog entries (40 languages). */
+/** All learning-language catalog entries (20 languages). */
 export const languageOptions: LanguageOptionRecord[] =
   languageOptionsConfig as LanguageOptionRecord[];
 
@@ -36,9 +36,9 @@ export const nativeLanguageOptions: NativeLanguageOptionRecord[] =
   nativeLanguageOptionsConfig as NativeLanguageOptionRecord[];
 
 const isLearningLanguageCode = (code: string): code is LanguageCode =>
-  code === "en" || code === "ja" || code === "es";
+  code === "en" || code === "ja";
 
-/** Learning languages with playable courses (en/ja/es). */
+/** Learning languages with playable courses (en/ja for now). */
 export const learningLanguages: Language[] = languageOptions
   .filter(
     (item): item is LanguageOptionRecord & { code: LanguageCode } =>

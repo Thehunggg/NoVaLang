@@ -37,15 +37,15 @@ class L10n {
     'lessonsAvailableCount': {'en': '{n} lessons', 'vi': '{n} bài học'},
     'curriculumLanguageComingSoon': {
       'en':
-          '{language} courses are coming soon. Pick English, Japanese, or Spanish to start learning now.',
+          '{language} courses are coming soon. Pick English or Japanese to start learning now.',
       'vi':
-          'Khóa học {language} sắp ra mắt. Chọn English, Japanese hoặc Spanish để học ngay.',
+          'Khóa học {language} sắp ra mắt. Chọn English hoặc Japanese để học ngay.',
     },
     'curriculumNicheComingSoon': {
       'en':
-          'Lessons for {niche} are coming soon. Try Daily Life, Travel & Hotel, or Restaurant & Food Service.',
+          'Lessons for {niche} are coming soon. Start with Daily Life → Greetings for now.',
       'vi':
-          'Bài học cho {niche} sắp ra mắt. Thử Đời sống hàng ngày, Du lịch & khách sạn, hoặc Nhà hàng & dịch vụ ăn uống.',
+          'Bài học cho {niche} sắp ra mắt. Hiện chỉ có Đời sống hàng ngày → Chào hỏi.',
     },
     'checkAnswer': {'en': 'Check answer', 'vi': 'Kiểm tra'},
     'correct': {'en': 'Correct', 'vi': 'Chính xác'},

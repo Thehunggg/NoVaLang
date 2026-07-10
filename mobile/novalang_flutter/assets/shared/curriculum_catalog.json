@@ -1,91 +1,86 @@
 {
-  "version": "curriculum-v2",
-  "generatedAt": "2026-07-09T08:52:59.583Z",
+  "version": "curriculum-v3",
+  "generatedAt": "2026-07-10T01:54:15.646Z",
+  "architecture": {
+    "coreFoundation": {
+      "status": "placeholder",
+      "note": "Alphabet/script basics by language — not built yet."
+    },
+    "mainNiches": [
+      "daily_life",
+      "travel_hotel",
+      "restaurant_food_service",
+      "it_programming",
+      "ai_data_analytics",
+      "healthcare",
+      "business_office",
+      "sales_customer_service",
+      "education_school",
+      "manufacturing_engineering",
+      "construction_real_estate",
+      "logistics_delivery",
+      "finance_accounting",
+      "marketing_content_creation",
+      "environment_energy_agriculture"
+    ],
+    "examPreparation": {
+      "status": "placeholder",
+      "note": "Separate future branch — do not build yet."
+    }
+  },
   "languages": [
     "en",
     "ja",
-    "es"
+    "es",
+    "ko",
+    "zh",
+    "fr",
+    "de",
+    "it",
+    "pt",
+    "vi",
+    "th",
+    "id",
+    "ms",
+    "tl",
+    "hi",
+    "ar",
+    "ru",
+    "nl",
+    "sv",
+    "tr"
   ],
-  "niches": [
-    "daily_life",
-    "travel_hotel",
-    "restaurant_food_service"
+  "playableLanguages": [
+    "en",
+    "ja"
   ],
-  "courseCount": 9,
-  "lessonCount": 81,
-  "unitCount": 19,
+  "nichesPlayable": [
+    "daily_life"
+  ],
+  "modulesPlayable": [
+    "greetings"
+  ],
+  "courseCount": 2,
+  "lessonCount": 12,
+  "unitCount": 2,
   "courses": [
-    {
-      "id": "ja-daily_life",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "title": "Japanese · Daily Life",
-      "lessonCount": 17,
-      "playableLessonCount": 17
-    },
-    {
-      "id": "ja-travel_hotel",
-      "languageCode": "ja",
-      "nicheId": "travel_hotel",
-      "title": "Japanese · Travel & Hotel",
-      "lessonCount": 8,
-      "playableLessonCount": 8
-    },
-    {
-      "id": "ja-restaurant_food_service",
-      "languageCode": "ja",
-      "nicheId": "restaurant_food_service",
-      "title": "Japanese · Restaurant & Food Service",
-      "lessonCount": 8,
-      "playableLessonCount": 8
-    },
     {
       "id": "en-daily_life",
       "languageCode": "en",
       "nicheId": "daily_life",
+      "moduleId": "greetings",
       "title": "English · Daily Life",
-      "lessonCount": 8,
-      "playableLessonCount": 8
+      "lessonCount": 6,
+      "playableLessonCount": 6
     },
     {
-      "id": "en-travel_hotel",
-      "languageCode": "en",
-      "nicheId": "travel_hotel",
-      "title": "English · Travel & Hotel",
-      "lessonCount": 8,
-      "playableLessonCount": 8
-    },
-    {
-      "id": "en-restaurant_food_service",
-      "languageCode": "en",
-      "nicheId": "restaurant_food_service",
-      "title": "English · Restaurant & Food Service",
-      "lessonCount": 8,
-      "playableLessonCount": 8
-    },
-    {
-      "id": "es-daily_life",
-      "languageCode": "es",
+      "id": "ja-daily_life",
+      "languageCode": "ja",
       "nicheId": "daily_life",
-      "title": "Spanish · Daily Life",
-      "lessonCount": 8,
-      "playableLessonCount": 8
-    },
-    {
-      "id": "es-travel_hotel",
-      "languageCode": "es",
-      "nicheId": "travel_hotel",
-      "title": "Spanish · Travel & Hotel",
-      "lessonCount": 8,
-      "playableLessonCount": 8
-    },
-    {
-      "id": "es-restaurant_food_service",
-      "languageCode": "es",
-      "nicheId": "restaurant_food_service",
-      "title": "Spanish · Restaurant & Food Service",
-      "lessonCount": 8,
-      "playableLessonCount": 8
+      "moduleId": "greetings",
+      "title": "Japanese · Daily Life",
+      "lessonCount": 6,
+      "playableLessonCount": 6
     }
   ]
 }

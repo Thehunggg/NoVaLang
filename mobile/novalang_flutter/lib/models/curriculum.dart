@@ -289,10 +289,15 @@ class CurriculumLesson {
 Exercise _exerciseFromJson(Map<String, dynamic> json) {
   final type = switch (json['type'] as String?) {
     'chooseReading' => ExerciseType.chooseReading,
+    'chooseVocabulary' => ExerciseType.chooseVocabulary,
+    'chooseCorrectAnswer' => ExerciseType.chooseCorrectAnswer,
     'matchPairs' => ExerciseType.matchPairs,
     'typeAnswer' => ExerciseType.typeAnswer,
     'fillBlank' => ExerciseType.fillBlank,
     'listenAndChoose' => ExerciseType.listenAndChoose,
+    'listeningGapFill' => ExerciseType.listeningGapFill,
+    'controlledAiQa' => ExerciseType.controlledAiQa,
+    'aiFeedbackReview' => ExerciseType.aiFeedbackReview,
     _ => ExerciseType.chooseMeaning,
   };
 
@@ -306,22 +311,56 @@ Exercise _exerciseFromJson(Map<String, dynamic> json) {
       })
       .toList(growable: false);
 
+  Map<String, List<String>> parseStringListMap(dynamic raw) {
+    if (raw is! Map) return const {};
+    return raw.map(
+      (key, value) => MapEntry(
+        key.toString(),
+        (value as List<dynamic>? ?? const []).cast<String>(),
+      ),
+    );
+  }
+
+  Map<String, List<MatchPair>> parsePairsMap(dynamic raw) {
+    if (raw is! Map) return const {};
+    return raw.map(
+      (key, value) => MapEntry(key.toString(), parsePairs(value)),
+    );
+  }
+
+  Map<String, String> parseStringMap(dynamic raw) {
+    if (raw is! Map) return const {};
+    return raw.map(
+      (key, value) => MapEntry(key.toString(), value?.toString() ?? ''),
+    );
+  }
+
   return Exercise(
     id: json['id'] as String? ?? '',
     type: type,
     prompt: json['prompt'] as String? ?? '',
     promptVi: json['promptVi'] as String?,
+    prompts: parseStringMap(json['prompts']),
     displayText: json['displayText'] as String?,
     speechText: json['speechText'] as String?,
     options: (json['options'] as List<dynamic>? ?? const []).cast<String>(),
     optionsVi: (json['optionsVi'] as List<dynamic>? ?? const []).cast<String>(),
+    optionsByNative: parseStringListMap(json['optionsByNative']),
     correctAnswer: json['correctAnswer'] as String? ?? '',
     acceptedAnswers: (json['acceptedAnswers'] as List<dynamic>? ?? const [])
         .cast<String>(),
     acceptedAnswersVi:
         (json['acceptedAnswersVi'] as List<dynamic>? ?? const []).cast<String>(),
+    acceptedAnswersByNative: parseStringListMap(json['acceptedAnswersByNative']),
     pairs: parsePairs(json['pairs']),
     pairsVi: parsePairs(json['pairsVi']),
+    pairsByNative: parsePairsMap(json['pairsByNative']),
+    plusOnly: json['plusOnly'] as bool? ?? json['access'] == 'plus',
+    usesAi: json['usesAi'] as bool? ?? false,
+    reusesPreviousAiFeedback: json['reusesPreviousAiFeedback'] as bool? ?? false,
+    triggerExtraAiCallByDefault:
+        json['triggerExtraAiCallByDefault'] as bool? ?? false,
+    maxUserChars: json['maxUserChars'] as int? ?? 400,
   );
 }
 

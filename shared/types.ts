@@ -1,6 +1,7 @@
-export type LearningLanguageCode = "en" | "ja" | "es";
+export type LearningLanguageCode = "en" | "ja";
 export type LanguageCode = LearningLanguageCode;
 export type SupportedUILanguage = "en" | "vi" | "ja" | "es";
+export type NativeMeaningLanguage = "vi" | "en" | "ja" | "ko" | "zh";
 export type NativeLanguageCode = string;
 export type LevelId = "A0" | "A1_1" | "A1_2" | "A2_1" | "A2_2" | "B1_1" | "B1_2" | "B2";
 export type LessonType = "pronunciation" | "vocabulary" | "grammar" | "dialogue" | "review" | "checkpoint" | "culture" | "speaking_placeholder" | "listening_placeholder";
@@ -11,8 +12,8 @@ export type ExamTrack = "JLPT" | "TOEIC" | "IELTS" | "TOEFL" | "DELE";
 export type ExamLevel = "KANA_STARTER" | "JLPT_N5" | "JLPT_N4" | "JLPT_N3" | "JLPT_N2" | "JLPT_N1" | "GENERAL_ENGLISH" | "GENERAL_SPANISH" | "TOEIC" | "IELTS" | "TOEFL" | "DELE_A1" | "DELE_A2" | "DELE_B1" | "DELE_B2";
 export type TrackSkill = "kana" | "vocabulary" | "kanji" | "grammar" | "reading" | "listening" | "mock_test" | "mistake_review" | "speaking" | "general";
 export type ReviewedStatus = "reviewed" | "draft" | "needs_review";
-export type LocalizedText = string | Partial<Record<SupportedUILanguage, string>>;
-export type LocalizedAnswers = Partial<Record<SupportedUILanguage, string[]>>;
+export type LocalizedText = string | Partial<Record<SupportedUILanguage | NativeMeaningLanguage, string>>;
+export type LocalizedAnswers = Partial<Record<SupportedUILanguage | NativeMeaningLanguage, string[]>>;
 
 export interface NativeLanguage { code: string; name: string; nativeName: string; flagEmoji: string; region?: string; direction?: "ltr" | "rtl"; uiSupported: boolean; }
 export interface Language { code: LanguageCode; name: string; nativeName: string; flag: string; color: string; greeting: string; description: string; }
@@ -49,11 +50,11 @@ export interface Exercise {
   reviewedStatus?: ReviewedStatus;
   acceptedAnswers?: LocalizedAnswers;
   meanings?: LocalizedAnswers;
-  questionTranslations?: Partial<Record<SupportedUILanguage, string>>;
-  optionTranslations?: Partial<Record<SupportedUILanguage, string[]>>;
-  pairTranslations?: Partial<Record<SupportedUILanguage, MatchPair[]>>;
-  explanationTranslations?: Partial<Record<SupportedUILanguage, string>>;
-  hintTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  questionTranslations?: Partial<Record<SupportedUILanguage | NativeMeaningLanguage, string>>;
+  optionTranslations?: Partial<Record<SupportedUILanguage | NativeMeaningLanguage, string[]>>;
+  pairTranslations?: Partial<Record<SupportedUILanguage | NativeMeaningLanguage, MatchPair[]>>;
+  explanationTranslations?: Partial<Record<SupportedUILanguage | NativeMeaningLanguage, string>>;
+  hintTranslations?: Partial<Record<SupportedUILanguage | NativeMeaningLanguage, string>>;
 }
 
 export interface PronunciationItem {

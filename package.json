@@ -13,8 +13,10 @@
     "build:backend": "npm run build --prefix backend",
     "start": "npm run start --prefix backend",
     "generate:curriculum": "node scripts/generate-curriculum.mjs",
+    "review:curriculum:export": "node scripts/export-curriculum-review.mjs",
+    "validate:curriculum": "node scripts/validate-curriculum.mjs",
     "sync:flutter-assets": "node scripts/sync-shared-assets.mjs",
-    "sync:curriculum": "npm run generate:curriculum && npm run sync:flutter-assets"
+    "sync:curriculum": "npm run generate:curriculum && npm run validate:curriculum && npm run sync:flutter-assets"
   },
   "devDependencies": { "concurrently": "^9.1.2" }
 }

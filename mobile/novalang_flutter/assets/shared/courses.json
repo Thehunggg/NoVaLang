@@ -1,475 +1,83 @@
 {
-  "version": "curriculum-v2",
-  "generatedAt": "2026-07-09T08:52:59.583Z",
+  "version": "curriculum-v3",
+  "generatedAt": "2026-07-10T01:54:15.646Z",
   "courses": [
-    {
-      "id": "ja-daily_life",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "title": "Japanese · Daily Life",
-      "titleVi": "Tiếng Nhật · Đời sống hàng ngày",
-      "description": "Kana foundations plus greetings, numbers, and everyday vocabulary.",
-      "descriptionVi": "Nền tảng kana cùng chào hỏi, số đếm và từ vựng hàng ngày.",
-      "levelCode": "A0",
-      "order": 1,
-      "unitIds": [
-        "ja-a0-u1",
-        "ja-a0-u2",
-        "ja-daily_life-u3"
-      ],
-      "isComingSoon": false,
-      "units": [
-        {
-          "id": "ja-a0-u1",
-          "title": "Kana Starter: Hiragana",
-          "titleVi": "Khởi động Kana: Hiragana",
-          "levelCode": "A0",
-          "trackId": "ja-daily_life",
-          "goal": "Read basic hiragana vowels and K/S rows.",
-          "goalVi": "Đọc nguyên âm hiragana và hàng K/S.",
-          "order": 1,
-          "lessonIds": [
-            "ja-a0-u1-l1",
-            "ja-a0-u1-l2",
-            "ja-a0-u1-l3",
-            "ja-a0-u1-l4",
-            "ja-a0-u1-l5"
-          ]
-        },
-        {
-          "id": "ja-a0-u2",
-          "title": "Kana Starter: Katakana",
-          "titleVi": "Khởi động Kana: Katakana",
-          "levelCode": "A0",
-          "trackId": "ja-daily_life",
-          "goal": "Read katakana vowels, K-row, and common loanwords.",
-          "goalVi": "Đọc nguyên âm, hàng K katakana và từ ngoại lai thường gặp.",
-          "order": 2,
-          "lessonIds": [
-            "ja-a0-u2-l1",
-            "ja-a0-u2-l2",
-            "ja-a0-u2-l3",
-            "ja-a0-u2-l4",
-            "ja-a0-u2-l5"
-          ]
-        },
-        {
-          "id": "ja-daily_life-u3",
-          "title": "Greetings & Daily Life",
-          "titleVi": "Chào hỏi & đời sống hàng ngày",
-          "levelCode": "A1_1",
-          "trackId": "ja-daily_life",
-          "goal": "Greet, introduce yourself, count, shop, ask directions, and get help.",
-          "goalVi": "Chào hỏi, tự giới thiệu, đếm số, mua sắm, hỏi đường và nhờ giúp đỡ.",
-          "order": 3,
-          "lessonIds": [
-            "ja-daily_life-u3-l1",
-            "ja-daily_life-u3-l2",
-            "ja-daily_life-u3-l3",
-            "ja-daily_life-u3-l4",
-            "ja-daily_life-u3-l5",
-            "ja-daily_life-u3-l6",
-            "ja-daily_life-u3-l7"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ja-travel_hotel",
-      "languageCode": "ja",
-      "nicheId": "travel_hotel",
-      "title": "Japanese · Travel & Hotel",
-      "titleVi": "Tiếng Nhật · Du lịch & khách sạn",
-      "description": "Airport, hotel check-in, transport, and travel emergencies.",
-      "descriptionVi": "Sân bay, nhận phòng khách sạn, di chuyển và tình huống khẩn cấp khi du lịch.",
-      "levelCode": "A1_1",
-      "order": 1,
-      "unitIds": [
-        "ja-travel_hotel-u1",
-        "ja-travel_hotel-u2"
-      ],
-      "isComingSoon": false,
-      "units": [
-        {
-          "id": "ja-travel_hotel-u1",
-          "title": "Airport & Hotel",
-          "titleVi": "Sân bay & khách sạn",
-          "levelCode": "A1_1",
-          "trackId": "ja-travel_hotel",
-          "goal": "Check in, find your way, and report missing baggage.",
-          "goalVi": "Nhận phòng, tìm đường và báo mất hành lý.",
-          "order": 1,
-          "lessonIds": [
-            "ja-travel_hotel-u1-l1",
-            "ja-travel_hotel-u1-l2",
-            "ja-travel_hotel-u1-l3",
-            "ja-travel_hotel-u1-l4"
-          ]
-        },
-        {
-          "id": "ja-travel_hotel-u2",
-          "title": "Getting Around",
-          "titleVi": "Di chuyển & tình huống khẩn cấp",
-          "levelCode": "A1_2",
-          "trackId": "ja-travel_hotel",
-          "goal": "Take taxis and trains, buy tickets, and ask for help.",
-          "goalVi": "Đi tắc xi, tàu điện, mua vé và nhờ giúp đỡ.",
-          "order": 2,
-          "lessonIds": [
-            "ja-travel_hotel-u2-l1",
-            "ja-travel_hotel-u2-l2",
-            "ja-travel_hotel-u2-l3",
-            "ja-travel_hotel-u2-l4"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ja-restaurant_food_service",
-      "languageCode": "ja",
-      "nicheId": "restaurant_food_service",
-      "title": "Japanese · Restaurant & Food Service",
-      "titleVi": "Tiếng Nhật · Nhà hàng & phục vụ ẩm thực",
-      "description": "Ordering, allergies, and payment as a guest; greeting and service as staff.",
-      "descriptionVi": "Gọi món, dị ứng và thanh toán khi là khách; chào đón và phục vụ khi là nhân viên.",
-      "levelCode": "A1_1",
-      "order": 1,
-      "unitIds": [
-        "ja-restaurant_food_service-u1",
-        "ja-restaurant_food_service-u2"
-      ],
-      "isComingSoon": false,
-      "units": [
-        {
-          "id": "ja-restaurant_food_service-u1",
-          "title": "As a Customer",
-          "titleVi": "Khi là khách hàng",
-          "levelCode": "A1_1",
-          "trackId": "ja-restaurant_food_service",
-          "goal": "Reserve, order, mention allergies, and pay the bill.",
-          "goalVi": "Đặt bàn, gọi món, báo dị ứng và thanh toán.",
-          "order": 1,
-          "lessonIds": [
-            "ja-restaurant_food_service-u1-l1",
-            "ja-restaurant_food_service-u1-l2",
-            "ja-restaurant_food_service-u1-l3",
-            "ja-restaurant_food_service-u1-l4"
-          ]
-        },
-        {
-          "id": "ja-restaurant_food_service-u2",
-          "title": "As Restaurant Staff",
-          "titleVi": "Khi là nhân viên nhà hàng",
-          "levelCode": "A1_2",
-          "trackId": "ja-restaurant_food_service",
-          "goal": "Welcome guests, recommend dishes, apologize, and handle takeout.",
-          "goalVi": "Chào đón khách, gợi ý món, xin lỗi và xử lý đơn mang về.",
-          "order": 2,
-          "lessonIds": [
-            "ja-restaurant_food_service-u2-l1",
-            "ja-restaurant_food_service-u2-l2",
-            "ja-restaurant_food_service-u2-l3",
-            "ja-restaurant_food_service-u2-l4"
-          ]
-        }
-      ]
-    },
     {
       "id": "en-daily_life",
       "languageCode": "en",
       "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "greetings",
+      "moduleTitle": "Greetings",
+      "moduleTitleVi": "Chào hỏi",
       "title": "English · Daily Life",
       "titleVi": "Tiếng Anh · Đời sống hàng ngày",
-      "description": "Introductions, home, shopping, health, and asking for help.",
-      "descriptionVi": "Giới thiệu bản thân, nhà cửa, mua sắm, sức khỏe và nhờ giúp đỡ.",
-      "levelCode": "A1_1",
+      "description": "Start with greetings for everyday English.",
+      "descriptionVi": "Bắt đầu với chào hỏi tiếng Anh hàng ngày.",
+      "levelCode": "A0",
       "order": 1,
       "unitIds": [
-        "en-daily_life-u1",
-        "en-daily_life-u2"
+        "en-daily_life-greetings-u1"
       ],
       "isComingSoon": false,
       "units": [
         {
-          "id": "en-daily_life-u1",
-          "title": "Introductions & Home",
-          "titleVi": "Giới thiệu & nhà cửa",
-          "levelCode": "A1_1",
+          "id": "en-daily_life-greetings-u1",
+          "title": "Unit 1: Hello / goodbye",
+          "titleVi": "Unit 1: Hello / tạm biệt",
+          "levelCode": "A0",
           "trackId": "en-daily_life",
-          "goal": "Introduce yourself, your family, your home, and your needs.",
-          "goalVi": "Giới thiệu bản thân, gia đình, nhà cửa và nhu cầu của bạn.",
+          "moduleId": "greetings",
+          "goal": "Use basic hello and goodbye lines in short daily talks.",
+          "goalVi": "Dùng lời chào và tạm biệt cơ bản trong trò chuyện ngắn hàng ngày.",
           "order": 1,
           "lessonIds": [
-            "en-daily_life-u1-l1",
-            "en-daily_life-u1-l2",
-            "en-daily_life-u1-l3",
-            "en-daily_life-u1-l4"
-          ]
-        },
-        {
-          "id": "en-daily_life-u2",
-          "title": "Around Town & Health",
-          "titleVi": "Trong thành phố & sức khỏe",
-          "levelCode": "A1_2",
-          "trackId": "en-daily_life",
-          "goal": "Ask directions and prices, and talk about health and help.",
-          "goalVi": "Hỏi đường, hỏi giá và nói về sức khỏe, nhờ giúp đỡ.",
-          "order": 2,
-          "lessonIds": [
-            "en-daily_life-u2-l1",
-            "en-daily_life-u2-l2",
-            "en-daily_life-u2-l3",
-            "en-daily_life-u2-l4"
+            "en-daily-greetings-u1-l1",
+            "en-daily-greetings-u1-l2",
+            "en-daily-greetings-u1-l3",
+            "en-daily-greetings-u1-l4",
+            "en-daily-greetings-u1-l5",
+            "en-daily-greetings-u1-l6"
           ]
         }
       ]
     },
     {
-      "id": "en-travel_hotel",
-      "languageCode": "en",
-      "nicheId": "travel_hotel",
-      "title": "English · Travel & Hotel",
-      "titleVi": "Tiếng Anh · Du lịch & khách sạn",
-      "description": "Airport, hotel check-in, transport, and travel emergencies.",
-      "descriptionVi": "Sân bay, nhận phòng khách sạn, di chuyển và tình huống khẩn cấp khi du lịch.",
-      "levelCode": "A1_1",
-      "order": 1,
-      "unitIds": [
-        "en-travel_hotel-u1",
-        "en-travel_hotel-u2"
-      ],
-      "isComingSoon": false,
-      "units": [
-        {
-          "id": "en-travel_hotel-u1",
-          "title": "Airport & Hotel",
-          "titleVi": "Sân bay & khách sạn",
-          "levelCode": "A1_1",
-          "trackId": "en-travel_hotel",
-          "goal": "Check in, find your way, and report missing baggage.",
-          "goalVi": "Nhận phòng, tìm đường và báo mất hành lý.",
-          "order": 1,
-          "lessonIds": [
-            "en-travel_hotel-u1-l1",
-            "en-travel_hotel-u1-l2",
-            "en-travel_hotel-u1-l3",
-            "en-travel_hotel-u1-l4"
-          ]
-        },
-        {
-          "id": "en-travel_hotel-u2",
-          "title": "Getting Around",
-          "titleVi": "Di chuyển & tình huống khẩn cấp",
-          "levelCode": "A1_2",
-          "trackId": "en-travel_hotel",
-          "goal": "Take taxis and trains, buy tickets, and ask for help.",
-          "goalVi": "Đi tắc xi, tàu điện, mua vé và nhờ giúp đỡ.",
-          "order": 2,
-          "lessonIds": [
-            "en-travel_hotel-u2-l1",
-            "en-travel_hotel-u2-l2",
-            "en-travel_hotel-u2-l3",
-            "en-travel_hotel-u2-l4"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "en-restaurant_food_service",
-      "languageCode": "en",
-      "nicheId": "restaurant_food_service",
-      "title": "English · Restaurant & Food Service",
-      "titleVi": "Tiếng Anh · Nhà hàng & phục vụ ẩm thực",
-      "description": "Ordering, allergies, and payment as a guest; greeting and service as staff.",
-      "descriptionVi": "Gọi món, dị ứng và thanh toán khi là khách; chào đón và phục vụ khi là nhân viên.",
-      "levelCode": "A1_1",
-      "order": 1,
-      "unitIds": [
-        "en-restaurant_food_service-u1",
-        "en-restaurant_food_service-u2"
-      ],
-      "isComingSoon": false,
-      "units": [
-        {
-          "id": "en-restaurant_food_service-u1",
-          "title": "As a Customer",
-          "titleVi": "Khi là khách hàng",
-          "levelCode": "A1_1",
-          "trackId": "en-restaurant_food_service",
-          "goal": "Reserve, order, mention allergies, and pay the bill.",
-          "goalVi": "Đặt bàn, gọi món, báo dị ứng và thanh toán.",
-          "order": 1,
-          "lessonIds": [
-            "en-restaurant_food_service-u1-l1",
-            "en-restaurant_food_service-u1-l2",
-            "en-restaurant_food_service-u1-l3",
-            "en-restaurant_food_service-u1-l4"
-          ]
-        },
-        {
-          "id": "en-restaurant_food_service-u2",
-          "title": "As Restaurant Staff",
-          "titleVi": "Khi là nhân viên nhà hàng",
-          "levelCode": "A1_2",
-          "trackId": "en-restaurant_food_service",
-          "goal": "Welcome guests, recommend dishes, apologize, and handle takeout.",
-          "goalVi": "Chào đón khách, gợi ý món, xin lỗi và xử lý đơn mang về.",
-          "order": 2,
-          "lessonIds": [
-            "en-restaurant_food_service-u2-l1",
-            "en-restaurant_food_service-u2-l2",
-            "en-restaurant_food_service-u2-l3",
-            "en-restaurant_food_service-u2-l4"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "es-daily_life",
-      "languageCode": "es",
+      "id": "ja-daily_life",
+      "languageCode": "ja",
       "nicheId": "daily_life",
-      "title": "Spanish · Daily Life",
-      "titleVi": "Tiếng Tây Ban Nha · Đời sống hàng ngày",
-      "description": "Introductions, home, shopping, health, and asking for help.",
-      "descriptionVi": "Giới thiệu bản thân, nhà cửa, mua sắm, sức khỏe và nhờ giúp đỡ.",
-      "levelCode": "A1_1",
+      "branch": "niche",
+      "moduleId": "greetings",
+      "moduleTitle": "Greetings",
+      "moduleTitleVi": "Chào hỏi",
+      "title": "Japanese · Daily Life",
+      "titleVi": "Tiếng Nhật · Đời sống hàng ngày",
+      "description": "Start with greetings for everyday Japanese.",
+      "descriptionVi": "Bắt đầu với chào hỏi tiếng Nhật hàng ngày.",
+      "levelCode": "A0",
       "order": 1,
       "unitIds": [
-        "es-daily_life-u1",
-        "es-daily_life-u2"
+        "ja-daily_life-greetings-u1"
       ],
       "isComingSoon": false,
       "units": [
         {
-          "id": "es-daily_life-u1",
-          "title": "Presentaciones y hogar",
-          "titleVi": "Giới thiệu & nhà cửa",
-          "levelCode": "A1_1",
-          "trackId": "es-daily_life",
-          "goal": "Introduce yourself, your family, your home, and your needs.",
-          "goalVi": "Giới thiệu bản thân, gia đình, nhà cửa và nhu cầu của bạn.",
+          "id": "ja-daily_life-greetings-u1",
+          "title": "Unit 1: Hello / goodbye",
+          "titleVi": "Unit 1: Chào / tạm biệt",
+          "levelCode": "A0",
+          "trackId": "ja-daily_life",
+          "moduleId": "greetings",
+          "goal": "Use basic Japanese hello and goodbye lines.",
+          "goalVi": "Dùng lời chào và tạm biệt tiếng Nhật cơ bản.",
           "order": 1,
           "lessonIds": [
-            "es-daily_life-u1-l1",
-            "es-daily_life-u1-l2",
-            "es-daily_life-u1-l3",
-            "es-daily_life-u1-l4"
-          ]
-        },
-        {
-          "id": "es-daily_life-u2",
-          "title": "En la ciudad y la salud",
-          "titleVi": "Trong thành phố & sức khỏe",
-          "levelCode": "A1_2",
-          "trackId": "es-daily_life",
-          "goal": "Ask directions and prices, and talk about health and help.",
-          "goalVi": "Hỏi đường, hỏi giá và nói về sức khỏe, nhờ giúp đỡ.",
-          "order": 2,
-          "lessonIds": [
-            "es-daily_life-u2-l1",
-            "es-daily_life-u2-l2",
-            "es-daily_life-u2-l3",
-            "es-daily_life-u2-l4"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "es-travel_hotel",
-      "languageCode": "es",
-      "nicheId": "travel_hotel",
-      "title": "Spanish · Travel & Hotel",
-      "titleVi": "Tiếng Tây Ban Nha · Du lịch & khách sạn",
-      "description": "Airport, hotel check-in, transport, and travel emergencies.",
-      "descriptionVi": "Sân bay, nhận phòng khách sạn, di chuyển và tình huống khẩn cấp khi du lịch.",
-      "levelCode": "A1_1",
-      "order": 1,
-      "unitIds": [
-        "es-travel_hotel-u1",
-        "es-travel_hotel-u2"
-      ],
-      "isComingSoon": false,
-      "units": [
-        {
-          "id": "es-travel_hotel-u1",
-          "title": "Aeropuerto y hotel",
-          "titleVi": "Sân bay & khách sạn",
-          "levelCode": "A1_1",
-          "trackId": "es-travel_hotel",
-          "goal": "Check in, find your way, and report missing baggage.",
-          "goalVi": "Nhận phòng, tìm đường và báo mất hành lý.",
-          "order": 1,
-          "lessonIds": [
-            "es-travel_hotel-u1-l1",
-            "es-travel_hotel-u1-l2",
-            "es-travel_hotel-u1-l3",
-            "es-travel_hotel-u1-l4"
-          ]
-        },
-        {
-          "id": "es-travel_hotel-u2",
-          "title": "Cómo moverse",
-          "titleVi": "Di chuyển & tình huống khẩn cấp",
-          "levelCode": "A1_2",
-          "trackId": "es-travel_hotel",
-          "goal": "Take taxis and trains, buy tickets, and ask for help.",
-          "goalVi": "Đi tắc xi, tàu điện, mua vé và nhờ giúp đỡ.",
-          "order": 2,
-          "lessonIds": [
-            "es-travel_hotel-u2-l1",
-            "es-travel_hotel-u2-l2",
-            "es-travel_hotel-u2-l3",
-            "es-travel_hotel-u2-l4"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "es-restaurant_food_service",
-      "languageCode": "es",
-      "nicheId": "restaurant_food_service",
-      "title": "Spanish · Restaurant & Food Service",
-      "titleVi": "Tiếng Tây Ban Nha · Nhà hàng & phục vụ ẩm thực",
-      "description": "Ordering, allergies, and payment as a guest; greeting and service as staff.",
-      "descriptionVi": "Gọi món, dị ứng và thanh toán khi là khách; chào đón và phục vụ khi là nhân viên.",
-      "levelCode": "A1_1",
-      "order": 1,
-      "unitIds": [
-        "es-restaurant_food_service-u1",
-        "es-restaurant_food_service-u2"
-      ],
-      "isComingSoon": false,
-      "units": [
-        {
-          "id": "es-restaurant_food_service-u1",
-          "title": "Como cliente",
-          "titleVi": "Khi là khách hàng",
-          "levelCode": "A1_1",
-          "trackId": "es-restaurant_food_service",
-          "goal": "Reserve, order, mention allergies, and pay the bill.",
-          "goalVi": "Đặt bàn, gọi món, báo dị ứng và thanh toán.",
-          "order": 1,
-          "lessonIds": [
-            "es-restaurant_food_service-u1-l1",
-            "es-restaurant_food_service-u1-l2",
-            "es-restaurant_food_service-u1-l3",
-            "es-restaurant_food_service-u1-l4"
-          ]
-        },
-        {
-          "id": "es-restaurant_food_service-u2",
-          "title": "Como personal del restaurante",
-          "titleVi": "Khi là nhân viên nhà hàng",
-          "levelCode": "A1_2",
-          "trackId": "es-restaurant_food_service",
-          "goal": "Welcome guests, recommend dishes, apologize, and handle takeout.",
-          "goalVi": "Chào đón khách, gợi ý món, xin lỗi và xử lý đơn mang về.",
-          "order": 2,
-          "lessonIds": [
-            "es-restaurant_food_service-u2-l1",
-            "es-restaurant_food_service-u2-l2",
-            "es-restaurant_food_service-u2-l3",
-            "es-restaurant_food_service-u2-l4"
+            "ja-daily-greetings-u1-l1",
+            "ja-daily-greetings-u1-l2",
+            "ja-daily-greetings-u1-l3",
+            "ja-daily-greetings-u1-l4",
+            "ja-daily-greetings-u1-l5",
+            "ja-daily-greetings-u1-l6"
           ]
         }
       ]

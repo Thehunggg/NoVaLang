@@ -235,3 +235,105 @@ Always report:
 6. Flutter analyze result
 7. Flutter build result if run
 8. Any SDK/config issue
+## Curriculum source-of-truth rule
+
+All curriculum/business data must be updated from the shared source of truth.
+
+Do not fix curriculum only in Flutter.
+Do not fix curriculum only in Web.
+
+If changing:
+- learning language catalog
+- native language behavior
+- lesson/unit/module/niche tree
+- exercise types
+- lesson content
+- Plus gating
+- AI Q&A rules
+- translations
+- validator rules
+
+then update shared source-of-truth first, then regenerate/sync outputs for both Web and Flutter.
+
+Do not manually patch generated JSON only. Fix the source/generator/schema first, then regenerate.
+
+Current curriculum model:
+
+NovaLang Curriculum
+├── Core Foundation
+├── 15 Main Niches
+└── Exam Preparation, future branch only
+
+Current build scope:
+- Keep 20 learning languages in catalog.
+- Only English and Japanese are playable for now.
+- The other 18 languages must be preview / comingSoon.
+- Build only Daily Life → Greetings → Unit 1 for English and Japanese first.
+- Do not expand beyond that until the user reviews.
+
+Lesson structure:
+Each lesson must have exactly 10 exercises.
+
+Exercise 1–7:
+- Free
+- fixed/non-AI exercises
+
+Exercise 8:
+- Plus only
+- Listening Gap-fill
+- uses device TTS / speechText
+- no AI API
+
+Exercise 9:
+- Plus only
+- Controlled AI Q&A for the 390 yen/month Plus plan
+- not open-ended chat
+- 1 set = AI asks 1 short lesson-based question → user answers → AI gives short correction/comment → set ends
+- keep output short and cost-controlled
+- do not save long chat history
+
+Exercise 10:
+- Plus only
+- AI Feedback / Review
+- should reuse Exercise 9 feedback
+- must not trigger an extra AI call by default
+
+Native language rule:
+Native language controls meanings, explanations, hints, and answer options.
+Supported native languages:
+vi, en, ja, ko, zh
+
+Example:
+nativeLanguage = ja, learningLanguage = en
+chooseMeaning options must be Japanese.
+
+Example:
+nativeLanguage = vi, learningLanguage = ja
+chooseMeaning options must be Vietnamese.
+
+Validator must fail if:
+- lesson does not have exactly 10 exercises
+- Exercise 8–10 are not Plus gated
+- Exercise 9 is open-ended chat
+- translations vi/en/ja/ko/zh are missing
+- Japanese reading/romanization/speechText is missing
+- chooseMeaning options are in the wrong native language
+- duplicate options exist
+- unsupported exercise types are used
+
+Required checks:
+npm run generate:curriculum
+npm run validate:curriculum
+npm run sync:flutter-assets
+npm run build
+
+Then:
+cd mobile/novalang_flutter
+flutter analyze
+flutter build apk --debug
+
+Reporting rule:
+After each task, report briefly in Vietnamese.
+Max 8 bullet lines total.
+Do not paste full code unless asked.
+Stop and ask for review before expanding.
