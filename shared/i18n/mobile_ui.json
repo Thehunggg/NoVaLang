@@ -1,7 +1,13 @@
 {
   "back": {"en": "Back", "vi": "Quay lại", "ja": "戻る"},
   "continue": {"en": "Continue", "vi": "Tiếp tục", "ja": "続ける"},
-  "next": {"en": "Next", "vi": "Tiếp theo", "ja": "次へ"},
+  "next": {
+    "en": "Next",
+    "vi": "Tiếp tục",
+    "ja": "次へ",
+    "ko": "다음",
+    "zh": "下一步"
+  },
   "nativeLanguage": {"en": "Native/UI language", "vi": "Ngôn ngữ mẹ đẻ / giao diện", "ja": "母国語 / UI言語"},
   "learningLanguage": {"en": "Learning language", "vi": "Ngôn ngữ muốn học", "ja": "学習言語"},
   "learningLanguageSubtitle": {
@@ -110,9 +116,34 @@
     "vi": "Tìm theo tên, tên bản địa, bí danh hoặc chữ viết",
     "ja": "名前・別名・文字で検索"
   },
-  "checkAnswer": {"en": "Check answer", "vi": "Kiểm tra", "ja": "答えを確認"},
-  "correct": {"en": "Correct", "vi": "Chính xác", "ja": "正解"},
-  "tryAgain": {"en": "Not quite", "vi": "Chưa đúng", "ja": "もう一度"},
+  "checkAnswer": {
+    "en": "Check answer",
+    "vi": "Kiểm tra",
+    "ja": "答えを確認",
+    "ko": "정답 확인",
+    "zh": "检查答案"
+  },
+  "correct": {
+    "en": "Correct",
+    "vi": "Đúng rồi",
+    "ja": "正解です",
+    "ko": "맞아요",
+    "zh": "正确"
+  },
+  "notQuite": {
+    "en": "Not quite",
+    "vi": "Chưa đúng",
+    "ja": "まだ違います",
+    "ko": "아직 아니에요",
+    "zh": "还不对"
+  },
+  "tryAgain": {
+    "en": "Try again",
+    "vi": "Thử lại",
+    "ja": "もう一度",
+    "ko": "다시 시도",
+    "zh": "再试一次"
+  },
   "answerHint": {"en": "Type your answer", "vi": "Nhập câu trả lời", "ja": "答えを入力"},
   "match": {"en": "Match", "vi": "Ghép cặp", "ja": "組み合わせ"},
   "courseBack": {"en": "Back to course", "vi": "Quay lại lộ trình", "ja": "コースに戻る"},
@@ -331,6 +362,93 @@
   "vocabulary": {
     "en": "Vocabulary",
     "vi": "Từ vựng",
-    "ja": "単語"
+    "ja": "単語",
+    "ko": "단어",
+    "zh": "词汇"
+  },
+  "lessonIntro": {
+    "en": "Lesson intro",
+    "vi": "Giới thiệu bài học",
+    "ja": "レッスン紹介",
+    "ko": "레슨 소개",
+    "zh": "课程介绍"
+  },
+  "startExercises": {
+    "en": "Start exercises · {count}",
+    "vi": "Bắt đầu bài tập · {count}",
+    "ja": "練習を始める · {count}",
+    "ko": "연습 시작 · {count}",
+    "zh": "开始练习 · {count}"
+  },
+  "exerciseNumber": {
+    "en": "Exercise {current}/{total}",
+    "vi": "Bài tập {current}/{total}",
+    "ja": "練習 {current}/{total}",
+    "ko": "연습 {current}/{total}",
+    "zh": "练习 {current}/{total}"
+  },
+  "plusAdvancedBadge": {
+    "en": "Plus · Advanced",
+    "vi": "Plus · bài nâng cao",
+    "ja": "Plus・応用",
+    "ko": "Plus · 심화",
+    "zh": "Plus · 进阶"
+  },
+  "aiReviewHelper": {
+    "en": "AI will ask a short question and correct your answer.",
+    "vi": "AI sẽ hỏi ngắn và sửa câu trả lời của bạn.",
+    "ja": "AIが短い質問をして、あなたの答えを添削します。",
+    "ko": "AI가 짧은 질문을 하고 답변을 교정합니다.",
+    "zh": "AI 会提出一个简短问题，并纠正你的回答。"
+  },
+  "plusAiReviewTitle": {
+    "en": "Plus · Review AI feedback (no extra call)",
+    "vi": "Plus · xem lại phản hồi AI (không gọi thêm)",
+    "ja": "Plus・AIフィードバック確認（追加呼び出しなし）",
+    "ko": "Plus · AI 피드백 확인 (추가 호출 없음)",
+    "zh": "Plus · 查看 AI 反馈（不额外调用）"
+  },
+  "aiFeedbackReuseHelper": {
+    "en": "This step reuses the Exercise 9 result.",
+    "vi": "Bước này tái sử dụng kết quả Exercise 9.",
+    "ja": "このステップはExercise 9の結果を再利用します。",
+    "ko": "이 단계는 Exercise 9 결과를 재사용합니다.",
+    "zh": "此步骤会复用 Exercise 9 的结果。"
+  },
+  "playingAudio": {
+    "en": "Playing audio…",
+    "vi": "Đang phát âm…",
+    "ja": "音声を再生中…",
+    "ko": "오디오 재생 중…",
+    "zh": "正在播放音频…"
+  },
+  "listenTooltip": {
+    "en": "Listen",
+    "vi": "Nghe",
+    "ja": "聞く",
+    "ko": "듣기",
+    "zh": "收听"
+  },
+  "ttsUnavailable": {
+    "en": "Device TTS voice is unavailable for this language.",
+    "vi": "Thiết bị chưa có giọng TTS cho ngôn ngữ này.",
+    "ja": "この言語の端末TTS音声は利用できません。",
+    "ko": "이 언어의 기기 TTS 음성을 사용할 수 없습니다.",
+    "zh": "设备暂无该语言的 TTS 语音。"
+  },
+  "addSecondTrack": {
+    "en": "Add a second study track",
+    "vi": "Thêm lộ trình học thứ hai",
+    "ja": "2つ目の学習トラックを追加"
+  },
+  "activeTracksTitle": {
+    "en": "Active study tracks",
+    "vi": "Lộ trình học đang dùng",
+    "ja": "学習中のトラック"
+  },
+  "trackProgress": {
+    "en": "Track progress: {done}/{total}",
+    "vi": "Tiến độ lộ trình: {done}/{total}",
+    "ja": "トラック進捗: {done}/{total}"
   }
 }

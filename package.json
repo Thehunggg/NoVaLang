@@ -15,6 +15,7 @@
     "generate:curriculum": "node scripts/generate-curriculum.mjs",
     "review:curriculum:export": "node scripts/export-curriculum-review.mjs",
     "smoke:curriculum": "node scripts/smoke-curriculum-flow.mjs",
+    "smoke:answer-unicode": "node scripts/smoke-answer-unicode.mjs",
     "validate:curriculum": "node scripts/validate-curriculum.mjs",
     "sync:flutter-assets": "node scripts/sync-shared-assets.mjs",
     "sync:curriculum": "npm run generate:curriculum && npm run validate:curriculum && npm run sync:flutter-assets"

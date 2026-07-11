@@ -64,13 +64,24 @@ export function AppProvider({ children }: { children: ReactNode }) {
       getNativeLanguage: () => progress.nativeLanguage,
       updateNativeLanguage: setNative,
       updateProfileInfo: (info) => setProgress((current) => ({ ...current, ...info })),
-      updateNiches: (selectedNiches, primaryNiche, decision) => setProgress((current) => ({
-        ...current,
-        selectedNiches,
-        primaryNiche,
-        nicheUpdatedAt: new Date().toISOString(),
-        levelDecisionAfterNicheChange: decision ?? current.levelDecisionAfterNicheChange
-      })),
+      updateNiches: (selectedNiches, primaryNiche, decision) => setProgress((current) => {
+        const activeTracks = selectedNiches.slice(0, 2);
+        const currentTrack =
+          primaryNiche && activeTracks.includes(primaryNiche)
+            ? primaryNiche
+            : activeTracks[0] ?? current.currentTrack ?? "daily_life";
+        return {
+          ...current,
+          selectedNiches: activeTracks,
+          primaryNiche: primaryNiche && activeTracks.includes(primaryNiche)
+            ? primaryNiche
+            : activeTracks[0] ?? primaryNiche,
+          activeTracks,
+          currentTrack,
+          nicheUpdatedAt: new Date().toISOString(),
+          levelDecisionAfterNicheChange: decision ?? current.levelDecisionAfterNicheChange
+        };
+      }),
       finishOnboarding: (selectedLanguage, selectedLevel, dailyGoalMinutes, profileInfo, nicheInfo) => {
         setLearningLanguage(selectedLanguage);
         setProgress((current) => {
@@ -78,12 +89,24 @@ export function AppProvider({ children }: { children: ReactNode }) {
           const firstLesson = course.levels.find((item) => item.id === selectedLevel)?.units[0]?.lessons[0] ?? course.levels[0].units[0].lessons[0];
           const starting = unlockStartingPointFromPlacement(course, { completed: true, score: 0, level: selectedLevel, date: new Date().toISOString(), startingUnitId: firstLesson.unitId, startingLessonId: firstLesson.id });
           const experienceLevel: ExperienceLevel = selectedLevel === "A0" || selectedLevel.startsWith("A1") ? "beginner" : selectedLevel.startsWith("A2") ? "elementary" : "intermediate";
+          const nextNiches = nicheInfo?.selectedNiches?.length
+            ? nicheInfo.selectedNiches.slice(0, 2)
+            : current.selectedNiches.slice(0, 2);
+          const nextPrimary = nicheInfo?.primaryNiche ?? current.primaryNiche;
+          const nextCurrentTrack =
+            nextPrimary && nextNiches.includes(nextPrimary)
+              ? nextPrimary
+              : nextNiches[0] ?? current.currentTrack ?? "daily_life";
           return {
             ...current,
             onboardingCompleted: true,
             ...profileInfo,
-            selectedNiches: nicheInfo?.selectedNiches?.length ? nicheInfo.selectedNiches : current.selectedNiches,
-            primaryNiche: nicheInfo?.primaryNiche ?? current.primaryNiche,
+            selectedNiches: nextNiches,
+            primaryNiche: nextPrimary && nextNiches.includes(nextPrimary)
+              ? nextPrimary
+              : nextNiches[0] ?? nextPrimary,
+            activeTracks: nextNiches,
+            currentTrack: nextCurrentTrack,
             selectedLanguage,
             learningLanguage: selectedLanguage,
             experienceLevel,
@@ -134,7 +157,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
           [lessonId]: {
             lessonId,
             currentStepIndex,
-            completedStepIds: current.lessonSessions[lessonId]?.completedStepIds ?? []
+            completedStepIds: current.lessonSessions[lessonId]?.completedStepIds ?? [],
+            introCompleted: true,
           }
         }
       })),
@@ -176,6 +200,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
                 lessonId: lesson.id,
                 currentStepIndex: Math.min(micro.order, lesson.microLessons.length - 1),
                 completedStepIds: sessionCompletedIds.includes(micro.id) ? sessionCompletedIds : [...sessionCompletedIds, micro.id],
+                introCompleted: next.lessonSessions[lesson.id]?.introCompleted === true,
                 completedAt: lessonCompleted ? new Date().toISOString() : undefined
               }
             }
@@ -183,8 +208,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
           const completedIds = next.completedLessonIds;
           const foundationDone =
             next.coreFoundationCompleted ||
-            (completedIds.includes("ja-hiragana-u1-l6") &&
-              completedIds.includes("ja-katakana-u4-l6")) ||
+            (completedIds.includes("ja-hiragana-u1-l10") &&
+              completedIds.includes("ja-katakana-u4-l10")) ||
             completedIds.includes("en-alphabet-u1-l6");
           if (foundationDone) next = { ...next, coreFoundationCompleted: true };
           return withAchievements(next);
@@ -219,4 +244,3 @@ export function AppProvider({ children }: { children: ReactNode }) {
 }
 
 export const useApp = () => { const context = useContext(AppContext); if (!context) throw new Error("useApp must be used inside AppProvider"); return context; };
-

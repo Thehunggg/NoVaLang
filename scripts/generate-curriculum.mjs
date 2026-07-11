@@ -15,6 +15,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { KATAKANA_E8_SPECS } from "./katakana-e8-specs.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -32,15 +33,26 @@ const LEARNING_CATALOG = [
 ];
 const PLAYABLE_LANGUAGES = ["en", "ja"];
 const FREE_TYPES = [
+  "characterCard",
   "chooseMeaning",
+  "chooseReading",
   "chooseVocabulary",
+  "fillMissingCharacter",
+  "soundToCharacter",
+  "nextInSequence",
+  "chooseCorrectPair",
   "matchPairs",
   "fillBlank",
   "chooseCorrectAnswer",
   "listenAndChoose",
   "typeAnswer",
 ];
-const PLUS_TYPES = ["listeningGapFill", "controlledAiQa", "aiFeedbackReview"];
+const PLUS_TYPES = [
+  "listeningGapFill",
+  "plusListeningVocabularyChallenge",
+  "controlledAiQa",
+  "aiFeedbackReview",
+];
 
 function t(map) {
   for (const code of NATIVE_CODES) {
@@ -130,6 +142,56 @@ function pairsByNative(entries, seedId) {
   return byNative;
 }
 
+function readingPairsByNative(entries, seedId) {
+  const pairs = rotated(
+    entries.slice(0, Math.min(5, entries.length)).map((e) => ({
+      left: e.displayText,
+      right: e.romanization,
+    })),
+    seedId,
+  );
+  assertUnique(
+    pairs.map((p) => p.left),
+    `reading pair lefts ${seedId}`,
+  );
+  assertUnique(
+    pairs.map((p) => p.right),
+    `reading pair rights ${seedId}`,
+  );
+  return Object.fromEntries(NATIVE_CODES.map((code) => [code, pairs]));
+}
+
+function charOptions(entries, seedId) {
+  const options = rotated(
+    entries.slice(0, 4).map((e) => e.displayText),
+    seedId,
+  );
+  assertUnique(options, `char options ${seedId}`);
+  return options;
+}
+
+function romanizationOptions(entries, seedId) {
+  const options = rotated(
+    entries.slice(0, 4).map((e) => e.romanization),
+    seedId,
+  );
+  assertUnique(options, `romanization options ${seedId}`);
+  return options;
+}
+
+function blankSequence(chars, blankIndex) {
+  return chars
+    .map((ch, i) => (i === blankIndex ? "_" : ch))
+    .join(" ");
+}
+
+function sequenceClue(chars, questionIndex) {
+  return chars
+    .slice(0, questionIndex)
+    .concat(["?"])
+    .join(" → ");
+}
+
 function baseExercise(id, type, access, prompts, fields = {}) {
   return {
     id,
@@ -210,7 +272,7 @@ function exChooseVocabulary(id, target, pool) {
 }
 
 function exMatchPairs(id, entries) {
-  const selected = entries.slice(0, Math.min(4, entries.length));
+  const selected = entries.slice(0, Math.min(5, entries.length));
   if (selected.length < 3) throw new Error(`matchPairs ${id}: need at least 3 pairs`);
   const byNative = pairsByNative(selected, id);
   return baseExercise(
@@ -240,37 +302,67 @@ function exFillBlank(id, sentence, blankWord, optionWords, speechText) {
   if (!options.includes(blankWord)) {
     throw new Error(`fillBlank ${id}: blankWord missing from options`);
   }
+  if (!/_|＿|\{blank\}|\[blank\]/.test(sentence)) {
+    throw new Error(`fillBlank ${id}: visible sentence must include a blank marker`);
+  }
+  if (String(sentence).includes(blankWord)) {
+    throw new Error(`fillBlank ${id}: correct answer must not appear in visible blank sentence`);
+  }
+  const fields = {
+    displayText: sentence,
+    options,
+    optionsVi: options,
+    optionsByNative: Object.fromEntries(NATIVE_CODES.map((c) => [c, options])),
+    correctAnswer: blankWord,
+    acceptedAnswers: [blankWord],
+    acceptedAnswersVi: [blankWord],
+    acceptedAnswersByNative: Object.fromEntries(
+      NATIVE_CODES.map((c) => [c, [blankWord]]),
+    ),
+    skill: "grammar",
+  };
+  // Do not attach speech that reveals the missing answer in the audio card.
+  if (speechText && !String(speechText).includes(blankWord)) {
+    fields.speechText = speechText;
+  }
   return baseExercise(
     id,
     "fillBlank",
     "free",
     promptMap(
-      "Fill in the missing word.",
-      "Điền từ còn thiếu.",
-      "空欄に入る語を選んでください。",
-      "빈칸에 알맞은 말을 고르세요.",
-      "填入缺少的词。",
+      "Fill in the missing character.",
+      "Điền ký tự còn thiếu.",
+      "空欄に入る文字を選んでください。",
+      "빈칸에 알맞은 글자를 고르세요.",
+      "填入缺少的字符。",
     ),
-    {
-      displayText: sentence,
-      speechText: speechText ?? sentence.replace("___", blankWord),
-      options,
-      optionsVi: options,
-      optionsByNative: Object.fromEntries(NATIVE_CODES.map((c) => [c, options])),
-      correctAnswer: blankWord,
-      acceptedAnswers: [blankWord],
-      acceptedAnswersVi: [blankWord],
-      acceptedAnswersByNative: Object.fromEntries(
-        NATIVE_CODES.map((c) => [c, [blankWord]]),
-      ),
-      skill: "grammar",
-    },
+    fields,
   );
 }
 
 function exChooseCorrectAnswer(id, promptTarget, correct, distractors) {
   const options = rotated([correct, ...distractors.slice(0, 3)], id);
   assertUnique(options, `chooseCorrectAnswer ${id}`);
+  const fields = {
+    displayText: promptTarget.displayText,
+    options,
+    optionsVi: options,
+    optionsByNative: Object.fromEntries(NATIVE_CODES.map((c) => [c, options])),
+    correctAnswer: correct,
+    acceptedAnswers: [correct],
+    acceptedAnswersVi: [correct],
+    acceptedAnswersByNative: Object.fromEntries(
+      NATIVE_CODES.map((c) => [c, [correct]]),
+    ),
+    skill: "dialogue",
+  };
+  if (
+    promptTarget.speechText &&
+    promptTarget.speechText !== correct &&
+    promptTarget.allowSpeech !== false
+  ) {
+    fields.speechText = promptTarget.speechText;
+  }
   return baseExercise(
     id,
     "chooseCorrectAnswer",
@@ -282,20 +374,7 @@ function exChooseCorrectAnswer(id, promptTarget, correct, distractors) {
       promptTarget.ko,
       promptTarget.zh,
     ),
-    {
-      displayText: promptTarget.displayText,
-      speechText: promptTarget.speechText,
-      options,
-      optionsVi: options,
-      optionsByNative: Object.fromEntries(NATIVE_CODES.map((c) => [c, options])),
-      correctAnswer: correct,
-      acceptedAnswers: [correct],
-      acceptedAnswersVi: [correct],
-      acceptedAnswersByNative: Object.fromEntries(
-        NATIVE_CODES.map((c) => [c, [correct]]),
-      ),
-      skill: "dialogue",
-    },
+    fields,
   );
 }
 
@@ -318,8 +397,8 @@ function exListenAndChoose(id, target, pool) {
     {
       displayText: "🎧",
       speechText: target.speechText,
-      reading: target.reading,
-      romanization: target.romanization,
+      hideSpeechLabel: true,
+      ...AUDIO_LABEL_LISTEN,
       options: optionsByNativeLang.en,
       optionsVi: optionsByNativeLang.vi,
       optionsByNative: optionsByNativeLang,
@@ -329,6 +408,186 @@ function exListenAndChoose(id, target, pool) {
       acceptedAnswersByNative: acceptedByNative(target),
       skill: "listening",
       usesAi: false,
+    },
+  );
+}
+
+function exListenAndChooseCharacter(id, target, pool) {
+  const distractors = pool.filter((p) => p.id !== target.id).slice(0, 3);
+  if (distractors.length < 3) {
+    throw new Error(`listenAndChooseCharacter ${id}: need 3 distractors`);
+  }
+  const options = charOptions([target, ...distractors], id);
+  return baseExercise(
+    id,
+    "listenAndChoose",
+    "free",
+    promptMap(
+      "Listen to the pronunciation and choose the correct character.",
+      "Nghe phát âm và chọn chữ đúng.",
+      "発音を聞いて正しい文字を選んでください。",
+      "발음을 듣고 올바른 글자를 고르세요.",
+      "听发音并选择正确的字符。",
+    ),
+    {
+      displayText: "🎧",
+      speechText: target.speechText,
+      hideSpeechLabel: true,
+      ...AUDIO_LABEL_LISTEN,
+      options,
+      optionsVi: options,
+      optionsByNative: Object.fromEntries(NATIVE_CODES.map((c) => [c, options])),
+      correctAnswer: target.displayText,
+      acceptedAnswers: [target.displayText],
+      acceptedAnswersVi: [target.displayText],
+      acceptedAnswersByNative: Object.fromEntries(
+        NATIVE_CODES.map((c) => [c, [target.displayText]]),
+      ),
+      skill: "listening",
+      usesAi: false,
+    },
+  );
+}
+
+function exChooseCharacterBySound(id, target, pool) {
+  const distractors = pool.filter((p) => p.id !== target.id).slice(0, 3);
+  if (distractors.length < 3) {
+    throw new Error(`chooseCharacterBySound ${id}: need 3 distractors`);
+  }
+  const options = charOptions([target, ...distractors], id);
+  const sound = target.romanization;
+  return baseExercise(
+    id,
+    "chooseVocabulary",
+    "free",
+    promptMap(
+      `Choose the character for the sound “${sound}”.`,
+      `Chọn chữ có âm “${sound}”.`,
+      `「${sound}」の音の文字を選んでください。`,
+      `“${sound}” 소리의 글자를 고르세요.`,
+      `请选择发 “${sound}” 音的字符。`,
+    ),
+    {
+      displayText: sound,
+      options,
+      optionsVi: options,
+      optionsByNative: Object.fromEntries(NATIVE_CODES.map((c) => [c, options])),
+      correctAnswer: target.displayText,
+      acceptedAnswers: [target.displayText],
+      acceptedAnswersVi: [target.displayText],
+      acceptedAnswersByNative: Object.fromEntries(
+        NATIVE_CODES.map((c) => [c, [target.displayText]]),
+      ),
+      skill: "vocabulary",
+      hideSpeechLabel: true,
+    },
+  );
+}
+
+function exChooseReading(id, target, pool) {
+  const distractors = pool.filter((p) => p.id !== target.id).slice(0, 3);
+  if (distractors.length < 3) throw new Error(`chooseReading ${id}: need 3 distractors`);
+  const options = romanizationOptions([target, ...distractors], id);
+  return baseExercise(
+    id,
+    "chooseCorrectAnswer",
+    "free",
+    promptMap(
+      "How is this character read?",
+      "Chữ này đọc là gì?",
+      "この文字の読みは何ですか？",
+      "이 글자는 어떻게 읽나요?",
+      "这个字怎么读？",
+    ),
+    {
+      displayText: target.displayText,
+      speechText: target.speechText,
+      options,
+      optionsVi: options,
+      optionsByNative: Object.fromEntries(NATIVE_CODES.map((c) => [c, options])),
+      correctAnswer: target.romanization,
+      acceptedAnswers: [target.romanization],
+      acceptedAnswersVi: [target.romanization],
+      acceptedAnswersByNative: Object.fromEntries(
+        NATIVE_CODES.map((c) => [c, [target.romanization]]),
+      ),
+      skill: "reading",
+      answerVisibleOk: true,
+    },
+  );
+}
+
+function exMatchReadingPairs(id, entries) {
+  const byNative = readingPairsByNative(entries, id);
+  return baseExercise(
+    id,
+    "matchPairs",
+    "free",
+    promptMap(
+      "Match each character with its reading.",
+      "Nối mỗi chữ với cách đọc đúng.",
+      "文字と読みを組み合わせてください。",
+      "글자와 읽기를 짝지으세요.",
+      "将字符与读音配对。",
+    ),
+    {
+      pairs: byNative.en,
+      pairsVi: byNative.vi,
+      pairsByNative: byNative,
+      correctAnswer: byNative.en.map((p) => p.right).join("|"),
+      skill: "reading",
+      matchPairMode: "kana_reading",
+    },
+  );
+}
+
+function exSequenceNext(id, focusChars, optionPool = focusChars) {
+  if (focusChars.length < 3) {
+    throw new Error(`sequenceNext ${id}: need at least 3 characters`);
+  }
+  const questionIndex = Math.min(2, focusChars.length - 1);
+  const correctItem = focusChars[questionIndex];
+  const correct = correctItem.displayText;
+  const distractors = optionPool
+    .filter((e) => e.displayText !== correct)
+    .map((e) => e.displayText)
+    .slice(0, 3);
+  if (distractors.length < 3) {
+    throw new Error(`sequenceNext ${id}: need 3 distractors`);
+  }
+  const options = rotated([correct, ...distractors], id);
+  assertUnique(options, `sequenceNext ${id}`);
+  const clue = sequenceClue(
+    focusChars.slice(0, questionIndex + 1).map((e) => e.displayText),
+    questionIndex,
+  );
+  if (clue.replaceAll("?", "").includes(correct)) {
+    throw new Error(`sequenceNext ${id}: correct answer leaked in clue`);
+  }
+  return baseExercise(
+    id,
+    "typeAnswer",
+    "free",
+    promptMap(
+      "What character comes next in order?",
+      "Chữ nào tiếp theo trong thứ tự?",
+      "次に来る文字はどれですか？",
+      "순서상 다음에 오는 글자는?",
+      "按顺序下一个字符是什么？",
+    ),
+    {
+      displayText: clue,
+      options,
+      optionsVi: options,
+      optionsByNative: Object.fromEntries(NATIVE_CODES.map((c) => [c, options])),
+      correctAnswer: correct,
+      acceptedAnswers: [correct, correctItem.romanization],
+      acceptedAnswersVi: [correct, correctItem.romanization],
+      acceptedAnswersByNative: Object.fromEntries(
+        NATIVE_CODES.map((c) => [c, [correct, correctItem.romanization]]),
+      ),
+      skill: "review",
+      sequenceMode: "gojuon_next",
     },
   );
 }
@@ -368,21 +627,30 @@ function exTypeAnswer(id, target) {
 
 function exListeningGapFill(id, sentences) {
   // Plus: device TTS only, no AI API.
+  for (const sentence of sentences) {
+    if (!/_|＿|\{blank\}|\[blank\]/.test(sentence.text)) {
+      throw new Error(`listeningGapFill ${id}: gap sentence missing blank marker`);
+    }
+    if (String(sentence.text).includes(sentence.blankWord)) {
+      throw new Error(`listeningGapFill ${id}: blankWord leaked in visible gap text`);
+    }
+  }
   const gaps = sentences.map((s) => s.blankWord);
   return baseExercise(
     id,
     "listeningGapFill",
     "plus",
     promptMap(
-      "Listen to the short lines and fill the missing words.",
-      "Nghe các câu ngắn và điền từ còn thiếu.",
-      "短い文を聞いて空欄を埋めてください。",
-      "짧은 문장을 듣고 빈칸을 채우세요.",
-      "听短句并填入缺少的词。",
+      "Listen to the short lines and fill the missing characters.",
+      "Nghe các dòng ngắn và điền ký tự còn thiếu.",
+      "短い行を聞いて空欄の文字を埋めてください。",
+      "짧은 줄을 듣고 빈칸 글자를 채우세요.",
+      "听短句并填入缺少的字符。",
     ),
     {
       displayText: sentences.map((s) => s.text).join("\n"),
       speechText: sentences.map((s) => s.speechText).join("。"),
+      hideSpeechLabel: true,
       gapSentences: sentences,
       correctAnswer: gaps.join("|"),
       acceptedAnswers: gaps,
@@ -448,6 +716,255 @@ function exAiFeedbackReview(id) {
   );
 }
 
+function feedbackMap(vi, en, ja, ko, zh) {
+  return t({ vi, en, ja, ko, zh });
+}
+
+function localizedAudioLabels(en, vi, ja, ko, zh) {
+  const labels = t({ en, vi, ja, ko, zh });
+  const withIcon = Object.fromEntries(
+    NATIVE_CODES.map((code) => [code, `🔊 ${labels[code]}`]),
+  );
+  return {
+    audioCardLabel: en,
+    audioCardLabelByNative: labels,
+    visibleBeforeAnswer: withIcon.en,
+    visibleBeforeAnswerByNative: withIcon,
+    displayTextByNative: withIcon,
+  };
+}
+
+function revealMap(vi, en, ja, ko, zh) {
+  const byNative = t({ vi, en, ja, ko, zh });
+  return {
+    revealAfterAnswer: en,
+    revealAfterAnswerByNative: byNative,
+  };
+}
+
+const AUDIO_LABEL_LISTEN = localizedAudioLabels(
+  "Listen",
+  "Nghe phát âm",
+  "発音を聞く",
+  "발음 듣기",
+  "听发音",
+);
+const AUDIO_LABEL_LISTEN_WORD = localizedAudioLabels(
+  "Listen to word",
+  "Nghe từ",
+  "単語を聞く",
+  "단어 듣기",
+  "听单词",
+);
+
+function plusListeningSubQuestion({
+  id,
+  speechText,
+  wordDisplay,
+  meanings,
+  options,
+  correctAnswer,
+  feedbackCorrect,
+  feedbackWrong,
+  prompts,
+  revealByNative,
+}) {
+  const audio = AUDIO_LABEL_LISTEN_WORD;
+  const resolvedPrompts =
+    prompts ??
+    promptMap(
+      "Choose the first Hiragana character.",
+      "Chọn chữ Hiragana đầu tiên.",
+      "最初のひらがなを選んでください。",
+      "첫 히라가나를 고르세요.",
+      "选择第一个平假名。",
+    );
+  const reveal =
+    revealByNative ??
+    revealMap(
+      `${wordDisplay}— ${meanings.vi}`,
+      `${wordDisplay}— ${meanings.en}`,
+      `${wordDisplay}— ${meanings.ja}`,
+      `${wordDisplay}— ${meanings.ko}`,
+      `${wordDisplay}— ${meanings.zh}`,
+    );
+  return {
+    id,
+    speechText,
+    hideSpeechLabel: true,
+    audioCardLabel: audio.audioCardLabel,
+    audioCardLabelByNative: audio.audioCardLabelByNative,
+    visibleBeforeAnswer: audio.visibleBeforeAnswer,
+    visibleBeforeAnswerByNative: audio.visibleBeforeAnswerByNative,
+    prompt: resolvedPrompts.en,
+    prompts: resolvedPrompts,
+    options,
+    correctAnswer,
+    acceptedAnswers: [correctAnswer],
+    ...(revealByNative
+      ? {
+          revealAfterAnswer: revealByNative.en,
+          revealAfterAnswerByNative: t(revealByNative),
+        }
+      : reveal),
+    feedbackCorrectByNative: feedbackCorrect,
+    feedbackWrongByNative: feedbackWrong,
+  };
+}
+
+function exCharacterCard(id, cards) {
+  return baseExercise(
+    id,
+    "characterCard",
+    "free",
+    promptMap(
+      "Learn the first 5 Hiragana characters.",
+      "Học 5 chữ Hiragana đầu tiên.",
+      "最初の5つのひらがなを学びましょう。",
+      "첫 히라가나 5글자를 배워요.",
+      "学习前 5 个平假名。",
+    ),
+    {
+      displayText: "あ い う え お",
+      cards,
+      correctAnswer: "learned",
+      acceptedAnswers: ["learned"],
+      acceptedAnswersVi: ["learned", "đã học"],
+      acceptedAnswersByNative: Object.fromEntries(
+        NATIVE_CODES.map((code) => [code, ["learned"]]),
+      ),
+      skill: "reading",
+      answerVisibleOk: true,
+    },
+  );
+}
+
+function exFixedMultipleChoice(id, type, prompts, fields) {
+  const options = fields.options ?? [];
+  assertUnique(options, `${type} ${id} options`);
+  if (options.length !== 4) {
+    throw new Error(`${type} ${id}: multiple choice must have exactly 4 options`);
+  }
+  if (!options.includes(fields.correctAnswer)) {
+    throw new Error(`${type} ${id}: correct answer missing from options`);
+  }
+  return baseExercise(id, type, "free", prompts, {
+    ...fields,
+    options,
+    optionsVi: options,
+    optionsByNative: Object.fromEntries(NATIVE_CODES.map((code) => [code, options])),
+    acceptedAnswers: [fields.correctAnswer],
+    acceptedAnswersVi: [fields.correctAnswer],
+    acceptedAnswersByNative: Object.fromEntries(
+      NATIVE_CODES.map((code) => [code, [fields.correctAnswer]]),
+    ),
+  });
+}
+
+function exPlusListeningVocabularyChallenge(id, subQuestions, promptOverride) {
+  if (subQuestions.length < 3 || subQuestions.length > 5) {
+    throw new Error(
+      `${id}: plusListeningVocabularyChallenge must have 3–5 subQuestions, got ${subQuestions.length}`,
+    );
+  }
+  const prompts =
+    promptOverride ??
+    promptMap(
+      "Listen to each Japanese word and choose the first Hiragana character.",
+      "Nghe từng từ tiếng Nhật và chọn chữ Hiragana đầu tiên.",
+      "日本語の単語を聞いて、最初のひらがなを選んでください。",
+      "일본어 단어를 듣고 첫 히라가나를 고르세요.",
+      "听每个日语单词，选择开头的平假名。",
+    );
+  return baseExercise(
+    id,
+    "plusListeningVocabularyChallenge",
+    "plus",
+    prompts,
+    {
+      displayText: AUDIO_LABEL_LISTEN_WORD.visibleBeforeAnswer,
+      displayTextByNative: AUDIO_LABEL_LISTEN_WORD.displayTextByNative,
+      hideSpeechLabel: true,
+      audioCardLabel: AUDIO_LABEL_LISTEN_WORD.audioCardLabel,
+      audioCardLabelByNative: AUDIO_LABEL_LISTEN_WORD.audioCardLabelByNative,
+      subQuestions,
+      correctAnswer: subQuestions.map((q) => q.correctAnswer).join("|"),
+      acceptedAnswers: subQuestions.map((q) => q.correctAnswer),
+      acceptedAnswersVi: subQuestions.map((q) => q.correctAnswer),
+      acceptedAnswersByNative: Object.fromEntries(
+        NATIVE_CODES.map((code) => [code, subQuestions.map((q) => q.correctAnswer)]),
+      ),
+      skill: "listening",
+      usesAi: false,
+      plusOnly: true,
+    },
+  );
+}
+
+function meaningFromReveal(reveal) {
+  const meanings = {};
+  for (const code of NATIVE_CODES) {
+    const text = reveal[code] ?? "";
+    const sep = text.indexOf(" — ");
+    meanings[code] = sep >= 0 ? text.slice(sep + 3).trim() : text;
+  }
+  return meanings;
+}
+
+function buildKatakanaPlusListeningE8(lessonId) {
+  const spec = KATAKANA_E8_SPECS[lessonId];
+  if (!spec) {
+    throw new Error(`${lessonId}: missing Katakana Exercise 8 spec`);
+  }
+  const targetMode = spec.listeningTargetMode ?? "first";
+  const exercisePrompt = promptMap(
+    spec.prompt.en,
+    spec.prompt.vi,
+    spec.prompt.ja,
+    spec.prompt.ko,
+    spec.prompt.zh,
+  );
+  const subPrompt = promptMap(
+    spec.subPrompt.en,
+    spec.subPrompt.vi,
+    spec.subPrompt.ja,
+    spec.subPrompt.ko,
+    spec.subPrompt.zh,
+  );
+
+  const subQuestions = spec.items.map((item, index) => {
+    const meanings = meaningFromReveal(item.reveal);
+    const fb = hiraganaListeningFeedback(item.speechText, meanings, item.correctAnswer, {
+      targetMode,
+    });
+    return plusListeningSubQuestion({
+      id: `${lessonId}-e8-s${index + 1}`,
+      speechText: item.speechText,
+      wordDisplay: item.speechText,
+      meanings,
+      options: item.options,
+      correctAnswer: item.correctAnswer,
+      feedbackCorrect: fb.correct,
+      feedbackWrong: fb.wrong,
+      prompts: subPrompt,
+      revealByNative: item.reveal,
+    });
+  }).map((question) => ({
+    ...question,
+    optionsVi: question.options,
+    optionsByNative: Object.fromEntries(NATIVE_CODES.map((code) => [code, question.options])),
+    acceptedAnswersByNative: Object.fromEntries(
+      NATIVE_CODES.map((code) => [code, [question.correctAnswer]]),
+    ),
+    feedback: {
+      correct: question.feedbackCorrectByNative,
+      wrong: question.feedbackWrongByNative,
+    },
+  }));
+
+  return exPlusListeningVocabularyChallenge(`${lessonId}-e8`, subQuestions, exercisePrompt);
+}
+
 function buildTenExercises({ id, vocab, focus, fill, chooseSentence, listenIndex, gapSentences, aiQuestion }) {
   const pool = vocab;
   const v0 = pool[0];
@@ -490,6 +1007,892 @@ function buildTenExercises({ id, vocab, focus, fill, chooseSentence, listenIndex
   return exercises;
 }
 
+/** Foundation kana/alphabet: no answer leaks, real blanks, proven drill patterns. */
+function buildFoundationCharacterExercises({ id, vocab, distractorVocab = [], scriptLabel, scriptLabelVi, aiQuestion }) {
+  const pool = [...vocab, ...distractorVocab].filter(
+    (entry, index, all) => all.findIndex((candidate) => candidate.id === entry.id) === index,
+  );
+  if (pool.length < 4) {
+    throw new Error(`Foundation lesson ${id}: need at least 4 characters`);
+  }
+  const focus = vocab.slice(0, Math.min(5, vocab.length));
+  const [c0, c1, c2, c3, c4] = [
+    focus[0],
+    focus[1] ?? focus[0],
+    focus[2] ?? focus[0],
+    focus[3] ?? focus[0],
+    focus[4] ?? focus[0],
+  ];
+  const focusChars = focus.map((v) => v.displayText);
+  const blankIndex = 1;
+  const blankWord = focus[blankIndex].displayText;
+  const fillSentence = blankSequence(focusChars.slice(0, 5), blankIndex);
+  const fillOptions = charOptions(pool, `${id}-fill`);
+
+  const gapSentences = [
+    {
+      text: blankSequence([c0.displayText, c1.displayText, c2.displayText], 0),
+      blankWord: c0.displayText,
+      speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
+    },
+    {
+      text: blankSequence([c0.displayText, c1.displayText, c2.displayText], 1),
+      blankWord: c1.displayText,
+      speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
+    },
+    focus.length >= 5
+      ? {
+          text: blankSequence([c2.displayText, c3.displayText, c4.displayText], 2),
+          blankWord: c4.displayText,
+          speechText: `${c2.displayText} ${c3.displayText} ${c4.displayText}`,
+        }
+      : {
+          text: blankSequence([c0.displayText, c1.displayText, c2.displayText], 2),
+          blankWord: c2.displayText,
+          speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
+        },
+  ];
+
+  // Exercise 1: shared matchPairs (letter/kana → reading) for all foundation languages.
+  const e1 = exMatchReadingPairs(`${id}-e1`, focus);
+  e1.prompt = "Match letters with their sounds";
+  e1.promptVi = "Nối chữ cái với âm đọc";
+  e1.promptByNative = promptMap(
+    "Match letters with their sounds",
+    "Nối chữ cái với âm đọc",
+    "アルファベットと音を結びましょう",
+    "알파벳과 소리를 연결하세요",
+    "连接字母和读音",
+  );
+  if (scriptLabel !== "alphabet") {
+    e1.prompt = "Match each character with its reading.";
+    e1.promptVi = "Nối mỗi chữ với cách đọc đúng.";
+    e1.promptByNative = promptMap(
+      "Match each character with its reading.",
+      "Nối mỗi chữ với cách đọc đúng.",
+      "文字と読みを組み合わせてください。",
+      "글자와 읽기를 짝지으세요.",
+      "将字符与读音配对。",
+    );
+  }
+
+  const exercises = [
+    e1,
+    exListenAndChooseCharacter(`${id}-e2`, c1, pool),
+    exChooseReading(`${id}-e3`, c1, pool),
+    exFillBlank(`${id}-e4`, fillSentence, blankWord, fillOptions, null),
+    exChooseCharacterBySound(`${id}-e5`, c2, pool),
+    exChooseMeaning(`${id}-e6`, c0, pool),
+    exSequenceNext(`${id}-e7`, focus, pool),
+    exListeningGapFill(`${id}-e8`, gapSentences),
+    exControlledAiQa(
+      `${id}-e9`,
+      aiQuestion ?? {
+        en: `Name these ${scriptLabel} characters in order: ${focusChars.join(", ")}.`,
+        vi: `Nêu các chữ ${scriptLabelVi} theo thứ tự: ${focusChars.join(", ")}.`,
+        ja: `次の文字を順番に言ってください：${focusChars.join(", ")}。`,
+        ko: `다음 글자를 순서대로 말하세요: ${focusChars.join(", ")}.`,
+        zh: `按顺序说出这些字符：${focusChars.join(", ")}。`,
+      },
+      focusChars.join(" "),
+    ),
+    exAiFeedbackReview(`${id}-e10`),
+  ];
+
+  if (exercises.length !== 10) {
+    throw new Error(`Lesson ${id}: expected 10 exercises, got ${exercises.length}`);
+  }
+  const expectedTypes = [
+    "matchPairs",
+    "listenAndChoose",
+    "chooseCorrectAnswer",
+    "fillBlank",
+    "chooseVocabulary",
+    "chooseMeaning",
+    "typeAnswer",
+    "listeningGapFill",
+    "controlledAiQa",
+    "aiFeedbackReview",
+  ];
+  exercises.forEach((ex, i) => {
+    if (ex.type !== expectedTypes[i]) {
+      throw new Error(`Lesson ${id}: e${i + 1} expected ${expectedTypes[i]}, got ${ex.type}`);
+    }
+    if (i < 7 && (ex.access !== "free" || ex.plusOnly)) {
+      throw new Error(`Lesson ${id}: exercise ${i + 1} must be free`);
+    }
+    if (i >= 7 && (ex.access !== "plus" || !ex.plusOnly)) {
+      throw new Error(`Lesson ${id}: exercise ${i + 1} must be Plus`);
+    }
+  });
+  return exercises;
+}
+
+function buildHiraganaAiueoExercises({ id, vocab }) {
+  const byChar = new Map(vocab.map((entry) => [entry.displayText, entry]));
+  const a = byChar.get("あ");
+  const i = byChar.get("い");
+  const u = byChar.get("う");
+  const e = byChar.get("え");
+  const o = byChar.get("お");
+  if (!a || !i || !u || !e || !o) {
+    throw new Error(`${id}: Hiragana あいうえお vocabulary is incomplete`);
+  }
+
+  const focus = [a, i, u, e, o];
+  // Keep left column in gojuon order; Flutter shuffles right-side answers for display.
+  const orderedPairs = focus.map((entry) => ({
+    left: entry.displayText,
+    right: entry.romanization,
+  }));
+  const readingPairs = Object.fromEntries(
+    NATIVE_CODES.map((code) => [code, orderedPairs]),
+  );
+  const e1 = baseExercise(
+    `${id}-e1`,
+    "matchPairs",
+    "free",
+    promptMap(
+      "Match Hiragana with its sound",
+      "Nối chữ Hiragana với âm đọc",
+      "ひらがなと読み方を結びましょう",
+      "히라가나와 소리를 연결하세요",
+      "连接平假名和读音",
+    ),
+    {
+      instructionByNative: t({
+        en: "Select a character on the left, then select the correct sound on the right.",
+        vi: "Chọn một chữ bên trái, rồi chọn âm đọc đúng bên phải.",
+        ja: "左の文字を選び、右の正しい読み方を選びましょう。",
+        ko: "왼쪽의 글자를 고른 다음 오른쪽의 올바른 소리를 고르세요.",
+        zh: "先选择左边的字符，再选择右边正确的读音。",
+      }),
+      pairs: orderedPairs,
+      pairsVi: orderedPairs,
+      pairsByNative: readingPairs,
+      correctAnswer: orderedPairs.map((p) => p.right).join("|"),
+      skill: "reading",
+      matchPairMode: "kana_reading",
+      feedbackCorrectByNative: feedbackMap(
+        "Đúng rồi. Bạn đã nối đúng chữ với âm đọc.",
+        "Correct. You matched the character with the right sound.",
+        "正解です。文字と読み方を正しく結びました。",
+        "맞아요. 글자와 소리를 올바르게 연결했어요.",
+        "正确。你把字符和读音连接对了。",
+      ),
+      feedbackWrongByNative: feedbackMap(
+        "Chưa đúng. Hãy nhìn lại chữ và chọn âm đọc phù hợp.",
+        "Not quite. Look at the character again and choose the matching sound.",
+        "まだ違います。文字をもう一度見て、合う読み方を選びましょう。",
+        "아직 아니에요. 글자를 다시 보고 맞는 소리를 골라 보세요.",
+        "还不对。再看看字符，选择对应的读音。",
+      ),
+    },
+  );
+
+  const e2 = exFixedMultipleChoice(
+    `${id}-e2`,
+    "listenAndChoose",
+    promptMap(
+      "Listen to the pronunciation and choose the correct character.",
+      "Nghe phát âm và chọn chữ đúng.",
+      "発音を聞いて正しい文字を選んでください。",
+      "발음을 듣고 올바른 글자를 고르세요.",
+      "听发音并选择正确的字符。",
+    ),
+    {
+      displayText: "🔊",
+      speechText: "い",
+      hideSpeechLabel: true,
+      ...AUDIO_LABEL_LISTEN,
+      options: ["あ", "い", "う", "え"],
+      correctAnswer: "い",
+      feedbackCorrectByNative: feedbackMap(
+        "Đúng rồi. Âm bạn nghe là 'i', viết bằng Hiragana là い. Ví dụ: いぬ（犬） nghĩa là chó.",
+        "Correct. The sound is 'i', written in Hiragana as い. Example: いぬ（犬） means dog.",
+        "正解です。聞こえた音は「i」で、ひらがなでは い です。例：いぬ（犬）。",
+        "맞아요. 들은 소리는 'i'이고 히라가나로 い입니다. 예: いぬ（犬）.",
+        "正确。你听到的音是“i”，平假名写作 い。例：いぬ（犬）。",
+      ),
+      feedbackWrongByNative: feedbackMap(
+        "Chưa đúng. Hãy nghe lại âm 'i'. Chữ đúng là い. Ví dụ: いぬ（犬） nghĩa là chó.",
+        "Not yet. Listen again for 'i'. The correct character is い. Example: いぬ（犬） means dog.",
+        "まだ違います。「i」の音をもう一度聞きましょう。正解は い です。",
+        "아직 아니에요. 'i' 소리를 다시 들어 보세요. 정답은 い입니다.",
+        "还不对。再听一次“i”的音。正确答案是 い。",
+      ),
+      skill: "listening",
+    },
+  );
+
+  const e3 = exFixedMultipleChoice(
+    `${id}-e3`,
+    "chooseReading",
+    promptMap(
+      "How is this character read?",
+      "Chữ này đọc là gì?",
+      "この文字の読みは何ですか？",
+      "이 글자는 어떻게 읽나요?",
+      "这个字怎么读？",
+    ),
+    {
+      displayText: "う",
+      speechText: "う",
+      options: ["a", "i", "u", "e"],
+      correctAnswer: "u",
+      answerVisibleOk: true,
+      feedbackCorrectByNative: feedbackMap(
+        "Đúng rồi. う đọc là 'u'. Ví dụ: うみ（海） nghĩa là biển.",
+        "Correct. う is read as 'u'. Example: うみ（海） means sea.",
+        "正解です。う は「u」と読みます。例：うみ（海）。",
+        "맞아요. う는 'u'로 읽습니다. 예: うみ（海）.",
+        "正确。う 读作“u”。例：うみ（海）表示海。",
+      ),
+      feedbackWrongByNative: feedbackMap(
+        "Chưa đúng. う đọc là 'u', như trong うみ（海）.",
+        "Not yet. う is read as 'u', as in うみ（海）.",
+        "まだ違います。う は「u」と読みます。例：うみ（海）。",
+        "아직 아니에요. う는 'u'로 읽습니다. 예: うみ（海）.",
+        "还不对。う 读作“u”，如 うみ（海）。",
+      ),
+      skill: "reading",
+    },
+  );
+
+  const e4 = exFixedMultipleChoice(
+    `${id}-e4`,
+    "fillMissingCharacter",
+    promptMap(
+      "Fill in the missing character in the Hiragana sequence.",
+      "Điền chữ còn thiếu trong chuỗi Hiragana.",
+      "ひらがなの順番で抜けている文字を選んでください。",
+      "히라가나 순서에서 빠진 글자를 고르세요.",
+      "填入平假名顺序中缺少的字符。",
+    ),
+    {
+      displayText: "あ _ う え お",
+      options: ["い", "か", "え", "お"],
+      correctAnswer: "い",
+      sequenceMode: "gojuon_fill_missing",
+      feedbackCorrectByNative: feedbackMap(
+        "Đúng rồi. Thứ tự chuẩn là あ → い → う → え → お. Ví dụ với い: いぬ（犬） nghĩa là chó.",
+        "Correct. The standard order is あ → い → う → え → お. With い: いぬ（犬） means dog.",
+        "正解です。順番は あ → い → う → え → お です。例：いぬ（犬）。",
+        "맞아요. 순서는 あ → い → う → え → お입니다. 예: いぬ（犬）.",
+        "正确。标准顺序是 あ → い → う → え → お。例：いぬ（犬）。",
+      ),
+      feedbackWrongByNative: feedbackMap(
+        "Chưa đúng. Sau あ là い, nên chuỗi đúng là あ い う え お.",
+        "Not yet. After あ comes い, so the correct sequence is あ い う え お.",
+        "まだ違います。あ の次は い です。正しい順番は あ い う え お です。",
+        "아직 아니에요. あ 다음은 い입니다. 올바른 순서는 あ い う え お입니다.",
+        "还不对。あ 后面是 い，正确顺序是 あ い う え お。",
+      ),
+      skill: "review",
+    },
+  );
+
+  const e5 = exFixedMultipleChoice(
+    `${id}-e5`,
+    "soundToCharacter",
+    promptMap(
+      "Choose the character for the sound 'e'.",
+      "Chọn chữ có âm 'e'.",
+      "「e」の音の文字を選んでください。",
+      "'e' 소리의 글자를 고르세요.",
+      "选择发“e”音的字符。",
+    ),
+    {
+      displayText: "e",
+      options: ["あ", "い", "え", "お"],
+      correctAnswer: "え",
+      feedbackCorrectByNative: feedbackMap(
+        "Đúng rồi. Âm 'e' viết bằng Hiragana là え. Ví dụ: えき（駅） nghĩa là nhà ga.",
+        "Correct. The sound 'e' is written in Hiragana as え. Example: えき（駅） means station.",
+        "正解です。「e」の音は え です。例：えき（駅）。",
+        "맞아요. 'e' 소리는 히라가나로 え입니다. 예: えき（駅）.",
+        "正确。“e”的音用平假名写作 え。例：えき（駅）。",
+      ),
+      feedbackWrongByNative: feedbackMap(
+        "Chưa đúng. Âm 'e' tương ứng với chữ え.",
+        "Not yet. The sound 'e' matches え.",
+        "まだ違います。「e」の音は え です。",
+        "아직 아니에요. 'e' 소리는 え입니다.",
+        "还不对。“e”的音对应 え。",
+      ),
+      skill: "reading",
+    },
+  );
+
+  const e6 = exFixedMultipleChoice(
+    `${id}-e6`,
+    "nextInSequence",
+    promptMap(
+      "What character comes next?",
+      "Chữ tiếp theo là gì?",
+      "次の文字は何ですか？",
+      "다음 글자는 무엇인가요?",
+      "下一个字符是什么？",
+    ),
+    {
+      displayText: "あ → い → ?",
+      options: ["え", "う", "お", "か"],
+      correctAnswer: "う",
+      sequenceMode: "gojuon_next",
+      feedbackCorrectByNative: feedbackMap(
+        "Đúng rồi. Thứ tự là あ → い → う. Ví dụ với う: うみ（海） nghĩa là biển.",
+        "Correct. The order is あ → い → う. With う: うみ（海） means sea.",
+        "正解です。順番は あ → い → う です。例：うみ（海）。",
+        "맞아요. 순서는 あ → い → う입니다. 예: うみ（海）.",
+        "正确。顺序是 あ → い → う。例：うみ（海）。",
+      ),
+      feedbackWrongByNative: feedbackMap(
+        "Chưa đúng. Sau あ và い là う.",
+        "Not yet. After あ and い comes う.",
+        "まだ違います。あ、い の次は う です。",
+        "아직 아니에요. あ와 い 다음은 う입니다.",
+        "还不对。あ 和 い 后面是 う。",
+      ),
+      skill: "review",
+    },
+  );
+
+  const e7 = exFixedMultipleChoice(
+    `${id}-e7`,
+    "chooseCorrectPair",
+    promptMap(
+      "Which pair correctly matches the Hiragana character with its reading?",
+      "Cặp nào ghép đúng chữ Hiragana với cách đọc?",
+      "ひらがなと読みの正しい組み合わせはどれですか？",
+      "히라가나와 읽기가 올바르게 짝지어진 것은 무엇인가요?",
+      "哪一组平假名和读音匹配正确？",
+    ),
+    {
+      displayText: "あ / い / え / お",
+      options: ["あ → i", "い → u", "え → e", "お → a"],
+      correctAnswer: "え → e",
+      feedbackCorrectByNative: feedbackMap(
+        "Đúng rồi. え đọc là 'e'. Ví dụ: えき（駅） nghĩa là nhà ga.",
+        "Correct. え is read as 'e'. Example: えき（駅） means station.",
+        "正解です。え は「e」と読みます。例：えき（駅）。",
+        "맞아요. え는 'e'로 읽습니다. 예: えき（駅）.",
+        "正确。え 读作“e”。例：えき（駅）表示车站。",
+      ),
+      feedbackWrongByNative: feedbackMap(
+        "Chưa đúng. Cặp đúng là え → e. あ đọc là a, い đọc là i, お đọc là o.",
+        "Not yet. The correct pair is え → e. あ is a, い is i, and お is o.",
+        "まだ違います。正しい組み合わせは え → e です。あ は a、い は i、お は o です。",
+        "아직 아니에요. 올바른 짝은 え → e입니다. あ는 a, い는 i, お는 o입니다.",
+        "还不对。正确组合是 え → e。あ 读 a，い 读 i，お 读 o。",
+      ),
+      skill: "reading",
+    },
+  );
+
+  const subQuestions = [
+    plusListeningSubQuestion({
+      id: `${id}-e8-s1`,
+      speechText: "あさ",
+      wordDisplay: "あさ（朝）",
+      meanings: { vi: "buổi sáng", en: "morning", ja: "朝", ko: "아침", zh: "早晨" },
+      options: ["あ", "い", "う", "え"],
+      correctAnswer: "あ",
+      feedbackCorrect: feedbackMap(
+        "Đúng rồi. あさ（朝） nghĩa là buổi sáng. Từ này bắt đầu bằng あ.",
+        "Correct. あさ（朝） means morning. This word starts with あ.",
+        "正解です。あさ（朝）は「朝」という意味です。この単語は「あ」から始まります。",
+        "맞아요. あさ（朝）는 아침이라는 뜻입니다. 이 단어는 あ로 시작합니다.",
+        "正确。あさ（朝）的意思是早晨。这个词以「あ」开头。",
+      ),
+      feedbackWrong: feedbackMap(
+        "Chưa đúng. あさ（朝） nghĩa là buổi sáng. Từ này bắt đầu bằng あ.",
+        "Not quite. あさ（朝） means morning. This word starts with あ.",
+        "まだ違います。あさ（朝）は「朝」という意味です。この単語は「あ」から始まります。",
+        "아직 아니에요. あさ（朝）는 아침이라는 뜻입니다. 이 단어는 あ로 시작합니다.",
+        "还不对。あさ（朝）的意思是早晨。这个词以「あ」开头。",
+      ),
+    }),
+    plusListeningSubQuestion({
+      id: `${id}-e8-s2`,
+      speechText: "いんしょう",
+      wordDisplay: "いんしょう（印象）",
+      meanings: { vi: "ấn tượng", en: "impression", ja: "印象", ko: "인상", zh: "印象" },
+      options: ["あ", "い", "う", "お"],
+      correctAnswer: "い",
+      feedbackCorrect: feedbackMap(
+        "Đúng rồi. いんしょう（印象） nghĩa là ấn tượng. Từ này bắt đầu bằng い.",
+        "Correct. いんしょう（印象） means impression. This word starts with い.",
+        "正解です。いんしょう（印象）は「印象」という意味です。この単語は「い」から始まります。",
+        "맞아요. いんしょう（印象）는 인상이라는 뜻입니다. 이 단어는 い로 시작합니다.",
+        "正确。いんしょう（印象）的意思是印象。这个词以「い」开头。",
+      ),
+      feedbackWrong: feedbackMap(
+        "Chưa đúng. いんしょう（印象） nghĩa là ấn tượng. Từ này bắt đầu bằng い.",
+        "Not quite. いんしょう（印象） means impression. This word starts with い.",
+        "まだ違います。いんしょう（印象）は「印象」という意味です。この単語は「い」から始まります。",
+        "아직 아니에요. いんしょう（印象）는 인상이라는 뜻입니다. 이 단어는 い로 시작합니다.",
+        "还不对。いんしょう（印象）的意思是印象。这个词以「い」开头。",
+      ),
+    }),
+    plusListeningSubQuestion({
+      id: `${id}-e8-s3`,
+      speechText: "うみ",
+      wordDisplay: "うみ（海）",
+      meanings: { vi: "biển", en: "sea", ja: "海", ko: "바다", zh: "海" },
+      options: ["え", "あ", "う", "お"],
+      correctAnswer: "う",
+      feedbackCorrect: feedbackMap(
+        "Đúng rồi. うみ（海） nghĩa là biển. Từ này bắt đầu bằng う.",
+        "Correct. うみ（海） means sea. This word starts with う.",
+        "正解です。うみ（海）は「海」という意味です。この単語は「う」から始まります。",
+        "맞아요. うみ（海）는 바다라는 뜻입니다. 이 단어는 う로 시작합니다.",
+        "正确。うみ（海）的意思是海。这个词以「う」开头。",
+      ),
+      feedbackWrong: feedbackMap(
+        "Chưa đúng. うみ（海） nghĩa là biển. Từ này bắt đầu bằng う.",
+        "Not quite. うみ（海） means sea. This word starts with う.",
+        "まだ違います。うみ（海）は「海」という意味です。この単語は「う」から始まります。",
+        "아직 아니에요. うみ（海）는 바다라는 뜻입니다. 이 단어는 う로 시작합니다.",
+        "还不对。うみ（海）的意思是海。这个词以「う」开头。",
+      ),
+    }),
+    plusListeningSubQuestion({
+      id: `${id}-e8-s4`,
+      speechText: "えいが",
+      wordDisplay: "えいが（映画）",
+      meanings: { vi: "phim", en: "movie", ja: "映画", ko: "영화", zh: "电影" },
+      options: ["い", "え", "お", "あ"],
+      correctAnswer: "え",
+      feedbackCorrect: feedbackMap(
+        "Đúng rồi. えいが（映画） nghĩa là phim. Từ này bắt đầu bằng え.",
+        "Correct. えいが（映画） means movie. This word starts with え.",
+        "正解です。えいが（映画）は「映画」という意味です。この単語は「え」から始まります。",
+        "맞아요. えいが（映画）는 영화라는 뜻입니다. 이 단어는 え로 시작합니다.",
+        "正确。えいが（映画）的意思是电影。这个词以「え」开头。",
+      ),
+      feedbackWrong: feedbackMap(
+        "Chưa đúng. えいが（映画） nghĩa là phim. Từ này bắt đầu bằng え.",
+        "Not quite. えいが（映画） means movie. This word starts with え.",
+        "まだ違います。えいが（映画）は「映画」という意味です。この単語は「え」から始まります。",
+        "아직 아니에요. えいが（映画）는 영화라는 뜻입니다. 이 단어는 え로 시작합니다.",
+        "还不对。えいが（映画）的意思是电影。这个词以「え」开头。",
+      ),
+    }),
+    plusListeningSubQuestion({
+      id: `${id}-e8-s5`,
+      speechText: "おかね",
+      wordDisplay: "おかね（お金）",
+      meanings: { vi: "tiền", en: "money", ja: "お金", ko: "돈", zh: "钱" },
+      options: ["う", "え", "あ", "お"],
+      correctAnswer: "お",
+      feedbackCorrect: feedbackMap(
+        "Đúng rồi. おかね（お金） nghĩa là tiền. Từ này bắt đầu bằng お.",
+        "Correct. おかね（お金） means money. This word starts with お.",
+        "正解です。おかね（お金）は「お金」という意味です。この単語は「お」から始まります。",
+        "맞아요. おかね（お金）는 돈이라는 뜻입니다. 이 단어는 お로 시작합니다.",
+        "正确。おかね（お金）的意思是钱。这个词以「お」开头。",
+      ),
+      feedbackWrong: feedbackMap(
+        "Chưa đúng. おかね（お金） nghĩa là tiền. Từ này bắt đầu bằng お.",
+        "Not quite. おかね（お金） means money. This word starts with お.",
+        "まだ違います。おかね（お金）は「お金」という意味です。この単語は「お」から始まります。",
+        "아직 아니에요. おかね（お金）는 돈이라는 뜻입니다. 이 단어는 お로 시작합니다.",
+        "还不对。おかね（お金）的意思是钱。这个词以「お」开头。",
+      ),
+    }),
+  ].map((question) => ({
+    ...question,
+    optionsVi: question.options,
+    optionsByNative: Object.fromEntries(NATIVE_CODES.map((code) => [code, question.options])),
+    acceptedAnswersByNative: Object.fromEntries(
+      NATIVE_CODES.map((code) => [code, [question.correctAnswer]]),
+    ),
+    feedback: {
+      correct: question.feedbackCorrectByNative,
+      wrong: question.feedbackWrongByNative,
+    },
+  }));
+
+  const e8 = exPlusListeningVocabularyChallenge(`${id}-e8`, subQuestions);
+
+  const e9 = exControlledAiQa(
+    `${id}-e9`,
+    {
+      en: "Among あ い う え お, which character is read as 'u'?",
+      vi: "Trong 5 chữ あ い う え お, chữ nào đọc là 'u'?",
+      ja: "あ い う え お の中で「u」と読む文字はどれですか？",
+      ko: "あ い う え お 중에서 'u'로 읽는 글자는 무엇인가요?",
+      zh: "在 あ い う え お 中，哪个字符读作“u”？",
+    },
+    "う",
+  );
+  e9.expectedAnswer = "う";
+  e9.feedbackByNative = feedbackMap(
+    "Đúng rồi. う đọc là 'u'. Ví dụ: うみ（海） nghĩa là biển.",
+    "Correct. う is read as 'u'. Example: うみ（海） means sea.",
+    "正解です。う は「u」と読みます。例：うみ（海）。",
+    "맞아요. う는 'u'로 읽습니다. 예: うみ（海）.",
+    "正确。う 读作“u”。例：うみ（海）表示海。",
+  );
+
+  const e10 = exAiFeedbackReview(`${id}-e10`);
+  e10.displayTextByNative = {
+    en: "あ い う え お\nあ → い → う → え → お\nあめ（雨）— rain\nいぬ（犬）— dog\nうみ（海）— sea\nえき（駅）— station\nおに（鬼）— demon / ogre",
+    vi: "あ い う え お\nあ → い → う → え → お\nあめ（雨）— mưa\nいぬ（犬）— chó\nうみ（海）— biển\nえき（駅）— nhà ga\nおに（鬼）— quỷ / yêu quái",
+    ja: "あ い う え お\nあ → い → う → え → お\nあめ（雨）\nいぬ（犬）\nうみ（海）\nえき（駅）\nおに（鬼）",
+    ko: "あ い う え お\nあ → い → う → え → お\nあめ（雨）— 비\nいぬ（犬）— 개\nうみ（海）— 바다\nえき（駅）— 역\nおに（鬼）— 도깨비",
+    zh: "あ い う え お\nあ → い → う → え → お\nあめ（雨）— 雨\nいぬ（犬）— 狗\nうみ（海）— 海\nえき（駅）— 车站\nおに（鬼）— 鬼",
+  };
+  e10.displayText = e10.displayTextByNative.en;
+  e10.reviewPointsByNative = {
+    en: [
+      "Review: あ い う え お",
+      "Order: あ → い → う → え → お",
+      "Examples: あめ（雨） rain, いぬ（犬） dog, うみ（海） sea, えき（駅） station, おに（鬼） demon / ogre",
+    ],
+    vi: [
+      "Nhắc lại 5 chữ: あ い う え お",
+      "Thứ tự: あ → い → う → え → お",
+      "Ví dụ: あめ（雨） mưa, いぬ（犬） chó, うみ（海） biển, えき（駅） nhà ga, おに（鬼） quỷ / yêu quái",
+    ],
+    ja: [
+      "復習：あ い う え お",
+      "順番：あ → い → う → え → お",
+      "例：あめ（雨）、いぬ（犬）、うみ（海）、えき（駅）、おに（鬼）",
+    ],
+    ko: [
+      "복습: あ い う え お",
+      "순서: あ → い → う → え → お",
+      "예: あめ（雨）, いぬ（犬）, うみ（海）, えき（駅）, おに（鬼）",
+    ],
+    zh: [
+      "复习：あ い う え お",
+      "顺序：あ → い → う → え → お",
+      "例：あめ（雨）、いぬ（犬）、うみ（海）、えき（駅）、おに（鬼）",
+    ],
+  };
+
+  const exercises = [e1, e2, e3, e4, e5, e6, e7, e8, e9, e10];
+  exercises.forEach((exercise, index) => {
+    if (index < 7 && (exercise.access !== "free" || exercise.plusOnly)) {
+      throw new Error(`${id}: exercise ${index + 1} must be Free`);
+    }
+    if (index >= 7 && (exercise.access !== "plus" || !exercise.plusOnly)) {
+      throw new Error(`${id}: exercise ${index + 1} must be Plus`);
+    }
+  });
+  return exercises;
+}
+
+function assertHiraganaFreePlus(id, exercises) {
+  if (exercises.length !== 10) {
+    throw new Error(`${id}: expected 10 exercises, got ${exercises.length}`);
+  }
+  exercises.forEach((exercise, index) => {
+    if (index < 7 && (exercise.access !== "free" || exercise.plusOnly)) {
+      throw new Error(`${id}: exercise ${index + 1} must be Free`);
+    }
+    if (index >= 7 && (exercise.access !== "plus" || !exercise.plusOnly)) {
+      throw new Error(`${id}: exercise ${index + 1} must be Plus`);
+    }
+  });
+}
+
+function hiraganaListeningFeedback(wordDisplay, meanings, correct, { targetMode = "first" } = {}) {
+  const meaningLine = (code) => meanings[code];
+  const viHint =
+    targetMode === "target"
+      ? `Chữ mục tiêu là ${correct}.`
+      : `Từ này bắt đầu bằng ${correct}.`;
+  const enHint =
+    targetMode === "target"
+      ? `The target character is ${correct}.`
+      : `This word starts with ${correct}.`;
+  const jaHint =
+    targetMode === "target"
+      ? `目標の文字は ${correct} です。`
+      : `この単語は「${correct}」から始まります。`;
+  const koHint =
+    targetMode === "target"
+      ? `목표 글자는 ${correct}입니다.`
+      : `이 단어는 ${correct}로 시작합니다.`;
+  const zhHint =
+    targetMode === "target"
+      ? `目标字符是 ${correct}。`
+      : `这个词以「${correct}」开头。`;
+  return {
+    correct: feedbackMap(
+      `Đúng rồi. ${wordDisplay} nghĩa là ${meaningLine("vi")}. ${viHint}`,
+      `Correct. ${wordDisplay} means ${meaningLine("en")}. ${enHint}`,
+      `正解です。${wordDisplay}は「${meaningLine("ja")}」という意味です。${jaHint}`,
+      `맞아요. ${wordDisplay}는 ${meaningLine("ko")}라는 뜻입니다. ${koHint}`,
+      `正确。${wordDisplay}的意思是${meaningLine("zh")}。${zhHint}`,
+    ),
+    wrong: feedbackMap(
+      `Chưa đúng. ${wordDisplay} nghĩa là ${meaningLine("vi")}. ${viHint}`,
+      `Not quite. ${wordDisplay} means ${meaningLine("en")}. ${enHint}`,
+      `まだ違います。${wordDisplay}は「${meaningLine("ja")}」という意味です。${jaHint}`,
+      `아직 아니에요. ${wordDisplay}는 ${meaningLine("ko")}라는 뜻입니다. ${koHint}`,
+      `还不对。${wordDisplay}的意思是${meaningLine("zh")}。${zhHint}`,
+    ),
+  };
+}
+
+function buildHiraganaLessonExercisesFromSpec({ id, vocab, spec }) {
+  const byChar = new Map(vocab.map((entry) => [entry.displayText, entry]));
+  for (const ch of spec.requiredChars) {
+    if (!byChar.has(ch)) {
+      throw new Error(`${id}: missing vocabulary for ${ch}`);
+    }
+  }
+
+  const orderedPairs = vocab.map((entry) => ({
+    left: entry.displayText,
+    right: entry.romanization,
+  }));
+  const readingPairs = Object.fromEntries(
+    NATIVE_CODES.map((code) => [code, orderedPairs]),
+  );
+
+  const e1 = baseExercise(
+    `${id}-e1`,
+    "matchPairs",
+    "free",
+    promptMap(
+      "Match Hiragana with its sound",
+      "Nối chữ Hiragana với âm đọc",
+      "ひらがなと読み方を結びましょう",
+      "히라가나와 소리를 연결하세요",
+      "连接平假名和读音",
+    ),
+    {
+      instructionByNative: t({
+        en: "Select a character on the left, then select the correct sound on the right.",
+        vi: "Chọn một chữ bên trái, rồi chọn âm đọc đúng bên phải.",
+        ja: "左の文字を選び、右の正しい読み方を選びましょう。",
+        ko: "왼쪽의 글자를 고른 다음 오른쪽의 올바른 소리를 고르세요.",
+        zh: "先选择左边的字符，再选择右边正确的读音。",
+      }),
+      pairs: orderedPairs,
+      pairsVi: orderedPairs,
+      pairsByNative: readingPairs,
+      correctAnswer: orderedPairs.map((p) => p.right).join("|"),
+      skill: "reading",
+      matchPairMode: "kana_reading",
+      feedbackCorrectByNative: feedbackMap(
+        "Đúng rồi. Bạn đã nối đúng chữ với âm đọc.",
+        "Correct. You matched the character with the right sound.",
+        "正解です。文字と読み方を正しく結びました。",
+        "맞아요. 글자와 소리를 올바르게 연결했어요.",
+        "正确。你把字符和读音连接对了。",
+      ),
+      feedbackWrongByNative: feedbackMap(
+        "Chưa đúng. Hãy nhìn lại chữ và chọn âm đọc phù hợp.",
+        "Not quite. Look at the character again and choose the matching sound.",
+        "まだ違います。文字をもう一度見て、合う読み方を選びましょう。",
+        "아직 아니에요. 글자를 다시 보고 맞는 소리를 골라 보세요.",
+        "还不对。再看看字符，选择对应的读音。",
+      ),
+    },
+  );
+
+  const e2 = exFixedMultipleChoice(
+    `${id}-e2`,
+    "listenAndChoose",
+    promptMap(
+      "Listen to the pronunciation and choose the correct character.",
+      "Nghe phát âm và chọn chữ đúng.",
+      "発音を聞いて正しい文字を選んでください。",
+      "발음을 듣고 올바른 글자를 고르세요.",
+      "听发音并选择正确的字符。",
+    ),
+    {
+      displayText: "🔊",
+      speechText: spec.listen.speechText,
+      hideSpeechLabel: true,
+      ...AUDIO_LABEL_LISTEN,
+      options: spec.listen.options,
+      correctAnswer: spec.listen.correct,
+      feedbackCorrectByNative: spec.listen.feedbackCorrect,
+      feedbackWrongByNative: spec.listen.feedbackWrong,
+      skill: "listening",
+    },
+  );
+
+  const e3 = exFixedMultipleChoice(
+    `${id}-e3`,
+    "chooseReading",
+    promptMap(
+      "How is this character read?",
+      "Chữ này đọc là gì?",
+      "この文字の読みは何ですか？",
+      "이 글자는 어떻게 읽나요?",
+      "这个字怎么读？",
+    ),
+    {
+      displayText: spec.chooseReading.visible,
+      speechText: spec.chooseReading.visible,
+      options: spec.chooseReading.options,
+      correctAnswer: spec.chooseReading.correct,
+      answerVisibleOk: true,
+      feedbackCorrectByNative: spec.chooseReading.feedbackCorrect,
+      feedbackWrongByNative: spec.chooseReading.feedbackWrong,
+      skill: "reading",
+    },
+  );
+
+  const e4 = exFixedMultipleChoice(
+    `${id}-e4`,
+    "fillMissingCharacter",
+    promptMap(
+      "Fill in the missing character in the Hiragana sequence.",
+      "Điền chữ còn thiếu trong chuỗi Hiragana.",
+      "ひらがなの順番で抜けている文字を選んでください。",
+      "히라가나 순서에서 빠진 글자를 고르세요.",
+      "填入平假名顺序中缺少的字符。",
+    ),
+    {
+      displayText: spec.fillMissing.visible,
+      options: spec.fillMissing.options,
+      correctAnswer: spec.fillMissing.correct,
+      sequenceMode: "gojuon_fill_missing",
+      feedbackCorrectByNative: spec.fillMissing.feedbackCorrect,
+      feedbackWrongByNative: spec.fillMissing.feedbackWrong,
+      skill: "review",
+    },
+  );
+
+  const e5 = exFixedMultipleChoice(
+    `${id}-e5`,
+    "soundToCharacter",
+    promptMap(
+      `Choose the character for the sound '${spec.soundToCharacter.clue}'.`,
+      `Chọn chữ có âm '${spec.soundToCharacter.clue}'.`,
+      `「${spec.soundToCharacter.clue}」の音の文字を選んでください。`,
+      `'${spec.soundToCharacter.clue}' 소리의 글자를 고르세요.`,
+      `选择发“${spec.soundToCharacter.clue}”音的字符。`,
+    ),
+    {
+      displayText: spec.soundToCharacter.clue,
+      options: spec.soundToCharacter.options,
+      correctAnswer: spec.soundToCharacter.correct,
+      feedbackCorrectByNative: spec.soundToCharacter.feedbackCorrect,
+      feedbackWrongByNative: spec.soundToCharacter.feedbackWrong,
+      skill: "reading",
+    },
+  );
+
+  const e6 = exFixedMultipleChoice(
+    `${id}-e6`,
+    "nextInSequence",
+    promptMap(
+      "What character comes next?",
+      "Chữ tiếp theo là gì?",
+      "次の文字は何ですか？",
+      "다음 글자는 무엇인가요?",
+      "下一个字符是什么？",
+    ),
+    {
+      displayText: spec.nextInSequence.visible,
+      options: spec.nextInSequence.options,
+      correctAnswer: spec.nextInSequence.correct,
+      sequenceMode: "gojuon_next",
+      feedbackCorrectByNative: spec.nextInSequence.feedbackCorrect,
+      feedbackWrongByNative: spec.nextInSequence.feedbackWrong,
+      skill: "review",
+    },
+  );
+
+  const e7 = exFixedMultipleChoice(
+    `${id}-e7`,
+    "chooseCorrectPair",
+    promptMap(
+      "Which pair correctly matches the Hiragana character with its reading?",
+      "Cặp nào ghép đúng chữ Hiragana với cách đọc?",
+      "ひらがなと読みの正しい組み合わせはどれですか？",
+      "히라가나와 읽기가 올바르게 짝지어진 것은 무엇인가요?",
+      "哪一组平假名和读音匹配正确？",
+    ),
+    {
+      displayText: spec.chooseCorrectPair.displayText,
+      options: spec.chooseCorrectPair.options,
+      correctAnswer: spec.chooseCorrectPair.correct,
+      feedbackCorrectByNative: spec.chooseCorrectPair.feedbackCorrect,
+      feedbackWrongByNative: spec.chooseCorrectPair.feedbackWrong,
+      skill: "reading",
+    },
+  );
+
+  const listeningTargetMode = spec.listeningTargetMode ?? "first";
+  const subPrompts =
+    listeningTargetMode === "target"
+      ? promptMap(
+          "Listen to the word or phrase and choose the target Hiragana you hear.",
+          "Nghe từ/cụm từ và chọn chữ Hiragana mục tiêu bạn nghe thấy.",
+          "単語やフレーズを聞いて、聞こえたひらがなを選びましょう。",
+          "단어나 표현을 듣고 들리는 히라가나를 고르세요.",
+          "听单词或短语，选择你听到的目标平假名。",
+        )
+      : undefined;
+
+  const subQuestions = spec.listeningItems.map((item, index) => {
+    const entry = byChar.get(item.correct);
+    if (!entry) throw new Error(`${id}: listening item missing vocab ${item.correct}`);
+    const wordDisplay = item.revealDisplay ?? entry.exampleText;
+    const meanings = item.meanings ?? entry.exampleTranslations;
+    const fb = hiraganaListeningFeedback(wordDisplay, meanings, item.correct, {
+      targetMode: listeningTargetMode,
+    });
+    return plusListeningSubQuestion({
+      id: `${id}-e8-s${index + 1}`,
+      speechText: item.speechText,
+      wordDisplay,
+      meanings,
+      options: item.options,
+      correctAnswer: item.correct,
+      feedbackCorrect: fb.correct,
+      feedbackWrong: fb.wrong,
+      prompts: subPrompts,
+    });
+  }).map((question) => ({
+    ...question,
+    optionsVi: question.options,
+    optionsByNative: Object.fromEntries(NATIVE_CODES.map((code) => [code, question.options])),
+    acceptedAnswersByNative: Object.fromEntries(
+      NATIVE_CODES.map((code) => [code, [question.correctAnswer]]),
+    ),
+    feedback: {
+      correct: question.feedbackCorrectByNative,
+      wrong: question.feedbackWrongByNative,
+    },
+  }));
+
+  const e8PromptOverride =
+    listeningTargetMode === "target"
+      ? promptMap(
+          "Listen to the word or phrase and choose the target Hiragana you hear.",
+          "Nghe từ/cụm từ và chọn chữ Hiragana mục tiêu bạn nghe thấy.",
+          "単語やフレーズを聞いて、聞こえたひらがなを選びましょう。",
+          "단어나 표현을 듣고 들리는 히라가나를 고르세요.",
+          "听单词或短语，选择你听到的目标平假名。",
+        )
+      : undefined;
+  const e8 = exPlusListeningVocabularyChallenge(`${id}-e8`, subQuestions, e8PromptOverride);
+
+  const e9 = exControlledAiQa(`${id}-e9`, spec.aiQa.questionByNative, spec.aiQa.expectedAnswer);
+  e9.expectedAnswer = spec.aiQa.expectedAnswer;
+  e9.feedbackByNative = spec.aiQa.feedbackByNative;
+
+  const e10 = exAiFeedbackReview(`${id}-e10`);
+  e10.displayTextByNative = spec.review.displayTextByNative;
+  e10.displayText = spec.review.displayTextByNative.en;
+  e10.reviewPointsByNative = spec.review.reviewPointsByNative;
+
+  const exercises = [e1, e2, e3, e4, e5, e6, e7, e8, e9, e10];
+  assertHiraganaFreePlus(id, exercises);
+  return exercises;
+}
+
 function makeLesson(fields) {
   return {
     ...fields,
@@ -515,6 +1918,28 @@ function makeCourse({
   units,
   lessons,
 }) {
+  // Per-course/module unit numbers must be continuous 1..N (never global blueprint ids).
+  const normalizedUnits = units.map((unit, index) => {
+    const displayOrder = Number(unit.displayOrder ?? index + 1);
+    return {
+      ...unit,
+      displayOrder,
+      order: displayOrder,
+    };
+  });
+  const normalizedLessons = lessons.map((lesson) => {
+    const siblings = lessons
+      .filter((item) => item.unitId === lesson.unitId)
+      .slice()
+      .sort((a, b) => Number(a.order ?? 0) - Number(b.order ?? 0));
+    const displayOrder =
+      siblings.findIndex((item) => item.id === lesson.id) + 1 || Number(lesson.order ?? 1);
+    return {
+      ...lesson,
+      displayOrder,
+      order: displayOrder,
+    };
+  });
   return {
     course: {
       id: courseId ?? `${languageCode}-${nicheId}`,
@@ -530,11 +1955,11 @@ function makeCourse({
       descriptionVi,
       levelCode: "A0",
       order,
-      unitIds: units.map((u) => u.id),
+      unitIds: normalizedUnits.map((u) => u.id),
       isComingSoon: false,
-      units,
+      units: normalizedUnits,
     },
-    lessons,
+    lessons: normalizedLessons,
   };
 }
 
@@ -554,9 +1979,10 @@ function kanaExample(ex) {
   };
 }
 
-function kanaItem(char, romaji, example, { script = "hiragana", idPrefix = "ja-kana", order, row } = {}) {
-  const meaning =
-    script === "katakana"
+function kanaItem(char, romaji, example, { script = "hiragana", idPrefix = "ja-kana", order, row, meaning, idKey } = {}) {
+  const meaningMap =
+    meaning ??
+    (script === "katakana"
       ? {
           en: `katakana sound ${romaji}`,
           vi: `âm ${romaji} trong katakana`,
@@ -570,11 +1996,11 @@ function kanaItem(char, romaji, example, { script = "hiragana", idPrefix = "ja-k
           ja: `${char}の音`,
           ko: `${romaji} 소리`,
           zh: `${romaji} 音`,
-        };
+        });
   const base = item(
-    `${idPrefix}-${romaji}`,
+    `${idPrefix}-${idKey ?? romaji}`,
     char,
-    meaning,
+    meaningMap,
     { reading: char, romanization: romaji, speechText: char },
   );
   if (!example) {
@@ -601,6 +2027,7 @@ function buildKanaLesson({
   title,
   titleVi,
   chars,
+  distractorChars = [],
   isCheckpoint = false,
   script = "hiragana",
   moduleId = "hiragana_starter",
@@ -612,17 +2039,41 @@ function buildKanaLesson({
       ...metadata,
     }),
   );
-  const [c0, c1, c2, c3, c4] = vocab;
-  const focus = c0;
+  const distractorVocab = distractorChars.map(([char, romaji, example, metadata = {}]) =>
+    kanaItem(char, romaji, example, {
+      script,
+      idPrefix: script === "katakana" ? "ja-kata" : "ja-kana",
+      ...metadata,
+    }),
+  );
   const allChars = vocab.map((v) => v.displayText);
-  const fillBlankWord = c0.displayText;
-  const fillOptions = allChars.slice(0, 4);
-  const chooseCorrect = c1?.displayText ?? c0.displayText;
-  const chooseDistractors = allChars.filter((ch) => ch !== chooseCorrect).slice(0, 3);
-  const rowSpeech = allChars.join(" ");
-  const fillSentence = `___ ${allChars.slice(1).join(" ")}`;
   const scriptLabel = script === "katakana" ? "katakana" : "hiragana";
   const scriptLabelVi = script === "katakana" ? "katakana" : "hiragana";
+  const joinedChars = allChars.join(" / ");
+  const scriptNames = script === "katakana"
+    ? { ja: "カタカナ", ko: "가타카나", zh: "片假名" }
+    : { ja: "ひらがな", ko: "히라가나", zh: "平假名" };
+  const titleByNative = t({
+    en: title,
+    vi: titleVi,
+    ja: `${scriptNames.ja} ${order}: ${allChars.join("")}`,
+    ko: `${scriptNames.ko} ${order}: ${allChars.join("")}`,
+    zh: `${scriptNames.zh} ${order}: ${allChars.join("")}`,
+  });
+  const descriptionByNative = t({
+    en: `Learn the ${scriptLabel} characters ${joinedChars}.`,
+    vi: `Học các chữ ${scriptLabelVi} ${joinedChars}.`,
+    ja: `${scriptNames.ja}の文字 ${joinedChars} を学びます。`,
+    ko: `${scriptNames.ko} 문자 ${joinedChars}를 배웁니다.`,
+    zh: `学习${scriptNames.zh}字符 ${joinedChars}。`,
+  });
+  const canDoObjectiveByNative = t({
+    en: `I can recognize ${allChars.join(", ")}.`,
+    vi: `Tôi có thể nhận biết ${allChars.join(", ")}.`,
+    ja: `${allChars.join("、")}を見分けられます。`,
+    ko: `${allChars.join(", ")}를 구별할 수 있습니다.`,
+    zh: `我能识别${allChars.join("、")}。`,
+  });
 
   return makeLesson({
     id,
@@ -636,10 +2087,13 @@ function buildKanaLesson({
     template: isCheckpoint ? "miniTestLesson" : "kanaLesson",
     title,
     titleVi,
-    description: `Learn the ${scriptLabel} characters ${allChars.join(" / ")}.`,
-    descriptionVi: `Học các chữ ${scriptLabelVi} ${allChars.join(" / ")}.`,
-    canDoObjective: `I can recognize ${allChars.join(", ")}.`,
-    canDoObjectiveVi: `Tôi có thể nhận biết ${allChars.join(", ")}.`,
+    titleByNative,
+    description: descriptionByNative.en,
+    descriptionVi: descriptionByNative.vi,
+    descriptionByNative,
+    canDoObjective: canDoObjectiveByNative.en,
+    canDoObjectiveVi: canDoObjectiveByNative.vi,
+    canDoObjectiveByNative,
     estimatedMinutes: isCheckpoint ? 10 : 8,
     track: "ja-core_foundation",
     vocabulary: vocab,
@@ -652,55 +2106,29 @@ function buildKanaLesson({
       (v) =>
         `${v.displayText} (${v.romanization}) — ${v.exampleText} = ${v.exampleTranslations.vi}`,
     ),
-    exercises: buildTenExercises({
-      id,
-      vocab,
-      focus,
-      fill: {
-        sentence: fillSentence,
-        blankWord: fillBlankWord,
-        options: fillOptions,
-        speechText: rowSpeech,
-      },
-      chooseSentence: {
-        prompt: t({
-          en: `Which character is “${c1?.romanization ?? c0.romanization}”?`,
-          vi: `Chữ nào đọc là “${c1?.romanization ?? c0.romanization}”?`,
-          ja: `「${c1?.romanization ?? c0.romanization}」の文字はどれですか？`,
-          ko: `“${c1?.romanization ?? c0.romanization}”에 해당하는 글자는?`,
-          zh: `哪个字读作 “${c1?.romanization ?? c0.romanization}”？`,
-          displayText: c1?.romanization ?? c0.romanization,
-          speechText: c1?.speechText ?? c0.speechText,
-        }),
-        correct: chooseCorrect,
-        distractors: chooseDistractors,
-      },
-      listenIndex: 2,
-      gapSentences: [
-        {
-          text: `___ ${c1.displayText} ${c2.displayText}`,
-          blankWord: c0.displayText,
-          speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
-        },
-        {
-          text: `${c0.displayText} ___ ${c2.displayText}`,
-          blankWord: c1.displayText,
-          speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
-        },
-        {
-          text: `${c2.displayText} ${c3.displayText} ___`,
-          blankWord: c4.displayText,
-          speechText: `${c2.displayText} ${c3.displayText} ${c4.displayText}`,
-        },
-      ],
-      aiQuestion: {
-        en: `Name the five ${scriptLabel} characters in this lesson in order.`,
-        vi: `Nêu 5 chữ ${scriptLabelVi} trong bài theo thứ tự.`,
-        ja: `このレッスンの${script === "katakana" ? "カタカナ" : "ひらがな"}5文字を順番に言ってください。`,
-        ko: `이 수업의 ${script === "katakana" ? "가타카나" : "히라가나"} 5글자를 순서대로 말하세요.`,
-        zh: `按顺序说出本课的五个${script === "katakana" ? "片假名" : "平假名"}。`,
-      },
-    }),
+    exercises: (() => {
+      const built =
+        id === "ja-hiragana-u1-l1"
+          ? buildHiraganaAiueoExercises({ id, vocab })
+          : buildFoundationCharacterExercises({
+              id,
+              vocab,
+              distractorVocab,
+              scriptLabel,
+              scriptLabelVi,
+              aiQuestion: {
+                en: `Name the ${scriptLabel} characters in this lesson in order.`,
+                vi: `Nêu các chữ ${scriptLabelVi} trong bài theo thứ tự.`,
+                ja: `このレッスンの${script === "katakana" ? "カタカナ" : "ひらがな"}を順番に言ってください。`,
+                ko: `이 수업의 ${script === "katakana" ? "가타카나" : "히라가나"}를 순서대로 말하세요.`,
+                zh: `按顺序说出本课的${script === "katakana" ? "片假名" : "平假名"}。`,
+              },
+            });
+      if (script !== "katakana") return built;
+      const next = [...built];
+      next[7] = buildKatakanaPlusListeningE8(id);
+      return next;
+    })(),
   });
 }
 
@@ -782,6 +2210,7 @@ function jaHiraganaFoundationUnit1() {
       title: row.title,
       titleVi: row.titleVi,
       chars: row.chars,
+      distractorChars: row.distractorChars,
       script: "hiragana",
       moduleId: "hiragana_starter",
     }),
@@ -1407,6 +2836,7 @@ function enGreetingsUnit1() {
     moduleId: "greetings",
     goal: "Use basic hello and goodbye lines in short daily talks.",
     goalVi: "Dùng lời chào và tạm biệt cơ bản trong trò chuyện ngắn hàng ngày.",
+    displayOrder: 1,
     order: 1,
     lessonIds: lessons.map((l) => l.id),
   };
@@ -1418,6 +2848,7 @@ function enGreetingsUnit1() {
     titleVi: "Tiếng Anh · Đời sống hàng ngày",
     description: "Start with greetings for everyday English.",
     descriptionVi: "Bắt đầu với chào hỏi tiếng Anh hàng ngày.",
+    order: 2,
     units: [unit],
     lessons,
   });
@@ -1859,6 +3290,7 @@ function jaGreetingsUnit1() {
     moduleId: "greetings",
     goal: "Use basic Japanese hello and goodbye lines.",
     goalVi: "Dùng lời chào và tạm biệt tiếng Nhật cơ bản.",
+    displayOrder: 1,
     order: 1,
     lessonIds: lessons.map((l) => l.id),
   };
@@ -1870,6 +3302,7 @@ function jaGreetingsUnit1() {
     titleVi: "Tiếng Nhật · Đời sống hàng ngày",
     description: "Start with greetings for everyday Japanese.",
     descriptionVi: "Bắt đầu với chào hỏi tiếng Nhật hàng ngày.",
+    order: 2,
     units: [unit],
     lessons,
   });
@@ -1910,10 +3343,33 @@ function buildAlphabetLesson({
   const vocab = letters.map(([letter, sound]) => letterItem(letter, sound));
   // Exercises use five focus letters; vocabulary may include a sixth (Z).
   const focusVocab = vocab.length >= 5 ? vocab.slice(0, 5) : vocab;
-  const [c0, c1, c2, c3, c4] = focusVocab;
   const all = vocab.map((v) => v.displayText);
-  const focusLetters = focusVocab.map((v) => v.displayText);
-  const fillSentence = `___ ${focusLetters.slice(1).join(" ")}`;
+  const groupLabel = isCheckpoint
+    ? { ja: "アルファベット基礎チェック", ko: "알파벳 기초 확인", zh: "字母基础检查" }
+    : order === 1
+      ? { ja: "母音", ko: "모음", zh: "元音" }
+      : { ja: "子音", ko: "자음", zh: "辅音" };
+  const titleByNative = t({
+    en: title,
+    vi: titleVi,
+    ja: `${groupLabel.ja}: ${all.join(" / ")}`,
+    ko: `${groupLabel.ko}: ${all.join(" / ")}`,
+    zh: `${groupLabel.zh}: ${all.join(" / ")}`,
+  });
+  const descriptionByNative = t({
+    en: `Learn the English letters ${all.join(" / ")}.`,
+    vi: `Học các chữ cái tiếng Anh ${all.join(" / ")}.`,
+    ja: `英字 ${all.join(" / ")} を学びます。`,
+    ko: `영어 알파벳 ${all.join(" / ")}를 배웁니다.`,
+    zh: `学习英文字母 ${all.join(" / ")}。`,
+  });
+  const canDoObjectiveByNative = t({
+    en: `I can recognize ${all.join(", ")}.`,
+    vi: `Tôi có thể nhận biết ${all.join(", ")}.`,
+    ja: `${all.join("、")}を見分けられます。`,
+    ko: `${all.join(", ")}를 구별할 수 있습니다.`,
+    zh: `我能识别${all.join("、")}。`,
+  });
   return makeLesson({
     id,
     languageCode: "en",
@@ -1926,55 +3382,22 @@ function buildAlphabetLesson({
     template: isCheckpoint ? "miniTestLesson" : "vocabularyLesson",
     title,
     titleVi,
-    description: `Learn the English letters ${all.join(" / ")}.`,
-    descriptionVi: `Học các chữ cái tiếng Anh ${all.join(" / ")}.`,
-    canDoObjective: `I can recognize ${all.join(", ")}.`,
-    canDoObjectiveVi: `Tôi có thể nhận biết ${all.join(", ")}.`,
+    titleByNative,
+    description: descriptionByNative.en,
+    descriptionVi: descriptionByNative.vi,
+    descriptionByNative,
+    canDoObjective: canDoObjectiveByNative.en,
+    canDoObjectiveVi: canDoObjectiveByNative.vi,
+    canDoObjectiveByNative,
     estimatedMinutes: isCheckpoint ? 10 : 8,
     track: "en-core_foundation",
     vocabulary: vocab,
     keyPhrases: [],
-    exercises: buildTenExercises({
+    exercises: buildFoundationCharacterExercises({
       id,
       vocab: focusVocab,
-      focus: c0,
-      fill: {
-        sentence: fillSentence,
-        blankWord: c0.displayText,
-        options: focusLetters.slice(0, 4),
-        speechText: focusLetters.join(" "),
-      },
-      chooseSentence: {
-        prompt: t({
-          en: `Which letter makes the “${c1.romanization}” sound?`,
-          vi: `Chữ nào có âm “${c1.romanization}”?`,
-          ja: `「${c1.romanization}」の音の文字はどれですか？`,
-          ko: `“${c1.romanization}” 소리의 글자는?`,
-          zh: `哪个字母发 “${c1.romanization}” 音？`,
-          displayText: c1.romanization,
-          speechText: c1.speechText,
-        }),
-        correct: c1.displayText,
-        distractors: focusLetters.filter((ch) => ch !== c1.displayText).slice(0, 3),
-      },
-      listenIndex: 2,
-      gapSentences: [
-        {
-          text: `___ ${c1.displayText} ${c2.displayText}`,
-          blankWord: c0.displayText,
-          speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
-        },
-        {
-          text: `${c0.displayText} ___ ${c2.displayText}`,
-          blankWord: c1.displayText,
-          speechText: `${c0.displayText} ${c1.displayText} ${c2.displayText}`,
-        },
-        {
-          text: `${c2.displayText} ${c3.displayText} ___`,
-          blankWord: c4.displayText,
-          speechText: `${c2.displayText} ${c3.displayText} ${c4.displayText}`,
-        },
-      ],
+      scriptLabel: "alphabet",
+      scriptLabelVi: "chữ cái",
       aiQuestion: {
         en: `Say these letters in order: ${all.join(", ")}.`,
         vi: `Nêu các chữ cái này theo thứ tự: ${all.join(", ")}.`,
@@ -2090,11 +3513,26 @@ function enAlphabetFoundationUnit1() {
     id: unitId,
     title: "Unit 1: Alphabet basics",
     titleVi: "Unit 1: Alphabet cơ bản",
+    titleByNative: t({
+      en: "Unit 1: Alphabet basics",
+      vi: "Bài 1: Bảng chữ cái cơ bản",
+      ja: "ユニット1：アルファベットの基礎",
+      ko: "유닛 1: 알파벳 기초",
+      zh: "单元1：字母基础",
+    }),
     levelCode: "A0",
     trackId: "en-core_foundation",
     moduleId: "alphabet_starter",
     goal: "Recognize English vowels and consonants as individual letters.",
     goalVi: "Nhận biết nguyên âm và phụ âm tiếng Anh dưới dạng từng chữ cái.",
+    goalByNative: t({
+      en: "Recognize English vowels and consonants as individual letters.",
+      vi: "Nhận biết nguyên âm và phụ âm tiếng Anh dưới dạng từng chữ cái.",
+      ja: "英語の母音と子音を一文字ずつ見分けます。",
+      ko: "영어 모음과 자음을 한 글자씩 구별합니다.",
+      zh: "逐个识别英语元音和辅音字母。",
+    }),
+    displayOrder: 1,
     order: 1,
     lessonIds: lessons.map((l) => l.id),
   };
@@ -2116,8 +3554,8 @@ function enAlphabetFoundationUnit1() {
   });
 }
 
-function kanaExampleWord(text, romanization, en, vi, ja, ko, zh) {
-  return { text, romanization, translations: { en, vi, ja, ko, zh } };
+function kanaDef(char, romanization, row, example, extra = {}) {
+  return { char, romanization, row, example, ...extra };
 }
 
 function orderedKanaDefs(defs) {
@@ -2131,61 +3569,84 @@ function kanaChars(defs, start, end) {
       def.char,
       def.romanization,
       def.example,
-      { order: def.order, row: def.row },
+      {
+        order: def.order,
+        row: def.row,
+        meaning: def.meaning,
+        idKey: def.idKey,
+      },
     ]);
 }
 
-function kanaDef(char, romanization, row, example) {
-  return { char, romanization, row, example };
+function kanaExampleWord(text, romanization, en, vi, ja, ko, zh, extra = {}) {
+  return { text, romanization, translations: { en, vi, ja, ko, zh }, ...extra };
 }
 
 const HIRAGANA_BASIC_46 = orderedKanaDefs([
-  kanaDef("あ", "a", "a-row", kanaExampleWord("あめ", "ame", "rain", "mưa", "雨", "비", "雨")),
-  kanaDef("い", "i", "a-row", kanaExampleWord("いえ", "ie", "house", "nhà", "家", "집", "家")),
-  kanaDef("う", "u", "a-row", kanaExampleWord("うみ", "umi", "sea", "biển", "海", "바다", "海")),
-  kanaDef("え", "e", "a-row", kanaExampleWord("えき", "eki", "station", "nhà ga", "駅", "역", "车站")),
-  kanaDef("お", "o", "a-row", kanaExampleWord("おちゃ", "ocha", "tea", "trà", "お茶", "차", "茶")),
-  kanaDef("か", "ka", "ka-row", kanaExampleWord("かさ", "kasa", "umbrella", "ô", "傘", "우산", "伞")),
-  kanaDef("き", "ki", "ka-row", kanaExampleWord("きって", "kitte", "stamp", "tem thư", "切手", "우표", "邮票")),
-  kanaDef("く", "ku", "ka-row", kanaExampleWord("くつ", "kutsu", "shoes", "giày", "靴", "신발", "鞋子")),
-  kanaDef("け", "ke", "ka-row", kanaExampleWord("けむり", "kemuri", "smoke", "khói", "煙", "연기", "烟")),
-  kanaDef("こ", "ko", "ka-row", kanaExampleWord("こえ", "koe", "voice", "giọng nói", "声", "목소리", "声音")),
-  kanaDef("さ", "sa", "sa-row", kanaExampleWord("さとう", "satou", "sugar", "đường", "砂糖", "설탕", "糖")),
-  kanaDef("し", "shi", "sa-row", kanaExampleWord("しお", "shio", "salt", "muối", "塩", "소금", "盐")),
-  kanaDef("す", "su", "sa-row", kanaExampleWord("すし", "sushi", "sushi", "sushi", "寿司", "스시", "寿司")),
-  kanaDef("せ", "se", "sa-row", kanaExampleWord("せき", "seki", "seat", "chỗ ngồi", "席", "자리", "座位")),
-  kanaDef("そ", "so", "sa-row", kanaExampleWord("そら", "sora", "sky", "bầu trời", "空", "하늘", "天空")),
-  kanaDef("た", "ta", "ta-row", kanaExampleWord("たまご", "tamago", "egg", "trứng", "卵", "달걀", "蛋")),
-  kanaDef("ち", "chi", "ta-row", kanaExampleWord("ちず", "chizu", "map", "bản đồ", "地図", "지도", "地图")),
-  kanaDef("つ", "tsu", "ta-row", kanaExampleWord("つき", "tsuki", "moon", "mặt trăng", "月", "달", "月亮")),
-  kanaDef("て", "te", "ta-row", kanaExampleWord("てがみ", "tegami", "letter", "lá thư", "手紙", "편지", "信")),
-  kanaDef("と", "to", "ta-row", kanaExampleWord("とけい", "tokei", "clock", "đồng hồ", "時計", "시계", "钟表")),
-  kanaDef("な", "na", "na-row", kanaExampleWord("なつ", "natsu", "summer", "mùa hè", "夏", "여름", "夏天")),
-  kanaDef("に", "ni", "na-row", kanaExampleWord("にく", "niku", "meat", "thịt", "肉", "고기", "肉")),
-  kanaDef("ぬ", "nu", "na-row", kanaExampleWord("ぬの", "nuno", "cloth", "vải", "布", "천", "布")),
-  kanaDef("ね", "ne", "na-row", kanaExampleWord("ねつ", "netsu", "fever", "sốt", "熱", "열", "发烧")),
-  kanaDef("の", "no", "na-row", kanaExampleWord("のり", "nori", "seaweed", "rong biển", "海苔", "김", "紫菜")),
-  kanaDef("は", "ha", "ha-row", kanaExampleWord("はな", "hana", "flower", "hoa", "花", "꽃", "花")),
-  kanaDef("ひ", "hi", "ha-row", kanaExampleWord("ひる", "hiru", "noon", "buổi trưa", "昼", "낮", "中午")),
-  kanaDef("ふ", "fu", "ha-row", kanaExampleWord("ふね", "fune", "ship", "tàu", "船", "배", "船")),
-  kanaDef("へ", "he", "ha-row", kanaExampleWord("へや", "heya", "room", "phòng", "部屋", "방", "房间")),
-  kanaDef("ほ", "ho", "ha-row", kanaExampleWord("ほし", "hoshi", "star", "ngôi sao", "星", "별", "星星")),
-  kanaDef("ま", "ma", "ma-row", kanaExampleWord("まど", "mado", "window", "cửa sổ", "窓", "창문", "窗户")),
-  kanaDef("み", "mi", "ma-row", kanaExampleWord("みず", "mizu", "water", "nước", "水", "물", "水")),
-  kanaDef("む", "mu", "ma-row", kanaExampleWord("むら", "mura", "village", "ngôi làng", "村", "마을", "村庄")),
-  kanaDef("め", "me", "ma-row", kanaExampleWord("めがね", "megane", "glasses", "kính", "眼鏡", "안경", "眼镜")),
-  kanaDef("も", "mo", "ma-row", kanaExampleWord("もり", "mori", "forest", "rừng", "森", "숲", "森林")),
-  kanaDef("や", "ya", "ya-row", kanaExampleWord("やま", "yama", "mountain", "núi", "山", "산", "山")),
-  kanaDef("ゆ", "yu", "ya-row", kanaExampleWord("ゆき", "yuki", "snow", "tuyết", "雪", "눈", "雪")),
-  kanaDef("よ", "yo", "ya-row", kanaExampleWord("よる", "yoru", "night", "đêm", "夜", "밤", "夜晚")),
-  kanaDef("ら", "ra", "ra-row", kanaExampleWord("らく", "raku", "comfort", "sự thoải mái", "楽", "편안함", "轻松")),
-  kanaDef("り", "ri", "ra-row", kanaExampleWord("りんご", "ringo", "apple", "táo", "りんご", "사과", "苹果")),
-  kanaDef("る", "ru", "ra-row", kanaExampleWord("るす", "rusu", "absence", "vắng nhà", "留守", "부재", "不在家")),
-  kanaDef("れ", "re", "ra-row", kanaExampleWord("れい", "rei", "zero", "số không", "零", "영", "零")),
-  kanaDef("ろ", "ro", "ra-row", kanaExampleWord("ろうか", "rouka", "hallway", "hành lang", "廊下", "복도", "走廊")),
-  kanaDef("わ", "wa", "wa-row", kanaExampleWord("わたし", "watashi", "I / me", "tôi", "私", "나", "我")),
-  kanaDef("を", "wo", "wa-row", kanaExampleWord("みずを", "mizu o", "water + object marker", "nước + trợ từ tân ngữ", "水を", "물을", "水 + 宾语助词")),
-  kanaDef("ん", "n", "n-row", kanaExampleWord("ほん", "hon", "book", "sách", "本", "책", "书")),
+  kanaDef("あ", "a", "a-row", kanaExampleWord("あめ（雨）", "ame", "rain", "mưa", "雨", "비", "雨", { reading: "あめ", speechText: "あめ" })),
+  kanaDef("い", "i", "a-row", kanaExampleWord("いぬ（犬）", "inu", "dog", "chó", "犬", "개", "狗", { reading: "いぬ", speechText: "いぬ" })),
+  kanaDef("う", "u", "a-row", kanaExampleWord("うみ（海）", "umi", "sea", "biển", "海", "바다", "海", { reading: "うみ", speechText: "うみ" })),
+  kanaDef("え", "e", "a-row", kanaExampleWord("えき（駅）", "eki", "station", "nhà ga", "駅", "역", "车站", { reading: "えき", speechText: "えき" })),
+  kanaDef("お", "o", "a-row", kanaExampleWord("おに（鬼）", "oni", "demon / ogre", "quỷ / yêu quái", "鬼", "도깨비", "鬼", { reading: "おに", speechText: "おに" })),
+  kanaDef("か", "ka", "ka-row", kanaExampleWord("かさ（傘）", "kasa", "umbrella", "ô", "傘", "우산", "伞", { reading: "かさ", speechText: "かさ" })),
+  kanaDef("き", "ki", "ka-row", kanaExampleWord("きつね（狐）", "kitsune", "fox", "con cáo", "狐", "여우", "狐狸", { reading: "きつね", speechText: "きつね" })),
+  kanaDef("く", "ku", "ka-row", kanaExampleWord("くも（雲）", "kumo", "cloud", "mây", "雲", "구름", "云", { reading: "くも", speechText: "くも" })),
+  kanaDef("け", "ke", "ka-row", kanaExampleWord("けむり（煙）", "kemuri", "smoke", "khói", "煙", "연기", "烟", { reading: "けむり", speechText: "けむり" })),
+  kanaDef("こ", "ko", "ka-row", kanaExampleWord("こえ（声）", "koe", "voice", "giọng nói", "声", "목소리", "声音", { reading: "こえ", speechText: "こえ" })),
+  kanaDef("さ", "sa", "sa-row", kanaExampleWord("さくら（桜）", "sakura", "cherry blossom", "hoa anh đào", "桜", "벚꽃", "樱花", { reading: "さくら", speechText: "さくら" })),
+  kanaDef("し", "shi", "sa-row", kanaExampleWord("しお（塩）", "shio", "salt", "muối", "塩", "소금", "盐", { reading: "しお", speechText: "しお" })),
+  kanaDef("す", "su", "sa-row", kanaExampleWord("すし（寿司）", "sushi", "sushi", "sushi", "寿司", "초밥", "寿司", { reading: "すし", speechText: "すし" })),
+  kanaDef("せ", "se", "sa-row", kanaExampleWord("せかい（世界）", "sekai", "world", "thế giới", "世界", "세계", "世界", { reading: "せかい", speechText: "せかい" })),
+  kanaDef("そ", "so", "sa-row", kanaExampleWord("そら（空）", "sora", "sky", "bầu trời", "空", "하늘", "天空", { reading: "そら", speechText: "そら" })),
+  kanaDef("た", "ta", "ta-row", kanaExampleWord("たこ（蛸）", "tako", "octopus", "bạch tuộc", "蛸", "문어", "章鱼", { reading: "たこ", speechText: "たこ" })),
+  kanaDef("ち", "chi", "ta-row", kanaExampleWord("ちず（地図）", "chizu", "map", "bản đồ", "地図", "지도", "地图", { reading: "ちず", speechText: "ちず" })),
+  kanaDef("つ", "tsu", "ta-row", kanaExampleWord("つき（月）", "tsuki", "moon", "mặt trăng", "月", "달", "月亮", { reading: "つき", speechText: "つき" })),
+  kanaDef("て", "te", "ta-row", kanaExampleWord("て（手）", "te", "hand", "tay", "手", "손", "手", { reading: "て", speechText: "て" })),
+  kanaDef("と", "to", "ta-row", kanaExampleWord("とり（鳥）", "tori", "bird", "chim", "鳥", "새", "鸟", { reading: "とり", speechText: "とり" })),
+  kanaDef("な", "na", "na-row", kanaExampleWord("なつ（夏）", "natsu", "summer", "mùa hè", "夏", "여름", "夏天", { reading: "なつ", speechText: "なつ" })),
+  kanaDef("に", "ni", "na-row", kanaExampleWord("にく（肉）", "niku", "meat", "thịt", "肉", "고기", "肉", { reading: "にく", speechText: "にく" })),
+  kanaDef("ぬ", "nu", "na-row", kanaExampleWord("ぬの（布）", "nuno", "cloth", "vải", "布", "천", "布", { reading: "ぬの", speechText: "ぬの" })),
+  kanaDef("ね", "ne", "na-row", kanaExampleWord("ねこ（猫）", "neko", "cat", "mèo", "猫", "고양이", "猫", { reading: "ねこ", speechText: "ねこ" })),
+  kanaDef("の", "no", "na-row", kanaExampleWord("のり（海苔）", "nori", "seaweed", "rong biển", "海苔", "김", "海苔", { reading: "のり", speechText: "のり" })),
+  kanaDef("は", "ha", "ha-row", kanaExampleWord("はな（花）", "hana", "flower", "hoa", "花", "꽃", "花", { reading: "はな", speechText: "はな" })),
+  kanaDef("ひ", "hi", "ha-row", kanaExampleWord("ひこうき（飛行機）", "hikouki", "airplane", "máy bay", "飛行機", "비행기", "飞机", { reading: "ひこうき", speechText: "ひこうき" })),
+  kanaDef("ふ", "fu", "ha-row", kanaExampleWord("ふね（船）", "fune", "boat", "thuyền", "船", "배", "船", { reading: "ふね", speechText: "ふね" })),
+  kanaDef("へ", "he", "ha-row", kanaExampleWord("へや（部屋）", "heya", "room", "căn phòng", "部屋", "방", "房间", { reading: "へや", speechText: "へや" })),
+  kanaDef("ほ", "ho", "ha-row", kanaExampleWord("ほし（星）", "hoshi", "star", "ngôi sao", "星", "별", "星星", { reading: "ほし", speechText: "ほし" })),
+  kanaDef("ま", "ma", "ma-row", kanaExampleWord("まど（窓）", "mado", "window", "cửa sổ", "窓", "창문", "窗户", { reading: "まど", speechText: "まど" })),
+  kanaDef("み", "mi", "ma-row", kanaExampleWord("みず（水）", "mizu", "water", "nước", "水", "물", "水", { reading: "みず", speechText: "みず" })),
+  kanaDef("む", "mu", "ma-row", kanaExampleWord("むし（虫）", "mushi", "insect", "côn trùng", "虫", "벌레", "虫子", { reading: "むし", speechText: "むし" })),
+  kanaDef("め", "me", "ma-row", kanaExampleWord("め（目）", "me", "eye", "mắt", "目", "눈", "眼睛", { reading: "め", speechText: "め" })),
+  kanaDef("も", "mo", "ma-row", kanaExampleWord("もも（桃）", "momo", "peach", "quả đào", "桃", "복숭아", "桃子", { reading: "もも", speechText: "もも" })),
+  kanaDef("や", "ya", "ya-row", kanaExampleWord("やま（山）", "yama", "mountain", "núi", "山", "산", "山", { reading: "やま", speechText: "やま" })),
+  kanaDef("ゆ", "yu", "ya-row", kanaExampleWord("ゆき（雪）", "yuki", "snow", "tuyết", "雪", "눈", "雪", { reading: "ゆき", speechText: "ゆき" })),
+  kanaDef("よ", "yo", "ya-row", kanaExampleWord("よる（夜）", "yoru", "night", "ban đêm", "夜", "밤", "夜晚", { reading: "よる", speechText: "よる" })),
+  kanaDef("ら", "ra", "ra-row", kanaExampleWord("らいねん（来年）", "rainen", "next year", "năm sau", "来年", "내년", "明年", { reading: "らいねん", speechText: "らいねん" })),
+  kanaDef("り", "ri", "ra-row", kanaExampleWord("りんご（林檎）", "ringo", "apple", "táo", "林檎", "사과", "苹果", { reading: "りんご", speechText: "りんご" })),
+  kanaDef("る", "ru", "ra-row", kanaExampleWord("るす（留守）", "rusu", "not at home", "vắng nhà", "留守", "부재중", "不在家", { reading: "るす", speechText: "るす" })),
+  kanaDef("れ", "re", "ra-row", kanaExampleWord("れいぞうこ（冷蔵庫）", "reizouko", "refrigerator", "tủ lạnh", "冷蔵庫", "냉장고", "冰箱", { reading: "れいぞうこ", speechText: "れいぞうこ" })),
+  kanaDef("ろ", "ro", "ra-row", kanaExampleWord("ろうそく（蝋燭）", "rousoku", "candle", "nến", "蝋燭", "양초", "蜡烛", { reading: "ろうそく", speechText: "ろうそく" })),
+  kanaDef("わ", "wa", "wa-row", kanaExampleWord("わに（鰐）", "wani", "crocodile", "cá sấu", "鰐", "악어", "鳄鱼", { reading: "わに", speechText: "わに" })),
+  kanaDef(
+    "を",
+    "o",
+    "wa-row",
+    kanaExampleWord("ほんをよむ（本を読む）", "hon o yomu", "read a book", "đọc sách", "本を読む", "책을 읽다", "读书", {
+      reading: "ほんをよむ",
+      speechText: "ほんをよむ",
+    }),
+    {
+      idKey: "wo",
+      meaning: {
+        en: "object particle",
+        vi: "trợ từ tân ngữ",
+        ja: "目的語を表す助詞",
+        ko: "목적어 조사",
+        zh: "宾语助词",
+      },
+    },
+  ),
+  kanaDef("ん", "n", "n-row", kanaExampleWord("ほん（本）", "hon", "book", "sách", "本", "책", "书", { reading: "ほん", speechText: "ほん" })),
 ]);
 
 const KATAKANA_BASIC_46 = orderedKanaDefs([
@@ -2240,12 +3701,16 @@ const KATAKANA_BASIC_46 = orderedKanaDefs([
 function jaHiraganaFoundationUnitV2() {
   const unitId = "ja-core-foundation-hiragana-u1";
   const rows = [
-    { id: "ja-hiragana-u1-l1", order: 1, title: "Hiragana 1: あ〜お", titleVi: "Hiragana 1: あ〜お", chars: kanaChars(HIRAGANA_BASIC_46, 1, 5) },
-    { id: "ja-hiragana-u1-l2", order: 2, title: "Hiragana 2: か〜そ", titleVi: "Hiragana 2: か〜そ", chars: kanaChars(HIRAGANA_BASIC_46, 6, 15) },
-    { id: "ja-hiragana-u1-l3", order: 3, title: "Hiragana 3: た〜の", titleVi: "Hiragana 3: た〜の", chars: kanaChars(HIRAGANA_BASIC_46, 16, 25) },
-    { id: "ja-hiragana-u1-l4", order: 4, title: "Hiragana 4: は〜も", titleVi: "Hiragana 4: は〜も", chars: kanaChars(HIRAGANA_BASIC_46, 26, 35) },
-    { id: "ja-hiragana-u1-l5", order: 5, title: "Hiragana 5: や〜る", titleVi: "Hiragana 5: や〜る", chars: kanaChars(HIRAGANA_BASIC_46, 36, 41) },
-    { id: "ja-hiragana-u1-l6", order: 6, title: "Hiragana 6: れ〜ん", titleVi: "Hiragana 6: れ〜ん", chars: kanaChars(HIRAGANA_BASIC_46, 42, 46), isCheckpoint: true },
+    { id: "ja-hiragana-u1-l1", order: 1, title: "Hiragana 1: あいうえお", titleVi: "Hiragana 1: あいうえお", chars: kanaChars(HIRAGANA_BASIC_46, 1, 5) },
+    { id: "ja-hiragana-u1-l2", order: 2, title: "Hiragana 2: かきくけこ", titleVi: "Hiragana 2: かきくけこ", chars: kanaChars(HIRAGANA_BASIC_46, 6, 10) },
+    { id: "ja-hiragana-u1-l3", order: 3, title: "Hiragana 3: さしすせそ", titleVi: "Hiragana 3: さしすせそ", chars: kanaChars(HIRAGANA_BASIC_46, 11, 15) },
+    { id: "ja-hiragana-u1-l4", order: 4, title: "Hiragana 4: たちつてと", titleVi: "Hiragana 4: たちつてと", chars: kanaChars(HIRAGANA_BASIC_46, 16, 20) },
+    { id: "ja-hiragana-u1-l5", order: 5, title: "Hiragana 5: なにぬねの", titleVi: "Hiragana 5: なにぬねの", chars: kanaChars(HIRAGANA_BASIC_46, 21, 25) },
+    { id: "ja-hiragana-u1-l6", order: 6, title: "Hiragana 6: はひふへほ", titleVi: "Hiragana 6: はひふへほ", chars: kanaChars(HIRAGANA_BASIC_46, 26, 30) },
+    { id: "ja-hiragana-u1-l7", order: 7, title: "Hiragana 7: まみむめも", titleVi: "Hiragana 7: まみむめも", chars: kanaChars(HIRAGANA_BASIC_46, 31, 35) },
+    { id: "ja-hiragana-u1-l8", order: 8, title: "Hiragana 8: やゆよ", titleVi: "Hiragana 8: やゆよ", chars: kanaChars(HIRAGANA_BASIC_46, 36, 38), distractorChars: kanaChars(HIRAGANA_BASIC_46, 35, 35) },
+    { id: "ja-hiragana-u1-l9", order: 9, title: "Hiragana 9: らりるれろ", titleVi: "Hiragana 9: らりるれろ", chars: kanaChars(HIRAGANA_BASIC_46, 39, 43) },
+    { id: "ja-hiragana-u1-l10", order: 10, title: "Hiragana 10: わをん", titleVi: "Hiragana 10: わをん", chars: kanaChars(HIRAGANA_BASIC_46, 44, 46), distractorChars: kanaChars(HIRAGANA_BASIC_46, 43, 43), isCheckpoint: true },
   ];
 
   const lessons = rows.map((row) =>
@@ -2256,6 +3721,7 @@ function jaHiraganaFoundationUnitV2() {
       title: row.title,
       titleVi: row.titleVi,
       chars: row.chars,
+      distractorChars: row.distractorChars,
       isCheckpoint: row.isCheckpoint,
       script: "hiragana",
       moduleId: "hiragana_starter",
@@ -2266,11 +3732,26 @@ function jaHiraganaFoundationUnitV2() {
     id: unitId,
     title: "Unit 1: Hiragana basics",
     titleVi: "Unit 1: Hiragana cơ bản",
+    titleByNative: t({
+      en: "Unit 1: Hiragana basics",
+      vi: "Bài 1: Hiragana cơ bản",
+      ja: "ユニット1：ひらがな基礎",
+      ko: "유닛 1: 히라가나 기초",
+      zh: "单元1：平假名基础",
+    }),
     levelCode: "A0",
     trackId: "ja-core_foundation",
     moduleId: "hiragana_starter",
     goal: "Recognize all 46 basic hiragana characters in gojuon order.",
     goalVi: "Nhận biết đủ 46 chữ hiragana cơ bản theo thứ tự gojuon.",
+    goalByNative: t({
+      en: "Recognize all 46 basic hiragana characters in gojūon order.",
+      vi: "Nhận biết đủ 46 chữ hiragana cơ bản theo thứ tự gojuon.",
+      ja: "五十音順で46字の基本ひらがなを見分けます。",
+      ko: "오십음도 순서로 기본 히라가나 46자를 구별합니다.",
+      zh: "按五十音顺序识别全部46个基础平假名。",
+    }),
+    displayOrder: 1,
     order: 1,
     lessonIds: lessons.map((l) => l.id),
   };
@@ -2294,14 +3775,19 @@ function jaHiraganaFoundationUnitV2() {
 }
 
 function jaKatakanaFoundationUnitV2() {
+  // Keep stable lesson/unit ids (…-u4-…) but display as Core Foundation Unit 2.
   const unitId = "ja-core-foundation-katakana-u4";
   const rows = [
-    { id: "ja-katakana-u4-l1", order: 1, title: "Katakana 1: ア〜オ", titleVi: "Katakana 1: ア〜オ", chars: kanaChars(KATAKANA_BASIC_46, 1, 5) },
-    { id: "ja-katakana-u4-l2", order: 2, title: "Katakana 2: カ〜ソ", titleVi: "Katakana 2: カ〜ソ", chars: kanaChars(KATAKANA_BASIC_46, 6, 15) },
-    { id: "ja-katakana-u4-l3", order: 3, title: "Katakana 3: タ〜ノ", titleVi: "Katakana 3: タ〜ノ", chars: kanaChars(KATAKANA_BASIC_46, 16, 25) },
-    { id: "ja-katakana-u4-l4", order: 4, title: "Katakana 4: ハ〜モ", titleVi: "Katakana 4: ハ〜モ", chars: kanaChars(KATAKANA_BASIC_46, 26, 35) },
-    { id: "ja-katakana-u4-l5", order: 5, title: "Katakana 5: ヤ〜ル", titleVi: "Katakana 5: ヤ〜ル", chars: kanaChars(KATAKANA_BASIC_46, 36, 41) },
-    { id: "ja-katakana-u4-l6", order: 6, title: "Katakana 6: レ〜ン", titleVi: "Katakana 6: レ〜ン", chars: kanaChars(KATAKANA_BASIC_46, 42, 46), isCheckpoint: true },
+    { id: "ja-katakana-u4-l1", order: 1, title: "Katakana 1: アイウエオ", titleVi: "Katakana 1: アイウエオ", chars: kanaChars(KATAKANA_BASIC_46, 1, 5) },
+    { id: "ja-katakana-u4-l2", order: 2, title: "Katakana 2: カキクケコ", titleVi: "Katakana 2: カキクケコ", chars: kanaChars(KATAKANA_BASIC_46, 6, 10) },
+    { id: "ja-katakana-u4-l3", order: 3, title: "Katakana 3: サシスセソ", titleVi: "Katakana 3: サシスセソ", chars: kanaChars(KATAKANA_BASIC_46, 11, 15) },
+    { id: "ja-katakana-u4-l4", order: 4, title: "Katakana 4: タチツテト", titleVi: "Katakana 4: タチツテト", chars: kanaChars(KATAKANA_BASIC_46, 16, 20) },
+    { id: "ja-katakana-u4-l5", order: 5, title: "Katakana 5: ナニヌネノ", titleVi: "Katakana 5: ナニヌネノ", chars: kanaChars(KATAKANA_BASIC_46, 21, 25) },
+    { id: "ja-katakana-u4-l6", order: 6, title: "Katakana 6: ハヒフヘホ", titleVi: "Katakana 6: ハヒフヘホ", chars: kanaChars(KATAKANA_BASIC_46, 26, 30) },
+    { id: "ja-katakana-u4-l7", order: 7, title: "Katakana 7: マミムメモ", titleVi: "Katakana 7: マミムメモ", chars: kanaChars(KATAKANA_BASIC_46, 31, 35) },
+    { id: "ja-katakana-u4-l8", order: 8, title: "Katakana 8: ヤユヨ", titleVi: "Katakana 8: ヤユヨ", chars: kanaChars(KATAKANA_BASIC_46, 36, 38), distractorChars: kanaChars(KATAKANA_BASIC_46, 35, 35) },
+    { id: "ja-katakana-u4-l9", order: 9, title: "Katakana 9: ラリルレロ", titleVi: "Katakana 9: ラリルレロ", chars: kanaChars(KATAKANA_BASIC_46, 39, 43) },
+    { id: "ja-katakana-u4-l10", order: 10, title: "Katakana 10: ワヲン", titleVi: "Katakana 10: ワヲン", chars: kanaChars(KATAKANA_BASIC_46, 44, 46), distractorChars: kanaChars(KATAKANA_BASIC_46, 43, 43), isCheckpoint: true },
   ];
 
   const lessons = rows.map((row) =>
@@ -2312,6 +3798,7 @@ function jaKatakanaFoundationUnitV2() {
       title: row.title,
       titleVi: row.titleVi,
       chars: row.chars,
+      distractorChars: row.distractorChars,
       isCheckpoint: row.isCheckpoint,
       script: "katakana",
       moduleId: "katakana_starter",
@@ -2320,14 +3807,29 @@ function jaKatakanaFoundationUnitV2() {
 
   const unit = {
     id: unitId,
-    title: "Unit 4: Katakana Basics",
-    titleVi: "Unit 4: Katakana cơ bản",
+    title: "Unit 2: Katakana Basics",
+    titleVi: "Unit 2: Katakana cơ bản",
+    titleByNative: t({
+      en: "Unit 2: Katakana basics",
+      vi: "Bài 2: Katakana cơ bản",
+      ja: "ユニット2：カタカナ基礎",
+      ko: "유닛 2: 가타카나 기초",
+      zh: "单元2：片假名基础",
+    }),
     levelCode: "A0",
     trackId: "ja-core_foundation",
     moduleId: "katakana_starter",
     goal: "Recognize all 46 basic katakana characters in gojuon order.",
     goalVi: "Nhận biết đủ 46 chữ katakana cơ bản theo thứ tự gojuon.",
-    order: 4,
+    goalByNative: t({
+      en: "Recognize all 46 basic katakana characters in gojūon order.",
+      vi: "Nhận biết đủ 46 chữ katakana cơ bản theo thứ tự gojuon.",
+      ja: "五十音順で46字の基本カタカナを見分けます。",
+      ko: "오십음도 순서로 기본 가타카나 46자를 구별합니다.",
+      zh: "按五十音顺序识别全部46个基础片假名。",
+    }),
+    displayOrder: 2,
+    order: 2,
     lessonIds: lessons.map((l) => l.id),
   };
 

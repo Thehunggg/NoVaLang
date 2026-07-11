@@ -1,6 +1,23 @@
 import 'exercise.dart';
 import 'lesson.dart';
 
+Map<String, String> _stringMap(dynamic raw) {
+  if (raw is! Map) return const {};
+  return raw.map(
+    (key, value) => MapEntry(key.toString(), value?.toString() ?? ''),
+  );
+}
+
+Map<String, List<String>> _stringListMap(dynamic raw) {
+  if (raw is! Map) return const {};
+  return raw.map(
+    (key, value) => MapEntry(
+      key.toString(),
+      (value as List<dynamic>? ?? const []).cast<String>(),
+    ),
+  );
+}
+
 /// Vocabulary item with pronunciation-ready fields.
 class VocabularyItem {
   const VocabularyItem({
@@ -57,21 +74,17 @@ class VocabularyItem {
       displayText: json['displayText'] as String? ?? '',
       speechText:
           json['speechText'] as String? ?? json['displayText'] as String? ?? '',
-      meaningEn:
-          json['meaningEn'] as String? ?? translations['en'] ?? '',
-      meaningVi:
-          json['meaningVi'] as String? ?? translations['vi'] ?? '',
+      meaningEn: json['meaningEn'] as String? ?? translations['en'] ?? '',
+      meaningVi: json['meaningVi'] as String? ?? translations['vi'] ?? '',
       reading: json['reading'] as String?,
       romanization: json['romanization'] as String?,
       exampleText: exampleText,
       exampleReading: json['exampleReading'] as String? ?? exampleText,
       exampleRomanization: json['exampleRomanization'] as String?,
-      exampleSpeechText:
-          json['exampleSpeechText'] as String? ?? exampleText,
+      exampleSpeechText: json['exampleSpeechText'] as String? ?? exampleText,
       exampleSentence: json['exampleSentence'] as String? ?? exampleText,
       exampleSentenceVi:
-          json['exampleSentenceVi'] as String? ??
-          exampleTranslations['vi'],
+          json['exampleSentenceVi'] as String? ?? exampleTranslations['vi'],
       exampleTranslations: exampleTranslations,
       translations: translations,
     );
@@ -80,7 +93,13 @@ class VocabularyItem {
   String localizedMeaning(String locale) {
     if (translations[locale]?.isNotEmpty == true) return translations[locale]!;
     if (locale == 'vi' && meaningVi.isNotEmpty) return meaningVi;
-    return meaningEn;
+    if (locale == 'en' && meaningEn.isNotEmpty) return meaningEn;
+    return meaningEn.isNotEmpty
+        ? meaningEn
+        : (translations['en'] ??
+              (translations.values.isNotEmpty
+                  ? translations.values.first
+                  : ''));
   }
 
   String localizedExampleTranslation(String locale) {
@@ -93,8 +112,7 @@ class VocabularyItem {
     return exampleTranslations['en'] ?? exampleSentenceVi ?? '';
   }
 
-  String get resolvedExampleText =>
-      exampleText ?? exampleSentence ?? '';
+  String get resolvedExampleText => exampleText ?? exampleSentence ?? '';
 }
 
 class KeyPhrase {
@@ -192,20 +210,24 @@ class CurriculumLesson {
     required this.unitId,
     required this.title,
     required this.titleVi,
+    this.titleByNative = const {},
     required this.track,
     required this.level,
     required this.template,
     required this.description,
     required this.descriptionVi,
+    this.descriptionByNative = const {},
     required this.estimatedMinutes,
     required this.comingSoon,
     required this.order,
     required this.canDoObjective,
     required this.canDoObjectiveVi,
+    this.canDoObjectiveByNative = const {},
     required this.objectives,
     required this.objectivesVi,
     required this.introPoints,
     required this.introPointsVi,
+    this.introPointsByNative = const {},
     required this.vocabulary,
     required this.keyPhrases,
     required this.dialogue,
@@ -223,20 +245,24 @@ class CurriculumLesson {
   final String unitId;
   final String title;
   final String titleVi;
+  final Map<String, String> titleByNative;
   final String track;
   final String level;
   final LessonTemplate template;
   final String description;
   final String descriptionVi;
+  final Map<String, String> descriptionByNative;
   final int estimatedMinutes;
   final bool comingSoon;
   final int order;
   final String canDoObjective;
   final String canDoObjectiveVi;
+  final Map<String, String> canDoObjectiveByNative;
   final List<String> objectives;
   final List<String> objectivesVi;
   final List<String> introPoints;
   final List<String> introPointsVi;
+  final Map<String, List<String>> introPointsByNative;
   final List<VocabularyItem> vocabulary;
   final List<KeyPhrase> keyPhrases;
   final List<DialogueLine> dialogue;
@@ -255,7 +281,9 @@ class CurriculumLesson {
         '';
     final canDoVi =
         json['canDoObjectiveVi'] as String? ??
-        ((json['objectivesVi'] as List<dynamic>?)?.cast<String>().firstOrNull) ??
+        ((json['objectivesVi'] as List<dynamic>?)
+            ?.cast<String>()
+            .firstOrNull) ??
         json['descriptionVi'] as String? ??
         canDo;
     return CurriculumLesson(
@@ -265,6 +293,7 @@ class CurriculumLesson {
       unitId: json['unitId'] as String? ?? '',
       title: json['title'] as String? ?? '',
       titleVi: json['titleVi'] as String? ?? json['title'] as String? ?? '',
+      titleByNative: _stringMap(json['titleByNative']),
       track: json['track'] as String? ?? '',
       level: json['level'] as String? ?? 'A1_1',
       template: _templateFrom(json['template'] as String?),
@@ -273,11 +302,13 @@ class CurriculumLesson {
           json['descriptionVi'] as String? ??
           json['description'] as String? ??
           '',
+      descriptionByNative: _stringMap(json['descriptionByNative']),
       estimatedMinutes: json['estimatedMinutes'] as int? ?? 6,
       comingSoon: json['comingSoon'] as bool? ?? false,
       order: json['order'] as int? ?? 0,
       canDoObjective: canDo,
       canDoObjectiveVi: canDoVi,
+      canDoObjectiveByNative: _stringMap(json['canDoObjectiveByNative']),
       objectives: (json['objectives'] as List<dynamic>? ?? const [])
           .cast<String>(),
       objectivesVi: (json['objectivesVi'] as List<dynamic>? ?? const [])
@@ -286,6 +317,7 @@ class CurriculumLesson {
           .cast<String>(),
       introPointsVi: (json['introPointsVi'] as List<dynamic>? ?? const [])
           .cast<String>(),
+      introPointsByNative: _stringListMap(json['introPointsByNative']),
       vocabulary: (json['vocabulary'] as List<dynamic>? ?? const [])
           .map((item) => VocabularyItem.fromJson(item as Map<String, dynamic>))
           .toList(growable: false),
@@ -313,6 +345,7 @@ class CurriculumLesson {
     id: id,
     title: title,
     titleVi: titleVi,
+    titleByNative: titleByNative,
     track: track,
     level: level,
     template: template,
@@ -320,6 +353,9 @@ class CurriculumLesson {
     descriptionVi: canDoObjectiveVi.isNotEmpty
         ? canDoObjectiveVi
         : descriptionVi,
+    descriptionByNative: canDoObjectiveByNative.isNotEmpty
+        ? canDoObjectiveByNative
+        : descriptionByNative,
     exercises: exercises,
     introPoints: introPoints.isNotEmpty
         ? introPoints
@@ -327,13 +363,14 @@ class CurriculumLesson {
     introPointsVi: introPointsVi.isNotEmpty
         ? introPointsVi
         : (canDoObjectiveVi.isNotEmpty ? [canDoObjectiveVi] : const []),
+    introPointsByNative: introPointsByNative,
     vocabulary: vocabulary
         .map(
           (item) => LessonVocabCard(
             displayText: item.displayText,
             speechText: item.speechText,
             meaning: item.localizedMeaning(nativeLanguage),
-            reading: item.reading,
+            reading: item.romanization ?? item.reading,
             romanization: item.romanization,
             exampleText: item.resolvedExampleText.isEmpty
                 ? null
@@ -364,14 +401,21 @@ class CurriculumLesson {
 
 Exercise _exerciseFromJson(Map<String, dynamic> json) {
   final type = switch (json['type'] as String?) {
+    'characterCard' => ExerciseType.characterCard,
     'chooseReading' => ExerciseType.chooseReading,
     'chooseVocabulary' => ExerciseType.chooseVocabulary,
     'chooseCorrectAnswer' => ExerciseType.chooseCorrectAnswer,
+    'fillMissingCharacter' => ExerciseType.fillMissingCharacter,
+    'soundToCharacter' => ExerciseType.soundToCharacter,
+    'nextInSequence' => ExerciseType.nextInSequence,
+    'chooseCorrectPair' => ExerciseType.chooseCorrectPair,
     'matchPairs' => ExerciseType.matchPairs,
     'typeAnswer' => ExerciseType.typeAnswer,
     'fillBlank' => ExerciseType.fillBlank,
     'listenAndChoose' => ExerciseType.listenAndChoose,
     'listeningGapFill' => ExerciseType.listeningGapFill,
+    'plusListeningVocabularyChallenge' =>
+      ExerciseType.plusListeningVocabularyChallenge,
     'controlledAiQa' => ExerciseType.controlledAiQa,
     'aiFeedbackReview' => ExerciseType.aiFeedbackReview,
     _ => ExerciseType.chooseMeaning,
@@ -399,9 +443,7 @@ Exercise _exerciseFromJson(Map<String, dynamic> json) {
 
   Map<String, List<MatchPair>> parsePairsMap(dynamic raw) {
     if (raw is! Map) return const {};
-    return raw.map(
-      (key, value) => MapEntry(key.toString(), parsePairs(value)),
-    );
+    return raw.map((key, value) => MapEntry(key.toString(), parsePairs(value)));
   }
 
   Map<String, String> parseStringMap(dynamic raw) {
@@ -411,6 +453,66 @@ Exercise _exerciseFromJson(Map<String, dynamic> json) {
     );
   }
 
+  List<LearnCard> parseCards(dynamic raw) {
+    return (raw as List<dynamic>? ?? const [])
+        .map((item) {
+          final map = item as Map<String, dynamic>;
+          return LearnCard(
+            id: map['id'] as String? ?? '',
+            character:
+                map['character'] as String? ??
+                map['displayText'] as String? ??
+                '',
+            reading: map['reading'] as String? ?? '',
+            speechText: map['speechText'] as String? ?? '',
+            example: map['example'] as String? ?? '',
+            exampleReading: map['exampleReading'] as String?,
+            exampleRomanization: map['exampleRomanization'] as String?,
+            exampleSpeechText: map['exampleSpeechText'] as String?,
+            meaningByNative: parseStringMap(map['meaningByNative']),
+            audioCardLabelByNative: parseStringMap(
+              map['audioCardLabelByNative'],
+            ),
+            feedbackByNative: parseStringMap(map['feedbackByNative']),
+          );
+        })
+        .toList(growable: false);
+  }
+
+  List<ExerciseSubQuestion> parseSubQuestions(dynamic raw) {
+    return (raw as List<dynamic>? ?? const [])
+        .map((item) {
+          final map = item as Map<String, dynamic>;
+          return ExerciseSubQuestion(
+            id: map['id'] as String? ?? '',
+            prompt: map['prompt'] as String? ?? '',
+            prompts: parseStringMap(map['prompts']),
+            speechText: map['speechText'] as String? ?? '',
+            visibleBeforeAnswer: map['visibleBeforeAnswer'] as String?,
+            visibleBeforeAnswerByNative: parseStringMap(
+              map['visibleBeforeAnswerByNative'],
+            ),
+            audioCardLabel: map['audioCardLabel'] as String?,
+            audioCardLabelByNative: parseStringMap(
+              map['audioCardLabelByNative'],
+            ),
+            hideSpeechLabel: map['hideSpeechLabel'] as bool? ?? true,
+            options: (map['options'] as List<dynamic>? ?? const [])
+                .cast<String>(),
+            correctAnswer: map['correctAnswer'] as String? ?? '',
+            revealAfterAnswer: map['revealAfterAnswer'] as String?,
+            revealAfterAnswerByNative: parseStringMap(
+              map['revealAfterAnswerByNative'],
+            ),
+            feedbackCorrectByNative: parseStringMap(
+              map['feedbackCorrectByNative'],
+            ),
+            feedbackWrongByNative: parseStringMap(map['feedbackWrongByNative']),
+          );
+        })
+        .toList(growable: false);
+  }
+
   return Exercise(
     id: json['id'] as String? ?? '',
     type: type,
@@ -418,25 +520,40 @@ Exercise _exerciseFromJson(Map<String, dynamic> json) {
     promptVi: json['promptVi'] as String?,
     prompts: parseStringMap(json['prompts']),
     displayText: json['displayText'] as String?,
+    displayTextByNative: parseStringMap(json['displayTextByNative']),
     speechText: json['speechText'] as String?,
+    hideSpeechLabel: json['hideSpeechLabel'] as bool? ?? false,
+    audioCardLabel: json['audioCardLabel'] as String?,
+    audioCardLabelByNative: parseStringMap(json['audioCardLabelByNative']),
+    cards: parseCards(json['cards']),
+    subQuestions: parseSubQuestions(json['subQuestions']),
+    revealAfterAnswer: json['revealAfterAnswer'] as String?,
+    feedbackCorrectByNative: parseStringMap(json['feedbackCorrectByNative']),
+    feedbackWrongByNative: parseStringMap(json['feedbackWrongByNative']),
     options: (json['options'] as List<dynamic>? ?? const []).cast<String>(),
     optionsVi: (json['optionsVi'] as List<dynamic>? ?? const []).cast<String>(),
     optionsByNative: parseStringListMap(json['optionsByNative']),
     correctAnswer: json['correctAnswer'] as String? ?? '',
     acceptedAnswers: (json['acceptedAnswers'] as List<dynamic>? ?? const [])
         .cast<String>(),
-    acceptedAnswersVi:
-        (json['acceptedAnswersVi'] as List<dynamic>? ?? const []).cast<String>(),
-    acceptedAnswersByNative: parseStringListMap(json['acceptedAnswersByNative']),
+    acceptedAnswersVi: (json['acceptedAnswersVi'] as List<dynamic>? ?? const [])
+        .cast<String>(),
+    acceptedAnswersByNative: parseStringListMap(
+      json['acceptedAnswersByNative'],
+    ),
     pairs: parsePairs(json['pairs']),
     pairsVi: parsePairs(json['pairsVi']),
     pairsByNative: parsePairsMap(json['pairsByNative']),
+    instructionByNative: parseStringMap(json['instructionByNative']),
     plusOnly: json['plusOnly'] as bool? ?? json['access'] == 'plus',
     usesAi: json['usesAi'] as bool? ?? false,
-    reusesPreviousAiFeedback: json['reusesPreviousAiFeedback'] as bool? ?? false,
+    reusesPreviousAiFeedback:
+        json['reusesPreviousAiFeedback'] as bool? ?? false,
     triggerExtraAiCallByDefault:
         json['triggerExtraAiCallByDefault'] as bool? ?? false,
     maxUserChars: json['maxUserChars'] as int? ?? 400,
+    caseInsensitive: json['caseInsensitive'] as bool? ?? false,
+    ignorePunctuation: json['ignorePunctuation'] as bool? ?? false,
   );
 }
 
@@ -445,10 +562,12 @@ class CurriculumUnit {
     required this.id,
     required this.title,
     required this.titleVi,
+    this.titleByNative = const {},
     required this.levelCode,
     required this.trackId,
     required this.goal,
     required this.goalVi,
+    this.goalByNative = const {},
     required this.order,
     required this.lessonIds,
   });
@@ -456,10 +575,12 @@ class CurriculumUnit {
   final String id;
   final String title;
   final String titleVi;
+  final Map<String, String> titleByNative;
   final String levelCode;
   final String trackId;
   final String goal;
   final String goalVi;
+  final Map<String, String> goalByNative;
   final int order;
   final List<String> lessonIds;
 
@@ -467,11 +588,13 @@ class CurriculumUnit {
     id: json['id'] as String,
     title: json['title'] as String? ?? '',
     titleVi: json['titleVi'] as String? ?? json['title'] as String? ?? '',
+    titleByNative: _stringMap(json['titleByNative']),
     levelCode: json['levelCode'] as String? ?? 'A1_1',
     trackId: json['trackId'] as String? ?? '',
     goal: json['goal'] as String? ?? '',
     goalVi: json['goalVi'] as String? ?? json['goal'] as String? ?? '',
-    order: json['order'] as int? ?? 0,
+    goalByNative: _stringMap(json['goalByNative']),
+    order: (json['displayOrder'] as int?) ?? (json['order'] as int? ?? 0),
     lessonIds: (json['lessonIds'] as List<dynamic>? ?? const []).cast<String>(),
   );
 }
@@ -522,7 +645,9 @@ class CurriculumCourse {
         unitIds: (json['unitIds'] as List<dynamic>? ?? const []).cast<String>(),
         isComingSoon: json['isComingSoon'] as bool? ?? false,
         units: (json['units'] as List<dynamic>? ?? const [])
-            .map((item) => CurriculumUnit.fromJson(item as Map<String, dynamic>))
+            .map(
+              (item) => CurriculumUnit.fromJson(item as Map<String, dynamic>),
+            )
             .toList(growable: false),
       );
 }
@@ -548,9 +673,7 @@ class CurriculumCatalog {
         .where(
           (course) =>
               course.languageCode == languageCode &&
-              (nicheId == null ||
-                  nicheId.isEmpty ||
-                  course.nicheId == nicheId),
+              (nicheId == null || nicheId.isEmpty || course.nicheId == nicheId),
         )
         .toList(growable: false);
   }

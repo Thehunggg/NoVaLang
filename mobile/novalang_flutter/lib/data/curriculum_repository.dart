@@ -19,19 +19,21 @@ class CurriculumRepository {
       final coursesRaw = await SharedAssetLoader.loadMap('courses.json');
       final lessonsRaw = await SharedAssetLoader.loadMap('lessons.json');
       final courseList = (coursesRaw['courses'] as List<dynamic>? ?? const [])
-          .map((item) => CurriculumCourse.fromJson(item as Map<String, dynamic>))
+          .map(
+            (item) => CurriculumCourse.fromJson(item as Map<String, dynamic>),
+          )
           .toList(growable: false);
       final lessonList = (lessonsRaw['lessons'] as List<dynamic>? ?? const [])
-          .map((item) => CurriculumLesson.fromJson(item as Map<String, dynamic>))
+          .map(
+            (item) => CurriculumLesson.fromJson(item as Map<String, dynamic>),
+          )
           .toList(growable: false);
 
       if (courseList.isEmpty || lessonList.isEmpty) {
         throw StateError('Curriculum JSON empty');
       }
 
-      final lessonById = {
-        for (final lesson in lessonList) lesson.id: lesson,
-      };
+      final lessonById = {for (final lesson in lessonList) lesson.id: lesson};
       _cache = CurriculumCatalog(
         courses: courseList,
         lessons: lessonList,
@@ -49,9 +51,9 @@ class CurriculumRepository {
   static CurriculumCatalog? peek() => _cache;
 
   static Lesson? findLesson(String id, {String nativeLanguage = 'en'}) {
-    final fromShared = _cache?.findLesson(id)?.toLesson(
-      nativeLanguage: nativeLanguage,
-    );
+    final fromShared = _cache
+        ?.findLesson(id)
+        ?.toLesson(nativeLanguage: nativeLanguage);
     if (fromShared != null) return fromShared;
     return lessonById(id);
   }
@@ -75,10 +77,7 @@ class CurriculumRepository {
         nicheId: 'core_foundation',
       ),
       if (includeNiche)
-        ...catalog.coursesFor(
-          languageCode: languageCode,
-          nicheId: nicheId,
-        ),
+        ...catalog.coursesFor(languageCode: languageCode, nicheId: nicheId),
     ];
     // De-dupe by course id while preserving order.
     final seen = <String>{};
@@ -102,10 +101,13 @@ class CurriculumRepository {
             id: unit.id,
             title: unit.title,
             titleVi: unit.titleVi,
+            titleByNative: unit.titleByNative,
             levelCode: unit.levelCode,
             trackId: unit.trackId,
             goal: unit.goal,
             goalVi: unit.goalVi,
+            goalByNative: unit.goalByNative,
+            displayOrder: unit.order,
             lessons: lessons,
           ),
         );

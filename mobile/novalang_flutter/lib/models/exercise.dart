@@ -1,13 +1,21 @@
+import '../core/utils/answer_normalize.dart';
+
 enum ExerciseType {
+  characterCard,
   chooseMeaning,
   chooseReading,
   chooseVocabulary,
   chooseCorrectAnswer,
+  fillMissingCharacter,
+  soundToCharacter,
+  nextInSequence,
+  chooseCorrectPair,
   matchPairs,
   typeAnswer,
   fillBlank,
   listenAndChoose,
   listeningGapFill,
+  plusListeningVocabularyChallenge,
   controlledAiQa,
   aiFeedbackReview,
 }
@@ -19,6 +27,110 @@ class MatchPair {
   final String right;
 }
 
+class LearnCard {
+  const LearnCard({
+    required this.id,
+    required this.character,
+    required this.reading,
+    required this.speechText,
+    required this.example,
+    this.exampleReading,
+    this.exampleRomanization,
+    this.exampleSpeechText,
+    this.meaningByNative = const {},
+    this.audioCardLabelByNative = const {},
+    this.feedbackByNative = const {},
+  });
+
+  final String id;
+  final String character;
+  final String reading;
+  final String speechText;
+  final String example;
+  final String? exampleReading;
+  final String? exampleRomanization;
+  final String? exampleSpeechText;
+  final Map<String, String> meaningByNative;
+  final Map<String, String> audioCardLabelByNative;
+  final Map<String, String> feedbackByNative;
+
+  String localizedMeaning(String nativeLanguageCode) =>
+      meaningByNative[nativeLanguageCode] ?? meaningByNative['en'] ?? '';
+
+  String localizedAudioLabel(String nativeLanguageCode) =>
+      audioCardLabelByNative[nativeLanguageCode] ??
+      audioCardLabelByNative['en'] ??
+      'Listen';
+
+  String localizedFeedback(String nativeLanguageCode) =>
+      feedbackByNative[nativeLanguageCode] ?? feedbackByNative['en'] ?? '';
+}
+
+class ExerciseSubQuestion {
+  const ExerciseSubQuestion({
+    required this.id,
+    required this.prompt,
+    required this.speechText,
+    required this.options,
+    required this.correctAnswer,
+    this.prompts = const {},
+    this.visibleBeforeAnswer,
+    this.visibleBeforeAnswerByNative = const {},
+    this.audioCardLabel,
+    this.audioCardLabelByNative = const {},
+    this.hideSpeechLabel = true,
+    this.revealAfterAnswer,
+    this.revealAfterAnswerByNative = const {},
+    this.feedbackCorrectByNative = const {},
+    this.feedbackWrongByNative = const {},
+  });
+
+  final String id;
+  final String prompt;
+  final Map<String, String> prompts;
+  final String speechText;
+  final String? visibleBeforeAnswer;
+  final Map<String, String> visibleBeforeAnswerByNative;
+  final String? audioCardLabel;
+  final Map<String, String> audioCardLabelByNative;
+  final bool hideSpeechLabel;
+  final List<String> options;
+  final String correctAnswer;
+  final String? revealAfterAnswer;
+  final Map<String, String> revealAfterAnswerByNative;
+  final Map<String, String> feedbackCorrectByNative;
+  final Map<String, String> feedbackWrongByNative;
+
+  String localizedPrompt(String nativeLanguageCode) =>
+      prompts[nativeLanguageCode] ?? prompts['en'] ?? prompt;
+
+  String localizedVisibleBeforeAnswer(String nativeLanguageCode) =>
+      visibleBeforeAnswerByNative[nativeLanguageCode] ??
+      visibleBeforeAnswerByNative['en'] ??
+      visibleBeforeAnswer ??
+      '';
+
+  String localizedAudioCardLabel(String nativeLanguageCode) =>
+      audioCardLabelByNative[nativeLanguageCode] ??
+      audioCardLabelByNative['en'] ??
+      audioCardLabel ??
+      'Listen';
+
+  String localizedRevealAfterAnswer(String nativeLanguageCode) =>
+      revealAfterAnswerByNative[nativeLanguageCode] ??
+      revealAfterAnswerByNative['en'] ??
+      revealAfterAnswer ??
+      '';
+
+  String localizedFeedback(String nativeLanguageCode, bool correct) {
+    final map = correct ? feedbackCorrectByNative : feedbackWrongByNative;
+    return map[nativeLanguageCode] ?? map['en'] ?? '';
+  }
+
+  bool check(String answer, {NormalizeAnswerOptions options = const NormalizeAnswerOptions()}) =>
+      answersMatch(answer, correctAnswer, options: options);
+}
+
 class Exercise {
   const Exercise({
     required this.id,
@@ -27,7 +139,16 @@ class Exercise {
     this.promptVi,
     this.prompts = const {},
     this.displayText,
+    this.displayTextByNative = const {},
     this.speechText,
+    this.hideSpeechLabel = false,
+    this.audioCardLabel,
+    this.audioCardLabelByNative = const {},
+    this.cards = const [],
+    this.subQuestions = const [],
+    this.revealAfterAnswer,
+    this.feedbackCorrectByNative = const {},
+    this.feedbackWrongByNative = const {},
     this.options = const [],
     this.optionsVi = const [],
     this.optionsByNative = const {},
@@ -38,11 +159,14 @@ class Exercise {
     this.pairs = const [],
     this.pairsVi = const [],
     this.pairsByNative = const {},
+    this.instructionByNative = const {},
     this.plusOnly = false,
     this.usesAi = false,
     this.reusesPreviousAiFeedback = false,
     this.triggerExtraAiCallByDefault = false,
     this.maxUserChars = 400,
+    this.caseInsensitive = false,
+    this.ignorePunctuation = false,
   });
 
   final String id;
@@ -51,7 +175,16 @@ class Exercise {
   final String? promptVi;
   final Map<String, String> prompts;
   final String? displayText;
+  final Map<String, String> displayTextByNative;
   final String? speechText;
+  final bool hideSpeechLabel;
+  final String? audioCardLabel;
+  final Map<String, String> audioCardLabelByNative;
+  final List<LearnCard> cards;
+  final List<ExerciseSubQuestion> subQuestions;
+  final String? revealAfterAnswer;
+  final Map<String, String> feedbackCorrectByNative;
+  final Map<String, String> feedbackWrongByNative;
   final List<String> options;
   final List<String> optionsVi;
   final Map<String, List<String>> optionsByNative;
@@ -62,11 +195,19 @@ class Exercise {
   final List<MatchPair> pairs;
   final List<MatchPair> pairsVi;
   final Map<String, List<MatchPair>> pairsByNative;
+  final Map<String, String> instructionByNative;
   final bool plusOnly;
   final bool usesAi;
   final bool reusesPreviousAiFeedback;
   final bool triggerExtraAiCallByDefault;
   final int maxUserChars;
+  final bool caseInsensitive;
+  final bool ignorePunctuation;
+
+  NormalizeAnswerOptions get normalizeOptions => NormalizeAnswerOptions(
+        caseInsensitive: caseInsensitive,
+        ignorePunctuation: ignorePunctuation,
+      );
 
   List<String> localizedOptions(String nativeLanguageCode) {
     final byNative = optionsByNative[nativeLanguageCode];
@@ -98,7 +239,31 @@ class Exercise {
     return prompt;
   }
 
+  String localizedInstruction(String nativeLanguageCode) =>
+      instructionByNative[nativeLanguageCode] ??
+      instructionByNative['en'] ??
+      '';
+
+  String localizedDisplayText(String nativeLanguageCode) =>
+      displayTextByNative[nativeLanguageCode] ??
+      displayTextByNative['en'] ??
+      displayText ??
+      '';
+
+  String localizedAudioCardLabel(String nativeLanguageCode) =>
+      audioCardLabelByNative[nativeLanguageCode] ??
+      audioCardLabelByNative['en'] ??
+      audioCardLabel ??
+      'Listen';
+
+  String localizedFeedback(String nativeLanguageCode, bool correct) {
+    final map = correct ? feedbackCorrectByNative : feedbackWrongByNative;
+    return map[nativeLanguageCode] ?? map['en'] ?? '';
+  }
+
   bool check(Object answer, String nativeLanguageCode) {
+    final opts = normalizeOptions;
+    if (type == ExerciseType.characterCard) return true;
     if (type == ExerciseType.matchPairs) {
       final expected = localizedPairs(nativeLanguageCode);
       final submitted = answer is Map<String, String>
@@ -106,8 +271,11 @@ class Exercise {
           : <String, String>{};
       if (submitted.length != expected.length) return false;
       return expected.every(
-        (pair) =>
-            normalize(submitted[pair.left] ?? '') == normalize(pair.right),
+        (pair) => answersMatch(
+          submitted[pair.left],
+          pair.right,
+          options: opts,
+        ),
       );
     }
     if (type == ExerciseType.listeningGapFill) {
@@ -115,7 +283,7 @@ class Exercise {
       if (answer is List) {
         if (answer.length != accepted.length) return false;
         for (var i = 0; i < accepted.length; i += 1) {
-          if (normalize(answer[i].toString()) != normalize(accepted[i])) {
+          if (!answersMatch(answer[i].toString(), accepted[i], options: opts)) {
             return false;
           }
         }
@@ -124,7 +292,7 @@ class Exercise {
       final parts = answer.toString().split('|');
       if (parts.length != accepted.length) return false;
       for (var i = 0; i < accepted.length; i += 1) {
-        if (normalize(parts[i]) != normalize(accepted[i])) return false;
+        if (!answersMatch(parts[i], accepted[i], options: opts)) return false;
       }
       return true;
     }
@@ -134,87 +302,16 @@ class Exercise {
       return text.isNotEmpty && text.length <= maxUserChars;
     }
     final accepted = localizedAccepted(nativeLanguageCode);
-    final value = normalize(answer.toString());
-    return accepted.any((item) => normalize(item) == value);
+    final value = normalizeAnswer(answer.toString(), options: opts);
+    return accepted.any(
+      (item) => normalizeAnswer(item, options: opts) == value,
+    );
   }
 
-  static String normalize(String value) {
-    const accents = {
-      'à': 'a',
-      'á': 'a',
-      'ả': 'a',
-      'ã': 'a',
-      'ạ': 'a',
-      'ă': 'a',
-      'ằ': 'a',
-      'ắ': 'a',
-      'ẳ': 'a',
-      'ẵ': 'a',
-      'ặ': 'a',
-      'â': 'a',
-      'ầ': 'a',
-      'ấ': 'a',
-      'ẩ': 'a',
-      'ẫ': 'a',
-      'ậ': 'a',
-      'è': 'e',
-      'é': 'e',
-      'ẻ': 'e',
-      'ẽ': 'e',
-      'ẹ': 'e',
-      'ê': 'e',
-      'ề': 'e',
-      'ế': 'e',
-      'ể': 'e',
-      'ễ': 'e',
-      'ệ': 'e',
-      'ì': 'i',
-      'í': 'i',
-      'ỉ': 'i',
-      'ĩ': 'i',
-      'ị': 'i',
-      'ò': 'o',
-      'ó': 'o',
-      'ỏ': 'o',
-      'õ': 'o',
-      'ọ': 'o',
-      'ô': 'o',
-      'ồ': 'o',
-      'ố': 'o',
-      'ổ': 'o',
-      'ỗ': 'o',
-      'ộ': 'o',
-      'ơ': 'o',
-      'ờ': 'o',
-      'ớ': 'o',
-      'ở': 'o',
-      'ỡ': 'o',
-      'ợ': 'o',
-      'ù': 'u',
-      'ú': 'u',
-      'ủ': 'u',
-      'ũ': 'u',
-      'ụ': 'u',
-      'ư': 'u',
-      'ừ': 'u',
-      'ứ': 'u',
-      'ử': 'u',
-      'ữ': 'u',
-      'ự': 'u',
-      'ỳ': 'y',
-      'ý': 'y',
-      'ỷ': 'y',
-      'ỹ': 'y',
-      'ỵ': 'y',
-      'đ': 'd',
-    };
-    return value
-        .toLowerCase()
-        .split('')
-        .map((char) => accents[char] ?? char)
-        .join()
-        .replaceAll(RegExp(r'[.!?。、「」“”’]'), '')
-        .trim()
-        .replaceAll(RegExp(r'\s+'), ' ');
-  }
+  /// Shared Unicode-safe answer normalization (does not strip accents).
+  static String normalize(
+    String value, {
+    NormalizeAnswerOptions options = const NormalizeAnswerOptions(),
+  }) =>
+      normalizeAnswer(value, options: options);
 }

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import type { Exercise, SupportedUILanguage } from "../../types/index";
 import { useApp } from "../../context/AppContext";
 import { useTranslation } from "../../i18n/useTranslation";
-import { checkAnswer, getExerciseHint, getExerciseOptions, isMatchPairExercise } from "../../utils/checkAnswer";
+import { checkAnswer, getExerciseHint, getExerciseOptions, isMatchPairExercise, normalizeUserAnswer } from "../../utils/checkAnswer";
 import { Button } from "../ui/Button";
 import { SpeakerButton } from "../ui/SpeakerButton";
 
@@ -12,6 +12,10 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
   const [selected, setSelected] = useState<string[]>([]);
   const [matches, setMatches] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [subQuestionIndex, setSubQuestionIndex] = useState(0);
+  const [subAnswer, setSubAnswer] = useState("");
+  const [subChecked, setSubChecked] = useState(false);
+  const [subResults, setSubResults] = useState<boolean[]>([]);
   const { t } = useTranslation();
   const { progress } = useApp();
 
@@ -20,6 +24,10 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
     setSelected([]);
     setMatches({});
     setSubmitted(false);
+    setSubQuestionIndex(0);
+    setSubAnswer("");
+    setSubChecked(false);
+    setSubResults([]);
   }, [exercise.id]);
 
   const submit = (answer: string | string[]) => {
@@ -28,12 +36,105 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
     onAnswer(checkAnswer(answer, exercise, progress.nativeLanguage).correct, answer);
   };
 
-  const choiceTypes = ["multiple_choice", "fill_blank", "listening_placeholder", "choose_correct_sound", "choose_correct_letter", "choose_word_starting_with_letter", "choose_word_starting_with_kana", "choose_correct_reading", "choose_meaning", "choose_correct_sentence", "read_short_sentence", "answer_question", "choose_summary", "listen_and_choose_meaning", "listen_and_choose_sentence", "match_character_to_pronunciation", "dialogue_choice"];
+  const locale = progress.nativeLanguage as SupportedUILanguage;
+  const localizedText = (map: Partial<Record<string, string>> | undefined, fallback = "") => map?.[progress.nativeLanguage] ?? map?.en ?? fallback;
+  const localizedList = (map: Partial<Record<string, string[]>> | undefined, fallback: string[] = []) => map?.[progress.nativeLanguage] ?? map?.en ?? fallback;
+  const choiceTypes = ["multiple_choice", "fill_blank", "fill_missing_character", "sound_to_character", "next_in_sequence", "choose_correct_pair", "listening_placeholder", "choose_correct_sound", "choose_correct_letter", "choose_word_starting_with_letter", "choose_word_starting_with_kana", "choose_correct_reading", "choose_meaning", "choose_correct_sentence", "read_short_sentence", "answer_question", "choose_summary", "listen_and_choose_meaning", "listen_and_choose_sentence", "match_character_to_pronunciation", "dialogue_choice"];
   const isChoice = choiceTypes.includes(exercise.type);
   const options = [...new Set(getExerciseOptions(exercise, progress.nativeLanguage) ?? [])];
   const hint = getExerciseHint(exercise, progress.nativeLanguage);
-  const pairs = exercise.pairTranslations?.[progress.nativeLanguage as SupportedUILanguage] ?? exercise.pairTranslations?.en ?? exercise.pairs ?? [];
+  const pairs = exercise.pairTranslations?.[locale] ?? exercise.pairTranslations?.en ?? exercise.pairs ?? [];
   const pairOptions = [...new Set(pairs.map((pair) => pair.right))];
+
+  if (exercise.type === "character_card") {
+    return (
+      <div className="space-y-4">
+        {exercise.cards?.map((card) => (
+          <div key={card.id} className="rounded-2xl border border-white/10 bg-white/[.04] p-4">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="font-display text-5xl font-black text-white">{card.character}</p>
+                <p className="mt-2 text-sm font-black text-cyan-300">{card.reading}</p>
+              </div>
+              <SpeakerButton text={card.speechText} languageCode={exercise.targetLanguage} size="sm" label={localizedText(card.audioCardLabelByNative, t("playPronunciation"))} />
+            </div>
+            <div className="mt-4 rounded-xl bg-black/15 p-3">
+              <p className="text-sm"><span className="font-bold text-slate-500">{t("exampleLabel")}: </span><strong>{card.example}</strong></p>
+              {card.exampleRomanization && <p className="mt-1 text-xs font-bold text-cyan-300">{card.exampleRomanization}</p>}
+              <p className="mt-2 text-sm text-cyan-300">{localizedText(card.meaningByNative)}</p>
+            </div>
+            {localizedText(card.feedbackByNative) && <p className="mt-3 text-sm leading-6 text-slate-300">{localizedText(card.feedbackByNative)}</p>}
+          </div>
+        ))}
+        <Button className="w-full" disabled={submitted} onClick={() => submit("learned")}>{t("checkAnswer")} <Check size={17} /></Button>
+      </div>
+    );
+  }
+
+  if (exercise.type === "plus_listening_vocabulary_challenge") {
+    const subQuestions = exercise.subQuestions ?? [];
+    const current = subQuestions[subQuestionIndex];
+    if (!current) return <p className="rounded-2xl border border-amber-300/20 bg-amber-300/10 p-4 text-sm font-bold text-amber-100">{t("moreRoadmap")}</p>;
+    const currentOptions = [...new Set(localizedList(current.optionTranslations, current.options))];
+    const currentCorrect = normalizeUserAnswer(current.correctAnswer);
+    const currentIsCorrect = normalizeUserAnswer(subAnswer) === currentCorrect;
+    const reveal = localizedText(current.revealAfterAnswerTranslations, current.revealAfterAnswer);
+    const audioLabel = localizedText(
+      current.audioLabelTranslations,
+      localizedText(current.visibleBeforeAnswerTranslations, current.visibleBeforeAnswer ?? current.audioLabel ?? t("playPronunciation")),
+    );
+    const feedback = subChecked
+      ? localizedText(currentIsCorrect ? current.feedbackCorrectTranslations : current.feedbackWrongTranslations)
+      : "";
+    const finishChallenge = () => {
+      if (submitted) return;
+      const allResults = [...subResults, currentIsCorrect];
+      setSubmitted(true);
+      onAnswer(allResults.every(Boolean), allResults.map((ok, index) => `${index + 1}:${ok ? "correct" : "wrong"}`));
+    };
+
+    return (
+      <div className="space-y-4">
+        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4">
+          <div className="flex items-center gap-4">
+            <SpeakerButton text={current.audioText} languageCode={exercise.targetLanguage} size="md" label={audioLabel} />
+            <div>
+              <p className="text-xs font-black uppercase tracking-wider text-cyan-300"><Headphones className="mr-1 inline" size={13} /> {audioLabel}</p>
+              <p className="mt-1 text-sm font-bold text-slate-300">{localizedText(current.questionTranslations, current.question)}</p>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-xs font-black uppercase tracking-wider text-violet-300">Plus · {subQuestionIndex + 1}/{subQuestions.length}</p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {currentOptions.map((option) => (
+            <button key={option} disabled={subChecked || submitted} onClick={() => setSubAnswer(option)} className={`min-h-14 rounded-2xl border p-4 text-left text-sm font-extrabold transition disabled:opacity-70 ${subAnswer === option ? "border-cyan-300/50 bg-cyan-300/15 text-white" : "border-white/10 bg-white/[.045] text-slate-200 hover:border-cyan-300/40 hover:bg-cyan-300/10"}`}>
+              {option}
+            </button>
+          ))}
+        </div>
+
+        {!subChecked ? (
+          <Button className="w-full" disabled={!subAnswer || submitted} onClick={() => setSubChecked(true)}>{t("checkAnswer")} <Check size={17} /></Button>
+        ) : (
+          <div className={`rounded-2xl border p-4 ${currentIsCorrect ? "border-emerald-300/25 bg-emerald-300/10" : "border-rose-300/25 bg-rose-300/10"}`}>
+            {reveal && <p className="font-black text-white">{reveal}</p>}
+            {feedback && <p className="mt-2 text-sm leading-6 text-slate-300">{feedback}</p>}
+            {subQuestionIndex < subQuestions.length - 1 ? (
+              <Button className="mt-4 w-full" onClick={() => {
+                setSubResults((items) => [...items, currentIsCorrect]);
+                setSubQuestionIndex((value) => value + 1);
+                setSubAnswer("");
+                setSubChecked(false);
+              }}>{t("nextExercise")}</Button>
+            ) : (
+              <Button className="mt-4 w-full" disabled={submitted} onClick={finishChallenge}>{t("finishMicro")}</Button>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -42,7 +143,7 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
           <SpeakerButton text={exercise.audioText} languageCode={exercise.targetLanguage} />
           <div>
             <p className="text-xs font-black uppercase tracking-wider text-cyan-300"><Headphones className="mr-1 inline" size={13} /> {t("playPronunciation")}</p>
-            <p className="mt-1 text-lg font-black">"{exercise.audioText}"</p>
+            <p className="mt-1 text-lg font-black">{exercise.hideAudioText ? localizedText(exercise.audioLabelTranslations, exercise.audioLabel ?? t("playPronunciation")) : `"${exercise.audioText}"`}</p>
           </div>
         </div>
       )}
@@ -69,7 +170,17 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
 
       {(exercise.type === "translation" || exercise.type === "type_meaning" || exercise.type === "translate_sentence") && (
         <div>
-          <textarea value={text} onChange={(event) => setText(event.target.value)} disabled={submitted} rows={3} placeholder="..." className="w-full resize-none rounded-2xl border border-white/10 bg-black/20 p-4 text-sm font-bold text-white outline-none focus:border-cyan-300/50" />
+          <textarea
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+            disabled={submitted}
+            rows={3}
+            placeholder="..."
+            autoComplete="off"
+            spellCheck={false}
+            lang="und"
+            className="w-full resize-none rounded-2xl border border-white/10 bg-black/20 p-4 text-sm font-bold text-white outline-none focus:border-cyan-300/50"
+          />
           <Button onClick={() => submit(text)} disabled={!text.trim() || submitted} className="mt-4 w-full">{t("checkAnswer")} <Check size={17} /></Button>
         </div>
       )}

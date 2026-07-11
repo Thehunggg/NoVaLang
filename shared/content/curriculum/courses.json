@@ -25,11 +25,26 @@
           "id": "ja-core-foundation-hiragana-u1",
           "title": "Unit 1: Hiragana basics",
           "titleVi": "Unit 1: Hiragana cơ bản",
+          "titleByNative": {
+            "en": "Unit 1: Hiragana basics",
+            "vi": "Bài 1: Hiragana cơ bản",
+            "ja": "ユニット1：ひらがな基礎",
+            "ko": "유닛 1: 히라가나 기초",
+            "zh": "单元1：平假名基础"
+          },
           "levelCode": "A0",
           "trackId": "ja-core_foundation",
           "moduleId": "hiragana_starter",
           "goal": "Recognize all 46 basic hiragana characters in gojuon order.",
           "goalVi": "Nhận biết đủ 46 chữ hiragana cơ bản theo thứ tự gojuon.",
+          "goalByNative": {
+            "en": "Recognize all 46 basic hiragana characters in gojūon order.",
+            "vi": "Nhận biết đủ 46 chữ hiragana cơ bản theo thứ tự gojuon.",
+            "ja": "五十音順で46字の基本ひらがなを見分けます。",
+            "ko": "오십음도 순서로 기본 히라가나 46자를 구별합니다.",
+            "zh": "按五十音顺序识别全部46个基础平假名。"
+          },
+          "displayOrder": 1,
           "order": 1,
           "lessonIds": [
             "ja-hiragana-u1-l1",
@@ -37,7 +52,11 @@
             "ja-hiragana-u1-l3",
             "ja-hiragana-u1-l4",
             "ja-hiragana-u1-l5",
-            "ja-hiragana-u1-l6"
+            "ja-hiragana-u1-l6",
+            "ja-hiragana-u1-l7",
+            "ja-hiragana-u1-l8",
+            "ja-hiragana-u1-l9",
+            "ja-hiragana-u1-l10"
           ]
         }
       ]
@@ -63,21 +82,40 @@
       "units": [
         {
           "id": "ja-core-foundation-katakana-u4",
-          "title": "Unit 4: Katakana Basics",
-          "titleVi": "Unit 4: Katakana cơ bản",
+          "title": "Unit 2: Katakana Basics",
+          "titleVi": "Unit 2: Katakana cơ bản",
+          "titleByNative": {
+            "en": "Unit 2: Katakana basics",
+            "vi": "Bài 2: Katakana cơ bản",
+            "ja": "ユニット2：カタカナ基礎",
+            "ko": "유닛 2: 가타카나 기초",
+            "zh": "单元2：片假名基础"
+          },
           "levelCode": "A0",
           "trackId": "ja-core_foundation",
           "moduleId": "katakana_starter",
           "goal": "Recognize all 46 basic katakana characters in gojuon order.",
           "goalVi": "Nhận biết đủ 46 chữ katakana cơ bản theo thứ tự gojuon.",
-          "order": 4,
+          "goalByNative": {
+            "en": "Recognize all 46 basic katakana characters in gojūon order.",
+            "vi": "Nhận biết đủ 46 chữ katakana cơ bản theo thứ tự gojuon.",
+            "ja": "五十音順で46字の基本カタカナを見分けます。",
+            "ko": "오십음도 순서로 기본 가타카나 46자를 구별합니다.",
+            "zh": "按五十音顺序识别全部46个基础片假名。"
+          },
+          "displayOrder": 2,
+          "order": 2,
           "lessonIds": [
             "ja-katakana-u4-l1",
             "ja-katakana-u4-l2",
             "ja-katakana-u4-l3",
             "ja-katakana-u4-l4",
             "ja-katakana-u4-l5",
-            "ja-katakana-u4-l6"
+            "ja-katakana-u4-l6",
+            "ja-katakana-u4-l7",
+            "ja-katakana-u4-l8",
+            "ja-katakana-u4-l9",
+            "ja-katakana-u4-l10"
           ]
         }
       ]
@@ -105,11 +143,26 @@
           "id": "en-core-foundation-alphabet-u1",
           "title": "Unit 1: Alphabet basics",
           "titleVi": "Unit 1: Alphabet cơ bản",
+          "titleByNative": {
+            "en": "Unit 1: Alphabet basics",
+            "vi": "Bài 1: Bảng chữ cái cơ bản",
+            "ja": "ユニット1：アルファベットの基礎",
+            "ko": "유닛 1: 알파벳 기초",
+            "zh": "单元1：字母基础"
+          },
           "levelCode": "A0",
           "trackId": "en-core_foundation",
           "moduleId": "alphabet_starter",
           "goal": "Recognize English vowels and consonants as individual letters.",
           "goalVi": "Nhận biết nguyên âm và phụ âm tiếng Anh dưới dạng từng chữ cái.",
+          "goalByNative": {
+            "en": "Recognize English vowels and consonants as individual letters.",
+            "vi": "Nhận biết nguyên âm và phụ âm tiếng Anh dưới dạng từng chữ cái.",
+            "ja": "英語の母音と子音を一文字ずつ見分けます。",
+            "ko": "영어 모음과 자음을 한 글자씩 구별합니다.",
+            "zh": "逐个识别英语元音和辅音字母。"
+          },
+          "displayOrder": 1,
           "order": 1,
           "lessonIds": [
             "en-alphabet-u1-l1",
@@ -135,7 +188,7 @@
       "description": "Start with greetings for everyday English.",
       "descriptionVi": "Bắt đầu với chào hỏi tiếng Anh hàng ngày.",
       "levelCode": "A0",
-      "order": 1,
+      "order": 2,
       "unitIds": [
         "en-daily_life-greetings-u1"
       ],
@@ -150,6 +203,7 @@
           "moduleId": "greetings",
           "goal": "Use basic hello and goodbye lines in short daily talks.",
           "goalVi": "Dùng lời chào và tạm biệt cơ bản trong trò chuyện ngắn hàng ngày.",
+          "displayOrder": 1,
           "order": 1,
           "lessonIds": [
             "en-daily-greetings-u1-l1",
@@ -175,7 +229,7 @@
       "description": "Start with greetings for everyday Japanese.",
       "descriptionVi": "Bắt đầu với chào hỏi tiếng Nhật hàng ngày.",
       "levelCode": "A0",
-      "order": 1,
+      "order": 2,
       "unitIds": [
         "ja-daily_life-greetings-u1"
       ],
@@ -190,6 +244,7 @@
           "moduleId": "greetings",
           "goal": "Use basic Japanese hello and goodbye lines.",
           "goalVi": "Dùng lời chào và tạm biệt tiếng Nhật cơ bản.",
+          "displayOrder": 1,
           "order": 1,
           "lessonIds": [
             "ja-daily-greetings-u1-l1",

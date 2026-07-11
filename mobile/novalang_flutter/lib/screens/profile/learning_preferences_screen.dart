@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/utils/localization.dart';
+import '../../models/user_profile.dart';
 import '../../state/profile_provider.dart';
 import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_scaffold.dart';
@@ -89,6 +90,11 @@ class _LearningPreferencesScreenState
   }
 
   void _toggle(String id, bool selected) {
+    if (selected &&
+        selectedIds.length >= UserProfile.maxActiveTracks &&
+        !selectedIds.contains(id)) {
+      return;
+    }
     setState(() {
       if (selected) {
         selectedIds.add(id);

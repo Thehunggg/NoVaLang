@@ -1,0 +1,60 @@
+{
+  "version": "profile-v1",
+  "maxActiveTracks": 2,
+  "fields": {
+    "activeTracks": {
+      "type": "string[]",
+      "description": "Up to 2 parallel study tracks (niche or exam track ids).",
+      "maxItems": 2,
+      "examples": [["daily_life", "exam_jlpt"], ["daily_life", "exam_ielts"]]
+    },
+    "currentTrack": {
+      "type": "string",
+      "description": "Currently selected track on the Learn screen.",
+      "examples": ["daily_life", "exam_jlpt"]
+    },
+    "selectedNiches": {
+      "type": "string[]",
+      "description": "Legacy multi-select niches; synced into activeTracks (max 2)."
+    },
+    "primaryNiche": {
+      "type": "string",
+      "description": "Legacy primary niche; maps to currentTrack when currentTrack is unset."
+    }
+  },
+  "trackIdAliases": {
+    "exam_jlpt": "exam_preparation",
+    "exam_jft_basic": "exam_preparation",
+    "exam_bjt": "exam_preparation",
+    "exam_ielts": "exam_preparation",
+    "exam_toeic": "exam_preparation",
+    "exam_toefl": "exam_preparation",
+    "exam_eiken": "exam_preparation",
+    "exam_topik": "exam_preparation",
+    "exam_hsk": "exam_preparation",
+    "exam_delf": "exam_preparation",
+    "exam_dalf": "exam_preparation",
+    "exam_goethe": "exam_preparation",
+    "exam_testdaf": "exam_preparation",
+    "exam_telc": "exam_preparation",
+    "exam_dele": "exam_preparation",
+    "exam_siele": "exam_preparation",
+    "jlpt": "exam_preparation",
+    "ielts": "exam_preparation",
+    "toeic": "exam_preparation",
+    "toefl": "exam_preparation",
+    "topik": "exam_preparation",
+    "hsk": "exam_preparation",
+    "travel_hotel": "daily_life",
+    "restaurant_food_service": "daily_life"
+  },
+  "examTrackIdsByLanguage": {
+    "ja": ["exam_jlpt", "exam_jft_basic", "exam_bjt"],
+    "en": ["exam_ielts", "exam_toeic", "exam_toefl"],
+    "ko": ["exam_topik"],
+    "zh": ["exam_hsk"],
+    "fr": ["exam_delf", "exam_dalf"],
+    "de": ["exam_goethe", "exam_testdaf", "exam_telc"],
+    "es": ["exam_dele", "exam_siele"]
+  }
+}

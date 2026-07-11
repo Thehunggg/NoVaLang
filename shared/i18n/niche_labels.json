@@ -1,104 +1,171 @@
 {
   "titles": {
     "daily_life": {
-      "en": "Daily Life",
-      "vi": "Đời sống hàng ngày",
-      "ja": "日常生活"
+      "en": "Everyday Communication",
+      "vi": "Giao tiếp hằng ngày",
+      "ja": "日常コミュニケーション",
+      "ko": "일상 의사소통",
+      "zh": "日常交流"
+    },
+    "exam_preparation": {
+      "en": "Exam Preparation",
+      "vi": "Luyện thi",
+      "ja": "試験対策",
+      "ko": "시험 준비",
+      "zh": "备考"
     },
     "travel_hotel": {
       "en": "Travel & Hotel",
       "vi": "Du lịch & khách sạn",
-      "ja": "旅行・ホテル"
+      "ja": "旅行・ホテル",
+      "ko": "여행·호텔",
+      "zh": "旅行与酒店"
     },
     "restaurant_food_service": {
       "en": "Restaurant & Food Service",
       "vi": "Nhà hàng & dịch vụ ăn uống",
-      "ja": "飲食・接客"
+      "ja": "飲食・接客",
+      "ko": "식당·외식",
+      "zh": "餐饮服务"
     },
     "it_programming": {
       "en": "IT & Programming",
       "vi": "Công nghệ thông tin & lập trình",
-      "ja": "IT・プログラミング"
+      "ja": "IT・プログラミング",
+      "ko": "IT·프로그래밍",
+      "zh": "IT与编程"
     },
     "ai_data_analytics": {
       "en": "AI, Data & Analytics",
       "vi": "AI, dữ liệu & phân tích",
-      "ja": "AI・データ分析"
+      "ja": "AI・データ分析",
+      "ko": "AI·데이터 분석",
+      "zh": "AI、数据与分析"
     },
     "healthcare": {
       "en": "Healthcare",
       "vi": "Y tế & chăm sóc sức khỏe",
-      "ja": "医療・介護"
+      "ja": "医療・介護",
+      "ko": "의료·케어",
+      "zh": "医疗健康"
     },
     "business_office": {
       "en": "Business & Office",
       "vi": "Kinh doanh & văn phòng",
-      "ja": "ビジネス・オフィス"
+      "ja": "ビジネス・オフィス",
+      "ko": "비즈니스·오피스",
+      "zh": "商务与办公"
     },
     "sales_customer_service": {
       "en": "Sales & Customer Service",
       "vi": "Bán hàng & chăm sóc khách hàng",
-      "ja": "営業・カスタマーサービス"
+      "ja": "営業・カスタマーサービス",
+      "ko": "영업·고객 서비스",
+      "zh": "销售与客服"
     },
     "education_school": {
       "en": "Education & School",
       "vi": "Giáo dục & trường học",
-      "ja": "教育・学校"
+      "ja": "教育・学校",
+      "ko": "교육·학교",
+      "zh": "教育与学校"
     },
     "manufacturing_engineering": {
       "en": "Manufacturing & Engineering",
       "vi": "Sản xuất & kỹ thuật",
-      "ja": "製造・エンジニアリング"
+      "ja": "製造・エンジニアリング",
+      "ko": "제조·엔지니어링",
+      "zh": "制造与工程"
     },
     "construction_real_estate": {
       "en": "Construction & Real Estate",
       "vi": "Xây dựng & bất động sản",
-      "ja": "建設・不動産"
+      "ja": "建設・不動産",
+      "ko": "건설·부동산",
+      "zh": "建筑与房地产"
     },
     "logistics_delivery": {
       "en": "Logistics & Delivery",
       "vi": "Logistics & giao hàng",
-      "ja": "物流・配送"
+      "ja": "物流・配送",
+      "ko": "물류·배송",
+      "zh": "物流与配送"
     },
     "finance_accounting": {
       "en": "Finance & Accounting",
       "vi": "Tài chính & kế toán",
-      "ja": "金融・会計"
+      "ja": "金融・会計",
+      "ko": "금융·회계",
+      "zh": "金融与会计"
     },
     "marketing_content_creation": {
       "en": "Marketing & Content Creation",
       "vi": "Marketing & sáng tạo nội dung",
-      "ja": "マーケティング・コンテンツ"
+      "ja": "マーケティング・コンテンツ",
+      "ko": "마케팅·콘텐츠",
+      "zh": "营销与内容创作"
     },
     "environment_energy_agriculture": {
       "en": "Environment, Energy & Agriculture",
       "vi": "Môi trường, năng lượng & nông nghiệp",
-      "ja": "環境・エネルギー・農業"
+      "ja": "環境・エネルギー・農業",
+      "ko": "환경·에너지·농업",
+      "zh": "环境、能源与农业"
+    }
+  },
+  "descriptions": {
+    "daily_life": {
+      "en": "Self-introduction, shopping, travel, restaurants, family talk, phone calls, appointments, asking directions, everyday situations...",
+      "vi": "Giới thiệu bản thân, mua sắm, du lịch, nhà hàng, hỏi thăm gia đình, nghe điện thoại, đặt lịch, hỏi đường, tình huống hằng ngày...",
+      "ja": "自己紹介、買い物、旅行、レストラン、家族の話、電話、予約、道案内、日常会話...",
+      "ko": "자기소개, 쇼핑, 여행, 식당, 가족 이야기, 전화, 예약, 길 묻기, 일상 상황...",
+      "zh": "自我介绍、购物、旅行、餐厅、家庭话题、电话、预约、问路、日常场景..."
+    },
+    "exam_preparation": {
+      "en": "Exam tracks depend on your learning language (JLPT, IELTS, TOEIC, TOPIK, HSK, and more).",
+      "vi": "Các kỳ thi phụ thuộc ngôn ngữ đang học (JLPT, IELTS, TOEIC, TOPIK, HSK...).",
+      "ja": "学習言語に応じた試験対策（JLPT、IELTS、TOEIC、TOPIK、HSK など）。",
+      "ko": "학습 언어에 따른 시험 대비(JLPT, IELTS, TOEIC, TOPIK, HSK 등).",
+      "zh": "根据学习语言提供考试备考（JLPT、IELTS、TOEIC、TOPIK、HSK 等）。"
     }
   },
   "categories": {
     "Daily Communication": {
-      "en": "Daily Communication",
+      "en": "Everyday Communication",
       "vi": "Giao tiếp hằng ngày",
-      "ja": "日常コミュニケーション"
+      "ja": "日常コミュニケーション",
+      "ko": "일상 의사소통",
+      "zh": "日常交流"
+    },
+    "Exam Preparation": {
+      "en": "Exam Preparation",
+      "vi": "Luyện thi",
+      "ja": "試験対策",
+      "ko": "시험 준비",
+      "zh": "备考"
     },
     "Career / Specialized Fields": {
       "en": "Career / Specialized Fields",
       "vi": "Nghề nghiệp / Lĩnh vực chuyên môn",
-      "ja": "仕事・専門分野"
+      "ja": "仕事・専門分野",
+      "ko": "직업 / 전문 분야",
+      "zh": "职业 / 专业领域"
     }
   },
   "legacyIdMap": {
     "everyday": "daily_life",
-    "travel": "travel_hotel",
-    "shopping": "restaurant_food_service",
+    "travel": "daily_life",
+    "travel_hotel": "daily_life",
+    "shopping": "daily_life",
+    "restaurant_food_service": "daily_life",
     "culture": "daily_life",
     "social": "daily_life",
-    "jlpt": "daily_life",
-    "toeic": "daily_life",
-    "ielts": "daily_life",
-    "toefl": "daily_life",
-    "other_exams": "daily_life",
+    "jlpt": "exam_preparation",
+    "toeic": "exam_preparation",
+    "ielts": "exam_preparation",
+    "toefl": "exam_preparation",
+    "other_exams": "exam_preparation",
+    "exam": "exam_preparation",
     "business": "business_office",
     "it": "it_programming",
     "engineering": "manufacturing_engineering",

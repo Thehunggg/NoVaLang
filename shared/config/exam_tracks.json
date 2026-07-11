@@ -1,159 +1,376 @@
 {
   "ja": [
     {
-      "id": "ja-kana-starter",
-      "language": "ja",
-      "title": "Kana Starter",
-      "description": "Hiragana, katakana signals, basic sounds, and first words.",
-      "trackType": "exam",
-      "examTrack": "JLPT",
-      "examLevel": "KANA_STARTER",
-      "levelId": "A0"
+      "id": "exam_jlpt",
+      "learningLanguage": "ja",
+      "examCode": "JLPT",
+      "title": {
+        "en": "JLPT",
+        "vi": "JLPT",
+        "ja": "JLPT",
+        "ko": "JLPT",
+        "zh": "JLPT"
+      },
+      "shortDescription": {
+        "en": "Japanese-Language Proficiency Test (N5–N1).",
+        "vi": "Kỳ thi năng lực tiếng Nhật JLPT (N5–N1).",
+        "ja": "日本語能力試験（N5〜N1）。",
+        "ko": "일본어능력시험 JLPT(N5–N1).",
+        "zh": "日本语能力测试 JLPT（N5–N1）。"
+      },
+      "iconKey": "graduation_cap",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 1,
+      "trackType": "exam"
     },
     {
-      "id": "ja-jlpt-n5",
-      "language": "ja",
-      "title": "JLPT N5",
-      "description": "Vocabulary, kanji, grammar, reading, listening, mini tests, and mistake review.",
-      "trackType": "exam",
-      "examTrack": "JLPT",
-      "examLevel": "JLPT_N5",
-      "levelId": "A1_1"
+      "id": "exam_jft_basic",
+      "learningLanguage": "ja",
+      "examCode": "JFT-Basic",
+      "title": {
+        "en": "JFT-Basic",
+        "vi": "JFT-Basic",
+        "ja": "JFT-Basic",
+        "ko": "JFT-Basic",
+        "zh": "JFT-Basic"
+      },
+      "shortDescription": {
+        "en": "Japan Foundation Test for Basic Japanese.",
+        "vi": "Bài thi tiếng Nhật cơ bản của Japan Foundation.",
+        "ja": "国際交流基金日本語基礎テスト。",
+        "ko": "일본국제교류기금 기초 일본어 시험.",
+        "zh": "日本国际交流基金会基础日语考试。"
+      },
+      "iconKey": "chat_bubbles",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 2,
+      "trackType": "exam"
     },
     {
-      "id": "ja-jlpt-n4",
-      "language": "ja",
-      "title": "JLPT N4",
-      "description": "Coming soon after the N5 sample track is stable.",
-      "trackType": "exam",
-      "examTrack": "JLPT",
-      "examLevel": "JLPT_N4",
-      "levelId": "A2_1",
-      "comingSoon": true
-    },
-    {
-      "id": "ja-jlpt-n3",
-      "language": "ja",
-      "title": "JLPT N3",
-      "description": "Coming soon.",
-      "trackType": "exam",
-      "examTrack": "JLPT",
-      "examLevel": "JLPT_N3",
-      "levelId": "B1_1",
-      "comingSoon": true
-    },
-    {
-      "id": "ja-jlpt-n2",
-      "language": "ja",
-      "title": "JLPT N2",
-      "description": "Coming soon.",
-      "trackType": "exam",
-      "examTrack": "JLPT",
-      "examLevel": "JLPT_N2",
-      "levelId": "B2",
-      "comingSoon": true
-    },
-    {
-      "id": "ja-jlpt-n1",
-      "language": "ja",
-      "title": "JLPT N1",
-      "description": "Roadmap placeholder.",
-      "trackType": "exam",
-      "examTrack": "JLPT",
-      "examLevel": "JLPT_N1",
-      "comingSoon": true
+      "id": "exam_bjt",
+      "learningLanguage": "ja",
+      "examCode": "BJT",
+      "title": {
+        "en": "BJT",
+        "vi": "BJT",
+        "ja": "BJTビジネス日本語",
+        "ko": "BJT",
+        "zh": "BJT"
+      },
+      "shortDescription": {
+        "en": "Business Japanese Proficiency Test.",
+        "vi": "Kỳ thi tiếng Nhật thương mại BJT.",
+        "ja": "ビジネス日本語能力テスト。",
+        "ko": "비즈니스 일본어 능력 시험.",
+        "zh": "商务日语能力测试。"
+      },
+      "iconKey": "briefcase",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 3,
+      "trackType": "exam"
     }
   ],
   "en": [
     {
-      "id": "en-general",
-      "language": "en",
-      "title": "General English",
-      "description": "General English foundations and CEFR-style progress.",
-      "trackType": "general",
-      "examLevel": "GENERAL_ENGLISH",
-      "levelId": "A0"
+      "id": "exam_ielts",
+      "learningLanguage": "en",
+      "examCode": "IELTS",
+      "title": {
+        "en": "IELTS",
+        "vi": "IELTS",
+        "ja": "IELTS",
+        "ko": "IELTS",
+        "zh": "IELTS"
+      },
+      "shortDescription": {
+        "en": "International English Language Testing System.",
+        "vi": "Hệ thống kiểm tra tiếng Anh quốc tế IELTS.",
+        "ja": "国際英語能力試験 IELTS。",
+        "ko": "국제 영어 시험 IELTS.",
+        "zh": "国际英语语言测试系统 IELTS。"
+      },
+      "iconKey": "graduation_cap",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 1,
+      "trackType": "exam"
     },
     {
-      "id": "en-toeic",
-      "language": "en",
-      "title": "TOEIC",
-      "description": "Coming soon.",
-      "trackType": "exam",
-      "examTrack": "TOEIC",
-      "examLevel": "TOEIC",
-      "comingSoon": true
+      "id": "exam_toeic",
+      "learningLanguage": "en",
+      "examCode": "TOEIC",
+      "title": {
+        "en": "TOEIC",
+        "vi": "TOEIC",
+        "ja": "TOEIC",
+        "ko": "TOEIC",
+        "zh": "TOEIC"
+      },
+      "shortDescription": {
+        "en": "Test of English for International Communication.",
+        "vi": "Bài thi tiếng Anh giao tiếp quốc tế TOEIC.",
+        "ja": "国際コミュニケーション英語能力テスト。",
+        "ko": "국제 커뮤니케이션 영어 시험 TOEIC.",
+        "zh": "国际交流英语考试 TOEIC。"
+      },
+      "iconKey": "headset",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 2,
+      "trackType": "exam"
     },
     {
-      "id": "en-ielts",
-      "language": "en",
-      "title": "IELTS",
-      "description": "Coming soon.",
-      "trackType": "exam",
-      "examTrack": "IELTS",
-      "examLevel": "IELTS",
-      "comingSoon": true
+      "id": "exam_toefl",
+      "learningLanguage": "en",
+      "examCode": "TOEFL",
+      "title": {
+        "en": "TOEFL",
+        "vi": "TOEFL",
+        "ja": "TOEFL",
+        "ko": "TOEFL",
+        "zh": "TOEFL"
+      },
+      "shortDescription": {
+        "en": "Test of English as a Foreign Language.",
+        "vi": "Bài thi tiếng Anh như ngôn ngữ nước ngoài TOEFL.",
+        "ja": "英語を外国語として測る TOEFL。",
+        "ko": "외국어로서의 영어 시험 TOEFL.",
+        "zh": "作为外语的英语考试 TOEFL。"
+      },
+      "iconKey": "school",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 3,
+      "trackType": "exam"
+    }
+  ],
+  "ko": [
+    {
+      "id": "exam_topik",
+      "learningLanguage": "ko",
+      "examCode": "TOPIK",
+      "title": {
+        "en": "TOPIK",
+        "vi": "TOPIK",
+        "ja": "TOPIK",
+        "ko": "TOPIK",
+        "zh": "TOPIK"
+      },
+      "shortDescription": {
+        "en": "Test of Proficiency in Korean.",
+        "vi": "Kỳ thi năng lực tiếng Hàn TOPIK.",
+        "ja": "韓国語能力試験 TOPIK。",
+        "ko": "한국어능력시험 TOPIK.",
+        "zh": "韩国语能力考试 TOPIK。"
+      },
+      "iconKey": "graduation_cap",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 1,
+      "trackType": "exam"
+    }
+  ],
+  "zh": [
+    {
+      "id": "exam_hsk",
+      "learningLanguage": "zh",
+      "examCode": "HSK",
+      "title": {
+        "en": "HSK",
+        "vi": "HSK",
+        "ja": "HSK",
+        "ko": "HSK",
+        "zh": "HSK"
+      },
+      "shortDescription": {
+        "en": "Chinese Proficiency Test (Hanyu Shuiping Kaoshi).",
+        "vi": "Kỳ thi năng lực tiếng Trung HSK.",
+        "ja": "中国語検定 HSK。",
+        "ko": "중국어능력시험 HSK.",
+        "zh": "汉语水平考试 HSK。"
+      },
+      "iconKey": "graduation_cap",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 1,
+      "trackType": "exam"
+    }
+  ],
+  "fr": [
+    {
+      "id": "exam_delf",
+      "learningLanguage": "fr",
+      "examCode": "DELF",
+      "title": {
+        "en": "DELF",
+        "vi": "DELF",
+        "ja": "DELF",
+        "ko": "DELF",
+        "zh": "DELF"
+      },
+      "shortDescription": {
+        "en": "Diplôme d'études en langue française.",
+        "vi": "Chứng chỉ tiếng Pháp DELF.",
+        "ja": "フランス語学力資格 DELF。",
+        "ko": "프랑스어 자격증 DELF.",
+        "zh": "法语学习文凭 DELF。"
+      },
+      "iconKey": "graduation_cap",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 1,
+      "trackType": "exam"
     },
     {
-      "id": "en-toefl",
-      "language": "en",
-      "title": "TOEFL",
-      "description": "Coming soon.",
-      "trackType": "exam",
-      "examTrack": "TOEFL",
-      "examLevel": "TOEFL",
-      "comingSoon": true
+      "id": "exam_dalf",
+      "learningLanguage": "fr",
+      "examCode": "DALF",
+      "title": {
+        "en": "DALF",
+        "vi": "DALF",
+        "ja": "DALF",
+        "ko": "DALF",
+        "zh": "DALF"
+      },
+      "shortDescription": {
+        "en": "Diplôme approfondi de langue française.",
+        "vi": "Chứng chỉ tiếng Pháp nâng cao DALF.",
+        "ja": "フランス語上級資格 DALF。",
+        "ko": "프랑스어 고급 자격증 DALF.",
+        "zh": "法语深入学习文凭 DALF。"
+      },
+      "iconKey": "graduation_cap",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 2,
+      "trackType": "exam"
+    }
+  ],
+  "de": [
+    {
+      "id": "exam_goethe",
+      "learningLanguage": "de",
+      "examCode": "Goethe",
+      "title": {
+        "en": "Goethe",
+        "vi": "Goethe",
+        "ja": "ゲーテ",
+        "ko": "Goethe",
+        "zh": "歌德"
+      },
+      "shortDescription": {
+        "en": "Goethe-Institut German exams.",
+        "vi": "Kỳ thi tiếng Đức Goethe-Institut.",
+        "ja": "ゲーテ・インスティトゥートのドイツ語試験。",
+        "ko": "괴테 인스티투트 독일어 시험.",
+        "zh": "歌德学院德语考试。"
+      },
+      "iconKey": "graduation_cap",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 1,
+      "trackType": "exam"
+    },
+    {
+      "id": "exam_testdaf",
+      "learningLanguage": "de",
+      "examCode": "TestDaF",
+      "title": {
+        "en": "TestDaF",
+        "vi": "TestDaF",
+        "ja": "TestDaF",
+        "ko": "TestDaF",
+        "zh": "TestDaF"
+      },
+      "shortDescription": {
+        "en": "Test of German as a Foreign Language.",
+        "vi": "Bài thi tiếng Đức như ngoại ngữ TestDaF.",
+        "ja": "外国語としてのドイツ語試験 TestDaF。",
+        "ko": "외국어로서의 독일어 시험 TestDaF.",
+        "zh": "作为外语的德语考试 TestDaF。"
+      },
+      "iconKey": "school",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 2,
+      "trackType": "exam"
+    },
+    {
+      "id": "exam_telc",
+      "learningLanguage": "de",
+      "examCode": "telc",
+      "title": {
+        "en": "telc",
+        "vi": "telc",
+        "ja": "telc",
+        "ko": "telc",
+        "zh": "telc"
+      },
+      "shortDescription": {
+        "en": "The European Language Certificates (telc).",
+        "vi": "Chứng chỉ ngôn ngữ châu Âu telc.",
+        "ja": "ヨーロッパ言語証明書 telc。",
+        "ko": "유럽 언어 자격증 telc.",
+        "zh": "欧洲语言证书 telc。"
+      },
+      "iconKey": "briefcase",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 3,
+      "trackType": "exam"
     }
   ],
   "es": [
     {
-      "id": "es-general",
-      "language": "es",
-      "title": "General Spanish",
-      "description": "General Spanish foundations and CEFR-style progress.",
-      "trackType": "general",
-      "examLevel": "GENERAL_SPANISH",
-      "levelId": "A0"
+      "id": "exam_dele",
+      "learningLanguage": "es",
+      "examCode": "DELE",
+      "title": {
+        "en": "DELE",
+        "vi": "DELE",
+        "ja": "DELE",
+        "ko": "DELE",
+        "zh": "DELE"
+      },
+      "shortDescription": {
+        "en": "Diplomas of Spanish as a Foreign Language.",
+        "vi": "Chứng chỉ tiếng Tây Ban Nha DELE.",
+        "ja": "スペイン語検定 DELE。",
+        "ko": "스페인어 자격증 DELE.",
+        "zh": "西班牙语水平证书 DELE。"
+      },
+      "iconKey": "graduation_cap",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 1,
+      "trackType": "exam"
     },
     {
-      "id": "es-dele-a1",
-      "language": "es",
-      "title": "DELE A1",
-      "description": "Coming soon.",
-      "trackType": "exam",
-      "examTrack": "DELE",
-      "examLevel": "DELE_A1",
-      "comingSoon": true
-    },
-    {
-      "id": "es-dele-a2",
-      "language": "es",
-      "title": "DELE A2",
-      "description": "Coming soon.",
-      "trackType": "exam",
-      "examTrack": "DELE",
-      "examLevel": "DELE_A2",
-      "comingSoon": true
-    },
-    {
-      "id": "es-dele-b1",
-      "language": "es",
-      "title": "DELE B1",
-      "description": "Coming soon.",
-      "trackType": "exam",
-      "examTrack": "DELE",
-      "examLevel": "DELE_B1",
-      "comingSoon": true
-    },
-    {
-      "id": "es-dele-b2",
-      "language": "es",
-      "title": "DELE B2",
-      "description": "Coming soon.",
-      "trackType": "exam",
-      "examTrack": "DELE",
-      "examLevel": "DELE_B2",
-      "comingSoon": true
+      "id": "exam_siele",
+      "learningLanguage": "es",
+      "examCode": "SIELE",
+      "title": {
+        "en": "SIELE",
+        "vi": "SIELE",
+        "ja": "SIELE",
+        "ko": "SIELE",
+        "zh": "SIELE"
+      },
+      "shortDescription": {
+        "en": "Servicio Internacional de Evaluación de la Lengua Española.",
+        "vi": "Đánh giá tiếng Tây Ban Nha quốc tế SIELE.",
+        "ja": "スペイン語国際評価サービス SIELE。",
+        "ko": "스페인어 국제 평가 SIELE.",
+        "zh": "西班牙语国际评估服务 SIELE。"
+      },
+      "iconKey": "chat_bubbles",
+      "enabled": true,
+      "comingSoon": true,
+      "displayOrder": 2,
+      "trackType": "exam"
     }
   ]
 }

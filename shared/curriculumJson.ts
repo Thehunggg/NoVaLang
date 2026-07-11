@@ -2,22 +2,23 @@ import type {
   Course,
   CourseLevel,
   DialogueLine,
+  ExamLevel,
   Exercise,
   LanguageCode,
   Lesson,
   LevelId,
   MicroLesson,
   PlacementQuestion,
+  TrackType,
   Unit,
   VocabularyItem,
+  ExamTrackOption,
 } from "./types.js";
 import coursesJson from "./generated/courses.json" with { type: "json" };
 import lessonsJson from "./generated/lessons.json" with { type: "json" };
 import catalogJson from "./generated/curriculum_catalog.json" with { type: "json" };
 import { learningLanguages } from "./languageOptions.js";
 import examTracksConfig from "./config/exam_tracks.json" with { type: "json" };
-import type { ExamTrackOption } from "./types.js";
-
 type FlatExercise = {
   id: string;
   type: string;
@@ -30,7 +31,11 @@ type FlatExercise = {
   promptVi?: string;
   prompts?: Record<string, string>;
   displayText?: string;
+  displayTextByNative?: Record<string, string>;
   speechText?: string;
+  hideSpeechLabel?: boolean;
+  audioCardLabel?: string;
+  audioCardLabelByNative?: Record<string, string>;
   options?: string[];
   optionsVi?: string[];
   optionsByNative?: Record<string, string[]>;
@@ -47,6 +52,49 @@ type FlatExercise = {
   aiMode?: string;
   maxUserChars?: number;
   openEndedChat?: boolean;
+  caseInsensitive?: boolean;
+  ignorePunctuation?: boolean;
+  allowedScript?: "any" | "latin" | "kana" | "kanji" | "hangul" | "hanzi" | "arabic" | "thai" | "devanagari" | "cyrillic";
+  cards?: Array<{
+    id: string;
+    character: string;
+    reading: string;
+    displayText?: string;
+    speechText: string;
+    example: string;
+    exampleReading?: string;
+    exampleRomanization?: string;
+    exampleSpeechText?: string;
+    meaningByNative?: Record<string, string>;
+    meaningVi?: string;
+    audioCardLabelByNative?: Record<string, string>;
+    feedbackByNative?: Record<string, string>;
+  }>;
+  subQuestions?: Array<{
+    id: string;
+    prompt?: string;
+    prompts?: Record<string, string>;
+    speechText: string;
+    visibleBeforeAnswer?: string;
+    visibleBeforeAnswerByNative?: Record<string, string>;
+    audioCardLabel?: string;
+    audioCardLabelByNative?: Record<string, string>;
+    hideSpeechLabel?: boolean;
+    options: string[];
+    optionsVi?: string[];
+    optionsByNative?: Record<string, string[]>;
+    correctAnswer: string;
+    acceptedAnswers?: string[];
+    acceptedAnswersByNative?: Record<string, string[]>;
+    revealAfterAnswer?: string;
+    revealAfterAnswerByNative?: Record<string, string>;
+    feedbackCorrectByNative?: Record<string, string>;
+    feedbackWrongByNative?: Record<string, string>;
+  }>;
+  revealAfterAnswer?: string;
+  revealAfterAnswerByNative?: Record<string, string>;
+  feedbackCorrectByNative?: Record<string, string>;
+  feedbackWrongByNative?: Record<string, string>;
 };
 
 type FlatLesson = {
@@ -56,16 +104,19 @@ type FlatLesson = {
   unitId: string;
   title: string;
   titleVi?: string;
+  titleByNative?: Record<string, string>;
   track: string;
   level: string;
   template?: string;
   description: string;
   descriptionVi?: string;
+  descriptionByNative?: Record<string, string>;
   estimatedMinutes?: number;
   comingSoon?: boolean;
   order: number;
   canDoObjective?: string;
   canDoObjectiveVi?: string;
+  canDoObjectiveByNative?: Record<string, string>;
   objectives?: string[];
   objectivesVi?: string[];
   introPoints?: string[];
@@ -127,10 +178,12 @@ type FlatUnit = {
   id: string;
   title: string;
   titleVi?: string;
+  titleByNative?: Record<string, string>;
   levelCode: string;
   trackId: string;
   goal: string;
   goalVi?: string;
+  goalByNative?: Record<string, string>;
   order: number;
   lessonIds: string[];
 };
@@ -157,10 +210,22 @@ export const flatLessons = (lessonsJson as { lessons: FlatLesson[] }).lessons;
 
 const mapExerciseType = (type: string): Exercise["type"] => {
   switch (type) {
+    case "characterCard":
+      return "character_card";
     case "chooseMeaning":
       return "choose_meaning";
     case "chooseReading":
       return "choose_correct_reading";
+    case "fillMissingCharacter":
+      return "fill_missing_character";
+    case "soundToCharacter":
+      return "sound_to_character";
+    case "nextInSequence":
+      return "next_in_sequence";
+    case "chooseCorrectPair":
+      return "choose_correct_pair";
+    case "plusListeningVocabularyChallenge":
+      return "plus_listening_vocabulary_challenge";
     case "chooseVocabulary":
     case "chooseCorrectAnswer":
       return "multiple_choice";
@@ -196,6 +261,8 @@ const mapExercise = (ex: FlatExercise, language: LanguageCode, levelId: LevelId)
     (ex.correctAnswer ? [ex.correctAnswer] : []);
   const acceptedVi =
     ex.acceptedAnswersByNative?.vi ?? ex.acceptedAnswersVi ?? acceptedEn;
+  const feedbackCorrect = ex.feedbackCorrectByNative;
+  const feedbackWrong = ex.feedbackWrongByNative;
   return {
     id: ex.id,
     type: mapExerciseType(ex.type),
@@ -211,6 +278,9 @@ const mapExercise = (ex: FlatExercise, language: LanguageCode, levelId: LevelId)
     nativeTranslation: ex.prompts?.vi ?? ex.promptVi ?? ex.prompt,
     difficulty: "easy",
     matchPairMode: isMatch ? "vocabulary_meaning" : undefined,
+    caseInsensitive: ex.caseInsensitive === true,
+    ignorePunctuation: ex.ignorePunctuation === true,
+    allowedScript: ex.allowedScript ?? "any",
     acceptedAnswers: {
       en: acceptedEn,
       vi: acceptedVi,
@@ -239,10 +309,62 @@ const mapExercise = (ex: FlatExercise, language: LanguageCode, levelId: LevelId)
       ko: ex.pairsByNative?.ko ?? ex.pairs,
       zh: ex.pairsByNative?.zh ?? ex.pairs,
     },
-    explanationTranslations: ex.explanationVi
+    explanationTranslations: feedbackCorrect ?? (ex.explanationVi
       ? { en: ex.explanation ?? "", vi: ex.explanationVi }
-      : undefined,
+      : undefined),
     audioText: ex.speechText ?? ex.displayText,
+    audioLabel: ex.audioCardLabel,
+    audioLabelTranslations: ex.audioCardLabelByNative,
+    hideAudioText: ex.hideSpeechLabel,
+    cards: ex.cards,
+    subQuestions: ex.subQuestions?.map((subQuestion) => {
+      const subOptionsEn = subQuestion.optionsByNative?.en ?? subQuestion.options;
+      const subAcceptedEn =
+        subQuestion.acceptedAnswersByNative?.en ??
+        subQuestion.acceptedAnswers ??
+        [subQuestion.correctAnswer];
+      return {
+        id: subQuestion.id,
+        question: subQuestion.prompts?.en ?? subQuestion.prompt ?? "",
+        questionTranslations: {
+          en: subQuestion.prompts?.en ?? subQuestion.prompt ?? "",
+          vi: subQuestion.prompts?.vi ?? subQuestion.prompt ?? "",
+          ja: subQuestion.prompts?.ja ?? subQuestion.prompt ?? "",
+          ko: subQuestion.prompts?.ko ?? subQuestion.prompt ?? "",
+          zh: subQuestion.prompts?.zh ?? subQuestion.prompt ?? "",
+        },
+        audioText: subQuestion.speechText,
+        audioLabel: subQuestion.audioCardLabel,
+        audioLabelTranslations: subQuestion.audioCardLabelByNative,
+        hideAudioText: subQuestion.hideSpeechLabel ?? true,
+        visibleBeforeAnswer: subQuestion.visibleBeforeAnswer,
+        visibleBeforeAnswerTranslations: subQuestion.visibleBeforeAnswerByNative,
+        options: subOptionsEn,
+        optionTranslations: {
+          en: subOptionsEn,
+          vi: subQuestion.optionsByNative?.vi ?? subQuestion.optionsVi ?? subQuestion.options,
+          ja: subQuestion.optionsByNative?.ja ?? subOptionsEn,
+          ko: subQuestion.optionsByNative?.ko ?? subOptionsEn,
+          zh: subQuestion.optionsByNative?.zh ?? subOptionsEn,
+        },
+        correctAnswer: subQuestion.correctAnswer,
+        acceptedAnswers: {
+          en: subAcceptedEn,
+          vi: subQuestion.acceptedAnswersByNative?.vi ?? subAcceptedEn,
+          ja: subQuestion.acceptedAnswersByNative?.ja ?? subAcceptedEn,
+          ko: subQuestion.acceptedAnswersByNative?.ko ?? subAcceptedEn,
+          zh: subQuestion.acceptedAnswersByNative?.zh ?? subAcceptedEn,
+        },
+        revealAfterAnswer: subQuestion.revealAfterAnswer,
+        revealAfterAnswerTranslations: subQuestion.revealAfterAnswerByNative,
+        feedbackCorrectTranslations: subQuestion.feedbackCorrectByNative,
+        feedbackWrongTranslations: subQuestion.feedbackWrongByNative,
+      };
+    }),
+    revealAfterAnswer: ex.revealAfterAnswer,
+    revealAfterAnswerTranslations: ex.revealAfterAnswerByNative,
+    feedbackCorrectTranslations: feedbackCorrect,
+    feedbackWrongTranslations: feedbackWrong,
   };
 };
 
@@ -350,6 +472,18 @@ const mapLesson = (flat: FlatLesson): Lesson => {
     flat.objectivesVi?.[0] ??
     flat.descriptionVi ??
     flat.description;
+  const titleTranslations = flat.titleByNative ?? {
+    en: flat.title,
+    vi: flat.titleVi ?? flat.title,
+  };
+  const descriptionTranslations = flat.descriptionByNative ?? {
+    en: flat.description,
+    vi: flat.descriptionVi ?? flat.description,
+  };
+  const canDoTranslations = flat.canDoObjectiveByNative ?? {
+    en: canDo,
+    vi: canDoVi,
+  };
 
   const micro: MicroLesson = {
     id: `${flat.id}-m1`,
@@ -363,15 +497,9 @@ const mapLesson = (flat: FlatLesson): Lesson => {
     order: 1,
     estimatedMinutes: flat.estimatedMinutes ?? 6,
     unlockStatus: flat.comingSoon ? "locked" : "available",
-    titleTranslations: { en: flat.title, vi: flat.titleVi ?? flat.title },
-    objectiveTranslations: {
-      en: canDo,
-      vi: canDoVi,
-    },
-    explanationTranslations: {
-      en: flat.description,
-      vi: flat.descriptionVi ?? flat.description,
-    },
+    titleTranslations,
+    objectiveTranslations: canDoTranslations,
+    explanationTranslations: descriptionTranslations,
   };
 
   const examples = [
@@ -392,19 +520,13 @@ const mapLesson = (flat: FlatLesson): Lesson => {
     unitId: flat.unitId,
     type: flat.template === "kanaLesson" ? "pronunciation" : "vocabulary",
     title: flat.title,
-    titleTranslations: { en: flat.title, vi: flat.titleVi ?? flat.title },
+    titleTranslations,
     objective: canDo,
-    objectiveTranslations: {
-      en: canDo,
-      vi: canDoVi,
-    },
+    objectiveTranslations: canDoTranslations,
     canDo,
-    canDoTranslations: { en: canDo, vi: canDoVi },
+    canDoTranslations,
     description: flat.description,
-    descriptionTranslations: {
-      en: flat.description,
-      vi: flat.descriptionVi ?? flat.description,
-    },
+    descriptionTranslations,
     microLessons: [micro],
     vocabulary,
     dialogue: dialogue.length ? dialogue : undefined,
@@ -435,8 +557,71 @@ const mapLesson = (flat: FlatLesson): Lesson => {
   };
 };
 
-const examTracksFor = (language: LanguageCode): ExamTrackOption[] =>
-  (examTracksConfig as Record<LanguageCode, ExamTrackOption[]>)[language] ?? [];
+type RawExamTrackConfig = {
+  id: string;
+  learningLanguage?: string;
+  language?: string;
+  examCode?: string;
+  examTrack?: string;
+  title?: string | Record<string, string>;
+  shortDescription?: string | Record<string, string>;
+  description?: string | Record<string, string>;
+  iconKey?: string;
+  displayOrder?: number;
+  enabled?: boolean;
+  comingSoon?: boolean;
+  trackType?: TrackType;
+  examLevel?: ExamLevel;
+  levelId?: LevelId;
+};
+
+const pickLocalized = (
+  value: string | Record<string, string> | undefined,
+  fallback: string,
+) => {
+  if (!value) return fallback;
+  if (typeof value === "string") return value;
+  return value.en ?? value.vi ?? Object.values(value)[0] ?? fallback;
+};
+
+const examTracksFor = (language: LanguageCode): ExamTrackOption[] => {
+  const raw = (examTracksConfig as Record<string, RawExamTrackConfig[]>)[language] ?? [];
+  return raw
+    .filter((track) => track.enabled !== false)
+    .slice()
+    .sort((a, b) => Number(a.displayOrder ?? 0) - Number(b.displayOrder ?? 0))
+    .slice(0, 3)
+    .map((track) => {
+      const examCode = track.examCode ?? track.examTrack ?? track.id;
+      const title = pickLocalized(track.title, examCode);
+      const description = pickLocalized(
+        track.shortDescription ?? track.description,
+        title,
+      );
+      return {
+        id: track.id,
+        language: track.learningLanguage ?? track.language ?? language,
+        learningLanguage: track.learningLanguage ?? track.language ?? language,
+        examCode,
+        title,
+        description,
+        titleByNative:
+          typeof track.title === "object" ? track.title : undefined,
+        shortDescriptionByNative:
+          typeof track.shortDescription === "object"
+            ? track.shortDescription
+            : undefined,
+        iconKey: track.iconKey,
+        displayOrder: track.displayOrder,
+        enabled: track.enabled ?? true,
+        trackType: track.trackType ?? "exam",
+        examTrack: examCode as ExamTrackOption["examTrack"],
+        examLevel: track.examLevel,
+        levelId: track.levelId,
+        comingSoon: track.comingSoon ?? false,
+      } satisfies ExamTrackOption;
+    });
+};
 
 const buildCourseForLanguage = (language: LanguageCode): Course => {
   const nicheCourses = flatCourses
@@ -449,21 +634,33 @@ const buildCourseForLanguage = (language: LanguageCode): Course => {
       return (a.order ?? 0) - (b.order ?? 0);
     });
   const lessonById = new Map(flatLessons.map((l) => [l.id, l]));
-  const units: Unit[] = nicheCourses.flatMap((course, courseIndex) =>
+  // Display Unit numbers from per-module displayOrder (never courseIndex*100 + global blueprint).
+  const units: Unit[] = nicheCourses.flatMap((course) =>
     course.units.map((unit) => {
       const lessons = unit.lessonIds
         .map((id) => lessonById.get(id))
         .filter((l): l is FlatLesson => Boolean(l))
         .map(mapLesson);
+      const displayOrder = Number(
+        (unit as { displayOrder?: number }).displayOrder ?? unit.order ?? 1,
+      );
       return {
         id: unit.id,
         language,
         levelId: toLevelId(unit.levelCode),
         title: unit.title,
+        titleTranslations: unit.titleByNative ?? {
+          en: unit.title,
+          vi: unit.titleVi ?? unit.title,
+        },
         communicationGoal: unit.goal,
+        communicationGoalTranslations: unit.goalByNative ?? {
+          en: unit.goal,
+          vi: unit.goalVi ?? unit.goal,
+        },
         description: unit.goalVi ?? unit.goal,
         estimatedMinutes: lessons.reduce((sum, l) => sum + l.durationMinutes, 0),
-        order: courseIndex * 100 + unit.order,
+        order: displayOrder,
         lessons,
         trackType: "general",
         skill: course.nicheId === "core_foundation" ? "kana" : "general",

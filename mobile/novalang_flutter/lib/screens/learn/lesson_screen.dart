@@ -27,17 +27,43 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
   bool answered = false;
   bool completed = false;
 
+  /// Shared lesson intro (vocabulary / introPoints) before Exercise 1.
+  bool showingIntro = true;
+
+  bool _hasIntroContent(Lesson lesson) =>
+      lesson.vocabulary.isNotEmpty ||
+      lesson.localizedIntroPoints('en').isNotEmpty;
+
   @override
   void initState() {
     super.initState();
     final lesson = widget.lesson;
-    if (lesson != null) {
-      final session = ref.read(profileProvider).lessonSessions[lesson.id];
-      stepIndex = (session?['currentStepIndex'] as int? ?? 0).clamp(
-        0,
-        lesson.exercises.isEmpty ? 0 : lesson.exercises.length - 1,
-      );
-      completed = session?['completedAt'] != null;
+    if (lesson == null) return;
+
+    final session = ref.read(profileProvider).lessonSessions[lesson.id];
+    completed = session?['completedAt'] != null;
+
+    if (completed) {
+      showingIntro = false;
+      stepIndex = 0;
+      return;
+    }
+
+    final introDone = session?['introCompleted'] == true;
+    final savedStep = (session?['currentStepIndex'] as int? ?? 0).clamp(
+      0,
+      lesson.exercises.isEmpty ? 0 : lesson.exercises.length - 1,
+    );
+
+    if (!_hasIntroContent(lesson)) {
+      showingIntro = false;
+      stepIndex = savedStep;
+    } else if (introDone) {
+      showingIntro = false;
+      stepIndex = savedStep;
+    } else {
+      showingIntro = true;
+      stepIndex = 0;
     }
   }
 
@@ -45,6 +71,8 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
   Widget build(BuildContext context) {
     final profile = ref.watch(profileProvider);
     final locale = profile.uiLanguageCode;
+    final nativeLocale = profile.nativeLanguageCode;
+    final learningCode = profile.learningLanguageCode;
     final lesson = widget.lesson;
     if (lesson == null) {
       return AppScaffold(
@@ -57,8 +85,11 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
       );
     }
 
+    final canGoPrevious =
+        !showingIntro && (stepIndex > 0 || _hasIntroContent(lesson));
+
     return AppScaffold(
-      title: lesson.localizedTitle(locale),
+      title: lesson.localizedTitle(nativeLocale),
       showBack: true,
       backPath: '/learn',
       selectedNavIndex: 0,
@@ -75,7 +106,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                     label: Text(L10n.text('courseBack', locale)),
                   ),
                 ),
-                if (stepIndex > 0)
+                if (canGoPrevious)
                   Expanded(
                     child: TextButton.icon(
                       onPressed: _previous,
@@ -99,8 +130,8 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                             Text(
                               getLevelDisplayName(
                                 lesson.level,
-                                profile.learningLanguageCode,
-                                nativeLanguage: profile.nativeLanguageCode,
+                                learningCode,
+                                nativeLanguage: nativeLocale,
                               ),
                               style: const TextStyle(
                                 color: Color(0xFF67E8F9),
@@ -109,12 +140,12 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              lesson.localizedTitle(locale),
+                              lesson.localizedTitle(nativeLocale),
                               style: Theme.of(context).textTheme.headlineSmall
                                   ?.copyWith(fontWeight: FontWeight.w900),
                             ),
                             const SizedBox(height: 8),
-                            Text(lesson.localizedDescription(locale)),
+                            Text(lesson.localizedDescription(nativeLocale)),
                           ],
                         ),
                       ),
@@ -122,7 +153,8 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                     ],
                   ),
                   if (profile.lessonSessions[lesson.id] != null &&
-                      !completed) ...[
+                      !completed &&
+                      !showingIntro) ...[
                     const SizedBox(height: 12),
                     Text(
                       L10n.text('resume', locale),
@@ -138,19 +170,30 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
             const SizedBox(height: 14),
             if (lesson.comingSoon)
               AppCard(child: Text(L10n.text('comingSoon', locale)))
-            else if (lesson.exercises.isEmpty)
-              _intro(context, lesson, locale)
             else if (completed)
               _completion(context, lesson, locale)
+            else if (showingIntro)
+              _intro(context, lesson, locale, nativeLocale, learningCode)
             else ...[
               LinearProgressIndicator(
                 value: (stepIndex + 1) / lesson.exercises.length,
+              ),
+              const SizedBox(height: 10),
+              Text(
+                _exerciseHeader(lesson, stepIndex, nativeLocale),
+                style: const TextStyle(
+                  color: Color(0xFF67E8F9),
+                  fontWeight: FontWeight.w900,
+                  fontSize: 13,
+                  letterSpacing: 0.2,
+                ),
               ),
               const SizedBox(height: 12),
               ExerciseCard(
                 key: ValueKey('${lesson.id}-$stepIndex'),
                 exercise: lesson.exercises[stepIndex],
-                nativeLanguageCode: locale,
+                nativeLanguageCode: nativeLocale,
+                learningLanguageCode: learningCode,
                 onChecked: (_) => setState(() => answered = true),
               ),
               const SizedBox(height: 12),
@@ -166,24 +209,41 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     );
   }
 
-  Widget _intro(BuildContext context, Lesson lesson, String locale) {
+  String _exerciseHeader(Lesson lesson, int index, String nativeLocale) {
+    final total = lesson.exercises.length;
+    final numberLabel = L10n.text(
+      'exerciseNumber',
+      nativeLocale,
+    ).replaceAll('{current}', '${index + 1}').replaceAll('{total}', '$total');
+    final title = lesson.exercises[index].localizedPrompt(nativeLocale).trim();
+    if (title.isEmpty) return numberLabel;
+    return '$numberLabel · $title';
+  }
+
+  Widget _intro(
+    BuildContext context,
+    Lesson lesson,
+    String locale,
+    String nativeLocale,
+    String learningCode,
+  ) {
     return AppCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text(
+            L10n.text('lessonIntro', locale),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w900),
+          ),
+          const SizedBox(height: 10),
           if (lesson.vocabulary.isNotEmpty) ...[
-            Text(
-              L10n.text('vocabulary', locale),
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-            const SizedBox(height: 10),
             for (final item in lesson.vocabulary)
-              _vocabCard(context, item, locale),
+              _vocabCard(context, item, locale, learningCode),
             const SizedBox(height: 8),
           ] else
-            for (final point in lesson.localizedIntroPoints(locale))
+            for (final point in lesson.localizedIntroPoints(nativeLocale))
               Padding(
                 padding: const EdgeInsets.only(bottom: 12),
                 child: Row(
@@ -206,9 +266,14 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
               ),
           const SizedBox(height: 8),
           AppButton(
-            label: L10n.text('next', locale),
+            label: lesson.exercises.isEmpty
+                ? L10n.text('next', locale)
+                : L10n.text(
+                    'startExercises',
+                    locale,
+                  ).replaceAll('{count}', '${lesson.exercises.length}'),
             icon: Icons.arrow_forward,
-            onPressed: completed ? _nextLesson : _completeIntro,
+            onPressed: _startFromIntro,
           ),
         ],
       ),
@@ -219,10 +284,12 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     BuildContext context,
     LessonVocabCard item,
     String locale,
+    String learningCode,
   ) {
     final example = item.exampleText;
     final exampleReading = item.exampleReading ?? item.exampleRomanization;
     final exampleTranslation = item.exampleTranslation;
+    final reading = item.romanization ?? item.reading;
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: DecoratedBox(
@@ -245,13 +312,17 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                           ?.copyWith(fontWeight: FontWeight.w900),
                     ),
                   ),
-                  SpeakerButton(speechText: item.speechText),
+                  SpeakerButton(
+                    speechText: item.speechText,
+                    languageCode: learningCode,
+                    uiLanguageCode: locale,
+                  ),
                 ],
               ),
-              if (item.reading != null && item.reading!.isNotEmpty) ...[
+              if (reading != null && reading.isNotEmpty) ...[
                 const SizedBox(height: 6),
                 Text(
-                  '${L10n.text('vocabReading', locale)}: ${item.reading}',
+                  '${L10n.text('vocabReading', locale)}: $reading',
                   style: const TextStyle(
                     color: Color(0xFF67E8F9),
                     fontWeight: FontWeight.w700,
@@ -308,6 +379,8 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                     ),
                     SpeakerButton(
                       speechText: item.exampleSpeechText ?? example,
+                      languageCode: learningCode,
+                      uiLanguageCode: locale,
                     ),
                   ],
                 ),
@@ -336,6 +409,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
               outlined: true,
               onPressed: () => setState(() {
                 completed = false;
+                showingIntro = _hasIntroContent(lesson);
                 stepIndex = 0;
                 answered = false;
               }),
@@ -346,10 +420,66 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
         ),
       );
 
-  void _previous() => setState(() {
-    stepIndex--;
-    answered = true;
-  });
+  void _previous() {
+    final lesson = widget.lesson!;
+    if (stepIndex > 0) {
+      setState(() {
+        stepIndex--;
+        answered = true;
+      });
+      return;
+    }
+    if (_hasIntroContent(lesson)) {
+      setState(() {
+        showingIntro = true;
+        answered = false;
+      });
+    }
+  }
+
+  Future<void> _startFromIntro() async {
+    final lesson = widget.lesson!;
+    if (lesson.exercises.isEmpty) {
+      final rewarded = await ref
+          .read(profileProvider.notifier)
+          .completeLessonStep(
+            lessonId: lesson.id,
+            stepId: 'intro',
+            currentStepIndex: 0,
+            lessonComplete: true,
+            estimatedMinutes: lesson.estimatedMinutes,
+          );
+      if (!mounted) return;
+      if (rewarded) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              L10n.text('goalReward', ref.read(profileProvider).uiLanguageCode),
+            ),
+          ),
+        );
+      }
+      setState(() => completed = true);
+      _nextLesson();
+      return;
+    }
+
+    await ref
+        .read(profileProvider.notifier)
+        .completeLessonStep(
+          lessonId: lesson.id,
+          stepId: 'intro',
+          currentStepIndex: 0,
+          lessonComplete: false,
+          estimatedMinutes: 1,
+        );
+    if (!mounted) return;
+    setState(() {
+      showingIntro = false;
+      stepIndex = 0;
+      answered = false;
+    });
+  }
 
   Future<void> _next() async {
     final lesson = widget.lesson!;
@@ -384,35 +514,9 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     });
   }
 
-  Future<void> _completeIntro() async {
-    final lesson = widget.lesson!;
-    final rewarded = await ref
-        .read(profileProvider.notifier)
-        .completeLessonStep(
-          lessonId: lesson.id,
-          stepId: 'intro',
-          currentStepIndex: 0,
-          lessonComplete: true,
-          estimatedMinutes: lesson.estimatedMinutes,
-        );
-    if (!mounted) return;
-    if (rewarded) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            L10n.text('goalReward', ref.read(profileProvider).uiLanguageCode),
-          ),
-        ),
-      );
-    }
-    setState(() => completed = true);
-    _nextLesson();
-  }
-
   void _nextLesson() {
     final lessons = ref.read(lessonProvider);
     final currentId = widget.lesson!.id;
-    // Find the next non-coming-soon lesson in the catalog.
     final index = lessons.indexWhere((l) => l.id == currentId);
     if (index >= 0) {
       for (int i = index + 1; i < lessons.length; i++) {

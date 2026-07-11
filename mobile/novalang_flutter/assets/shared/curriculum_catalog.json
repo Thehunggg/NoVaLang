@@ -64,7 +64,7 @@
     "greetings"
   ],
   "courseCount": 5,
-  "lessonCount": 30,
+  "lessonCount": 38,
   "unitCount": 5,
   "courses": [
     {
@@ -74,8 +74,8 @@
       "branch": "core_foundation",
       "moduleId": "hiragana_starter",
       "title": "Japanese · Core Foundation · Hiragana",
-      "lessonCount": 6,
-      "playableLessonCount": 6
+      "lessonCount": 10,
+      "playableLessonCount": 10
     },
     {
       "id": "ja-core_foundation-katakana",
@@ -84,8 +84,8 @@
       "branch": "core_foundation",
       "moduleId": "katakana_starter",
       "title": "Japanese · Core Foundation · Katakana",
-      "lessonCount": 6,
-      "playableLessonCount": 6
+      "lessonCount": 10,
+      "playableLessonCount": 10
     },
     {
       "id": "en-core_foundation",

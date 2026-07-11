@@ -36,7 +36,7 @@ class _LevelScreenState extends ConsumerState<LevelScreen> {
     final profile = ref.watch(profileProvider);
     final locale = profile.uiLanguageCode;
     final tracksAsync = ref.watch(
-      availableExamTracksProvider(profile.learningLanguageCode),
+      displayedExamTracksProvider(profile.learningLanguageCode),
     );
 
     return AppScaffold(
@@ -65,6 +65,8 @@ class _LevelScreenState extends ConsumerState<LevelScreen> {
         .where((track) => track.id == selectedTrackId)
         .firstOrNull;
     final selectedLevel = selectedTrack?.levelId ?? profile.levelCode;
+    // Exam track copy follows native language (vi/en/ja/ko/zh).
+    final nativeLocale = profile.nativeLanguageCode;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -111,13 +113,7 @@ class _LevelScreenState extends ConsumerState<LevelScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          track.levelId == null
-                              ? track.title
-                              : getLevelDisplayName(
-                                  track.levelId!,
-                                  profile.learningLanguageCode,
-                                  nativeLanguage: profile.nativeLanguageCode,
-                                ),
+                          _trackCardTitle(track, profile, nativeLocale),
                           style: const TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 16,
@@ -125,7 +121,7 @@ class _LevelScreenState extends ConsumerState<LevelScreen> {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          track.description,
+                          _trackCardDescription(track, nativeLocale, locale),
                           style: TextStyle(
                             color: Colors.white.withValues(alpha: 0.68),
                             fontSize: 13,
@@ -163,10 +159,37 @@ class _LevelScreenState extends ConsumerState<LevelScreen> {
     );
   }
 
+  String _trackCardTitle(
+    ExamTrack track,
+    UserProfile profile,
+    String nativeLocale,
+  ) {
+    if (track.levelId != null) {
+      return getLevelDisplayName(
+        track.levelId!,
+        profile.learningLanguageCode,
+        nativeLanguage: profile.nativeLanguageCode,
+      );
+    }
+    return track.localizedTitle(nativeLocale);
+  }
+
+  String _trackCardDescription(
+    ExamTrack track,
+    String nativeLocale,
+    String uiLocale,
+  ) {
+    final description = track.localizedDescription(nativeLocale);
+    if (!track.comingSoon) return description;
+    final soon = L10n.text('comingSoon', uiLocale);
+    if (description.isEmpty) return soon;
+    return '$description · $soon';
+  }
+
   Future<void> _saveDraft() async {
     if (!manual || selectedTrackId == null) return;
     final tracks = await ref.read(
-      availableExamTracksProvider(
+      displayedExamTracksProvider(
         ref.read(profileProvider).learningLanguageCode,
       ).future,
     );

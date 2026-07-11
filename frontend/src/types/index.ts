@@ -1,7 +1,7 @@
 export type {
   ContentItem, Course, CourseLevel, DialogueLine, Difficulty, ExampleSentence, ExamLevel, ExamTrack, ExamTrackOption, Exercise, ExerciseType,
   GrammarPoint, Language, LanguageCode, Lesson, LessonExample, LessonType, LevelId, LocalizedAnswers, LocalizedText, MatchPair, MicroLesson,
-  LearningLanguageCode, MistakeRecord, NativeLanguage, NativeLanguageCode, PlacementQuestion, PlacementResult, PracticeSet,
+  ExerciseSubQuestion, LearnCard, LearningLanguageCode, MistakeRecord, NativeLanguage, NativeLanguageCode, PlacementQuestion, PlacementResult, PracticeSet,
   PronunciationItem, QuizQuestion, ReviewedStatus, ReviewItem, SavedFlashcard, SupportedUILanguage, TrackSkill, TrackType, Unit, VocabularyItem
 } from "../../../shared/types";
 
@@ -14,6 +14,7 @@ export interface LessonSessionProgress {
   lessonId: string;
   currentStepIndex: number;
   completedStepIds: string[];
+  introCompleted?: boolean;
   completedAt?: string;
 }
 
@@ -30,6 +31,8 @@ export interface AppProgress {
   learningLanguage: LanguageCode;
   selectedNiches: string[];
   primaryNiche: string | null;
+  activeTracks: string[];
+  currentTrack: string | null;
   nicheUpdatedAt: string | null;
   levelDecisionAfterNicheChange: LevelDecisionAfterNicheChange | null;
   onboardingCompleted: boolean;

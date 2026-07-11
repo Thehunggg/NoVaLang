@@ -52,32 +52,30 @@ class ProfileNotifier extends Notifier<UserProfile> {
   Future<void> setLevel(String levelCode) => _commit(
     state.copyWith(
       levelCode: levelCode,
-      coreFoundationSkipped:
-          levelCode != 'A0' ? true : state.coreFoundationSkipped,
-      coreFoundationCompleted:
-          levelCode != 'A0' ? true : state.coreFoundationCompleted,
+      coreFoundationSkipped: levelCode != 'A0'
+          ? true
+          : state.coreFoundationSkipped,
+      coreFoundationCompleted: levelCode != 'A0'
+          ? true
+          : state.coreFoundationCompleted,
     ),
   );
   Future<void> setTrack(String track) =>
       _commit(state.copyWith(selectedTrack: track));
 
-  Future<void> setExamTrack({
-    required String trackId,
-    String? levelCode,
-  }) => _commit(
-    state.copyWith(
-      selectedTrack: trackId,
-      levelCode: levelCode ?? state.levelCode,
-      coreFoundationSkipped:
-          (levelCode ?? state.levelCode) != 'A0'
+  Future<void> setExamTrack({required String trackId, String? levelCode}) =>
+      _commit(
+        state.copyWith(
+          selectedTrack: trackId,
+          levelCode: levelCode ?? state.levelCode,
+          coreFoundationSkipped: (levelCode ?? state.levelCode) != 'A0'
               ? true
               : state.coreFoundationSkipped,
-      coreFoundationCompleted:
-          (levelCode ?? state.levelCode) != 'A0'
+          coreFoundationCompleted: (levelCode ?? state.levelCode) != 'A0'
               ? true
               : state.coreFoundationCompleted,
-    ),
-  );
+        ),
+      );
 
   Future<void> resetSession() async {
     final fresh = _templateForCurrentUser();
@@ -97,7 +95,8 @@ class ProfileNotifier extends Notifier<UserProfile> {
   }
 
   /// Mock auth is for local development only. Replace with Supabase Auth before production.
-  Future<void> signInGuest() => _signInWithTemplate(MockAuthService.guestTemplate());
+  Future<void> signInGuest() =>
+      _signInWithTemplate(MockAuthService.guestTemplate());
 
   Future<void> signInGoogleMock() =>
       _signInWithTemplate(MockAuthService.googleTemplate());
@@ -118,7 +117,9 @@ class ProfileNotifier extends Notifier<UserProfile> {
   UserProfile _templateForCurrentUser() => switch (state.authProvider) {
     'google_mock' => MockAuthService.googleTemplate(),
     'facebook_mock' => MockAuthService.facebookTemplate(),
-    'email_mock' => MockAuthService.emailTemplate(state.email ?? MockAuthService.defaultEmail),
+    'email_mock' => MockAuthService.emailTemplate(
+      state.email ?? MockAuthService.defaultEmail,
+    ),
     _ => MockAuthService.guestTemplate(),
   };
 
@@ -129,10 +130,12 @@ class ProfileNotifier extends Notifier<UserProfile> {
     state.copyWith(
       levelCode: levelCode,
       placementResultLevel: levelCode,
-      coreFoundationSkipped:
-          levelCode != 'A0' ? true : state.coreFoundationSkipped,
-      coreFoundationCompleted:
-          levelCode != 'A0' ? true : state.coreFoundationCompleted,
+      coreFoundationSkipped: levelCode != 'A0'
+          ? true
+          : state.coreFoundationSkipped,
+      coreFoundationCompleted: levelCode != 'A0'
+          ? true
+          : state.coreFoundationCompleted,
     ),
   );
 
@@ -151,6 +154,7 @@ class ProfileNotifier extends Notifier<UserProfile> {
       'lessonId': lessonId,
       'currentStepIndex': currentStepIndex,
       'completedStepIds': current['completedStepIds'] ?? <String>[],
+      'introCompleted': current['introCompleted'] == true,
       if (current['completedAt'] != null) 'completedAt': current['completedAt'],
     };
     return _commit(state.copyWith(lessonSessions: sessions));
@@ -184,6 +188,7 @@ class ProfileNotifier extends Notifier<UserProfile> {
       'lessonId': lessonId,
       'currentStepIndex': currentStepIndex,
       'completedStepIds': completed,
+      'introCompleted': stepId == 'intro' || current['introCompleted'] == true,
       if (lessonComplete) 'completedAt': DateTime.now().toIso8601String(),
     };
     final completedLessons = List<String>.from(state.completedLessonIds);
@@ -192,8 +197,8 @@ class ProfileNotifier extends Notifier<UserProfile> {
     }
     final foundationDone =
         state.coreFoundationCompleted ||
-        (completedLessons.contains('ja-hiragana-u1-l6') &&
-            completedLessons.contains('ja-katakana-u4-l6')) ||
+        (completedLessons.contains('ja-hiragana-u1-l10') &&
+            completedLessons.contains('ja-katakana-u4-l10')) ||
         completedLessons.contains('en-alphabet-u1-l6');
     await _commit(
       state.copyWith(
@@ -218,13 +223,32 @@ class ProfileNotifier extends Notifier<UserProfile> {
     String? primary, {
     String? decision,
   }) {
+    final capped = selected
+        .take(UserProfile.maxActiveTracks)
+        .toList(growable: false);
+    final activeTracks = List<String>.from(capped);
+    final currentTrack = (primary != null && activeTracks.contains(primary))
+        ? primary
+        : (activeTracks.isNotEmpty ? activeTracks.first : 'daily_life');
     return _commit(
       state.copyWith(
-        selectedNiches: selected,
-        primaryNiche: primary,
+        selectedNiches: capped,
+        primaryNiche: primary != null && activeTracks.contains(primary)
+            ? primary
+            : (activeTracks.isNotEmpty ? activeTracks.first : primary),
+        activeTracks: activeTracks,
+        currentTrack: currentTrack,
         nicheUpdatedAt: DateTime.now().toIso8601String(),
         levelDecisionAfterNicheChange: decision,
       ),
     );
+  }
+
+  Future<void> setCurrentTrack(String trackId) {
+    final tracks = state.effectiveActiveTracks;
+    if (tracks.isNotEmpty && !tracks.contains(trackId)) {
+      return Future.value();
+    }
+    return _commit(state.copyWith(currentTrack: trackId));
   }
 }

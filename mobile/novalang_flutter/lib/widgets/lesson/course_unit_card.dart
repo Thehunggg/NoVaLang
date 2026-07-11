@@ -85,16 +85,12 @@ class _CourseUnitCardState extends State<CourseUnitCard> {
                             Expanded(
                               child: Text(
                                 unit.localizedTitle(locale),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleSmall
+                                style: Theme.of(context).textTheme.titleSmall
                                     ?.copyWith(fontWeight: FontWeight.w900),
                               ),
                             ),
                             Icon(
-                              _expanded
-                                  ? Icons.expand_less
-                                  : Icons.expand_more,
+                              _expanded ? Icons.expand_less : Icons.expand_more,
                               color: Colors.white54,
                               size: 20,
                             ),
@@ -103,9 +99,7 @@ class _CourseUnitCardState extends State<CourseUnitCard> {
                         const SizedBox(height: 4),
                         Text(
                           unit.localizedGoal(locale),
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall
+                          style: Theme.of(context).textTheme.bodySmall
                               ?.copyWith(color: Colors.white70),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
@@ -130,9 +124,7 @@ class _CourseUnitCardState extends State<CourseUnitCard> {
                             const SizedBox(width: 10),
                             Text(
                               '$completedCount / $total',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelSmall
+                              style: Theme.of(context).textTheme.labelSmall
                                   ?.copyWith(color: Colors.white54),
                             ),
                           ],
@@ -153,18 +145,15 @@ class _CourseUnitCardState extends State<CourseUnitCard> {
                 index: i + 1,
                 lesson: unit.lessons[i],
                 locale: locale,
-                isCompleted: widget.completedLessonIds
-                    .contains(unit.lessons[i].id),
+                isCompleted: widget.completedLessonIds.contains(
+                  unit.lessons[i].id,
+                ),
                 onTap: unit.lessons[i].comingSoon
                     ? null
                     : () => widget.onLessonTap(unit.lessons[i]),
               ),
               if (i < unit.lessons.length - 1)
-                const Divider(
-                  color: Colors.white10,
-                  height: 1,
-                  indent: 46,
-                ),
+                const Divider(color: Colors.white10, height: 1, indent: 46),
             ],
           ],
         ],
@@ -229,9 +218,9 @@ class _LessonRow extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       lesson.localizedDescription(locale),
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.white38,
-                      ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: Colors.white38),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -243,11 +232,7 @@ class _LessonRow extends StatelessWidget {
             if (coming)
               const Icon(Icons.lock_outline, size: 16, color: Colors.white30)
             else if (isCompleted)
-              const Icon(
-                Icons.check_circle,
-                size: 18,
-                color: Color(0xFF22D3EE),
-              )
+              const Icon(Icons.check_circle, size: 18, color: Color(0xFF22D3EE))
             else
               const Icon(
                 Icons.play_circle_outline,

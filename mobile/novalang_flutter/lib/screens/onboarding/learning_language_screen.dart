@@ -104,8 +104,8 @@ class _LearningLanguageScreenState
       return Chip(label: Text(L10n.text('availableNow', locale)));
     }
     final labels = languageTracks
-        .where((track) => track.examTrack != null)
-        .map((track) => track.examTrack!)
+        .where((track) => track.isDisplayed)
+        .map((track) => track.examCode)
         .toSet()
         .join(' · ');
     if (labels.isEmpty) {
@@ -116,7 +116,8 @@ class _LearningLanguageScreenState
 
   Future<void> _choose(LanguageOption language) async {
     await ref.read(profileProvider.notifier).setLearningLanguage(language.code);
-    final tracks = await ref.read(availableExamTracksProvider(language.code).future);
+    final tracks =
+        await ref.read(displayedExamTracksProvider(language.code).future);
     if (tracks.isNotEmpty) {
       await ref.read(profileProvider.notifier).setExamTrack(
             trackId: tracks.first.id,

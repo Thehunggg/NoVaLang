@@ -268,8 +268,46 @@ const levelMeta: Record<LevelId, { title: string; description: string; cefr: str
   B2: { title: "Advanced Communication", description: "Nuance, longer reading, academic, and workplace communication.", cefr: "CEFR B2", jlpt: "JLPT N2" }
 };
 
-const examTracksFor = (language: LanguageCode): ExamTrackOption[] =>
-  (examTracksConfig as Record<LanguageCode, ExamTrackOption[]>)[language] ?? [];
+const examTracksFor = (language: LanguageCode): ExamTrackOption[] => {
+  const raw = (examTracksConfig as Record<string, Array<Record<string, unknown>>>)[language] ?? [];
+  return raw
+    .filter((track) => track.enabled !== false)
+    .slice()
+    .sort((a, b) => Number(a.displayOrder ?? 0) - Number(b.displayOrder ?? 0))
+    .slice(0, 3)
+    .map((track) => {
+      const examCode = String(track.examCode ?? track.examTrack ?? track.id ?? "");
+      const titleRaw = track.title;
+      const descRaw = track.shortDescription ?? track.description;
+      const title =
+        typeof titleRaw === "string"
+          ? titleRaw
+          : (titleRaw as Record<string, string> | undefined)?.en ?? examCode;
+      const description =
+        typeof descRaw === "string"
+          ? descRaw
+          : (descRaw as Record<string, string> | undefined)?.en ?? title;
+      return {
+        id: String(track.id ?? examCode),
+        language: String(track.learningLanguage ?? track.language ?? language),
+        learningLanguage: String(track.learningLanguage ?? track.language ?? language),
+        examCode,
+        title,
+        description,
+        titleByNative: typeof titleRaw === "object" ? (titleRaw as Record<string, string>) : undefined,
+        shortDescriptionByNative:
+          typeof descRaw === "object" ? (descRaw as Record<string, string>) : undefined,
+        iconKey: track.iconKey as string | undefined,
+        displayOrder: track.displayOrder as number | undefined,
+        enabled: (track.enabled as boolean | undefined) ?? true,
+        trackType: (track.trackType as ExamTrackOption["trackType"]) ?? "exam",
+        examTrack: examCode as ExamTrackOption["examTrack"],
+        examLevel: track.examLevel as ExamTrackOption["examLevel"],
+        levelId: track.levelId as ExamTrackOption["levelId"],
+        comingSoon: (track.comingSoon as boolean | undefined) ?? false,
+      } satisfies ExamTrackOption;
+    });
+};
 
 const makeCourse = (language: LanguageCode): Course => {
   let lessonOrder = 0;

@@ -8,6 +8,10 @@ export interface NicheOption {
   title: string;
   description: string;
   isReady: boolean;
+  iconKey?: string;
+  quickSelect?: boolean;
+  branchType?: string;
+  subtopics?: string[];
 }
 
 type LocalizedMap = Record<string, string | Record<string, string>>;
@@ -38,7 +42,9 @@ export const nicheCategory = (category: string, language: SupportedUILanguage) =
   pickLabel(categories[category], language, category);
 
 export const groupedNiches = () =>
-  nicheOptions.reduce<Record<string, NicheOption[]>>((groups, niche) => {
-    groups[niche.category] = [...(groups[niche.category] ?? []), niche];
-    return groups;
-  }, {});
+  nicheOptions
+    .filter((niche) => niche.quickSelect !== false)
+    .reduce<Record<string, NicheOption[]>>((groups, niche) => {
+      groups[niche.category] = [...(groups[niche.category] ?? []), niche];
+      return groups;
+    }, {});

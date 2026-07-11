@@ -2,106 +2,129 @@
   {
     "id": "daily_life",
     "category": "Daily Communication",
-    "title": "Daily Life",
-    "description": "Greetings, home, shopping, transport, health, and everyday conversation.",
-    "isReady": true
+    "title": "Everyday Communication",
+    "description": "Self-introduction, shopping, travel, restaurants, family talk, phone calls, appointments, asking directions, everyday situations...",
+    "isReady": true,
+    "iconKey": "chat_bubbles",
+    "quickSelect": true,
+    "subtopics": ["travel_hotel", "restaurant_food_service"]
   },
   {
-    "id": "travel_hotel",
-    "category": "Daily Communication",
-    "title": "Travel & Hotel",
-    "description": "Airport, immigration, hotels, tickets, directions, and travel help.",
-    "isReady": true
-  },
-  {
-    "id": "restaurant_food_service",
-    "category": "Daily Communication",
-    "title": "Restaurant & Food Service",
-    "description": "Ordering, allergies, recommendations, payment, and polite service phrases.",
-    "isReady": true
+    "id": "exam_preparation",
+    "category": "Exam Preparation",
+    "title": "Exam Preparation",
+    "description": "Exam tracks depend on the learning language (JLPT, IELTS, TOEIC, TOPIK, HSK, and more).",
+    "isReady": false,
+    "iconKey": "graduation_cap",
+    "quickSelect": true,
+    "branchType": "exam"
   },
   {
     "id": "it_programming",
     "category": "Career / Specialized Fields",
     "title": "IT & Programming",
     "description": "Software, tools, tickets, standups, and technical collaboration.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "code",
+    "quickSelect": true
   },
   {
     "id": "ai_data_analytics",
     "category": "Career / Specialized Fields",
     "title": "AI, Data & Analytics",
     "description": "AI, data, models, analytics, and research communication.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "brain",
+    "quickSelect": true
   },
   {
     "id": "healthcare",
     "category": "Career / Specialized Fields",
     "title": "Healthcare",
     "description": "Symptoms, care, patient communication, and medical basics.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "medical_cross",
+    "quickSelect": true
   },
   {
     "id": "business_office",
     "category": "Career / Specialized Fields",
     "title": "Business & Office",
     "description": "Meetings, email, scheduling, and professional workplace language.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "briefcase",
+    "quickSelect": true
   },
   {
     "id": "sales_customer_service",
     "category": "Career / Specialized Fields",
     "title": "Sales & Customer Service",
     "description": "Sales conversations, complaints, and customer care phrases.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "headset",
+    "quickSelect": true
   },
   {
     "id": "education_school",
     "category": "Career / Specialized Fields",
     "title": "Education & School",
     "description": "Classroom language, campus life, and academic communication.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "graduation_cap",
+    "quickSelect": true
   },
   {
     "id": "manufacturing_engineering",
     "category": "Career / Specialized Fields",
     "title": "Manufacturing & Engineering",
     "description": "Factory, process, safety, and technical engineering language.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "gear",
+    "quickSelect": true
   },
   {
     "id": "construction_real_estate",
     "category": "Career / Specialized Fields",
     "title": "Construction & Real Estate",
     "description": "Sites, housing, contracts, and property conversations.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "building",
+    "quickSelect": true
   },
   {
     "id": "logistics_delivery",
     "category": "Career / Specialized Fields",
     "title": "Logistics & Delivery",
     "description": "Shipping, warehouses, routes, and delivery communication.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "truck",
+    "quickSelect": true
   },
   {
     "id": "finance_accounting",
     "category": "Career / Specialized Fields",
     "title": "Finance & Accounting",
     "description": "Banking, invoices, budgets, and accounting basics.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "wallet",
+    "quickSelect": true
   },
   {
     "id": "marketing_content_creation",
     "category": "Career / Specialized Fields",
     "title": "Marketing & Content Creation",
     "description": "Campaigns, social content, branding, and creative briefs.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "megaphone",
+    "quickSelect": true
   },
   {
     "id": "environment_energy_agriculture",
     "category": "Career / Specialized Fields",
     "title": "Environment, Energy & Agriculture",
     "description": "Sustainability, energy, farming, and environmental topics.",
-    "isReady": false
+    "isReady": false,
+    "iconKey": "leaf",
+    "quickSelect": true
   }
 ]

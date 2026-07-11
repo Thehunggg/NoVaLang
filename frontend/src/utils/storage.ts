@@ -8,7 +8,7 @@ const OLD_STORAGE_KEY = "linguaquest-ai-progress-v2";
 const NATIVE_LANGUAGE_KEY = "nativeLanguage";
 const UI_LANGUAGE_KEY = "effectiveUILanguage";
 const LEARNING_LANGUAGE_KEY = "learningLanguage";
-export const CONTENT_VERSION = "cross-platform-onboarding-v5";
+export const CONTENT_VERSION = "cross-platform-onboarding-v6";
 
 export { getEffectiveUILanguage, isUISupportedForNativeLanguage };
 
@@ -33,6 +33,8 @@ export const updateNativeLanguage = setNativeLanguage;
 const normalizeLearningLanguage = (value?: string | null): LanguageCode =>
   value === "ja" || value === "japanese" ? "ja" : "en";
 const normalizeLevel = (value?: string | null) => levelOrder.includes(value as AppProgress["currentLevel"]) ? value as AppProgress["currentLevel"] : "A0";
+
+const MAX_ACTIVE_TRACKS = 2;
 
 const nicheLegacyIdMap: Record<string, string> = {
   everyday: "daily_life",
@@ -61,6 +63,25 @@ const normalizeNicheList = (values?: string[] | null) => {
   const mapped = [...new Set((values ?? []).map(normalizeNicheId))];
   return mapped.length ? mapped : ["daily_life"];
 };
+
+const normalizeTrackId = (value?: string | null) => {
+  if (!value) return "daily_life";
+  if (value.startsWith("exam_")) return value;
+  return nicheLegacyIdMap[value] ?? value;
+};
+
+const normalizeActiveTracks = (values?: string[] | null, fallback?: string[]) => {
+  const source = values?.length ? values : fallback ?? ["daily_life"];
+  const mapped = [...new Set(source.map(normalizeTrackId))].slice(0, MAX_ACTIVE_TRACKS);
+  return mapped.length ? mapped : ["daily_life"];
+};
+
+const normalizeCurrentTrack = (value: string | null | undefined, activeTracks: string[], primaryNiche: string | null) => {
+  const candidate = value ?? primaryNiche ?? activeTracks[0] ?? "daily_life";
+  const normalized = normalizeTrackId(candidate);
+  if (activeTracks.includes(normalized)) return normalized;
+  return activeTracks[0] ?? "daily_life";
+};
 export const getLearningLanguage = (): LanguageCode => { try { return normalizeLearningLanguage(localStorage.getItem(LEARNING_LANGUAGE_KEY)); } catch { return "en"; } };
 export const setLearningLanguage = (language: LanguageCode): void => { try { localStorage.setItem(LEARNING_LANGUAGE_KEY, language); } catch { /* In-memory state remains functional. */ } };
 
@@ -68,7 +89,9 @@ export const initialAppProgress: AppProgress = {
   contentVersion: CONTENT_VERSION,
   displayName: "", ageRange: "", country: "", region: "", occupationStatus: "",
   nativeLanguage: "en", uiLanguage: "en", effectiveUILanguage: "en", learningLanguage: "en",
-  selectedNiches: ["daily_life"], primaryNiche: "daily_life", nicheUpdatedAt: null, levelDecisionAfterNicheChange: null,
+  selectedNiches: ["daily_life"], primaryNiche: "daily_life",
+  activeTracks: ["daily_life"], currentTrack: "daily_life",
+  nicheUpdatedAt: null, levelDecisionAfterNicheChange: null,
   onboardingCompleted: false, selectedLanguage: "en", experienceLevel: "beginner",
   selectedLevel: "A0", currentLevel: "A0", currentUnitId: null, dailyGoalMinutes: 10, placementResult: null,
   coreFoundationCompleted: false, coreFoundationSkipped: false,
@@ -89,6 +112,10 @@ export const getProgress = (): AppProgress => {
     const learningLanguage = normalizeLearningLanguage(value.learningLanguage ?? value.selectedLanguage ?? localStorage.getItem(LEARNING_LANGUAGE_KEY));
     const staleContent = value.contentVersion !== CONTENT_VERSION;
     const today = new Date().toISOString().slice(0, 10);
+    const selectedNiches = normalizeNicheList(value.selectedNiches);
+    const primaryNiche = normalizeNicheId(value.primaryNiche ?? value.selectedNiches?.[0]);
+    const activeTracks = normalizeActiveTracks(value.activeTracks, selectedNiches);
+    const currentTrack = normalizeCurrentTrack(value.currentTrack, activeTracks, primaryNiche);
     return {
       ...initialAppProgress, ...value, contentVersion: CONTENT_VERSION, nativeLanguage, uiLanguage: effectiveUILanguage, effectiveUILanguage, learningLanguage, selectedLanguage: learningLanguage,
       displayName: value.displayName ?? "",
@@ -96,8 +123,10 @@ export const getProgress = (): AppProgress => {
       country: value.country ?? "",
       region: value.region ?? "",
       occupationStatus: value.occupationStatus ?? "",
-      selectedNiches: normalizeNicheList(value.selectedNiches),
-      primaryNiche: normalizeNicheId(value.primaryNiche ?? value.selectedNiches?.[0]),
+      selectedNiches,
+      primaryNiche,
+      activeTracks,
+      currentTrack,
       nicheUpdatedAt: value.nicheUpdatedAt ?? null,
       levelDecisionAfterNicheChange: value.levelDecisionAfterNicheChange ?? null,
       selectedLevel: normalizeLevel(value.selectedLevel),

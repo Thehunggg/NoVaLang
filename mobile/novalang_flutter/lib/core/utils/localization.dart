@@ -1,5 +1,25 @@
 import 'mobile_ui_strings.dart';
 
+/// Resolve a shared localized map (vi/en/ja/ko/zh) to a non-null [String].
+///
+/// Fallback order: [languageCode] → en → first non-empty value → [fallback].
+String localizedMapText(
+  Map<String, String>? values,
+  String languageCode, {
+  String fallback = '',
+}) {
+  if (values == null || values.isEmpty) return fallback;
+  final preferred = values[languageCode]?.trim();
+  if (preferred != null && preferred.isNotEmpty) return preferred;
+  final english = values['en']?.trim();
+  if (english != null && english.isNotEmpty) return english;
+  for (final value in values.values) {
+    final trimmed = value.trim();
+    if (trimmed.isNotEmpty) return trimmed;
+  }
+  return fallback;
+}
+
 /// Localized UI text for Flutter Android.
 ///
 /// Priority strings are loaded from `assets/shared/mobile_ui.json`
@@ -48,8 +68,31 @@ class L10n {
           'Bài học cho {niche} sắp ra mắt. Hiện chỉ có Đời sống hàng ngày → Chào hỏi.',
     },
     'checkAnswer': {'en': 'Check answer', 'vi': 'Kiểm tra'},
-    'correct': {'en': 'Correct', 'vi': 'Chính xác'},
-    'tryAgain': {'en': 'Not quite', 'vi': 'Chưa đúng'},
+    'correct': {'en': 'Correct', 'vi': 'Đúng rồi'},
+    'notQuite': {'en': 'Not quite', 'vi': 'Chưa đúng'},
+    'tryAgain': {'en': 'Try again', 'vi': 'Thử lại'},
+    'plusAdvancedBadge': {
+      'en': 'Plus · Advanced',
+      'vi': 'Plus · bài nâng cao',
+    },
+    'aiReviewHelper': {
+      'en': 'AI will ask a short question and correct your answer.',
+      'vi': 'AI sẽ hỏi ngắn và sửa câu trả lời của bạn.',
+    },
+    'plusAiReviewTitle': {
+      'en': 'Plus · Review AI feedback (no extra call)',
+      'vi': 'Plus · xem lại phản hồi AI (không gọi thêm)',
+    },
+    'aiFeedbackReuseHelper': {
+      'en': 'This step reuses the Exercise 9 result.',
+      'vi': 'Bước này tái sử dụng kết quả Exercise 9.',
+    },
+    'playingAudio': {'en': 'Playing audio…', 'vi': 'Đang phát âm…'},
+    'listenTooltip': {'en': 'Listen', 'vi': 'Nghe'},
+    'ttsUnavailable': {
+      'en': 'Device TTS voice is unavailable for this language.',
+      'vi': 'Thiết bị chưa có giọng TTS cho ngôn ngữ này.',
+    },
     'providerLater': {
       'en': 'This login provider will be connected later.',
       'vi': 'Nhà cung cấp đăng nhập này sẽ được kết nối sau.',
@@ -265,7 +308,34 @@ class L10n {
       'en': 'Skip Core Foundation',
       'vi': 'Bỏ qua Core Foundation',
     },
-    'vocabulary': {'en': 'Vocabulary', 'vi': 'Từ vựng'},
+    'vocabulary': {
+      'en': 'Vocabulary',
+      'vi': 'Từ vựng',
+      'ja': '単語',
+      'ko': '단어',
+      'zh': '词汇',
+    },
+    'lessonIntro': {
+      'en': 'Lesson intro',
+      'vi': 'Giới thiệu bài học',
+      'ja': 'レッスン紹介',
+      'ko': '레슨 소개',
+      'zh': '课程介绍',
+    },
+    'startExercises': {
+      'en': 'Start exercises · {count}',
+      'vi': 'Bắt đầu bài tập · {count}',
+      'ja': '練習を始める · {count}',
+      'ko': '연습 시작 · {count}',
+      'zh': '开始练习 · {count}',
+    },
+    'exerciseNumber': {
+      'en': 'Exercise {current}/{total}',
+      'vi': 'Bài tập {current}/{total}',
+      'ja': '練習 {current}/{total}',
+      'ko': '연습 {current}/{total}',
+      'zh': '练习 {current}/{total}',
+    },
     'vocabReading': {'en': 'Reading', 'vi': 'Cách đọc'},
     'vocabMeaning': {'en': 'Meaning', 'vi': 'Nghĩa'},
     'vocabExample': {'en': 'Example', 'vi': 'Ví dụ'},
@@ -311,6 +381,18 @@ class L10n {
       'en': 'Learning focus saved',
       'vi': 'Đã lưu trọng tâm học',
     },
+    'addSecondTrack': {
+      'en': 'Add a second study track',
+      'vi': 'Thêm lộ trình học thứ hai',
+    },
+    'activeTracksTitle': {
+      'en': 'Active study tracks',
+      'vi': 'Lộ trình học đang dùng',
+    },
+    'trackProgress': {
+      'en': 'Track progress: {done}/{total}',
+      'vi': 'Tiến độ lộ trình: {done}/{total}',
+    },
   };
 
   static String text(String key, String languageCode) {
@@ -320,7 +402,8 @@ class L10n {
   }
 
   static String _fallbackText(String key, String languageCode) {
-    final locale = languageCode == 'vi' ? 'vi' : 'en';
-    return _fallback[key]?[locale] ?? _fallback[key]?['en'] ?? key;
+    final map = _fallback[key];
+    if (map == null) return key;
+    return map[languageCode] ?? map['en'] ?? map.values.first;
   }
 }

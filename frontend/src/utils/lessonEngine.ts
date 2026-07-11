@@ -1,4 +1,5 @@
 import type { Course, Exercise, Lesson, MicroLesson, PlacementResult } from "../types/index";
+import { normalizeAnswer } from "../../../shared/answerNormalize";
 
 export const flattenLessons = (course?: Course): Lesson[] => course?.levels.flatMap((level) => level.units.flatMap((unit) => unit.lessons)) ?? [];
 
@@ -22,13 +23,18 @@ export const unlockStartingPointFromPlacement = (course: Course, result: Placeme
   return { placedLessonIds: lessons.slice(0, startIndex).map((lesson) => lesson.id), unlockedLessonId: lessons[startIndex]?.id ?? lessons[0]?.id, currentUnitId: lessons[startIndex]?.unitId ?? null };
 };
 
-export const normalizeAnswer = (value: string) => value.toLowerCase().replace(/[.!?¡¿。、「」,’']/g, "").replace(/\s+/g, " ").trim();
+export { normalizeAnswer };
 export const isCorrectAnswer = (exercise: Exercise, answer: string | string[]): boolean => {
+  const opts = {
+    caseInsensitive: exercise.caseInsensitive === true,
+    ignorePunctuation: exercise.ignorePunctuation === true,
+    allowedScript: exercise.allowedScript ?? ("any" as const),
+  };
   if (Array.isArray(exercise.correctAnswer)) {
     const candidate = Array.isArray(answer) ? answer : [answer];
     return exercise.correctAnswer.every((item) => candidate.includes(item));
   }
-  return normalizeAnswer(Array.isArray(answer) ? answer.join(" ") : answer) === normalizeAnswer(exercise.correctAnswer);
+  return normalizeAnswer(Array.isArray(answer) ? answer.join(" ") : answer, opts) === normalizeAnswer(exercise.correctAnswer, opts);
 };
 
 export const firstIncompleteMicroLesson = (lesson: Lesson, completedIds: string[]): MicroLesson | undefined =>

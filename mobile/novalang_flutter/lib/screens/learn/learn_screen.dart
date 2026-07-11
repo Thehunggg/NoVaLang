@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/utils/localization.dart';
+import '../../models/exam_track.dart';
 import '../../models/language_option.dart';
+import '../../models/niche.dart';
 import '../../models/user_profile.dart';
 import '../../state/lesson_provider.dart';
 import '../../state/profile_provider.dart';
@@ -18,6 +20,34 @@ import '../../widgets/lesson/course_unit_card.dart';
 class LearnScreen extends ConsumerWidget {
   const LearnScreen({super.key});
 
+  String _trackTitle(
+    String trackId,
+    List<Niche> niches,
+    List<ExamTrack> examTracks,
+    String locale,
+  ) {
+    final exam = examTracks.where((track) => track.id == trackId).firstOrNull;
+    if (exam != null) return exam.localizedTitle(locale);
+
+    final direct = niches.where((n) => n.id == trackId).firstOrNull;
+    if (direct != null) return direct.localizedTitle(locale);
+
+    if (trackId.startsWith('exam_')) {
+      final examLabel = trackId.substring(5).toUpperCase();
+      final resolved = resolveCurriculumNicheId(trackId);
+      final niche = niches.where((n) => n.id == resolved).firstOrNull;
+      if (niche != null) return '$examLabel · ${niche.localizedTitle(locale)}';
+      return examLabel;
+    }
+
+    final resolved = resolveCurriculumNicheId(trackId);
+    return niches
+            .where((n) => n.id == resolved)
+            .map((n) => n.localizedTitle(locale))
+            .firstOrNull ??
+        trackId;
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final profile = ref.watch(profileProvider);
@@ -25,21 +55,29 @@ class LearnScreen extends ConsumerWidget {
     final learningCode = UserProfile.normalizeLearningLanguageCode(
       profile.learningLanguageCode,
     );
-    final nicheId = normalizeNicheId(profile.primaryNiche);
+    final activeTracks = profile.effectiveActiveTracks;
+    final currentTrack = profile.effectiveCurrentTrack;
+    final nicheId = resolveCurriculumNicheId(currentTrack);
     final units = ref.watch(courseUnitsProvider);
     final catalogAsync = ref.watch(curriculumCatalogProvider);
     final learningOption = ref.watch(languageByCodeProvider(learningCode));
     final niches = ref.watch(nicheCatalogProvider).value ?? const [];
-    final nicheTitle = niches
-            .where((n) => n.id == nicheId)
-            .map((n) => n.localizedTitle(locale))
-            .firstOrNull ??
-        nicheId;
+    final examTracks =
+        ref.watch(examTrackCatalogProvider).value?[learningCode] ??
+        const <ExamTrack>[];
+    final nicheTitle = _trackTitle(currentTrack, niches, examTracks, locale);
 
     final completedIds = profile.lessonSessions.entries
         .where((e) => e.value['completedAt'] != null)
         .map((e) => e.key)
         .toSet();
+
+    final trackLessonIds = units
+        .expand((unit) => unit.lessons)
+        .map((lesson) => lesson.id)
+        .toSet();
+    final trackCompletedCount =
+        completedIds.where(trackLessonIds.contains).length;
 
     final visibleLessonCount = units.fold<int>(
       0,
@@ -48,7 +86,7 @@ class LearnScreen extends ConsumerWidget {
 
     if (kDebugMode) {
       debugPrint(
-        '[Learn] language=$learningCode niche=$nicheId '
+        '[Learn] language=$learningCode track=$currentTrack niche=$nicheId '
         'units=${units.length} lessons=$visibleLessonCount '
         'fallback=${catalogAsync.hasError}',
       );
@@ -68,9 +106,54 @@ class LearnScreen extends ConsumerWidget {
               locale: locale,
               learningOption: learningOption,
               nicheTitle: nicheTitle,
-              completedCount: completedIds.length,
+              completedCount: trackCompletedCount,
               lessonCount: visibleLessonCount,
             ),
+            const SizedBox(height: 16),
+            Text(
+              L10n.text('activeTracksTitle', locale),
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (final trackId in activeTracks)
+                  ChoiceChip(
+                    label: Text(_trackTitle(trackId, niches, examTracks, locale)),
+                    selected: trackId == currentTrack,
+                    onSelected: (_) => ref
+                        .read(profileProvider.notifier)
+                        .setCurrentTrack(trackId),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Text(
+              L10n.text('trackProgress', locale)
+                  .replaceAll('{done}', '$trackCompletedCount')
+                  .replaceAll('{total}', '$visibleLessonCount'),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Colors.white70,
+              ),
+            ),
+            if (activeTracks.length < UserProfile.maxActiveTracks) ...[
+              const SizedBox(height: 12),
+              AppButton(
+                label: L10n.text('addSecondTrack', locale),
+                outlined: true,
+                onPressed: () {
+                  if (profile.onboardingComplete) {
+                    context.push('/profile/preferences');
+                  } else {
+                    context.push('/onboarding/niche');
+                  }
+                },
+              ),
+            ],
             const SizedBox(height: 20),
             if (profile.needsCoreFoundation) ...[
               AppCard(

@@ -38,8 +38,8 @@ class MobileUiStrings {
   }
 
   static String _resolveLocale(String languageCode) {
-    if (languageCode == 'vi') return 'vi';
-    if (languageCode == 'ja') return 'ja';
+    const supported = {'vi', 'en', 'ja', 'ko', 'zh'};
+    if (supported.contains(languageCode)) return languageCode;
     return 'en';
   }
 }
