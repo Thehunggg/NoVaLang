@@ -1,0 +1,11 @@
+{
+  "contractions.apostrophe_marks_omission": { "claim": true, "note": "'it's' (it is/it has) vs possessive 'its' — style-and-register.md" },
+  "contractions.common_in_informal_speech": { "claim": true, "note": "Contractions preferred in spoken/UI/workplace/customer-service en — style-and-register.md" },
+  "contractions.acceptable_in_formal_writing": { "claim": "generally_avoided", "note": "'Full forms có thể được ưu tiên' in FORMAL/academic/legal/ceremonial — style-and-register.md" },
+  "register_taxonomy.mainly_word_choice_not_grammar": { "claim": true, "note": "'English không có hệ thống honorific grammar rộng tương đương Japanese' — style-and-register.md" },
+  "register_taxonomy.contractions_signal_informality": { "claim": true, "note": "CASUAL uses contractions; FORMAL prefers full forms — style-and-register.md" },
+  "forms_of_address.first_name_common_informal": { "claim": true, "note": "'First name có thể phù hợp trong modern workplace' — style-and-register.md" },
+  "forms_of_address.maam_sir_service_context": { "claim": false, "note": "'tránh...sir/madam máy móc'; 'Không tự động thêm...sir hoặc madam' — style-and-register.md" },
+  "naturalness_translation.literal_translation_risk_from_ja": { "claim": true, "note": "'Japanese-to-English translation traps' section — style-and-register.md" },
+  "answer_acceptance_en.contraction_and_full_form_equivalent": { "claim": true, "note": "'không tuyên bố biến thể tự nhiên khác là sai ngoài exact-form task' — style-and-register.md" }
+}
