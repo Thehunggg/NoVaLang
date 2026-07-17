@@ -53,9 +53,14 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   (A0–B1 ẩn romaji + toggle; B2–C2 không toggle → D-11 giải quyết). Đã áp dụng
   vào grammar/orthography.rules.json + coverage (điểm lệch → chốt, reading_aid
   low→medium). Validator PASS. Hàng đợi review = RỖNG.
-- **Bước 5 · 2026-07-17 · dừng ở VALIDATED (chưa freeze)** — Gate 5 đòi VALIDATED
-  ≥ 48h mới freeze; chạy lần đầu nên dừng ở VALIDATED đúng chuẩn, chờ owner xác
-  nhận lần 2 sau ≥ 48h. Native review (`native-review-ja.md`) vẫn mở, không chặn.
+- **Bước 5 · 2026-07-17 · VALIDATED (đồng hồ Gate 5 bắt đầu)** — Ghi `status`
+  từng hiện tượng vào coverage: **27 VALIDATED · 1 not-applicable (casing) · 2
+  DEFERRED (stroke_order, pitch_accent) · 0 DRAFT**. `_meta.stage='validated'`,
+  `validatedAt=2026-07-17` (mốc đếm 48h). Bật INV-7 (T1 confidence) — PASS.
+  Catalog `ja.ruleStatus=VALIDATED_PENDING_FREEZE`. **CHƯA freeze** — freeze cần
+  ≥48h + owner xác nhận lần 2. lexical_level rendaku/counters/keigo +
+  pitch_accent/stroke_order KHÔNG freeze (thiếu nguồn theo-từng-từ). Native
+  review (`native-review-ja.md`) vẫn mở, không chặn.
 - **Ghi chú hạ tầng (đã giải quyết) · 2026-07-17** — Ghi chú cũ "commit bị chặn,
   chờ owner" đã lỗi thời: toàn bộ scaffold + Bước 0 + đầu Bước 1 đã nằm trong
   commit `f0083a7`, và `main` đã fast-forward lên đúng commit đó. Từ giờ commit +

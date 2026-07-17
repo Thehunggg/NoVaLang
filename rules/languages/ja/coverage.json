@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "ja",
-    "stage": "4-review-done",
+    "stage": "validated",
     "generatedAt": "2026-07-17",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
@@ -13,7 +13,9 @@
       "sentences": 9100,
       "source": "UD Japanese GSD train/dev/test + PUD (S-UD-CORPUS)",
       "note": "Dưới mốc 10000 vì egress chặn Tatoeba/Wikipedia; 9100 > 2000 nên corpus check KHÔNG yếu. Text-assert: 0%/0%/0.01% vi phạm."
-    }
+    },
+    "validatedAt": "2026-07-17",
+    "gate5_note": "Freeze chỉ được đề xuất sau khi VALIDATED ≥48h (đối chiếu validatedAt) + owner xác nhận lần 2. lexical_level của rendaku/counters/keigo và pitch_accent/stroke_order KHÔNG freeze (thiếu nguồn theo-từng-từ)."
   },
   "writing_systems": {
     "rule_level": {
@@ -30,7 +32,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Vai trò kanji/hiragana/katakana — EXISTING_CONFIRMED."
+    "notes": "Vai trò kanji/hiragana/katakana — EXISTING_CONFIRMED.",
+    "status": "VALIDATED"
   },
   "charset_exemplars": {
     "rule_level": {
@@ -44,7 +47,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Đã import CLDR ở Bước 1: kana + 2136 jōyō + auxiliary + punctuation + numbers + index → orthography.data.json. [B3: charset phủ 99.37% từ WikiPron; ngoài charset chỉ kana cổ (ゟヿヸ), ゔ, dấu ゚ rời]"
+    "notes": "Đã import CLDR ở Bước 1: kana + 2136 jōyō + auxiliary + punctuation + numbers + index → orthography.data.json. [B3: charset phủ 99.37% từ WikiPron; ngoài charset chỉ kana cổ (ゟヿヸ), ゔ, dấu ゚ rời]",
+    "status": "VALIDATED"
   },
   "kana_orthography": {
     "rule_level": {
@@ -58,7 +62,8 @@
       "confidence": "medium"
     },
     "machine_readable": false,
-    "notes": "Modern Kana Usage + okurigana; cross-check Bước 2. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "Modern Kana Usage + okurigana; cross-check Bước 2. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "kanji_joyo": {
     "rule_level": {
@@ -72,7 +77,8 @@
       "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "Bảng Jōyō máy đọc được; kanji nào thuộc jōyō là lexical."
+    "notes": "Bảng Jōyō máy đọc được; kanji nào thuộc jōyō là lexical.",
+    "status": "VALIDATED"
   },
   "loanword_katakana": {
     "rule_level": {
@@ -86,7 +92,8 @@
       "confidence": "low"
     },
     "machine_readable": false,
-    "notes": "Chuyển tự loanword theo từng từ khó chuẩn hóa. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "Chuyển tự loanword theo từng từ khó chuẩn hóa. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "punctuation_layout": {
     "rule_level": {
@@ -100,7 +107,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "。、ー々 small kana; KHÔNG normalize như Latin. [B2: 3/5 trùng; LỆCH 。、 vs ．，(JLREQ both) → ĐÃ CHỐT D-39 (chỉ dạy 。、)]"
+    "notes": "。、ー々 small kana; KHÔNG normalize như Latin. [B2: 3/5 trùng; LỆCH 。、 vs ．，(JLREQ both) → ĐÃ CHỐT D-39 (chỉ dạy 。、)]",
+    "status": "VALIDATED"
   },
   "writing_direction": {
     "rule_level": {
@@ -114,7 +122,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "LTR ngang là baseline; viết dọc OUT_OF_SCOPE."
+    "notes": "LTR ngang là baseline; viết dọc OUT_OF_SCOPE.",
+    "status": "VALIDATED"
   },
   "casing": {
     "rule_level": {
@@ -128,7 +137,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "NOT-APPLICABLE: tiếng Nhật không có hoa/thường."
+    "notes": "NOT-APPLICABLE: tiếng Nhật không có hoa/thường.",
+    "status": "not-applicable"
   },
   "stroke_order": {
     "rule_level": {
@@ -142,7 +152,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Viết tay ngoài scope hiện tại → app chưa dạy."
+    "notes": "Viết tay ngoài scope hiện tại → app chưa dạy.",
+    "status": "DEFERRED"
   },
   "reading_system": {
     "rule_level": {
@@ -159,7 +170,8 @@
       "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "Kana reading; furigana theo kanji đã học cần mastery data."
+    "notes": "Kana reading; furigana theo kanji đã học cần mastery data.",
+    "status": "VALIDATED"
   },
   "pronunciation_contextual": {
     "rule_level": {
@@ -173,7 +185,8 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "Token/POS は→wa v.v. — implementation + test đã xác nhận."
+    "notes": "Token/POS は→wa v.v. — implementation + test đã xác nhận.",
+    "status": "VALIDATED"
   },
   "romanization_hepburn": {
     "rule_level": {
@@ -187,7 +200,8 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "Modified Hepburn, exact fixtures — EXISTING_CONFIRMED."
+    "notes": "Modified Hepburn, exact fixtures — EXISTING_CONFIRMED.",
+    "status": "VALIDATED"
   },
   "phoneme_inventory": {
     "rule_level": {
@@ -204,7 +218,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Mora/nguyên âm/phụ âm; đã import WikiPron (Bước 1): 21710 cặp narrow_filtered (hira 2320 + kata 2623 + hani 16767) → grapheme-to-phoneme.data.json; đo khớp ở Bước 3. Lưu ý: ja KHÔNG có bản phonemic trên WikiPron, chỉ narrow (phiên âm chi tiết). [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json] [B3: đo WikiPron — ー→ː 0/937 vi phạm; っ→gemination 1/525 (từ tượng thanh); ん→nasal khớp (52 mục ɲ̟ = đồng hoá trước âm vòm, đúng luật); xem g2p-check.mjs]"
+    "notes": "Mora/nguyên âm/phụ âm; đã import WikiPron (Bước 1): 21710 cặp narrow_filtered (hira 2320 + kata 2623 + hani 16767) → grapheme-to-phoneme.data.json; đo khớp ở Bước 3. Lưu ý: ja KHÔNG có bản phonemic trên WikiPron, chỉ narrow (phiên âm chi tiết). [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json] [B3: đo WikiPron — ー→ː 0/937 vi phạm; っ→gemination 1/525 (từ tượng thanh); ん→nasal khớp (52 mục ɲ̟ = đồng hoá trước âm vòm, đúng luật); xem g2p-check.mjs]",
+    "status": "VALIDATED"
   },
   "mora_timing": {
     "rule_level": {
@@ -218,7 +233,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Nhịp theo mora. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "Nhịp theo mora. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "rendaku": {
     "rule_level": {
@@ -232,7 +248,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Biến âm nối; lexical rendaku theo từng từ CHƯA có nguồn đủ → có thể không dạy phần lexical. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "Biến âm nối; lexical rendaku theo từng từ CHƯA có nguồn đủ → có thể không dạy phần lexical. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "long_vowel_gemination_youon": {
     "rule_level": {
@@ -246,7 +263,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Trường âm/ー, sokuon っ, youon — đã trong romanization. [B3: xác nhận trên WikiPron: trường âm 100%, sokuon 99.81%]"
+    "notes": "Trường âm/ー, sokuon っ, youon — đã trong romanization. [B3: xác nhận trên WikiPron: trường âm 100%, sokuon 99.81%]",
+    "status": "VALIDATED"
   },
   "pitch_accent": {
     "rule_level": {
@@ -260,7 +278,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "OUT_OF_SCOPE / pending expert (JA-EV-OWNER-05). App KHÔNG dạy; AI không tự tạo."
+    "notes": "OUT_OF_SCOPE / pending expert (JA-EV-OWNER-05). App KHÔNG dạy; AI không tự tạo.",
+    "status": "DEFERRED"
   },
   "word_class": {
     "rule_level": {
@@ -274,7 +293,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Đã import UD (Japanese-GSD): 16 nhãn UPOS → word-class.data.json. ADP=2807 (trợ từ)."
+    "notes": "Đã import UD (Japanese-GSD): 16 nhãn UPOS → word-class.data.json. ADP=2807 (trợ từ).",
+    "status": "VALIDATED"
   },
   "particles": {
     "rule_level": {
@@ -288,7 +308,8 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "Phân loại trợ từ cho pronunciation — EXISTING_CONFIRMED."
+    "notes": "Phân loại trợ từ cho pronunciation — EXISTING_CONFIRMED.",
+    "status": "VALIDATED"
   },
   "word_order": {
     "rule_level": {
@@ -305,7 +326,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "SOV / topic-comment; cần cho Q4/Q13. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "SOV / topic-comment; cần cho Q4/Q13. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "conjugation": {
     "rule_level": {
@@ -319,7 +341,8 @@
       "confidence": "medium"
     },
     "machine_readable": false,
-    "notes": "Chia động từ/tính từ; động từ bất quy tắc là lexical. [B2: 4/5 claim trùng; LỆCH irregular_verbs (nrGrammar thêm ある) → ĐÃ CHỐT D-38 (2 động từ)]"
+    "notes": "Chia động từ/tính từ; động từ bất quy tắc là lexical. [B2: 4/5 claim trùng; LỆCH irregular_verbs (nrGrammar thêm ある) → ĐÃ CHỐT D-38 (2 động từ)]",
+    "status": "VALIDATED"
   },
   "counters": {
     "rule_level": {
@@ -333,7 +356,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Trợ số từ; bảng counter-theo-danh-từ lớn, lexical CHƯA đủ nguồn. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "Trợ số từ; bảng counter-theo-danh-từ lớn, lexical CHƯA đủ nguồn. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "honorifics_keigo": {
     "rule_level": {
@@ -347,7 +371,9 @@
       "confidence": "low"
     },
     "machine_readable": false,
-    "notes": "尊敬/謙譲/丁寧; keigo bất quy tắc theo động từ CẦN native review. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "尊敬/謙譲/丁寧; keigo bất quy tắc theo động từ CẦN native review. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]",
+    "status": "VALIDATED",
+    "native_review": "PENDING (rule_level VALIDATED; nội dung PASS cần native-review-ja.md — ADR-016/D-36)"
   },
   "register_taxonomy": {
     "rule_level": {
@@ -364,7 +390,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Map ADR-016 vào keigo — có _base/register.rules.json."
+    "notes": "Map ADR-016 vào keigo — có _base/register.rules.json.",
+    "status": "VALIDATED"
   },
   "sentence_final_particles": {
     "rule_level": {
@@ -378,7 +405,9 @@
       "confidence": "low"
     },
     "machine_readable": false,
-    "notes": "ね/よ/か dịch theo chức năng; CẦN native review. Bẫy dịch ja→en ở rules/pairs/. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "ね/よ/か dịch theo chức năng; CẦN native review. Bẫy dịch ja→en ở rules/pairs/. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]",
+    "status": "VALIDATED",
+    "native_review": "PENDING (rule_level VALIDATED; nội dung PASS cần native-review-ja.md — ADR-016/D-36)"
   },
   "forms_of_address": {
     "rule_level": {
@@ -392,7 +421,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "さん/tên; bẫy さん→Mr/Ms thuộc rules/pairs/ja-en/. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "さん/tên; bẫy さん→Mr/Ms thuộc rules/pairs/ja-en/. [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "reading_aid_policy": {
     "rule_level": {
@@ -406,7 +436,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "D-11 ĐÃ CHỐT bản (ii): A0–B1 ẩn romaji mặc định + toggle; B2–C2 không toggle. Nhất quán D-10/D-12."
+    "notes": "D-11 ĐÃ CHỐT bản (ii): A0–B1 ẩn romaji mặc định + toggle; B2–C2 không toggle. Nhất quán D-10/D-12.",
+    "status": "VALIDATED"
   },
   "answer_acceptance_ja": {
     "rule_level": {
@@ -423,7 +454,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Chấp nhận kana/kanji, normalize — có _base + owner decisions D-13/14."
+    "notes": "Chấp nhận kana/kanji, normalize — có _base + owner decisions D-13/14.",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": {
@@ -437,7 +469,9 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Dịch tự nhiên; CẦN native review (ADR-016)."
+    "notes": "Dịch tự nhiên; CẦN native review (ADR-016).",
+    "status": "VALIDATED",
+    "native_review": "PENDING (rule_level VALIDATED; nội dung PASS cần native-review-ja.md — ADR-016/D-36)"
   },
   "tts_audio_policy": {
     "rule_level": {
@@ -454,6 +488,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "speechText=kana, ưu tiên audio, tốc độ 1.0/0.75 — có _base + D-20/21/22."
+    "notes": "speechText=kana, ưu tiên audio, tốc độ 1.0/0.75 — có _base + D-20/21/22.",
+    "status": "VALIDATED"
   }
 }

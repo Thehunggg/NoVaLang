@@ -4,74 +4,837 @@
     "decision": "D-01 (owner 2026-07-17): build rule cho 60 ngôn ngữ",
     "status": "APPROVED_BY_OWNER_2026-07-18 (D-37; zh=Hans mặc định; sửa sau tùy ý)",
     "note": "Nháp do AI đề xuất, xếp theo (độ sẵn có dataset CLDR/UD/Wikipron + số người nói/độ cần học). Owner duyệt/sửa ở Bước 0. 'playable' (có bài học thật) chỉ en+ja; còn lại 'preview'. ruleStatus theo dõi tiến độ build rule, tách rời playable.",
-    "playable": ["en", "ja"],
-    "namedNativeLanguages": ["vi", "en", "ja", "ko", "zh"],
-    "roleValues": ["learning", "native"],
-    "tierValues": ["t1", "t3"],
-    "statusValues": ["playable", "preview"],
-    "ruleStatusValues": ["NOT_STARTED", "DRAFT_STYLE_ONLY", "EXISTS_FROZEN_NARRATIVE", "IN_PROGRESS", "VALIDATED", "FROZEN"],
-    "openQuestions": ["zh: giản thể (Hans) hay phồn thể (Hant)? — mặc định nháp Hans, cần owner chốt"]
+    "playable": [
+      "en",
+      "ja"
+    ],
+    "namedNativeLanguages": [
+      "vi",
+      "en",
+      "ja",
+      "ko",
+      "zh"
+    ],
+    "roleValues": [
+      "learning",
+      "native"
+    ],
+    "tierValues": [
+      "t1",
+      "t3"
+    ],
+    "statusValues": [
+      "playable",
+      "preview"
+    ],
+    "ruleStatusValues": [
+      "NOT_STARTED",
+      "DRAFT_STYLE_ONLY",
+      "EXISTS_FROZEN_NARRATIVE",
+      "IN_PROGRESS",
+      "VALIDATED",
+      "FROZEN"
+    ],
+    "openQuestions": [
+      "zh: giản thể (Hans) hay phồn thể (Hant)? — mặc định nháp Hans, cần owner chốt"
+    ]
   },
   "languages": [
-    { "code": "en", "name": "English", "writingSystem": "Latn", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "playable", "ruleStatus": "DRAFT_STYLE_ONLY" },
-    { "code": "ja", "name": "Japanese", "writingSystem": "Jpan", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "playable", "ruleStatus": "EXISTS_FROZEN_NARRATIVE" },
-    { "code": "zh", "name": "Chinese (Mandarin)", "writingSystem": "Hans", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "script Hans/Hant cần owner chốt" },
-    { "code": "ko", "name": "Korean", "writingSystem": "Kore", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "vi", "name": "Vietnamese", "writingSystem": "Latn", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "es", "name": "Spanish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "fr", "name": "French", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "de", "name": "German", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "pt", "name": "Portuguese", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "it", "name": "Italian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ru", "name": "Russian", "writingSystem": "Cyrl", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "id", "name": "Indonesian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "hi", "name": "Hindi", "writingSystem": "Deva", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ar", "name": "Arabic (MSA)", "writingSystem": "Arab", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "RTL; MSA vs dialect cần cân nhắc sau" },
-    { "code": "th", "name": "Thai", "writingSystem": "Thai", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "tr", "name": "Turkish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "nl", "name": "Dutch", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "pl", "name": "Polish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "uk", "name": "Ukrainian", "writingSystem": "Cyrl", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "sv", "name": "Swedish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ro", "name": "Romanian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "el", "name": "Greek", "writingSystem": "Grek", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "cs", "name": "Czech", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "da", "name": "Danish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "fi", "name": "Finnish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "nb", "name": "Norwegian Bokmål", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "hu", "name": "Hungarian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "he", "name": "Hebrew", "writingSystem": "Hebr", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "RTL" },
-    { "code": "fa", "name": "Persian", "writingSystem": "Arab", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "RTL" },
-    { "code": "bn", "name": "Bengali", "writingSystem": "Beng", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ta", "name": "Tamil", "writingSystem": "Taml", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "te", "name": "Telugu", "writingSystem": "Telu", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ml", "name": "Malayalam", "writingSystem": "Mlym", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "mr", "name": "Marathi", "writingSystem": "Deva", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ur", "name": "Urdu", "writingSystem": "Arab", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "RTL" },
-    { "code": "pa", "name": "Punjabi (Gurmukhi)", "writingSystem": "Guru", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "sw", "name": "Swahili", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "fil", "name": "Filipino", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ms", "name": "Malay", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "my", "name": "Burmese", "writingSystem": "Mymr", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "km", "name": "Khmer", "writingSystem": "Khmr", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "lo", "name": "Lao", "writingSystem": "Laoo", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "si", "name": "Sinhala", "writingSystem": "Sinh", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ne", "name": "Nepali", "writingSystem": "Deva", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "gu", "name": "Gujarati", "writingSystem": "Gujr", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "kn", "name": "Kannada", "writingSystem": "Knda", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "am", "name": "Amharic", "writingSystem": "Ethi", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "af", "name": "Afrikaans", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ca", "name": "Catalan", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "hr", "name": "Croatian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "sr", "name": "Serbian", "writingSystem": "Cyrl", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "cũng viết Latn; mặc định nháp Cyrl" },
-    { "code": "sk", "name": "Slovak", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "sl", "name": "Slovenian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "bg", "name": "Bulgarian", "writingSystem": "Cyrl", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "lt", "name": "Lithuanian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "lv", "name": "Latvian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "et", "name": "Estonian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "is", "name": "Icelandic", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ga", "name": "Irish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "eu", "name": "Basque", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" }
+    {
+      "code": "en",
+      "name": "English",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "playable",
+      "ruleStatus": "DRAFT_STYLE_ONLY"
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "writingSystem": "Jpan",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "playable",
+      "ruleStatus": "VALIDATED_PENDING_FREEZE"
+    },
+    {
+      "code": "zh",
+      "name": "Chinese (Mandarin)",
+      "writingSystem": "Hans",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "note": "script Hans/Hant cần owner chốt"
+    },
+    {
+      "code": "ko",
+      "name": "Korean",
+      "writingSystem": "Kore",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "vi",
+      "name": "Vietnamese",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "it",
+      "name": "Italian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "writingSystem": "Cyrl",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "id",
+      "name": "Indonesian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "writingSystem": "Deva",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ar",
+      "name": "Arabic (MSA)",
+      "writingSystem": "Arab",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "note": "RTL; MSA vs dialect cần cân nhắc sau"
+    },
+    {
+      "code": "th",
+      "name": "Thai",
+      "writingSystem": "Thai",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "tr",
+      "name": "Turkish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "nl",
+      "name": "Dutch",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "pl",
+      "name": "Polish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "uk",
+      "name": "Ukrainian",
+      "writingSystem": "Cyrl",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "sv",
+      "name": "Swedish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ro",
+      "name": "Romanian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "el",
+      "name": "Greek",
+      "writingSystem": "Grek",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "cs",
+      "name": "Czech",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "da",
+      "name": "Danish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "fi",
+      "name": "Finnish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "nb",
+      "name": "Norwegian Bokmål",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "hu",
+      "name": "Hungarian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "he",
+      "name": "Hebrew",
+      "writingSystem": "Hebr",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "note": "RTL"
+    },
+    {
+      "code": "fa",
+      "name": "Persian",
+      "writingSystem": "Arab",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "note": "RTL"
+    },
+    {
+      "code": "bn",
+      "name": "Bengali",
+      "writingSystem": "Beng",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ta",
+      "name": "Tamil",
+      "writingSystem": "Taml",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "te",
+      "name": "Telugu",
+      "writingSystem": "Telu",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ml",
+      "name": "Malayalam",
+      "writingSystem": "Mlym",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "mr",
+      "name": "Marathi",
+      "writingSystem": "Deva",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "writingSystem": "Arab",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "note": "RTL"
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi (Gurmukhi)",
+      "writingSystem": "Guru",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "sw",
+      "name": "Swahili",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "fil",
+      "name": "Filipino",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ms",
+      "name": "Malay",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "my",
+      "name": "Burmese",
+      "writingSystem": "Mymr",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "km",
+      "name": "Khmer",
+      "writingSystem": "Khmr",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "lo",
+      "name": "Lao",
+      "writingSystem": "Laoo",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "si",
+      "name": "Sinhala",
+      "writingSystem": "Sinh",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ne",
+      "name": "Nepali",
+      "writingSystem": "Deva",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "gu",
+      "name": "Gujarati",
+      "writingSystem": "Gujr",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "kn",
+      "name": "Kannada",
+      "writingSystem": "Knda",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "am",
+      "name": "Amharic",
+      "writingSystem": "Ethi",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "af",
+      "name": "Afrikaans",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ca",
+      "name": "Catalan",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "hr",
+      "name": "Croatian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "sr",
+      "name": "Serbian",
+      "writingSystem": "Cyrl",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "note": "cũng viết Latn; mặc định nháp Cyrl"
+    },
+    {
+      "code": "sk",
+      "name": "Slovak",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "sl",
+      "name": "Slovenian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "bg",
+      "name": "Bulgarian",
+      "writingSystem": "Cyrl",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "lt",
+      "name": "Lithuanian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "lv",
+      "name": "Latvian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "et",
+      "name": "Estonian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "is",
+      "name": "Icelandic",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "ga",
+      "name": "Irish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    },
+    {
+      "code": "eu",
+      "name": "Basque",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED"
+    }
   ]
 }
