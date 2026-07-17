@@ -1,12 +1,18 @@
 {
   "_meta": {
     "language": "ja",
-    "stage": "2-derive-done",
+    "stage": "3-corpus-done",
     "generatedAt": "2026-07-17",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
       "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc implementation đã test",
       "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1–3 sẽ chốt lại."
+    },
+    "corpus": {
+      "file": "tools/cache/corpus/ja-sentences.txt (không commit)",
+      "sentences": 9100,
+      "source": "UD Japanese GSD train/dev/test + PUD (S-UD-CORPUS)",
+      "note": "Dưới mốc 10000 vì egress chặn Tatoeba/Wikipedia; 9100 > 2000 nên corpus check KHÔNG yếu. Text-assert: 0%/0%/0.01% vi phạm."
     }
   },
   "writing_systems": {
@@ -38,7 +44,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Đã import CLDR ở Bước 1: kana + 2136 jōyō + auxiliary + punctuation + numbers + index → orthography.data.json."
+    "notes": "Đã import CLDR ở Bước 1: kana + 2136 jōyō + auxiliary + punctuation + numbers + index → orthography.data.json. [B3: charset phủ 99.37% từ WikiPron; ngoài charset chỉ kana cổ (ゟヿヸ), ゔ, dấu ゚ rời]"
   },
   "kana_orthography": {
     "rule_level": {
@@ -198,7 +204,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Mora/nguyên âm/phụ âm; đã import WikiPron (Bước 1): 21710 cặp narrow_filtered (hira 2320 + kata 2623 + hani 16767) → grapheme-to-phoneme.data.json; đo khớp ở Bước 3. Lưu ý: ja KHÔNG có bản phonemic trên WikiPron, chỉ narrow (phiên âm chi tiết). [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json]"
+    "notes": "Mora/nguyên âm/phụ âm; đã import WikiPron (Bước 1): 21710 cặp narrow_filtered (hira 2320 + kata 2623 + hani 16767) → grapheme-to-phoneme.data.json; đo khớp ở Bước 3. Lưu ý: ja KHÔNG có bản phonemic trên WikiPron, chỉ narrow (phiên âm chi tiết). [B2: cross-check OK ≥2 nguồn (nrGrammar/Wikipedia/JLREQ/FROZEN), xem derive/review-diff.json] [B3: đo WikiPron — ー→ː 0/937 vi phạm; っ→gemination 1/525 (từ tượng thanh); ん→nasal khớp (52 mục ɲ̟ = đồng hoá trước âm vòm, đúng luật); xem g2p-check.mjs]"
   },
   "mora_timing": {
     "rule_level": {
@@ -240,7 +246,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Trường âm/ー, sokuon っ, youon — đã trong romanization."
+    "notes": "Trường âm/ー, sokuon っ, youon — đã trong romanization. [B3: xác nhận trên WikiPron: trường âm 100%, sokuon 99.81%]"
   },
   "pitch_accent": {
     "rule_level": {

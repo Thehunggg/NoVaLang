@@ -33,8 +33,9 @@
       "description": "Câu baseline NATURAL_NEUTRAL_POLITE kết bằng です/ます (biến thể: でした/ました/ません/ましょう/ますか...). Chỉ áp cho nội dung sinh ở register baseline, KHÔNG áp cho corpus văn viết chung.",
       "assert": { "type": "custom", "note": "máy kiểm khi generator chạy; không chạy trên corpus vì corpus không phải baseline-register" },
       "fixtures": {
-        "pass": ["田中さんは先生です。", "水を飲みます。"],
-        "fail": ["田中は先生だ。", "水を飲む。"]
+        "pass": ["田中さんは先生です。", "水を飲みます。", "全く同感です。", "一部を抜粋します。"],
+        "fail": ["田中は先生だ。", "水を飲む。"],
+        "_note": "2 câu pass cuối từ corpus thật UD GSD (Bước 3 mục 6)"
       }
     }
   ],

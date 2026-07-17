@@ -34,6 +34,15 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   Phát hiện: hồ sơ FROZEN thiên governance, ít mô tả ngôn ngữ. Sinh 4 file rule:
   `orthography/phonology/grammar/pragmatics.rules.json` (fixtures pass+fail đủ).
   Validator PASS.
+- **Bước 3 (corpus check) · 2026-07-17 · XONG** — Corpus 9100 câu thật (UD GSD
+  train/dev/test + PUD; Tatoeba/Wikipedia bị egress chặn nên không đạt mốc
+  10000 — ghi số thật, vẫn > 2000). `corpus-check.mjs` (sửa 1 lỗi cú pháp có
+  sẵn): 3 text-assert vi phạm 0%/0%/0.01% — sạch. `g2p-check.mjs` (tool mới,
+  tái dùng): ー→ː 0/937 · っ→gemination 1/525 (từ tượng thanh) · ん→nasal khớp
+  (52 ca ɲ̟ = đồng hoá trước âm vòm) · charset phủ 99.37% WikiPron (thiếu toàn
+  kana cổ). Fixtures pass bổ sung câu thật từ corpus. Validator PASS.
+  → KHÔNG có rule nào bị corpus bác; hàng đợi review Bước 4 giữ nguyên 3 điểm
+  lệch từ Bước 2 + D-11.
 - **Ghi chú hạ tầng (đã giải quyết) · 2026-07-17** — Ghi chú cũ "commit bị chặn,
   chờ owner" đã lỗi thời: toàn bộ scaffold + Bước 0 + đầu Bước 1 đã nằm trong
   commit `f0083a7`, và `main` đã fast-forward lên đúng commit đó. Từ giờ commit +
