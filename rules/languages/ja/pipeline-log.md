@@ -20,6 +20,10 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   ưu tiên hết · D-36 sẽ có native review (soạn checklist) · D-37 duyệt catalog 60.
 - **Bước 1 (import dataset) · 2026-07-18** — Bắt đầu: CLDR (charset) → UD (word class)
   → WikiPron (g2p).
+- **Bước 1 · 2026-07-17 · XONG** — Import WikiPron hoàn tất: ja không có bản
+  phonemic, dùng 3 file narrow_filtered (hira 2320 + kata 2623 + hani 16767 =
+  21710 cặp) → `grapheme-to-phoneme.data.json`. Importer wikipron mở rộng nhận
+  nhiều `--url` (tái dùng cho ngôn ngữ đa hệ chữ). Validator PASS.
 - **Ghi chú hạ tầng (đã giải quyết) · 2026-07-17** — Ghi chú cũ "commit bị chặn,
   chờ owner" đã lỗi thời: toàn bộ scaffold + Bước 0 + đầu Bước 1 đã nằm trong
   commit `f0083a7`, và `main` đã fast-forward lên đúng commit đó. Từ giờ commit +

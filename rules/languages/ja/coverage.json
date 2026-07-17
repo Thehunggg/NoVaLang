@@ -1,8 +1,8 @@
 {
   "_meta": {
     "language": "ja",
-    "stage": "1-import",
-    "generatedAt": "2026-07-18",
+    "stage": "1-import-done",
+    "generatedAt": "2026-07-17",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
       "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc implementation đã test",
@@ -23,7 +23,7 @@
   "reading_system": { "rule_level": { "source": ["S-REPO-IMPL", "S-FROZEN"], "derived_by": "human", "confidence": "high" }, "lexical_level": { "source": "S-REPO-IMPL", "derived_by": "human", "confidence": "medium" }, "machine_readable": true, "notes": "Kana reading; furigana theo kanji đã học cần mastery data." },
   "pronunciation_contextual": { "rule_level": { "source": "S-REPO-IMPL", "derived_by": "human", "confidence": "high" }, "lexical_level": { "source": "S-REPO-IMPL", "derived_by": "dataset", "confidence": "high" }, "machine_readable": true, "notes": "Token/POS は→wa v.v. — implementation + test đã xác nhận." },
   "romanization_hepburn": { "rule_level": { "source": "S-REPO-IMPL", "derived_by": "human", "confidence": "high" }, "lexical_level": { "source": "S-REPO-IMPL", "derived_by": "dataset", "confidence": "high" }, "machine_readable": true, "notes": "Modified Hepburn, exact fixtures — EXISTING_CONFIRMED." },
-  "phoneme_inventory": { "rule_level": { "source": ["S-FROZEN", "WIKIPRON"], "derived_by": "human", "confidence": "medium" }, "lexical_level": { "source": null, "derived_by": null, "confidence": "none" }, "machine_readable": true, "notes": "Mora/nguyên âm/phụ âm; có thể đo với Wikipron ở Bước 3." },
+  "phoneme_inventory": { "rule_level": { "source": ["S-FROZEN", "WIKIPRON"], "derived_by": "human", "confidence": "medium" }, "lexical_level": { "source": null, "derived_by": null, "confidence": "none" }, "machine_readable": true, "notes": "Mora/nguyên âm/phụ âm; đã import WikiPron (Bước 1): 21710 cặp narrow_filtered (hira 2320 + kata 2623 + hani 16767) → grapheme-to-phoneme.data.json; đo khớp ở Bước 3. Lưu ý: ja KHÔNG có bản phonemic trên WikiPron, chỉ narrow (phiên âm chi tiết)." },
   "mora_timing": { "rule_level": { "source": "S-FROZEN", "derived_by": "human", "confidence": "medium" }, "lexical_level": { "source": null, "derived_by": null, "confidence": "none" }, "machine_readable": false, "notes": "Nhịp theo mora." },
   "rendaku": { "rule_level": { "source": "S-FROZEN", "derived_by": "human", "confidence": "medium" }, "lexical_level": { "source": null, "derived_by": null, "confidence": "none" }, "machine_readable": false, "notes": "Biến âm nối; lexical rendaku theo từng từ CHƯA có nguồn đủ → có thể không dạy phần lexical." },
   "long_vowel_gemination_youon": { "rule_level": { "source": "S-REPO-IMPL", "derived_by": "human", "confidence": "high" }, "lexical_level": { "source": null, "derived_by": null, "confidence": "none" }, "machine_readable": true, "notes": "Trường âm/ー, sokuon っ, youon — đã trong romanization." },
