@@ -1,0 +1,151 @@
+NGUỒN: ChatGPT recovery — vòng 1 (khai quật trí nhớ hội thoại cũ về NovaLang)
+CHỦ ĐỀ: style-and-register + cấu trúc thẻ từ vựng
+LƯU Ý: đây là trí nhớ của AI, KHÔNG phải nguồn sự thật. Repo + decisions.md thắng file này.
+
+=====================================================================
+
+1. Tên file rule + vị trí trong cấu trúc thư mục
+
+rules/
+├── content/
+│   ├── README.md
+│   └── naturalness-and-register.md
+└── languages/
+    ├── README.md
+    ├── _template/
+    │   ├── README.md
+    │   └── style-and-register.md
+    ├── ja/
+    │   └── style-and-register.md
+    ├── en/
+    │   └── style-and-register.md
+    └── vi/
+        └── style-and-register.md
+
+- `rules/content/naturalness-and-register.md`: rule chung canonical.
+- `rules/languages/<code>/style-and-register.md`: chi tiết ngôn ngữ.
+- `.cursor/rules/novalang.mdc`: gateway ngắn, không duplicate.
+- `AGENTS.md`: chỉ định agent phải đọc global rule khi task liên quan content/localization.
+- `ARCHITECTURE_DECISIONS.md`: ADR ngắn ghi architecture, release gate và QA semantics.
+- Không đưa chi tiết English/Japanese/Vietnamese vào ADR hoặc Core Rules.
+Nên giữ và hoàn thiện `rules/languages/_template/style-and-register.md`.
+
+=====================================================================
+
+2. Nội dung rule về các mức diễn đạt
+
+1. Baseline mặc định: `NATURAL_NEUTRAL_POLITE`.
+2. Baseline chỉ áp dụng khi approved context không chỉ định register khác.
+3. Giữ nguyên:
+   - intended meaning;
+   - pragmatic intent;
+   - speaker relationship;
+   - social context;
+   - lesson objective;
+   - approved emotional tone.
+4. Không coi "lịch sự" là "formal tối đa".
+5. Không ưu tiên word-for-word coverage hơn cách nói bản ngữ.
+6. Phân loại:
+   - `CASUAL`: quan hệ gần gũi, plain/informal wording.
+   - `NATURAL_NEUTRAL_POLITE`: giao tiếp hiện đại, lịch sự thông thường.
+   - `FORMAL`: bối cảnh chính thức, công việc, học thuật hoặc hành chính phù hợp.
+   - `HONORIFIC`: hệ thống kính trọng/hạ mình dựa trên vai trò xã hội.
+   - `CEREMONIAL`: nghi thức, tuyên bố, lễ nghi hoặc công thức truyền thống.
+   - `SLANG`: từ ngữ nhóm, vùng, thế hệ hoặc rất thân mật.
+7. `HONORIFIC`, `CEREMONIAL`, `SLANG` nên được coi là marked modes/modifiers,
+   không ép thành một thang "cao hơn/thấp hơn".
+
+Template nên có:
+- `languageCode`; status; profile version; reviewer; review date; source/provenance;
+- phạm vi: target text, learner support, UI;
+- normal neutral-polite; casual; formal; honorific; ceremonial; slang;
+- pronouns/forms of address; politeness markers; contractions;
+- sentence-final particles; service/customer language;
+- spoken versus written language; unacceptable literal translations;
+- pedagogically controlled language; deterministic banned fixtures;
+- native-review fixtures; unresolved decisions; change log.
+
+Về cách xử lý ngôn ngữ không có đủ các mức: KHÔNG TÌM THẤY
+Chỉ tìm thấy nguyên văn quy tắc liên quan sau:
+Không được sao chép profile Japanese sang English/Vietnamese hoặc suy diễn
+profile cho ngôn ngữ tương lai.
+
+=====================================================================
+
+3. Cấu trúc thẻ từ vựng
+
+Use the approved expandable vocabulary card pattern:
+- collapsed: target-language display, approved reading, and audio;
+- expanded: meaning, approved usage, example, translation, and approved note.
+Keep vocabulary data, order, and audio behavior from the approved source. Do
+not synthesize examples, translations, or notes.
+
+Quy tắc dữ liệu liên quan:
+Store `displayText`, `canonicalText`, and `audioText` separately: UI renders
+`displayText`, the answer checker uses `canonicalText`, and TTS uses
+`audioText`.
+
+Các trường tìm thấy nguyên văn:
+target-language display / approved reading / audio / meaning / approved usage /
+example / translation / approved note / displayText / canonicalText / audioText
+
+Format JSON đã từng chốt cho thẻ từ vựng: KHÔNG TÌM THẤY
+Các trường riêng cho "các cách diễn đạt theo từng mức" trong một thẻ: KHÔNG TÌM THẤY
+
+=====================================================================
+
+4. Giao diện thẻ
+
+Tìm thấy nguyên văn:
+Use the approved expandable vocabulary card pattern:
+- collapsed: target-language display, approved reading, and audio;
+- expanded: meaning, approved usage, example, translation, and approved note.
+
+Mặt trước/mặt sau theo dạng flashcard: KHÔNG TÌM THẤY
+Vị trí chính xác của từng trường trong card: KHÔNG TÌM THẤY
+Thứ tự hiển thị CASUAL / NATURAL_NEUTRAL_POLITE / FORMAL / HONORIFIC trên thẻ: KHÔNG TÌM THẤY
+Quy tắc đổi mặt bằng vuốt/chạm/lật thẻ: KHÔNG TÌM THẤY
+
+=====================================================================
+
+5. Ví dụ thẻ hoàn chỉnh đã viết (như お願い致します)
+
+KHÔNG TÌM THẤY
+Không tìm thấy thẻ hoàn chỉnh chứa chính xác: お願い致します
+Cũng không tìm thấy JSON hoặc layout thẻ hoàn chỉnh gắn với ví dụ này.
+
+=====================================================================
+
+6. Mọi quyết định liên quan khác đã chốt
+
+8. Phân biệt rõ:
+   - target-language text; natural translation; literal gloss;
+   - grammar explanation; UI copy; exact-form exercise.
+9. Không tự động rewrite approved content bằng heuristic hoặc LLM score.
+10. Mọi thay đổi content phải đi qua Source → Generate → Validate → Sync và
+    Change Control tương ứng.
+
+Nếu cần thể hiện cấu trúc source:
+- bản dịch chính vẫn phải tự nhiên;
+- cấu trúc sát nghĩa nằm ở trường `literalGloss` riêng;
+- không làm bản dịch chính trở nên cứng để thay cho gloss.
+
+Một câu target-language hơi có tính kiểm soát chỉ được giữ khi:
+- đúng ngữ pháp;
+- approved lesson objective yêu cầu exact form;
+- learner được biết đây là mẫu đang học;
+- validator không mở rộng constraint đó sang mọi câu tương đương tự nhiên.
+
+Không dùng word frequency, translation similarity, LLM score hoặc regex phong
+cách để tự động tạo `PASS`.
+
+Keep vocabulary data, order, and audio behavior from the approved source. Do
+not synthesize examples, translations, or notes.
+
+Every `five_cards` lesson has exactly these five overview cards, in this order,
+with each card opening its own page:
+1. Introduction
+2. Vocabulary cards
+3. Short dialogue
+4. Grammar
+5. Exercises

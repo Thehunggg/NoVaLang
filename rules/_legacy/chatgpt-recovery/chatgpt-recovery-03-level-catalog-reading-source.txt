@@ -1,0 +1,171 @@
+NGUỒN: ChatGPT recovery — vòng 3 (khai quật trí nhớ hội thoại cũ về NovaLang)
+CHỦ ĐỀ: hệ level / danh mục ngôn ngữ / reading policy / Shared Source Of Truth
+LƯU Ý: đây là trí nhớ của AI, KHÔNG phải nguồn sự thật. Repo + decisions.md thắng file này.
+GHI CHÚ CỦA CHỦ DỰ ÁN (2026-07-17): quyết định "20 learning languages in catalog"
+dưới đây ĐÃ BỊ THAY THẾ — catalog mục tiêu hiện là 60 ngôn ngữ (xem decisions.md).
+
+=====================================================================
+PHẦN A — KIỂM KÊ REPO
+=====================================================================
+
+KHÔNG TRUY CẬP ĐƯỢC
+
+=====================================================================
+PHẦN B1 — HỆ LEVEL
+=====================================================================
+
+Hệ level được tìm thấy:
+A0 / A1 / A2 / B1: romaji ẩn mặc định; có thể bật bằng toggle.
+B2 / C1 / C2: không hiển thị romaji; không có toggle romaji.
+Unknown/missing level:
+- fail safe;
+- không hiển thị romaji;
+- không hiển thị toggle;
+- ghi diagnostic phù hợp;
+- không tự suy ra level.
+
+A0 chỉ được dùng kana hay không? KHÔNG TÌM THẤY
+Kanji bắt đầu từ level nào? KHÔNG TÌM THẤY
+Từng level cho phép hoặc cấm kanji như thế nào? KHÔNG TÌM THẤY
+Quy tắc thứ tự bài trong từng level: KHÔNG TÌM THẤY
+Quyết định sau lỗi thứ tự bài ở A0: KHÔNG TÌM THẤY
+
+Thông tin liên quan được tìm thấy:
+Canonical lesson level của Golden Lesson: A0.
+[KHÔNG CHẮC NGUYÊN VĂN]
+Cây học: Language → Level → Niche/Focus → Unit → Lesson → Exercises
+
+=====================================================================
+PHẦN B2 — DANH MỤC NGÔN NGỮ
+=====================================================================
+
+*** ĐÃ BỊ THAY THẾ bởi quyết định 60 ngôn ngữ (2026-07-17) ***
+Keep 20 learning languages in catalog.
+Only English and Japanese are playable for now.
+The other 18 languages must be preview / comingSoon.
+Build only Daily Life → Greetings → Unit 1 for English and Japanese first.
+Do not expand beyond that until the user reviews.
+*** Phần "chỉ en+ja playable" + khóa scope Daily Life → Greetings → Unit 1
+    VẪN CÒN HIỆU LỰC cho phần lesson; chỉ con số 20 → 60 bị thay. ***
+
+Giá trị targetLanguage / targetLocale nguyên văn cho từng ngôn ngữ: KHÔNG TÌM THẤY
+
+Các trường ngôn ngữ đã được nhắc tới:
+targetLanguage / targetLocale / cultureContext / approvedCharacterNamePool
+Character data must include `targetLanguage`, `targetLocale`, `cultureContext`,
+and `approvedCharacterNamePool`.
+
+Ngôn ngữ native được hỗ trợ:
+Supported native languages: vi, en, ja, ko, zh.
+Native language controls meanings, explanations, hints, and answer options.
+
+Phân chia vai trò ngôn ngữ:
+[KHÔNG CHẮC NGUYÊN VĂN]
+appLanguage controls UI
+nativeLanguage controls explanations
+targetLanguage controls learning content
+
+Một quyết định sau đó được ghi bằng tên trường:
+learningLanguageCode / nativeLanguageCode / uiLanguageCode
+nativeLanguageCode quyết định ngôn ngữ giải thích/feedback; khi native=ja không
+được có Vietnamese/English instructional text; không silent fallback chéo ngôn ngữ.
+
+Trạng thái thực hiện theo thứ tự:
+Japanese Full Profile: CLOSED / FROZEN
+CURRENT_LANGUAGE_SCOPE: ENGLISH
+OTHER_LANGUAGES: NOT_STARTED
+
+Roadmap đầy đủ theo thứ tự của toàn bộ catalog: KHÔNG TÌM THẤY
+
+=====================================================================
+PHẦN B3 — READING POLICY
+=====================================================================
+
+Furigana:
+- chỉ hiện mặc định cho kanji người học chưa học hoặc chưa thành thạo;
+- người học có thể bật toàn bộ furigana.
+
+Romaji chung theo trình độ, ngoài chính sách riêng của Q14:
+Basic: hiển thị mặc định.
+Intermediate: ẩn mặc định nhưng có thể bật.
+Advanced: không hiển thị, trừ ngoại lệ đã được duyệt.
+*** MÂU THUẪN với Q14_ROMAJI_POLICY (A0–B1 ẩn mặc định) — cần chủ dự án quyết ***
+
+Reading và romaji:
+Reading và romaji có hai toggle độc lập.
+Người học có thể chọn: chỉ reading; chỉ romaji; cả hai; không hiển thị cả hai.
+
+Kana và kanji trong đáp án:
+Khi bài không kiểm tra kanji:
+- chấp nhận kana hoặc kanji;
+- bài kiểm tra kanji có thể yêu cầu kanji theo exact-form objective.
+
+Reading aid phụ thuộc ngôn ngữ và locale:
+Reading-aid policy is language- and locale-specific, based on `targetLanguage`
+and `targetLocale`.
+
+Thẻ từ vựng:
+collapsed: target-language display, approved reading, and audio;
+expanded: meaning, approved usage, example, translation, and approved note.
+
+Dạng 雨（あめ）:
+[KHÔNG CHẮC NGUYÊN VĂN] Display 雨（あめ） / Speech text あめ
+
+雨（あめ） được dùng chính xác ở loại bài/card nào? KHÔNG TÌM THẤY
+Hiragana phải nằm dưới kanji ở mọi nơi hay chỉ một số card? KHÔNG TÌM THẤY
+Đề bài bắt buộc dùng kanji hay hiragana theo từng level: KHÔNG TÌM THẤY
+
+=====================================================================
+PHẦN B4 — SHARED SOURCE OF TRUTH
+=====================================================================
+
+Vị trí: Shared source of truth: `shared/`
+
+Quy trình bắt buộc:
+For any change that affects lesson, curriculum, localization, exercise,
+character, plan, schema, generator, or validator data:
+1. Update the approved Shared Source Of Truth.
+2. Generate.
+3. Validate.
+4. Sync.
+Never hand-edit generated JSON.
+
+Lesson Format 2.0:
+This file is the Single Source of Truth for the opt-in `lessonFormat: five_cards`
+format.
+Reference implementation: ja-daily_life-m01-u1-l1
+
+Các trường source đã tìm thấy nguyên văn:
+lessonFormat / targetLanguage / targetLocale / cultureContext /
+approvedCharacterNamePool / displayText / canonicalText / audioText
+
+Quy tắc của ba trường:
+Store `displayText`, `canonicalText`, and `audioText` separately: UI renders
+`displayText`, the answer checker uses `canonicalText`, and TTS uses `audioText`.
+
+Cấu trúc bài five_cards:
+Every `five_cards` lesson has exactly these five overview cards, in this order,
+with each card opening its own page:
+1. Introduction
+2. Vocabulary cards
+3. Short dialogue
+4. Grammar
+5. Exercises
+
+Điều kiện source đã được nhắc tới:
+- Explicit `lessonFormat: five_cards` opt-in and approved target language/locale.
+- Approved source content, localization, character metadata, and reading policy.
+- `targetLanguage` and `targetLocale` exist; when a lesson uses characters,
+  `cultureContext` exists; when dialogue uses a speaker,
+  `approvedCharacterNamePool` exists.
+- Exactly five cards in the frozen order and the approved 14-question map.
+- Free 1–10 and Plus 11–14 access plans; Q15 remains deferred.
+- Stable IDs, local persistence/resume/wrong-answer behavior, and completion
+  rules are represented in source and validation.
+- Source → generate → validate → sync is available; no generated JSON is edited
+  manually.
+
+Format/schema đầy đủ của một file Shared Source of Truth: KHÔNG TÌM THẤY
+Một entry JSON hoàn chỉnh nguyên văn: KHÔNG TÌM THẤY
+Tên chính xác của file source chứa từng lesson: KHÔNG TÌM THẤY
+Schema type đầy đủ của lesson entry: KHÔNG TÌM THẤY

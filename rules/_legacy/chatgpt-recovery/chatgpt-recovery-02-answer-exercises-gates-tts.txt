@@ -1,0 +1,297 @@
+NGUỒN: ChatGPT recovery — vòng 2 (khai quật trí nhớ hội thoại cũ về NovaLang)
+CHỦ ĐỀ: chấm đáp án / loại bài tập Q1-Q15 / approved source / Gate 1-6 /
+        style-and-register ja-en-vi / metadata / TTS-audio
+LƯU Ý: đây là trí nhớ của AI, KHÔNG phải nguồn sự thật. Repo + decisions.md thắng file này.
+
+=====================================================================
+1. CHẤM ĐÁP ÁN (answer acceptance)
+=====================================================================
+
+Single choice:
+For single-choice exercises, there must be exactly one correct answer.
+There must be no duplicate options.
+Distractor options must not also satisfy the question rule.
+Do not use 飴（あめ） as a distractor for あ because it also starts with あ.
+
+Match pairs:
+For match pairs, check every pair exactly.
+If even one pair is wrong, the result should be incorrect.
+Do not show "Chính xác" unless every pair is correctly matched.
+Do not mix kana-only items with vocabulary meaning items in the same
+match-pairs exercise.
+
+Kana và kanji:
+Khi bài không kiểm tra kanji:
+- chấp nhận kana hoặc kanji;
+- bài kiểm tra kanji có thể yêu cầu kanji theo exact-form objective.
+
+Dấu câu, khoảng trắng, full-width/half-width:
+- chuẩn hóa và bỏ qua khác biệt nhỏ;
+- exact-form exercise có thể yêu cầu chính xác.
+
+Nhiều đáp án cùng đúng hoặc cùng nghĩa:
+Đáp án khác cấu trúc nhưng đúng nghĩa và tự nhiên:
+- chỉ tự động chấp nhận biến thể đã được phê duyệt;
+- trường hợp open answer chưa chắc chắn phải review/escalate.
+
+Lỗi gõ nhỏ (typo):
+- không cấp PASS;
+- phân loại là typo;
+- phản hồi nhẹ, không coi là lỗi ngữ pháp hoàn toàn.
+
+Sai mức diễn đạt (register):
+- tính sai khi register là mục tiêu bài học hoặc làm câu không phù hợp tình huống;
+- trường hợp khác chỉ cảnh báo.
+
+Hoa/thường: KHÔNG TÌM THẤY
+Dấu thanh tiếng Việt: KHÔNG TÌM THẤY
+Quy tắc typo theo số ký tự hoặc khoảng cách Levenshtein: KHÔNG TÌM THẤY
+Homophone: KHÔNG TÌM THẤY
+English it's và its: KHÔNG TÌM THẤY
+  (chỉ có audit cảnh báo: ignorePunctuation can erase contraction apostrophes.)
+
+=====================================================================
+2. DANH SÁCH LOẠI BÀI TẬP (Q1–Q15)
+=====================================================================
+
+| Q1 | Meaning multiple choice | Free |
+| Q2 | Target-language multiple choice | Free |
+| Q3 | Two-column matching: left target language, right native meaning; columns
+       shuffle independently; pair/unpair by stable IDs | Free |
+| Q4 | Sentence ordering: answer area above, option bank below; tap a token to
+       move or return it | Free |
+| Q5 | Dialogue fill with approved word-bank/slot behavior; check by slot IDs | Free |
+| Q6 | Listening multiple choice; replay allowed, no autoplay | Free |
+| Q7 | Grammar-fill selection | Free |
+| Q8 | Contextual response | Free |
+| Q9 | Checkpoint: five saved subquestions, four options, one correct answer each | Free |
+| Q10 | `chat_text_fill`: context 11:00, exactly 6 chat bubbles, A right/B left,
+        exactly 2 keyboard text slots, local Unicode/script-tolerant checker,
+        no AI | Free |
+| Q11 | Situation multiple choice | Plus |
+| Q12 | Naturalness judgement | Plus |
+| Q13 | `slot_ordering`: exactly 6 slots; system-inserted punctuation is neither
+        draggable nor the distractor; `こんばんは` is the distractor;
+        check `slotId → tokenId`, never display position | Plus |
+
+Q14 — quyết định CŨ đã bị thay thế:
+| Q14 | Controlled AI text practice: fixed approved prompt, exactly one user
+       answer per cycle, local pre-validation, AI grades once, `maxCycles = 1`,
+       no free chat | Plus |
+
+Q14 — quyết định THAY THẾ:
+Schema real_world_practice_dialogue (non-graded).
+Nội dung Tanaka-Sato 14 dòng đã duyệt, đầy đủ hiragana + vi/en/ja translation,
+không romaji.
+Audio phát từng dòng, chỉ 1 dòng phát cùng lúc, cho nghe lại không mất quota.
+Hai toggle (hiragana/dịch) độc lập hoàn toàn.
+Completion non-graded, idempotent (double-tap chỉ navigate 1 lần).
+Đã xoá hết UI AI cũ (trial label, text input, Check Answer, score).
+
+Q14_ROMAJI_POLICY (cập nhật sau đó):
+HIDDEN_BY_DEFAULT / USER_TOGGLE_AVAILABLE
+Reading và romaji: INDEPENDENT_TOGGLES
+A0 / A1 / A2 / B1: romaji ẩn mặc định; có thể bật bằng toggle.
+B2 / C1 / C2: không hiển thị romaji; không có toggle romaji.
+
+Q15: Q15 remains deferred.
+
+Speech recording, pronunciation scoring, essay, image choice: KHÔNG TÌM THẤY
+
+=====================================================================
+3. NGUỒN TỪ VỰNG ("approved source")
+=====================================================================
+
+Approved content is authoritative. Do not invent vocabulary, dialogue,
+grammar, exercises, translations, names, cultural details, or a lesson plan.
+Stop and report missing approved input.
+Keep vocabulary data, order, and audio behavior from the approved source. Do
+not synthesize examples, translations, or notes.
+
+Nguồn chuẩn được gọi là: approved Shared Source Of Truth
+
+Quy tắc cập nhật:
+For any change that affects lesson, curriculum, localization, exercise,
+character, plan, schema, generator, or validator data:
+1. Update the approved Shared Source Of Truth.
+2. Generate.
+3. Validate.
+4. Sync.
+
+Checklist nội dung đã duyệt:
+- Explicit `lessonFormat: five_cards` opt-in and approved target language/locale.
+- Approved source content, localization, character metadata, and reading policy.
+- `targetLanguage` and `targetLocale` exist; when a lesson uses characters,
+  `cultureContext` exists; when dialogue uses a speaker,
+  `approvedCharacterNamePool` exists.
+- Exactly five cards in the frozen order and the approved 14-question map.
+- Free 1–10 and Plus 11–14 access plans; Q15 remains deferred.
+- Stable IDs, local persistence/resume/wrong-answer behavior, and completion
+  rules are represented in source and validation.
+- Source → generate → validate → sync is available; no generated JSON is edited
+  manually.
+
+Approved source cụ thể nằm ở file nào cho từng bài? KHÔNG TÌM THẤY
+Ai là người duyệt từ vựng? KHÔNG TÌM THẤY
+  (chỉ có: Only the project owner can change this frozen specification.)
+Quy trình duyệt từng từ trước khi vào bài: KHÔNG TÌM THẤY
+Có bắt buộc native reviewer duyệt từng từ không? KHÔNG TÌM THẤY
+
+=====================================================================
+4. QUY TRÌNH SOURCE → GENERATE → VALIDATE → SYNC + CÁC GATE
+=====================================================================
+
+For any change that affects lesson, curriculum, localization, exercise,
+character, plan, schema, generator, or validator data:
+1. Update the approved Shared Source Of Truth.
+2. Generate.
+3. Validate.
+4. Sync.
+Never hand-edit generated JSON.
+
+Gate 1 — Ownership
+- Không có hai core cùng là source of truth.
+- Không có dữ liệu không có chủ sở hữu.
+- Không có core tự tính thay core khác.
+
+Gate 2 — Invariants
+XP không quyết định mastery.
+AI không phải source of truth.
+Review không tiêu thụ new lesson quota.
+Downgrade không xóa progress.
+
+Gate 3 — Edge cases
+- app thoát giữa lesson; request bị gửi hai lần; đổi plan giữa ngày;
+- đổi domain; curriculum đổi version; API AI lỗi; người dùng nghỉ nhiều ngày;
+- reward farming; downgrade khi có 3 active tracks;
+- Guided Set đã dùng nhưng session bị gián đoạn.
+
+Gate 4 — Cross-architecture consistency
+- Output task phù hợp proficiency.
+- Language correction phù hợp quality rules.
+- Mastery không bị tăng chỉ vì XP.
+- Gamification không thưởng hành vi học vô nghĩa.
+- AI không tự thay đổi curriculum hoặc mastery.
+- Review dùng đúng knowledge item và error state.
+
+Gate 5 — Review có khoảng cách
+Review lần 1 → nghỉ 48–72 giờ → Review lần 2
+
+Gate 6 — Validation đúng loại
+| Quyết định | Validation tối thiểu |
+| Data ownership | Architecture simulation |
+| Entitlement/quota | Scenario testing |
+| Proficiency UX | Người học thật |
+| Language feedback | Người học + language reviewer |
+| Mastery presentation | Người học thật |
+| Quest/Rhythm | Người học thật |
+| AI boundaries | Adversarial simulation |
+| Guided Conversation | Người học thật |
+
+Điều kiện PASS riêng cho từng gate ngoài nội dung trên: KHÔNG TÌM THẤY
+
+=====================================================================
+5. STYLE-AND-REGISTER ja / en / vi
+=====================================================================
+
+ja/style-and-register.md — toàn bộ nội dung nguyên văn: KHÔNG TÌM THẤY
+Chỉ có audit summary:
+`rules/languages/ja/style-and-register.md` | Nguyên tắc ghi là `CONFIRMED`;
+áp dụng content vẫn pending | Có です／ます, casual, formal, 敬語, trợ từ cuối
+câu và translation traps
+
+en/style-and-register.md — toàn bộ nội dung nguyên văn: KHÔNG TÌM THẤY
+Các quyết định được audit xác nhận là đã ghi trong profile:
+- General International English.
+- en-US spelling và punctuation baseline.
+- `NATURAL_NEUTRAL_POLITE`.
+- `CASUAL`, `FORMAL`; `HONORIFIC`, `CEREMONIAL`, `SLANG` là modifiers.
+- `Hi` có thể neutral-polite trong modern UI/workplace.
+- Contractions thường phù hợp nhưng không bắt buộc.
+- Ambiguous contractions cần context rõ.
+- Không tự dịch Japanese `ね` thành `isn't it?`.
+- Không tự thêm `Mr`, `Ms`, `sir`, `madam`.
+- Không tự chuyển `さん` thành `Mr/Ms`.
+- Slang opt-in; có region/user group/tone/review date; review tối thiểu mỗi 12 tháng.
+- Customer service: polite, clear, action-oriented; tránh excessive deference,
+  unnecessary passive voice, mechanical `kindly` và titles.
+- Translation traps chỉ mang tính context/pair-specific, không phải global bans.
+- AI không phải native reviewer.
+- Reviewer: `NOT_ASSIGNED`.
+- Version: `0.1.0-draft`.
+- Review sampling: 100% / 25% / 10% / 5%.
+
+vi/style-and-register.md: Không tồn tại — `LANGUAGE_STYLE_PROFILE_NOT_IMPLEMENTED`
+
+Deterministic banned fixtures / native-review fixtures nguyên văn (ja, en, vi):
+KHÔNG TÌM THẤY
+
+=====================================================================
+6. FRONT-MATTER / METADATA
+=====================================================================
+
+Danh sách template:
+- `languageCode`; status; profile version; reviewer; review date; source/provenance;
+- phạm vi: target text, learner support, UI;
+- normal neutral-polite; casual; formal; honorific; ceremonial; slang;
+- pronouns/forms of address; politeness markers; contractions;
+- sentence-final particles; service/customer language;
+- spoken versus written language; unacceptable literal translations;
+- pedagogically controlled language; deterministic banned fixtures;
+- native-review fixtures; unresolved decisions; change log.
+
+Các trạng thái tài liệu chính thức:
+| DRAFT | Đang hình thành, có thể sửa tự do |
+| REVIEW_CANDIDATE | Đủ hoàn chỉnh để kiểm tra |
+| PROVISIONAL | Tạm dùng làm nền, chưa hard-freeze |
+| VALIDATED | Đã qua validation phù hợp |
+| FROZEN | Đủ bằng chứng, thay đổi phải qua change process |
+| DEFERRED | Cố ý chưa quyết định |
+
+Các QA state của language style:
+LANGUAGE_STYLE_PROFILE_NOT_IMPLEMENTED / FAIL_DETERMINISTIC /
+NEEDS_NATIVE_STYLE_REVIEW / PASS
+
+Các status marker khác từng xuất hiện:
+PROJECT_OWNER_REVIEW_PENDING / NOT_FROZEN / NOT_ASSIGNED / NOT_REVIEWED /
+PENDING / APPROVED / CLOSED / WAIVED / NOT_COMPLETED / OUT_OF_SCOPE
+(Không tìm thấy một enum chung duy nhất tuyên bố tất cả marker trên là giá trị
+hợp lệ cho cùng một trường.)
+
+=====================================================================
+7. TTS / AUDIO
+=====================================================================
+
+Store `displayText`, `canonicalText`, and `audioText` separately: UI renders
+`displayText`, the answer checker uses `canonicalText`, and TTS uses
+`audioText`.
+Never use a display string as an answer key or make TTS repeat both Kanji and
+its reading.
+
+Japanese speech text:
+For beginner Japanese pronunciation, use kana/reading for speechText.
+Do not pass ambiguous kanji alone to speechSynthesis.
+Ví dụ: Display 雨（あめ）→ Speech text あめ
+       Display 雨（あめ）です。→ Speech text あめです。
+
+Replay và autoplay:
+Dialogue and listening audio may be replayed by the learner.
+Do not autoplay listening questions.
+
+Tốc độ và hành vi đã chốt cho Japanese:
+- replay không giới hạn; tốc độ chuẩn 1.0x; có chế độ chậm 0.75x;
+- không tự động phát khi mở card.
+
+Thứ tự ưu tiên audio:
+1. audio đã được duyệt;
+2. TTS đúng locale;
+3. báo lỗi rõ nếu cả hai không có.
+Không fallback âm thầm sang voice hoặc locale khác.
+
+Q14 per-line audio:
+Audio phát từng dòng, chỉ 1 dòng phát cùng lúc, cho nghe lại không mất quota.
+
+Giọng đọc cụ thể / tên voice / nhà cung cấp: KHÔNG TÌM THẤY
+SSML: KHÔNG TÌM THẤY
+Pitch, emphasis, pause, prosody: KHÔNG TÌM THẤY
+English voice locale đã được Project Owner freeze: KHÔNG TÌM THẤY
