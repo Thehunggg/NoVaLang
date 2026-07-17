@@ -1,0 +1,570 @@
+{
+  "generatedAt": "2026-07-17T16:37:13.126Z",
+  "passes": [
+    "passA-frozen",
+    "passB-nrgrammar",
+    "passC-jlreq",
+    "passD-wikipedia"
+  ],
+  "agree": [
+    {
+      "phenomenon": "conjugation.i_adjectives_inflect",
+      "claim": true,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "conjugation.na_adjectives_need_copula",
+      "claim": true,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "conjugation.person_number_agreement",
+      "claim": false,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "conjugation.regular_verb_classes",
+      "claim": 2,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "counters.counter_people",
+      "claim": "人",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "counters.generic_native_counter",
+      "claim": "つ",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "counters.numeral_needs_counter",
+      "claim": true,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "counters.sound_changes_occur",
+      "claim": true,
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "forms_of_address.neutral_polite_suffix",
+      "claim": "さん",
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "forms_of_address.second_person_pronoun_common_polite",
+      "claim": false,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "forms_of_address.teacher_title",
+      "claim": "先生",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "honorifics_keigo.honorific_prefix_exists",
+      "claim": true,
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "honorifics_keigo.kenjougo_refers_to",
+      "claim": "speaker_own_actions",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "honorifics_keigo.main_categories",
+      "claim": [
+        "kenjougo",
+        "sonkeigo",
+        "teineigo"
+      ],
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "honorifics_keigo.polite_verb_suffix",
+      "claim": "ます",
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "honorifics_keigo.sonkeigo_refers_to",
+      "claim": "actions_of_respected_person",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "kana_orthography.katakana_long_vowel_mark",
+      "claim": "ー",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "kana_orthography.long_o_hiragana_default",
+      "claim": "おう",
+      "passes": [
+        "passA-frozen",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "kana_orthography.particle_direction_spelled",
+      "claim": "へ",
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "kana_orthography.particle_object_spelled",
+      "claim": "を",
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "kana_orthography.particle_topic_spelled",
+      "claim": "は",
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "kana_orthography.sokuon_symbol",
+      "claim": "small_tsu",
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "loanword_katakana.script_for_loanwords",
+      "claim": "katakana",
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "loanword_katakana.transliteration_fully_deterministic",
+      "claim": false,
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "loanword_katakana.v_sound_kana",
+      "claim": "both_accepted",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "mora_timing.long_vowel_extra_unit",
+      "claim": true,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "mora_timing.n_counts_as_unit",
+      "claim": true,
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "mora_timing.timing_unit",
+      "claim": "mora",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "phoneme_inventory.consonant_gemination_contrastive",
+      "claim": true,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "phoneme_inventory.moraic_nasal_is_separate_unit",
+      "claim": true,
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "phoneme_inventory.vowel_count",
+      "claim": 5,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "punctuation_layout.question_mark_required_with_ka",
+      "claim": false,
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "punctuation_layout.quote_marks",
+      "claim": "「」",
+      "passes": [
+        "passB-nrgrammar",
+        "passC-jlreq",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "punctuation_layout.words_separated_by_spaces",
+      "claim": false,
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passC-jlreq",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "rendaku.applies_to",
+      "claim": "second_element_initial",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "rendaku.change_direction",
+      "claim": "voiceless_to_voiced",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "rendaku.fully_predictable",
+      "claim": false,
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "sentence_final_particles.gender_associations_exist",
+      "claim": true,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "sentence_final_particles.ka_function",
+      "claim": "question",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "sentence_final_particles.ne_function",
+      "claim": "agreement_seeking",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "sentence_final_particles.yo_function",
+      "claim": "assertion_new_info",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "word_order.adposition_type",
+      "claim": "postposition",
+      "passes": [
+        "passA-frozen",
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "word_order.basic",
+      "claim": "SOV",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "word_order.modifier_position",
+      "claim": "before_noun",
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "word_order.verb_strictly_final_in_neutral_sentence",
+      "claim": true,
+      "passes": [
+        "passB-nrgrammar",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    }
+  ],
+  "conflict": [
+    {
+      "phenomenon": "conjugation.irregular_verbs",
+      "claims": [
+        {
+          "pass": "passB-nrgrammar",
+          "claim": [
+            "ある",
+            "くる",
+            "する"
+          ],
+          "note": "\"There are three irregular verbs in Japanese ... する ... 来(く)る ... ある\" — verb_grammar.txt"
+        },
+        {
+          "pass": "passD-wikipedia",
+          "claim": [
+            "くる",
+            "する"
+          ],
+          "note": "\"best-known irregular verbs are する suru 'do' and 来る kuru 'come'\" — Wikipedia: Japanese irregular verbs"
+        }
+      ],
+      "action": "review"
+    },
+    {
+      "phenomenon": "punctuation_layout.comma",
+      "claims": [
+        {
+          "pass": "passB-nrgrammar",
+          "claim": "、",
+          "note": "punctuation table: \"comma 、\" — syntax.txt"
+        },
+        {
+          "pass": "passC-jlreq",
+          "claim": "both",
+          "note": "縦組は読点[、]；横組は，(COMMA)と、(IDEOGRAPHIC COMMA)双方の方式を併記 — JLREQ §id138–id141 — jlreq"
+        },
+        {
+          "pass": "passD-wikipedia",
+          "claim": "、",
+          "note": "\"The comma (、, tōten) is used... for marking off separate elements within a sentence\" — Wikipedia: Japanese punctuation"
+        }
+      ],
+      "action": "review"
+    },
+    {
+      "phenomenon": "punctuation_layout.sentence_terminator",
+      "claims": [
+        {
+          "pass": "passB-nrgrammar",
+          "claim": "。",
+          "note": "punctuation table: \"full stop 。\" — syntax.txt"
+        },
+        {
+          "pass": "passC-jlreq",
+          "claim": "both",
+          "note": "縦組は句点[。]専用；横組は3方式（，．／，。／、。）を併記，。は公用文採用 — JLREQ §id137–id141, n46 — jlreq"
+        },
+        {
+          "pass": "passD-wikipedia",
+          "claim": "。",
+          "note": "\"The kuten (。) is a small circle used as a full stop\" — Wikipedia: Japanese punctuation"
+        }
+      ],
+      "action": "review"
+    }
+  ],
+  "onlyOne": [
+    {
+      "phenomenon": "mora_timing.sokuon_counts_as_unit",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"The sokuon indicates a one-mora period of silence\" — Wikipedia: Japanese phonology"
+    },
+    {
+      "phenomenon": "phoneme_inventory.vowel_length_contrastive",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"all vowels display a length contrast, where short vowels are phonemically distinct from long vowels\" — Wikipedia: Japanese phonology"
+    },
+    {
+      "phenomenon": "rendaku.blocked_by_voiced_obstruent_in_second_element",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Lyman's law... prohibits voicing when the second element already contains a voiced obstruent\" — Wikipedia: Rendaku"
+    }
+  ]
+}

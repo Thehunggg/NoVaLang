@@ -1,0 +1,39 @@
+{
+  "id": "ja/grammar.rules",
+  "phenomenon": "word_order",
+  "enforces": ["grammar-and-usage.md", "grammar-particles.md"],
+  "sources": ["S-NRGRAMMAR", "S-JF-GRAMMAR", "UD"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "word_order": {
+      "basic": "SOV",
+      "adposition_type": "postposition",
+      "modifier_position": "before_noun",
+      "verb_strictly_final_in_neutral_sentence": true
+    },
+    "conjugation": {
+      "regular_verb_classes": 2,
+      "irregular_verbs": { "value": ["くる", "する"], "pending_review": "R-IRR: nrGrammar thêm ある; Wikipedia chỉ する/くる — chờ owner (Bước 4)" },
+      "i_adjectives_inflect": true,
+      "na_adjectives_need_copula": true,
+      "person_number_agreement": false
+    },
+    "counters": {
+      "numeral_needs_counter": true,
+      "counter_people": "人",
+      "generic_native_counter": "つ",
+      "sound_changes_occur": true
+    }
+  },
+  "fixtures": {
+    "pass": [
+      { "sentence": "私は水を飲む。", "note": "SOV: động từ cuối câu" },
+      { "sentence": "三人の学生が来ました。", "note": "counter 人 cho người" },
+      { "sentence": "りんごを三つ買った。", "note": "counter gốc Nhật つ" }
+    ],
+    "fail": [
+      { "sentence": "私は飲む水を。", "note": "SAI: động từ không đứng cuối trong câu trần thuật trung tính" },
+      { "sentence": "学生三が来ました。", "note": "SAI: số đếm người thiếu counter 人" }
+    ]
+  }
+}

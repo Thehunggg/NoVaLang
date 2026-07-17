@@ -1,0 +1,55 @@
+{
+  "id": "ja/orthography.rules",
+  "phenomenon": "kana_orthography",
+  "enforces": ["writing-system.md", "orthography.md"],
+  "sources": ["S-BUNKA-KANA", "S-NRGRAMMAR", "S-W3C-JLREQ"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "particle_spellings": { "topic_wa": "は", "direction_e": "へ", "object_o": "を" },
+    "sokuon": "small_tsu",
+    "katakana_long_vowel_mark": "ー",
+    "loanword_script": "katakana",
+    "v_sound_kana_accepted": ["ブ", "ヴ"],
+    "words_separated_by_spaces": false,
+    "sentence_terminator": "。",
+    "comma": "、",
+    "quote_marks": "「」",
+    "question_mark_required_with_ka": false,
+    "_pending_review": [
+      "R-PUNCT: JLREQ ghi nhận cả quy ước ．， ngang bên cạnh 。、 — app dạy quy ước nào là quyết định sản phẩm (Bước 4)"
+    ]
+  },
+  "checks": [
+    {
+      "id": "no-space-between-japanese-words",
+      "description": "Văn tiếng Nhật không chèn khoảng trắng giữa các từ (JLREQ ベタ組).",
+      "assert": { "type": "regex_absent", "pattern": "[\\u3040-\\u30ff\\u4e00-\\u9fff] [\\u3040-\\u30ff\\u4e00-\\u9fff]" },
+      "fixtures": {
+        "pass": ["私は学生です。"],
+        "fail": ["私 は 学生 です。"]
+      }
+    },
+    {
+      "id": "greeting-wa-spelled-ha",
+      "description": "こんにちは/こんばんは viết bằng は (gốc trợ từ chủ đề), không viết わ.",
+      "assert": { "type": "regex_absent", "pattern": "こんにちわ|こんばんわ" },
+      "fixtures": {
+        "pass": ["こんにちは。", "こんばんは。"],
+        "fail": ["こんにちわ。", "こんばんわ。"]
+      }
+    },
+    {
+      "id": "line-contains-japanese-script",
+      "description": "Mỗi câu target-language phải chứa ít nhất một ký tự Nhật (kana/kanji).",
+      "assert": { "type": "regex_present", "pattern": "[\\u3040-\\u30ff\\u4e00-\\u9fff]" },
+      "fixtures": {
+        "pass": ["水を飲む。"],
+        "fail": ["Hello world."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["東京へ行きます。", "水を飲みます。", "私はベトナム人です。", "コーヒーを飲む。"],
+    "fail": ["東京え行きます。", "水お飲みます。", "私わベトナム人です。", "コウヒイを飲む。"]
+  }
+}

@@ -24,6 +24,16 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   phonemic, dùng 3 file narrow_filtered (hira 2320 + kata 2623 + hani 16767 =
   21710 cặp) → `grapheme-to-phoneme.data.json`. Importer wikipron mở rộng nhận
   nhiều `--url` (tái dùng cho ngôn ngữ đa hệ chữ). Validator PASS.
+- **Bước 2 (derive) · 2026-07-17 · XONG** — Egress chặn Wikipedia/Tatoeba/bunka
+  trực tiếp → nguồn thay thế: nrGrammar (Kamermans, GitHub raw), W3C JLREQ
+  (GitHub raw), Wikipedia qua WebSearch. 4 lượt derive độc lập (A=FROZEN 17,
+  B=nrGrammar 47, C=JLREQ 4, D=Wikipedia 51 trên 51 claim) điền khung claim đóng
+  `derive/claims-template.json`; `derive.mjs diff-multi` (mode mới, tái dùng):
+  **45 trùng → medium/ai-cross-checked · 3 lệch → review Bước 4** (irregular
+  verbs có ある?; 。、 vs ．，×2) · 3 chỉ-1-nguồn (giữ nguyên, có ghi chú).
+  Phát hiện: hồ sơ FROZEN thiên governance, ít mô tả ngôn ngữ. Sinh 4 file rule:
+  `orthography/phonology/grammar/pragmatics.rules.json` (fixtures pass+fail đủ).
+  Validator PASS.
 - **Ghi chú hạ tầng (đã giải quyết) · 2026-07-17** — Ghi chú cũ "commit bị chặn,
   chờ owner" đã lỗi thời: toàn bộ scaffold + Bước 0 + đầu Bước 1 đã nằm trong
   commit `f0083a7`, và `main` đã fast-forward lên đúng commit đó. Từ giờ commit +

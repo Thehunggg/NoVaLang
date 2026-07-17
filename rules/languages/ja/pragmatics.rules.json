@@ -1,0 +1,51 @@
+{
+  "id": "ja/pragmatics.rules",
+  "phenomenon": "honorifics_keigo",
+  "enforces": ["style-and-register.md", "grammar-particles.md"],
+  "sources": ["S-BUNKA-KEIGO", "S-NRGRAMMAR", "S-FROZEN"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "keigo": {
+      "main_categories": ["kenjougo", "sonkeigo", "teineigo"],
+      "polite_verb_suffix": "ます",
+      "polite_copula": "です",
+      "honorific_prefix_exists": true,
+      "sonkeigo_refers_to": "actions_of_respected_person",
+      "kenjougo_refers_to": "speaker_own_actions"
+    },
+    "sentence_final_particles": {
+      "ka": "question",
+      "ne": "agreement_seeking",
+      "yo": "assertion_new_info",
+      "gender_associations_exist": true,
+      "_guidance": "Dịch theo chức năng, không map cố định (S-FROZEN); phần chủ quan → native review"
+    },
+    "forms_of_address": {
+      "neutral_polite_suffix": "さん",
+      "second_person_pronoun_common_polite": false,
+      "teacher_title": "先生"
+    },
+    "register_note": "Baseline NATURAL_NEUTRAL_POLITE (ADR-016/D-24) = thể です/ます, KHÔNG phải keigo tối đa"
+  },
+  "checks": [
+    {
+      "id": "baseline-polite-sentence-ends-desu-masu",
+      "description": "Câu baseline NATURAL_NEUTRAL_POLITE kết bằng です/ます (biến thể: でした/ました/ません/ましょう/ますか...). Chỉ áp cho nội dung sinh ở register baseline, KHÔNG áp cho corpus văn viết chung.",
+      "assert": { "type": "custom", "note": "máy kiểm khi generator chạy; không chạy trên corpus vì corpus không phải baseline-register" },
+      "fixtures": {
+        "pass": ["田中さんは先生です。", "水を飲みます。"],
+        "fail": ["田中は先生だ。", "水を飲む。"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      { "text": "田中さんは先生です。", "note": "さん + です: baseline lịch sự trung tính" },
+      { "text": "先生、おはようございます。", "note": "gọi giáo viên bằng 先生" }
+    ],
+    "fail": [
+      { "text": "田中あなたは先生です。", "note": "SAI: gọi trực tiếp bằng あなた khi biết tên không phải cách lịch sự thông dụng" },
+      { "text": "田中くんは先生です。", "note": "SAI ngữ cảnh baseline: くん không phải hậu tố trung tính-lịch sự mặc định" }
+    ]
+  }
+}
