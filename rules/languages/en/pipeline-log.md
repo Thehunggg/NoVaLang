@@ -28,6 +28,13 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   `import-dataset.mjs lexicon` (tái dùng cho ngôn ngữ sau cần bảng từ đóng).
   Tải corpus thật UD English-EWT train+dev+test → 16.622 câu (vượt mốc 10.000)
   cho Bước 3.
-- **Bước 2 (derive) · 2026-07-17** — Khung 40 claim đóng
-  `derive/claims-template.json`. 2 lượt derive độc lập song song: A = narrative
-  nội bộ (S-EN-STYLE + naturalness rule + _base), D = Wikipedia qua WebSearch.
+- **Bước 2 (derive) · 2026-07-17 · XONG** — Khung 38 claim đóng
+  `derive/claims-template.json`. 2 lượt derive độc lập: A = narrative nội bộ
+  (S-EN-STYLE + naturalness rule + _base) 9/45, D = Wikipedia qua WebSearch
+  36/38. `derive.mjs diff-multi`: **7 trùng → medium/ai-cross-checked · 1 lệch
+  → review Bước 4 (R-01: sir/ma'am — quy tắc sản phẩm vs sự kiện ngôn ngữ) · 29
+  chỉ-Wikipedia** (nguồn nội bộ không mô tả sự kiện ngôn ngữ, giữ đúng tiền lệ
+  ja cho single-source: medium + trích dẫn, không bịa nguồn thứ hai). Sinh 4
+  file rule: `orthography/phonology/grammar/pragmatics.rules.json` (fixtures
+  đủ pass+fail, dùng luôn 2 bảng lexicon irregular-verbs/contractions). Validator
+  PASS.

@@ -1,0 +1,52 @@
+{
+  "id": "en/orthography.rules",
+  "phenomenon": "casing",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-WIKIPEDIA-EN", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "sentence_initial_capitalized": true,
+    "pronoun_I_always_capitalized": true,
+    "proper_nouns_capitalized": true,
+    "days_months_capitalized": true,
+    "seasons_capitalized": false,
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "oxford_comma_standard": "optional_style_dependent",
+    "definite_article": "the",
+    "article_rule_based_on_sound_not_letter": true
+  },
+  "checks": [
+    {
+      "id": "sentence-starts-with-capital",
+      "description": "Câu (target-language text) phải bắt đầu bằng chữ hoa.",
+      "assert": { "type": "regex_present", "pattern": "^[A-Z]" },
+      "fixtures": {
+        "pass": ["The cat sleeps.", "I like coffee."],
+        "fail": ["the cat sleeps.", "i like coffee."]
+      }
+    },
+    {
+      "id": "pronoun-I-capitalized",
+      "description": "Đại từ 'I' luôn viết hoa dù đứng giữa câu.",
+      "assert": { "type": "regex_absent", "pattern": "\\b(?<![A-Za-z'])i\\b" },
+      "fixtures": {
+        "pass": ["I think I am right."],
+        "fail": ["I think i am right."]
+      }
+    },
+    {
+      "id": "an-before-vowel-sound",
+      "description": "'an' đứng trước từ có ÂM đầu là nguyên âm (không phải chữ cái đầu).",
+      "assert": { "type": "custom", "note": "kiểm bằng phoneme đầu của WikiPron khi generator chạy, không phải regex chữ cái" },
+      "fixtures": {
+        "pass": ["an hour", "a university", "an apple"],
+        "fail": ["a hour", "an university"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["The train arrives on Monday in January.", "I need to go to the store."],
+    "fail": ["the train arrives on monday in january.", "i need to go to the store."]
+  }
+}

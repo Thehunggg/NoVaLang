@@ -1,0 +1,54 @@
+{
+  "id": "en/pragmatics.rules",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md", "content/naturalness-and-register.md"],
+  "sources": ["S-EN-STYLE", "S-CONTENT-NATURALNESS", "S-WIKIPEDIA-EN"],
+  "derived_by": "human",
+  "config": {
+    "register_taxonomy": {
+      "mainly_word_choice_not_grammar": true,
+      "contractions_signal_informality": true,
+      "_note": "Khác ja: en hiếm khi cần chế độ đánh dấu HONORIFIC/CEREMONIAL/SLANG riêng — chủ yếu qua chọn từ, không có hệ ngữ pháp kính ngữ riêng."
+    },
+    "contractions": {
+      "apostrophe_marks_omission": true,
+      "common_in_informal_speech": true,
+      "acceptable_in_formal_writing": "generally_avoided",
+      "source_table": "contractions.data.json (145 mục, S-CONTRACTIONS)"
+    },
+    "forms_of_address": {
+      "first_name_common_informal": true,
+      "title_lastname_formal": true,
+      "_pending_review": "R-01: sir/ma'am trong ngữ cảnh dịch vụ — quy tắc sản phẩm (đừng máy móc) vs sự kiện ngôn ngữ (có dùng thật) → review Bước 4"
+    },
+    "naturalness_translation": {
+      "literal_translation_risk_from_source_language": true
+    },
+    "answer_acceptance_en": {
+      "case_insensitive_default": true,
+      "contraction_and_full_form_equivalent": true,
+      "_source": "S-BASE (answer_acceptance.rules.json normalize_ignore) — không cần derive riêng, đã có sẵn ở lớp _base"
+    }
+  },
+  "checks": [
+    {
+      "id": "contraction-full-form-equivalent",
+      "description": "'do not' và 'don't' chấm như đáp án tương đương (trừ bài dạy đúng rút gọn).",
+      "assert": { "type": "custom", "note": "máy kiểm khi generator/grader chạy, tra contractions.data.json" },
+      "fixtures": {
+        "pass": [{ "input": "I don't know.", "accepted_as_equivalent_to": "I do not know." }],
+        "fail": [{ "input": "I dont no.", "note": "lỗi chính tả 'dont'/'no' KHÔNG được coi ngang hàng — đây là lỗi, không phải rút gọn hợp lệ" }]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      { "text": "Could you help me, please?", "note": "baseline lịch sự trung tính, không formal quá mức" },
+      { "text": "Thanks for your help!", "note": "rút gọn 'Thanks' tự nhiên trong văn nói thân mật" },
+      { "text": "Dear Dr. Smith, ...", "note": "Title + Họ cho ngữ cảnh trang trọng" }
+    ],
+    "fail": [
+      { "text": "I would be most grateful if you would kindly assist me.", "note": "SAI baseline: formal quá mức cho tình huống thường ngày (không phải NATURAL_NEUTRAL_POLITE)" }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "en",
-    "stage": "1.5-lexicon-imported",
+    "stage": "2-derive-done",
     "generatedAt": "2026-07-17",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
@@ -52,7 +52,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "KHÁC tiếng Nhật: tiếng Anh CÓ hoa/thường. Rule: đầu câu, danh từ riêng, đại từ 'I', tiêu đề. Danh từ riêng nào là lexical → Bước 2."
+    "notes": "KHÁC tiếng Nhật: tiếng Anh CÓ hoa/thường. Rule: đầu câu, danh từ riêng, đại từ 'I', tiêu đề. Danh từ riêng nào là lexical → Bước 2. [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "writing_direction": {
     "rule_level": {
@@ -111,7 +111,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "~44 âm vị (tùy giọng). Số chính xác phụ thuộc quyết định giọng (Bước 0 Q2). [B1: WikiPron US 99645 mục sẵn sàng đo/derive Bước 2-3]"
+    "notes": "~44 âm vị (tùy giọng). Số chính xác phụ thuộc quyết định giọng (Bước 0 Q2). [B1: WikiPron US 99645 mục sẵn sàng đo/derive Bước 2-3] [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "lexical_stress": {
     "rule_level": {
@@ -125,7 +125,7 @@
       "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "Trọng âm từ (word stress) phân biệt nghĩa: PREsent (n) vs preSENT (v). WikiPron đánh dấu ˈ. Lexical theo từng từ. [B1: WikiPron US có đánh dấu ˈ trọng âm]"
+    "notes": "Trọng âm từ (word stress) phân biệt nghĩa: PREsent (n) vs preSENT (v). WikiPron đánh dấu ˈ. Lexical theo từng từ. [B1: WikiPron US có đánh dấu ˈ trọng âm] [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "vowel_reduction": {
     "rule_level": {
@@ -139,7 +139,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Nguyên âm không trọng âm → schwa /ə/. Quan trọng cho phát âm tự nhiên, không cho chấm chính tả."
+    "notes": "Nguyên âm không trọng âm → schwa /ə/. Quan trọng cho phát âm tự nhiên, không cho chấm chính tả. [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "word_class": {
     "rule_level": {
@@ -167,7 +167,7 @@
       "confidence": "medium"
     },
     "machine_readable": false,
-    "notes": "Số nhiều -s, quá khứ -ed, ngôi 3 số ít -s, so sánh -er/-est. Bất quy tắc (go/went, child/children) là lexical → Bước 2 + wordlist. [B1.5: import kemitchell/english-irregular-verbs (50 động từ tần suất cao) -> irregular-verbs.data.json; đơn tác giả nên medium, không phải high]"
+    "notes": "Số nhiều -s, quá khứ -ed, ngôi 3 số ít -s, so sánh -er/-est. Bất quy tắc (go/went, child/children) là lexical → Bước 2 + wordlist. [B1.5: import kemitchell/english-irregular-verbs (50 động từ tần suất cao) -> irregular-verbs.data.json; đơn tác giả nên medium, không phải high] [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "articles": {
     "rule_level": {
@@ -181,7 +181,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "a/an/the. a→an theo ÂM đầu, không theo chữ ('an hour', 'a university'). Kiểm máy được."
+    "notes": "a/an/the. a→an theo ÂM đầu, không theo chữ ('an hour', 'a university'). Kiểm máy được. [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "word_order": {
     "rule_level": {
@@ -198,12 +198,12 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "SVO; tính từ đứng trước danh từ; giới từ đứng trước (preposition)."
+    "notes": "SVO; tính từ đứng trước danh từ; giới từ đứng trước (preposition). [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "contractions": {
     "rule_level": {
       "source": "S-WIKIPEDIA-EN",
-      "derived_by": "human",
+      "derived_by": "ai-cross-checked",
       "confidence": "medium"
     },
     "lexical_level": {
@@ -212,7 +212,7 @@
       "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "don't/I'm/it's/'ll/'ve. Ảnh hưởng chấm đáp án (chấp nhận do not = don't?). Có bảng đóng. [B1.5: import andrewbury/contractions (145 mục) -> contractions.data.json; đơn tác giả nên medium]"
+    "notes": "don't/I'm/it's/'ll/'ve. Ảnh hưởng chấm đáp án (chấp nhận do not = don't?). Có bảng đóng. [B1.5: import andrewbury/contractions (145 mục) -> contractions.data.json; đơn tác giả nên medium] [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "punctuation_layout": {
     "rule_level": {
@@ -229,7 +229,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": ". , ? ! ; : ' \" ( ) — . Có khoảng trắng giữa từ (khác ja). Normalize dấu câu khi chấm."
+    "notes": ". , ? ! ; : ' \" ( ) — . Có khoảng trắng giữa từ (khác ja). Normalize dấu câu khi chấm. [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "spelling_variants": {
     "rule_level": {
@@ -243,7 +243,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "en-US vs en-GB (color/colour, -ize/-ise, traveled/travelled). S-EN-STYLE đã chốt baseline en-US. Danh sách từ khác nhau là lexical."
+    "notes": "en-US vs en-GB (color/colour, -ize/-ise, traveled/travelled). S-EN-STYLE đã chốt baseline en-US. Danh sách từ khác nhau là lexical. [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "register_taxonomy": {
     "rule_level": {
@@ -252,7 +252,7 @@
         "S-CONTENT-NATURALNESS",
         "S-BASE"
       ],
-      "derived_by": "human",
+      "derived_by": "ai-cross-checked",
       "confidence": "medium"
     },
     "lexical_level": {
@@ -261,12 +261,12 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "en: chủ yếu CHỌN TỪ (word choice), hiếm khi cần chế độ đánh dấu HONORIFIC/CEREMONIAL/SLANG. Map ADR-016 → có S-EN-STYLE (DRAFT)."
+    "notes": "en: chủ yếu CHỌN TỪ (word choice), hiếm khi cần chế độ đánh dấu HONORIFIC/CEREMONIAL/SLANG. Map ADR-016 → có S-EN-STYLE (DRAFT). [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "forms_of_address": {
     "rule_level": {
       "source": "S-EN-STYLE",
-      "derived_by": "human",
+      "derived_by": "ai-cross-checked",
       "confidence": "medium"
     },
     "lexical_level": {
@@ -275,7 +275,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Mr/Ms/Mrs/Dr/Prof/sir/ma'am; văn hóa gọi tên. Cần cho bài hội thoại."
+    "notes": "Mr/Ms/Mrs/Dr/Prof/sir/ma'am; văn hóa gọi tên. Cần cho bài hội thoại. [B2: cross-check xong, xem derive/review-diff.json] [B2: LỆCH forms_of_address.maam_sir_service_context (passA quy tắc sản phẩm \"đừng máy móc\" vs passD sự kiện \"có dùng thật\") → review Bước 4]"
   },
   "sentence_final_particles": {
     "rule_level": {
@@ -342,7 +342,7 @@
         "S-EN-STYLE",
         "S-CONTENT-NATURALNESS"
       ],
-      "derived_by": "human",
+      "derived_by": "ai-cross-checked",
       "confidence": "medium"
     },
     "lexical_level": {
@@ -351,7 +351,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Dịch/diễn đạt tự nhiên. Owner tự review được (owner biết tiếng Anh — decisions.md)."
+    "notes": "Dịch/diễn đạt tự nhiên. Owner tự review được (owner biết tiếng Anh — decisions.md). [B2: cross-check xong, xem derive/review-diff.json]"
   },
   "tts_audio_policy": {
     "rule_level": {

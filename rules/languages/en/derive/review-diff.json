@@ -1,0 +1,273 @@
+{
+  "generatedAt": "2026-07-17T23:43:13.895Z",
+  "passes": [
+    "passA-internal",
+    "passD-wikipedia"
+  ],
+  "agree": [
+    {
+      "phenomenon": "contractions.acceptable_in_formal_writing",
+      "claim": "generally_avoided",
+      "passes": [
+        "passA-internal",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "contractions.apostrophe_marks_omission",
+      "claim": true,
+      "passes": [
+        "passA-internal",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "contractions.common_in_informal_speech",
+      "claim": true,
+      "passes": [
+        "passA-internal",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "forms_of_address.first_name_common_informal",
+      "claim": true,
+      "passes": [
+        "passA-internal",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "naturalness_translation.literal_translation_risk_from_ja",
+      "claim": true,
+      "passes": [
+        "passA-internal",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "register_taxonomy.contractions_signal_informality",
+      "claim": true,
+      "passes": [
+        "passA-internal",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    },
+    {
+      "phenomenon": "register_taxonomy.mainly_word_choice_not_grammar",
+      "claim": true,
+      "passes": [
+        "passA-internal",
+        "passD-wikipedia"
+      ],
+      "confidence": "medium",
+      "derived_by": "ai-cross-checked"
+    }
+  ],
+  "conflict": [
+    {
+      "phenomenon": "forms_of_address.maam_sir_service_context",
+      "claims": [
+        {
+          "pass": "passA-internal",
+          "claim": false,
+          "note": "'tránh...sir/madam máy móc'; 'Không tự động thêm...sir hoặc madam' — style-and-register.md"
+        },
+        {
+          "pass": "passD-wikipedia",
+          "claim": true,
+          "note": "\"'Sir', 'Madam', and 'Ma'am' are commonly used by workers performing a service\" — Wikipedia: English honorifics"
+        }
+      ],
+      "action": "review"
+    }
+  ],
+  "onlyOne": [
+    {
+      "phenomenon": "answer_acceptance_en.contraction_and_full_form_equivalent",
+      "pass": "passA-internal",
+      "claim": true,
+      "note": "'không tuyên bố biến thể tự nhiên khác là sai ngoài exact-form task' — style-and-register.md"
+    },
+    {
+      "phenomenon": "articles.definite_article",
+      "pass": "passD-wikipedia",
+      "claim": "the",
+      "note": "\"the definite article the\" — Wikipedia: A, an"
+    },
+    {
+      "phenomenon": "articles.rule_based_on_sound_not_letter",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"the rule is based on sound, not letter\" — Wikipedia: A, an"
+    },
+    {
+      "phenomenon": "casing.days_months_capitalized",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"names of months, days, and holidays always begin with a capital letter\" — Wikipedia: Capitalization in English"
+    },
+    {
+      "phenomenon": "casing.pronoun_I_always_capitalized",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"the first-person pronoun 'I'... capitalized\" — Wikipedia: Capitalization"
+    },
+    {
+      "phenomenon": "casing.proper_nouns_capitalized",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"norm for recognized proper names to be capitalized\" — Wikipedia: Capitalization in English"
+    },
+    {
+      "phenomenon": "casing.seasons_capitalized",
+      "pass": "passD-wikipedia",
+      "claim": false,
+      "note": "\"Seasons are uncapitalized (a hot summer) except when personified\" — Wikipedia: Capitalization in English"
+    },
+    {
+      "phenomenon": "casing.sentence_initial_capitalized",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"In standard English prose, only the first word is capitalized\" — Wikipedia: Capitalization"
+    },
+    {
+      "phenomenon": "forms_of_address.title_lastname_formal",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"commonly followed either by an honorific and a surname, such as 'Dear Mr. Smith'\" — Wikipedia: Salutation"
+    },
+    {
+      "phenomenon": "inflection_morphology.comparative_long_adj_uses_more_most",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"words of three or more syllables require 'more' or 'most'\" — Wikipedia: Degrees of comparison of adjectives and adverbs"
+    },
+    {
+      "phenomenon": "inflection_morphology.comparative_suffix_short_adj",
+      "pass": "passD-wikipedia",
+      "claim": "-er",
+      "note": "\"words of one syllable require the suffix\" [-er] — Wikipedia: Degrees of comparison of adjectives and adverbs"
+    },
+    {
+      "phenomenon": "inflection_morphology.regular_past_suffix",
+      "pass": "passD-wikipedia",
+      "claim": "-ed",
+      "note": "\"past tense is formed...by adding -ed to the base form (play → played)\" — Wikipedia: English verbs"
+    },
+    {
+      "phenomenon": "inflection_morphology.regular_plural_suffix",
+      "pass": "passD-wikipedia",
+      "claim": "both_depending_on_sound",
+      "note": "\"-es ending is typically used with nouns ending in...sibilants\" — Wikipedia: English plurals"
+    },
+    {
+      "phenomenon": "inflection_morphology.third_person_singular_suffix",
+      "pass": "passD-wikipedia",
+      "claim": "both_depending_on_sound",
+      "note": "\"-es is added\" after sibilants, otherwise -s — Wikipedia: English verbs"
+    },
+    {
+      "phenomenon": "lexical_stress.can_change_meaning",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "noun PREsent vs verb preSENT distinguished by stress — Wikipedia: Initial-stress-derived noun"
+    },
+    {
+      "phenomenon": "lexical_stress.compound_noun_pattern",
+      "pass": "passD-wikipedia",
+      "claim": "first_element",
+      "note": "\"compound blackboard is stressed on only the first element, black\" — Wikipedia: English compound"
+    },
+    {
+      "phenomenon": "phoneme_inventory.consonant_count_us",
+      "pass": "passD-wikipedia",
+      "claim": 24,
+      "note": "\"There are 24 consonantal phonemes in General American English\" — Wikipedia: General American English"
+    },
+    {
+      "phenomenon": "phoneme_inventory.rhotic",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"General American is rhotic while RP...is non-rhotic\" — Wikipedia: Comparison of General American and Received Pronunciation"
+    },
+    {
+      "phenomenon": "phoneme_inventory.vowel_count_us",
+      "pass": "passD-wikipedia",
+      "claim": 14,
+      "note": "\"There are 14 vocalic phonemes in General American English\" — Wikipedia: General American English"
+    },
+    {
+      "phenomenon": "punctuation_layout.oxford_comma_standard",
+      "pass": "passD-wikipedia",
+      "claim": "optional_style_dependent",
+      "note": "\"no universally accepted standard for its use\"; \"house style will dictate\" — Wikipedia: Serial comma"
+    },
+    {
+      "phenomenon": "punctuation_layout.sentence_terminator",
+      "pass": "passD-wikipedia",
+      "claim": ".",
+      "note": "full stop/period \"used...to mark the end of a declarative sentence\" — Wikipedia: Full stop"
+    },
+    {
+      "phenomenon": "punctuation_layout.words_separated_by_spaces",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"words would normally be 1/3 em-spaced\" (space between words) — Wikipedia: History of sentence spacing"
+    },
+    {
+      "phenomenon": "spelling_variants.color_colour_us_gb",
+      "pass": "passD-wikipedia",
+      "claim": "us_color_gb_colour",
+      "note": "\"'colour' is the British...'color' is the American version\" — Wikipedia: American and British English spelling differences"
+    },
+    {
+      "phenomenon": "spelling_variants.ize_ise_us_gb",
+      "pass": "passD-wikipedia",
+      "claim": "us_ize_gb_ise_or_ize",
+      "note": "\"American spelling avoids -ise...British spelling mostly uses -ise\" (though -ize also used) — Wikipedia: American and British English spelling differences"
+    },
+    {
+      "phenomenon": "spelling_variants.single_l_double_l_past_tense",
+      "pass": "passD-wikipedia",
+      "claim": "us_single_l_gb_double_l",
+      "note": "\"Americans typically use...traveling\" vs British \"travelling\" — Wikipedia: American and British English spelling differences"
+    },
+    {
+      "phenomenon": "vowel_reduction.unstressed_vowel_becomes_schwa",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Reduction to schwa occurs in most unstressed syllables\" — Wikipedia: Stress and vowel reduction in English"
+    },
+    {
+      "phenomenon": "word_order.adjective_position",
+      "pass": "passD-wikipedia",
+      "claim": "before_noun",
+      "note": "\"attributive adjectives normally come before the nouns they modify\" — Wikipedia: Postpositive adjective"
+    },
+    {
+      "phenomenon": "word_order.adposition_type",
+      "pass": "passD-wikipedia",
+      "claim": "preposition",
+      "note": "\"English generally has prepositions rather than postpositions\" — Wikipedia: Adposition"
+    },
+    {
+      "phenomenon": "word_order.basic",
+      "pass": "passD-wikipedia",
+      "claim": "SVO",
+      "note": "\"English is included in this group\" [SVO] — Wikipedia: Subject–verb–object word order"
+    }
+  ]
+}
