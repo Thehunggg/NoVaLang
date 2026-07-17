@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "source": "D-29 (legacy Q1–Q14 map)",
+    "purpose": "Bản đồ: mỗi loại bài tập cần những hiện tượng ngôn ngữ nào. Generator của app BẮT BUỘC đọc file này; invariant 9 dùng nó để chặn sinh item thuộc hiện tượng có confidence:none trong coverage.json của ngôn ngữ.",
+    "q15": "DEFERRED",
+    "plans": { "free": "Q1-Q10", "plus": "Q11-Q14" },
+    "phenomenaVocabulary": [
+      "vocabulary_meaning", "native_translation", "target_orthography", "reading_system",
+      "word_order", "particles", "grammar_usage", "listening", "pronunciation",
+      "register", "pragmatics", "naturalness", "typing_input", "punctuation_layout",
+      "audio_playback", "reading_aid"
+    ]
+  },
+  "exercises": [
+    { "questionId": "Q1", "type": "meaning_multiple_choice", "plan": "free", "requiredPhenomena": ["vocabulary_meaning", "native_translation"] },
+    { "questionId": "Q2", "type": "target_language_multiple_choice", "plan": "free", "requiredPhenomena": ["target_orthography", "vocabulary_meaning"] },
+    { "questionId": "Q3", "type": "two_column_matching", "plan": "free", "requiredPhenomena": ["target_orthography", "vocabulary_meaning", "native_translation"], "notes": "Trái target, phải native; hai cột shuffle độc lập; pair/unpair theo stable ID." },
+    { "questionId": "Q4", "type": "sentence_ordering", "plan": "free", "requiredPhenomena": ["word_order", "particles"], "notes": "Answer area trên, option bank dưới; tap token để chuyển/trả." },
+    { "questionId": "Q5", "type": "dialogue_fill_word_bank", "plan": "free", "requiredPhenomena": ["particles", "grammar_usage", "vocabulary_meaning"], "notes": "Check theo slot ID." },
+    { "questionId": "Q6", "type": "listening_multiple_choice", "plan": "free", "requiredPhenomena": ["audio_playback", "pronunciation", "reading_system"], "notes": "Cho replay, không autoplay." },
+    { "questionId": "Q7", "type": "grammar_fill_selection", "plan": "free", "requiredPhenomena": ["grammar_usage", "particles"] },
+    { "questionId": "Q8", "type": "contextual_response", "plan": "free", "requiredPhenomena": ["register", "pragmatics", "grammar_usage"] },
+    { "questionId": "Q9", "type": "checkpoint", "plan": "free", "requiredPhenomena": ["vocabulary_meaning", "grammar_usage"], "notes": "Năm subquestion đã lưu, mỗi câu 4 option 1 đúng." },
+    { "questionId": "Q10", "type": "chat_text_fill", "plan": "free", "requiredPhenomena": ["typing_input", "target_orthography", "punctuation_layout"], "notes": "Context 11:00, đúng 6 bubble, A phải/B trái, đúng 2 slot gõ text, checker local Unicode/script-tolerant, KHÔNG AI." },
+    { "questionId": "Q11", "type": "situation_multiple_choice", "plan": "plus", "requiredPhenomena": ["register", "pragmatics"] },
+    { "questionId": "Q12", "type": "naturalness_judgement", "plan": "plus", "requiredPhenomena": ["naturalness", "register"] },
+    { "questionId": "Q13", "type": "slot_ordering", "plan": "plus", "requiredPhenomena": ["word_order", "particles", "punctuation_layout"], "notes": "Đúng 6 slot; dấu câu do hệ chèn không kéo được và không phải distractor; こんばんは là distractor; check slotId→tokenId, không theo vị trí hiển thị." },
+    { "questionId": "Q14", "type": "real_world_practice_dialogue", "plan": "plus", "graded": false, "requiredPhenomena": ["reading_aid", "audio_playback", "register", "pronunciation"], "notes": "Non-graded; thay controlled_ai_text cũ. Toggle reading/dịch độc lập; audio từng dòng; completion idempotent; không UI AI." }
+  ]
+}

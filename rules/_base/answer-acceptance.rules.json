@@ -1,0 +1,49 @@
+{
+  "id": "_base/answer-acceptance",
+  "phenomenon": "answer_acceptance",
+  "enforces": ["rules/content/naturalness-and-register.md"],
+  "config": {
+    "single_choice": { "exactly_one_correct": true, "no_duplicate_options": true },
+    "match_pairs": { "all_pairs_required": true, "no_mixed_item_kinds": true },
+    "normalize_ignore": ["punctuation", "whitespace", "char_width"],
+    "exact_form_exempt_from_normalize": true,
+    "variant_auto_accept_only_if_approved": true,
+    "typo": { "no_pass": true, "classify_as_typo": true, "gentle_feedback": true },
+    "register_error": { "fail_only_if_objective_or_inappropriate": true, "otherwise_warn_only": true }
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "note": "Match-pairs: mọi cặp đúng → kết quả đúng.",
+        "kind": "match_pairs",
+        "all_pairs_correct": true,
+        "result": "correct"
+      },
+      {
+        "note": "Bài không kiểm kanji: chấp nhận kana hoặc kanji.",
+        "kind": "single_choice",
+        "expected": "やま",
+        "submitted": "山",
+        "kanji_is_exact_form_objective": false,
+        "result": "accepted"
+      }
+    ],
+    "fail": [
+      {
+        "note": "Một cặp sai nhưng vẫn hiện 'Chính xác' → SAI.",
+        "kind": "match_pairs",
+        "all_pairs_correct": false,
+        "shown": "Chính xác",
+        "violated": "all_pairs_required"
+      },
+      {
+        "note": "Typo được cấp PASS → SAI; phải phân loại typo + phản hồi nhẹ.",
+        "kind": "single_choice",
+        "expected": "ありがとう",
+        "submitted": "ありがとお",
+        "result": "pass",
+        "violated": "typo.no_pass"
+      }
+    ]
+  }
+}

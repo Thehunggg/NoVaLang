@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "novalang/rules/_schema/data.schema.json",
+  "title": "NovaLang data table file (*.data.json)",
+  "description": "Bảng dữ liệu ngôn ngữ: charset, exemplar, chữ→âm, variant. Không chứa logic.",
+  "type": "object",
+  "required": ["id", "kind", "data"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string" },
+    "kind": {
+      "type": "string",
+      "description": "Loại bảng, ví dụ: charset, exemplars, grapheme_to_phoneme, variants, casing, collation"
+    },
+    "source": {
+      "description": "id nguồn trong sources.json, hoặc null nếu chưa có nguồn",
+      "type": ["string", "array", "null"],
+      "items": { "type": "string" }
+    },
+    "derived_by": { "enum": ["dataset", "ai-cross-checked", "human", null] },
+    "confidence": { "enum": ["high", "medium", "low", "none"] },
+    "data": {
+      "description": "Nội dung bảng; hình dạng tuỳ theo kind."
+    }
+  }
+}

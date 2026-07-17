@@ -1,0 +1,22 @@
+{
+  "_comment": "File .md narrative có sẵn TRƯỚC pipeline, được miễn kiểm front-matter (invariant 2). Theo Option A (D-33), 16 file ja FROZEN nằm ở đây và KHÔNG bị đụng. File .md mới do pipeline tạo KHÔNG nằm ở đây và BẮT BUỘC có front-matter. README.md và mọi file dưới _template/ được validator tự bỏ qua, không cần liệt kê.",
+  "narrative": [
+    "rules/content/naturalness-and-register.md",
+    "rules/languages/en/style-and-register.md",
+    "rules/languages/ja/language-profile.md",
+    "rules/languages/ja/writing-system.md",
+    "rules/languages/ja/orthography.md",
+    "rules/languages/ja/reading-system.md",
+    "rules/languages/ja/pronunciation.md",
+    "rules/languages/ja/romanization.md",
+    "rules/languages/ja/grammar-and-usage.md",
+    "rules/languages/ja/grammar-particles.md",
+    "rules/languages/ja/learning-and-pedagogy.md",
+    "rules/languages/ja/style-and-register.md",
+    "rules/languages/ja/tts-and-audio.md",
+    "rules/languages/ja/localization-boundaries.md",
+    "rules/languages/ja/validation.md",
+    "rules/languages/ja/test-fixtures.md",
+    "rules/languages/ja/change-log.md"
+  ]
+}

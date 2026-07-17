@@ -1,0 +1,30 @@
+{
+  "id": "_base/distractor",
+  "phenomenon": "distractor_generation",
+  "enforces": ["rules/content/naturalness-and-register.md"],
+  "config": {
+    "same_language_as_answer": true,
+    "same_word_class": true,
+    "length_ratio_max": 1.5,
+    "forbid_synonym_of_answer": true,
+    "forbid_above_level": true,
+    "must_not_satisfy_question_rule": true
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "note": "Đáp án あ; nhiễu い/う/え cùng script, không thoả luật câu (không bắt đầu bằng あ).",
+        "answer": "あ",
+        "distractors": ["い", "う", "え"]
+      }
+    ],
+    "fail": [
+      {
+        "note": "飴（あめ）làm nhiễu cho あ là SAI: nó cũng bắt đầu bằng あ nên thoả luật câu.",
+        "answer": "あ",
+        "distractors": ["飴（あめ）", "い", "う"],
+        "violated": "must_not_satisfy_question_rule"
+      }
+    ]
+  }
+}

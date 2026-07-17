@@ -1,0 +1,41 @@
+{
+  "id": "_base/register",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["rules/content/naturalness-and-register.md"],
+  "config": {
+    "baseline": "NATURAL_NEUTRAL_POLITE",
+    "core_levels": ["CASUAL", "NATURAL_NEUTRAL_POLITE", "FORMAL"],
+    "marked_modes": ["HONORIFIC", "CEREMONIAL", "SLANG"],
+    "marked_modes_are_not_a_scale": true,
+    "vocab_item_shows_core_levels": true,
+    "allow_not_applicable_per_item": true,
+    "forbid_invented_variants": true
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "note": "Baseline neutral-polite khi context không chỉ định register khác.",
+        "context_register": null,
+        "chosen": "NATURAL_NEUTRAL_POLITE"
+      },
+      {
+        "note": "Danh từ trung tính không có bản casual riêng → đánh not-applicable, KHÔNG bịa.",
+        "item": "danh từ trung tính",
+        "casual": "not-applicable"
+      }
+    ],
+    "fail": [
+      {
+        "note": "Bịa một biến thể casual cho đủ ô → SAI.",
+        "item": "danh từ trung tính",
+        "casual": "<biến thể tự nghĩ>",
+        "violated": "forbid_invented_variants"
+      },
+      {
+        "note": "Xếp HONORIFIC là 'cao hơn FORMAL' trên một thang tuyến tính → SAI.",
+        "claim": "HONORIFIC > FORMAL",
+        "violated": "marked_modes_are_not_a_scale"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "_script/Latn/script",
+  "phenomenon": "script_defaults",
+  "enforces": "guidance-only",
+  "config": {
+    "writingSystem": "Latn",
+    "hasCase": true,
+    "reading_aids": {
+      "applicable": false,
+      "note": "Ngôn ngữ Latin thường không cần furigana/romaji; ngôn ngữ cụ thể có thể override có nguồn."
+    }
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "note": "Ngôn ngữ Latin: reading aid not-applicable theo mặc định script.",
+        "writingSystem": "Latn",
+        "reading_aids_applicable": false
+      }
+    ],
+    "fail": [
+      {
+        "note": "Ép furigana lên một từ Latin thuần mà không có override có nguồn → SAI theo mặc định script.",
+        "word": "hello",
+        "furigana": "<đặt sai>",
+        "violated": "reading_aids.applicable"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "novalang/rules/_schema/sources.schema.json",
+  "title": "NovaLang language sources registry (sources.json)",
+  "description": "Danh sách nguồn tham chiếu cho một ngôn ngữ. Mọi rule/data trỏ tới id ở đây.",
+  "type": "object",
+  "required": ["sources"],
+  "additionalProperties": true,
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "derived_by", "confidence"],
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "description": "ví dụ S-01, CLDR, UD, WIKIPRON"
+          },
+          "name": { "type": "string" },
+          "url": { "type": ["string", "null"] },
+          "consulted": { "type": ["string", "null"], "description": "ngày tra cứu YYYY-MM-DD" },
+          "derived_by": { "enum": ["human", "dataset", "ai-cross-checked"] },
+          "confidence": { "enum": ["high", "medium", "low", "none"] },
+          "license": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

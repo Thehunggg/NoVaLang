@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "novalang/rules/_schema/rules.schema.json",
+  "title": "NovaLang machine-checkable rules file (*.rules.json)",
+  "description": "Ràng buộc máy kiểm được. Mỗi file phải có >=1 fixture pass và >=1 fixture fail (invariant 5).",
+  "type": "object",
+  "required": ["id", "fixtures"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string" },
+    "phenomenon": { "type": "string", "description": "id hiện tượng trong coverage.json (nếu áp cho một hiện tượng)" },
+    "enforces": {
+      "description": "Đường dẫn tới file .md / narrative mà rule này enforce",
+      "type": ["string", "array"],
+      "items": { "type": "string" }
+    },
+    "config": {
+      "type": "object",
+      "description": "Cấu hình sản phẩm (ví dụ answer_acceptance, distractor)."
+    },
+    "checks": {
+      "type": "array",
+      "description": "Danh sách check máy chạy được; mỗi check có assert + fixtures riêng (tuỳ chọn).",
+      "items": {
+        "type": "object",
+        "required": ["id", "assert"],
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "assert": {
+            "type": "object",
+            "description": "Vị từ máy chạy được. type ∈ {regex_absent, regex_present, equals, one_of, field_separated, custom}."
+          },
+          "fixtures": { "$ref": "#/definitions/fixtures" }
+        }
+      }
+    },
+    "fixtures": { "$ref": "#/definitions/fixtures" }
+  },
+  "definitions": {
+    "fixtures": {
+      "type": "object",
+      "required": ["pass", "fail"],
+      "properties": {
+        "pass": { "type": "array", "minItems": 1 },
+        "fail": { "type": "array", "minItems": 1 }
+      }
+    }
+  }
+}

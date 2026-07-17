@@ -1,0 +1,43 @@
+{
+  "id": "_base/audio",
+  "phenomenon": "audio_playback",
+  "enforces": ["rules/languages/ja/tts-and-audio.md"],
+  "config": {
+    "priority": ["approved_audio", "tts_correct_locale", "explicit_error"],
+    "no_silent_fallback": true,
+    "no_autoplay": true,
+    "replay_unlimited": true,
+    "speeds": [1.0, 0.75]
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "note": "Có audio đã duyệt → dùng nó; replay không giới hạn; không autoplay.",
+        "has_approved_audio": true,
+        "used": "approved_audio",
+        "autoplay": false
+      },
+      {
+        "note": "Không có audio duyệt nhưng có TTS đúng locale → dùng TTS đúng locale.",
+        "has_approved_audio": false,
+        "tts_locale_matches": true,
+        "used": "tts_correct_locale"
+      }
+    ],
+    "fail": [
+      {
+        "note": "Fallback âm thầm sang locale khác → SAI.",
+        "has_approved_audio": false,
+        "tts_locale_matches": false,
+        "used": "tts_other_locale",
+        "violated": "no_silent_fallback"
+      },
+      {
+        "note": "Autoplay câu listening → SAI.",
+        "question_type": "listening",
+        "autoplay": true,
+        "violated": "no_autoplay"
+      }
+    ]
+  }
+}

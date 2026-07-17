@@ -1,0 +1,40 @@
+{
+  "id": "_base/fail-safe",
+  "phenomenon": "fail_safe",
+  "enforces": ["rules/content/naturalness-and-register.md"],
+  "config": {
+    "unknown_level": {
+      "hide_reading_aids": true,
+      "hide_toggles": true,
+      "log_diagnostic": true,
+      "never_infer_level": true
+    },
+    "no_cross_language_fallback": true
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "note": "Level không xác định → ẩn reading aid + ẩn toggle + ghi diagnostic, không đoán level.",
+        "level": null,
+        "reading_aids_hidden": true,
+        "toggles_hidden": true,
+        "diagnostic_logged": true
+      }
+    ],
+    "fail": [
+      {
+        "note": "Level không xác định nhưng đoán A0 rồi hiện romaji → SAI.",
+        "level": null,
+        "inferred_level": "A0",
+        "romaji_shown": true,
+        "violated": "unknown_level.never_infer_level"
+      },
+      {
+        "note": "Native=ja thiếu nội dung → fallback âm thầm sang English → SAI.",
+        "native": "ja",
+        "fell_back_to": "en",
+        "violated": "no_cross_language_fallback"
+      }
+    ]
+  }
+}

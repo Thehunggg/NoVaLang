@@ -1,0 +1,33 @@
+{
+  "id": "_base/text-fields",
+  "phenomenon": "text_field_separation",
+  "enforces": ["rules/languages/ja/tts-and-audio.md"],
+  "config": {
+    "store_separately": ["displayText", "canonicalText", "audioText"],
+    "displayText": "UI hiển thị",
+    "canonicalText": "máy chấm đáp án dùng",
+    "audioText": "TTS đọc"
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "note": "Ba trường tách biệt; kanji có furigana để hiển thị, kana để đọc.",
+        "displayText": "雨（あめ）",
+        "canonicalText": "雨",
+        "audioText": "あめ"
+      }
+    ],
+    "fail": [
+      {
+        "note": "Dùng displayText làm answer key → SAI.",
+        "used_as_answer_key": "displayText",
+        "violated": "store_separately"
+      },
+      {
+        "note": "TTS đọc cả kanji lẫn reading (雨あめ) → SAI.",
+        "audioText": "雨あめ",
+        "violated": "audioText"
+      }
+    ]
+  }
+}

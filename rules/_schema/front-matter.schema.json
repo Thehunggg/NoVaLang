@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "novalang/rules/_schema/front-matter.schema.json",
+  "title": "NovaLang rule file front-matter",
+  "description": "Bắt buộc cho mọi file .md rule do pipeline quản lý. Narrative có sẵn (content/, legacy/, hồ sơ ja FROZEN, en/, _template/) được allowlist ngoài kiểm này.",
+  "type": "object",
+  "required": ["id", "version", "status", "tier", "role", "enforced_by", "depends_on", "sources"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_]+(/[A-Za-z0-9._-]+)+$",
+      "description": "<lang>/<tên-file>, ví dụ ja/orthography"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "semver; FROZEN đòi >= 1.0.0"
+    },
+    "status": {
+      "enum": ["DRAFT", "REVIEW_CANDIDATE", "PROVISIONAL", "VALIDATED", "FROZEN", "DEFERRED"]
+    },
+    "tier": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "enum": ["t1", "t3"] },
+      "description": "t1 = target đầy đủ; t3 = native/UI"
+    },
+    "role": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "enum": ["native", "target", "both"] }
+    },
+    "enforced_by": {
+      "oneOf": [
+        { "const": "guidance-only" },
+        { "type": "string", "pattern": "\\.rules\\.json$" }
+      ],
+      "description": "Đường dẫn tới file .rules.json, hoặc 'guidance-only'"
+    },
+    "depends_on": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "id của file khác mà file này phụ thuộc"
+    },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "id trỏ vào sources.json"
+    },
+    "writing_system": { "type": "string" },
+    "reviewer": { "type": "string" },
+    "review_date": { "type": "string" }
+  }
+}

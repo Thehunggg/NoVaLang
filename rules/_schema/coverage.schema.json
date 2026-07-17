@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "novalang/rules/_schema/coverage.schema.json",
+  "title": "NovaLang language coverage map (coverage.json)",
+  "description": "Mỗi hiện tượng ngôn ngữ tách hai mức: rule_level (quy tắc chung) và lexical_level (tri thức theo từng từ).",
+  "type": "object",
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "description": "Metadata tuỳ chọn: languageCode, generatedAt, pipelineStep...",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": { "$ref": "#/definitions/phenomenon" },
+  "definitions": {
+    "phenomenon": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "rule_level": { "$ref": "#/definitions/level" },
+        "lexical_level": { "$ref": "#/definitions/level" },
+        "machine_readable": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "level": {
+      "type": "object",
+      "required": ["source", "derived_by", "confidence"],
+      "properties": {
+        "source": {
+          "type": ["string", "array", "null"],
+          "items": { "type": "string" }
+        },
+        "derived_by": { "enum": ["dataset", "ai-cross-checked", "human", null] },
+        "confidence": { "enum": ["high", "medium", "low", "none"] }
+      }
+    }
+  }
+}
