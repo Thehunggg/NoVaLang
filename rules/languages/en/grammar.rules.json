@@ -29,7 +29,8 @@
       { "sentence": "She goes to school every day.", "note": "ngôi 3 số ít thêm -es (go→goes)" },
       { "sentence": "I have three children.", "note": "số nhiều bất quy tắc child→children" },
       { "sentence": "He went home yesterday.", "note": "quá khứ bất quy tắc go→went (irregular-verbs.data.json)" },
-      { "sentence": "This book is more interesting than that one.", "note": "tính từ dài dùng more, không thêm -er" }
+      { "sentence": "This book is more interesting than that one.", "note": "tính từ dài dùng more, không thêm -er" },
+      { "sentence": "In the wake of Hurricane Katrina, affordable housing in New Orleans is more scarce than ever.", "note": "corpus UD EWT: comparative 'more scarce than'" }
     ],
     "fail": [
       { "sentence": "The dog the red ball chases.", "note": "SAI: không phải SVO" },

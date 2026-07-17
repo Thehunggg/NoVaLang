@@ -46,7 +46,8 @@
     }
   ],
   "fixtures": {
-    "pass": ["The train arrives on Monday in January.", "I need to go to the store."],
-    "fail": ["the train arrives on monday in january.", "i need to go to the store."]
+    "pass": ["The train arrives on Monday in January.", "I need to go to the store.", "Antigua was awesome.", "Here you go."],
+    "fail": ["the train arrives on monday in january.", "i need to go to the store."],
+    "_note": "2 câu pass cuối lấy từ corpus thật UD English-EWT (Bước 3 mục 6)"
   }
 }

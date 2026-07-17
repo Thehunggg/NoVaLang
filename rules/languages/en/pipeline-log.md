@@ -38,3 +38,14 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   file rule: `orthography/phonology/grammar/pragmatics.rules.json` (fixtures
   đủ pass+fail, dùng luôn 2 bảng lexicon irregular-verbs/contractions). Validator
   PASS.
+- **Bước 3 (corpus check) · 2026-07-17 · XONG** — Corpus 16.622 câu thật (UD
+  English-EWT — văn Web: blog/forum/email/newsgroup). `corpus-check.mjs`:
+  chữ hoa đầu câu vi phạm 14.66%, "I" hoa vi phạm 1.86% — cả hai < 20%, KHÔNG
+  bác rule (văn Web informal, không phải rule sai). `g2p-check.mjs`: đo rhotic
+  trên WikiPron US — 87.2% từ (nguyên âm)+r cuối có âm ɹ/ɚ, dưới ngưỡng nghi
+  ngờ. **Phát hiện + sửa 2 lỗi thật:** (1) Bước 0/1 giả định sai WikiPron có
+  đánh dấu trọng âm ˈ — kiểm trực tiếp cả bản broad (99.645) lẫn narrow (5.443):
+  0 dòng có ˈ → hạ `lexical_stress.lexical_level` về none, KHÔNG dạy trọng âm
+  theo từng từ (không bịa). (2) `g2p-check.mjs` (tool mới của phiên này) thiếu
+  trường `index` (chữ hoa CLDR) khi tính charset coverage → phủ báo sai 80.78%;
+  sửa tool, phủ thật 99.89%. Fixtures bổ sung câu thật từ corpus. Validator PASS.

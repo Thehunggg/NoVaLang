@@ -36,7 +36,10 @@
       "description": "'do not' và 'don't' chấm như đáp án tương đương (trừ bài dạy đúng rút gọn).",
       "assert": { "type": "custom", "note": "máy kiểm khi generator/grader chạy, tra contractions.data.json" },
       "fixtures": {
-        "pass": [{ "input": "I don't know.", "accepted_as_equivalent_to": "I do not know." }],
+        "pass": [
+          { "input": "I don't know.", "accepted_as_equivalent_to": "I do not know." },
+          { "input": "but they didn't.", "note": "corpus UD EWT: rút gọn didn't trong văn thật" }
+        ],
         "fail": [{ "input": "I dont no.", "note": "lỗi chính tả 'dont'/'no' KHÔNG được coi ngang hàng — đây là lỗi, không phải rút gọn hợp lệ" }]
       }
     }

@@ -54,7 +54,7 @@ for (const spec of implications) {
 
 if (charsetFile) {
   const doc = JSON.parse(readFileSync(charsetFile, 'utf8'));
-  const specs = [doc?.data?.exemplarCharacters, doc?.data?.auxiliary, doc?.data?.punctuation].filter(Boolean).join('');
+  const specs = [doc?.data?.exemplarCharacters, doc?.data?.index, doc?.data?.auxiliary, doc?.data?.punctuation].filter(Boolean).join('');
   // Bỏ cú pháp UnicodeSet của CLDR ({...} cụm nhiều ký tự tách riêng, [ ] \ khoảng trắng, escape \uXXXX đã là ký tự thật trong JSON)
   const allow = new Set();
   for (const cluster of specs.match(/\{[^}]*\}/g) || []) for (const ch of cluster.replace(/[{}]/g, '')) allow.add(ch);
