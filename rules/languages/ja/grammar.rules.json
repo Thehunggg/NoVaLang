@@ -13,7 +13,8 @@
     },
     "conjugation": {
       "regular_verb_classes": 2,
-      "irregular_verbs": { "value": ["くる", "する"], "pending_review": "R-IRR: nrGrammar thêm ある; Wikipedia chỉ する/くる — chờ owner (Bước 4)" },
+      "irregular_verbs": ["くる", "する"],
+      "_irregular_verbs_note": "D-38 (owner Bước 4): 2 động từ. ある là godan có ngoại lệ phủ định ない, KHÔNG xếp bất quy tắc.",
       "i_adjectives_inflect": true,
       "na_adjectives_need_copula": true,
       "person_number_agreement": false

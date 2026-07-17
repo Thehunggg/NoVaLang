@@ -48,6 +48,14 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   (mâu thuẫn romaji, không tính trần) · ~7 phút. Soạn `native-review-ja.md`
   (tiếng Anh, 15 tick, ~5 phút) theo D-36. Validator PASS. Chờ owner trả lời
   rồi mới áp dụng + cập nhật decisions.md.
+- **Bước 4 trả lời · 2026-07-17 · owner** — R-01: **B** (2 động từ bất quy tắc
+  する・くる → D-38). R-02: **A** (chỉ dạy 。、 → D-39). D-11: **bản (ii)**
+  (A0–B1 ẩn romaji + toggle; B2–C2 không toggle → D-11 giải quyết). Đã áp dụng
+  vào grammar/orthography.rules.json + coverage (điểm lệch → chốt, reading_aid
+  low→medium). Validator PASS. Hàng đợi review = RỖNG.
+- **Bước 5 · 2026-07-17 · dừng ở VALIDATED (chưa freeze)** — Gate 5 đòi VALIDATED
+  ≥ 48h mới freeze; chạy lần đầu nên dừng ở VALIDATED đúng chuẩn, chờ owner xác
+  nhận lần 2 sau ≥ 48h. Native review (`native-review-ja.md`) vẫn mở, không chặn.
 - **Ghi chú hạ tầng (đã giải quyết) · 2026-07-17** — Ghi chú cũ "commit bị chặn,
   chờ owner" đã lỗi thời: toàn bộ scaffold + Bước 0 + đầu Bước 1 đã nằm trong
   commit `f0083a7`, và `main` đã fast-forward lên đúng commit đó. Từ giờ commit +

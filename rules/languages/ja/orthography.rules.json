@@ -15,9 +15,7 @@
     "comma": "、",
     "quote_marks": "「」",
     "question_mark_required_with_ka": false,
-    "_pending_review": [
-      "R-PUNCT: JLREQ ghi nhận cả quy ước ．， ngang bên cạnh 。、 — app dạy quy ước nào là quyết định sản phẩm (Bước 4)"
-    ]
+    "_punctuation_note": "D-39 (owner Bước 4): app CHỈ dạy 。、. JLREQ ghi nhận ．， cho sách KHKT nhưng không dạy; máy chấm normalize dấu câu (D-14) nên bài chứa ．， không bị chấm sai."
   },
   "checks": [
     {

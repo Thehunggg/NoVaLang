@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "ja",
-    "stage": "4-review-waiting-owner",
+    "stage": "4-review-done",
     "generatedAt": "2026-07-17",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
@@ -100,7 +100,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "。、ー々 small kana; KHÔNG normalize như Latin. [B2: 3/5 trùng; LỆCH 。、 vs ．，(JLREQ both) → review Bước 4 (quyết định sản phẩm: app dạy quy ước nào)]"
+    "notes": "。、ー々 small kana; KHÔNG normalize như Latin. [B2: 3/5 trùng; LỆCH 。、 vs ．，(JLREQ both) → ĐÃ CHỐT D-39 (chỉ dạy 。、)]"
   },
   "writing_direction": {
     "rule_level": {
@@ -319,7 +319,7 @@
       "confidence": "medium"
     },
     "machine_readable": false,
-    "notes": "Chia động từ/tính từ; động từ bất quy tắc là lexical. [B2: 4/5 claim trùng; LỆCH irregular_verbs (nrGrammar thêm ある) → review Bước 4]"
+    "notes": "Chia động từ/tính từ; động từ bất quy tắc là lexical. [B2: 4/5 claim trùng; LỆCH irregular_verbs (nrGrammar thêm ある) → ĐÃ CHỐT D-38 (2 động từ)]"
   },
   "counters": {
     "rule_level": {
@@ -398,7 +398,7 @@
     "rule_level": {
       "source": "S-FROZEN",
       "derived_by": "human",
-      "confidence": "low"
+      "confidence": "medium"
     },
     "lexical_level": {
       "source": null,
@@ -406,7 +406,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "⚠ MÂU THUẪN D-11 (romaji theo trình độ hai bản ngược nhau) → BẮT BUỘC đưa Bước 4."
+    "notes": "D-11 ĐÃ CHỐT bản (ii): A0–B1 ẩn romaji mặc định + toggle; B2–C2 không toggle. Nhất quán D-10/D-12."
   },
   "answer_acceptance_ja": {
     "rule_level": {
