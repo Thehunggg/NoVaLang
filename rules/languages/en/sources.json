@@ -62,6 +62,33 @@
       "derived_by": "ai-cross-checked",
       "confidence": "medium",
       "license": "CC BY-SA; chỉ trích sự kiện ngôn ngữ + ghi nguồn"
+    },
+    {
+      "id": "S-IRREGULAR-VERBS",
+      "name": "Lexicon: irregular-verbs.data.json (đơn tác giả, không phải chuẩn cộng đồng)",
+      "url": "https://raw.githubusercontent.com/kemitchell/english-irregular-verbs/master/index.json",
+      "consulted": "2026-07-17",
+      "derived_by": "dataset",
+      "confidence": "medium",
+      "license": "xem repo nguồn"
+    },
+    {
+      "id": "S-CONTRACTIONS",
+      "name": "Lexicon: contractions.data.json (đơn tác giả, không phải chuẩn cộng đồng)",
+      "url": "https://raw.githubusercontent.com/andrewbury/contractions/master/contractions.json",
+      "consulted": "2026-07-17",
+      "derived_by": "dataset",
+      "confidence": "medium",
+      "license": "xem repo nguồn"
+    },
+    {
+      "id": "S-UD-CORPUS-EN",
+      "name": "UD English-EWT (train/dev/test) — câu thật cho corpus check (16622 câu)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_English-EWT/master/",
+      "consulted": "2026-07-17",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA 4.0"
     }
   ]
 }

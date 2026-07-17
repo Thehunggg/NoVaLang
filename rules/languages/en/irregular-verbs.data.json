@@ -1,0 +1,363 @@
+{
+  "id": "en/irregular-verbs",
+  "kind": "irregular_verbs",
+  "source": "S-IRREGULAR-VERBS",
+  "derived_by": "dataset",
+  "confidence": "medium",
+  "data": {
+    "count": 50,
+    "entries": {
+      "say": {
+        "past": "said",
+        "participles": [
+          "said"
+        ],
+        "frequency": "high"
+      },
+      "make": {
+        "past": "made",
+        "participles": [
+          "made"
+        ],
+        "frequency": "high"
+      },
+      "go": {
+        "past": "went",
+        "participles": [
+          "gone"
+        ],
+        "frequency": "high"
+      },
+      "take": {
+        "past": "took",
+        "participles": [
+          "taken"
+        ],
+        "frequency": "high"
+      },
+      "come": {
+        "past": "came",
+        "participles": [
+          "come"
+        ],
+        "frequency": "high"
+      },
+      "see": {
+        "past": "saw",
+        "participles": [
+          "seen"
+        ],
+        "frequency": "high"
+      },
+      "know": {
+        "past": "knew",
+        "participles": [
+          "known"
+        ],
+        "frequency": "high"
+      },
+      "get": {
+        "past": "got",
+        "participles": [
+          "got",
+          "gotten"
+        ],
+        "frequency": "high"
+      },
+      "give": {
+        "past": "gave",
+        "participles": [
+          "given"
+        ],
+        "frequency": "high"
+      },
+      "find": {
+        "past": "found",
+        "participles": [
+          "found"
+        ],
+        "frequency": "high"
+      },
+      "think": {
+        "past": "thought",
+        "participles": [
+          "thought"
+        ],
+        "frequency": "high"
+      },
+      "tell": {
+        "past": "told",
+        "participles": [
+          "told"
+        ],
+        "frequency": "high"
+      },
+      "become": {
+        "past": "became",
+        "participles": [
+          "become"
+        ],
+        "frequency": "high"
+      },
+      "show": {
+        "past": "showed",
+        "participles": [
+          "shown"
+        ],
+        "frequency": "high"
+      },
+      "leave": {
+        "past": "left",
+        "participles": [
+          "left"
+        ],
+        "frequency": "high"
+      },
+      "feel": {
+        "past": "felt",
+        "participles": [
+          "felt"
+        ],
+        "frequency": "high"
+      },
+      "put": {
+        "past": "put",
+        "participles": [
+          "put"
+        ],
+        "frequency": "high"
+      },
+      "bring": {
+        "past": "brought",
+        "participles": [
+          "brought"
+        ],
+        "frequency": "high"
+      },
+      "begin": {
+        "past": "began",
+        "participles": [
+          "begun"
+        ],
+        "frequency": "high"
+      },
+      "keep": {
+        "past": "kept",
+        "participles": [
+          "kept"
+        ],
+        "frequency": "high"
+      },
+      "hold": {
+        "past": "held",
+        "participles": [
+          "held"
+        ],
+        "frequency": "high"
+      },
+      "write": {
+        "past": "wrote",
+        "participles": [
+          "written"
+        ],
+        "frequency": "high"
+      },
+      "stand": {
+        "past": "stood",
+        "participles": [
+          "stood"
+        ],
+        "frequency": "high"
+      },
+      "hear": {
+        "past": "heard",
+        "participles": [
+          "heard"
+        ],
+        "frequency": "high"
+      },
+      "let": {
+        "past": "let",
+        "participles": [
+          "let"
+        ],
+        "frequency": "high"
+      },
+      "mean": {
+        "past": "meant",
+        "participles": [
+          "meant"
+        ],
+        "frequency": "high"
+      },
+      "set": {
+        "past": "set",
+        "participles": [
+          "set"
+        ],
+        "frequency": "high"
+      },
+      "meet": {
+        "past": "met",
+        "participles": [
+          "met"
+        ],
+        "frequency": "high"
+      },
+      "run": {
+        "past": "ran",
+        "participles": [
+          "run"
+        ],
+        "frequency": "high"
+      },
+      "pay": {
+        "past": "paid",
+        "participles": [
+          "paid"
+        ],
+        "frequency": "high"
+      },
+      "sit": {
+        "past": "sat",
+        "participles": [
+          "sat"
+        ],
+        "frequency": "high"
+      },
+      "speak": {
+        "past": "spoke",
+        "participles": [
+          "spoken"
+        ],
+        "frequency": "high"
+      },
+      "lie": {
+        "past": "lay",
+        "participles": [
+          "lain"
+        ],
+        "frequency": "high"
+      },
+      "lead": {
+        "past": "led",
+        "participles": [
+          "led"
+        ],
+        "frequency": "high"
+      },
+      "read": {
+        "past": "read",
+        "participles": [
+          "read"
+        ],
+        "frequency": "high"
+      },
+      "grow": {
+        "past": "grew",
+        "participles": [
+          "grown"
+        ],
+        "frequency": "high"
+      },
+      "lose": {
+        "past": "lost",
+        "participles": [
+          "lost"
+        ],
+        "frequency": "high"
+      },
+      "fall": {
+        "past": "fell",
+        "participles": [
+          "fallen"
+        ],
+        "frequency": "high"
+      },
+      "send": {
+        "past": "sent",
+        "participles": [
+          "sent"
+        ],
+        "frequency": "high"
+      },
+      "build": {
+        "past": "built",
+        "participles": [
+          "built"
+        ],
+        "frequency": "high"
+      },
+      "understand": {
+        "past": "understood",
+        "participles": [
+          "understood"
+        ],
+        "frequency": "high"
+      },
+      "draw": {
+        "past": "drew",
+        "participles": [
+          "drawn"
+        ],
+        "frequency": "high"
+      },
+      "break": {
+        "past": "broke",
+        "participles": [
+          "broken"
+        ],
+        "frequency": "high"
+      },
+      "spend": {
+        "past": "spent",
+        "participles": [
+          "spent"
+        ],
+        "frequency": "high"
+      },
+      "cut": {
+        "past": "cut",
+        "participles": [
+          "cut"
+        ],
+        "frequency": "high"
+      },
+      "rise": {
+        "past": "rose",
+        "participles": [
+          "risen"
+        ],
+        "frequency": "high"
+      },
+      "drive": {
+        "past": "drove",
+        "participles": [
+          "driven"
+        ],
+        "frequency": "high"
+      },
+      "buy": {
+        "past": "bought",
+        "participles": [
+          "bought"
+        ],
+        "frequency": "high"
+      },
+      "wear": {
+        "past": "wore",
+        "participles": [
+          "worn"
+        ],
+        "frequency": "high"
+      },
+      "choose": {
+        "past": "chose",
+        "participles": [
+          "chosen"
+        ],
+        "frequency": "high"
+      }
+    }
+  }
+}

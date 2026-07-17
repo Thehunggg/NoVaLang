@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "en",
-    "stage": "1-import-done",
+    "stage": "1.5-lexicon-imported",
     "generatedAt": "2026-07-17",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
@@ -162,12 +162,12 @@
       "confidence": "medium"
     },
     "lexical_level": {
-      "source": null,
-      "derived_by": null,
-      "confidence": "none"
+      "source": "S-IRREGULAR-VERBS",
+      "derived_by": "dataset",
+      "confidence": "medium"
     },
     "machine_readable": false,
-    "notes": "Số nhiều -s, quá khứ -ed, ngôi 3 số ít -s, so sánh -er/-est. Bất quy tắc (go/went, child/children) là lexical → Bước 2 + wordlist."
+    "notes": "Số nhiều -s, quá khứ -ed, ngôi 3 số ít -s, so sánh -er/-est. Bất quy tắc (go/went, child/children) là lexical → Bước 2 + wordlist. [B1.5: import kemitchell/english-irregular-verbs (50 động từ tần suất cao) -> irregular-verbs.data.json; đơn tác giả nên medium, không phải high]"
   },
   "articles": {
     "rule_level": {
@@ -207,12 +207,12 @@
       "confidence": "medium"
     },
     "lexical_level": {
-      "source": null,
-      "derived_by": null,
-      "confidence": "none"
+      "source": "S-CONTRACTIONS",
+      "derived_by": "dataset",
+      "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "don't/I'm/it's/'ll/'ve. Ảnh hưởng chấm đáp án (chấp nhận do not = don't?). Có bảng đóng."
+    "notes": "don't/I'm/it's/'ll/'ve. Ảnh hưởng chấm đáp án (chấp nhận do not = don't?). Có bảng đóng. [B1.5: import andrewbury/contractions (145 mục) -> contractions.data.json; đơn tác giả nên medium]"
   },
   "punctuation_layout": {
     "rule_level": {
