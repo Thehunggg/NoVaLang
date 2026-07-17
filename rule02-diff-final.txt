@@ -1,0 +1,63 @@
+﻿diff --git a/.cursor/rules/02_novalang_lesson_standard.mdc b/.cursor/rules/02_novalang_lesson_standard.mdc
+new file mode 100644
+index 0000000..bb02e69
+--- /dev/null
++++ b/.cursor/rules/02_novalang_lesson_standard.mdc
+@@ -0,0 +1,57 @@
++---
++description: Legacy lesson standards and scope guard
++alwaysApply: true
++---
++
++# NovaLang Lesson Standard ΓÇö scope guard
++
++## Rule priority
++
++Apply workspace rules in this order:
++
++1. `AGENTS.md`
++2. `.cursor/rules/novalang.mdc` (Core Rules)
++3. `.cursor/rules/03_novalang_lesson_format_2_0.mdc`
++4. This file
++
++`03_novalang_lesson_format_2_0.mdc` is the frozen Single Source of Truth for
++the opt-in `lessonFormat: five_cards` format. This file must not restate,
++extend, or override that format.
++
++## Opt-in only
++
++Apply Lesson Format 2.0 only when a lesson explicitly declares
++`lessonFormat: five_cards`. Do not automatically migrate or reinterpret
++foundation lessons, Hiragana, Katakana, English Alphabet, JLPT/exam content, or
++any other existing or unapproved lesson. Legacy lessons remain legacy unless
++the project owner explicitly approves a migration.
++
++## Explicit legacy ten-exercise contract
++
++The following historical rules apply only to a legacy lesson that already uses
++the ten-exercise contract. They never apply to `lessonFormat: five_cards` and
++must not override Rule 03:
++
++- exactly 10 exercises;
++- Exercises 1ΓÇô7 are Free fixed/non-AI exercises;
++- Exercise 8 is Plus listening gap-fill using device TTS/speech text, without
++  an AI audio API;
++- Exercise 9 is Plus controlled AI Q&A, not open-ended chat; and
++- Exercise 10 is Plus AI feedback/review that reuses Exercise 9 feedback and
++  does not make an additional AI call by default.
++
++For this legacy contract, native UI language controls meanings, explanations,
++hints, and meaning-answer options. Typed answers use approved
++`acceptedAnswers` and normalize only according to the legacy checker policy.
++Single-choice options are unique with one correct answer when enough approved
++data exists; matching checks each pair exactly. Japanese legacy TTS uses its
++approved speech text rather than ambiguous Kanji alone.
++
++Do not introduce this contract into foundation/Kana/alphabet or another legacy
++lesson unless its approved source already declares it.
++
++## Golden reference
++
++`ja-daily_life-m01-u1-l1` is a reference implementation for reusable data,
++renderer, and flow behavior only. Do not copy its lesson content, names,
++translations, or culture-specific data into another lesson.

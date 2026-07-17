@@ -11,10 +11,10 @@ const warn = (language: LanguageCode, exercise: Exercise, problem: string) => {
 };
 
 const localizedOptions = (exercise: Exercise, nativeLanguage: string) =>
-  exercise.optionTranslations?.[nativeLanguage as SupportedUILanguage] ?? exercise.optionTranslations?.en ?? exercise.options ?? [];
+  exercise.optionTranslations?.[nativeLanguage as SupportedUILanguage] ?? (nativeLanguage === "en" ? exercise.options ?? [] : []);
 
 const localizedPairs = (exercise: Exercise, nativeLanguage: string): MatchPair[] =>
-  exercise.pairTranslations?.[nativeLanguage as SupportedUILanguage] ?? exercise.pairTranslations?.en ?? exercise.pairs ?? [];
+  exercise.pairTranslations?.[nativeLanguage as SupportedUILanguage] ?? (nativeLanguage === "en" ? exercise.pairs ?? [] : []);
 
 const hasDuplicates = (items: string[]) => new Set(items.map(normalize)).size !== items.length;
 

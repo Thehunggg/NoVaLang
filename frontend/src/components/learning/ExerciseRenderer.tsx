@@ -37,13 +37,13 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
   };
 
   const locale = progress.nativeLanguage as SupportedUILanguage;
-  const localizedText = (map: Partial<Record<string, string>> | undefined, fallback = "") => map?.[progress.nativeLanguage] ?? map?.en ?? fallback;
-  const localizedList = (map: Partial<Record<string, string[]>> | undefined, fallback: string[] = []) => map?.[progress.nativeLanguage] ?? map?.en ?? fallback;
+  const localizedText = (map: Partial<Record<string, string>> | undefined, fallback = "") => map?.[progress.nativeLanguage] ?? (progress.nativeLanguage === "en" ? fallback : `⟦missing-content:${progress.nativeLanguage}⟧`);
+  const localizedList = (map: Partial<Record<string, string[]>> | undefined, fallback: string[] = []) => map?.[progress.nativeLanguage] ?? (progress.nativeLanguage === "en" ? fallback : [`⟦missing-content:${progress.nativeLanguage}⟧`]);
   const choiceTypes = ["multiple_choice", "fill_blank", "fill_missing_character", "sound_to_character", "next_in_sequence", "choose_correct_pair", "listening_placeholder", "choose_correct_sound", "choose_correct_letter", "choose_word_starting_with_letter", "choose_word_starting_with_kana", "choose_correct_reading", "choose_meaning", "choose_correct_sentence", "read_short_sentence", "answer_question", "choose_summary", "listen_and_choose_meaning", "listen_and_choose_sentence", "match_character_to_pronunciation", "dialogue_choice"];
   const isChoice = choiceTypes.includes(exercise.type);
   const options = [...new Set(getExerciseOptions(exercise, progress.nativeLanguage) ?? [])];
   const hint = getExerciseHint(exercise, progress.nativeLanguage);
-  const pairs = exercise.pairTranslations?.[locale] ?? exercise.pairTranslations?.en ?? exercise.pairs ?? [];
+  const pairs = exercise.pairTranslations?.[locale] ?? (locale === "en" ? exercise.pairs ?? [] : []);
   const pairOptions = [...new Set(pairs.map((pair) => pair.right))];
 
   if (exercise.type === "character_card") {
@@ -225,6 +225,14 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
       )}
 
       {hint && <p className="mt-4 text-xs font-bold text-slate-600">{hint}</p>}
+      {submitted && localizedText(exercise.revealAfterAnswerTranslations, exercise.revealAfterAnswer) && (
+        <div className="mt-4 rounded-lg border border-cyan-300/20 bg-cyan-300/10 p-4">
+          <div className="flex items-start justify-between gap-3">
+            <p className="whitespace-pre-line font-black text-white">{localizedText(exercise.revealAfterAnswerTranslations, exercise.revealAfterAnswer)}</p>
+            {exercise.audioText && <SpeakerButton text={exercise.audioText} languageCode={exercise.targetLanguage} size="sm" />}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

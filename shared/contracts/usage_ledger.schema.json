@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://novalang.local/contracts/usage_ledger.schema.json",
+  "title": "NovaLang Usage Ledger Contract",
+  "description": "Platform-neutral request, immutable entry, and result contracts for local usage ledger commits.",
+  "$defs": {
+    "NonEmptyString": {
+      "type": "string",
+      "pattern": "\\S",
+      "description": "Must contain at least one non-whitespace character."
+    },
+    "TimezoneDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": ".*(?:Z|[+-]\\d{2}:\\d{2})$",
+      "description": "ISO 8601 datetime with a Z suffix or explicit timezone offset."
+    },
+    "UsageDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Calendar date in YYYY-MM-DD form, resolved through a date abstraction rather than hardcoded to device local time."
+    },
+    "ContractVersion": {
+      "const": "1.0"
+    },
+    "UsageQuantity": {
+      "const": 1,
+      "description": "Stage 1 only accepts a quantity of exactly 1."
+    },
+    "UsageType": {
+      "type": "string",
+      "enum": ["new_lesson_completion"]
+    },
+    "UsageCommitStatus": {
+      "type": "string",
+      "enum": ["committed", "already_committed"]
+    },
+    "UsageCommitRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "userId",
+        "userTrackId",
+        "usageType",
+        "quantity",
+        "sourceEventId",
+        "sourceRecordId",
+        "requestedAt",
+        "idempotencyKey",
+        "contractVersion"
+      ],
+      "properties": {
+        "userId": { "$ref": "#/$defs/NonEmptyString" },
+        "userTrackId": { "$ref": "#/$defs/NonEmptyString" },
+        "usageType": { "$ref": "#/$defs/UsageType" },
+        "quantity": { "$ref": "#/$defs/UsageQuantity" },
+        "sourceEventId": { "$ref": "#/$defs/NonEmptyString" },
+        "sourceRecordId": { "$ref": "#/$defs/NonEmptyString" },
+        "requestedAt": { "$ref": "#/$defs/TimezoneDateTime" },
+        "idempotencyKey": { "$ref": "#/$defs/NonEmptyString" },
+        "contractVersion": { "$ref": "#/$defs/ContractVersion" }
+      }
+    },
+    "UsageLedgerEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "usageEntryId",
+        "userId",
+        "userTrackId",
+        "usageDate",
+        "usageType",
+        "quantity",
+        "sourceEventId",
+        "sourceRecordId",
+        "recordedAt",
+        "idempotencyKey",
+        "contractVersion"
+      ],
+      "properties": {
+        "usageEntryId": { "$ref": "#/$defs/NonEmptyString" },
+        "userId": { "$ref": "#/$defs/NonEmptyString" },
+        "userTrackId": { "$ref": "#/$defs/NonEmptyString" },
+        "usageDate": { "$ref": "#/$defs/UsageDate" },
+        "usageType": { "$ref": "#/$defs/UsageType" },
+        "quantity": { "$ref": "#/$defs/UsageQuantity" },
+        "sourceEventId": { "$ref": "#/$defs/NonEmptyString" },
+        "sourceRecordId": { "$ref": "#/$defs/NonEmptyString" },
+        "recordedAt": { "$ref": "#/$defs/TimezoneDateTime" },
+        "idempotencyKey": { "$ref": "#/$defs/NonEmptyString" },
+        "contractVersion": { "$ref": "#/$defs/ContractVersion" }
+      }
+    },
+    "UsageCommitResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "contractVersion"],
+      "properties": {
+        "status": { "$ref": "#/$defs/UsageCommitStatus" },
+        "entry": { "$ref": "#/$defs/UsageLedgerEntry" },
+        "existingUsageEntryId": { "$ref": "#/$defs/NonEmptyString" },
+        "contractVersion": { "$ref": "#/$defs/ContractVersion" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["status"],
+            "properties": { "status": { "const": "committed" } }
+          },
+          "then": {
+            "required": ["entry"],
+            "not": { "required": ["existingUsageEntryId"] }
+          }
+        },
+        {
+          "if": {
+            "required": ["status"],
+            "properties": { "status": { "const": "already_committed" } }
+          },
+          "then": {
+            "required": ["existingUsageEntryId"],
+            "not": { "required": ["entry"] }
+          }
+        }
+      ]
+    }
+  }
+}

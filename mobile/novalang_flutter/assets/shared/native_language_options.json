@@ -4,44 +4,1499 @@
     "englishName": "Vietnamese",
     "nativeName": "Tiếng Việt",
     "flagEmoji": "🇻🇳",
-    "aliases": ["tieng viet", "viet", "vietnam", "v"],
+    "aliases": [
+      "vietnamese",
+      "tiếng việt",
+      "vi"
+    ],
     "direction": "ltr",
-    "isSupportedAsNative": true
+    "isSupportedAsNative": true,
+    "isAvailableForUi": true,
+    "fallbackLocale": "vi"
   },
   {
     "code": "en",
     "englishName": "English",
     "nativeName": "English",
     "flagEmoji": "🇬🇧",
-    "aliases": ["eng", "american", "british", "e"],
+    "aliases": [
+      "english",
+      "english",
+      "en"
+    ],
     "direction": "ltr",
-    "isSupportedAsNative": true
+    "isSupportedAsNative": true,
+    "isAvailableForUi": true,
+    "fallbackLocale": "en"
   },
   {
     "code": "ja",
     "englishName": "Japanese",
     "nativeName": "日本語",
     "flagEmoji": "🇯🇵",
-    "aliases": ["nihongo", "nihon", "japan", "日本", "にほんご", "j"],
+    "aliases": [
+      "japanese",
+      "日本語",
+      "ja"
+    ],
     "direction": "ltr",
-    "isSupportedAsNative": true
+    "isSupportedAsNative": true,
+    "isAvailableForUi": true,
+    "fallbackLocale": "ja"
   },
   {
     "code": "ko",
     "englishName": "Korean",
     "nativeName": "한국어",
     "flagEmoji": "🇰🇷",
-    "aliases": ["hangul", "hangeul", "korea", "korean", "한국", "k"],
+    "aliases": [
+      "korean",
+      "한국어",
+      "ko"
+    ],
     "direction": "ltr",
-    "isSupportedAsNative": true
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
   },
   {
     "code": "zh",
     "englishName": "Chinese",
     "nativeName": "中文",
     "flagEmoji": "🇨🇳",
-    "aliases": ["zh-CN", "zh-TW", "mandarin", "putonghua", "hanzi", "中国", "中文", "chinese", "z"],
+    "aliases": [
+      "chinese",
+      "中文",
+      "zh"
+    ],
     "direction": "ltr",
-    "isSupportedAsNative": true
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "es",
+    "englishName": "Spanish",
+    "nativeName": "Español",
+    "flagEmoji": "🇪🇸",
+    "aliases": [
+      "spanish",
+      "español",
+      "es"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "fr",
+    "englishName": "French",
+    "nativeName": "Français",
+    "flagEmoji": "🇫🇷",
+    "aliases": [
+      "french",
+      "français",
+      "fr"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "de",
+    "englishName": "German",
+    "nativeName": "Deutsch",
+    "flagEmoji": "🇩🇪",
+    "aliases": [
+      "german",
+      "deutsch",
+      "de"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "it",
+    "englishName": "Italian",
+    "nativeName": "Italiano",
+    "flagEmoji": "🇮🇹",
+    "aliases": [
+      "italian",
+      "italiano",
+      "it"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "pt",
+    "englishName": "Portuguese",
+    "nativeName": "Português",
+    "flagEmoji": "🇵🇹",
+    "aliases": [
+      "portuguese",
+      "português",
+      "pt"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ru",
+    "englishName": "Russian",
+    "nativeName": "Русский",
+    "flagEmoji": "🇷🇺",
+    "aliases": [
+      "russian",
+      "русский",
+      "ru"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "uk",
+    "englishName": "Ukrainian",
+    "nativeName": "Українська",
+    "flagEmoji": "🇺🇦",
+    "aliases": [
+      "ukrainian",
+      "українська",
+      "uk"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "pl",
+    "englishName": "Polish",
+    "nativeName": "Polski",
+    "flagEmoji": "🇵🇱",
+    "aliases": [
+      "polish",
+      "polski",
+      "pl"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "nl",
+    "englishName": "Dutch",
+    "nativeName": "Nederlands",
+    "flagEmoji": "🇳🇱",
+    "aliases": [
+      "dutch",
+      "nederlands",
+      "nl"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "sv",
+    "englishName": "Swedish",
+    "nativeName": "Svenska",
+    "flagEmoji": "🇸🇪",
+    "aliases": [
+      "swedish",
+      "svenska",
+      "sv"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "no",
+    "englishName": "Norwegian",
+    "nativeName": "Norsk",
+    "flagEmoji": "🇳🇴",
+    "aliases": [
+      "norwegian",
+      "norsk",
+      "no"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "da",
+    "englishName": "Danish",
+    "nativeName": "Dansk",
+    "flagEmoji": "🇩🇰",
+    "aliases": [
+      "danish",
+      "dansk",
+      "da"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "fi",
+    "englishName": "Finnish",
+    "nativeName": "Suomi",
+    "flagEmoji": "🇫🇮",
+    "aliases": [
+      "finnish",
+      "suomi",
+      "fi"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "cs",
+    "englishName": "Czech",
+    "nativeName": "Čeština",
+    "flagEmoji": "🇨🇿",
+    "aliases": [
+      "czech",
+      "čeština",
+      "cs"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "sk",
+    "englishName": "Slovak",
+    "nativeName": "Slovenčina",
+    "flagEmoji": "🇸🇰",
+    "aliases": [
+      "slovak",
+      "slovenčina",
+      "sk"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "hu",
+    "englishName": "Hungarian",
+    "nativeName": "Magyar",
+    "flagEmoji": "🇭🇺",
+    "aliases": [
+      "hungarian",
+      "magyar",
+      "hu"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ro",
+    "englishName": "Romanian",
+    "nativeName": "Română",
+    "flagEmoji": "🇷🇴",
+    "aliases": [
+      "romanian",
+      "română",
+      "ro"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "el",
+    "englishName": "Greek",
+    "nativeName": "Ελληνικά",
+    "flagEmoji": "🇬🇷",
+    "aliases": [
+      "greek",
+      "ελληνικά",
+      "el"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "tr",
+    "englishName": "Turkish",
+    "nativeName": "Türkçe",
+    "flagEmoji": "🇹🇷",
+    "aliases": [
+      "turkish",
+      "türkçe",
+      "tr"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ar",
+    "englishName": "Arabic",
+    "nativeName": "العربية",
+    "flagEmoji": "🇸🇦",
+    "aliases": [
+      "arabic",
+      "العربية",
+      "ar"
+    ],
+    "direction": "rtl",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "he",
+    "englishName": "Hebrew",
+    "nativeName": "עברית",
+    "flagEmoji": "🇮🇱",
+    "aliases": [
+      "hebrew",
+      "עברית",
+      "he"
+    ],
+    "direction": "rtl",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "fa",
+    "englishName": "Persian",
+    "nativeName": "فارسی",
+    "flagEmoji": "🇮🇷",
+    "aliases": [
+      "persian",
+      "فارسی",
+      "fa"
+    ],
+    "direction": "rtl",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "hi",
+    "englishName": "Hindi",
+    "nativeName": "हिन्दी",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "hindi",
+      "हिन्दी",
+      "hi"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ur",
+    "englishName": "Urdu",
+    "nativeName": "اردو",
+    "flagEmoji": "🇵🇰",
+    "aliases": [
+      "urdu",
+      "اردو",
+      "ur"
+    ],
+    "direction": "rtl",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "bn",
+    "englishName": "Bengali",
+    "nativeName": "বাংলা",
+    "flagEmoji": "🇧🇩",
+    "aliases": [
+      "bengali",
+      "বাংলা",
+      "bn"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "pa",
+    "englishName": "Punjabi",
+    "nativeName": "ਪੰਜਾਬੀ",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "punjabi",
+      "ਪੰਜਾਬੀ",
+      "pa"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ta",
+    "englishName": "Tamil",
+    "nativeName": "தமிழ்",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "tamil",
+      "தமிழ்",
+      "ta"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "te",
+    "englishName": "Telugu",
+    "nativeName": "తెలుగు",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "telugu",
+      "తెలుగు",
+      "te"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "mr",
+    "englishName": "Marathi",
+    "nativeName": "मराठी",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "marathi",
+      "मराठी",
+      "mr"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "gu",
+    "englishName": "Gujarati",
+    "nativeName": "ગુજરાતી",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "gujarati",
+      "ગુજરાતી",
+      "gu"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "kn",
+    "englishName": "Kannada",
+    "nativeName": "ಕನ್ನಡ",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "kannada",
+      "ಕನ್ನಡ",
+      "kn"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ml",
+    "englishName": "Malayalam",
+    "nativeName": "മലയാളം",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "malayalam",
+      "മലയാളം",
+      "ml"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "th",
+    "englishName": "Thai",
+    "nativeName": "ไทย",
+    "flagEmoji": "🇹🇭",
+    "aliases": [
+      "thai",
+      "ไทย",
+      "th"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "id",
+    "englishName": "Indonesian",
+    "nativeName": "Bahasa Indonesia",
+    "flagEmoji": "🇮🇩",
+    "aliases": [
+      "indonesian",
+      "bahasa indonesia",
+      "id"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ms",
+    "englishName": "Malay",
+    "nativeName": "Bahasa Melayu",
+    "flagEmoji": "🇲🇾",
+    "aliases": [
+      "malay",
+      "bahasa melayu",
+      "ms"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "tl",
+    "englishName": "Filipino / Tagalog",
+    "nativeName": "Filipino",
+    "flagEmoji": "🇵🇭",
+    "aliases": [
+      "filipino / tagalog",
+      "filipino",
+      "tl"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "my",
+    "englishName": "Burmese",
+    "nativeName": "မြန်မာဘာသာ",
+    "flagEmoji": "🇲🇲",
+    "aliases": [
+      "burmese",
+      "မြန်မာဘာသာ",
+      "my"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "km",
+    "englishName": "Khmer",
+    "nativeName": "ភាសាខ្មែរ",
+    "flagEmoji": "🇰🇭",
+    "aliases": [
+      "khmer",
+      "ភាសាខ្មែរ",
+      "km"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "lo",
+    "englishName": "Lao",
+    "nativeName": "ພາສາລາວ",
+    "flagEmoji": "🇱🇦",
+    "aliases": [
+      "lao",
+      "ພາສາລາວ",
+      "lo"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "mn",
+    "englishName": "Mongolian",
+    "nativeName": "Монгол",
+    "flagEmoji": "🇲🇳",
+    "aliases": [
+      "mongolian",
+      "монгол",
+      "mn"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "kk",
+    "englishName": "Kazakh",
+    "nativeName": "Қазақ тілі",
+    "flagEmoji": "🇰🇿",
+    "aliases": [
+      "kazakh",
+      "қазақ тілі",
+      "kk"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "uz",
+    "englishName": "Uzbek",
+    "nativeName": "O'zbekcha",
+    "flagEmoji": "🇺🇿",
+    "aliases": [
+      "uzbek",
+      "o'zbekcha",
+      "uz"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "sw",
+    "englishName": "Swahili",
+    "nativeName": "Kiswahili",
+    "flagEmoji": "🇰🇪",
+    "aliases": [
+      "swahili",
+      "kiswahili",
+      "sw"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "af",
+    "englishName": "Afrikaans",
+    "nativeName": "Afrikaans",
+    "flagEmoji": "🇿🇦",
+    "aliases": [
+      "afrikaans",
+      "afrikaans",
+      "af"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "zu",
+    "englishName": "Zulu",
+    "nativeName": "isiZulu",
+    "flagEmoji": "🇿🇦",
+    "aliases": [
+      "zulu",
+      "isizulu",
+      "zu"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "xh",
+    "englishName": "Xhosa",
+    "nativeName": "isiXhosa",
+    "flagEmoji": "🇿🇦",
+    "aliases": [
+      "xhosa",
+      "isixhosa",
+      "xh"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "am",
+    "englishName": "Amharic",
+    "nativeName": "አማርኛ",
+    "flagEmoji": "🇪🇹",
+    "aliases": [
+      "amharic",
+      "አማርኛ",
+      "am"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "yo",
+    "englishName": "Yoruba",
+    "nativeName": "Yorùbá",
+    "flagEmoji": "🇳🇬",
+    "aliases": [
+      "yoruba",
+      "yorùbá",
+      "yo"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ig",
+    "englishName": "Igbo",
+    "nativeName": "Igbo",
+    "flagEmoji": "🇳🇬",
+    "aliases": [
+      "igbo",
+      "igbo",
+      "ig"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ha",
+    "englishName": "Hausa",
+    "nativeName": "Hausa",
+    "flagEmoji": "🇳🇬",
+    "aliases": [
+      "hausa",
+      "hausa",
+      "ha"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "so",
+    "englishName": "Somali",
+    "nativeName": "Soomaali",
+    "flagEmoji": "🇸🇴",
+    "aliases": [
+      "somali",
+      "soomaali",
+      "so"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ne",
+    "englishName": "Nepali",
+    "nativeName": "नेपाली",
+    "flagEmoji": "🇳🇵",
+    "aliases": [
+      "nepali",
+      "नेपाली",
+      "ne"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "si",
+    "englishName": "Sinhala",
+    "nativeName": "සිංහල",
+    "flagEmoji": "🇱🇰",
+    "aliases": [
+      "sinhala",
+      "සිංහල",
+      "si"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ka",
+    "englishName": "Georgian",
+    "nativeName": "ქართული",
+    "flagEmoji": "🇬🇪",
+    "aliases": [
+      "georgian",
+      "ქართული",
+      "ka"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "hy",
+    "englishName": "Armenian",
+    "nativeName": "Հայերեն",
+    "flagEmoji": "🇦🇲",
+    "aliases": [
+      "armenian",
+      "հայերեն",
+      "hy"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "az",
+    "englishName": "Azerbaijani",
+    "nativeName": "Azərbaycanca",
+    "flagEmoji": "🇦🇿",
+    "aliases": [
+      "azerbaijani",
+      "azərbaycanca",
+      "az"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "sr",
+    "englishName": "Serbian",
+    "nativeName": "Српски",
+    "flagEmoji": "🇷🇸",
+    "aliases": [
+      "serbian",
+      "српски",
+      "sr"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "hr",
+    "englishName": "Croatian",
+    "nativeName": "Hrvatski",
+    "flagEmoji": "🇭🇷",
+    "aliases": [
+      "croatian",
+      "hrvatski",
+      "hr"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "bg",
+    "englishName": "Bulgarian",
+    "nativeName": "Български",
+    "flagEmoji": "🇧🇬",
+    "aliases": [
+      "bulgarian",
+      "български",
+      "bg"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "sl",
+    "englishName": "Slovenian",
+    "nativeName": "Slovenščina",
+    "flagEmoji": "🌐",
+    "aliases": [
+      "slovenian",
+      "slovenščina",
+      "sl"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "lt",
+    "englishName": "Lithuanian",
+    "nativeName": "Lietuvių",
+    "flagEmoji": "🇱🇹",
+    "aliases": [
+      "lithuanian",
+      "lietuvių",
+      "lt"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "lv",
+    "englishName": "Latvian",
+    "nativeName": "Latviešu",
+    "flagEmoji": "🇱🇻",
+    "aliases": [
+      "latvian",
+      "latviešu",
+      "lv"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "et",
+    "englishName": "Estonian",
+    "nativeName": "Eesti",
+    "flagEmoji": "🇪🇪",
+    "aliases": [
+      "estonian",
+      "eesti",
+      "et"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "is",
+    "englishName": "Icelandic",
+    "nativeName": "Íslenska",
+    "flagEmoji": "🇮🇸",
+    "aliases": [
+      "icelandic",
+      "íslenska",
+      "is"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ga",
+    "englishName": "Irish",
+    "nativeName": "Gaeilge",
+    "flagEmoji": "🇮🇪",
+    "aliases": [
+      "irish",
+      "gaeilge",
+      "ga"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "cy",
+    "englishName": "Welsh",
+    "nativeName": "Cymraeg",
+    "flagEmoji": "🇬🇧",
+    "aliases": [
+      "welsh",
+      "cymraeg",
+      "cy"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ca",
+    "englishName": "Catalan",
+    "nativeName": "Català",
+    "flagEmoji": "🇪🇸",
+    "aliases": [
+      "catalan",
+      "català",
+      "ca"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "eu",
+    "englishName": "Basque",
+    "nativeName": "Euskara",
+    "flagEmoji": "🇪🇸",
+    "aliases": [
+      "basque",
+      "euskara",
+      "eu"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "gl",
+    "englishName": "Galician",
+    "nativeName": "Galego",
+    "flagEmoji": "🇪🇸",
+    "aliases": [
+      "galician",
+      "galego",
+      "gl"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "la",
+    "englishName": "Latin",
+    "nativeName": "Latina",
+    "flagEmoji": "🏛️",
+    "aliases": [
+      "latin",
+      "latina",
+      "la"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "eo",
+    "englishName": "Esperanto",
+    "nativeName": "Esperanto",
+    "flagEmoji": "🌐",
+    "aliases": [
+      "esperanto",
+      "esperanto",
+      "eo"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "sq",
+    "englishName": "Albanian",
+    "nativeName": "Shqip",
+    "flagEmoji": "🇦🇱",
+    "aliases": [
+      "albanian",
+      "shqip",
+      "sq"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "mk",
+    "englishName": "Macedonian",
+    "nativeName": "Македонски",
+    "flagEmoji": "🇲🇰",
+    "aliases": [
+      "macedonian",
+      "македонски",
+      "mk"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "bs",
+    "englishName": "Bosnian",
+    "nativeName": "Bosanski",
+    "flagEmoji": "🇧🇦",
+    "aliases": [
+      "bosnian",
+      "bosanski",
+      "bs"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "mt",
+    "englishName": "Maltese",
+    "nativeName": "Malti",
+    "flagEmoji": "🇲🇹",
+    "aliases": [
+      "maltese",
+      "malti",
+      "mt"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "be",
+    "englishName": "Belarusian",
+    "nativeName": "Беларуская",
+    "flagEmoji": "🇧🇾",
+    "aliases": [
+      "belarusian",
+      "беларуская",
+      "be"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "jv",
+    "englishName": "Javanese",
+    "nativeName": "Basa Jawa",
+    "flagEmoji": "🇮🇩",
+    "aliases": [
+      "javanese",
+      "basa jawa",
+      "jv"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ceb",
+    "englishName": "Cebuano",
+    "nativeName": "Cebuano",
+    "flagEmoji": "🇵🇭",
+    "aliases": [
+      "cebuano",
+      "cebuano",
+      "ceb"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "haw",
+    "englishName": "Hawaiian",
+    "nativeName": "ʻŌlelo Hawaiʻi",
+    "flagEmoji": "🌺",
+    "aliases": [
+      "hawaiian",
+      "ʻōlelo hawaiʻi",
+      "haw"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "mi",
+    "englishName": "Māori",
+    "nativeName": "Te Reo Māori",
+    "flagEmoji": "🇳🇿",
+    "aliases": [
+      "māori",
+      "te reo māori",
+      "mi"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ht",
+    "englishName": "Haitian Creole",
+    "nativeName": "Kreyòl ayisyen",
+    "flagEmoji": "🇭🇹",
+    "aliases": [
+      "haitian creole",
+      "kreyòl ayisyen",
+      "ht"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "qu",
+    "englishName": "Quechua",
+    "nativeName": "Runa Simi",
+    "flagEmoji": "🇵🇪",
+    "aliases": [
+      "quechua",
+      "runa simi",
+      "qu"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "gn",
+    "englishName": "Guaraní",
+    "nativeName": "Avañe'ẽ",
+    "flagEmoji": "🇵🇾",
+    "aliases": [
+      "guaraní",
+      "avañe'ẽ",
+      "gn"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "yi",
+    "englishName": "Yiddish",
+    "nativeName": "ייִדיש",
+    "flagEmoji": "🌐",
+    "aliases": [
+      "yiddish",
+      "ייִדיש",
+      "yi"
+    ],
+    "direction": "rtl",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "lb",
+    "englishName": "Luxembourgish",
+    "nativeName": "Lëtzebuergesch",
+    "flagEmoji": "🇱🇺",
+    "aliases": [
+      "luxembourgish",
+      "lëtzebuergesch",
+      "lb"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "gd",
+    "englishName": "Scottish Gaelic",
+    "nativeName": "Gàidhlig",
+    "flagEmoji": "🇬🇧",
+    "aliases": [
+      "scottish gaelic",
+      "gàidhlig",
+      "gd"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "br",
+    "englishName": "Breton",
+    "nativeName": "Brezhoneg",
+    "flagEmoji": "🇫🇷",
+    "aliases": [
+      "breton",
+      "brezhoneg",
+      "br"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "fo",
+    "englishName": "Faroese",
+    "nativeName": "Føroyskt",
+    "flagEmoji": "🇫🇴",
+    "aliases": [
+      "faroese",
+      "føroyskt",
+      "fo"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "se",
+    "englishName": "Northern Sami",
+    "nativeName": "Davvisámegiella",
+    "flagEmoji": "🇳🇴",
+    "aliases": [
+      "northern sami",
+      "davvisámegiella",
+      "se"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "mg",
+    "englishName": "Malagasy",
+    "nativeName": "Malagasy",
+    "flagEmoji": "🇲🇬",
+    "aliases": [
+      "malagasy",
+      "malagasy",
+      "mg"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "rw",
+    "englishName": "Kinyarwanda",
+    "nativeName": "Ikinyarwanda",
+    "flagEmoji": "🇷🇼",
+    "aliases": [
+      "kinyarwanda",
+      "ikinyarwanda",
+      "rw"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "sn",
+    "englishName": "Shona",
+    "nativeName": "ChiShona",
+    "flagEmoji": "🇿🇼",
+    "aliases": [
+      "shona",
+      "chishona",
+      "sn"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ps",
+    "englishName": "Pashto",
+    "nativeName": "پښتو",
+    "flagEmoji": "🇦🇫",
+    "aliases": [
+      "pashto",
+      "پښتو",
+      "ps"
+    ],
+    "direction": "rtl",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "ku",
+    "englishName": "Kurdish",
+    "nativeName": "Kurdî",
+    "flagEmoji": "🌐",
+    "aliases": [
+      "kurdish",
+      "kurdî",
+      "ku"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
+    "code": "bo",
+    "englishName": "Tibetan",
+    "nativeName": "བོད་ཡིག",
+    "flagEmoji": "🏔️",
+    "aliases": [
+      "tibetan",
+      "བོད་ཡིག",
+      "bo"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
   }
 ]

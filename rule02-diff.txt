@@ -1,0 +1,39 @@
+﻿diff --git a/.cursor/rules/02_novalang_lesson_standard.mdc b/.cursor/rules/02_novalang_lesson_standard.mdc
+new file mode 100644
+index 0000000..b08fb98
+--- /dev/null
++++ b/.cursor/rules/02_novalang_lesson_standard.mdc
+@@ -0,0 +1,33 @@
++---
++description: Legacy lesson standards and scope guard
++alwaysApply: true
++---
++
++# NovaLang Lesson Standard ΓÇö scope guard
++
++## Rule priority
++
++Apply workspace rules in this order:
++
++1. `AGENTS.md`
++2. `.cursor/rules/novalang.mdc` (Core Rules)
++3. `.cursor/rules/03_novalang_lesson_format_2_0.mdc`
++4. This file
++
++`03_novalang_lesson_format_2_0.mdc` is the frozen Shared Source Of Truth for
++the opt-in `lessonFormat: five_cards` format. This file must not restate,
++extend, or override that format.
++
++## Opt-in only
++
++Apply Lesson Format 2.0 only when a lesson explicitly declares
++`lessonFormat: five_cards`. Do not automatically migrate or reinterpret
++foundation lessons, Hiragana, Katakana, English Alphabet, JLPT/exam content, or
++any other existing or unapproved lesson. Legacy lessons remain legacy unless
++the project owner explicitly approves a migration.
++
++## Golden reference
++
++`ja-daily_life-m01-u1-l1` is a reference implementation for reusable data,
++renderer, and flow behavior only. Do not copy its lesson content, names,
++translations, or culture-specific data into another lesson.

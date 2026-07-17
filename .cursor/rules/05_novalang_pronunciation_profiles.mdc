@@ -1,0 +1,39 @@
+---
+description: Global gateway for NovaLang's five-field pronunciation contract and canonical per-language rule directories
+alwaysApply: true
+---
+
+# NovaLang Pronunciation Profiles Gateway
+
+Status: `JAPANESE_LANGUAGE_PROFILE_EXISTS` ·
+`ROMANIZATION_IMPLEMENTATION_PASS` · `ADR_015_APPROVED_FROZEN` ·
+`JAPANESE_FULL_PROFILE_CLOSED_FROZEN`
+
+Apply this gateway after `AGENTS.md` and `.cursor/rules/novalang.mdc`. It
+defines the global contract; detailed linguistic rules live only in
+[`rules/languages/`](../../rules/languages/README.md).
+
+## Global contract
+
+Keep these fields separate: `surfaceText`, `reading`, `romanization`,
+`pronunciation`, and `ttsText`. `reading` is literal in the language's
+phonetic system. `romanization` is learner-facing Latin transliteration.
+`ttsText` defaults to native script and never to `romanization`.
+
+Every learning language needs an approved `PronunciationProfile` before its
+first real lesson enters production. Contextual rules must be evidence-based,
+must not be blind character substitution, and must preserve approved content
+overrides with a reason/source. Missing analysis must fail loudly or require
+an explicit override.
+
+## Canonical language sources
+
+- [Japanese (`ja`)](../../rules/languages/ja/README.md): complete pilot rules,
+  currently `JAPANESE_LANGUAGE_PROFILE_EXISTS`, `APPROVED / FROZEN`, with
+  native expert review explicitly `WAIVED / NOT_COMPLETED` by Project Owner.
+- [_template](../../rules/languages/_template/README.md): architecture for a
+  future language; it contains no invented linguistic rules.
+
+ADR-015 is the architecture record. Implementation files and fixtures are
+referenced by the applicable language directory; this gateway deliberately
+does not duplicate Japanese spelling, particle, romanization, or TTS details.

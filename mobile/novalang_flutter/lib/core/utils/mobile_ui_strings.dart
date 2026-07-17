@@ -29,17 +29,17 @@ class MobileUiStrings {
 
   static MobileUiStrings _empty() => MobileUiStrings._({});
 
-  /// Returns null when the key is missing from JSON.
+  /// Returns null when the key or requested locale is missing from JSON.
+  /// Never falls through to another language.
   String? lookup(String key, String languageCode) {
     final entry = _strings[key];
     if (entry == null) return null;
     final locale = _resolveLocale(languageCode);
-    return entry[locale] ?? entry['en'];
+    return entry[locale];
   }
 
   static String _resolveLocale(String languageCode) {
-    const supported = {'vi', 'en', 'ja', 'ko', 'zh'};
-    if (supported.contains(languageCode)) return languageCode;
-    return 'en';
+    final normalized = languageCode.trim().toLowerCase().replaceAll('_', '-');
+    return normalized.split('-').first;
   }
 }

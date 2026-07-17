@@ -1,0 +1,111 @@
+{
+  "fixtureVersion": "1.0",
+  "requestFixtures": [
+    {
+      "name": "golden_lesson_request",
+      "request": {
+        "attemptId": "attempt-golden-001",
+        "userId": "user-demo-a",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "ja-daily_life-m01-u1-l1",
+        "requestedAt": "2026-07-14T10:30:00+09:00",
+        "idempotencyKey": "completion:user-demo-a:ja-daily_life:ja-daily_life-m01-u1-l1:attempt-golden-001",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "same_lesson_different_user_request",
+      "request": {
+        "attemptId": "attempt-user-b-001",
+        "userId": "user-demo-b",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "ja-daily_life-m01-u1-l1",
+        "requestedAt": "2026-07-14T10:35:00+09:00",
+        "idempotencyKey": "completion:user-demo-b:ja-daily_life:ja-daily_life-m01-u1-l1:attempt-user-b-001",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "same_user_lesson_different_track_request",
+      "request": {
+        "attemptId": "attempt-track-b-001",
+        "userId": "user-demo-a",
+        "userTrackId": "ja-exam",
+        "lessonId": "ja-daily_life-m01-u1-l1",
+        "requestedAt": "2026-07-14T10:40:00+09:00",
+        "idempotencyKey": "completion:user-demo-a:ja-exam:ja-daily_life-m01-u1-l1:attempt-track-b-001",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "duplicate_golden_lesson_request",
+      "request": {
+        "attemptId": "attempt-golden-001",
+        "userId": "user-demo-a",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "ja-daily_life-m01-u1-l1",
+        "requestedAt": "2026-07-14T10:31:00+09:00",
+        "idempotencyKey": "completion:user-demo-a:ja-daily_life:ja-daily_life-m01-u1-l1:attempt-golden-001",
+        "contractVersion": "1.0"
+      }
+    }
+  ],
+  "recordFixtures": [
+    {
+      "name": "recorded_golden_lesson",
+      "requestFixtureName": "golden_lesson_request",
+      "record": {
+        "completionId": "completion-golden-001",
+        "attemptId": "attempt-golden-001",
+        "userId": "user-demo-a",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "ja-daily_life-m01-u1-l1",
+        "completedAt": "2026-07-14T10:32:00+09:00",
+        "idempotencyKey": "completion:user-demo-a:ja-daily_life:ja-daily_life-m01-u1-l1:attempt-golden-001",
+        "contractVersion": "1.0"
+      }
+    }
+  ],
+  "resultFixtures": [
+    {
+      "name": "recorded_result",
+      "requestFixtureName": "golden_lesson_request",
+      "result": {
+        "status": "recorded",
+        "record": {
+          "completionId": "completion-golden-001",
+          "attemptId": "attempt-golden-001",
+          "userId": "user-demo-a",
+          "userTrackId": "ja-daily_life",
+          "lessonId": "ja-daily_life-m01-u1-l1",
+          "completedAt": "2026-07-14T10:32:00+09:00",
+          "idempotencyKey": "completion:user-demo-a:ja-daily_life:ja-daily_life-m01-u1-l1:attempt-golden-001",
+          "contractVersion": "1.0"
+        },
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "already_completed_result",
+      "result": {
+        "status": "already_completed",
+        "existingCompletionId": "completion-golden-001",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "invalid_attempt_result",
+      "result": {
+        "status": "invalid_attempt",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "not_eligible_result",
+      "result": {
+        "status": "not_eligible",
+        "contractVersion": "1.0"
+      }
+    }
+  ]
+}

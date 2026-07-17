@@ -1,10 +1,10 @@
 {
   "titles": {
     "daily_life": {
-      "en": "Everyday Communication",
+      "en": "Daily Life Communication",
       "vi": "Giao tiếp hằng ngày",
-      "ja": "日常コミュニケーション",
-      "ko": "일상 의사소통",
+      "ja": "日常会話",
+      "ko": "일상 회화",
       "zh": "日常交流"
     },
     "exam_preparation": {
@@ -28,98 +28,159 @@
       "ko": "식당·외식",
       "zh": "餐饮服务"
     },
-    "it_programming": {
-      "en": "IT & Programming",
-      "vi": "Công nghệ thông tin & lập trình",
-      "ja": "IT・プログラミング",
-      "ko": "IT·프로그래밍",
-      "zh": "IT与编程"
+    "it_software": {
+      "en": "IT & Software",
+      "vi": "CNTT & Lập trình",
+      "ja": "IT・ソフトウェア"
     },
     "ai_data_analytics": {
       "en": "AI, Data & Analytics",
-      "vi": "AI, dữ liệu & phân tích",
-      "ja": "AI・データ分析",
-      "ko": "AI·데이터 분석",
-      "zh": "AI、数据与分析"
+      "vi": "AI, Dữ liệu & Phân tích",
+      "ja": "AI・データ分析"
     },
-    "healthcare": {
-      "en": "Healthcare",
-      "vi": "Y tế & chăm sóc sức khỏe",
-      "ja": "医療・介護",
-      "ko": "의료·케어",
-      "zh": "医疗健康"
+    "robotics_iot_automation": {
+      "en": "Robotics, IoT & Automation",
+      "vi": "Robot, IoT & Tự động hóa",
+      "ja": "ロボティクス・IoT・自動化"
     },
-    "business_office": {
-      "en": "Business & Office",
-      "vi": "Kinh doanh & văn phòng",
-      "ja": "ビジネス・オフィス",
-      "ko": "비즈니스·오피스",
-      "zh": "商务与办公"
+    "robotics_automation": {
+      "en": "Robotics & Automation",
+      "vi": "Robot & Tự động hóa",
+      "ja": "ロボティクス・自動化"
+    },
+    "iot": {
+      "en": "IoT",
+      "vi": "IoT",
+      "ja": "IoT"
+    },
+    "digital_design_ui_ux": {
+      "en": "Digital Design & UI/UX",
+      "vi": "Thiết kế số & UI/UX",
+      "ja": "デジタルデザイン・UI/UX"
+    },
+    "ecommerce_online_operations": {
+      "en": "E-commerce & Online Operations",
+      "vi": "Thương mại điện tử & Vận hành trực tuyến",
+      "ja": "Eコマース・オンライン運営"
+    },
+    "office_administration": {
+      "en": "Office Administration",
+      "vi": "Hành chính văn phòng",
+      "ja": "オフィス管理・事務"
+    },
+    "finance_accounting_audit": {
+      "en": "Finance, Accounting & Audit",
+      "vi": "Tài chính, Kế toán & Kiểm toán",
+      "ja": "財務・会計・監査"
+    },
+    "finance": {
+      "en": "Finance",
+      "vi": "Tài chính",
+      "ja": "財務"
+    },
+    "accounting_audit": {
+      "en": "Accounting & Audit",
+      "vi": "Kế toán & Kiểm toán",
+      "ja": "会計・監査"
+    },
+    "human_resources_recruitment": {
+      "en": "Human Resources & Recruitment",
+      "vi": "Nhân sự & Tuyển dụng",
+      "ja": "人事・採用"
+    },
+    "legal_compliance": {
+      "en": "Legal & Compliance",
+      "vi": "Pháp lý & Tuân thủ",
+      "ja": "法務・コンプライアンス"
+    },
+    "marketing_communications_content": {
+      "en": "Marketing, Communications & Content",
+      "vi": "Marketing, Truyền thông & Nội dung",
+      "ja": "マーケティング・広報・コンテンツ"
     },
     "sales_customer_service": {
       "en": "Sales & Customer Service",
-      "vi": "Bán hàng & chăm sóc khách hàng",
-      "ja": "営業・カスタマーサービス",
-      "ko": "영업·고객 서비스",
-      "zh": "销售与客服"
+      "vi": "Bán hàng & Chăm sóc khách hàng",
+      "ja": "営業・カスタマーサービス"
     },
-    "education_school": {
-      "en": "Education & School",
-      "vi": "Giáo dục & trường học",
-      "ja": "教育・学校",
-      "ko": "교육·학교",
-      "zh": "教育与学校"
+    "travel_hospitality": {
+      "en": "Travel & Hospitality",
+      "vi": "Du lịch, Khách sạn & Lưu trú",
+      "ja": "旅行・ホスピタリティ"
+    },
+    "food_beverage": {
+      "en": "Food & Beverage (F&B)",
+      "vi": "Nhà hàng, Ẩm thực & Dịch vụ đồ uống",
+      "ja": "飲食（F&B）"
+    },
+    "beauty_aesthetics_spa": {
+      "en": "Beauty, Aesthetics & Spa",
+      "vi": "Làm đẹp, Thẩm mỹ & Spa",
+      "ja": "美容・エステ・スパ"
     },
     "manufacturing_engineering": {
       "en": "Manufacturing & Engineering",
-      "vi": "Sản xuất & kỹ thuật",
-      "ja": "製造・エンジニアリング",
-      "ko": "제조·엔지니어링",
-      "zh": "制造与工程"
+      "vi": "Sản xuất & Kỹ thuật công nghiệp",
+      "ja": "製造・エンジニアリング"
     },
     "construction_real_estate": {
       "en": "Construction & Real Estate",
-      "vi": "Xây dựng & bất động sản",
-      "ja": "建設・不動産",
-      "ko": "건설·부동산",
-      "zh": "建筑与房地产"
+      "vi": "Xây dựng & Bất động sản",
+      "ja": "建設・不動産"
     },
-    "logistics_delivery": {
-      "en": "Logistics & Delivery",
-      "vi": "Logistics & giao hàng",
-      "ja": "物流・配送",
-      "ko": "물류·배송",
-      "zh": "物流与配送"
+    "automotive_mobility": {
+      "en": "Automotive & Mobility",
+      "vi": "Ô tô, Giao thông & Di chuyển",
+      "ja": "自動車・モビリティ"
     },
-    "finance_accounting": {
-      "en": "Finance & Accounting",
-      "vi": "Tài chính & kế toán",
-      "ja": "金融・会計",
-      "ko": "금융·회계",
-      "zh": "金融与会计"
+    "clinical_healthcare": {
+      "en": "Clinical Healthcare",
+      "vi": "Y tế lâm sàng",
+      "ja": "臨床医療"
     },
-    "marketing_content_creation": {
-      "en": "Marketing & Content Creation",
-      "vi": "Marketing & sáng tạo nội dung",
-      "ja": "マーケティング・コンテンツ",
-      "ko": "마케팅·콘텐츠",
-      "zh": "营销与内容创作"
+    "nursing_elderly_care": {
+      "en": "Nursing & Elderly Care",
+      "vi": "Điều dưỡng & Chăm sóc người cao tuổi",
+      "ja": "看護・高齢者ケア"
     },
-    "environment_energy_agriculture": {
-      "en": "Environment, Energy & Agriculture",
-      "vi": "Môi trường, năng lượng & nông nghiệp",
-      "ja": "環境・エネルギー・農業",
-      "ko": "환경·에너지·농업",
-      "zh": "环境、能源与农业"
+    "education_school": {
+      "en": "Education & School",
+      "vi": "Giáo dục & Trường học",
+      "ja": "教育・学校"
+    },
+    "social_public_services": {
+      "en": "Social & Public Services",
+      "vi": "Dịch vụ xã hội & Hành chính công",
+      "ja": "社会福祉・公共サービス"
+    },
+    "logistics_supply_chain": {
+      "en": "Logistics & Supply Chain",
+      "vi": "Logistics & Chuỗi cung ứng",
+      "ja": "物流・サプライチェーン"
+    },
+    "agriculture_agritech": {
+      "en": "Agriculture & AgriTech",
+      "vi": "Nông nghiệp & Công nghệ nông nghiệp",
+      "ja": "農業・アグリテック"
+    },
+    "fisheries_aquaculture": {
+      "en": "Fisheries & Aquaculture",
+      "vi": "Thủy sản & Nuôi trồng thủy sản",
+      "ja": "漁業・養殖業"
+    },
+    "green_energy_building_operations": {
+      "en": "Green Energy & Building Operations",
+      "vi": "Năng lượng xanh & Quản lý cơ sở vật chất",
+      "ja": "グリーンエネルギー・ビル運用"
     }
   },
   "descriptions": {
     "daily_life": {
-      "en": "Self-introduction, shopping, travel, restaurants, family talk, phone calls, appointments, asking directions, everyday situations...",
-      "vi": "Giới thiệu bản thân, mua sắm, du lịch, nhà hàng, hỏi thăm gia đình, nghe điện thoại, đặt lịch, hỏi đường, tình huống hằng ngày...",
-      "ja": "自己紹介、買い物、旅行、レストラン、家族の話、電話、予約、道案内、日常会話...",
-      "ko": "자기소개, 쇼핑, 여행, 식당, 가족 이야기, 전화, 예약, 길 묻기, 일상 상황...",
-      "zh": "自我介绍、购物、旅行、餐厅、家庭话题、电话、预约、问路、日常场景..."
+      "en": "Learn everyday communication through real situations — greetings, shopping, travel, family, work, and more.",
+      "vi": "Học giao tiếp đời sống hằng ngày theo tình huống thật — chào hỏi, mua sắm, đi lại, gia đình, công việc...",
+      "ja": "あいさつ・買い物・旅行・家族・仕事など、実生活の場面で日常会話を学びます。",
+      "ko": "인사, 쇼핑, 여행, 가족, 직장 등 실제 상황으로 일상 회화를 배웁니다.",
+      "zh": "通过真实情境学习日常交流——打招呼、购物、出行、家庭、工作等。"
     },
     "exam_preparation": {
       "en": "Exam tracks depend on your learning language (JLPT, IELTS, TOEIC, TOPIK, HSK, and more).",
@@ -131,10 +192,10 @@
   },
   "categories": {
     "Daily Communication": {
-      "en": "Everyday Communication",
+      "en": "Daily Life Communication",
       "vi": "Giao tiếp hằng ngày",
-      "ja": "日常コミュニケーション",
-      "ko": "일상 의사소통",
+      "ja": "日常会話",
+      "ko": "일상 회화",
       "zh": "日常交流"
     },
     "Exam Preparation": {
@@ -150,6 +211,51 @@
       "ja": "仕事・専門分野",
       "ko": "직업 / 전문 분야",
       "zh": "职业 / 专业领域"
+    },
+    "digital_technology": {
+      "en": "Digital & Tech",
+      "vi": "Công nghệ & Số hóa",
+      "ja": "デジタル・テクノロジー"
+    },
+    "corporate_business": {
+      "en": "Corporate & Business",
+      "vi": "Quản trị & Doanh nghiệp",
+      "ja": "経営・ビジネス"
+    },
+    "hospitality_customer_service": {
+      "en": "Hospitality, Travel & Customer Service",
+      "vi": "Dịch vụ, Du lịch & Khách sạn",
+      "ja": "接客・旅行・カスタマーサービス"
+    },
+    "engineering_production": {
+      "en": "Engineering & Production",
+      "vi": "Kỹ thuật & Sản xuất",
+      "ja": "エンジニアリング・生産"
+    },
+    "care_health_education": {
+      "en": "Healthcare, Care & Education",
+      "vi": "Y tế, Chăm sóc & Giáo dục",
+      "ja": "医療・ケア・教育"
+    },
+    "green_agriculture_supply_chain": {
+      "en": "Logistics, Agriculture & Environment",
+      "vi": "Logistics, Nông nghiệp & Môi trường",
+      "ja": "物流・農業・環境"
+    },
+    "health_care": {
+      "en": "Health & Care",
+      "vi": "Y tế & Chăm sóc",
+      "ja": "医療・ケア"
+    },
+    "education_social_services": {
+      "en": "Education & Social Services",
+      "vi": "Giáo dục & Dịch vụ xã hội",
+      "ja": "教育・社会サービス"
+    },
+    "agriculture_fisheries_sustainability": {
+      "en": "Agriculture, Fisheries & Sustainability",
+      "vi": "Nông nghiệp, Thủy sản & Phát triển bền vững",
+      "ja": "農業・水産業・サステナビリティ"
     }
   },
   "legacyIdMap": {
@@ -166,10 +272,14 @@
     "toefl": "exam_preparation",
     "other_exams": "exam_preparation",
     "exam": "exam_preparation",
-    "business": "business_office",
-    "it": "it_programming",
+    "business": "office_administration",
+    "it": "it_software",
     "engineering": "manufacturing_engineering",
     "ai_data": "ai_data_analytics",
-    "healthcare": "healthcare"
+    "healthcare": "clinical_healthcare",
+    "it_programming": "it_software",
+    "business_office": "office_administration",
+    "logistics_delivery": "logistics_supply_chain",
+    "marketing_content_creation": "marketing_communications_content"
   }
 }

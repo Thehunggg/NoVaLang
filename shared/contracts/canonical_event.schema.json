@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://novalang.local/contracts/canonical_event.schema.json",
+  "title": "NovaLang Canonical Event Contract",
+  "description": "Platform-neutral append request, immutable event, and append result contracts for the canonical event dispatcher.",
+  "$defs": {
+    "NonEmptyString": {
+      "type": "string",
+      "pattern": "\\S",
+      "description": "Must contain at least one non-whitespace character."
+    },
+    "TimezoneDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": ".*(?:Z|[+-]\\d{2}:\\d{2})$",
+      "description": "ISO 8601 datetime with a Z suffix or explicit timezone offset."
+    },
+    "ContractVersion": {
+      "const": "1.0"
+    },
+    "CanonicalEventType": {
+      "type": "string",
+      "enum": ["lesson_completion_recorded"],
+      "description": "Stage 1 defines exactly one canonical event type."
+    },
+    "SourceRecordType": {
+      "const": "lesson_completion",
+      "description": "Stage 1 canonical events reference a lesson_completion record only."
+    },
+    "CanonicalEventAppendStatus": {
+      "type": "string",
+      "enum": ["appended", "already_appended"]
+    },
+    "EventPayload": {
+      "type": "object",
+      "description": "Platform-neutral, event-type-specific payload. Stage 1 payloads carry no field not already present at the top level of the event; this stays an open object so a future event type can add fields without a breaking contract change."
+    },
+    "CanonicalEventAppendRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventType",
+        "sourceRecordId",
+        "sourceRecordType",
+        "userId",
+        "userTrackId",
+        "lessonId",
+        "requestedAt",
+        "idempotencyKey",
+        "contractVersion",
+        "payload"
+      ],
+      "properties": {
+        "eventType": { "$ref": "#/$defs/CanonicalEventType" },
+        "sourceRecordId": { "$ref": "#/$defs/NonEmptyString" },
+        "sourceRecordType": { "$ref": "#/$defs/SourceRecordType" },
+        "userId": { "$ref": "#/$defs/NonEmptyString" },
+        "userTrackId": { "$ref": "#/$defs/NonEmptyString" },
+        "lessonId": { "$ref": "#/$defs/NonEmptyString" },
+        "requestedAt": { "$ref": "#/$defs/TimezoneDateTime" },
+        "idempotencyKey": { "$ref": "#/$defs/NonEmptyString" },
+        "contractVersion": { "$ref": "#/$defs/ContractVersion" },
+        "payload": { "$ref": "#/$defs/EventPayload" }
+      }
+    },
+    "CanonicalEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventId",
+        "eventType",
+        "sourceRecordId",
+        "sourceRecordType",
+        "userId",
+        "userTrackId",
+        "lessonId",
+        "occurredAt",
+        "idempotencyKey",
+        "contractVersion",
+        "payload"
+      ],
+      "properties": {
+        "eventId": { "$ref": "#/$defs/NonEmptyString" },
+        "eventType": { "$ref": "#/$defs/CanonicalEventType" },
+        "sourceRecordId": { "$ref": "#/$defs/NonEmptyString" },
+        "sourceRecordType": { "$ref": "#/$defs/SourceRecordType" },
+        "userId": { "$ref": "#/$defs/NonEmptyString" },
+        "userTrackId": { "$ref": "#/$defs/NonEmptyString" },
+        "lessonId": { "$ref": "#/$defs/NonEmptyString" },
+        "occurredAt": { "$ref": "#/$defs/TimezoneDateTime" },
+        "idempotencyKey": { "$ref": "#/$defs/NonEmptyString" },
+        "contractVersion": { "$ref": "#/$defs/ContractVersion" },
+        "payload": { "$ref": "#/$defs/EventPayload" }
+      }
+    },
+    "CanonicalEventAppendResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "contractVersion"],
+      "properties": {
+        "status": { "$ref": "#/$defs/CanonicalEventAppendStatus" },
+        "event": { "$ref": "#/$defs/CanonicalEvent" },
+        "existingEventId": { "$ref": "#/$defs/NonEmptyString" },
+        "contractVersion": { "$ref": "#/$defs/ContractVersion" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["status"],
+            "properties": { "status": { "const": "appended" } }
+          },
+          "then": {
+            "required": ["event"],
+            "not": { "required": ["existingEventId"] }
+          }
+        },
+        {
+          "if": {
+            "required": ["status"],
+            "properties": { "status": { "const": "already_appended" } }
+          },
+          "then": {
+            "required": ["existingEventId"],
+            "not": { "required": ["event"] }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,10 +1,9 @@
-import 'dart:io' show Platform;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/constants/app_constants.dart';
+import '../../core/platform/app_platform.dart';
 import '../../core/utils/localization.dart';
 import '../../models/auth_provider_option.dart';
 import '../../services/mock_auth_service.dart';
@@ -31,7 +30,10 @@ class AuthScreen extends ConsumerWidget {
     List<AuthProviderOption> providers,
   ) =>
       providers
-          .where((provider) => provider.id != 'apple' || Platform.isIOS)
+          .where(
+            (provider) =>
+                provider.id != 'apple' || AppPlatform.supportsAppleSignIn,
+          )
           .toList(growable: false);
 
   static void _redirectAfterAuth(BuildContext context, WidgetRef ref) {

@@ -43,7 +43,7 @@
         "zh": "日本国际交流基金会基础日语考试。"
       },
       "iconKey": "chat_bubbles",
-      "enabled": true,
+      "enabled": false,
       "comingSoon": true,
       "displayOrder": 2,
       "trackType": "exam"
@@ -67,7 +67,7 @@
         "zh": "商务日语能力测试。"
       },
       "iconKey": "briefcase",
-      "enabled": true,
+      "enabled": false,
       "comingSoon": true,
       "displayOrder": 3,
       "trackType": "exam"
@@ -141,7 +141,7 @@
         "zh": "作为外语的英语考试 TOEFL。"
       },
       "iconKey": "school",
-      "enabled": true,
+      "enabled": false,
       "comingSoon": true,
       "displayOrder": 3,
       "trackType": "exam"

@@ -2,8 +2,8 @@
   {
     "id": "daily_life",
     "category": "Daily Communication",
-    "title": "Everyday Communication",
-    "description": "Self-introduction, shopping, travel, restaurants, family talk, phone calls, appointments, asking directions, everyday situations...",
+    "title": "Daily Life Communication",
+    "description": "Everyday situations: greetings, shopping, travel, restaurants, family talk, phone calls, appointments, asking directions, and more.",
     "isReady": true,
     "iconKey": "chat_bubbles",
     "quickSelect": true,
@@ -20,9 +20,9 @@
     "branchType": "exam"
   },
   {
-    "id": "it_programming",
-    "category": "Career / Specialized Fields",
-    "title": "IT & Programming",
+    "id": "it_software",
+    "category": "digital_technology",
+    "title": "IT & Software",
     "description": "Software, tools, tickets, standups, and technical collaboration.",
     "isReady": false,
     "iconKey": "code",
@@ -30,34 +30,115 @@
   },
   {
     "id": "ai_data_analytics",
-    "category": "Career / Specialized Fields",
+    "category": "digital_technology",
     "title": "AI, Data & Analytics",
     "description": "AI, data, models, analytics, and research communication.",
     "isReady": false,
-    "iconKey": "brain",
+    "iconKey": "sparkles",
     "quickSelect": true
   },
   {
-    "id": "healthcare",
-    "category": "Career / Specialized Fields",
-    "title": "Healthcare",
-    "description": "Symptoms, care, patient communication, and medical basics.",
+    "id": "robotics_automation",
+    "category": "digital_technology",
+    "title": "Robotics & Automation",
+    "description": "Robotics and automation workflows.",
     "isReady": false,
-    "iconKey": "medical_cross",
+    "iconKey": "robot",
     "quickSelect": true
   },
   {
-    "id": "business_office",
-    "category": "Career / Specialized Fields",
-    "title": "Business & Office",
+    "id": "iot",
+    "category": "digital_technology",
+    "title": "IoT",
+    "description": "IoT devices, sensors, and connected-systems communication.",
+    "isReady": false,
+    "iconKey": "wifi",
+    "quickSelect": true
+  },
+  {
+    "id": "digital_design_ui_ux",
+    "category": "digital_technology",
+    "title": "Digital Design & UI/UX",
+    "description": "Product design, UI/UX, and design-team communication.",
+    "isReady": false,
+    "iconKey": "palette",
+    "quickSelect": true
+  },
+  {
+    "id": "office_administration",
+    "category": "corporate_business",
+    "title": "Office Administration",
     "description": "Meetings, email, scheduling, and professional workplace language.",
     "isReady": false,
     "iconKey": "briefcase",
     "quickSelect": true
   },
   {
+    "id": "finance",
+    "category": "corporate_business",
+    "title": "Finance",
+    "description": "Banking, budgets, investments, and financial communication.",
+    "isReady": false,
+    "iconKey": "briefcase",
+    "quickSelect": true
+  },
+  {
+    "id": "accounting_audit",
+    "category": "corporate_business",
+    "title": "Accounting & Audit",
+    "description": "Invoices, ledgers, audits, and accounting basics.",
+    "isReady": false,
+    "iconKey": "briefcase",
+    "quickSelect": true
+  },
+  {
+    "id": "human_resources_recruitment",
+    "category": "corporate_business",
+    "title": "Human Resources & Recruitment",
+    "description": "Hiring, onboarding, and workplace HR communication.",
+    "isReady": false,
+    "iconKey": "briefcase",
+    "quickSelect": true
+  },
+  {
+    "id": "legal_compliance",
+    "category": "corporate_business",
+    "title": "Legal & Compliance",
+    "description": "Contracts, policy, and compliance communication.",
+    "isReady": false,
+    "iconKey": "briefcase",
+    "quickSelect": true
+  },
+  {
+    "id": "marketing_communications_content",
+    "category": "corporate_business",
+    "title": "Marketing, Communications & Content",
+    "description": "Campaigns, social content, branding, and creative briefs.",
+    "isReady": false,
+    "iconKey": "briefcase",
+    "quickSelect": true
+  },
+  {
+    "id": "ecommerce_online_operations",
+    "category": "corporate_business",
+    "title": "E-commerce & Online Operations",
+    "description": "Online storefronts, marketplaces, and digital operations.",
+    "isReady": false,
+    "iconKey": "briefcase",
+    "quickSelect": true
+  },
+  {
+    "id": "logistics_supply_chain",
+    "category": "corporate_business",
+    "title": "Logistics & Supply Chain",
+    "description": "Shipping, warehouses, routes, and delivery communication.",
+    "isReady": false,
+    "iconKey": "briefcase",
+    "quickSelect": true
+  },
+  {
     "id": "sales_customer_service",
-    "category": "Career / Specialized Fields",
+    "category": "hospitality_customer_service",
     "title": "Sales & Customer Service",
     "description": "Sales conversations, complaints, and customer care phrases.",
     "isReady": false,
@@ -65,17 +146,35 @@
     "quickSelect": true
   },
   {
-    "id": "education_school",
-    "category": "Career / Specialized Fields",
-    "title": "Education & School",
-    "description": "Classroom language, campus life, and academic communication.",
+    "id": "travel_hospitality",
+    "category": "hospitality_customer_service",
+    "title": "Travel & Hospitality",
+    "description": "Travel, hotel, and guest-facing hospitality language.",
     "isReady": false,
-    "iconKey": "graduation_cap",
+    "iconKey": "headset",
+    "quickSelect": true
+  },
+  {
+    "id": "food_beverage",
+    "category": "hospitality_customer_service",
+    "title": "Food & Beverage (F&B)",
+    "description": "Restaurant, dining, and beverage-service communication.",
+    "isReady": false,
+    "iconKey": "headset",
+    "quickSelect": true
+  },
+  {
+    "id": "beauty_aesthetics_spa",
+    "category": "hospitality_customer_service",
+    "title": "Beauty, Aesthetics & Spa",
+    "description": "Salon, spa, and personal-care service communication.",
+    "isReady": false,
+    "iconKey": "headset",
     "quickSelect": true
   },
   {
     "id": "manufacturing_engineering",
-    "category": "Career / Specialized Fields",
+    "category": "engineering_production",
     "title": "Manufacturing & Engineering",
     "description": "Factory, process, safety, and technical engineering language.",
     "isReady": false,
@@ -84,45 +183,81 @@
   },
   {
     "id": "construction_real_estate",
-    "category": "Career / Specialized Fields",
+    "category": "engineering_production",
     "title": "Construction & Real Estate",
     "description": "Sites, housing, contracts, and property conversations.",
     "isReady": false,
-    "iconKey": "building",
+    "iconKey": "gear",
     "quickSelect": true
   },
   {
-    "id": "logistics_delivery",
-    "category": "Career / Specialized Fields",
-    "title": "Logistics & Delivery",
-    "description": "Shipping, warehouses, routes, and delivery communication.",
+    "id": "automotive_mobility",
+    "category": "engineering_production",
+    "title": "Automotive & Mobility",
+    "description": "Automotive, transportation, and mobility communication.",
     "isReady": false,
-    "iconKey": "truck",
+    "iconKey": "gear",
     "quickSelect": true
   },
   {
-    "id": "finance_accounting",
-    "category": "Career / Specialized Fields",
-    "title": "Finance & Accounting",
-    "description": "Banking, invoices, budgets, and accounting basics.",
+    "id": "clinical_healthcare",
+    "category": "health_care",
+    "title": "Clinical Healthcare",
+    "description": "Symptoms, care, patient communication, and medical basics.",
     "isReady": false,
-    "iconKey": "wallet",
+    "iconKey": "medical_cross",
     "quickSelect": true
   },
   {
-    "id": "marketing_content_creation",
-    "category": "Career / Specialized Fields",
-    "title": "Marketing & Content Creation",
-    "description": "Campaigns, social content, branding, and creative briefs.",
+    "id": "nursing_elderly_care",
+    "category": "health_care",
+    "title": "Nursing & Elderly Care",
+    "description": "Nursing, elderly care, and patient-support communication.",
     "isReady": false,
-    "iconKey": "megaphone",
+    "iconKey": "medical_cross",
     "quickSelect": true
   },
   {
-    "id": "environment_energy_agriculture",
-    "category": "Career / Specialized Fields",
-    "title": "Environment, Energy & Agriculture",
-    "description": "Sustainability, energy, farming, and environmental topics.",
+    "id": "education_school",
+    "category": "education_social_services",
+    "title": "Education & School",
+    "description": "Classroom language, campus life, and academic communication.",
+    "isReady": false,
+    "iconKey": "book",
+    "quickSelect": true
+  },
+  {
+    "id": "social_public_services",
+    "category": "education_social_services",
+    "title": "Social & Public Services",
+    "description": "Community, social work, and public-service communication.",
+    "isReady": false,
+    "iconKey": "book",
+    "quickSelect": true
+  },
+  {
+    "id": "agriculture_agritech",
+    "category": "agriculture_fisheries_sustainability",
+    "title": "Agriculture & AgriTech",
+    "description": "Farming, agritech, and field-operations communication.",
+    "isReady": false,
+    "iconKey": "leaf",
+    "quickSelect": true
+  },
+  {
+    "id": "fisheries_aquaculture",
+    "category": "agriculture_fisheries_sustainability",
+    "title": "Fisheries & Aquaculture",
+    "description": "Fisheries, aquaculture, and marine-farming communication.",
+    "isReady": false,
+    "iconKey": "leaf",
+    "quickSelect": true
+  },
+  {
+    "id": "green_energy_building_operations",
+    "category": "agriculture_fisheries_sustainability",
+    "title": "Green Energy & Building Operations",
+    "description": "Sustainability, energy, and building-operations topics.",
     "isReady": false,
     "iconKey": "leaf",
     "quickSelect": true

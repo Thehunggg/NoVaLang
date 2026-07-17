@@ -58,9 +58,107 @@ export type LocalizedAnswers = Partial<Record<SupportedUILanguage | NativeMeanin
 
 export interface NativeLanguage { code: string; name: string; nativeName: string; flagEmoji: string; region?: string; direction?: "ltr" | "rtl"; uiSupported: boolean; }
 export interface Language { code: LanguageCode; name: string; nativeName: string; flag: string; color: string; greeting: string; description: string; }
-export interface ExampleSentence { text: string; translation: string; note?: string; }
+export interface ExampleSentence {
+  text: string;
+  translation: string;
+  note?: string;
+  reading?: string;
+  speechText?: string;
+  translationTranslations?: Partial<Record<SupportedUILanguage | NativeMeaningLanguage, string>>;
+}
 export type LessonExample = ExampleSentence;
 export interface MatchPair { left: string; right: string; }
+
+/** Trial-only exercise schema for the approved five-card Japanese Lesson 1. */
+export interface FiveCardPracticeOption {
+  id: string;
+  text: string;
+  canonicalText?: string;
+  audioText?: string;
+}
+export interface FiveCardPracticeToken extends FiveCardPracticeOption {}
+/** Explicit locale/culture character contract; names are never inferred. */
+export interface FiveCardCharacterName {
+  id: string;
+  displayName: string;
+  canonicalName: string;
+  audioName: string;
+}
+export interface FiveCardCharacterContext {
+  targetLanguage: LearningLanguageCode;
+  targetLocale: string;
+  cultureContext: string;
+  approvedCharacterNamePool: FiveCardCharacterName[];
+}
+export interface FiveCardPracticeAnswerSlot {
+  id: string;
+  expectedTokenId: string;
+  afterText?: string;
+}
+export interface FiveCardChatSlot {
+  id: string;
+  displayText: string;
+  canonicalText: string;
+  audioText: string;
+  acceptedAnswers: string[];
+}
+export interface FiveCardChatMessageSegment {
+  displayText?: string;
+  canonicalText?: string;
+  audioText?: string;
+  slotId?: string;
+}
+export interface FiveCardChatMessage {
+  id: string;
+  speakerId: string;
+  segments: FiveCardChatMessageSegment[];
+}
+export interface FiveCardChatExercise {
+  timestamp: string;
+  context: string;
+  speakers: { id: string; label: string; alignment: 'left' | 'right' }[];
+  messages: FiveCardChatMessage[];
+}
+export interface FiveCardPracticeExercise {
+  id: string;
+  order: number;
+  plan: 'free' | 'plus';
+  type: string;
+  prompt: string;
+  maxCycles?: number;
+  options?: FiveCardPracticeOption[];
+  correctOptionId?: string;
+  tokens?: FiveCardPracticeToken[];
+  answerSlots?: FiveCardPracticeAnswerSlot[];
+  correctTokenIds?: string[];
+  unusedTokenIds?: string[];
+  subQuestions?: FiveCardPracticeExercise[];
+  chat?: FiveCardChatExercise;
+  slots?: FiveCardChatSlot[];
+}
+export interface FiveCardPractice {
+  title: string;
+  japaneseTitle: string;
+  totalQuestions: 14;
+  estimatedMinutes: string;
+  reviewTopics?: string;
+  groups?: {
+    id: string;
+    number?: string;
+    title: string;
+    range?: string;
+    details?: string;
+    badge?: string;
+    start?: number;
+    end?: number;
+    plan: 'free' | 'plus';
+  }[];
+  exercises: FiveCardPracticeExercise[];
+}
+export type FiveCardContent = Record<string, unknown> &
+  Partial<FiveCardCharacterContext> & {
+  practice?: FiveCardPractice;
+};
 
 export interface LearnCard {
   id: string;
@@ -220,6 +318,7 @@ export interface DialogueLine {
   audioPlaceholder?: string;
   speechText?: string;
   translations?: Partial<Record<SupportedUILanguage, string>>;
+  reading?: string;
 }
 
 export type ContentItem = PronunciationItem | VocabularyItem | GrammarPoint | DialogueLine;
@@ -245,6 +344,8 @@ export interface QuizQuestion { id: string; prompt: string; options: string[]; c
 
 export interface Lesson {
   id: string;
+  lessonFormat?: "five_cards";
+  fiveCardContent?: FiveCardContent;
   language: LanguageCode;
   levelId: LevelId;
   unitId: string;
@@ -278,6 +379,19 @@ export interface Lesson {
   objectiveTranslations?: Partial<Record<SupportedUILanguage, string>>;
   canDoTranslations?: Partial<Record<SupportedUILanguage, string>>;
   descriptionTranslations?: Partial<Record<SupportedUILanguage, string>>;
+  contentStatus?: "ready" | "blueprint" | string;
+  playable?: boolean;
+  situationByNative?: Partial<Record<SupportedUILanguage, string>>;
+  goalByNative?: Partial<Record<SupportedUILanguage, string>>;
+  learnSection?: Record<string, { status?: string }>;
+  practiceStages?: Array<{
+    key: string;
+    labelByNative?: Partial<Record<SupportedUILanguage, string>>;
+    exerciseOrders?: number[];
+  }>;
+  cultureNoteTranslations?: Partial<Record<SupportedUILanguage | NativeMeaningLanguage, string>>;
+  contextualVariations?: VocabularyItem[];
+  communicationStrategyTranslations?: Partial<Record<SupportedUILanguage | NativeMeaningLanguage, string>>;
 }
 
 export interface Unit {

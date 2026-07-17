@@ -114,7 +114,7 @@ final languageCatalogProvider = FutureProvider<List<LanguageOption>>((ref) async
       .toList(growable: false);
 });
 
-/// Native/UI languages from shared/config/native_language_options.json (5 for now).
+/// Native/UI languages from shared/config/native_language_options.json (~100).
 final nativeLanguageCatalogProvider = FutureProvider<List<LanguageOption>>((ref) async {
   try {
     final raw = await SharedAssetLoader.loadList('native_language_options.json');

@@ -1,0 +1,128 @@
+{
+  "fixtureVersion": "1.0",
+  "fixtures": [
+    {
+      "name": "request_missing_attempt_id",
+      "type": "request",
+      "expectedErrors": ["attemptId is required"],
+      "value": {
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "completion:invalid:001",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "request_whitespace_user_id",
+      "type": "request",
+      "expectedErrors": ["userId must be a non-empty string"],
+      "value": {
+        "attemptId": "attempt-invalid-002",
+        "userId": "   ",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "completion:invalid:002",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "request_datetime_without_timezone",
+      "type": "request",
+      "expectedErrors": ["requestedAt must be an ISO 8601 datetime with a timezone"],
+      "value": {
+        "attemptId": "attempt-invalid-003",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00",
+        "idempotencyKey": "completion:invalid:003",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "record_wrong_contract_version",
+      "type": "record",
+      "expectedErrors": ["contractVersion must equal 1.0"],
+      "value": {
+        "completionId": "completion-invalid-004",
+        "attemptId": "attempt-invalid-004",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "completedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "completion:invalid:004",
+        "contractVersion": "2.0"
+      }
+    },
+    {
+      "name": "recorded_result_without_record",
+      "type": "result",
+      "expectedErrors": ["recorded result requires record"],
+      "value": {
+        "status": "recorded",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "invalid_attempt_result_with_record",
+      "type": "result",
+      "expectedErrors": ["invalid_attempt result must not include record"],
+      "value": {
+        "status": "invalid_attempt",
+        "record": {
+          "completionId": "completion-invalid-006",
+          "attemptId": "attempt-invalid-006",
+          "userId": "user-invalid",
+          "userTrackId": "ja-daily_life",
+          "lessonId": "lesson-invalid",
+          "completedAt": "2026-07-14T11:00:00+09:00",
+          "idempotencyKey": "completion:invalid:006",
+          "contractVersion": "1.0"
+        },
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "already_completed_result_without_existing_completion_id",
+      "type": "result",
+      "expectedErrors": ["already_completed result requires existingCompletionId"],
+      "value": {
+        "status": "already_completed",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "request_unknown_field",
+      "type": "request",
+      "expectedErrors": ["request contains unknown field unexpectedField"],
+      "value": {
+        "attemptId": "attempt-invalid-008",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "completion:invalid:008",
+        "contractVersion": "1.0",
+        "unexpectedField": "not allowed"
+      }
+    },
+    {
+      "name": "result_unknown_status",
+      "type": "result",
+      "expectedErrors": ["status must be one of recorded, already_completed, invalid_attempt, not_eligible"],
+      "value": {
+        "status": "unknown_status",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "unknown_fixture_type",
+      "type": "unknown",
+      "expectedErrors": ["fixture type must be one of request, record, result"],
+      "value": {}
+    }
+  ]
+}

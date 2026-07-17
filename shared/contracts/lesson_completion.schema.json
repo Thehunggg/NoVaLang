@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://novalang.local/contracts/lesson_completion.schema.json",
+  "title": "NovaLang Lesson Completion Contract",
+  "description": "Platform-neutral request, immutable record, and result contracts for lesson completion.",
+  "$defs": {
+    "NonEmptyString": {
+      "type": "string",
+      "pattern": "\\S",
+      "description": "Must contain at least one non-whitespace character."
+    },
+    "TimezoneDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": ".*(?:Z|[+-]\\d{2}:\\d{2})$",
+      "description": "ISO 8601 datetime with a Z suffix or explicit timezone offset."
+    },
+    "ContractVersion": {
+      "const": "1.0"
+    },
+    "CompletionStatus": {
+      "type": "string",
+      "enum": [
+        "recorded",
+        "already_completed",
+        "invalid_attempt",
+        "not_eligible"
+      ]
+    },
+    "LessonCompletionRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attemptId",
+        "userId",
+        "userTrackId",
+        "lessonId",
+        "requestedAt",
+        "idempotencyKey",
+        "contractVersion"
+      ],
+      "properties": {
+        "attemptId": { "$ref": "#/$defs/NonEmptyString" },
+        "userId": { "$ref": "#/$defs/NonEmptyString" },
+        "userTrackId": { "$ref": "#/$defs/NonEmptyString" },
+        "lessonId": { "$ref": "#/$defs/NonEmptyString" },
+        "requestedAt": { "$ref": "#/$defs/TimezoneDateTime" },
+        "idempotencyKey": { "$ref": "#/$defs/NonEmptyString" },
+        "contractVersion": { "$ref": "#/$defs/ContractVersion" }
+      }
+    },
+    "LessonCompletionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "completionId",
+        "attemptId",
+        "userId",
+        "userTrackId",
+        "lessonId",
+        "completedAt",
+        "idempotencyKey",
+        "contractVersion"
+      ],
+      "properties": {
+        "completionId": { "$ref": "#/$defs/NonEmptyString" },
+        "attemptId": { "$ref": "#/$defs/NonEmptyString" },
+        "userId": { "$ref": "#/$defs/NonEmptyString" },
+        "userTrackId": { "$ref": "#/$defs/NonEmptyString" },
+        "lessonId": { "$ref": "#/$defs/NonEmptyString" },
+        "completedAt": { "$ref": "#/$defs/TimezoneDateTime" },
+        "idempotencyKey": { "$ref": "#/$defs/NonEmptyString" },
+        "contractVersion": { "$ref": "#/$defs/ContractVersion" }
+      }
+    },
+    "LessonCompletionResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "contractVersion"],
+      "properties": {
+        "status": { "$ref": "#/$defs/CompletionStatus" },
+        "record": { "$ref": "#/$defs/LessonCompletionRecord" },
+        "existingCompletionId": { "$ref": "#/$defs/NonEmptyString" },
+        "contractVersion": { "$ref": "#/$defs/ContractVersion" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["status"],
+            "properties": { "status": { "const": "recorded" } }
+          },
+          "then": {
+            "required": ["record"],
+            "not": { "required": ["existingCompletionId"] }
+          }
+        },
+        {
+          "if": {
+            "required": ["status"],
+            "properties": { "status": { "const": "already_completed" } }
+          },
+          "then": {
+            "required": ["existingCompletionId"],
+            "not": { "required": ["record"] }
+          }
+        },
+        {
+          "if": {
+            "required": ["status"],
+            "properties": { "status": { "const": "invalid_attempt" } }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                { "required": ["record"] },
+                { "required": ["existingCompletionId"] }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["status"],
+            "properties": { "status": { "const": "not_eligible" } }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                { "required": ["record"] },
+                { "required": ["existingCompletionId"] }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

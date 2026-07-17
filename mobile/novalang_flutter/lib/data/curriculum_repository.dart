@@ -91,7 +91,11 @@ class CurriculumRepository {
             .map(
               (id) => catalog
                   .findLesson(id)
-                  ?.toLesson(nativeLanguage: nativeLanguage),
+                  ?.toLesson(
+                    nativeLanguage: nativeLanguage,
+                    overrideModuleId: course.moduleId,
+                    overrideModuleTitleByNative: course.moduleTitleByNative,
+                  ),
             )
             .whereType<Lesson>()
             .toList(growable: false);
@@ -108,6 +112,11 @@ class CurriculumRepository {
             goalVi: unit.goalVi,
             goalByNative: unit.goalByNative,
             displayOrder: unit.order,
+            moduleId: course.moduleId,
+            moduleTitle: course.moduleTitle,
+            moduleTitleByNative: course.moduleTitleByNative,
+            levelRange: course.levelRange,
+            moduleOrder: course.order,
             lessons: lessons,
           ),
         );

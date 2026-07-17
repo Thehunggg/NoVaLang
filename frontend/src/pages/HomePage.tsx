@@ -2,7 +2,7 @@ import { BookOpen, Brain, CloudOff, Flame, Heart, Repeat2, Target, TriangleAlert
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { CoursePath } from "../components/learning/CoursePath";
-import { Mascot } from "../components/learning/Mascot";
+import { LanguageHero } from "../components/learning/LanguageHero";
 import { StatCard } from "../components/learning/StatCard";
 import { PageContainer } from "../components/layout/PageContainer";
 import { Badge } from "../components/ui/Badge";
@@ -59,27 +59,21 @@ export function HomePage() {
 
   return (
     <PageContainer className="py-7 sm:py-10">
-      <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-cyan-300/[.08] via-violet-400/[.08] to-fuchsia-400/[.07] p-5 sm:p-8">
-        <div className="relative flex flex-col justify-between gap-7 md:flex-row md:items-center">
-          <div>
-            <div className="mb-4 flex flex-wrap gap-2">
-              <Badge tone="cyan">{t("currentLevel")} {currentLevelName}</Badge>
-              {offline && <Badge tone="amber"><CloudOff size={12} /> {t("offlinePack")}</Badge>}
-            </div>
-            {progress.displayName && <p className="mb-2 text-sm font-black text-cyan-200">{t("welcomeBack")}, {progress.displayName}</p>}
-            <h1 className="font-display text-3xl font-black sm:text-4xl">{t("signalLive", { language: label(language.code) })}</h1>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400">{t("signalDescription")}</p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {languages.map((item) => (
-                <button key={item.code} onClick={() => selectLanguage(item.code)} className={`rounded-xl border px-3 py-2 text-sm font-black ${item.code === progress.selectedLanguage ? "border-cyan-300/40 bg-cyan-300/10" : "border-white/[.07] bg-white/[.03] text-slate-500"}`}>
-                  {item.flag} {label(item.code)}
-                </button>
-              ))}
-            </div>
-          </div>
-          <Mascot size="md" message={`${currentLevelName} · ${course?.mapping ?? "CEFR Pre-A1 to B2"}`} />
-        </div>
-      </section>
+      <LanguageHero
+        language={language}
+        trackName={t("coursePath")}
+        description={language.description}
+        lessonCount={course?.units.reduce((sum, unit) => sum + unit.lessons.length, 0) ?? 0}
+      />
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <Badge tone="cyan">{t("currentLevel")} {currentLevelName}</Badge>
+        {offline && <Badge tone="amber"><CloudOff size={12} /> {t("offlinePack")}</Badge>}
+        {languages.map((item) => (
+          <button key={item.code} onClick={() => selectLanguage(item.code)} className={`rounded-lg border px-3 py-2 text-sm font-black ${item.code === progress.selectedLanguage ? "border-cyan-300/40 bg-cyan-300/10" : "border-white/[.07] bg-white/[.03] text-slate-500"}`}>
+            {item.flag} {label(item.code)}
+          </button>
+        ))}
+      </div>
 
       {needsCoreFoundation && (
         <Card className="mt-5 p-5">

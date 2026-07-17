@@ -24,8 +24,8 @@ export const nicheLegacyIdMap =
 
 const pickLabel = (value: string | Record<string, string> | undefined, language: SupportedUILanguage, fallback: string) => {
   if (!value) return fallback;
-  if (typeof value === "string") return language === "vi" ? value : fallback;
-  return value[language] ?? value.en ?? fallback;
+  if (typeof value === "string") return language === "vi" ? value : language === "en" ? fallback : `⟦missing:${language}⟧`;
+  return value[language] ?? `⟦missing:${language}⟧`;
 };
 
 export const nicheOptions = rawNiches as NicheOption[];

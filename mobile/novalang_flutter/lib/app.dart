@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'core/app_scroll_behavior.dart';
 import 'core/theme/app_theme.dart';
 import 'router/app_router.dart';
 
@@ -14,6 +15,7 @@ class NovaLangApp extends ConsumerWidget {
       title: 'NovaLang',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark(),
+      scrollBehavior: AppScrollBehavior(),
       routerConfig: router,
     );
   }

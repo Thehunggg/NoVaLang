@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../core/theme/app_theme.dart';
 import '../../models/exercise.dart';
 import '../../core/utils/localization.dart';
 import '../common/app_button.dart';
 import '../common/app_card.dart';
 import '../common/app_text_field.dart';
+import '../learn/exercise_option_style.dart';
 import 'speaker_button.dart';
 
 class ExerciseCard extends StatefulWidget {
@@ -38,6 +40,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
   String? selectedRight;
   late List<String> shuffledRights;
   String? matchFeedback;
+  final List<String> arrangedTiles = [];
 
   @override
   void initState() {
@@ -57,6 +60,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
       selectedRight = null;
       matchFeedback = null;
       correct = null;
+      arrangedTiles.clear();
     }
   }
 
@@ -82,6 +86,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
                   exercise.localizedPrompt(widget.nativeLanguageCode),
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w900,
+                    color: AppTheme.questionForeground,
                   ),
                 ),
               ),
@@ -101,9 +106,9 @@ class _ExerciseCardState extends State<ExerciseCard> {
             const SizedBox(height: 8),
             Text(
               exercise.localizedInstruction(locale),
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Colors.white70,
-              ),
+              style: Theme.of(
+                context,
+            ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
             ),
           ],
           if (exercise.displayText != null &&
@@ -118,8 +123,8 @@ class _ExerciseCardState extends State<ExerciseCard> {
                           exercise.audioCardLabelByNative.isNotEmpty)
                   ? exercise.localizedAudioCardLabel(locale)
                   : exercise.localizedDisplayText(locale).isNotEmpty
-                      ? exercise.localizedDisplayText(locale)
-                      : exercise.displayText!,
+                  ? exercise.localizedDisplayText(locale)
+                  : exercise.displayText!,
               style: Theme.of(
                 context,
               ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w900),
@@ -128,18 +133,15 @@ class _ExerciseCardState extends State<ExerciseCard> {
           const SizedBox(height: 16),
           _buildAnswerArea(context),
           const SizedBox(height: 16),
-          AppButton(
-            label: L10n.text('checkAnswer', locale),
-            onPressed: _check,
-          ),
+          AppButton(label: L10n.text('checkAnswer', locale), onPressed: _check),
           if (correct != null) ...[
             const SizedBox(height: 12),
             Text(
               exercise.localizedFeedback(locale, correct!).isNotEmpty
                   ? exercise.localizedFeedback(locale, correct!)
                   : correct!
-                      ? L10n.text('correct', locale)
-                      : L10n.text('notQuite', locale),
+                  ? L10n.text('correct', locale)
+                  : L10n.text('notQuite', locale),
               style: TextStyle(
                 color: correct!
                     ? Colors.greenAccent
@@ -147,6 +149,35 @@ class _ExerciseCardState extends State<ExerciseCard> {
                 fontWeight: FontWeight.w900,
               ),
             ),
+            if (exercise.localizedReveal(locale).isNotEmpty) ...[
+              const SizedBox(height: 10),
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  color: const Color(0x1A22D3EE),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: const Color(0x3322D3EE)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          exercise.localizedReveal(locale),
+                          style: const TextStyle(fontWeight: FontWeight.w800),
+                        ),
+                      ),
+                      if (exercise.speechText != null)
+                        SpeakerButton(
+                          speechText: exercise.speechText!,
+                          languageCode: widget.learningLanguageCode,
+                          uiLanguageCode: locale,
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ],
         ],
       ),
@@ -164,9 +195,9 @@ class _ExerciseCardState extends State<ExerciseCard> {
         children: [
           Text(
             exercise.localizedPrompt(locale),
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w900,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w900),
           ),
           const SizedBox(height: 14),
           for (final card in exercise.cards)
@@ -284,9 +315,9 @@ class _ExerciseCardState extends State<ExerciseCard> {
         children: [
           Text(
             exercise.localizedPrompt(locale),
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w900,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w900),
           ),
           const SizedBox(height: 8),
           Text(
@@ -325,7 +356,10 @@ class _ExerciseCardState extends State<ExerciseCard> {
             ),
           ),
           const SizedBox(height: 12),
-          Text(question.localizedPrompt(locale)),
+          Text(
+            question.localizedPrompt(locale),
+            style: const TextStyle(color: AppTheme.questionForeground),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 10,
@@ -335,6 +369,29 @@ class _ExerciseCardState extends State<ExerciseCard> {
                 ChoiceChip(
                   label: Text(option),
                   selected: subQuestionAnswer == option,
+                  labelStyle: ExerciseOptionStyle.labelStyle(
+                    answered
+                        ? ExerciseOptionVisualState.disabled
+                        : subQuestionAnswer == option
+                        ? ExerciseOptionVisualState.selected
+                        : ExerciseOptionVisualState.available,
+                  ),
+                  color: ExerciseOptionStyle.background(
+                    answered
+                        ? ExerciseOptionVisualState.disabled
+                        : subQuestionAnswer == option
+                        ? ExerciseOptionVisualState.selected
+                        : ExerciseOptionVisualState.available,
+                  ),
+                  side: BorderSide(
+                    color: ExerciseOptionStyle.borderFor(
+                      answered
+                          ? ExerciseOptionVisualState.disabled
+                          : subQuestionAnswer == option
+                          ? ExerciseOptionVisualState.selected
+                          : ExerciseOptionVisualState.available,
+                    ),
+                  ),
                   onSelected: answered
                       ? null
                       : (_) => setState(() => subQuestionAnswer = option),
@@ -363,17 +420,15 @@ class _ExerciseCardState extends State<ExerciseCard> {
                 border: Border.all(
                   color: subQuestionCorrect == true
                       ? Colors.greenAccent.withValues(alpha: 0.3)
-                      : Theme.of(context)
-                          .colorScheme
-                          .error
-                          .withValues(alpha: 0.3),
+                      : Theme.of(
+                          context,
+                        ).colorScheme.error.withValues(alpha: 0.3),
                 ),
                 color: subQuestionCorrect == true
                     ? Colors.greenAccent.withValues(alpha: 0.08)
-                    : Theme.of(context)
-                        .colorScheme
-                        .error
-                        .withValues(alpha: 0.08),
+                    : Theme.of(
+                        context,
+                      ).colorScheme.error.withValues(alpha: 0.08),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(12),
@@ -392,11 +447,16 @@ class _ExerciseCardState extends State<ExerciseCard> {
             ),
             const SizedBox(height: 12),
             AppButton(
-              label: isLast ? L10n.text('next', locale) : L10n.text('next', locale),
+              label: isLast
+                  ? L10n.text('next', locale)
+                  : L10n.text('next', locale),
               icon: Icons.arrow_forward,
               onPressed: () {
                 if (isLast) {
-                  final allResults = [...subQuestionResults, subQuestionCorrect == true];
+                  final allResults = [
+                    ...subQuestionResults,
+                    subQuestionCorrect == true,
+                  ];
                   widget.onChecked?.call(allResults.every((item) => item));
                   return;
                 }
@@ -442,6 +502,51 @@ class _ExerciseCardState extends State<ExerciseCard> {
   Widget _buildAnswerArea(BuildContext context) {
     final exercise = widget.exercise;
     final locale = widget.nativeLanguageCode;
+    if (exercise.type == ExerciseType.arrangeWords ||
+        exercise.type == ExerciseType.arrangeLetters) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            constraints: const BoxConstraints(minHeight: 58),
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.white24),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (var i = 0; i < arrangedTiles.length; i++)
+                  InputChip(
+                    label: Text(arrangedTiles[i]),
+                    onDeleted: () => setState(() => arrangedTiles.removeAt(i)),
+                  ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (var i = 0; i < exercise.tiles.length; i++)
+                if (_usedCount(exercise.tiles[i]) <
+                    exercise.tiles
+                        .take(i + 1)
+                        .where((tile) => tile == exercise.tiles[i])
+                        .length)
+                  ActionChip(
+                    label: Text(exercise.tiles[i]),
+                    onPressed: () =>
+                        setState(() => arrangedTiles.add(exercise.tiles[i])),
+                  ),
+            ],
+          ),
+        ],
+      );
+    }
     if (exercise.type == ExerciseType.matchPairs) {
       final pairs = exercise.localizedPairs(widget.nativeLanguageCode);
       final matched = pairAnswers.keys.toSet();
@@ -582,9 +687,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
               style: const TextStyle(fontWeight: FontWeight.w700),
             )
           else
-            Text(
-              L10n.text('aiFeedbackReuseHelper', locale),
-            ),
+            Text(L10n.text('aiFeedbackReuseHelper', locale)),
         ],
       );
     }
@@ -612,6 +715,23 @@ class _ExerciseCardState extends State<ExerciseCard> {
               ChoiceChip(
                 label: Text(option),
                 selected: selectedAnswer == option,
+                labelStyle: ExerciseOptionStyle.labelStyle(
+                  selectedAnswer == option
+                      ? ExerciseOptionVisualState.selected
+                      : ExerciseOptionVisualState.available,
+                ),
+                color: ExerciseOptionStyle.background(
+                  selectedAnswer == option
+                      ? ExerciseOptionVisualState.selected
+                      : ExerciseOptionVisualState.available,
+                ),
+                side: BorderSide(
+                  color: ExerciseOptionStyle.borderFor(
+                    selectedAnswer == option
+                        ? ExerciseOptionVisualState.selected
+                        : ExerciseOptionVisualState.available,
+                  ),
+                ),
                 onSelected: (_) => setState(() => selectedAnswer = option),
               ),
           ],
@@ -630,14 +750,14 @@ class _ExerciseCardState extends State<ExerciseCard> {
     final Object answer = switch (exercise.type) {
       ExerciseType.matchPairs => pairAnswers,
       ExerciseType.typeAnswer ||
-      ExerciseType.fillBlank when usesOptionChoices =>
-        selectedAnswer ?? '',
+      ExerciseType.fillBlank when usesOptionChoices => selectedAnswer ?? '',
       ExerciseType.typeAnswer ||
       ExerciseType.fillBlank ||
       ExerciseType.listeningGapFill ||
-      ExerciseType.controlledAiQa =>
-        typedAnswer,
+      ExerciseType.controlledAiQa => typedAnswer,
       ExerciseType.aiFeedbackReview => 'reviewed',
+      ExerciseType.arrangeWords => arrangedTiles.join(' '),
+      ExerciseType.arrangeLetters => arrangedTiles.join(),
       _ => selectedAnswer ?? '',
     };
     final result = exercise.type == ExerciseType.aiFeedbackReview
@@ -646,6 +766,9 @@ class _ExerciseCardState extends State<ExerciseCard> {
     setState(() => correct = result);
     widget.onChecked?.call(result);
   }
+
+  int _usedCount(String tile) =>
+      arrangedTiles.where((item) => item == tile).length;
 
   void _onMatchLeftTap(String left) {
     setState(() {
@@ -722,7 +845,10 @@ class _MatchChip extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: accent, width: selected || matched ? 2 : 1),
+            border: Border.all(
+              color: accent,
+              width: selected || matched ? 2 : 1,
+            ),
             color: matched
                 ? const Color(0x2234D399)
                 : selected

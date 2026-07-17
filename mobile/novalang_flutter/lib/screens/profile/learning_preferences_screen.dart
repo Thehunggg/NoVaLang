@@ -8,7 +8,7 @@ import '../../state/profile_provider.dart';
 import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/niche/focus_selection_layout.dart';
-import '../../widgets/niche/niche_group_card.dart';
+import '../../widgets/niche/niche_groups_list.dart';
 
 class LearningPreferencesScreen extends ConsumerStatefulWidget {
   const LearningPreferencesScreen({super.key});
@@ -24,6 +24,7 @@ class _LearningPreferencesScreenState
   late String? primaryId;
   late List<String> initialSelectedIds;
   late String? initialPrimaryId;
+  late bool showLegacyReselectionNotice;
 
   @override
   void initState() {
@@ -31,6 +32,13 @@ class _LearningPreferencesScreenState
     final profile = ref.read(profileProvider);
     selectedIds = profile.selectedNiches.toSet();
     primaryId = profile.primaryNiche;
+    showLegacyReselectionNotice = selectedIds.any(
+      UserProfile.ambiguousLegacyNicheIds.contains,
+    );
+    selectedIds.removeAll(UserProfile.ambiguousLegacyNicheIds);
+    if (UserProfile.ambiguousLegacyNicheIds.contains(primaryId)) {
+      primaryId = selectedIds.isEmpty ? null : selectedIds.first;
+    }
     initialSelectedIds = List<String>.from(profile.selectedNiches);
     initialPrimaryId = profile.primaryNiche;
   }
@@ -67,22 +75,14 @@ class _LearningPreferencesScreenState
           actionLabel: L10n.text('goLearn', locale),
           onAction: hasSelection ? _saveAndContinue : null,
           hintWhenEmpty: L10n.text('chooseFocusToContinue', locale),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              for (final entry in groups.entries) ...[
-                NicheGroupCard(
-                  category: entry.key,
-                  niches: entry.value,
-                  selectedIds: selectedIds,
-                  primaryId: primaryId,
-                  onToggle: _toggle,
-                  onPrimary: (id) => setState(() => primaryId = id),
-                  languageCode: locale,
-                ),
-                const SizedBox(height: 12),
-              ],
-            ],
+          body: NicheGroupsList(
+            groups: groups,
+            selectedIds: selectedIds,
+            primaryId: primaryId,
+            onToggle: _toggle,
+            onPrimary: (id) => setState(() => primaryId = id),
+            languageCode: locale,
+            showLegacyReselectionNotice: showLegacyReselectionNotice,
           ),
         ),
       ),
@@ -109,9 +109,9 @@ class _LearningPreferencesScreenState
   }
 
   void _showSavedSnackBar(String locale) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(L10n.text('focusSaved', locale))),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(L10n.text('focusSaved', locale))));
   }
 
   Future<void> _saveAndContinue() async {
@@ -145,7 +145,9 @@ class _LearningPreferencesScreenState
                 ListTile(
                   title: Text(entry.value),
                   onTap: () async {
-                    await ref.read(profileProvider.notifier).setNiches(
+                    await ref
+                        .read(profileProvider.notifier)
+                        .setNiches(
                           selectedIds.toList(),
                           primaryId,
                           decision: entry.key,

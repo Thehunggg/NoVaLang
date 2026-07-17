@@ -5,3 +5,10 @@ build/
 .env.local
 .DS_Store
 .vscode/
+
+# NovaLang language-rule pipeline (/build-language)
+# Dataset/corpus tải về là cache, KHÔNG commit (repo nằm trong OneDrive).
+tools/cache/
+rules/**/corpus/
+*.corpus.txt
+*.dataset.json

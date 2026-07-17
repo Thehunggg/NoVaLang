@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/language_option.dart';
 import '../../core/utils/localization.dart';
 import '../common/app_card.dart';
+import 'coming_soon_badge.dart';
 
 class LanguageOptionTile extends StatelessWidget {
   const LanguageOptionTile({
@@ -20,8 +21,8 @@ class LanguageOptionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final accent = _parseColor(language.color) ??
-        Theme.of(context).colorScheme.primary;
+    final accent =
+        _parseColor(language.color) ?? Theme.of(context).colorScheme.primary;
 
     return AppCard(
       onTap: onTap,
@@ -60,36 +61,33 @@ class LanguageOptionTile extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   language.nativeName,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.white70,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                 ),
                 if (language.isSupportedAsLearning) ...[
                   const SizedBox(height: 8),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                      color: language.isCourseAvailable
-                          ? const Color(0xFF22D3EE).withValues(alpha: 0.14)
-                          : Colors.orangeAccent.withValues(alpha: 0.14),
-                      borderRadius: BorderRadius.circular(999),
-                    ),
-                    child: Text(
-                      language.isCourseAvailable
-                          ? L10n.text('availableNow', languageCode)
-                          : L10n.text('comingSoon', languageCode),
-                      style: TextStyle(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                        color: language.isCourseAvailable
-                            ? const Color(0xFF22D3EE)
-                            : Colors.orangeAccent,
+                  if (language.isCourseAvailable)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 4,
                       ),
-                    ),
-                  ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF22D3EE).withValues(alpha: 0.14),
+                        borderRadius: BorderRadius.circular(999),
+                      ),
+                      child: Text(
+                        L10n.text('availableNow', languageCode),
+                        style: const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFF22D3EE),
+                        ),
+                      ),
+                    )
+                  else
+                    ComingSoonBadge(uiLanguageCode: languageCode),
                 ],
               ],
             ),

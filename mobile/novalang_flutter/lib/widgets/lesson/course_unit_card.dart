@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/utils/localization.dart';
 import '../../models/course_unit.dart';
 import '../../models/lesson.dart';
 import '../common/app_card.dart';
@@ -13,6 +14,7 @@ class CourseUnitCard extends StatefulWidget {
     required this.completedLessonIds,
     required this.onLessonTap,
     this.initiallyExpanded = false,
+    this.showModuleHeader = false,
   });
 
   final CourseUnit unit;
@@ -21,6 +23,7 @@ class CourseUnitCard extends StatefulWidget {
   final Set<String> completedLessonIds;
   final void Function(Lesson lesson) onLessonTap;
   final bool initiallyExpanded;
+  final bool showModuleHeader;
 
   @override
   State<CourseUnitCard> createState() => _CourseUnitCardState();
@@ -50,6 +53,18 @@ class _CourseUnitCardState extends State<CourseUnitCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          if (widget.showModuleHeader &&
+              (unit.moduleTitle?.isNotEmpty == true ||
+                  unit.moduleTitleByNative.isNotEmpty)) ...[
+            Text(
+              '${L10n.text('moduleLabel', locale)} · ${unit.localizedModuleTitle(locale)}',
+              style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                color: const Color(0xFF67E8F9),
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            const SizedBox(height: 8),
+          ],
           InkWell(
             onTap: () => setState(() => _expanded = !_expanded),
             borderRadius: BorderRadius.circular(12),
@@ -148,9 +163,8 @@ class _CourseUnitCardState extends State<CourseUnitCard> {
                 isCompleted: widget.completedLessonIds.contains(
                   unit.lessons[i].id,
                 ),
-                onTap: unit.lessons[i].comingSoon
-                    ? null
-                    : () => widget.onLessonTap(unit.lessons[i]),
+                // Blueprint lessons open preview; playable lessons open exercises.
+                onTap: () => widget.onLessonTap(unit.lessons[i]),
               ),
               if (i < unit.lessons.length - 1)
                 const Divider(color: Colors.white10, height: 1, indent: 46),
@@ -179,7 +193,7 @@ class _LessonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final coming = lesson.comingSoon;
+    final coming = lesson.isBlueprint;
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(8),
@@ -203,16 +217,47 @@ class _LessonRow extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    lesson.localizedTitle(locale),
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: coming
-                          ? Colors.white38
-                          : isCompleted
-                          ? const Color(0xFF22D3EE)
-                          : Colors.white,
-                    ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          lesson.localizedTitle(locale),
+                          style: Theme.of(context).textTheme.bodyMedium
+                              ?.copyWith(
+                                fontWeight: FontWeight.w700,
+                                color: coming
+                                    ? Colors.white70
+                                    : isCompleted
+                                    ? const Color(0xFF22D3EE)
+                                    : Colors.white,
+                              ),
+                        ),
+                      ),
+                      if (coming) ...[
+                        const SizedBox(width: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 2,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.orangeAccent.withValues(alpha: 0.16),
+                            borderRadius: BorderRadius.circular(999),
+                            border: Border.all(
+                              color: Colors.orangeAccent.withValues(alpha: 0.35),
+                            ),
+                          ),
+                          child: Text(
+                            L10n.text('blueprintInProgress', locale),
+                            style: const TextStyle(
+                              color: Colors.orangeAccent,
+                              fontSize: 10,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                   if (lesson.localizedDescription(locale).isNotEmpty) ...[
                     const SizedBox(height: 2),
@@ -230,7 +275,7 @@ class _LessonRow extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             if (coming)
-              const Icon(Icons.lock_outline, size: 16, color: Colors.white30)
+              const Icon(Icons.visibility_outlined, size: 16, color: Colors.white54)
             else if (isCompleted)
               const Icon(Icons.check_circle, size: 18, color: Color(0xFF22D3EE))
             else

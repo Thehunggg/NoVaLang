@@ -4,259 +4,1160 @@
     "englishName": "English",
     "nativeName": "English",
     "flagEmoji": "🇬🇧",
-    "aliases": ["eng", "american", "british", "e"],
+    "aliases": [
+      "english",
+      "english",
+      "en"
+    ],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": true,
     "courseStatus": "available",
+    "learningContentStatus": "available",
+    "scriptType": "latin",
+    "hasFoundation": true,
+    "contentAvailabilityNote": "Core Foundation and Daily Life Communication are available.",
     "color": "#22d3ee",
     "greeting": "Hello!",
-    "description": "Practical English for daily greetings and everyday talk."
+    "description": "Practical English for daily communication.",
+    "heroIllustrationKey": "en",
+    "heroAsset": "language_hero/en.svg",
+    "heroGradient": [
+      "#123047",
+      "#1A4C55",
+      "#172033"
+    ],
+    "heroOverlayOpacity": 0.34
   },
   {
     "code": "ja",
     "englishName": "Japanese",
     "nativeName": "日本語",
     "flagEmoji": "🇯🇵",
-    "aliases": ["nihongo", "nihon", "japan", "日本", "にほんご", "j"],
+    "aliases": [
+      "japanese",
+      "日本語",
+      "ja"
+    ],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": true,
     "courseStatus": "available",
+    "learningContentStatus": "available",
+    "scriptType": "kana",
+    "hasFoundation": true,
+    "contentAvailabilityNote": "Core Foundation and Daily Life Communication are available.",
     "color": "#f472b6",
     "greeting": "こんにちは！",
-    "description": "Practical Japanese for daily greetings and everyday talk."
-  },
-  {
-    "code": "es",
-    "englishName": "Spanish",
-    "nativeName": "Español",
-    "flagEmoji": "🇪🇸",
-    "aliases": ["espanol", "castellano", "spain", "latin america", "s"],
-    "isSupportedAsNative": false,
-    "isSupportedAsLearning": true,
-    "courseStatus": "coming_soon",
-    "color": "#fbbf24",
-    "greeting": "¡Hola!",
-    "description": "Spanish course coming soon."
+    "description": "Practical Japanese for daily communication.",
+    "heroIllustrationKey": "ja",
+    "heroAsset": "language_hero/ja.svg",
+    "heroGradient": [
+      "#351E3B",
+      "#75354D",
+      "#172033"
+    ],
+    "heroOverlayOpacity": 0.3,
+    "nativeNameReading": "にほんご"
   },
   {
     "code": "ko",
     "englishName": "Korean",
     "nativeName": "한국어",
     "flagEmoji": "🇰🇷",
-    "aliases": ["hangul", "hangeul", "korea", "korean", "한국", "k"],
+    "aliases": [
+      "korean",
+      "한국어",
+      "ko"
+    ],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
-    "color": "#ec4899",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "hangul",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#fbbf24",
     "greeting": "안녕하세요!",
-    "description": "Korean course coming soon."
+    "description": "Korean course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   },
   {
     "code": "zh",
-    "englishName": "Chinese",
+    "englishName": "Chinese Mandarin",
     "nativeName": "中文",
     "flagEmoji": "🇨🇳",
-    "aliases": ["zh-CN", "mandarin", "putonghua", "hanzi", "中国", "中文", "z"],
+    "aliases": [
+      "chinese mandarin",
+      "中文",
+      "zh"
+    ],
     "isSupportedAsNative": true,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
-    "color": "#ef4444",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "han",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#ec4899",
     "greeting": "你好！",
-    "description": "Chinese course coming soon."
+    "description": "Chinese Mandarin course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "es",
+    "englishName": "Spanish",
+    "nativeName": "Español",
+    "flagEmoji": "🇪🇸",
+    "aliases": [
+      "spanish",
+      "español",
+      "es"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#ef4444",
+    "greeting": "¡Hola!",
+    "description": "Spanish course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   },
   {
     "code": "fr",
     "englishName": "French",
     "nativeName": "Français",
     "flagEmoji": "🇫🇷",
-    "aliases": ["french", "francais"],
+    "aliases": [
+      "french",
+      "français",
+      "fr"
+    ],
     "isSupportedAsNative": false,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
     "color": "#6366f1",
     "greeting": "Bonjour!",
-    "description": "French course coming soon."
+    "description": "French course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   },
   {
     "code": "de",
     "englishName": "German",
     "nativeName": "Deutsch",
     "flagEmoji": "🇩🇪",
-    "aliases": ["german", "deutsch"],
+    "aliases": [
+      "german",
+      "deutsch",
+      "de"
+    ],
     "isSupportedAsNative": false,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
     "color": "#f59e0b",
     "greeting": "Hallo!",
-    "description": "German course coming soon."
+    "description": "German course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   },
   {
     "code": "it",
     "englishName": "Italian",
     "nativeName": "Italiano",
     "flagEmoji": "🇮🇹",
-    "aliases": ["italian", "italiano"],
+    "aliases": [
+      "italian",
+      "italiano",
+      "it"
+    ],
     "isSupportedAsNative": false,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
     "color": "#16a34a",
     "greeting": "Ciao!",
-    "description": "Italian course coming soon."
+    "description": "Italian course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   },
   {
     "code": "pt",
     "englishName": "Portuguese",
     "nativeName": "Português",
-    "flagEmoji": "🇧🇷",
-    "aliases": ["portuguese", "portugues", "brazil"],
+    "flagEmoji": "🇵🇹",
+    "aliases": [
+      "portuguese",
+      "português",
+      "pt"
+    ],
     "isSupportedAsNative": false,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
     "color": "#22c55e",
     "greeting": "Olá!",
-    "description": "Portuguese course coming soon."
-  },
-  {
-    "code": "vi",
-    "englishName": "Vietnamese",
-    "nativeName": "Tiếng Việt",
-    "flagEmoji": "🇻🇳",
-    "aliases": ["tieng viet", "viet", "vietnam", "v"],
-    "isSupportedAsNative": true,
-    "isSupportedAsLearning": true,
-    "courseStatus": "coming_soon",
-    "color": "#ef4444",
-    "greeting": "Xin chào!",
-    "description": "Vietnamese course coming soon."
-  },
-  {
-    "code": "th",
-    "englishName": "Thai",
-    "nativeName": "ไทย",
-    "flagEmoji": "🇹🇭",
-    "aliases": ["thai"],
-    "isSupportedAsNative": false,
-    "isSupportedAsLearning": true,
-    "courseStatus": "coming_soon",
-    "color": "#2563eb",
-    "greeting": "สวัสดี!",
-    "description": "Thai course coming soon."
-  },
-  {
-    "code": "id",
-    "englishName": "Indonesian",
-    "nativeName": "Bahasa Indonesia",
-    "flagEmoji": "🇮🇩",
-    "aliases": ["indonesian", "bahasa"],
-    "isSupportedAsNative": false,
-    "isSupportedAsLearning": true,
-    "courseStatus": "coming_soon",
-    "color": "#dc2626",
-    "greeting": "Halo!",
-    "description": "Indonesian course coming soon."
-  },
-  {
-    "code": "ms",
-    "englishName": "Malay",
-    "nativeName": "Bahasa Melayu",
-    "flagEmoji": "🇲🇾",
-    "aliases": ["malay", "melayu"],
-    "isSupportedAsNative": false,
-    "isSupportedAsLearning": true,
-    "courseStatus": "coming_soon",
-    "color": "#0d9488",
-    "greeting": "Helo!",
-    "description": "Malay course coming soon."
-  },
-  {
-    "code": "tl",
-    "englishName": "Tagalog",
-    "nativeName": "Tagalog",
-    "flagEmoji": "🇵🇭",
-    "aliases": ["filipino", "tagalog"],
-    "isSupportedAsNative": false,
-    "isSupportedAsLearning": true,
-    "courseStatus": "coming_soon",
-    "color": "#0284c7",
-    "greeting": "Kumusta!",
-    "description": "Tagalog course coming soon."
-  },
-  {
-    "code": "hi",
-    "englishName": "Hindi",
-    "nativeName": "हिन्दी",
-    "flagEmoji": "🇮🇳",
-    "aliases": ["hindi", "hin"],
-    "isSupportedAsNative": false,
-    "isSupportedAsLearning": true,
-    "courseStatus": "coming_soon",
-    "color": "#f97316",
-    "greeting": "नमस्ते!",
-    "description": "Hindi course coming soon."
-  },
-  {
-    "code": "ar",
-    "englishName": "Arabic",
-    "nativeName": "العربية",
-    "flagEmoji": "🇸🇦",
-    "aliases": ["arabic", "ara"],
-    "isSupportedAsNative": false,
-    "isSupportedAsLearning": true,
-    "courseStatus": "coming_soon",
-    "color": "#14b8a6",
-    "greeting": "مرحبا!",
-    "description": "Arabic course coming soon."
+    "description": "Portuguese course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   },
   {
     "code": "ru",
     "englishName": "Russian",
     "nativeName": "Русский",
     "flagEmoji": "🇷🇺",
-    "aliases": ["russian", "russkiy"],
+    "aliases": [
+      "russian",
+      "русский",
+      "ru"
+    ],
     "isSupportedAsNative": false,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
-    "color": "#3b82f6",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "cyrillic",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#2563eb",
     "greeting": "Привет!",
-    "description": "Russian course coming soon."
+    "description": "Russian course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "ar",
+    "englishName": "Arabic",
+    "nativeName": "العربية",
+    "flagEmoji": "🇸🇦",
+    "aliases": [
+      "arabic",
+      "العربية",
+      "ar"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "arabic",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#0d9488",
+    "greeting": "مرحبا!",
+    "description": "Arabic course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "hi",
+    "englishName": "Hindi",
+    "nativeName": "हिन्दी",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "hindi",
+      "हिन्दी",
+      "hi"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "devanagari",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#dc2626",
+    "greeting": "नमस्ते!",
+    "description": "Hindi course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "vi",
+    "englishName": "Vietnamese",
+    "nativeName": "Tiếng Việt",
+    "flagEmoji": "🇻🇳",
+    "aliases": [
+      "vietnamese",
+      "tiếng việt",
+      "vi"
+    ],
+    "isSupportedAsNative": true,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#8b5cf6",
+    "greeting": "Xin chào!",
+    "description": "Vietnamese course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "th",
+    "englishName": "Thai",
+    "nativeName": "ไทย",
+    "flagEmoji": "🇹🇭",
+    "aliases": [
+      "thai",
+      "ไทย",
+      "th"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "other",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#14b8a6",
+    "greeting": "สวัสดี!",
+    "description": "Thai course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "id",
+    "englishName": "Indonesian",
+    "nativeName": "Bahasa Indonesia",
+    "flagEmoji": "🇮🇩",
+    "aliases": [
+      "indonesian",
+      "bahasa indonesia",
+      "id"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#eab308",
+    "greeting": "Halo!",
+    "description": "Indonesian course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "ms",
+    "englishName": "Malay",
+    "nativeName": "Bahasa Melayu",
+    "flagEmoji": "🇲🇾",
+    "aliases": [
+      "malay",
+      "bahasa melayu",
+      "ms"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#f97316",
+    "greeting": "Helo!",
+    "description": "Malay course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "tl",
+    "englishName": "Tagalog / Filipino",
+    "nativeName": "Filipino",
+    "flagEmoji": "🇵🇭",
+    "aliases": [
+      "tagalog / filipino",
+      "filipino",
+      "tl"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#06b6d4",
+    "greeting": "Kumusta!",
+    "description": "Tagalog / Filipino course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   },
   {
     "code": "nl",
     "englishName": "Dutch",
     "nativeName": "Nederlands",
     "flagEmoji": "🇳🇱",
-    "aliases": ["dutch", "nederlands"],
+    "aliases": [
+      "dutch",
+      "nederlands",
+      "nl"
+    ],
     "isSupportedAsNative": false,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
-    "color": "#ea580c",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#a855f7",
     "greeting": "Hallo!",
-    "description": "Dutch course coming soon."
+    "description": "Dutch course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   },
   {
     "code": "sv",
     "englishName": "Swedish",
     "nativeName": "Svenska",
     "flagEmoji": "🇸🇪",
-    "aliases": ["swedish", "svenska"],
+    "aliases": [
+      "swedish",
+      "svenska",
+      "sv"
+    ],
     "isSupportedAsNative": false,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
-    "color": "#0ea5e9",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#84cc16",
     "greeting": "Hej!",
-    "description": "Swedish course coming soon."
+    "description": "Swedish course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "no",
+    "englishName": "Norwegian",
+    "nativeName": "Norsk",
+    "flagEmoji": "🇳🇴",
+    "aliases": [
+      "norwegian",
+      "norsk",
+      "no"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#64748b",
+    "greeting": "Hei!",
+    "description": "Norwegian course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "da",
+    "englishName": "Danish",
+    "nativeName": "Dansk",
+    "flagEmoji": "🇩🇰",
+    "aliases": [
+      "danish",
+      "dansk",
+      "da"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#22d3ee",
+    "greeting": "Hej!",
+    "description": "Danish course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "fi",
+    "englishName": "Finnish",
+    "nativeName": "Suomi",
+    "flagEmoji": "🇫🇮",
+    "aliases": [
+      "finnish",
+      "suomi",
+      "fi"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#f472b6",
+    "greeting": "Hei!",
+    "description": "Finnish course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "pl",
+    "englishName": "Polish",
+    "nativeName": "Polski",
+    "flagEmoji": "🇵🇱",
+    "aliases": [
+      "polish",
+      "polski",
+      "pl"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#fbbf24",
+    "greeting": "Cześć!",
+    "description": "Polish course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "cs",
+    "englishName": "Czech",
+    "nativeName": "Čeština",
+    "flagEmoji": "🇨🇿",
+    "aliases": [
+      "czech",
+      "čeština",
+      "cs"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#ec4899",
+    "greeting": "Ahoj!",
+    "description": "Czech course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "el",
+    "englishName": "Greek",
+    "nativeName": "Ελληνικά",
+    "flagEmoji": "🇬🇷",
+    "aliases": [
+      "greek",
+      "ελληνικά",
+      "el"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "other",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#ef4444",
+    "greeting": "Γεια!",
+    "description": "Greek course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   },
   {
     "code": "tr",
     "englishName": "Turkish",
     "nativeName": "Türkçe",
     "flagEmoji": "🇹🇷",
-    "aliases": ["turkish", "turkce"],
+    "aliases": [
+      "turkish",
+      "türkçe",
+      "tr"
+    ],
     "isSupportedAsNative": false,
     "isSupportedAsLearning": true,
     "courseStatus": "coming_soon",
-    "color": "#dc2626",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#6366f1",
     "greeting": "Merhaba!",
-    "description": "Turkish course coming soon."
+    "description": "Turkish course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "uk",
+    "englishName": "Ukrainian",
+    "nativeName": "Українська",
+    "flagEmoji": "🇺🇦",
+    "aliases": [
+      "ukrainian",
+      "українська",
+      "uk"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "cyrillic",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#f59e0b",
+    "greeting": "Привіт!",
+    "description": "Ukrainian course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "ro",
+    "englishName": "Romanian",
+    "nativeName": "Română",
+    "flagEmoji": "🇷🇴",
+    "aliases": [
+      "romanian",
+      "română",
+      "ro"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#16a34a",
+    "greeting": "Salut!",
+    "description": "Romanian course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "hu",
+    "englishName": "Hungarian",
+    "nativeName": "Magyar",
+    "flagEmoji": "🇭🇺",
+    "aliases": [
+      "hungarian",
+      "magyar",
+      "hu"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#22c55e",
+    "greeting": "Szia!",
+    "description": "Hungarian course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "he",
+    "englishName": "Hebrew",
+    "nativeName": "עברית",
+    "flagEmoji": "🇮🇱",
+    "aliases": [
+      "hebrew",
+      "עברית",
+      "he"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "other",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#2563eb",
+    "greeting": "שלום!",
+    "description": "Hebrew course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "fa",
+    "englishName": "Persian",
+    "nativeName": "فارسی",
+    "flagEmoji": "🇮🇷",
+    "aliases": [
+      "persian",
+      "فارسی",
+      "fa"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "arabic",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#0d9488",
+    "greeting": "سلام!",
+    "description": "Persian course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "ur",
+    "englishName": "Urdu",
+    "nativeName": "اردو",
+    "flagEmoji": "🇵🇰",
+    "aliases": [
+      "urdu",
+      "اردو",
+      "ur"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "arabic",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#dc2626",
+    "greeting": "سلام!",
+    "description": "Urdu course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "bn",
+    "englishName": "Bengali",
+    "nativeName": "বাংলা",
+    "flagEmoji": "🇧🇩",
+    "aliases": [
+      "bengali",
+      "বাংলা",
+      "bn"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "other",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#8b5cf6",
+    "greeting": "নমস্কার!",
+    "description": "Bengali course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "ta",
+    "englishName": "Tamil",
+    "nativeName": "தமிழ்",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "tamil",
+      "தமிழ்",
+      "ta"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "other",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#14b8a6",
+    "greeting": "வணக்கம்!",
+    "description": "Tamil course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "te",
+    "englishName": "Telugu",
+    "nativeName": "తెలుగు",
+    "flagEmoji": "🇮🇳",
+    "aliases": [
+      "telugu",
+      "తెలుగు",
+      "te"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "other",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#eab308",
+    "greeting": "నమస్కారం!",
+    "description": "Telugu course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "sw",
+    "englishName": "Swahili",
+    "nativeName": "Kiswahili",
+    "flagEmoji": "🇰🇪",
+    "aliases": [
+      "swahili",
+      "kiswahili",
+      "sw"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#f97316",
+    "greeting": "Habari!",
+    "description": "Swahili course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "af",
+    "englishName": "Afrikaans",
+    "nativeName": "Afrikaans",
+    "flagEmoji": "🇿🇦",
+    "aliases": [
+      "afrikaans",
+      "afrikaans",
+      "af"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#06b6d4",
+    "greeting": "Hallo!",
+    "description": "Afrikaans course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "ga",
+    "englishName": "Irish",
+    "nativeName": "Gaeilge",
+    "flagEmoji": "🇮🇪",
+    "aliases": [
+      "irish",
+      "gaeilge",
+      "ga"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#a855f7",
+    "greeting": "Dia dhuit!",
+    "description": "Irish course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "km",
+    "englishName": "Khmer",
+    "nativeName": "ភាសាខ្មែរ",
+    "flagEmoji": "🇰🇭",
+    "aliases": [
+      "khmer",
+      "ភាសាខ្មែរ",
+      "km"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "other",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#84cc16",
+    "greeting": "សួស្តី!",
+    "description": "Khmer course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
+  },
+  {
+    "code": "la",
+    "englishName": "Latin",
+    "nativeName": "Latina",
+    "flagEmoji": "🏛️",
+    "aliases": [
+      "latin",
+      "latina",
+      "la"
+    ],
+    "isSupportedAsNative": false,
+    "isSupportedAsLearning": true,
+    "courseStatus": "coming_soon",
+    "learningContentStatus": "comingSoon",
+    "scriptType": "latin",
+    "hasFoundation": false,
+    "contentAvailabilityNote": "Roadmap is planned. Curriculum content is coming soon.",
+    "color": "#64748b",
+    "greeting": "Salve!",
+    "description": "Latin course coming soon.",
+    "heroIllustrationKey": "default",
+    "heroAsset": "language_hero/default.svg",
+    "heroGradient": [
+      "#173247",
+      "#31465A",
+      "#151B2A"
+    ],
+    "heroOverlayOpacity": 0.36
   }
 ]

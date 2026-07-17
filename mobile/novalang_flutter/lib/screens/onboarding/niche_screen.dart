@@ -9,7 +9,7 @@ import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/onboarding_header.dart';
 import '../../widgets/niche/focus_selection_layout.dart';
-import '../../widgets/niche/niche_group_card.dart';
+import '../../widgets/niche/niche_groups_list.dart';
 
 class NicheScreen extends ConsumerStatefulWidget {
   const NicheScreen({super.key});
@@ -21,6 +21,7 @@ class NicheScreen extends ConsumerStatefulWidget {
 class _NicheScreenState extends ConsumerState<NicheScreen> {
   late Set<String> selectedIds;
   late String? primaryId;
+  late bool showLegacyReselectionNotice;
 
   @override
   void initState() {
@@ -28,6 +29,13 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
     final profile = ref.read(profileProvider);
     selectedIds = profile.selectedNiches.toSet();
     primaryId = profile.primaryNiche;
+    showLegacyReselectionNotice = selectedIds.any(
+      UserProfile.ambiguousLegacyNicheIds.contains,
+    );
+    selectedIds.removeAll(UserProfile.ambiguousLegacyNicheIds);
+    if (UserProfile.ambiguousLegacyNicheIds.contains(primaryId)) {
+      primaryId = selectedIds.isEmpty ? null : selectedIds.first;
+    }
   }
 
   @override
@@ -59,22 +67,14 @@ class _NicheScreenState extends ConsumerState<NicheScreen> {
             title: L10n.text('niche', locale),
             subtitle: L10n.text('nicheInstruction', locale),
           ),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              for (final entry in groups.entries) ...[
-                NicheGroupCard(
-                  category: entry.key,
-                  niches: entry.value,
-                  selectedIds: selectedIds,
-                  primaryId: primaryId,
-                  onToggle: _toggle,
-                  onPrimary: (id) => setState(() => primaryId = id),
-                  languageCode: locale,
-                ),
-                const SizedBox(height: 12),
-              ],
-            ],
+          body: NicheGroupsList(
+            groups: groups,
+            selectedIds: selectedIds,
+            primaryId: primaryId,
+            onToggle: _toggle,
+            onPrimary: (id) => setState(() => primaryId = id),
+            languageCode: locale,
+            showLegacyReselectionNotice: showLegacyReselectionNotice,
           ),
         ),
       ),

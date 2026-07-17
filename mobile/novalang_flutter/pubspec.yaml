@@ -40,6 +40,7 @@ dependencies:
   http: ^1.6.0
   google_fonts: ^8.1.0
   flutter_tts: ^4.2.3
+  flutter_svg: ^2.2.1
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/shared/
+    - assets/shared/language_hero/
+    - assets/fonts/NotoSansJP-OFL.txt
+
+  fonts:
+    - family: NotoSansJP
+      fonts:
+        - asset: assets/fonts/NotoSansJP-wght.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

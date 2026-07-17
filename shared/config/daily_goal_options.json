@@ -1,8 +1,8 @@
 [
-  {"minutes":5,"name":{"en":"Gentle","vi":"Nhẹ nhàng"}},
-  {"minutes":10,"name":{"en":"Steady","vi":"Đều đặn"}},
-  {"minutes":15,"name":{"en":"Focused","vi":"Tập trung"}},
-  {"minutes":20,"name":{"en":"Serious","vi":"Nghiêm túc"}},
-  {"minutes":25,"name":{"en":"Accelerated","vi":"Tăng tốc"}},
-  {"minutes":30,"name":{"en":"Dedicated","vi":"Chuyên tâm"}}
+  {"minutes": 5, "nameKey": "dailyGoalGentle"},
+  {"minutes": 10, "nameKey": "dailyGoalSteady"},
+  {"minutes": 15, "nameKey": "dailyGoalFocused"},
+  {"minutes": 20, "nameKey": "dailyGoalSerious"},
+  {"minutes": 25, "nameKey": "dailyGoalAccelerated"},
+  {"minutes": 30, "nameKey": "dailyGoalDedicated"}
 ]

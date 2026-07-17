@@ -15,7 +15,7 @@ export function NativeLanguageSelector({ compact = false }: { compact?: boolean 
   const { progress, setNativeLanguage } = useApp(); const { t } = useTranslation();
   const [catalog, setCatalog] = useState<NativeLanguage[]>(nativeLanguages); const [query, setQuery] = useState(""); const [expanded, setExpanded] = useState(!compact);
   const [showSuggestion, setShowSuggestion] = useState(!hasNativeChoice());
-  useEffect(() => { getNativeLanguages().then(({ data }) => setCatalog(data.length >= 150 ? data : nativeLanguages)); }, []);
+  useEffect(() => { getNativeLanguages().then(({ data }) => setCatalog(data.length >= 100 ? data : nativeLanguages)); }, []);
   const selected = catalog.find((item) => item.code === progress.nativeLanguage) ?? nativeLanguages.find((item) => item.code === progress.nativeLanguage) ?? nativeLanguages[0];
   const deviceLanguage = useMemo(() => {
     const codes = typeof navigator === "undefined" ? [] : [...(navigator.languages ?? []), navigator.language].filter(Boolean);

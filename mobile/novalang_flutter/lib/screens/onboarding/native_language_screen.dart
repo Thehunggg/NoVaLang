@@ -10,8 +10,25 @@ import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/onboarding_header.dart';
 import '../../widgets/common/responsive_page.dart';
 import '../../widgets/language/device_language_suggestion.dart';
-import '../../widgets/language/language_option_tile.dart';
 import '../../widgets/language/language_search_field.dart';
+import '../../widgets/language/language_search_list.dart';
+
+const _popularNativeCodes = [
+  'vi',
+  'en',
+  'ja',
+  'ko',
+  'zh',
+  'es',
+  'fr',
+  'de',
+  'pt',
+  'th',
+  'id',
+  'hi',
+  'ar',
+  'ru',
+];
 
 class NativeLanguageScreen extends ConsumerStatefulWidget {
   const NativeLanguageScreen({super.key});
@@ -28,7 +45,7 @@ class _NativeLanguageScreenState extends ConsumerState<NativeLanguageScreen> {
   @override
   Widget build(BuildContext context) {
     final profile = ref.watch(profileProvider);
-    final locale = profile.nativeLanguageCode;
+    final locale = profile.uiLanguageCode;
     final catalogAsync = ref.watch(nativeLanguageCatalogProvider);
 
     return AppScaffold(
@@ -44,23 +61,20 @@ class _NativeLanguageScreenState extends ConsumerState<NativeLanguageScreen> {
           data: (catalog) {
             final deviceLanguage = _deviceLanguage(catalog);
             final items = catalog
-                .where(
-                  (item) => item.isSupportedAsNative && item.matches(query),
-                )
+                .where((item) => item.isSupportedAsNative)
                 .toList();
 
             return Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                OnboardingHeader(
-                  title: L10n.text('nativeLanguage', locale),
-                ),
+                OnboardingHeader(title: L10n.text('nativeLanguage', locale)),
                 const SizedBox(height: 20),
                 if (showSuggestion &&
                     query.isEmpty &&
                     deviceLanguage != null) ...[
                   DeviceLanguageSuggestion(
                     language: deviceLanguage,
+                    uiLanguageCode: locale,
                     onAccept: () => _choose(deviceLanguage),
                     onSearchAnother: () =>
                         setState(() => showSuggestion = false),
@@ -72,13 +86,13 @@ class _NativeLanguageScreenState extends ConsumerState<NativeLanguageScreen> {
                   onChanged: (value) => setState(() => query = value),
                 ),
                 const SizedBox(height: 16),
-                for (final language in items) ...[
-                  LanguageOptionTile(
-                    language: language,
-                    onTap: () => _choose(language),
-                  ),
-                  const SizedBox(height: 10),
-                ],
+                LanguageSearchList(
+                  items: items,
+                  locale: locale,
+                  query: query,
+                  popularCodes: _popularNativeCodes,
+                  onTap: _choose,
+                ),
               ],
             );
           },
@@ -88,8 +102,7 @@ class _NativeLanguageScreenState extends ConsumerState<NativeLanguageScreen> {
   }
 
   LanguageOption? _deviceLanguage(List<LanguageOption> catalog) {
-    final code =
-        WidgetsBinding.instance.platformDispatcher.locale.languageCode;
+    final code = WidgetsBinding.instance.platformDispatcher.locale.languageCode;
     return catalog
         .where((item) => item.code == code && item.isSupportedAsNative)
         .firstOrNull;
@@ -100,7 +113,12 @@ class _NativeLanguageScreenState extends ConsumerState<NativeLanguageScreen> {
   }
 
   Future<void> _choose(LanguageOption language) async {
-    await ref.read(profileProvider.notifier).setNativeLanguage(language.code);
+    final uiCode = language.isAvailableForUi == true
+        ? language.code
+        : (language.fallbackLocale ?? 'en');
+    await ref
+        .read(profileProvider.notifier)
+        .setNativeLanguage(language.code, uiLanguageCode: uiCode);
     if (!mounted) return;
     context.push('/onboarding/basic');
   }

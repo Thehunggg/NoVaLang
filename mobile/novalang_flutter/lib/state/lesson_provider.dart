@@ -43,11 +43,21 @@ const nicheLegacyIdMap = <String, String>{
   'exam_telc': 'exam_preparation',
   'exam_dele': 'exam_preparation',
   'exam_siele': 'exam_preparation',
-  'business': 'business_office',
-  'it': 'it_programming',
+  'business': 'office_administration',
+  'it': 'it_software',
   'engineering': 'manufacturing_engineering',
   'ai_data': 'ai_data_analytics',
-  'healthcare': 'healthcare',
+  'healthcare': 'clinical_healthcare',
+  // NOVALANG-LEARNING-FOCUS-INTEGRATION-FIX-01: forward-map the 12 legacy
+  // career niche IDs to the new 6-category / 25-domain professional catalog
+  // so persisted selections survive (non-destructive).
+  'it_programming': 'it_software',
+  'business_office': 'office_administration',
+  'logistics_delivery': 'logistics_supply_chain',
+  'marketing_content_creation': 'marketing_communications_content',
+  // finance_accounting intentionally NOT mapped here — see
+  // UserProfile.ambiguousLegacyNicheIds (finance_accounting_audit was split
+  // into finance + accounting_audit; no single unambiguous forward target).
 };
 
 String normalizeNicheId(String? raw) {

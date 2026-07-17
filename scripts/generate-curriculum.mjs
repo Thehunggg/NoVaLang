@@ -4,18 +4,29 @@
  * Run: npm run generate:curriculum
  *
  * curriculum-v3 scope (review before expanding):
- * - Catalog: 20 learning languages (en/ja available, others comingSoon)
- * - Playable: Daily Life → Greetings → Unit 1 only for en + ja
- * - Each lesson: exactly 10 exercises (1–7 free, 8–10 Plus)
+ * - Catalog: ~40 learning languages from shared/config/language_options.json
+ *   (en/ja available, others comingSoon / blueprint)
+ * - Playable content: Core Foundation + Daily Life blueprint for en + ja
+ * - Each playable lesson: exactly 10 exercises (1–7 free, 8–10 Plus)
  * - Exam Preparation: placeholder branch only (not built)
  *
  * Original NovaLang content — do not copy third-party lesson text.
  */
 
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { KATAKANA_E8_SPECS } from "./katakana-e8-specs.mjs";
+import { ENGLISH_E8_SPECS } from "./english-e8-specs.mjs";
+import {
+  DAILY_LIFE_COURSE_META,
+  DAILY_LIFE_MODULES,
+  EXERCISE_PLACEHOLDER_DEFS,
+  LEARN_SECTION_PLACEHOLDER,
+  PRACTICE_STAGE_DEFS,
+  assertDailyLifeBlueprintShape,
+  buildDailyLifeCourses,
+} from "./lib/daily-life-blueprint.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -27,11 +38,24 @@ const OUT_DIRS = [
 const VERSION = "curriculum-v3";
 const GENERATED_AT = "2026-07-10T00:00:00.000Z";
 const NATIVE_CODES = ["vi", "en", "ja", "ko", "zh"];
-const LEARNING_CATALOG = [
-  "en", "ja", "es", "ko", "zh", "fr", "de", "it", "pt", "vi",
-  "th", "id", "ms", "tl", "hi", "ar", "ru", "nl", "sv", "tr",
-];
 const PLAYABLE_LANGUAGES = ["en", "ja"];
+
+async function loadLearningCatalogCodes() {
+  const raw = await readFile(
+    path.join(ROOT, "shared", "config", "language_options.json"),
+    "utf8",
+  );
+  const options = JSON.parse(raw);
+  const codes = options
+    .filter((item) => item.isSupportedAsLearning)
+    .map((item) => item.code);
+  if (codes.length < 40) {
+    throw new Error(
+      `language_options.json must list >= 40 learning languages, got ${codes.length}`,
+    );
+  }
+  return codes;
+}
 const FREE_TYPES = [
   "characterCard",
   "chooseMeaning",
@@ -862,9 +886,9 @@ function exFixedMultipleChoice(id, type, prompts, fields) {
 }
 
 function exPlusListeningVocabularyChallenge(id, subQuestions, promptOverride) {
-  if (subQuestions.length < 3 || subQuestions.length > 5) {
+  if (subQuestions.length < 3 || subQuestions.length > 9) {
     throw new Error(
-      `${id}: plusListeningVocabularyChallenge must have 3–5 subQuestions, got ${subQuestions.length}`,
+      `${id}: plusListeningVocabularyChallenge must have 3–9 subQuestions, got ${subQuestions.length}`,
     );
   }
   const prompts =
@@ -915,6 +939,60 @@ function buildKatakanaPlusListeningE8(lessonId) {
   const spec = KATAKANA_E8_SPECS[lessonId];
   if (!spec) {
     throw new Error(`${lessonId}: missing Katakana Exercise 8 spec`);
+  }
+  const targetMode = spec.listeningTargetMode ?? "first";
+  const exercisePrompt = promptMap(
+    spec.prompt.en,
+    spec.prompt.vi,
+    spec.prompt.ja,
+    spec.prompt.ko,
+    spec.prompt.zh,
+  );
+  const subPrompt = promptMap(
+    spec.subPrompt.en,
+    spec.subPrompt.vi,
+    spec.subPrompt.ja,
+    spec.subPrompt.ko,
+    spec.subPrompt.zh,
+  );
+
+  const subQuestions = spec.items.map((item, index) => {
+    const meanings = meaningFromReveal(item.reveal);
+    const fb = hiraganaListeningFeedback(item.speechText, meanings, item.correctAnswer, {
+      targetMode,
+    });
+    return plusListeningSubQuestion({
+      id: `${lessonId}-e8-s${index + 1}`,
+      speechText: item.speechText,
+      wordDisplay: item.speechText,
+      meanings,
+      options: item.options,
+      correctAnswer: item.correctAnswer,
+      feedbackCorrect: fb.correct,
+      feedbackWrong: fb.wrong,
+      prompts: subPrompt,
+      revealByNative: item.reveal,
+    });
+  }).map((question) => ({
+    ...question,
+    optionsVi: question.options,
+    optionsByNative: Object.fromEntries(NATIVE_CODES.map((code) => [code, question.options])),
+    acceptedAnswersByNative: Object.fromEntries(
+      NATIVE_CODES.map((code) => [code, [question.correctAnswer]]),
+    ),
+    feedback: {
+      correct: question.feedbackCorrectByNative,
+      wrong: question.feedbackWrongByNative,
+    },
+  }));
+
+  return exPlusListeningVocabularyChallenge(`${lessonId}-e8`, subQuestions, exercisePrompt);
+}
+
+function buildEnglishPlusListeningE8(lessonId) {
+  const spec = ENGLISH_E8_SPECS[lessonId];
+  if (!spec) {
+    throw new Error(`${lessonId}: missing English Exercise 8 spec`);
   }
   const targetMode = spec.listeningTargetMode ?? "first";
   const exercisePrompt = promptMap(
@@ -1894,11 +1972,14 @@ function buildHiraganaLessonExercisesFromSpec({ id, vocab, spec }) {
 }
 
 function makeLesson(fields) {
+  const isBlueprint = fields.contentStatus === "blueprint" || fields.playable === false;
   return {
     ...fields,
     moduleId: fields.moduleId ?? "greetings",
     branch: fields.branch ?? "niche",
-    comingSoon: false,
+    comingSoon: fields.comingSoon ?? (isBlueprint ? true : false),
+    playable: fields.playable ?? !isBlueprint,
+    contentStatus: fields.contentStatus ?? (isBlueprint ? "blueprint" : "ready"),
   };
 }
 
@@ -1910,11 +1991,21 @@ function makeCourse({
   moduleId = "greetings",
   moduleTitle = "Greetings",
   moduleTitleVi = "Chào hỏi",
+  moduleTitleByNative,
   title,
   titleVi,
+  titleByNative,
   description,
   descriptionVi,
+  descriptionByNative,
   order = 1,
+  levelCode = "A0",
+  levelRange,
+  placementTag,
+  contentStatus,
+  playable,
+  type,
+  unlockRequirement,
   units,
   lessons,
 }) {
@@ -1940,6 +2031,7 @@ function makeCourse({
       order: displayOrder,
     };
   });
+  const isBlueprint = contentStatus === "blueprint" || playable === false;
   return {
     course: {
       id: courseId ?? `${languageCode}-${nicheId}`,
@@ -1949,14 +2041,23 @@ function makeCourse({
       moduleId,
       moduleTitle,
       moduleTitleVi,
+      ...(moduleTitleByNative ? { moduleTitleByNative } : {}),
       title,
       titleVi,
+      ...(titleByNative ? { titleByNative } : {}),
       description,
       descriptionVi,
-      levelCode: "A0",
+      ...(descriptionByNative ? { descriptionByNative } : {}),
+      levelCode,
+      ...(levelRange ? { levelRange } : {}),
+      ...(placementTag ? { placementTag } : {}),
+      ...(type ? { type } : {}),
+      ...(unlockRequirement ? { unlockRequirement } : {}),
+      contentStatus: contentStatus ?? (isBlueprint ? "blueprint" : "ready"),
+      playable: playable ?? !isBlueprint,
       order,
       unitIds: normalizedUnits.map((u) => u.id),
-      isComingSoon: false,
+      isComingSoon: isBlueprint,
       units: normalizedUnits,
     },
     lessons: normalizedLessons,
@@ -3393,19 +3494,24 @@ function buildAlphabetLesson({
     track: "en-core_foundation",
     vocabulary: vocab,
     keyPhrases: [],
-    exercises: buildFoundationCharacterExercises({
-      id,
-      vocab: focusVocab,
-      scriptLabel: "alphabet",
-      scriptLabelVi: "chữ cái",
-      aiQuestion: {
-        en: `Say these letters in order: ${all.join(", ")}.`,
-        vi: `Nêu các chữ cái này theo thứ tự: ${all.join(", ")}.`,
-        ja: `この文字を順番に言ってください：${all.join(", ")}。`,
-        ko: `이 글자들을 순서대로 말하세요: ${all.join(", ")}.`,
-        zh: `按顺序说出这些字母：${all.join(", ")}。`,
-      },
-    }),
+    exercises: (() => {
+      const built = buildFoundationCharacterExercises({
+        id,
+        vocab: focusVocab,
+        scriptLabel: "alphabet",
+        scriptLabelVi: "chữ cái",
+        aiQuestion: {
+          en: `Say these letters in order: ${all.join(", ")}.`,
+          vi: `Nêu các chữ cái này theo thứ tự: ${all.join(", ")}.`,
+          ja: `この文字を順番に言ってください：${all.join(", ")}。`,
+          ko: `이 글자들을 순서대로 말하세요: ${all.join(", ")}.`,
+          zh: `按顺序说出这些字母：${all.join(", ")}。`,
+        },
+      });
+      const next = [...built];
+      next[7] = buildEnglishPlusListeningE8(id);
+      return next;
+    })(),
   });
 }
 
@@ -3852,17 +3958,24 @@ function jaKatakanaFoundationUnitV2() {
 }
 
 async function main() {
+  assertDailyLifeBlueprintShape();
+  const LEARNING_CATALOG = await loadLearningCatalogCodes();
+  const dailyLifePacks = [
+    ...buildDailyLifeCourses("en", { makeCourse, makeLesson }),
+    ...buildDailyLifeCourses("ja", { makeCourse, makeLesson }),
+  ];
   const packs = [
     jaHiraganaFoundationUnitV2(),
     jaKatakanaFoundationUnitV2(),
     enAlphabetFoundationUnit1(),
-    enGreetingsUnit1(),
-    jaGreetingsUnit1(),
+    ...dailyLifePacks,
   ];
   const courses = packs.map((p) => p.course);
   const lessons = packs.flatMap((p) => p.lessons);
   const generatedAt = GENERATED_AT;
   const unitCount = courses.reduce((sum, c) => sum + c.units.length, 0);
+  const playableLessons = lessons.filter((l) => l.playable !== false && !l.comingSoon);
+  const blueprintLessons = lessons.filter((l) => l.contentStatus === "blueprint" || l.playable === false);
 
   const catalog = {
     version: VERSION,
@@ -3871,6 +3984,18 @@ async function main() {
       coreFoundation: {
         status: "partial",
         note: "Japanese Hiragana + Katakana Basics and English Alphabet Starter (A–Z) are playable. A0 users must finish or skip Core Foundation before niche lessons.",
+      },
+      dailyLifeCommunication: {
+        status: "partial",
+        courseId: DAILY_LIFE_COURSE_META.courseId,
+        type: DAILY_LIFE_COURSE_META.type,
+        playable: false,
+        unlockRequirement: DAILY_LIFE_COURSE_META.unlockRequirement,
+        moduleCount: 10,
+        unitsPerModule: 8,
+        lessonsPerUnit: 3,
+        lessonsPerLanguage: 240,
+        note: "Daily Life Module 1 (First Conversations) is ready/playable for en+ja. Modules 2–10 remain blueprint-only.",
       },
       mainNiches: [
         "daily_life",
@@ -3894,9 +4019,11 @@ async function main() {
     languages: LEARNING_CATALOG,
     playableLanguages: PLAYABLE_LANGUAGES,
     nichesPlayable: ["core_foundation", "daily_life"],
-    modulesPlayable: ["hiragana_starter", "alphabet_starter", "greetings"],
+    modulesPlayable: ["hiragana_starter", "katakana_starter", "alphabet_starter"],
     courseCount: courses.length,
     lessonCount: lessons.length,
+    playableLessonCount: playableLessons.length,
+    blueprintLessonCount: blueprintLessons.length,
     unitCount,
     courses: courses.map((c) => {
       const courseLessons = lessons.filter((l) => c.unitIds.includes(l.unitId));
@@ -3907,8 +4034,10 @@ async function main() {
         branch: c.branch,
         moduleId: c.moduleId,
         title: c.title,
+        contentStatus: c.contentStatus ?? "ready",
+        playable: c.playable !== false,
         lessonCount: courseLessons.length,
-        playableLessonCount: courseLessons.filter((l) => !l.comingSoon).length,
+        playableLessonCount: courseLessons.filter((l) => l.playable !== false && !l.comingSoon).length,
       };
     }),
   };
@@ -3916,14 +4045,24 @@ async function main() {
   const coursesPayload = { version: VERSION, generatedAt, courses };
   const lessonsPayload = { version: VERSION, generatedAt, lessons };
 
+  const blueprintConfig = {
+    version: VERSION,
+    generatedAt,
+    ...DAILY_LIFE_COURSE_META,
+    learnSection: LEARN_SECTION_PLACEHOLDER,
+    practiceStages: PRACTICE_STAGE_DEFS,
+    exercisePlaceholders: EXERCISE_PLACEHOLDER_DEFS,
+    modules: DAILY_LIFE_MODULES,
+  };
+
   const readme = `# Shared curriculum (${VERSION})
 
 Generated by \`scripts/generate-curriculum.mjs\`.
 
-Current playable scope:
-- Core Foundation first for A0: JA hiragana + EN alphabet
-- Daily Life → Greetings Unit 1 after foundation complete/skip
-- Each lesson: exactly 10 exercises (1–7 free, 8–10 Plus)
+Current scope:
+- Core Foundation playable: JA hiragana + katakana, EN alphabet
+- Daily Life Communication: full 10×8×3 blueprint roadmap (not playable)
+- Blueprint lessons have placeholder exercise metadata only (no real Q&A)
 
 \`\`\`bash
 npm run generate:curriculum
@@ -3938,9 +4077,15 @@ npm run sync:flutter-assets
     await writeFile(path.join(dir, "lessons.json"), JSON.stringify(lessonsPayload, null, 2), "utf8");
     await writeFile(path.join(dir, "curriculum_catalog.json"), JSON.stringify(catalog, null, 2), "utf8");
   }
+  await mkdir(path.join(ROOT, "shared", "config"), { recursive: true });
+  await writeFile(
+    path.join(ROOT, "shared", "config", "daily_life_blueprint.json"),
+    JSON.stringify(blueprintConfig, null, 2),
+    "utf8",
+  );
   await writeFile(path.join(ROOT, "shared", "content", "curriculum", "README.md"), readme, "utf8");
 
-  console.log(`Generated ${VERSION}: ${courses.length} courses, ${unitCount} units, ${lessons.length} lessons.`);
+  console.log(`Generated ${VERSION}: ${courses.length} courses, ${unitCount} units, ${lessons.length} lessons (${playableLessons.length} playable, ${blueprintLessons.length} blueprint).`);
   for (const entry of catalog.courses) {
     console.log(`  - ${entry.id}: ${entry.playableLessonCount}/${entry.lessonCount} playable`);
   }

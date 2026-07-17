@@ -1,0 +1,147 @@
+---
+description: Single Source of Truth for the Q14 Real-World Practice breaking change on opt-in NovaLang five-card lessons
+alwaysApply: true
+---
+
+# NovaLang Lesson Format 3.0
+
+Format name: NovaLang Lesson Format 3.0
+Status: `APPROVED_FOR_IMPLEMENTATION_PENDING_OWNER_RUNTIME_FREEZE`
+Reference implementation: ja-daily_life-m01-u1-l1
+Approved by project owner: 2026-07-15
+Supersedes: `.cursor/rules/03_novalang_lesson_format_2_0.mdc` (Q14 only)
+Related: ADR-008 (Golden Reference Lesson), ADR-012 (Q14 Real-World Practice
+redesign), ADR-014 (Unit Comprehensive Conversation placement correction,
+distinct from Q14)
+
+## Authority, priority, and versioning
+
+This file is the Single Source of Truth for the **Q14 behavior** of the
+opt-in `lessonFormat: five_cards` format. Apply workspace rules in this
+order:
+
+1. `AGENTS.md`
+2. `.cursor/rules/novalang.mdc` (Core Rules; the workspace has no
+   `01_novalang_core.mdc`)
+3. This file, for any question about Q14 behavior
+4. `.cursor/rules/03_novalang_lesson_format_2_0.mdc`, for every other part of
+   the format (Q1–Q13, five cards, access plans, persistence, result page,
+   etc.), which remains the Single Source of Truth for everything it defines
+   except the parts explicitly superseded below
+5. `.cursor/rules/02_novalang_lesson_standard.mdc`
+
+Only the project owner can change this specification. This is a breaking
+change to Q14 only — it does not silently edit or reinterpret Format 2.0.
+Format 2.0 remains the historical record of what was approved on 2026-07-13
+and is not rewritten; it is marked superseded for Q14 by an explicit note in
+that file (see below) rather than by deleting or altering its Q14 section.
+
+## What is superseded and what is inherited
+
+**Superseded (this file governs instead of Format 2.0):**
+
+- The Q14 row of the "Approved exercise map" table in Format 2.0.
+- The "Q14 controlled AI policy" section in Format 2.0.
+- Every reference to Q14 as `controlled_ai_text`, AI-graded, scored, or using
+  `maxCycles`.
+
+**Inherited unchanged from Format 2.0 (this file does not alter these):**
+
+- Q1–Q13 approved interaction types, access plans, and behavior.
+- The five main cards, their order, and Cards 1–4 behavior.
+- The Card 5 landing page, access plans (Free 1–10, Plus 11–14), wrong-answer
+  card, and primary CTA copy.
+- Stable IDs, persistence, resume, autosave, and completion rules, except
+  where Q14 specifically no longer produces a checked/graded result (see
+  below).
+- Golden Lesson protection: exactly 5 cards, exactly 14 exercises, Q1–Q13
+  content, order, and IDs are unchanged.
+- Text input/IME rules, shuffle-once rules, and script-tolerance rules for
+  exercises other than Q14.
+- Result page format (`Hoàn thành bài tập`, correct/total, percentage, one
+  primary action), except that Q14 is excluded from the graded total (see
+  "Scoring" below).
+
+## Q14 — Real-World Practice (non-graded advanced dialogue)
+
+Q14 keeps its stable exercise ID, its position (14/14), and its display name:
+
+- vi: `Thực hành thực tế`
+- en: `Real-World Practice`
+- ja: `実践練習`
+
+Its **behavior** changes completely. Q14 is a non-graded advanced dialogue
+activity for reading, listening, and repeating — not a graded, AI-checked
+production exercise.
+
+### Technical type
+
+`real_world_practice_dialogue`. Do not use `controlled_ai_text` for Q14 in
+any lesson using Format 3.0. This type is intentionally distinct from
+`unit_comprehensive_conversation` (a separate Unit-level shell activity
+defined in ADR-014) — never conflate the two.
+
+### Required contract
+
+- Fixed, owner-approved scenario (`scenarioTitle`, `scenarioDescription`,
+  localized vi/en/ja via `*ByNative`).
+- Fixed, owner-approved dialogue lines (`dialogueLines`), each reusing the
+  existing dialogue-line shape used elsewhere in this lesson format:
+  `speakerId` (resolved through `approvedCharacterNamePool`, never
+  hardcoded), `targetText`, `reading` (hiragana; present only when the line
+  has kanji — never romaji), `speechText`, and `translationByNative`
+  (vi/en/ja, non-empty, no cross-language leakage).
+- No learner answer input of any kind: no text field, no option selection,
+  no microphone input for a graded answer.
+- No AI grading, no AI quota usage, no `maxCycles`, no retry cycles.
+- No correct/incorrect state and no score contribution.
+- Independent visibility controls for reading and for translation. They must
+  not be coupled to each other.
+- A speaker/audio control per line. Only one line plays at a time; replaying
+  a line is always allowed and never consumes quota.
+- A non-graded completion action/event once the learner is done. Completion
+  does not require listening to every line, does not create a duplicate
+  completion when replayed, and does not add to the graded score.
+
+### Removed for Q14
+
+Do not render, for Q14, any of: trial-open labeling (`トライアル公開中` /
+"Trial open" / "Mở thử nghiệm"), AI-set quota UI, a text input field, a
+microphone input for a graded answer, a Check Answer action, AI grading, a
+score, or correct/incorrect state. Do not remove the AI grader from the
+codebase — other exercises may still use it. Only Q14's dependency on it is
+removed.
+
+### Scoring
+
+Because Q14 no longer produces a checked result, the result page's graded
+total excludes it: the score fraction shown to the learner is computed over
+the graded exercises only (Q1–Q13), while the landing page's overall
+question count and the in-session position counter (`Câu 14/14`) still
+reflect all 14 items, matching the Golden Lesson invariant of exactly 14
+exercises.
+
+## Golden protection (unchanged obligations)
+
+- The Golden Lesson (`ja-daily_life-m01-u1-l1`) still has exactly 5 cards and
+  exactly 14 exercises.
+- Q1–Q13 content, order, and stable IDs are unchanged by this file.
+- Only the approved Q14 content (Tanaka–Sato dialogue) may be introduced, and
+  only into Q14.
+- The golden reference remains a reference implementation only for data
+  structure, renderer, and interaction pattern — never copy its Q14 dialogue
+  content into another lesson.
+
+## Required validation checks
+
+Validation and review must confirm:
+
+- Q14's technical type is `real_world_practice_dialogue`, never
+  `controlled_ai_text`, for any lesson opted into Format 3.0.
+- Q14 has no AI-grading fields (`aiCriteria`, `scriptPolicy`,
+  `correctedExampleTemplate`, `quota`, `maxCycles`) and `nonGraded: true`.
+- Q1–Q13 remain exactly as specified by Format 2.0.
+- Exactly 14 dialogue lines in Q14, each with a valid `speakerId`, non-empty
+  `targetText`/`speechText`, and complete vi/en/ja `translationByNative`.
+- No romaji appears in any Q14 `reading` field.
+- The result page's graded fraction denominator excludes Q14.

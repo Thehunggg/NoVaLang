@@ -35,6 +35,13 @@ class UserProfile {
 
   static const currentContentVersion = 'cross-platform-onboarding-v6';
   static const maxActiveTracks = 2;
+  static const ambiguousLegacyNicheIds = <String>{
+    'environment_energy_agriculture',
+    // NOVALANG-DOMAIN-TAXONOMY-RESTRUCTURE-01: finance_accounting_audit was
+    // split into finance + accounting_audit; the old combined legacy id has
+    // no single unambiguous forward target.
+    'finance_accounting',
+  };
 
   final String contentVersion;
   final String displayName;
@@ -210,7 +217,13 @@ class UserProfile {
 
     final lower = trimmed.toLowerCase();
     return switch (lower) {
-      'ja' || 'japanese' || 'jp' || 'nihongo' || 'nihon' || '日本語' || '日本' => 'ja',
+      'ja' ||
+      'japanese' ||
+      'jp' ||
+      'nihongo' ||
+      'nihon' ||
+      '日本語' ||
+      '日本' => 'ja',
       'en' || 'english' || 'eng' => 'en',
       'vi' || 'vietnamese' || 'vietnam' => 'vi',
       'es' || 'spanish' || 'espanol' || 'español' => 'es',
@@ -384,11 +397,22 @@ class UserProfile {
     'exam_telc': 'exam_preparation',
     'exam_dele': 'exam_preparation',
     'exam_siele': 'exam_preparation',
-    'business': 'business_office',
-    'it': 'it_programming',
+    'business': 'office_administration',
+    'it': 'it_software',
     'engineering': 'manufacturing_engineering',
     'ai_data': 'ai_data_analytics',
-    'healthcare': 'healthcare',
+    'healthcare': 'clinical_healthcare',
+    // NOVALANG-LEARNING-FOCUS-INTEGRATION-FIX-01: the 12 legacy career niche
+    // IDs were replaced by the 6-category / 25-domain professional catalog.
+    // Map any persisted old selection forward to its new equivalent so it
+    // still renders as selected (non-destructive; no data loss).
+    'it_programming': 'it_software',
+    'business_office': 'office_administration',
+    'logistics_delivery': 'logistics_supply_chain',
+    'marketing_content_creation': 'marketing_communications_content',
+    // finance_accounting intentionally NOT mapped here — see
+    // ambiguousLegacyNicheIds (finance_accounting_audit was split into
+    // finance + accounting_audit; no single unambiguous forward target).
   };
 
   /// Curriculum niche id for a study track (maps exam_* → exam_preparation).

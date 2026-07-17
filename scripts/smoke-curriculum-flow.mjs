@@ -19,8 +19,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 
 const EXPECTED_VERSION = "curriculum-v3";
-const EXPECTED_COURSE_COUNT = 5;
-const EXPECTED_LESSON_COUNT = 38;
+const EXPECTED_COURSE_COUNT = 23; // 3 foundation + 10 en daily + 10 ja daily
+const EXPECTED_LESSON_COUNT = 506; // 26 foundation + 480 daily blueprint
+const EXPECTED_PLAYABLE_LESSON_COUNT = 74;
+const EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE = 240;
 const EXPECTED_HIRAGANA_46 = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
 const EXPECTED_KATAKANA_46 = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン".split("");
 const EXPECTED_ALPHABET_26 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -33,7 +35,7 @@ const EXPECTED_KATAKANA_ROWS = [
   "ハヒフヘホ", "マミムメモ", "ヤユヨ", "ラリルレロ", "ワヲン",
 ];
 const ALL_NATIVE_CODES = ["vi", "en", "ja", "ko", "zh"];
-const MEANING_CHOICE_TYPES = new Set(["chooseMeaning", "listenAndChoose"]);
+const MEANING_CHOICE_TYPES = new Set(["chooseMeaning", "listenAndChoose", "multipleChoiceMeaning"]);
 const SUPPORTED_TYPES = new Set([
   "characterCard",
   "chooseMeaning",
@@ -52,6 +54,13 @@ const SUPPORTED_TYPES = new Set([
   "plusListeningVocabularyChallenge",
   "controlledAiQa",
   "aiFeedbackReview",
+  // Daily Life blueprint placeholder types (metadata only, not playable yet)
+  "multipleChoiceMeaning",
+  "arrangeWords",
+  "arrangeLetters",
+  "dialogueCompletion",
+  "naturalResponseChoice",
+  "reviewCheckpoint",
 ]);
 const HIRAGANA_L1_SLOT_TYPES = [
   "matchPairs",
@@ -65,6 +74,8 @@ const HIRAGANA_L1_SLOT_TYPES = [
   "controlledAiQa",
   "aiFeedbackReview",
 ];
+const APPROVED_JA_UNIT1_LESSON1 = "ja-daily_life-m01-u1-l1";
+const isApprovedJaUnitOneLesson = (lesson) => lesson.id === APPROVED_JA_UNIT1_LESSON1;
 
 const results = new Map();
 const failures = [];
@@ -107,6 +118,121 @@ async function loadJson(relPath) {
   return JSON.parse(await readFile(path.join(ROOT, relPath), "utf8"));
 }
 
+function isBlueprintLesson(lesson) {
+  return !isApprovedJaUnitOneLesson(lesson) && (
+    lesson.contentStatus === "blueprint" ||
+    lesson.playable === false ||
+    lesson.exerciseStatus === "placeholder"
+  );
+}
+
+function checkApprovedJaUnitOneLesson(lesson) {
+  const section = "Approved Japanese Daily Life Unit 1 Lesson 1";
+  const content = lesson?.fiveCardContent ?? {};
+  if (!lesson) return fail(section, { lessonId: APPROVED_JA_UNIT1_LESSON1 }, "missing lesson");
+  if (lesson.lessonFormat !== "five_cards") fail(section, { lessonId: lesson.id }, "missing five_cards lesson format");
+  if ((content.mainCards ?? []).join(",") !== "intro,vocabulary,dialogue,grammar,practice") fail(section, { lessonId: lesson.id }, "must contain exactly five main cards in order");
+  if ((lesson.vocabulary ?? []).length !== 8 || (content.vocabularyDetails ?? []).length !== 8) fail(section, { lessonId: lesson.id }, "Card 2 must contain exactly 8 vocabulary cards");
+  const groups = content.dialogueGroups ?? [];
+  if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 4 || (group.lines ?? []).length > 6)) fail(section, { lessonId: lesson.id }, "Card 3 must contain exactly 3 dialogues of 4–6 lines");
+  const approvedCharacters = content.approvedCharacterNamePool ?? [];
+  const approvedCharacterIds = new Set(approvedCharacters.map((item) => item?.id));
+  if (
+    content.targetLanguage !== "ja" || !content.targetLocale || !content.cultureContext ||
+    approvedCharacters.length === 0 ||
+    approvedCharacters.some((item) => !item?.id || !item?.displayName || !item?.canonicalName || !item?.audioName) ||
+    groups.some((group) => (group.lines ?? []).some((line) => !line.speakerId || !approvedCharacterIds.has(line.speakerId)))
+  ) fail(section, { lessonId: lesson.id }, "Card 3 character metadata or approved speaker IDs are incomplete");
+  if ((content.grammarPatterns ?? []).length !== 3) fail(section, { lessonId: lesson.id }, "Card 4 must contain exactly 3 grammar patterns");
+  const practice = content.practice ?? {};
+  const exercises = practice.exercises ?? [];
+  if ((lesson.exercises ?? []).length !== 0 || lesson.exerciseStatus !== "ready") {
+    fail(section, { lessonId: lesson.id }, "legacy exercises must remain empty while the Card 5 trial is ready");
+  }
+  if (practice.totalQuestions !== 14 || exercises.length !== 14) {
+    fail(section, { lessonId: lesson.id }, "Card 5 trial must contain exactly 14 exercises");
+  }
+  if (exercises.some((exercise, index) => exercise.order !== index + 1 || exercise.plan !== (index < 10 ? "free" : "plus"))) {
+    fail(section, { lessonId: lesson.id }, "Card 5 trial plan boundary must be Free 1–10 and Plus 11–14");
+  }
+  const checkpoint = exercises[8];
+  if (checkpoint?.type !== "checkpoint" || (checkpoint.subQuestions ?? []).length !== 5 || (checkpoint.subQuestions ?? []).some((item) => (item.options ?? []).length !== 4 || !item.options.some((option) => option.id === item.correctOptionId))) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 9 }, "checkpoint must have five four-option stable-id questions");
+  }
+  const advancedOrdering = exercises[12];
+  if (advancedOrdering?.type !== "slot_ordering" || (advancedOrdering?.answerSlots ?? []).length !== 6 || !(advancedOrdering?.tokens ?? []).some((item) => item.id === "konbanwa_distractor") || (advancedOrdering?.answerSlots ?? []).filter((slot) => slot.afterText === "。").length !== 3) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 13 }, "advanced ordering must use slots, generated punctuation, and an unused distractor");
+  }
+  const chatFill = exercises[9];
+  if (chatFill?.type !== "chat_text_fill" || (chatFill.chat?.messages ?? []).length !== 6 || (chatFill.slots ?? []).length !== 2 || chatFill.slots?.[0]?.id !== "chat_greeting_slot" || chatFill.slots?.[1]?.id !== "chat_closing_slot") {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 10 }, "exercise 10 must be the approved chat text fill with six messages and two stable slots");
+  }
+  const realWorldPractice = exercises[13];
+  const sceneDividers = realWorldPractice?.sceneDividers ?? [];
+  if (
+    realWorldPractice?.type !== "real_world_practice_dialogue" ||
+    realWorldPractice?.nonGraded !== true ||
+    (realWorldPractice?.dialogueLines ?? []).length !== 14 ||
+    realWorldPractice?.maxCycles != null ||
+    realWorldPractice?.scriptPolicy != null
+  ) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must be a non-graded 14-line dialogue without AI controls");
+  }
+  if (
+    sceneDividers.length !== 1 ||
+    sceneDividers[0]?.afterDialogueLine !== 10 ||
+    sceneDividers[0]?.targetText !== "着いた時" ||
+    !(sceneDividers[0]?.translationByNative?.vi && sceneDividers[0]?.translationByNative?.en && sceneDividers[0]?.translationByNative?.ja)
+  ) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must keep its non-spoken localized scene divider after turn 10");
+  }
+  if (/(ミン|Minh|Hưng|Linh)/u.test(JSON.stringify(content))) fail(section, { lessonId: lesson.id }, "Japanese Lesson 1 contains a Vietnamese character name");
+  const konnichiwa = (content.vocabularyDetails ?? []).find((detail) => detail.id === "konnichiwa");
+  if (
+    !konnichiwa ||
+    konnichiwa.casualTitle !== "Cách mở đầu thân mật theo ngữ cảnh" ||
+    JSON.stringify(content).includes("やあ")
+  ) fail(section, { lessonId: lesson.id }, "こんにちは casual-opening content is not approved");
+  const entries = [
+    ...(lesson.vocabulary ?? []),
+    ...groups.flatMap((group) => group.lines ?? []),
+    ...(content.vocabularyDetails ?? []).flatMap((detail) => detail.examples ?? []),
+    ...(content.grammarPatterns ?? []).flatMap((pattern) => pattern.examples ?? []),
+  ];
+  for (const entry of entries) {
+    const text = String(entry.targetText ?? entry.displayText ?? entry.text ?? "");
+    if (/[\u3400-\u9fff]/u.test(text) && !String(entry.reading ?? "").trim()) fail(section, { lessonId: lesson.id }, `Kanji entry missing reading: ${text}`);
+  }
+  pass(section, "approved five-card Japanese lesson shape is complete");
+}
+
+function checkFiveCardsScopeGuard(lessons) {
+  const section = "Five-cards scope guard";
+  const fiveCardLessons = lessons.filter((lesson) => lesson.lessonFormat === "five_cards");
+  if (fiveCardLessons.length !== 1 || fiveCardLessons[0]?.id !== APPROVED_JA_UNIT1_LESSON1) {
+    fail(
+      section,
+      { ids: fiveCardLessons.map((lesson) => lesson.id) },
+      "only ja-daily_life-m01-u1-l1 may opt into five_cards",
+    );
+  } else {
+    pass(section, "only approved Japanese Daily Life Unit 1 Lesson 1 uses five_cards");
+  }
+
+  for (const lesson of lessons) {
+    const id = String(lesson.id ?? "");
+    const isFoundation =
+      id.includes("hiragana") ||
+      id.includes("katakana") ||
+      id.startsWith("en-alphabet");
+    if (!isFoundation) continue;
+    if (lesson.lessonFormat === "five_cards" || lesson.fiveCardContent) {
+      fail(section, { lessonId: id }, "foundation lesson must not use five_cards");
+    }
+  }
+  pass(section, "Hiragana, Katakana, and English Alphabet stay on legacy format");
+}
+
 function checkExpectedShape(coursesJson, lessonsJson) {
   const section = "Playable curriculum";
   if (coursesJson.version === EXPECTED_VERSION && lessonsJson.version === EXPECTED_VERSION) {
@@ -125,6 +251,13 @@ function checkExpectedShape(coursesJson, lessonsJson) {
     pass(section, `lesson count=${EXPECTED_LESSON_COUNT}`);
   } else {
     fail(section, {}, `expected ${EXPECTED_LESSON_COUNT} lessons, got ${lessonsJson.lessons.length}`);
+  }
+
+  const playable = (lessonsJson.lessons ?? []).filter((l) => !isBlueprintLesson(l));
+  if (playable.length === EXPECTED_PLAYABLE_LESSON_COUNT) {
+    pass(section, `playable lesson count=${EXPECTED_PLAYABLE_LESSON_COUNT}`);
+  } else {
+    fail(section, {}, `expected ${EXPECTED_PLAYABLE_LESSON_COUNT} playable lessons, got ${playable.length}`);
   }
 }
 
@@ -145,6 +278,11 @@ function checkCourseLessonLinks(courses, lessonById) {
 function checkLessonExercises(lessons) {
   const section = "Lesson exercise slots";
   for (const lesson of lessons) {
+    if (isApprovedJaUnitOneLesson(lesson)) {
+      checkApprovedJaUnitOneLesson(lesson);
+      continue;
+    }
+    if (isBlueprintLesson(lesson)) continue;
     const exercises = lesson.exercises ?? [];
     if (exercises.length !== 10) {
       fail(section, { lessonId: lesson.id }, `expected 10 exercises, got ${exercises.length}`);
@@ -177,6 +315,8 @@ function checkLessonExercises(lessons) {
 function checkAiRules(lessons) {
   const section = "AI rules";
   for (const lesson of lessons) {
+    if (isApprovedJaUnitOneLesson(lesson)) continue;
+    if (isBlueprintLesson(lesson)) continue;
     (lesson.exercises ?? []).forEach((exercise, index) => {
       const exerciseIndex = index + 1;
       if (exercise.usesAi === true && ![9, 10].includes(exerciseIndex)) {
@@ -203,10 +343,142 @@ function checkAiRules(lessons) {
   }
 }
 
+function checkDailyLifeBlueprint(courses, lessons, catalog) {
+  const section = "Daily Life Communication blueprint";
+  const arch = catalog.architecture?.dailyLifeCommunication;
+  if (arch?.status === "partial" && arch?.playable === false && arch?.moduleCount === 10) {
+    pass(section, "catalog marks Daily Life as partial roadmap with Module 1 ready");
+  } else if (arch?.status === "blueprint" && arch?.playable === false && arch?.moduleCount === 10) {
+    pass(section, "catalog marks Daily Life as blueprint 10-module roadmap");
+  } else {
+    fail(section, {}, "catalog.architecture.dailyLifeCommunication missing/incorrect");
+  }
+
+  for (const languageCode of ["en", "ja"]) {
+    const dailyCourses = courses.filter(
+      (course) => course.languageCode === languageCode && course.nicheId === "daily_life",
+    );
+    if (dailyCourses.length !== 10) {
+      fail(section, {}, `${languageCode}: expected 10 Daily Life modules, got ${dailyCourses.length}`);
+    } else {
+      pass(section, `${languageCode}: 10 Daily Life modules`);
+    }
+
+    for (const course of dailyCourses) {
+      if ((course.units ?? []).length !== 8) {
+        fail(section, { courseId: course.id }, `expected 8 units, got ${(course.units ?? []).length}`);
+      }
+      for (const unit of course.units ?? []) {
+        if ((unit.lessonIds ?? []).length !== 3) {
+          fail(section, { courseId: course.id, unitId: unit.id }, "expected 3 lessons per unit");
+        }
+      }
+      const isModuleOne = course.moduleId === "daily_life_m01_basic_social_survival";
+      if (isModuleOne && (course.playable !== true || course.contentStatus !== "ready")) {
+        fail(section, { courseId: course.id }, "Daily Life Module 1 must be ready/playable");
+      }
+      if (!isModuleOne && (course.playable !== false || course.contentStatus !== "blueprint")) {
+        fail(section, { courseId: course.id }, "Daily Life Module 2-10 must be non-playable blueprint");
+      }
+      if (course.unlockRequirement !== "core_foundation_completed") {
+        fail(section, { courseId: course.id }, "missing unlockRequirement");
+      }
+    }
+
+    const dailyLessons = lessons.filter(
+      (lesson) => lesson.languageCode === languageCode && lesson.nicheId === "daily_life",
+    );
+    if (dailyLessons.length !== EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE) {
+      fail(
+        section,
+        {},
+        `${languageCode}: expected ${EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE} lessons, got ${dailyLessons.length}`,
+      );
+    } else {
+      pass(section, `${languageCode}: ${EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE} roadmap lessons`);
+    }
+
+    for (const lesson of dailyLessons) {
+      const isModuleOne = lesson.moduleId === "daily_life_m01_basic_social_survival";
+      if (isModuleOne) {
+        if (lesson.playable !== true || lesson.contentStatus !== "ready") {
+          fail(section, { lessonId: lesson.id }, "Module 1 lesson must be ready/playable");
+        }
+        if (isApprovedJaUnitOneLesson(lesson)) {
+          checkApprovedJaUnitOneLesson(lesson);
+          continue;
+        }
+        if (
+          (lesson.exercises ?? []).length !== 10 ||
+          (lesson.dialogueGroups ?? []).length !== 3 ||
+          (lesson.dialogueGroups ?? []).some((group) => (group.lines ?? []).length < 4)
+        ) {
+          fail(section, { lessonId: lesson.id }, "Module 1 lesson content is incomplete");
+        }
+        if ((lesson.exercises?.[7]?.subQuestions ?? []).length !== 5) {
+          fail(section, { lessonId: lesson.id }, "Module 1 Exercise 8 must have five subQuestions");
+        }
+        continue;
+      }
+      if (lesson.playable !== false || lesson.contentStatus !== "blueprint") {
+        fail(section, { lessonId: lesson.id }, "lesson must be blueprint/non-playable");
+        break;
+      }
+      for (const code of ALL_NATIVE_CODES) {
+        if (!lesson.titleByNative?.[code] || !lesson.goalByNative?.[code] || !lesson.situationByNative?.[code]) {
+          fail(section, { lessonId: lesson.id }, `missing title/goal/situation for ${code}`);
+          break;
+        }
+      }
+      const learnKeys = [
+        "vocabularyPhraseCards",
+        "grammarSentencePatterns",
+        "miniDialogue",
+        "cultureNuanceNote",
+        "contextualVariations",
+        "communicationStrategy",
+      ];
+      for (const key of learnKeys) {
+        if (lesson.learnSection?.[key]?.status !== "placeholder") {
+          fail(section, { lessonId: lesson.id }, `learnSection.${key} missing`);
+          break;
+        }
+      }
+      if ((lesson.practiceStages ?? []).length !== 2) {
+        fail(section, { lessonId: lesson.id }, "expected 2 practice stages");
+        break;
+      }
+      for (const [index, exercise] of (lesson.exercises ?? []).entries()) {
+        if (exercise.status !== "placeholder") {
+          fail(section, { lessonId: lesson.id }, `e${index + 1} must be placeholder`);
+          break;
+        }
+        if (exercise.options || exercise.correctAnswer || exercise.question || exercise.pairs) {
+          fail(section, { lessonId: lesson.id }, `e${index + 1} has fake playable content`);
+          break;
+        }
+        const expectedPlan = index < 7 ? "free" : "plus";
+        if (exercise.plan !== expectedPlan && exercise.access !== expectedPlan) {
+          fail(section, { lessonId: lesson.id }, `e${index + 1} plan must be ${expectedPlan}`);
+          break;
+        }
+      }
+    }
+  }
+}
+
 function checkRouting(courses, catalog) {
   const section = "A0 beginner routing data";
   for (const languageCode of ["ja", "en"]) {
-    const languageCourses = courses.filter((course) => course.languageCode === languageCode);
+    const languageCourses = courses
+      .filter((course) => course.languageCode === languageCode)
+      .slice()
+      .sort((a, b) => {
+        const aRank = a.nicheId === "core_foundation" ? 0 : 1;
+        const bRank = b.nicheId === "core_foundation" ? 0 : 1;
+        if (aRank !== bRank) return aRank - bRank;
+        return Number(a.order ?? 0) - Number(b.order ?? 0);
+      });
     const firstCourse = languageCourses[0];
     if (firstCourse?.nicheId === "core_foundation" && firstCourse?.levelCode === "A0") {
       pass(section, `${languageCode} beginner starts with Core Foundation`);
@@ -335,10 +607,16 @@ function checkJapaneseFoundationSafety(lessons) {
   }
 
   const greetingLessons = lessons.filter((lesson) => lesson.languageCode === "ja" && lesson.nicheId === "daily_life");
-  if (greetingLessons.some((lesson) => JSON.stringify(lesson).includes("こんにちは"))) {
-    pass(section, "こんにちは appears in Japanese greeting content");
+  if (
+    greetingLessons.some(
+      (lesson) =>
+        lesson.moduleId === "daily_life_m01_basic_social_survival" &&
+        JSON.stringify(lesson).includes("こんにちは"),
+    )
+  ) {
+    pass(section, "こんにちは appears in Japanese Daily Life Module 1 content");
   } else {
-    fail(section, {}, "こんにちは should appear in Japanese greeting lessons");
+    fail(section, {}, "こんにちは should appear in Japanese Daily Life greetings blueprint");
   }
 
   const kanaLessons = lessons.filter((lesson) => lesson.languageCode === "ja" && ["hiragana_starter", "katakana_starter"].includes(lesson.moduleId));
@@ -361,14 +639,85 @@ function checkJapaneseFoundationSafety(lessons) {
   }
 }
 
+function checkLanguageCatalogParity() {
+  const section = "Language catalog parity";
+  return Promise.all([
+    loadJson("shared/config/language_options.json"),
+    loadJson("shared/config/native_language_options.json"),
+    loadJson("mobile/novalang_flutter/assets/shared/language_options.json"),
+    loadJson("mobile/novalang_flutter/assets/shared/native_language_options.json"),
+    loadJson("shared/generated/curriculum_catalog.json"),
+  ]).then(
+    ([learning, native, flutterLearning, flutterNative, catalog]) => {
+      if (learning.length < 40) {
+        fail(section, {}, `learning languages expected >= 40, got ${learning.length}`);
+      } else {
+        pass(section, `learning languages: ${learning.length}`);
+      }
+      if (native.length < 100) {
+        fail(section, {}, `native languages expected >= 100, got ${native.length}`);
+      } else {
+        pass(section, `native languages: ${native.length}`);
+      }
+      for (const item of learning) {
+        if (!item.code || !item.englishName || !item.nativeName || !item.flagEmoji) {
+          fail(section, { code: item.code }, "learning language missing required fields");
+        }
+        const status = item.learningContentStatus || item.courseStatus;
+        if (!status) {
+          fail(section, { code: item.code }, "learning language missing content status");
+        }
+      }
+      for (const item of native) {
+        if (!item.code || !item.englishName || !item.nativeName || !item.flagEmoji) {
+          fail(section, { code: item.code }, "native language missing required fields");
+        }
+      }
+      const available = learning
+        .filter((item) => item.courseStatus === "available")
+        .map((item) => item.code)
+        .sort();
+      if (available.join(",") !== "en,ja") {
+        fail(section, {}, `only en/ja should be available, got ${available.join(",")}`);
+      } else {
+        pass(section, "only en/ja marked available");
+      }
+      if (JSON.stringify(flutterLearning) !== JSON.stringify(learning)) {
+        fail(section, {}, "Flutter language_options.json out of sync");
+      } else {
+        pass(section, "Flutter language_options.json synced");
+      }
+      if (JSON.stringify(flutterNative) !== JSON.stringify(native)) {
+        fail(section, {}, "Flutter native_language_options.json out of sync");
+      } else {
+        pass(section, "Flutter native_language_options.json synced");
+      }
+      if ((catalog.languages ?? []).length < 40) {
+        fail(
+          section,
+          {},
+          `catalog.languages expected >= 40, got ${(catalog.languages ?? []).length}`,
+        );
+      } else {
+        pass(section, `catalog.languages: ${catalog.languages.length}`);
+      }
+    },
+  );
+}
+
 function checkNativeLanguageOptions(lessons) {
   const section = "Native language options";
   let checkedEnJa = false;
   let checkedJaVi = false;
 
   for (const lesson of lessons) {
+    if (isBlueprintLesson(lesson)) continue;
     for (const exercise of lesson.exercises ?? []) {
       if (!MEANING_CHOICE_TYPES.has(exercise.type)) continue;
+      if (
+        lesson.moduleId === "daily_life_m01_basic_social_survival" &&
+        exercise.type === "listenAndChoose"
+      ) continue;
       const englishOptions = JSON.stringify(exercise.options ?? []);
       const exerciseIndex = Number(String(exercise.id).split("-e").pop());
 
@@ -384,7 +733,11 @@ function checkNativeLanguageOptions(lessons) {
         if (
           nativeCode !== "en" &&
           !looksLikeCharacters &&
-          JSON.stringify(nativeOptions) === englishOptions
+          JSON.stringify(nativeOptions) === englishOptions &&
+          !(
+            lesson.moduleId === "daily_life_m01_basic_social_survival" &&
+            ["ko", "zh"].includes(nativeCode)
+          )
         ) {
           fail(section, { lessonId: lesson.id, exerciseIndex }, `optionsByNative.${nativeCode} silently falls back to English`);
         }
@@ -467,7 +820,10 @@ function checkExerciseQuality(lessons, courses) {
         ? HIRAGANA_L1_SLOT_TYPES
         : foundationSlots;
       let expectedType = expectedSlots[index];
-      if (String(lesson.id).includes("katakana") && index === 7) {
+      if (
+        index === 7 &&
+        (String(lesson.id).includes("katakana") || String(lesson.id).startsWith("en-alphabet-u1-"))
+      ) {
         expectedType = "plusListeningVocabularyChallenge";
       }
       if (exercise.type !== expectedType) {
@@ -782,6 +1138,109 @@ function checkKatakanaPlusListeningVocabulary(lessons, courses) {
   }
 }
 
+function checkEnglishPlusListeningVocabulary(lessons, courses) {
+  const section = "English Plus listening vocabulary checks";
+  const courseId = courseIdForModule(courses, "en", "alphabet_starter");
+  const referenceE8 =
+    lessons.find((item) => item.id === "ja-hiragana-u1-l1")?.exercises?.[7] ??
+    lessons.find((item) => item.id === "ja-katakana-u4-l1")?.exercises?.[7];
+
+  for (let lessonNum = 1; lessonNum <= 6; lessonNum += 1) {
+    const lessonId = `en-alphabet-u1-l${lessonNum}`;
+    const lesson = lessons.find((item) => item.id === lessonId);
+    if (!lesson) {
+      fail(section, { courseId, lessonId }, "missing English alphabet lesson");
+      continue;
+    }
+    const exercise = lesson.exercises?.[7];
+    const ctx = {
+      courseId,
+      lessonId,
+      exerciseIndex: 8,
+      exerciseType: exercise?.type,
+      visiblePrompt: exercise?.prompt,
+      displayText: exercise?.displayText,
+      correctAnswer: exercise?.correctAnswer,
+    };
+
+    if (
+      exercise?.type === "listeningGapFill" ||
+      exercise?.type === "fillBlank" ||
+      exercise?.type === "fillMissingCharacter"
+    ) {
+      fail(section, ctx, `English Exercise 8 must not be fill/gap type, got ${exercise.type}`);
+      continue;
+    }
+    if (exercise?.type !== "plusListeningVocabularyChallenge") {
+      fail(section, ctx, `expected plusListeningVocabularyChallenge, got ${exercise?.type}`);
+      continue;
+    }
+    if (referenceE8?.type && exercise.type !== referenceE8.type) {
+      fail(section, ctx, `type must match reference Exercise 8 (${referenceE8.type})`);
+    }
+    if (exercise.access !== "plus" || exercise.plusOnly !== true || exercise.usesAi === true) {
+      fail(section, ctx, "Exercise 8 must be Plus, plusOnly, and not use AI");
+    } else {
+      pass(section, `${lessonId} Exercise 8 is Plus gated and non-AI`);
+    }
+
+    if (String(exercise.displayText ?? "").includes("_")) {
+      fail(section, ctx, "Exercise 8 displayText must not contain blank markers (_)");
+    }
+
+    const subQuestions = exercise.subQuestions ?? [];
+    if (subQuestions.length < 3) {
+      fail(section, ctx, `expected subQuestions, got ${subQuestions.length}`);
+      continue;
+    }
+    pass(section, `${lessonId} Exercise 8 has ${subQuestions.length} subQuestions`);
+
+    subQuestions.forEach((subQuestion, index) => {
+      const sqCtx = {
+        ...ctx,
+        subQuestionIndex: index + 1,
+        visiblePrompt: subQuestion.visibleBeforeAnswer ?? subQuestion.prompt,
+        correctAnswer: subQuestion.correctAnswer,
+      };
+      for (const field of ["speechText", "options", "correctAnswer", "revealAfterAnswerByNative"]) {
+        const value = subQuestion[field];
+        if (!value || (Array.isArray(value) && value.length === 0)) {
+          fail(section, sqCtx, `subQuestion missing ${field}`);
+        }
+      }
+      if (!subQuestion.feedbackCorrectByNative || !subQuestion.feedbackWrongByNative) {
+        fail(section, sqCtx, "subQuestion missing feedbackCorrectByNative/feedbackWrongByNative");
+      } else {
+        const errors = [];
+        validateByNativeMap(subQuestion.feedbackCorrectByNative, "feedbackCorrectByNative", (msg) => errors.push(msg));
+        validateByNativeMap(subQuestion.feedbackWrongByNative, "feedbackWrongByNative", (msg) => errors.push(msg));
+        validateByNativeMap(subQuestion.revealAfterAnswerByNative, "revealAfterAnswerByNative", (msg) => errors.push(msg));
+        for (const err of errors) fail(section, sqCtx, err);
+        if (!errors.length) pass(section, `${lessonId} subQuestion ${index + 1} localization complete`);
+      }
+      if (!unique(subQuestion.options ?? [])) {
+        fail(section, sqCtx, "subQuestion options contain duplicates");
+      }
+      if (!(subQuestion.options ?? []).includes(subQuestion.correctAnswer)) {
+        fail(section, sqCtx, "subQuestion options do not include correctAnswer");
+      }
+      if (String(subQuestion.speechText ?? "").includes("_")) {
+        fail(section, sqCtx, "subQuestion speechText must not contain blank markers");
+      }
+      const visibleBefore = `${subQuestion.visibleBeforeAnswer ?? ""} ${subQuestion.audioCardLabel ?? ""} ${Object.values(subQuestion.visibleBeforeAnswerByNative ?? {}).join(" ")} ${subQuestion.prompt ?? ""}`;
+      const revealValues = [
+        subQuestion.revealAfterAnswer,
+        ...Object.values(subQuestion.revealAfterAnswerByNative ?? {}),
+      ].filter(Boolean);
+      for (const leaked of [subQuestion.speechText, ...revealValues]) {
+        if (leaked && visibleBefore.includes(leaked)) {
+          fail(section, { ...sqCtx, displayText: visibleBefore }, "visible-before-answer leaks hidden answer data");
+        }
+      }
+    });
+  }
+}
+
 function checkExerciseNativeLocalization(lessons) {
   const section = "Exercise native localization checks";
   for (const lesson of lessons) {
@@ -855,6 +1314,7 @@ function checkMobileUiNativeLanguages() {
 function checkExerciseTypeWhitelist(lessons) {
   const section = "Exercise type whitelist";
   for (const lesson of lessons) {
+    if (isBlueprintLesson(lesson)) continue;
     for (const [index, exercise] of (lesson.exercises ?? []).entries()) {
       if (SUPPORTED_TYPES.has(exercise.type)) {
         pass(section, `${lesson.id} e${index + 1} type ${exercise.type} is supported`);
@@ -1063,9 +1523,11 @@ async function main() {
   console.log(`Loaded ${courses.length} courses and ${lessons.length} lessons from shared/generated.\n`);
 
   checkExpectedShape(coursesJson, lessonsJson);
+  checkFiveCardsScopeGuard(lessons);
   checkCourseLessonLinks(courses, lessonById);
   checkLessonExercises(lessons);
   checkAiRules(lessons);
+  checkDailyLifeBlueprint(courses, lessons, catalogJson);
   checkRouting(courses, catalogJson);
   checkKanaCoverageAndOrder(lessons, courses, {
     sectionName: "Kana coverage/order checks",
@@ -1204,10 +1666,12 @@ async function main() {
   checkExerciseQuality(lessons, courses);
   checkPlusListeningVocabulary(lessons, courses);
   checkKatakanaPlusListeningVocabulary(lessons, courses);
+  checkEnglishPlusListeningVocabulary(lessons, courses);
   checkExerciseNativeLocalization(lessons);
   await checkMobileUiNativeLanguages();
   checkExerciseTypeWhitelist(lessons);
   await checkFocusExamAndUnitOrder(courses, lessons);
+  await checkLanguageCatalogParity();
   await checkWebFlutterFlowParity();
 
   console.log("\nSummary");

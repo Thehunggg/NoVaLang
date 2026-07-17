@@ -1,0 +1,170 @@
+{
+  "fixtureVersion": "1.0",
+  "fixtures": [
+    {
+      "name": "request_missing_user_id",
+      "type": "request",
+      "expectedErrors": ["userId is required"],
+      "value": {
+        "userTrackId": "ja-daily_life",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-invalid-001",
+        "sourceRecordId": "completion-invalid-001",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "usage:invalid:001",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "request_whitespace_user_track_id",
+      "type": "request",
+      "expectedErrors": ["userTrackId must be a non-empty string"],
+      "value": {
+        "userId": "user-invalid",
+        "userTrackId": "   ",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-invalid-002",
+        "sourceRecordId": "completion-invalid-002",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "usage:invalid:002",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "request_datetime_without_timezone",
+      "type": "request",
+      "expectedErrors": ["requestedAt must be an ISO 8601 datetime with a timezone"],
+      "value": {
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-invalid-003",
+        "sourceRecordId": "completion-invalid-003",
+        "requestedAt": "2026-07-14T11:00:00",
+        "idempotencyKey": "usage:invalid:003",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "request_wrong_quantity",
+      "type": "request",
+      "expectedErrors": ["quantity must equal 1"],
+      "value": {
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "usageType": "new_lesson_completion",
+        "quantity": 2,
+        "sourceEventId": "event-invalid-004",
+        "sourceRecordId": "completion-invalid-004",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "usage:invalid:004",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "request_unknown_usage_type",
+      "type": "request",
+      "expectedErrors": ["usageType must be one of new_lesson_completion"],
+      "value": {
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "usageType": "review_practice",
+        "quantity": 1,
+        "sourceEventId": "event-invalid-005",
+        "sourceRecordId": "completion-invalid-005",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "usage:invalid:005",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "entry_wrong_contract_version",
+      "type": "entry",
+      "expectedErrors": ["contractVersion must equal 1.0"],
+      "value": {
+        "usageEntryId": "usage-invalid-006",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "usageDate": "2026-07-14",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-invalid-006",
+        "sourceRecordId": "completion-invalid-006",
+        "recordedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "usage:invalid:006",
+        "contractVersion": "2.0"
+      }
+    },
+    {
+      "name": "entry_invalid_usage_date",
+      "type": "entry",
+      "expectedErrors": ["usageDate must be YYYY-MM-DD"],
+      "value": {
+        "usageEntryId": "usage-invalid-007",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "usageDate": "2026/07/14",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-invalid-007",
+        "sourceRecordId": "completion-invalid-007",
+        "recordedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "usage:invalid:007",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "committed_result_without_entry",
+      "type": "result",
+      "expectedErrors": ["committed result requires entry"],
+      "value": {
+        "status": "committed",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "already_committed_result_without_existing_usage_entry_id",
+      "type": "result",
+      "expectedErrors": ["already_committed result requires existingUsageEntryId"],
+      "value": {
+        "status": "already_committed",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "request_unknown_field",
+      "type": "request",
+      "expectedErrors": ["request contains unknown field unexpectedField"],
+      "value": {
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-invalid-010",
+        "sourceRecordId": "completion-invalid-010",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "usage:invalid:010",
+        "contractVersion": "1.0",
+        "unexpectedField": "not allowed"
+      }
+    },
+    {
+      "name": "result_unknown_status",
+      "type": "result",
+      "expectedErrors": ["status must be one of committed, already_committed"],
+      "value": {
+        "status": "unknown_status",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "unknown_fixture_type",
+      "type": "unknown",
+      "expectedErrors": ["fixture type must be one of request, entry, result"],
+      "value": {}
+    }
+  ]
+}

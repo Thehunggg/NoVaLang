@@ -25,8 +25,16 @@ class ProfileNotifier extends Notifier<UserProfile> {
     await ref.read(localStorageServiceProvider).saveProfile(profile);
   }
 
-  Future<void> setNativeLanguage(String code) =>
-      _commit(state.copyWith(nativeLanguageCode: code, uiLanguageCode: code));
+  Future<void> setNativeLanguage(
+    String code, {
+    String? uiLanguageCode,
+  }) =>
+      _commit(
+        state.copyWith(
+          nativeLanguageCode: code,
+          uiLanguageCode: uiLanguageCode ?? code,
+        ),
+      );
   Future<void> setUserInfo({
     required String displayName,
     String? ageRange,
@@ -216,6 +224,85 @@ class ProfileNotifier extends Notifier<UserProfile> {
       ),
     );
     return rewarded;
+  }
+
+  /// Temporary UI compatibility bridge.
+  /// Not a source of truth for Usage, Mastery, XP, Hearts, or Rewards.
+  ///
+  /// Applies at most once per lesson using [UserProfile.completedLessonIds] as
+  /// the durable marker. Returns `true` when this call newly applied the
+  /// bridge, or `false` when the marker already existed (no mutation/commit).
+  Future<bool> applyLessonCompletionCompatibilityOnce({
+    required String lessonId,
+    required String stepId,
+    required int currentStepIndex,
+    required bool lessonComplete,
+    int estimatedMinutes = 2,
+  }) async {
+    if (lessonComplete && state.completedLessonIds.contains(lessonId)) {
+      return false;
+    }
+
+    final today = DateTime.now().toIso8601String().substring(0, 10);
+    final isNewDay = state.lastStudyDate != today;
+    final sessions = Map<String, Map<String, dynamic>>.from(
+      state.lessonSessions,
+    );
+    final current = Map<String, dynamic>.from(sessions[lessonId] ?? const {});
+    final completed = List<String>.from(
+      current['completedStepIds'] as List? ?? const [],
+    );
+    final isNewStep = !completed.contains(stepId);
+    if (isNewStep) completed.add(stepId);
+    final minutes =
+        (isNewDay ? 0 : state.studyMinutesToday) +
+        (isNewStep ? estimatedMinutes : 0);
+    sessions[lessonId] = {
+      'lessonId': lessonId,
+      'currentStepIndex': currentStepIndex,
+      'completedStepIds': completed,
+      'introCompleted': stepId == 'intro' || current['introCompleted'] == true,
+      if (lessonComplete) 'completedAt': DateTime.now().toIso8601String(),
+    };
+    final completedLessons = List<String>.from(state.completedLessonIds);
+    if (lessonComplete && !completedLessons.contains(lessonId)) {
+      completedLessons.add(lessonId);
+    }
+    final foundationDone =
+        state.coreFoundationCompleted ||
+        (completedLessons.contains('ja-hiragana-u1-l10') &&
+            completedLessons.contains('ja-katakana-u4-l10')) ||
+        completedLessons.contains('en-alphabet-u1-l6');
+    await _commit(
+      state.copyWith(
+        lessonSessions: sessions,
+        completedLessonIds: completedLessons,
+        studyMinutesToday: minutes,
+        lastStudyDate: today,
+        coreFoundationCompleted: foundationDone,
+      ),
+    );
+    return true;
+  }
+
+  /// Temporary UI compatibility bridge.
+  /// Not a source of truth for Usage, Mastery, XP, Hearts, or Rewards.
+  ///
+  /// Legacy void wrapper around [applyLessonCompletionCompatibilityOnce].
+  Future<void> completeLessonStepCompatibilityOnly({
+    required String lessonId,
+    required String stepId,
+    required int currentStepIndex,
+    required bool lessonComplete,
+    int estimatedMinutes = 2,
+  }) async {
+    await applyLessonCompletionCompatibilityOnce(
+      lessonId: lessonId,
+      stepId: stepId,
+      currentStepIndex: currentStepIndex,
+      lessonComplete: lessonComplete,
+      estimatedMinutes: estimatedMinutes,
+    );
   }
 
   Future<void> setNiches(

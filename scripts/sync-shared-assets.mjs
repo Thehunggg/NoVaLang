@@ -33,6 +33,12 @@ const DEST_DIR = path.join(
   'shared',
 );
 
+const SHARED_HERO_DIR = path.join(ROOT, 'shared', 'assets', 'language_hero');
+const HERO_DEST_DIRS = [
+  path.join(DEST_DIR, 'language_hero'),
+  path.join(ROOT, 'frontend', 'public', 'shared', 'language_hero'),
+];
+
 async function listJsonFiles(dir, { flatOnly = false } = {}) {
   const entries = await readdir(dir);
   const files = [];
@@ -78,6 +84,23 @@ async function main() {
       });
       console.log(
         `[copy] ${path.relative(ROOT, sourcePath)} -> ${path.relative(ROOT, destPath)}`,
+      );
+    }
+  }
+
+  const heroAssets = (await readdir(SHARED_HERO_DIR))
+    .filter((name) => name.endsWith('.svg'))
+    .sort();
+  for (const heroDest of HERO_DEST_DIRS) {
+    await mkdir(heroDest, { recursive: true });
+    for (const fileName of heroAssets) {
+      await copyFile(
+        path.join(SHARED_HERO_DIR, fileName),
+        path.join(heroDest, fileName),
+      );
+      copied += 1;
+      console.log(
+        `[copy] shared/assets/language_hero/${fileName} -> ${path.relative(ROOT, path.join(heroDest, fileName))}`,
       );
     }
   }

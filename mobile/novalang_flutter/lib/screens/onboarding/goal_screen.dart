@@ -69,7 +69,7 @@ class GoalScreen extends ConsumerWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        goal.localizedName(locale),
+                                        L10n.text(goal.nameKey, locale),
                                         style: const TextStyle(
                                           fontWeight: FontWeight.w900,
                                           fontSize: 17,

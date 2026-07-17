@@ -12,13 +12,25 @@
     "build:frontend": "npm run build --prefix frontend",
     "build:backend": "npm run build --prefix backend",
     "start": "npm run start --prefix backend",
-    "generate:curriculum": "node scripts/generate-curriculum.mjs",
+    "generate:language-catalogs": "node scripts/generate-language-catalogs.mjs",
+    "generate:curriculum": "node scripts/generate-language-catalogs.mjs && node scripts/generate-curriculum.mjs",
     "review:curriculum:export": "node scripts/export-curriculum-review.mjs",
     "smoke:curriculum": "node scripts/smoke-curriculum-flow.mjs",
     "smoke:answer-unicode": "node scripts/smoke-answer-unicode.mjs",
-    "validate:curriculum": "node scripts/validate-curriculum.mjs",
+    "test:japanese-pronunciation": "node scripts/test-japanese-pronunciation.mjs",
+    "test:q14-romanization": "node scripts/test-q14-romanization.mjs",
+    "validate:curriculum": "node scripts/validate-curriculum.mjs && node scripts/validate-localization-purity.mjs",
+    "validate:localization-purity": "node scripts/validate-localization-purity.mjs",
+    "validate:lesson-completion-contract": "node scripts/validate-lesson-completion-contract.mjs",
+    "validate:usage-ledger-contract": "node scripts/validate-usage-ledger-contract.mjs",
+    "validate:canonical-event-contract": "node scripts/validate-canonical-event-contract.mjs",
     "sync:flutter-assets": "node scripts/sync-shared-assets.mjs",
     "sync:curriculum": "npm run generate:curriculum && npm run validate:curriculum && npm run sync:flutter-assets"
   },
-  "devDependencies": { "concurrently": "^9.1.2" }
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "kuromoji": "0.1.2"
+  }
 }

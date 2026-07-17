@@ -1,0 +1,777 @@
+﻿diff --git a/.cursor/rules/novalang.mdc b/.cursor/rules/novalang.mdc
+index 097b176..73e1e46 100644
+--- a/.cursor/rules/novalang.mdc
++++ b/.cursor/rules/novalang.mdc
+@@ -1,339 +1,107 @@
+ ---
+-description: NovaLang Android Flutter rules
+-globs:
+-  - "mobile/novalang_flutter/**"
+-  - "shared/**"
++description: NovaLang Core Rules
+ alwaysApply: true
+ ---
+ 
+-# NovaLang Cursor Rules
++# NovaLang Core Rules
+ 
+-## Main role
++## 1. ─É├óy l├á project ─æa nß╗ün tß║úng
+ 
+-Cursor mainly handles the Android Flutter app.
++Shared Data d├╣ng chung cho:
+ 
+-Main folder:
++- Flutter
++- React Web
+ 
+-mobile/novalang_flutter/
++Nß║┐u sß╗¡a business logic hoß║╖c lesson data:
+ 
+-Do not edit Web React unless the task explicitly requires Web + Flutter sync.
++ΓåÆ phß║úi sß╗¡a Shared Source Of Truth.
+ 
+-Web React lives in:
++Kh├┤ng fix ri├¬ng Flutter.
+ 
+-frontend/
++Kh├┤ng fix ri├¬ng Web.
+ 
+-Shared source of truth lives in:
+-
+-shared/
+-
+-## Project path
+-
+-Work only inside:
+-
+-C:\Users\thehu\OneDrive\Desktop\NovaLang\novalang
+-
+-Do not work inside:
+-
+-C:\Users\thehu\Documents\Codex
+-
+-Do not create or edit:
+-
+-linguaquest-ai
+-
+-## Flutter UI-only tasks
+-
+-For Android/Flutter UI-only tasks, edit only:
+-
+-mobile/novalang_flutter/
+-
+-Examples:
+-
+-- Flutter screen layout
+-- Android responsive UI
+-- Flutter bottom navigation
+-- Flutter card/button styling
+-- Flutter onboarding UI
+-- Flutter lesson UI
+-- Flutter back button behavior
+-
+-Do not touch frontend/.
+-
+-Do not touch shared/ unless the task requires shared data or shared logic.
+-
+-## Shared data / logic tasks
+-
+-If the task affects shared data, learning logic, product logic, or business logic, update shared/ first.
+-
+-Shared logic includes:
+-
+-- language list
+-- language aliases
+-- flags/language icons
+-- i18n/localization
+-- niche list
+-- exam tracks
+-- level system
+-- lesson data
+-- vocabulary data
+-- grammar data
+-- kana/kanji data
+-- exercise data
+-- exercise builder logic
+-- answer checking logic
+-- accepted answers
+-- placement test
+-- daily goal
+-- heart/streak rules
+-- profile schema
+-- onboarding choices
+-- subscription plans
+-- AI quota rules
+-
+-Do not create Flutter-only data that conflicts with Web.
+-
+-If Flutter cannot directly consume shared JSON, mirror the same JSON into Flutter assets and document the sync.
+-
+-## Shared data sync workflow
+-
+-Any change affecting shared data or business logic must be made in `shared/` first.
+-
+-Shared data includes:
+-
+-- lesson data
+-- exercise logic
+-- language list
+-- native language list
+-- niche / learning focus list
+-- level system
+-- exam tracks
+-- onboarding options
+-- localization / i18n catalog
+-- placement policy
+-- auth provider catalog
+-- profile schema
+-- answer checking rules
+-
+-Do not fix shared business logic only in Web or only in Flutter.
+-
+-After changing JSON under `shared/config/` or `shared/i18n/`, run:
+-
+-```powershell
+-npm run sync:flutter-assets
+-```
+-
+-This copies shared JSON into `mobile/novalang_flutter/assets/shared/`.
+-
+-If lesson/content generation is added later, run the future generate script before syncing Flutter assets.
+-
+-Do not manually edit copied files under `mobile/novalang_flutter/assets/shared/` unless explicitly instructed. Update `shared/` and run the sync script instead.
+-
+-UI-only changes may target only the specified platform.
+-
+-Android-first design is allowed for mobile UI, but shared data must remain platform-independent.
+-
+-## Localization rule
+-
+-If uiLanguage = vi, all user-facing text must be Vietnamese.
+-
+-Target learning language text stays in the learning language.
+-
+-Example:
+-
+-Japanese target:
+-
+-πüôπéôπü½πüíπü»
+-
+-Vietnamese UI/options:
++---
+ 
+-xin ch├áo
+-tß║ím biß╗çt
+-cß║úm ╞ín
+-l├ám ╞ín
++## 2. Generated files
+ 
+-Do not show English UI/options when Vietnamese UI is selected.
++Kh├┤ng sß╗¡a:
+ 
+-## Exercise rules
++- generated json
++- generated assets
+ 
+-Single-choice exercises must have:
++Lu├┤n sß╗¡a:
+ 
+-- exactly 4 unique options when enough data exists
+-- exactly 1 correct answer
+-- no duplicate labels
+-- no duplicate values
+-- no distractor that is also correct
++Source
++Γåô
+ 
+-Match-pairs exercises must:
++Generate
++Γåô
+ 
+-- check every pair exactly
+-- not mark correct just because a value was selected
+-- kana reading match must use kana ΓåÆ reading
+-- vocabulary meaning match must use vocabulary ΓåÆ meaning
++Sync
+ 
+-Typed answers must:
++---
+ 
+-- use acceptedAnswers
+-- normalize input before checking
++## 3. Localization
+ 
+-Japanese TTS:
++Kh├┤ng hard-code text.
+ 
+-- use speechText when available
+-- do not send ambiguous kanji alone
+-- Θ¢¿∩╝êπüéπéü∩╝ë should speak πüéπéü
++UI phß║úi d├╣ng localization key.
+ 
+-## Android UI rules
++UI language v├á Learning language l├á hai kh├íi niß╗çm kh├íc nhau.
+ 
+-NovaLang is Android-first.
++---
+ 
+-Use mobile-first Flutter UI:
++## 4. Learning Languages
+ 
+-- SafeArea
+-- LayoutBuilder
+-- MediaQuery
+-- responsive spacing
+-- full-width cards on small screens
+-- visible back buttons
+-- bottom navigation with max 5 tabs
+-- no fixed phone width/height
+-- no layout designed only for one screen size
++Format lesson d├╣ng chung cho mß╗ìi learning language.
+ 
+-Do not use fixed page sizes like:
++Kh├┤ng hard-code chß╗ë English hoß║╖c Japanese.
+ 
+-width: 390
+-height: 844
++Nß╗Öi dung tß╗½ng language sß║╜ ─æ╞░ß╗úc ng╞░ß╗¥i d├╣ng duyß╗çt ri├¬ng.
+ 
+-Small fixed icon sizes are okay.
++Kh├┤ng ─æ╞░ß╗úc tß╗▒ dß╗ïch.
+ 
+-## Commands
++---
+ 
+-Before editing, check:
++## 5. Navigation
+ 
+-pwd
+-dir
+-git status --short
++Back:
+ 
+-For Flutter tasks, run:
++- Navigator.pop()
+ 
+-cd mobile/novalang_flutter
+-flutter pub get
+-flutter analyze
++Giß╗»:
+ 
+-If possible, run:
++- scroll
++- roadmap
++- module
++- unit
+ 
+-flutter build apk --debug
++Kh├┤ng reset vß╗ü ─æß║ºu.
+ 
+-If Flutter SDK is missing, report it clearly.
++---
+ 
+-## Final report
++## 6. Audio
+ 
+-Always report:
++Basic Audio:
+ 
+-1. Current working directory
+-2. Task type: Flutter UI-only or shared-data/business-logic
+-3. Files changed in mobile/novalang_flutter/
+-4. Files changed in shared/
+-5. Whether Web sync is needed
+-6. Flutter analyze result
+-7. Flutter build result if run
+-8. Any SDK/config issue
+-## Curriculum source-of-truth rule
++- d├╣ng TTS hoß║╖c audio cache
+ 
+-All curriculum/business data must be updated from the shared source of truth.
++Kh├┤ng gß╗ìi AI Audio API cho fixed lesson.
+ 
+-Do not fix curriculum only in Flutter.
+-Do not fix curriculum only in Web.
++Voice AI chß╗ë thuß╗Öc Pro.
+ 
+-If changing:
+-- learning language catalog
+-- native language behavior
+-- lesson/unit/module/niche tree
+-- exercise types
+-- lesson content
+-- Plus gating
+-- AI Q&A rules
+-- translations
+-- validator rules
++---
+ 
+-then update shared source-of-truth first, then regenerate/sync outputs for both Web and Flutter.
++## 7. Validation
+ 
+-Do not manually patch generated JSON only. Fix the source/generator/schema first, then regenerate.
+-
+-Current curriculum model:
++Nß║┐u task li├¬n quan curriculum:
+ 
+-NovaLang Curriculum
+-Γö£ΓöÇΓöÇ Core Foundation
+-Γö£ΓöÇΓöÇ 15 Main Niches
+-ΓööΓöÇΓöÇ Exam Preparation, future branch only
++Phß║úi chß║íy:
+ 
+-Current build scope:
+-- Keep 20 learning languages in catalog.
+-- Only English and Japanese are playable for now.
+-- The other 18 languages must be preview / comingSoon.
+-- Build only Daily Life ΓåÆ Greetings ΓåÆ Unit 1 for English and Japanese first.
+-- Do not expand beyond that until the user reviews.
++- Generate
++- Validate
++- Smoke
++- Flutter Analyze
++- Flutter Test
+ 
+-Lesson structure:
+-Each lesson must have exactly 10 exercises.
+-
+-Exercise 1ΓÇô7:
+-- Free
+-- fixed/non-AI exercises
+-
+-Exercise 8:
+-- Plus only
+-- Listening Gap-fill
+-- uses device TTS / speechText
+-- no AI API
+-
+-Exercise 9:
+-- Plus only
+-- Controlled AI Q&A for the 390 yen/month Plus plan
+-- not open-ended chat
+-- 1 set = AI asks 1 short lesson-based question ΓåÆ user answers ΓåÆ AI gives short correction/comment ΓåÆ set ends
+-- keep output short and cost-controlled
+-- do not save long chat history
+-
+-Exercise 10:
+-- Plus only
+-- AI Feedback / Review
+-- should reuse Exercise 9 feedback
+-- must not trigger an extra AI call by default
+-
+-Native language rule:
+-Native language controls meanings, explanations, hints, and answer options.
+-Supported native languages:
+-vi, en, ja, ko, zh
+-
+-Example:
+-nativeLanguage = ja, learningLanguage = en
+-chooseMeaning options must be Japanese.
+-
+-Example:
+-nativeLanguage = vi, learningLanguage = ja
+-chooseMeaning options must be Vietnamese.
+-
+-Validator must fail if:
+-- lesson does not have exactly 10 exercises
+-- Exercise 8ΓÇô10 are not Plus gated
+-- Exercise 9 is open-ended chat
+-- translations vi/en/ja/ko/zh are missing
+-- Japanese reading/romanization/speechText is missing
+-- chooseMeaning options are in the wrong native language
+-- duplicate options exist
+-- unsupported exercise types are used
+-
+-Required checks:
+-npm run generate:curriculum
+-npm run validate:curriculum
+-npm run sync:flutter-assets
+-npm run build
+-
+-Then:
+-cd mobile/novalang_flutter
+-flutter analyze
+-flutter build apk --debug
+-
+-Reporting rule:
+-After each task, report briefly in Vietnamese.
+-Max 8 bullet lines total.
+-Do not paste full code unless asked.
+-Stop and ask for review before expanding.
+\ No newline at end of file
++Kh├┤ng ─æ╞░ß╗úc b├ío PASS nß║┐u ch╞░a chß║íy.
+\ No newline at end of file
+diff --git a/AGENTS.md b/AGENTS.md
+index 11dfe73..0ba52a6 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -1,281 +1,125 @@
+-# NovaLang ΓÇö Agent Rules
++# NovaLang Agent Instructions
+ 
+-## Project path
++─É├óy l├á project NovaLang.
+ 
+-Work only inside:
++Tr╞░ß╗¢c khi thß╗▒c hiß╗çn bß║Ñt kß╗│ task n├áo, bß║»t buß╗Öc phß║úi ─æß╗ìc:
+ 
+-C:\Users\thehu\OneDrive\Desktop\NovaLang\novalang
++- .cursor/rules/novalang.mdc (Core Rules; equivalent to the absent 01_novalang_core.mdc)
++- .cursor/rules/02_novalang_lesson_standard.mdc
+ 
+-Do not work inside:
++For a task that creates or changes an opt-in `lessonFormat: five_cards` lesson, also read:
+ 
+-C:\Users\thehu\Documents\Codex
++- .cursor/rules/03_novalang_lesson_format_2_0.mdc
+ 
+-Do not create or edit:
++Apply those rules in this order: `AGENTS.md`, `novalang.mdc`, Lesson Format
++2.0 (`03`), then Lesson Standard (`02`).
+ 
+-linguaquest-ai
++---
+ 
+-## Project structure
++# Vai tr├▓
+ 
+-NovaLang has two platforms:
++Bß║ín l├á Software Engineer.
+ 
+-- Web React: frontend/
+-- Android Flutter: mobile/novalang_flutter/
+-- Shared source of truth: shared/
++Bß║ín KH├öNG phß║úi:
+ 
+-## Main rule
++- Product Designer
++- UI Designer
++- UX Designer
++- Curriculum Designer
++- Language Teacher
+ 
+-UI-only changes should modify only the requested platform.
++Kh├┤ng ─æ╞░ß╗úc tß╗▒ thay ─æß╗òi c├íc quyß║┐t ─æß╗ïnh sß║ún phß║⌐m ─æ├ú ─æ╞░ß╗úc ph├¬ duyß╗çt.
+ 
+-Examples of UI-only changes:
++---
+ 
+-- Web layout
+-- Flutter Android layout
+-- button style
+-- card style
+-- navbar
+-- bottom navigation
+-- screen spacing
+-- responsive UI
++# Kh├┤ng ─æ╞░ß╗úc tß╗▒ s├íng tß║ío
+ 
+-Shared data/business logic changes must update shared/ first, then sync Web and Flutter.
++Kh├┤ng ─æ╞░ß╗úc tß╗▒:
+ 
+-Shared logic includes:
++- thiß║┐t kß║┐ lesson
++- thiß║┐t kß║┐ UI lesson
++- thiß║┐t kß║┐ format lesson
++- chß╗ìn tß╗½ vß╗▒ng
++- viß║┐t hß╗Öi thoß║íi
++- viß║┐t ngß╗» ph├íp
++- viß║┐t b├ái tß║¡p
++- thay ─æß╗òi lesson flow
++- thay ─æß╗òi sß╗æ l╞░ß╗úng card
++- thay ─æß╗òi plan
++- ─æ╞ín giß║ún h├│a nß╗Öi dung
++- dß╗ïch m├íy sang ng├┤n ngß╗» kh├íc ─æß╗â tß║ío lesson
+ 
+-- language list
+-- language search aliases
+-- flags/language icons
+-- i18n/localization
+-- niche list
+-- exam tracks
+-- level system
+-- lesson data
+-- vocabulary data
+-- grammar data
+-- kana/kanji data
+-- exercise data
+-- exercise builder logic
+-- answer checking logic
+-- accepted answers
+-- placement test
+-- daily goal
+-- heart/streak rules
+-- profile schema
+-- onboarding choices
+-- subscription plans
+-- AI quota rules
++Nß║┐u prompt ch╞░a cung cß║Ñp ─æß╗º nß╗Öi dung:
+ 
+-Do not fix shared logic only in Web.
++ΓåÆ Dß╗½ng.
++ΓåÆ B├ío thiß║┐u g├¼.
+ 
+-Do not fix shared logic only in Flutter.
++Kh├┤ng ─æ╞░ß╗úc tß╗▒ suy diß╗àn.
+ 
+-Do not create inconsistent duplicate data.
++---
+ 
+-Preferred shared folders:
++# Lesson Format 2.0 (five_cards)
+ 
+-- shared/config/
+-- shared/content/
+-- shared/i18n/
+-- shared/assets/
++`03_novalang_lesson_format_2_0.mdc` is the frozen Shared Source Of Truth for
++the opt-in `five_cards` format. Its golden reference is
++`ja-daily_life-m01-u1-l1`.
+ 
+-If Flutter cannot directly read shared JSON, mirror the same JSON into Flutter assets and document the sync.
++Do not migrate legacy lessons automatically, and do not create or alter lesson
++content, plans, exercise flows, or UI decisions without an approved owner
++instruction.
+ 
+-## Shared data sync workflow
++---
+ 
+-### For shared config / i18n data
++# Shared Source Of Truth
+ 
+-1. Edit files under `shared/config/` or `shared/i18n/`.
+-2. Run:
++Nß║┐u task ß║únh h╞░ß╗ƒng:
+ 
+-```powershell
+-npm run sync:flutter-assets
+-```
++- lesson
++- curriculum
++- vocabulary
++- dialogue
++- grammar
++- exercises
++- localization
++- language
++- level
++- niche
++- domain
++- subscription
++- profile
++- generator
++- validator
+ 
+-3. Verify Flutter still works:
++th├¼ phß║úi sß╗¡a Shared Source Of Truth.
+ 
+-```powershell
+-cd mobile/novalang_flutter
+-flutter analyze
+-flutter build apk --debug
+-```
++Kh├┤ng sß╗¡a generated JSON bß║▒ng tay.
+ 
+-Do not manually edit copied files under `mobile/novalang_flutter/assets/shared/` unless explicitly instructed. Update `shared/` and run the sync script instead.
++Quy tr├¼nh:
+ 
+-### For lessons / courses
++Source
++Γåô
+ 
+-Do not migrate lesson data unless the task explicitly requires it.
++Generate
++Γåô
+ 
+-Current Flutter lesson data remains in `mobile/novalang_flutter/lib/data/japanese_course_data.dart`.
++Validate
++Γåô
+ 
+-Future migration should use `shared/generated/` JSON or generated Dart files, not hand-edited Flutter-only copies.
++Sync
+ 
+-If lesson/content generation is added later, run the future generate script before syncing Flutter assets.
++---
+ 
+-### Shared data scope
++# Sau khi ho├án th├ánh
+ 
+-Any change affecting shared data or business logic must be made in `shared/` first.
++Lu├┤n b├ío:
+ 
+-Shared data includes:
++- File ─æ├ú sß╗¡a
++- Shared source ─æ├ú sß╗¡a
++- Schema thay ─æß╗òi
++- Generate
++- Validate
++- Build
++- Analyze
++- Test
+ 
+-- lesson data
+-- exercise logic
+-- language list
+-- native language list
+-- niche / learning focus list
+-- level system
+-- exam tracks
+-- onboarding options
+-- localization / i18n catalog
+-- placement policy
+-- auth provider catalog
+-- profile schema
+-- answer checking rules
+-
+-Do not fix shared business logic only in Web or only in Flutter.
+-
+-UI-only changes may target only the requested platform.
+-
+-Android-first design is allowed for mobile UI, but shared data must remain platform-independent.
+-
+-## Codex role
+-
+-Codex mainly handles the Web React app.
+-
+-Main folder:
+-
+-frontend/
+-
+-Do not edit Flutter unless the task explicitly requires Web + Flutter sync.
+-
+-For Web tasks, run:
+-
+-npm run build
+-
+-Do not finish until Web build passes.
+-
+-## Flutter rule
+-
+-Flutter Android lives in:
+-
+-mobile/novalang_flutter/
+-
+-For Flutter tasks, run if Flutter SDK exists:
+-
+-cd mobile/novalang_flutter
+-flutter pub get
+-flutter analyze
+-
+-If Flutter SDK is missing, report it clearly.
+-
+-## Localization rule
+-
+-When user selects a native/UI language, every user-facing UI label, explanation, hint, feedback, and meaning option must use that language.
+-
+-The learning-language target text remains in the learning language.
+-
+-Example:
+-
+-learningLanguage = ja
+-uiLanguage = vi
+-
+-Target text:
+-
+-πüôπéôπü½πüíπü»
+-
+-UI/options/meaning:
+-
+-xin ch├áo
+-tß║ím biß╗çt
+-cß║úm ╞ín
+-l├ám ╞ín
+-
+-Do not show English UI/options when Vietnamese UI is selected, unless English is the learning target.
+-
+-## Exercise rules
+-
+-Single-choice exercises must have:
+-
+-- exactly 4 unique options when enough data exists
+-- exactly 1 correct answer
+-- no duplicate visible labels
+-- no duplicate values
+-- no distractor that is also correct
+-- localized options when options are meanings
+-
+-Match-pairs exercises must:
+-
+-- check every pair exactly
+-- not mark correct just because something was selected
+-- not mix kana-only items with vocabulary meanings
+-
+-Correct kana match:
+-
+-πüé ΓåÆ a
+-πüä ΓåÆ i
+-
+-Correct vocabulary match:
+-
+-Θ¢¿∩╝êπüéπéü∩╝ë ΓåÆ m╞░a
+-Θú┤∩╝êπüéπéü∩╝ë ΓåÆ kß║╣o
+-
+-Incorrect:
+-
+-πüé ΓåÆ m╞░a
+-
+-Typed answers must use acceptedAnswers.
+-
+-Normalize typed answers:
+-
+-- trim
+-- lowercase
+-- collapse repeated spaces
+-- accept no-accent variants if listed
+-
+-Japanese rule:
+-
+-- separate displayText and speechText
+-- displayText: Θ¢¿∩╝êπüéπéü∩╝ë
+-- speechText: πüéπéü
+-- do not send ambiguous kanji alone to TTS if speechText exists
+-- do not split Θ¢¿∩╝êπüéπéü∩╝ë into Θ¢¿ / ∩╝ê / πüéπéü / ∩╝ë in sentence builder
+-
+-## Lesson navigation rules
+-
+-Lesson screens should support:
+-
+-- Back to course
+-- Review previous step
+-- Next
+-- Resume from last step
+-- Review completed lesson
+-
+-Do not make "Review lesson" jump to the beginning every time.
+-
+-Save lesson session state:
+-
+-- lessonId
+-- currentStepIndex
+-- completedStepIds
+-- isCompleted
+-- completedAt
+-- lastVisitedAt
+-
+-## Android-first strategy
+-
+-NovaLang is Android-first.
+-
+-Flutter Android is the main mobile MVP.
+-
+-Web must stay working and aligned with shared data, but Web does not need to be more polished than Android at this stage.
+-
+-## Final report
+-
+-Always report:
+-
+-1. Current working directory
+-2. Task type: UI-only or shared-data/business-logic
+-3. Files changed in shared/
+-4. Files changed in frontend/
+-5. Files changed in mobile/novalang_flutter/
+-6. Whether Web and Flutter are synced
+-7. Web build result
+-8. Flutter check result or SDK missing reason
+\ No newline at end of file
++Kh├┤ng commit nß║┐u ng╞░ß╗¥i d├╣ng ch╞░a y├¬u cß║ºu.

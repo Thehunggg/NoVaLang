@@ -1,0 +1,55 @@
+---
+description: NovaLang shared multi-agent workflow and task ownership
+alwaysApply: true
+---
+
+# NovaLang Shared Agent Rule — Rule AI dùng chung
+
+Before editing any file:
+
+1. Read `AGENTS.md`.
+2. Read `docs/ai/ACTIVE_TASK.md`.
+3. Read the applicable NovaLang rules under `.cursor/rules/`.
+4. Confirm that `Current owner` is `Cursor`.
+5. Inspect the dirty worktree.
+6. Do not modify files outside the approved task scope.
+
+Cursor is the third default takeover agent after:
+
+1. Claude Code
+2. Codex
+3. Cursor
+
+Only one AI may edit files at a time.
+
+When taking over:
+
+- begin read-only;
+- inspect the current diff;
+- preserve existing changes;
+- continue from the recorded next action;
+- do not redesign approved architecture without explicit approval.
+
+Before ending the session, update the active task and produce a complete handoff.
+
+Never run reset, clean, stash, checkout, commit, or push without explicit approval.
+
+# Cross-platform targets — Mục tiêu đa nền tảng
+
+NovaLang targets Web, Android, and iOS.
+
+Android-first is a validation priority, not an Android-only architecture.
+
+Android and iOS share the Flutter/Dart mobile codebase.
+
+Web is a first-class target and must follow shared contracts, stable IDs,
+content schemas, product semantics, and validation rules. Do not assume
+Flutter Web unless the approved architecture explicitly chooses it.
+
+Default to responsive and platform-adaptive UI.
+
+Isolate unavoidable platform-specific behavior behind interfaces or adapters.
+
+Do not claim iOS runtime/build validation without macOS/Xcode or a cloud iOS build.
+
+Every implementation report must state platform impact for Web, Android, and iOS.

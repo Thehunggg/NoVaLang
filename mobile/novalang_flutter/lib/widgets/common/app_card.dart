@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../core/theme/app_theme.dart';
+
 class AppCard extends StatelessWidget {
   const AppCard({
     super.key,
@@ -16,17 +18,14 @@ class AppCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
     return Card(
-      color: selected
-          ? colors.primaryContainer.withValues(alpha: 0.38)
-          : Colors.white.withValues(alpha: 0.045),
+      color: selected ? AppTheme.lessonSurfaceElevated : AppTheme.lessonSurface,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
         side: BorderSide(
           color: selected
-              ? const Color(0xFF22D3EE).withValues(alpha: 0.55)
-              : Colors.white.withValues(alpha: 0.08),
+              ? AppTheme.lessonSelectedBorder.withValues(alpha: 0.55)
+              : AppTheme.lessonBorderSubtle,
           width: selected ? 1.4 : 1,
         ),
       ),

@@ -1,12 +1,14 @@
 import type { LocalizedAnswers, LocalizedText, SupportedUILanguage } from "../types/index";
 
-export const getLocalizedText = (value: LocalizedText | null | undefined, nativeLanguage: string, fallbackLanguage: SupportedUILanguage = "en"): string => {
+export const getLocalizedText = (value: LocalizedText | null | undefined, nativeLanguage: string): string => {
   if (typeof value === "string") return value;
   if (!value) return "";
-  return value[nativeLanguage as SupportedUILanguage] ?? value[fallbackLanguage] ?? Object.values(value).find((item): item is string => typeof item === "string") ?? "";
+  const locale = nativeLanguage.toLowerCase().replace("_", "-").split("-")[0] as SupportedUILanguage;
+  return value[locale] ?? `⟦missing-content:${locale}⟧`;
 };
 
-export const getLocalizedAnswers = (value: LocalizedAnswers | null | undefined, nativeLanguage: string, fallbackLanguage: SupportedUILanguage = "en"): string[] => {
+export const getLocalizedAnswers = (value: LocalizedAnswers | null | undefined, nativeLanguage: string): string[] => {
   if (!value) return [];
-  return value[nativeLanguage as SupportedUILanguage] ?? value[fallbackLanguage] ?? Object.values(value).find((items): items is string[] => Array.isArray(items)) ?? [];
+  const locale = nativeLanguage.toLowerCase().replace("_", "-").split("-")[0] as SupportedUILanguage;
+  return value[locale] ?? [`⟦missing-content:${locale}⟧`];
 };

@@ -1,0 +1,193 @@
+{
+  "fixtureVersion": "1.0",
+  "fixtures": [
+    {
+      "name": "request_missing_source_record_id",
+      "type": "request",
+      "expectedErrors": ["sourceRecordId is required"],
+      "value": {
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "event:invalid:001",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    },
+    {
+      "name": "request_whitespace_user_id",
+      "type": "request",
+      "expectedErrors": ["userId must be a non-empty string"],
+      "value": {
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-invalid-002",
+        "sourceRecordType": "lesson_completion",
+        "userId": "   ",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "event:invalid:002",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    },
+    {
+      "name": "request_datetime_without_timezone",
+      "type": "request",
+      "expectedErrors": ["requestedAt must be an ISO 8601 datetime with a timezone"],
+      "value": {
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-invalid-003",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00",
+        "idempotencyKey": "event:invalid:003",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    },
+    {
+      "name": "request_unknown_event_type",
+      "type": "request",
+      "expectedErrors": ["eventType must be one of lesson_completion_recorded"],
+      "value": {
+        "eventType": "review_recorded",
+        "sourceRecordId": "completion-invalid-004",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "event:invalid:004",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    },
+    {
+      "name": "request_payload_not_object",
+      "type": "request",
+      "expectedErrors": ["payload must be an object"],
+      "value": {
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-invalid-005",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "event:invalid:005",
+        "contractVersion": "1.0",
+        "payload": "not-an-object"
+      }
+    },
+    {
+      "name": "event_wrong_contract_version",
+      "type": "event",
+      "expectedErrors": ["contractVersion must equal 1.0"],
+      "value": {
+        "eventId": "event-invalid-006",
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-invalid-006",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "occurredAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "event:invalid:006",
+        "contractVersion": "2.0",
+        "payload": {}
+      }
+    },
+    {
+      "name": "event_wrong_source_record_type",
+      "type": "event",
+      "expectedErrors": ["sourceRecordType must equal lesson_completion"],
+      "value": {
+        "eventId": "event-invalid-012",
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-invalid-012",
+        "sourceRecordType": "completion",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "occurredAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "event:invalid:012",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    },
+    {
+      "name": "request_wrong_source_record_type",
+      "type": "request",
+      "expectedErrors": ["sourceRecordType must equal lesson_completion"],
+      "value": {
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-invalid-013",
+        "sourceRecordType": "lesson",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "event:invalid:013",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    },
+    {
+      "name": "appended_result_without_event",
+      "type": "result",
+      "expectedErrors": ["appended result requires event"],
+      "value": {
+        "status": "appended",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "already_appended_result_without_existing_event_id",
+      "type": "result",
+      "expectedErrors": ["already_appended result requires existingEventId"],
+      "value": {
+        "status": "already_appended",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "request_unknown_field",
+      "type": "request",
+      "expectedErrors": ["request contains unknown field unexpectedField"],
+      "value": {
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-invalid-009",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-invalid",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "lesson-invalid",
+        "requestedAt": "2026-07-14T11:00:00+09:00",
+        "idempotencyKey": "event:invalid:009",
+        "contractVersion": "1.0",
+        "payload": {},
+        "unexpectedField": "not allowed"
+      }
+    },
+    {
+      "name": "result_unknown_status",
+      "type": "result",
+      "expectedErrors": ["status must be one of appended, already_appended"],
+      "value": {
+        "status": "unknown_status",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "unknown_fixture_type",
+      "type": "unknown",
+      "expectedErrors": ["fixture type must be one of request, event, result"],
+      "value": {}
+    }
+  ]
+}

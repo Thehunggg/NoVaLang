@@ -1,4 +1,5 @@
 import '../core/utils/localization.dart';
+import '../core/utils/native_content.dart';
 
 class Niche {
   const Niche({
@@ -57,18 +58,27 @@ class Niche {
   String localizedCategory(String languageCode) {
     final fromMap = localizedMapText(categoryByLocale, languageCode);
     if (fromMap.isNotEmpty) return fromMap;
-    return languageCode == 'vi' ? categoryVi : category;
+    final locale = normalizeNativeLocale(languageCode);
+    if (locale == 'vi') return categoryVi;
+    if (locale == 'en') return category;
+    return missingNativeContentSentinel('niche.$id.category', locale);
   }
 
   String localizedTitle(String languageCode) {
     final fromMap = localizedMapText(titleByLocale, languageCode);
     if (fromMap.isNotEmpty) return fromMap;
-    return languageCode == 'vi' ? titleVi : title;
+    final locale = normalizeNativeLocale(languageCode);
+    if (locale == 'vi') return titleVi;
+    if (locale == 'en') return title;
+    return missingNativeContentSentinel('niche.$id.title', locale);
   }
 
   String localizedDescription(String languageCode) {
     final fromMap = localizedMapText(descriptionByLocale, languageCode);
     if (fromMap.isNotEmpty) return fromMap;
-    return description;
+    final locale = normalizeNativeLocale(languageCode);
+    return locale == 'en'
+        ? description
+        : missingNativeContentSentinel('niche.$id.description', locale);
   }
 }

@@ -12,9 +12,26 @@ export type LanguageOptionRecord = {
   isSupportedAsNative: boolean;
   isSupportedAsLearning: boolean;
   courseStatus?: "available" | "coming_soon";
+  learningContentStatus?: "available" | "blueprint" | "comingSoon";
+  scriptType?:
+    | "latin"
+    | "kana"
+    | "han"
+    | "hangul"
+    | "arabic"
+    | "devanagari"
+    | "cyrillic"
+    | "other";
+  hasFoundation?: boolean;
+  contentAvailabilityNote?: string;
   color?: string;
   greeting?: string;
   description?: string;
+  heroIllustrationKey?: string;
+  heroAsset?: string;
+  heroGradient?: string[];
+  heroOverlayOpacity?: number;
+  nativeNameReading?: string;
 };
 
 export type NativeLanguageOptionRecord = {
@@ -25,13 +42,15 @@ export type NativeLanguageOptionRecord = {
   aliases: string[];
   direction?: "ltr" | "rtl";
   isSupportedAsNative: boolean;
+  isAvailableForUi?: boolean;
+  fallbackLocale?: string;
 };
 
-/** All learning-language catalog entries (20 languages). */
+/** All learning-language catalog entries (~40 languages). */
 export const languageOptions: LanguageOptionRecord[] =
   languageOptionsConfig as LanguageOptionRecord[];
 
-/** Native/UI language options (starter set of 5). */
+/** Native/UI language options (~100 languages). */
 export const nativeLanguageOptions: NativeLanguageOptionRecord[] =
   nativeLanguageOptionsConfig as NativeLanguageOptionRecord[];
 
@@ -64,9 +83,19 @@ export const getLanguageOption = (code: string) =>
   languageOptions.find((item) => item.code === code) ??
   nativeLanguageOptions.find((item) => item.code === code);
 
+export const getNativeLanguageOption = (code: string) =>
+  nativeLanguageOptions.find((item) => item.code === code);
+
 export const getLearningLanguage = (code: LanguageCode) =>
   learningLanguages.find((item) => item.code === code);
 
 export const isCourseAvailable = (code: string) =>
   (getLanguageOption(code) as LanguageOptionRecord | undefined)?.courseStatus ===
   "available";
+
+/** Resolve UI locale for a native language (fallback English when UI is not polished). */
+export const resolveUiLocale = (nativeCode: string) => {
+  const native = getNativeLanguageOption(nativeCode);
+  if (native?.isAvailableForUi) return native.code;
+  return native?.fallbackLocale ?? "en";
+};

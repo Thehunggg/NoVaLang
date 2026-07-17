@@ -1,0 +1,100 @@
+{
+  "fixtureVersion": "1.0",
+  "requestFixtures": [
+    {
+      "name": "golden_completion_event_request",
+      "request": {
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-golden-001",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-demo-a",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "ja-daily_life-m01-u1-l1",
+        "requestedAt": "2026-07-14T10:32:05+09:00",
+        "idempotencyKey": "event:completion-golden-001",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    },
+    {
+      "name": "duplicate_golden_completion_event_request",
+      "request": {
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-golden-001",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-demo-a",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "ja-daily_life-m01-u1-l1",
+        "requestedAt": "2026-07-14T10:32:10+09:00",
+        "idempotencyKey": "event:completion-golden-001",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    },
+    {
+      "name": "different_user_event_request",
+      "request": {
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-user-b-001",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-demo-b",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "ja-daily_life-m01-u1-l1",
+        "requestedAt": "2026-07-14T10:36:05+09:00",
+        "idempotencyKey": "event:completion-user-b-001",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    }
+  ],
+  "eventFixtures": [
+    {
+      "name": "appended_golden_event",
+      "requestFixtureName": "golden_completion_event_request",
+      "event": {
+        "eventId": "event-golden-001",
+        "eventType": "lesson_completion_recorded",
+        "sourceRecordId": "completion-golden-001",
+        "sourceRecordType": "lesson_completion",
+        "userId": "user-demo-a",
+        "userTrackId": "ja-daily_life",
+        "lessonId": "ja-daily_life-m01-u1-l1",
+        "occurredAt": "2026-07-14T10:32:06+09:00",
+        "idempotencyKey": "event:completion-golden-001",
+        "contractVersion": "1.0",
+        "payload": {}
+      }
+    }
+  ],
+  "resultFixtures": [
+    {
+      "name": "appended_result",
+      "requestFixtureName": "golden_completion_event_request",
+      "result": {
+        "status": "appended",
+        "event": {
+          "eventId": "event-golden-001",
+          "eventType": "lesson_completion_recorded",
+          "sourceRecordId": "completion-golden-001",
+          "sourceRecordType": "lesson_completion",
+          "userId": "user-demo-a",
+          "userTrackId": "ja-daily_life",
+          "lessonId": "ja-daily_life-m01-u1-l1",
+          "occurredAt": "2026-07-14T10:32:06+09:00",
+          "idempotencyKey": "event:completion-golden-001",
+          "contractVersion": "1.0",
+          "payload": {}
+        },
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "already_appended_result",
+      "result": {
+        "status": "already_appended",
+        "existingEventId": "event-golden-001",
+        "contractVersion": "1.0"
+      }
+    }
+  ]
+}

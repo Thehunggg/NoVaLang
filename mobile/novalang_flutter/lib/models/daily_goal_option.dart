@@ -1,19 +1,12 @@
 class DailyGoalOption {
-  const DailyGoalOption({required this.minutes, required this.nameEn, required this.nameVi});
+  const DailyGoalOption({required this.minutes, required this.nameKey});
 
   final int minutes;
-  final String nameEn;
-  final String nameVi;
+  final String nameKey;
 
-  factory DailyGoalOption.fromJson(Map<String, dynamic> json) {
-    final name = json['name'] as Map<String, dynamic>;
-    return DailyGoalOption(
-      minutes: json['minutes'] as int,
-      nameEn: name['en'] as String,
-      nameVi: name['vi'] as String,
-    );
-  }
-
-  String localizedName(String languageCode) =>
-      languageCode == 'vi' ? nameVi : nameEn;
+  factory DailyGoalOption.fromJson(Map<String, dynamic> json) =>
+      DailyGoalOption(
+        minutes: json['minutes'] as int,
+        nameKey: json['nameKey'] as String,
+      );
 }

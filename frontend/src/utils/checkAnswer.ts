@@ -22,7 +22,7 @@ const optionsFromExercise = (exercise: Exercise): NormalizeAnswerOptions => ({
 export const checkAnswer = (userAnswer: string | string[], exercise: Exercise, nativeLanguage: string): AnswerCheckResult => {
   const normOpts = optionsFromExercise(exercise);
   if (isMatchPairExercise(exercise.type)) {
-    const pairs = exercise.pairTranslations?.[nativeLanguage as SupportedUILanguage] ?? exercise.pairTranslations?.en ?? exercise.pairs ?? [];
+    const pairs = exercise.pairTranslations?.[nativeLanguage as SupportedUILanguage] ?? (nativeLanguage === "en" ? exercise.pairs ?? [] : []);
     const submitted = Array.isArray(userAnswer) ? userAnswer : [userAnswer];
     const submittedMap = new Map(submitted.map((item) => {
       const [left, ...rightParts] = item.split("=");
@@ -47,4 +47,4 @@ export const checkAnswer = (userAnswer: string | string[], exercise: Exercise, n
 export const getExerciseQuestion = (exercise: Exercise, nativeLanguage: string) => getLocalizedText(exercise.questionTranslations ?? exercise.question, nativeLanguage);
 export const getExerciseExplanation = (exercise: Exercise, nativeLanguage: string) => getLocalizedText(exercise.explanationTranslations ?? exercise.explanation, nativeLanguage);
 export const getExerciseHint = (exercise: Exercise, nativeLanguage: string) => getLocalizedText(exercise.hintTranslations ?? exercise.hint, nativeLanguage);
-export const getExerciseOptions = (exercise: Exercise, nativeLanguage: string) => exercise.optionTranslations?.[nativeLanguage as SupportedUILanguage] ?? exercise.optionTranslations?.en ?? exercise.options;
+export const getExerciseOptions = (exercise: Exercise, nativeLanguage: string) => exercise.optionTranslations?.[nativeLanguage as SupportedUILanguage] ?? (nativeLanguage === "en" ? exercise.options : []);

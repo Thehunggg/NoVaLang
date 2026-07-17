@@ -10,8 +10,22 @@ import '../../state/shared_data_provider.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/onboarding_header.dart';
 import '../../widgets/common/responsive_page.dart';
-import '../../widgets/language/language_option_tile.dart';
 import '../../widgets/language/language_search_field.dart';
+import '../../widgets/language/language_search_list.dart';
+import '../../widgets/language/coming_soon_badge.dart';
+
+const _popularLearningCodes = [
+  'en',
+  'ja',
+  'ko',
+  'zh',
+  'es',
+  'fr',
+  'de',
+  'vi',
+  'th',
+  'id',
+];
 
 class LearningLanguageScreen extends ConsumerStatefulWidget {
   const LearningLanguageScreen({super.key});
@@ -28,7 +42,7 @@ class _LearningLanguageScreenState
   @override
   Widget build(BuildContext context) {
     final profile = ref.watch(profileProvider);
-    final locale = profile.nativeLanguageCode;
+    final locale = profile.uiLanguageCode;
     final catalogAsync = ref.watch(languageCatalogProvider);
     final tracksAsync = ref.watch(examTrackCatalogProvider);
 
@@ -42,17 +56,15 @@ class _LearningLanguageScreenState
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => Text(error.toString()),
           data: (catalog) {
-            final items = catalog
-                .where(
-                  (item) => item.isSupportedAsLearning && item.matches(query),
-                )
-                .toList()
-              ..sort((a, b) {
-                final byAvailability =
-                    (b.isCourseAvailable ? 1 : 0) - (a.isCourseAvailable ? 1 : 0);
-                if (byAvailability != 0) return byAvailability;
-                return a.englishName.compareTo(b.englishName);
-              });
+            final items =
+                catalog.where((item) => item.isSupportedAsLearning).toList()
+                  ..sort((a, b) {
+                    final byAvailability =
+                        (b.isCourseAvailable ? 1 : 0) -
+                        (a.isCourseAvailable ? 1 : 0);
+                    if (byAvailability != 0) return byAvailability;
+                    return a.englishName.compareTo(b.englishName);
+                  });
             final tracks = tracksAsync.maybeWhen(
               data: (value) => value,
               orElse: () => const <String, List<ExamTrack>>{},
@@ -71,15 +83,15 @@ class _LearningLanguageScreenState
                   onChanged: (value) => setState(() => query = value),
                 ),
                 const SizedBox(height: 16),
-                for (final language in items) ...[
-                  LanguageOptionTile(
-                    language: language,
-                    languageCode: locale,
-                    trailing: _status(language, tracks, locale),
-                    onTap: () => _choose(language),
-                  ),
-                  const SizedBox(height: 10),
-                ],
+                LanguageSearchList(
+                  items: items,
+                  locale: locale,
+                  query: query,
+                  popularCodes: _popularLearningCodes,
+                  trailingBuilder: (language) =>
+                      _status(language, tracks, locale),
+                  onTap: _choose,
+                ),
               ],
             );
           },
@@ -94,14 +106,11 @@ class _LearningLanguageScreenState
     String locale,
   ) {
     if (!language.isCourseAvailable) {
-      return Chip(
-        label: Text(L10n.text('comingSoon', locale)),
-        backgroundColor: Colors.orangeAccent.withValues(alpha: 0.16),
-      );
+      return ComingSoonBadge(uiLanguageCode: locale);
     }
     final languageTracks = tracks[language.code] ?? const <ExamTrack>[];
     if (languageTracks.isEmpty) {
-      return Chip(label: Text(L10n.text('availableNow', locale)));
+      return const SizedBox.shrink();
     }
     final labels = languageTracks
         .where((track) => track.isDisplayed)
@@ -109,17 +118,20 @@ class _LearningLanguageScreenState
         .toSet()
         .join(' · ');
     if (labels.isEmpty) {
-      return Chip(label: Text(L10n.text('availableNow', locale)));
+      return const SizedBox.shrink();
     }
-    return Chip(label: Text(labels));
+    return const SizedBox.shrink();
   }
 
   Future<void> _choose(LanguageOption language) async {
     await ref.read(profileProvider.notifier).setLearningLanguage(language.code);
-    final tracks =
-        await ref.read(displayedExamTracksProvider(language.code).future);
+    final tracks = await ref.read(
+      displayedExamTracksProvider(language.code).future,
+    );
     if (tracks.isNotEmpty) {
-      await ref.read(profileProvider.notifier).setExamTrack(
+      await ref
+          .read(profileProvider.notifier)
+          .setExamTrack(
             trackId: tracks.first.id,
             levelCode: tracks.first.levelId,
           );

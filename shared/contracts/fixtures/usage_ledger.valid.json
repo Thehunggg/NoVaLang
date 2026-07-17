@@ -1,0 +1,111 @@
+{
+  "fixtureVersion": "1.0",
+  "requestFixtures": [
+    {
+      "name": "golden_completion_usage_request",
+      "request": {
+        "userId": "user-demo-a",
+        "userTrackId": "ja-daily_life",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-golden-001",
+        "sourceRecordId": "completion-golden-001",
+        "requestedAt": "2026-07-14T10:33:00+09:00",
+        "idempotencyKey": "usage:user-demo-a:ja-daily_life:new_lesson_completion:event-golden-001",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "duplicate_golden_completion_usage_request",
+      "request": {
+        "userId": "user-demo-a",
+        "userTrackId": "ja-daily_life",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-golden-001",
+        "sourceRecordId": "completion-golden-001",
+        "requestedAt": "2026-07-14T10:34:00+09:00",
+        "idempotencyKey": "usage:user-demo-a:ja-daily_life:new_lesson_completion:event-golden-001",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "different_user_usage_request",
+      "request": {
+        "userId": "user-demo-b",
+        "userTrackId": "ja-daily_life",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-user-b-001",
+        "sourceRecordId": "completion-user-b-001",
+        "requestedAt": "2026-07-14T10:36:00+09:00",
+        "idempotencyKey": "usage:user-demo-b:ja-daily_life:new_lesson_completion:event-user-b-001",
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "different_track_usage_request",
+      "request": {
+        "userId": "user-demo-a",
+        "userTrackId": "ja-exam",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-track-b-001",
+        "sourceRecordId": "completion-track-b-001",
+        "requestedAt": "2026-07-14T10:41:00+09:00",
+        "idempotencyKey": "usage:user-demo-a:ja-exam:new_lesson_completion:event-track-b-001",
+        "contractVersion": "1.0"
+      }
+    }
+  ],
+  "entryFixtures": [
+    {
+      "name": "committed_golden_usage",
+      "requestFixtureName": "golden_completion_usage_request",
+      "entry": {
+        "usageEntryId": "usage-golden-001",
+        "userId": "user-demo-a",
+        "userTrackId": "ja-daily_life",
+        "usageDate": "2026-07-14",
+        "usageType": "new_lesson_completion",
+        "quantity": 1,
+        "sourceEventId": "event-golden-001",
+        "sourceRecordId": "completion-golden-001",
+        "recordedAt": "2026-07-14T10:33:05+09:00",
+        "idempotencyKey": "usage:user-demo-a:ja-daily_life:new_lesson_completion:event-golden-001",
+        "contractVersion": "1.0"
+      }
+    }
+  ],
+  "resultFixtures": [
+    {
+      "name": "committed_result",
+      "requestFixtureName": "golden_completion_usage_request",
+      "result": {
+        "status": "committed",
+        "entry": {
+          "usageEntryId": "usage-golden-001",
+          "userId": "user-demo-a",
+          "userTrackId": "ja-daily_life",
+          "usageDate": "2026-07-14",
+          "usageType": "new_lesson_completion",
+          "quantity": 1,
+          "sourceEventId": "event-golden-001",
+          "sourceRecordId": "completion-golden-001",
+          "recordedAt": "2026-07-14T10:33:05+09:00",
+          "idempotencyKey": "usage:user-demo-a:ja-daily_life:new_lesson_completion:event-golden-001",
+          "contractVersion": "1.0"
+        },
+        "contractVersion": "1.0"
+      }
+    },
+    {
+      "name": "already_committed_result",
+      "result": {
+        "status": "already_committed",
+        "existingUsageEntryId": "usage-golden-001",
+        "contractVersion": "1.0"
+      }
+    }
+  ]
+}

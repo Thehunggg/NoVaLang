@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/theme/app_theme.dart';
 import '../../core/utils/level_display.dart';
 import '../../core/utils/localization.dart';
 import '../../data/japanese_jlpt_seed.dart';
@@ -13,6 +14,7 @@ import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/nova_mascot.dart';
 import '../../widgets/common/onboarding_header.dart';
 import '../../widgets/common/responsive_page.dart';
+import '../../widgets/learn/exercise_option_style.dart';
 
 class PlacementTestScreen extends ConsumerStatefulWidget {
   const PlacementTestScreen({super.key});
@@ -71,6 +73,7 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
                     question.localizedPrompt(locale),
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w900,
+                      color: AppTheme.questionForeground,
                     ),
                   ),
                   if (question.displayText != null) ...[
@@ -85,13 +88,15 @@ class _PlacementTestScreenState extends ConsumerState<PlacementTestScreen> {
                   for (final option in options)
                     Padding(
                       padding: const EdgeInsets.only(bottom: 9),
-                      child: ChoiceChip(
-                        label: SizedBox(
-                          width: double.infinity,
-                          child: Text(option),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: ExerciseActionOptionChip(
+                          label: option,
+                          state: answer == option
+                              ? ExerciseOptionVisualState.selected
+                              : ExerciseOptionVisualState.available,
+                          onPressed: () => setState(() => answer = option),
                         ),
-                        selected: answer == option,
-                        onSelected: (_) => setState(() => answer = option),
                       ),
                     ),
                 ],

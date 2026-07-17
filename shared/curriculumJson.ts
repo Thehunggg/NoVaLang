@@ -13,6 +13,7 @@ import type {
   Unit,
   VocabularyItem,
   ExamTrackOption,
+  FiveCardContent,
 } from "./types.js";
 import coursesJson from "./generated/courses.json" with { type: "json" };
 import lessonsJson from "./generated/lessons.json" with { type: "json" };
@@ -30,6 +31,8 @@ type FlatExercise = {
   prompt: string;
   promptVi?: string;
   prompts?: Record<string, string>;
+  hint?: string;
+  hintByNative?: Record<string, string>;
   displayText?: string;
   displayTextByNative?: Record<string, string>;
   speechText?: string;
@@ -39,6 +42,7 @@ type FlatExercise = {
   options?: string[];
   optionsVi?: string[];
   optionsByNative?: Record<string, string[]>;
+  tiles?: string[];
   correctAnswer: string;
   acceptedAnswers?: string[];
   acceptedAnswersVi?: string[];
@@ -99,6 +103,8 @@ type FlatExercise = {
 
 type FlatLesson = {
   id: string;
+  lessonFormat?: "five_cards";
+  fiveCardContent?: FiveCardContent;
   languageCode: string;
   nicheId: string;
   unitId: string;
@@ -113,6 +119,19 @@ type FlatLesson = {
   descriptionByNative?: Record<string, string>;
   estimatedMinutes?: number;
   comingSoon?: boolean;
+  playable?: boolean;
+  contentStatus?: string;
+  situationByNative?: Record<string, string>;
+  goalByNative?: Record<string, string>;
+  learnSection?: Record<string, { status?: string }>;
+  practiceStages?: Array<{
+    key: string;
+    labelByNative?: Record<string, string>;
+    exerciseOrders?: number[];
+  }>;
+  exerciseStatus?: string;
+  canSkip?: boolean;
+  unlockRequirement?: string;
   order: number;
   canDoObjective?: string;
   canDoObjectiveVi?: string;
@@ -158,11 +177,28 @@ type FlatLesson = {
     speechText: string;
     meaningEn: string;
     meaningVi: string;
+    meaningJa?: string;
+    reading?: string;
+    translationByNative?: Record<string, string>;
   }>;
   grammarFocus?: string;
   grammarFocusVi?: string;
+  grammarPattern?: {
+    pattern: string;
+    reading?: string;
+    explanationByNative?: Record<string, string>;
+    examples?: Array<{
+      displayText: string;
+      reading?: string;
+      speechText?: string;
+      translations?: Record<string, string>;
+    }>;
+  };
   cultureNote?: string;
   cultureNoteVi?: string;
+  cultureNoteByNative?: Record<string, string>;
+  contextualVariations?: FlatLesson["vocabulary"];
+  communicationStrategyByNative?: Record<string, string>;
   reviewItems?: Array<{
     id: string;
     kind?: string;
@@ -239,8 +275,17 @@ const mapExerciseType = (type: string): Exercise["type"] => {
     case "listenAndChoose":
       return "listen_and_choose_meaning";
     case "controlledAiQa":
+    case "reviewCheckpoint":
     case "aiFeedbackReview":
       return "answer_question";
+    case "multipleChoiceMeaning":
+      return "multiple_choice";
+    case "dialogueCompletion":
+    case "naturalResponseChoice":
+      return "dialogue_choice";
+    case "arrangeWords":
+    case "arrangeLetters":
+      return "sentence_builder";
     default:
       return "multiple_choice";
   }
@@ -274,6 +319,8 @@ const mapExercise = (ex: FlatExercise, language: LanguageCode, levelId: LevelId)
       ? ((ex.pairsByNative?.en ?? ex.pairs)?.map((p) => p.right) ?? [])
       : ex.correctAnswer,
     explanation: ex.explanation ?? "",
+    hint: ex.hint,
+    hintTranslations: ex.hintByNative,
     targetLanguage: language,
     nativeTranslation: ex.prompts?.vi ?? ex.promptVi ?? ex.prompt,
     difficulty: "easy",
@@ -302,6 +349,7 @@ const mapExercise = (ex: FlatExercise, language: LanguageCode, levelId: LevelId)
       ko: ex.optionsByNative?.ko ?? optionsEn,
       zh: ex.optionsByNative?.zh ?? optionsEn,
     },
+    words: ex.tiles ?? ex.options,
     pairTranslations: {
       en: ex.pairsByNative?.en ?? ex.pairs,
       vi: ex.pairsByNative?.vi ?? ex.pairsVi ?? ex.pairs,
@@ -434,7 +482,8 @@ const mapDialogue = (lesson: FlatLesson): DialogueLine[] =>
     text: item.displayText,
     translation: item.meaningEn,
     speechText: item.speechText,
-    translations: { en: item.meaningEn, vi: item.meaningVi },
+    reading: item.reading,
+    translations: item.translationByNative ?? { en: item.meaningEn, vi: item.meaningVi, ja: item.meaningJa ?? item.meaningEn },
   }));
 
 const mapLesson = (flat: FlatLesson): Lesson => {
@@ -448,19 +497,30 @@ const mapLesson = (flat: FlatLesson): Lesson => {
   const contentItems = [
     ...vocabulary,
     ...dialogue,
-    ...(flat.grammarFocus
+    ...(flat.grammarFocus || flat.grammarPattern
       ? [
           {
             kind: "grammar" as const,
             id: `${flat.id}-g1`,
-            title: flat.grammarFocus,
-            pattern: flat.grammarFocus,
-            explanation: flat.grammarFocusVi ?? flat.grammarFocus,
-            examples: [],
-            explanationTranslations: {
-              en: flat.grammarFocus,
-              vi: flat.grammarFocusVi ?? flat.grammarFocus,
-            },
+            title: flat.grammarPattern?.pattern ?? flat.grammarFocus ?? "",
+            pattern: flat.grammarPattern?.pattern ?? flat.grammarFocus ?? "",
+            explanation:
+              flat.grammarPattern?.explanationByNative?.en ??
+              flat.grammarFocusVi ??
+              flat.grammarFocus ??
+              "",
+            examples: (flat.grammarPattern?.examples ?? []).map((example) => ({
+              text: example.displayText,
+              reading: example.reading,
+              speechText: example.speechText ?? example.displayText,
+              translation: example.translations?.en ?? "",
+              translationTranslations: example.translations,
+            })),
+            explanationTranslations:
+              flat.grammarPattern?.explanationByNative ?? {
+                en: flat.grammarFocus ?? "",
+                vi: flat.grammarFocusVi ?? flat.grammarFocus ?? "",
+              },
           },
         ]
       : []),
@@ -485,6 +545,9 @@ const mapLesson = (flat: FlatLesson): Lesson => {
     vi: canDoVi,
   };
 
+  const isBlueprint =
+    flat.contentStatus === "blueprint" || flat.playable === false || flat.comingSoon === true;
+
   const micro: MicroLesson = {
     id: `${flat.id}-m1`,
     lessonId: flat.id,
@@ -492,11 +555,11 @@ const mapLesson = (flat: FlatLesson): Lesson => {
     objective: canDo,
     explanation: flat.description,
     contentItems,
-    exercises,
+    exercises: isBlueprint ? [] : exercises,
     xpReward: 20,
     order: 1,
     estimatedMinutes: flat.estimatedMinutes ?? 6,
-    unlockStatus: flat.comingSoon ? "locked" : "available",
+    unlockStatus: isBlueprint ? "locked" : "available",
     titleTranslations,
     objectiveTranslations: canDoTranslations,
     explanationTranslations: descriptionTranslations,
@@ -515,6 +578,8 @@ const mapLesson = (flat: FlatLesson): Lesson => {
 
   return {
     id: flat.id,
+    lessonFormat: flat.lessonFormat,
+    fiveCardContent: flat.fiveCardContent,
     language,
     levelId,
     unitId: flat.unitId,
@@ -531,7 +596,7 @@ const mapLesson = (flat: FlatLesson): Lesson => {
     vocabulary,
     dialogue: dialogue.length ? dialogue : undefined,
     examples,
-    exercises,
+    exercises: isBlueprint ? [] : exercises,
     xpReward: 25,
     order: flat.order,
     unlockRule: "Complete the previous lesson",
@@ -540,20 +605,36 @@ const mapLesson = (flat: FlatLesson): Lesson => {
     level: levelId.startsWith("A0") || levelId.startsWith("A1") ? "Beginner" : "Elementary",
     subtitle: canDo,
     explanation: flat.description,
-    quiz: exercises.slice(0, 5).map((exercise) => ({
-      id: `${exercise.id}-quiz`,
-      prompt: exercise.question,
-      options: exercise.options ?? [],
-      correctAnswer: Array.isArray(exercise.correctAnswer)
-        ? exercise.correctAnswer[0] ?? ""
-        : String(exercise.correctAnswer),
-      explanation: exercise.explanation ?? "",
-      wrongAnswerExplanation: "",
-    })),
+    quiz: isBlueprint
+      ? []
+      : exercises.slice(0, 5).map((exercise) => ({
+          id: `${exercise.id}-quiz`,
+          prompt: exercise.question,
+          options: exercise.options ?? [],
+          correctAnswer: Array.isArray(exercise.correctAnswer)
+            ? exercise.correctAnswer[0] ?? ""
+            : String(exercise.correctAnswer),
+          explanation: exercise.explanation ?? "",
+          wrongAnswerExplanation: "",
+        })),
     // Practical niche curriculum — keep general track (exam tracks stay separate).
     trackType: "general",
     skill: flat.template === "kanaLesson" ? "kana" : "vocabulary",
-    reviewedStatus: flat.comingSoon ? "draft" : "reviewed",
+    reviewedStatus: isBlueprint ? "draft" : "reviewed",
+    contentStatus: flat.contentStatus ?? (isBlueprint ? "blueprint" : "ready"),
+    playable: isBlueprint ? false : true,
+    situationByNative: flat.situationByNative,
+    goalByNative: flat.goalByNative ?? canDoTranslations,
+    learnSection: flat.learnSection,
+    practiceStages: flat.practiceStages,
+    cultureNoteTranslations: flat.cultureNoteByNative ?? {
+      en: flat.cultureNote ?? "",
+      vi: flat.cultureNoteVi ?? flat.cultureNote ?? "",
+    },
+    contextualVariations: flat.contextualVariations
+      ? mapVocabulary({ ...flat, vocabulary: flat.contextualVariations })
+      : [],
+    communicationStrategyTranslations: flat.communicationStrategyByNative,
   };
 };
 

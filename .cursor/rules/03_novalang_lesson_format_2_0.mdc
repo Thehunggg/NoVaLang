@@ -1,0 +1,386 @@
+---
+description: Single Source of Truth for opt-in NovaLang five-card lessons
+alwaysApply: true
+---
+
+# NovaLang Lesson Format 2.0
+
+Format name: NovaLang Lesson Format 2.0
+Status: Frozen
+Reference implementation: ja-daily_life-m01-u1-l1
+Last approved by project owner: 2026-07-13
+
+> **Superseded for Q14 only (2026-07-15):** the project owner approved a
+> breaking change to Q14's behavior. See
+> `.cursor/rules/04_novalang_lesson_format_3_0.mdc` for the current Q14
+> contract (non-graded Real-World Practice dialogue,
+> `real_world_practice_dialogue`). This file is kept unmodified elsewhere as
+> the historical record of what was approved on 2026-07-13; its Q14 row and
+> Q14 policy section below describe the prior, now-superseded behavior and
+> must not be used to implement or validate Q14 in a lesson using Format
+> 3.0. Everything else in this file remains the frozen Single Source of
+> Truth.
+
+## Authority, priority, and versioning
+
+This file is the Single Source of Truth for the opt-in
+`lessonFormat: five_cards` format. Apply workspace rules in this order:
+
+1. `AGENTS.md`
+2. `.cursor/rules/novalang.mdc` (Core Rules; the workspace has no
+   `01_novalang_core.mdc`)
+3. This file
+4. `.cursor/rules/02_novalang_lesson_standard.mdc`
+
+Only the project owner can change this frozen specification. A compatible
+addition requires a 2.1 rule; a breaking change requires a 3.0 rule. Do not
+silently edit, reinterpret, or extend this specification.
+
+## Scope and non-negotiable boundaries
+
+- Use this format only when a lesson explicitly declares
+  `lessonFormat: five_cards`.
+- The golden reference is `ja-daily_life-m01-u1-l1` (Japanese Daily Life →
+  Module 1 → Unit 1 → Lesson 1).
+- Do not create Lesson 2, migrate a lesson automatically, or change an
+  unapproved lesson.
+- Foundation lessons, Hiragana, Katakana, English Alphabet, JLPT/exam content,
+  and all non-opt-in lessons remain legacy.
+- The golden lesson is a reference implementation only for data structure,
+  renderer, UI flow, persistence, validation, interaction pattern, and local
+  progress behavior. Never copy its vocabulary, dialogue, grammar, exercise
+  content, Japanese names, translations, lesson-specific examples, or
+  culture-specific content into another lesson.
+- Do not change the five cards, their order, exercise count/flow, access plan,
+  UI, progress, resume, wrong-answer handling, reading policy, localization,
+  character metadata, mascot behavior, filler, or lesson content without an
+  explicit owner instruction.
+- Approved content is authoritative. Do not invent vocabulary, dialogue,
+  grammar, exercises, translations, names, cultural details, or a lesson plan.
+  Stop and report missing approved input.
+
+## Source and validation pipeline
+
+For any change that affects lesson, curriculum, localization, exercise,
+character, plan, schema, generator, or validator data:
+
+1. Update the approved Shared Source Of Truth.
+2. Generate.
+3. Validate.
+4. Sync.
+
+Never hand-edit generated JSON. The generator and validator must reject a
+`five_cards` lesson that lacks required metadata, stable IDs, approved content,
+or required access/format fields.
+
+## Five-card overview and navigation
+
+Every `five_cards` lesson has exactly these five overview cards, in this order,
+with each card opening its own page:
+
+1. Introduction
+2. Vocabulary cards
+3. Short dialogue
+4. Grammar
+5. Exercises
+
+The overview keeps the approved card design: small left icon, native-UI title,
+learning-language subtitle, short description, and a separate right chevron.
+Keep each card's existing background color, border, radius, spacing,
+navigation, and responsive behavior. Use the full middle region for text
+between icon and chevron.
+
+Do not add decorative backgrounds, `CustomPaint`, language-code background
+mappings, repeated Japanese iconography, fixed dimensions, oversized right
+gaps, or mascot/filler treatment to this overview. The chevron remains
+independent of text layout. Keep dark-theme support, `SafeArea`, pinned app bar,
+responsive text scaling, and visual hierarchy.
+
+## Language, reading, and audio
+
+- UI labels follow the native UI language. Learning content follows the lesson's
+  learning language. Localize all UI text; do not leave English text in a
+  Vietnamese UI.
+- Japanese early-learning reading uses `Kanji(Hiragana)` only where approved.
+  Store `displayText`, `canonicalText`, and `audioText` separately: UI renders
+  `displayText`, the answer checker uses `canonicalText`, and TTS uses
+  `audioText`. Never use a display string as an answer key or make TTS repeat
+  both Kanji and its reading.
+- Do not add reading aid to user-entered names.
+- Reading-aid policy is language- and locale-specific, based on
+  `targetLanguage` and `targetLocale`. The Japanese Kanji/Hiragana policy is
+  only for early Japanese; do not apply furigana conventions to English or
+  another target language.
+- Dialogue and listening audio may be replayed by the learner. Do not autoplay
+  listening questions.
+
+## Card 1 — Introduction
+
+Use concise, clear inner cards to help the learner understand the approved
+lesson context, what will be learned, what the learner can do after the lesson,
+and where or when that knowledge can be used. Include only necessary approved
+cultural notes. Preserve the approved content and route; do not create extra
+goals or instructional material.
+
+## Card 2 — Vocabulary cards
+
+Use the approved expandable vocabulary card pattern:
+
+- collapsed: target term, approved reading aid when needed, audio control, and
+  an expand/collapse control; keep this header compact, responsive, and free of
+  overflow;
+- expanded: meaning, approved usage, example, translation, and approved note.
+
+Keep vocabulary data, order, and audio behavior from the approved source. Do
+not synthesize examples, translations, or notes.
+
+## Card 3 — Short dialogue and character metadata
+
+Render the approved short, natural dialogue with its approved readings, audio,
+and localized support. Dialogue data must use stable `speakerId`; the renderer
+resolves the speaker rather than hardcoding a name or image.
+
+Character data must include `targetLanguage`, `targetLocale`,
+`cultureContext`, and `approvedCharacterNamePool`. The renderer resolves each
+stable `speakerId` from `approvedCharacterNamePool`; it must not hardcode a
+name. Do not infer country or culture from language. Validation must fail when
+required metadata is missing or a `speakerId` is outside the approved pool. A
+content agent cannot invent names or character data.
+
+## Card 4 — Grammar
+
+Each approved grammar point has a title, pattern, concise native-language
+explanation, examples, translations, a usage note when needed, and a clear
+inner-card/container hierarchy. Keep approved reading/audio behavior where
+present. Do not simplify, author, reorder, or translate grammar content
+independently.
+
+## Card 5 — Exercises landing and access plans
+
+The landing page has an overview card with the approved lesson exercise title,
+learning-language subtitle, `14 câu` (or localized equivalent), estimated
+duration, and review topics. It separates `Nhóm cơ bản` (Câu 1–10) from `Nhóm
+nâng cao` (Câu 11–14), with localized equivalents for other UI languages.
+
+- Questions 1–10 are Free.
+- Questions 11–14 are Plus.
+- Question 15 is a deferred Pro Voice concept. It is not designed or
+  implemented, is not shown on the landing page, and is not included in any
+  repeated count.
+- Keep production access gating. A trial/debug unlock is non-production only.
+- The landing always includes the current lesson's Wrong answer card and uses
+  only that lesson's data. In Vietnamese, its empty state is exactly:
+
+  `Ôn lại câu sai`
+
+  `Bạn chưa có câu sai nào để ôn lại.`
+
+  Its active state is exactly:
+
+  `Ôn lại câu sai`
+
+  `Bạn có {count} câu cần ôn lại.`
+
+  `Ôn lại {count} câu`
+
+- The primary CTA is exactly `Bắt đầu bài tập` or `Tiếp tục từ Câu X` in
+  Vietnamese. Do not repeat a question count in the CTA.
+- Other UI languages use i18n equivalents; do not scatter hard-coded Flutter
+  copy.
+
+Do not group questions 11–14 into a generic premium plan and do not add Daily
+Review, a second wrong-answer entry point, a mascot, backend behavior, or
+additional completion actions to this page.
+
+## Exercise session, navigation, and feedback
+
+Show one exercise at a time. The app bar provides back navigation, a localized
+question counter, and progress. In Vietnamese the counter is exactly
+`Câu X/14`; do not hard-code `Q X/14`. Each exercise has its approved label,
+instruction, interaction, and sticky localized Check or Continue action.
+
+Vietnamese exercise UI labels are exactly `Câu trả lời của bạn`, `Các lựa
+chọn`, `Kiểm tra`, `Tiếp tục`, `Đáp án đúng`, `Giải thích`, `Chính xác`, and
+`Chưa đúng`. Other UI languages use i18n equivalents.
+
+Back navigation must confirm when required and persist state. The current
+exercise must be restored exactly on resume. Never restart an in-progress
+attempt at Question 1 merely because of rebuild, resume, or navigation.
+
+Feedback is concise and localized through i18n. Vietnamese correct feedback is
+exactly:
+
+`✓ Chính xác`
+
+`Bạn làm tốt lắm!`
+
+`Hãy tiếp tục cố gắng ở phần tiếp theo nhé.`
+
+Correct feedback has no long explanation. The Vietnamese incorrect heading is
+exactly `✕ Chưa đúng`. Incorrect feedback contains the correct answer, a
+concise explanation, and one explanation icon/heading only. Do not place an
+icon on every line.
+
+Do not add extra feedback panels, mascots, or content.
+
+## Approved exercise map (exactly Questions 1–14)
+
+The implementation may only render the following approved interaction types:
+
+| Question | Approved interaction | Access |
+| --- | --- | --- |
+| Q1 | Meaning multiple choice | Free |
+| Q2 | Target-language multiple choice | Free |
+| Q3 | Two-column matching: left target language, right native meaning; columns shuffle independently; pair/unpair by stable IDs | Free |
+| Q4 | Sentence ordering: answer area above, option bank below; tap a token to move or return it | Free |
+| Q5 | Dialogue fill with approved word-bank/slot behavior; check by slot IDs | Free |
+| Q6 | Listening multiple choice; replay allowed, no autoplay | Free |
+| Q7 | Grammar-fill selection | Free |
+| Q8 | Contextual response | Free |
+| Q9 | Checkpoint: five saved subquestions, four options, one correct answer each | Free |
+| Q10 | `chat_text_fill`: context 11:00, exactly 6 chat bubbles, A right/B left, exactly 2 keyboard text slots, local Unicode/script-tolerant checker, no AI | Free |
+| Q11 | Situation multiple choice | Plus |
+| Q12 | Naturalness judgement | Plus |
+| Q13 | `slot_ordering`: exactly 6 slots; system-inserted punctuation is neither draggable nor the distractor; `こんばんは` is the distractor; check `slotId → tokenId`, never display position | Plus |
+| Q14 | ~~Controlled AI text practice: fixed approved prompt, exactly one user answer per cycle, local pre-validation, AI grades once, `maxCycles = 1`, no free chat~~ — **superseded 2026-07-15, see Format 3.0** | Plus |
+
+Q15 remains deferred. Do not create its content, UI, data, validator, plan, or
+voice flow.
+
+For all applicable exercises, shuffle once when an attempt is created and keep
+the resulting order stable across rebuild and resume. This includes multiple
+choice, matching, tokens, word banks, dialogue elements, and checkpoint
+options. If a multi-item shuffled result is completely identical to the
+original order, shuffle again during attempt creation. Use stable IDs for
+rendering and answer checking; never rely on a display index.
+
+Unless an exercise deliberately checks a writing system, semantically correct
+answers may be accepted in Hiragana, Katakana, Kanji, Romaji, or other valid
+Unicode scripts. Preserve user names exactly; never auto-convert them to
+Katakana or a Japanese name, and do not judge Hiragana less natural than Kanji
+when both are correct.
+
+## Text input and Android IME
+
+For all exercise text fields:
+
+- Keep controller and focus objects stable; do not recreate them in `build`.
+- Do not normalize, format, or write back text while the learner is typing.
+- Normalize only on submission/checking.
+- Do not use an input formatter that breaks IME composition.
+- An IME diagnostic is debug-only and must not change the lesson format.
+
+## Q14 controlled AI policy (superseded 2026-07-15 — see Format 3.0)
+
+> This section describes the Q14 behavior approved on 2026-07-13. It no
+> longer governs Q14 for a lesson using Format 3.0. It is retained verbatim
+> as the historical record; see
+> `.cursor/rules/04_novalang_lesson_format_3_0.mdc` for the current contract.
+
+Q14 is controlled AI text practice: it uses a fixed approved prompt, exactly
+one user answer per cycle, local pre-validation, one AI grading, `maxCycles =
+1`, and no free chat.
+
+Its quota is five AI sets per day, global per account rather than per lesson.
+Local invalid input and a network/server failure without a returned result
+consume nothing. A returned grading result consumes one set whether correct or
+incorrect; retrying after a result consumes another set. Review never calls AI
+and never consumes a set.
+
+Correct feedback is minimal only: no correction and no naturalness alternative.
+Incorrect feedback identifies missing/wrong parts, gives a concise explanation
+and corrected example, and preserves the learner's name. Persist the approved
+AI result and timestamps with the attempt.
+
+## Persistence, wrong answers, and completion
+
+Create an attempt once and persist at least: local user ID, attempt ID, lesson
+ID, current index and exercise ID, checked/completed state, correct/wrong IDs,
+answers, checkpoint subquestion state, raw drafts, shuffles, matching/order/
+slot state, AI result, timestamps, and completion state.
+
+Autosave on Check, Next, Back, app inactive, app paused, app detached, and raw
+draft updates through a safe debounce. Drafts are raw, unsubmitted, and
+uncounted. Resume uses the same attempt ID, index, state, and shuffle.
+
+Upsert wrong answers immediately with the unique key `localUserId + lessonId +
+exerciseId + subQuestionId`; never create a duplicate record. Store the raw
+answer, correct answer, explanation, timestamp, and metadata. When an answer
+is later correct, its record may be marked resolved and must no longer count in
+the active wrong-answer total. Q9 uses the subquestion ID; Q10 preserves raw
+Unicode input; Q13 stores and reviews the complete learner sentence, not only
+tokens or slot positions; Q14 stores its saved AI result.
+
+A lesson completes only after the learner completes the lesson flow, completes
+the exercise flow permitted by current access, and takes the finish action.
+Viewing a card or starting an attempt does not complete a lesson. Count
+completion at most once.
+
+Module progress is local and equals `completedLessons / totalLessons × 100`.
+`totalLessons` comes from the curriculum and `completedLessons` from the local
+progress repository. Display a rounded integer; the progress bar and label use
+the same value, clamped from 0% to 100%. An in-progress lesson does not
+increase the percentage, and no backend is required for this local percentage.
+
+## Result and review
+
+The result page contains only `Hoàn thành bài tập`, correct/total, percentage,
+and one primary **Về bài học** action. Do not add a three-action result page,
+`Xem lại bài tập hôm nay`, a wrong-answer action on Results, mascot/filler, or
+backend status/work.
+
+Wrong-answer review starts from the current lesson's landing card. It uses
+local persisted data only; it does not call AI or deduct quota.
+
+## Local-first boundary and debug-only items
+
+This format is local-first. Define clear local interfaces, but do not introduce
+backend, Supabase, cross-device sync, conflict resolution, or remote quota
+infrastructure unless separately approved.
+
+The following are debug-only or deferred and must not become production lesson
+format behavior without owner approval: trial unlock, IME diagnostic, mascot
+filler, Daily Review, “Xem lại bài tập hôm nay”, debug UI, and Q15 Pro Voice.
+
+## Checklist for an approved new five-card lesson
+
+Before implementation, confirm all of the following:
+
+- Explicit `lessonFormat: five_cards` opt-in and approved target language/locale.
+- Approved source content, localization, character metadata, and reading policy.
+- `targetLanguage` and `targetLocale` exist; when a lesson uses characters,
+  `cultureContext` exists; when dialogue uses a speaker,
+  `approvedCharacterNamePool` exists.
+- Exactly five cards in the frozen order and the approved 14-question map.
+- Free 1–10 and Plus 11–14 access plans; Q15 remains deferred.
+- Stable IDs, local persistence/resume/wrong-answer behavior, and completion
+  rules are represented in source and validation.
+- Source → generate → validate → sync is available; no generated JSON is edited
+  manually.
+- The golden reference is used only for reusable implementation behavior.
+- No migration or modification of a legacy lesson is implied.
+
+## Required validation checks
+
+Validation and review must confirm:
+
+- this file remains the only Single Source of Truth for `five_cards`;
+- exactly 14 implemented questions, with Free 1–10 and Plus 11–14;
+- no Q15 production implementation or count;
+- no Daily Review, mascot/filler, or remote/backend behavior in the format;
+- wrong-answer review is current-lesson and local-first;
+- Q13 is `slot_ordering` with exactly 6 slots, system punctuation that is
+  neither draggable nor a distractor, `こんばんは` as distractor, and
+  `slotId → tokenId` checking;
+- landing states, primary CTA, feedback copy, completion, progress, access,
+  reading fields, `targetLanguage`, `targetLocale`, `cultureContext`,
+  `approvedCharacterNamePool`, stable IDs, and persistence obey this
+  specification;
+- the top-bar counter and exercise labels are localized; Q10 is
+  `chat_text_fill` with its six-bubble/two-slot local checker;
+- **Q14**: for a lesson still on Format 2.0 only, Q14 enforces fixed-prompt,
+  one-answer, one-grade, `maxCycles = 1`, and account-level quota behavior.
+  For a lesson using Format 3.0 (currently: the Golden Lesson), Q14 instead
+  follows `.cursor/rules/04_novalang_lesson_format_3_0.mdc` and must **not**
+  be validated against this section;
+- legacy lessons remain non-opt-in unless explicitly migrated by the owner.

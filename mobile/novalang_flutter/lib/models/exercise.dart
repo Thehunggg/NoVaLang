@@ -1,4 +1,5 @@
 import '../core/utils/answer_normalize.dart';
+import '../core/utils/native_content.dart';
 
 enum ExerciseType {
   characterCard,
@@ -18,6 +19,8 @@ enum ExerciseType {
   plusListeningVocabularyChallenge,
   controlledAiQa,
   aiFeedbackReview,
+  arrangeWords,
+  arrangeLetters,
 }
 
 class MatchPair {
@@ -54,16 +57,23 @@ class LearnCard {
   final Map<String, String> audioCardLabelByNative;
   final Map<String, String> feedbackByNative;
 
-  String localizedMeaning(String nativeLanguageCode) =>
-      meaningByNative[nativeLanguageCode] ?? meaningByNative['en'] ?? '';
+  String localizedMeaning(String nativeLanguageCode) => strictNativeText(
+    meaningByNative,
+    nativeLanguageCode,
+    path: 'learnCard.$id.meaning',
+  );
 
-  String localizedAudioLabel(String nativeLanguageCode) =>
-      audioCardLabelByNative[nativeLanguageCode] ??
-      audioCardLabelByNative['en'] ??
-      'Listen';
+  String localizedAudioLabel(String nativeLanguageCode) => strictNativeText(
+    audioCardLabelByNative,
+    nativeLanguageCode,
+    path: 'learnCard.$id.audioLabel',
+  );
 
-  String localizedFeedback(String nativeLanguageCode) =>
-      feedbackByNative[nativeLanguageCode] ?? feedbackByNative['en'] ?? '';
+  String localizedFeedback(String nativeLanguageCode) => strictNativeText(
+    feedbackByNative,
+    nativeLanguageCode,
+    path: 'learnCard.$id.feedback',
+  );
 }
 
 class ExerciseSubQuestion {
@@ -101,34 +111,55 @@ class ExerciseSubQuestion {
   final Map<String, String> feedbackCorrectByNative;
   final Map<String, String> feedbackWrongByNative;
 
-  String localizedPrompt(String nativeLanguageCode) =>
-      prompts[nativeLanguageCode] ?? prompts['en'] ?? prompt;
+  String localizedPrompt(String nativeLanguageCode) => strictNativeText(
+    prompts,
+    nativeLanguageCode,
+    path: 'subQuestion.$id.prompt',
+    legacy: normalizeNativeLocale(nativeLanguageCode) == 'en' ? prompt : '',
+  );
 
   String localizedVisibleBeforeAnswer(String nativeLanguageCode) =>
-      visibleBeforeAnswerByNative[nativeLanguageCode] ??
-      visibleBeforeAnswerByNative['en'] ??
-      visibleBeforeAnswer ??
-      '';
+      strictNativeText(
+        visibleBeforeAnswerByNative,
+        nativeLanguageCode,
+        path: 'subQuestion.$id.visibleBeforeAnswer',
+        legacy: normalizeNativeLocale(nativeLanguageCode) == 'en'
+            ? (visibleBeforeAnswer ?? '')
+            : '',
+      );
 
-  String localizedAudioCardLabel(String nativeLanguageCode) =>
-      audioCardLabelByNative[nativeLanguageCode] ??
-      audioCardLabelByNative['en'] ??
-      audioCardLabel ??
-      'Listen';
+  String localizedAudioCardLabel(String nativeLanguageCode) => strictNativeText(
+    audioCardLabelByNative,
+    nativeLanguageCode,
+    path: 'subQuestion.$id.audioLabel',
+    legacy: normalizeNativeLocale(nativeLanguageCode) == 'en'
+        ? (audioCardLabel ?? '')
+        : '',
+  );
 
   String localizedRevealAfterAnswer(String nativeLanguageCode) =>
-      revealAfterAnswerByNative[nativeLanguageCode] ??
-      revealAfterAnswerByNative['en'] ??
-      revealAfterAnswer ??
-      '';
+      strictNativeText(
+        revealAfterAnswerByNative,
+        nativeLanguageCode,
+        path: 'subQuestion.$id.revealAfterAnswer',
+        legacy: normalizeNativeLocale(nativeLanguageCode) == 'en'
+            ? (revealAfterAnswer ?? '')
+            : '',
+      );
 
   String localizedFeedback(String nativeLanguageCode, bool correct) {
     final map = correct ? feedbackCorrectByNative : feedbackWrongByNative;
-    return map[nativeLanguageCode] ?? map['en'] ?? '';
+    return strictNativeText(
+      map,
+      nativeLanguageCode,
+      path: 'subQuestion.$id.feedback',
+    );
   }
 
-  bool check(String answer, {NormalizeAnswerOptions options = const NormalizeAnswerOptions()}) =>
-      answersMatch(answer, correctAnswer, options: options);
+  bool check(
+    String answer, {
+    NormalizeAnswerOptions options = const NormalizeAnswerOptions(),
+  }) => answersMatch(answer, correctAnswer, options: options);
 }
 
 class Exercise {
@@ -147,6 +178,7 @@ class Exercise {
     this.cards = const [],
     this.subQuestions = const [],
     this.revealAfterAnswer,
+    this.revealAfterAnswerByNative = const {},
     this.feedbackCorrectByNative = const {},
     this.feedbackWrongByNative = const {},
     this.options = const [],
@@ -167,6 +199,7 @@ class Exercise {
     this.maxUserChars = 400,
     this.caseInsensitive = false,
     this.ignorePunctuation = false,
+    this.tiles = const [],
   });
 
   final String id;
@@ -183,6 +216,7 @@ class Exercise {
   final List<LearnCard> cards;
   final List<ExerciseSubQuestion> subQuestions;
   final String? revealAfterAnswer;
+  final Map<String, String> revealAfterAnswerByNative;
   final Map<String, String> feedbackCorrectByNative;
   final Map<String, String> feedbackWrongByNative;
   final List<String> options;
@@ -203,17 +237,25 @@ class Exercise {
   final int maxUserChars;
   final bool caseInsensitive;
   final bool ignorePunctuation;
+  final List<String> tiles;
 
   NormalizeAnswerOptions get normalizeOptions => NormalizeAnswerOptions(
-        caseInsensitive: caseInsensitive,
-        ignorePunctuation: ignorePunctuation,
-      );
+    caseInsensitive: caseInsensitive,
+    ignorePunctuation: ignorePunctuation,
+  );
 
   List<String> localizedOptions(String nativeLanguageCode) {
-    final byNative = optionsByNative[nativeLanguageCode];
-    if (byNative != null && byNative.isNotEmpty) return byNative;
-    if (nativeLanguageCode == 'vi' && optionsVi.isNotEmpty) return optionsVi;
-    return options;
+    if (optionsByNative.isNotEmpty) {
+      return strictNativeTextList(
+        optionsByNative,
+        nativeLanguageCode,
+        path: 'exercise.$id.options',
+      );
+    }
+    final locale = normalizeNativeLocale(nativeLanguageCode);
+    if (locale == 'vi' && optionsVi.isNotEmpty) return optionsVi;
+    if (locale == 'en') return options;
+    return [missingNativeContentSentinel('exercise.$id.options', locale)];
   }
 
   List<String> localizedAccepted(String nativeLanguageCode) {
@@ -228,38 +270,73 @@ class Exercise {
   List<MatchPair> localizedPairs(String nativeLanguageCode) {
     final byNative = pairsByNative[nativeLanguageCode];
     if (byNative != null && byNative.isNotEmpty) return byNative;
-    if (nativeLanguageCode == 'vi' && pairsVi.isNotEmpty) return pairsVi;
-    return pairs;
+    final locale = normalizeNativeLocale(nativeLanguageCode);
+    if (pairsByNative.isNotEmpty) {
+      final missing = missingNativeContentSentinel(
+        'exercise.$id.pairs',
+        locale,
+      );
+      return [MatchPair(left: missing, right: missing)];
+    }
+    if (locale == 'vi' && pairsVi.isNotEmpty) return pairsVi;
+    if (locale == 'en') return pairs;
+    final missing = missingNativeContentSentinel('exercise.$id.pairs', locale);
+    return [MatchPair(left: missing, right: missing)];
   }
 
   String localizedPrompt(String nativeLanguageCode) {
-    final byNative = prompts[nativeLanguageCode];
-    if (byNative != null && byNative.isNotEmpty) return byNative;
-    if (nativeLanguageCode == 'vi' && promptVi != null) return promptVi!;
-    return prompt;
+    final locale = normalizeNativeLocale(nativeLanguageCode);
+    return strictNativeText(
+      prompts,
+      locale,
+      path: 'exercise.$id.prompt',
+      legacy: locale == 'vi'
+          ? (promptVi ?? '')
+          : (locale == 'en' ? prompt : ''),
+    );
   }
 
-  String localizedInstruction(String nativeLanguageCode) =>
-      instructionByNative[nativeLanguageCode] ??
-      instructionByNative['en'] ??
-      '';
+  String localizedInstruction(String nativeLanguageCode) => strictNativeText(
+    instructionByNative,
+    nativeLanguageCode,
+    path: 'exercise.$id.instruction',
+  );
 
-  String localizedDisplayText(String nativeLanguageCode) =>
-      displayTextByNative[nativeLanguageCode] ??
-      displayTextByNative['en'] ??
-      displayText ??
-      '';
+  String localizedDisplayText(String nativeLanguageCode) => strictNativeText(
+    displayTextByNative,
+    nativeLanguageCode,
+    path: 'exercise.$id.displayText',
+    legacy: normalizeNativeLocale(nativeLanguageCode) == 'en'
+        ? (displayText ?? '')
+        : '',
+  );
 
-  String localizedAudioCardLabel(String nativeLanguageCode) =>
-      audioCardLabelByNative[nativeLanguageCode] ??
-      audioCardLabelByNative['en'] ??
-      audioCardLabel ??
-      'Listen';
+  String localizedAudioCardLabel(String nativeLanguageCode) => strictNativeText(
+    audioCardLabelByNative,
+    nativeLanguageCode,
+    path: 'exercise.$id.audioLabel',
+    legacy: normalizeNativeLocale(nativeLanguageCode) == 'en'
+        ? (audioCardLabel ?? '')
+        : '',
+  );
 
   String localizedFeedback(String nativeLanguageCode, bool correct) {
     final map = correct ? feedbackCorrectByNative : feedbackWrongByNative;
-    return map[nativeLanguageCode] ?? map['en'] ?? '';
+    return strictNativeText(
+      map,
+      nativeLanguageCode,
+      path: 'exercise.$id.feedback',
+    );
   }
+
+  String localizedReveal(String nativeLanguageCode) => strictNativeText(
+    revealAfterAnswerByNative,
+    nativeLanguageCode,
+    path: 'exercise.$id.reveal',
+    legacy: normalizeNativeLocale(nativeLanguageCode) == 'en'
+        ? (revealAfterAnswer ?? '')
+        : '',
+  );
 
   bool check(Object answer, String nativeLanguageCode) {
     final opts = normalizeOptions;
@@ -271,11 +348,7 @@ class Exercise {
           : <String, String>{};
       if (submitted.length != expected.length) return false;
       return expected.every(
-        (pair) => answersMatch(
-          submitted[pair.left],
-          pair.right,
-          options: opts,
-        ),
+        (pair) => answersMatch(submitted[pair.left], pair.right, options: opts),
       );
     }
     if (type == ExerciseType.listeningGapFill) {
@@ -312,6 +385,5 @@ class Exercise {
   static String normalize(
     String value, {
     NormalizeAnswerOptions options = const NormalizeAnswerOptions(),
-  }) =>
-      normalizeAnswer(value, options: options);
+  }) => normalizeAnswer(value, options: options);
 }
