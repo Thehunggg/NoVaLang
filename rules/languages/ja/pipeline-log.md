@@ -43,6 +43,11 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   kana cổ). Fixtures pass bổ sung câu thật từ corpus. Validator PASS.
   → KHÔNG có rule nào bị corpus bác; hàng đợi review Bước 4 giữ nguyên 3 điểm
   lệch từ Bước 2 + D-11.
+- **Bước 4 (review) · 2026-07-17 · 🛑 DỪNG CHỜ OWNER** — `review-checklist.md`:
+  2 mục thường (R-01 irregular verbs 2-vs-3; R-02 quy ước dấu câu) + D-11
+  (mâu thuẫn romaji, không tính trần) · ~7 phút. Soạn `native-review-ja.md`
+  (tiếng Anh, 15 tick, ~5 phút) theo D-36. Validator PASS. Chờ owner trả lời
+  rồi mới áp dụng + cập nhật decisions.md.
 - **Ghi chú hạ tầng (đã giải quyết) · 2026-07-17** — Ghi chú cũ "commit bị chặn,
   chờ owner" đã lỗi thời: toàn bộ scaffold + Bước 0 + đầu Bước 1 đã nằm trong
   commit `f0083a7`, và `main` đã fast-forward lên đúng commit đó. Từ giờ commit +
