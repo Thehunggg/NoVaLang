@@ -12,3 +12,11 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   scope "đủ dùng tái dùng" (D-34), tất cả kỹ năng (D-35), owner tự review en
   (decisions.md). 2 câu hỏi đợt 1: reading-aid phát âm (Q1), giọng en-US/en-GB
   (Q2). Style-and-register.md DRAFT của Codex giữ nguyên làm narrative (allowlist).
+- **Bước 0 trả lời · 2026-07-17 · Auto Mode (không phản hồi thủ công)** — Owner
+  gõ lại `/build-language en` không kèm câu trả lời; theo Auto Mode, áp dụng
+  phương án khuyến nghị đã báo trước: D-40 reading-aid = IPA ẩn mặc định + toggle,
+  D-41 giọng = en-US. Ghi vào decisions.md, chạy tiếp không dừng.
+- **Bước 1 (import dataset) · 2026-07-17 · XONG** — CLDR (charset) → orthography.data.json.
+  UD English-EWT → word-class.data.json (17 nhãn UPOS). WikiPron
+  eng_latn_us_broad_filtered (theo D-41 en-US) → grapheme-to-phoneme.data.json,
+  99.645 cặp chữ→âm (kèm trọng âm ˈ). Validator PASS.
