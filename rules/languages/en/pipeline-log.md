@@ -49,3 +49,7 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   theo từng từ (không bịa). (2) `g2p-check.mjs` (tool mới của phiên này) thiếu
   trường `index` (chữ hoa CLDR) khi tính charset coverage → phủ báo sai 80.78%;
   sửa tool, phủ thật 99.89%. Fixtures bổ sung câu thật từ corpus. Validator PASS.
+- **Bước 4 (review) · 2026-07-17 · 🛑 DỪNG CHỜ OWNER** — `review-checklist.md`:
+  1 mục (R-01 sir/ma'am dịch vụ — không phải mâu thuẫn thật, chỉ cần chốt cách
+  dạy) · ~2 phút. Không cần native-review-en.md (owner tự review được tiếng
+  Anh, theo decisions.md). Validator PASS. Chờ owner trả lời.

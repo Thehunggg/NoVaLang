@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "en",
-    "stage": "3-corpus-done",
+    "stage": "4-review-waiting-owner",
     "generatedAt": "2026-07-17",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
