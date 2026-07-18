@@ -673,7 +673,12 @@ C2/C9) — so ID stability matters only for already-playable content.
 - **Block A — "Những ngày đầu" (working name only, not a display string):**
   procedural/survival situations for someone who just arrived. **No 3-tier
   split, no scroll-window gating** — an "emergency valve": open access, no
-  forced structure.
+  forced structure. **Description (i18n key source text, vi original,
+  2026-07-18, needs translation into every supported native language before
+  release — not yet translated by this ADR):** *"Dành cho người sắp ra nước
+  ngoài — để không bối rối trước những việc thiết yếu đầu tiên."* This is
+  marketing copy, not narrative — it must live as one i18n key, resolved via
+  `nativeLanguageCode` like every other display string, never hardcoded.
 - **Block B — main track:** everyday recurring communication topics, split
   into **3 display tiers** (Cơ bản / Trung cấp / Cao cấp), with scroll-window
   gating (existing pattern, unchanged mechanism).
@@ -723,6 +728,22 @@ depth, but it is a continuation of the same topic, not a new one.
   to topic/module ids, matching the Project Owner's referenced "ID bền
   trong SRS" principle (no single named decision by that exact tag was found
   in-repo prior to this ADR; this ADR is now that record).
+- **Display-language purity (added 2026-07-18) — system-wide, not just this
+  domain:** a display name MUST be written entirely in the learner's chosen
+  `nativeLanguageCode`, and MUST NOT borrow a word from the language being
+  learned (`learningLanguageCode`), no matter how common that borrowing is
+  among real speakers of the native language. Example (vi native, ja
+  learning): write "làm thêm", never "baito"/バイト; write "thẻ cư trú",
+  never "zairyu card"; write "gia hạn", never "shinsei". This is an easy
+  mistake because content authors are often fluent in the target-country's
+  own loanword habits — the rule exists specifically to catch that habit.
+  Every display name is an i18n key; each native language gets its own pure
+  translation, never a shared or cross-contaminated string. This generalizes
+  the existing "Learning Content Language Purity" rule in `AGENTS.md` (which
+  already separates `learningLanguageCode` from `nativeLanguageCode` content)
+  to explicitly cover the failure mode of *borrowing the target language's
+  own vocabulary into native-language display text*, which that rule did not
+  spell out by name before this ADR.
 
 **3. Three-tier principle:** same topic, tier increases **expressive
 complexity**, not just vocabulary volume. Worked example (Chào hỏi &
@@ -774,12 +795,20 @@ ADR):**
 
 **8. Block A ("Những ngày đầu") entitlement split — INITIAL ASSUMPTION,
 explicitly not fixed, pending data; also explicitly independent of the
-not-yet-decided Plus/Pro/Max tier structure (see 9):**
+not-yet-decided Plus/Pro/Max tier structure (see 9). Revised 2026-07-18:
+classification is by CONTENT IMPORTANCE, not by elapsed time — the earlier
+"24-hour hook" framing is retired because it reads as a time-limited trial
+that expires, which is not the intent. Free content stays free permanently;
+it is not a countdown.**
 
-- **Free (24-hour hook):** airport & immigration, shopping/supermarket,
-  trains & transit.
-- **Paid (deep stock):** visa/immigration procedures, banking, SIM,
-  housing/rental, insurance, part-time work (baito), police, post office.
+- **Free (a set of the most essential situations, permanently open, no time
+  limit):** airport & immigration, shopping, trains & transit.
+- **Plus and above (unlocks the rest of the block):** visa & immigration
+  procedures, opening a bank account, phone/SIM registration, renting
+  housing, insurance & seeing a doctor, part-time work, police, post office.
+- The exact Free-tier situation list above remains an **initial assumption**,
+  subject to change once real usage data exists — do not treat the specific
+  items as final.
 
 **9. What paid tiers sell — explicitly NOT unit count** (Free already ships
 8 units/day across up to 2×2 language/domain slots, which the Project Owner
@@ -846,6 +875,12 @@ expression dependency, not by content-ordering preference.
 - Paid-block content (point 10) requires a human reviewer with real
   situational experience before release; this ADR does not authorize
   AI-authored-and-skim-reviewed content for that block.
+- The display-language-purity rule (point 2b) is a real, checkable authoring
+  constraint: content review for every display string (topic names, Block A
+  marketing copy, and beyond this domain wherever `nativeLanguageCode` text
+  is authored) must reject any word borrowed from `learningLanguageCode`,
+  even a borrowing that is common in everyday speech among real speakers of
+  that native language.
 - Does not change ADR-008 (Golden Reference Lesson, still FROZEN), ADR-012
   (Q14), ADR-013/ADR-014 (Unit/Module Comprehensive Conversation), or any
   language-rule ADR (ADR-015/ADR-016/ADR-017).

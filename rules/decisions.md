@@ -346,7 +346,7 @@ chỉ in cảnh báo, không fail.
 
 ---
 
-## 0.3 Kiến trúc curriculum domain Giao tiếp hàng ngày (P-01 .. P-12) — 2026-07-18
+## 0.3 Kiến trúc curriculum domain Giao tiếp hàng ngày (P-01 .. P-12, + P-03b) — 2026-07-18
 
 **Lưu ý phạm vi:** sổ này (`rules/decisions.md`) vốn ghi quyết định cho pipeline
 `/build-language` (luật ngôn ngữ: chính tả, ngữ âm, ngữ pháp, ngữ dụng), không
@@ -365,7 +365,9 @@ dấu rõ dưới đây — không đóng băng dù đã ghi ra.
   chia **2 khối**: (A) "Những ngày đầu" (tên tạm) — tình huống thủ tục mới
   sang, KHÔNG chia 3 chặng, KHÔNG cửa sổ cuốn, mở tự do ("van xả cấp cứu");
   (B) lộ trình chính — chủ đề lặp hàng ngày, chia 3 chặng hiển thị, có cửa sổ
-  cuốn.
+  cuốn. **Cập nhật 2026-07-18:** câu mô tả khối A là 1 key i18n (nguồn vi):
+  *"Dành cho người sắp ra nước ngoài — để không bối rối trước những việc
+  thiết yếu đầu tiên."* — chưa dịch en/ja/... (xem ADR-018 điểm 1).
 - **P-02 · owner · ALL** — Khối B có **15 chủ đề dùng chung cả 3 chặng**, thứ
   tự tham chiếu: Chào hỏi&làm quen · Bản thân · Số đếm&tiền · Thời gian&ngày
   tháng · Mua sắm · Ăn uống&gọi món · Chỉ đường · Tàu điện&đi lại · Khi không
@@ -379,6 +381,15 @@ dấu rõ dưới đây — không đóng băng dù đã ghi ra.
   ngôn ngữ, không đổi khi đổi tên hiển thị — cùng nguyên tắc đã xác nhận cho
   lesson ID qua completion-record (`shared/contracts/lesson_completion.rules.md`
   C2/C9), mở rộng áp dụng cho topic/module ID.
+- **P-03b · 2026-07-18 · owner · ALL — luật ngôn ngữ hiển thị, áp toàn hệ
+  thống, không riêng domain này** — Tên hiển thị phải THUẦN `nativeLanguageCode`,
+  TUYỆT ĐỐI không vay mượn từ của `learningLanguageCode`, kể cả từ vay mượn đó
+  phổ biến trong lời nói thật. Vd bản vi học ja: ghi "làm thêm" (không
+  "baito"/バイト), "thẻ cư trú" (không "zairyu card"), "gia hạn" (không
+  "shinsei"). Lỗi dễ mắc vì người viết quen dùng từ bản ngữ nước sở tại — mỗi
+  tên hiển thị là 1 key i18n, mỗi ngôn ngữ có bản dịch thuần riêng, không lẫn.
+  Cụ thể hoá thêm cho luật "Learning Content Language Purity" đã có trong
+  `AGENTS.md` (chưa nêu rõ tên trường hợp vay mượn ngược này trước ADR-018).
 - **P-04 · owner · ALL** — 3 chặng: cùng chủ đề, TĂNG độ phức tạp diễn đạt
   (không phải tăng khối lượng từ vựng). Nhãn hiển thị Cơ bản/Trung cấp/Cao cấp;
   KHÔNG hiện CEFR (CEFR/thang mức tương đương vẫn chạy ngầm cho xếp lớp/khoá).
@@ -399,11 +410,17 @@ dấu rõ dưới đây — không đóng băng dù đã ghi ra.
 - **P-08 · owner · ALL** — Giữ nguyên 3 cơ chế vào đã có: placement test (mở
   đúng chặng, chặng dưới coi như hoàn thành nhưng vẫn ôn lại được), tự chọn
   level, nút bỏ qua Core Foundation (kana). Không thiết kế lại 3 cơ chế này.
-- **P-09 · owner · ALL — GIẢ ĐỊNH BAN ĐẦU, chờ dữ liệu, KHÔNG cố định** —
-  Entitlement khối A: Free (mồi 24h) = sân bay&nhập cảnh, mua sắm/siêu thị,
-  tàu điện&đi lại; Trả phí (hàng sâu) = visa/xuất nhập cảnh, ngân hàng, SIM,
-  thuê nhà, bảo hiểm, baito, cảnh sát, bưu điện. Độc lập với bậc Plus/Pro/Max
-  (chưa chốt).
+- **P-09 · 2026-07-18 (sửa) · owner · ALL — GIẢ ĐỊNH BAN ĐẦU, chờ dữ liệu,
+  KHÔNG cố định** — Entitlement khối A, phân loại theo **TẦM QUAN TRỌNG nội
+  dung, KHÔNG theo thời gian** (bỏ khung "mồi 24h" cũ — dễ hiểu nhầm là gói
+  dùng thử hết hạn; Free ở đây là mở vĩnh viễn, không đếm ngược):
+  - **Free** (một số bài thiết yếu nhất, mở sẵn, không giới hạn thời gian):
+    sân bay & nhập cảnh, mua sắm, tàu điện & đi lại.
+  - **Plus trở lên** (mở hết khối): visa & xuất nhập cảnh, mở tài khoản ngân
+    hàng, đăng ký điện thoại/SIM, thuê nhà, bảo hiểm & khám bệnh, làm thêm,
+    cảnh sát, bưu điện.
+  - Danh sách bài Free cụ thể vẫn là giả định, chờ điều chỉnh theo dữ liệu
+    người dùng thật. Độc lập với bậc Plus/Pro/Max (chưa chốt).
 - **P-10 · owner · ALL** — Trả phí KHÔNG bán bằng số unit (Free đã 8 unit/ngày
   qua 2×2 slot ngôn ngữ/domain, coi là đủ nhiều). Bán: bỏ quảng cáo + khối
   "Những ngày đầu" hàng sâu + bỏ giới hạn số ngôn ngữ/domain song song + tính
