@@ -302,6 +302,50 @@ pipeline này (xem Bước 2). Chi tiết đầy đủ 14 lỗ hổng + bằng c
 
 ---
 
+## 0.2 Nợ nội dung Golden Lesson (B1/B2, 4 mục) — ghi nợ, CHƯA sửa
+
+**Trạng thái: NỢ CÓ TÊN, chưa làm.** Xác nhận bằng chứng nhiều lần trong phiên
+2026-07-18 (đọc trực tiếp `scripts/content/daily-life/module-1/ja-unit1-lesson1.mjs`,
+và độc lập bằng `tools/lesson-check.mjs` chạy trên toàn bộ 506 bài thật — kết
+quả 505/506 sạch, đúng 4 cảnh báo này còn lại, không đổi qua nhiều lần chạy).
+
+**Đúng 4 mục, đúng dòng nguồn:**
+
+| Vocabulary id | Dòng nguồn (`ja-unit1-lesson1.mjs`) | Thiếu field |
+|---|---|---|
+| `desu` | dòng 419 | `reading` VÀ `romanization` (cả hai) |
+| `kochira-koso` | dòng 421 | `romanization` |
+| `sayounara` | dòng 422 | `romanization` |
+
+**Vì sao chưa sửa:** cả 3 mục thuộc `vocabulary[]` của Golden Reference Lesson
+(`ja-daily_life-m01-u1-l1`, ADR-008, FROZEN). Sửa nội dung Golden bắt buộc đi
+qua đúng quy trình **Source → Generate → Validate → Sync** (D-31) —
+KHÔNG hand-edit `shared/generated/lessons.json`, KHÔNG sửa trực tiếp file
+generated. Sửa đúng chỗ là ở `ja-unit1-lesson1.mjs` (dòng 419/421/422), rồi
+chạy lại `npm run generate:curriculum` → `validate:curriculum` → sync Flutter
+assets. Đây là thay đổi nội dung FROZEN, cần task/change-control riêng, không
+tự làm trong lúc chỉ đang sửa `rules/**`+`tools/**`.
+
+**Quyết định owner (2026-07-18):** để lại nợ, **chưa sửa ngay** — gom vào lần
+có nhiều việc change-control khác cho Golden Lesson để làm một thể (đỡ tốn một
+lượt generate→validate→sync riêng chỉ cho 4 dòng). Không chặn build: lớp
+validate mềm (`scripts/validate-curriculum.mjs`, xem mục nối lớp A cùng ngày)
+chỉ in cảnh báo, không fail.
+
+**Việc cần làm khi tới lượt (không làm bây giờ):**
+1. Sửa `ja-unit1-lesson1.mjs` dòng 419: thêm `reading: 'たなかです。'`-kiểu
+   (hoặc giá trị đúng theo ngữ cảnh `～です` là copula rời, cần owner/native
+   xác nhận giá trị chính xác, không tự suy đoán) và `romanization` tương ứng.
+2. Dòng 421 (`kochira-koso`): thêm `romanization` (đã có `reading` đúng —
+   "こちらこそ、よろしくおねがいします").
+3. Dòng 422 (`sayounara`): thêm `romanization` (đã có `reading` đúng —
+   "さようなら").
+4. Chạy `npm run generate:curriculum` → `validate:curriculum` → sync Flutter
+   assets. Xác nhận `tools/lesson-check.mjs --lang ja --lesson-id
+   ja-daily_life-m01-u1-l1` về 0 cảnh báo.
+
+---
+
 ## Ghi chú (không phải quyết định đã chốt)
 
 - Giao diện thẻ từ vựng (collapsed: target + reading + audio; expanded: meaning +
