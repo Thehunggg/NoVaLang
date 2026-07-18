@@ -54,13 +54,15 @@ if (selfTest) {
       const fx = check.fixtures || {};
       let ok = true;
       const badPass = [];
-      for (const text of fx.pass || []) {
-        const { violations } = impl(null, [{ path: '$.fixture.pass', text }], check);
+      for (const item of fx.pass || []) {
+        const text = typeof item === 'string' ? item : (item.note || JSON.stringify(item));
+        const { violations } = impl(null, [{ path: '$.fixture.pass', text }], check, rf.config, item);
         if (violations.length) { ok = false; badPass.push(text); }
       }
       const badFail = [];
-      for (const text of fx.fail || []) {
-        const { violations } = impl(null, [{ path: '$.fixture.fail', text }], check);
+      for (const item of fx.fail || []) {
+        const text = typeof item === 'string' ? item : (item.note || JSON.stringify(item));
+        const { violations } = impl(null, [{ path: '$.fixture.fail', text }], check, rf.config, item);
         if (!violations.length) { ok = false; badFail.push(text); }
       }
       if (!ok) anyFail = true;
@@ -121,7 +123,7 @@ for (const lesson of targetLessons) {
       } else if (a.type === 'custom') {
         const impl = CUSTOM_CHECKS[check.id];
         if (!impl) { bucket.skip++; continue; }
-        const result = impl(lesson, strings, check);
+        const result = impl(lesson, strings, check, rf.config);
         if (result.violations.length) { bucket.fail++; bucket.violations.push(...result.violations.map((v) => ({ lesson: lesson.id, ...v }))); }
         else bucket.pass++;
       } else {

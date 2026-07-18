@@ -5,11 +5,37 @@
   "config": {
     "same_language_as_answer": true,
     "same_word_class": true,
+    "same_word_class_scope": {
+      "_comment": "G-01/A2 (owner 2026-07-18, phép thử C ja Golden Lesson): same_word_class KHÔNG được áp cứng cho mọi loại bài. Bài kiểm tra ngữ pháp/trợ từ (Q7-kiểu grammar_fill_selection) CHỦ Ý trộn nhiều loại từ chức năng làm phương án (vd です/さん/は là 3 loại từ khác nhau — người học phải chọn đúng loại từ phù hợp ngữ cảnh, đó LÀ mục tiêu bài). same_word_class chỉ có ý nghĩa khi bài kiểm NGHĨA từ vựng (các phương án nên cùng một nhóm ngữ nghĩa để gây nhiễu thật). Đối chiếu exercise-phenomena.map.json (nối qua coverageAlias, xem rules/exercise-phenomena.map.json._meta).",
+      "enforced_for_phenomena": ["vocabulary_meaning"],
+      "exempt_for_phenomena": ["grammar_usage", "particles"],
+      "verification_status": "guidance-only — CHƯA có custom-check tự động kiểm được: xác định 'cùng loại từ' cần bộ gán nhãn từ loại (POS tagger) mà rules/tools/ chưa tích hợp (kuromoji hiện chỉ dùng ở scripts/ content-generation, ngoài phạm vi rules/). Không giả vờ kiểm máy khi chưa làm được (ADR-016: cấm auto-PASS bằng heuristic chưa xác minh)."
+    },
     "length_ratio_max": 1.5,
+    "length_ratio_exempt_if_curated": {
+      "_comment": "G-01/A1 (owner 2026-07-18): nhiễu là chuỗi THẬT đã xuất hiện ở nơi khác trong CHÍNH bài học (vd các lời chào khác trong cùng bài dùng làm nhiễu cho nhau) không bị length_ratio_max chặn — mục đích ratio là chặn filler sinh máy vô nghĩa dài/ngắn bất thường, không phải cấm dùng lại nội dung thật đã duyệt. 'Curated' = xuất hiện dạng chuỗi y hệt ở đâu đó trong bài NGOÀI phần fiveCardContent.practice (tức: có nguồn gốc vocabulary/dialogue/grammar thật, không phải filler tự sinh cho riêng distractor này).",
+      "value": true,
+      "excluded_subtree": "fiveCardContent.practice"
+    },
     "forbid_synonym_of_answer": true,
     "forbid_above_level": true,
     "must_not_satisfy_question_rule": true
   },
+  "checks": [
+    {
+      "id": "distractor-length-ratio",
+      "description": "length_ratio_max chỉ chặn nhiễu KHÔNG phải nội dung thật đã duyệt ở nơi khác trong bài (xem length_ratio_exempt_if_curated). Chạy trên mọi bài tập có 'options' + 'correctOptionId' trong fiveCardContent.practice.exercises.",
+      "assert": { "type": "custom", "note": "impl: tools/lib/custom-checks.mjs" },
+      "fixtures": {
+        "pass": [
+          { "note": "Nhiễu dài gấp 2.5 lần đáp án NHƯNG là chuỗi thật xuất hiện trong vocabulary của bài (curated) → không vi phạm.", "kind": "distractor_ratio", "answer": "です", "distractor": "こんにちは", "curated_elsewhere": true }
+        ],
+        "fail": [
+          { "note": "Nhiễu dài gấp 2.5 lần đáp án và KHÔNG xuất hiện ở đâu khác trong bài (filler tự sinh) → vi phạm.", "kind": "distractor_ratio", "answer": "です", "distractor": "こんにちはとても長い作り文", "curated_elsewhere": false }
+        ]
+      }
+    }
+  ],
   "fixtures": {
     "pass": [
       {
