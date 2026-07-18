@@ -47,3 +47,7 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   99.67%. Đo thanh điệu trên WikiPron: huyền→˨ và sắc→˧˦ khớp 100% (sau khi tự
   sửa lỗi dùng nhầm chữ số thay ký tự Unicode Chao tone letter ở lần đo đầu).
   Fixtures bổ sung câu thật. Validator PASS.
+- **Bước 4 (review) · 2026-07-18 · 🛑 DỪNG CHỜ OWNER** — `review-checklist.md`:
+  3 mục (R-01 viết hoa, R-02 tiểu từ "ạ", R-03 đại từ trung tính — cả 3 là sự
+  thật cơ bản Wikipedia không nêu đủ rõ, owner bản ngữ tự xác nhận được) · ~3
+  phút. Không cần native-review-vi.md. Validator PASS. Chờ owner trả lời.
