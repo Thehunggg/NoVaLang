@@ -30,3 +30,17 @@ Layer sau ghi đè layer trước ở cùng khoá. Chạy `node tools/resolve.mj
 - Cấm dùng word frequency / translation similarity / LLM score / regex phong cách
   để tự động cấp `PASS`.
 - Mỗi file có `fixtures.pass` và `fixtures.fail` để validator kiểm (invariant 5).
+
+## Front-matter và pin version (từ 2026-07-18, Golden Lesson audit G-đợt 2)
+
+Mỗi file `_base/*.rules.json` (và `_script/<ws>/*.rules.json`) nay có
+`version`/`status`/`depends_on` giống file cấp ngôn ngữ. Vì mọi ngôn ngữ FROZEN
+đều **ngầm phụ thuộc** các layer này qua `tools/resolve.mjs` (merge live theo
+`id`, không cache), mỗi ngôn ngữ FROZEN ghi lại `_meta.baseDependencies` trong
+`coverage.json` — bản chụp `{id: version}` của `_base`/`_script` tại thời điểm
+freeze. `tools/validate.mjs` (invariant 3, phần mở rộng) đối chiếu bản chụp đó
+với version **hiện tại** trên đĩa; nếu một file `_base`/`_script` mà một ngôn
+ngữ FROZEN phụ thuộc đã đổi version kể từ lúc freeze → validator **CHẶN**
+(lỗi, không tự hạ trạng thái ngôn ngữ đó). Sửa `_base`/`_script` mà không bump
+`version` sẽ không bị validator phát hiện — luôn bump `version` khi đổi
+`config` có ý nghĩa.

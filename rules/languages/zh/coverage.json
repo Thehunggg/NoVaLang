@@ -15,7 +15,16 @@
       "note": "Vượt mốc 2000. Xác nhận Hans: 0 ký tự Hant / 7613 ký tự Hans trong 20 cặp kiểm."
     },
     "validatedAt": "2026-07-18",
-    "gate5_note": "D-49/ADR-017: Gate 5 đã bỏ cho pipeline build rule ngôn ngữ — có thể đề xuất freeze ngay, không cần chờ. lexical_level của tone_system/grapheme_to_phoneme hạ xuống medium (WikiPron cmn_hani Hant-keyed, xem note SỬA LỖI B3) — KHÔNG freeze cho tới khi có bảng S2T. classifiers/pronoun_system/forms_of_address lexical (none/thấp) KHÔNG freeze. stroke_order = DEFERRED, casing = not-applicable."
+    "gate5_note": "D-49/ADR-017: Gate 5 đã bỏ cho pipeline build rule ngôn ngữ — có thể đề xuất freeze ngay, không cần chờ. lexical_level của tone_system/grapheme_to_phoneme hạ xuống medium (WikiPron cmn_hani Hant-keyed, xem note SỬA LỖI B3) — KHÔNG freeze cho tới khi có bảng S2T. classifiers/pronoun_system/forms_of_address lexical (none/thấp) KHÔNG freeze. stroke_order = DEFERRED, casing = not-applicable.",
+    "baseDependencies": {
+      "_base/distractor": "1.0.0",
+      "_base/text-fields": "1.0.0",
+      "_base/answer-acceptance": "1.0.0",
+      "_base/audio": "1.0.0",
+      "_base/fail-safe": "1.0.0",
+      "_base/register": "1.0.0"
+    },
+    "baseDependenciesNote": "Ban chup version _base/_script tai thoi diem validate/freeze gan nhat cua ngon ngu nay (2026-07-18, Golden Lesson audit). validate.mjs INV-3 doi chieu voi version hien tai tren dia."
   },
   "writing_systems": {
     "rule_level": {

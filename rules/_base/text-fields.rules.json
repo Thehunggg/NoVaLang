@@ -1,5 +1,8 @@
 {
   "id": "_base/text-fields",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "depends_on": [],
   "phenomenon": "text_field_separation",
   "enforces": ["rules/languages/ja/tts-and-audio.md"],
   "config": {

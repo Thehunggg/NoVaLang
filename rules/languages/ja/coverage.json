@@ -16,7 +16,16 @@
     },
     "validatedAt": "2026-07-17",
     "gate5_note": "D-49 (2026-07-18): Gate 5 (chờ 48h) đã BỎ cho pipeline build rule ngôn ngữ — xem rules/decisions.md D-49 / docs/ai/ARCHITECTURE_DECISIONS.md ADR-017. 27 hiện tượng FROZEN ở rule_level ngay trong phiên VALIDATED. lexical_level của rendaku/counters/honorifics_keigo (theo-từng-từ) KHÔNG freeze — giữ DRAFT/none, thiếu dữ liệu đầy đủ. stroke_order/pitch_accent = DEFERRED, casing = not-applicable, không đổi.",
-    "frozenAt": "2026-07-18"
+    "frozenAt": "2026-07-18",
+    "baseDependencies": {
+      "_base/distractor": "1.0.0",
+      "_base/text-fields": "1.0.0",
+      "_base/answer-acceptance": "1.0.0",
+      "_base/audio": "1.0.0",
+      "_base/fail-safe": "1.0.0",
+      "_base/register": "1.0.0"
+    },
+    "baseDependenciesNote": "Ban chup version _base/_script tai thoi diem validate/freeze gan nhat cua ngon ngu nay (2026-07-18, Golden Lesson audit). validate.mjs INV-3 doi chieu voi version hien tai tren dia."
   },
   "writing_systems": {
     "rule_level": {

@@ -1,5 +1,8 @@
 {
   "id": "_base/register",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "depends_on": [],
   "phenomenon": "register_taxonomy",
   "enforces": ["rules/content/naturalness-and-register.md"],
   "config": {

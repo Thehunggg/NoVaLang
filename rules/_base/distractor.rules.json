@@ -1,5 +1,8 @@
 {
   "id": "_base/distractor",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "depends_on": [],
   "phenomenon": "distractor_generation",
   "enforces": ["rules/content/naturalness-and-register.md"],
   "config": {
