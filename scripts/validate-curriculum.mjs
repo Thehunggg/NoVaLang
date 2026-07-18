@@ -14,6 +14,7 @@ import {
 } from "./lib/native-localization.mjs";
 import { containsKana } from "./lib/japanese-pronunciation.mjs";
 import { requireGeneratedQ14Romanization } from "./lib/q14-romanization-validation.mjs";
+import { runSoftLinguisticChecks } from "../tools/lib/soft-linguistic-checks.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -1969,6 +1970,24 @@ async function main() {
     }
   } catch (error) {
     fail(`Flutter shared assets missing/unreadable: ${error.message}`);
+  }
+
+  // --- Lớp CẢNH BÁO MỀM từ rules/ (2026-07-18) ---
+  // Chỉ 2 check đã hiệu chỉnh trên 506 bài thật (text-fields + register ja,
+  // xem rules/_legacy/golden-lesson-test-2026-07-18.md): IN CẢNH BÁO, KHÔNG
+  // BAO GIỜ đẩy vào `errors`/fail build — không thay đổi hành vi pass/fail
+  // hiện có của validator này theo bất kỳ cách nào. provenance suy tại chỗ
+  // là owner_approved cho nội dung literal (quyết định owner), nên không có
+  // check distractor ở đây (luôn miễn, không cần chạy). Bọc try/catch riêng:
+  // lớp mềm lỗi cũng không được kéo sập validator chính.
+  try {
+    const softWarnings = runSoftLinguisticChecks(lessons, path.join(ROOT, "rules"));
+    if (softWarnings.length) {
+      console.warn(`\n[rules/] ${softWarnings.length} cảnh báo mềm (không chặn build, xem rules/_legacy/golden-lesson-test-2026-07-18.md):`);
+      for (const w of softWarnings) console.warn(`  ! ${w}`);
+    }
+  } catch (error) {
+    console.warn(`[rules/] lớp cảnh báo mềm gặp lỗi nội bộ, bỏ qua (không chặn build): ${error.message}`);
   }
 
   if (errors.length) {
