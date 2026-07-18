@@ -1,7 +1,14 @@
 {
   "id": "ja/pragmatics.rules",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "FROZEN",
+  "changeLog": [
+    {
+      "version": "1.1.0",
+      "date": "2026-07-18",
+      "change": "A3 (Golden Lesson audit, rules/decisions.md mục 0.1): thêm 'fixed_expression_exemptions' cho check baseline-polite-sentence-ends-desu-masu — ngoại lệ trước đây chỉ loại trừ 'corpus văn viết chung', không loại trừ cụm chào hỏi/từ cố định xuất hiện ngay trong nội dung bài (register baseline thật). Danh sách 4 mục lấy trực tiếp từ headword thật trong Golden Lesson vocabulary[] (shared/generated/lessons.json, lesson ja-daily_life-m01-u1-l1): こんにちは/こんばんは/はじめまして/さようなら — không suy đoán thêm mục chưa có bằng chứng."
+    }
+  ],
   "phenomenon": "honorifics_keigo",
   "enforces": [
     "style-and-register.md",
@@ -43,23 +50,29 @@
   "checks": [
     {
       "id": "baseline-polite-sentence-ends-desu-masu",
-      "description": "Câu baseline NATURAL_NEUTRAL_POLITE kết bằng です/ます (biến thể: でした/ました/ません/ましょう/ますか...). Chỉ áp cho nội dung sinh ở register baseline, KHÔNG áp cho corpus văn viết chung.",
+      "description": "Câu baseline NATURAL_NEUTRAL_POLITE kết bằng です/ます (biến thể: でした/ました/ません/ましょう/ますか...). Chỉ áp cho nội dung sinh ở register baseline, KHÔNG áp cho corpus văn viết chung, VÀ KHÔNG áp cho cụm chào hỏi/từ cố định trong fixed_expression_exemptions (A3).",
+      "fixed_expression_exemptions": ["こんにちは", "こんばんは", "はじめまして", "さようなら"],
+      "fixed_expression_exemptions_note": "A3: cụm chào hỏi/từ cố định (fixed expression) không mang được です/ます theo đúng ngữ pháp (không phải câu thiếu lịch sự) — khi đứng riêng (headword từ vựng, câu chào trong hội thoại) KHÔNG bị coi là vi phạm baseline です/ます. Danh sách lấy từ headword thật trong Golden Lesson vocabulary[] (shared/generated/lessons.json) — chỉ thêm mục mới khi có bằng chứng thật tương tự, không suy đoán mở rộng.",
       "assert": {
         "type": "custom",
-        "note": "máy kiểm khi generator chạy; không chạy trên corpus vì corpus không phải baseline-register"
+        "note": "máy kiểm khi generator chạy; không chạy trên corpus vì corpus không phải baseline-register; bỏ qua chuỗi khớp nguyên văn với fixed_expression_exemptions trước khi kiểm です/ます"
       },
       "fixtures": {
         "pass": [
           "田中さんは先生です。",
           "水を飲みます。",
           "全く同感です。",
-          "一部を抜粋します。"
+          "一部を抜粋します。",
+          "こんにちは",
+          "こんばんは",
+          "はじめまして",
+          "さようなら"
         ],
         "fail": [
           "田中は先生だ。",
           "水を飲む。"
         ],
-        "_note": "2 câu pass cuối từ corpus thật UD GSD (Bước 3 mục 6)"
+        "_note": "2 câu pass cuối trước 4 fixed expression từ corpus thật UD GSD (Bước 3 mục 6); 4 fixed expression (A3, 2026-07-18) từ Golden Lesson vocabulary[] thật, đứng riêng không です/ます nhưng vẫn PASS vì khớp fixed_expression_exemptions."
       }
     }
   ],
