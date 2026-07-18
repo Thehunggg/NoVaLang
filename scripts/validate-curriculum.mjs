@@ -103,7 +103,7 @@ const EXPECTED_KATAKANA_ROWS = [
   "ハヒフヘホ", "マミムメモ", "ヤユヨ", "ラリルレロ", "ワヲン",
 ];
 
-const errors = [];
+export const errors = [];
 const fail = (msg) => errors.push(msg);
 
 async function loadJson(rel) {
@@ -897,6 +897,174 @@ function validateHiraganaLessonOneSpec(lesson) {
   }
 }
 
+/**
+ * Structural contract for ANY lesson with `lessonFormat === 'five_cards'`
+ * (NovaLang Lesson Format 2.0/3.0, .cursor/rules/03_.../04_...): shape,
+ * required fields, and generic quality rules that do not depend on which
+ * approved lesson content was used. Runs for every five_cards lesson,
+ * including the Golden Lesson (which additionally gets
+ * validateApprovedGoldenLessonContent, defined inside main()).
+ * Exported at module scope (moved out of main()) so a standalone script can
+ * import and exercise it directly against a minimal placeholder lesson.
+ */
+export function validateFiveCardsStructure(lesson) {
+  if (lesson.contentStatus !== "ready" || lesson.playable !== true || lesson.comingSoon === true) {
+    fail(`${lesson.id}: five_cards lesson must remain ready and playable`);
+  }
+  if ((lesson.exercises ?? []).length !== 0 || lesson.exerciseStatus !== "ready") {
+    fail(`${lesson.id}: legacy exercises must remain empty while Card 5 practice is ready`);
+  }
+  const content = lesson.fiveCardContent ?? {};
+  const expectedCards = "intro,vocabulary,dialogue,grammar,practice";
+  if ((content.mainCards ?? []).join(",") !== expectedCards) {
+    fail(`${lesson.id}: must define exactly five main cards in the approved order`);
+  }
+  if ((lesson.vocabulary ?? []).length !== 8 || (content.vocabularyDetails ?? []).length !== 8) {
+    fail(`${lesson.id}: Card 2 must contain exactly 8 vocabulary cards`);
+  }
+  const groups = content.dialogueGroups ?? [];
+  if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 4 || (group.lines ?? []).length > 6)) {
+    fail(`${lesson.id}: Card 3 must contain exactly 3 dialogue groups with 4–6 lines`);
+  }
+  const approvedCharacters = content.approvedCharacterNamePool ?? [];
+  const approvedCharacterIds = new Set(approvedCharacters.map((item) => item?.id));
+  if (
+    !content.targetLanguage ||
+    content.targetLanguage !== lesson.languageCode ||
+    !content.targetLocale ||
+    !content.cultureContext ||
+    approvedCharacters.length === 0 ||
+    approvedCharacters.some((item) => !item?.id || !item?.displayName || !item?.canonicalName || !item?.audioName)
+  ) {
+    fail(`${lesson.id}: Card 3 character metadata requires targetLanguage matching the lesson's languageCode, targetLocale, cultureContext, and approvedCharacterNamePool`);
+  }
+  for (const group of groups) {
+    for (const entry of group.lines ?? []) {
+      if (!entry.speakerId || !approvedCharacterIds.has(entry.speakerId)) {
+        fail(`${lesson.id}: dialogue speakerId ${entry.speakerId ?? "(missing)"} is outside approvedCharacterNamePool`);
+      }
+    }
+  }
+  if ((content.grammarPatterns ?? []).length !== 3) {
+    fail(`${lesson.id}: Card 4 must contain exactly 3 grammar patterns`);
+  }
+  const practice = content.practice ?? {};
+  const practiceExercises = practice.exercises ?? [];
+  if (practice.totalQuestions !== 14 || practiceExercises.length !== 14) {
+    fail(`${lesson.id}: Card 5 practice must contain exactly 14 exercises`);
+  }
+  for (const [index, exercise] of practiceExercises.entries()) {
+    const expectedPlan = index < 10 ? "free" : "plus";
+    if (exercise.order !== index + 1 || exercise.plan !== expectedPlan) {
+      fail(`${lesson.id}: practice exercise ${index + 1} must use order ${index + 1} and plan ${expectedPlan}`);
+    }
+  }
+  const checkpoint = practiceExercises[8];
+  if (
+    checkpoint?.type !== "checkpoint" ||
+    (checkpoint.subQuestions ?? []).length !== 5 ||
+    (checkpoint.subQuestions ?? []).some((question) =>
+      (question.options ?? []).length !== 4 ||
+      !question.correctOptionId ||
+      !(question.options ?? []).some((option) => option.id === question.correctOptionId),
+    )
+  ) {
+    fail(`${lesson.id}: exercise 9 must contain five four-option checkpoint questions with stable correct ids`);
+  }
+  const matching = practiceExercises[2];
+  if (
+    matching?.type !== "matching" ||
+    (matching.pairs ?? []).length !== 4 ||
+    (matching.pairs ?? []).some((pair) => !pair.id || !pair.left?.id || !pair.right?.id)
+  ) {
+    fail(`${lesson.id}: exercise 3 must define four stable matching pairs`);
+  }
+  const chatFill = practiceExercises[9];
+  if (
+    chatFill?.type !== "chat_text_fill" ||
+    (chatFill.chat?.messages ?? []).length !== 6 ||
+    (chatFill.slots ?? []).length !== 2 ||
+    !chatFill.slots?.every((slot) => slot.displayText && slot.canonicalText && slot.audioText && (slot.acceptedAnswers ?? []).length)
+  ) {
+    fail(`${lesson.id}: exercise 10 must be a six-message, two-slot chat text fill with complete slot fields`);
+  }
+  const advancedOrdering = practiceExercises[12];
+  if (
+    advancedOrdering?.type !== "slot_ordering" ||
+    (advancedOrdering?.answerSlots ?? []).length !== 6 ||
+    !(advancedOrdering?.unusedTokenIds ?? []).length
+  ) {
+    fail(`${lesson.id}: exercise 13 must use six answer slots and include at least one unused distractor token`);
+  }
+  // Lesson Format 3.0 (Owner-approved breaking change, 2026-07-15):
+  // exercise 14 is a non-graded Real-World Practice dialogue, not
+  // controlled AI text. See .cursor/rules/04_novalang_lesson_format_3_0.mdc.
+  const realWorldPractice = practiceExercises[13];
+  const dialogueLines = realWorldPractice?.dialogueLines ?? [];
+  const sceneDividers = realWorldPractice?.sceneDividers ?? [];
+  if (
+    realWorldPractice?.type !== "real_world_practice_dialogue" ||
+    realWorldPractice?.nonGraded !== true ||
+    dialogueLines.length !== 14 ||
+    !realWorldPractice?.scenarioTitleByNative?.vi ||
+    !realWorldPractice?.scenarioDescriptionByNative?.vi
+  ) {
+    fail(`${lesson.id}: exercise 14 must be a 14-line non-graded Real-World Practice dialogue with a localized scenario`);
+  }
+  for (const [lineIndex, entry] of dialogueLines.entries()) {
+    if (!entry.speakerId || !approvedCharacterIds.has(entry.speakerId)) {
+      fail(`${lesson.id}: exercise 14 line ${lineIndex + 1} speakerId is outside approvedCharacterNamePool`);
+    }
+    if (!entry.targetText || !entry.speechText) {
+      fail(`${lesson.id}: exercise 14 line ${lineIndex + 1} is missing targetText/speechText`);
+    }
+    const translation = entry.translationByNative ?? {};
+    if (!translation.vi || !translation.en || !translation.ja) {
+      fail(`${lesson.id}: exercise 14 line ${lineIndex + 1} is missing a vi/en/ja translation`);
+    }
+    if (/[a-zA-Z]/.test(entry.reading ?? "")) {
+      fail(`${lesson.id}: exercise 14 line ${lineIndex + 1} reading must not use romaji`);
+    }
+    try {
+      requireGeneratedQ14Romanization(
+        entry.romanization,
+        `${lesson.id}: exercise 14 line ${lineIndex + 1}`,
+      );
+    } catch (error) {
+      fail(error.message);
+    }
+  }
+  const divider = sceneDividers[0];
+  if (
+    sceneDividers.length !== 1 ||
+    !divider?.translationByNative?.vi ||
+    !divider?.translationByNative?.en ||
+    !divider?.translationByNative?.ja
+  ) {
+    fail(`${lesson.id}: exercise 14 must have exactly one localized non-spoken scene divider`);
+  }
+  if (/(ミン|Minh|Hưng|Linh)/u.test(JSON.stringify(content))) {
+    fail(`${lesson.id}: five_cards lesson must not contain leftover draft Vietnamese character names`);
+  }
+  const requireReading = (entry, label) => {
+    const text = String(entry?.targetText ?? entry?.displayText ?? entry?.text ?? "");
+    if (/[㐀-鿿]/u.test(text) && !String(entry?.reading ?? "").trim()) {
+      fail(`${lesson.id}: ${label} contains Kanji without reading`);
+    }
+  };
+  for (const item of lesson.vocabulary ?? []) requireReading(item, `vocabulary ${item.id}`);
+  for (const group of groups) for (const entry of group.lines ?? []) requireReading(entry, `dialogue ${group.id}`);
+  for (const detail of content.vocabularyDetails ?? []) {
+    for (const entry of detail.examples ?? []) requireReading(entry, `vocabulary detail ${detail.id}`);
+  }
+  for (const pattern of content.grammarPatterns ?? []) {
+    if (/[㐀-鿿]/u.test(String(pattern.formula ?? "")) && !String(pattern.formulaReading ?? "").trim()) {
+      fail(`${lesson.id}: grammar formula contains Kanji without reading`);
+    }
+    for (const entry of pattern.examples ?? []) requireReading(entry, `grammar ${pattern.title}`);
+  }
+}
+
 async function main() {
   const coursesPayload = await loadJson("shared/generated/courses.json");
   const lessonsPayload = await loadJson("shared/generated/lessons.json");
@@ -1016,105 +1184,34 @@ async function main() {
     );
   }
 
-  function validateApprovedJaUnitOneLesson(lesson) {
-    if (lesson.lessonFormat !== "five_cards") fail(`${lesson.id}: lessonFormat must be five_cards`);
-    if (lesson.contentStatus !== "ready" || lesson.playable !== true || lesson.comingSoon === true) {
-      fail(`${lesson.id}: approved lesson must remain ready and playable`);
-    }
-    if ((lesson.exercises ?? []).length !== 0 || lesson.exerciseStatus !== "ready") {
-      fail(`${lesson.id}: legacy exercises must remain empty while Card 5 trial practice is ready`);
-    }
+  /**
+   * Literal content lock for the Golden Reference Lesson only
+   * (ja-daily_life-m01-u1-l1, ADR-008). Every check here is the exact
+   * wording/id the project owner approved — carried over verbatim from the
+   * former validateApprovedJaUnitOneLesson, not weakened. A new five_cards
+   * lesson never runs this function; it only runs validateFiveCardsStructure
+   * above.
+   */
+  function validateApprovedGoldenLessonContent(lesson) {
     const content = lesson.fiveCardContent ?? {};
-    const expectedCards = "intro,vocabulary,dialogue,grammar,practice";
-    if ((content.mainCards ?? []).join(",") !== expectedCards) {
-      fail(`${lesson.id}: must define exactly five main cards in the approved order`);
-    }
-    if ((lesson.vocabulary ?? []).length !== 8 || (content.vocabularyDetails ?? []).length !== 8) {
-      fail(`${lesson.id}: Card 2 must contain exactly 8 vocabulary cards`);
-    }
-    const groups = content.dialogueGroups ?? [];
-    if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 4 || (group.lines ?? []).length > 6)) {
-      fail(`${lesson.id}: Card 3 must contain exactly 3 dialogue groups with 4–6 lines`);
-    }
-    const approvedCharacters = content.approvedCharacterNamePool ?? [];
-    const approvedCharacterIds = new Set(approvedCharacters.map((item) => item?.id));
-    if (
-      content.targetLanguage !== "ja" ||
-      !content.targetLocale ||
-      !content.cultureContext ||
-      approvedCharacters.length === 0 ||
-      approvedCharacters.some((item) => !item?.id || !item?.displayName || !item?.canonicalName || !item?.audioName)
-    ) {
-      fail(`${lesson.id}: Card 3 character metadata requires targetLanguage, targetLocale, cultureContext, and approvedCharacterNamePool`);
-    }
-    for (const group of groups) {
-      for (const entry of group.lines ?? []) {
-        if (!entry.speakerId || !approvedCharacterIds.has(entry.speakerId)) {
-          fail(`${lesson.id}: dialogue speakerId ${entry.speakerId ?? "(missing)"} is outside approvedCharacterNamePool`);
-        }
-      }
-    }
-    if ((content.grammarPatterns ?? []).length !== 3) {
-      fail(`${lesson.id}: Card 4 must contain exactly 3 grammar patterns`);
-    }
     const practice = content.practice ?? {};
     const practiceExercises = practice.exercises ?? [];
-    if (practice.totalQuestions !== 14 || practiceExercises.length !== 14) {
-      fail(`${lesson.id}: Card 5 trial practice must contain exactly 14 exercises`);
-    }
-    for (const [index, exercise] of practiceExercises.entries()) {
-      const expectedPlan = index < 10 ? "free" : "plus";
-      if (exercise.order !== index + 1 || exercise.plan !== expectedPlan) {
-        fail(`${lesson.id}: trial practice exercise ${index + 1} must use order ${index + 1} and plan ${expectedPlan}`);
-      }
-    }
-    const checkpoint = practiceExercises[8];
-    if (
-      checkpoint?.type !== "checkpoint" ||
-      (checkpoint.subQuestions ?? []).length !== 5 ||
-      (checkpoint.subQuestions ?? []).some((question) =>
-        (question.options ?? []).length !== 4 ||
-        !question.correctOptionId ||
-        !(question.options ?? []).some((option) => option.id === question.correctOptionId),
-      )
-    ) {
-      fail(`${lesson.id}: exercise 9 must contain five four-option checkpoint questions with stable correct ids`);
-    }
-    const matching = practiceExercises[2];
-    if (
-      matching?.type !== "matching" ||
-      (matching.pairs ?? []).length !== 4 ||
-      (matching.pairs ?? []).some((pair) => !pair.id || !pair.left?.id || !pair.right?.id)
-    ) {
-      fail(`${lesson.id}: exercise 3 must define four stable matching pairs`);
-    }
+
     const ordering = practiceExercises[3];
     if ((ordering?.correctTokenIds ?? []).join("|") !== "watashi|topic_wa|tanaka|desu|period") {
       fail(`${lesson.id}: exercise 4 must preserve approved token ids`);
     }
     const chatFill = practiceExercises[9];
-    if (
-      chatFill?.type !== "chat_text_fill" ||
-      (chatFill.chat?.messages ?? []).length !== 6 ||
-      (chatFill.slots ?? []).length !== 2 ||
-      chatFill.slots?.[0]?.id !== "chat_greeting_slot" ||
-      chatFill.slots?.[1]?.id !== "chat_closing_slot" ||
-      !chatFill.slots?.every((slot) => slot.displayText && slot.canonicalText && slot.audioText && (slot.acceptedAnswers ?? []).length)
-    ) {
-      fail(`${lesson.id}: exercise 10 must be the approved six-message, two-slot chat text fill`);
+    if (chatFill?.slots?.[0]?.id !== "chat_greeting_slot" || chatFill?.slots?.[1]?.id !== "chat_closing_slot") {
+      fail(`${lesson.id}: exercise 10 must use the approved chat_greeting_slot/chat_closing_slot ids`);
     }
     const advancedOrdering = practiceExercises[12];
     if (
-      advancedOrdering?.type !== "slot_ordering" ||
-      (advancedOrdering?.answerSlots ?? []).length !== 6 ||
       !(advancedOrdering?.tokens ?? []).some((item) => item.id === "konbanwa_distractor") ||
       (advancedOrdering?.answerSlots ?? []).filter((slot) => slot.afterText === "。").length !== 3
     ) {
-      fail(`${lesson.id}: exercise 13 must use six answer slots, generated punctuation, and its unused distractor`);
+      fail(`${lesson.id}: exercise 13 must use generated punctuation and the approved unused distractor`);
     }
-    // Lesson Format 3.0 (Owner-approved breaking change, 2026-07-15):
-    // exercise 14 is a non-graded Real-World Practice dialogue, not
-    // controlled AI text. See .cursor/rules/04_novalang_lesson_format_3_0.mdc.
     const realWorldPractice = practiceExercises[13];
     const dialogueLines = realWorldPractice?.dialogueLines ?? [];
     const sceneDividers = realWorldPractice?.sceneDividers ?? [];
@@ -1134,54 +1231,12 @@ async function main() {
       "なんでもないです。",
       "田中さん、勉強を頑張ってくださいね。さようなら。",
     ];
-    if (
-      realWorldPractice?.type !== "real_world_practice_dialogue" ||
-      realWorldPractice?.nonGraded !== true ||
-      dialogueLines.length !== 14 ||
-      !realWorldPractice?.scenarioTitleByNative?.vi ||
-      !realWorldPractice?.scenarioDescriptionByNative?.vi
-    ) {
-      fail(`${lesson.id}: exercise 14 must be the approved 14-line non-graded Real-World Practice dialogue with a localized scenario`);
-    }
-    for (const [lineIndex, entry] of dialogueLines.entries()) {
-      if (!entry.speakerId || !approvedCharacterIds.has(entry.speakerId)) {
-        fail(`${lesson.id}: exercise 14 line ${lineIndex + 1} speakerId is outside approvedCharacterNamePool`);
-      }
-      if (!entry.targetText || !entry.speechText) {
-        fail(`${lesson.id}: exercise 14 line ${lineIndex + 1} is missing targetText/speechText`);
-      }
-      const translation = entry.translationByNative ?? {};
-      if (!translation.vi || !translation.en || !translation.ja) {
-        fail(`${lesson.id}: exercise 14 line ${lineIndex + 1} is missing a vi/en/ja translation`);
-      }
-      if (/[a-zA-Z]/.test(entry.reading ?? "")) {
-        fail(`${lesson.id}: exercise 14 line ${lineIndex + 1} reading must not use romaji`);
-      }
-      try {
-        requireGeneratedQ14Romanization(
-          entry.romanization,
-          `${lesson.id}: exercise 14 line ${lineIndex + 1}`,
-        );
-      } catch (error) {
-        fail(error.message);
-      }
-    }
     if (dialogueLines.map((entry) => entry.targetText).join("|") !== approvedQ14Targets.join("|")) {
       fail(`${lesson.id}: exercise 14 must match the owner-approved Tanaka–Sato dialogue exactly`);
     }
     const divider = sceneDividers[0];
-    if (
-      sceneDividers.length !== 1 ||
-      divider?.afterDialogueLine !== 10 ||
-      divider?.targetText !== "着いた時" ||
-      !divider?.translationByNative?.vi ||
-      !divider?.translationByNative?.en ||
-      !divider?.translationByNative?.ja
-    ) {
-      fail(`${lesson.id}: exercise 14 must have one localized non-spoken scene divider after turn 10`);
-    }
-    if (/(ミン|Minh|Hưng|Linh)/u.test(JSON.stringify(content))) {
-      fail(`${lesson.id}: Japanese Lesson 1 must not contain Vietnamese character names`);
+    if (divider?.afterDialogueLine !== 10 || divider?.targetText !== "着いた時") {
+      fail(`${lesson.id}: exercise 14 scene divider must match the approved afterDialogueLine/targetText`);
     }
     const konnichiwa = (content.vocabularyDetails ?? []).find((item) => item.id === "konnichiwa");
     const expectedCasualOpenings = [
@@ -1198,23 +1253,6 @@ async function main() {
       JSON.stringify(content).includes("やあ")
     ) {
       fail(`${lesson.id}: こんにちは must use the approved contextual casual-opening content without やあ`);
-    }
-    const requireReading = (entry, label) => {
-      const text = String(entry?.targetText ?? entry?.displayText ?? entry?.text ?? "");
-      if (/[\u3400-\u9fff]/u.test(text) && !String(entry?.reading ?? "").trim()) {
-        fail(`${lesson.id}: ${label} contains Kanji without reading`);
-      }
-    };
-    for (const item of lesson.vocabulary ?? []) requireReading(item, `vocabulary ${item.id}`);
-    for (const group of groups) for (const entry of group.lines ?? []) requireReading(entry, `dialogue ${group.id}`);
-    for (const detail of content.vocabularyDetails ?? []) {
-      for (const entry of detail.examples ?? []) requireReading(entry, `vocabulary detail ${detail.id}`);
-    }
-    for (const pattern of content.grammarPatterns ?? []) {
-      if (/[\u3400-\u9fff]/u.test(String(pattern.formula ?? "")) && !String(pattern.formulaReading ?? "").trim()) {
-        fail(`${lesson.id}: grammar formula contains Kanji without reading`);
-      }
-      for (const entry of pattern.examples ?? []) requireReading(entry, `grammar ${pattern.title}`);
     }
   }
 
@@ -1308,8 +1346,9 @@ async function main() {
       fail(`${lesson.id}: unexpected nicheId ${lesson.nicheId}`);
     }
     if (lesson.languageCode === "ja") validateNoRawKanaInRomanization(lesson);
-    if (isApprovedJaUnitOneLesson(lesson)) {
-      validateApprovedJaUnitOneLesson(lesson);
+    if (lesson.lessonFormat === "five_cards") {
+      validateFiveCardsStructure(lesson);
+      if (isApprovedJaUnitOneLesson(lesson)) validateApprovedGoldenLessonContent(lesson);
       continue;
     }
     if ((lesson.exercises ?? []).length !== 10) {

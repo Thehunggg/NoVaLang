@@ -24,6 +24,15 @@ await prepareJapaneseRomanization([
   ...GOLDEN_Q14_TARGETS,
 ]);
 
+// Registry of approved five_cards lessons, keyed by language then
+// "${unitOrder}-${lessonOrder}" position. To add a new five_cards lesson:
+// write its approved source module (matching JA_UNIT1_LESSON1's shape,
+// declaring `lessonFormat: 'five_cards'`) and add exactly one entry here —
+// the generation loop below does not need to change.
+const FIVE_CARDS_REGISTRY = {
+  ja: { '1-1': JA_UNIT1_LESSON1 },
+};
+
 const CODES = ['vi', 'en', 'ja', 'ko', 'zh'];
 const AUDIO = { en: 'en-US', ja: 'ja-JP' };
 const localized = (en, vi, ja) => N(en, vi, ja);
@@ -277,8 +286,9 @@ export function buildReadyModuleOne(language, context) {
       const spec = MODULE_ONE_CONTENT[unitIndex * 3 + lessonIndex];
       const lessonId = `${unitId}-l${lessonIndex + 1}`;
       lessonIds.push(lessonId);
-      if (language === 'ja' && unitIndex === 0 && lessonIndex === 0) {
-        const approved = JA_UNIT1_LESSON1;
+      const approvedFiveCards = FIVE_CARDS_REGISTRY[language]?.[`${unitIndex + 1}-${lessonIndex + 1}`];
+      if (approvedFiveCards) {
+        const approved = approvedFiveCards;
         const approvedContent = withGeneratedQ14Romanization(
           approved.lesson.content,
         );
