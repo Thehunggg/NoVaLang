@@ -450,6 +450,74 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
 
 ---
 
+## 11. Build rule ko/es/fr (2026-07-18) — hạ tầng bị chặn mạng ngoài, điều chỉnh phương pháp
+
+- **⚠ D-51 · 2026-07-18 · derived · ALL (áp cho mọi lần build rule ngôn ngữ
+  trong PHIÊN NÀY và mọi phiên chạy trong cùng loại môi trường cloud) —
+  KHÔNG fetch được hầu hết web ngoài, chỉ vài domain cụ thể còn mở.** Xác
+  nhận qua `curl http://127.0.0.1:38867/__agentproxy/status`: proxy trả 403
+  "policy denial" cho `tatoeba.org`, `ko.wikipedia.org`,
+  `downloads.tatoeba.org`. Test tay thêm: `en.wikipedia.org`, `unicode.org`,
+  `www.unicode.org`, `archive.org`, `www.rae.es`, `dle.rae.es`,
+  `www.korean.go.kr` (trang chính thức National Institute of Korean
+  Language), `assets.publishing.service.gov.uk` (PDF quy tắc La-tinh hoá
+  chính thức UK-hosted) — **TẤT CẢ 403 CONNECT tunnel failed**, kể cả qua
+  công cụ `WebFetch` (không chỉ `curl`). Theo đúng `/root/.ccr/README.md`:
+  đây là **policy denial của tổ chức, KHÔNG phải lỗi kỹ thuật sửa được** —
+  "không được retry, không được vòng qua, phải báo lại". Domain còn dùng
+  được đã xác nhận: `raw.githubusercontent.com` (dataset CLDR/UD/WikiPron —
+  dùng để import Bước 1 như bình thường), registry npm/PyPI (theo `noProxy`
+  của proxy). `WebSearch` (công cụ tìm kiếm, KHÔNG fetch trực tiếp trang
+  đích) **vẫn hoạt động** và trả về snippet thật kèm URL nguồn.
+  **Hệ quả cho phương pháp Bước 2 (derive 2 nguồn độc lập bằng subagent, mỗi
+  lượt chỉ đọc 1 tài liệu):** không thể thực hiện đúng nguyên văn — subagent
+  trong cùng container sẽ gặp đúng proxy này, không fetch được tài liệu gốc
+  (trang chính phủ, Wikipedia, sách ngữ pháp online). **Điều chỉnh áp dụng
+  cho ko/es/fr (khác ja — lúc build ja, WebFetch còn hoạt động, xem
+  `S-W3C-JLREQ`/`S-NRGRAMMAR`/Wikipedia trong `sources.json` của ja):**
+  - Dùng `WebSearch` (nhiều truy vấn độc lập, diễn đạt khác nhau, cho cùng
+    một hiện tượng) làm nguồn cross-check thay cho "subagent đọc nguyên văn
+    2 tài liệu" — vẫn trả về snippet + URL nguồn thật, chỉ không đọc được
+    toàn văn trang.
+  - Tri thức ngôn ngữ học đã huấn luyện sẵn (trained knowledge) của chính
+    người viết rule được dùng làm nguồn bổ sung cho các sự kiện ngôn ngữ học
+    chuẩn, phổ thông, không tranh cãi (bảng chữ cái, cấu trúc âm tiết, loại
+    từ, trật tự từ cơ bản...) — ghi `derived_by: human`, **KHÔNG bao giờ
+    `confidence: high`** cho các mục chỉ có nguồn này (trần `medium`), và
+    ghi rõ trong `sources.json`/`coverage.json` đây là giới hạn của phiên
+    này, không phải "đã đối chiếu tài liệu gốc" thật.
+  - Bất kỳ hiện tượng nào WebSearch cũng không cho đủ bằng chứng cụ thể
+    (không phải kiến thức phổ thông, cần trích dẫn chính xác từ văn bản quy
+    định — vd bảng La-tinh hoá chính thức đầy đủ, ranh giới register chính
+    xác) → hạ `confidence: none` hoặc đưa vào "GIẢ ĐỊNH CẦN NGƯỜI DUYỆT",
+    KHÔNG bịa cho đủ.
+  - Corpus check (Bước 3) KHÔNG bị ảnh hưởng — vẫn dùng UD treebank qua
+    `raw.githubusercontent.com` như ja đã làm (Tatoeba/Wikipedia cũng bị
+    chặn y hệt cho ja, đây là tình trạng lặp lại, không phải mới).
+  - **Khi Project Owner quay lại:** nếu môi trường lúc đó cho fetch web đầy
+    đủ (như lúc build ja), nên chạy lại Bước 2 cho các mục đang ở
+    `confidence: medium`-do-WebSearch để nâng lên đúng chuẩn "2 nguồn độc
+    lập đọc nguyên văn" nếu muốn FROZEN sau này — ghi rõ trong từng
+    `coverage.json` mục nào cần làm lại kiểu này.
+
+- **D-52 · 2026-07-18 · derived · ko — `ko` build HOÀN TẤT, trạng thái
+  `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN.** 24 hiện tượng
+  trong `rules/languages/ko/coverage.json`; 4 file `.rules.json`
+  (orthography/phonology/grammar/pragmatics) đối chiếu khuôn thành công với
+  `ja` (FROZEN) — xem `rules/languages/ko/pipeline-log.md` cho log chi tiết
+  từng bước. Bước 3 (corpus check trên 7339 câu UD Korean-GSD/PUD thật) tìm
+  và tự sửa 2 bug thật trong rule mới viết (check bị áp sai phạm vi — xem
+  pipeline-log). `node tools/validate.mjs` PASS, không phát sinh lỗi mới
+  ngoài 4 lỗi pre-existing của vi/zh (không liên quan). 3 mục cần Project
+  Owner quyết (`review-checklist.md`: A-02 map register, A-03 reading-aid
+  policy, A-06 spacing grading) và 3 mục cần người bản ngữ Hàn
+  (`native-review-ko.md`: A-01 bảng romanization, A-04 bảng động từ bất quy
+  tắc, A-05 bảng counter) — CHƯA gửi review, CHỈ khung checklist. Không đụng
+  `PLAYABLE_LANGUAGES`/`language_options.json`/`generate-curriculum.mjs`
+  hay `rules/languages/{ja,en,vi,zh}/**`. Commit riêng ngay sau entry này.
+
+---
+
 ## Ghi chú (không phải quyết định đã chốt)
 
 - Giao diện thẻ từ vựng (collapsed: target + reading + audio; expanded: meaning +

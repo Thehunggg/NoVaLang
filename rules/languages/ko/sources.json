@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "language": "ko",
+    "stage": "0-inventory",
+    "note": "Nguồn cho lớp máy-đọc-được của ko. Dataset (CLDR/UD/WikiPron) import ở Bước 1, confidence:high, derived_by:dataset. Các nguồn S-* còn lại tra qua WebSearch (snippet + URL, KHÔNG fetch được toàn văn trang — xem D-51 trong decisions.md: proxy của phiên này chặn 403 hầu hết domain ngoài trừ raw.githubusercontent.com). confidence trần ở medium cho các nguồn này, KHÔNG bao giờ high, vì chưa đối chiếu được nguyên văn tài liệu gốc."
+  },
+  "sources": [
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (ko)",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/ko/characters.json",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme (kor_hang_narrow_filtered)",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/kor_hang_narrow_filtered.tsv",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank (UD_Korean-GSD test split, word-class import)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Korean-GSD/master/ko_gsd-ud-test.conllu",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD Korean-GSD (train/dev/test) + UD_Korean-PUD — câu thật cho corpus check (7339 câu, xem tools/cache/corpus/ko-sentences.txt, không commit)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Korean-GSD/master/ + UD_Korean-PUD/master/",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "S-NIKL-ROMAN",
+      "name": "National Institute of Korean Language (국립국어원) — Revised Romanization of Korean (2000), tra qua WebSearch snippet, KHÔNG fetch được trang gốc korean.go.kr (403, xem D-51)",
+      "url": "https://www.korean.go.kr/front_eng/roman/roman_01.do",
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "gov (không fetch được toàn văn trong phiên này)"
+    },
+    {
+      "id": "S-WIKI-ROMAN",
+      "name": "Wikipedia — Revised Romanization of Korean (tổng hợp bảng chính thức từ NIKL, tra qua WebSearch snippet)",
+      "url": "https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean",
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "CC BY-SA (không fetch được toàn văn trong phiên này)"
+    },
+    {
+      "id": "S-WIKI-SPEECHLEVELS",
+      "name": "Wikipedia — Korean speech levels (7-level taxonomy, tra qua WebSearch snippet)",
+      "url": "https://en.wikipedia.org/wiki/Korean_speech_levels",
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "CC BY-SA (không fetch được toàn văn trong phiên này)"
+    },
+    {
+      "id": "S-NIKL-SPACING",
+      "name": "National Institute of Korean Language — quy tắc 띄어쓰기 (word spacing), tra qua WebSearch snippet tổng hợp (Oreate AI blog, Language Log, Aigo — đều dẫn lại quy định NIKL 1949/hangeul matchumbeop, KHÔNG fetch được văn bản quy định gốc)",
+      "url": "https://languagelog.ldc.upenn.edu/nll/?p=44437",
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "low",
+      "license": "secondary summary, chưa đối chiếu văn bản quy định gốc — xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT A-06"
+    },
+    {
+      "id": "S-TRAINED-KNOWLEDGE",
+      "name": "Kiến thức ngôn ngữ học tiếng Hàn đã huấn luyện sẵn của người viết rule (Claude) — CHỈ dùng cho sự kiện chuẩn, phổ thông, không tranh cãi (vd cấu trúc âm tiết Hangul, 2 hệ số đếm, trật tự SOV cơ bản), KHÔNG dùng làm nguồn duy nhất cho quyết định sản phẩm hay bảng dữ liệu đầy đủ chính xác",
+      "url": null,
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "n/a — xem D-51, giới hạn môi trường phiên này"
+    }
+  ]
+}

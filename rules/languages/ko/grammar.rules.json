@@ -1,0 +1,92 @@
+{
+  "id": "ko/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "particles_josa",
+  "enforces": [
+    "grammar-and-usage.md",
+    "grammar-particles.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "UD"
+  ],
+  "derived_by": "human",
+  "config": {
+    "word_order": "SOV",
+    "topic_prominent": true,
+    "particle_pairs_patchim_conditioned": {
+      "topic": { "with_patchim": "은", "without_patchim": "는" },
+      "subject": { "with_patchim": "이", "without_patchim": "가" },
+      "object": { "with_patchim": "을", "without_patchim": "를" }
+    },
+    "patchim_rule": "Chọn vế có phụ âm cuối (patchim) nếu âm tiết cuối của từ đứng trước CÓ 종성; chọn vế không patchim nếu âm tiết cuối KHÔNG có 종성. Quy tắc âm vị học rõ ràng, không tranh cãi.",
+    "vowel_harmony": {
+      "rule": "Đuôi 아/어 chọn theo nguyên âm gốc: gốc có nguyên âm ㅏ hoặc ㅗ -> 아; các nguyên âm còn lại -> 어.",
+      "example_a": "받다 (gốc 받, ㅏ) -> 받아요",
+      "example_eo": "먹다 (gốc 먹, ㅓ) -> 먹어요"
+    },
+    "irregular_verb_classes": [
+      "ㅂ 불규칙 (ㅂ-irregular)",
+      "ㄷ 불규칙 (ㄷ-irregular)",
+      "르 불규칙 (leu-irregular)",
+      "ㅅ 불규칙 (ㅅ-irregular)",
+      "ㅎ 불규칙 (ㅎ-irregular)"
+    ],
+    "irregular_verb_lexicon_status": "PENDING — cần bảng động từ cụ thể theo từng lớp bất quy tắc, CHƯA có nguồn đầy đủ trong phiên này (xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT A-04).",
+    "numeral_systems": {
+      "native_korean": { "used_for": ["đếm vật/tuổi/giờ với counter thuần Hàn", "1-99"], "example": ["하나", "둘", "셋"] },
+      "sino_korean": { "used_for": ["số lớn", "ngày tháng", "tiền", "phút/giây", "số điện thoại", "cấp bậc/thứ tự"], "example": ["일", "이", "삼"] },
+      "mixed_time_expression": "Giờ dùng số thuần Hàn + phút dùng số Hán-Hàn trong cùng cụm, vd '한 시 삼십 분' (1 giờ 30 phút)."
+    },
+    "counter_lexicon_status": "PENDING — bảng lượng từ (개/명/마리/장...) theo danh từ CHƯA đủ nguồn (xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT A-05)."
+  },
+  "checks": [
+    {
+      "id": "sentence-ends-with-verb-or-adjective-morphology",
+      "description": "Câu tiếng Hàn kết thúc bằng đuôi động từ/tính từ hoặc dấu câu ngay sau đuôi đó (SOV — động từ cuối câu). Kiểm thô: câu không kết thúc bằng một tiểu từ chủ đề/chủ ngữ/tân ngữ trần trụi (dấu hiệu câu bị cắt cụt).",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "(은|는|이|가|을|를)[.?!]?$"
+      },
+      "fixtures": {
+        "pass": [
+          "저는 학생이에요."
+        ],
+        "fail": [
+          "저는 학생을"
+        ]
+      }
+    },
+    {
+      "id": "topic-particle-patchim-agreement",
+      "description": "은 chỉ theo sau âm tiết CÓ patchim, 는 chỉ theo sau âm tiết KHÔNG patchim (kiểm mẫu cố định, không phải kiểm tổng quát toàn bộ từ vựng).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm patchim tổng quát cần phân tích Unicode Hangul decomposition (종성 != rỗng) khi generator chạy, không phải regex tĩnh trên danh sách từ hữu hạn."
+      },
+      "fixtures": {
+        "pass": [
+          "선생님은 친절해요.",
+          "저는 학생이에요."
+        ],
+        "fail": [
+          "선생님는 친절해요.",
+          "저은 학생이에요."
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "부산공업학교를 졸업했고, 1949년 부친과 함께 부산에 국제고무공업사를 설립해 《왕자표》고무신을 생산하기 시작했다.",
+      "저는 학생이에요.",
+      "선생님은 친절해요."
+    ],
+    "fail": [
+      "저은 학생가 아니에요.",
+      "저는 학생을"
+    ],
+    "_note": "1 câu pass đầu lấy từ corpus thật UD Korean-GSD (Bước 3 mục 6)."
+  }
+}
