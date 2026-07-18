@@ -83,6 +83,10 @@ for (const f of managedMd) {
 if (!hadErr('INV-1')) OK('INV-1 cô lập ngôn ngữ: không phát hiện tham chiếu chéo trong file pipeline');
 
 // INV-3: FROZEN => version>=1.0.0 và depends_on cũng FROZEN
+// (D-49, 2026-07-18: Gate 5 — chờ 48h giữa VALIDATED và FROZEN — đã BỎ cho
+// phạm vi build rule ngôn ngữ. Review thật đến từ native review + corpus
+// check, không từ thời gian chờ. Không có kiểm 48h nào ở đây trước đây ngoài
+// dòng thông báo dưới; sửa lại cho khớp chính sách hiện hành.)
 for (const meta of Object.values(mdMeta)) {
   if (meta.status !== 'FROZEN') continue;
   if (!/^[1-9]\d*\.\d+\.\d+$/.test(meta.version || '')) E(3, `FROZEN cần version>=1.0.0: ${meta.rel}`);
@@ -91,7 +95,7 @@ for (const meta of Object.values(mdMeta)) {
     if (dm && dm.status !== 'FROZEN') E(3, `${meta.rel} FROZEN nhưng depends_on '${dep}' chưa FROZEN`);
   }
 }
-if (!hadErr('INV-3')) OK('INV-3 FROZEN: hợp lệ (48h VALIDATED kiểm qua pipeline-log khi freeze)');
+if (!hadErr('INV-3')) OK('INV-3 FROZEN: hợp lệ (D-49: không còn yêu cầu chờ 48h)');
 
 // INV-4 + INV-5: *.rules.json có id + >=1 fixture pass và >=1 fail
 const rulesFiles = files.filter((f) => f.rel.endsWith('.rules.json'));

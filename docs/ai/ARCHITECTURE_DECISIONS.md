@@ -569,3 +569,63 @@ approved by Project Owner under
 `NOVALANG-NATURALNESS-RULE-ARCHITECTURE-IMPLEMENTATION-01`. Documentation
 wording remains pending final Project Owner review; no language profile is
 frozen by this approval.
+
+## ADR-017 — Gate 5 removed for the language rule-build pipeline
+
+Status: `APPROVED`
+
+### Context
+
+`/build-language`'s Bước 5 (freeze step) used a "Gate 5" wait — a hiện tượng
+(language phenomenon) had to sit at `VALIDATED` for ≥48 hours, and the Project
+Owner had to confirm a second time, before it could be proposed `FROZEN`. Gate
+5 assumes a second reviewer with enough linguistic expertise to catch problems
+missed the first time. NovaLang is a one-person company; the Project Owner is
+not a linguist and cannot audit rule content by eye. A time gap alone does not
+produce a materially different second review under that constraint — it is an
+empty procedural step, not real verification.
+
+### Decision
+
+- Gate 5 (the 48–72 hour wait between a `VALIDATED` proposal and a `FROZEN`
+  confirmation) is **removed for the language rule-build pipeline only**
+  (`/build-language`, its Bước 5, and `tools/validate.mjs`).
+- A phenomenon that meets the existing `VALIDATED` bar (confidence ≥ medium,
+  sufficient pass+fail fixtures, a clean corpus check, and every `depends_on`
+  already ≥ `VALIDATED`) may be proposed `FROZEN` in the same session — no
+  waiting period required.
+- Real review is replaced by two mechanisms already built into the pipeline:
+  **native review** (`native-review-<lang>.md`, or direct Project Owner
+  confirmation when the language is one the Owner reads natively — vi/ja/en
+  per `rules/decisions.md`) and **corpus check** (Bước 3 — running the rule
+  against real text and demoting confidence on mass violations). Both produce
+  actual evidence; neither depends on elapsed time.
+- The other `FROZEN` conditions are unchanged: `version ≥ 1.0.0`, every
+  `depends_on` also `FROZEN`, and explicit Project Owner confirmation (freeze
+  is an irreversible-in-spirit action and still requires that confirmation).
+- `tools/validate.mjs` never programmatically enforced the 48-hour gap — it
+  was only checked manually by whichever agent proposed a freeze, by
+  comparing dates in `pipeline-log.md`. That manual check is dropped; INV-3's
+  success message was updated to match.
+
+### Scope
+
+This ADR and its source decision (`rules/decisions.md` D-49) apply **only**
+to the language rule-build pipeline. Gate 5 remains in full effect for every
+other NovaLang architecture decision or release process that references it.
+
+### Consequences
+
+- Language phenomena for `ja`, `en`, and `vi` already sitting at `VALIDATED`
+  may be proposed for `FROZEN` immediately, without waiting for their prior
+  48-hour clocks to elapse.
+- Freeze proposals still require the Project Owner's explicit second
+  confirmation per hiện tượng — only the elapsed-time requirement is dropped.
+- Does not change the Golden Reference Lesson, Lesson Format, Stage
+  1/completion contracts, or any non-language-rule ADR.
+
+### Approval
+
+Approved by Project Owner, 2026-07-18, effective immediately. Recorded in
+`rules/decisions.md` as D-49 (source of truth for wording/rationale); this
+ADR is the architecture-level pointer for future readers.
