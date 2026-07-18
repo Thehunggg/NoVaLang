@@ -1,0 +1,54 @@
+{
+  "id": "vi/pragmatics.rules",
+  "phenomenon": "pronoun_system",
+  "enforces": ["register_taxonomy, forms_of_address, sentence_final_particles"],
+  "sources": ["S-WIKIPEDIA-VI", "S-CONTENT-NATURALNESS"],
+  "derived_by": "human",
+  "config": {
+    "pronoun_system": {
+      "kinship_terms_used_as_pronouns": true,
+      "choice_depends_on_relative_age_status": true,
+      "no_fixed_i_you_pair": true,
+      "examples": [
+        { "pronoun": "anh", "used_for": "nam giới lớn tuổi hơn người nói một chút / chồng-người-yêu" },
+        { "pronoun": "chị", "used_for": "nữ giới lớn tuổi hơn người nói một chút" },
+        { "pronoun": "em", "used_for": "người nhỏ tuổi hơn (cả nam/nữ)" },
+        { "pronoun": "ông", "used_for": "nam giới cao tuổi/kính trọng" },
+        { "pronoun": "bà", "used_for": "nữ giới cao tuổi/kính trọng" },
+        { "pronoun": "tôi", "used_for": "trung tính, khoảng cách/trang trọng, không xác định quan hệ" }
+      ]
+    },
+    "sentence_final_particles": {
+      "exist_in_vietnamese": true,
+      "examples": [
+        { "particle": "ạ", "function": "lễ phép" },
+        { "particle": "nhé", "function": "gợi ý/đề nghị nhẹ nhàng" },
+        { "particle": "nhỉ", "function": "tìm đồng thuận" },
+        { "particle": "à", "function": "hỏi lại/xác nhận" }
+      ]
+    },
+    "politeness_particle_da": {
+      "dạ_vâng_signal_respect": true
+    },
+    "register_taxonomy": {
+      "mainly_pronoun_and_particle_choice": true,
+      "_note": "Khác en (chọn từ) và ja (hậu tố ngữ pháp keigo): vi thể hiện register qua CHỌN ĐẠI TỪ THÂN TỘC + trợ từ cuối câu + dạ/vâng đầu câu."
+    },
+    "forms_of_address": {
+      "title_or_kinship_before_name_formal": true
+    },
+    "naturalness_translation": {
+      "pronoun_choice_affects_naturalness": true
+    }
+  },
+  "fixtures": {
+    "pass": [
+      { "text": "Dạ, em chào anh ạ.", "note": "dạ đầu câu + ạ cuối câu: lễ phép với người lớn hơn" },
+      { "text": "Anh ơi, đợi em với!", "note": "xưng hô bằng từ thân tộc theo tuổi tương đối" },
+      { "text": "Chị Lan có khỏe không?", "note": "danh xưng + tên cho ngữ cảnh lịch sự" }
+    ],
+    "fail": [
+      { "text": "Tôi chào ông ạ.", "context": "nói với bạn cùng tuổi", "note": "SAI ngữ cảnh: 'ông' dùng cho người cao tuổi/kính trọng, không hợp với bạn ngang tuổi" }
+    ]
+  }
+}

@@ -22,3 +22,14 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   nhãn UPOS). WikiPron vie_latn_hanoi_narrow_filtered (theo D-43 Hà Nội) →
   grapheme-to-phoneme.data.json, 24.796 mục — có ký hiệu thanh điệu Chao tone
   letters thật (˧˧/˨˩/˨˦...). Validator PASS.
+- **Bước 2 (derive) · 2026-07-18 · XONG** — Khung 34 claim đóng. 2 lượt: A =
+  narrative nội bộ 0/34 (narrative không có gì riêng vi — dự đoán đúng), D =
+  Wikipedia 23/28. Diff: 0 trùng, 0 lệch, **23 chỉ-Wikipedia** (medium, có
+  trích dẫn — không nguồn thứ hai mở trong môi trường mạng phiên này, cùng
+  tình huống với en). Thử thêm 2 WebSearch trực tiếp cho 5 claim bị bỏ: vẫn
+  không đủ bằng chứng cho `casing.*` (3), `politeness_particle_da.a_marks_politeness`
+  (1) — đưa Bước 4 hỏi trực tiếp (owner bản ngữ tự xác nhận được, không cần
+  nguồn ngoài). `pronoun_system.neutral_pronouns_exist` bị bỏ vì Wikipedia MÂU
+  THUẪN nội bộ → cũng đưa Bước 4. Sinh 4 file rule:
+  orthography/phonology/grammar/pragmatics.rules.json (fixtures đủ pass+fail,
+  gồm bộ 6 từ minimal-pair thanh điệu ma/má/mà/mả/mã/mạ). Validator PASS.

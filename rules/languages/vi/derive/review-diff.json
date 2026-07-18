@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-07-18T00:34:44.099Z",
+  "passes": [
+    "passA-internal",
+    "passD-wikipedia"
+  ],
+  "agree": [],
+  "conflict": [],
+  "onlyOne": [
+    {
+      "phenomenon": "answer_acceptance_vi.diacritic_stripped_input_common",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Vietnamese can be typed without tone marks, which Vietnamese speakers can usually guess depending on context — Wikipedia: Vietnamese language and computers"
+    },
+    {
+      "phenomenon": "classifiers.example_con_for_animals",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "The classifier 'con' generally introduces animate objects, especially animals, e.g. 'con gà' (chicken), 'con chó' (dog) — Wikipedia: Vietnamese grammar"
+    },
+    {
+      "phenomenon": "classifiers.required_before_countable_noun",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "classifiers are frequently required when a noun is accompanied by a numeral; in Vietnamese the classifier always precedes the noun but comes after the number — Wikipedia: Classifier (linguistics)"
+    },
+    {
+      "phenomenon": "forms_of_address.title_or_kinship_before_name_formal",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "the last syllable in a primary name with a title before it is used to call or address a person: 'ông Dũng', 'anh Dũng' — Wikipedia: Vietnamese name"
+    },
+    {
+      "phenomenon": "grapheme_to_phoneme.orthography_mostly_phonemic",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Chữ quốc ngữ was created by Portuguese missionaries according to the phonemic orthography of Portuguese language — Wikipedia: Vietnamese alphabet"
+    },
+    {
+      "phenomenon": "grapheme_to_phoneme.same_sound_multiple_spellings_exist",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "The velar stop is written variously as 'c', 'k', or 'q' in Vietnamese — Wikipedia: Vietnamese phonology / Talk:Vietnamese phonology"
+    },
+    {
+      "phenomenon": "inflection_morphology.no_verb_conjugation",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Vietnamese lacks morphological markings of case, gender, number, and tense (and, as a result, has no finite/nonfinite distinction) — Wikipedia: Vietnamese morphology"
+    },
+    {
+      "phenomenon": "inflection_morphology.tense_marked_by_particles",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "whereas European languages tend to use morphology to express tense, Vietnamese uses grammatical particles or syntactic constructions — Wikipedia: Vietnamese grammar"
+    },
+    {
+      "phenomenon": "naturalness_translation.pronoun_choice_affects_naturalness",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "the exclusive use of the Vietnamese words for 'I' and 'you' are considered informal and rude — Wikipedia: Pronouns in Vietnamese"
+    },
+    {
+      "phenomenon": "phoneme_inventory.is_monosyllabic_analytic",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Vietnamese is an isolating language (highly analytic)...Vietnamese morphemes and phonological words are predominantly monosyllabic — Wikipedia: Vietnamese language / Vietnamese morphology"
+    },
+    {
+      "phenomenon": "politeness_particle_da.dạ_vâng_signal_respect",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "'dạ' combines with 'vâng' to form 'dạ vâng,' a polite affirmative response, particularly used when addressing elders or in formal/respectful contexts — Wikipedia: Vietnamese grammar / Pronouns in Vietnamese"
+    },
+    {
+      "phenomenon": "pronoun_system.choice_depends_on_relative_age_status",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Vietnamese pronouns indicate the social status between speakers and other persons in the discourse in addition to grammatical person and number — Wikipedia: Pronouns in Vietnamese"
+    },
+    {
+      "phenomenon": "pronoun_system.kinship_terms_used_as_pronouns",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "a pronoun usually connotes a degree of family relationship or kinship, and in polite speech...kinship terminology is used when referring to oneself, the audience, or a third party — Wikipedia: Pronouns in Vietnamese"
+    },
+    {
+      "phenomenon": "register_taxonomy.mainly_pronoun_and_particle_choice",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Tôi is often used formally...conveys equal status; tao, mày...commonly used in familiar social contexts...otherwise considered impolite — Wikipedia: Vietnamese language / Pronouns in Vietnamese"
+    },
+    {
+      "phenomenon": "sentence_final_particles.exist_in_vietnamese",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Languages that use many modal particles in their spoken form include Vietnamese — Wikipedia: Sentence-final particle / Modal particle"
+    },
+    {
+      "phenomenon": "syllable_structure.each_syllable_written_separately",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Vietnamese orthography uses spaces to separate syllables rather than words — Wikipedia: Vietnamese language"
+    },
+    {
+      "phenomenon": "tone_system.marked_directly_on_vowel",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "the first tone is not marked and the other five are indicated by diacritics applied to the vowel part of the syllable — Wikipedia: Vietnamese phonology"
+    },
+    {
+      "phenomenon": "tone_system.tone_count_standard",
+      "pass": "passD-wikipedia",
+      "claim": 6,
+      "note": "Standard Vietnamese has six tones (ngang, sắc, huyền, hỏi, ngã, nặng); modern linguists count 6 phonemic tones — Wikipedia: Vietnamese phonology"
+    },
+    {
+      "phenomenon": "tone_system.tones_are_phonemic",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Vietnamese is a tonal language, so the meaning of each word depends on the pitch in which it is pronounced — Wikipedia: Vietnamese language"
+    },
+    {
+      "phenomenon": "word_order.adjective_after_noun",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "postpositive adjectives are the norm: it is normal for an attributive adjective to follow, rather than precede, the noun it modifies — Wikipedia: Postpositive adjective / Vietnamese grammar"
+    },
+    {
+      "phenomenon": "word_order.basic",
+      "pass": "passD-wikipedia",
+      "claim": "SVO",
+      "note": "Vietnamese has a basic subject-verb-object (SVO) word order, though utterances may be restructured to be topic-prominent — Wikipedia: Vietnamese grammar"
+    },
+    {
+      "phenomenon": "word_segmentation.compound_words_common",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "many multisyllabic words do occur, usually as a result of compounding and reduplication — Wikipedia: Vietnamese morphology"
+    },
+    {
+      "phenomenon": "word_segmentation.space_marks_syllable_not_word",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "Vietnamese orthography uses spaces to separate syllables rather than words, meaning multisyllabic words frequently appear as separate tokens — Wikipedia: Vietnamese language"
+    }
+  ]
+}

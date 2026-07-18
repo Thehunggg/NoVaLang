@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "vi",
-    "stage": "1-import-done",
+    "stage": "2-derive-done",
     "generatedAt": "2026-07-18",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
@@ -49,7 +49,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Có hoa/thường như Latin khác: đầu câu, danh từ riêng. Khác Anh: đại từ nhân xưng KHÔNG viết hoa cố định (khác 'I')."
+    "notes": "Có hoa/thường như Latin khác: đầu câu, danh từ riêng. Khác Anh: đại từ nhân xưng KHÔNG viết hoa cố định (khác 'I'). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B2: 3/3 claim casing (viết hoa đầu câu, danh từ riêng, đại từ không cố định hoa) KHÔNG tìm được trích dẫn Wikipedia rõ ràng sau 2 lượt tìm → đưa Bước 4 hỏi trực tiếp (owner là người bản ngữ, tự xác nhận được, không cần nguồn ngoài).]"
   },
   "writing_direction": {
     "rule_level": {
@@ -94,7 +94,7 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 6 thanh điệu (giọng Hà Nội) phân biệt nghĩa hoàn toàn — ma/má/mà/mả/mã/mạ là 6 từ khác nhau. Dấu thanh ghi trực tiếp trên chữ (không như ja cần romanize riêng). [B1: import WikiPron vie_latn_hanoi_narrow_filtered (D-43) -> 24796 mục, có ký hiệu thanh Chao tone letters (˧˧/˨˩...) -> grapheme-to-phoneme.data.json]"
+    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 6 thanh điệu (giọng Hà Nội) phân biệt nghĩa hoàn toàn — ma/má/mà/mả/mã/mạ là 6 từ khác nhau. Dấu thanh ghi trực tiếp trên chữ (không như ja cần romanize riêng). [B1: import WikiPron vie_latn_hanoi_narrow_filtered (D-43) -> 24796 mục, có ký hiệu thanh Chao tone letters (˧˧/˨˩...) -> grapheme-to-phoneme.data.json] [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "dialect_variety": {
     "rule_level": {
@@ -125,7 +125,7 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "Chính tả khá đều đặn (quốc ngữ thiết kế theo âm) — dễ hơn tiếng Anh nhiều, nhưng có vài chữ ghi nhiều âm theo vị trí (gi/d/v theo giọng) và âm cuối bị trung hòa (-c/-t, -n/-ng theo một số phân tích). [B1: WikiPron Hà Nội 24796 mục sẵn sàng đo Bước 3]"
+    "notes": "Chính tả khá đều đặn (quốc ngữ thiết kế theo âm) — dễ hơn tiếng Anh nhiều, nhưng có vài chữ ghi nhiều âm theo vị trí (gi/d/v theo giọng) và âm cuối bị trung hòa (-c/-t, -n/-ng theo một số phân tích). [B1: WikiPron Hà Nội 24796 mục sẵn sàng đo Bước 3] [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "phoneme_inventory": {
     "rule_level": {
@@ -142,7 +142,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Nguyên âm đơn + đôi + phụ âm đầu/cuối. Số lượng chính xác phụ thuộc quyết định giọng (Q1). [B1: WikiPron Hà Nội cấp dữ liệu âm vị + thanh cho đo/derive]"
+    "notes": "Nguyên âm đơn + đôi + phụ âm đầu/cuối. Số lượng chính xác phụ thuộc quyết định giọng (Q1). [B1: WikiPron Hà Nội cấp dữ liệu âm vị + thanh cho đo/derive] [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "syllable_structure": {
     "rule_level": {
@@ -156,7 +156,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Ngôn ngữ đơn lập (isolating) — mỗi âm tiết thường = 1 hình vị, viết cách nhau bằng khoảng trắng dù không phải luôn = 1 từ."
+    "notes": "Ngôn ngữ đơn lập (isolating) — mỗi âm tiết thường = 1 hình vị, viết cách nhau bằng khoảng trắng dù không phải luôn = 1 từ. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "word_segmentation": {
     "rule_level": {
@@ -170,7 +170,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "⚠ Khoảng trắng ngăn ÂM TIẾT, không ngăn TỪ — 'học sinh' (học+sinh) là 1 từ 2 âm tiết viết cách nhau. Ảnh hưởng cách app tách từ để chấm/tra nghĩa."
+    "notes": "⚠ Khoảng trắng ngăn ÂM TIẾT, không ngăn TỪ — 'học sinh' (học+sinh) là 1 từ 2 âm tiết viết cách nhau. Ảnh hưởng cách app tách từ để chấm/tra nghĩa. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "word_class": {
     "rule_level": {
@@ -201,7 +201,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "SVO như tiếng Anh, NHƯNG tính từ đứng SAU danh từ (khác Anh): 'mèo đen' (mèo+đen = cat black), không phải 'black cat'."
+    "notes": "SVO như tiếng Anh, NHƯNG tính từ đứng SAU danh từ (khác Anh): 'mèo đen' (mèo+đen = cat black), không phải 'black cat'. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "classifiers": {
     "rule_level": {
@@ -215,7 +215,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Loại từ (classifier/measure word, giống tiếng Trung/Nhật counter): con, cái, chiếc, quyển... đứng trước danh từ đếm được. Loại từ nào đi với danh từ nào là lexical."
+    "notes": "Loại từ (classifier/measure word, giống tiếng Trung/Nhật counter): con, cái, chiếc, quyển... đứng trước danh từ đếm được. Loại từ nào đi với danh từ nào là lexical. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "inflection_morphology": {
     "rule_level": {
@@ -229,7 +229,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "KHÔNG biến hình (isolating): động từ không chia thì/ngôi/số, danh từ không có số nhiều bắt buộc — thì diễn đạt bằng từ phụ trợ (đã/đang/sẽ), số nhiều bằng từ phụ (các/những)."
+    "notes": "KHÔNG biến hình (isolating): động từ không chia thì/ngôi/số, danh từ không có số nhiều bắt buộc — thì diễn đạt bằng từ phụ trợ (đã/đang/sẽ), số nhiều bằng từ phụ (các/những). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "pronoun_system": {
     "rule_level": {
@@ -243,7 +243,7 @@
       "confidence": "low"
     },
     "machine_readable": true,
-    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: đại từ nhân xưng chủ yếu là TỪ THÂN TỘC (anh/chị/em/ông/bà/cô/chú/con...) chọn theo tuổi/vai vế/quan hệ tương đối giữa 2 người nói — không có cặp I/you cố định. Rất khác en/ja. Lexical (quy tắc chọn từ theo ngữ cảnh) cần native review."
+    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: đại từ nhân xưng chủ yếu là TỪ THÂN TỘC (anh/chị/em/ông/bà/cô/chú/con...) chọn theo tuổi/vai vế/quan hệ tương đối giữa 2 người nói — không có cặp I/you cố định. Rất khác en/ja. Lexical (quy tắc chọn từ theo ngữ cảnh) cần native review. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B2: claim neutral_pronouns_exist bị BỎ vì bằng chứng Wikipedia MÂU THUẪN nội bộ (một chỗ nói \"tôi\" dùng lịch sự rộng rãi, chỗ khác nói hệ đại từ \"lacks any truly neutral terms\") → đưa Bước 4 hỏi trực tiếp.]"
   },
   "sentence_final_particles": {
     "rule_level": {
@@ -257,7 +257,7 @@
       "confidence": "low"
     },
     "machine_readable": false,
-    "notes": "CÓ (khác en not-applicable, giống ja): trợ từ/tiểu từ tình thái cuối câu à/ạ/nhé/nhỉ/đấy/cơ/mà... mang sắc thái. Dịch theo chức năng — cần native review."
+    "notes": "CÓ (khác en not-applicable, giống ja): trợ từ/tiểu từ tình thái cuối câu à/ạ/nhé/nhỉ/đấy/cơ/mà... mang sắc thái. Dịch theo chức năng — cần native review. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "politeness_particle_da": {
     "rule_level": {
@@ -271,7 +271,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "'dạ'/'vâng' đầu câu = tín hiệu lễ phép/đồng ý khi nói với người lớn tuổi/bề trên — gần vai trò teineigo ja nhưng thể hiện bằng từ rời, không phải hậu tố ngữ pháp."
+    "notes": "'dạ'/'vâng' đầu câu = tín hiệu lễ phép/đồng ý khi nói với người lớn tuổi/bề trên — gần vai trò teineigo ja nhưng thể hiện bằng từ rời, không phải hậu tố ngữ pháp. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B2: claim \"ạ lễ phép\" KHÔNG tìm được trích dẫn Wikipedia cụ thể (chỉ có bằng chứng chung về modal particle) → đưa Bước 4 hỏi trực tiếp.]"
   },
   "register_taxonomy": {
     "rule_level": {
@@ -289,7 +289,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Map ADR-016: register vi thể hiện qua CHỌN ĐẠI TỪ THÂN TỘC + trợ từ cuối câu + dạ/vâng — gần giữa en (word choice) và ja (có hệ ngữ pháp riêng), nhưng cơ chế khác cả hai (không hậu tố động từ như keigo)."
+    "notes": "Map ADR-016: register vi thể hiện qua CHỌN ĐẠI TỪ THÂN TỘC + trợ từ cuối câu + dạ/vâng — gần giữa en (word choice) và ja (có hệ ngữ pháp riêng), nhưng cơ chế khác cả hai (không hậu tố động từ như keigo). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "forms_of_address": {
     "rule_level": {
@@ -303,7 +303,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Trùng lặp có chủ đích với pronoun_system — xưng hô = chọn đại từ thân tộc; tách riêng để map với answer_acceptance/dialogue content."
+    "notes": "Trùng lặp có chủ đích với pronoun_system — xưng hô = chọn đại từ thân tộc; tách riêng để map với answer_acceptance/dialogue content. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "reading_aid_policy": {
     "rule_level": {
@@ -334,7 +334,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "⚠ QUYẾT ĐỊNH SẢN PHẨM (Bước 0 Q3): thiếu/sai dấu thanh (ma vs má vs mà) — chấm SAI (đổi nghĩa) hay chấm ĐÚNG-NHƯNG-NHẮC (typo, giống D-18)? Ảnh hưởng người gõ không dấu/gõ Telex sai."
+    "notes": "⚠ QUYẾT ĐỊNH SẢN PHẨM (Bước 0 Q3): thiếu/sai dấu thanh (ma vs má vs mà) — chấm SAI (đổi nghĩa) hay chấm ĐÚNG-NHƯNG-NHẮC (typo, giống D-18)? Ảnh hưởng người gõ không dấu/gõ Telex sai. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "naturalness_translation": {
     "rule_level": {
@@ -348,7 +348,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "vi vừa là target vừa là native (uiLanguageCode mặc định) — dịch tự nhiên áp cho cả 2 chiều. Owner tự review (S-OWNER-REVIEW)."
+    "notes": "vi vừa là target vừa là native (uiLanguageCode mặc định) — dịch tự nhiên áp cho cả 2 chiều. Owner tự review (S-OWNER-REVIEW). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]"
   },
   "tts_audio_policy": {
     "rule_level": {
