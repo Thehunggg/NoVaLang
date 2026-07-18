@@ -30,7 +30,8 @@
       { "sentence": "我喜欢红色的花。", "note": "SVO + tính từ trước danh từ (红色的花 = hoa màu đỏ)" },
       { "sentence": "我有三个苹果。", "note": "lượng từ 个 trước danh từ đếm được" },
       { "sentence": "我吃了饭。", "note": "trợ từ 了 đánh dấu hoàn thành, không chia động từ" },
-      { "sentence": "我去过北京。", "note": "trợ từ 过 đánh dấu kinh nghiệm đã từng" }
+      { "sentence": "我去过北京。", "note": "trợ từ 过 đánh dấu kinh nghiệm đã từng" },
+      { "sentence": "其测试包含了美术治疗法。", "note": "corpus UD GSDSimp thật: lượng từ 一个 + trợ từ 了" }
     ],
     "fail": [
       { "sentence": "我三个苹果有。", "note": "SAI: không phải SVO" },

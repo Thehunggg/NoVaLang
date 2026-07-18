@@ -36,3 +36,22 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   dẫn — không nguồn thứ hai mở, cùng tình huống en/vi). Sinh 4 file rule:
   orthography/phonology/grammar/pragmatics.rules.json (fixtures pass+fail đủ,
   gồm 5 chữ minimal-pair thanh điệu 妈/麻/马/骂/吗). Validator PASS.
+- **Bước 3 (corpus check) · 2026-07-18 · XONG, có 1 lỗi thật phát hiện + sửa
+  ngay** — **PHÁT HIỆN NGHIÊM TRỌNG:** dataset Bước 1 `UD_Chinese-GSD` (đã dùng
+  cho word_class + corpus check ban đầu) hóa ra là **PHỒN THỂ** (README chính
+  thức của treebank: "Traditional Chinese Universal Dependencies Treebank"),
+  mâu thuẫn trực tiếp D-37 (Hans). Phát hiện khi đối chiếu corpus thật với 20
+  cặp giản/phồn đã biết: 7593 lượt ký tự Hant / chỉ 20 lượt Hans. Cùng lúc phát
+  hiện WikiPron `cmn_hani_standard_broad` (nguồn Bước 1 cho tone/g2p) cũng
+  Hant-keyed: kiểm 42 cặp giản/phồn → 40/42 chỉ có bản Hant (giá trị THANH vẫn
+  đúng khi đối chiếu tay, chỉ khóa chữ sai).
+  **Sửa:** đổi UD sang `UD_Chinese-GSDSimp` (Hans, OpenCC + sửa tay) — import
+  lại `word-class.data.json`, tải lại corpus (4997 câu), xác nhận 0 Hant/7613
+  Hans trong 20 cặp kiểm. Corpus check sạch: 0% vi phạm 2 text-assert.
+  WikiPron cmn_hani KHÔNG có bản Hans thay thế trên WikiPron — hạ
+  `tone_system.lexical_level`/`grapheme_to_phoneme.lexical_level` từ high→medium,
+  ghi rõ khoảng trống: cần bảng chuyển đổi S2T (OpenCC) trước khi generator
+  dùng được bảng tra Hán tự→âm cho Hans — đề xuất báo cáo cuối, KHÔNG tự thêm
+  dataset mới ngoài phạm vi phiên này. g2p-check đo thanh: 99.93% mục WikiPron
+  có ký hiệu thanh (121/168655 không thanh, đa số khinh thanh hợp lệ). Fixtures
+  bổ sung câu thật từ corpus GSDSimp. Validator PASS.

@@ -11,8 +11,8 @@
     },
     {
       "id": "UD",
-      "name": "Universal Dependencies treebank",
-      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Chinese-GSD/master/zh_gsd-ud-train.conllu",
+      "name": "Universal Dependencies Chinese-GSDSimp treebank (Hans, giản thể — chuyển đổi bằng OpenCC từ GSD gốc phồn thể, có sửa tay)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Chinese-GSDSimp/master/zh_gsdsimp-ud-train.conllu",
       "consulted": "2026-07-18",
       "derived_by": "dataset",
       "confidence": "high",
@@ -65,8 +65,8 @@
     },
     {
       "id": "S-UD-CORPUS-ZH",
-      "name": "UD Chinese-GSD (train/dev/test) — câu thật cho corpus check (4997 câu)",
-      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Chinese-GSD/master/",
+      "name": "UD Chinese-GSDSimp (train/dev/test) — câu thật cho corpus check (4997 câu, Hans xác nhận 0 ký tự Hant trong 20 cặp kiểm)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Chinese-GSDSimp/master/",
       "consulted": "2026-07-18",
       "derived_by": "dataset",
       "confidence": "high",

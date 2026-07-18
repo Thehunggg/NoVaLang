@@ -1,12 +1,18 @@
 {
   "_meta": {
     "language": "zh",
-    "stage": "2-derive-done",
+    "stage": "3-corpus-done",
     "generatedAt": "2026-07-18",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
       "machine_readable": "true nếu có dataset/bảng máy đọc được",
       "note": "confidence ở Bước 0 là SƠ BỘ; Bước 1–3 sẽ chốt lại. Script = Hans (giản thể, D-37 chốt lại 2026-07-18). Nhiều quyết định sản phẩm tự áp theo D-50 (nguyên tắc dạy) + pattern tái dùng từ ja/vi — ghi rõ từng chỗ."
+    },
+    "corpus": {
+      "file": "tools/cache/corpus-zh/zh-sentences.txt (không commit)",
+      "sentences": 4997,
+      "source": "UD Chinese-GSDSimp train/dev/test (S-UD-CORPUS-ZH) — ĐÃ SỬA từ GSD (Hant) sang GSDSimp (Hans)",
+      "note": "Vượt mốc 2000. Xác nhận Hans: 0 ký tự Hant / 7613 ký tự Hans trong 20 cặp kiểm."
     }
   },
   "writing_systems": {
@@ -35,7 +41,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Import CLDR Bước 1 (locale zh = Hans mặc định). [B1: CLDR imported -> orthography.data.json; 4421 chữ Hán exemplar]"
+    "notes": "Import CLDR Bước 1 (locale zh = Hans mặc định). [B1: CLDR imported -> orthography.data.json; 4421 chữ Hán exemplar] [B3: g2p-check trên WikiPron cmn_hani (Hant-keyed) chỉ phủ 30.84% charset Hans — con số này XÁC NHẬN THÊM (không phải phát hiện mới) vấn đề Hant-keying đã ghi ở tone_system/grapheme_to_phoneme; charset CLDR Hans tự nó không bị ảnh hưởng, vẫn đúng.]"
   },
   "casing": {
     "rule_level": {
@@ -88,10 +94,10 @@
     "lexical_level": {
       "source": "WIKIPRON",
       "derived_by": "dataset",
-      "confidence": "high"
+      "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 4 thanh + 1 thanh nhẹ (khinh thanh) phân biệt nghĩa hoàn toàn (mā/má/mǎ/mà = mẹ/gai/ngựa/mắng). WikiPron cmn_hani có IPA kèm thanh. [B1: WikiPron cmn_hani 168655 mục có ký hiệu thanh Chao tone (số góc trên, vd ⁵¹/²¹⁴/³⁵) sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 4 thanh + 1 thanh nhẹ (khinh thanh) phân biệt nghĩa hoàn toàn (mā/má/mǎ/mà = mẹ/gai/ngựa/mắng). WikiPron cmn_hani có IPA kèm thanh. [B1: WikiPron cmn_hani 168655 mục có ký hiệu thanh Chao tone (số góc trên, vd ⁵¹/²¹⁴/³⁵) sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.] [SỬA LỖI B3: WikiPron cmn_hani_standard_broad.tsv (168655 mục) đã kiểm chứng bằng 42 cặp giản-phồn đã biết (爱/愛, 国/國, 马/馬...) — 40/42 chỉ có bản PHỒN THỂ (Hant) làm khóa, không phải giản thể (Hans, D-37). Bản thân giá trị thanh điệu ĐÚNG (妈→媽=\"m ä ⁵⁵\" khớp thanh 1; 马→馬=\"m ä ²¹⁴\" khớp thanh 3 — đã đối chiếu tay), nhưng dataset KHÔNG dùng được trực tiếp làm bảng tra \"chữ Hans → âm\" vì khóa là Hant. Không tìm được biến thể WikiPron nào keyed theo Hans; cần bảng chuyển đổi giản↔phồn (S2T, vd OpenCC) làm cầu nối — CHƯA có trong phiên này, không bịa. Hạ lexical_level về medium (không phải high), ghi rõ khoảng trống.] [B3: đo đánh dấu thanh trên WikiPron cmn_hani — 168534/168655 mục (99.93%) có ký hiệu thanh; 121 trường hợp không thanh (0.07%) đa số là từ chức năng đọc thanh nhẹ hợp lệ (vd 了 khinh thanh) — dưới ngưỡng nghi ngờ, xác nhận rule tone_count=4+neutral đúng.]"
   },
   "pinyin_romanization": {
     "rule_level": {
@@ -130,10 +136,10 @@
     "lexical_level": {
       "source": "WIKIPRON",
       "derived_by": "dataset",
-      "confidence": "high"
+      "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "Hán tự KHÔNG cho biết cách đọc từ hình chữ (logographic, giống kanji ja) — đọc phải tra theo từng chữ (lexical), không suy được bằng rule chung. WikiPron cmn_hani 168655 mục cấp sẵn. [B1: WikiPron cmn_hani 168655 mục sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "Hán tự KHÔNG cho biết cách đọc từ hình chữ (logographic, giống kanji ja) — đọc phải tra theo từng chữ (lexical), không suy được bằng rule chung. WikiPron cmn_hani 168655 mục cấp sẵn. [B1: WikiPron cmn_hani 168655 mục sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.] [SỬA LỖI B3: WikiPron cmn_hani_standard_broad.tsv (168655 mục) đã kiểm chứng bằng 42 cặp giản-phồn đã biết (爱/愛, 国/國, 马/馬...) — 40/42 chỉ có bản PHỒN THỂ (Hant) làm khóa, không phải giản thể (Hans, D-37). Bản thân giá trị thanh điệu ĐÚNG (妈→媽=\"m ä ⁵⁵\" khớp thanh 1; 马→馬=\"m ä ²¹⁴\" khớp thanh 3 — đã đối chiếu tay), nhưng dataset KHÔNG dùng được trực tiếp làm bảng tra \"chữ Hans → âm\" vì khóa là Hant. Không tìm được biến thể WikiPron nào keyed theo Hans; cần bảng chuyển đổi giản↔phồn (S2T, vd OpenCC) làm cầu nối — CHƯA có trong phiên này, không bịa. Hạ lexical_level về medium (không phải high), ghi rõ khoảng trống.] Generator tương lai cần bảng S2T trước khi tra âm theo Hans character trực tiếp — ghi thành đề xuất báo cáo cuối, không thuộc phạm vi sửa ở tools/**/rules/** phiên này (là việc thêm 1 dataset S2T mới, cần owner duyệt nguồn). [B3: fixtures bổ sung câu thật từ corpus UD GSDSimp] [B3 quan trọng: bảng tra Hán tự→âm (WikiPron cmn_hani) vẫn CHƯA dùng trực tiếp được cho Hans (xem SỬA LỖI ở note trước) — đây là khoảng trống dữ liệu thật sự tồn tại cho generator tương lai, không phải lỗi corpus/UD (đã sửa riêng). Đề xuất: cần dataset OpenCC S2T hoặc nguồn WikiPron Hans-keyed khác trước khi build nội dung thật.]"
   },
   "phoneme_inventory": {
     "rule_level": {
@@ -175,7 +181,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Import UD Chinese-GSD Bước 1. [B1: Import UD Chinese-GSD -> 16 nhãn UPOS -> word-class.data.json]"
+    "notes": "Import UD Chinese-GSD Bước 1. [B1: Import UD Chinese-GSD -> 16 nhãn UPOS -> word-class.data.json] [SỬA LỖI B1→B3: UD Chinese-GSD (nguồn Bước 1 ban đầu) là PHỒN THỂ (README chính thức: \"Traditional Chinese Universal Dependencies Treebank\") — mâu thuẫn trực tiếp D-37 (Hans). Phát hiện khi đối chiếu corpus Bước 3 (7593 lượt ký tự Hant / 20 lượt Hans trong 20 cặp kiểm). Đã đổi sang UD Chinese-GSDSimp (Hans, chuyển đổi bằng OpenCC + sửa tay) — import lại word-class.data.json (16 nhãn UPOS, số liệu mới) và corpus check (4997 câu, xác nhận 0 Hant/7613 Hans). Không có rule nào dựa trên GSD (Hant) bị giữ lại — word_order/word_segmentation/word_class notes trong Bước 0-2 mô tả hiện tượng chung (SVO, topic-prominent...) không đổi vì đúng với cả 2 script, chỉ nguồn dữ liệu máy đổi.]"
   },
   "word_order": {
     "rule_level": {
@@ -192,7 +198,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "SVO cơ bản nhưng topic-prominent (chủ đề có thể đứng đầu câu khác chủ ngữ ngữ pháp); tính từ trước danh từ. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "SVO cơ bản nhưng topic-prominent (chủ đề có thể đứng đầu câu khác chủ ngữ ngữ pháp); tính từ trước danh từ. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.] [B3: corpus check sạch trên GSDSimp (Hans) — 0% vi phạm 2 text-assert.]"
   },
   "classifiers": {
     "rule_level": {

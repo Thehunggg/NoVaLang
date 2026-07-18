@@ -42,6 +42,6 @@
   "fixtures": {
     "pass": ["妈", "麻", "马", "骂", "吗"],
     "fail": ["ma1", "mā2", "m@"],
-    "_note": "5 chữ minimal-pair chuẩn (mā/má/mǎ/mà + thanh nhẹ ma) phân biệt nghĩa hoàn toàn theo thanh điệu — nguồn Wikipedia Standard Chinese phonology, đối chiếu WikiPron."
+    "_note": "5 chữ minimal-pair chuẩn (mā/má/mǎ/mà + thanh nhẹ ma) phân biệt nghĩa hoàn toàn theo thanh điệu — nguồn Wikipedia Standard Chinese phonology. Giá trị thanh đối chiếu tay với WikiPron qua bản PHỒN THỂ tương ứng (媽⁵⁵/麻³⁵/馬²¹⁴/罵⁵¹/嗎-thanh nhẹ) vì file WikiPron cmn_hani khóa theo Hant, không phải Hans — xem coverage.json ghi chú SỬA LỖI B3."
   }
 }
