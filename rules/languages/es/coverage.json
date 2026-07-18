@@ -1,0 +1,176 @@
+{
+  "_meta": {
+    "language": "es",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-18",
+    "legend": {
+      "confidence": "high=dataset chuẩn hoặc đã xác nhận | medium=WebSearch snippet + kiến thức đã huấn luyện, cross-check nhiều truy vấn (xem D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc implementation đã test",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51 (rules/decisions.md): phiên này KHÔNG fetch được web ngoài. Derive Bước 2 dùng WebSearch (snippet, không toàn văn) + kiến thức ngôn ngữ học đã huấn luyện. confidence trần medium cho các mục không có dataset trực tiếp.",
+    "corpus": {
+      "file": "tools/cache/corpus/es-sentences.txt (không commit)",
+      "sentences": 17013,
+      "source": "UD Spanish-GSD train/dev/test + UD_Spanish-PUD (S-UD-CORPUS)",
+      "note": "Vượt mốc 10000 — corpus không yếu. Nguồn chủ yếu báo/web Tây Ban Nha (Peninsular), không đại diện đều cho toàn bộ thế giới nói tiếng Tây Ban Nha — xem GIẢ ĐỊNH B-01."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "Theo yêu cầu Project Owner (2026-07-18): KHÔNG tự gắn FROZEN. Chưa có bài học thật (playable) tiếng Tây Ban Nha nào để chạy rule lên kiểm tra false-positive như đã làm với 506 bài ja."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Bảng chữ cái Latin + ñ (chữ cái riêng, không phải n có dấu) + nguyên âm có dấu á/é/í/ó/ú + ü (diaeresis, chỉ dùng sau g trong güe/güi). Sự kiện phổ thông, không tranh cãi.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json.",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chữ hoa đầu câu + danh từ riêng như en, NHƯNG KHÁC en: tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (lunes, enero, español — trong khi English viết hoa Monday/January/Spanish). Điểm khác biệt quan trọng, dễ bị học viên nói tiếng Anh áp nhầm quy tắc.",
+    "status": "DRAFT"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang, chuẩn Latin, không tranh cãi.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ Latin không có khái niệm thứ tự nét như kanji/Hanja.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (spa_latn_la_broad_filtered) -> grapheme-to-phoneme.data.json. Bản 'la' (Latin America) — xem GIẢ ĐỊNH B-01 về dialect baseline.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Tiếng Tây Ban Nha có chính tả rất minh bạch (transparent orthography) — gần như 1 chữ cái = 1 âm, hiếm ngoại lệ so với tiếng Anh. Ngoại lệ đáng chú ý: h câm, c/z (distinción) hoặc c/z/s (seseo) tuỳ vùng, g mềm/cứng theo nguyên âm sau (ge/gi vs ga/go/gu), qu luôn /k/. [Bước 3: g2p-check.mjs xác nhận 3 giả thuyết trên WikiPron thật (132249 từ) — ñ->[ɲ]: 2579 từ, 0.00% vi phạm; qu (đầu từ)->[k]: 564 từ, 0.00% vi phạm; z (đầu từ)->[s]: 651 từ, 0.00% vi phạm (XÁC NHẬN bản WikiPron 'la' dùng SESEO, không phải distinción — bằng chứng trực tiếp cho GIẢ ĐỊNH B-01, không phải suy đoán).]",
+    "status": "VALIDATED"
+  },
+  "syllable_stress": {
+    "rule_level": { "source": "S-WIKI-STRESS", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "4 loại từ theo trọng âm: agudas (trọng âm âm tiết cuối, có tilde nếu kết thúc bằng nguyên âm/n/s), llanas/graves (trọng âm áp chót, có tilde nếu KHÔNG kết thúc bằng nguyên âm/n/s), esdrújulas (trọng âm áp áp chót, LUÔN có tilde), sobresdrújulas (trọng âm xa hơn, LUÔN có tilde). Xác nhận qua 4 nguồn WebSearch độc lập, đồng thuận hoàn toàn (không có điểm lệch nào phát hiện được).",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Spanish-GSD test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "gender_and_number_agreement": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Danh từ có giống (nam/nữ, phần lớn đoán được qua đuôi -o/-a nhưng có ngoại lệ: el día, la mano), tính từ/mạo từ PHẢI hoà giống-số với danh từ. Đặc điểm cấu trúc trung tâm của ngữ pháp Tây Ban Nha — quan trọng hơn hẳn so với vai trò tương tự trong ja/ko (không có giống ngữ pháp) hay en (giống ngữ pháp rất hạn chế).",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "3 nhóm động từ đều đặn theo đuôi nguyên mẫu (-ar/-er/-ir), chia theo ngôi (6 ngôi: yo/tú/él-ella-usted/nosotros/vosotros/ellos-ellas-ustedes) và nhiều thì/thức (hiện tại, quá khứ đơn/tiếp diễn, tương lai, điều kiện, giả định...). Động từ bất quy tắc (ser/estar/ir/tener/hacer...) là lexical, CHƯA có bảng đầy đủ trong phiên này.",
+    "status": "DRAFT"
+  },
+  "ser_estar_distinction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Tây Ban Nha có HAI động từ 'to be': ser (bản chất/đặc điểm lâu dài/thời gian/nguồn gốc) và estar (trạng thái/vị trí/tạm thời). Đây là điểm học viên nói tiếng Anh/Việt/Nhật (chỉ có 1 động từ 'to be'/'là'/'です') sai nhiều nhất — tương đương độ quan trọng với は/へ/を của ja về mức độ cần rule rõ ràng, dù bản chất ngôn ngữ học khác hẳn (từ vựng, không phải âm vị học).",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-RAE-VOSEO-SESEO", "S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "tú (thân mật, ngôi 2 số ít chuẩn) vs usted (trang trọng, chia động từ như ngôi 3) vs vos (voseo, thay tú ở Argentina/Uruguay/Trung Mỹ, chia động từ riêng — RAE xác nhận vos là 'đặc trưng vùng', không phải chuẩn quốc tế chung). vosotros (số nhiều thân mật, CHỈ dùng ở Tây Ban Nha) vs ustedes (số nhiều, chuẩn cho cả trang trọng VÀ thân mật ở Mỹ Latin — Mỹ Latin không phân biệt vosotros/ustedes theo độ thân mật như Tây Ban Nha). Baseline dialect ảnh hưởng trực tiếp phenomenon này — xem GIẢ ĐỊNH B-01.",
+    "status": "DRAFT"
+  },
+  "clitic_pronouns": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Đại từ tân ngữ trực tiếp/gián tiếp (lo/la/los/las, le/les) đứng TRƯỚC động từ chia (lo veo) hoặc GẮN SAU động từ nguyên mẫu/mệnh lệnh/gerund (verlo, dímelo, viéndolo). leísmo/laísmo (dùng le thay lo ở một số vùng Tây Ban Nha) là biến thể vùng miền, RAE chấp nhận leísmo hạn chế (chỉ le cho người, số ít) nhưng không chấp nhận laísmo — CHƯA cross-check kỹ, giữ DRAFT.",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SVO mặc định nhưng linh hoạt (VSO/OVS đều hợp lệ tuỳ ngữ cảnh nhấn mạnh). Pro-drop: chủ ngữ đại từ thường bị lược bỏ vì đuôi động từ đã mang thông tin ngôi/số (hablo = 'tôi nói', không cần 'yo').",
+    "status": "DRAFT"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đặc trưng nổi tiếng: dấu hỏi/than lật ngược ¿ ¡ mở đầu câu hỏi/câu cảm thán, cộng dấu ? ! chuẩn ở cuối (¿Cómo estás?). Sự kiện phổ thông, không tranh cãi, dễ kiểm bằng regex.",
+    "status": "VALIDATED"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": "S-WIKI-STRESS", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Tilde (´) đánh dấu trọng âm bất quy tắc — xem syllable_stress. Tilde diacrítica phân biệt từ đồng âm khác nghĩa/từ loại (él/el, tú/tu, sí/si, más/mas, sólo/solo — lưu ý RAE 2010 đã bỏ yêu cầu bắt buộc tilde cho sólo/solo, chỉ khuyến nghị dùng khi thật cần tránh nhầm nghĩa) — điểm CẦN xác nhận kỹ hơn, ghi vào GIẢ ĐỊNH nếu ảnh hưởng chấm điểm.",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-RAE-VOSEO-SESEO"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016 — ĐỀ XUẤT (chưa duyệt): CASUAL~tú/vos + từ vựng thân mật, NATURAL_NEUTRAL_POLITE~tú chuẩn mực trung tính (baseline mặc định), FORMAL~usted. Không có HONORIFIC-modifier riêng biệt kiểu ja/ko trong tiếng Tây Ban Nha chuẩn (usted đã bao hàm lịch sự qua lựa chọn đại từ, không phải hình thái động từ kính ngữ riêng) — xem GIẢ ĐỊNH B-02.",
+    "status": "DRAFT"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "NOT-APPLICABLE: chữ Latin, chính tả minh bạch — không cần romaji/furigana-style reading aid như ja/ko. IPA/pronunciation guide (nếu có) là tính năng khác, không phải reading_aid_policy theo nghĩa này.",
+    "status": "not-applicable"
+  },
+  "answer_acceptance_es": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "low" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Chính sách chấm điểm khi thiếu/sai tilde (vd gõ 'como' thay 'cómo', 'el' thay 'él') — lỗi bàn phím rất phổ biến với người không quen gõ dấu Tây Ban Nha. CHƯA CHỐT chấp nhận/cảnh báo/coi sai — xem GIẢ ĐỊNH B-03, cùng loại quyết định với D-45 (dấu thanh tiếng Việt) đã có tiền lệ trong repo.",
+    "status": "DRAFT"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016 như mọi ngôn ngữ. CẦN native review trước khi PASS release.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text Latin (chính tả minh bạch, TTS đọc trực tiếp được). Kế thừa _base/audio.rules.json. Locale es-ES (Tây Ban Nha) hoặc es-419 (Mỹ Latin trung lập) — xem GIẢ ĐỊNH B-01, ảnh hưởng trực tiếp locale TTS chọn.",
+    "status": "DRAFT"
+  }
+}

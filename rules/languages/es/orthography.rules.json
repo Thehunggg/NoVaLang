@@ -1,0 +1,80 @@
+{
+  "id": "es/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "punctuation_layout",
+  "enforces": [
+    "orthography.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "CLDR"
+  ],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "inverted_question_mark": "¿",
+    "inverted_exclamation_mark": "¡",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "«»",
+    "quote_marks_alternative": "\"\"",
+    "quote_marks_note": "RAE khuyến nghị « » (comillas angulares/latinas) là chuẩn hàn lâm, nhưng \" \" (comillas inglesas) rất phổ biến trong thực tế xuất bản hiện đại, đặc biệt Mỹ Latin — app dùng \" \" làm mặc định thực dụng, chưa cross-check kỹ.",
+    "capitalization_differs_from_english": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "enero/lunes/español viết thường, KHÁC January/Monday/Spanish viết hoa trong tiếng Anh — lỗi phổ biến của học viên nói tiếng Anh."
+    }
+  },
+  "checks": [
+    {
+      "id": "inverted-question-mark-opens-question",
+      "description": "Câu hỏi tiếng Tây Ban Nha phải mở đầu bằng ¿ và kết bằng ?.",
+      "assert": {
+        "type": "custom",
+        "note": "Cần parse cả câu (tìm vị trí ? cuối và ¿ tương ứng ở đầu mệnh đề hỏi, không nhất thiết đầu câu nếu câu có mệnh đề khác đứng trước) khi generator chạy, không phải regex đơn giản trên toàn dòng."
+      },
+      "fixtures": {
+        "pass": [
+          "¿Cómo estás?",
+          "Bueno, ¿vienes o no?"
+        ],
+        "fail": [
+          "Cómo estás?",
+          "¿Cómo estás."
+        ]
+      }
+    },
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu).",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Enero|Febrero|Marzo|Abril|Mayo|Junio|Julio|Agosto|Septiembre|Octubre|Noviembre|Diciembre|Lunes|Martes|Miércoles|Jueves|Viernes|Sábado|Domingo)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": [
+          "Hoy es lunes 3 de enero."
+        ],
+        "fail": [
+          "Hoy es Lunes 3 de Enero."
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "Además se le pediría a las empresas interesadas en prestar el servicio que se hagan cargo de la señalización y la cartelería que contiene información para los usuarios.",
+      "¿Cómo estás?",
+      "Hoy es lunes."
+    ],
+    "fail": [
+      "Cómo estás?",
+      "Hoy es Lunes."
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD Spanish-GSD (Bước 3 mục 6)."
+  }
+}

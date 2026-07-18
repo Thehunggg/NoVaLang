@@ -516,6 +516,30 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   `PLAYABLE_LANGUAGES`/`language_options.json`/`generate-curriculum.mjs`
   hay `rules/languages/{ja,en,vi,zh}/**`. Commit riêng ngay sau entry này.
 
+- **D-53 · 2026-07-18 · derived · es — `es` build HOÀN TẤT, trạng thái
+  `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN.** 22 hiện tượng
+  trong `rules/languages/es/coverage.json`; 4 file `.rules.json` khớp khuôn
+  với ja/en/ko — xem `rules/languages/es/pipeline-log.md`. Bug tìm được ở
+  `ko` (check bị áp sai phạm vi) KHÔNG lặp lại ở `es` — viết `checks[]` cẩn
+  thận hơn ngay từ đầu, chỉ đưa vào thứ thật sự kiểm được ở mức toàn-dòng.
+  Một lỗi khuôn thật tìm được và sửa: phenomenon tôi đặt tên
+  `pronouns_and_address` không khớp tên chuẩn `forms_of_address` mà
+  `rules/exercise-phenomena.map.json` đã dùng cho `ko`/mặc định toàn hệ
+  thống — đổi tên lại cho khớp. Bước 3 (corpus check 17013 câu UD
+  Spanish-GSD/PUD + g2p-check 132249 từ WikiPron) xác nhận sạch 100% cho 3
+  giả thuyết grapheme-to-phoneme (ñ->[ɲ], qu->[k], z->[s] — xác nhận dataset
+  dùng SESEO/Latin America). `node tools/validate.mjs` PASS, không lỗi mới.
+  **Phát hiện quan trọng nhất của es (khác ko):** tiếng Tây Ban Nha không có
+  MỘT chuẩn vùng miền duy nhất (tú/usted/vos/vosotros, seseo/distinción) —
+  đây là GIẢ ĐỊNH B-01, ảnh hưởng gần như toàn bộ `style-and-register.md`
+  và locale TTS, đưa vào `review-checklist.md` làm mục đầu tiên/quan trọng
+  nhất. 3 mục review-checklist (B-01 dialect baseline, B-02 HONORIFIC
+  mapping khi không có hệ tương ứng, B-03 chính sách chấm tilde) + 4 mục
+  native-review (B-04 tilde diacrítica, B-05 ngoại lệ giống danh từ, B-06
+  bảng động từ bất quy tắc, B-07 leísmo/laísmo) — CHƯA gửi review. Không
+  đụng `PLAYABLE_LANGUAGES`/`language_options.json`/`generate-curriculum.mjs`
+  hay `rules/languages/{ja,en,vi,zh,ko}/**`. Commit riêng ngay sau entry này.
+
 ---
 
 ## Ghi chú (không phải quyết định đã chốt)
