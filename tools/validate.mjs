@@ -212,19 +212,61 @@ for (const f of managedMd) {
 }
 if (!hadErr('INV-8')) OK('INV-8 sources: mọi tham chiếu nguồn hợp lệ');
 
-// INV-9: exercise-phenomena.map.json hợp lệ
+// INV-9: exercise-phenomena.map.json hợp lệ VÀ khớp coverage.json THẬT
+// (Golden Lesson audit 2026-07-18, C6 + việc-kế-tiếp mục 3: trước đây chỉ
+// đối chiếu tự tham chiếu với chính phenomenaVocabulary — không bao giờ
+// phát hiện được register/naturalness/reading_aid/audio_playback... không
+// khớp register_taxonomy/naturalness_translation/reading_aid_policy/
+// tts_audio_policy... trong coverage.json thật. Nay dùng
+// phenomenaVocabulary[name].coveragePhenomena (+ perLanguage override) để
+// đối chiếu với coverage.json của từng ngôn ngữ có trong catalog.)
 const mapPath = join(RULES, 'exercise-phenomena.map.json');
 if (!existsSync(mapPath)) E(9, 'thiếu rules/exercise-phenomena.map.json');
 else {
   const map = readJson(mapPath);
-  const vocab = new Set((map._meta && map._meta.phenomenaVocabulary) || []);
+  const vocab = (map._meta && map._meta.phenomenaVocabulary) || {};
+  const vocabIsObject = vocab && typeof vocab === 'object' && !Array.isArray(vocab);
+  if (!vocabIsObject) {
+    E(9, 'phenomenaVocabulary phải là object {tên: {coveragePhenomena, perLanguage?}}, không phải mảng phẳng (tự tham chiếu cũ)');
+  }
+  const coverageCache = {};
+  const covOf = (lang) => {
+    if (lang in coverageCache) return coverageCache[lang];
+    const p = join(RULES, 'languages', lang, 'coverage.json');
+    coverageCache[lang] = existsSync(p) ? readJson(p) : null;
+    return coverageCache[lang];
+  };
+  const langsWithCoverage = (catalog.languages || []).map((l) => l.code).filter((c) => existsSync(join(RULES, 'languages', c, 'coverage.json')));
+
   for (const ex of map.exercises || []) {
     if (!ex.questionId || !ex.type) E(9, 'exercise thiếu questionId/type');
     for (const p of ex.requiredPhenomena || []) {
-      if (vocab.size && !vocab.has(p)) W(9, `${ex.questionId} dùng phenomenon '${p}' không có trong phenomenaVocabulary`);
+      const entry = vocabIsObject ? vocab[p] : undefined;
+      if (!entry) { E(9, `${ex.questionId} dùng phenomenon '${p}' không có trong phenomenaVocabulary`); continue; }
+      for (const lang of langsWithCoverage) {
+        const effective = (entry.perLanguage && entry.perLanguage[lang]) || entry.coveragePhenomena;
+        if (!effective) continue; // null = khái niệm curriculum hoặc không áp dụng cho ngôn ngữ này — không phải lỗi
+        const cov = covOf(lang);
+        if (!cov) continue;
+        const covStage = cov._meta && cov._meta.stage;
+        const isUsable = typeof covStage === 'string' && (covStage.includes('frozen') || covStage === 'validated');
+        for (const rawId of effective) {
+          const covId = rawId.replace('{lang}', lang);
+          const ph = cov[covId];
+          if (!ph) {
+            W(9, `${ex.questionId} ('${p}') -> '${covId}' không có trong coverage.json của ${lang}`);
+            continue;
+          }
+          const conf = ph.rule_level && ph.rule_level.confidence;
+          if (conf === 'none') {
+            const msg = `${ex.questionId} ('${p}') -> '${covId}' trong coverage.json của ${lang} có rule_level.confidence=none — không đủ căn cứ để generator sinh bài`;
+            if (isUsable) E(9, msg); else W(9, msg);
+          }
+        }
+      }
     }
   }
-  if (!hadErr('INV-9')) OK(`INV-9 map: ${(map.exercises || []).length} bài, phenomena hợp lệ`);
+  if (!hadErr('INV-9')) OK(`INV-9 map: ${(map.exercises || []).length} bài, phenomena khớp coverage.json thật của ${langsWithCoverage.length} ngôn ngữ`);
 }
 
 // Extra: catalog
