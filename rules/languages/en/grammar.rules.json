@@ -1,8 +1,15 @@
 {
   "id": "en/grammar.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "word_order",
-  "enforces": ["grammar (inflection, articles, word order)"],
-  "sources": ["S-WIKIPEDIA-EN", "UD"],
+  "enforces": [
+    "grammar (inflection, articles, word order)"
+  ],
+  "sources": [
+    "S-WIKIPEDIA-EN",
+    "UD"
+  ],
   "derived_by": "human",
   "config": {
     "word_order": {
@@ -25,17 +32,44 @@
   },
   "fixtures": {
     "pass": [
-      { "sentence": "The dog chases the red ball.", "note": "SVO + tính từ trước danh từ" },
-      { "sentence": "She goes to school every day.", "note": "ngôi 3 số ít thêm -es (go→goes)" },
-      { "sentence": "I have three children.", "note": "số nhiều bất quy tắc child→children" },
-      { "sentence": "He went home yesterday.", "note": "quá khứ bất quy tắc go→went (irregular-verbs.data.json)" },
-      { "sentence": "This book is more interesting than that one.", "note": "tính từ dài dùng more, không thêm -er" },
-      { "sentence": "In the wake of Hurricane Katrina, affordable housing in New Orleans is more scarce than ever.", "note": "corpus UD EWT: comparative 'more scarce than'" }
+      {
+        "sentence": "The dog chases the red ball.",
+        "note": "SVO + tính từ trước danh từ"
+      },
+      {
+        "sentence": "She goes to school every day.",
+        "note": "ngôi 3 số ít thêm -es (go→goes)"
+      },
+      {
+        "sentence": "I have three children.",
+        "note": "số nhiều bất quy tắc child→children"
+      },
+      {
+        "sentence": "He went home yesterday.",
+        "note": "quá khứ bất quy tắc go→went (irregular-verbs.data.json)"
+      },
+      {
+        "sentence": "This book is more interesting than that one.",
+        "note": "tính từ dài dùng more, không thêm -er"
+      },
+      {
+        "sentence": "In the wake of Hurricane Katrina, affordable housing in New Orleans is more scarce than ever.",
+        "note": "corpus UD EWT: comparative 'more scarce than'"
+      }
     ],
     "fail": [
-      { "sentence": "The dog the red ball chases.", "note": "SAI: không phải SVO" },
-      { "sentence": "He goed home yesterday.", "note": "SAI: 'go' là động từ bất quy tắc, quá khứ là 'went' không phải 'goed'" },
-      { "sentence": "This book is interestinger than that one.", "note": "SAI: tính từ dài không thêm -er, phải dùng 'more interesting'" }
+      {
+        "sentence": "The dog the red ball chases.",
+        "note": "SAI: không phải SVO"
+      },
+      {
+        "sentence": "He goed home yesterday.",
+        "note": "SAI: 'go' là động từ bất quy tắc, quá khứ là 'went' không phải 'goed'"
+      },
+      {
+        "sentence": "This book is interestinger than that one.",
+        "note": "SAI: tính từ dài không thêm -er, phải dùng 'more interesting'"
+      }
     ]
   }
 }

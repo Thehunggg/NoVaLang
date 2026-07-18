@@ -66,3 +66,9 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   `en.ruleStatus=VALIDATED_PENDING_FREEZE`. **CHƯA freeze** — cần ≥48h + owner
   xác nhận lần 2. lexical_level của lexical_stress/inflection_morphology/
   spelling_variants KHÔNG freeze (dữ liệu chưa đầy đủ theo-từng-từ).
+- **Freeze (D-49, không chờ Gate 5) · 2026-07-18** — Owner xác nhận đóng băng
+  22/24 hiện tượng ở **rule_level** (loại trừ stroke_order/sentence_final_particles
+  not-applicable). 4 file `*.rules.json` bump `version: 1.0.0`, `status: FROZEN`.
+  `lexical_level` của lexical_stress (none)/inflection_morphology (50/~200 động
+  từ)/spelling_variants GIỮ NGUYÊN, không tự động freeze theo. Catalog
+  `en.ruleStatus=FROZEN_RULE_LEVEL_LEXICAL_OPEN`. Validator PASS.

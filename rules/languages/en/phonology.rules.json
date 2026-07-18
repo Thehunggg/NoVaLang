@@ -1,8 +1,15 @@
 {
   "id": "en/phonology.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "phoneme_inventory",
-  "enforces": ["reading-aid (D-40 IPA), accent_variety (D-41 en-US)"],
-  "sources": ["S-WIKIPEDIA-EN", "WIKIPRON"],
+  "enforces": [
+    "reading-aid (D-40 IPA), accent_variety (D-41 en-US)"
+  ],
+  "sources": [
+    "S-WIKIPEDIA-EN",
+    "WIKIPRON"
+  ],
   "derived_by": "human",
   "config": {
     "accent": "en-US (General American)",
@@ -18,14 +25,41 @@
   },
   "fixtures": {
     "pass": [
-      { "word": "record", "pos": "NOUN", "stress": "REcord", "note": "danh từ nhấn âm đầu" },
-      { "word": "record", "pos": "VERB", "stress": "reCORD", "note": "động từ nhấn âm sau — trọng âm phân biệt từ loại" },
-      { "word": "car", "ipa_us": "/kɑr/", "note": "rhotic: r sau nguyên âm được phát âm ở giọng Mỹ" },
-      { "word": "about", "ipa_us": "/əˈbaʊt/", "note": "âm tiết không trọng âm đầu giảm thành schwa" }
+      {
+        "word": "record",
+        "pos": "NOUN",
+        "stress": "REcord",
+        "note": "danh từ nhấn âm đầu"
+      },
+      {
+        "word": "record",
+        "pos": "VERB",
+        "stress": "reCORD",
+        "note": "động từ nhấn âm sau — trọng âm phân biệt từ loại"
+      },
+      {
+        "word": "car",
+        "ipa_us": "/kɑr/",
+        "note": "rhotic: r sau nguyên âm được phát âm ở giọng Mỹ"
+      },
+      {
+        "word": "about",
+        "ipa_us": "/əˈbaʊt/",
+        "note": "âm tiết không trọng âm đầu giảm thành schwa"
+      }
     ],
     "fail": [
-      { "word": "record", "pos": "NOUN", "stress": "reCORD", "note": "SAI: danh từ 'record' không nhấn âm sau" },
-      { "word": "car", "ipa_us": "/kɑː/", "note": "SAI với giọng US: bỏ r cuối là đặc trưng non-rhotic (GB), không phải US" }
+      {
+        "word": "record",
+        "pos": "NOUN",
+        "stress": "reCORD",
+        "note": "SAI: danh từ 'record' không nhấn âm sau"
+      },
+      {
+        "word": "car",
+        "ipa_us": "/kɑː/",
+        "note": "SAI với giọng US: bỏ r cuối là đặc trưng non-rhotic (GB), không phải US"
+      }
     ]
   }
 }

@@ -1,8 +1,17 @@
 {
   "id": "en/pragmatics.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "register_taxonomy",
-  "enforces": ["style-and-register.md", "content/naturalness-and-register.md"],
-  "sources": ["S-EN-STYLE", "S-CONTENT-NATURALNESS", "S-WIKIPEDIA-EN"],
+  "enforces": [
+    "style-and-register.md",
+    "content/naturalness-and-register.md"
+  ],
+  "sources": [
+    "S-EN-STYLE",
+    "S-CONTENT-NATURALNESS",
+    "S-WIKIPEDIA-EN"
+  ],
   "derived_by": "human",
   "config": {
     "register_taxonomy": {
@@ -36,26 +45,60 @@
     {
       "id": "contraction-full-form-equivalent",
       "description": "'do not' và 'don't' chấm như đáp án tương đương (trừ bài dạy đúng rút gọn).",
-      "assert": { "type": "custom", "note": "máy kiểm khi generator/grader chạy, tra contractions.data.json" },
+      "assert": {
+        "type": "custom",
+        "note": "máy kiểm khi generator/grader chạy, tra contractions.data.json"
+      },
       "fixtures": {
         "pass": [
-          { "input": "I don't know.", "accepted_as_equivalent_to": "I do not know." },
-          { "input": "but they didn't.", "note": "corpus UD EWT: rút gọn didn't trong văn thật" }
+          {
+            "input": "I don't know.",
+            "accepted_as_equivalent_to": "I do not know."
+          },
+          {
+            "input": "but they didn't.",
+            "note": "corpus UD EWT: rút gọn didn't trong văn thật"
+          }
         ],
-        "fail": [{ "input": "I dont no.", "note": "lỗi chính tả 'dont'/'no' KHÔNG được coi ngang hàng — đây là lỗi, không phải rút gọn hợp lệ" }]
+        "fail": [
+          {
+            "input": "I dont no.",
+            "note": "lỗi chính tả 'dont'/'no' KHÔNG được coi ngang hàng — đây là lỗi, không phải rút gọn hợp lệ"
+          }
+        ]
       }
     }
   ],
   "fixtures": {
     "pass": [
-      { "text": "Could you help me, please?", "note": "baseline lịch sự trung tính, không formal quá mức" },
-      { "text": "Thanks for your help!", "note": "rút gọn 'Thanks' tự nhiên trong văn nói thân mật" },
-      { "text": "Dear Dr. Smith, ...", "note": "Title + Họ cho ngữ cảnh trang trọng" },
-      { "text": "How can I help you, sir?", "context": "hotel_staff_to_guest", "note": "D-42: sir/ma'am tự nhiên trong ngữ cảnh dịch vụ" }
+      {
+        "text": "Could you help me, please?",
+        "note": "baseline lịch sự trung tính, không formal quá mức"
+      },
+      {
+        "text": "Thanks for your help!",
+        "note": "rút gọn 'Thanks' tự nhiên trong văn nói thân mật"
+      },
+      {
+        "text": "Dear Dr. Smith, ...",
+        "note": "Title + Họ cho ngữ cảnh trang trọng"
+      },
+      {
+        "text": "How can I help you, sir?",
+        "context": "hotel_staff_to_guest",
+        "note": "D-42: sir/ma'am tự nhiên trong ngữ cảnh dịch vụ"
+      }
     ],
     "fail": [
-      { "text": "I would be most grateful if you would kindly assist me.", "note": "SAI baseline: formal quá mức cho tình huống thường ngày (không phải NATURAL_NEUTRAL_POLITE)" },
-      { "text": "Hey sir, want to grab lunch?", "context": "friend_to_friend", "note": "D-42: SAI — sir không tự nhiên khi nói với bạn bè, đây là ngữ cảnh thường ngày không phải dịch vụ" }
+      {
+        "text": "I would be most grateful if you would kindly assist me.",
+        "note": "SAI baseline: formal quá mức cho tình huống thường ngày (không phải NATURAL_NEUTRAL_POLITE)"
+      },
+      {
+        "text": "Hey sir, want to grab lunch?",
+        "context": "friend_to_friend",
+        "note": "D-42: SAI — sir không tự nhiên khi nói với bạn bè, đây là ngữ cảnh thường ngày không phải dịch vụ"
+      }
     ]
   }
 }

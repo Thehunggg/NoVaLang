@@ -53,7 +53,7 @@
         "t3"
       ],
       "status": "playable",
-      "ruleStatus": "VALIDATED_PENDING_FREEZE"
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN"
     },
     {
       "code": "ja",
