@@ -1,5 +1,7 @@
 {
   "id": "zh/phonology.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "grapheme_to_phoneme",
   "enforces": ["phoneme_inventory, pinyin_romanization"],
   "sources": ["S-WIKIPEDIA-ZH", "WIKIPRON"],

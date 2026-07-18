@@ -70,3 +70,19 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   grapheme_to_phoneme hạ xuống medium (WikiPron Hant-keyed) — KHÔNG freeze cho
   tới khi có bảng chuyển đổi S2T. classifiers/pronoun_system/forms_of_address
   lexical KHÔNG freeze (thiếu dữ liệu theo-từng-từ). Validator PASS.
+- **Bước 5 (freeze) · 2026-07-18 · FROZEN (D-49: không chờ Gate 5)** — Golden
+  Lesson audit (owner, cùng ngày) sửa `_base/distractor` (G-01) +
+  `_base/text-fields` (C7) lên version 1.1.0; owner chọn re-validate ja/en/vi
+  trên `_base` mới rồi freeze lại thay vì giữ pin cũ, và freeze zh luôn nếu đủ
+  điều kiện trên `_base` mới. zh chưa từng có front-matter `version`/`status`
+  ở 4 file `*.rules.json` (orthography/phonology/grammar/pragmatics) — thêm
+  `version: 1.0.0`, `status: FROZEN` (khớp mẫu ja/en/vi). `coverage.json`
+  `_meta.stage='frozen-rule-level'`, `frozenAt=2026-07-18`,
+  `baseDependencies` ghim đúng version hiện tại của `_base` (distractor/
+  text-fields = 1.1.0, còn lại 1.0.0; zh không có `_script/Hans/` nên không
+  ghim layer script). Catalog `zh.ruleStatus=FROZEN_RULE_LEVEL_LEXICAL_OPEN`.
+  `punctuation_layout` (thiếu hoàn toàn, phát hiện bởi INV-9 thật) được ghi
+  nhận riêng: `confidence: none` + ghi nợ tường minh trong coverage, KHÔNG tự
+  vá — để lần build sau xử theo đúng quy trình (Bước 1–3). `node
+  tools/validate.mjs` PASS (0 lỗi) sau khi thêm entry đó vẫn cần xác nhận lại
+  (xem quyết định trong `rules/_legacy/golden-lesson-test-2026-07-18.md`).

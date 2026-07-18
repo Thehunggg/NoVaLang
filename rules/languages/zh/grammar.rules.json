@@ -1,5 +1,7 @@
 {
   "id": "zh/grammar.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "word_order",
   "enforces": ["classifiers, inflection_morphology, word_segmentation"],
   "sources": ["S-WIKIPEDIA-ZH", "UD"],

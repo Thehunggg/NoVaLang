@@ -1,5 +1,7 @@
 {
   "id": "zh/pragmatics.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "pronoun_system",
   "enforces": ["register_taxonomy, forms_of_address, sentence_final_particles"],
   "sources": ["S-WIKIPEDIA-ZH", "S-CONTENT-NATURALNESS"],

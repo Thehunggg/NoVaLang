@@ -83,7 +83,7 @@
         "t3"
       ],
       "status": "preview",
-      "ruleStatus": "VALIDATED_PENDING_FREEZE",
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN",
       "note": "Hans (giản thể) — CHỐT theo D-37, xác nhận khi build zh 2026-07-18."
     },
     {

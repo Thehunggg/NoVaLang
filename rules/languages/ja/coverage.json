@@ -15,17 +15,17 @@
       "note": "Dưới mốc 10000 vì egress chặn Tatoeba/Wikipedia; 9100 > 2000 nên corpus check KHÔNG yếu. Text-assert: 0%/0%/0.01% vi phạm."
     },
     "validatedAt": "2026-07-17",
-    "gate5_note": "D-49 (2026-07-18): Gate 5 (chờ 48h) đã BỎ cho pipeline build rule ngôn ngữ — xem rules/decisions.md D-49 / docs/ai/ARCHITECTURE_DECISIONS.md ADR-017. 27 hiện tượng FROZEN ở rule_level ngay trong phiên VALIDATED. lexical_level của rendaku/counters/honorifics_keigo (theo-từng-từ) KHÔNG freeze — giữ DRAFT/none, thiếu dữ liệu đầy đủ. stroke_order/pitch_accent = DEFERRED, casing = not-applicable, không đổi.",
-    "frozenAt": "2026-07-18",
+    "gate5_note": "D-49/ADR-017: Gate 5 da bo cho pipeline build rule ngon ngu. 2026-07-18: RE-FROZEN tren _base moi sau khi ha xuong validated va xac nhan khong co gi doi ket qua ngoai du kien (xem golden-lesson-test-2026-07-18.md). Pin baseDependencies cap nhat _base/distractor + _base/text-fields = 1.1.0.",
     "baseDependencies": {
-      "_base/distractor": "1.0.0",
-      "_base/text-fields": "1.0.0",
+      "_base/distractor": "1.1.0",
+      "_base/text-fields": "1.1.0",
       "_base/answer-acceptance": "1.0.0",
       "_base/audio": "1.0.0",
       "_base/fail-safe": "1.0.0",
       "_base/register": "1.0.0"
     },
-    "baseDependenciesNote": "Ban chup version _base/_script tai thoi diem validate/freeze gan nhat cua ngon ngu nay (2026-07-18, Golden Lesson audit). validate.mjs INV-3 doi chieu voi version hien tai tren dia."
+    "baseDependenciesNote": "Ban chup version _base/_script tai thoi diem freeze GAN NHAT (2026-07-18, re-freeze sau G-01/C7 - xem golden-lesson-test-2026-07-18.md).",
+    "frozenAt": "2026-07-18"
   },
   "writing_systems": {
     "rule_level": {

@@ -1,5 +1,7 @@
 {
   "id": "zh/orthography.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "tone_system",
   "enforces": ["writing_systems, charset (Hán tự Hans), casing, writing_direction"],
   "sources": ["S-WIKIPEDIA-ZH", "WIKIPRON", "CLDR"],

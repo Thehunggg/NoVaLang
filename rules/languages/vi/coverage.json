@@ -15,18 +15,18 @@
       "note": "UD Vietnamese-VTB riêng chỉ 1123 câu (dưới 2000, YẾU) — đã bổ sung mẫu báo chí MIT để đạt 3077, vượt mốc 2000. Ghi rõ: phần bổ sung là MẪU (sample) 1000 dòng của một corpus lớn hơn nhiều (111 triệu câu), không phải toàn bộ."
     },
     "validatedAt": "2026-07-18",
-    "gate5_note": "D-49 (2026-07-18): Gate 5 (chờ 48h) đã BỎ cho pipeline build rule ngôn ngữ — xem rules/decisions.md D-49 / docs/ai/ARCHITECTURE_DECISIONS.md ADR-017. 23 hiện tượng FROZEN ở rule_level ngay trong phiên VALIDATED. lexical_level của classifiers (loại từ theo từng danh từ — none), forms_of_address/pronoun_system (quy tắc chọn đại từ theo ngữ cảnh cụ thể — low) KHÔNG freeze — giữ nguyên như đã ghi. stroke_order = not-applicable, không đổi.",
-    "frozenAt": "2026-07-18",
+    "gate5_note": "D-49/ADR-017: Gate 5 da bo cho pipeline build rule ngon ngu. 2026-07-18: RE-FROZEN tren _base moi sau khi ha xuong validated va xac nhan khong co gi doi ket qua ngoai du kien (xem golden-lesson-test-2026-07-18.md). Pin baseDependencies cap nhat _base/distractor + _base/text-fields = 1.1.0.",
     "baseDependencies": {
-      "_base/distractor": "1.0.0",
-      "_base/text-fields": "1.0.0",
+      "_base/distractor": "1.1.0",
+      "_base/text-fields": "1.1.0",
       "_base/answer-acceptance": "1.0.0",
       "_base/audio": "1.0.0",
       "_base/fail-safe": "1.0.0",
       "_base/register": "1.0.0",
       "_script/Latn/script": "1.0.0"
     },
-    "baseDependenciesNote": "Ban chup version _base/_script tai thoi diem validate/freeze gan nhat cua ngon ngu nay (2026-07-18, Golden Lesson audit). validate.mjs INV-3 doi chieu voi version hien tai tren dia."
+    "baseDependenciesNote": "Ban chup version _base/_script tai thoi diem freeze GAN NHAT (2026-07-18, re-freeze sau G-01/C7 - xem golden-lesson-test-2026-07-18.md).",
+    "frozenAt": "2026-07-18"
   },
   "writing_systems": {
     "rule_level": {
