@@ -1,11 +1,67 @@
 {
   "sources": [
-    { "id": "CLDR", "name": "Unicode CLDR exemplar characters (vi)", "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/vi/characters.json", "consulted": "2026-07-18", "derived_by": "dataset", "confidence": "high", "license": "Unicode-3.0" },
-    { "id": "UD", "name": "Universal Dependencies Vietnamese-VTB treebank", "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Vietnamese-VTB/master/", "consulted": "2026-07-18", "derived_by": "dataset", "confidence": "high", "license": "CC BY-SA (per treebank)" },
-    { "id": "WIKIPRON", "name": "WikiPron grapheme-to-phoneme (vie, 3 giọng: Hà Nội/Huế/Sài Gòn)", "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/", "consulted": "2026-07-18", "derived_by": "dataset", "confidence": "high", "license": "Apache-2.0" },
-    { "id": "S-CONTENT-NATURALNESS", "name": "NovaLang global naturalness/register rule (ADR-016)", "url": "rules/content/naturalness-and-register.md", "consulted": "2026-07-18", "derived_by": "human", "confidence": "high", "license": "narrative canonical nội bộ" },
-    { "id": "S-BASE", "name": "NovaLang product rules cho MỌI ngôn ngữ (rules/_base/*.rules.json)", "url": "rules/_base/", "consulted": "2026-07-18", "derived_by": "human", "confidence": "high", "license": "narrative canonical nội bộ" },
-    { "id": "S-WIKIPEDIA-VI", "name": "English Wikipedia (Vietnamese phonology / grammar / orthography — bài tiếng Anh mô tả tiếng Việt) — nguồn derive Bước 2", "url": "https://en.wikipedia.org/ (qua WebSearch)", "consulted": "2026-07-18", "derived_by": "ai-cross-checked", "confidence": "medium", "license": "CC BY-SA; chỉ trích sự kiện ngôn ngữ + ghi nguồn" },
-    { "id": "S-OWNER-REVIEW", "name": "Project Owner — người bản ngữ tiếng Việt, tự review trực tiếp (decisions.md danh sách ngôn ngữ owner tự đánh giá được)", "url": null, "consulted": "2026-07-18", "derived_by": "human", "confidence": "high", "license": "n/a" }
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (vi)",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/vi/characters.json",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Vietnamese-VTB/master/vi_vtb-ud-train.conllu",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/vie_latn_hanoi_narrow_filtered.tsv",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "S-CONTENT-NATURALNESS",
+      "name": "NovaLang global naturalness/register rule (ADR-016)",
+      "url": "rules/content/naturalness-and-register.md",
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "high",
+      "license": "narrative canonical nội bộ"
+    },
+    {
+      "id": "S-BASE",
+      "name": "NovaLang product rules cho MỌI ngôn ngữ (rules/_base/*.rules.json)",
+      "url": "rules/_base/",
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "high",
+      "license": "narrative canonical nội bộ"
+    },
+    {
+      "id": "S-WIKIPEDIA-VI",
+      "name": "English Wikipedia (Vietnamese phonology / grammar / orthography — bài tiếng Anh mô tả tiếng Việt) — nguồn derive Bước 2",
+      "url": "https://en.wikipedia.org/ (qua WebSearch)",
+      "consulted": "2026-07-18",
+      "derived_by": "ai-cross-checked",
+      "confidence": "medium",
+      "license": "CC BY-SA; chỉ trích sự kiện ngôn ngữ + ghi nguồn"
+    },
+    {
+      "id": "S-OWNER-REVIEW",
+      "name": "Project Owner — người bản ngữ tiếng Việt, tự review trực tiếp (decisions.md danh sách ngôn ngữ owner tự đánh giá được)",
+      "url": null,
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "high",
+      "license": "n/a"
+    }
   ]
 }
