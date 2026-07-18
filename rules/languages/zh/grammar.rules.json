@@ -1,0 +1,41 @@
+{
+  "id": "zh/grammar.rules",
+  "phenomenon": "word_order",
+  "enforces": ["classifiers, inflection_morphology, word_segmentation"],
+  "sources": ["S-WIKIPEDIA-ZH", "UD"],
+  "derived_by": "human",
+  "config": {
+    "word_order": {
+      "basic": "SVO",
+      "topic_prominent": true,
+      "adjective_before_noun": true
+    },
+    "classifiers": {
+      "required_before_countable_noun": true,
+      "general_default": "个 (gè)"
+    },
+    "inflection_morphology": {
+      "no_verb_conjugation": true,
+      "aspect_marked_by_particles_not_tense": true,
+      "aspect_particles": { "了": "hoàn thành/đổi trạng thái", "过": "đã từng trải nghiệm", "着": "đang tiếp diễn" }
+    },
+    "word_segmentation": {
+      "no_spaces_between_words": true,
+      "word_boundary_often_ambiguous": true,
+      "_note": "Nặng hơn vi (vi còn khoảng trắng giữa âm tiết) — app phải tự xử lý tách từ để tra nghĩa/chấm, không dựa khoảng trắng."
+    }
+  },
+  "fixtures": {
+    "pass": [
+      { "sentence": "我喜欢红色的花。", "note": "SVO + tính từ trước danh từ (红色的花 = hoa màu đỏ)" },
+      { "sentence": "我有三个苹果。", "note": "lượng từ 个 trước danh từ đếm được" },
+      { "sentence": "我吃了饭。", "note": "trợ từ 了 đánh dấu hoàn thành, không chia động từ" },
+      { "sentence": "我去过北京。", "note": "trợ từ 过 đánh dấu kinh nghiệm đã từng" }
+    ],
+    "fail": [
+      { "sentence": "我三个苹果有。", "note": "SAI: không phải SVO" },
+      { "sentence": "我吃饭了了。", "note": "SAI: lặp trợ từ 了 không đúng ngữ pháp" },
+      { "sentence": "我有三苹果。", "note": "SAI: thiếu lượng từ 个 trước danh từ đếm được" }
+    ]
+  }
+}

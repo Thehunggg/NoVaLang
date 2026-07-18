@@ -1,0 +1,51 @@
+{
+  "id": "zh/pragmatics.rules",
+  "phenomenon": "pronoun_system",
+  "enforces": ["register_taxonomy, forms_of_address, sentence_final_particles"],
+  "sources": ["S-WIKIPEDIA-ZH", "S-CONTENT-NATURALNESS"],
+  "derived_by": "human",
+  "config": {
+    "pronoun_system": {
+      "fixed_pronouns_not_kinship_based": true,
+      "base_pronouns": { "tôi": "我", "bạn": "你", "anh_ấy": "他", "cô_ấy": "她" },
+      "nin_is_polite_you": true,
+      "_note": "Đơn giản hơn nhiều so với hệ thân tộc tiếng Việt — đại từ cố định, chỉ có 1 cặp lịch sự-thường (您/你)."
+    },
+    "register_taxonomy": {
+      "mainly_word_choice_and_pronoun": true,
+      "_note": "Gần với en hơn ja: không có hệ ngữ pháp kính ngữ riêng phức tạp, chủ yếu qua chọn từ + cặp 您/你."
+    },
+    "sentence_final_particles": {
+      "ma_marks_yes_no_question": true,
+      "ba_marks_suggestion": true,
+      "examples": [
+        { "particle": "吗", "function": "đánh dấu câu hỏi có/không" },
+        { "particle": "了", "function": "đổi trạng thái/nhấn mạnh (khi ở cuối câu, khác vai trò aspect giữa câu)" },
+        { "particle": "呢", "function": "hỏi tiếp/nhấn mạnh" },
+        { "particle": "吧", "function": "đề nghị/gợi ý/phỏng đoán nhẹ" }
+      ]
+    },
+    "forms_of_address": {
+      "xiansheng_nvshi_formal_title": true,
+      "examples": [
+        { "title": "先生", "used_for": "ông (trang trọng, sau họ)" },
+        { "title": "女士", "used_for": "bà/quý cô (trang trọng, sau họ)" }
+      ]
+    },
+    "naturalness_translation": {
+      "word_order_literal_translation_risk": true,
+      "_note": "Dịch trực dịch trật tự từ ngôn ngữ khác dễ ra câu không tự nhiên do cấu trúc topic-prominent + trợ từ khía cạnh khác biệt."
+    }
+  },
+  "fixtures": {
+    "pass": [
+      { "text": "您好，请问您需要什么？", "note": "您 lịch sự trong ngữ cảnh dịch vụ/khách hàng" },
+      { "text": "你好吗？", "note": "吗 đánh dấu câu hỏi có/không" },
+      { "text": "我们走吧。", "note": "吧 đề nghị nhẹ nhàng" },
+      { "text": "王先生，您好。", "note": "danh xưng 先生 + họ cho ngữ cảnh trang trọng" }
+    ],
+    "fail": [
+      { "text": "你好你需要什么", "note": "SAI baseline: thiếu 您, dùng 你 thường với khách hàng/người lạ không phù hợp ngữ cảnh dịch vụ" }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "zh/orthography.rules",
+  "phenomenon": "tone_system",
+  "enforces": ["writing_systems, charset (Hán tự Hans), casing, writing_direction"],
+  "sources": ["S-WIKIPEDIA-ZH", "WIKIPRON", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "script": "Hans (giản thể) — D-37",
+    "logographic": true,
+    "no_case_distinction": true,
+    "words_separated_by_spaces": false,
+    "modern_writing_direction": "horizontal_ltr",
+    "tone_count": 4,
+    "neutral_tone_exists": true,
+    "tones_are_phonemic": true,
+    "pinyin": {
+      "official_standard": true,
+      "tone_marked_on_vowel": true
+    },
+    "reading_aid_policy": "[D-50] pinyin ẩn mặc định + toggle A0–B1, không toggle B2–C2 — giống D-11 bản (ii)."
+  },
+  "checks": [
+    {
+      "id": "line-contains-han-script",
+      "description": "Mỗi câu target-language phải chứa ít nhất một chữ Hán.",
+      "assert": { "type": "regex_present", "pattern": "[\\u4e00-\\u9fff]" },
+      "fixtures": {
+        "pass": ["我喜欢喝咖啡。"],
+        "fail": ["Hello world."]
+      }
+    },
+    {
+      "id": "no-spaces-between-han-characters",
+      "description": "Văn tiếng Trung không chèn khoảng trắng giữa các chữ Hán liền kề (giống ja, khác vi/en).",
+      "assert": { "type": "regex_absent", "pattern": "[\\u4e00-\\u9fff] [\\u4e00-\\u9fff]" },
+      "fixtures": {
+        "pass": ["我喜欢喝咖啡。"],
+        "fail": ["我 喜欢 喝 咖啡。"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["妈", "麻", "马", "骂", "吗"],
+    "fail": ["ma1", "mā2", "m@"],
+    "_note": "5 chữ minimal-pair chuẩn (mā/má/mǎ/mà + thanh nhẹ ma) phân biệt nghĩa hoàn toàn theo thanh điệu — nguồn Wikipedia Standard Chinese phonology, đối chiếu WikiPron."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "zh/phonology.rules",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["phoneme_inventory, pinyin_romanization"],
+  "sources": ["S-WIKIPEDIA-ZH", "WIKIPRON"],
+  "derived_by": "human",
+  "config": {
+    "character_reading_not_predictable_from_shape": true,
+    "phonetic_component_sometimes_hints_sound": true,
+    "phonetic_component_reliability": "not_fully_reliable — chỉ gợi ý, không suy chắc được, giống thanh phù kanji ja",
+    "syllable_structure": "initial (thanh mẫu, có thể rỗng) + final (vận mẫu) + tone",
+    "reading_requires_lexical_lookup": true,
+    "_note": "Hán tự logographic — đọc PHẢI tra theo từng chữ (WikiPron cmn_hani 168655 mục), không suy được bằng rule chung chữ→âm như chữ Latin."
+  },
+  "fixtures": {
+    "pass": [
+      { "character": "妈", "pinyin": "mā", "note": "thanh 1 (cao ngang)" },
+      { "character": "麻", "pinyin": "má", "note": "thanh 2 (lên)" },
+      { "character": "马", "pinyin": "mǎ", "note": "thanh 3 (xuống-lên)" },
+      { "character": "骂", "pinyin": "mà", "note": "thanh 4 (xuống)" },
+      { "character": "妈", "phonetic_component": "马", "note": "妈 = 女(nghĩa) + 马(gợi ý âm mǎ→mā) — thanh phù chỉ gợi ý, không chắc chắn" }
+    ],
+    "fail": [
+      { "character": "妈", "pinyin": "ma", "note": "SAI: thiếu dấu thanh — mất thông tin phân biệt nghĩa" }
+    ]
+  }
+}

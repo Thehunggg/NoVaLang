@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "zh",
-    "stage": "1-import-done",
+    "stage": "2-derive-done",
     "generatedAt": "2026-07-18",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
@@ -21,7 +21,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Hán tự (chữ biểu ý-biểu âm, logographic) — Hans (giản thể, D-37). Mỗi chữ ~1 âm tiết, thường ~1 hình vị."
+    "notes": "Hán tự (chữ biểu ý-biểu âm, logographic) — Hans (giản thể, D-37). Mỗi chữ ~1 âm tiết, thường ~1 hình vị. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "charset_exemplars": {
     "rule_level": {
@@ -49,7 +49,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "NOT-APPLICABLE: Hán tự không có hoa/thường."
+    "notes": "NOT-APPLICABLE: Hán tự không có hoa/thường. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "writing_direction": {
     "rule_level": {
@@ -63,7 +63,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "LTR ngang là chuẩn hiện đại (dọc truyền thống tồn tại nhưng OUT_OF_SCOPE — [pattern reuse ja: writing_direction])."
+    "notes": "LTR ngang là chuẩn hiện đại (dọc truyền thống tồn tại nhưng OUT_OF_SCOPE — [pattern reuse ja: writing_direction]). [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "stroke_order": {
     "rule_level": {
@@ -91,7 +91,7 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 4 thanh + 1 thanh nhẹ (khinh thanh) phân biệt nghĩa hoàn toàn (mā/má/mǎ/mà = mẹ/gai/ngựa/mắng). WikiPron cmn_hani có IPA kèm thanh. [B1: WikiPron cmn_hani 168655 mục có ký hiệu thanh Chao tone (số góc trên, vd ⁵¹/²¹⁴/³⁵) sẵn sàng đo Bước 3]"
+    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 4 thanh + 1 thanh nhẹ (khinh thanh) phân biệt nghĩa hoàn toàn (mā/má/mǎ/mà = mẹ/gai/ngựa/mắng). WikiPron cmn_hani có IPA kèm thanh. [B1: WikiPron cmn_hani 168655 mục có ký hiệu thanh Chao tone (số góc trên, vd ⁵¹/²¹⁴/³⁵) sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "pinyin_romanization": {
     "rule_level": {
@@ -105,7 +105,7 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "Hệ La-tinh hóa chuẩn (Hán Việt: bính âm) — chuẩn quốc tế, có dấu thanh trên nguyên âm. [B1: WikiPron cấp IPA kèm thanh, có thể đối chiếu bính âm ở Bước 2-3]"
+    "notes": "Hệ La-tinh hóa chuẩn (Hán Việt: bính âm) — chuẩn quốc tế, có dấu thanh trên nguyên âm. [B1: WikiPron cấp IPA kèm thanh, có thể đối chiếu bính âm ở Bước 2-3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "reading_aid_policy": {
     "rule_level": {
@@ -133,7 +133,7 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "Hán tự KHÔNG cho biết cách đọc từ hình chữ (logographic, giống kanji ja) — đọc phải tra theo từng chữ (lexical), không suy được bằng rule chung. WikiPron cmn_hani 168655 mục cấp sẵn. [B1: WikiPron cmn_hani 168655 mục sẵn sàng đo Bước 3]"
+    "notes": "Hán tự KHÔNG cho biết cách đọc từ hình chữ (logographic, giống kanji ja) — đọc phải tra theo từng chữ (lexical), không suy được bằng rule chung. WikiPron cmn_hani 168655 mục cấp sẵn. [B1: WikiPron cmn_hani 168655 mục sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "phoneme_inventory": {
     "rule_level": {
@@ -147,7 +147,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Thanh mẫu (âm đầu) + vận mẫu (âm cuối) + thanh điệu — cấu trúc âm tiết chuẩn Quan thoại. [B1: WikiPron cấp dữ liệu âm vị + thanh cho đo/derive]"
+    "notes": "Thanh mẫu (âm đầu) + vận mẫu (âm cuối) + thanh điệu — cấu trúc âm tiết chuẩn Quan thoại. [B1: WikiPron cấp dữ liệu âm vị + thanh cho đo/derive] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "word_segmentation": {
     "rule_level": {
@@ -161,7 +161,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: KHÔNG có khoảng trắng giữa CHỮ hay TỪ trong văn viết chuẩn — nặng hơn cả vi (vi ít nhất còn khoảng trắng giữa âm tiết). Ảnh hưởng trực tiếp cách app tách từ để chấm/tra nghĩa."
+    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: KHÔNG có khoảng trắng giữa CHỮ hay TỪ trong văn viết chuẩn — nặng hơn cả vi (vi ít nhất còn khoảng trắng giữa âm tiết). Ảnh hưởng trực tiếp cách app tách từ để chấm/tra nghĩa. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "word_class": {
     "rule_level": {
@@ -192,7 +192,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "SVO cơ bản nhưng topic-prominent (chủ đề có thể đứng đầu câu khác chủ ngữ ngữ pháp); tính từ trước danh từ."
+    "notes": "SVO cơ bản nhưng topic-prominent (chủ đề có thể đứng đầu câu khác chủ ngữ ngữ pháp); tính từ trước danh từ. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "classifiers": {
     "rule_level": {
@@ -206,7 +206,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Lượng từ (measure word/classifier, giống loại từ vi và counter ja): 个/只/本/条... đứng trước danh từ khi đếm. Lượng từ nào đi với danh từ nào là lexical."
+    "notes": "Lượng từ (measure word/classifier, giống loại từ vi và counter ja): 个/只/本/条... đứng trước danh từ khi đếm. Lượng từ nào đi với danh từ nào là lexical. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "inflection_morphology": {
     "rule_level": {
@@ -220,7 +220,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "KHÔNG biến hình (isolating, giống vi): động từ không chia thì/ngôi/số. Khía cạnh (aspect) diễn đạt bằng trợ từ 了 (hoàn thành)/过 (đã từng)/着 (đang diễn ra), không phải thì (tense)."
+    "notes": "KHÔNG biến hình (isolating, giống vi): động từ không chia thì/ngôi/số. Khía cạnh (aspect) diễn đạt bằng trợ từ 了 (hoàn thành)/过 (đã từng)/着 (đang diễn ra), không phải thì (tense). [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "pronoun_system": {
     "rule_level": {
@@ -234,7 +234,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Đơn giản hơn nhiều so với vi: đại từ cố định 我/你/他/她 (tôi/bạn/anh ấy/cô ấy), KHÔNG phụ thuộc tuổi/vai vế như vi. Có cặp lịch sự-thường 您/你 (you formal/informal) — gần vai trò T–V distinction."
+    "notes": "Đơn giản hơn nhiều so với vi: đại từ cố định 我/你/他/她 (tôi/bạn/anh ấy/cô ấy), KHÔNG phụ thuộc tuổi/vai vế như vi. Có cặp lịch sự-thường 您/你 (you formal/informal) — gần vai trò T–V distinction. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "sentence_final_particles": {
     "rule_level": {
@@ -248,7 +248,7 @@
       "confidence": "low"
     },
     "machine_readable": false,
-    "notes": "CÓ (giống ja/vi): 吗 (hỏi có/không), 了 (đổi trạng thái/hoàn thành), 呢 (hỏi tiếp/nhấn mạnh), 吧 (đề nghị/phỏng đoán). Dịch theo chức năng — cần native review."
+    "notes": "CÓ (giống ja/vi): 吗 (hỏi có/không), 了 (đổi trạng thái/hoàn thành), 呢 (hỏi tiếp/nhấn mạnh), 吧 (đề nghị/phỏng đoán). Dịch theo chức năng — cần native review. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "register_taxonomy": {
     "rule_level": {
@@ -266,7 +266,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Map ADR-016: chủ yếu qua chọn từ + cặp 您/你, gần với en hơn ja (không có hệ ngữ pháp kính ngữ riêng như keigo)."
+    "notes": "Map ADR-016: chủ yếu qua chọn từ + cặp 您/你, gần với en hơn ja (không có hệ ngữ pháp kính ngữ riêng như keigo). [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "forms_of_address": {
     "rule_level": {
@@ -280,7 +280,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "先生/女士 (ông/bà, trang trọng) + Họ; 您 cho người lớn tuổi/bề trên/khách hàng. Đơn giản hơn hệ thân tộc vi."
+    "notes": "先生/女士 (ông/bà, trang trọng) + Họ; 您 cho người lớn tuổi/bề trên/khách hàng. Đơn giản hơn hệ thân tộc vi. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "answer_acceptance_zh": {
     "rule_level": {
@@ -308,7 +308,7 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Dịch tự nhiên — [D-36 pattern reuse: sẽ có native review, chưa tự cấp PASS bằng máy]."
+    "notes": "Dịch tự nhiên — [D-36 pattern reuse: sẽ có native review, chưa tự cấp PASS bằng máy]. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
   },
   "tts_audio_policy": {
     "rule_level": {

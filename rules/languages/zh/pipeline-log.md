@@ -30,3 +30,9 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   orthography.data.json. UD Chinese-GSD → word-class.data.json (16 nhãn UPOS).
   WikiPron cmn_hani_standard_broad → grapheme-to-phoneme.data.json, 168.655
   cặp — có ký hiệu thanh Chao tone (số góc trên, vd ⁵¹/²¹⁴/³⁵). Validator PASS.
+- **Bước 2 (derive) · 2026-07-18 · XONG** — Khung 28 claim đóng. 2 lượt: A =
+  narrative nội bộ 0/28 (dự đoán đúng, không mô tả sự kiện ngôn ngữ), D =
+  Wikipedia 28/28. Diff: **0 trùng, 0 lệch, 28 chỉ-Wikipedia** (medium, có trích
+  dẫn — không nguồn thứ hai mở, cùng tình huống en/vi). Sinh 4 file rule:
+  orthography/phonology/grammar/pragmatics.rules.json (fixtures pass+fail đủ,
+  gồm 5 chữ minimal-pair thanh điệu 妈/麻/马/骂/吗). Validator PASS.
