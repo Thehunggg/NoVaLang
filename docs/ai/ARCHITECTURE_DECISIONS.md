@@ -629,3 +629,230 @@ other NovaLang architecture decision or release process that references it.
 Approved by Project Owner, 2026-07-18, effective immediately. Recorded in
 `rules/decisions.md` as D-49 (source of truth for wording/rationale); this
 ADR is the architecture-level pointer for future readers.
+
+## ADR-018 — Daily Life domain curriculum architecture: two blocks, 15 shared topics × 3 tiers, per-language concurrency and entitlement model
+
+Status: `APPROVED AS DESIGN DIRECTION / NOT FROZEN / IMPLEMENTATION NOT STARTED`
+
+This is a **design record, not an implementation order**. It documents an
+architecture the Project Owner has decided for the `daily_life` domain,
+intended to apply to every learning language. It does **not** change
+`shared/content/curriculum/curriculum_catalog.json` or any generated
+curriculum data — the current 10-module blueprint (ADR-scoped as a temporary
+layout test, see Context) is untouched by this ADR. A separate task, with its
+own plan and checkpoints, is required before any code or content change.
+Several sub-decisions below are explicitly marked as **initial
+assumptions**, not frozen values — see "Explicitly open / assumption-only"
+at the end.
+
+### Context
+
+The `daily_life` domain currently exists as a temporary 10-module × 8-unit ×
+3-lesson blueprint (`scripts/lib/daily-life-blueprint.mjs`), built only to
+test the five-card layout end-to-end (one real lesson: Golden Reference
+Lesson, ADR-008). The Project Owner is redesigning this domain's real
+architecture before authoring content at scale, and wants the design captured
+before any code/content change so implementation does not have to be
+re-derived or guessed later.
+
+Investigation prior to this ADR (read-only, same session) established the
+concrete blast radius of the old 10-module number (`docs/ai/ARCHITECTURE_DECISIONS.md`
+history is silent on it; the hardcoded assertions live in
+`scripts/lib/daily-life-blueprint.mjs`, `scripts/generate-curriculum.mjs`,
+`scripts/smoke-curriculum-flow.mjs`, `scripts/validate-curriculum.mjs`, and
+the three synced copies of `curriculum_catalog.json`), that placement-test
+scoring is independent of module/unit counts, that only Module 1 (Golden
+Lesson + 47 sibling lessons) is `playable`/`ready` today, and that lesson IDs
+are the completion-record scope key (`shared/contracts/lesson_completion.rules.md`,
+C2/C9) — so ID stability matters only for already-playable content.
+
+### Decision
+
+**1. Two blocks inside `daily_life`, structurally different:**
+
+- **Block A — "Những ngày đầu" (working name only, not a display string):**
+  procedural/survival situations for someone who just arrived. **No 3-tier
+  split, no scroll-window gating** — an "emergency valve": open access, no
+  forced structure.
+- **Block B — main track:** everyday recurring communication topics, split
+  into **3 display tiers** (Cơ bản / Trung cấp / Cao cấp), with scroll-window
+  gating (existing pattern, unchanged mechanism).
+
+**2. Block B has 15 shared topics, same 15 across all 3 tiers, fixed order
+for reference (not necessarily a hard display order requirement):**
+
+1. Chào hỏi & làm quen
+2. Bản thân
+3. Số đếm & tiền
+4. Thời gian & ngày tháng
+5. Mua sắm
+6. Ăn uống & gọi món
+7. Chỉ đường
+8. Tàu điện & đi lại
+9. Khi không hiểu
+10. Gia đình & người quen
+11. Sở thích
+12. Hẹn gặp & rủ rê
+13. Điện thoại & tin nhắn
+14. Thời tiết & sức khỏe
+15. Cảm ơn / xin lỗi / lịch sự
+
+Each tier covers the *same* topic with increasing complexity/fluency of
+expression, not disjoint sub-topics — a higher tier may add situational
+depth, but it is a continuation of the same topic, not a new one.
+
+**2b. Naming — two layers, never conflated:**
+
+- **Technical name (code/ID/docs):** a stable key. The 15 labels above are
+  **internal reference labels for this ADR only, not display strings and not
+  the literal ID text.** The concrete technical id/slug for the
+  module/topic tier is an implementation choice made when the design is
+  actually built (must stay consistent with existing code conventions, e.g.
+  the `daily_life_m##_snake_case` pattern already in use) — not fixed by this
+  ADR.
+- **Display name (user-facing):** **mandatory through i18n**, keyed by
+  `nativeLanguageCode` (vi/en/ja/ko/zh/...). **Never hardcode a topic display
+  string in any language inside rendering code.** One i18n key per topic,
+  translated into every supported native language — same discipline already
+  required elsewhere in this repo (AGENTS.md "UI Language Purity" /
+  "Learning Content Language Purity").
+- **Topic IDs are immutable**: no language embedded in the id, and the id
+  never changes when the display name changes. This is the same principle
+  already enforced structurally for lesson IDs via the completion-record
+  scope key (`lesson_completion.rules.md` C2/C9) — extended here explicitly
+  to topic/module ids, matching the Project Owner's referenced "ID bền
+  trong SRS" principle (no single named decision by that exact tag was found
+  in-repo prior to this ADR; this ADR is now that record).
+
+**3. Three-tier principle:** same topic, tier increases **expressive
+complexity**, not just vocabulary volume. Worked example (Chào hỏi &
+làm quen): Cơ bản = short, disconnected sentences; Trung cấp = compound
+sentences with modifying clauses; Cao cấp = nuance + honorific/register
+control. Tier labels shown to the learner are **Cơ bản / Trung cấp / Cao
+cấp only — CEFR never displayed**, CEFR (or an equivalent internal level
+scale) still runs underneath for placement/gating purposes only.
+
+**4. Free horizontal movement, locked vertical progression:**
+
+- Inside one tier: the learner may pick any topic's unit in any order — no
+  forced sequence across topics within a tier.
+- Between tiers: Trung cấp is locked until Cơ bản is fully completed; Cao
+  cấp is locked until Trung cấp is fully completed. Rationale: higher-tier
+  expression genuinely depends on groundwork laid across *multiple* topics
+  in the tier below, not just the same topic's own lower tier.
+
+**5. Concurrency and Free-tier limits — every language fully independent
+(no cross-language pooling of any limit):**
+
+- Free: at most **2 languages** learned in parallel.
+- Per language: at most **2 domains** in parallel.
+- Per (language × domain): **2 units/day**.
+- Per language: a **separate** SRS review cap of **30 items/day** (not
+  shared across the account's other languages).
+- Level, progress, SRS queue, and notifications are all per-language;
+  switching language surfaces that language's own SRS/notifications only.
+- A lesson **not yet completed** = new learning = **consumes** the daily
+  quota. A lesson **already completed** (including via placement-test
+  skip) = review = **does not consume** quota (matches the general SRS
+  principle that review doesn't spend new-content quota); the UI shows a
+  light "you're reviewing, this won't cost a slot" notice *before* the tap
+  registers, not after.
+
+**6. Content rule for every Block B lesson (a real authoring constraint, not
+just a design note):** because tier movement is free-horizontal, **every
+unit within a tier must stand alone — it must not assume any other
+topic/unit in the same tier has already been studied.** Foundational
+grammar (copula です/ます, counting, etc.) belongs to Core Foundation, and
+must never be an *implicit* prerequisite baked into a Block-B unit.
+
+**7. Entry mechanisms (already existing, kept as-is, not redesigned by this
+ADR):**
+   a. Placement test → opens the correct tier directly; lower tiers are
+      marked completed but remain reviewable.
+   b. Manual level selection.
+   c. Core Foundation (kana) skip button.
+
+**8. Block A ("Những ngày đầu") entitlement split — INITIAL ASSUMPTION,
+explicitly not fixed, pending data; also explicitly independent of the
+not-yet-decided Plus/Pro/Max tier structure (see 9):**
+
+- **Free (24-hour hook):** airport & immigration, shopping/supermarket,
+  trains & transit.
+- **Paid (deep stock):** visa/immigration procedures, banking, SIM,
+  housing/rental, insurance, part-time work (baito), police, post office.
+
+**9. What paid tiers sell — explicitly NOT unit count** (Free already ships
+8 units/day across up to 2×2 language/domain slots, which the Project Owner
+judges as already generous): remove ads, unlock the "Những ngày đầu"
+deep-stock block, remove the language/domain concurrency caps, and advanced
+features. **Exact allocation across a Plus/Pro/Max tier structure is
+explicitly deferred** — no tier boundaries are decided by this ADR.
+
+**10. Pricing principle for the paid block (principle only, no number
+fixed):** value is judged against "cost of hiring an interpreter / attending
+a language center," not against "cheapest possible." "Worth the money" means
+content that is genuinely usable in a real situation. Because this is the
+highest-stakes, most expert-dependent content in the product, it requires
+the **strictest review** — a person with lived experience of the actual
+situation, **not AI-generated-then-skim-reviewed**. Exact price is deferred
+pending data (referenced by the Project Owner as "Gate 6" — see the note in
+ADR-017's context on `.claude/commands/build-language.md`'s Phần E table,
+where "Gate 6" appears once, undefined; this ADR does not resolve what Gate
+6 is, only records that pricing is explicitly gated behind it).
+
+**11. Unit/lesson count per (topic × tier) cell: intentionally left open.**
+No multiplication table is frozen on paper; the real count is decided when
+the first real content for that cell is authored.
+
+**12. Root design philosophy:** unlike a physical classroom, the app has no
+teacher to field an ad-hoc question, so the structure **must** let a learner
+pull the exact situation they need on demand rather than being forced through
+a rigid linear sequence — the only locking that survives this philosophy is
+the cross-tier lock in point 4, justified specifically by genuine grammar/
+expression dependency, not by content-ordering preference.
+
+### Explicitly open / assumption-only (do not treat as frozen)
+
+- The working name "Những ngày đầu" for Block A.
+- The exact Free/Paid situation split in point 8.
+- Any Plus/Pro/Max tier boundary or feature allocation (point 9).
+- Any concrete price (point 10).
+- Per-cell unit/lesson counts (point 11).
+- Ad-supported-vs-ad-free mechanics beyond "paid removes ads."
+- The concrete technical id/slug scheme for topics/tiers (point 2b only
+  fixes the *principle* — stable id, i18n-only display — not the literal
+  strings).
+
+### Consequences
+
+- `curriculum_catalog.json` (all three synced copies) and
+  `scripts/lib/daily-life-blueprint.mjs`'s 10-module blueprint remain
+  unchanged until a separate, explicitly scoped task replaces them — that
+  task must carry its own plan and checkpoints (per the Project Owner's
+  standing requirement for this kind of structural change) and must account
+  for the ID-stability finding above (Module 1 / Golden Lesson content must
+  not be renumbered without a completion-record migration plan; Modules 2–10
+  are blueprint-only today and can be freely restructured).
+- Block A's "no scroll-window, open access" behavior and Block B's tiered
+  scroll-window behavior are two distinct gating mechanisms that must be
+  implemented as such, not as one mechanism with a flag — Block A must never
+  inherit Block B's tier-lock (point 4) or vice versa.
+- Any future placement-test, level-selection, or Core-Foundation-skip work
+  must preserve the three existing entry mechanisms (point 7) rather than
+  redesigning them.
+- Content authoring for Block B must be reviewed against the standalone-unit
+  constraint (point 6) — a reviewer must be able to reject a unit for
+  assuming cross-topic prior knowledge within the same tier.
+- Paid-block content (point 10) requires a human reviewer with real
+  situational experience before release; this ADR does not authorize
+  AI-authored-and-skim-reviewed content for that block.
+- Does not change ADR-008 (Golden Reference Lesson, still FROZEN), ADR-012
+  (Q14), ADR-013/ADR-014 (Unit/Module Comprehensive Conversation), or any
+  language-rule ADR (ADR-015/ADR-016/ADR-017).
+
+### Approval
+
+Recorded by Project Owner instruction, 2026-07-18, as a documentation-only
+design record. No code or generated-content change is authorized by this
+ADR. Implementation requires a separate task with its own plan and
+checkpoints, per explicit Project Owner instruction.

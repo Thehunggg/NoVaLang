@@ -346,6 +346,93 @@ chỉ in cảnh báo, không fail.
 
 ---
 
+## 0.3 Kiến trúc curriculum domain Giao tiếp hàng ngày (P-01 .. P-12) — 2026-07-18
+
+**Lưu ý phạm vi:** sổ này (`rules/decisions.md`) vốn ghi quyết định cho pipeline
+`/build-language` (luật ngôn ngữ: chính tả, ngữ âm, ngữ pháp, ngữ dụng), không
+phải quyết định kiến trúc curriculum/sản phẩm. Mục này là **ngoại lệ ghi theo
+đúng chỉ thị owner** ("ghi vào decisions.md") cho một quyết định thiết kế
+curriculum áp mọi ngôn ngữ — dùng tiền tố **P-** (Product/Curriculum) để tách
+hẳn khỏi dãy **D-** (quyết định ngôn ngữ), tránh lẫn hai loại. **Bản đầy đủ,
+có ngữ cảnh và hệ quả, nằm ở `docs/ai/ARCHITECTURE_DECISIONS.md` ADR-018** —
+mục này là bản tóm tắt đối chiếu nhanh, không phải bản gốc.
+
+**Trạng thái: THIẾT KẾ đã được owner chốt hướng, CHƯA FROZEN, CHƯA đổi code,
+CHƯA đụng `curriculum_catalog.json`.** Nhiều điểm là **giả định ban đầu**, đánh
+dấu rõ dưới đây — không đóng băng dù đã ghi ra.
+
+- **P-01 · 2026-07-18 · owner · ALL (mọi ngôn ngữ học)** — Domain `daily_life`
+  chia **2 khối**: (A) "Những ngày đầu" (tên tạm) — tình huống thủ tục mới
+  sang, KHÔNG chia 3 chặng, KHÔNG cửa sổ cuốn, mở tự do ("van xả cấp cứu");
+  (B) lộ trình chính — chủ đề lặp hàng ngày, chia 3 chặng hiển thị, có cửa sổ
+  cuốn.
+- **P-02 · owner · ALL** — Khối B có **15 chủ đề dùng chung cả 3 chặng**, thứ
+  tự tham chiếu: Chào hỏi&làm quen · Bản thân · Số đếm&tiền · Thời gian&ngày
+  tháng · Mua sắm · Ăn uống&gọi món · Chỉ đường · Tàu điện&đi lại · Khi không
+  hiểu · Gia đình&người quen · Sở thích · Hẹn gặp&rủ rê · Điện thoại&tin nhắn ·
+  Thời tiết&sức khỏe · Cảm ơn/xin lỗi/lịch sự. Chặng cao hơn = cùng chủ đề,
+  nói phức tạp/liền mạch hơn, không phải chủ đề rời.
+- **P-03 · owner · ALL** — Tên kỹ thuật (id/code) tách hẳn khỏi tên hiển thị.
+  15 nhãn ở P-02 chỉ là nhãn tham chiếu nội bộ, không phải chuỗi hiển thị.
+  Tên hiển thị **bắt buộc qua i18n** theo `nativeLanguageCode`, cấm hardcode
+  bất kỳ ngôn ngữ nào trong code hiển thị. **ID chủ đề bất biến**, không nhúng
+  ngôn ngữ, không đổi khi đổi tên hiển thị — cùng nguyên tắc đã xác nhận cho
+  lesson ID qua completion-record (`shared/contracts/lesson_completion.rules.md`
+  C2/C9), mở rộng áp dụng cho topic/module ID.
+- **P-04 · owner · ALL** — 3 chặng: cùng chủ đề, TĂNG độ phức tạp diễn đạt
+  (không phải tăng khối lượng từ vựng). Nhãn hiển thị Cơ bản/Trung cấp/Cao cấp;
+  KHÔNG hiện CEFR (CEFR/thang mức tương đương vẫn chạy ngầm cho xếp lớp/khoá).
+- **P-05 · owner · ALL** — Tự do ngang trong 1 chặng (chọn unit từ bất kỳ chủ
+  đề nào, không ép tuần tự); khoá dọc giữa chặng (Trung cấp khoá tới khi xong
+  Cơ bản, Cao cấp khoá tới khi xong Trung cấp) — vì cách nói chặng cao cần nền
+  nhiều chủ đề chặng dưới, không chỉ nền của chính chủ đề đó.
+- **P-06 · owner · ALL** — Học song song & giới hạn Free, **mỗi ngôn ngữ độc
+  lập hoàn toàn, không cộng dồn**: tối đa 2 ngôn ngữ song song; mỗi ngôn ngữ
+  tối đa 2 domain song song; mỗi (ngôn ngữ×domain) 2 unit/ngày; SRS cap 30
+  mục/ngày riêng từng ngôn ngữ; level/tiến độ/SRS/thông báo tách riêng theo
+  ngôn ngữ. Bài chưa hoàn thành = tính lượt; bài đã hoàn thành (kể cả placement
+  bỏ qua) = ôn lại, KHÔNG tính lượt, có nhắc nhẹ trước khi bấm.
+- **P-07 · owner · ALL** — Luật nội dung bắt buộc cho mọi unit khối B: vì tự do
+  ngang, mỗi unit PHẢI tự đứng được, không giả định đã học unit/chủ đề khác
+  cùng chặng. Ngữ pháp nền (です/ます, số đếm...) thuộc Core Foundation, không
+  phải điều kiện ẩn của một unit khối B.
+- **P-08 · owner · ALL** — Giữ nguyên 3 cơ chế vào đã có: placement test (mở
+  đúng chặng, chặng dưới coi như hoàn thành nhưng vẫn ôn lại được), tự chọn
+  level, nút bỏ qua Core Foundation (kana). Không thiết kế lại 3 cơ chế này.
+- **P-09 · owner · ALL — GIẢ ĐỊNH BAN ĐẦU, chờ dữ liệu, KHÔNG cố định** —
+  Entitlement khối A: Free (mồi 24h) = sân bay&nhập cảnh, mua sắm/siêu thị,
+  tàu điện&đi lại; Trả phí (hàng sâu) = visa/xuất nhập cảnh, ngân hàng, SIM,
+  thuê nhà, bảo hiểm, baito, cảnh sát, bưu điện. Độc lập với bậc Plus/Pro/Max
+  (chưa chốt).
+- **P-10 · owner · ALL** — Trả phí KHÔNG bán bằng số unit (Free đã 8 unit/ngày
+  qua 2×2 slot ngôn ngữ/domain, coi là đủ nhiều). Bán: bỏ quảng cáo + khối
+  "Những ngày đầu" hàng sâu + bỏ giới hạn số ngôn ngữ/domain song song + tính
+  năng nâng cao. Phân bổ theo bậc Plus/Pro/Max: CHƯA CHỐT.
+- **P-11 · owner · ALL — nguyên tắc, KHÔNG chốt số** — Định giá khối trả phí so
+  với "chi phí thuê phiên dịch/học trung tâm", không so "rẻ tuyệt đối". Nội
+  dung khối này (chuyên môn cao, hàng bán) phải được người có trải nghiệm thật
+  rà soát kỹ nhất — KHÔNG AI-sinh-rồi-đọc-lướt. Giá cụ thể chờ dữ liệu
+  ("Gate 6" — xem ADR-017: tên xuất hiện đúng 1 lần trong
+  `.claude/commands/build-language.md`, chưa từng định nghĩa; ADR-018 không tự
+  định nghĩa Gate 6, chỉ ghi nhận giá đang chờ nó).
+- **P-12 · owner · ALL — để mở, không chốt trên giấy** — Số unit/lesson mỗi ô
+  (chủ đề×chặng) quyết khi viết bài thật đầu tiên, không nhân sẵn ra một bảng
+  cố định.
+
+**Triết lý gốc (không phải quyết định riêng, là lý do xuyên suốt P-01..P-12):**
+app không có giáo viên hỏi đột xuất như trường tiếng, nên cấu trúc phải cho
+người học tự lấy đúng tình huống cần ngay, không khoá cứng tuyến tính — chỉ
+khoá dọc giữa chặng (P-05) là ngoại lệ, vì có căn cứ phụ thuộc ngữ pháp/diễn
+đạt thật, không phải sở thích sắp xếp nội dung.
+
+**Còn treo, đánh dấu rõ để không đóng băng nhầm:** tên "Những ngày đầu", tỉ lệ
+Free/Trả phí cụ thể ở P-09, mọi ranh giới/tính năng theo bậc Plus/Pro/Max, mọi
+con số giá, số unit/lesson mỗi ô (P-12), cơ chế quảng cáo ngoài "trả phí thì
+hết quảng cáo", và chuỗi id/slug kỹ thuật cụ thể cho topic/tier (P-03 chỉ chốt
+NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký tự cụ thể).
+
+---
+
 ## Ghi chú (không phải quyết định đã chốt)
 
 - Giao diện thẻ từ vựng (collapsed: target + reading + audio; expanded: meaning +
