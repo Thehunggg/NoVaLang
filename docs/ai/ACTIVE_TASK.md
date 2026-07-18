@@ -2,23 +2,29 @@
 
 ## Task identity — Danh tính task
 
-- Task ID: `NOVALANG-JAPANESE-FULL-PROFILE-FINAL-CLOSURE-01`
-- Task name: `Japanese Full Language Profile final documentation closure`
-- Status: `CLOSED / FROZEN`
-- Current owner: `Codex — SOLE WRITER`
-- Claude Code: `READ-ONLY`
-- Codex: `WRITE`
+- Task ID: `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01`
+- Task name: `Generalize five_cards lesson format from Golden-Lesson-only to a reusable registry-based mechanism`
+- Status: `NODE_LAYER_IMPLEMENTATION_COMPLETE / FLUTTER_TEST_VERIFICATION_PENDING`
+- Current owner: `Claude Code — SOLE WRITER (this task only)`
+- Claude Code: `WRITE`
+- Codex: `READ-ONLY`
 - Cursor: `READ-ONLY`
 - Default next owner: `Project Owner`
-- Last updated: `2026-07-17`
-- Final verdict: `JAPANESE_FULL_PROFILE_FINAL_CLOSURE_COMPLETED`
-- Ownership note: Project Owner assigned Codex as the sole writer for
-  `NOVALANG-JAPANESE-FULL-PROFILE-FINAL-CLOSURE-01`; Claude Code and Cursor
-  are READ-ONLY. Existing dirty-worktree changes remain preserved; no reset,
-  clean, stash, checkout, restore, commit, or push is authorized. The approved
-  scope permits status/documentation updates only. Curriculum, schema,
-  generated content, Flutter/runtime, pronunciation/romanization pipeline,
-  English, and other languages remain forbidden. The prior
+- Last updated: `2026-07-18`
+- Final verdict: `NODE_LAYER_VERIFIED_BYTE_IDENTICAL / FLUTTER_TEST_NOT_RUN_NO_SDK_IN_CLOUD_ENV`
+- Ownership note: Project Owner explicitly assigned Claude Code as writer for
+  this scoped task in the current conversation (registry in `helpers.mjs`,
+  split `validateFiveCardsStructure`/`validateApprovedGoldenLessonContent`,
+  `smoke-curriculum-flow.mjs` scope-guard change, new ADR-019), per
+  AGENTS.md's "project owner explicitly assigns ownership in the current
+  conversation" clause. Scope is strictly the 3 Node scripts
+  (`scripts/content/daily-life/module-1/helpers.mjs`,
+  `scripts/validate-curriculum.mjs`, `scripts/smoke-curriculum-flow.mjs`)
+  plus this file and `ARCHITECTURE_DECISIONS.md`. No file under `shared/**`,
+  `mobile/novalang_flutter/lib/**`, or `rules/**` was touched — confirmed by
+  `git status --short` after every edit in this task. The prior
+  `NOVALANG-JAPANESE-FULL-PROFILE-FINAL-CLOSURE-01`
+  (`CLOSED / FROZEN`, Codex — unaffected by this task) and
   `NOVALANG-ENGLISH-STYLE-PROFILE-IMPLEMENTATION-01`,
   `NOVALANG-VOCABULARY-SCROLL-CROSS-PLATFORM-RUNTIME-FIX-05`,
   `NOVALANG-VOCABULARY-SCROLL-RUNTIME-FIX-04`,
@@ -26,6 +32,85 @@
   `NOVALANG-VOCABULARY-SCROLL-ROOT-CAUSE-FIX-02`, and
   `NOVALANG-MULTILINGUAL-NATURALNESS-REGISTER-RULE-01` history below remains
   preserved and is not superseded outside this scoped correction.
+
+## Five_cards format generalization — 2026-07-18
+
+Executed the previously reported and approved plan (see the earlier
+"Kế hoạch tổng quát hoá `five_cards`" report in this session): `helpers.mjs`
+now looks up approved five_cards content through `FIVE_CARDS_REGISTRY`
+(keyed `languageCode` → `"${unitOrder}-${lessonOrder}"`, today exactly
+`{ ja: { '1-1': JA_UNIT1_LESSON1 } }`) instead of the hard-coded position
+condition; `validate-curriculum.mjs`'s `validateApprovedJaUnitOneLesson` is
+split into `validateFiveCardsStructure` (generic, runs for every
+`lessonFormat: five_cards` lesson, exported at module scope) and
+`validateApprovedGoldenLessonContent` (literal Golden-content lock, runs
+only for `ja-daily_life-m01-u1-l1`); `smoke-curriculum-flow.mjs`'s
+`checkFiveCardsScopeGuard` now requires every five_cards lesson to pass a
+structural check instead of requiring exactly one lesson with exactly the
+Golden id — this specific change was flagged in the original plan as a real
+product decision needing separate confirmation, and the Project Owner's
+execution instruction explicitly named it. New ADR-019 records the full
+decision. Full technical detail (exact classification of every check,
+generalizations made, verification evidence) is in ADR-019; this entry is
+the task-log summary.
+
+**Scope discipline:** only `scripts/content/daily-life/module-1/helpers.mjs`,
+`scripts/validate-curriculum.mjs`, and `scripts/smoke-curriculum-flow.mjs`
+were changed as code; `docs/ai/ARCHITECTURE_DECISIONS.md` and this file are
+the only other changed files. Zero files under `shared/**`,
+`mobile/novalang_flutter/lib/**`, or `rules/**` were touched — verified by
+`git status --short` after every edit step, not assumed.
+
+**Verification performed (all in this cloud session):**
+- `npm run validate:curriculum` baseline captured BEFORE any edit: PASS, 23
+  courses, 506 lessons, 4 pre-existing soft `rules/` warnings, exit 0.
+- After all 3 files were edited: `npm run generate:curriculum` (which now
+  runs the new registry-based `helpers.mjs`) was executed, and
+  `shared/generated/lessons.json`/`courses.json`/`curriculum_catalog.json`
+  were SHA-256 hash-compared before vs. after — **byte-for-byte identical**.
+  `git status --short shared/generated/` showed zero diff. This proves the
+  registry refactor is a true no-op for the existing 506-lesson corpus, not
+  just "validator still passes."
+- `npm run validate:curriculum` re-run on the freshly regenerated output:
+  output identical to the pre-edit baseline (same 23/506/4-warnings/PASS).
+- `npm run smoke:curriculum`: PASS, including `Five-cards scope guard: 2
+  pass, 0 fail` (the rewritten guard) and `Approved Japanese Daily Life Unit
+  1 Lesson 1: 2 pass, 0 fail` (the untouched Golden-content smoke check).
+- Proof requested by Project Owner (scratchpad only, never written to the
+  repo, not committed): a Node script imported the newly-exported
+  `validateFiveCardsStructure` directly and built a brand-new minimal
+  five_cards lesson object with a new, non-Golden ID
+  (`scratch-five-cards-proof-lesson`) never added to `FIVE_CARDS_REGISTRY`
+  or any real content file. The complete minimal lesson passed with **0
+  errors**. The same object with only 7 (not 8) vocabulary items failed with
+  **exactly 1 error**: `"Card 2 must contain exactly 8 vocabulary cards"` —
+  proving the structural check is real, generic, and fails at the correct
+  location, not just decorative.
+- `node --check` passed on all 3 edited files at every intermediate step.
+
+**Known, explicitly flagged gap — not silently skipped:** `flutter test`
+could **not** be run. This cloud session's environment has no Flutter/Dart
+SDK installed anywhere (`flutter: command not found`; `find / -iname
+"*flutter*"` and `*dart-sdk*` found nothing; confirmed with the Project
+Owner before proceeding, who explicitly authorized continuing without it).
+No `.dart` file was modified by this task; the generated
+`shared/generated/*.json` that the Flutter app's tests actually read is
+proven byte-for-byte unchanged (see above), and the Flutter/Web render layer
+already branches on `lesson.lessonFormat == 'five_cards'` generically
+(confirmed by source read, not changed by this task) — so there is a strong
+theoretical case that `flutter test` (in particular
+`golden_reference_lesson_invariants_test.dart` and `five_card_lesson_test.dart`,
+which read only the generated JSON asset, never the validator source) would
+be unaffected. **This is not the same as having actually run it.** Real
+`flutter test` verification on a machine with the Flutter SDK installed is
+required before this task can be marked fully closed — see "Next exact
+action" below. Do not report this task as fully done until that check runs.
+
+No commit beyond this task's own 3 approved code files + these 2 docs files.
+Push: performed for the code commit, per explicit Project Owner
+authorization to commit/push step by step for this task specifically (this
+authorization is scoped to this task; it does not change the standing
+"never commit/push without approval" default for other tasks).
 
 ## Japanese Full Profile final closure — 2026-07-17
 
@@ -802,6 +887,22 @@ Phase B does not start until Phase A scoped tests pass.
   started. Manual Android/Web runtime verification is not claimed as PASS.
 
 ## Next exact action — Hành động tiếp theo chính xác
+
+**For `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01` (Node layer complete,
+Flutter test verification pending — DO NOT close until this runs):** Project
+Owner (or a session with the Flutter SDK installed): run the full `flutter
+test` suite in `mobile/novalang_flutter/` — in particular
+`test/golden_reference_lesson_invariants_test.dart` and
+`test/five_card_lesson_test.dart` — and confirm the result count matches
+whatever the suite reported before this task (this task could not capture
+that number itself; no Flutter SDK was available in this cloud session).
+Since `shared/generated/lessons.json`/`courses.json` are proven byte-for-byte
+unchanged by this task (SHA-256 verified) and no `.dart` file was touched,
+the expectation is an identical pass count with zero new failures — but that
+expectation has not been empirically confirmed and must not be reported as
+PASS until it is. Only after this check should
+`NODE_LAYER_IMPLEMENTATION_COMPLETE / FLUTTER_TEST_VERIFICATION_PENDING` be
+updated to a fully closed status.
 
 **For `NOVALANG-DOMAIN-TAXONOMY-RESTRUCTURE-01` (complete):** Project Owner:
 manually verify the real Learning Focus screen (Android and/or Web) shows all

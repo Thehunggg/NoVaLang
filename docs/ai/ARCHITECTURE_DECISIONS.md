@@ -891,3 +891,114 @@ Recorded by Project Owner instruction, 2026-07-18, as a documentation-only
 design record. No code or generated-content change is authorized by this
 ADR. Implementation requires a separate task with its own plan and
 checkpoints, per explicit Project Owner instruction.
+
+## ADR-019 — `five_cards` is a standard, reusable lesson-format mechanism, not a Golden-Lesson-only mechanism
+
+Status: `APPROVED`
+
+### Context
+
+Since ADR-008/Lesson Format 2.0, the `lessonFormat: five_cards` generation
+and validation pipeline was wired to exactly one lesson: the Golden
+Reference Lesson (`ja-daily_life-m01-u1-l1`). Three places encoded this as a
+hard boundary rather than a format contract: the generator
+(`scripts/content/daily-life/module-1/helpers.mjs`) triggered the five_cards
+branch only via the literal condition
+`language === 'ja' && unitIndex === 0 && lessonIndex === 0`; the validator
+(`scripts/validate-curriculum.mjs`) ran one function,
+`validateApprovedJaUnitOneLesson`, that mixed generic format-shape checks
+(five cards, 14 exercises, dialogue group counts, character metadata) with
+literal Golden-content checks (exact token ids, exact slot ids, the exact
+14-line Tanaka–Sato dialogue, the exact こんにちは casual-opening wording) in
+one function gated only by `lesson.id === APPROVED_JA_UNIT1_LESSON1`; and
+the smoke test (`scripts/smoke-curriculum-flow.mjs`) had an explicit scope
+guard failing unless exactly one lesson used `lessonFormat: five_cards` and
+its id was the Golden Lesson's. A future five_cards lesson could not be
+added without editing the validator and smoke guard by hand each time.
+
+### Decision
+
+- `lessonFormat: five_cards` (NovaLang Lesson Format 2.0,
+  `.cursor/rules/03_novalang_lesson_format_2_0.mdc`, and Format 3.0's Q14
+  amendment, `.cursor/rules/04_novalang_lesson_format_3_0.mdc`) is the
+  **standard, reusable format contract** for any approved five-card lesson,
+  not a mechanism reserved for the Golden Lesson alone.
+- **Generation**: `helpers.mjs` looks up approved five_cards source content
+  through `FIVE_CARDS_REGISTRY`, keyed by `languageCode` then
+  `"${unitOrder}-${lessonOrder}"` (today: `{ ja: { '1-1': JA_UNIT1_LESSON1 } }`).
+  Adding a future five_cards lesson is a source-module addition plus exactly
+  one registry entry — it does not require editing the generation loop.
+- **Validation**: the former `validateApprovedJaUnitOneLesson` is split into
+  `validateFiveCardsStructure(lesson)` — the generic structural contract
+  (five ordered main cards, 8 vocabulary/8 vocabularyDetails, 3 dialogue
+  groups of 4–6 lines, character-metadata completeness and speakerId
+  validity, 3 grammar patterns, 14 exercises with the Free 1–10/Plus 11–14
+  boundary, Q3/Q9/Q10/Q13/Q14 shape, kanji-requires-reading, no leftover
+  draft Vietnamese names) — versus `validateApprovedGoldenLessonContent(lesson)`
+  — the literal content lock (exact token ids, exact slot ids, the exact
+  14-line dialogue, exact scene-divider fields, the exact こんにちは content),
+  called only when `lesson.id === APPROVED_JA_UNIT1_LESSON1`. Every lesson
+  with `lessonFormat === 'five_cards'` runs the structural function; only the
+  Golden Lesson additionally runs the content-lock function. No existing
+  condition was weakened — every check that existed before this split still
+  runs for the Golden Lesson; two checks were **generalized**, not loosened:
+  `targetLanguage` must equal the lesson's own `languageCode` (previously
+  hard-coded to `"ja"`, which would have rejected a correct non-Japanese
+  five_cards lesson), and exercise 13 requires a non-empty `unusedTokenIds`
+  (previously required the literal id `"konbanwa_distractor"`, which is
+  Golden-specific wording now checked only in the content-lock function).
+- **Smoke test**: `checkFiveCardsScopeGuard` now requires every
+  `lessonFormat: five_cards` lesson to pass a structural check (mirroring
+  `validateFiveCardsStructure`'s boundary), instead of requiring exactly one
+  lesson with exactly the Golden Lesson's id. `checkApprovedJaUnitOneLesson`
+  (the full Golden-content smoke check) is unchanged and still runs only for
+  the Golden Lesson at its existing call sites.
+- **This ADR authorizes engineering plumbing only.** It does not authorize,
+  approve, or pre-clear the creation of any new lesson content. A future
+  five_cards lesson still requires: an explicit owner content instruction
+  (vocabulary, dialogue, grammar, exercises — nothing may be invented per
+  `AGENTS.md`/`novalang.mdc`), full compliance with Format 2.0 for Q1–13 and
+  Format 3.0 for Q14, and passing both `validateFiveCardsStructure` and the
+  smoke structural guard. The Golden Lesson's own content, stable IDs, card
+  count, exercise count, and order remain governed by ADR-008 and are
+  unchanged by this ADR.
+
+### Consequences
+
+- `scripts/content/daily-life/module-1/helpers.mjs`,
+  `scripts/validate-curriculum.mjs`, and `scripts/smoke-curriculum-flow.mjs`
+  are the three files that implement this contract; none of
+  `shared/**`, `mobile/novalang_flutter/lib/**`, or `rules/**` were touched
+  to make the format reusable — the Flutter/Web render layer already keyed
+  off `lesson.lessonFormat == 'five_cards'` generically (confirmed by source
+  read before this change) and required no change.
+- Verified as a pure refactor for the existing corpus: after the split,
+  `npm run generate:curriculum` produced `shared/generated/lessons.json`,
+  `courses.json`, and `curriculum_catalog.json` byte-for-byte identical
+  (SHA-256) to their pre-change contents, and `npm run validate:curriculum`
+  produced output identical to the pre-change baseline (23 courses, 506
+  lessons, PASS, same 4 pre-existing soft `rules/` warnings). `npm run
+  smoke:curriculum` passed, including the rewritten scope guard.
+  `validateFiveCardsStructure` was additionally exercised directly (exported
+  for this purpose) against a brand-new, non-Golden, scratchpad-only lesson
+  object: a complete minimal five_cards shape passed with 0 errors, and the
+  same object with only 7 (not 8) vocabulary items failed with exactly the
+  expected single error. `flutter test` could not be run in this session's
+  cloud environment (no Flutter SDK available); Flutter/Dart runtime
+  re-verification on a machine with Flutter installed remains an open item
+  before this task is considered fully closed — see
+  `docs/ai/ACTIVE_TASK.md`.
+- Future five_cards work should read `FIVE_CARDS_REGISTRY`,
+  `validateFiveCardsStructure`, and `checkFiveCardsScopeGuard` as the
+  reusable contract surface, and treat `validateApprovedGoldenLessonContent`/
+  `checkApprovedJaUnitOneLesson` as Golden-Lesson-only content locks that a
+  new lesson never runs.
+
+### Approval
+
+Approved by Project Owner, 2026-07-18, executing the previously reported and
+approved generalization plan (registry in `helpers.mjs`, structural/content
+validator split, smoke scope-guard change) under this task. The smoke
+scope-guard change was explicitly called out in the original plan report as
+a real product decision requiring separate confirmation; the Project Owner's
+instruction to execute this task explicitly included it.
