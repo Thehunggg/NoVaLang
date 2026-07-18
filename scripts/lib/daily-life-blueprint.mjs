@@ -3,6 +3,7 @@
  * Skeleton only — no real exercise content / questions / answers.
  */
 import { buildReadyModuleOne } from '../content/daily-life/module-1/helpers.mjs';
+import { resolveLanguageDisplayName } from './language-names.mjs';
 
 const NATIVE_CODES = ["vi", "en", "ja", "ko", "zh"];
 
@@ -839,14 +840,11 @@ export function buildDailyLifeCourses(languageCode, { makeCourse, makeLesson }) 
         moduleTitle: mod.titleByNative.en,
         moduleTitleVi: mod.titleByNative.vi,
         moduleTitleByNative: mod.titleByNative,
-        title: `${languageCode === "ja" ? "Japanese" : "English"} · ${DAILY_LIFE_COURSE_META.titleByNative.en} · ${mod.titleByNative.en}`,
-        titleVi: `${languageCode === "ja" ? "Tiếng Nhật" : "Tiếng Anh"} · ${DAILY_LIFE_COURSE_META.titleByNative.vi} · ${mod.titleByNative.vi}`,
+        title: `${resolveLanguageDisplayName(languageCode, "en")} · ${DAILY_LIFE_COURSE_META.titleByNative.en} · ${mod.titleByNative.en}`,
+        titleVi: `${resolveLanguageDisplayName(languageCode, "vi")} · ${DAILY_LIFE_COURSE_META.titleByNative.vi} · ${mod.titleByNative.vi}`,
         titleByNative: Object.fromEntries(
           NATIVE_CODES.map((code) => {
-            const langLabel =
-              languageCode === "ja"
-                ? { vi: "Tiếng Nhật", en: "Japanese", ja: "日本語", ko: "일본어", zh: "日语" }[code]
-                : { vi: "Tiếng Anh", en: "English", ja: "英語", ko: "영어", zh: "英语" }[code];
+            const langLabel = resolveLanguageDisplayName(languageCode, code);
             return [
               code,
               `${langLabel} · ${DAILY_LIFE_COURSE_META.titleByNative[code]} · ${mod.titleByNative[code]}`,

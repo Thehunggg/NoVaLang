@@ -2,6 +2,7 @@ import { MODULE_ONE_CONTENT, moduleOneNative as N } from './content.mjs';
 import { MODULE_ONE_DIALOGUES } from './dialogues.mjs';
 import { JA_UNIT1_LESSON1 } from './ja-unit1-lesson1.mjs';
 import { prepareJapaneseRomanization, toReadableRomaji } from '../../../lib/japanese-pronunciation.mjs';
+import { resolveLanguageDisplayName } from '../../../lib/language-names.mjs';
 
 // Tokenizer-based Japanese romanization (JapanesePronunciationProfile,
 // scripts/lib/japanese-pronunciation.mjs) needs an async morphological
@@ -374,5 +375,5 @@ export function buildReadyModuleOne(language, context) {
     });
   }
   const moduleTitle = moduleDef.titleByNative;
-  return makeCourse({ courseId, languageCode: language, nicheId: 'daily_life', branch: 'niche', moduleId: moduleDef.moduleId, moduleTitle: moduleTitle.en, moduleTitleVi: moduleTitle.vi, moduleTitleByNative: moduleTitle, title: `${language === 'ja' ? 'Japanese' : 'English'} · ${moduleTitle.en}`, titleVi: `${language === 'ja' ? 'Tiếng Nhật' : 'Tiếng Anh'} · ${moduleTitle.vi}`, titleByNative: moduleTitle, description: moduleDef.goalByNative.en, descriptionVi: moduleDef.goalByNative.vi, descriptionByNative: moduleDef.goalByNative, order: courseOrder, levelCode: 'A0', levelRange: 'A0–A1', placementTag: 'daily_life_basic', contentStatus: units.length ? 'ready' : 'blueprint', playable: units.length > 0, type: 'communication', unlockRequirement: 'core_foundation_completed', units, lessons });
+  return makeCourse({ courseId, languageCode: language, nicheId: 'daily_life', branch: 'niche', moduleId: moduleDef.moduleId, moduleTitle: moduleTitle.en, moduleTitleVi: moduleTitle.vi, moduleTitleByNative: moduleTitle, title: `${resolveLanguageDisplayName(language, 'en')} · ${moduleTitle.en}`, titleVi: `${resolveLanguageDisplayName(language, 'vi')} · ${moduleTitle.vi}`, titleByNative: moduleTitle, description: moduleDef.goalByNative.en, descriptionVi: moduleDef.goalByNative.vi, descriptionByNative: moduleDef.goalByNative, order: courseOrder, levelCode: 'A0', levelRange: 'A0–A1', placementTag: 'daily_life_basic', contentStatus: units.length ? 'ready' : 'blueprint', playable: units.length > 0, type: 'communication', unlockRequirement: 'core_foundation_completed', units, lessons });
 }
