@@ -71,14 +71,39 @@ const I = (m) => findings.info.push(m);
 
 console.log(`=== lesson-check: ${lessonId} (lang=${lang}, writingSystem=${ws || '(unknown)'}, giả định provenance=${assumeProvenance}) ===`);
 
-// --- Check 1: _base/text-fields (fieldNameMapping) ---
+// --- Check 1: _base/text-fields (fieldNameMapping)
+// Sửa 2026-07-18 sau khi chạy thật 506 bài (rules/_legacy/golden-lesson-test-2026-07-18.md):
+// reading/romanization CHỈ áp cho vocabulary là từ/cụm-từ HEADWORD (flashcard) —
+// KHÔNG áp khi item có field 'targetText' (dấu hiệu cấu trúc: đây là câu hội thoại mẫu,
+// không phải headword — vd en-daily_life). Và CHỈ áp khi lớp script của ngôn ngữ này
+// thật sự cần reading-aid (_script/<ws>.config.reading_aids.applicable !== false) —
+// owner quyết định 2026-07-18: en bỏ qua hoàn toàn (D-40's field 'pronunciation' là
+// gap khác, ghi nợ riêng, KHÔNG map vào reading/romanization). ---
 const tf = baseLayer['_base/text-fields'];
 if (tf) {
   I(`_base/text-fields v${tf.version || '?'}: đối chiếu vocabulary[] theo fieldNameMapping (displayText/reading/romanization/speechText)`);
+  const scriptCfg = scriptLayer[`_script/${ws}/script`];
+  const readingAidsApplicable = scriptCfg && scriptCfg.config && scriptCfg.config.reading_aids
+    ? scriptCfg.config.reading_aids.applicable !== false
+    : true; // mặc định true khi không có layer script khai báo gì (vd Jpan — ja luôn cần)
+  const readingAidsSkipReason = !readingAidsApplicable
+    ? `_script/${ws}/script.config.reading_aids.applicable=false`
+    : null;
+  if (lang === 'en') {
+    I("Owner quyết định 2026-07-18: bỏ qua reading/romanization cho en hoàn toàn ở check này — D-40 (FROZEN) nói en cần IPA nhưng field đúng là 'pronunciation' (ADR-015), không phải reading/romanization; 0/506 bài có field 'pronunciation' — ghi nợ riêng, không map vào đây.");
+  } else if (readingAidsSkipReason) {
+    I(`Bỏ qua reading/romanization cho ${lang}: ${readingAidsSkipReason}`);
+  }
   for (const v of lesson.vocabulary || []) {
     if (!v.displayText) E(`vocabulary[${v.id}]: thiếu displayText`);
-    if (v.reading === undefined) W(`vocabulary[${v.id}]: thiếu 'reading' (đọc bản ngữ) — xem C7/B2`);
-    if (v.romanization === undefined) W(`vocabulary[${v.id}]: thiếu 'romanization' (La-tinh hoá) — xem C7/B1`);
+    const isDialogueExample = 'targetText' in v;
+    const checkReadingAids = lang !== 'en' && readingAidsApplicable && !isDialogueExample;
+    if (checkReadingAids) {
+      if (v.reading === undefined) W(`vocabulary[${v.id}]: thiếu 'reading' (đọc bản ngữ) — xem C7/B2`);
+      if (v.romanization === undefined) W(`vocabulary[${v.id}]: thiếu 'romanization' (La-tinh hoá) — xem C7/B1`);
+    } else if (isDialogueExample && (v.reading === undefined || v.romanization === undefined)) {
+      I(`vocabulary[${v.id}]: bỏ qua reading/romanization — có 'targetText' (câu hội thoại mẫu, không phải headword từ-đơn)`);
+    }
     if (v.speechText === undefined) W(`vocabulary[${v.id}]: thiếu 'speechText' (TTS) — xem C7 (audioText/speechText)`);
   }
   const exercises = (lesson.fiveCardContent && lesson.fiveCardContent.practice && lesson.fiveCardContent.practice.exercises) || [];
@@ -124,21 +149,27 @@ if (dr) {
   W('_base/distractor không có trong layer đã merge — bỏ qua check 2');
 }
 
-// --- Check 3 (chỉ ja): baseline-polite-sentence-ends-desu-masu, có fixed_expression_exemptions (A3) ---
+// --- Check 3 (chỉ ja): baseline-polite-sentence-ends-desu-masu, có fixed_expression_exemptions (A3)
+// Sửa 2026-07-18 sau khi chạy thật 506 bài (rules/_legacy/golden-lesson-test-2026-07-18.md):
+// enders_regex mở rộng (ですか/ましたか/ね/よ), thêm lớp ください + N+は？, exemption khớp
+// endsWith thay vì nguyên văn, bỏ qua chuỗi 1 ký tự (bảng chữ cái). ---
 if (lang === 'ja') {
   const prag = langLayer['ja/pragmatics.rules'];
   const check = prag && Array.isArray(prag.checks) && prag.checks.find((c) => c.id === 'baseline-polite-sentence-ends-desu-masu');
   if (check) {
-    const exemptions = new Set(check.fixed_expression_exemptions || []);
-    I(`ja/pragmatics check '${check.id}': fixed_expression_exemptions=[${[...exemptions].join(', ')}] (A3)`);
+    const exemptions = [...new Set(check.fixed_expression_exemptions || [])];
+    I(`ja/pragmatics check '${check.id}': fixed_expression_exemptions=[${exemptions.join(', ')}] (endsWith, A3)`);
     I("G-04 (C3): KHÔNG áp check này lên lesson.dialogueGroups — chưa có trường register máy-đọc-được để phân biệt nhóm hội thoại casual có chủ ý; chỉ áp lên vocabulary[] (headword baseline).");
-    const enders = /(です|ます|でした|ました|ません|ましょう|ますか)。?$/;
+    const endersSource = check.enders_regex_source || '(です|ます|でした|ました|ません|ましょう)(か)?(ね|よ)?|ください|は';
+    const enders = new RegExp(`(${endersSource})[。！？]?$`);
+    const skipSingle = check.skip_single_character !== false;
     const texts = [];
     for (const v of lesson.vocabulary || []) if (v.displayText) texts.push({ src: `vocabulary[${v.id}]`, text: v.displayText });
     for (const t of texts) {
       const stripped = t.text.replace(/^[～\s]+/, '').replace(/[。！？]+$/, '');
-      if (exemptions.has(t.text) || exemptions.has(stripped)) { I(`${t.src}: '${t.text}' — MIỄN (fixed_expression_exemptions, A3)`); continue; }
-      if (!enders.test(t.text)) W(`${t.src}: '${t.text}' — không kết bằng です/ます-family và không trong fixed_expression_exemptions (baseline-polite-sentence-ends-desu-masu)`);
+      if (skipSingle && [...stripped].length <= 1) { I(`${t.src}: '${t.text}' — bỏ qua (skip_single_character)`); continue; }
+      if (exemptions.some((ex) => stripped.endsWith(ex))) { I(`${t.src}: '${t.text}' — MIỄN (fixed_expression_exemptions endsWith, A3)`); continue; }
+      if (!enders.test(t.text)) W(`${t.src}: '${t.text}' — không kết bằng です/ます-family/ください/は？ và không trong fixed_expression_exemptions (baseline-polite-sentence-ends-desu-masu)`);
     }
   } else {
     W("ja/pragmatics.rules không có check 'baseline-polite-sentence-ends-desu-masu' — bỏ qua check 3");

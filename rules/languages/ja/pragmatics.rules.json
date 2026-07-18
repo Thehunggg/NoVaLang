@@ -1,12 +1,17 @@
 {
   "id": "ja/pragmatics.rules",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "FROZEN",
   "changeLog": [
     {
       "version": "1.1.0",
       "date": "2026-07-18",
       "change": "A3 (Golden Lesson audit, rules/decisions.md mục 0.1): thêm 'fixed_expression_exemptions' cho check baseline-polite-sentence-ends-desu-masu — ngoại lệ trước đây chỉ loại trừ 'corpus văn viết chung', không loại trừ cụm chào hỏi/từ cố định xuất hiện ngay trong nội dung bài (register baseline thật). Danh sách 4 mục lấy trực tiếp từ headword thật trong Golden Lesson vocabulary[] (shared/generated/lessons.json, lesson ja-daily_life-m01-u1-l1): こんにちは/こんばんは/はじめまして/さようなら — không suy đoán thêm mục chưa có bằng chứng."
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-07-18",
+      "change": "SỬA GỐC theo dữ liệu thật (chạy check trên toàn bộ 506 bài generic + Golden — không phải chỉ mở rộng exemption hẹp). Phát hiện: check cũ coi 'baseline polite' = CHỈ です/ます-family, và không loại trừ vocabulary là ký tự đơn (bảng chữ cái). Đọc tay toàn bộ 41 chuỗi ja daily_life bị bắt nhầm ngoài Golden: 100% là báo động giả, chia 5 nhóm thật — enders regex thiếu 'ですか'/'ましたか' (chỉ có 'ますか'), thiếu trợ từ cuối câu ね/よ gắn sau です/ます, thiếu hẳn cấu trúc yêu cầu lịch sự て-form/N+を+ください (một dạng baseline-polite hợp lệ khác, không phải biến thể です/ます), thiếu 5 cụm cố định mới (ありがとう/どういたしまして/こちらこそ/どうぞ/ようこそ), và câu hỏi rút gọn N+は？ (owner quyết: coi là hợp lệ, xem AskUserQuestion 2026-07-18). Sửa: (1) enders_regex mở rộng có tham số hoá trong config, (2) polite_request_ending (て-form/N+を+ください) là lớp baseline-polite riêng, không phải biến thể desu/masu, (3) ellipsis_topic_question (N+は？) hợp lệ theo quyết định owner, (4) fixed_expression_exemptions +5 mục, chuyển từ khớp-nguyên-văn sang khớp-hậu-tố (endsWith) để phủ cả trường hợp cụm cố định đứng cuối câu dài hơn (vd '...ありがとう。'), (5) skip_single_character: true — không áp check này lên vocabulary là 1 ký tự (bảng chữ cái hiragana/katakana). tools/lesson-check.mjs cập nhật logic khớp. Chạy lại 506 bài: báo động giả register về 0/138 (xem rules/_legacy/golden-lesson-test-2026-07-18.md phần thống kê mới)."
     }
   ],
   "phenomenon": "honorifics_keigo",
@@ -50,12 +55,17 @@
   "checks": [
     {
       "id": "baseline-polite-sentence-ends-desu-masu",
-      "description": "Câu baseline NATURAL_NEUTRAL_POLITE kết bằng です/ます (biến thể: でした/ました/ません/ましょう/ますか...). Chỉ áp cho nội dung sinh ở register baseline, KHÔNG áp cho corpus văn viết chung, VÀ KHÔNG áp cho cụm chào hỏi/từ cố định trong fixed_expression_exemptions (A3).",
-      "fixed_expression_exemptions": ["こんにちは", "こんばんは", "はじめまして", "さようなら"],
-      "fixed_expression_exemptions_note": "A3: cụm chào hỏi/từ cố định (fixed expression) không mang được です/ます theo đúng ngữ pháp (không phải câu thiếu lịch sự) — khi đứng riêng (headword từ vựng, câu chào trong hội thoại) KHÔNG bị coi là vi phạm baseline です/ます. Danh sách lấy từ headword thật trong Golden Lesson vocabulary[] (shared/generated/lessons.json) — chỉ thêm mục mới khi có bằng chứng thật tương tự, không suy đoán mở rộng.",
+      "description": "Câu baseline NATURAL_NEUTRAL_POLITE thuộc MỘT trong ba lớp: (1) kết bằng です/ます-family, cho phép có か (hỏi) và/hoặc ね/よ (trợ từ cuối câu) gắn sau — vd です/ますか/ですね/ますよ; (2) câu yêu cầu lịch sự kết bằng ください (て-form+ください hoặc N+を+ください) — một cấu trúc baseline-polite hợp lệ RIÊNG, không phải biến thể です/ます; (3) câu hỏi rút gọn kiểu N+は？ (lược bỏ phần đã rõ từ ngữ cảnh — owner xác nhận 2026-07-18: đây là cách hỏi tự nhiên, lịch sự trung tính, không phải câu thiếu lịch sự). KHÔNG áp cho corpus văn viết chung, KHÔNG áp cho vocabulary là 1 ký tự đơn (bảng chữ cái — không phải câu), VÀ KHÔNG áp cho cụm chào hỏi/từ cố định trong fixed_expression_exemptions (khớp theo HẬU TỐ — endsWith — không chỉ khớp nguyên văn, để phủ cả trường hợp cụm cố định đứng cuối câu dài hơn).",
+      "enders_regex_source": "(です|ます|でした|ました|ません|ましょう)(か)?(ね|よ)?|ください|は",
+      "enders_regex_note": "Ghép với dấu câu cuối tuỳ chọn ([。！？]?) rồi neo cuối chuỗi ($) khi dùng thật. Ba nhóm: (a) です/ます-family + hỏi/trợ từ cuối câu tuỳ chọn — sửa 2026-07-18: thêm biến thể ですか/ましたか (trước chỉ có ますか) và ね/よ gắn sau です/ます (trước không có, khiến 'いいですね' bị bắt nhầm); (b) 'ください' (yêu cầu lịch sự, て-form hoặc N+を+ください — lớp baseline-polite riêng, KHÔNG map vào です/ます); (c) 'は' (câu hỏi rút gọn N+は？, owner quyết 2026-07-18).",
+      "skip_single_character": true,
+      "skip_single_character_note": "Không áp check này khi chuỗi chỉ có 1 ký tự (vd bảng chữ cái hiragana/katakana あ/い/か...) — về cấu trúc không phải câu, 'kết thúc bằng gì' vô nghĩa. Phát hiện từ chạy thật 506 bài: 20 bài hiragana/katakana bị bắt nhầm 100% vì lý do này.",
+      "fixed_expression_exemptions": ["こんにちは", "こんばんは", "はじめまして", "さようなら", "ありがとう", "どういたしまして", "こちらこそ", "どうぞ", "ようこそ"],
+      "fixed_expression_exemptions_match": "endsWith",
+      "fixed_expression_exemptions_note": "A3 (2026-07-18, mở rộng sau khi chạy 506 bài thật): cụm chào hỏi/từ cố định (fixed expression) không mang được です/ます theo đúng ngữ pháp (không phải câu thiếu lịch sự) — khi đứng riêng HOẶC đứng cuối một câu dài hơn (vd '手伝ってくれてありがとう。') KHÔNG bị coi là vi phạm baseline です/ます. Khớp theo HẬU TỐ (endsWith trên chuỗi đã bỏ dấu câu cuối), không chỉ khớp nguyên văn — sửa từ bản 1.1.0 (chỉ khớp nguyên văn, bỏ sót các câu dài kết bằng cụm cố định). 4 mục đầu từ Golden Lesson; 5 mục sau (ありがとう/どういたしまして/こちらこそ/どうぞ/ようこそ) từ chạy thật 505 bài generic, đều có bằng chứng cụ thể trong rules/_legacy/golden-lesson-test-2026-07-18.md — không suy đoán thêm mục chưa có bằng chứng.",
       "assert": {
         "type": "custom",
-        "note": "máy kiểm khi generator chạy; không chạy trên corpus vì corpus không phải baseline-register; bỏ qua chuỗi khớp nguyên văn với fixed_expression_exemptions trước khi kiểm です/ます"
+        "note": "máy kiểm khi generator chạy; không chạy trên corpus vì corpus không phải baseline-register; bỏ qua chuỗi 1 ký tự; bỏ qua chuỗi có HẬU TỐ khớp fixed_expression_exemptions trước khi kiểm enders_regex_source"
       },
       "fixtures": {
         "pass": [
@@ -66,13 +76,22 @@
           "こんにちは",
           "こんばんは",
           "はじめまして",
-          "さようなら"
+          "さようなら",
+          "そうですか。",
+          "いいですね。",
+          "高いですよ。",
+          "どこから来ましたか。",
+          "説明してください。",
+          "お水をください。",
+          "あなたは？",
+          "手伝ってくれてありがとう。",
+          "ペンをどうぞ。"
         ],
         "fail": [
           "田中は先生だ。",
           "水を飲む。"
         ],
-        "_note": "2 câu pass cuối trước 4 fixed expression từ corpus thật UD GSD (Bước 3 mục 6); 4 fixed expression (A3, 2026-07-18) từ Golden Lesson vocabulary[] thật, đứng riêng không です/ます nhưng vẫn PASS vì khớp fixed_expression_exemptions."
+        "_note": "2 câu pass cuối (trước そうですか。) từ corpus thật UD GSD (Bước 3 mục 6). 4 fixed expression Golden (こんにちは..さようなら) đứng riêng, PASS vì fixed_expression_exemptions. Từ そうですか。 trở xuống (2026-07-18): 9 fixture pass mới, lấy nguyên văn từ 41 chuỗi bị bắt nhầm khi chạy thật 505 bài generic — đại diện đủ 5 nhóm đã sửa (ですか/ましたか, ですね/ですよ, ください, N+は？, cụm cố định làm hậu tố)."
       }
     }
   ],
