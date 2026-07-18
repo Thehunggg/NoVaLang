@@ -12,6 +12,7 @@
 | `fail-safe.rules.json` | Level unknown, không fallback chéo ngôn ngữ | legacy reading policy |
 | `register.rules.json` | Baseline `NATURAL_NEUTRAL_POLITE`, 3 mức lõi + 3 modifier | naturalness-and-register.md, ADR-016 |
 | `text-fields.rules.json` | Tách `displayText` / `canonicalText` / `audioText` | legacy TTS/audio |
+| `field-naming-crosswalk.md` | *(guidance-only, không enforce)* — bảng nối 3 bộ tên trường (rule layer / product schema / ADR-015 five-field) đang sống song song trong repo, để viết rule mới không kiểm nhầm tên trường không tồn tại ở tầng đang xét | phát hiện từ phép thử C7 (2026-07-18) trên Golden Lesson |
 
 ## Cách merge (resolve)
 
