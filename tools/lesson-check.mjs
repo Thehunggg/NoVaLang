@@ -11,6 +11,7 @@
 //   node tools/lesson-check.mjs --lang ja --lesson-id ja-daily_life-m01-u1-l1 \
 //     [--file shared/generated/lessons.json] [--assume-provenance auto_generated|hand_authored|owner_approved]
 import { join, readJson, existsSync, walk } from './lib/util.mjs';
+import { isAbsolute } from 'node:path';
 
 const ROOT = process.cwd();
 const RULES = join(ROOT, 'rules');
@@ -56,7 +57,7 @@ const scriptLayer = ws ? loadLayer(join(RULES, '_script', ws)) : {};
 const langLayer = loadLayer(join(RULES, 'languages', lang));
 
 // --- load lesson JSON that (chi doc) ---
-const filePath = join(ROOT, file);
+const filePath = isAbsolute(file) ? file : join(ROOT, file);
 if (!existsSync(filePath)) { console.error(`không tìm thấy: ${file}`); process.exit(2); }
 const raw = readJson(filePath);
 const lessons = Array.isArray(raw) ? raw : raw.lessons || [];
