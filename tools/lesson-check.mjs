@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// lesson-check <lang> (--lesson <id> | --all) [--file <path>] [--verbose]
+// lesson-check <lang> (--lesson <id> | --all | --self-test) [--file <path>] [--verbose]
 //
 // Chạy các *.rules.json.checks (regex_absent / regex_present / custom) của
 // một ngôn ngữ lên một bài học JSON THẬT (đã generate) — thứ mà
@@ -20,7 +20,7 @@ const ROOT = process.cwd();
 const RULES = join(ROOT, 'rules');
 
 function usage() {
-  console.error('usage: node tools/lesson-check.mjs <lang> (--lesson <id> | --all) [--file <path>] [--verbose]');
+  console.error('usage: node tools/lesson-check.mjs <lang> (--lesson <id> | --all | --self-test) [--file <path>] [--verbose]');
   process.exit(2);
 }
 
@@ -30,10 +30,48 @@ if (!lang || lang.startsWith('--')) usage();
 const lessonIdIdx = args.indexOf('--lesson');
 const lessonId = lessonIdIdx !== -1 ? args[lessonIdIdx + 1] : null;
 const all = args.includes('--all');
+const selfTest = args.includes('--self-test');
 const fileIdx = args.indexOf('--file');
 const filePath = fileIdx !== -1 ? args[fileIdx + 1] : join(ROOT, 'shared', 'generated', 'lessons.json');
 const verbose = args.includes('--verbose');
-if (!lessonId && !all) usage();
+if (!lessonId && !all && !selfTest) usage();
+
+if (selfTest) {
+  // Chạy impl custom-check trong tools/lib/custom-checks.mjs lên đúng
+  // fixtures.pass/fail khai báo NGAY TRONG rules.json của chính check đó —
+  // fixture pass phải cho 0 vi phạm, mỗi fixture fail phải tự nó là 1 vi
+  // phạm khi đứng riêng. Đây là bằng chứng impl khớp ví dụ đã khai, khác với
+  // validate.mjs (chỉ đếm fixtures tồn tại, không chạy impl).
+  const ruleFiles = rulesFilesFor(RULES, lang).map((p) => readJson(p)).filter((j) => Array.isArray(j.checks) && j.checks.length);
+  let anyFail = false;
+  console.log(`\n=== lesson-check --self-test: ${lang} — chạy custom-check impl lên fixtures của chính nó ===`);
+  for (const rf of ruleFiles) {
+    for (const check of rf.checks) {
+      if ((check.assert || {}).type !== 'custom') continue;
+      const impl = CUSTOM_CHECKS[check.id];
+      const key = `${rf.id} :: ${check.id}`;
+      if (!impl) { console.log(`\n[SKIPPED] ${key} — chưa có impl`); continue; }
+      const fx = check.fixtures || {};
+      let ok = true;
+      const badPass = [];
+      for (const text of fx.pass || []) {
+        const { violations } = impl(null, [{ path: '$.fixture.pass', text }], check);
+        if (violations.length) { ok = false; badPass.push(text); }
+      }
+      const badFail = [];
+      for (const text of fx.fail || []) {
+        const { violations } = impl(null, [{ path: '$.fixture.fail', text }], check);
+        if (!violations.length) { ok = false; badFail.push(text); }
+      }
+      if (!ok) anyFail = true;
+      console.log(`\n[${ok ? 'PASS' : 'FAIL'}] ${key} (self-test: ${(fx.pass || []).length} fixture pass, ${(fx.fail || []).length} fixture fail)`);
+      for (const t of badPass) console.log(`   fixture PASS nhưng impl báo vi phạm: ${JSON.stringify(t)}`);
+      for (const t of badFail) console.log(`   fixture FAIL nhưng impl không báo vi phạm: ${JSON.stringify(t)}`);
+    }
+  }
+  console.log(`\n${anyFail ? 'FAIL' : 'PASS'} (self-test)`);
+  process.exit(anyFail ? 1 : 0);
+}
 
 if (!existsSync(filePath)) { console.error(`Không tìm thấy file lesson: ${filePath}`); process.exit(2); }
 const data = readJson(filePath);

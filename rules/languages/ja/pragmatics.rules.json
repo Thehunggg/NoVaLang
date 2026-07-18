@@ -30,12 +30,22 @@
   "checks": [
     {
       "id": "baseline-polite-sentence-ends-desu-masu",
-      "description": "Câu baseline NATURAL_NEUTRAL_POLITE kết bằng です/ます (biến thể: でした/ました/ません/ましょう/ますか...). Chỉ áp cho nội dung sinh ở register baseline, KHÔNG áp cho corpus văn viết chung.",
-      "assert": { "type": "custom", "note": "máy kiểm khi generator chạy; không chạy trên corpus vì corpus không phải baseline-register" },
+      "description": "Câu baseline NATURAL_NEUTRAL_POLITE kết bằng です/ます (biến thể: でした/ました/ません/ましょう/ですか/ますか/ましたか, kèm trợ từ cuối câu tuỳ chọn ね/よ/わ). Miễn trừ cụm chào/đáp cố định (fixed expression — không chia động từ, tự nó đã là dạng lịch sự chuẩn: こんにちは・こんばんは・はじめまして・さようなら・おはようございます・おやすみなさい・どういたしまして). Chỉ áp cho chuỗi kết thúc bằng dấu câu kết câu Nhật (。！？ — lọc bớt nhãn/từ vựng rời rạc không phải câu hoàn chỉnh) và chỉ xét MỆNH ĐỀ CUỐI của chuỗi (chuỗi ghép nhiều câu chỉ cần câu cuối đúng). KHÔNG áp cho corpus văn viết chung, và KHÔNG tự suy ra hội thoại nào là casual có chủ đích (G-04, owner 2026-07-18): dòng casual chưa có cờ dữ liệu riêng nên máy vẫn báo FAIL đúng theo thiết kế — đây là giới hạn đã biết, chờ schema đăng ký register riêng (task khác), không phải lỗi của check này.",
+      "assert": {
+        "type": "custom",
+        "sentenceOnly": true,
+        "fixedExpressions": ["こんにちは", "こんばんは", "はじめまして", "さようなら", "おはようございます", "おやすみなさい", "どういたしまして"],
+        "note": "impl: tools/lib/custom-checks.mjs"
+      },
       "fixtures": {
-        "pass": ["田中さんは先生です。", "水を飲みます。", "全く同感です。", "一部を抜粋します。"],
-        "fail": ["田中は先生だ。", "水を飲む。"],
-        "_note": "2 câu pass cuối từ corpus thật UD GSD (Bước 3 mục 6)"
+        "pass": [
+          "田中さんは先生です。", "水を飲みます。", "全く同感です。", "一部を抜粋します。",
+          "こんにちは。", "さようなら。",
+          "はい、どうしましたか。",
+          "頑張ってくださいね。"
+        ],
+        "fail": ["田中は先生だ。", "水を飲む。", "田中もよろしく！"],
+        "_note": "2 câu pass đầu + đầu tiên trong 4 câu gốc từ corpus thật UD GSD (Bước 3 mục 6); 4 câu pass cuối + câu fail cuối thêm ở C6/A3 (2026-07-18) khi viết impl thật cho custom check — trước đó check này chưa từng chạy được (luôn SKIPPED)."
       }
     }
   ],
