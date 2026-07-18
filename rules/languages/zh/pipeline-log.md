@@ -26,3 +26,7 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   owner có quen người bản ngữ tiếng Trung không? Auto Mode đang bật → áp dụng
   mặc định "chưa có, chuẩn bị native-review-zh.md" và chạy tiếp luôn; owner có
   thể điều chỉnh sau nếu thực ra có quen ai đó.
+- **Bước 1 (import dataset) · 2026-07-18 · XONG** — CLDR (4.421 chữ Hán mẫu) →
+  orthography.data.json. UD Chinese-GSD → word-class.data.json (16 nhãn UPOS).
+  WikiPron cmn_hani_standard_broad → grapheme-to-phoneme.data.json, 168.655
+  cặp — có ký hiệu thanh Chao tone (số góc trên, vd ⁵¹/²¹⁴/³⁵). Validator PASS.
