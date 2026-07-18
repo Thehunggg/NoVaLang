@@ -112,6 +112,64 @@ authorization to commit/push step by step for this task specifically (this
 authorization is scoped to this task; it does not change the standing
 "never commit/push without approval" default for other tasks).
 
+## Stray branch review — `claude/golden-lesson-ja-rule-validation-r81zix` — 2026-07-18
+
+While investigating remote branches for collision risk during the five_cards
+task above, found `origin/claude/golden-lesson-ja-rule-validation-r81zix`: 5
+commits (04:06–04:21 UTC), same author identity as this session's own `main`
+commits, doing the same `/build-language` rules-pipeline work items (C6/INV-9,
+C7, A3, G-01, a new `tools/lesson-check.mjs` tool) that `main` also
+independently completed 15–90 minutes later under different commit hashes
+(`9ae79e9`, `5a02a7f`, `3c621da`, `0e837ad`, `e8303ce`). `git merge-tree`
+confirmed 6 real content conflicts (one `add/add` on `tools/lesson-check.mjs`
+— both sides wrote it from scratch, independently, differently).
+
+Compared the two solutions file-by-file by actually running both
+`tools/lesson-check.mjs` implementations against the Golden Lesson (not just
+reading code): `main`'s version ran clean — 0 errors, 4 warnings, matching
+exactly the known `validate:curriculum` baseline. The branch's version
+**FAILED live** — 13 + 205 violations, mostly false positives, root-caused to
+two concrete bugs: (1) its G-01 "curated content" exemption does exact-string
+`Set.has()` matching, which misses real matches differing only by trailing
+punctuation (e.g. `"Chào buổi sáng"` vs `"Chào buổi sáng."`); (2) its
+pragmatics check extracts every Japanese-looking string from the whole lesson
+tree, so one dialogue line gets counted 3–5× across its
+`targetText`/`displayText`/`reading`/`speechText`/`translationByNative.ja`
+duplicate representations. `main`'s `pragmatics.rules.json` (v1.2.0) and
+`exercise-phenomena.map.json` are also more complete: they were built and
+verified against the full 506-lesson corpus (not just Golden Lesson), covering
+polite-request (て-form+ください) and ellipsis-question (N+は？) baseline
+forms the branch's version never implemented, and per-language
+`coveragePhenomena` overrides the branch's flat `coverage:[...]` mapping
+lacks (real accuracy gap for non-ja languages, e.g. `reading_system` wrongly
+applied to vi/en). Full file-by-file verdict recorded in this session's
+conversation; not duplicated here.
+
+**Decision (Project Owner, 2026-07-18): `main` wins on all 6 conflicting
+files — no merge from the branch into `main`.** The branch is **not**
+deleted — it stays on `origin` as an idea reference (566 lines of real,
+non-trivial tooling: `tools/lesson-check.mjs` + 3 new `tools/lib/*.mjs`
+files, none of which exist on `main`). Two ideas from it are worth revisiting
+later, **not now**:
+
+1. `lesson-check.mjs`'s data-driven architecture (reads every `.rules.json`'s
+   `checks[]` automatically instead of `main`'s 3 hard-coded checks; has
+   `--all` and `--self-test` modes `main`'s version lacks).
+2. The `length_ratio_exempt_if_curated` idea for G-01 (auto-detect that a
+   distractor is real approved content appearing elsewhere in the lesson,
+   instead of `main`'s simpler caller-supplied `--assume-provenance` flag) —
+   worth retrying if the exact-string-match bug above is fixed first (e.g.
+   normalize trailing punctuation before comparing).
+
+Deferred deliberately: `main`'s current tooling runs correctly today: a
+lesson-check rearchitecture now is an unforced risk, not a fix for a live
+problem. Needs its own future task/ADR when picked up — not implemented as
+part of this note. No file under `tools/**` or `rules/**` was touched by this
+review or this note; investigation was git-plumbing-only (`git fetch`,
+`git log`, `git diff`, `git merge-tree`, and a disposable `git worktree`
+removed after use to run the branch's tool for comparison) plus reading
+`shared/generated/lessons.json` (unchanged, read-only).
+
 ## Japanese Full Profile final closure — 2026-07-17
 
 Project Owner completed final review and accepted the Android font A/B
