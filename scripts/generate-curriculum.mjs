@@ -3991,11 +3991,8 @@ async function main() {
         type: DAILY_LIFE_COURSE_META.type,
         playable: false,
         unlockRequirement: DAILY_LIFE_COURSE_META.unlockRequirement,
-        moduleCount: 10,
-        unitsPerModule: 8,
-        lessonsPerUnit: 3,
-        lessonsPerLanguage: 240,
-        note: "Daily Life Module 1 (First Conversations) is ready/playable for en+ja. Modules 2–10 remain blueprint-only.",
+        topicCount: 15,
+        note: "15-topic × 3-tier structure (owner decision, 2026-07-18). Topic 1 (Chào hỏi & làm quen) / Cơ bản has the Golden Reference Lesson (ja only, five_cards). Every other topic/tier is an empty, valid shell awaiting content — unit/lesson counts are not fixed per topic and grow as content is written in.",
       },
       mainNiches: [
         "daily_life",

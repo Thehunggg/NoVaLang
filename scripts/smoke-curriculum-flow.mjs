@@ -19,10 +19,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 
 const EXPECTED_VERSION = "curriculum-v3";
-const EXPECTED_COURSE_COUNT = 23; // 3 foundation + 10 en daily + 10 ja daily
-const EXPECTED_LESSON_COUNT = 506; // 26 foundation + 480 daily blueprint
-const EXPECTED_PLAYABLE_LESSON_COUNT = 74;
-const EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE = 240;
+// Daily Life is 15 topics × 2 languages (owner decision, 2026-07-18; replaces
+// the prior 10-module blueprint). Topic COUNT is a fixed structural
+// invariant (15 topics always exist as course shells), so course count stays
+// a real fixed number — but daily_life LESSON count is no longer fixed: it
+// grows as topics are written in incrementally, so it is checked via
+// self-consistency (see checkExpectedShape/checkDailyLifeBlueprint) instead
+// of a magic number that would need updating every time content is added.
+const EXPECTED_COURSE_COUNT = 33; // 3 foundation + 15 en daily topics + 15 ja daily topics
+const EXPECTED_FOUNDATION_LESSON_COUNT = 26;
+const EXPECTED_DAILY_LIFE_TOPIC_COUNT = 15;
 const EXPECTED_HIRAGANA_46 = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
 const EXPECTED_KATAKANA_46 = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン".split("");
 const EXPECTED_ALPHABET_26 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -321,17 +327,26 @@ function checkExpectedShape(coursesJson, lessonsJson) {
     fail(section, {}, `expected ${EXPECTED_COURSE_COUNT} courses, got ${coursesJson.courses.length}`);
   }
 
-  if (lessonsJson.lessons.length === EXPECTED_LESSON_COUNT) {
-    pass(section, `lesson count=${EXPECTED_LESSON_COUNT}`);
+  const allLessons = lessonsJson.lessons ?? [];
+  const foundationLessons = allLessons.filter((l) => l.nicheId === "core_foundation");
+  const dailyLifeLessons = allLessons.filter((l) => l.nicheId === "daily_life");
+  if (foundationLessons.length === EXPECTED_FOUNDATION_LESSON_COUNT) {
+    pass(section, `foundation lesson count=${EXPECTED_FOUNDATION_LESSON_COUNT}`);
   } else {
-    fail(section, {}, `expected ${EXPECTED_LESSON_COUNT} lessons, got ${lessonsJson.lessons.length}`);
+    fail(section, {}, `expected ${EXPECTED_FOUNDATION_LESSON_COUNT} Core Foundation lessons, got ${foundationLessons.length}`);
+  }
+  if (allLessons.length === foundationLessons.length + dailyLifeLessons.length) {
+    pass(section, `lesson total=${allLessons.length} (foundation + daily_life, no other niche)`);
+  } else {
+    fail(section, {}, `lesson total ${allLessons.length} does not equal foundation (${foundationLessons.length}) + daily_life (${dailyLifeLessons.length})`);
   }
 
-  const playable = (lessonsJson.lessons ?? []).filter((l) => !isBlueprintLesson(l));
-  if (playable.length === EXPECTED_PLAYABLE_LESSON_COUNT) {
-    pass(section, `playable lesson count=${EXPECTED_PLAYABLE_LESSON_COUNT}`);
+  const playable = allLessons.filter((l) => !isBlueprintLesson(l));
+  const expectedPlayable = foundationLessons.length + dailyLifeLessons.filter((l) => l.playable === true).length;
+  if (playable.length === expectedPlayable) {
+    pass(section, `playable lesson count=${playable.length}`);
   } else {
-    fail(section, {}, `expected ${EXPECTED_PLAYABLE_LESSON_COUNT} playable lessons, got ${playable.length}`);
+    fail(section, {}, `expected ${expectedPlayable} playable lessons, got ${playable.length}`);
   }
 }
 
@@ -417,13 +432,15 @@ function checkAiRules(lessons) {
   }
 }
 
+// 15-topic × 3-tier structure (owner decision, 2026-07-18). An empty topic
+// (0 units) or an empty unit's worth of tiers is a VALID, intentional state
+// — content is written in incrementally, later, in separately authorized
+// tasks. Only Topic 1 (Golden Lesson, ja-only) has real content today.
 function checkDailyLifeBlueprint(courses, lessons, catalog) {
   const section = "Daily Life Communication blueprint";
   const arch = catalog.architecture?.dailyLifeCommunication;
-  if (arch?.status === "partial" && arch?.playable === false && arch?.moduleCount === 10) {
-    pass(section, "catalog marks Daily Life as partial roadmap with Module 1 ready");
-  } else if (arch?.status === "blueprint" && arch?.playable === false && arch?.moduleCount === 10) {
-    pass(section, "catalog marks Daily Life as blueprint 10-module roadmap");
+  if (arch?.status === "partial" && arch?.playable === false && arch?.topicCount === EXPECTED_DAILY_LIFE_TOPIC_COUNT) {
+    pass(section, `catalog marks Daily Life as ${EXPECTED_DAILY_LIFE_TOPIC_COUNT}-topic roadmap with Topic 1 ready`);
   } else {
     fail(section, {}, "catalog.architecture.dailyLifeCommunication missing/incorrect");
   }
@@ -432,27 +449,31 @@ function checkDailyLifeBlueprint(courses, lessons, catalog) {
     const dailyCourses = courses.filter(
       (course) => course.languageCode === languageCode && course.nicheId === "daily_life",
     );
-    if (dailyCourses.length !== 10) {
-      fail(section, {}, `${languageCode}: expected 10 Daily Life modules, got ${dailyCourses.length}`);
+    if (dailyCourses.length !== EXPECTED_DAILY_LIFE_TOPIC_COUNT) {
+      fail(section, {}, `${languageCode}: expected ${EXPECTED_DAILY_LIFE_TOPIC_COUNT} Daily Life topics, got ${dailyCourses.length}`);
     } else {
-      pass(section, `${languageCode}: 10 Daily Life modules`);
+      pass(section, `${languageCode}: ${EXPECTED_DAILY_LIFE_TOPIC_COUNT} Daily Life topics`);
     }
 
     for (const course of dailyCourses) {
-      if ((course.units ?? []).length !== 8) {
-        fail(section, { courseId: course.id }, `expected 8 units, got ${(course.units ?? []).length}`);
+      const hasUnits = (course.units ?? []).length > 0;
+      const isModuleOne = course.moduleId === "daily_life_m01_basic_social_survival";
+      if (isModuleOne && languageCode === "ja" && !hasUnits) {
+        fail(section, { courseId: course.id }, "Topic 1 (Golden Lesson) must have at least one unit");
       }
       for (const unit of course.units ?? []) {
-        if ((unit.lessonIds ?? []).length !== 3) {
-          fail(section, { courseId: course.id, unitId: unit.id }, "expected 3 lessons per unit");
+        if ((unit.lessonIds ?? []).length === 0) {
+          fail(section, { courseId: course.id, unitId: unit.id }, "a created unit must contain at least one lesson");
+        }
+        if (!["basic", "intermediate", "advanced"].includes(unit.tier)) {
+          fail(section, { courseId: course.id, unitId: unit.id }, `invalid tier '${unit.tier}'`);
         }
       }
-      const isModuleOne = course.moduleId === "daily_life_m01_basic_social_survival";
-      if (isModuleOne && (course.playable !== true || course.contentStatus !== "ready")) {
-        fail(section, { courseId: course.id }, "Daily Life Module 1 must be ready/playable");
+      if (hasUnits && (course.playable !== true || course.contentStatus !== "ready")) {
+        fail(section, { courseId: course.id }, "a topic with real units must be ready/playable");
       }
-      if (!isModuleOne && (course.playable !== false || course.contentStatus !== "blueprint")) {
-        fail(section, { courseId: course.id }, "Daily Life Module 2-10 must be non-playable blueprint");
+      if (!hasUnits && (course.playable !== false || course.contentStatus !== "blueprint")) {
+        fail(section, { courseId: course.id }, "an empty topic (no units yet) must be non-playable blueprint");
       }
       if (course.unlockRequirement !== "core_foundation_completed") {
         fail(section, { courseId: course.id }, "missing unlockRequirement");
@@ -462,15 +483,7 @@ function checkDailyLifeBlueprint(courses, lessons, catalog) {
     const dailyLessons = lessons.filter(
       (lesson) => lesson.languageCode === languageCode && lesson.nicheId === "daily_life",
     );
-    if (dailyLessons.length !== EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE) {
-      fail(
-        section,
-        {},
-        `${languageCode}: expected ${EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE} lessons, got ${dailyLessons.length}`,
-      );
-    } else {
-      pass(section, `${languageCode}: ${EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE} roadmap lessons`);
-    }
+    pass(section, `${languageCode}: ${dailyLessons.length} daily_life lesson(s) present`);
 
     for (const lesson of dailyLessons) {
       const isModuleOne = lesson.moduleId === "daily_life_m01_basic_social_survival";

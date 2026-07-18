@@ -2,27 +2,37 @@
 
 ## Task identity — Danh tính task
 
-- Task ID: `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01`
-- Task name: `Generalize five_cards lesson format from Golden-Lesson-only to a reusable registry-based mechanism`
-- Status: `NODE_LAYER_IMPLEMENTATION_COMPLETE / FLUTTER_TEST_VERIFICATION_PENDING`
+- Task ID: `NOVALANG-DAILY-LIFE-15-TOPIC-RESTRUCTURE-01`
+- Task name: `Replace the 10-module Daily Life blueprint with the ADR-018 15-topic × 3-tier skeleton (en+ja), keep Golden Lesson, drop non-Golden Module 1/2-10 content`
+- Status: `SKELETON_IMPLEMENTATION_COMPLETE / FLUTTER_TEST_VERIFICATION_PENDING`
 - Current owner: `Claude Code — SOLE WRITER (this task only)`
 - Claude Code: `WRITE`
 - Codex: `READ-ONLY`
 - Cursor: `READ-ONLY`
 - Default next owner: `Project Owner`
 - Last updated: `2026-07-18`
-- Final verdict: `NODE_LAYER_VERIFIED_BYTE_IDENTICAL / FLUTTER_TEST_NOT_RUN_NO_SDK_IN_CLOUD_ENV`
+- Final verdict: `NODE_LAYER_VERIFIED_GOLDEN_BYTE_IDENTICAL / FLUTTER_TEST_NOT_RUN_NO_SDK_IN_CLOUD_ENV`
 - Ownership note: Project Owner explicitly assigned Claude Code as writer for
-  this scoped task in the current conversation (registry in `helpers.mjs`,
-  split `validateFiveCardsStructure`/`validateApprovedGoldenLessonContent`,
-  `smoke-curriculum-flow.mjs` scope-guard change, new ADR-019), per
-  AGENTS.md's "project owner explicitly assigns ownership in the current
-  conversation" clause. Scope is strictly the 3 Node scripts
-  (`scripts/content/daily-life/module-1/helpers.mjs`,
-  `scripts/validate-curriculum.mjs`, `scripts/smoke-curriculum-flow.mjs`)
-  plus this file and `ARCHITECTURE_DECISIONS.md`. No file under `shared/**`,
-  `mobile/novalang_flutter/lib/**`, or `rules/**` was touched — confirmed by
-  `git status --short` after every edit in this task. The prior
+  this scoped task in the current conversation (blueprint restructure,
+  registry ID-key fix, validator/smoke updates, new ADR-020), per AGENTS.md's
+  "project owner explicitly assigns ownership in the current conversation"
+  clause, continuing directly from this same session's
+  `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01` and stray-branch-review work
+  below. Scope: `scripts/lib/daily-life-blueprint.mjs`,
+  `scripts/content/daily-life/module-1/helpers.mjs`,
+  `scripts/validate-curriculum.mjs`, `scripts/smoke-curriculum-flow.mjs`,
+  `scripts/generate-curriculum.mjs` (catalog metadata only), plus generated
+  output (`shared/generated/**`, `shared/content/curriculum/**`,
+  `shared/config/daily_life_blueprint.json`,
+  `mobile/novalang_flutter/assets/shared/**`) and this file +
+  `ARCHITECTURE_DECISIONS.md`. Per explicit Project Owner instruction,
+  ADR-008 itself was NOT modified. No `.dart` file, no file under
+  `frontend/src/**`, and no file under `rules/**` was touched — confirmed by
+  `git status --short` after every edit. The prior
+  `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01`
+  (`NODE_LAYER_IMPLEMENTATION_COMPLETE / FLUTTER_TEST_VERIFICATION_PENDING`,
+  Claude Code — unaffected by this task, its own flutter-test debt is still
+  open and separate from this task's),
   `NOVALANG-JAPANESE-FULL-PROFILE-FINAL-CLOSURE-01`
   (`CLOSED / FROZEN`, Codex — unaffected by this task) and
   `NOVALANG-ENGLISH-STYLE-PROFILE-IMPLEMENTATION-01`,
@@ -32,6 +42,91 @@
   `NOVALANG-VOCABULARY-SCROLL-ROOT-CAUSE-FIX-02`, and
   `NOVALANG-MULTILINGUAL-NATURALNESS-REGISTER-RULE-01` history below remains
   preserved and is not superseded outside this scoped correction.
+
+## Daily Life domain: 15-topic × 3-tier restructure — 2026-07-18
+
+Executed the previously reported and approved plan (read-only scope report,
+then explicit scope decision: vi/zh untouched; en gets the same empty
+skeleton as ja; drop all non-Golden Module 1 content and all Module 2–10
+blueprint content, no migration). Full technical detail, exact before/after
+numbers, and the ID-key registry fix are recorded in ADR-020; this entry is
+the task-log summary.
+
+**Files changed (code):** `scripts/lib/daily-life-blueprint.mjs` (new
+15-topic `DAILY_LIFE_MODULES`, `unit()` now requires explicit `order`/`tier`,
+`TIER_LEVELS`, rewritten `assertDailyLifeBlueprintShape`, `buildDailyLifeCourses`
+uses explicit order fields instead of array position),
+`scripts/content/daily-life/module-1/helpers.mjs` (`buildReadyModuleOne`
+rewritten to iterate whatever units/lessons the blueprint actually declares
+instead of a hard-coded 8×3 loop, no more generic-content fallback,
+`FIVE_CARDS_REGISTRY` keyed by final lesson id instead of
+`${unitIndex}-${lessonIndex}` position), `scripts/validate-curriculum.mjs`
+and `scripts/smoke-curriculum-flow.mjs` (Daily Life sections: 15-topic count
+instead of 10-module, no fixed unit/lesson-per-unit counts, course
+ready/playable status derived from whether it actually has units, total
+lesson/course counts are self-consistency checks instead of magic numbers),
+`scripts/generate-curriculum.mjs` (catalog `architecture.dailyLifeCommunication`
+metadata: `topicCount: 15` replacing `moduleCount`/`unitsPerModule`/
+`lessonsPerUnit`/`lessonsPerLanguage`). `content.mjs`/`dialogues.mjs` and the
+generic-lesson-building helper functions in `helpers.mjs` are now
+unreferenced but were left on disk (not deleted), flagged in ADR-020 as a
+possible future cleanup/reuse decision, not resolved in this task.
+
+**Generated output regenerated + synced:** `shared/generated/*.json`,
+`shared/content/curriculum/*.json`, `shared/config/daily_life_blueprint.json`,
+`mobile/novalang_flutter/assets/shared/*.json`.
+
+**Verification performed (all in this cloud session):**
+- Baseline captured before any edit: `npm run validate:curriculum` PASS, 23
+  courses, 506 lessons, same 4 pre-existing soft `rules/` warnings.
+- After the restructure: `npm run generate:curriculum` — PASS, no thrown
+  error, **33 courses, 27 lessons** (26 foundation unchanged + 1 Golden;
+  every one of the other 14 topics × 2 languages, plus `en`'s Topic 1, has
+  `units: []`, `contentStatus: "blueprint"`, `playable: false`).
+- `npm run validate:curriculum` — **PASS**, same 4 pre-existing soft warnings,
+  zero new ones.
+- `npm run smoke:curriculum` — **PASS**, including `Approved Japanese Daily
+  Life Unit 1 Lesson 1: 2 pass, 0 fail` (Golden's full content-lock check,
+  unchanged) and `Five-cards scope guard: 2 pass, 0 fail` (ADR-019's check).
+- Direct JSON diff: `ja-daily_life-m01-u1-l1`'s full lesson object compared
+  against the last git-committed `shared/generated/lessons.json` (before this
+  task) — **byte-for-byte identical**. Its unit's `titleByNative` is also
+  unchanged (`"Chào và nói tên"` / `"Greetings and names"` / `"あいさつと名前"`);
+  only its unit's sibling-lesson count (3→1, the 2 non-Golden lessons
+  dropped) and the surrounding course/topic title (renamed from "First
+  Conversations" to "Chào hỏi & làm quen" / "Greetings & Getting Acquainted",
+  matching the new topic name) changed — both intentional, neither governed
+  by ADR-008.
+- `node --check` passed on all 5 edited `.mjs` files at every intermediate
+  step; found and fixed one real bug of my own along the way (the "Topic 1
+  must have a unit" structural check I wrote initially did not account for
+  language — it wrongly flagged `en`'s intentionally-empty Topic 1 as an
+  error; fixed to be `ja`-specific, then re-verified PASS).
+- Flutter/React empty-course rendering safety was verified by source read
+  before implementing (not assumed): `CurriculumModuleGroup.fromUnits`
+  (`mobile/novalang_flutter/lib/models/course_unit.dart`) groups by iterating
+  actual `CourseUnit` objects, so a course with `units: []` simply produces
+  no card (no crash, no empty tile); `daily_life_module_card.dart`'s progress
+  calculation already guards divide-by-zero.
+
+**Known, explicitly flagged gaps — not silently skipped:**
+- `flutter test` could not be run (same cloud-environment constraint as
+  `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01`: no Flutter SDK). No `.dart`
+  file was touched by this task either. Real `flutter test` verification on
+  a machine with Flutter installed is required before this task is
+  considered fully closed.
+- `content.mjs`/`dialogues.mjs` and the now-unreferenced generic-lesson
+  helper functions in `helpers.mjs` were left on disk rather than deleted —
+  an explicit, flagged scope decision (see ADR-020), not an oversight.
+- ADR-008 was deliberately **not** modified, per explicit Project Owner
+  instruction; this task's own conclusion is that no ADR-008-governed field
+  needed to change (verified, not assumed — see the byte-identical diff
+  above), so no amendment was requested.
+
+No commit yet at the time this entry was written — commit/push follow
+immediately after, per explicit Project Owner authorization for this task
+(only once `validate:curriculum` + `smoke:curriculum` both PASS cleanly, per
+the Project Owner's own stated condition).
 
 ## Five_cards format generalization — 2026-07-18
 
@@ -945,6 +1040,22 @@ Phase B does not start until Phase A scoped tests pass.
   started. Manual Android/Web runtime verification is not claimed as PASS.
 
 ## Next exact action — Hành động tiếp theo chính xác
+
+**For `NOVALANG-DAILY-LIFE-15-TOPIC-RESTRUCTURE-01` (skeleton complete,
+Flutter test verification pending — DO NOT close until this runs):** Project
+Owner (or a session with the Flutter SDK installed): run the full `flutter
+test` suite in `mobile/novalang_flutter/`. `shared/generated/lessons.json`'s
+Golden Lesson object was proven byte-for-byte identical to before this task
+(direct JSON diff, not just a hash check), and no `.dart` file was touched —
+so the expectation is that Golden-specific tests still pass, but tests that
+assumed the OLD 10-module/24-lesson/8-unit Module 1 shape (course/unit
+counts, "24 ready lessons" style assertions, if any exist in the Dart test
+suite) may need updating for the new 15-topic/mostly-empty shape. This has
+not been empirically confirmed and must not be reported as PASS until real
+`flutter test` runs. Also pending, deliberately deferred, not urgent:
+whether to physically delete `content.mjs`/`dialogues.mjs` and the now-dead
+generic-lesson helper functions in `helpers.mjs` (currently left in place,
+unreferenced) — a separate decision, see ADR-020.
 
 **For `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01` (Node layer complete,
 Flutter test verification pending — DO NOT close until this runs):** Project

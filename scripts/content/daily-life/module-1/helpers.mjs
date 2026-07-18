@@ -24,13 +24,21 @@ await prepareJapaneseRomanization([
   ...GOLDEN_Q14_TARGETS,
 ]);
 
-// Registry of approved five_cards lessons, keyed by language then
-// "${unitOrder}-${lessonOrder}" position. To add a new five_cards lesson:
-// write its approved source module (matching JA_UNIT1_LESSON1's shape,
-// declaring `lessonFormat: 'five_cards'`) and add exactly one entry here —
-// the generation loop below does not need to change.
+// Registry of approved five_cards lessons, keyed by language then the FINAL
+// LESSON ID string (e.g. 'ja-daily_life-m01-u1-l1') — never by array
+// position/index. This is the ID-stability fix from the 15-topic × 3-tier
+// restructure (owner decision, 2026-07-18): the id is derived from each
+// unit's/lesson's own explicit `order` field in daily-life-blueprint.mjs,
+// not from where it happens to sit in an array, so reordering, inserting, or
+// removing a topic/unit elsewhere can never silently make this resolve to
+// the wrong content — a stale/renamed key simply resolves to nothing (the
+// slot is skipped, not filled with the wrong lesson). To add a new
+// five_cards lesson: write its approved source module (matching
+// JA_UNIT1_LESSON1's shape, declaring `lessonFormat: 'five_cards'`) and add
+// exactly one entry here keyed by that lesson's real, final id — the
+// generation loop does not need to change.
 const FIVE_CARDS_REGISTRY = {
-  ja: { '1-1': JA_UNIT1_LESSON1 },
+  ja: { 'ja-daily_life-m01-u1-l1': JA_UNIT1_LESSON1 },
 };
 
 const CODES = ['vi', 'en', 'ja', 'ko', 'zh'];
@@ -273,124 +281,98 @@ function exercises(id, spec, language) {
   return [e1,e2,e3,e4,e5,e6,e7,e8,e9,e10];
 }
 
+// Topic 1 (Chào hỏi & làm quen) builder. Rewritten for the 15-topic × 3-tier
+// restructure (owner decision, 2026-07-18): iterates whatever units/lesson
+// slots moduleDef actually declares (no hard-coded 8×3), and resolves each
+// lesson slot's id from its EXPLICIT `order` field (never array position) —
+// see FIVE_CARDS_REGISTRY above and `unit()` in daily-life-blueprint.mjs.
+// There is no more generic-content fallback: a lesson slot with no matching
+// registry entry for this `language` is simply skipped (not fabricated), and
+// a unit that ends up with zero real lessons is not added to the course at
+// all (an empty topic/unit is a valid, intentional "not written yet" state,
+// not an error — see assertDailyLifeBlueprintShape).
 export function buildReadyModuleOne(language, context) {
   const { makeCourse, makeLesson, moduleDef, courseOrder } = context;
   const courseId = `${language}-daily_life-m01`;
   const units = [];
   const lessons = [];
-  for (let unitIndex = 0; unitIndex < 8; unitIndex += 1) {
-    const unitDef = moduleDef.units[unitIndex];
-    const unitId = `${courseId}-u${unitIndex + 1}`;
+  for (const unitDef of moduleDef.units) {
+    const unitOrder = unitDef.order;
+    const unitId = `${courseId}-u${unitOrder}`;
     const lessonIds = [];
-    for (let lessonIndex = 0; lessonIndex < 3; lessonIndex += 1) {
-      const spec = MODULE_ONE_CONTENT[unitIndex * 3 + lessonIndex];
-      const lessonId = `${unitId}-l${lessonIndex + 1}`;
+    let approvedUnitMeta = null;
+    for (const lessonSlot of unitDef.lessons) {
+      const lessonOrder = lessonSlot.order;
+      const lessonId = `${unitId}-l${lessonOrder}`;
+      const approvedFiveCards = FIVE_CARDS_REGISTRY[language]?.[lessonId];
+      if (!approvedFiveCards) continue;
+      const approved = approvedFiveCards;
+      approvedUnitMeta = approved.unit;
+      const approvedContent = withGeneratedQ14Romanization(
+        approved.lesson.content,
+      );
+      const approvedVocabulary = approved.vocabulary;
+      const approvedDialogueGroups = approvedContent.dialogueGroups.map((group) => ({
+        id: `${lessonId}-${group.id}`,
+        titleByNative: group.titleByNative,
+        situationByNative: group.situationByNative,
+        explanationByNative: Object.fromEntries(
+          Object.entries(group.explanationByNative).map(([code, lines]) => [
+            code,
+            lines.join('\n'),
+          ]),
+        ),
+        lines: group.lines.map((item, index) => ({ ...item, id: `${lessonId}-${group.id}-${index + 1}` })),
+      }));
       lessonIds.push(lessonId);
-      const approvedFiveCards = FIVE_CARDS_REGISTRY[language]?.[`${unitIndex + 1}-${lessonIndex + 1}`];
-      if (approvedFiveCards) {
-        const approved = approvedFiveCards;
-        const approvedContent = withGeneratedQ14Romanization(
-          approved.lesson.content,
-        );
-        const approvedVocabulary = approved.vocabulary;
-        const approvedDialogueGroups = approvedContent.dialogueGroups.map((group) => ({
-          id: `${lessonId}-${group.id}`,
-          titleByNative: group.titleByNative,
-          situationByNative: group.situationByNative,
-          explanationByNative: Object.fromEntries(
-            Object.entries(group.explanationByNative).map(([code, lines]) => [
-              code,
-              lines.join('\n'),
-            ]),
-          ),
-          lines: group.lines.map((item, index) => ({ ...item, id: `${lessonId}-${group.id}-${index + 1}` })),
-        }));
-        lessons.push(makeLesson({
-          id: lessonId, languageCode: language, nicheId: 'daily_life', branch: 'niche',
-          moduleId: moduleDef.moduleId, unitId, order: 1, level: 'A0', levelRange: 'A0–A1',
-          placementTag: 'daily_life_basic', template: 'vocabularyLesson',
-          title: approved.lesson.title, titleVi: approved.lesson.title, titleByNative: approved.lesson.titleByNative,
-          description: approved.lesson.description, descriptionVi: approved.lesson.description,
-          descriptionByNative: approved.lesson.descriptionByNative,
-          canDoObjective: approved.lesson.description, canDoObjectiveVi: approved.lesson.description,
-          canDoObjectiveByNative: approved.lesson.descriptionByNative,
-          goalByNative: approved.lesson.descriptionByNative,
-          situationByNative: Object.fromEntries(
-            Object.entries(approvedContent.intro.situationByNative).map(([code, lines]) => [
-              code,
-              lines.join('\n'),
-            ]),
-          ),
-          objectives: approvedContent.intro.objectives, objectivesVi: approvedContent.intro.objectives,
-          objectivesByNative: approvedContent.intro.objectivesByNative,
-          introPoints: approvedContent.intro.objectives, introPointsVi: approvedContent.intro.objectives,
-          introPointsByNative: approvedContent.intro.objectivesByNative,
-          estimatedMinutes: 12, track: `${language}-daily_life`, vocabulary: approvedVocabulary,
-          keyPhrases: [], dialogue: approvedDialogueGroups.flatMap((group) => group.lines),
-          dialogueGroups: approvedDialogueGroups, reviewItems: [], grammarFocus: null, grammarFocusVi: null,
-          cultureNote: null, cultureNoteVi: null, contextualVariations: [], communicationStrategyByNative: {},
-          lessonFormat: approved.lessonFormat, fiveCardContent: approvedContent,
-          contentStatus: 'ready', playable: true, comingSoon: false, canSkip: false,
-          exerciseStatus: 'ready',
-          learnSection: {
-            lessonIntro: { status: 'ready' }, vocabularyPhraseCards: { status: 'ready' },
-            miniDialogue: { status: 'ready', dialogueGroupCount: 3 }, grammarSentencePatterns: { status: 'ready' },
-            practiceExercises: { status: 'ready' },
-          },
-          saveToReview: { status: 'ready', itemIds: approvedVocabulary.map((card) => card.id) },
-          exercises: [],
-        }));
-        continue;
-      }
-      const cards = spec.lines.map((line, index) => vocab(lessonId, line, index, language));
-      const dialogueGroups = buildDialogueGroups(lessonId, spec.id, language);
-      const dialogue = dialogueGroups.flatMap((group) => group.lines);
-      const pattern = language === 'ja' ? spec.patternJa : spec.patternEn;
       lessons.push(makeLesson({
         id: lessonId, languageCode: language, nicheId: 'daily_life', branch: 'niche',
-        moduleId: moduleDef.moduleId, unitId, order: lessonIndex + 1, level: 'A0',
-        levelRange: 'A0–A1', placementTag: 'daily_life_basic', template: 'vocabularyLesson',
-        title: spec.titleByNative.en, titleVi: spec.titleByNative.vi, titleByNative: spec.titleByNative,
-        description: spec.goalByNative.en, descriptionVi: spec.goalByNative.vi, descriptionByNative: spec.goalByNative,
-        canDoObjective: spec.canSayByNative.en, canDoObjectiveVi: spec.canSayByNative.vi, canDoObjectiveByNative: spec.canSayByNative,
-        goalByNative: spec.goalByNative, situationByNative: spec.situationByNative, canSayByNative: spec.canSayByNative,
-        objectives: spec.objectivesByNative.en,
-        objectivesVi: spec.objectivesByNative.vi,
-        objectivesByNative: spec.objectivesByNative,
-        introPoints: spec.objectivesByNative.en,
-        introPointsVi: spec.objectivesByNative.vi,
-        introPointsByNative: spec.objectivesByNative,
-        estimatedMinutes: 12, track: `${language}-daily_life`, vocabulary: cards, keyPhrases: cards,
-        dialogue, dialogueGroups, reviewItems: cards.slice(0, 3), grammarFocus: pattern,
-        grammarFocusVi: language === 'ja' ? spec.patternReading : spec.grammarExplainByNative.vi,
-        grammarFocusByNative: Object.fromEntries(CODES.map((code) => [code, pattern])),
-        grammarExplanationByNative: spec.grammarExplainByNative,
-        grammarPattern: {
-          pattern,
-          reading: language === 'ja' ? spec.patternReading : undefined,
-          explanationByNative: spec.grammarExplainByNative,
-          examples: cards.slice(0, 2),
-        },
-        cultureNote: spec.cultureByNative.en, cultureNoteVi: spec.cultureByNative.vi,
-        cultureNoteByNative: spec.cultureByNative,
-        contextualVariations: [],
-        communicationStrategyByNative: spec.pronunciationByNative,
+        moduleId: moduleDef.moduleId, unitId, order: lessonOrder, level: 'A0', levelRange: 'A0–A1',
+        placementTag: 'daily_life_basic', template: 'vocabularyLesson',
+        title: approved.lesson.title, titleVi: approved.lesson.title, titleByNative: approved.lesson.titleByNative,
+        description: approved.lesson.description, descriptionVi: approved.lesson.description,
+        descriptionByNative: approved.lesson.descriptionByNative,
+        canDoObjective: approved.lesson.description, canDoObjectiveVi: approved.lesson.description,
+        canDoObjectiveByNative: approved.lesson.descriptionByNative,
+        goalByNative: approved.lesson.descriptionByNative,
+        situationByNative: Object.fromEntries(
+          Object.entries(approvedContent.intro.situationByNative).map(([code, lines]) => [
+            code,
+            lines.join('\n'),
+          ]),
+        ),
+        objectives: approvedContent.intro.objectives, objectivesVi: approvedContent.intro.objectives,
+        objectivesByNative: approvedContent.intro.objectivesByNative,
+        introPoints: approvedContent.intro.objectives, introPointsVi: approvedContent.intro.objectives,
+        introPointsByNative: approvedContent.intro.objectivesByNative,
+        estimatedMinutes: 12, track: `${language}-daily_life`, vocabulary: approvedVocabulary,
+        keyPhrases: [], dialogue: approvedDialogueGroups.flatMap((group) => group.lines),
+        dialogueGroups: approvedDialogueGroups, reviewItems: [], grammarFocus: null, grammarFocusVi: null,
+        cultureNote: null, cultureNoteVi: null, contextualVariations: [], communicationStrategyByNative: {},
+        lessonFormat: approved.lessonFormat, fiveCardContent: approvedContent,
         contentStatus: 'ready', playable: true, comingSoon: false, canSkip: false,
         exerciseStatus: 'ready',
         learnSection: {
-          lessonIntro: { status: 'ready' },
-          vocabularyPhraseCards: { status: 'ready' },
-          miniDialogue: { status: 'ready', dialogueGroupCount: 3 },
-          grammarSentencePatterns: { status: 'ready' },
+          lessonIntro: { status: 'ready' }, vocabularyPhraseCards: { status: 'ready' },
+          miniDialogue: { status: 'ready', dialogueGroupCount: 3 }, grammarSentencePatterns: { status: 'ready' },
           practiceExercises: { status: 'ready' },
         },
-        saveToReview: { status: 'ready', itemIds: cards.map((card) => card.id) },
-        exercises: exercises(lessonId, spec, language),
+        saveToReview: { status: 'ready', itemIds: approvedVocabulary.map((card) => card.id) },
+        exercises: [],
       }));
     }
-    const approvedUnit = language === 'ja' && unitIndex === 0 ? JA_UNIT1_LESSON1.unit : null;
-    units.push({ id: unitId, title: approvedUnit?.title ?? `Unit ${unitIndex + 1}: ${unitDef.titleByNative.en}`, titleVi: approvedUnit?.title ?? `Bài ${unitIndex + 1}: ${unitDef.titleByNative.vi}`, titleByNative: approvedUnit?.titleByNative ?? unitDef.titleByNative, levelCode: 'A0', levelRange: 'A0–A1', trackId: `${language}-daily_life`, moduleId: moduleDef.moduleId, goal: moduleDef.goalByNative.en, goalVi: moduleDef.goalByNative.vi, goalByNative: moduleDef.goalByNative, displayOrder: unitIndex + 1, order: unitIndex + 1, lessonIds });
+    if (!lessonIds.length) continue; // no approved content for this unit/language yet — don't create it
+    units.push({
+      id: unitId,
+      title: approvedUnitMeta?.title ?? `Unit ${unitOrder}: ${unitDef.titleByNative.en}`,
+      titleVi: approvedUnitMeta?.title ?? `Bài ${unitOrder}: ${unitDef.titleByNative.vi}`,
+      titleByNative: approvedUnitMeta?.titleByNative ?? unitDef.titleByNative,
+      levelCode: 'A0', levelRange: 'A0–A1', tier: unitDef.tier,
+      trackId: `${language}-daily_life`, moduleId: moduleDef.moduleId,
+      goal: moduleDef.goalByNative.en, goalVi: moduleDef.goalByNative.vi, goalByNative: moduleDef.goalByNative,
+      displayOrder: unitOrder, order: unitOrder, lessonIds,
+    });
   }
-  const moduleTitle = localized('First Conversations','Những cuộc trò chuyện đầu tiên','はじめての会話');
-  return makeCourse({ courseId, languageCode: language, nicheId: 'daily_life', branch: 'niche', moduleId: moduleDef.moduleId, moduleTitle: moduleTitle.en, moduleTitleVi: moduleTitle.vi, moduleTitleByNative: moduleTitle, title: `${language === 'ja' ? 'Japanese' : 'English'} · ${moduleTitle.en}`, titleVi: `${language === 'ja' ? 'Tiếng Nhật' : 'Tiếng Anh'} · ${moduleTitle.vi}`, titleByNative: moduleTitle, description: moduleDef.goalByNative.en, descriptionVi: moduleDef.goalByNative.vi, descriptionByNative: moduleDef.goalByNative, order: courseOrder, levelCode: 'A0', levelRange: 'A0–A1', placementTag: 'daily_life_basic', contentStatus: 'ready', playable: true, type: 'communication', unlockRequirement: 'core_foundation_completed', units, lessons });
+  const moduleTitle = moduleDef.titleByNative;
+  return makeCourse({ courseId, languageCode: language, nicheId: 'daily_life', branch: 'niche', moduleId: moduleDef.moduleId, moduleTitle: moduleTitle.en, moduleTitleVi: moduleTitle.vi, moduleTitleByNative: moduleTitle, title: `${language === 'ja' ? 'Japanese' : 'English'} · ${moduleTitle.en}`, titleVi: `${language === 'ja' ? 'Tiếng Nhật' : 'Tiếng Anh'} · ${moduleTitle.vi}`, titleByNative: moduleTitle, description: moduleDef.goalByNative.en, descriptionVi: moduleDef.goalByNative.vi, descriptionByNative: moduleDef.goalByNative, order: courseOrder, levelCode: 'A0', levelRange: 'A0–A1', placementTag: 'daily_life_basic', contentStatus: units.length ? 'ready' : 'blueprint', playable: units.length > 0, type: 'communication', unlockRequirement: 'core_foundation_completed', units, lessons });
 }

@@ -1382,38 +1382,48 @@ async function main() {
     }
   }
 
-  // Daily Life Communication blueprint tree: 10 modules × 8 units × 3 lessons = 240 / language.
+  // Daily Life Communication: 15 topics × 3 tiers (owner decision, 2026-07-18;
+  // replaces the prior 10-module × 8-unit × 3-lesson blueprint entirely).
+  // Content is written in incrementally — an empty topic (0 units) or an
+  // empty tier is a VALID, intentional state, not an error (see
+  // assertDailyLifeBlueprintShape in scripts/lib/daily-life-blueprint.mjs).
+  // What is still enforced hard: exactly 15 topics per language; every
+  // course's ready/playable status matches whether it actually has units;
+  // every unit that exists has >=1 lesson (an empty-but-created unit would
+  // indicate a generator bug, not intentional "not written yet"); and the
+  // Golden Lesson's own unit/course still match their frozen ADR-008 values.
   for (const language of ["en", "ja"]) {
     const dailyCourses = courses
       .filter((c) => c.languageCode === language && c.nicheId === "daily_life")
       .slice()
       .sort((a, b) => Number(a.order ?? 0) - Number(b.order ?? 0));
-    if (dailyCourses.length !== 10) {
-      fail(`${language} Daily Life must have exactly 10 modules/courses, got ${dailyCourses.length}`);
+    if (dailyCourses.length !== 15) {
+      fail(`${language} Daily Life must have exactly 15 topics, got ${dailyCourses.length}`);
     }
     const dailyLessons = lessons.filter(
       (l) => l.languageCode === language && l.nicheId === "daily_life",
     );
-    if (dailyLessons.length !== 240) {
-      fail(`${language} Daily Life must have exactly 240 lessons, got ${dailyLessons.length}`);
-    }
     for (const course of dailyCourses) {
       const isModuleOne = course.moduleId === "daily_life_m01_basic_social_survival";
-      if (isModuleOne && (course.contentStatus !== "ready" || course.playable !== true)) {
-        fail(`${course.id}: Module 1 must be ready/playable`);
+      const hasUnits = (course.units ?? []).length > 0;
+      if (hasUnits && (course.contentStatus !== "ready" || course.playable !== true)) {
+        fail(`${course.id}: a topic with real units must be ready/playable`);
       }
-      if (!isModuleOne && (course.contentStatus !== "blueprint" || course.playable !== false)) {
-        fail(`${course.id}: Module 2-10 must stay blueprint/non-playable`);
+      if (!hasUnits && (course.contentStatus !== "blueprint" || course.playable !== false)) {
+        fail(`${course.id}: an empty topic (no units yet) must stay blueprint/non-playable`);
+      }
+      if (isModuleOne && language === "ja" && !hasUnits) {
+        fail(`${course.id}: Topic 1 (Golden Lesson) must have at least one unit`);
       }
       if (course.unlockRequirement !== "core_foundation_completed") {
         fail(`${course.id}: missing unlockRequirement core_foundation_completed`);
       }
-      if ((course.units ?? []).length !== 8) {
-        fail(`${course.id}: must have exactly 8 units`);
-      }
       for (const unit of course.units ?? []) {
-        if ((unit.lessonIds ?? []).length !== 3) {
-          fail(`${unit.id}: must have exactly 3 lessons`);
+        if ((unit.lessonIds ?? []).length === 0) {
+          fail(`${unit.id}: a created unit must contain at least one lesson (empty units should not be created)`);
+        }
+        if (!["basic", "intermediate", "advanced"].includes(unit.tier)) {
+          fail(`${unit.id}: missing/invalid tier (must be basic|intermediate|advanced)`);
         }
         if (unit.id === "ja-daily_life-m01-u1") {
           if (unit.titleByNative?.vi !== "Chào và nói tên") {
@@ -1425,8 +1435,8 @@ async function main() {
       }
     }
     const moduleOneLessons = dailyLessons.filter((l) => l.moduleId === "daily_life_m01_basic_social_survival");
-    if (moduleOneLessons.length !== 24 || moduleOneLessons.some((l) => l.playable !== true || l.contentStatus !== "ready")) {
-      fail(`${language} Daily Life Module 1 must contain 24 ready/playable lessons`);
+    if (language === "ja" && (moduleOneLessons.length < 1 || moduleOneLessons.some((l) => l.playable !== true || l.contentStatus !== "ready"))) {
+      fail(`${language} Daily Life Topic 1 must contain at least the Golden Lesson, ready/playable`);
     }
     const laterLessons = dailyLessons.filter((l) => l.moduleId !== "daily_life_m01_basic_social_survival");
     if (laterLessons.some((l) => l.playable === true || l.contentStatus !== "blueprint")) {
@@ -1646,19 +1656,31 @@ async function main() {
     }
   }
 
-  // 26 foundation + 48 ready Daily Life Module 1 + 432 later blueprint lessons.
+  // Core Foundation (hiragana/katakana/alphabet) has a fixed, frozen shape —
+  // 26 lessons, all always playable. Daily Life (15 topics × 3 tiers, owner
+  // decision 2026-07-18) is written in incrementally, so its lesson count is
+  // NOT a fixed magic number anymore; these are self-consistency checks
+  // instead (total = foundation + daily_life; playable count matches what
+  // each lesson itself declares), which stay valid as content grows rather
+  // than needing a manual update every time a topic gets real content.
+  const foundationLessons = lessons.filter((l) => l.nicheId === "core_foundation");
+  const dailyLifeLessonsTotal = lessons.filter((l) => l.nicheId === "daily_life");
   const playableCount = lessons.filter((l) => l.playable !== false && !l.comingSoon).length;
-  const blueprintCount = lessons.filter((l) => l.contentStatus === "blueprint").length;
-  if (lessons.length !== 506) {
+  if (foundationLessons.length !== 26) {
+    fail(`Expected 26 Core Foundation lessons, got ${foundationLessons.length}`);
+  }
+  if (foundationLessons.some((l) => l.playable !== true)) {
+    fail("Every Core Foundation lesson must be playable");
+  }
+  if (lessons.length !== foundationLessons.length + dailyLifeLessonsTotal.length) {
     fail(
-      `Expected 506 lessons (26 foundation + 480 Daily Life blueprint), got ${lessons.length}`,
+      `Lesson total ${lessons.length} does not equal foundation (${foundationLessons.length}) + daily_life (${dailyLifeLessonsTotal.length}) — unexpected nicheId present`,
     );
   }
-  if (playableCount !== 74) {
-    fail(`Expected 74 playable lessons, got ${playableCount}`);
-  }
-  if (blueprintCount !== 432) {
-    fail(`Expected 432 Daily Life blueprint lessons, got ${blueprintCount}`);
+  const expectedPlayableCount =
+    foundationLessons.length + dailyLifeLessonsTotal.filter((l) => l.playable === true).length;
+  if (playableCount !== expectedPlayableCount) {
+    fail(`Playable lesson count ${playableCount} does not match expected ${expectedPlayableCount}`);
   }
 
   const enAlphabetL1 = lessonById.get("en-alphabet-u1-l1");
