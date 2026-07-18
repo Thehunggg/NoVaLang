@@ -65,3 +65,9 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   chờ owner" đã lỗi thời: toàn bộ scaffold + Bước 0 + đầu Bước 1 đã nằm trong
   commit `f0083a7`, và `main` đã fast-forward lên đúng commit đó. Từ giờ commit +
   push lên `main` sau mỗi bước.
+- **Freeze (D-49, không chờ Gate 5) · 2026-07-18** — Owner xác nhận đóng băng
+  27/30 hiện tượng ở **rule_level** (loại trừ stroke_order/pitch_accent
+  DEFERRED, casing not-applicable). 4 file `*.rules.json` bump
+  `version: 1.0.0`, `status: FROZEN`. `lexical_level` của rendaku/counters/
+  honorifics_keigo (theo-từng-từ) GIỮ NGUYÊN, không tự động freeze theo. Catalog
+  `ja.ruleStatus=FROZEN_RULE_LEVEL_LEXICAL_OPEN`. Validator PASS.

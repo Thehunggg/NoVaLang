@@ -1,8 +1,17 @@
 {
   "id": "ja/grammar.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "word_order",
-  "enforces": ["grammar-and-usage.md", "grammar-particles.md"],
-  "sources": ["S-NRGRAMMAR", "S-JF-GRAMMAR", "UD"],
+  "enforces": [
+    "grammar-and-usage.md",
+    "grammar-particles.md"
+  ],
+  "sources": [
+    "S-NRGRAMMAR",
+    "S-JF-GRAMMAR",
+    "UD"
+  ],
   "derived_by": "ai-cross-checked",
   "config": {
     "word_order": {
@@ -13,7 +22,10 @@
     },
     "conjugation": {
       "regular_verb_classes": 2,
-      "irregular_verbs": ["くる", "する"],
+      "irregular_verbs": [
+        "くる",
+        "する"
+      ],
       "_irregular_verbs_note": "D-38 (owner Bước 4): 2 động từ. ある là godan có ngoại lệ phủ định ない, KHÔNG xếp bất quy tắc.",
       "i_adjectives_inflect": true,
       "na_adjectives_need_copula": true,
@@ -28,16 +40,40 @@
   },
   "fixtures": {
     "pass": [
-      { "sentence": "私は水を飲む。", "note": "SOV: động từ cuối câu" },
-      { "sentence": "三人の学生が来ました。", "note": "counter 人 cho người" },
-      { "sentence": "りんごを三つ買った。", "note": "counter gốc Nhật つ" },
-      { "sentence": "祝福をする。", "note": "corpus UD GSD: を + động từ cuối (SOV)" },
-      { "sentence": "一部を抜粋します。", "note": "corpus UD GSD: SOV + ます" },
-      { "sentence": "二人で食べて9万円。", "note": "corpus UD GSD: counter 人" }
+      {
+        "sentence": "私は水を飲む。",
+        "note": "SOV: động từ cuối câu"
+      },
+      {
+        "sentence": "三人の学生が来ました。",
+        "note": "counter 人 cho người"
+      },
+      {
+        "sentence": "りんごを三つ買った。",
+        "note": "counter gốc Nhật つ"
+      },
+      {
+        "sentence": "祝福をする。",
+        "note": "corpus UD GSD: を + động từ cuối (SOV)"
+      },
+      {
+        "sentence": "一部を抜粋します。",
+        "note": "corpus UD GSD: SOV + ます"
+      },
+      {
+        "sentence": "二人で食べて9万円。",
+        "note": "corpus UD GSD: counter 人"
+      }
     ],
     "fail": [
-      { "sentence": "私は飲む水を。", "note": "SAI: động từ không đứng cuối trong câu trần thuật trung tính" },
-      { "sentence": "学生三が来ました。", "note": "SAI: số đếm người thiếu counter 人" }
+      {
+        "sentence": "私は飲む水を。",
+        "note": "SAI: động từ không đứng cuối trong câu trần thuật trung tính"
+      },
+      {
+        "sentence": "学生三が来ました。",
+        "note": "SAI: số đếm người thiếu counter 人"
+      }
     ]
   }
 }
