@@ -33,3 +33,17 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   THUẪN nội bộ → cũng đưa Bước 4. Sinh 4 file rule:
   orthography/phonology/grammar/pragmatics.rules.json (fixtures đủ pass+fail,
   gồm bộ 6 từ minimal-pair thanh điệu ma/má/mà/mả/mã/mạ). Validator PASS.
+- **Bước 3 (corpus check) · 2026-07-18 · XONG** — UD Vietnamese-VTB riêng chỉ
+  1.123 câu (dưới 2.000, YẾU) → bổ sung mẫu báo chí MIT (binhvq/news-corpus,
+  demo-full+demo-title, khử trùng lặp) đạt **3.077 câu**, vượt mốc. Ghi rõ đây
+  là mẫu 1.000 dòng của corpus lớn hơn (111 triệu câu), không phải toàn bộ.
+  `corpus-check.mjs`: dấu kết câu vi phạm 1.88% (tiêu đề báo không chấm) — dưới
+  ngưỡng, không bác rule. **Tự phát hiện + sửa 2 lỗi ngay trong lúc chạy:** (1)
+  check "no-double-tone-diacritic-typo" tôi viết ra hóa ra bắt nhầm dấu nháy
+  trích dẫn báo chí ("Cấm dừng...") — XÓA check này vì gây hiểu lầm dù tỷ lệ
+  vi phạm (4.22%) dưới ngưỡng 20%, không đợi tới lúc bị phát hiện là sai. (2)
+  `g2p-check.mjs` thiếu khoảng trắng trong charset (cụm nhiều âm tiết như địa
+  danh) → phủ báo sai 22.48%; sửa tool (luôn cho phép khoảng trắng), phủ thật
+  99.67%. Đo thanh điệu trên WikiPron: huyền→˨ và sắc→˧˦ khớp 100% (sau khi tự
+  sửa lỗi dùng nhầm chữ số thay ký tự Unicode Chao tone letter ở lần đo đầu).
+  Fixtures bổ sung câu thật. Validator PASS.

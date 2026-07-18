@@ -62,6 +62,24 @@
       "derived_by": "human",
       "confidence": "high",
       "license": "n/a"
+    },
+    {
+      "id": "S-UD-CORPUS-VI",
+      "name": "UD Vietnamese-VTB (train/dev/test) — 1123 câu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Vietnamese-VTB/master/",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "S-BINHVQ-NEWS-SAMPLE",
+      "name": "binhvq/news-corpus — mẫu demo-full.txt + demo-title.txt (báo chí, đã tách câu sẵn, ~1954 câu sau khử trùng lặp)",
+      "url": "https://raw.githubusercontent.com/binhvq/news-corpus/master/sample/",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "medium",
+      "license": "MIT"
     }
   ]
 }

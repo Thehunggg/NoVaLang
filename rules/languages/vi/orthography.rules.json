@@ -15,6 +15,15 @@
   },
   "checks": [
     {
+      "id": "sentence-terminator-present",
+      "description": "Câu tiếng Việt phải kết thúc bằng dấu chấm câu chuẩn (. ? ! …).",
+      "assert": { "type": "regex_present", "pattern": "[.?!…]$" },
+      "fixtures": {
+        "pass": ["Tôi thích uống cà phê.", "Bạn có khỏe không?"],
+        "fail": ["Tôi thích uống cà phê", "Bạn có khỏe không"]
+      }
+    },
+    {
       "id": "tone-marked-vowel-required-for-non-ngang",
       "description": "Từ có thanh khác 'ngang' (không dấu) phải mang đúng 1 trong 5 dấu thanh trên nguyên âm chính.",
       "assert": { "type": "custom", "note": "kiểm bằng bảng dấu thanh CLDR khi generator/grader chạy, không phải regex đơn giản" },

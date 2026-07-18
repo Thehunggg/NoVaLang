@@ -34,7 +34,9 @@
       { "sentence": "Con mèo đen ngủ.", "note": "SVO + tính từ 'đen' sau danh từ 'mèo'" },
       { "sentence": "Tôi có ba con chó.", "note": "classifier 'con' trước danh từ động vật đếm được" },
       { "sentence": "Tôi đã ăn cơm.", "note": "quá khứ diễn đạt bằng 'đã', động từ 'ăn' không biến đổi" },
-      { "sentence": "học sinh chăm chỉ", "note": "từ ghép 'học sinh' (2 âm tiết = 1 từ) + tính từ sau" }
+      { "sentence": "học sinh chăm chỉ", "note": "từ ghép 'học sinh' (2 âm tiết = 1 từ) + tính từ sau" },
+      { "sentence": "Dấu ấn từ vỉa hè đô thị.", "note": "corpus báo chí thật (S-BINHVQ-NEWS-SAMPLE)" },
+      { "sentence": "Mong luật sư tư vấn giúp.", "note": "corpus báo chí thật" }
     ],
     "fail": [
       { "sentence": "Con đen mèo ngủ.", "note": "SAI: tính từ phải đứng SAU danh từ, không phải trước" },

@@ -59,6 +59,7 @@ if (charsetFile) {
   const allow = new Set();
   for (const cluster of specs.match(/\{[^}]*\}/g) || []) for (const ch of cluster.replace(/[{}]/g, '')) allow.add(ch);
   for (const ch of specs.replace(/\{[^}]*\}/g, '').replace(/[\[\]\\\s-]/g, '')) allow.add(ch);
+  allow.add(' '); // cụm nhiều âm tiết/từ (địa danh, thành ngữ...) hợp lệ trong mọi ngôn ngữ dùng khoảng trắng
   let covered = 0, uncovered = 0;
   const badChars = new Map();
   for (const [w] of pairs) {
