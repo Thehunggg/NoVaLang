@@ -62,6 +62,15 @@
       "derived_by": "human",
       "confidence": "high",
       "license": "n/a"
+    },
+    {
+      "id": "S-UD-CORPUS-ZH",
+      "name": "UD Chinese-GSD (train/dev/test) — câu thật cho corpus check (4997 câu)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Chinese-GSD/master/",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
     }
   ]
 }
