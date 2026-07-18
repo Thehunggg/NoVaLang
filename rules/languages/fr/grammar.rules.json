@@ -1,0 +1,76 @@
+{
+  "id": "fr/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "gender_and_number_agreement",
+  "enforces": [
+    "grammar-and-usage.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "UD"
+  ],
+  "derived_by": "human",
+  "config": {
+    "word_order": "SVO_fixed_no_pro_drop",
+    "gender_system": {
+      "values": ["masculine", "feminine"],
+      "predictable_by_ending": "KÉM đáng tin cậy hơn es — không có quy tắc -o/-a tương đương; xu hướng thống kê: -tion/-sion/-té thường nữ, -ment/-age thường nam, nhiều ngoại lệ.",
+      "exception_list_status": "PENDING — xem GIẢ ĐỊNH C-04"
+    },
+    "agreement_rule": "Mạo từ + tính từ PHẢI hoà giống-số với danh từ (un grand homme / une grande femme / de grands hommes / de grandes femmes).",
+    "adjective_position": {
+      "default": "sau danh từ (une voiture rouge)",
+      "bags_exception": "Một nhóm tính từ ngắn thông dụng đứng TRƯỚC danh từ — nhóm BAGS (Beauty/Age/Goodness/Size): beau, joli, vieux, jeune, nouveau, bon, mauvais, grand, petit, gros...",
+      "example": ["un grand homme", "une belle femme", "un petit chat"]
+    },
+    "verb_conjugation_groups": {
+      "er": { "infinitive_ending": "-er", "example": "parler", "note": "Nhóm đều đặn lớn nhất, NHIỀU đuôi chia đọc giống nhau dù viết khác (parle/parles/parlent đều [paʁl])." },
+      "ir": { "infinitive_ending": "-ir", "example": "finir" },
+      "re": { "infinitive_ending": "-re", "example": "vendre" }
+    },
+    "irregular_verb_lexicon_status": "PENDING — être/avoir/aller/faire... CHƯA có bảng chia đầy đủ, xem GIẢ ĐỊNH C-05.",
+    "no_pro_drop": {
+      "value": true,
+      "note": "KHÁC es — chủ ngữ đại từ (je/tu/il...) LUÔN bắt buộc, không thể lược bỏ dù đuôi động từ đôi khi đủ thông tin ngôi."
+    },
+    "clitic_pronoun_placement": {
+      "before_conjugated_verb": true,
+      "attached_after_affirmative_imperative_only": true,
+      "example_before": "Je le vois.",
+      "example_attached": "Donne-le-moi.",
+      "y_and_en": "y (thay địa điểm/à+việc), en (thay de+danh từ/số lượng) — không có tương đương trực tiếp trong es/en, cần dạy riêng."
+    }
+  },
+  "checks": [
+    {
+      "id": "bags-adjective-before-noun",
+      "description": "Tính từ nhóm BAGS đứng trước danh từ (kiểm mẫu cố định, không phải kiểm tổng quát toàn từ vựng).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm tổng quát cần bảng phân loại tính từ BAGS đầy đủ khi generator chạy, không phải regex tĩnh."
+      },
+      "fixtures": {
+        "pass": [
+          "un grand homme",
+          "une voiture rouge"
+        ],
+        "fail": [
+          "un homme grand (sai vị trí cho nghĩa 'người cao lớn' thông thường)"
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "Le comportement de la Turquie vis-à-vis du problème palestinien a fait qu'elle n'est plus en odeur de sainteté auprès de la communauté juive en générale, et américaine en particulier.",
+      "un grand homme",
+      "Je le vois."
+    ],
+    "fail": [
+      "un homme grand",
+      "Je vois le."
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD French-GSD (Bước 3 mục 6)."
+  }
+}

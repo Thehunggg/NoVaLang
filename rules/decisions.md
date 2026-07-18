@@ -540,6 +540,37 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   đụng `PLAYABLE_LANGUAGES`/`language_options.json`/`generate-curriculum.mjs`
   hay `rules/languages/{ja,en,vi,zh,ko}/**`. Commit riêng ngay sau entry này.
 
+- **D-54 · 2026-07-18 · derived · fr — `fr` build HOÀN TẤT, trạng thái
+  `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN. Ngôn ngữ 3/3,
+  chuỗi ko→es→fr HOÀN TẤT.** 22 hiện tượng trong
+  `rules/languages/fr/coverage.json`; 4 file `.rules.json` khớp khuôn với
+  ja/en/ko/es — xem `rules/languages/fr/pipeline-log.md`. Bước 1 thuận lợi
+  nhất (dataset đúng ngay lần thử đầu). Bước 3 (corpus check 17342 câu UD
+  French-GSD/PUD thật) tìm và sửa 3 bug thật, nhiều nhất trong 3 ngôn ngữ:
+  (1) check elision coi 'h' là trigger tự động — sửa bằng loại h khỏi
+  trigger, phát hiện h aspiré là exception lexical thật; (2) **bug kỹ thuật
+  tổng quát**: JS `\b` (word boundary) không coi ký tự Latin có dấu (é/è/ê/
+  à...) là word-char (`\w` JS luôn ASCII-only, flag `u` không sửa việc
+  này), gây khớp nhầm bên trong từ như "même" — sửa bằng anchor khoảng
+  trắng `(?:^|[\s(«"'])` thay `\b`; (3) residual 141/17342 (0.81%) là
+  exception lexical thật (proper noun ngoại lai, bán-nguyên-âm như "que
+  oui"). g2p-check trên WikiPron thật (97301 từ): `on$->[ɔ̃]` sạch 98.10%
+  nhưng `an$->[ɑ̃]` chỉ 79.90% — **công cụ tự gắn nhãn RULE NGHI NGỜ SAI**,
+  đọc tay xác nhận toàn bộ vi phạm là tên riêng ngoại lai (Batman, Bowman,
+  Brian, Dylan, Erdogan) lẫn trong WikiPron, KHÔNG nâng confidence
+  `nasal_vowels`. **Đã kiểm tra chéo:** bug (2) không ảnh hưởng `es` (check
+  `month-weekday-not-capitalized` đã re-run, vẫn 102/17013 — es dùng
+  lookbehind `(?<!^\w+)` không phải `\b`, không dính bug này). `node
+  tools/validate.mjs` PASS, không lỗi mới. 3 mục review-checklist (C-01
+  phân biệt FORMAL/NATURAL_NEUTRAL_POLITE khi cùng dùng "vous", C-02 chính
+  sách chấm dấu phụ/elision, C-03 dialect Pháp/Québécois — nhẹ hơn B-01 của
+  es vì không ảnh hưởng ngữ pháp cốt lõi) + 3 mục native-review (C-04 ngoại
+  lệ giống danh từ, C-05 bảng động từ bất quy tắc, C-06 lexicon h aspiré/
+  bán-nguyên-âm) — CHƯA gửi review. Không đụng
+  `PLAYABLE_LANGUAGES`/`language_options.json`/`generate-curriculum.mjs`
+  hay `rules/languages/{ja,en,vi,zh,ko,es}/**`. Commit riêng ngay sau entry
+  này, rồi viết báo cáo tổng hợp 3 ngôn ngữ thành commit cuối cùng.
+
 ---
 
 ## Ghi chú (không phải quyết định đã chốt)

@@ -1,0 +1,218 @@
+{
+  "id": "fr/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 97301,
+    "byScript": {
+      "fra_latn_broad_filtered": {
+        "count": 97301,
+        "sample": [
+          [
+            "'tain",
+            "t ɛ̃"
+          ],
+          [
+            "A",
+            "a"
+          ],
+          [
+            "AB",
+            "a b e"
+          ],
+          [
+            "ABS",
+            "a b e ɛ s"
+          ],
+          [
+            "ACE",
+            "a s"
+          ],
+          [
+            "ACEA",
+            "a s e a"
+          ],
+          [
+            "ACL",
+            "a s e ɛ l"
+          ],
+          [
+            "ADM",
+            "a d m"
+          ],
+          [
+            "ADN",
+            "a d e ɛ n"
+          ],
+          [
+            "ADQ",
+            "a d e k y"
+          ],
+          [
+            "AFM",
+            "a e f ɛ m"
+          ],
+          [
+            "AFM",
+            "a ɛ f ɛ m"
+          ],
+          [
+            "AFP",
+            "a ɛ f p e"
+          ],
+          [
+            "AFPC",
+            "a ɛ f p e s e"
+          ],
+          [
+            "AGP",
+            "a ʒ e p e"
+          ],
+          [
+            "ALÉNA",
+            "a l e n a"
+          ],
+          [
+            "ANP",
+            "a ɛ n p e"
+          ],
+          [
+            "AOC",
+            "a o s e"
+          ],
+          [
+            "API",
+            "a p e i"
+          ],
+          [
+            "ARN",
+            "a e ʁ ɛ n"
+          ],
+          [
+            "ARN",
+            "a ɛ ʁ ɛ n"
+          ],
+          [
+            "ARYM",
+            "a ʁ i m"
+          ],
+          [
+            "ASBL",
+            "a ɛ s b e ɛ l"
+          ],
+          [
+            "AVC",
+            "a v e s e"
+          ],
+          [
+            "AZERTY",
+            "a z ɛ ʁ t i"
+          ],
+          [
+            "Aalénien",
+            "a l e n j ɛ̃"
+          ],
+          [
+            "Aar",
+            "a ʁ"
+          ],
+          [
+            "Aaron",
+            "a a ʁ ɔ̃"
+          ],
+          [
+            "Aast",
+            "a s"
+          ],
+          [
+            "Abainville",
+            "a b ɛ̃ v i l"
+          ],
+          [
+            "Abancourt",
+            "a b ɑ̃ k u ʁ"
+          ],
+          [
+            "Abbaretz",
+            "a b a ʁ ɛ"
+          ],
+          [
+            "Abbasside",
+            "a b a s i d"
+          ],
+          [
+            "Abbecourt",
+            "a b k u ʁ"
+          ],
+          [
+            "Abbeville",
+            "a b v i l"
+          ],
+          [
+            "Abbeville",
+            "b e v i l"
+          ],
+          [
+            "Abbevillois",
+            "a b v i l w a"
+          ],
+          [
+            "Abbevilloise",
+            "a b v i l w a z"
+          ],
+          [
+            "Abby",
+            "a b i"
+          ],
+          [
+            "Abbécourt",
+            "a b e k u ʁ"
+          ],
+          [
+            "Abdallah",
+            "a b d a l a"
+          ],
+          [
+            "Abdeslam",
+            "a b d ə s l a m"
+          ],
+          [
+            "Abdias",
+            "a b d i a"
+          ],
+          [
+            "Abdias",
+            "a b d i ɑ"
+          ],
+          [
+            "Abdias",
+            "a b d j a"
+          ],
+          [
+            "Abdias",
+            "a b d j ɑ"
+          ],
+          [
+            "Abdoul",
+            "a b d u l"
+          ],
+          [
+            "Abdoulaye",
+            "a b d u l a j"
+          ],
+          [
+            "Abdoulla",
+            "a b d u l a"
+          ],
+          [
+            "Abeau",
+            "a b o"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/fra_latn_broad_filtered.tsv"
+      }
+    }
+  }
+}
