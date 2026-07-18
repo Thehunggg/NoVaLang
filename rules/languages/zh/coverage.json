@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "zh",
-    "stage": "3-corpus-done",
+    "stage": "validated",
     "generatedAt": "2026-07-18",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
@@ -13,7 +13,9 @@
       "sentences": 4997,
       "source": "UD Chinese-GSDSimp train/dev/test (S-UD-CORPUS-ZH) — ĐÃ SỬA từ GSD (Hant) sang GSDSimp (Hans)",
       "note": "Vượt mốc 2000. Xác nhận Hans: 0 ký tự Hant / 7613 ký tự Hans trong 20 cặp kiểm."
-    }
+    },
+    "validatedAt": "2026-07-18",
+    "gate5_note": "D-49/ADR-017: Gate 5 đã bỏ cho pipeline build rule ngôn ngữ — có thể đề xuất freeze ngay, không cần chờ. lexical_level của tone_system/grapheme_to_phoneme hạ xuống medium (WikiPron cmn_hani Hant-keyed, xem note SỬA LỖI B3) — KHÔNG freeze cho tới khi có bảng S2T. classifiers/pronoun_system/forms_of_address lexical (none/thấp) KHÔNG freeze. stroke_order = DEFERRED, casing = not-applicable."
   },
   "writing_systems": {
     "rule_level": {
@@ -27,7 +29,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Hán tự (chữ biểu ý-biểu âm, logographic) — Hans (giản thể, D-37). Mỗi chữ ~1 âm tiết, thường ~1 hình vị. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "Hán tự (chữ biểu ý-biểu âm, logographic) — Hans (giản thể, D-37). Mỗi chữ ~1 âm tiết, thường ~1 hình vị. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED"
   },
   "charset_exemplars": {
     "rule_level": {
@@ -41,7 +44,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Import CLDR Bước 1 (locale zh = Hans mặc định). [B1: CLDR imported -> orthography.data.json; 4421 chữ Hán exemplar] [B3: g2p-check trên WikiPron cmn_hani (Hant-keyed) chỉ phủ 30.84% charset Hans — con số này XÁC NHẬN THÊM (không phải phát hiện mới) vấn đề Hant-keying đã ghi ở tone_system/grapheme_to_phoneme; charset CLDR Hans tự nó không bị ảnh hưởng, vẫn đúng.]"
+    "notes": "Import CLDR Bước 1 (locale zh = Hans mặc định). [B1: CLDR imported -> orthography.data.json; 4421 chữ Hán exemplar] [B3: g2p-check trên WikiPron cmn_hani (Hant-keyed) chỉ phủ 30.84% charset Hans — con số này XÁC NHẬN THÊM (không phải phát hiện mới) vấn đề Hant-keying đã ghi ở tone_system/grapheme_to_phoneme; charset CLDR Hans tự nó không bị ảnh hưởng, vẫn đúng.]",
+    "status": "VALIDATED"
   },
   "casing": {
     "rule_level": {
@@ -55,7 +59,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "NOT-APPLICABLE: Hán tự không có hoa/thường. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "NOT-APPLICABLE: Hán tự không có hoa/thường. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "not-applicable"
   },
   "writing_direction": {
     "rule_level": {
@@ -69,7 +74,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "LTR ngang là chuẩn hiện đại (dọc truyền thống tồn tại nhưng OUT_OF_SCOPE — [pattern reuse ja: writing_direction]). [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "LTR ngang là chuẩn hiện đại (dọc truyền thống tồn tại nhưng OUT_OF_SCOPE — [pattern reuse ja: writing_direction]). [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED"
   },
   "stroke_order": {
     "rule_level": {
@@ -83,7 +89,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "DEFERRED [pattern reuse ja: app không dạy thứ tự nét viết tay — quyết định đã chốt, tự áp dụng không hỏi lại]."
+    "notes": "DEFERRED [pattern reuse ja: app không dạy thứ tự nét viết tay — quyết định đã chốt, tự áp dụng không hỏi lại].",
+    "status": "DEFERRED"
   },
   "tone_system": {
     "rule_level": {
@@ -97,7 +104,8 @@
       "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 4 thanh + 1 thanh nhẹ (khinh thanh) phân biệt nghĩa hoàn toàn (mā/má/mǎ/mà = mẹ/gai/ngựa/mắng). WikiPron cmn_hani có IPA kèm thanh. [B1: WikiPron cmn_hani 168655 mục có ký hiệu thanh Chao tone (số góc trên, vd ⁵¹/²¹⁴/³⁵) sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.] [SỬA LỖI B3: WikiPron cmn_hani_standard_broad.tsv (168655 mục) đã kiểm chứng bằng 42 cặp giản-phồn đã biết (爱/愛, 国/國, 马/馬...) — 40/42 chỉ có bản PHỒN THỂ (Hant) làm khóa, không phải giản thể (Hans, D-37). Bản thân giá trị thanh điệu ĐÚNG (妈→媽=\"m ä ⁵⁵\" khớp thanh 1; 马→馬=\"m ä ²¹⁴\" khớp thanh 3 — đã đối chiếu tay), nhưng dataset KHÔNG dùng được trực tiếp làm bảng tra \"chữ Hans → âm\" vì khóa là Hant. Không tìm được biến thể WikiPron nào keyed theo Hans; cần bảng chuyển đổi giản↔phồn (S2T, vd OpenCC) làm cầu nối — CHƯA có trong phiên này, không bịa. Hạ lexical_level về medium (không phải high), ghi rõ khoảng trống.] [B3: đo đánh dấu thanh trên WikiPron cmn_hani — 168534/168655 mục (99.93%) có ký hiệu thanh; 121 trường hợp không thanh (0.07%) đa số là từ chức năng đọc thanh nhẹ hợp lệ (vd 了 khinh thanh) — dưới ngưỡng nghi ngờ, xác nhận rule tone_count=4+neutral đúng.]"
+    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 4 thanh + 1 thanh nhẹ (khinh thanh) phân biệt nghĩa hoàn toàn (mā/má/mǎ/mà = mẹ/gai/ngựa/mắng). WikiPron cmn_hani có IPA kèm thanh. [B1: WikiPron cmn_hani 168655 mục có ký hiệu thanh Chao tone (số góc trên, vd ⁵¹/²¹⁴/³⁵) sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.] [SỬA LỖI B3: WikiPron cmn_hani_standard_broad.tsv (168655 mục) đã kiểm chứng bằng 42 cặp giản-phồn đã biết (爱/愛, 国/國, 马/馬...) — 40/42 chỉ có bản PHỒN THỂ (Hant) làm khóa, không phải giản thể (Hans, D-37). Bản thân giá trị thanh điệu ĐÚNG (妈→媽=\"m ä ⁵⁵\" khớp thanh 1; 马→馬=\"m ä ²¹⁴\" khớp thanh 3 — đã đối chiếu tay), nhưng dataset KHÔNG dùng được trực tiếp làm bảng tra \"chữ Hans → âm\" vì khóa là Hant. Không tìm được biến thể WikiPron nào keyed theo Hans; cần bảng chuyển đổi giản↔phồn (S2T, vd OpenCC) làm cầu nối — CHƯA có trong phiên này, không bịa. Hạ lexical_level về medium (không phải high), ghi rõ khoảng trống.] [B3: đo đánh dấu thanh trên WikiPron cmn_hani — 168534/168655 mục (99.93%) có ký hiệu thanh; 121 trường hợp không thanh (0.07%) đa số là từ chức năng đọc thanh nhẹ hợp lệ (vd 了 khinh thanh) — dưới ngưỡng nghi ngờ, xác nhận rule tone_count=4+neutral đúng.]",
+    "status": "VALIDATED"
   },
   "pinyin_romanization": {
     "rule_level": {
@@ -111,7 +119,8 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "Hệ La-tinh hóa chuẩn (Hán Việt: bính âm) — chuẩn quốc tế, có dấu thanh trên nguyên âm. [B1: WikiPron cấp IPA kèm thanh, có thể đối chiếu bính âm ở Bước 2-3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "Hệ La-tinh hóa chuẩn (Hán Việt: bính âm) — chuẩn quốc tế, có dấu thanh trên nguyên âm. [B1: WikiPron cấp IPA kèm thanh, có thể đối chiếu bính âm ở Bước 2-3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED"
   },
   "reading_aid_policy": {
     "rule_level": {
@@ -125,7 +134,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "[D-50: đã áp nguyên tắc dạy, chọn: pinyin ẩn mặc định + toggle bật ở A0–B1, KHÔNG toggle ở B2–C2 — giống hệt D-11 bản (ii) đã chốt cho romaji ja.]"
+    "notes": "[D-50: đã áp nguyên tắc dạy, chọn: pinyin ẩn mặc định + toggle bật ở A0–B1, KHÔNG toggle ở B2–C2 — giống hệt D-11 bản (ii) đã chốt cho romaji ja.]",
+    "status": "VALIDATED"
   },
   "grapheme_to_phoneme": {
     "rule_level": {
@@ -139,7 +149,8 @@
       "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "Hán tự KHÔNG cho biết cách đọc từ hình chữ (logographic, giống kanji ja) — đọc phải tra theo từng chữ (lexical), không suy được bằng rule chung. WikiPron cmn_hani 168655 mục cấp sẵn. [B1: WikiPron cmn_hani 168655 mục sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.] [SỬA LỖI B3: WikiPron cmn_hani_standard_broad.tsv (168655 mục) đã kiểm chứng bằng 42 cặp giản-phồn đã biết (爱/愛, 国/國, 马/馬...) — 40/42 chỉ có bản PHỒN THỂ (Hant) làm khóa, không phải giản thể (Hans, D-37). Bản thân giá trị thanh điệu ĐÚNG (妈→媽=\"m ä ⁵⁵\" khớp thanh 1; 马→馬=\"m ä ²¹⁴\" khớp thanh 3 — đã đối chiếu tay), nhưng dataset KHÔNG dùng được trực tiếp làm bảng tra \"chữ Hans → âm\" vì khóa là Hant. Không tìm được biến thể WikiPron nào keyed theo Hans; cần bảng chuyển đổi giản↔phồn (S2T, vd OpenCC) làm cầu nối — CHƯA có trong phiên này, không bịa. Hạ lexical_level về medium (không phải high), ghi rõ khoảng trống.] Generator tương lai cần bảng S2T trước khi tra âm theo Hans character trực tiếp — ghi thành đề xuất báo cáo cuối, không thuộc phạm vi sửa ở tools/**/rules/** phiên này (là việc thêm 1 dataset S2T mới, cần owner duyệt nguồn). [B3: fixtures bổ sung câu thật từ corpus UD GSDSimp] [B3 quan trọng: bảng tra Hán tự→âm (WikiPron cmn_hani) vẫn CHƯA dùng trực tiếp được cho Hans (xem SỬA LỖI ở note trước) — đây là khoảng trống dữ liệu thật sự tồn tại cho generator tương lai, không phải lỗi corpus/UD (đã sửa riêng). Đề xuất: cần dataset OpenCC S2T hoặc nguồn WikiPron Hans-keyed khác trước khi build nội dung thật.]"
+    "notes": "Hán tự KHÔNG cho biết cách đọc từ hình chữ (logographic, giống kanji ja) — đọc phải tra theo từng chữ (lexical), không suy được bằng rule chung. WikiPron cmn_hani 168655 mục cấp sẵn. [B1: WikiPron cmn_hani 168655 mục sẵn sàng đo Bước 3] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.] [SỬA LỖI B3: WikiPron cmn_hani_standard_broad.tsv (168655 mục) đã kiểm chứng bằng 42 cặp giản-phồn đã biết (爱/愛, 国/國, 马/馬...) — 40/42 chỉ có bản PHỒN THỂ (Hant) làm khóa, không phải giản thể (Hans, D-37). Bản thân giá trị thanh điệu ĐÚNG (妈→媽=\"m ä ⁵⁵\" khớp thanh 1; 马→馬=\"m ä ²¹⁴\" khớp thanh 3 — đã đối chiếu tay), nhưng dataset KHÔNG dùng được trực tiếp làm bảng tra \"chữ Hans → âm\" vì khóa là Hant. Không tìm được biến thể WikiPron nào keyed theo Hans; cần bảng chuyển đổi giản↔phồn (S2T, vd OpenCC) làm cầu nối — CHƯA có trong phiên này, không bịa. Hạ lexical_level về medium (không phải high), ghi rõ khoảng trống.] Generator tương lai cần bảng S2T trước khi tra âm theo Hans character trực tiếp — ghi thành đề xuất báo cáo cuối, không thuộc phạm vi sửa ở tools/**/rules/** phiên này (là việc thêm 1 dataset S2T mới, cần owner duyệt nguồn). [B3: fixtures bổ sung câu thật từ corpus UD GSDSimp] [B3 quan trọng: bảng tra Hán tự→âm (WikiPron cmn_hani) vẫn CHƯA dùng trực tiếp được cho Hans (xem SỬA LỖI ở note trước) — đây là khoảng trống dữ liệu thật sự tồn tại cho generator tương lai, không phải lỗi corpus/UD (đã sửa riêng). Đề xuất: cần dataset OpenCC S2T hoặc nguồn WikiPron Hans-keyed khác trước khi build nội dung thật.]",
+    "status": "VALIDATED"
   },
   "phoneme_inventory": {
     "rule_level": {
@@ -153,7 +164,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Thanh mẫu (âm đầu) + vận mẫu (âm cuối) + thanh điệu — cấu trúc âm tiết chuẩn Quan thoại. [B1: WikiPron cấp dữ liệu âm vị + thanh cho đo/derive] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "Thanh mẫu (âm đầu) + vận mẫu (âm cuối) + thanh điệu — cấu trúc âm tiết chuẩn Quan thoại. [B1: WikiPron cấp dữ liệu âm vị + thanh cho đo/derive] [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED"
   },
   "word_segmentation": {
     "rule_level": {
@@ -167,7 +179,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: KHÔNG có khoảng trắng giữa CHỮ hay TỪ trong văn viết chuẩn — nặng hơn cả vi (vi ít nhất còn khoảng trắng giữa âm tiết). Ảnh hưởng trực tiếp cách app tách từ để chấm/tra nghĩa. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: KHÔNG có khoảng trắng giữa CHỮ hay TỪ trong văn viết chuẩn — nặng hơn cả vi (vi ít nhất còn khoảng trắng giữa âm tiết). Ảnh hưởng trực tiếp cách app tách từ để chấm/tra nghĩa. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED"
   },
   "word_class": {
     "rule_level": {
@@ -181,7 +194,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Import UD Chinese-GSD Bước 1. [B1: Import UD Chinese-GSD -> 16 nhãn UPOS -> word-class.data.json] [SỬA LỖI B1→B3: UD Chinese-GSD (nguồn Bước 1 ban đầu) là PHỒN THỂ (README chính thức: \"Traditional Chinese Universal Dependencies Treebank\") — mâu thuẫn trực tiếp D-37 (Hans). Phát hiện khi đối chiếu corpus Bước 3 (7593 lượt ký tự Hant / 20 lượt Hans trong 20 cặp kiểm). Đã đổi sang UD Chinese-GSDSimp (Hans, chuyển đổi bằng OpenCC + sửa tay) — import lại word-class.data.json (16 nhãn UPOS, số liệu mới) và corpus check (4997 câu, xác nhận 0 Hant/7613 Hans). Không có rule nào dựa trên GSD (Hant) bị giữ lại — word_order/word_segmentation/word_class notes trong Bước 0-2 mô tả hiện tượng chung (SVO, topic-prominent...) không đổi vì đúng với cả 2 script, chỉ nguồn dữ liệu máy đổi.]"
+    "notes": "Import UD Chinese-GSD Bước 1. [B1: Import UD Chinese-GSD -> 16 nhãn UPOS -> word-class.data.json] [SỬA LỖI B1→B3: UD Chinese-GSD (nguồn Bước 1 ban đầu) là PHỒN THỂ (README chính thức: \"Traditional Chinese Universal Dependencies Treebank\") — mâu thuẫn trực tiếp D-37 (Hans). Phát hiện khi đối chiếu corpus Bước 3 (7593 lượt ký tự Hant / 20 lượt Hans trong 20 cặp kiểm). Đã đổi sang UD Chinese-GSDSimp (Hans, chuyển đổi bằng OpenCC + sửa tay) — import lại word-class.data.json (16 nhãn UPOS, số liệu mới) và corpus check (4997 câu, xác nhận 0 Hant/7613 Hans). Không có rule nào dựa trên GSD (Hant) bị giữ lại — word_order/word_segmentation/word_class notes trong Bước 0-2 mô tả hiện tượng chung (SVO, topic-prominent...) không đổi vì đúng với cả 2 script, chỉ nguồn dữ liệu máy đổi.]",
+    "status": "VALIDATED"
   },
   "word_order": {
     "rule_level": {
@@ -198,7 +212,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "SVO cơ bản nhưng topic-prominent (chủ đề có thể đứng đầu câu khác chủ ngữ ngữ pháp); tính từ trước danh từ. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.] [B3: corpus check sạch trên GSDSimp (Hans) — 0% vi phạm 2 text-assert.]"
+    "notes": "SVO cơ bản nhưng topic-prominent (chủ đề có thể đứng đầu câu khác chủ ngữ ngữ pháp); tính từ trước danh từ. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.] [B3: corpus check sạch trên GSDSimp (Hans) — 0% vi phạm 2 text-assert.]",
+    "status": "VALIDATED"
   },
   "classifiers": {
     "rule_level": {
@@ -212,7 +227,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Lượng từ (measure word/classifier, giống loại từ vi và counter ja): 个/只/本/条... đứng trước danh từ khi đếm. Lượng từ nào đi với danh từ nào là lexical. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "Lượng từ (measure word/classifier, giống loại từ vi và counter ja): 个/只/本/条... đứng trước danh từ khi đếm. Lượng từ nào đi với danh từ nào là lexical. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED"
   },
   "inflection_morphology": {
     "rule_level": {
@@ -226,7 +242,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "KHÔNG biến hình (isolating, giống vi): động từ không chia thì/ngôi/số. Khía cạnh (aspect) diễn đạt bằng trợ từ 了 (hoàn thành)/过 (đã từng)/着 (đang diễn ra), không phải thì (tense). [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "KHÔNG biến hình (isolating, giống vi): động từ không chia thì/ngôi/số. Khía cạnh (aspect) diễn đạt bằng trợ từ 了 (hoàn thành)/过 (đã từng)/着 (đang diễn ra), không phải thì (tense). [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED"
   },
   "pronoun_system": {
     "rule_level": {
@@ -240,7 +257,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Đơn giản hơn nhiều so với vi: đại từ cố định 我/你/他/她 (tôi/bạn/anh ấy/cô ấy), KHÔNG phụ thuộc tuổi/vai vế như vi. Có cặp lịch sự-thường 您/你 (you formal/informal) — gần vai trò T–V distinction. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "Đơn giản hơn nhiều so với vi: đại từ cố định 我/你/他/她 (tôi/bạn/anh ấy/cô ấy), KHÔNG phụ thuộc tuổi/vai vế như vi. Có cặp lịch sự-thường 您/你 (you formal/informal) — gần vai trò T–V distinction. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED"
   },
   "sentence_final_particles": {
     "rule_level": {
@@ -254,7 +272,9 @@
       "confidence": "low"
     },
     "machine_readable": false,
-    "notes": "CÓ (giống ja/vi): 吗 (hỏi có/không), 了 (đổi trạng thái/hoàn thành), 呢 (hỏi tiếp/nhấn mạnh), 吧 (đề nghị/phỏng đoán). Dịch theo chức năng — cần native review. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "CÓ (giống ja/vi): 吗 (hỏi có/không), 了 (đổi trạng thái/hoàn thành), 呢 (hỏi tiếp/nhấn mạnh), 吧 (đề nghị/phỏng đoán). Dịch theo chức năng — cần native review. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED",
+    "native_review": "PENDING (sắc thái 吗/呢/吧 — native-review-zh.md mục B)"
   },
   "register_taxonomy": {
     "rule_level": {
@@ -272,7 +292,9 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Map ADR-016: chủ yếu qua chọn từ + cặp 您/你, gần với en hơn ja (không có hệ ngữ pháp kính ngữ riêng như keigo). [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "Map ADR-016: chủ yếu qua chọn từ + cặp 您/你, gần với en hơn ja (không có hệ ngữ pháp kính ngữ riêng như keigo). [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED",
+    "native_review": "PENDING (ranh giới 您/你 — native-review-zh.md mục A)"
   },
   "forms_of_address": {
     "rule_level": {
@@ -286,7 +308,9 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "先生/女士 (ông/bà, trang trọng) + Họ; 您 cho người lớn tuổi/bề trên/khách hàng. Đơn giản hơn hệ thân tộc vi. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "先生/女士 (ông/bà, trang trọng) + Họ; 您 cho người lớn tuổi/bề trên/khách hàng. Đơn giản hơn hệ thân tộc vi. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED",
+    "native_review": "PENDING (native-review-zh.md mục E)"
   },
   "answer_acceptance_zh": {
     "rule_level": {
@@ -300,7 +324,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "[D-50: đã áp nguyên tắc dạy, chọn: A0–B1 cho nhập pinyin thay Hán tự nếu chưa gõ được (Hán tự cần IME khó với người mới — hệ quả D-50 'cho gõ Latin ở A0–B1 nếu hệ chữ khó gõ'), chấm khoan dung dấu thanh; B1+ dần yêu cầu Hán tự đúng, C1+ yêu cầu chính xác cả dấu thanh.] [D-17 pattern reuse: KHÔNG tự động chấp nhận phồn thể (Hant) làm biến thể tương đương giản thể (Hans) — biến thể chưa được duyệt.]"
+    "notes": "[D-50: đã áp nguyên tắc dạy, chọn: A0–B1 cho nhập pinyin thay Hán tự nếu chưa gõ được (Hán tự cần IME khó với người mới — hệ quả D-50 'cho gõ Latin ở A0–B1 nếu hệ chữ khó gõ'), chấm khoan dung dấu thanh; B1+ dần yêu cầu Hán tự đúng, C1+ yêu cầu chính xác cả dấu thanh.] [D-17 pattern reuse: KHÔNG tự động chấp nhận phồn thể (Hant) làm biến thể tương đương giản thể (Hans) — biến thể chưa được duyệt.]",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": {
@@ -314,7 +339,9 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Dịch tự nhiên — [D-36 pattern reuse: sẽ có native review, chưa tự cấp PASS bằng máy]. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]"
+    "notes": "Dịch tự nhiên — [D-36 pattern reuse: sẽ có native review, chưa tự cấp PASS bằng máy]. [B2: 0 trùng/0 lệch — 28 claim chỉ-Wikipedia (medium, có trích dẫn), narrative nội bộ 0/28 (không mô tả sự kiện ngôn ngữ). Không nguồn thứ hai mở trong môi trường mạng phiên này — cùng tình huống en/vi. Xem derive/review-diff.json.]",
+    "status": "VALIDATED",
+    "native_review": "PENDING (rule_level VALIDATED; owner KHÔNG biết tiếng Trung — nội dung PASS thật sự cần native-review-zh.md, theo D-36 pattern)"
   },
   "tts_audio_policy": {
     "rule_level": {
@@ -328,6 +355,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Từ _base + Putonghua (Quan thoại chuẩn) chuẩn phát âm."
+    "notes": "Từ _base + Putonghua (Quan thoại chuẩn) chuẩn phát âm.",
+    "status": "VALIDATED"
   }
 }

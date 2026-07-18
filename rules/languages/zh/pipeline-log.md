@@ -55,3 +55,18 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   dataset mới ngoài phạm vi phiên này. g2p-check đo thanh: 99.93% mục WikiPron
   có ký hiệu thanh (121/168655 không thanh, đa số khinh thanh hợp lệ). Fixtures
   bổ sung câu thật từ corpus GSDSimp. Validator PASS.
+- **Bước 4 (review) · 2026-07-18 · Hàng đợi RỖNG, không cần hỏi owner** — 0
+  lệch từ Bước 2, corpus sạch, mọi quyết định sản phẩm đã tự quyết qua D-50
+  (reading_aid_policy, answer_acceptance_zh) hoặc pattern tái dùng (script,
+  stroke_order). Soạn `native-review-zh.md` (tiếng Anh, 15 tick, ~5 phút, theo
+  D-36 pattern) cho phần chủ quan: register 您/你 (mục A), trợ từ cuối câu
+  吗/呢/吧 (mục B), trợ từ khía cạnh 了/过 (mục C), lượng từ (mục D), xưng hô
+  (mục E), dịch tự nhiên (mục F). Không đưa owner checklist vì owner không
+  biết tiếng Trung — đúng luật Phần D Bước 4 mục 3.
+- **Bước 5 · 2026-07-18 · VALIDATED (D-49: không chờ Gate 5)** — 20 VALIDATED
+  · 1 not-applicable (casing) · 1 DEFERRED (stroke_order). `_meta.stage=
+  'validated'`, `validatedAt=2026-07-18`. Catalog
+  `zh.ruleStatus=VALIDATED_PENDING_FREEZE`. lexical_level của tone_system/
+  grapheme_to_phoneme hạ xuống medium (WikiPron Hant-keyed) — KHÔNG freeze cho
+  tới khi có bảng chuyển đổi S2T. classifiers/pronoun_system/forms_of_address
+  lexical KHÔNG freeze (thiếu dữ liệu theo-từng-từ). Validator PASS.
