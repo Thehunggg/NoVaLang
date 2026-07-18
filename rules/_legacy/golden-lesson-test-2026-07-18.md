@@ -21,9 +21,9 @@ chứng số liệu/trích dẫn thật đã tự đo, không suy diễn.
 
 ### A1 — `_base/distractor.length_ratio_max = 1.5` quá chặt cho A0
 
-Đo trực tiếp trên toàn bộ 3 câu `multiple_choice` có cấu trúc `options` +
-`correctOptionId` đo được (Q1, Q2, Q7 — 8 câu còn lại không có cấu trúc này
-hoặc là kiểu bài khác):
+Đo trực tiếp trên **3 câu** `multiple_choice` có cấu trúc `options` +
+`correctOptionId` mà bản audit tay ban đầu kiểm được (Q1, Q2, Q7 — lúc đó
+ghi "8 câu còn lại không có cấu trúc này hoặc là kiểu bài khác"):
 
 | Câu | Đáp án đúng (độ dài) | Nhiễu vi phạm (độ dài) | Tỷ lệ |
 |---|---|---|---|
@@ -36,6 +36,38 @@ Cả 4 nhiễu đều là **lời chào khác trong cùng bài** — bộ nhiễ
 có thể có ở trình độ A0 (cùng trường nghĩa "chào hỏi", người học thật sự dễ
 nhầm). Rule `length_ratio_max: 1.5` không có căn cứ ngôn ngữ học hay sư phạm
 — do AI viết prompt ban đầu tự đặt (owner xác nhận, xem G-01).
+
+**Cập nhật 2026-07-18 (sau khi `tools/lesson-check.mjs` được xây ở việc-5):**
+bản audit tay ban đầu **bỏ sót Q8, Q11, Q12** — cả 3 câu này CŨNG có đúng cấu
+trúc `options[]` + `correctOptionId` (kiểu `contextual_response`/
+`naturalness_judgement`, không phải `multiple_choice` thuần, nhưng cùng
+shape dữ liệu), nên vẫn đo được `length_ratio_max` như Q1/Q2/Q7. Chạy
+`node tools/lesson-check.mjs --lang ja --lesson-id ja-daily_life-m01-u1-l1`
+(mặc định `--assume-provenance auto_generated`) phát hiện thêm 9 vi phạm
+nữa, TỔNG CỘNG 14 (không phải 4 như bản tay ban đầu):
+
+| Câu | Đáp án đúng (độ dài) | Nhiễu vi phạm (độ dài) | Tỷ lệ |
+|---|---|---|---|
+| Q8 | "はじめまして。私は佐藤です。よろしくお願いします。" (39) | "おやすみなさい。" (8) | **4.88** |
+| Q8 | (như trên, 39) | "いただきます。" (7) | **5.57** |
+| Q8 | (như trên, 39) | "さようなら。" (6) | **6.50** |
+| Q11 | "おはようございます。はじめまして。私は田中です。よろしくお願いします。" (49) | "こんばんは。私は田中です。" (23) | **2.13** |
+| Q11 | (như trên, 49) | "さようなら。田中さんです。" (18) | **2.72** |
+| Q11 | (như trên, 49) | "こんにちは。おやすみなさい。" (14) | **3.50** |
+| Q12 | "はじめまして。私は田中です。よろしくお願いします。" (39) | "よろしくお願いします。私はです田中。" (18) | **2.17** |
+| Q12 | (như trên, 39) | "田中さんは私です。" (19) | **2.05** |
+| Q12 | (như trên, 39) | "こんばんは。はじめまして。さようなら。" (19) | **2.05** |
+
+Nguồn phát hiện: **`tools/lesson-check.mjs`** (chạy thật, không phải đọc
+tay) — chính công cụ được xây ở việc-5 để giải quyết vế "chưa có tool nào
+chạy rule lên 1 file lesson JSON cụ thể" của C6. Điều này tự nó là bằng
+chứng cho lý do C6/lesson-check.mjs tồn tại: audit tay, dù cẩn thận, vẫn bỏ
+sót 3/6 câu multiple-choice-shaped thật có trong bài. Kết luận A1 KHÔNG đổi
+(rule vẫn sai theo cách tương tự ở cả 9 câu mới), chỉ mở rộng phạm vi bằng
+chứng — không ảnh hưởng G-01 (đã sửa đúng gốc bằng provenance, áp dụng đều
+cho toàn bộ 14 câu, không chỉ 4 câu ban đầu — xác nhận bằng
+`tools/lesson-check.mjs --assume-provenance owner_approved`: cả 14 vi phạm
+đều chuyển thành MIỄN).
 
 ### A2 — `_base/distractor.same_word_class = true` sai chủ ý sư phạm ở Q7
 
