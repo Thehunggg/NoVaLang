@@ -19,7 +19,9 @@
     "forms_of_address": {
       "first_name_common_informal": true,
       "title_lastname_formal": true,
-      "_pending_review": "R-01: sir/ma'am trong ngữ cảnh dịch vụ — quy tắc sản phẩm (đừng máy móc) vs sự kiện ngôn ngữ (có dùng thật) → review Bước 4"
+      "sir_maam_service_context": true,
+      "sir_maam_default_in_ordinary_polite_speech": false,
+      "_note": "D-42 (owner Bước 4): sir/ma'am có thật + tự nhiên khi nói với nhân viên phục vụ (nhà hàng, khách sạn, tổng đài); KHÔNG tự động chèn vào câu lịch sự thường ngày (bạn bè, đồng nghiệp)."
     },
     "naturalness_translation": {
       "literal_translation_risk_from_source_language": true
@@ -48,10 +50,12 @@
     "pass": [
       { "text": "Could you help me, please?", "note": "baseline lịch sự trung tính, không formal quá mức" },
       { "text": "Thanks for your help!", "note": "rút gọn 'Thanks' tự nhiên trong văn nói thân mật" },
-      { "text": "Dear Dr. Smith, ...", "note": "Title + Họ cho ngữ cảnh trang trọng" }
+      { "text": "Dear Dr. Smith, ...", "note": "Title + Họ cho ngữ cảnh trang trọng" },
+      { "text": "How can I help you, sir?", "context": "hotel_staff_to_guest", "note": "D-42: sir/ma'am tự nhiên trong ngữ cảnh dịch vụ" }
     ],
     "fail": [
-      { "text": "I would be most grateful if you would kindly assist me.", "note": "SAI baseline: formal quá mức cho tình huống thường ngày (không phải NATURAL_NEUTRAL_POLITE)" }
+      { "text": "I would be most grateful if you would kindly assist me.", "note": "SAI baseline: formal quá mức cho tình huống thường ngày (không phải NATURAL_NEUTRAL_POLITE)" },
+      { "text": "Hey sir, want to grab lunch?", "context": "friend_to_friend", "note": "D-42: SAI — sir không tự nhiên khi nói với bạn bè, đây là ngữ cảnh thường ngày không phải dịch vụ" }
     ]
   }
 }

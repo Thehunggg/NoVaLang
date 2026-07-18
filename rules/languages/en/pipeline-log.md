@@ -53,3 +53,16 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   1 mục (R-01 sir/ma'am dịch vụ — không phải mâu thuẫn thật, chỉ cần chốt cách
   dạy) · ~2 phút. Không cần native-review-en.md (owner tự review được tiếng
   Anh, theo decisions.md). Validator PASS. Chờ owner trả lời.
+- **Bước 4 trả lời · 2026-07-17 · owner** — R-01: **A** (sir/ma'am có thật
+  trong ngữ cảnh dịch vụ, không mặc định vào câu lịch sự thường ngày → D-42).
+  Áp dụng vào pragmatics.rules.json + coverage. **Tự phát hiện thêm 1 lỗi khi
+  rà trước freeze:** `sentence_final_particles` mang confidence medium từ Bước
+  0 nhưng KHÔNG có trong `claims-template.json` → chưa từng qua Bước 2 derive
+  thật. Sửa: hạ về none/not-applicable (tiếng Anh không có hệ trợ từ cuối câu
+  như ja). Validator PASS. Hàng đợi review = RỖNG.
+- **Bước 5 · 2026-07-17 · VALIDATED (đồng hồ Gate 5 bắt đầu)** — 22 VALIDATED
+  · 2 not-applicable (stroke_order, sentence_final_particles) · 0 DEFERRED · 0
+  DRAFT. `_meta.stage='validated'`, `validatedAt=2026-07-17`. Catalog
+  `en.ruleStatus=VALIDATED_PENDING_FREEZE`. **CHƯA freeze** — cần ≥48h + owner
+  xác nhận lần 2. lexical_level của lexical_stress/inflection_morphology/
+  spelling_variants KHÔNG freeze (dữ liệu chưa đầy đủ theo-từng-từ).

@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "en",
-    "stage": "4-review-waiting-owner",
+    "stage": "validated",
     "generatedAt": "2026-07-17",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
@@ -13,7 +13,9 @@
       "sentences": 16622,
       "source": "UD English-EWT train/dev/test (S-UD-CORPUS-EN)",
       "note": "Vượt mốc 10000. Corpus là văn Web thật (blog/forum/email/newsgroup) — có văn phong không trang trọng (chữ thường đầu câu, 'i' viết thường), KHÔNG đồng nghĩa rule sai; cả hai vi phạm dưới 20%."
-    }
+    },
+    "validatedAt": "2026-07-17",
+    "gate5_note": "Freeze chỉ được đề xuất sau khi VALIDATED ≥48h (đối chiếu validatedAt) + owner xác nhận lần 2. lexical_level của lexical_stress (WikiPron không có per-word stress), inflection_morphology (chỉ 50 động từ tần suất cao, chưa đầy đủ ~200), và spelling_variants (chưa có bảng đóng US/GB) KHÔNG freeze — thiếu dữ liệu đầy đủ theo-từng-từ. stroke_order + sentence_final_particles = not-applicable, không dạy."
   },
   "writing_systems": {
     "rule_level": {
@@ -30,7 +32,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Bảng Latin cơ bản 26 chữ (a–z), không dấu phụ trong từ gốc Anh."
+    "notes": "Bảng Latin cơ bản 26 chữ (a–z), không dấu phụ trong từ gốc Anh.",
+    "status": "VALIDATED"
   },
   "charset_exemplars": {
     "rule_level": {
@@ -44,7 +47,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Import CLDR ở Bước 1: exemplar + auxiliary (từ mượn: café, naïve) + punctuation + numbers. [B1: CLDR imported -> orthography.data.json] [B3: g2p-check charset (đã sửa lỗi tool thiếu trường index chữ hoa) phủ 99.89% WikiPron US; ngoài charset chỉ ký tự nước ngoài lẻ (ł, ı, Æ, ę...)]"
+    "notes": "Import CLDR ở Bước 1: exemplar + auxiliary (từ mượn: café, naïve) + punctuation + numbers. [B1: CLDR imported -> orthography.data.json] [B3: g2p-check charset (đã sửa lỗi tool thiếu trường index chữ hoa) phủ 99.89% WikiPron US; ngoài charset chỉ ký tự nước ngoài lẻ (ł, ı, Æ, ę...)]",
+    "status": "VALIDATED"
   },
   "casing": {
     "rule_level": {
@@ -58,7 +62,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "KHÁC tiếng Nhật: tiếng Anh CÓ hoa/thường. Rule: đầu câu, danh từ riêng, đại từ 'I', tiêu đề. Danh từ riêng nào là lexical → Bước 2. [B2: cross-check xong, xem derive/review-diff.json] [B3: corpus-check text-assert — chữ hoa đầu câu vi phạm 14.66% (văn Web không trang trọng), I viết hoa vi phạm 1.86% (chat/blog thường lười gõ); cả hai < 20% ngưỡng — rule giữ nguyên, không hạ confidence]"
+    "notes": "KHÁC tiếng Nhật: tiếng Anh CÓ hoa/thường. Rule: đầu câu, danh từ riêng, đại từ 'I', tiêu đề. Danh từ riêng nào là lexical → Bước 2. [B2: cross-check xong, xem derive/review-diff.json] [B3: corpus-check text-assert — chữ hoa đầu câu vi phạm 14.66% (văn Web không trang trọng), I viết hoa vi phạm 1.86% (chat/blog thường lười gõ); cả hai < 20% ngưỡng — rule giữ nguyên, không hạ confidence]",
+    "status": "VALIDATED"
   },
   "writing_direction": {
     "rule_level": {
@@ -72,7 +77,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "LTR ngang."
+    "notes": "LTR ngang.",
+    "status": "VALIDATED"
   },
   "stroke_order": {
     "rule_level": {
@@ -86,7 +92,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "NOT-APPLICABLE: chữ Latin, app không dạy thứ tự nét."
+    "notes": "NOT-APPLICABLE: chữ Latin, app không dạy thứ tự nét.",
+    "status": "not-applicable"
   },
   "grapheme_to_phoneme": {
     "rule_level": {
@@ -100,7 +107,8 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "TIẾNG ANH CHÍNH TẢ SÂU (deep orthography — chữ viết KHÔNG cho biết chắc cách đọc: though/through/tough). Rule_level chỉ medium (nhiều ngoại lệ); lexical (đọc theo từng từ) high nhờ WikiPron. Bước 3 đo tỷ lệ khớp. [B1: import WikiPron eng_latn_us_broad_filtered (D-41 en-US) -> 99645 cặp -> grapheme-to-phoneme.data.json]"
+    "notes": "TIẾNG ANH CHÍNH TẢ SÂU (deep orthography — chữ viết KHÔNG cho biết chắc cách đọc: though/through/tough). Rule_level chỉ medium (nhiều ngoại lệ); lexical (đọc theo từng từ) high nhờ WikiPron. Bước 3 đo tỷ lệ khớp. [B1: import WikiPron eng_latn_us_broad_filtered (D-41 en-US) -> 99645 cặp -> grapheme-to-phoneme.data.json]",
+    "status": "VALIDATED"
   },
   "phoneme_inventory": {
     "rule_level": {
@@ -117,7 +125,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "~44 âm vị (tùy giọng). Số chính xác phụ thuộc quyết định giọng (Bước 0 Q2). [B1: WikiPron US 99645 mục sẵn sàng đo/derive Bước 2-3] [B2: cross-check xong, xem derive/review-diff.json] [B3: đo rhotic trên WikiPron US — 6183/7089 từ tận cùng nguyên âm+r có âm ɹ/ɚ (87.2%, dưới ngưỡng nghi ngờ 20% vi phạm); vi phạm còn lại chủ yếu là địa danh/tên riêng hiếm (Afar, Agenor) — không đủ để bác rule chung en-US rhotic]"
+    "notes": "~44 âm vị (tùy giọng). Số chính xác phụ thuộc quyết định giọng (Bước 0 Q2). [B1: WikiPron US 99645 mục sẵn sàng đo/derive Bước 2-3] [B2: cross-check xong, xem derive/review-diff.json] [B3: đo rhotic trên WikiPron US — 6183/7089 từ tận cùng nguyên âm+r có âm ɹ/ɚ (87.2%, dưới ngưỡng nghi ngờ 20% vi phạm); vi phạm còn lại chủ yếu là địa danh/tên riêng hiếm (Afar, Agenor) — không đủ để bác rule chung en-US rhotic]",
+    "status": "VALIDATED"
   },
   "lexical_stress": {
     "rule_level": {
@@ -131,7 +140,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Trọng âm từ (word stress) phân biệt nghĩa: PREsent (n) vs preSENT (v). WikiPron đánh dấu ˈ. Lexical theo từng từ. [B1: WikiPron US có đánh dấu ˈ trọng âm] [B2: cross-check xong, xem derive/review-diff.json] [B3 SỬA LỖI: Bước 0/1 giả định sai rằng WikiPron đánh dấu ˈ trọng âm. Kiểm trực tiếp cả bản us_broad_filtered (99645 mục) lẫn us_narrow (5443 mục): 0 dòng có ˈ. WikiPron KHÔNG cấp per-word stress data cho en. lexical_level hạ về none — app KHÔNG dạy trọng âm theo từng từ cụ thể (không nguồn, không bịa); rule_level (khái niệm: trọng âm phân biệt nghĩa, danh từ ghép nhấn thành tố đầu) vẫn giữ medium từ Wikipedia.]"
+    "notes": "Trọng âm từ (word stress) phân biệt nghĩa: PREsent (n) vs preSENT (v). WikiPron đánh dấu ˈ. Lexical theo từng từ. [B1: WikiPron US có đánh dấu ˈ trọng âm] [B2: cross-check xong, xem derive/review-diff.json] [B3 SỬA LỖI: Bước 0/1 giả định sai rằng WikiPron đánh dấu ˈ trọng âm. Kiểm trực tiếp cả bản us_broad_filtered (99645 mục) lẫn us_narrow (5443 mục): 0 dòng có ˈ. WikiPron KHÔNG cấp per-word stress data cho en. lexical_level hạ về none — app KHÔNG dạy trọng âm theo từng từ cụ thể (không nguồn, không bịa); rule_level (khái niệm: trọng âm phân biệt nghĩa, danh từ ghép nhấn thành tố đầu) vẫn giữ medium từ Wikipedia.]",
+    "status": "VALIDATED"
   },
   "vowel_reduction": {
     "rule_level": {
@@ -145,7 +155,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Nguyên âm không trọng âm → schwa /ə/. Quan trọng cho phát âm tự nhiên, không cho chấm chính tả. [B2: cross-check xong, xem derive/review-diff.json]"
+    "notes": "Nguyên âm không trọng âm → schwa /ə/. Quan trọng cho phát âm tự nhiên, không cho chấm chính tả. [B2: cross-check xong, xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "word_class": {
     "rule_level": {
@@ -159,7 +170,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Import UD English-EWT (Bước 1): 17 nhãn UPOS -> word-class.data.json."
+    "notes": "Import UD English-EWT (Bước 1): 17 nhãn UPOS -> word-class.data.json.",
+    "status": "VALIDATED"
   },
   "inflection_morphology": {
     "rule_level": {
@@ -173,7 +185,8 @@
       "confidence": "medium"
     },
     "machine_readable": false,
-    "notes": "Số nhiều -s, quá khứ -ed, ngôi 3 số ít -s, so sánh -er/-est. Bất quy tắc (go/went, child/children) là lexical → Bước 2 + wordlist. [B1.5: import kemitchell/english-irregular-verbs (50 động từ tần suất cao) -> irregular-verbs.data.json; đơn tác giả nên medium, không phải high] [B2: cross-check xong, xem derive/review-diff.json] [B3: fixtures bổ sung câu thật từ corpus UD EWT (comparative more+adj)]"
+    "notes": "Số nhiều -s, quá khứ -ed, ngôi 3 số ít -s, so sánh -er/-est. Bất quy tắc (go/went, child/children) là lexical → Bước 2 + wordlist. [B1.5: import kemitchell/english-irregular-verbs (50 động từ tần suất cao) -> irregular-verbs.data.json; đơn tác giả nên medium, không phải high] [B2: cross-check xong, xem derive/review-diff.json] [B3: fixtures bổ sung câu thật từ corpus UD EWT (comparative more+adj)]",
+    "status": "VALIDATED"
   },
   "articles": {
     "rule_level": {
@@ -187,7 +200,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "a/an/the. a→an theo ÂM đầu, không theo chữ ('an hour', 'a university'). Kiểm máy được. [B2: cross-check xong, xem derive/review-diff.json]"
+    "notes": "a/an/the. a→an theo ÂM đầu, không theo chữ ('an hour', 'a university'). Kiểm máy được. [B2: cross-check xong, xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "word_order": {
     "rule_level": {
@@ -204,7 +218,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "SVO; tính từ đứng trước danh từ; giới từ đứng trước (preposition). [B2: cross-check xong, xem derive/review-diff.json]"
+    "notes": "SVO; tính từ đứng trước danh từ; giới từ đứng trước (preposition). [B2: cross-check xong, xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "contractions": {
     "rule_level": {
@@ -218,7 +233,8 @@
       "confidence": "medium"
     },
     "machine_readable": true,
-    "notes": "don't/I'm/it's/'ll/'ve. Ảnh hưởng chấm đáp án (chấp nhận do not = don't?). Có bảng đóng. [B1.5: import andrewbury/contractions (145 mục) -> contractions.data.json; đơn tác giả nên medium] [B2: cross-check xong, xem derive/review-diff.json] [B3: fixtures bổ sung câu thật từ corpus UD EWT]"
+    "notes": "don't/I'm/it's/'ll/'ve. Ảnh hưởng chấm đáp án (chấp nhận do not = don't?). Có bảng đóng. [B1.5: import andrewbury/contractions (145 mục) -> contractions.data.json; đơn tác giả nên medium] [B2: cross-check xong, xem derive/review-diff.json] [B3: fixtures bổ sung câu thật từ corpus UD EWT]",
+    "status": "VALIDATED"
   },
   "punctuation_layout": {
     "rule_level": {
@@ -235,7 +251,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": ". , ? ! ; : ' \" ( ) — . Có khoảng trắng giữa từ (khác ja). Normalize dấu câu khi chấm. [B2: cross-check xong, xem derive/review-diff.json]"
+    "notes": ". , ? ! ; : ' \" ( ) — . Có khoảng trắng giữa từ (khác ja). Normalize dấu câu khi chấm. [B2: cross-check xong, xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "spelling_variants": {
     "rule_level": {
@@ -249,7 +266,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "en-US vs en-GB (color/colour, -ize/-ise, traveled/travelled). S-EN-STYLE đã chốt baseline en-US. Danh sách từ khác nhau là lexical. [B2: cross-check xong, xem derive/review-diff.json]"
+    "notes": "en-US vs en-GB (color/colour, -ize/-ise, traveled/travelled). S-EN-STYLE đã chốt baseline en-US. Danh sách từ khác nhau là lexical. [B2: cross-check xong, xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "register_taxonomy": {
     "rule_level": {
@@ -267,7 +285,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "en: chủ yếu CHỌN TỪ (word choice), hiếm khi cần chế độ đánh dấu HONORIFIC/CEREMONIAL/SLANG. Map ADR-016 → có S-EN-STYLE (DRAFT). [B2: cross-check xong, xem derive/review-diff.json]"
+    "notes": "en: chủ yếu CHỌN TỪ (word choice), hiếm khi cần chế độ đánh dấu HONORIFIC/CEREMONIAL/SLANG. Map ADR-016 → có S-EN-STYLE (DRAFT). [B2: cross-check xong, xem derive/review-diff.json]",
+    "status": "VALIDATED"
   },
   "forms_of_address": {
     "rule_level": {
@@ -281,13 +300,14 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Mr/Ms/Mrs/Dr/Prof/sir/ma'am; văn hóa gọi tên. Cần cho bài hội thoại. [B2: cross-check xong, xem derive/review-diff.json] [B2: LỆCH forms_of_address.maam_sir_service_context (passA quy tắc sản phẩm \"đừng máy móc\" vs passD sự kiện \"có dùng thật\") → review Bước 4]"
+    "notes": "Mr/Ms/Mrs/Dr/Prof/sir/ma'am; văn hóa gọi tên. Cần cho bài hội thoại. [B2: cross-check xong, xem derive/review-diff.json] [B2: LỆCH forms_of_address.maam_sir_service_context → ĐÃ CHỐT D-42: sir/ma'am có thật trong ngữ cảnh dịch vụ, không mặc định vào câu lịch sự thường ngày]",
+    "status": "VALIDATED"
   },
   "sentence_final_particles": {
     "rule_level": {
-      "source": "S-WIKIPEDIA-EN",
-      "derived_by": "human",
-      "confidence": "medium"
+      "source": null,
+      "derived_by": null,
+      "confidence": "none"
     },
     "lexical_level": {
       "source": null,
@@ -295,7 +315,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "NOT-APPLICABLE dạng ja (ね/よ). Chức năng gần nhất = tag question (…, isn't it?) — bẫy dịch ja↔en thuộc rules/pairs/, không thuộc đây."
+    "notes": "NOT-APPLICABLE: tiếng Anh không có hệ trợ từ cuối câu như ja (ね/よ). [SỬA LỖI Bước 4: rule_level=medium ghi ở Bước 0 chưa từng được kiểm chứng — phenomenon này không có trong claims-template.json nên không qua Bước 2 derive; hạ về none/not-applicable cho trung thực, không giữ confidence chưa kiểm]. Chức năng gần nhất = tag question (…, isn't it?) — bẫy dịch ja↔en thuộc rules/pairs/, không thuộc đây.",
+    "status": "not-applicable"
   },
   "reading_aid_policy": {
     "rule_level": {
@@ -309,7 +330,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "D-40 (owner mặc định, Auto Mode): IPA, ẩn mặc định + toggle (giống D-11 bản ii). WikiPron cấp dữ liệu IPA khớp máy được."
+    "notes": "D-40 (owner mặc định, Auto Mode): IPA, ẩn mặc định + toggle (giống D-11 bản ii). WikiPron cấp dữ liệu IPA khớp máy được.",
+    "status": "VALIDATED"
   },
   "accent_variety": {
     "rule_level": {
@@ -323,7 +345,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "D-41 (owner mặc định, Auto Mode): en-US (General American), nhất quán baseline chính tả en-US."
+    "notes": "D-41 (owner mặc định, Auto Mode): en-US (General American), nhất quán baseline chính tả en-US.",
+    "status": "VALIDATED"
   },
   "answer_acceptance_en": {
     "rule_level": {
@@ -340,7 +363,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Chấm không phân biệt hoa/thường (trừ bài dạy hoa/thường); chấp nhận contraction; a/an. Dựa _base + đặc thù en."
+    "notes": "Chấm không phân biệt hoa/thường (trừ bài dạy hoa/thường); chấp nhận contraction; a/an. Dựa _base + đặc thù en.",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": {
@@ -357,7 +381,9 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Dịch/diễn đạt tự nhiên. Owner tự review được (owner biết tiếng Anh — decisions.md). [B2: cross-check xong, xem derive/review-diff.json]"
+    "notes": "Dịch/diễn đạt tự nhiên. Owner tự review được (owner biết tiếng Anh — decisions.md). [B2: cross-check xong, xem derive/review-diff.json]",
+    "status": "VALIDATED",
+    "native_review": "PENDING (rule_level VALIDATED; owner tự review được tiếng Anh theo decisions.md — không cần native-review-en.md riêng, nhưng nội dung PASS thật sự vẫn qua review nội dung khi viết bài, theo ADR-016)"
   },
   "tts_audio_policy": {
     "rule_level": {
@@ -371,6 +397,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Ưu tiên audio đã duyệt → TTS đúng locale (theo Q2) → báo lỗi. Không autoplay, replay không giới hạn, 1.0/0.75x (D-20/21)."
+    "notes": "Ưu tiên audio đã duyệt → TTS đúng locale (theo Q2) → báo lỗi. Không autoplay, replay không giới hạn, 1.0/0.75x (D-20/21).",
+    "status": "VALIDATED"
   }
 }
