@@ -367,5 +367,20 @@
     "machine_readable": true,
     "notes": "Từ _base + Putonghua (Quan thoại chuẩn) chuẩn phát âm.",
     "status": "VALIDATED"
+  },
+  "punctuation_layout": {
+    "rule_level": {
+      "source": null,
+      "derived_by": null,
+      "confidence": "none"
+    },
+    "lexical_level": {
+      "source": null,
+      "derived_by": null,
+      "confidence": "none"
+    },
+    "machine_readable": false,
+    "notes": "GHI NỢ (2026-07-18, Golden Lesson audit + INV-9 THẬT phát hiện, owner quyết định KHÔNG tự vá): phenomenon này CHƯA TỪNG được đưa vào Bước 0 kiểm kê cho ngôn ngữ này (đã có ở ja/en) — không phải bị mất, mà chưa bao giờ tồn tại. Được exercise-phenomena.map.json yêu cầu cho Q10/Q13 nhưng KHÔNG có nguồn/dữ liệu nào. KHÔNG tự vá bằng suy đoán ở đây — cần qua đúng quy trình Bước 1 (import nguồn chuẩn dấu câu cho ngôn ngữ này) → Bước 2 (derive) → Bước 3 (corpus check) ở một phiên build riêng. Ghi rõ debt này thay vì để trống — dù ngôn ngữ đã FROZEN ở rule_level nói chung, riêng phenomenon này confidence=none nghĩa là generator KHÔNG được sinh nội dung Q10/Q13 dựa vào nó cho tới khi có dữ liệu thật.",
+    "status": "DRAFT"
   }
 }
