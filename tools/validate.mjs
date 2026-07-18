@@ -155,19 +155,60 @@ for (const f of managedMd) {
 }
 if (!hadErr('INV-8')) OK('INV-8 sources: mọi tham chiếu nguồn hợp lệ');
 
-// INV-9: exercise-phenomena.map.json hợp lệ
+// INV-9: exercise-phenomena.map.json hợp lệ, VÀ (C6) nối thật sang coverage.json
+// từng ngôn ngữ playable — generator không được sinh item dùng phenomenon mà
+// coverage.json ngôn ngữ đó ghi rule_level.confidence:'none'.
 const mapPath = join(RULES, 'exercise-phenomena.map.json');
 if (!existsSync(mapPath)) E(9, 'thiếu rules/exercise-phenomena.map.json');
 else {
   const map = readJson(mapPath);
   const vocab = new Set((map._meta && map._meta.phenomenaVocabulary) || []);
+  const alias = (map._meta && map._meta.coverageAlias) || {};
   for (const ex of map.exercises || []) {
     if (!ex.questionId || !ex.type) E(9, 'exercise thiếu questionId/type');
     for (const p of ex.requiredPhenomena || []) {
       if (vocab.size && !vocab.has(p)) W(9, `${ex.questionId} dùng phenomenon '${p}' không có trong phenomenaVocabulary`);
     }
   }
-  if (!hadErr('INV-9')) OK(`INV-9 map: ${(map.exercises || []).length} bài, phenomena hợp lệ`);
+  // Cấu trúc coverageAlias phải phủ đủ phenomenaVocabulary (mỗi entry là
+  // productLevel:true hoặc coverage:[...]) — thiếu thì invariant chỉ kiểm hình
+  // thức, không kiểm được nội dung thật.
+  for (const p of vocab) {
+    const a = alias[p];
+    if (!a) { E(9, `coverageAlias thiếu entry cho phenomenon '${p}'`); continue; }
+    if (a.productLevel !== true && !(Array.isArray(a.coverage) && a.coverage.length > 0)) {
+      E(9, `coverageAlias['${p}'] phải có productLevel:true hoặc coverage:[...] không rỗng`);
+    }
+  }
+  // Kiểm thật theo từng ngôn ngữ playable: coverage id tồn tại + confidence != none.
+  // Coverage id không tồn tại ở ngôn ngữ này (vd hiện tượng đặc thù ja mà en
+  // chưa có khái niệm tương đương) → bỏ qua, không phải lỗi — loại bài đó đơn
+  // giản là chưa áp dụng cho ngôn ngữ này. Coverage id CÓ tồn tại nhưng
+  // confidence:'none' → lỗi thật: generator sẽ sinh nội dung không có nguồn.
+  const rank9 = { none: 0, low: 1, medium: 2, high: 3 };
+  for (const l of catalog.languages || []) {
+    if (l.status !== 'playable') continue;
+    const covPath = join(RULES, 'languages', l.code, 'coverage.json');
+    if (!existsSync(covPath)) continue;
+    const cov = readJson(covPath);
+    for (const ex of map.exercises || []) {
+      for (const p of ex.requiredPhenomena || []) {
+        const a = alias[p];
+        if (!a || a.productLevel === true) continue;
+        for (const covIdRaw of a.coverage || []) {
+          const covId = covIdRaw.replace('{lang}', l.code);
+          const ph = cov[covId];
+          if (!ph) continue; // hiện tượng chưa áp dụng cho ngôn ngữ này — bỏ qua
+          if (ph.status === 'not-applicable') continue; // hiện tượng KHÔNG tồn tại ở ngôn ngữ này (vd sentence_final_particles/en) — không phải lỗ hổng, bỏ qua
+          const conf = ph.rule_level && ph.rule_level.confidence;
+          if (conf === 'none') {
+            E(9, `${l.code} ${ex.questionId} (${p} → coverage '${covId}') rule_level confidence:none (status=${ph.status || '?'}) — generator không được sinh item này`);
+          }
+        }
+      }
+    }
+  }
+  if (!hadErr('INV-9')) OK(`INV-9 map: ${(map.exercises || []).length} bài, phenomena hợp lệ, đối chiếu coverage.json ${(catalog.languages || []).filter((l) => l.status === 'playable').map((l) => l.code).join('/')} sạch`);
 }
 
 // Extra: catalog

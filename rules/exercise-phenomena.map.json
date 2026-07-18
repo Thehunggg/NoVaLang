@@ -9,7 +9,26 @@
       "word_order", "particles", "grammar_usage", "listening", "pronunciation",
       "register", "pragmatics", "naturalness", "typing_input", "punctuation_layout",
       "audio_playback", "reading_aid"
-    ]
+    ],
+    "coverageAlias": {
+      "_comment": "C6 (2026-07-18, owner-approved kỹ thuật): tên phenomenon ở map này là tên SẢN PHẨM (product-level, dùng chung cho mọi ngôn ngữ) — khác tên hiện tượng NGÔN NGỮ HỌC trong rules/languages/<lang>/coverage.json (per-language). Bảng này nối hai bên để validate.mjs INV-9 kiểm được thật: mỗi phenomenon sản phẩm trỏ tới 0+ id coverage.json. 'productLevel: true' = cơ chế app/UI thuần túy (không phải hiện tượng ngôn ngữ học, không cần confidence gate). 'coverage: [...]' = phải tồn tại trong coverage.json của ngôn ngữ VÀ rule_level.confidence khác 'none' thì mới cho phép generator sinh item dùng phenomenon này.",
+      "vocabulary_meaning": { "productLevel": true, "note": "Biết nghĩa từ — cơ chế bài tập, không phải hiện tượng ngôn ngữ học riêng." },
+      "native_translation": { "coverage": ["naturalness_translation"] },
+      "target_orthography": { "coverage": ["kana_orthography", "kanji_joyo"] },
+      "reading_system": { "coverage": ["reading_system"] },
+      "word_order": { "coverage": ["word_order"] },
+      "particles": { "coverage": ["particles"] },
+      "grammar_usage": { "coverage": ["conjugation", "counters"] },
+      "listening": { "coverage": ["tts_audio_policy", "phoneme_inventory"] },
+      "pronunciation": { "coverage": ["pronunciation_contextual", "long_vowel_gemination_youon"] },
+      "register": { "coverage": ["register_taxonomy"] },
+      "pragmatics": { "coverage": ["honorifics_keigo", "forms_of_address", "sentence_final_particles"] },
+      "naturalness": { "coverage": ["naturalness_translation"] },
+      "typing_input": { "coverage": ["answer_acceptance_{lang}"], "note": "'{lang}' được validate.mjs thay bằng mã ngôn ngữ đang kiểm (vd ja → answer_acceptance_ja, en → answer_acceptance_en) vì mỗi ngôn ngữ có phenomenon chấm-đáp-án riêng theo tên này." },
+      "punctuation_layout": { "coverage": ["punctuation_layout"] },
+      "audio_playback": { "coverage": ["tts_audio_policy"] },
+      "reading_aid": { "coverage": ["reading_aid_policy"] }
+    }
   },
   "exercises": [
     { "questionId": "Q1", "type": "meaning_multiple_choice", "plan": "free", "requiredPhenomena": ["vocabulary_meaning", "native_translation"] },
