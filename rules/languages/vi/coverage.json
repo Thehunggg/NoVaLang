@@ -98,9 +98,9 @@
   },
   "dialect_variety": {
     "rule_level": {
-      "source": null,
-      "derived_by": null,
-      "confidence": "none"
+      "source": "S-OWNER-REVIEW",
+      "derived_by": "human",
+      "confidence": "high"
     },
     "lexical_level": {
       "source": null,
@@ -108,7 +108,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "⚠ QUYẾT ĐỊNH SẢN PHẨM (Bước 0 Q1): giọng chuẩn phát âm/TTS — Hà Nội (Bắc) hay Sài Gòn (Nam) hay Huế (Trung)? 3 giọng khác nhau đáng kể: số thanh điệu phát âm thực tế (Nam chỉ phân biệt rõ ~5), tr/ch, s/x, r/d/gi, v/d. WikiPron có cả 3. Chờ owner."
+    "notes": "⚠ QUYẾT ĐỊNH SẢN PHẨM (Bước 0 Q1): giọng chuẩn phát âm/TTS — Hà Nội (Bắc) hay Sài Gòn (Nam) hay Huế (Trung)? 3 giọng khác nhau đáng kể: số thanh điệu phát âm thực tế (Nam chỉ phân biệt rõ ~5), tr/ch, s/x, r/d/gi, v/d. WikiPron có cả 3. Chờ owner. [D-43: owner chốt giọng Hà Nội (Bắc). Không cần derive — đây là quyết định sản phẩm, không phải sự kiện ngôn ngữ cần 2 nguồn.]"
   },
   "grapheme_to_phoneme": {
     "rule_level": {
