@@ -1,8 +1,16 @@
 {
   "id": "vi/pragmatics.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "pronoun_system",
-  "enforces": ["register_taxonomy, forms_of_address, sentence_final_particles"],
-  "sources": ["S-WIKIPEDIA-VI", "S-CONTENT-NATURALNESS", "S-OWNER-REVIEW"],
+  "enforces": [
+    "register_taxonomy, forms_of_address, sentence_final_particles"
+  ],
+  "sources": [
+    "S-WIKIPEDIA-VI",
+    "S-CONTENT-NATURALNESS",
+    "S-OWNER-REVIEW"
+  ],
   "derived_by": "human",
   "config": {
     "pronoun_system": {
@@ -10,12 +18,30 @@
       "choice_depends_on_relative_age_status": true,
       "no_fixed_i_you_pair": true,
       "examples": [
-        { "pronoun": "anh", "used_for": "nam giới lớn tuổi hơn người nói một chút / chồng-người-yêu" },
-        { "pronoun": "chị", "used_for": "nữ giới lớn tuổi hơn người nói một chút" },
-        { "pronoun": "em", "used_for": "người nhỏ tuổi hơn (cả nam/nữ)" },
-        { "pronoun": "ông", "used_for": "nam giới cao tuổi/kính trọng" },
-        { "pronoun": "bà", "used_for": "nữ giới cao tuổi/kính trọng" },
-        { "pronoun": "tôi", "used_for": "gần trung tính nhất, khoảng cách/trang trọng, không xác định quan hệ tuổi/vai vế — KHÔNG có đại từ nào trung tính tuyệt đối" }
+        {
+          "pronoun": "anh",
+          "used_for": "nam giới lớn tuổi hơn người nói một chút / chồng-người-yêu"
+        },
+        {
+          "pronoun": "chị",
+          "used_for": "nữ giới lớn tuổi hơn người nói một chút"
+        },
+        {
+          "pronoun": "em",
+          "used_for": "người nhỏ tuổi hơn (cả nam/nữ)"
+        },
+        {
+          "pronoun": "ông",
+          "used_for": "nam giới cao tuổi/kính trọng"
+        },
+        {
+          "pronoun": "bà",
+          "used_for": "nữ giới cao tuổi/kính trọng"
+        },
+        {
+          "pronoun": "tôi",
+          "used_for": "gần trung tính nhất, khoảng cách/trang trọng, không xác định quan hệ tuổi/vai vế — KHÔNG có đại từ nào trung tính tuyệt đối"
+        }
       ],
       "no_pronoun_is_absolutely_neutral": true,
       "_note_r03": "D-48 (owner Bước 4): 'tôi' gần trung tính nhất nhưng không tuyệt đối trung tính; xác nhận trực tiếp vì Wikipedia tự mâu thuẫn."
@@ -23,10 +49,22 @@
     "sentence_final_particles": {
       "exist_in_vietnamese": true,
       "examples": [
-        { "particle": "ạ", "function": "lễ phép" },
-        { "particle": "nhé", "function": "gợi ý/đề nghị nhẹ nhàng" },
-        { "particle": "nhỉ", "function": "tìm đồng thuận" },
-        { "particle": "à", "function": "hỏi lại/xác nhận" }
+        {
+          "particle": "ạ",
+          "function": "lễ phép"
+        },
+        {
+          "particle": "nhé",
+          "function": "gợi ý/đề nghị nhẹ nhàng"
+        },
+        {
+          "particle": "nhỉ",
+          "function": "tìm đồng thuận"
+        },
+        {
+          "particle": "à",
+          "function": "hỏi lại/xác nhận"
+        }
       ]
     },
     "politeness_particle_da": {
@@ -46,13 +84,30 @@
   },
   "fixtures": {
     "pass": [
-      { "text": "Dạ, em chào anh ạ.", "note": "dạ đầu câu + ạ cuối câu: lễ phép với người lớn hơn" },
-      { "text": "Anh ơi, đợi em với!", "note": "xưng hô bằng từ thân tộc theo tuổi tương đối" },
-      { "text": "Chị Lan có khỏe không?", "note": "danh xưng + tên cho ngữ cảnh lịch sự" },
-      { "text": "Tôi tên là Lan.", "context": "tự giới thiệu với người lạ/trang trọng", "note": "D-48: 'tôi' gần trung tính nhất, phù hợp khi chưa xác định quan hệ" }
+      {
+        "text": "Dạ, em chào anh ạ.",
+        "note": "dạ đầu câu + ạ cuối câu: lễ phép với người lớn hơn"
+      },
+      {
+        "text": "Anh ơi, đợi em với!",
+        "note": "xưng hô bằng từ thân tộc theo tuổi tương đối"
+      },
+      {
+        "text": "Chị Lan có khỏe không?",
+        "note": "danh xưng + tên cho ngữ cảnh lịch sự"
+      },
+      {
+        "text": "Tôi tên là Lan.",
+        "context": "tự giới thiệu với người lạ/trang trọng",
+        "note": "D-48: 'tôi' gần trung tính nhất, phù hợp khi chưa xác định quan hệ"
+      }
     ],
     "fail": [
-      { "text": "Tôi chào ông ạ.", "context": "nói với bạn cùng tuổi", "note": "SAI ngữ cảnh: 'ông' dùng cho người cao tuổi/kính trọng, không hợp với bạn ngang tuổi" }
+      {
+        "text": "Tôi chào ông ạ.",
+        "context": "nói với bạn cùng tuổi",
+        "note": "SAI ngữ cảnh: 'ông' dùng cho người cao tuổi/kính trọng, không hợp với bạn ngang tuổi"
+      }
     ]
   }
 }

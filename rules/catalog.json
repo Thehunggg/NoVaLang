@@ -114,7 +114,7 @@
         "t3"
       ],
       "status": "preview",
-      "ruleStatus": "VALIDATED_PENDING_FREEZE"
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN"
     },
     {
       "code": "es",

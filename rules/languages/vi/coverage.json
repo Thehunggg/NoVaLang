@@ -1,7 +1,7 @@
 {
   "_meta": {
     "language": "vi",
-    "stage": "validated",
+    "stage": "frozen-rule-level",
     "generatedAt": "2026-07-18",
     "legend": {
       "confidence": "high=đã xác nhận hoặc dataset chuẩn | medium=cần cross-check 2 nguồn (Bước 2) | low | none=chưa có nguồn tin cậy",
@@ -15,7 +15,8 @@
       "note": "UD Vietnamese-VTB riêng chỉ 1123 câu (dưới 2000, YẾU) — đã bổ sung mẫu báo chí MIT để đạt 3077, vượt mốc 2000. Ghi rõ: phần bổ sung là MẪU (sample) 1000 dòng của một corpus lớn hơn nhiều (111 triệu câu), không phải toàn bộ."
     },
     "validatedAt": "2026-07-18",
-    "gate5_note": "Freeze chỉ được đề xuất sau khi VALIDATED ≥48h (đối chiếu validatedAt) + owner xác nhận lần 2. lexical_level của classifiers (loại từ nào đi với danh từ nào — chưa có bảng đóng đầy đủ), forms_of_address/pronoun_system lexical (quy tắc chọn từ theo ngữ cảnh — S-WIKIPEDIA-VI confidence low) KHÔNG freeze — thiếu dữ liệu đầy đủ theo-từng-từ. stroke_order = not-applicable."
+    "gate5_note": "D-49 (2026-07-18): Gate 5 (chờ 48h) đã BỎ cho pipeline build rule ngôn ngữ — xem rules/decisions.md D-49 / docs/ai/ARCHITECTURE_DECISIONS.md ADR-017. 23 hiện tượng FROZEN ở rule_level ngay trong phiên VALIDATED. lexical_level của classifiers (loại từ theo từng danh từ — none), forms_of_address/pronoun_system (quy tắc chọn đại từ theo ngữ cảnh cụ thể — low) KHÔNG freeze — giữ nguyên như đã ghi. stroke_order = not-applicable, không đổi.",
+    "frozenAt": "2026-07-18"
   },
   "writing_systems": {
     "rule_level": {
@@ -29,8 +30,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Latin mở rộng: 29 chữ cái + dấu phụ nguyên âm (ă â ê ô ơ ư) + 5 dấu thanh chồng lên nguyên âm (huyền sắc hỏi ngã nặng, thanh ngang không dấu).",
-    "status": "VALIDATED"
+    "notes": "Latin mở rộng: 29 chữ cái + dấu phụ nguyên âm (ă â ê ô ơ ư) + 5 dấu thanh chồng lên nguyên âm (huyền sắc hỏi ngã nặng, thanh ngang không dấu). [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "charset_exemplars": {
     "rule_level": {
@@ -44,8 +45,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Import CLDR Bước 1. [B1: CLDR imported -> orthography.data.json; đủ nguyên âm+dấu thanh trong exemplarCharacters] [B3: g2p-check (đã sửa lỗi tool thiếu khoảng trắng — cụm nhiều âm tiết) phủ 99.67% WikiPron Hà Nội; ngoài charset chỉ nguyên âm có dấu VIẾT HOA hiếm gặp (Á/Ú/Ấ...)]",
-    "status": "VALIDATED"
+    "notes": "Import CLDR Bước 1. [B1: CLDR imported -> orthography.data.json; đủ nguyên âm+dấu thanh trong exemplarCharacters] [B3: g2p-check (đã sửa lỗi tool thiếu khoảng trắng — cụm nhiều âm tiết) phủ 99.67% WikiPron Hà Nội; ngoài charset chỉ nguyên âm có dấu VIẾT HOA hiếm gặp (Á/Ú/Ấ...)] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "casing": {
     "rule_level": {
@@ -59,8 +60,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Có hoa/thường như Latin khác: đầu câu, danh từ riêng. Khác Anh: đại từ nhân xưng KHÔNG viết hoa cố định (khác 'I'). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B2: 3/3 claim casing (viết hoa đầu câu, danh từ riêng, đại từ không cố định hoa) KHÔNG tìm được trích dẫn Wikipedia rõ ràng sau 2 lượt tìm → ĐÃ CHỐT D-46 (owner xác nhận trực tiếp: đầu câu + danh từ riêng viết hoa).]",
-    "status": "VALIDATED"
+    "notes": "Có hoa/thường như Latin khác: đầu câu, danh từ riêng. Khác Anh: đại từ nhân xưng KHÔNG viết hoa cố định (khác 'I'). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B2: 3/3 claim casing (viết hoa đầu câu, danh từ riêng, đại từ không cố định hoa) KHÔNG tìm được trích dẫn Wikipedia rõ ràng sau 2 lượt tìm → ĐÃ CHỐT D-46 (owner xác nhận trực tiếp: đầu câu + danh từ riêng viết hoa).] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "writing_direction": {
     "rule_level": {
@@ -74,8 +75,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "LTR ngang.",
-    "status": "VALIDATED"
+    "notes": "LTR ngang. [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "stroke_order": {
     "rule_level": {
@@ -107,8 +108,8 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 6 thanh điệu (giọng Hà Nội) phân biệt nghĩa hoàn toàn — ma/má/mà/mả/mã/mạ là 6 từ khác nhau. Dấu thanh ghi trực tiếp trên chữ (không như ja cần romanize riêng). [B1: import WikiPron vie_latn_hanoi_narrow_filtered (D-43) -> 24796 mục, có ký hiệu thanh Chao tone letters (˧˧/˨˩...) -> grapheme-to-phoneme.data.json] [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B3: đo trên WikiPron Hà Nội — thanh huyền (à...) → ký hiệu IPA ˨ khớp 0/6363 vi phạm; thanh sắc (á...) → ˧˦ khớp 0/9854 vi phạm (sau khi tự sửa 1 lỗi: lần đầu dùng nhầm chữ số \"4/5\" thay vì ký tự Unicode Chao tone letter ˦, gây báo sai 100% vi phạm)]",
-    "status": "VALIDATED"
+    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: 6 thanh điệu (giọng Hà Nội) phân biệt nghĩa hoàn toàn — ma/má/mà/mả/mã/mạ là 6 từ khác nhau. Dấu thanh ghi trực tiếp trên chữ (không như ja cần romanize riêng). [B1: import WikiPron vie_latn_hanoi_narrow_filtered (D-43) -> 24796 mục, có ký hiệu thanh Chao tone letters (˧˧/˨˩...) -> grapheme-to-phoneme.data.json] [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B3: đo trên WikiPron Hà Nội — thanh huyền (à...) → ký hiệu IPA ˨ khớp 0/6363 vi phạm; thanh sắc (á...) → ˧˦ khớp 0/9854 vi phạm (sau khi tự sửa 1 lỗi: lần đầu dùng nhầm chữ số \"4/5\" thay vì ký tự Unicode Chao tone letter ˦, gây báo sai 100% vi phạm)] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "dialect_variety": {
     "rule_level": {
@@ -122,8 +123,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "⚠ QUYẾT ĐỊNH SẢN PHẨM (Bước 0 Q1): giọng chuẩn phát âm/TTS — Hà Nội (Bắc) hay Sài Gòn (Nam) hay Huế (Trung)? 3 giọng khác nhau đáng kể: số thanh điệu phát âm thực tế (Nam chỉ phân biệt rõ ~5), tr/ch, s/x, r/d/gi, v/d. WikiPron có cả 3. Chờ owner. [D-43: owner chốt giọng Hà Nội (Bắc). Không cần derive — đây là quyết định sản phẩm, không phải sự kiện ngôn ngữ cần 2 nguồn.]",
-    "status": "VALIDATED"
+    "notes": "⚠ QUYẾT ĐỊNH SẢN PHẨM (Bước 0 Q1): giọng chuẩn phát âm/TTS — Hà Nội (Bắc) hay Sài Gòn (Nam) hay Huế (Trung)? 3 giọng khác nhau đáng kể: số thanh điệu phát âm thực tế (Nam chỉ phân biệt rõ ~5), tr/ch, s/x, r/d/gi, v/d. WikiPron có cả 3. Chờ owner. [D-43: owner chốt giọng Hà Nội (Bắc). Không cần derive — đây là quyết định sản phẩm, không phải sự kiện ngôn ngữ cần 2 nguồn.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "grapheme_to_phoneme": {
     "rule_level": {
@@ -140,8 +141,8 @@
       "confidence": "high"
     },
     "machine_readable": true,
-    "notes": "Chính tả khá đều đặn (quốc ngữ thiết kế theo âm) — dễ hơn tiếng Anh nhiều, nhưng có vài chữ ghi nhiều âm theo vị trí (gi/d/v theo giọng) và âm cuối bị trung hòa (-c/-t, -n/-ng theo một số phân tích). [B1: WikiPron Hà Nội 24796 mục sẵn sàng đo Bước 3] [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B3: fixtures bổ sung câu thật từ corpus (S-BINHVQ-NEWS-SAMPLE)]",
-    "status": "VALIDATED"
+    "notes": "Chính tả khá đều đặn (quốc ngữ thiết kế theo âm) — dễ hơn tiếng Anh nhiều, nhưng có vài chữ ghi nhiều âm theo vị trí (gi/d/v theo giọng) và âm cuối bị trung hòa (-c/-t, -n/-ng theo một số phân tích). [B1: WikiPron Hà Nội 24796 mục sẵn sàng đo Bước 3] [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B3: fixtures bổ sung câu thật từ corpus (S-BINHVQ-NEWS-SAMPLE)] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "phoneme_inventory": {
     "rule_level": {
@@ -158,8 +159,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Nguyên âm đơn + đôi + phụ âm đầu/cuối. Số lượng chính xác phụ thuộc quyết định giọng (Q1). [B1: WikiPron Hà Nội cấp dữ liệu âm vị + thanh cho đo/derive] [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "Nguyên âm đơn + đôi + phụ âm đầu/cuối. Số lượng chính xác phụ thuộc quyết định giọng (Q1). [B1: WikiPron Hà Nội cấp dữ liệu âm vị + thanh cho đo/derive] [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "syllable_structure": {
     "rule_level": {
@@ -173,8 +174,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Ngôn ngữ đơn lập (isolating) — mỗi âm tiết thường = 1 hình vị, viết cách nhau bằng khoảng trắng dù không phải luôn = 1 từ. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "Ngôn ngữ đơn lập (isolating) — mỗi âm tiết thường = 1 hình vị, viết cách nhau bằng khoảng trắng dù không phải luôn = 1 từ. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "word_segmentation": {
     "rule_level": {
@@ -188,8 +189,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "⚠ Khoảng trắng ngăn ÂM TIẾT, không ngăn TỪ — 'học sinh' (học+sinh) là 1 từ 2 âm tiết viết cách nhau. Ảnh hưởng cách app tách từ để chấm/tra nghĩa. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "⚠ Khoảng trắng ngăn ÂM TIẾT, không ngăn TỪ — 'học sinh' (học+sinh) là 1 từ 2 âm tiết viết cách nhau. Ảnh hưởng cách app tách từ để chấm/tra nghĩa. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "word_class": {
     "rule_level": {
@@ -203,8 +204,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Import UD Vietnamese-VTB Bước 1. [B1: Import UD Vietnamese-VTB -> 17 nhãn UPOS -> word-class.data.json]",
-    "status": "VALIDATED"
+    "notes": "Import UD Vietnamese-VTB Bước 1. [B1: Import UD Vietnamese-VTB -> 17 nhãn UPOS -> word-class.data.json] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "word_order": {
     "rule_level": {
@@ -221,8 +222,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "SVO như tiếng Anh, NHƯNG tính từ đứng SAU danh từ (khác Anh): 'mèo đen' (mèo+đen = cat black), không phải 'black cat'. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B3: fixtures bổ sung 2 câu thật từ corpus báo chí]",
-    "status": "VALIDATED"
+    "notes": "SVO như tiếng Anh, NHƯNG tính từ đứng SAU danh từ (khác Anh): 'mèo đen' (mèo+đen = cat black), không phải 'black cat'. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B3: fixtures bổ sung 2 câu thật từ corpus báo chí] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "classifiers": {
     "rule_level": {
@@ -236,8 +237,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Loại từ (classifier/measure word, giống tiếng Trung/Nhật counter): con, cái, chiếc, quyển... đứng trước danh từ đếm được. Loại từ nào đi với danh từ nào là lexical. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "Loại từ (classifier/measure word, giống tiếng Trung/Nhật counter): con, cái, chiếc, quyển... đứng trước danh từ đếm được. Loại từ nào đi với danh từ nào là lexical. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "inflection_morphology": {
     "rule_level": {
@@ -251,8 +252,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "KHÔNG biến hình (isolating): động từ không chia thì/ngôi/số, danh từ không có số nhiều bắt buộc — thì diễn đạt bằng từ phụ trợ (đã/đang/sẽ), số nhiều bằng từ phụ (các/những). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "KHÔNG biến hình (isolating): động từ không chia thì/ngôi/số, danh từ không có số nhiều bắt buộc — thì diễn đạt bằng từ phụ trợ (đã/đang/sẽ), số nhiều bằng từ phụ (các/những). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "pronoun_system": {
     "rule_level": {
@@ -266,8 +267,8 @@
       "confidence": "low"
     },
     "machine_readable": true,
-    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: đại từ nhân xưng chủ yếu là TỪ THÂN TỘC (anh/chị/em/ông/bà/cô/chú/con...) chọn theo tuổi/vai vế/quan hệ tương đối giữa 2 người nói — không có cặp I/you cố định. Rất khác en/ja. Lexical (quy tắc chọn từ theo ngữ cảnh) cần native review. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B2: claim neutral_pronouns_exist bị BỎ vì bằng chứng Wikipedia MÂU THUẪN nội bộ (một chỗ nói \"tôi\" dùng lịch sự rộng rãi, chỗ khác nói hệ đại từ \"lacks any truly neutral terms\") → ĐÃ CHỐT D-48 (owner xác nhận trực tiếp: \"tôi\" gần trung tính nhất, không đại từ nào trung tính tuyệt đối).]",
-    "status": "VALIDATED"
+    "notes": "⚠ HIỆN TƯỢNG TRUNG TÂM: đại từ nhân xưng chủ yếu là TỪ THÂN TỘC (anh/chị/em/ông/bà/cô/chú/con...) chọn theo tuổi/vai vế/quan hệ tương đối giữa 2 người nói — không có cặp I/you cố định. Rất khác en/ja. Lexical (quy tắc chọn từ theo ngữ cảnh) cần native review. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B2: claim neutral_pronouns_exist bị BỎ vì bằng chứng Wikipedia MÂU THUẪN nội bộ (một chỗ nói \"tôi\" dùng lịch sự rộng rãi, chỗ khác nói hệ đại từ \"lacks any truly neutral terms\") → ĐÃ CHỐT D-48 (owner xác nhận trực tiếp: \"tôi\" gần trung tính nhất, không đại từ nào trung tính tuyệt đối).] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "sentence_final_particles": {
     "rule_level": {
@@ -281,8 +282,8 @@
       "confidence": "low"
     },
     "machine_readable": false,
-    "notes": "CÓ (khác en not-applicable, giống ja): trợ từ/tiểu từ tình thái cuối câu à/ạ/nhé/nhỉ/đấy/cơ/mà... mang sắc thái. Dịch theo chức năng — cần native review. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "CÓ (khác en not-applicable, giống ja): trợ từ/tiểu từ tình thái cuối câu à/ạ/nhé/nhỉ/đấy/cơ/mà... mang sắc thái. Dịch theo chức năng — cần native review. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "politeness_particle_da": {
     "rule_level": {
@@ -296,8 +297,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "'dạ'/'vâng' đầu câu = tín hiệu lễ phép/đồng ý khi nói với người lớn tuổi/bề trên — gần vai trò teineigo ja nhưng thể hiện bằng từ rời, không phải hậu tố ngữ pháp. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B2: claim \"ạ lễ phép\" KHÔNG tìm được trích dẫn Wikipedia cụ thể (chỉ có bằng chứng chung về modal particle) → ĐÃ CHỐT D-47 (owner xác nhận trực tiếp: dạ lễ phép với người lớn tuổi/bề trên).]",
-    "status": "VALIDATED"
+    "notes": "'dạ'/'vâng' đầu câu = tín hiệu lễ phép/đồng ý khi nói với người lớn tuổi/bề trên — gần vai trò teineigo ja nhưng thể hiện bằng từ rời, không phải hậu tố ngữ pháp. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [B2: claim \"ạ lễ phép\" KHÔNG tìm được trích dẫn Wikipedia cụ thể (chỉ có bằng chứng chung về modal particle) → ĐÃ CHỐT D-47 (owner xác nhận trực tiếp: dạ lễ phép với người lớn tuổi/bề trên).] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "register_taxonomy": {
     "rule_level": {
@@ -315,8 +316,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Map ADR-016: register vi thể hiện qua CHỌN ĐẠI TỪ THÂN TỘC + trợ từ cuối câu + dạ/vâng — gần giữa en (word choice) và ja (có hệ ngữ pháp riêng), nhưng cơ chế khác cả hai (không hậu tố động từ như keigo). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "Map ADR-016: register vi thể hiện qua CHỌN ĐẠI TỪ THÂN TỘC + trợ từ cuối câu + dạ/vâng — gần giữa en (word choice) và ja (có hệ ngữ pháp riêng), nhưng cơ chế khác cả hai (không hậu tố động từ như keigo). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "forms_of_address": {
     "rule_level": {
@@ -330,8 +331,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "Trùng lặp có chủ đích với pronoun_system — xưng hô = chọn đại từ thân tộc; tách riêng để map với answer_acceptance/dialogue content. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "Trùng lặp có chủ đích với pronoun_system — xưng hô = chọn đại từ thân tộc; tách riêng để map với answer_acceptance/dialogue content. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "reading_aid_policy": {
     "rule_level": {
@@ -345,8 +346,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "NOT-APPLICABLE cho romanization (đã là Latin) — NHƯNG dấu thanh chính là phần khó nhất khi gõ/đọc; có thể cần gợi ý riêng (IPA hoặc mô tả thanh bằng lời) — quyết định sản phẩm Q2.",
-    "status": "VALIDATED"
+    "notes": "NOT-APPLICABLE cho romanization (đã là Latin) — NHƯNG dấu thanh chính là phần khó nhất khi gõ/đọc; có thể cần gợi ý riêng (IPA hoặc mô tả thanh bằng lời) — quyết định sản phẩm Q2. [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "answer_acceptance_vi": {
     "rule_level": {
@@ -363,8 +364,8 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "⚠ QUYẾT ĐỊNH SẢN PHẨM (Bước 0 Q3): thiếu/sai dấu thanh (ma vs má vs mà) — chấm SAI (đổi nghĩa) hay chấm ĐÚNG-NHƯNG-NHẮC (typo, giống D-18)? Ảnh hưởng người gõ không dấu/gõ Telex sai. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "⚠ QUYẾT ĐỊNH SẢN PHẨM (Bước 0 Q3): thiếu/sai dấu thanh (ma vs má vs mà) — chấm SAI (đổi nghĩa) hay chấm ĐÚNG-NHƯNG-NHẮC (typo, giống D-18)? Ảnh hưởng người gõ không dấu/gõ Telex sai. [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "naturalness_translation": {
     "rule_level": {
@@ -378,8 +379,8 @@
       "confidence": "none"
     },
     "machine_readable": false,
-    "notes": "vi vừa là target vừa là native (uiLanguageCode mặc định) — dịch tự nhiên áp cho cả 2 chiều. Owner tự review (S-OWNER-REVIEW). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.]",
-    "status": "VALIDATED"
+    "notes": "vi vừa là target vừa là native (uiLanguageCode mặc định) — dịch tự nhiên áp cho cả 2 chiều. Owner tự review (S-OWNER-REVIEW). [B2: passA (nội bộ) 0/34 — narrative không có gì riêng vi. Chỉ-Wikipedia (medium, có trích dẫn), không có nguồn thứ hai mở trong môi trường mạng phiên này. Xem derive/review-diff.json.] [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   },
   "tts_audio_policy": {
     "rule_level": {
@@ -393,7 +394,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "Từ _base + phụ thuộc giọng đã chọn ở Q1 (WikiPron có TTS-relevant data cho cả 3 giọng).",
-    "status": "VALIDATED"
+    "notes": "Từ _base + phụ thuộc giọng đã chọn ở Q1 (WikiPron có TTS-relevant data cho cả 3 giọng). [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "status": "FROZEN"
   }
 }

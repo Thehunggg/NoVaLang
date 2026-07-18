@@ -1,8 +1,17 @@
 {
   "id": "vi/orthography.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
   "phenomenon": "tone_system",
-  "enforces": ["writing-system, charset (dấu thanh), casing"],
-  "sources": ["S-WIKIPEDIA-VI", "WIKIPRON", "CLDR", "S-OWNER-REVIEW"],
+  "enforces": [
+    "writing-system, charset (dấu thanh), casing"
+  ],
+  "sources": [
+    "S-WIKIPEDIA-VI",
+    "WIKIPRON",
+    "CLDR",
+    "S-OWNER-REVIEW"
+  ],
   "derived_by": "human",
   "config": {
     "casing": {
@@ -12,7 +21,14 @@
     },
     "dialect": "Hà Nội (Bắc) — D-43",
     "tone_count": 6,
-    "tone_names": ["ngang", "huyền", "sắc", "hỏi", "ngã", "nặng"],
+    "tone_names": [
+      "ngang",
+      "huyền",
+      "sắc",
+      "hỏi",
+      "ngã",
+      "nặng"
+    ],
     "tones_are_phonemic": true,
     "marked_directly_on_vowel": true,
     "diacritic_missing_or_wrong_is_semantic_error": true,
@@ -22,43 +38,102 @@
     {
       "id": "sentence-starts-with-capital",
       "description": "Câu (target-language text) phải bắt đầu bằng chữ hoa (D-46).",
-      "assert": { "type": "regex_present", "pattern": "^[A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬĐÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴ]" },
+      "assert": {
+        "type": "regex_present",
+        "pattern": "^[A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬĐÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴ]"
+      },
       "fixtures": {
-        "pass": ["Tôi thích uống cà phê.", "Đây là nhà tôi."],
-        "fail": ["tôi thích uống cà phê.", "đây là nhà tôi."]
+        "pass": [
+          "Tôi thích uống cà phê.",
+          "Đây là nhà tôi."
+        ],
+        "fail": [
+          "tôi thích uống cà phê.",
+          "đây là nhà tôi."
+        ]
       }
     },
     {
       "id": "sentence-terminator-present",
       "description": "Câu tiếng Việt phải kết thúc bằng dấu chấm câu chuẩn (. ? ! …).",
-      "assert": { "type": "regex_present", "pattern": "[.?!…]$" },
+      "assert": {
+        "type": "regex_present",
+        "pattern": "[.?!…]$"
+      },
       "fixtures": {
-        "pass": ["Tôi thích uống cà phê.", "Bạn có khỏe không?"],
-        "fail": ["Tôi thích uống cà phê", "Bạn có khỏe không"]
+        "pass": [
+          "Tôi thích uống cà phê.",
+          "Bạn có khỏe không?"
+        ],
+        "fail": [
+          "Tôi thích uống cà phê",
+          "Bạn có khỏe không"
+        ]
       }
     },
     {
       "id": "tone-marked-vowel-required-for-non-ngang",
       "description": "Từ có thanh khác 'ngang' (không dấu) phải mang đúng 1 trong 5 dấu thanh trên nguyên âm chính.",
-      "assert": { "type": "custom", "note": "kiểm bằng bảng dấu thanh CLDR khi generator/grader chạy, không phải regex đơn giản" },
+      "assert": {
+        "type": "custom",
+        "note": "kiểm bằng bảng dấu thanh CLDR khi generator/grader chạy, không phải regex đơn giản"
+      },
       "fixtures": {
-        "pass": ["má", "mà", "mả", "mã", "mạ", "ma"],
-        "fail": ["ma'", "maa", "m'a"]
+        "pass": [
+          "má",
+          "mà",
+          "mả",
+          "mã",
+          "mạ",
+          "ma"
+        ],
+        "fail": [
+          "ma'",
+          "maa",
+          "m'a"
+        ]
       }
     },
     {
       "id": "diacritic-stripped-input-not-silently-accepted",
       "description": "Gõ không dấu (vd 'ma' thay 'má') KHÔNG được chấm ngang hàng với bản có dấu — vì đổi nghĩa (D-45).",
-      "assert": { "type": "custom", "note": "máy kiểm ở lớp chấm điểm/grader, tra bảng đối lập thanh điệu" },
+      "assert": {
+        "type": "custom",
+        "note": "máy kiểm ở lớp chấm điểm/grader, tra bảng đối lập thanh điệu"
+      },
       "fixtures": {
-        "pass": [{ "target": "má", "input": "má", "verdict": "correct" }],
-        "fail": [{ "target": "má", "input": "ma", "verdict": "WRONG_asserted_incorrectly_as_correct", "note": "SAI nếu hệ thống chấm 'ma' == 'má' — đây chính là lỗi D-45 cấm" }]
+        "pass": [
+          {
+            "target": "má",
+            "input": "má",
+            "verdict": "correct"
+          }
+        ],
+        "fail": [
+          {
+            "target": "má",
+            "input": "ma",
+            "verdict": "WRONG_asserted_incorrectly_as_correct",
+            "note": "SAI nếu hệ thống chấm 'ma' == 'má' — đây chính là lỗi D-45 cấm"
+          }
+        ]
       }
     }
   ],
   "fixtures": {
-    "pass": ["ma", "má", "mà", "mả", "mã", "mạ"],
-    "fail": ["ma1", "má2", "m@"],
+    "pass": [
+      "ma",
+      "má",
+      "mà",
+      "mả",
+      "mã",
+      "mạ"
+    ],
+    "fail": [
+      "ma1",
+      "má2",
+      "m@"
+    ],
     "_note": "6 từ minimal-pair chuẩn phân biệt nghĩa hoàn toàn theo thanh điệu (nguồn: Wikipedia Vietnamese phonology, đối chiếu WikiPron Hà Nội)"
   }
 }

@@ -64,3 +64,9 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   xác nhận lần 2. lexical_level của classifiers (loại từ theo từng danh từ) và
   forms_of_address/pronoun_system (quy tắc chọn đại từ theo ngữ cảnh cụ thể)
   KHÔNG freeze — thiếu dữ liệu đầy đủ theo-từng-từ, để DRAFT là đúng.
+- **Freeze (D-49, không chờ Gate 5) · 2026-07-18** — Owner xác nhận đóng băng
+  23/24 hiện tượng ở **rule_level** (loại trừ stroke_order not-applicable). 4
+  file `*.rules.json` bump `version: 1.0.0`, `status: FROZEN`. `lexical_level`
+  của classifiers (none)/forms_of_address/pronoun_system (low — quy tắc chọn
+  từ theo ngữ cảnh) GIỮ NGUYÊN, không tự động freeze theo. Catalog
+  `vi.ruleStatus=FROZEN_RULE_LEVEL_LEXICAL_OPEN`. Validator PASS.
