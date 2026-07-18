@@ -1,10 +1,15 @@
 {
   "id": "vi/orthography.rules",
   "phenomenon": "tone_system",
-  "enforces": ["writing-system, charset (dấu thanh)"],
-  "sources": ["S-WIKIPEDIA-VI", "WIKIPRON", "CLDR"],
+  "enforces": ["writing-system, charset (dấu thanh), casing"],
+  "sources": ["S-WIKIPEDIA-VI", "WIKIPRON", "CLDR", "S-OWNER-REVIEW"],
   "derived_by": "human",
   "config": {
+    "casing": {
+      "sentence_initial_capitalized": true,
+      "proper_nouns_capitalized": true,
+      "_note": "D-46 (owner Bước 4): xác nhận trực tiếp — Wikipedia không nêu đủ rõ."
+    },
     "dialect": "Hà Nội (Bắc) — D-43",
     "tone_count": 6,
     "tone_names": ["ngang", "huyền", "sắc", "hỏi", "ngã", "nặng"],
@@ -14,6 +19,15 @@
     "_note": "D-45 (owner): thiếu/sai dấu thanh chấm SAI (đổi nghĩa), khác lỗi typo nhỏ (D-18) hay dấu câu/khoảng trắng (D-14, normalize)."
   },
   "checks": [
+    {
+      "id": "sentence-starts-with-capital",
+      "description": "Câu (target-language text) phải bắt đầu bằng chữ hoa (D-46).",
+      "assert": { "type": "regex_present", "pattern": "^[A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬĐÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴ]" },
+      "fixtures": {
+        "pass": ["Tôi thích uống cà phê.", "Đây là nhà tôi."],
+        "fail": ["tôi thích uống cà phê.", "đây là nhà tôi."]
+      }
+    },
     {
       "id": "sentence-terminator-present",
       "description": "Câu tiếng Việt phải kết thúc bằng dấu chấm câu chuẩn (. ? ! …).",

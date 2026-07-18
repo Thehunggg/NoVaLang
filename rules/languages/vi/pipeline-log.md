@@ -51,3 +51,16 @@ phiên sau **resume** đúng chỗ. File này là nhật ký quy trình, không 
   3 mục (R-01 viết hoa, R-02 tiểu từ "ạ", R-03 đại từ trung tính — cả 3 là sự
   thật cơ bản Wikipedia không nêu đủ rõ, owner bản ngữ tự xác nhận được) · ~3
   phút. Không cần native-review-vi.md. Validator PASS. Chờ owner trả lời.
+- **Bước 4 trả lời · 2026-07-18 · owner (đúng hết)** — R-01: A (viết hoa →
+  D-46). R-02: A ("ạ" lễ phép → D-47). R-03: A ("tôi" gần trung tính nhất,
+  không đại từ nào trung tính tuyệt đối → D-48). Áp dụng vào
+  orthography.rules.json (thêm config casing + check sentence-starts-with-capital)
+  và pragmatics.rules.json. Validator PASS (1 lỗi JSON tự gây ra khi chèn
+  fixture bị sửa ngay). Hàng đợi review = RỖNG.
+- **Bước 5 · 2026-07-18 · VALIDATED (đồng hồ Gate 5 bắt đầu)** — 23 VALIDATED
+  · 1 not-applicable (stroke_order) · 0 DEFERRED · 0 DRAFT.
+  `_meta.stage='validated'`, `validatedAt=2026-07-18`. Catalog
+  `vi.ruleStatus=VALIDATED_PENDING_FREEZE`. **CHƯA freeze** — cần ≥48h + owner
+  xác nhận lần 2. lexical_level của classifiers (loại từ theo từng danh từ) và
+  forms_of_address/pronoun_system (quy tắc chọn đại từ theo ngữ cảnh cụ thể)
+  KHÔNG freeze — thiếu dữ liệu đầy đủ theo-từng-từ, để DRAFT là đúng.
