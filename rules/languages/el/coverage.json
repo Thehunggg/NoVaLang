@@ -130,8 +130,8 @@
     "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "MONOTONIC (chuẩn từ 1982): tonos (´) BẮT BUỘC trên từ đa âm tiết đánh trọng âm; dieresis (¨) trên ι/υ tách khỏi nguyên âm trước (μαϊντανός -> a-ï không ai). tonos + dieresis kết hợp: ΐ ΰ. Bỏ/sai tonos = sai chính tả + có thể đổi nghĩa (πότε/ποτέ). sigma cuối ς vs σ giữa cũng là chính tả bắt buộc. Ảnh hưởng chấm điểm — xem answer_acceptance_el (bản chất giống pl/da: dấu là phần chính tả bắt buộc). [Bước 3: 0 ký tự polytonic trên 4285 câu -> monotonic xác nhận.]",
-    "status": "DRAFT"
+    "notes": "MONOTONIC (chuẩn từ 1982): tonos (´) BẮT BUỘC trên từ đa âm tiết đánh trọng âm; dieresis (¨) trên ι/υ tách khỏi nguyên âm trước (μαϊντανός -> a-ï không ai). tonos + dieresis kết hợp: ΐ ΰ. Bỏ/sai tonos = sai chính tả + có thể đổi nghĩa (πότε/ποτέ). sigma cuối ς vs σ giữa cũng là chính tả bắt buộc. Ảnh hưởng chấm điểm — xem answer_acceptance_el (bản chất giống pl/da: dấu là phần chính tả bắt buộc). [Bước 3: 0 ký tự polytonic trên 4285 câu -> monotonic xác nhận.] [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED: cùng bằng chứng monotonic với accent_system (đã VALIDATED) — V3 corpus-check 0 ký tự polytonic trên 4285 câu; conf=high; monotonic là chuẩn nhà nước 1982.]",
+    "status": "VALIDATED"
   },
   "register_taxonomy": {
     "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
@@ -144,8 +144,8 @@
     "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "APPLICABLE về nguyên tắc (el là hệ chữ MỚI không phải Latin — người học phương Tây cần thời gian nhận diện chữ Hy Lạp), KHÁC các ngôn ngữ Latin (not-applicable). NHƯNG: el không có hệ trợ đọc chuẩn kiểu furigana; phiên âm Latin ('Greeklish') là quy ước không chính thức, không nhất quán. QUYẾT ĐỊNH SẢN PHẨM (xem review-checklist D-el-03): có hiển thị phiên âm Latin cho người mới bắt đầu không, và theo trình độ nào. Đề xuất: dạy CHỮ HY LẠP trực tiếp, KHÔNG dùng phiên âm Latin làm nạng (nhất quán triết lý 'học hệ chữ thật' + tránh Greeklish sai chuẩn); audio TTS là kênh phát âm chính.",
-    "status": "DRAFT"
+    "notes": "APPLICABLE về nguyên tắc (el là hệ chữ MỚI không phải Latin — người học phương Tây cần thời gian nhận diện chữ Hy Lạp), KHÁC các ngôn ngữ Latin (not-applicable). NHƯNG: el không có hệ trợ đọc chuẩn kiểu furigana; phiên âm Latin ('Greeklish') là quy ước không chính thức, không nhất quán. QUYẾT ĐỊNH SẢN PHẨM (xem review-checklist D-el-03): có hiển thị phiên âm Latin cho người mới bắt đầu không, và theo trình độ nào. Đề xuất: dạy CHỮ HY LẠP trực tiếp, KHÔNG dùng phiên âm Latin làm nạng (nhất quán triết lý 'học hệ chữ thật' + tránh Greeklish sai chuẩn); audio TTS là kênh phát âm chính. [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED: OWNER ĐÃ DUYỆT phương án A (D-el-03, Phần A phiên này) — KHÔNG dùng Greeklish, dạy chữ Hy Lạp trực tiếp; audio TTS là kênh phát âm. Quyết định sản phẩm đã chốt.]",
+    "status": "VALIDATED"
   },
   "answer_acceptance_el": {
     "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },

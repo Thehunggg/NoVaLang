@@ -34,3 +34,15 @@ Không có front-matter (log nội bộ).
   D-el-05 (dạy đối lập εσύ/εσείς). Sự kiện ngôn ngữ Hy Lạp thuần tuý →
   `native-review-el.md` (7 mục). Trạng thái dừng ở VALIDATED_NOT_YET_PROVEN,
   KHÔNG FROZEN (ADR-014).
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** 2 điểm DRAFT NÂNG VALIDATED:
+  (1) `diacritics_orthography` — cùng bằng chứng monotonic với accent_system
+  (đã VALIDATED): V3 corpus 0 ký tự polytonic/4285 câu, conf=high, chuẩn nhà
+  nước 1982. (2) `reading_aid_policy` — owner ĐÃ DUYỆT A (D-el-03 Phần A: không
+  Greeklish, dạy chữ Hy Lạp trực tiếp) → quyết định sản phẩm đã chốt. Owner
+  decisions D-el-01..05 (Phần A) tra lại 5 vòng — XÁC NHẬN ĐÚNG, không nghi ngờ.
+  `casing` GIỮ DRAFT trung thực: tháng/thứ Hy Lạp VIẾT HOA (không có quy tắc
+  month-lowercase để corpus-check như Latin); quy tắc caps-bỏ-tonos cần
+  POS/native. Còn DRAFT cần người bản ngữ: casing, gender_and_articles,
+  noun_case (4 cách — paradigm), verb_conjugation (chia đầy đủ), word_order,
+  naturalness. Status ngôn ngữ KHÔNG đổi.
