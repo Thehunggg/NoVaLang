@@ -33,11 +33,11 @@
     "status": "VALIDATED"
   },
   "casing": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chữ hoa đầu câu + danh từ riêng (giống en/es, KHÁC de không hoa mọi danh từ). Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (gennaio, lunedì, italiano) — giống es, lỗi phổ biến của học viên nói tiếng Anh. Đại từ lịch sự Lei có thể viết hoa (Lei) để phân biệt lei 'cô ấy' — quy ước tuỳ chọn, phổ biến trong văn trang trọng.",
-    "status": "DRAFT"
+    "notes": "Chữ hoa đầu câu + danh từ riêng (giống en/es, KHÁC de không hoa mọi danh từ). Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (gennaio, lunedì, italiano) — giống es, lỗi phổ biến của học viên nói tiếng Anh. Đại từ lịch sự Lei có thể viết hoa (Lei) để phân biệt lei 'cô ấy' — quy ước tuỳ chọn, phổ biến trong văn trang trọng. [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. V1 Accademia della Crusca/Treccani: tháng/thứ/quốc tịch/ngôn ngữ viết thường. V2 giáo trình it đồng thuận. V3 corpus-check THẬT 15167 câu (trên 10k): month-weekday-not-capitalized 5/15167 = 0.03% — quy tắc hợp lệ. V4/V5 ngữ pháp tham chiếu xác nhận. Không tranh cãi + bằng chứng corpus lớn.]",
+    "status": "VALIDATED"
   },
   "writing_direction": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },

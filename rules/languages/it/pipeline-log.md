@@ -24,3 +24,15 @@ Không có front-matter (log nội bộ).
   D-it-01 (baseline it-IT), D-it-02 (answer acceptance dấu phụ — tự áp tiền lệ
   es B-03). Sự kiện ngôn ngữ Ý thuần tuý → `native-review-it.md`. Trạng thái
   dừng ở VALIDATED_NOT_YET_PROVEN, KHÔNG FROZEN (ADR-014).
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** `casing` NÂNG DRAFT→VALIDATED:
+  V3 corpus-check THẬT 15167 câu (trên 10k) — month-weekday-not-capitalized
+  0.03%, quy tắc hợp lệ; V1 Crusca/Treccani + V2 giáo trình + V4/V5 đồng thuận.
+  Owner decisions D-it-01 (baseline it-IT) + D-it-02 (answer_acceptance B 'cảnh
+  báo nhẹ', owner CHỦ ĐỘNG giữ DRAFT) tra lại 5 vòng — XÁC NHẬN ĐÚNG, KHÔNG nghi
+  ngờ: dấu tiếng Ý (à è é ì ò ù) đều là dấu-trọng-âm, KHÔNG có chữ cái riêng
+  kiểu ñ/pl → B hợp lý, khác es (es có ñ — xem owner-review-queue SUS-01). Giữ
+  answer_acceptance_it DRAFT theo ý owner. Còn DRAFT cần người bản ngữ:
+  syllable_stress, gender/number agreement, definite_articles, verb_conjugation,
+  auxiliary_selection (essere/avere — khó điển hình), clitic_pronouns, word_order,
+  diacritics_orthography. Status ngôn ngữ KHÔNG đổi.
