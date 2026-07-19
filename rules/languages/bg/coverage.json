@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "language": "bg",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "bg-BG (tiếng Bulgaria chuẩn / книжовен български)",
+    "family": "South Slavic (Nam Slav), hệ chữ Kirin (Cyrl)",
+    "difficulty_self_assessment": "TRUNG BÌNH-KHÓ: hệ chữ Kirin (không Latin) + 3 giống + động từ giàu (thể + THỨC KỂ LẠI/evidential + không nguyên mẫu). NHƯNG DỄ HƠN Slavic khác: MẤT HẲN cách danh từ (chỉ đại từ còn vết). Đặc trưng: MẠO TỪ XÁC ĐỊNH HẬU TỐ. Tra cứu 5 vòng.",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật.",
+    "corpus": {
+      "file": "tools/cache/corpus/bg-sentences.txt (không commit)",
+      "sentences": 11138,
+      "source": "UD Bulgarian-BTB (train/dev/test) (S-UD-CORPUS)",
+      "note": "TRÊN mốc 10000 (11138) — corpus check ĐẦY ĐỦ, tin cậy."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Bulgaria. Chính tả Bulgaria KHÁ ĐỀU (phonemic) trừ giảm nguyên âm không nhấn — g2p-check trên 47572 từ thật đạt rất tốt. Cái khó là động từ (thể + evidential) + mạo từ hậu tố; cái DỄ là không cách danh từ."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Bảng chữ KIRIN Bulgaria 30 chữ (а б в г д е ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ь ю я). Bicameral. ĐẶC TRƯNG: ъ (ер голям) là NGUYÊN ÂM [ɤ] (khác Nga/Ukraina dùng ъ làm dấu cứng); щ đọc [ʃt] (khác Nga [ɕː]). KHÔNG có ы/э/і/ё/ѣ. ь (ер малък) hiếm, làm mềm. CLDR xác nhận.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận 30 chữ Kirin Bulgaria (có ъ, không ы/э/і).",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Hoa đầu câu + danh từ riêng. Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (януари, понеделник, български) — giống ru/uk/pl. Đại từ trang trọng Вие/Ви có thể viết hoa trong thư từ lịch sự. [Bước 3: corpus-check month-weekday-not-capitalized trên 11138 câu thật — 18/11138 = 0.16% vi phạm (tên riêng: свети Августин, Юлиян) — quy tắc hợp lệ. V1 Институт за български език + V2 giáo trình + V4/V5 đồng thuận.]",
+    "status": "VALIDATED"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ cái Kirin (alphabetic).",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (bul_cyrl_narrow, 47572 cặp — bộ RẤT LỚN) -> grapheme-to-phoneme.data.json. 6 nguyên âm: а[a] е[ɛ] и[i] о[ɔ] у[u] ъ[ɤ] (ъ đặc trưng, KHÔNG có ở Nga/Ukraina như nguyên âm). GIẢM NGUYÊN ÂM không nhấn (а/ъ→[ɐ], о→[o~u]). г→[g] (KHÁC Ukraina [ɦ]). Phụ âm mềm/cứng phân biệt. щ→[ʃt] (2 âm). Không thanh điệu; trọng âm động di động.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính tả Bulgaria KHÁ ĐỀU (phonemic) trừ giảm nguyên âm không nhấn. [Bước 3: g2p-check.mjs trên WikiPron thật 47572 từ.] Phụ âm sạch: ш→[ʃ] 0.00%, ч→[t͡ʃ] 0.08%, ц→[t͡s] 0.25%, х→[x] 0.00%, ж→[ʒ] 4.22% (biến âm cuối câm [ʃ]). VALIDATED. KỶ LUẬT DỮ LIỆU (ngoại lệ CÓ QUY LUẬT, KHÔNG phá rule): (1) щ→[ʃt] báo 100% 'vi phạm' = ARTIFACT tokenization — WikiPron tách 'ʃ t' (2 token), pattern 'ʃt' không khớp; kiểm tay щ→[ʃ t] ĐÚNG 100% (щ→sht, khác Nga [ɕː]). (2) ъ→[ɤ] báo 67% 'vi phạm' = GIẢM NGUYÊN ÂM: ъ nhấn→[ɤ], KHÔNG nhấn→[ɐ] (а/ъ trộn khi không nhấn — quy tắc âm vị học Bulgaria). Ghi rõ, giữ high. г→[g] (khác Ukraina).",
+    "status": "VALIDATED"
+  },
+  "vowel_reduction": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG bg (khác Ukraina không giảm): nguyên âm KHÔNG NHẤN giảm — а và ъ trộn thành [ɐ], о nghiêng [o~u], е nghiêng [ɛ~i]. Chính tả giữ chữ gốc; phát âm giảm. [g2p-check: ъ→[ɤ] chỉ 33% giữ [ɤ] (nhấn), còn lại [ɐ] (không nhấn) — bằng chứng giảm.] Vị trí trọng âm quyết định giảm → cần audio + trọng âm (không đánh dấu).",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Bulgarian-BTB test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "gender_and_number": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "3 GIỐNG (masc/fem/neut). Đoán qua đuôi: phụ âm cuối→thường masc, -а/-я→fem, -о/-е→neut; biệt lệ lexical. Số nhiều nhiều dạng (-и/-ове/-а...). Có dạng ĐẾM riêng sau số từ cho masc không-người (два стола). Tính từ hợp giống+số.",
+    "status": "DRAFT"
+  },
+  "definite_article_suffix": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG bg (độc nhất trong Slavic cùng Macedonia): MẠO TỪ XÁC ĐỊNH GẮN SAU danh từ/tính từ đầu ngữ đoạn — masc -ът/-ят (đầy đủ, chủ ngữ) / -а/-я (rút gọn, tân ngữ) (стол→столът/стола), fem -та (книга→книгата), neut -то (дете→детето), số nhiều -те/-та (книгите). Quy tắc chọn theo giống+số rule_level; masc -ът vs -а theo vai cú pháp (chủ ngữ/tân ngữ) là điểm khó riêng.",
+    "status": "DRAFT"
+  },
+  "no_noun_case": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG bg (KHÁC mọi Slavic khác — điểm DỄ): danh từ MẤT HẲN biến cách (chỉ còn vết ở đại từ: аз/мене/ми). Quan hệ ngữ pháp thể hiện qua GIỚI TỪ + TRẬT TỰ TỪ (như tiếng Anh/Romance), không qua đuôi cách. Đại từ nhân xưng còn phân biệt chủ cách/tân cách (аз 'tôi'/мен 'tôi-tân ngữ') + dạng clitic (ме, ми). Thuận lợi lớn cho người học so với ru/uk/pl 6-7 cách.",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "GIÀU (điểm khó nhất): chia NGÔI+SỐ+THÌ+THỂ (perfective/imperfective). KHÔNG có nguyên mẫu — dùng да + hiện tại (искам да ям). Nhiều thì hơn Slavic khác (giữ aorist + imperfect quá khứ tổng hợp). ĐẶC TRƯNG: THỨC KỂ LẠI / evidential (преизказно наклонение) — hậu tố -л cho hành động NGHE KỂ/không chứng kiến (той дошъл 'nghe nói anh ấy đến') vs той дойде (chứng kiến) — TƯƠNG TỰ -miş tiếng Thổ, hiếm ở châu Âu. 9 nhóm chia. Paradigm + bất quy tắc lexical.",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SVO nền (vì mất cách → trật tự quan trọng hơn Slavic khác, gần Romance/Anh). Đại từ tân ngữ yếu (clitic) đứng gần động từ theo quy tắc vị trí (ме, те, го, ѝ...). Giới từ thay cho cách. Linh hoạt cho nhấn mạnh nhưng SVO là mặc định.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "CÓ đối lập T-V: ти (số ít, thân mật) / Вие (số nhiều HOẶC lịch sự số ít — người lạ/lớn tuổi/trang trọng, như fr vous; VIẾT HOA Вие/Ви khi lịch sự để phân biệt số nhiều thường). Kèm господин/госпожа (ông/bà). Đây là quyết định sản phẩm (dạy đối lập) — xem review-checklist D-bg-05.",
+    "status": "VALIDATED"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu câu chuẩn Latin (. , ? !). Ngoặc kép: „...“ (thấp-cao kiểu Đức) hoặc «...». Dấu phẩy trước мнеия phụ (че, който) theo quy tắc Bulgaria. KHÔNG dùng dấu nháy như Ukraina.",
+    "status": "DRAFT"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Bulgaria KHÔNG dùng dấu phụ (không có chữ có dấu) — mọi chữ là chữ Kirin cơ bản. Vấn đề chấm điểm là gõ ĐÚNG CHỮ KIRIN (đặc biệt ъ [ɤ] — nguyên âm thật, dễ bị bỏ/thay а) + KHÔNG dùng chuyển tự Latin (shlyokavitsa). Trọng âm đôi khi đánh dấu (ѝ 'của cô ấy' vs и 'và' — grave phân biệt) — hiếm. Ảnh hưởng chấm điểm — xem answer_acceptance_bg.",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~ти + từ thân mật (здравей, здрасти), NATURAL_NEUTRAL_POLITE~Вие lịch sự trung tính hoặc ти ngang hàng (baseline), FORMAL~Вие + từ trang trọng + господин/госпожа (Добър ден, моля, благодаря, извинете). HONORIFIC: not-applicable cho bg — không có hệ kính ngữ hình thái kiểu ja/ko; lịch sự qua Вие + từ vựng (đã bao trong FORMAL + forms_of_address). Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19).",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "APPLICABLE về nguyên tắc (bg là hệ chữ Kirin, không Latin). Không có hệ trợ đọc chuẩn; chuyển tự Latin ('shlyokavitsa' — quy ước chat không chính thức) KHÔNG chuẩn. QUYẾT ĐỊNH SẢN PHẨM (xem review-checklist D-bg-03): đề xuất dạy CHỮ KIRIN trực tiếp, KHÔNG dùng chuyển tự (nhất quán el/uk); audio TTS là kênh phát âm. LƯU Ý: trọng âm không đánh dấu + giảm nguyên âm → audio quan trọng.",
+    "status": "DRAFT"
+  },
+  "answer_acceptance_bg": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính sách chấm khi gõ sai chữ Kirin (bỏ/thay ъ bằng а, sai щ/ш) hoặc gõ chuyển tự Latin (shlyokavitsa): mọi chữ Kirin bg là chữ bắt buộc (ъ là nguyên âm THẬT — đổi từ: пъпка 'nụ'/папка 'thư mục'). Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): sai chữ Kirin/gõ Latin = SAI, không chấp nhận (dạy gõ đúng + bàn phím Bulgaria). Bulgaria KHÔNG có dấu phụ nên không có 'ngoại lệ khoan dung' kiểu circumflex/ґ — thẳng C. Giữ DRAFT + flag owner. Xem review-checklist D-bg-04.",
+    "status": "DRAFT"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Lưu ý: đối lập ти/Вие, mạo từ hậu tố (столът/стола theo vai), không nguyên mẫu (да + hiện tại: искам да отида), evidential -л (chứng kiến vs nghe kể — dịch đúng sắc thái), giới từ thay cách.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text chữ Kirin (đầy đủ ъ + щ). TTS bg-BG đọc trực tiếp (chính tả đều nhưng GIẢM NGUYÊN ÂM + trọng âm di động không đánh dấu → engine phải biết trọng âm, có thể sai từ hiếm). Kế thừa _base/audio.rules.json. Locale: bg-BG. Văn bản PHẢI giữ ъ (nguyên âm, bỏ = sai từ).",
+    "status": "VALIDATED"
+  }
+}

@@ -973,6 +973,29 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-78 · 2026-07-19 · derived · bg — `bg` (tiếng Bulgaria, bg-BG) build HOÀN
+  TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
+  vòng.** Nam Slav, hệ chữ KIRIN (Cyrl), t1, 24 hiện tượng. Dataset
+  CLDR/UD/WikiPron: WikiPron `bul_cyrl_narrow` **47572 cặp** (rất lớn); corpus
+  UD Bulgarian-BTB **11138 câu** (TRÊN 10000 — đầy đủ). g2p-check: phụ âm <1%
+  (ш 0.00%, ч 0.08%, ц 0.25%, х 0.00%, ж 4.22% biến âm cuối) →
+  `grapheme_to_phoneme` VALIDATED. **Kỷ luật dữ liệu:** щ→[ʃt] báo 100% 'vi
+  phạm' = ARTIFACT tokenization (WikiPron tách 'ʃ t', đúng 100% kiểm tay — щ=sht
+  khác Nga [ɕː]); ъ→[ɤ] báo 67% = GIẢM NGUYÊN ÂM (nhấn [ɤ]/không nhấn [ɐ]) —
+  quy tắc âm vị học, không phải rule sai. corpus-check month-weekday 0.00% +
+  no-non-bulgarian-cyrillic 0.00%. HONORIFIC not-applicable (es B-02). Đặc
+  trưng: 30 chữ (ъ [ɤ] NGUYÊN ÂM, щ [ʃt], không ы/э/і; г→[g]), **MẤT HẲN cách
+  danh từ** (độc nhất Slavic — điểm DỄ hơn ru/uk/pl), **MẠO TỪ XÁC ĐỊNH HẬU
+  TỐ** (столът/книгата/детето — độc nhất Slavic +Macedonia), không nguyên mẫu
+  (да+hiện tại), **evidential -л** (chứng kiến vs nghe kể, như -miş Thổ), ти/Вие.
+  **5 giả định cần owner duyệt:** D-bg-01 (baseline bg-BG — v1), D-bg-02 (chuẩn
+  Институт за български език — v2), D-bg-03 (KHÔNG chuyển tự Latin — v3, product),
+  D-bg-04 (chấm C — sai chữ Kirin/gõ Latin = SAI theo pl D-64; bg KHÔNG có dấu
+  phụ nên KHÔNG có 'ngoại lệ khoan dung' kiểu circumflex tr/ґ uk — thẳng C —
+  v4/v5), D-bg-05 (DẠY đối lập ти/Вие — v2). `native-review-bg.md` 7 mục. Status:
+  `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN. Validator: 4 lỗi vi/zh cũ, 0 lỗi
+  mới; catalog 60.
+
 - **D-77 · 2026-07-19 · owner · uk,tr — Owner DUYỆT 10 giả định sản phẩm của
   uk/tr (chốt D-75/D-76).** Cập nhật tracking duyệt + 2 thay đổi coverage
   (answer_acceptance_uk/tr → VALIDATED). KHÔNG đổi status ngôn ngữ (cả hai vẫn

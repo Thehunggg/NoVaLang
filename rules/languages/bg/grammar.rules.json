@@ -1,0 +1,64 @@
+{
+  "id": "bg/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "definite_article_suffix",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "bg-BG",
+    "no_noun_case": "ĐẶC TRƯNG: danh từ MẤT HẲN cách (khác mọi Slavic khác) — quan hệ qua GIỚI TỪ + TRẬT TỰ. Chỉ đại từ còn chủ/tân cách (аз/мен) + clitic (ме, ми)",
+    "gender": "3 giống (masc phụ âm cuối / fem -а,-я / neut -о,-е); tính từ hợp giống+số",
+    "definite_article_suffix": {
+      "note": "ĐẶC TRƯNG bg (+Macedonia): mạo từ xác định GẮN SAU (postposed)",
+      "masc": "-ът/-ят (đầy đủ, chủ ngữ: столът) / -а/-я (rút gọn, tân ngữ/sau giới từ: стола)",
+      "fem": "-та (книгата)",
+      "neut": "-то (детето)",
+      "plural": "-те (книгите) / -та (neut số nhiều: децата)",
+      "position": "gắn vào TỪ ĐẦU ngữ đoạn danh từ (новата книга 'quyển sách mới-XĐ')"
+    },
+    "verb": {
+      "no_infinitive": "KHÔNG có nguyên mẫu — dùng да + hiện tại (искам да ям 'tôi muốn ăn')",
+      "aspect": "perfective/imperfective (пиша/напиша)",
+      "tenses": "nhiều thì (giữ aorist + imperfect quá khứ tổng hợp, hơn Slavic khác)",
+      "evidential": "THỨC KỂ LẠI (преизказно): hậu tố -л cho hành động NGHE KỂ/không chứng kiến (той дошъл 'nghe nói anh ấy đã đến') vs той дойде (chứng kiến) — tương tự -miş tiếng Thổ",
+      "person": "chia ngôi+số; 9 nhóm chia (thематичен -е-/-и-/-а-)"
+    },
+    "word_order": "SVO nền (mất cách → trật tự quan trọng, gần Anh/Romance); clitic tân ngữ gần động từ (го виждам)"
+  },
+  "checks": [
+    {
+      "id": "definite-article-suffix",
+      "description": "Mạo từ xác định GẮN SAU danh từ/tính từ đầu ngữ đoạn — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần bảng giống + vị trí + vai cú pháp (masc -ът/-а) khi generator chạy." },
+      "fixtures": {
+        "pass": ["книгата", "столът", "детето", "новата книга"],
+        "fail": ["та книга", "книгата нова"]
+      }
+    },
+    {
+      "id": "no-infinitive-da-present",
+      "description": "Không nguyên mẫu — да + hiện tại — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích cấu trúc да khi generator chạy." },
+      "fixtures": {
+        "pass": ["искам да ям", "мога да дойда"],
+        "fail": ["искам ям"]
+      }
+    },
+    {
+      "id": "clitic-object-near-verb",
+      "description": "Đại từ tân ngữ yếu (clitic) đứng gần động từ — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Vị trí clitic theo quy tắc." },
+      "fixtures": {
+        "pass": ["го виждам", "казвам ти"],
+        "fail": ["виждам го непра"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["книгата", "столът", "искам да ям", "го виждам"],
+    "fail": ["та книга", "искам ям"],
+    "_note": "Câu pass minh hoạ mạo từ hậu tố + không nguyên mẫu + clitic; paradigm động từ cần native review."
+  }
+}
