@@ -817,6 +817,33 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ khác.
   Commit riêng.
 
+- **D-67 · 2026-07-19 · owner · sv,fi — Owner DUYỆT 6 giả định sản phẩm của
+  sv/fi (chốt D-65/D-66).** Cập nhật tracking duyệt + 2 thay đổi coverage
+  (answer_acceptance_sv/fi → C/VALIDATED). KHÔNG đổi status ngôn ngữ (cả hai
+  vẫn `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN).
+  - **D-sv-01 → DUYỆT:** baseline **sv-SE**.
+  - **D-sv-02 → DUYỆT phương án C:** thiếu/thay **å ä ö = SAI**, không chấp
+    nhận. Lý do owner: å/ä/ö là CHỮ CÁI riêng của tiếng Thụy Điển, không phải
+    dấu phụ → gõ thiếu là sai chính tả (áp tiền lệ pl D-64).
+    `answer_acceptance_sv` → C, nâng **VALIDATED**. Nhắc cài bàn phím Thụy Điển.
+  - **D-sv-03 → DUYỆT:** dùng **du phổ quát** (du-reformen, không phân biệt
+    lịch sự cầu kỳ) — đúng tiếng Thụy Điển hiện đại.
+  - **D-fi-01 → DUYỆT:** baseline **fi-FI**.
+  - **D-fi-02 → DUYỆT:** dạy **yleiskieli** (chuẩn viết) làm nền + cảnh báo
+    **puhekieli** (khẩu ngữ). Giữ cách xử này.
+  - **D-fi-03 → DUYỆT phương án C:** thiếu/thay **ä ö = SAI**, không chấp nhận.
+    Áp tiền lệ pl D-64 + lý do RIÊNG mạnh hơn owner xác nhận: bỏ ä/ö **phá HOÀ
+    ÂM nguyên âm** → sai cả hệ thống, không chỉ sai chữ. `answer_acceptance_fi`
+    → C, nâng **VALIDATED**. Nhắc cài bàn phím Phần Lan.
+  - **📝 GHI CHÚ APP (không phải rule, chưa làm):** với ngôn ngữ có dấu-là-chữ
+    (sv å ä ö, fi ä ö — như pl), app nên nhắc người dùng cài/dùng bàn phím ngôn
+    ngữ đó (bàn phím hệ thống) thay vì tự xây nút nhập ký tự trong bài. Thuộc UX
+    app — ghi lại đây + review-checklist + coverage tương ứng; chưa triển khai.
+  - **Các mục `native-review-sv.md` (7) / `native-review-fi.md` (7) GIỮ NGUYÊN**
+    chờ người bản ngữ. Ghi vào: `sv/review-checklist.md`, `fi/review-checklist.md`
+    (dấu ✅), `sv/coverage.json` + `fi/coverage.json` (answer_acceptance →
+    C/VALIDATED). Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

@@ -10,6 +10,11 @@ thuần tuý (15 cách, luân phiên phụ âm, hoà âm) → `native-review-fi.
 
 Không có front-matter (checklist thao tác).
 
+> **✅ CẬP NHẬT 2026-07-19: owner ĐÃ DUYỆT cả 3 mục** (D-fi-01, D-fi-02, D-fi-03
+> phương án C — xem dấu ✅). `native-review-fi.md` GIỮ NGUYÊN. Status ngôn ngữ
+> KHÔNG đổi (VALIDATED_NOT_YET_PROVEN, không FROZEN); `answer_acceptance_fi`
+> nâng C/VALIDATED. Ghi kèm: `decisions.md` D-67.
+
 ---
 
 ## [D-fi-01] Baseline vùng miền cho tiếng Phần Lan
@@ -27,6 +32,8 @@ Kven là ngôn ngữ riêng.)
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A (fi-FI).** `tts_audio_policy`
 > = VALIDATED, locale fi-FI.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: baseline fi-FI.** Chốt chính thức.
 
 ---
 
@@ -53,6 +60,9 @@ hän→se. Người Phần viết yleiskieli nhưng NÓI puhekieli.
 > ưu tiên khẩu ngữ (giao tiếp trước), đổi sang C/B — nhưng cần bộ nội dung
 > puhekieli riêng.
 
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: dạy yleiskieli (chuẩn viết) làm nền + cảnh báo
+> puhekieli (khẩu ngữ).** Giữ cách xử này. Chốt chính thức.
+
 ---
 
 ## [D-fi-03] Chấm điểm khi thiếu/thay ä ö
@@ -76,3 +86,8 @@ hän→se. Người Phần viết yleiskieli nhưng NÓI puhekieli.
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn C (thiếu ä/ö = sai), theo tiền lệ
 > pl D-64 + lý do hoà âm.** Giữ DRAFT. Nếu owner muốn khác cho fi, cập nhật.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: phương án C (thiếu ä/ö = SAI).** Owner xác
+> nhận lý do mạnh hơn pl: bỏ ä/ö **phá HOÀ ÂM nguyên âm** — sai cả hệ thống,
+> không chỉ sai chữ. `answer_acceptance_fi` cập nhật hướng C + nâng VALIDATED.
+> Nhắc người dùng cài bàn phím Phần Lan (như pl D-64).

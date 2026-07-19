@@ -9,6 +9,11 @@ thuần tuý → `native-review-sv.md`.
 
 Không có front-matter (checklist thao tác).
 
+> **✅ CẬP NHẬT 2026-07-19: owner ĐÃ DUYỆT cả 3 mục** (D-sv-01, D-sv-02 phương
+> án C, D-sv-03 — xem dấu ✅). `native-review-sv.md` GIỮ NGUYÊN. Status ngôn
+> ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN, không FROZEN); `answer_acceptance_sv`
+> nâng C/VALIDATED. Ghi kèm: `decisions.md` D-67.
+
 ---
 
 ## [D-sv-01] Baseline vùng miền cho tiếng Thụy Điển
@@ -26,6 +31,8 @@ là biến thể quốc gia riêng nhưng nhỏ hơn nhiều.
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A (sv-SE).** `tts_audio_policy`
 > = VALIDATED, locale sv-SE.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: baseline sv-SE.** Chốt chính thức.
 
 ---
 
@@ -52,6 +59,11 @@ mal 'con nhậy'; för / for).
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn C (thiếu å/ä/ö = sai), theo tiền
 > lệ pl D-64.** Giữ DRAFT. Nếu owner muốn khác (B/A cho sv), cập nhật.
 
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: phương án C (thiếu å/ä/ö = SAI).** Lý do owner:
+> å/ä/ö là CHỮ CÁI riêng của tiếng Thụy Điển, không phải dấu phụ → gõ thiếu là
+> sai chính tả. `answer_acceptance_sv` cập nhật hướng C + nâng VALIDATED. Nhắc
+> người dùng cài bàn phím Thụy Điển (như pl D-64).
+
 ---
 
 ## [D-sv-03] du phổ quát hay dạy đối lập du/ni
@@ -73,3 +85,6 @@ là cổ/tuỳ chọn.
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A (du phổ quát).**
 > `forms_of_address` VALIDATED với baseline du. `ni` dạy như số nhiều.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: du phổ quát (du-reformen, không phân biệt
+> lịch sự cầu kỳ) — đúng tiếng Thụy Điển hiện đại.** Chốt chính thức.

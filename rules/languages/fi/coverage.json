@@ -182,11 +182,11 @@
     "status": "not-applicable"
   },
   "answer_acceptance_fi": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chính sách chấm khi thiếu/thay ä ö (gõ 'saa' thay 'sää', 'talla' thay 'tällä', hoặc 'a/o'): ä ö là CHỮ CÁI THẬT (vị trí bảng chữ riêng + thuộc nhóm hoà âm TRƯỚC, khác a/o nhóm sau) — GIỐNG BẢN CHẤT pl/sv. Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu = SAI, không chấp nhận (dạy gõ đúng + bàn phím Phần Lan). Thêm lý do RIÊNG fi: bỏ ä/ö phá HOÀ ÂM -> sai hệ thống chứ không chỉ sai chữ. Giữ DRAFT + flag owner (áp tiền lệ sang ngôn ngữ mới). Ghi chú app (như pl): nhắc dùng bàn phím hệ thống Phần Lan.",
-    "status": "DRAFT"
+    "notes": "OWNER DECISION 2026-07-19 (D-67, phương án C): thiếu/thay ä ö (gõ 'saa' thay 'sää', 'talla' thay 'tällä') = SAI, KHÔNG chấp nhận như đáp án đúng. Lý do: ä ö là CHỮ CÁI THẬT (vị trí bảng chữ riêng + nhóm hoà âm TRƯỚC, khác a/o nhóm sau) — áp tiền lệ pl D-64, VÀ lý do RIÊNG mạnh hơn: bỏ ä/ö PHÁ HOÀ ÂM nguyên âm → sai cả hệ thống ngữ pháp, không chỉ sai chữ. Chấm: KHỚP-ĐÚNG chuẩn (ä ö bắt buộc), KHÔNG normalize bỏ dấu. Chữ đích luôn giữ đầy đủ ä ö + độ dài (xem tts_audio_policy/localization-boundaries). GHI CHÚ APP (không phải rule, chưa làm): app nên nhắc người dùng cài/dùng bàn phím Phần Lan hệ thống thay vì nút nhập ký tự trong bài (xem D-67).",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },

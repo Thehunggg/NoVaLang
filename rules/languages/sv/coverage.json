@@ -160,11 +160,11 @@
     "status": "not-applicable"
   },
   "answer_acceptance_sv": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chính sách chấm khi thiếu/thay å ä ö (gõ 'mal' thay 'mål', 'for' thay 'för', hoặc 'aa/ae/oe'): å ä ö là CHỮ CÁI THẬT (vị trí bảng chữ riêng, cuối bảng) — GIỐNG BẢN CHẤT pl (dấu là chữ). Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu chữ này = SAI, không chấp nhận (dạy gõ đúng, dùng bàn phím Thụy Điển). NHƯNG đây là ÁP tiền lệ sang ngôn ngữ mới -> giữ DRAFT + flag owner xác nhận (xem review-checklist D-sv-02). Ghi chú app (như pl): nên nhắc dùng bàn phím hệ thống Thụy Điển.",
-    "status": "DRAFT"
+    "notes": "OWNER DECISION 2026-07-19 (D-67, phương án C): thiếu/thay å ä ö (gõ 'mal' thay 'mål', 'for' thay 'för') = SAI, KHÔNG chấp nhận như đáp án đúng. Lý do owner: å ä ö là CHỮ CÁI riêng của tiếng Thụy Điển (vị trí bảng chữ riêng, cuối bảng), không phải dấu phụ → gõ thiếu là sai chính tả. Áp tiền lệ pl D-64. Chấm: KHỚP-ĐÚNG chuẩn (å ä ö bắt buộc), KHÔNG normalize bỏ dấu. Chữ đích luôn giữ đầy đủ å ä ö (xem tts_audio_policy/localization-boundaries). GHI CHÚ APP (không phải rule, chưa làm): app nên nhắc người dùng cài/dùng bàn phím Thụy Điển hệ thống thay vì nút nhập ký tự trong bài (xem D-67).",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
