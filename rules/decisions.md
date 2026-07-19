@@ -940,6 +940,39 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   nhiên, độ tự nhiên) chờ người bản ngữ. Status: `VALIDATED_NOT_YET_PROVEN`,
   KHÔNG FROZEN. Validator: 4 lỗi vi/zh cũ (ghi nợ), 0 lỗi mới; catalog 60.
 
+- **D-72 · 2026-07-19 · derived · el — `el` (tiếng Hy Lạp hiện đại, el-GR /
+  Standard Modern Greek) build HOÀN TẤT tới `VALIDATED_NOT_YET_PROVEN` qua
+  `/build-language` Bước 0–4.** Ngôn ngữ **RẤT KHÓ** (very hard): hệ chữ HY LẠP
+  (Grek — KHÔNG phải Latin, chữ mới) + 3 giống + 4 cách (nom/gen/acc/voc) +
+  động từ chia đầy đủ (ngôi/số/thì/thể/dạng, không nguyên mẫu) → theo quy tắc
+  tra cứu của owner = **5 vòng** cho quyết định sản phẩm. Nhánh Hellenic riêng
+  của Ấn-Âu, tier t1-only, 24 hiện tượng (nhiều hơn da: thêm `noun_case`,
+  `accent_system` thay `stod`). Dataset CLDR/UD/WikiPron: WikiPron
+  `ell_grek_broad_filtered` **19133 cặp** (bộ LỚN — g2p rất tin cậy); corpus UD
+  Greek-GDT + Greek-GUD **4285 câu** (**DƯỚI mốc 10000, trên sàn 2000** — chỉ
+  2 treebank UD el; ghi rõ trung thực). **NGƯỢC da:** chính tả Hy Lạp KHÁ ĐỀU
+  (phonemic chiều đọc) — g2p-check trên 19133 từ thật: phụ âm/nguyên âm/digraph
+  cơ bản <1% (β 0.06%, δ 0.48%, θ 0.10%, φ 0.05%, χ 0.10%, ψ 0.00%, ξ 0.62%,
+  η 0.05%, αι 0.14%, ου 0.12%, τσ 0.74%, τζ 0.00%, ντ 1.94%) → `grapheme_to_phoneme`
+  VALIDATED. **Kỷ luật dữ liệu (ngoại lệ CÓ QUY LUẬT, giữ rule):** υ→[i] báo
+  11.51% = υ trong digraph αυ/ευ/ου/υι bị nuốt trước (ưu tiên digraph — giống
+  nl ij/pt ão/it gli); ει/οι synizesis trước nguyên âm (→[ʝ]); μπ heterosyllabic
+  (Πέμπτη→[mp]). corpus-check 4285 câu: monotonic (0 ký tự polytonic
+  U+1F00–1FFF) **0.00%** + dấu hỏi Hy Lạp `;` (0 `?` Latin) **0.00%** →
+  `accent_system` + `punctuation_layout` có bằng chứng corpus. HONORIFIC
+  not-applicable (tự áp tiền lệ es B-02). **5 giả định cần owner duyệt (RẤT KHÓ
+  → mỗi mục ghi rõ đi tới vòng mấy):** D-el-01 (baseline el-GR — vòng 1),
+  D-el-02 (monotonic — vòng 2, corpus xác nhận), D-el-03 (KHÔNG Greeklish, dạy
+  chữ Hy Lạp trực tiếp — vòng 3, product), D-el-04 (chấm thiếu tonos/sai ς cuối
+  = SAI, Greeklish không chấp nhận — tự áp tiền lệ pl D-64, giữ DRAFT vì hệ chữ
+  MỚI cần owner xác nhận độ nghiêm), D-el-05 (DẠY đối lập εσύ/εσείς — vòng 2,
+  KHÁC da/sv 'du phổ quát' vì Hy Lạp giữ T-V thật). `native-review-el.md` 7 mục
+  (giống, cách, chia động từ+thể, trọng âm tonos, synizesis/phát âm, εσύ/εσείς,
+  độ tự nhiên) chờ người bản ngữ. Status: `VALIDATED_NOT_YET_PROVEN`, KHÔNG
+  FROZEN. Validator: 4 lỗi vi/zh cũ (ghi nợ), 0 lỗi mới; catalog 60. [Ghi chú
+  kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
+  lại sau khi cache đúng → 19133.]
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

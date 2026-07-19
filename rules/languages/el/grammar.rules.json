@@ -1,0 +1,80 @@
+{
+  "id": "el/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "noun_case",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "el-GR",
+    "gender": {
+      "count": 3,
+      "values": "masculine (m) / feminine (f) / neuter (n)",
+      "definite_article_nom_sg": "ο (m), η (f), το (n)",
+      "definite_article_nom_pl": "οι (m), οι (f), τα (n)",
+      "indefinite_article": "ένας (m), μία/μια (f), ένα (n)",
+      "ending_heuristic": "-ος thường m, -α/-η thường f, -ο/-ι/-μα thường n — NHIỀU biệt lệ → lexical",
+      "article_usage": "mạo từ dùng RỘNG hơn en: đứng trước tên riêng (ο Γιάννης), danh từ trừu tượng/tổng quát"
+    },
+    "noun_case": {
+      "note": "ĐẶC TRƯNG KHÓ NHẤT — 4 cách (Germanic/Romance đã mất). Danh từ + mạo từ + tính từ đều chia.",
+      "nominative": "chủ ngữ (ο άνθρωπος)",
+      "genitive": "sở hữu / 'của' (του ανθρώπου)",
+      "accusative": "tân ngữ trực tiếp / sau nhiều giới từ (τον άνθρωπο)",
+      "vocative": "gọi trực tiếp (άνθρωπε!)",
+      "dative_lost": "dative cổ đã mất → thay bằng σε + accusative hoặc genitive",
+      "declension_classes": "theo giống + lớp biến cách; rule_level hệ thống nhưng paradigm cụ thể + biệt lệ = lexical/native review"
+    },
+    "verb_conjugation": {
+      "note": "CHIA đầy đủ theo ngôi+số+thì+thể+dạng (KHÔNG như da 'không chia ngôi'). KHÔNG có nguyên mẫu — dạng từ điển = ngôi 1 số ít hiện tại.",
+      "present_active": "-ω / -εις / -ει / -ουμε / -ετε / -ουν (γράφω, γράφεις, γράφει, γράφουμε, γράφετε, γράφουν)",
+      "two_groups": "nhóm A paroxytone -ω (γράφω) / nhóm B oxytone -άω/-ώ (αγαπάω/αγαπώ)",
+      "aspect": "trục cốt lõi: imperfective (γράφω, đang/thường) vs perfective (γράψω, hành động trọn) — dùng cho tương lai/subjunctive",
+      "past_augment": "quá khứ có augment ε- + trọng âm lùi (έγραψα, έγραφα)",
+      "voice": "active vs mediopassive (-μαι: έρχομαι, χαίρομαι)",
+      "irregular": "είμαι (là), έχω (có), πάω (đi), λέω (nói)... lexical"
+    },
+    "word_order": {
+      "base": "SVO nền, TỰ DO tương đối (cách đánh dấu vai nghĩa)",
+      "clitic": "đại từ tân ngữ yếu TRƯỚC động từ chia (τον βλέπω 'tôi thấy anh ấy'); SAU imperative/gerund (δες τον!)"
+    },
+    "adjective_agreement": {
+      "note": "tính từ hợp giống + cách + số với danh từ (καλός/καλή/καλό → ο καλός άνθρωπος, η καλή μέρα, το καλό παιδί)"
+    }
+  },
+  "checks": [
+    {
+      "id": "article-gender-agreement",
+      "description": "Mạo từ hợp giống với danh từ (ο/η/το) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần bảng giống + phân tích cách khi generator chạy; giống lexical." },
+      "fixtures": {
+        "pass": ["ο άνθρωπος", "η μέρα", "το παιδί"],
+        "fail": ["το άνθρωπος", "ο μέρα"]
+      }
+    },
+    {
+      "id": "verb-person-agreement",
+      "description": "Động từ chia theo ngôi/số (KHÁC da) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần paradigm + phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["γράφω", "γράφεις", "γράφουμε"],
+        "fail": ["εγώ γράφεις", "εμείς γράφω"]
+      }
+    },
+    {
+      "id": "clitic-before-finite-verb",
+      "description": "Đại từ tân ngữ yếu đứng TRƯỚC động từ chia — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Vị trí clitic cần phân tích cú pháp khi generator chạy." },
+      "fixtures": {
+        "pass": ["τον βλέπω", "σε ευχαριστώ"],
+        "fail": ["βλέπω τον"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["ο άνθρωπος", "γράφω ένα γράμμα", "τον βλέπω", "η καλή μέρα"],
+    "fail": ["το άνθρωπος", "εμείς γράφω"],
+    "_note": "Câu pass minh hoạ 3 giống + chia động từ theo ngôi + clitic trước động từ; paradigm cụ thể cần native review."
+  }
+}

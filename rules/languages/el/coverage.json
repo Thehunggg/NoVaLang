@@ -1,0 +1,172 @@
+{
+  "_meta": {
+    "language": "el",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "el-GR (Standard Modern Greek / Νέα Ελληνική Κοινή)",
+    "family": "Hellenic (nhánh riêng của Ấn-Âu, không cùng nhóm với ngôn ngữ nào khác), hệ chữ Hy Lạp (Grek)",
+    "difficulty_self_assessment": "RẤT KHÓ (very hard): hệ chữ MỚI không phải Latin (Grek) + 3 giống + 4 cách danh từ (nom/gen/acc/voc) + động từ chia đầy đủ theo ngôi/số/thì/thể → theo quy tắc tra cứu của owner = 5 vòng cho quyết định sản phẩm.",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật. g2p-check/corpus-check chạy trên dữ liệu thật để nâng confidence.",
+    "corpus": {
+      "file": "tools/cache/corpus/el-sentences.txt (không commit)",
+      "sentences": 4285,
+      "source": "UD Greek-GDT (train/dev/test) + UD Greek-GUD (train/test) (S-UD-CORPUS)",
+      "note": "DƯỚI mốc 10000 (chỉ có 2 treebank UD cho el) nhưng TRÊN sàn 2000 — corpus check yếu hơn một số ngôn ngữ trước, ghi rõ, không giả vờ đủ 10k."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Hy Lạp. NGƯỢC với da: chính tả Hy Lạp KHÁ ĐỀU (phonemic) — g2p-check trên 19133 từ thật đạt rất tốt (phụ âm/nguyên âm/digraph <1% trừ vài ngoại lệ có quy luật). Cái KHÓ của el là NGỮ PHÁP HÌNH THÁI (giống/cách/chia động từ) + học HỆ CHỮ MỚI, không phải chữ→âm."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Bảng chữ HY LẠP 24 chữ (Α α, Β β, Γ γ, Δ δ, Ε ε, Ζ ζ, Η η, Θ θ, Ι ι, Κ κ, Λ λ, Μ μ, Ν ν, Ξ ξ, Ο ο, Π π, Ρ ρ, Σ σ/ς, Τ τ, Υ υ, Φ φ, Χ χ, Ψ ψ, Ω ω). Bicameral (hoa/thường). ĐẶC TRƯNG: sigma cuối từ dạng riêng ς (σ giữa/đầu từ, ς cuối từ). Hệ MONOTONIC (từ 1982): CHỈ dấu sắc tonos (´) đánh trọng âm + dieresis (¨) tách nguyên âm; đã BỎ hệ polytonic (dấu mũ/spiritus cổ). CLDR xác nhận. Sự kiện phổ thông.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. exemplarCharacters xác nhận: 24 chữ + biến thể có tonos (ά έ ή ί ό ύ ώ) + dieresis (ϊ ϋ) + kết hợp (ΐ ΰ) + sigma cuối ς. auxiliary = chữ Hy Lạp cổ (polytonic — KHÔNG dùng trong el hiện đại; chỉ để nhận diện văn bản cổ).",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Bicameral: hoa đầu câu + danh từ riêng. KHÁC da/sv/es: tháng/thứ trong tuần Hy Lạp VIẾT HOA (Ιανουάριος, Δευτέρα) — như en, KHÔNG viết thường. Tên ngôn ngữ/quốc tịch danh từ viết hoa (Έλληνας, Ελληνικά). ĐẶC TRƯNG: chữ hoa BỎ tonos ở chữ đơn (Α không Ά) — nhưng chữ hoa đầu từ nhiều chữ vẫn có tonos ở vị trí trọng âm (Άννα). Không đưa month-not-capitalized check (không áp cho el).",
+    "status": "DRAFT"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang (như Latin).",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ cái (alphabetic), không có thứ tự nét chuẩn hoá kiểu CJK. (Học viên vẫn cần luyện HÌNH DẠNG chữ Hy Lạp mới — nhưng đó là nhận diện/viết tay chữ cái, không phải stroke-order pedagogy.)",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (ell_grek_broad_filtered, 19133 cặp — bộ LỚN) -> grapheme-to-phoneme.data.json. Hệ 5 nguyên âm ĐƠN GIẢN (a e i o u) — không phân biệt độ dài; phụ âm có cặp ma sát hữu thanh/vô thanh đặc trưng (β[v] γ[ɣ] δ[ð] θ[θ] χ[x/ç]). Có âm vòm hoá trước nguyên âm trước (γ/κ/χ -> [ʝ]/[c]/[ç]). Không thanh điệu, không stød — trọng âm động (dynamic stress) đánh dấu bằng tonos.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "CHÍNH TẢ HY LẠP KHÁ ĐỀU (phonemic theo chiều đọc — biết chữ đọc được âm; chiều viết mới khó vì iotacism: η/ι/υ/ει/οι/υι đều [i]). [Bước 3: g2p-check.mjs trên WikiPron thật 19133 từ.] Phụ âm/nguyên âm cơ bản <1%: β->[v] 0.06%, δ->[ð] 0.48%, θ->[θ] 0.10%, φ->[f] 0.05%, χ->[x/ç] 0.10%, ψ->[ps] 0.00%, ξ->[ks] 0.62%, η->[i] 0.05%, αι->[e] 0.14%, ου->[u] 0.12%, τσ->[ts] 0.74%, τζ->[dz] 0.00%. VALIDATED. KỶ LUẬT DỮ LIỆU (ngoại lệ CÓ QUY LUẬT, không phá rule): (1) υ->[i] 11.51% 'vi phạm' = υ nằm TRONG digraph αυ/ευ/ου/υι bị nuốt trước (av/af/ev/ef/u) — rule đúng, chỉ cần ưu tiên digraph; (2) ει/οι->[i] ~2-3% = synizesis trước nguyên âm (άδεια->[að ʝa]) — lexical; (3) μπ->[b] 5.13% = μπ heterosyllabic (μ+π qua ranh giới, Πέμπτη->[pempti]) giữ [mp] — theo ranh giới âm tiết. Tất cả GIỮ medium/high, ghi rõ.",
+    "status": "VALIDATED"
+  },
+  "accent_system": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG el (thay chỗ 'stod' của da): TRỌNG ÂM ĐỘNG bắt buộc đánh dấu bằng tonos (´) trên nguyên âm âm tiết nhấn, với MỌI từ đa âm tiết. Quy luật cửa sổ 3 âm tiết cuối (trọng âm rơi vào 1 trong 3 âm tiết cuối). Tonos PHÂN BIỆT NGHĨA: πότε 'khi nào'/ποτέ 'không bao giờ'; νόμος 'luật'/νομός 'tỉnh'. Hệ MONOTONIC (cải cách 1982): chỉ 1 dấu tonos + dieresis. [Bước 3: corpus-check 4285 câu — 0 ký tự polytonic (khối Greek Extended U+1F00-1FFF) → monotonic xác nhận 100% trên văn bản thật.] Vị trí trọng âm mỗi từ = lexical (có quy luật hình thái nhưng nhiều biệt lệ).",
+    "status": "VALIDATED"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Greek-GDT test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "gender_and_articles": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "3 GIỐNG (masculine/feminine/neuter — nhiều hơn da/sv 2 giống). Mạo từ xác định chia theo giống+cách+số: ο (m), η (f), το (n) số ít nom; οι/οι/τα số nhiều. Mạo từ không xác định: ένας/μία/ένα. Giống thường đoán được QUA ĐUÔI (-ος thường m, -α/-η thường f, -ο/-ι thường n) nhưng NHIỀU biệt lệ -> lexical. Mạo từ Hy Lạp dùng RỘNG hơn en (đứng trước cả tên riêng, danh từ trừu tượng).",
+    "status": "DRAFT"
+  },
+  "noun_case": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG KHÓ NHẤT của el (không có ở da/sv/es/pt/it — Germanic/Romance đã mất cách): 4 CÁCH — nominative (chủ ngữ), genitive (sở hữu/của), accusative (tân ngữ trực tiếp), vocative (gọi). Danh từ + mạo từ + tính từ ĐỀU chia theo cách. Bảng biến cách theo giống + lớp biến cách (declension class) — rule_level có quy luật hệ thống nhưng nhiều lớp + biệt lệ -> paradigm cụ thể cần native review (lexical). Dative cổ đã mất (thay bằng σε+accusative hoặc genitive).",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "PHỨC (khác hẳn da 'không chia ngôi'): động từ el CHIA theo NGÔI + SỐ (1/2/3 × ít/nhiều) + THÌ + THỂ (aspect: perfective/imperfective) + DẠNG (active/mediopassive). Hiện tại active: -ω/-εις/-ει/-ουμε/-ετε/-ουν (γράφω 'tôi viết'). 2 nhóm biến cách chính (paroxytone -ω vs oxytone -άω). ĐẶC TRƯNG: KHÔNG có nguyên mẫu (infinitive) — dùng ngôi 1 hiện tại làm dạng từ điển. Thì quá khứ có tăng cường (augment) + đổi trọng âm. Aspect (thể) là trục ngữ pháp cốt lõi (γράφω vs γράψω). Paradigm cụ thể + động từ bất quy tắc lexical.",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SVO nền nhưng TƯƠNG ĐỐI TỰ DO (nhờ đánh dấu cách — cách cho biết vai nghĩa nên trật tự linh hoạt cho nhấn mạnh/thông tin cũ-mới). Đại từ tân ngữ yếu (clitic) đứng TRƯỚC động từ chia (τον βλέπω 'tôi thấy anh ấy'), sau imperative/gerund thì đứng sau. Không V2 kiểu da/de.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "CÓ đối lập T-V thật (KHÁC da/sv 'du phổ quát'): εσύ (số ít, thân mật — bạn bè/gia đình/trẻ/ngang hàng) / εσείς (số nhiều HOẶC lịch sự số ít — người lạ/lớn tuổi/cấp trên/trang trọng). Dùng εσείς + động từ ngôi 2 số nhiều để nói lịch sự với 1 người (như vous của fr). Đây là quyết định sản phẩm (dạy đối lập) — xem review-checklist D-el-05.",
+    "status": "VALIDATED"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG el (corpus-check xác nhận): DẤU HỎI = ερωτηματικό ';' (U+003B — GIỐNG HÌNH dấu chấm phẩy Latin nhưng là dấu HỎI trong tiếng Hy Lạp), KHÔNG dùng '?' Latin. [Bước 3: 4285 câu — 233 câu kết thúc bằng ';', 0 câu chứa '?' Latin.] Dấu chấm phẩy Hy Lạp = άνω τελεία '·' (ano teleia, U+00B7, chấm trên). Dấu chấm/phẩy '.'/',' như Latin. Ngoặc kép: «…» (guillemets). [corpus-check regex_absent '?' + regex_absent polytonic đều PASS 100%.]",
+    "status": "VALIDATED"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "MONOTONIC (chuẩn từ 1982): tonos (´) BẮT BUỘC trên từ đa âm tiết đánh trọng âm; dieresis (¨) trên ι/υ tách khỏi nguyên âm trước (μαϊντανός -> a-ï không ai). tonos + dieresis kết hợp: ΐ ΰ. Bỏ/sai tonos = sai chính tả + có thể đổi nghĩa (πότε/ποτέ). sigma cuối ς vs σ giữa cũng là chính tả bắt buộc. Ảnh hưởng chấm điểm — xem answer_acceptance_el (bản chất giống pl/da: dấu là phần chính tả bắt buộc). [Bước 3: 0 ký tự polytonic trên 4285 câu -> monotonic xác nhận.]",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~εσύ + từ thân mật (γεια, γεια σου), NATURAL_NEUTRAL_POLITE~εσείς lịch sự trung tính hoặc εσύ ngang hàng chuẩn mực (baseline), FORMAL~εσείς + từ trang trọng (παρακαλώ, ευχαριστώ, συγγνώμη, Καλημέρα σας). HONORIFIC: not-applicable cho el — không có hệ kính ngữ hình thái kiểu ja/ko; lịch sự qua εσείς + từ vựng (đã bao trong FORMAL + forms_of_address). Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19, ngôn ngữ châu Âu). LƯU Ý DIGLOSSIA lịch sử: katharevousa (thể thức cổ) vs dimotiki (bình dân) — đã hợp nhất thành Standard Modern Greek 1976; katharevousa chỉ còn dấu vết từ vựng trang trọng/tôn giáo/pháp lý, KHÔNG dạy làm register riêng.",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "APPLICABLE về nguyên tắc (el là hệ chữ MỚI không phải Latin — người học phương Tây cần thời gian nhận diện chữ Hy Lạp), KHÁC các ngôn ngữ Latin (not-applicable). NHƯNG: el không có hệ trợ đọc chuẩn kiểu furigana; phiên âm Latin ('Greeklish') là quy ước không chính thức, không nhất quán. QUYẾT ĐỊNH SẢN PHẨM (xem review-checklist D-el-03): có hiển thị phiên âm Latin cho người mới bắt đầu không, và theo trình độ nào. Đề xuất: dạy CHỮ HY LẠP trực tiếp, KHÔNG dùng phiên âm Latin làm nạng (nhất quán triết lý 'học hệ chữ thật' + tránh Greeklish sai chuẩn); audio TTS là kênh phát âm chính.",
+    "status": "DRAFT"
+  },
+  "answer_acceptance_el": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính sách chấm khi thiếu/sai tonos (gõ 'ποτε' thay 'πότε'/'ποτέ'), sai sigma cuối (σ thay ς), hoặc gõ Greeklish Latin thay chữ Hy Lạp: tonos là chính tả BẮT BUỘC + phân biệt nghĩa (πότε/ποτέ), ς/σ bắt buộc theo vị trí. Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu/sai dấu = SAI, không chấp nhận (dạy gõ đúng + bàn phím Hy Lạp). Greeklish (phiên âm Latin) KHÔNG chấp nhận làm đáp án đúng — el viết bằng chữ Hy Lạp. Giữ DRAFT + flag owner (áp sang ngôn ngữ hệ chữ MỚI — cần owner xác nhận độ nghiêm với người mới học chữ). Ghi chú app (như pl): nhắc dùng bàn phím Hy Lạp hệ thống + có thể nới lỏng tonos ở trình độ nhập môn (quyết định owner).",
+    "status": "DRAFT"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Lưu ý: đối lập εσύ/εσείς (chọn đúng theo quan hệ — đừng luôn dịch 'you' thành εσύ), mạo từ dùng rộng (trước tên riêng: ο Γιάννης), trật tự linh hoạt nhờ cách, clitic tân ngữ trước động từ (σε ευχαριστώ).",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text chữ Hy Lạp (đầy đủ tonos + dieresis + ς cuối). TTS el-GR đọc trực tiếp (chính tả đều nên TTS phát âm tốt; tonos hướng dẫn trọng âm). Kế thừa _base/audio.rules.json. Locale: el-GR. Văn bản PHẢI giữ tonos (bỏ -> trọng âm/nghĩa sai) và ς cuối từ.",
+    "status": "VALIDATED"
+  }
+}

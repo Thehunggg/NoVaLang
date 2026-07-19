@@ -1,0 +1,58 @@
+{
+  "id": "el/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "el-GR",
+    "address_forms": {
+      "esy": { "form": "εσύ", "formality": "informal", "number": "singular", "usage": "bạn bè, gia đình, trẻ em, ngang hàng — thân mật" },
+      "eseis": { "form": "εσείς", "formality": "formal_or_plural", "number": "plural_or_polite_singular", "usage": "số nhiều HOẶC lịch sự với 1 người lạ/lớn tuổi/cấp trên (như vous của fr) — động từ ngôi 2 số nhiều" }
+    },
+    "t_v_distinction": {
+      "value": "CÓ đối lập T-V thật (KHÁC da/sv 'du phổ quát'). Dạy cả εσύ và εσείς; chọn theo quan hệ. Xem review-checklist D-el-05.",
+      "tts_locale": "el-GR"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "εσύ + từ thân mật (γεια, γεια σου, τι κάνεις)",
+      "NATURAL_NEUTRAL_POLITE": "εσείς lịch sự trung tính (người lạ) HOẶC εσύ ngang hàng chuẩn mực — baseline",
+      "FORMAL": "εσείς + từ trang trọng (Καλημέρα σας, παρακαλώ, ευχαριστώ πολύ, συγγνώμη)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Hy Lạp KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Lịch sự qua εσείς + từ vựng — đã bao trong FORMAL + forms_of_address. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19, ngôn ngữ châu Âu)."
+      }
+    },
+    "diglossia_note": "Lịch sử katharevousa (thể thức cổ) vs dimotiki (bình dân) hợp nhất thành Standard Modern Greek (1976). katharevousa chỉ còn dấu vết từ vựng trang trọng/pháp lý/tôn giáo — KHÔNG dạy làm register riêng.",
+    "politeness_devices": {
+      "indirect": "Θα μπορούσατε...; (Ngài có thể...?), Παρακαλώ (làm ơn), Θα ήθελα... (Tôi muốn...), συγγνώμη (xin lỗi/xin phép), ευχαριστώ (cảm ơn)"
+    }
+  },
+  "checks": [
+    {
+      "id": "esy-eseis-agreement",
+      "description": "εσύ → động từ ngôi 2 số ít; εσείς → động từ ngôi 2 số nhiều (lịch sự) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích ngôi động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Τι κάνεις;", "Τι κάνετε;"],
+        "fail": ["Εσείς τι κάνεις;"]
+      }
+    },
+    {
+      "id": "polite-eseis-with-strangers",
+      "description": "Lịch sự qua εσείς + từ trang trọng (không qua hình thái kính ngữ) — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Chọn εσύ/εσείς theo ngữ cảnh quan hệ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Καλημέρα σας, τι θα θέλατε;"],
+        "fail": ["Καλημέρα σας, τι θέλεις;"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Τι κάνεις;", "Τι κάνετε;", "Σε ευχαριστώ πολύ.", "Θα μπορούσατε να με βοηθήσετε;"],
+    "fail": ["Εσείς τι κάνεις;", ""],
+    "_note": "Câu pass minh hoạ đối lập εσύ/εσείς + lịch sự qua εσείς/từ vựng."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "el/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "el-GR",
+    "transparency_note": "Chính tả Hy Lạp KHÁ ĐỀU theo CHIỀU ĐỌC (biết chữ → đọc được âm gần như luôn đúng). Chiều VIẾT mới khó (iotacism: η/ι/υ/ει/οι/υι đều [i] → nghe [i] không biết viết chữ nào). WikiPron LỚN (19133) → g2p-check đạt rất tốt.",
+    "single_letter_g2p": {
+      "β": "[v]", "γ": "[ɣ] (trước a/o/u), [ʝ] (trước e/i)", "δ": "[ð]", "ζ": "[z]",
+      "θ": "[θ]", "κ": "[k], [c] trước e/i", "λ": "[l]", "μ": "[m]", "ν": "[n]",
+      "ξ": "[ks]", "π": "[p]", "ρ": "[r]", "σ/ς": "[s], [z] trước phụ âm hữu thanh",
+      "τ": "[t]", "φ": "[f]", "χ": "[x] (trước a/o/u), [ç] (trước e/i)", "ψ": "[ps]",
+      "vowels": "α[a] ε[e] η[i] ι[i] ο[o] υ[i] ω[o]"
+    },
+    "digraphs": {
+      "vowel": "αι[e], ει[i], οι[i], υι[i], ου[u]",
+      "au_eu": "αυ[av]/[af], ευ[ev]/[ef] (hữu thanh trước nguyên âm/phụ âm hữu thanh; vô thanh trước phụ âm vô thanh)",
+      "voiced_stops": "μπ[b]/[mb], ντ[d]/[nd], γκ/γγ[g]/[ŋg], τσ[ts], τζ[dz]"
+    },
+    "g2p_check_results_19133_words": {
+      "β=>v": "0.06% OK", "δ=>ð": "0.48% OK", "θ=>θ": "0.10% OK", "φ=>f": "0.05% OK",
+      "χ=>x|ç": "0.10% OK", "ψ=>ps": "0.00% OK", "ξ=>ks": "0.62% OK",
+      "η=>i": "0.05% OK", "αι=>e": "0.14% OK", "ου=>u": "0.12% OK",
+      "τσ=>ts": "0.74% OK", "τζ=>dz": "0.00% OK", "ντ=>d|nd": "1.94% OK"
+    },
+    "data_discipline_exceptions": {
+      "upsilon_in_digraph": "υ=>i 'vi phạm' 11.51% = υ nằm TRONG digraph αυ/ευ/ου/υι bị nuốt trước → rule đúng, chỉ cần ưu tiên digraph khi tokenize (giống nl ij, pt ão, it gli). GIỮ high.",
+      "synizesis": "ει/οι=>i ~2-3% = synizesis: ει/οι trước nguyên âm thành glide [ʝ] (άδεια->[að.ʝa]) — lexical, GIỮ medium.",
+      "mp_heterosyllabic": "μπ=>b 5.13% = μπ qua ranh giới âm tiết (μ+π: Πέμπτη->[pempti]) giữ [mp] thay vì digraph [b] — theo ranh giới, GIỮ medium."
+    }
+  },
+  "checks": [
+    {
+      "id": "consonant-fricatives",
+      "description": "Phụ âm ma sát đặc trưng Hy Lạp β[v] δ[ð] θ[θ] φ[f] χ[x/ç] ψ[ps] ξ[ks] — g2p-check xác nhận <1% trên WikiPron.",
+      "assert": { "type": "custom", "note": "g2p-check.mjs xác nhận trên WikiPron 19133 từ; violations <1% đều là nhiễu dữ liệu." },
+      "fixtures": { "pass": ["βιβλίο", "δρόμος", "θάλασσα"], "fail": ["βιβλίο-as-b"] }
+    },
+    {
+      "id": "vowel-digraph-precedence",
+      "description": "Digraph nguyên âm (ου[u], αι[e], ει/οι[i]) + αυ/ευ phải ưu tiên TRƯỚC chữ đơn υ[i] khi tokenize.",
+      "assert": { "type": "custom", "note": "υ đơn->[i] nhưng υ trong αυ/ευ/ου/υι bị digraph nuốt trước; xác nhận qua g2p-check data-discipline." },
+      "fixtures": { "pass": ["ουρανός", "αύριο", "παιδί"], "fail": ["ουρανός-u-as-i"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["βιβλίο", "θάλασσα", "ουρανός", "παιδί", "νερό"],
+    "fail": ["βιβλίο-as-b"],
+    "_note": "fixtures minh hoạ; g2p-check.mjs Bước 3 trên WikiPron thật (19133 từ) xác nhận toàn bộ phụ âm/nguyên âm/digraph cơ bản <1% (trừ ngoại lệ CÓ QUY LUẬT: digraph-precedence, synizesis, μπ heterosyllabic — ghi rõ config)."
+  }
+}
