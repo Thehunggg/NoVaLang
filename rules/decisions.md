@@ -615,6 +615,26 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   NOT_STARTED → VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson
   hay ngôn ngữ khác. Commit riêng.
 
+- **D-58 · 2026-07-19 · owner · de,it — Owner DUYỆT 4 giả định sản phẩm của
+  de/it (chốt các mục TỰ QUYẾT ở D-56/D-57).** Cập nhật này CHỈ là tracking
+  duyệt — KHÔNG đổi status ngôn ngữ (cả hai vẫn `VALIDATED_NOT_YET_PROVEN`,
+  KHÔNG FROZEN), KHÔNG đụng rule/coverage/lesson.
+  - **D-de-01 → DUYỆT phương án A:** baseline **de-DE** (Đức chuẩn, không thêm
+    Áo de-AT / Thụy Sĩ de-CH).
+  - **D-de-02 → DUYỆT phương án A:** chấp nhận normalize `ss=ß`,
+    `ae/oe/ue=ä/ö/ü` khi chấm. Owner đồng ý cách xử thận trọng: **GIỮ**
+    `answer_acceptance_de` + `umlaut_orthography` ở **DRAFT** (vì ß/ss đôi khi
+    đổi nghĩa Maße/Masse) — không nâng VALIDATED cho 2 mục đó.
+  - **D-it-01 → DUYỆT phương án A:** baseline **it-IT** (Ý chuẩn).
+  - **D-it-02 → DUYỆT phương án B:** cảnh báo nhẹ khi thiếu/sai dấu phụ (nhất
+    quán tiền lệ es B-03). Owner đồng ý **GIỮ** `answer_acceptance_it` ở
+    **DRAFT**.
+  - **Các mục `native-review-de.md` / `native-review-it.md` GIỮ NGUYÊN** chờ
+    người bản ngữ (bảng chia động từ, giống danh từ, độ tự nhiên bản dịch...):
+    owner KHÔNG tự duyệt được, không đánh dấu duyệt.
+  - Ghi vào: `rules/languages/de/review-checklist.md`,
+    `rules/languages/it/review-checklist.md` (dấu ✅ mỗi mục). Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

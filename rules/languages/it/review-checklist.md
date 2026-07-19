@@ -4,6 +4,12 @@
 cứu. Mỗi mục ghi rõ đã chọn gì + nguồn. Trạng thái ngôn ngữ:
 `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN.
 
+> **✅ CẬP NHẬT 2026-07-19: owner ĐÃ DUYỆT cả 2 mục sản phẩm bên dưới**
+> (D-it-01, D-it-02 — xem dấu ✅ ở cuối mỗi mục). Các mục `native-review-it.md`
+> GIỮ NGUYÊN chờ người bản ngữ (owner không tự duyệt được). Trạng thái ngôn
+> ngữ KHÔNG đổi (vẫn `VALIDATED_NOT_YET_PROVEN`, không FROZEN). Ghi kèm:
+> `decisions.md` D-58.
+
 2 mục, đọc < 5 phút. Đều là **quyết định sản phẩm**. Sự kiện ngôn ngữ Ý thuần
 tuý → `native-review-it.md`.
 
@@ -27,6 +33,9 @@ là chuẩn Ý; Duolingo/Babbel dùng it-IT. Rủi ro thấp, dữ liệu sẵn 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A (it-IT).** `coverage.json`
 > `tts_audio_policy` = VALIDATED, locale it-IT.
 
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: phương án A** (baseline **it-IT**, Ý chuẩn).
+> Chốt chính thức, thay dòng "TỰ QUYẾT (chưa có owner)" phía trên.
+
 ---
 
 ## [D-it-02] Chính sách chấm điểm khi thiếu/sai dấu phụ
@@ -46,3 +55,7 @@ cần field UI hiển thị gợi ý dấu — thuộc implementation).
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn B (cảnh báo nhẹ), theo tiền lệ
 > es B-03.** Nếu owner muốn khác (chấp nhận hoàn toàn A), cập nhật sau.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: phương án B** (cảnh báo nhẹ khi thiếu/sai dấu
+> phụ, nhất quán tiền lệ es B-03). Owner đồng ý GIỮ `answer_acceptance_it` ở
+> **DRAFT**.
