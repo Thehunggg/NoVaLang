@@ -887,6 +887,34 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   `catalog.json` ro.ruleStatus NOT_STARTED → VALIDATED_NOT_YET_PROVEN. Không
   đụng playable config/lesson hay ngôn ngữ khác. Commit riêng.
 
+- **D-70 · 2026-07-19 · owner · cs,ro — Owner DUYỆT 7 giả định sản phẩm của
+  cs/ro (chốt D-68/D-69).** Cập nhật tracking duyệt + 2 thay đổi coverage
+  (answer_acceptance_cs/ro → C/VALIDATED). KHÔNG đổi status ngôn ngữ (cả hai vẫn
+  `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN).
+  - **D-cs-01 → DUYỆT:** baseline **cs-CZ**.
+  - **D-cs-02 → DUYỆT:** dạy **spisovná** (chuẩn viết) làm nền + lưu ý obecná
+    (khẩu ngữ).
+  - **D-cs-03 → DUYỆT phương án C:** thiếu dấu Séc = **SAI** (háček đổi âm,
+    acute/kroužek đổi độ dài/nghĩa — tiền lệ pl D-64). `answer_acceptance_cs`
+    → C, nâng **VALIDATED**. Nhắc cài bàn phím Séc.
+  - **D-ro-01 → DUYỆT:** baseline **ro-RO**.
+  - **D-ro-02 → DUYỆT:** chính tả **â/î theo quy tắc Academia Română 1993**
+    (î đầu/cuối từ, â giữa từ).
+  - **D-ro-03 → DUYỆT phương án C:** thiếu dấu Rumani = **SAI** (5 dấu là chữ —
+    tiền lệ pl D-64); giữ lưu ý **ș/ț dùng comma-below** (không cedilla) —
+    chuẩn hoá cedilla↔comma-below khi so khớp (cùng chữ), nhưng không chấp nhận
+    bỏ hẳn dấu. `answer_acceptance_ro` → C, nâng **VALIDATED**. Nhắc cài bàn
+    phím Rumani.
+  - **D-ro-04 → DUYỆT:** **tu/dumneavoastră** (bỏ dumneata cổ).
+  - **📝 GHI CHÚ APP (không phải rule, chưa làm):** ngôn ngữ có dấu-là-chữ (cs,
+    ro — như pl/sv/fi) → app nên nhắc dùng bàn phím ngôn ngữ đó (bàn phím hệ
+    thống) thay vì nút nhập ký tự trong bài. Ghi ở review-checklist + coverage
+    tương ứng; chưa triển khai.
+  - **Các mục `native-review-cs.md` (7) / `native-review-ro.md` (7) GIỮ NGUYÊN**
+    chờ người bản ngữ. Ghi vào: `cs/review-checklist.md`, `ro/review-checklist.md`
+    (dấu ✅), `cs/coverage.json` + `ro/coverage.json` (answer_acceptance →
+    C/VALIDATED). Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

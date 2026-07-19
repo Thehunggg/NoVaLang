@@ -196,11 +196,11 @@
     "status": "not-applicable"
   },
   "answer_acceptance_cs": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chính sách chấm khi thiếu dấu Séc (gõ 'reka' thay 'řeka', 'byt' thay 'být', 'cesky' thay 'český'): dấu Séc (háček + acute/kroužek) thay đổi ÂM + NGHĨA (s/š, byt/být) — GIỐNG BẢN CHẤT pl. Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu = SAI, không chấp nhận (dạy gõ đúng + bàn phím Séc). Giữ DRAFT + flag owner (áp tiền lệ sang ngôn ngữ mới). Ghi chú app (như pl): nhắc dùng bàn phím hệ thống Séc.",
-    "status": "DRAFT"
+    "notes": "OWNER DECISION 2026-07-19 (D-70, phương án C): thiếu dấu Séc (gõ 'reka' thay 'řeka', 'byt' thay 'být') = SAI, KHÔNG chấp nhận. Lý do: dấu Séc (háček đổi ÂM: s/š; acute/kroužek đổi ĐỘ DÀI/NGHĨA: byt/být) là chữ, không phải accent — áp tiền lệ pl D-64. Chấm: KHỚP-ĐÚNG chuẩn (dấu bắt buộc), KHÔNG normalize bỏ dấu. Chữ đích luôn giữ đầy đủ dấu (xem tts_audio_policy/localization-boundaries). GHI CHÚ APP (không phải rule, chưa làm): app nên nhắc người dùng cài/dùng bàn phím Séc hệ thống (xem D-70).",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },

@@ -161,11 +161,11 @@
     "status": "not-applicable"
   },
   "answer_acceptance_ro": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chính sách chấm khi thiếu/thay ă â î ș ț (gõ 'romana' thay 'română', 'si' thay 'și', 'tara' thay 'țara'): 5 dấu Rumani là CHỮ THẬT (đổi âm + nghĩa: si 'và'/și 'cũng'? no — și 'và'/si nốt nhạc; tara/țara) — GIỐNG BẢN CHẤT pl/sv/fi/cs. Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu = SAI, không chấp nhận (dạy gõ đúng + bàn phím Rumani). Lưu ý ș/ț phải comma-below đúng chuẩn (không phải cedilla). Giữ DRAFT + flag owner. Ghi chú app (như pl): nhắc dùng bàn phím hệ thống Rumani.",
-    "status": "DRAFT"
+    "notes": "OWNER DECISION 2026-07-19 (D-70, phương án C): thiếu/thay ă â î ș ț (gõ 'romana' thay 'română', 'si' thay 'și') = SAI, KHÔNG chấp nhận. Lý do: 5 dấu Rumani là CHỮ THẬT (đổi âm + nghĩa: și 'và'/si nốt nhạc; țara/tara) — áp tiền lệ pl D-64. Chấm: KHỚP-ĐÚNG chuẩn (dấu bắt buộc), KHÔNG normalize bỏ dấu. LƯU Ý ș/ț: chuẩn dùng comma-below (U+0219/U+021B), KHÔNG cedilla — chuẩn hoá cedilla↔comma-below khi so khớp (cùng chữ, hai cách gõ), nhưng KHÔNG chấp nhận bỏ hẳn dấu. Chữ đích luôn giữ đầy đủ dấu comma-below (xem tts_audio_policy/localization-boundaries). GHI CHÚ APP (không phải rule, chưa làm): app nên nhắc người dùng cài/dùng bàn phím Rumani hệ thống (xem D-70).",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
