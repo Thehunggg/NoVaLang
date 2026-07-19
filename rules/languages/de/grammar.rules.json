@@ -1,0 +1,107 @@
+{
+  "id": "de/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "gender_and_number_agreement",
+  "enforces": [
+    "grammar-and-usage.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "UD"
+  ],
+  "derived_by": "human",
+  "config": {
+    "gender_system": {
+      "values": ["masculine", "feminine", "neuter"],
+      "definite_articles_nominative": { "masculine": "der", "feminine": "die", "neuter": "das", "plural": "die" },
+      "indefinite_articles_nominative": { "masculine": "ein", "feminine": "eine", "neuter": "ein" },
+      "predictable": "PHẦN LỚN KHÔNG đoán được từ hình thức (khác es -o/-a) — giống là lexical, học theo từng danh từ. Vài gợi ý hậu tố: -ung/-heit/-keit/-schaft/-tion -> nữ; -chen/-lein -> trung (das Mädchen); -er (người làm) -> nam.",
+      "exception_note": "das Mädchen (cô bé, giống TRUNG vì -chen) là ví dụ kinh điển giống ngữ pháp ≠ giống tự nhiên."
+    },
+    "case_system": {
+      "cases": ["Nominativ", "Akkusativ", "Dativ", "Genitiv"],
+      "definite_article_declension_masculine": {
+        "Nominativ": "der Mann", "Akkusativ": "den Mann", "Dativ": "dem Mann", "Genitiv": "des Mannes"
+      },
+      "role": {
+        "Nominativ": "chủ ngữ", "Akkusativ": "tân ngữ trực tiếp", "Dativ": "tân ngữ gián tiếp", "Genitiv": "sở hữu"
+      },
+      "prepositions_govern_case": {
+        "akkusativ": ["für", "ohne", "gegen", "um", "durch"],
+        "dativ": ["mit", "nach", "aus", "zu", "von", "bei", "seit"],
+        "genitiv": ["wegen", "während", "trotz", "statt"],
+        "two_way": "in/an/auf/über/unter/vor/hinter/neben/zwischen — Akkusativ (chuyển động, wohin) hoặc Dativ (vị trí, wo)"
+      },
+      "status": "PENDING — bảng biến cách đầy đủ (mọi giống × 4 cách × xác định/không xác định + tính từ) là hình thái học lexical, CHƯA có đầy đủ trong phiên này. Xem D-de-lexicon."
+    },
+    "agreement_rule": "Mạo từ + tính từ hoà GIỐNG-SỐ-CÁCH với danh từ trung tâm. Đuôi tính từ đổi theo loại mạo từ (mạnh/yếu/hỗn hợp declension) — lexical/hình thái.",
+    "verb_conjugation": {
+      "persons": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+      "weak_vs_strong": "Động từ yếu (đều, -te quá khứ: machen-machte-gemacht) vs mạnh (đổi nguyên âm thân: singen-sang-gesungen) — mạnh là lexical.",
+      "auxiliaries": "haben/sein cho Perfekt; werden cho tương lai/bị động.",
+      "irregular_status": "sein/haben/werden bất quy tắc — CHƯA có bảng đầy đủ."
+    },
+    "separable_verbs": {
+      "rule": "Tiền tố tách được nhảy về CUỐI mệnh đề chính: aufstehen -> 'Ich stehe um 7 auf.'",
+      "separable_prefixes": ["an", "auf", "aus", "ein", "mit", "vor", "zu", "ab", "nach", "bei", "her", "hin"],
+      "inseparable_prefixes": ["be", "ge", "er", "ver", "zer", "ent", "emp", "miss"],
+      "status": "Chủ yếu lexical (động từ nào tách); quy tắc vị trí thì rule_level."
+    },
+    "word_order": {
+      "main_clause": "V2 — động từ chia ở vị trí thứ HAI (Heute gehe ich ins Kino).",
+      "subordinate_clause": "Động từ chia ở CUỐI (..., weil ich müde bin).",
+      "satzklammer": "Khung câu: trợ động từ vị trí 2 + phân từ/nguyên mẫu ở cuối (Ich habe das Buch gelesen)."
+    }
+  },
+  "checks": [
+    {
+      "id": "article-gender-agreement",
+      "description": "Mạo từ khớp giống danh từ ở Nominativ (kiểm mẫu cố định, không tổng quát).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm tổng quát cần bảng giống danh từ + biến cách khi generator chạy, không phải regex tĩnh."
+      },
+      "fixtures": {
+        "pass": [
+          "der Mann",
+          "die Frau",
+          "das Kind"
+        ],
+        "fail": [
+          "der Frau",
+          "das Mann"
+        ]
+      }
+    },
+    {
+      "id": "v2-word-order",
+      "description": "Mệnh đề chính: động từ chia ở vị trí thứ 2 (kiểm mẫu cố định).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm V2 cần phân tích cú pháp khi generator chạy, không phải regex tĩnh."
+      },
+      "fixtures": {
+        "pass": [
+          "Heute gehe ich ins Kino.",
+          "Ich stehe um sieben auf."
+        ],
+        "fail": [
+          "Heute ich gehe ins Kino."
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "Es muss betont werden, dass Qualität sich beim Essen auszahlt.",
+      "der Mann",
+      "Ich stehe um sieben auf."
+    ],
+    "fail": [
+      "der Frau",
+      "Heute ich gehe ins Kino."
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD German-GSD (Bước 3 mục 6)."
+  }
+}

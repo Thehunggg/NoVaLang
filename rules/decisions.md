@@ -574,6 +574,28 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   hay `rules/languages/{ja,en,vi,zh,ko,es}/**`. Commit riêng ngay sau entry
   này, rồi viết báo cáo tổng hợp 3 ngôn ngữ thành commit cuối cùng.
 
+## 11b. Build rule de/it (2026-07-19) — phiên tự động, 2 ngôn ngữ, không có owner
+
+- **D-56 · 2026-07-19 · derived · de — `de` (tiếng Đức) build HOÀN TẤT, trạng
+  thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN (ADR-014).**
+  22 hiện tượng trong `rules/languages/de/coverage.json`; 4 `.rules.json`
+  (orthography/phonology/grammar/pragmatics) khớp khuôn ja/en/es. Dataset thật:
+  CLDR de, UD German-GSD (word-class), WikiPron `deu_latn_broad` (57662 cặp).
+  Corpus 16589 câu (UD German-GSD+PUD). **g2p-check** xác nhận 4 quy tắc chữ→âm
+  sạch: sch→[ʃ] 1.17%, w-→[v] 0.13%, z-→[ts] 0.99%, v-→[f/v] 0.15% → nâng
+  `grapheme_to_phoneme` VALIDATED. Đặc trưng Đức: viết hoa mọi danh từ, 4 cách
+  (Kasus), V2, động từ tách được, ä/ö/ü/ß. **HONORIFIC not-applicable** — tự áp
+  theo TIỀN LỆ es B-02 đã duyệt (ngôn ngữ châu Âu không có kính ngữ hình thái;
+  pattern lặp lại, Phần B mục 2 của /build-language). 2 mục review-checklist
+  tự quyết (không có owner): D-de-01 baseline de-DE (nguồn: Goethe-Institut +
+  WikiPron/UD), D-de-02 chấp nhận ss/ae/oe/ue (nguồn: DIN 5007-2 + chuẩn Thụy
+  Sĩ) — `answer_acceptance_de`/`umlaut_orthography` giữ DRAFT vì là chính sách
+  chấm điểm có caveat, không tự nâng VALIDATED. Sự kiện ngôn ngữ Đức thuần tuý
+  (adjective declension, strong verbs, noun gender) → `native-review-de.md`.
+  `catalog.json` de.ruleStatus NOT_STARTED → VALIDATED_NOT_YET_PROVEN. Không
+  đụng playable config/lesson/`generate-curriculum` hay ngôn ngữ khác. Commit
+  riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,
