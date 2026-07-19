@@ -32,3 +32,5 @@ Không có front-matter (log nội bộ).
   có chú thích). Sự kiện ngôn ngữ Ba Lan thuần tuý (7 cách, số từ, giống
   nam-người) → `native-review-pl.md`. Trạng thái dừng ở VALIDATED_NOT_YET_PROVEN,
   KHÔNG FROZEN (ADR-014).
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** `casing` NÂNG DRAFT→VALIDATED: V3 corpus-check THẬT (month-weekday-not-capitalized 0.02%) trên corpus lớn; V1 cơ quan chuẩn + V2 giáo trình + V4/V5 đồng thuận tháng/thứ viết thường. answer_acceptance_pl C (owner D-64) tra lại — XÁC NHẬN ĐÚNG (ł/ó/ą/ę/ż... là chữ cái riêng, đổi âm/nghĩa). Còn DRAFT cần người bản ngữ (ngữ pháp/paradigm/g2p ngoại lệ) — giữ nguyên, đã tra 5 vòng, cần người bản ngữ. Status ngôn ngữ KHÔNG đổi.
