@@ -46,6 +46,48 @@
   `NOVALANG-MULTILINGUAL-NATURALNESS-REGISTER-RULE-01` history below remains
   preserved and is not superseded outside this scoped correction.
 
+## `validateFiveCardsStructure` Card 2 vocabulary count: fixed 8 → range 6–15 — 2026-07-19
+
+Follow-up correction to ADR-019: `scripts/validate-curriculum.mjs`'s Card 2
+check required exactly 8 vocabulary cards for every five_cards lesson, not
+just Golden. Confirmed via source read that "8" was never a documented
+Format 2.0/3.0 requirement (`.cursor/rules/03_novalang_lesson_format_2_0.mdc`
+Card 2 only says to preserve the approved source's data/order, no literal
+count) — it was Golden's own actual count, hard-coded into the generic
+validator when ADR-019 generalized it. Project Owner identified this as a
+Golden-derived implementation accident, not a product decision, and
+specified: min 6 / max 15, `vocabulary`/`vocabularyDetails` must still match
+count and ids 1-1. Full record: ADR-019 amendment (2026-07-19).
+
+**File changed:** `scripts/validate-curriculum.mjs` only (validator logic;
+no generator, no generated output, no other file touched).
+
+**Verification:**
+- Baseline (before edit): `validate:curriculum` PASS, 35 courses, 172
+  lessons, same 4 pre-existing soft warnings; `smoke:curriculum` PASS, all
+  sections identical to the last recorded run.
+- Golden Lesson vocabulary confirmed 8/8 (`lesson.vocabulary` and
+  `fiveCardContent.vocabularyDetails`), matching ids, before making any
+  change.
+- After the edit: `validate:curriculum` — **PASS**, identical numbers (35
+  courses, 172 lessons, same 4 warnings, 0 new errors). `smoke:curriculum` —
+  **PASS**, every section identical to baseline. `git status` after
+  regenerating nothing: only `scripts/validate-curriculum.mjs` modified —
+  confirms this was a pure validator-logic change with zero effect on
+  generated output (Golden Lesson untouched by construction, not just by
+  re-diff).
+- Isolated boundary test (the exact new range-check logic, copy-tested
+  standalone rather than importing the whole validator module, which runs
+  `main()` — and therefore a real curriculum validation pass — as an
+  import-time side effect): 5 → FAIL (below min), 6 → PASS, 8 → PASS
+  (Golden's real shape), 10 → PASS, 15 → PASS (at max), 16 → FAIL (above
+  max); a `vocabulary`/`vocabularyDetails` count mismatch and a same-count
+  id-order mismatch both correctly fail with distinct messages.
+
+No commit yet at the time this entry was written — commit/push follow
+immediately, per this task's own explicit authorization ("Commit + push khi
+sạch").
+
 ## Daily Life domain: 16-module × 3-tier restructure, Cơ bản fully named — 2026-07-19
 
 Superseded the 15-topic empty-shell skeleton (below) with the Project

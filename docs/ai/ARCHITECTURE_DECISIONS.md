@@ -1003,6 +1003,54 @@ scope-guard change was explicitly called out in the original plan report as
 a real product decision requiring separate confirmation; the Project Owner's
 instruction to execute this task explicitly included it.
 
+### Amendment — 2026-07-19: Card 2 vocabulary count is a range, not a fixed 8
+
+**Status:** `APPROVED`
+
+**Context:** `validateFiveCardsStructure`'s Card 2 check
+(`scripts/validate-curriculum.mjs`, then line ~922) required
+`lesson.vocabulary.length === 8` and `fiveCardContent.vocabularyDetails.length
+=== 8` for every five_cards lesson. That literal "8" was never a documented
+Format 2.0/3.0 product requirement — `.cursor/rules/03_novalang_lesson_format_2_0.mdc`'s
+Card 2 section only says to preserve the approved source's vocabulary
+data/order, with no numeric count. The "8" was the Golden Lesson's own actual
+vocabulary count, which leaked into this function as a hard-coded literal
+when this ADR generalized it for reuse beyond Golden. Content authors, not
+this validator, should decide how many vocabulary cards a given lesson needs.
+
+**Decision:** Replace the fixed `=== 8` check with a range: **minimum 6,
+maximum 15** vocabulary cards. `lesson.vocabulary` and
+`fiveCardContent.vocabularyDetails` must still have the exact same count as
+each other, and must match ids 1-1 in the same order — only the total count
+became flexible; the pairing between the two arrays is still hard-enforced
+(a new check, not present before, since the prior fixed-8-on-both-arrays
+check made an explicit id-pairing check redundant — with a range, count
+alone no longer guarantees the two arrays describe the same cards).
+
+**Consequences:**
+- Golden Lesson (8 vocabulary cards) is unaffected — 8 sits well inside
+  [6, 15] — verified by re-running `validate:curriculum`/`smoke:curriculum`
+  against the real generated output (see `docs/ai/ACTIVE_TASK.md`
+  2026-07-19 entry): identical numbers to the pre-change baseline (35
+  courses, 172 lessons, same 4 pre-existing soft warnings), and no
+  `shared/generated/**` file changed (this was a validator-only edit; the
+  generator was not touched).
+- Verified in isolation against the new range logic directly (copy-tested,
+  not just read): 5 → fail (below min), 6 → pass, 8 → pass (Golden's real
+  shape), 10 → pass, 15 → pass (at max), 16 → fail (above max); a
+  count-mismatch between `vocabulary`/`vocabularyDetails` and a same-count
+  id-order mismatch both correctly fail with their own distinct messages.
+- A future five_cards lesson (e.g. a Plus lesson needing more vocabulary
+  than Golden's 8) may now use any count from 6–15 without needing a
+  validator change; going outside that range is still a real, deliberate
+  guard (an accidentally near-empty or absurdly bloated Card 2), not a
+  Golden-derived accident.
+
+**Approval:** Approved by Project Owner, 2026-07-19, who identified the
+"exactly 8" check as a Golden-derived implementation accident rather than an
+intended product rule, and specified the 6–15 range along with the
+requirement to keep `vocabulary`/`vocabularyDetails` paired.
+
 ## ADR-020 — Daily Life domain: 10-module blueprint replaced by 15-topic × 3-tier skeleton (en+ja), old non-Golden Module 1 content removed
 
 Status: `APPROVED / IMPLEMENTED (SKELETON ONLY — NO NEW LESSON CONTENT AUTHORED)`

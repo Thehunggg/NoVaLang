@@ -919,8 +919,32 @@ export function validateFiveCardsStructure(lesson) {
   if ((content.mainCards ?? []).join(",") !== expectedCards) {
     fail(`${lesson.id}: must define exactly five main cards in the approved order`);
   }
-  if ((lesson.vocabulary ?? []).length !== 8 || (content.vocabularyDetails ?? []).length !== 8) {
-    fail(`${lesson.id}: Card 2 must contain exactly 8 vocabulary cards`);
+  // Card 2 vocabulary count: a RANGE, not a fixed number. The old "exactly 8"
+  // check was a Golden-Lesson-specific implementation detail that leaked
+  // into this generic function when ADR-019 generalized it for reuse across
+  // every five_cards lesson — 8 was never a documented Format 2.0/3.0
+  // product requirement (see .cursor/rules/03_novalang_lesson_format_2_0.mdc
+  // Card 2, which only says to preserve the approved source's vocabulary
+  // data/order, not a literal count). Content authors decide the real count
+  // per lesson; this only guards against an empty/near-empty card (min) and
+  // an unreasonably bloated one (max). What remains hard-enforced: `vocabulary`
+  // and `vocabularyDetails` must have the SAME count and match ids 1-1 in the
+  // same order — only the total is flexible, not the pairing between the two
+  // arrays (owner decision, 2026-07-19).
+  const MIN_VOCAB_CARDS = 6;
+  const MAX_VOCAB_CARDS = 15;
+  const vocabList = lesson.vocabulary ?? [];
+  const vocabDetailsList = content.vocabularyDetails ?? [];
+  if (vocabList.length < MIN_VOCAB_CARDS || vocabList.length > MAX_VOCAB_CARDS) {
+    fail(`${lesson.id}: Card 2 must contain between ${MIN_VOCAB_CARDS} and ${MAX_VOCAB_CARDS} vocabulary cards, got ${vocabList.length}`);
+  }
+  if (vocabDetailsList.length !== vocabList.length) {
+    fail(`${lesson.id}: Card 2 vocabularyDetails count (${vocabDetailsList.length}) must match vocabulary count (${vocabList.length})`);
+  }
+  const vocabIds = vocabList.map((item) => item?.id);
+  const vocabDetailIds = vocabDetailsList.map((item) => item?.id);
+  if (vocabIds.some((id, index) => id !== vocabDetailIds[index])) {
+    fail(`${lesson.id}: Card 2 vocabulary and vocabularyDetails must match ids 1-1 in the same order`);
   }
   const groups = content.dialogueGroups ?? [];
   if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 4 || (group.lines ?? []).length > 6)) {
