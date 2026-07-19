@@ -978,7 +978,10 @@ export function validateFiveCardsStructure(lesson) {
     fail(`${lesson.id}: Card 5 practice must contain exactly 14 exercises`);
   }
   for (const [index, exercise] of practiceExercises.entries()) {
-    const expectedPlan = index < 10 ? "free" : "plus";
+    // Owner decision (2026-07-19): Free = Q1–Q9, Plus = Q10–Q14
+    // (LESSON_AUTHORING_STANDARD.md §B5/§D5, ADR-008 amendment). Applies to
+    // every five_cards lesson including the Golden Reference Lesson.
+    const expectedPlan = index < 9 ? "free" : "plus";
     if (exercise.order !== index + 1 || exercise.plan !== expectedPlan) {
       fail(`${lesson.id}: practice exercise ${index + 1} must use order ${index + 1} and plan ${expectedPlan}`);
     }
@@ -1098,6 +1101,22 @@ export function validateFiveCardsStructure(lesson) {
     }
     for (const entry of pattern.examples ?? []) requireReading(entry, `grammar ${pattern.title}`);
   }
+  // Content-tier audio (Owner decision 2026-07-19; LESSON_AUTHORING_STANDARD.md
+  // §C1/§D8): every vocabulary card, every vocabulary example, and every
+  // dialogue line must carry a non-empty speechText so the UI can render a
+  // per-item speaker button. (Q14 dialogue lines are already checked above.)
+  const requireSpeech = (entry, label) => {
+    if (!String(entry?.speechText ?? "").trim()) {
+      fail(`${lesson.id}: ${label} is missing speechText (per-item audio)`);
+    }
+  };
+  for (const item of lesson.vocabulary ?? []) requireSpeech(item, `vocabulary ${item.id}`);
+  for (const detail of content.vocabularyDetails ?? []) {
+    for (const [exIndex, entry] of (detail.examples ?? []).entries()) {
+      requireSpeech(entry, `vocabulary detail ${detail.id} example ${exIndex + 1}`);
+    }
+  }
+  for (const group of groups) for (const entry of group.lines ?? []) requireSpeech(entry, `dialogue ${group.id}`);
 }
 
 async function main() {

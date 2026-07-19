@@ -17,12 +17,10 @@ các ràng buộc kỹ thuật đối chiếu trực tiếp từ code
 Khi mâu thuẫn: **Frozen spec / ADR > bản chuẩn owner > file này**. File này
 KHÔNG thay `.cursor/rules/*` hay ADR — nó GOM lại cho dễ dùng.
 
-> **Trạng thái quan hệ Free/Plus (đọc trước khi viết Practice):** Owner đã
-> quyết Free = Q1–Q9 / Plus = Q10–Q14. **Code hiện vẫn là Free Q1–Q10 /
-> Plus Q11–Q14** và CHƯA đổi được vì đổi sẽ phá Golden Lesson (khoá ADR-008) —
-> xem **PHẦN E — Điểm chờ Owner**. Cho tới khi Owner quyết cách xử lý Golden,
-> **viết theo ranh giới code hiện hành (Free 1–10 / Plus 11–14)** để pass
-> validator.
+> **Free/Plus (đã CHỐT 2026-07-19):** **Free = Q1–Q9, Plus = Q10–Q14.** Áp cho
+> MỌI lesson kể cả Golden (Owner mở khoá ADR-008 — xem ADR-008 Amendment
+> 2026-07-19). Code + Golden đã sửa khớp; viết theo ranh giới này (plan `free`
+> cho Q1–Q9, `plus` cho Q10–Q14).
 
 ---
 
@@ -119,9 +117,8 @@ khô cứng, không quy tắc tuyệt đối nếu có ngoại lệ. Chỉ dạy
 thì giới hạn rõ phạm vi; không dạy toàn hệ thống trong một lesson.
 
 **B5. Card 5 — Practice: 14 items.** (Owner §8; ràng buộc §D5)
-- **Free = Q1–Q9, Plus = Q10–Q14** (quyết định Owner). ⚠️ **Code hiện ép Free
-  1–10 / Plus 11–14** — xem PHẦN E; tạm viết theo code (plan `free` cho Q1–Q10,
-  `plus` cho Q11–Q14) để pass validator.
+- **Free = Q1–Q9, Plus = Q10–Q14** (đã chốt + code khớp): plan `free` cho
+  Q1–Q9, plan `plus` cho Q10–Q14.
 - Q1–Q13 **graded**; Q14 = `real_world_practice_dialogue`, `nonGraded: true`.
 
 **B6. Tăng độ khó Q1→Q13.** (Owner §9) Tăng dần, KHÔNG phải 13 câu chỉ đổi vocab
@@ -201,9 +198,9 @@ kiểm; chất lượng cao, tự nhiên, đúng sắc thái — không word-by-
 
 **C1. AUDIO / NÚT LOA — 2 TẦNG (Owner §21).**
 - **TẦNG NỘI DUNG (validator ép — xem §D8):** mỗi item bắt buộc có trường audio
-  (`speechText`). Đây là *điều kiện cần* để có loa. Thiếu = validator throw
-  (với các item đã được ép — hiện là Q14 line + chat slot; xem §D8 và PHẦN E về
-  các item chưa ép).
+  (`speechText`). Validator throw nếu thiếu trên: mỗi vocab card, mỗi vocab
+  example, mỗi dòng dialogue, mỗi dòng Q14 (+ chat slot `audioText`). Đây là
+  *điều kiện cần* để có loa.
 - **TẦNG GIAO DIỆN (Codex, validator KHÔNG kiểm):**
   - Render **nút loa RIÊNG** tại đúng từng item/câu: mỗi Vocabulary Card (từ
     chính) · mỗi example sentence trong Vocabulary · mỗi dòng Card Dialogue ·
@@ -215,15 +212,26 @@ kiểm; chất lượng cao, tự nhiên, đúng sắc thái — không word-by-
   - Text cho TTS / pronunciation handling / locale → theo Language-specific
     Rule (không hardcode).
 
-**C2. Reading / furigana (hiển thị).** (đối chiếu §D9)
-- `reading` là **trường riêng, kana thuần** (data). Với ja: `displayText` lưu
-  **văn bản chuẩn có kanji** (VD `田中さん、今日も…`), `reading` lưu kana thuần
-  (`たなかさん、きょうも…`) — hai trường TÁCH RIÊNG.
-- Furigana **hiển thị dạng ngoặc tròn `漢字（かな）`** được **render từ
-  displayText + reading**, **KHÔNG dùng ruby**. Đây là việc của UI (kết hợp 2
-  trường lúc render), KHÔNG phải chuỗi `漢字（かな）` lưu sẵn trong displayText.
-  ⚠️ Xem PHẦN E: mô tả owner ("displayText furigana 漢字（かな）") khác với dữ
-  liệu Golden (displayText = kanji thuần) — cần owner xác nhận cách hiểu.
+**C2. Reading / furigana — CƠ CHẾ THẬT (đã kiểm code Flutter, E3 chốt).**
+Trong repo có **HAI cơ chế** tuỳ ngữ cảnh — dùng đúng chỗ:
+
+1. **Vocab card / Dialogue line / Q14 line** (mặc định): `displayText` (=
+   `targetText`) lưu **văn bản chuẩn CÓ kanji** (`田中さん、今日も…`); `reading`
+   là **trường RIÊNG kana thuần** (`たなかさん、きょうも…`). Render
+   (`five_card_practice.dart` `hasReading` = `reading` ≠ `targetText`;
+   `lesson_five_card_pages.dart:~599/973/1089`) hiển thị `reading` như **dòng
+   trợ đọc riêng / toggle** — **KHÔNG** ghép thành `漢字（かな）`, **KHÔNG ruby**.
+   Không tồn tại widget parser `漢字（かな）→ ruby`.
+2. **Chat_text_fill segment** (Q10) + đôi chỗ có furigana nội dòng: `displayText`
+   **nhúng sẵn `漢字（かな）` trong text** (VD `私（わたし）は田中（たなか）です。`),
+   hiển thị nguyên văn (parens LÀ furigana). Đây là dữ liệu pre-authored, không
+   phải render kết hợp.
+
+→ **Người build UI:** furigana-in-parens `漢字（かな）` là do (1) **dòng reading
+riêng** hoặc (2) **text nhúng sẵn** — KHÔNG có bước "displayText + reading →
+漢字（かな）" tự động. Reading là trường riêng (validator ép kanji ⇒ có reading,
+§D9). Golden để nguyên (cả hai cơ chế đều chạy; không có mâu thuẫn phá vỡ) —
+không đổi displayText.
 
 **C3. Toggle hỗ trợ đọc.** Reading aid / romanization / translation toggle hiển
 thị theo hệ thống + Language Rule + level. Q14 hỗ trợ reading/pronunciation
@@ -258,9 +266,10 @@ audioName`); mọi `speakerId` phải nằm trong pool. (`:953–971`)
 **D4. Card 4 grammar.** **Đúng 3 grammar patterns.** (`:972`)
 
 **D5. Card 5 practice.** `totalQuestions === 14` và **đúng 14 exercises**
-(`:977`). Mỗi exercise: `order === index+1`. **Plan boundary hiện hành: index
-< 10 → `free`, còn lại → `plus`** = **Free Q1–Q10 / Plus Q11–Q14** (`:981`).
-⚠️ Owner muốn Free Q1–Q9 / Plus Q10–Q14 — CHƯA đổi (PHẦN E).
+(`:977`). Mỗi exercise: `order === index+1`. **Plan boundary: `index < 9` →
+`free`, còn lại → `plus`** = **Free Q1–Q9 / Plus Q10–Q14** (`:981`; smoke
+`:164`, `:250`). Áp cho mọi lesson kể cả Golden (ADR-008 Amendment 2026-07-19;
+Golden Q10 đã đổi `free → plus`).
 
 **D6. Loại câu ÉP CỨNG (chỉ 5 câu; còn lại tự do):**
 - Q3 (index 2) = `matching`, đúng 4 pairs, mỗi pair có `id/left.id/right.id`.
@@ -284,15 +293,17 @@ trần, KHÔNG ép đúng 14 (`validate-curriculum.mjs:~1029–1043`;
 (`[a-zA-Z]`) · `romanization` qua pipeline. Đúng **1 scene divider** có dịch
 vi/en/ja. (`:1026–1069`)
 
-**D8. Audio (tầng nội dung — validator ép ở đâu).** Hiện `validateFiveCardsStructure`
-ÉP `speechText`:
-- Mỗi **dòng Q14**: `targetText` + `speechText` bắt buộc (`:1042`).
-- **Chat slot Q10**: `audioText` bắt buộc (`:1011`).
-- Vocab **card**, dialogue **line**, grammar example: `speechText` **CHƯA được
-  ép** ở hàm generic (Golden có sẵn cho vocab-card + dialogue-line nhưng
-  **thiếu ở 10 vocab-example**). → mở rộng enforcement là việc chờ Owner (PHẦN
-  E). Người viết vẫn PHẢI cung cấp `speechText` cho mọi item theo Owner §21 dù
-  validator chưa chặn hết.
+**D8. Audio (tầng nội dung — validator ÉP).** `validateFiveCardsStructure` ép
+`speechText` KHÔNG rỗng trên (2026-07-19):
+- Mỗi **Vocabulary card** (`speechText`, `:~1105`).
+- Mỗi **Vocabulary example** (`speechText`, `:~1108`).
+- Mỗi **dòng Dialogue** (`speechText`, `:~1113`).
+- Mỗi **dòng Q14** (`targetText` + `speechText`, `:1042`).
+- **Chat slot Q10** (`audioText`, `:1011`).
+- Với ja: `speechText` của vocab example = kana thuần (từ `reading` đã có sẵn).
+Grammar examples: `speechText` CHƯA ép (audio grammar tuỳ Language Rule — Owner
+§21). Thiếu `speechText` ở item bị ép = validator throw. (Đây là *điều kiện
+cần* để có nút loa — tầng render là việc UI, PHẦN C1.)
 
 **D9. Reading (ja) — trường riêng.** Kanji `[㐀-鿿]` trong text ⇒ bắt buộc có
 `reading` không rỗng — áp cho vocabulary, dialogue line, vocabularyDetails
@@ -319,54 +330,52 @@ Source → generate → validate → sync.
 
 ---
 
-## PHẦN E — ĐIỂM CHỜ OWNER (đã DỪNG, không tự sửa)
+## PHẦN E — TRẠNG THÁI (E1–E3 đã áp; E4 chờ triển khai)
 
-**E1. Free/Plus 1–9 / 10–14 — CHƯA đổi được (phá Golden).** Owner quyết Free =
-Q1–Q9, Plus = Q10–Q14. Code hiện là Free 1–10 / Plus 11–14 (`:981`). **Golden
-Lesson Q10 (`chat_text_fill`) hiện có `plan: "free"`** theo ranh giới cũ; đổi
-validator sang 1–9/10–14 sẽ đòi Golden Q10 = `plus` → **phá Golden literal-lock
-(ADR-008)**. Theo lệnh owner ("nếu CÓ phá → DỪNG, báo owner"), **KHÔNG tự sửa
-validator**. Cần Owner chọn:
-1. Re-author Golden Q10 → `plan: plus` qua Change Control ADR-008 (rồi đổi
-   validator 1–9/10–14); hoặc
-2. Grandfather Golden (giữ Golden 1–10, chỉ áp 1–9/10–14 cho lesson MỚI qua một
-   nhánh riêng); hoặc
-3. Giữ nguyên 1–10/11–14.
+**E1. ✅ Free/Plus = Q1–Q9 / Q10–Q14 — ĐÃ ÁP (kể cả Golden).** Owner mở khoá
+ADR-008. Đã sửa: Golden Q10 `plan free → plus` (source
+`ja-unit1-lesson1.mjs`), validator boundary `index < 9`
+(`validate-curriculum.mjs:981`, `smoke:164/250`), Golden invariant test
+(`five_card_lesson_test.dart` take(9)/skip(9)). ADR-008 Amendment 2026-07-19.
+validate + smoke PASS, Golden PASS.
 
-**E2. Audio vocab-example — CHƯA ép được (phá Golden).** Owner §21 muốn mỗi
-example vocab có audio riêng (tầng nội dung). Nhưng Golden hiện **thiếu
-`speechText` ở cả 10 vocab-example** (vocab-card + dialogue-line thì có đủ). Thêm
-validator ép `speechText` cho vocab-example sẽ **phá Golden** → DỪNG. Cần Owner:
-bổ sung audio 10 example của Golden qua Change Control ADR-008 (rồi bật
-enforcement), hoặc miễn example khỏi tầng-nội-dung.
+**E2. ✅ Audio mọi vocab example — ĐÃ ÁP.** `example()` helper thêm `speechText`
+= `reading` (kana đã có sẵn — KHÔNG bịa cách đọc); Golden 10 example đủ audio.
+Validator ép `speechText` trên vocab card + vocab example + dialogue line +
+Q14 line (§D8). validate PASS.
 
-**E3. displayText furigana `漢字（かな）` — cần xác nhận cách hiểu.** Owner ghi
-"displayText furigana ngoặc tròn `漢字（かな）`". Dữ liệu Golden: `displayText` =
-kanji thuần (`田中さん…`), `reading` = kana riêng — furigana `漢字（かな）` là
-việc **render** (kết hợp 2 trường), KHÔNG lưu sẵn trong displayText. Nếu owner
-thực sự muốn `displayText` LƯU chuỗi `漢字（かな）` thì mâu thuẫn Golden → cần
-quyết. (Hiện tại: reading = trường riêng ✓ đúng; furigana-parens = render, PHẦN
-C2.)
+**E3. ✅ Furigana — cơ chế thật đã ghi ở PHẦN C2.** Kiểm code Flutter: có HAI
+cơ chế (reading trường riêng cho vocab/dialogue/Q14; `漢字（かな）` nhúng sẵn cho
+chat segment). KHÔNG có bước "displayText + reading → 漢字（かな）" tự động; KHÔNG
+ruby. Golden displayText giữ nguyên (không mâu thuẫn phá vỡ; cả hai cơ chế
+chạy). Reading = trường riêng, validator ép (§D9).
 
-**E4. Bài tổng hợp cuối Unit (20 câu) — MỚI, CHƯA làm.** Owner muốn bài tổng hợp
-cuối mỗi Unit = 20 câu, tổng hợp lesson đầu→cuối unit, khó hơn lesson thường
-nhưng vẫn dễ→khó dần. **Hiện trạng code:** chỉ có **SHELL** —
-`unit_comprehensive_conversation` (ADR-014): một card render sau Lesson thứ 3
-trong Unit, gate Plus/Pro/Ultimate qua `PlanAccessPolicy`, tap ra thông báo
-"đang chuẩn bị"/"nâng cấp" — **KHÔNG có câu hỏi, KHÔNG có bộ 20 câu, KHÔNG có
-schema/generation cho nội dung**. File: `mobile/novalang_flutter/lib/widgets/
-learn/unit_comprehensive_conversation_card.dart` + `services/plan_access_policy
-.dart` + i18n keys `unitComprehensiveConversation*`. **Để làm 20 câu cần:** (a)
-Owner duyệt nội dung + cách chấm (graded? mấy Free/Plus?); (b) schema mới cho
-activity tổng hợp (khác 5-card lesson); (c) generation + validator + UI thật
-thay shell. → Tính năng mới, **chờ Owner xác nhận cách làm**, chưa build.
+**E4. ⏳ Bài tổng hợp cuối Unit (20 câu) — CHỜ TRIỂN KHAI (chưa build).**
+*Đặc tả (ghi để nhớ):* bài tổng hợp cuối mỗi Unit = **20 câu**, tổng hợp kiến
+thức từ lesson ĐẦU → CUỐI unit, **khó hơn lesson thường** nhưng vẫn **dễ→khó
+dần**. **Hiện trạng code:** chỉ có **SHELL** — `unit_comprehensive_conversation`
+(ADR-014): card render sau Lesson thứ 3 trong Unit, gate Plus/Pro/Ultimate qua
+`PlanAccessPolicy`, tap ra thông báo "đang chuẩn bị"/"nâng cấp" — **KHÔNG câu
+hỏi, KHÔNG bộ 20 câu, KHÔNG schema/generation nội dung**. File:
+`mobile/novalang_flutter/lib/widgets/learn/unit_comprehensive_conversation_card
+.dart` + `services/plan_access_policy.dart` + i18n `unitComprehensiveConversation*`.
+**Chưa build** (Owner: chỉ ghi đặc tả, "chờ triển khai sau khi có lesson
+thường", không build shell mới). Khi làm cần: Owner duyệt nội dung + cách chấm
+(graded? Free/Plus?), schema mới cho activity tổng hợp (khác 5-card lesson),
+generation + validator + UI thật thay shell.
 
 ---
 
 ## Changelog file này
 
-- **2026-07-19** — Tạo mới. Gom 24 nguyên tắc Owner + đối chiếu code
-  (`validate-curriculum.mjs` / `smoke-curriculum-flow.mjs`). Code đổi trong
-  cùng đợt: **nới Q14 số dòng** (bỏ ép đúng 14 cho lesson thường, còn sàn ≥4;
-  Golden vẫn khoá 14 riêng). **Free/Plus 1–9/10–14 DỪNG** (phá Golden — E1).
-  Audio vocab-example + displayText-furigana + bài 20 câu: DỪNG/báo (E2–E4).
+- **2026-07-19 (bản 1)** — Tạo mới. Gom 24 nguyên tắc Owner + đối chiếu code.
+  Nới Q14 số dòng (bỏ ép đúng 14 cho lesson thường, sàn ≥4; Golden khoá 14
+  riêng). Free/Plus + audio-example + furigana + bài-20-câu: DỪNG chờ Owner.
+- **2026-07-19 (bản 2 — Owner mở khoá Golden)** — Áp rule mới cho MỌI bài kể cả
+  Golden (ADR-008 Amendment). **E1** Free/Plus → Q1–Q9 / Q10–Q14 (Golden Q10
+  free→plus, boundary `index<9`, invariant test cập nhật). **E2** audio mọi
+  vocab example (`speechText`=kana `reading`), validator ép speechText trên
+  vocab card + example + dialogue line + Q14. **E3** furigana: ghi cơ chế thật
+  (reading trường riêng, không auto-ghép, không ruby), Golden displayText giữ
+  nguyên. **E4** bài 20 câu cuối unit: ghi đặc tả, chờ triển khai (chưa build).
+  validate:curriculum + smoke:curriculum PASS, Golden PASS.

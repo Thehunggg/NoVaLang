@@ -73060,7 +73060,8 @@
                   "vi": "Chào buổi sáng, thầy/cô.",
                   "en": "Good morning, teacher.",
                   "ja": "先生、おはようございます。"
-                }
+                },
+                "speechText": "せんせい、おはようございます。"
               },
               {
                 "text": "佐藤さん、おはよう！",
@@ -73070,7 +73071,8 @@
                   "vi": "Sato, chào buổi sáng!",
                   "en": "Good morning, Sato!",
                   "ja": "佐藤さん、おはよう！"
-                }
+                },
+                "speechText": "さとうさん、おはよう！"
               }
             ]
           },
@@ -73263,7 +73265,8 @@
                   "vi": "Xin chào, anh/chị Tanaka.",
                   "en": "Hello, Tanaka.",
                   "ja": "こんにちは、田中さん。"
-                }
+                },
+                "speechText": "こんにちは、たなかさん。"
               }
             ]
           },
@@ -73396,7 +73399,8 @@
                   "vi": "Chào buổi tối. Hôm nay lạnh nhỉ.",
                   "en": "Good evening. It is cold today, is it not?",
                   "ja": "こんばんは。今日は寒いですね。"
-                }
+                },
+                "speechText": "こんばんは。きょうはさむいですね。"
               }
             ]
           },
@@ -73503,7 +73507,8 @@
                   "vi": "Rất vui được gặp bạn lần đầu. Tôi là Tanaka.",
                   "en": "Nice to meet you. I am Tanaka.",
                   "ja": "はじめまして。田中です。"
-                }
+                },
+                "speechText": "はじめまして。たなかです。"
               }
             ]
           },
@@ -73606,7 +73611,8 @@
                   "vi": "Tôi là Tanaka.",
                   "en": "I am Tanaka.",
                   "ja": "田中です。"
-                }
+                },
+                "speechText": "たなかです。"
               },
               {
                 "text": "佐藤です。",
@@ -73616,7 +73622,8 @@
                   "vi": "Tôi là Sato.",
                   "en": "I am Sato.",
                   "ja": "佐藤です。"
-                }
+                },
+                "speechText": "さとうです。"
               }
             ]
           },
@@ -73719,7 +73726,8 @@
                   "vi": "Rất vui được gặp bạn lần đầu. Tôi là Tanaka. Rất mong được làm quen.",
                   "en": "Nice to meet you. I am Tanaka. I look forward to getting to know you.",
                   "ja": "はじめまして。田中です。よろしくお願いします。"
-                }
+                },
+                "speechText": "はじめまして。たなかです。よろしくおねがいします。"
               },
               {
                 "text": "田中。よろしく！",
@@ -73729,7 +73737,8 @@
                   "vi": "Tớ là Tanaka. Làm quen nhé!",
                   "en": "I am Tanaka. Nice to meet you!",
                   "ja": "田中。よろしく！"
-                }
+                },
+                "speechText": "たなか。よろしく！"
               }
             ]
           },
@@ -73789,7 +73798,8 @@
               {
                 "text": "A:\nよろしくお願いします。\n\nB:\nこちらこそ、よろしくお願いします。",
                 "reading": "よろしくおねがいします。\n\nこちらこそ、よろしくおねがいします。",
-                "translation": ""
+                "translation": "",
+                "speechText": "よろしくおねがいします。\n\nこちらこそ、よろしくおねがいします。"
               }
             ]
           },
@@ -74283,12 +74293,14 @@
                   "vi": "Tôi là Tanaka.",
                   "en": "I am Tanaka.",
                   "ja": "田中です。"
-                }
+                },
+                "speechText": "たなかです。"
               },
               {
                 "text": "私は田中です。",
                 "reading": "わたしはたなかです。",
-                "translation": ""
+                "translation": "",
+                "speechText": "わたしはたなかです。"
               }
             ],
             "explanation": [
@@ -74372,7 +74384,8 @@
                   "vi": "Rất vui được gặp bạn lần đầu. Tôi là Sato.",
                   "en": "Nice to meet you. I am Sato.",
                   "ja": "はじめまして。佐藤です。"
-                }
+                },
+                "speechText": "はじめまして。さとうです。"
               }
             ],
             "whenToUse": [
@@ -74426,12 +74439,14 @@
               {
                 "text": "はじめまして。田中です。よろしくお願いします。",
                 "reading": "はじめまして。たなかです。よろしくおねがいします。",
-                "translation": ""
+                "translation": "",
+                "speechText": "はじめまして。たなかです。よろしくおねがいします。"
               },
               {
                 "text": "田中。よろしく！",
                 "reading": "たなか。よろしく！",
-                "translation": ""
+                "translation": "",
+                "speechText": "たなか。よろしく！"
               }
             ],
             "casual": [
@@ -75715,7 +75730,7 @@
             {
               "id": "ja-daily_life-m01-u1-l1-practice-10",
               "order": 10,
-              "plan": "free",
+              "plan": "plus",
               "type": "chat_text_fill",
               "prompt": "Hoàn thành đoạn chat",
               "promptByNative": {

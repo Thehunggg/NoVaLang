@@ -84,6 +84,42 @@ Status: `FROZEN`
 
 Its content, order, flow, metadata, resume behavior, wrong-answer handling, and protected format must not be changed without explicit approval.
 
+### Amendment — 2026-07-19: authoring rules apply to Golden too (Owner-approved Golden edits)
+
+**Status:** `APPROVED` (explicit Owner approval to modify the Golden Lesson).
+
+Context: Owner ratified `LESSON_AUTHORING_STANDARD.md` and decided the new
+rules apply to **every** lesson **including the Golden Reference Lesson** —
+Golden is no longer exempt. Owner explicitly authorized editing Golden for
+consistency. Changes made under this amendment:
+
+1. **Free/Plus boundary changed to Free = Q1–Q9 / Plus = Q10–Q14** (was Free
+   Q1–Q10 / Plus Q11–Q14). Golden's Q10 (`chat_text_fill`) `plan` was changed
+   `free → plus` in the approved source
+   (`scripts/content/daily-life/module-1/ja-unit1-lesson1.mjs`). The generic
+   validator boundary (`scripts/validate-curriculum.mjs`,
+   `scripts/smoke-curriculum-flow.mjs`) and the Golden Flutter invariant test
+   (`five_card_lesson_test.dart`) were updated to `index < 9 ? free : plus`.
+2. **Per-example audio:** every vocabulary example now carries `speechText`
+   (kana, taken from each example's already-authored `reading` — nothing
+   invented). Golden's 10 vocab examples previously lacked `speechText`; they
+   gained it. The generic validator now enforces `speechText` on every
+   vocabulary card, vocabulary example, and dialogue line (Q14 lines were
+   already enforced).
+3. **Q14 line count** is no longer forced to exactly 14 for a normal lesson
+   (generic check requires only ≥4). **Golden's Q14 remains locked to its exact
+   14 approved Tanaka–Sato lines** via `validateApprovedGoldenLessonContent`
+   — unchanged.
+
+Unchanged and still frozen: Golden's language/domain/id, exactly 5 main cards,
+exactly 14 exercises, Q1–Q9 content, the Q14 14-line approved dialogue, stable
+exercise/token ids, order, resume/wrong-answer behavior. Verification:
+`validate:curriculum` + `smoke:curriculum` PASS (same 4 pre-existing soft
+`rules/` warnings, 0 new errors); Golden content-lock + five-cards scope guard
+PASS. `flutter test` not run in this cloud env (no SDK) — the boundary test
+source was updated to match; real Flutter verification pending a machine with
+Flutter installed.
+
 ## ADR-009 — Multi-agent implementation workflow
 
 Status: `APPROVED`

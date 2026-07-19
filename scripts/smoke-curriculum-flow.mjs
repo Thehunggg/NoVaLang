@@ -161,8 +161,8 @@ function checkApprovedJaUnitOneLesson(lesson) {
   if (practice.totalQuestions !== 14 || exercises.length !== 14) {
     fail(section, { lessonId: lesson.id }, "Card 5 trial must contain exactly 14 exercises");
   }
-  if (exercises.some((exercise, index) => exercise.order !== index + 1 || exercise.plan !== (index < 10 ? "free" : "plus"))) {
-    fail(section, { lessonId: lesson.id }, "Card 5 trial plan boundary must be Free 1–10 and Plus 11–14");
+  if (exercises.some((exercise, index) => exercise.order !== index + 1 || exercise.plan !== (index < 9 ? "free" : "plus"))) {
+    fail(section, { lessonId: lesson.id }, "Card 5 trial plan boundary must be Free 1–9 and Plus 10–14");
   }
   const checkpoint = exercises[8];
   if (checkpoint?.type !== "checkpoint" || (checkpoint.subQuestions ?? []).length !== 5 || (checkpoint.subQuestions ?? []).some((item) => (item.options ?? []).length !== 4 || !item.options.some((option) => option.id === item.correctOptionId))) {
@@ -247,8 +247,8 @@ function checkFiveCardsLessonStructure(lesson, section) {
   if (practice.totalQuestions !== 14 || exercises.length !== 14) {
     fail(section, { lessonId: lesson.id }, "Card 5 practice must contain exactly 14 exercises");
   }
-  if (exercises.some((exercise, index) => exercise.order !== index + 1 || exercise.plan !== (index < 10 ? "free" : "plus"))) {
-    fail(section, { lessonId: lesson.id }, "Card 5 practice plan boundary must be Free 1–10 and Plus 11–14");
+  if (exercises.some((exercise, index) => exercise.order !== index + 1 || exercise.plan !== (index < 9 ? "free" : "plus"))) {
+    fail(section, { lessonId: lesson.id }, "Card 5 practice plan boundary must be Free 1–9 and Plus 10–14");
   }
   const checkpoint = exercises[8];
   if (checkpoint?.type !== "checkpoint" || (checkpoint.subQuestions ?? []).length !== 5 || (checkpoint.subQuestions ?? []).some((item) => (item.options ?? []).length !== 4 || !item.options.some((option) => option.id === item.correctOptionId))) {

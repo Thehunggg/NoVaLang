@@ -43,7 +43,12 @@ const dialogueLine = (speakerId, text, reading, translation, speechText) => ({
   speakerReading: undefined,
 });
 
-const example = (text, reading, translation) => ({ text, reading, translation });
+// Owner decision (2026-07-19): every vocabulary example must carry audio
+// (speech) so the UI can render a per-example speaker button (LESSON_AUTHORING_
+// STANDARD.md §C1/§D8). speechText defaults to the example's already-authored
+// kana `reading` (pure kana is the safe TTS surface for Japanese) — no reading
+// is invented here; each call already supplies its kana reading.
+const example = (text, reading, translation, speechText = reading) => ({ text, reading, translation, speechText });
 const option = (id, text, canonicalText = text, audioText = canonicalText) => ({ id, text, canonicalText, audioText });
 const token = (id, text, canonicalText = text, audioText = canonicalText) => ({ id, text, canonicalText, audioText });
 
@@ -137,7 +142,7 @@ const PRACTICE_EXERCISES = [
     ],
   },
   {
-    id: 'ja-daily_life-m01-u1-l1-practice-10', order: 10, plan: 'free', type: 'chat_text_fill',
+    id: 'ja-daily_life-m01-u1-l1-practice-10', order: 10, plan: 'plus', type: 'chat_text_fill',
     prompt: 'Hoàn thành đoạn chat',
     chat: {
       timestamp: '11:00',
