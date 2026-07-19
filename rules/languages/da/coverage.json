@@ -147,11 +147,11 @@
     "status": "not-applicable"
   },
   "answer_acceptance_da": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chính sách chấm khi thiếu/thay æ ø å (gõ 'laese' thay 'læse', 'hor' thay 'hør', hoặc 'ae/oe/aa'): æ ø å là CHỮ CÁI THẬT (vị trí bảng chữ riêng, cuối bảng) — GIỐNG BẢN CHẤT pl/sv. Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu = SAI, không chấp nhận (dạy gõ đúng + bàn phím Đan Mạch). Lưu ý 'aa' là biến thể lịch sử của 'å' (Aabenraa) — chấp nhận aa=å ở tên riêng lịch sử. Giữ DRAFT + flag owner. Ghi chú app (như pl): nhắc dùng bàn phím hệ thống Đan Mạch.",
-    "status": "DRAFT"
+    "notes": "Chính sách chấm khi thiếu/thay æ ø å (gõ 'laese' thay 'læse', 'hor' thay 'hør', hoặc 'ae/oe/aa'): æ ø å là CHỮ CÁI THẬT (vị trí bảng chữ riêng, cuối bảng) — GIỐNG BẢN CHẤT pl/sv. OWNER DUYỆT phương án C 2026-07-19 (D-73, D-da-03): thiếu = SAI, không chấp nhận (dạy gõ đúng + bàn phím Đan Mạch). Lưu ý 'aa' là biến thể lịch sử của 'å' (Aabenraa) — chấp nhận aa=å ở tên riêng lịch sử. Ghi chú app (như pl): nhắc dùng bàn phím hệ thống Đan Mạch (chưa triển khai).",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },

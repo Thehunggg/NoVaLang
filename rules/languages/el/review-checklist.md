@@ -26,6 +26,8 @@ Không có front-matter (checklist thao tác).
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A (el-GR).** `tts_audio_policy`
 > = VALIDATED, locale el-GR.
+>
+> **✅ OWNER DUYỆT 2026-07-19 (D-73): A (baseline el-GR).**
 
 ---
 
@@ -43,6 +45,8 @@ Không có front-matter (checklist thao tác).
 
 > **TỰ QUYẾT 2026-07-19: Chọn A (monotonic).** `accent_system` +
 > `diacritics_orthography` theo monotonic; check corpus PASS 0.00%.
+>
+> **✅ OWNER DUYỆT 2026-07-19 (D-73): A (monotonic, bỏ polytonic cổ).**
 
 ---
 
@@ -71,6 +75,9 @@ Lạp. Câu hỏi: có hiển thị phiên âm Latin ("Greeklish") kèm để đ
 > **TỰ QUYẾT 2026-07-19: Chọn A (không Greeklish, dạy chữ Hy Lạp trực tiếp).**
 > `reading_aid_policy` DRAFT, flag owner. Nếu owner muốn hỗ trợ nhập môn →
 > B (ẩn dần) là lựa chọn thứ hai hợp lý.
+>
+> **✅ OWNER DUYỆT 2026-07-19 (D-73): A (KHÔNG Greeklish, dạy chữ Hy Lạp trực
+> tiếp).** `reading_aid_policy` chốt A.
 
 ---
 
@@ -102,6 +109,9 @@ DRAFT.**
 > **TỰ QUYẾT 2026-07-19: Chọn C (thiếu tonos/sai ς = sai; Greeklish không
 > chấp nhận), theo tiền lệ pl D-64.** Giữ `answer_acceptance_el` DRAFT vì
 > el là hệ chữ MỚI — cần owner xác nhận độ nghiêm với người mới học.
+>
+> **✅ OWNER DUYỆT 2026-07-19 (D-73): C (thiếu tonos/sai ς = SAI, Greeklish
+> không nhận).** `answer_acceptance_el` nâng **VALIDATED**.
 
 ---
 
@@ -121,3 +131,6 @@ KHÁC da/sv (owner đã duyệt "du phổ quát"): tiếng Hy Lạp GIỮ đối
 
 > **TỰ QUYẾT 2026-07-19: Chọn A (dạy đối lập εσύ/εσείς).** `forms_of_address`
 > VALIDATED với cả hai dạng; `register_taxonomy` map εσείς → FORMAL.
+>
+> **✅ OWNER DUYỆT 2026-07-19 (D-73): A (dạy đối lập εσύ/εσείς — giữ T-V thật
+> của Hy Lạp, khác da/sv).**

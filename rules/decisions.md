@@ -973,6 +973,28 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-73 · 2026-07-19 · owner · da,el — Owner DUYỆT 8 giả định sản phẩm của
+  da/el (chốt D-71/D-72).** Cập nhật tracking duyệt + 2 thay đổi coverage
+  (answer_acceptance_da/el → C/VALIDATED). KHÔNG đổi status ngôn ngữ (cả hai vẫn
+  `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN).
+  - **D-da-01 → DUYỆT:** baseline **da-DK**.
+  - **D-da-02 → DUYỆT:** **du phổ quát** (De gần tuyệt chủng).
+  - **D-da-03 → DUYỆT phương án C:** thiếu æ/ø/å = **SAI** (tiền lệ pl D-64).
+    `answer_acceptance_da` → C, nâng **VALIDATED**. Nhắc cài bàn phím Đan Mạch.
+  - **D-el-01 → DUYỆT:** baseline **el-GR**.
+  - **D-el-02 → DUYỆT:** **monotonic** (bỏ polytonic cổ).
+  - **D-el-03 → DUYỆT:** **KHÔNG Greeklish**, dạy chữ Hy Lạp trực tiếp
+    (`reading_aid_policy` chốt A).
+  - **D-el-04 → DUYỆT phương án C:** thiếu tonos/sai ς cuối = **SAI**, KHÔNG
+    nhận Greeklish (tiền lệ pl D-64). `answer_acceptance_el` → C, nâng
+    **VALIDATED**. Nhắc cài bàn phím Hy Lạp.
+  - **D-el-05 → DUYỆT:** dạy **đối lập εσύ/εσείς** (giữ T-V thật của Hy Lạp —
+    KHÁC da/sv 'du/du phổ quát').
+  - **Các mục `native-review-da.md` (7) / `native-review-el.md` (7) GIỮ NGUYÊN**
+    chờ người bản ngữ. Ghi vào: `da/review-checklist.md`, `el/review-checklist.md`
+    (dấu ✅), `da/coverage.json` + `el/coverage.json` (answer_acceptance →
+    C/VALIDATED). Commit riêng cho phần A này.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

@@ -148,11 +148,11 @@
     "status": "DRAFT"
   },
   "answer_acceptance_el": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chính sách chấm khi thiếu/sai tonos (gõ 'ποτε' thay 'πότε'/'ποτέ'), sai sigma cuối (σ thay ς), hoặc gõ Greeklish Latin thay chữ Hy Lạp: tonos là chính tả BẮT BUỘC + phân biệt nghĩa (πότε/ποτέ), ς/σ bắt buộc theo vị trí. Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu/sai dấu = SAI, không chấp nhận (dạy gõ đúng + bàn phím Hy Lạp). Greeklish (phiên âm Latin) KHÔNG chấp nhận làm đáp án đúng — el viết bằng chữ Hy Lạp. Giữ DRAFT + flag owner (áp sang ngôn ngữ hệ chữ MỚI — cần owner xác nhận độ nghiêm với người mới học chữ). Ghi chú app (như pl): nhắc dùng bàn phím Hy Lạp hệ thống + có thể nới lỏng tonos ở trình độ nhập môn (quyết định owner).",
-    "status": "DRAFT"
+    "notes": "Chính sách chấm khi thiếu/sai tonos (gõ 'ποτε' thay 'πότε'/'ποτέ'), sai sigma cuối (σ thay ς), hoặc gõ Greeklish Latin thay chữ Hy Lạp: tonos là chính tả BẮT BUỘC + phân biệt nghĩa (πότε/ποτέ), ς/σ bắt buộc theo vị trí. OWNER DUYỆT phương án C 2026-07-19 (D-73, D-el-04): thiếu/sai dấu = SAI, không chấp nhận (dạy gõ đúng + bàn phím Hy Lạp). Greeklish (phiên âm Latin) KHÔNG chấp nhận làm đáp án đúng — el viết bằng chữ Hy Lạp. Ghi chú app (như pl): nhắc dùng bàn phím Hy Lạp hệ thống (chưa triển khai).",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
