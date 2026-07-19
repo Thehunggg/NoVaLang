@@ -155,11 +155,11 @@
     "status": "not-applicable"
   },
   "answer_acceptance_tr": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chính sách chấm khi thiếu/thay chữ Thổ đặc thù (gõ i thay ı, c thay ç, s thay ş, g thay ğ, o thay ö, u thay ü): ç ş ğ ı ö ü là CHỮ CÁI RIÊNG (đổi âm/nghĩa; ı≠i đặc biệt — 'sık'≠'sik'). Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu/sai = SAI, không chấp nhận (dạy gõ đúng + bàn phím Thổ). Circumflex â/î/û (kar/kâr): ngày càng tuỳ chọn → có thể KHOAN DUNG riêng (như ru ё/uk ґ). Giữ DRAFT + flag owner (điểm circumflex; và điểm ı/İ khi hệ thống tự lowercase/uppercase phải theo locale tr). Xem review-checklist D-tr-04.",
-    "status": "DRAFT"
+    "notes": "HAI PHẦN (owner DUYỆT 2026-07-19 D-77 / D-tr-04). (1) ç ş ğ ı ö ü: phương án C — thiếu/thay (i thay ı, c thay ç, s thay ş, g thay ğ, o thay ö, u thay ü) = SAI, không chấp nhận, vì là CHỮ CÁI RIÊNG (đổi âm/nghĩa; đặc biệt ı≠i: 'sık'≠'sik'). Nhắc cài bàn phím Thổ. Áp tiền lệ pl D-64. (2) circumflex â/î/û: KHOAN DUNG — chấp nhận a/i/u thay â/î/û (cảnh báo nhẹ), vì dấu phụ hiếm, ngày càng tuỳ chọn theo TDK (chỉ giữ khi tránh nhầm kar/kâr) — NGOẠI LỆ CÓ CƠ SỞ (như ё Nga/ґ Ukraina). LƯU Ý KỸ THUẬT (implementation, không phải rule): so khớp đáp án + lowercase/uppercase PHẢI dùng locale tr (i↔İ, ı↔I) — dùng locale mặc định làm sai chấm i.",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },

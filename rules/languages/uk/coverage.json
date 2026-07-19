@@ -162,11 +162,11 @@
     "status": "DRAFT"
   },
   "answer_acceptance_uk": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chính sách chấm khi thiếu/thay chữ Ukraina đặc thù (gõ и thay і/ї, е thay є, г thay ґ, bỏ dấu nháy ', bỏ dấu mềm ь) hoặc gõ chuyển tự Latin: і/ї/є/ґ/ь là CHỮ CÁI RIÊNG (đổi âm/nghĩa), dấu nháy ' + ь là chính tả bắt buộc. Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu/sai = SAI, không chấp nhận (dạy gõ đúng + bàn phím Ukraina). Chuyển tự Latin KHÔNG chấp nhận làm đáp án đúng. LƯU Ý PHỨC TẠP cần owner: ґ [g] hay bị thay bằng г [ɦ] trong thực tế (ґ từng bị cấm thời Soviet, vẫn ít dùng) — có thể cần KHOAN DUNG riêng cho ґ/г (giống ru ё/е), KHÁC phần còn lại nghiêm. Giữ DRAFT + flag owner (xem review-checklist D-uk-04).",
-    "status": "DRAFT"
+    "notes": "HAI PHẦN (owner DUYỆT 2026-07-19 D-77 / D-uk-04). (1) і/ї/є/ь + dấu nháy ' + chuyển tự Latin: phương án C — thiếu/thay (и thay і/ї, е thay є, bỏ ь, bỏ ', gõ Latin) = SAI, không chấp nhận, vì і/ї/є/ь là CHỮ CÁI RIÊNG (đổi âm/nghĩa: ї[ji]≠і[i]≠и[ɪ]) + dấu nháy đổi cách đọc. Nhắc cài bàn phím Ukraina. (2) ґ/г: KHOAN DUNG — chấp nhận г [ɦ] thay ґ [g] (hoặc chỉ cảnh báo nhẹ), vì ґ từng bị cấm thời Soviet 1933–1990 nên thực tế hay nhầm — NGOẠI LỆ CÓ CƠ SỞ LỊCH SỬ (như ё Nga). Áp tiền lệ pl D-64 cho phần (1); phần (2) là ngoại lệ owner-approved.",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },

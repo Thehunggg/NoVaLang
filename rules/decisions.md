@@ -973,6 +973,31 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-77 · 2026-07-19 · owner · uk,tr — Owner DUYỆT 10 giả định sản phẩm của
+  uk/tr (chốt D-75/D-76).** Cập nhật tracking duyệt + 2 thay đổi coverage
+  (answer_acceptance_uk/tr → VALIDATED). KHÔNG đổi status ngôn ngữ (cả hai vẫn
+  `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN).
+  - **D-uk-01→05 DUYỆT:** baseline uk-UA · Правопис 2019 · KHÔNG chuyển tự Latin
+    (dạy chữ Kirin) · **chấm C** cho і/ї/є/ь/' (chữ cái riêng, thiếu = SAI)
+    NHƯNG **ґ/г KHOAN DUNG** (chấp nhận г thay ґ — ґ bị cấm thời Soviet 1933–1990,
+    nay hay nhầm, NGOẠI LỆ CÓ CƠ SỞ LỊCH SỬ như ё Nga) · dạy ти/ви + vocative.
+    `answer_acceptance_uk` → VALIDATED (2 phần). Nhắc cài bàn phím Ukraina.
+  - **D-tr-01→05 DUYỆT:** baseline tr-TR · chuẩn TDK · reading-aid N/A (chữ Latin
+    đều) · **chấm C** cho ç/ş/ğ/ı/ö/ü (chữ cái riêng; ı≠i) NHƯNG **circumflex
+    â/î/û KHOAN DUNG** (dấu phụ hiếm, TDK ngày càng bỏ — NGOẠI LỆ CÓ CƠ SỞ như ё/ґ);
+    giữ lưu ý kỹ thuật casing ı/İ phải theo locale tr · dạy sen/siz + Bey/Hanım.
+    `answer_acceptance_tr` → VALIDATED (2 phần). Nhắc cài bàn phím Thổ.
+  - **NGUYÊN TẮC 3 LOẠI XỬ LÝ DẤU (owner xác nhận, dùng cho mọi ngôn ngữ sau):**
+    (a) CHỮ CÁI RIÊNG (đổi âm/nghĩa: pl ł/ó, da æ/ø/å, el tonos/ς, sv/fi å/ä/ö,
+    es ñ, uk і/ї/є/ь, tr ç/ş/ğ/ı/ö/ü) → **C, thiếu = sai**; (b) DẤU PHỤ NHẸ
+    (dấu trọng âm không đổi thành từ khác thường xuyên: es tilde, it/fr dấu) →
+    **cảnh báo nhẹ B**; (c) NGOẠI LỆ CÓ CƠ SỞ (chữ/dấu đúng-là-riêng nhưng thực
+    tế hay bỏ vì lý do lịch sử/quy ước: ru ё, uk ґ, tr circumflex) → **KHOAN DUNG**.
+  - **Các mục `native-review-uk.md` (7) / `native-review-tr.md` (7) GIỮ NGUYÊN**
+    chờ người bản ngữ. Ghi vào: `uk/review-checklist.md`, `tr/review-checklist.md`
+    (banner ✅), `uk/coverage.json` + `tr/coverage.json` (answer_acceptance →
+    VALIDATED). Commit riêng cho phần A này.
+
 - **D-76 · 2026-07-19 · derived · tr — `tr` (tiếng Thổ Nhĩ Kỳ, tr-TR) build
   HOÀN TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra
   cứu 5 vòng.** Turkic (Oghuz), chữ Latin (29 chữ), t1, 24 hiện tượng. Dataset

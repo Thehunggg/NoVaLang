@@ -10,6 +10,12 @@ thuần tuý → `native-review-tr.md`.
 
 Không có front-matter (checklist thao tác).
 
+> **✅ OWNER ĐÃ DUYỆT CẢ 5 MỤC (2026-07-19, D-77):** D-tr-01 (baseline tr-TR),
+> D-tr-02 (chuẩn TDK), D-tr-03 (reading-aid N/A), D-tr-04 (chấm **C** cho
+> ç/ş/ğ/ı/ö/ü — chữ cái riêng; **circumflex â/î/û KHOAN DUNG**; giữ lưu ý locale
+> casing ı/İ theo tr), D-tr-05 (dạy sen/siz + Bey/Hanım). `answer_acceptance_tr`
+> → **VALIDATED**. native-review GIỮ NGUYÊN.
+
 ---
 
 ## [D-tr-01] Baseline vùng miền

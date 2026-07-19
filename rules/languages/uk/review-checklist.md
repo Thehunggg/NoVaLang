@@ -10,6 +10,12 @@ thuần tuý → `native-review-uk.md`.
 
 Không có front-matter (checklist thao tác).
 
+> **✅ OWNER ĐÃ DUYỆT CẢ 5 MỤC (2026-07-19, D-77):** D-uk-01 (baseline uk-UA),
+> D-uk-02 (Правопис 2019), D-uk-03 (không chuyển tự Latin), D-uk-04 (chấm **C**
+> cho і/ї/є/ь/' — chữ cái riêng thiếu = sai; **ґ/г KHOAN DUNG** — ngoại lệ lịch
+> sử Soviet, như ё Nga), D-uk-05 (dạy ти/ви + vocative). `answer_acceptance_uk`
+> → **VALIDATED**. native-review GIỮ NGUYÊN.
+
 ---
 
 ## [D-uk-01] Baseline vùng miền
