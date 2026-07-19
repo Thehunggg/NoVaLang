@@ -1,0 +1,48 @@
+{
+  "id": "it/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "«»",
+    "quote_marks_alternative": "“”",
+    "quote_marks_note": "Caporali «…» phổ biến trong in ấn Ý; virgolette “…” cũng dùng. KHÔNG có dấu lật ngược như es.",
+    "capitalization_like_english_except": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "gennaio/lunedì/italiano viết thường (trừ đầu câu), KHÁC January/Monday/Italian tiếng Anh — lỗi phổ biến của học viên nói tiếng Anh. Giống es.",
+      "not_all_nouns": "KHÁC de: tiếng Ý KHÔNG viết hoa mọi danh từ, chỉ danh từ riêng + đầu câu."
+    },
+    "formal_pronoun_capitalization": {
+      "rule": "Lei (trang trọng) thường viết hoa để phân biệt lei 'cô ấy' — quy ước tuỳ chọn, phổ biến văn trang trọng."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu).",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Gennaio|Febbraio|Marzo|Aprile|Maggio|Giugno|Luglio|Agosto|Settembre|Ottobre|Novembre|Dicembre|Lunedì|Martedì|Mercoledì|Giovedì|Venerdì|Sabato|Domenica)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Oggi è lunedì 3 gennaio."],
+        "fail": ["Oggi è Lunedì 3 Gennaio."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["La scultura è del pachistano Hamad Butt.", "Oggi è lunedì.", "Ora si cerca il complice."],
+    "fail": ["oggi è lunedì.", "Oggi è Lunedì 3 Gennaio."],
+    "_note": "Câu pass đầu lấy từ corpus thật UD Italian-ISDT (Bước 3 mục 6)."
+  }
+}

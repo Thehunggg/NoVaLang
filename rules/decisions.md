@@ -596,6 +596,25 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   đụng playable config/lesson/`generate-curriculum` hay ngôn ngữ khác. Commit
   riêng.
 
+- **D-57 · 2026-07-19 · derived · it — `it` (tiếng Ý) build HOÀN TẤT, trạng
+  thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN (ADR-014).**
+  23 hiện tượng trong `rules/languages/it/coverage.json`; 4 `.rules.json` khớp
+  khuôn ja/en/es/de. Dataset thật: CLDR it, UD Italian-ISDT (word-class),
+  WikiPron `ita_latn_broad` (89403 cặp). Corpus 15167 câu (UD Italian-ISDT+PUD).
+  **g2p-check** xác nhận 6 quy tắc chữ→âm sạch (gn→[ɲ] 0.29%, ci/ce→[t͡ʃ]
+  0.57%/0.17%, chi→[k] 1.03%, gh→[ɡ] 0%, sci→[ʃ] 0%) → `grapheme_to_phoneme`
+  VALIDATED high. **Phát hiện real-data:** gli→[ʎ] CHỈ ở giữa từ (đầu từ
+  gli-=[ɡli], check ^gli=>^ʎ bắn 78.85%) — sửa mô tả theo dữ liệu, không giữ
+  giả thuyết sai. **corpus-check** month-weekday 0.03% (cực sạch). Đặc trưng
+  Ý: mạo từ theo âm đầu (il/lo/la/gli), essere/avere + hoà giống phân từ, c/g
+  mềm-cứng, geminate. HONORIFIC not-applicable (tiền lệ es B-02). 2 mục
+  review-checklist tự quyết (không có owner): D-it-01 baseline it-IT, D-it-02
+  chính sách dấu phụ — TỰ ÁP tiền lệ es B-03 (cảnh báo nhẹ, vì dấu phân biệt
+  nghĩa e/è, da/dà) → `answer_acceptance_it` giữ DRAFT. Sự kiện ngôn ngữ Ý
+  thuần tuý → `native-review-it.md`. `catalog.json` it.ruleStatus
+  NOT_STARTED → VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson
+  hay ngôn ngữ khác. Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

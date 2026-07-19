@@ -1,0 +1,40 @@
+{
+  "id": "it/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "grapheme_to_phoneme_rules": {
+      "gn": { "phoneme": "ɲ", "g2p_check": "1396 từ / 0.29% — OK (ngoại lệ từ mượn Anh design)" },
+      "ci_before_vowel": { "phoneme": "t͡ʃ", "g2p_check": "704 từ / 0.57% — OK (ce cũng: 596 / 0.17%)" },
+      "chi_che": { "phoneme": "k", "g2p_check": "chi 291 từ / 1.03% — OK (ngoại lệ chic/chip); gh 85 / 0.00%" },
+      "sci_sce": { "phoneme": "ʃ", "g2p_check": "sci 249 từ / 0.00% — OK" },
+      "gli_intervocalic": {
+        "phoneme": "ʎ",
+        "g2p_check": "PHÁT HIỆN THẬT: gli->[ʎ] CHỈ đúng giữa từ (figlio, famiglia). ĐẦU TỪ gli- phần lớn [ɡli] (glicemia) — ^gli=>^ʎ bắn 78.85%, KHÔNG áp cho đầu từ. Đã sửa theo dữ liệu."
+      }
+    },
+    "not_yet_g2p_checked": {
+      "geminate": "Phụ âm đôi (ll, tt, ss, nn...) đọc DÀI (geminate) — đặc trưng Ý, phân biệt nghĩa (nono 'thứ chín' / nonno 'ông nội', pala 'xẻng' / palla 'quả bóng')",
+      "z": "z -> [ts] hoặc [dz] tuỳ từ (lexical)",
+      "h": "h luôn CÂM (ho, hanno — h không phát âm)",
+      "hard_soft_c_g": "c/g CỨNG trước a/o/u ([k]/[ɡ]: casa, gatto); MỀM trước e/i ([t͡ʃ]/[d͡ʒ]: cena, gelato)"
+    }
+  },
+  "checks": [
+    {
+      "id": "gn-to-palatal-nasal",
+      "description": "Digraph 'gn' phát âm [ɲ] (xác nhận g2p-check 1396 từ, 0.29%).",
+      "assert": { "type": "custom", "note": "Kiểm chữ->âm cần G2P engine lúc generator chạy; g2p-check.mjs đã xác nhận trên WikiPron thật." },
+      "fixtures": { "pass": ["gnocchi", "bagno"], "fail": ["gnokki-x"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["gnocchi", "chiave", "cena", "sciare"],
+    "fail": ["gnokki-x"],
+    "_note": "fixtures minh hoạ quy tắc g2p đã xác nhận; dùng test implementation tương lai."
+  }
+}

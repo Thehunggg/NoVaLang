@@ -1,0 +1,54 @@
+{
+  "id": "it/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "gender_and_number_agreement",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "word_order": "SVO_flexible_pro_drop",
+    "gender_system": {
+      "values": ["masculine", "feminine"],
+      "plural_endings": { "masc_-o": "-i (libro->libri)", "fem_-a": "-e (casa->case)", "both_-e": "-i (chiave->chiavi)" },
+      "known_exceptions": ["la mano (nữ, -o)", "il problema (nam, -a)", "il tema", "la foto (rút gọn fotografia)"]
+    },
+    "definite_articles": {
+      "note": "Chọn theo giống + số + ÂM ĐẦU từ theo sau — đặc trưng Ý.",
+      "masc_sing": { "il": "trước phụ âm thường (il libro)", "lo": "trước s+phụ âm, z, gn, ps, x, y (lo studente, lo zaino, lo gnomo)", "l'": "trước nguyên âm (l'amico)" },
+      "masc_plur": { "i": "tương ứng il (i libri)", "gli": "tương ứng lo/l' (gli studenti, gli amici)" },
+      "fem_sing": { "la": "trước phụ âm (la casa)", "l'": "trước nguyên âm (l'amica)" },
+      "fem_plur": { "le": "mọi trường hợp (le case, le amiche)" }
+    },
+    "agreement_rule": "Mạo từ + tính từ hoà giống-số với danh từ. Tính từ thường ĐỨNG SAU danh từ (una casa grande).",
+    "verb_conjugation_groups": { "are": "parlare", "ere": "credere", "ire": "dormire/finire" },
+    "auxiliary_selection": {
+      "avere": "phần lớn ngoại động từ (ho mangiato)",
+      "essere": "động từ chuyển động/thay đổi trạng thái + phản thân (sono andato, si è alzato); phân từ hoà giống-số với chủ ngữ (lei è andata)",
+      "status": "PENDING — động từ nào dùng essere phần lớn là lexical, CHƯA có bảng đầy đủ."
+    },
+    "pro_drop": { "value": true, "note": "Chủ ngữ đại từ (io/tu/lui...) thường lược bỏ vì đuôi động từ mang thông tin ngôi/số." },
+    "clitic_pronoun_placement": {
+      "before_conjugated_verb": true,
+      "attached_after_infinitive_gerund_imperative": true,
+      "example_before": "Lo vedo.",
+      "example_attached": "Voglio vederlo. / Dammelo. / Guardandolo."
+    }
+  },
+  "checks": [
+    {
+      "id": "article-gender-sound-agreement",
+      "description": "Mạo từ xác định khớp giống-số-âm đầu (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng giống + quy tắc âm đầu khi generator chạy, không phải regex tĩnh." },
+      "fixtures": {
+        "pass": ["il libro", "lo studente", "l'amico", "gli studenti", "la casa"],
+        "fail": ["il studente", "gli casa", "la amico"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Il carabiniere rischia da 5 a 15 anni di condanna.", "lo studente", "una casa grande"],
+    "fail": ["il studente", "gli casa"],
+    "_note": "Câu pass đầu lấy từ corpus thật UD Italian-ISDT (Bước 3 mục 6)."
+  }
+}
