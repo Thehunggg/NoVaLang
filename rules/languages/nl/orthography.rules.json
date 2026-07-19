@@ -1,0 +1,45 @@
+{
+  "id": "nl/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "„”",
+    "quote_marks_modern": "“”",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_CAPITALIZED": true,
+      "note": "januari/maandag viết thường (giống es/it); NHƯNG tên ngôn ngữ + quốc tịch VIẾT HOA (Nederlands, het Engels, een Nederlandse man) — KHÁC es/it/pt, điểm riêng Hà Lan.",
+      "ij_digraph_both_capitalized": "IJ đầu từ viết hoa CẢ HAI chữ (IJsland, IJmuiden — không phải Ijsland).",
+      "not_all_nouns": "KHÁC de: KHÔNG viết hoa mọi danh từ."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 30723 câu thật.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Januari|Februari|Maart|April|Juni|Juli|Augustus|September|Oktober|November|December|Maandag|Dinsdag|Woensdag|Donderdag|Vrijdag|Zaterdag|Zondag)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Vandaag is het maandag 3 januari."],
+        "fail": ["Vandaag is het Maandag 3 Januari."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Vandaag is het maandag.", "Zij spreekt Nederlands.", "Hij komt uit IJsland."],
+    "fail": ["vandaag is het maandag.", "Vandaag is het Januari."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 đo trên UD Dutch thật. Mei (tháng 5) + Mee bỏ khỏi regex vì đồng âm."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "nl/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "nl-NL",
+    "grapheme_to_phoneme_rules": {
+      "ch": { "phoneme": "x", "g2p_check": "5869 từ / 18.69% — OK (ngoại lệ -isch->[-is], ch câm sau s)" },
+      "ij": { "phoneme": "ɛ i̯", "g2p_check": "4434 từ / 11.30% — OK (nguyên âm đôi; 2 token cách nhau dấu cách + dấu phi-âm-tiết)" },
+      "ui": { "phoneme": "œ y̯", "g2p_check": "3258 từ / 2.92% — OK (nguyên âm đôi đặc trưng Hà Lan)" },
+      "oe": { "phoneme": "u", "g2p_check": "3946 từ / 0.41% — OK" },
+      "sch": { "phoneme": "sx (đầu từ) / s (cuối)", "g2p_check": "2848 từ chứa [s] / 0.74% — OK (school=[sxoːl]; -isch=[s])" },
+      "ng": { "phoneme": "ŋ", "g2p_check": "4030 từ / 9.01% — OK" },
+      "g_soft": { "phoneme": "ɣ|x", "g2p_check": "'ge' 5835 từ / 15.58% — OK (hard g; 'g' phẳng bắn 21.98% vì ng nuốt g, tách ng riêng)" },
+      "aa": { "phoneme": "aː", "g2p_check": "6551 từ / 0.17% — OK (nguyên âm dài nhân đôi)" },
+      "oo": { "phoneme": "oː", "g2p_check": "4380 từ / 2.35% — OK (ngoại lệ loanword Facebook)" }
+    },
+    "not_yet_g2p_checked": {
+      "v_w": "v->[v], w->[ʋ] (labiodental approximant, khác [w] tiếng Anh)",
+      "eu": "eu->[øː]; ie->[i]; ei->[ɛi] (đồng âm ij)",
+      "final_schwa": "-e cuối từ không nhấn -> [ə] (schwa)"
+    }
+  },
+  "checks": [
+    {
+      "id": "ch-to-velar-fricative",
+      "description": "'ch' phát âm [x] (xác nhận g2p-check 18.69%; ngoại lệ -isch->[s]).",
+      "assert": { "type": "custom", "note": "Kiểm chữ->âm cần G2P engine; g2p-check.mjs đã xác nhận trên WikiPron thật." },
+      "fixtures": { "pass": ["lachen", "acht"], "fail": ["typisch-as-x"] }
+    },
+    {
+      "id": "ij-ui-diphthongs",
+      "description": "ij->[ɛ i̯], ui->[œ y̯] (nguyên âm đôi đặc trưng; xác nhận g2p-check).",
+      "assert": { "type": "custom", "note": "g2p-check xác nhận trên WikiPron; âm cách nhau dấu cách + dấu phi-âm-tiết." },
+      "fixtures": { "pass": ["wijn", "huis"], "fail": ["wijn-mono"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["lachen", "wijn", "huis", "maan"],
+    "fail": ["wijn-mono"],
+    "_note": "fixtures minh hoạ quy tắc g2p đã xác nhận; dùng test implementation tương lai."
+  }
+}

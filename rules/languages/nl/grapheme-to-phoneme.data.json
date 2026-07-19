@@ -1,0 +1,218 @@
+{
+  "id": "nl/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 58535,
+    "byScript": {
+      "nld_latn_broad_filtered": {
+        "count": 58535,
+        "sample": [
+          [
+            "'k",
+            "k"
+          ],
+          [
+            "'k",
+            "ə k"
+          ],
+          [
+            "'m",
+            "ə m"
+          ],
+          [
+            "'n",
+            "ə n"
+          ],
+          [
+            "'ns",
+            "ə n s"
+          ],
+          [
+            "'r",
+            "ə r"
+          ],
+          [
+            "'s",
+            "s"
+          ],
+          [
+            "'s",
+            "ə s"
+          ],
+          [
+            "'s",
+            "ɪ s"
+          ],
+          [
+            "'t",
+            "t"
+          ],
+          [
+            "'t",
+            "ə t"
+          ],
+          [
+            "A",
+            "aː"
+          ],
+          [
+            "ABN",
+            "aː b eː ɛ n"
+          ],
+          [
+            "ABW",
+            "aː b eː ʋ eː"
+          ],
+          [
+            "ADHD",
+            "aː d eː ɦ aː d eː"
+          ],
+          [
+            "ADHD'er",
+            "aː d eː ɦ aː d eː ə r"
+          ],
+          [
+            "AIVD",
+            "aː i v eː d eː"
+          ],
+          [
+            "ALS",
+            "aː ɛ l ɛ s"
+          ],
+          [
+            "AOW",
+            "aː oː ʋ eː"
+          ],
+          [
+            "ARP",
+            "aː ɛ r p eː"
+          ],
+          [
+            "AVG",
+            "aː v eː ɣ eː"
+          ],
+          [
+            "AZN",
+            "aː z ɛ t ɛ n"
+          ],
+          [
+            "Aa",
+            "aː"
+          ],
+          [
+            "Aad",
+            "aː t"
+          ],
+          [
+            "Aadje",
+            "aː t j ə"
+          ],
+          [
+            "Aadorp",
+            "aː d ɔ r p"
+          ],
+          [
+            "Aafje",
+            "aː f j ə"
+          ],
+          [
+            "Aagje",
+            "aː x j ə"
+          ],
+          [
+            "Aagtekerke",
+            "aː x t ə k ɛ r k ə"
+          ],
+          [
+            "Aagtje",
+            "aː x t j ə"
+          ],
+          [
+            "Aaksens",
+            "aː k s ə n s"
+          ],
+          [
+            "Aalbeek",
+            "aː l b eː k"
+          ],
+          [
+            "Aalbers",
+            "aː l b ə r s"
+          ],
+          [
+            "Aalbert",
+            "aː l b ɛ r t"
+          ],
+          [
+            "Aalbrecht",
+            "aː l b r ɛ x t"
+          ],
+          [
+            "Aalburg",
+            "aː l b ʏ r x"
+          ],
+          [
+            "Aalden",
+            "aː l d ə"
+          ],
+          [
+            "Aalden",
+            "aː l d ə n"
+          ],
+          [
+            "Aalderik",
+            "aː l d ə r ɪ k"
+          ],
+          [
+            "Aalderinkshoek",
+            "aː l d ə r ɪ ŋ k s ɦ u k"
+          ],
+          [
+            "Aaldert",
+            "aː l d ə r t"
+          ],
+          [
+            "Aaldonk",
+            "aː l d ɔ ŋ k"
+          ],
+          [
+            "Aaldrik",
+            "aː l d r ɪ k"
+          ],
+          [
+            "Aalrik",
+            "aː l r ɪ k"
+          ],
+          [
+            "Aalsburg",
+            "aː l s b ʏ r x"
+          ],
+          [
+            "Aalsmeer",
+            "aː l s m eː r"
+          ],
+          [
+            "Aalst",
+            "aː l s t"
+          ],
+          [
+            "Aalstervelden",
+            "aː l s t ə r v ɛ l d ə"
+          ],
+          [
+            "Aalstervelden",
+            "aː l s t ə r v ɛ l d ə n"
+          ],
+          [
+            "Aalsum",
+            "aː l s ʏ m"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/nld_latn_broad_filtered.tsv"
+      }
+    }
+  }
+}

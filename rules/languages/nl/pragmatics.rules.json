@@ -1,0 +1,59 @@
+{
+  "id": "nl/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "nl-NL",
+    "address_forms": {
+      "je / jij": { "formality": "informal", "number": "singular", "usage": "bạn bè, gia đình, ngang hàng — je không nhấn, jij nhấn. Dùng rộng ở Hà Lan (ít trang trọng hơn de Sie)." },
+      "u": { "formality": "formal", "number": "singular_and_plural", "verb_agreement": "chia như ngôi 3 số ít (u heeft/hebt, u is)", "usage": "người lạ, người lớn tuổi, dịch vụ, trang trọng" },
+      "jullie": { "formality": "informal", "number": "plural", "usage": "số nhiều thân mật (nhiều je)" },
+      "gij_ge": { "note": "dạng Flemish/nl-BE — KHÔNG dùng ở baseline nl-NL" }
+    },
+    "baseline": {
+      "value": "Dạy je/jij (thân mật) + u (trang trọng) + jullie (số nhiều thân mật). je/u map CASUAL/FORMAL. Tiếng Hà Lan dùng je rộng hơn, u dành cho trang trọng thật.",
+      "tts_locale": "nl-NL (xem D-nl-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "je/jij + từ thân mật (hoi, doei, joh)",
+      "NATURAL_NEUTRAL_POLITE": "je hoặc u chuẩn mực trung tính — baseline mặc định app dạy",
+      "FORMAL": "u + từ trang trọng (Goedendag, alstublieft, zou u kunnen...)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Hà Lan KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Lịch sự thể hiện qua đại từ (u) + thức điều kiện (zou u kunnen...?) + từ vựng — đã bao trong FORMAL, không phải modifier trực giao. Tự áp theo TIỀN LỆ es B-02 (owner duyệt 2026-07-19): ngôn ngữ German không có kính ngữ hình thái -> HONORIFIC not-applicable."
+      }
+    },
+    "politeness_devices": {
+      "conditional": "zou u kunnen...? (Ngài có thể...?), Ik zou graag... (Tôi muốn...), alstublieft (u) / alsjeblieft (je)"
+    }
+  },
+  "checks": [
+    {
+      "id": "u-third-person-singular-verb",
+      "description": "u (trang trọng) chia động từ như ngôi 3 số ít (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Wat wilt u drinken?"],
+        "fail": ["Wat willen u drinken?"]
+      }
+    },
+    {
+      "id": "je-jij-informal",
+      "description": "je/jij thân mật chia ngôi 2 số ít thân+t (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Wat wil je drinken?"],
+        "fail": ["Wat willen je drinken?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Wat wilt u drinken?", "Wat wil je drinken?", "Zou u mij kunnen helpen?"],
+    "fail": ["Wat willen u drinken?", ""],
+    "_note": "Câu pass minh hoạ baseline (je/u + điều kiện lịch sự)."
+  }
+}

@@ -702,6 +702,26 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   - Ghi vào: `rules/languages/pt/review-checklist.md`,
     `rules/languages/ru/review-checklist.md` (dấu ✅ mỗi mục). Commit riêng.
 
+- **D-62 · 2026-07-19 · derived · nl — `nl` (tiếng Hà Lan, nl-NL) build HOÀN
+  TẤT, trạng thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN
+  (ADR-014).** 24 hiện tượng; 4 `.rules.json` khớp khuôn ja/en/es/de/it/pt/ru.
+  Dataset thật: CLDR nl, UD Dutch-Alpino (word-class), WikiPron
+  `nld_latn_broad_filtered` (58535 cặp). Corpus 30723 câu (UD Alpino+
+  LassySmall). **g2p-check** xác nhận: ch→[x] 18.69% (-isch→[s]), ij→[ɛ i̯]
+  11.30%, ui→[œ y̯] 2.92%, oe→[u] 0.41%, sch 0.74%, aa→[aː] 0.17%, oo→[oː]
+  2.35%, ng→[ŋ] 9.01%, ge→[ɣ] 15.58%; làm câm cuối từ d→[t] 0.59%, b→[p]
+  4.49% → `grapheme_to_phoneme` + `final_devoicing` + `vowel_length_spelling`
+  VALIDATED. **Kỷ luật dữ liệu:** (1) ij/ui bắn 100% do âm cách nhau dấu cách +
+  dấu phi-âm-tiết [i̯]/[y̯] → sửa regex → 11.30%/2.92%. (2) g phẳng bắn 21.98%
+  (>ngưỡng) vì ng nuốt g → tách ng→[ŋ] + ge→[ɣ] riêng. **corpus-check**
+  month-weekday **0.09%** (tên riêng ngày lễ). Đặc trưng: de/het, V2 + động từ
+  cuối, âm hầu [x]/[ɣ], động từ tách, giảm nhẹ -je, tên ngôn ngữ/quốc tịch
+  viết hoa. HONORIFIC not-applicable (es B-02). D-nl-01 baseline nl-NL, D-nl-02
+  chấm trema/dấu (es B-03) → `answer_acceptance_nl` DRAFT. Sự kiện Hà Lan thuần
+  tuý → `native-review-nl.md`. `catalog.json` nl.ruleStatus NOT_STARTED →
+  VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ khác.
+  Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,
