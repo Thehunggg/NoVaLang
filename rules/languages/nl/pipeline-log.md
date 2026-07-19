@@ -29,3 +29,5 @@ Không có front-matter (log nội bộ).
   D-nl-01 (baseline nl-NL, vòng 1), D-nl-02 (chấm trema/dấu + ij/y — tự áp
   tiền lệ es B-03). Sự kiện ngôn ngữ Hà Lan thuần tuý → `native-review-nl.md`.
   Trạng thái dừng ở VALIDATED_NOT_YET_PROVEN, KHÔNG FROZEN (ADR-014).
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** `casing` NÂNG DRAFT→VALIDATED: V3 corpus-check THẬT (month-weekday-not-capitalized 0.09%) trên corpus lớn; V1 cơ quan chuẩn + V2 giáo trình + V4/V5 đồng thuận tháng/thứ viết thường. answer_acceptance_nl vẫn DRAFT — nl hầu như không dùng dấu (chỉ diaeresis coördinatie + accent trọng âm hiếm); vấn đề answer chủ yếu là digraph IJ, chờ owner. Còn DRAFT cần người bản ngữ (ngữ pháp/paradigm/g2p ngoại lệ) — giữ nguyên, đã tra 5 vòng, cần người bản ngữ. Status ngôn ngữ KHÔNG đổi.
