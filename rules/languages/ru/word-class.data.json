@@ -1,0 +1,45 @@
+{
+  "id": "ru/word-class.data",
+  "kind": "word_class",
+  "source": "UD",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "uposCounts": {
+      "PROPN": 754,
+      "VERB": 1003,
+      "ADP": 1264,
+      "ADJ": 1466,
+      "NOUN": 3102,
+      "PUNCT": 2093,
+      "NUM": 207,
+      "CCONJ": 334,
+      "AUX": 108,
+      "X": 184,
+      "ADV": 252,
+      "SCONJ": 63,
+      "DET": 195,
+      "PART": 127,
+      "PRON": 217,
+      "SYM": 16
+    },
+    "uposTags": [
+      "ADJ",
+      "ADP",
+      "ADV",
+      "AUX",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "NUM",
+      "PART",
+      "PRON",
+      "PROPN",
+      "PUNCT",
+      "SCONJ",
+      "SYM",
+      "VERB",
+      "X"
+    ]
+  }
+}

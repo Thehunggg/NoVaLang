@@ -1,0 +1,199 @@
+{
+  "_meta": {
+    "language": "ru",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "ru-RU (tiếng Nga chuẩn)",
+    "script": "Cyrillic (Kirin) — 33 chữ cái",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật. g2p-check/corpus-check chạy trên dữ liệu thật để nâng confidence.",
+    "corpus": {
+      "file": "tools/cache/corpus/ru-sentences.txt (không commit)",
+      "sentences": 22736,
+      "source": "UD Russian-GSD + UD Russian-SynTagRus train/dev/test (S-UD-CORPUS)",
+      "note": "Vượt mốc 10000 — corpus không yếu."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Nga để chạy rule lên kiểm false-positive."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chữ Kirin (Cyrillic), 33 chữ cái: а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я. Gồm 10 nguyên âm (а е ё и о у ы э ю я), 21 phụ âm, và 2 dấu KHÔNG có âm riêng: ъ (dấu cứng) và ь (dấu mềm — báo phụ âm trước MỀM/palatal). ё thường viết thành е trong văn thường (xem answer_acceptance_ru).",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận 33 chữ Kirin + auxiliary có nguyên âm đánh dấu trọng âm (а́ е́ и́ о́ у́ ы́ э́ ю́ я́) dùng cho học liệu.",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chữ hoa đầu câu + danh từ riêng. Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (январь, понедельник, русский) — giống es/it, lỗi phổ biến của học viên nói tiếng Anh. Đại từ 'я' (tôi) KHÔNG viết hoa (khác 'I' tiếng Anh). Đại từ trang trọng Вы có thể viết hoa trong thư từ lịch sự. [Bước 3: corpus-check month-weekday xác nhận trên 22736 câu thật.]",
+    "status": "DRAFT"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ cái Kirin (bảng chữ), không dạy thứ tự nét như chữ Hán.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (rus_cyrl_narrow, 466668 cặp) -> grapheme-to-phoneme.data.json. Đặc trưng: đối lập PHỤ ÂM CỨNG/MỀM (hard/palatalized) gần như toàn bảng — mỗi phụ âm gần như có cặp cứng/mềm (đánh dấu [ʲ] trong narrow). Nguyên âm giảm khi không nhấn.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "[Bước 3: g2p-check.mjs trên WikiPron narrow thật (466668 từ) xác nhận quy tắc PHỤ ÂM (độc lập trọng âm): ш->[ʂ] 0.03%; щ->[ɕ] 0.28%; ц->[ts] 0.16%; х->[x] 0.34%; ч->[t͡ɕ] 4.33% (ngoại lệ чн->[ʂn] конечно/скучно + чж loanword). LÀM CÂM CUỐI TỪ (final devoicing) — quy tắc lớn: г$->[k] 2.35%, б$->[p] 2.29%, д$->[t] 0.58%, з$->[s] 3.12%, ж$->[ʂ] (ж chung 7.13% chủ yếu do câm cuối từ Анкоридж->[...ʂ] + дж loanword). Nguyên âm giảm (akanye: о không nhấn->[ɐ]/[ə]) PHỤ THUỘC TRỌNG ÂM, trọng âm KHÔNG đánh dấu trong chính tả -> không kiểm được bằng regex tĩnh, để derive/medium.] Chưa g2p-check: palatal hoá theo nguyên âm mềm (я/е/ё/ю/и/ь), о/е -> [jo]/[je] đầu từ.",
+    "status": "VALIDATED"
+  },
+  "palatalization": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG TRUNG TÂM tiếng Nga: gần như mọi phụ âm có cặp CỨNG/MỀM (hard/soft, palatalized). Phụ âm MỀM khi (1) đứng trước nguyên âm mềm я/е/ё/ю/и, (2) đứng trước dấu mềm ь (мать=[matʲ]). Đối lập cứng/mềm phân biệt nghĩa: мат [mat] 'chiếu tướng' / мать [matʲ] 'mẹ'; брат [brat] 'anh' / брать [bratʲ] 'lấy'. WikiPron narrow đánh dấu [ʲ] xác nhận (kʲ, sʲ, tʲ, lʲ... khắp dataset). Điểm khó bậc nhất cho học viên.",
+    "status": "VALIDATED"
+  },
+  "vowel_reduction": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Nguyên âm KHÔNG nhấn bị giảm (reduction): о không nhấn -> [ɐ] (trước trọng âm) hoặc [ə] (khác) — акание/akanye: молоко=[məɫɐˈko]; е/я không nhấn -> [ɪ] — икание/ikanye. PHỤ THUỘC hoàn toàn vào TRỌNG ÂM, mà trọng âm tiếng Nga tự do + không đánh dấu trong chính tả -> không thể g2p-check bằng regex tĩnh (WikiPron narrow xác nhận [ɐ]/[ə] tồn tại nhưng vị trí phụ thuộc trọng âm từng từ). Confidence medium, kiến thức chuẩn.",
+    "status": "DRAFT"
+  },
+  "word_stress": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Trọng âm TỰ DO (rơi vào bất kỳ âm tiết nào) + DI ĐỘNG (đổi vị trí theo dạng biến cách: рука́ 'tay' -> ру́ки số nhiều) + KHÔNG đánh dấu trong chính tả thường. Học liệu đánh dấu bằng dấu sắc (rука́) — xem reading_aid_policy. Vị trí trọng âm phần lớn LEXICAL (theo từng từ + từng dạng biến cách), CHƯA có bảng đầy đủ. Điểm khó bậc nhất, ảnh hưởng nguyên âm giảm.",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Russian-GSD test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "case_system": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG TRUNG TÂM: 6 cách (падежи) — именительный (nom, chủ ngữ), родительный (gen, sở hữu/phủ định/sau nhiều giới từ), дательный (dat, tân ngữ gián tiếp), винительный (acc, tân ngữ trực tiếp), творительный (instr, công cụ/phương tiện), предложный (prep, sau в/о/на). Danh từ + tính từ + đại từ + số từ đều biến cách theo giống-số-cách. Đuôi biến cách phụ thuộc giống + loại biến cách (declension) — phần lớn quy tắc được nhưng bảng đầy đủ là hình thái LEXICAL, CHƯA có. UD annotation xác nhận hệ cách tồn tại trong dữ liệu thật.",
+    "status": "DRAFT"
+  },
+  "gender_and_number": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "3 giống: nam (thường kết thúc phụ âm: стол), nữ (thường -а/-я: книга), trung (thường -о/-е: окно). Đoán được phần lớn từ đuôi (tốt hơn de) nhưng có ngoại lệ (папа 'bố' -a nhưng NAM; путь nam bất thường). Tính từ ANIMACY (sống/không sống) ảnh hưởng cách винительный. Số: ít/nhiều; tính từ + động từ quá khứ hoà giống-số.",
+    "status": "DRAFT"
+  },
+  "verb_aspect": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG TRUNG TÂM (khó cho người nói tiếng Anh/Rôman): mỗi động từ gần như thành CẶP THỂ — chưa hoàn thành (imperfective: делать 'đang/thường làm') vs hoàn thành (perfective: сделать 'làm xong'). Thể quyết định thì dùng được (perfective KHÔNG có thì hiện tại). Quan hệ cặp thể (tiền tố с-/по-/про-, đổi thân, bổ sung) phần lớn LEXICAL — phải học theo từng cặp. Rule_level: hệ thống thể + hệ quả thì; lexical_level: cặp thể cụ thể.",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "2 kiểu chia (conjugation I -е-/ -ё-, II -и-) theo 6 ngôi (я/ты/он-она-оно/мы/вы/они) ở thì hiện tại/tương lai. Quá khứ chia theo GIỐNG-SỐ (không theo ngôi): -л/-ла/-ло/-ли. KHÔNG có trợ động từ 'to be' ở hiện tại (есть lược bỏ: Я студент, không 'Я есть студент'). Bất quy tắc (быть, идти, есть, дать, хотеть) lexical.",
+    "status": "DRAFT"
+  },
+  "no_articles": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Tiếng Nga KHÔNG có mạo từ (a/the). Xác định/không xác định biểu đạt qua ngữ cảnh, trật tự từ, chỉ định (этот). Học viên nói tiếng Anh hay thêm mạo từ thừa hoặc mong đợi mạo từ — cần nêu rõ (đặc trưng đối lập).",
+    "status": "VALIDATED"
+  },
+  "numeral_case_agreement": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG NỔI TIẾNG KHÓ: số đếm CHI PHỐI cách của danh từ theo sau. 1 (один) + danh từ danh cách số ít (один стол); 2/3/4 + SỞ HỮU CÁCH SỐ ÍT (два стола); 5 trở lên + sở hữu cách số NHIỀU (пять столов); số kết thúc bằng 1 (21, 31) lại theo quy tắc của 1; kết thúc 2-4 theo quy tắc 2-4. Quy tắc rule_level rõ, cần dạy tường minh.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đối lập ты/вы (giống es tú/usted về chức năng): ты (thân mật, số ít — bạn bè, gia đình, trẻ em, ngang hàng thân) / вы (trang trọng số ít HOẶC số nhiều — người lạ, người lớn tuổi, cấp trên, bối cảnh lịch sự; viết hoa Вы trong thư từ lịch sự). Trang trọng còn dùng TÊN + PHỤ DANH (patronymic: Иван Петрович) thay 'ông/bà'. ты/вы map CASUAL/FORMAL. Không gây tranh cãi vùng miền.",
+    "status": "VALIDATED"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SVO là trật tự trung tính/mặc định nhưng RẤT TỰ DO nhờ hệ cách đánh dấu vai trò ngữ pháp — có thể đảo để nhấn mạnh (thông tin cũ đầu, mới cuối). Không có mạo từ, thường lược 'to be' hiện tại. Pro-drop một phần (đuôi động từ mang ngôi). Khác Rôman ở mức độ tự do cao hơn.",
+    "status": "DRAFT"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu câu chuẩn (. , ? !). Ngoặc kép chính: guillemets «…» (ёлочки) — chuẩn Nga, và „…“ lồng bên trong. Dấu phẩy DÙNG NHIỀU và bắt buộc theo quy tắc rõ: trước мệnh đề phụ (что, который, потому что), ngăn cách ngữ tham gia (деепричастие), liệt kê. Gạch ngang (тире) thay 'to be' bị lược (Москва — столица). Không có dấu lật ngược như es.",
+    "status": "DRAFT"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "APPLICABLE (KHÁC ngôn ngữ Latin es/it/pt): dấu TRỌNG ÂM (ударение — dấu sắc trên nguyên âm nhấn: рука́, хорошо́) là trợ đọc thật cho học viên vì trọng âm tự do + không đánh dấu trong chính tả thường + quyết định nguyên âm giảm. CLDR auxiliary có sẵn nguyên âm đánh dấu (а́ е́ и́ о́ у́...). Đề xuất chính sách: hiển thị dấu trọng âm mặc định cho trình độ đầu, ẩn-có-toggle cho cao hơn (theo TIỀN LỆ chính sách romaji ja owner đã duyệt: ẩn mặc định + toggle). ё cũng là trợ đọc (phân biệt е/ё). Xem review-checklist D-ru-03.",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~ты + từ vựng thân mật (привет, пока), NATURAL_NEUTRAL_POLITE~вы chuẩn mực trung tính (baseline), FORMAL~вы + tên-phụ danh + từ vựng trang trọng (Здравствуйте, будьте добры). HONORIFIC: not-applicable cho ru — вы + phụ danh đã đủ diễn tả qua FORMAL, tiếng Nga KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Tự áp theo TIỀN LỆ es B-02 (owner duyệt 2026-07-19) — pattern lặp lại (ngôn ngữ Ấn-Âu không có kính ngữ hình thái).",
+    "status": "VALIDATED"
+  },
+  "answer_acceptance_ru": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B03"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Hai chính sách chấm: (1) ё/е — người Nga THƯỜNG viết е thay ё trong văn thường (ё chỉ bắt buộc trong từ điển/sách học/khi mơ hồ) -> đề xuất CHẤP NHẬN е=ё khi chấm (chuẩn chính tả đời thường, không phải lỗi). (2) DẤU TRỌNG ÂM — học viên không cần gõ dấu trọng âm (không có trên bàn phím Nga) -> normalize bỏ dấu trọng âm khi so khớp. Áp tinh thần tiền lệ es B-03 (dấu phụ = cảnh báo nhẹ, không đánh trượt vì thiếu công cụ gõ). Giữ DRAFT chờ owner — xem review-checklist D-ru-02.",
+    "status": "DRAFT"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Đặc biệt: chọn thể động từ đúng ngữ cảnh (perfective/imperfective), ты/вы đúng quan hệ, trật tự từ tự nhiên theo trọng tâm thông tin.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text Kirin (chữ đích). TTS ru-RU đọc trực tiếp. Kế thừa _base/audio.rules.json. Locale: ru-RU. LƯU Ý: TTS engine tự xử lý trọng âm/nguyên âm giảm; văn bản đầu vào KHÔNG cần dấu trọng âm (dấu trọng âm chỉ để HIỂN THỊ trợ đọc, không gửi TTS trừ khi engine hỗ trợ + được duyệt).",
+    "status": "VALIDATED"
+  }
+}

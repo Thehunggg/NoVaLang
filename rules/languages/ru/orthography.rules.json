@@ -1,0 +1,47 @@
+{
+  "id": "ru/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "script": "Cyrillic",
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "«»",
+    "quote_marks_nested": "„“",
+    "dash_for_omitted_copula": "тире (—) thay 'to be' bị lược: Москва — столица России.",
+    "capitalization_like_english_except": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "first_person_pronoun_not_capitalized": true,
+      "note": "январь/понедельник/русский viết thường (trừ đầu câu); 'я' (tôi) KHÔNG viết hoa, KHÁC 'I' tiếng Anh — lỗi phổ biến của học viên nói tiếng Anh.",
+      "formal_you_optional_capital": "Вы có thể viết hoa trong thư từ lịch sự (tuỳ chọn)."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 22736 câu thật.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Январь|Февраль|Март|Апрель|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь|Понедельник|Вторник|Среда|Четверг|Пятница|Суббота|Воскресенье)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Сегодня понедельник, третье января."],
+        "fail": ["Сегодня Понедельник, третье Января."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Сегодня понедельник.", "Москва — столица России.", "Он говорит по-русски."],
+    "fail": ["сегодня понедельник.", "Сегодня Января."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 đo tỷ lệ vi phạm trên UD Russian thật. Май (tháng 5) bỏ khỏi regex vì đồng âm tên riêng/ghép."
+  }
+}

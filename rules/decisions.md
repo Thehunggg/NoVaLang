@@ -657,6 +657,32 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ
   khác. Commit riêng.
 
+- **D-60 · 2026-07-19 · derived · ru — `ru` (tiếng Nga, ru-RU, chữ Kirin)
+  build HOÀN TẤT, trạng thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG
+  FROZEN (ADR-014). Ngôn ngữ T1 Kirin (Cyrillic) đầu tiên.** 24 hiện tượng
+  trong `rules/languages/ru/coverage.json`; 4 `.rules.json` khớp khuôn ja/en/
+  es/de/it/pt. Dataset thật: CLDR ru (33 chữ Kirin), UD Russian-GSD
+  (word-class), WikiPron `rus_cyrl_narrow` (466668 cặp — chỉ có bản narrow).
+  Corpus 22736 câu (UD GSD+SynTagRus). **g2p-check** xác nhận phụ âm độc lập
+  trọng âm sạch: ш→[ʂ] 0.03%, щ→[ɕ] 0.28%, ц→[ts] 0.16%, х→[x] 0.34%, ч→[t͡ɕ]
+  4.33% (чн→[ʂn]); và LÀM CÂM CUỐI TỪ (final devoicing) г→[k] 2.35%, б→[p]
+  2.29%, д→[t] 0.58%, з→[s] 3.12% → `grapheme_to_phoneme` + `palatalization`
+  VALIDATED. **Kỷ luật dữ liệu:** ж→[ʐ] bắn 7.13% → truy ra do câm cuối từ
+  (Анкоридж→[...ʂ]) + дж loanword, tách thành quy tắc final-devoicing riêng.
+  **Nguyên âm giảm (akanye)** phụ thuộc TRỌNG ÂM tự do KHÔNG đánh dấu → không
+  g2p-check được bằng regex tĩnh, để medium (ghi rõ, không giả vờ high).
+  **corpus-check** month-weekday **0.00%** (22736 câu). Đặc trưng Nga: 6 cách,
+  palatal hoá cứng/mềm, thể động từ, số đếm chi phối cách, không mạo từ/không
+  быть hiện tại. Hình thái nặng (cách/thể/trọng âm di động) phần lớn ở
+  lexical_level chờ bảng dữ liệu + native review. HONORIFIC not-applicable
+  (tiền lệ es B-02). 3 mục review-checklist tự quyết (không có owner, đều chốt
+  vòng 1): D-ru-01 baseline ru-RU, D-ru-02 chấm ё/е+trọng âm (tự áp es B-03),
+  D-ru-03 hiển thị dấu trọng âm trợ đọc (tiền lệ romaji ja ẩn-có-toggle) →
+  `answer_acceptance_ru` + `reading_aid_policy` giữ DRAFT. Sự kiện ngôn ngữ Nga
+  thuần tuý → `native-review-ru.md`. `catalog.json` ru.ruleStatus NOT_STARTED
+  → VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ
+  khác. Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

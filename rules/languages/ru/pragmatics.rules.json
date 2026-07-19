@@ -1,0 +1,59 @@
+{
+  "id": "ru/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "ru-RU",
+    "address_forms": {
+      "ты": { "formality": "informal", "number": "singular", "usage": "bạn bè, gia đình, trẻ em, ngang hàng đã thân — chia động từ ngôi 2 số ít (ты читаешь)" },
+      "вы": { "formality": "formal_or_plural", "number": "singular_formal_and_plural", "usage": "người lạ, người lớn tuổi, cấp trên, bối cảnh lịch sự (số ít trang trọng); hoặc số nhiều — chia động từ ngôi 2 số nhiều (вы читаете)", "capitalized": "Вы viết hoa trong thư từ lịch sự (tuỳ chọn)" },
+      "name_patronymic": { "usage": "Trang trọng: TÊN + PHỤ DANH (Иван Петрович, Мария Ивановна) thay 'ông/bà' — dấu hiệu lịch sự Nga đặc trưng" }
+    },
+    "baseline": {
+      "value": "Dạy CẢ ты lẫn вы ngay từ đầu (chuẩn giáo trình). ты/вы map thẳng CASUAL/FORMAL, giống chức năng es tú/usted. Không có biến thể vùng gây chia rẽ.",
+      "tts_locale": "ru-RU (xem D-ru-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "ты + từ vựng thân mật (привет, пока, спасибо)",
+      "NATURAL_NEUTRAL_POLITE": "вы chuẩn mực trung tính — baseline mặc định app dạy",
+      "FORMAL": "вы + tên-phụ danh + từ vựng trang trọng (Здравствуйте, будьте добры, извините)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Nga KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Lịch sự thể hiện qua đại từ (вы) + tên-phụ danh + thức mệnh lệnh lịch sự (будьте добры) + từ vựng — đã bao trong FORMAL, không phải modifier trực giao. Tự áp theo TIỀN LỆ es B-02 (owner duyệt 2026-07-19): ngôn ngữ Ấn-Âu không có kính ngữ hình thái -> HONORIFIC not-applicable. Pattern lặp lại (Phần B mục 2)."
+      }
+    },
+    "politeness_devices": {
+      "imperative_polite": "Будьте добры..., Не могли бы вы...? (thức điều kiện lịch sự), Пожалуйста",
+      "note": "Tương đương chức năng ですます-mềm ja nhưng là đại từ + cú pháp lịch sự, không phải kính ngữ hình thái."
+    }
+  },
+  "checks": [
+    {
+      "id": "ty-second-person-singular-verb",
+      "description": "ты chia động từ ngôi 2 số ít (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Ты читаешь книгу."],
+        "fail": ["Ты читаете книгу."]
+      }
+    },
+    {
+      "id": "vy-second-person-plural-verb",
+      "description": "вы (trang trọng/số nhiều) chia động từ ngôi 2 số nhiều (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Вы читаете книгу."],
+        "fail": ["Вы читаешь книгу."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Ты читаешь книгу.", "Вы читаете книгу.", "Здравствуйте, будьте добры."],
+    "fail": ["Вы читаешь книгу.", ""],
+    "_note": "Câu pass minh hoạ baseline (ты/вы + lịch sự trang trọng)."
+  }
+}
