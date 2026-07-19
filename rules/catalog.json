@@ -443,7 +443,7 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
       "target": "playable_needs_rule"
     },
     {

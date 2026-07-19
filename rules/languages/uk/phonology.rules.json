@@ -1,0 +1,55 @@
+{
+  "id": "uk/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "uk-UA",
+    "transparency_note": "Chính tả Ukraina KHÁ ĐỀU (phonemic; KHÔNG có akannya/giảm nguyên âm mạnh như Nga → nguyên âm không nhấn giữ chất lượng). WikiPron RẤT LỚN (53021) → g2p-check rất tốt.",
+    "consonant_g2p": {
+      "б": "[b]", "в": "[w]/[ʋ] (cuối/trước phụ âm →[u̯])", "г": "[ɦ] (hữu thanh thanh hầu — KHÁC Nga [g])",
+      "ґ": "[g] (chữ riêng)", "д": "[d]", "ж": "[ʒ]", "з": "[z]", "к": "[k]", "х": "[x]",
+      "ц": "[t͡s]", "ч": "[t͡ʃ]", "ш": "[ʃ]", "щ": "[ʃt͡ʃ]", "й": "[j]"
+    },
+    "vowel_g2p": {
+      "а": "[a]", "е": "[ɛ]", "и": "[ɪ] (KHÁC Nga)", "і": "[i]", "о": "[ɔ] (không giảm)", "у": "[u]",
+      "iotated": "я/ю/є = [ja/ju/je] đầu từ/sau nguyên âm/sau '/sau ь; ї = [ji] LUÔN"
+    },
+    "g2p_check_results_53021_words": {
+      "ж=>ʒ": "0.13% OK", "ш=>ʃ": "0.96% OK", "ч=>t͡ʃ": "0.23% OK", "ц=>t͡s": "0.12% OK",
+      "х=>x": "0.70% OK", "ґ=>ɡ": "0.00% OK", "ї=>ji": "0.30% OK"
+    },
+    "data_discipline_iotation": {
+      "finding": "'ю=>ju' bắn 97.48% 'vi phạm' — KHÔNG phải rule sai. Nguyên âm iotated я/ю/є đọc [ja/ju/je] CHỈ ở đầu từ / sau nguyên âm / sau dấu nháy ' / sau ь. SAU PHỤ ÂM: chúng làm MỀM phụ âm trước + đọc [a/u/e] (ню→[nʲu], не [nju]). ї LUÔN [ji] (vì thế ї=>ji giữ 0.30%). Đây là quy tắc iotation Slavic chuẩn — g2p đúng theo NGỮ CẢNH, không phải ánh xạ 1-1.",
+      "soft_hardening": "dấu nháy ' NGĂN mềm hoá: об'єкт = [obˈjɛkt] (phụ âm cứng + [j]), khác мяко."
+    }
+  },
+  "checks": [
+    {
+      "id": "consonants-cyrillic-uk",
+      "description": "Phụ âm Kirin Ukraina ж[ʒ] ш[ʃ] ч[t͡ʃ] ц[t͡s] х[x] ґ[g] — g2p-check xác nhận <1% trên WikiPron 53021 từ.",
+      "assert": { "type": "custom", "note": "g2p-check.mjs xác nhận; violations <1% là nhiễu/tên nước ngoài." },
+      "fixtures": { "pass": ["жінка", "шість", "ґудзик"], "fail": ["жінка-as-z"] }
+    },
+    {
+      "id": "iotation-context-dependent",
+      "description": "я/ю/є = [ja/ju/je] chỉ đầu từ/sau nguyên âm/sau '/sau ь; sau phụ âm = mềm hoá + [a/u/e]. ї luôn [ji].",
+      "assert": { "type": "custom", "note": "Quy tắc iotation ngữ cảnh; xác nhận qua g2p-check data-discipline (ю=>ju 97% 'vi phạm' = post-consonant palatalization)." },
+      "fixtures": { "pass": ["яблуко", "об'єкт", "сім'я"], "fail": ["ню-as-nju"] }
+    },
+    {
+      "id": "h-not-g",
+      "description": "г→[ɦ] (KHÔNG [g] như Nga); ґ→[g] là chữ RIÊNG — đặc trưng Ukraina.",
+      "assert": { "type": "custom", "note": "Phân biệt г/ґ; g2p-check ґ=>ɡ 0.00%." },
+      "fixtures": { "pass": ["гора", "ґанок"], "fail": ["гора-as-g"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["жінка", "яблуко", "об'єкт", "ґудзик", "гора"],
+    "fail": ["жінка-as-z"],
+    "_note": "g2p-check.mjs Bước 3 trên WikiPron thật (53021 từ) xác nhận phụ âm <1%; iotation ngữ cảnh + г/ґ ghi rõ config."
+  }
+}

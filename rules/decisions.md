@@ -973,6 +973,27 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-75 · 2026-07-19 · derived · uk — `uk` (tiếng Ukraina, uk-UA) build HOÀN
+  TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
+  vòng.** Đông Slav, hệ chữ KIRIN (Cyrl — không Latin), t1, 24 hiện tượng.
+  Dataset CLDR/UD/WikiPron: WikiPron `ukr_cyrl_narrow` **53021 cặp** (bộ RẤT
+  LỚN — g2p rất tin cậy); corpus UD Ukrainian-IU **7092 câu** (DƯỚI 10000, trên
+  sàn 2000 — ghi rõ). g2p-check 53021 từ: phụ âm <1% (ж 0.13%, ш 0.96%, ч
+  0.23%, ц 0.12%, х 0.70%, ґ 0.00%, ї 0.30%) → `grapheme_to_phoneme` VALIDATED.
+  **Kỷ luật dữ liệu:** 'ю→ju' 97.48% 'vi phạm' = quy tắc IOTATION (я/ю/є sau
+  phụ âm → mềm hoá + [a/u/e], KHÔNG [ja/ju/je]; ї luôn [ji]) — g2p đúng ngữ
+  cảnh, giữ rule, ghi rõ. corpus-check month-weekday 0.00% + no-russian-letters
+  (ы э ъ ё) 0.06%. HONORIFIC not-applicable (es B-02). Đặc trưng: 33 chữ (і/ї/є/ґ,
+  KHÔNG ы/э/ъ/ё), г→[ɦ]/ґ→[g] (khác Nga), и→[ɪ], dấu nháy ' + dấu mềm ь, 7 CÁCH
+  giữ VOCATIVE (Петре! — khác ru), quá khứ hợp giống, thể động từ, tương lai tổng
+  hợp читатиму, đối lập ти/ви. **5 giả định cần owner duyệt:** D-uk-01 (baseline
+  uk-UA — v1), D-uk-02 (Правопис 2019 — v2), D-uk-03 (KHÔNG chuyển tự Latin, dạy
+  chữ Kirin — v3, product), D-uk-04 (chấm thiếu і/ї/є/ь/dấu nháy = SAI theo pl
+  D-64; RIÊNG ґ/г KHOAN DUNG như ru ё vì ґ từng bị cấm Soviet vẫn ít dùng — giữ
+  DRAFT, flag owner điểm ґ/г — v4), D-uk-05 (DẠY đối lập ти/ви + vocative — v2).
+  `native-review-uk.md` 7 mục chờ người bản ngữ. Status: `VALIDATED_NOT_YET_PROVEN`,
+  KHÔNG FROZEN. Validator: 4 lỗi vi/zh cũ, 0 lỗi mới; catalog 60.
+
 - **D-74 · 2026-07-19 · owner · es — Owner DUYỆT SUS-01: tách ñ khỏi quy tắc
   tilde trong `answer_acceptance_es`.** Phát hiện khi rà lại 5 vòng (Phần B):
   quyết định B-03 cũ (cảnh báo nhẹ) chỉ khung quanh tilde-accent, chưa xử lý

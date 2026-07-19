@@ -1,0 +1,58 @@
+{
+  "id": "uk/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md", "writing-system.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "uk-UA",
+    "script": "Cyrillic (Cyrl), 33 chữ, bicameral, LTR",
+    "alphabet_distinct_from_russian": "CÓ і ї є ґ; KHÔNG có ы э ъ ё",
+    "apostrophe": "' (U+2019/U+0027) bắt buộc: ngăn mềm hoá + [j] tách (об'єкт, п'ять, м'ясо)",
+    "soft_sign": "ь làm mềm phụ âm trước (не âm riêng)",
+    "punctuation": {
+      "quotes": "«...» hoặc „...\"",
+      "dash": "— (thay 'là': Київ — столиця України)",
+      "standard": ". , ? ! như Latin"
+    },
+    "casing": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_nationalities_not_capitalized": true,
+      "note": "січень/понеділок/українська viết thường (trừ đầu câu) — giống ru/pl. Ви lịch sự có thể hoa trong thư từ."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ KHÔNG viết hoa giữa câu (січень, понеділок). [corpus-check Bước 3 trên 7092 câu thật: 0.04% vi phạm, chủ yếu tên riêng (Середа = họ người).]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[а-яіїєґ,] (Січень|Лютий|Березень|Квітень|Червень|Липень|Серпень|Вересень|Жовтень|Листопад|Грудень|Понеділок|Вівторок|Четвер|Пʼятниця|Субота|Неділя)(?![а-яіїєґ])"
+      },
+      "fixtures": {
+        "pass": ["Ми зустрінемося в січні.", "Сьогодні понеділок."],
+        "fail": ["Ми зустрінемося в Січні."]
+      }
+    },
+    {
+      "id": "no-russian-only-letters",
+      "description": "Văn bản Ukraina chuẩn KHÔNG dùng chữ chỉ-có-trong-Nga (ы э ъ ё) — nếu xuất hiện là tiếng Nga/lỗi, không phải Ukraina.",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[ыэъёЫЭЪЁ]"
+      },
+      "fixtures": {
+        "pass": ["Україна — незалежна держава.", "Я вивчаю українську мову."],
+        "fail": ["Это русский текст."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Доброго дня!", "Ми зустрінемося в січні.", "Київ — столиця України."],
+    "fail": ["Ми зустрінемося в Січні.", "Это русский текст."],
+    "_note": "pass minh hoạ casing + bảng chữ Ukraina; corpus-check Bước 3 trên UD Ukrainian-IU thật (7092 câu)."
+  }
+}

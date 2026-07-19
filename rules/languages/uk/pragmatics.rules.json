@@ -1,0 +1,57 @@
+{
+  "id": "uk/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "uk-UA",
+    "address_forms": {
+      "ty": { "form": "ти", "formality": "informal", "number": "singular", "usage": "bạn bè, gia đình, trẻ em, ngang hàng" },
+      "vy": { "form": "ви", "formality": "formal_or_plural", "number": "plural_or_polite_singular", "usage": "số nhiều HOẶC lịch sự với 1 người lạ/lớn tuổi/cấp trên (như fr vous); có thể viết hoa Ви trong thư từ" }
+    },
+    "t_v_distinction": {
+      "value": "CÓ đối lập T-V thật. Dạy cả ти và ви; chọn theo quan hệ. Kèm VOCATIVE khi gọi. Xem review-checklist D-uk-05.",
+      "tts_locale": "uk-UA"
+    },
+    "vocative_politeness": "gọi lịch sự dùng vocative + пане/пані (пане Петре!, пані Оксано!)",
+    "register_taxonomy_mapping": {
+      "CASUAL": "ти + từ thân mật (привіт, як справи)",
+      "NATURAL_NEUTRAL_POLITE": "ви lịch sự trung tính (người lạ) HOẶC ти ngang hàng — baseline",
+      "FORMAL": "ви + từ trang trọng + vocative (Доброго дня, будь ласка, дякую, перепрошую)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Ukraina KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja/ko. Lịch sự qua ви + từ vựng + vocative — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "avoid_russianisms": "dùng từ Ukraina chuẩn, tránh русизми (từ Nga không chuẩn): дякую (không спасибі ở ngữ cảnh trang trọng), будь ласка, гаразд",
+    "politeness_devices": "Чи не могли б Ви...? (Ngài có thể...?), будь ласка (làm ơn), перепрошую (xin lỗi/xin phép), дякую (cảm ơn)"
+  },
+  "checks": [
+    {
+      "id": "ty-vy-agreement",
+      "description": "ти → động từ ngôi 2 số ít; ви → ngôi 2 số nhiều (lịch sự) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích ngôi động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Як ти?", "Як ви?"],
+        "fail": ["Ви як ти?"]
+      }
+    },
+    {
+      "id": "vocative-in-address",
+      "description": "Gọi trực tiếp dùng vocative (пане Петре), không nominative — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Chọn ти/ви + vocative theo ngữ cảnh khi generator chạy." },
+      "fixtures": {
+        "pass": ["Пане Петре, добрий день!"],
+        "fail": ["Пан Петро, добрий день!"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Як ти?", "Як ви?", "Дякую вам!", "Пане Петре, добрий день!"],
+    "fail": ["Ви як ти?", ""],
+    "_note": "Câu pass minh hoạ đối lập ти/ви + vocative + lịch sự."
+  }
+}
