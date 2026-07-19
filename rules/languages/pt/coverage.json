@@ -34,11 +34,11 @@
     "status": "VALIDATED"
   },
   "casing": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chữ hoa đầu câu + danh từ riêng (giống en/es/it, KHÁC de không hoa mọi danh từ). Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (janeiro, segunda-feira, português, brasileiro) — giống es/it, lỗi phổ biến của học viên nói tiếng Anh. [Bước 3: corpus-check month-weekday xác nhận sạch trên 21377 câu thật.]",
-    "status": "DRAFT"
+    "notes": "Chữ hoa đầu câu + danh từ riêng (giống en/es/it, KHÁC de không hoa mọi danh từ). Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (janeiro, segunda-feira, português, brasileiro) — giống es/it, lỗi phổ biến của học viên nói tiếng Anh. [Bước 3: corpus-check month-weekday xác nhận sạch trên 21377 câu thật.] [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. V1 cơ quan chuẩn ngôn ngữ + V2 giáo trình + V4/V5 ngữ pháp tham chiếu đồng thuận tháng/thứ viết thường. V3 corpus-check THẬT: month-weekday-not-capitalized 351/21377 (1.64%) — dưới xa ngưỡng, quy tắc hợp lệ trên dữ liệu thật. LƯU Ý pt: tỷ lệ cao hơn (1.64%) do chính tả CŨ trước Acordo Ortográfico 1990 đôi khi hoa tháng — chuẩn hiện hành viết thường, 98.4% tuân thủ.]",
+    "status": "VALIDATED"
   },
   "writing_direction": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },

@@ -28,3 +28,5 @@ Không có front-matter (log nội bộ).
   đồng thuận), D-pt-03 (answer acceptance dấu — tự áp tiền lệ es B-03). Sự kiện
   ngôn ngữ Bồ thuần tuý → `native-review-pt.md`. Trạng thái dừng ở
   VALIDATED_NOT_YET_PROVEN, KHÔNG FROZEN (ADR-014).
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** `casing` NÂNG DRAFT→VALIDATED: V3 corpus-check THẬT (month-weekday-not-capitalized 1.64% (chính tả cũ trước Acordo 1990 hoa tháng; chuẩn nay viết thường)) trên corpus lớn; V1 cơ quan chuẩn + V2 giáo trình + V4/V5 đồng thuận tháng/thứ viết thường. answer_acceptance_pt vẫn DRAFT (chưa owner quyết) — pt dùng á/â/ã/ç: dấu trọng âm + til (nasal) + cedilha; KHÔNG có chữ cái riêng kiểu ñ; hướng B (cảnh báo nhẹ) như es/it hợp lý, chờ owner. Còn DRAFT cần người bản ngữ (ngữ pháp/paradigm/g2p ngoại lệ) — giữ nguyên, đã tra 5 vòng, cần người bản ngữ. Status ngôn ngữ KHÔNG đổi.
