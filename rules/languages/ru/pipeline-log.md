@@ -32,3 +32,5 @@ Không có front-matter (log nội bộ).
   ja ẩn-mặc-định-có-toggle). Sự kiện ngôn ngữ Nga thuần tuý (bảng cách, cặp
   thể, trọng âm từng từ) → `native-review-ru.md`. Trạng thái dừng ở
   VALIDATED_NOT_YET_PROVEN, KHÔNG FROZEN (ADR-014).
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** `casing` NÂNG DRAFT→VALIDATED: V3 corpus-check THẬT (month-weekday-not-capitalized 0.00%) trên corpus lớn; V1 cơ quan chuẩn + V2 giáo trình + V4/V5 đồng thuận tháng/thứ viết thường. answer_acceptance_ru vẫn DRAFT. **PHÁT HIỆN cần lưu ý cho quyết định tương lai:** chữ ё tiếng Nga RẤT thường viết thành е (bỏ 2 chấm) — đây là quy ước CHÍNH THỐNG chấp nhận (ё tuỳ chọn trong văn bản thường), NGƯỢC pl/da/el → nếu sau này quyết answer_acceptance_ru, ё nên KHOAN DUNG (chấp nhận е thay ё), KHÁC hướng C. Không phải nghi ngờ quyết định owner (chưa có quyết định), chỉ ghi trước. Còn DRAFT cần người bản ngữ (ngữ pháp/paradigm/g2p ngoại lệ) — giữ nguyên, đã tra 5 vòng, cần người bản ngữ. Status ngôn ngữ KHÔNG đổi.

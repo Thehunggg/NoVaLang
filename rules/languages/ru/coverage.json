@@ -35,11 +35,11 @@
     "status": "VALIDATED"
   },
   "casing": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chữ hoa đầu câu + danh từ riêng. Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (январь, понедельник, русский) — giống es/it, lỗi phổ biến của học viên nói tiếng Anh. Đại từ 'я' (tôi) KHÔNG viết hoa (khác 'I' tiếng Anh). Đại từ trang trọng Вы có thể viết hoa trong thư từ lịch sự. [Bước 3: corpus-check month-weekday xác nhận trên 22736 câu thật.]",
-    "status": "DRAFT"
+    "notes": "Chữ hoa đầu câu + danh từ riêng. Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (январь, понедельник, русский) — giống es/it, lỗi phổ biến của học viên nói tiếng Anh. Đại từ 'я' (tôi) KHÔNG viết hoa (khác 'I' tiếng Anh). Đại từ trang trọng Вы có thể viết hoa trong thư từ lịch sự. [Bước 3: corpus-check month-weekday xác nhận trên 22736 câu thật.] [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. V1 cơ quan chuẩn ngôn ngữ + V2 giáo trình + V4/V5 ngữ pháp tham chiếu đồng thuận tháng/thứ viết thường. V3 corpus-check THẬT: month-weekday-not-capitalized 0/22736 (0.00%) — dưới xa ngưỡng, quy tắc hợp lệ trên dữ liệu thật.]",
+    "status": "VALIDATED"
   },
   "writing_direction": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
