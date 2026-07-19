@@ -27,3 +27,5 @@ Không có front-matter (log nội bộ).
   chuẩn viết + cảnh báo), D-cs-03 (chấm thiếu dấu — áp tiền lệ pl D-64). Sự kiện
   ngôn ngữ Séc thuần tuý (7 cách, animacy, clitic) → `native-review-cs.md`.
   Trạng thái dừng ở VALIDATED_NOT_YET_PROVEN, KHÔNG FROZEN (ADR-014).
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** `casing` NÂNG DRAFT→VALIDATED: V3 corpus-check THẬT (month-weekday-not-capitalized 0.01%) trên corpus lớn; V1 cơ quan chuẩn + V2 giáo trình + V4/V5 đồng thuận tháng/thứ viết thường. answer_acceptance_cs C (owner D-70) tra lại — XÁC NHẬN ĐÚNG (háček/acute đổi âm/độ dài). Còn DRAFT cần người bản ngữ (ngữ pháp/paradigm/g2p ngoại lệ) — giữ nguyên, đã tra 5 vòng, cần người bản ngữ. Status ngôn ngữ KHÔNG đổi.
