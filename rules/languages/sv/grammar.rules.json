@@ -1,0 +1,65 @@
+{
+  "id": "sv/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "definite_suffix",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "sv-SE",
+    "word_order": {
+      "main_clause": "V2 — động từ chia ở vị trí THỨ HAI (Jag läser en bok. Idag läser jag.)",
+      "subordinate_clause": "inte (phủ định) đứng TRƯỚC động từ (..., att jag inte förstår)",
+      "no_strong_verb_final": "không có động từ về cuối mạnh như de/nl"
+    },
+    "gender_articles": {
+      "en_ord": "giống chung (~75%): en bok, en flicka",
+      "ett_ord": "giống trung: ett hus, ett äpple",
+      "indefinite": "en / ett (đứng trước)",
+      "en_ett_lexical": "phải học theo từng danh từ (giống de/het nl)"
+    },
+    "definite_suffix": {
+      "note": "ĐẶC TRƯNG SCANDINAVIA: mạo từ xác định GẮN SAU danh từ.",
+      "en_singular": "-en / -n (bil -> bilen, flicka -> flickan)",
+      "ett_singular": "-et / -t (hus -> huset, äpple -> äpplet)",
+      "plural": "-na / -a / -en (bilar -> bilarna, hus -> husen)",
+      "double_definiteness": "khi có tính từ: den/det/de + tính từ + danh từ-HẬU TỐ (den röda bilen, det stora huset)"
+    },
+    "adjective": {
+      "indefinite": "en röd bil / ett rött hus / röda bilar (ett-ord thêm -t; số nhiều -a)",
+      "definite": "den röda bilen (dạng -a)"
+    },
+    "verb_no_person_agreement": {
+      "rule": "Động từ KHÔNG chia theo ngôi/số — jag/du/han/vi/ni/de + CÙNG dạng (jag är, du är, de är).",
+      "present": "-ar/-er/-r (talar, läser, bor)",
+      "past": "-ade/-de/-te + động từ mạnh (đổi nguyên âm: skriva->skrev)",
+      "perfect": "har + supinum (-at/-t/-it: har talat, har skrivit)"
+    }
+  },
+  "checks": [
+    {
+      "id": "definite-suffix",
+      "description": "Mạo từ xác định gắn sau danh từ theo giống (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng giống + đuôi danh từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["bilen", "huset", "den röda bilen"],
+        "fail": ["den bil", "biletet"]
+      }
+    },
+    {
+      "id": "verb-no-person-agreement",
+      "description": "Động từ không chia theo ngôi — cùng dạng mọi ngôi (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["jag är", "du är", "de är"],
+        "fail": ["jag ären", "du bist"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Jag läser en bok.", "den röda bilen", "de är"],
+    "fail": ["den bil", "jag ären"],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Swedish thật."
+  }
+}

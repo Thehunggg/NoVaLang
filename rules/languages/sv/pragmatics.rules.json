@@ -1,0 +1,57 @@
+{
+  "id": "sv/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "sv-SE",
+    "address_forms": {
+      "du": { "formality": "universal_neutral", "number": "singular", "usage": "HẦU HẾT mọi người kể cả người lạ/lớn tuổi/dịch vụ — nhờ du-reformen (thập niên 1960-70). Baseline phổ quát." },
+      "ni": { "formality": "plural_or_archaic_formal", "number": "plural (or archaic singular formal)", "usage": "chủ yếu là số NHIỀU. 'ni' trang trọng số ít đã cổ, đôi khi bị coi là kỳ/thiếu tự nhiên -> KHÔNG dạy làm chuẩn trang trọng." }
+    },
+    "baseline": {
+      "value": "Dạy 'du' làm chuẩn phổ quát (thân mật + lịch sự trung tính gộp làm một nhờ du-reformen). 'ni' = số nhiều. KHÔNG dựng đối lập T-V mạnh kiểu de du/Sie hay fr tu/vous. Lịch sự thể hiện qua TỪ VỰNG + gián tiếp, không qua đại từ.",
+      "tts_locale": "sv-SE (xem D-sv-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "du + từ thân mật (hej, tjena, fika)",
+      "NATURAL_NEUTRAL_POLITE": "du chuẩn mực — baseline (du đã là mức trung tính lịch sự)",
+      "FORMAL": "du + từ trang trọng + gián tiếp (skulle kunna, tack så mycket, ursäkta)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Thụy Điển KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-), và sau du-reformen cũng không dựa vào đối lập đại từ T-V. Lịch sự thể hiện qua từ vựng + cấu trúc gián tiếp — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": {
+      "indirect": "Skulle du kunna...? (Bạn có thể...?), Jag skulle vilja... (Tôi muốn...), ursäkta (xin lỗi/xin phép), tack (cảm ơn)"
+    }
+  },
+  "checks": [
+    {
+      "id": "du-universal-baseline",
+      "description": "du dùng phổ quát, động từ cùng dạng (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần ngữ cảnh khi generator chạy; động từ sv không đổi theo ngôi." },
+      "fixtures": {
+        "pass": ["Vad vill du dricka?", "Talar du svenska?"],
+        "fail": ["Vad vill du dricker?"]
+      }
+    },
+    {
+      "id": "polite-indirect",
+      "description": "Lịch sự qua gián tiếp (skulle kunna), không qua đại từ trang trọng (kiểm mẫu).",
+      "assert": { "type": "custom", "note": "Không dùng 'ni' làm trang trọng số ít." },
+      "fixtures": {
+        "pass": ["Skulle du kunna hjälpa mig?"],
+        "fail": ["Skulle du kunna hjälper mig?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Talar du svenska?", "Skulle du kunna hjälpa mig?", "Tack så mycket."],
+    "fail": ["Vad vill du dricker?", ""],
+    "_note": "Câu pass minh hoạ baseline (du phổ quát + gián tiếp lịch sự)."
+  }
+}

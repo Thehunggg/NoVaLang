@@ -1,0 +1,49 @@
+{
+  "id": "sv/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "sv-SE",
+    "dataset_note": "WikiPron sv nhỏ (5856 cặp); quy tắc cốt lõi xác nhận, nhưng bộ nặng tên riêng/từ mượn — ảnh hưởng quy tắc mềm hoá âm đầu (xem dưới).",
+    "grapheme_to_phoneme_rules": {
+      "sj_skj_stj": { "phoneme": "ɧ", "g2p_check": "sj 49 từ / 4.08% — OK (sj-ljud đặc trưng; cũng [ʂ]/[ɕ] vùng)" },
+      "tj_kj": { "phoneme": "ɕ", "g2p_check": "tj 69 từ / 7.25% — OK" },
+      "ä": { "phoneme": "ɛ / æ / eː", "g2p_check": "846 từ / 1.65% — OK (æ trước r; eː dài)" },
+      "ö": { "phoneme": "ø / œ / ɵ", "g2p_check": "602 từ / 2.49% — OK (ɵ trước r+răng)" },
+      "å": { "phoneme": "oː / ɔ", "g2p_check": "480 từ / 1.25% — OK" }
+    },
+    "front_vowel_softening_medium": {
+      "note": "k->[ɕ], g->[j], sk->[ɧ] trước e/i/y/ä/ö (từ bản ngữ). g2p-check KHÔNG lên VALIDATED (bắn 40-73%) do dấu pitch ¹/² chặn ^anchor + TỪ MƯỢN giữ cứng (keff/gebit/gem/skeptisk) hoặc g->[ɧ] (Pháp: gelé). Confidence medium, xem coverage front_vowel_softening.",
+      "native_examples": { "k->ɕ": "köpa, kär, kind", "g->j": "göra, ge, gilla", "sk->ɧ": "sked, skjuta, skära" },
+      "hard_before_back_vowel": "k/g/sk trước a/o/u/å giữ [k]/[ɡ]/[sk] (kall, gata, skola)"
+    },
+    "not_yet_g2p_checked": {
+      "vowel_length": "nguyên âm dài (âm tiết mở nhấn) / ngắn (nhân đôi phụ âm) — vila/villa",
+      "rs_retroflex": "rs -> [ʂ] (Trung Thụy Điển; g2p bắn 64% -> KHÔNG phổ quát trong dataset broad, để lexical/vùng)",
+      "o_pronunciation": "o -> [uː]/[ʊ] (bo, bok) hoặc [oː]/[ɔ] — lexical"
+    }
+  },
+  "checks": [
+    {
+      "id": "sj-tj-sounds",
+      "description": "sj/skj/stj->[ɧ], tj/kj->[ɕ] (xác nhận g2p-check).",
+      "assert": { "type": "custom", "note": "Kiểm chữ->âm cần G2P engine; g2p-check.mjs đã xác nhận trên WikiPron thật." },
+      "fixtures": { "pass": ["sjö", "tjugo"], "fail": ["sjö-xyz"] }
+    },
+    {
+      "id": "front-vowel-softening-native",
+      "description": "k/g/sk mềm hoá trước nguyên âm trước (từ bản ngữ; medium, ngoại lệ từ mượn).",
+      "assert": { "type": "custom", "note": "Quy tắc bản ngữ hạn chế theo nguyên từ; g2p-check cho thấy từ mượn giữ cứng." },
+      "fixtures": { "pass": ["köpa", "göra"], "fail": ["keff-as-soft"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["sjö", "tjugo", "köpa", "mål"],
+    "fail": ["sjö-xyz"],
+    "_note": "fixtures minh hoạ quy tắc g2p đã xác nhận; dùng test implementation tương lai."
+  }
+}

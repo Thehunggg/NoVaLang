@@ -770,6 +770,29 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
     chờ người bản ngữ. Ghi vào: `nl/review-checklist.md`, `pl/review-checklist.md`
     (dấu ✅), `pl/coverage.json` (answer_acceptance_pl → C/VALIDATED). Commit riêng.
 
+- **D-65 · 2026-07-19 · derived · sv — `sv` (tiếng Thụy Điển, sv-SE) build HOÀN
+  TẤT, trạng thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN
+  (ADR-014).** 23 hiện tượng; 4 `.rules.json` khớp khuôn ja/en/es/de/it/pt/ru/
+  nl/pl. Dataset thật: CLDR sv, UD Swedish-Talbanken (word-class), WikiPron
+  `swe_latn_broad` (**5856 cặp — bộ nhỏ**, ghi rõ). Corpus 11734 câu (UD
+  Talbanken+LinES). **g2p-check** xác nhận sj→[ɧ] 4.08%, tj→[ɕ] 7.25%, ä→[ɛ]
+  1.65%, ö→[ø] 2.49%, å→[oː] 1.25% → `grapheme_to_phoneme` VALIDATED.
+  **Phát hiện thật (kỷ luật dữ liệu):** mềm hoá âm đầu ^k[eiyäö]→^ɕ bắn 48%,
+  ^g→^j 42%, ^sk→^ɧ 35% — KHÔNG lên VALIDATED: dấu pitch ¹/² chặn ^anchor +
+  dataset nặng TỪ MƯỢN giữ cứng (keff/gebit/gem/skeptisk) hoặc g→[ɧ] (Pháp);
+  quy tắc đúng cho từ bản ngữ nhưng hạn chế theo nguyên từ → giữ **medium**,
+  không giả vờ high. **corpus-check** month-weekday **0.00%** (11734 câu). Đặc
+  trưng: hậu tố xác định (bilen/huset) + xác định kép, en/ett, V2, ĐỘNG TỪ
+  KHÔNG CHIA THEO NGÔI (thuận lợi), sj-ljud, du phổ quát (du-reformen). HONORIFIC
+  not-applicable (es B-02). D-sv-01 baseline sv-SE (vòng 1); D-sv-02 chấm thiếu
+  å/ä/ö — TỰ ÁP TIỀN LỆ pl D-64 (å ä ö là chữ cái → thiếu = SAI, phương án C),
+  giữ `answer_acceptance_sv` DRAFT + flag owner (áp tiền lệ sang ngôn ngữ mới,
+  không tự nâng VALIDATED như pl); D-sv-03 du phổ quát (vòng 2). Ghi chú app
+  (như pl D-64): nhắc dùng bàn phím Thụy Điển. Sự kiện Thụy Điển thuần tuý →
+  `native-review-sv.md`. `catalog.json` sv.ruleStatus NOT_STARTED →
+  VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ khác.
+  Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

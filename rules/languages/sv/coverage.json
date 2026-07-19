@@ -1,0 +1,184 @@
+{
+  "_meta": {
+    "language": "sv",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "sv-SE (tiếng Thụy Điển chuẩn, Thụy Điển)",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật. g2p-check/corpus-check chạy trên dữ liệu thật để nâng confidence.",
+    "corpus": {
+      "file": "tools/cache/corpus/sv-sentences.txt (không commit)",
+      "sentences": 11734,
+      "source": "UD Swedish-Talbanken + UD Swedish-LinES train/dev/test (S-UD-CORPUS)",
+      "note": "Vượt mốc 10000 — corpus không yếu. WikiPron g2p nhỏ hơn (5856 cặp) nhưng đủ xác nhận quy tắc cốt lõi."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Thụy Điển để chạy rule lên kiểm false-positive."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chữ Latin 29 chữ: a-z + å ä ö (3 chữ riêng, xếp CUỐI bảng chữ sau z). å ä ö là CHỮ CÁI THẬT, không phải a/o có dấu — có vị trí từ điển riêng. CLDR xác nhận. Sự kiện phổ thông.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận a-z + å ä ö (+ à/é trong từ mượn).",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Hoa đầu câu + danh từ riêng. KHÁC de (không hoa mọi danh từ). Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (januari, måndag, svenska, engelska) — giống es/it/nl(một phần). [Bước 3: corpus-check month-weekday trên 11734 câu.]",
+    "status": "DRAFT"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ Latin.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (swe_latn_broad, 5856 cặp — bộ nhỏ) -> grapheme-to-phoneme.data.json. Đặc trưng: hệ nguyên âm nhiều (9 chữ nguyên âm a e i o u y å ä ö, dài/ngắn); âm [ɧ] (sj-ljud) đặc trưng; TRỌNG ÂM ĐỘ CAO (pitch accent 1/2, đánh dấu ¹/² trong WikiPron).",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "[Bước 3: g2p-check.mjs trên WikiPron thật (5856 từ) xác nhận: sj->[ɧ]/[ʂ]/[ɕ] 4.08%; tj->[ɕ]/[ɧ] 7.25%; ä->[ɛ]/[æ]/[eː] 1.65%; ö->[ø]/[œ]/[ɵ] 2.49%; å->[oː]/[ɔ] 1.25%. VALIDATED. Nguyên âm dài/ngắn đánh dấu ː trong dataset (xem vowel_length).] LƯU MỀM HOÁ ÂM ĐẦU (k/g/sk trước e/i/y/ä/ö -> ɕ/j/ɧ) KHÔNG lên VALIDATED bằng g2p (xem front_vowel_softening — g2p bắn 40-73% do từ mượn + dấu pitch chặn ^anchor).",
+    "status": "VALIDATED"
+  },
+  "vowel_length": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Nguyên âm DÀI/NGẮN phân biệt nghĩa, đánh dấu qua âm tiết mở/đóng + nhân đôi phụ âm (giống de/nl): âm tiết nhấn mở -> nguyên âm dài (vi-la [viːla]); nhân đôi phụ âm -> nguyên âm ngắn (vil-la [vɪla]). [g2p-check: nguyên âm dài [Vː] xuất hiện đều trong dataset.] Quy tắc chính tả rule_level rõ.",
+    "status": "DRAFT"
+  },
+  "front_vowel_softening": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Quy tắc bản ngữ: k -> [ɕ] (köpa, kär), g -> [j] (göra, ge), sk -> [ɧ] (sked, skjuta) khi đứng trước nguyên âm TRƯỚC (e i y ä ö), CỨNG [k]/[ɡ]/[sk] trước nguyên âm sau (a o u å). [Bước 3: g2p-check ^k[eiyäö]->^ɕ bắn 48%, ^g->^j 42%, ^sk->^ɧ 35% — KHÔNG lên VALIDATED: (1) dấu pitch ¹/² đầu chuỗi chặn ^anchor, (2) TỪ MƯỢN giữ cứng (keff, gebit, gem, skeptisk) hoặc g->[ɧ] (Pháp: gelé, generös). Đây là PHÁT HIỆN THẬT — quy tắc đúng cho từ bản ngữ nhưng hạn chế theo NGUYÊN TỪ, dataset WikiPron nặng từ mượn/tên riêng. Giữ medium, ghi rõ, KHÔNG giả vờ high.] Cần dạy như quy tắc bản ngữ + ngoại lệ từ mượn.",
+    "status": "DRAFT"
+  },
+  "pitch_accent": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Trọng âm độ cao (pitch accent): accent 1 (akut, ¹) vs accent 2 (grav, ²) — WikiPron đánh dấu. Phân biệt nghĩa vài cặp tối thiểu (anden 'con vịt' accent 1 / anden 'linh hồn' accent 2; tomten). KHÔNG đánh dấu trong chính tả thường -> gán accent theo từng từ phần lớn LEXICAL (có xu hướng: từ đa âm tiết + hậu tố nhất định -> accent 2). Điểm khó phát âm cho học viên nhưng không thiết yếu ở trình độ đầu. Confidence medium (xu hướng), lexical none.",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Swedish-Talbanken test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "gender_and_articles": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "2 giống: chung (en-ord, ~75% danh từ) / trung (ett-ord). Mạo từ không xác định TRƯỚC: en bok, ett hus. Mạo từ xác định là HẬU TỐ (đặc trưng Scandinavia): en bok -> boken, ett hus -> huset, số nhiều -> böckerna/husen. XÁC ĐỊNH KÉP khi có tính từ: den stora boken / det stora huset (mạo từ trước + hậu tố). en/ett phần lớn LEXICAL (phải học từng danh từ, giống de/het của nl).",
+    "status": "DRAFT"
+  },
+  "definite_suffix": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG SCANDINAVIA: mạo từ xác định GẮN SAU danh từ (postposed): -en/-n (en-ord: bilen, flickan), -et/-t (ett-ord: huset, äpplet), số nhiều -na/-a/-en (bilarna, husen). Xác định kép: den/det/de + tính từ + danh từ-HẬU TỐ (den röda bilen). Quy tắc chọn hậu tố theo giống + đuôi danh từ rule_level; giống en/ett là lexical.",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐƠN GIẢN (thuận lợi): động từ KHÔNG chia theo ngôi/số — jag/du/han/vi/ni/de ÄR (cùng dạng). Chỉ chia theo THÌ. Hiện tại -ar/-er/-r (talar, läser, bor). Quá khứ -ade/-de/-te + động từ mạnh (đổi nguyên âm). Hoàn thành: har + supinum (-at/-t/-it). Động từ mạnh + vara/ha/gå bất quy tắc là lexical.",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG (giống de/nl): mệnh đề chính V2 — động từ chia vị trí THỨ HAI (Jag läser en bok / Idag läser jag). Mệnh đề phụ: trạng từ phủ định inte đứng TRƯỚC động từ (..., att jag inte förstår) — khác mệnh đề chính. Không có động từ về cuối mạnh như de/nl. SVO nền + V2.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG XÃ HỘI (khác de/nl/ru): 'du-reformen' thập niên 1960-70 -> tiếng Thụy Điển hiện đại dùng 'du' cho HẦU HẾT mọi người (kể cả người lạ, người lớn tuổi, dịch vụ). 'ni' (trang trọng số ít cổ) gần như biến mất, đôi khi bị coi là kỳ/thiếu tự nhiên; 'ni' số nhiều vẫn dùng. Baseline: dạy 'du' làm chuẩn phổ quát, 'ni' = số nhiều + ghi chú 'ni' trang trọng là cổ/tuỳ chọn. Xem review-checklist D-sv-03 (quyết định sản phẩm).",
+    "status": "VALIDATED"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu câu chuẩn Latin (. , ? !). Ngoặc kép: \"…\" (cao-cao, giống en) hoặc »…» . KHÔNG có dấu lật ngược như es. Dấu phẩy ít bắt buộc hơn de (không bắt buộc trước att/som như de trước dass).",
+    "status": "DRAFT"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "å ä ö là CHỮ CÁI (không phải a/o có dấu) — có vị trí bảng chữ + từ điển riêng (cuối bảng). Bỏ/thay = sai chính tả + đổi từ (mål 'mục tiêu' / mal 'con nhậy'; för / fo:r). é/à chỉ ở từ mượn (idé, kafé). Ảnh hưởng chấm điểm — xem answer_acceptance_sv (giống bản chất pl: dấu là chữ).",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~du + từ thân mật (hej, tjena), NATURAL_NEUTRAL_POLITE~du chuẩn mực (baseline — nhờ du-reformen, du đã là mức trung tính lịch sự), FORMAL~du + từ trang trọng + cấu trúc gián tiếp (skulle kunna, tack så mycket). HONORIFIC: not-applicable cho sv — không có hệ kính ngữ hình thái kiểu ja/ko; lịch sự qua từ vựng + gián tiếp. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19). Đặc biệt: sv KHÔNG dựa vào đối lập đại từ T-V mạnh (du phổ quát) — lịch sự chủ yếu qua từ vựng/ngữ điệu.",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "NOT-APPLICABLE: chữ Latin. (Pitch accent không đánh dấu và không có hệ trợ đọc chuẩn — xem pitch_accent; không tạo thành reading aid hệ thống.)",
+    "status": "not-applicable"
+  },
+  "answer_acceptance_sv": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính sách chấm khi thiếu/thay å ä ö (gõ 'mal' thay 'mål', 'for' thay 'för', hoặc 'aa/ae/oe'): å ä ö là CHỮ CÁI THẬT (vị trí bảng chữ riêng, cuối bảng) — GIỐNG BẢN CHẤT pl (dấu là chữ). Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu chữ này = SAI, không chấp nhận (dạy gõ đúng, dùng bàn phím Thụy Điển). NHƯNG đây là ÁP tiền lệ sang ngôn ngữ mới -> giữ DRAFT + flag owner xác nhận (xem review-checklist D-sv-02). Ghi chú app (như pl): nên nhắc dùng bàn phím hệ thống Thụy Điển.",
+    "status": "DRAFT"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Lưu ý: du phổ quát (đừng dịch máy 'you' trang trọng thành ni), xác định kép, V2.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text Latin (đầy đủ å ä ö). TTS sv-SE đọc trực tiếp (engine tự xử lý pitch accent + độ dài nguyên âm). Kế thừa _base/audio.rules.json. Locale: sv-SE. Văn bản PHẢI giữ å ä ö (là chữ, bỏ đọc/nghĩa sai).",
+    "status": "VALIDATED"
+  }
+}

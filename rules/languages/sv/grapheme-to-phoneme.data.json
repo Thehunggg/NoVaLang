@@ -1,0 +1,218 @@
+{
+  "id": "sv/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 5856,
+    "byScript": {
+      "swe_latn_broad": {
+        "count": 5856,
+        "sample": [
+          [
+            "AB",
+            "ɑː b eː"
+          ],
+          [
+            "ADHD",
+            "ɑː d eː h oː d eː"
+          ],
+          [
+            "AW",
+            "ɑː v eː"
+          ],
+          [
+            "Aachen",
+            "ɑː k eː n"
+          ],
+          [
+            "Abbe",
+            "² a b ɛ"
+          ],
+          [
+            "Abbeshult",
+            "a b ɛ s h ɵ l t"
+          ],
+          [
+            "Adde",
+            "² a d ɛ"
+          ],
+          [
+            "Afrika",
+            "ɑː f r ɪ k a"
+          ],
+          [
+            "Agneta",
+            "a ŋ ² n eː t a"
+          ],
+          [
+            "Ahlman",
+            "ɑː l m a n"
+          ],
+          [
+            "Albanien",
+            "a l b ɑː n j ɛ n"
+          ],
+          [
+            "Albert",
+            "¹ a l b æ ʈ"
+          ],
+          [
+            "Albertina",
+            "a l b æ ² ʈ iː n a"
+          ],
+          [
+            "Albin",
+            "¹ a l b ɪ n"
+          ],
+          [
+            "Algeriet",
+            "a l ɧ ɛ r iː ɛ t"
+          ],
+          [
+            "Alingsås",
+            "ɑː l ɪ ŋ s oː s"
+          ],
+          [
+            "Alunda",
+            "ɑː l ɵ n d a"
+          ],
+          [
+            "Amanda",
+            "a ² m a n d a"
+          ],
+          [
+            "Amerika",
+            "a m eː r ɪ k a"
+          ],
+          [
+            "Amerikat",
+            "a m eː r ɪ k a t"
+          ],
+          [
+            "Anatolien",
+            "a n a t ɔ l i e n"
+          ],
+          [
+            "Anders",
+            "â nː d ɛ ʂ"
+          ],
+          [
+            "Andersson",
+            "â nː d ɛ ʂ ɔ n"
+          ],
+          [
+            "Andorra",
+            "a n d ɔ r a"
+          ],
+          [
+            "André",
+            "a n d r eː"
+          ],
+          [
+            "Angelstad",
+            "a ŋ ɛ l s t ɑ"
+          ],
+          [
+            "Angola",
+            "a n ɡ oː l a"
+          ],
+          [
+            "Ankeborg",
+            "a ŋ k ɛ b ɔ r j"
+          ],
+          [
+            "Anna",
+            "² a n a"
+          ],
+          [
+            "Annerstad",
+            "a n ɛ s t ɑ"
+          ],
+          [
+            "Antarktis",
+            "a n t a r k t ɪ s"
+          ],
+          [
+            "Apostlagärningarna",
+            "ɑː p ʊ s t l a j ɛː r n ɪ ŋ a r n a"
+          ],
+          [
+            "Arkimedes",
+            "a r k ɪ m eː d ɛ s"
+          ],
+          [
+            "Armenien",
+            "a r m eː n ɪ ɛ n"
+          ],
+          [
+            "Asien",
+            "ɑː s ɪ ɛ n"
+          ],
+          [
+            "Asmara",
+            "a s ² m ɑː r a"
+          ],
+          [
+            "Axel",
+            "¹ a k s ɛ l"
+          ],
+          [
+            "Azerbajdzjan",
+            "a s ɛ r b a j d j a n"
+          ],
+          [
+            "BB",
+            "² b eː b eː"
+          ],
+          [
+            "Backström",
+            "b a k s t r œ m"
+          ],
+          [
+            "Baggböle",
+            "b ɑ ɡ b øː l ɛ"
+          ],
+          [
+            "Bajen",
+            "b a j ɛ n"
+          ],
+          [
+            "Balkanhalvön",
+            "b ɑ l k ɑ n h ɑ l v øː n"
+          ],
+          [
+            "Barcelona",
+            "b a ʂ ɛ ² l oː n a"
+          ],
+          [
+            "Belarus",
+            "b ɛ l a r ɵ s"
+          ],
+          [
+            "Belarus",
+            "b ɛ l a r ʉː s"
+          ],
+          [
+            "Belgien",
+            "b ɛ l ɡ ɪ ɛ n"
+          ],
+          [
+            "Benin",
+            "b ɛ n iː n"
+          ],
+          [
+            "Bergling",
+            "b æ̂ r j l ɪ ŋ"
+          ],
+          [
+            "Berlin",
+            "b e r l iː n"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/swe_latn_broad.tsv"
+      }
+    }
+  }
+}
