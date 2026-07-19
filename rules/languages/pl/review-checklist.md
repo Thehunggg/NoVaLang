@@ -10,6 +10,11 @@ thuần tuý (7 cách, số từ, giống nam-người) → `native-review-pl.md
 
 Không có front-matter (checklist thao tác).
 
+> **✅ CẬP NHẬT 2026-07-19: owner ĐÃ DUYỆT cả 2 mục.** D-pl-01 → A (như đề
+> xuất). **D-pl-02 → owner CHỌN C (KHÔNG phải B như tôi đề xuất)** — thiếu dấu
+> Ba Lan = SAI, không chấp nhận. `native-review-pl.md` GIỮ NGUYÊN. Status KHÔNG
+> đổi (VALIDATED_NOT_YET_PROVEN, không FROZEN). Ghi kèm: `decisions.md` D-64.
+
 ---
 
 ## [D-pl-01] Baseline vùng miền cho tiếng Ba Lan
@@ -28,6 +33,8 @@ tranh.
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A (pl-PL).** `tts_audio_policy`
 > = VALIDATED, locale pl-PL.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: baseline pl-PL.** Chốt chính thức.
 
 ---
 
@@ -60,3 +67,19 @@ khó gõ dấu.
 > là chữ'), theo tinh thần es B-03 nhưng điều chỉnh cho bản chất Ba Lan.** Nếu
 > owner muốn nghiêm hơn (C: coi là sai vì là chữ) hoặc lỏng hơn (A), cập nhật.
 > Đây là mục CẦN OWNER DUYỆT RÕ (khác bản chất với es/it/pt/nl).
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: CHỌN C (KHÔNG phải B).** Thiếu dấu Ba Lan =
+> **SAI**, KHÔNG chấp nhận như đáp án đúng. **Lý do owner:** dấu Ba Lan là CHỮ
+> CÁI thật (ł≠l, ó≠u), gõ thiếu là sai chính tả — dạy đúng như người Ba Lan
+> viết; người học nghiêm túc (sang Ba Lan sống/làm) kiểu gì cũng phải dùng bàn
+> phím Ba Lan cho mọi việc, nên học gõ đúng từ đầu là kỹ năng thật. Đây là
+> quyết định KHÁC với tiền lệ es B-03 (owner cân nhắc bản chất "dấu là chữ" của
+> pl và chủ động chọn nghiêm hơn). `answer_acceptance_pl` cập nhật theo hướng C
+> và nâng VALIDATED (quyết định đã dứt khoát, chấm khớp-đúng chuẩn, không cần
+> UI cảnh-báo-nhẹ).
+>
+> **GHI CHÚ APP (không phải rule, KHÔNG làm bây giờ):** với ngôn ngữ có dấu là
+> chữ cái riêng (như pl), app NÊN NHẮC người dùng cài/dùng bàn phím ngôn ngữ đó
+> (bàn phím hệ thống), thay vì tự xây nút nhập ký tự trong bài. Việc này thuộc
+> UX của app, ghi lại ở đây + `decisions.md` D-64 để lần sau nhớ; chưa triển
+> khai trong task build-rule này.

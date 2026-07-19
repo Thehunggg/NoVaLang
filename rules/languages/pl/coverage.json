@@ -181,11 +181,11 @@
     "status": "not-applicable"
   },
   "answer_acceptance_pl": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B03"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chính sách chấm khi thiếu dấu Ba Lan (gõ 'dzien dobry' thay 'dzień dobry', 'zolw' thay 'żółw'): KHÁC BẢN CHẤT với es/it/pt/nl — dấu Ba Lan là CHỮ THẬT, không phải accent; bỏ dấu là lỗi chính tả thật, đôi khi đổi từ. NHƯNG bàn phím không-Ba-Lan không gõ được dễ. Đề xuất: CẢNH BÁO NHẸ (accept nhưng hiện dạng đúng + nhấn mạnh đây là chữ, không phải dấu) — tinh thần es B-03 nhưng với chú thích riêng. Đây là ĐIỂM CẦN OWNER DUYỆT rõ (xem review-checklist D-pl-02, đã cân nhắc tới VÒNG 2). Giữ DRAFT.",
-    "status": "DRAFT"
+    "notes": "OWNER DECISION 2026-07-19 (D-64, phương án C — KHÁC tiền lệ es B-03): thiếu/sai dấu Ba Lan (gõ 'dzien dobry' thay 'dzień dobry', 'zolw' thay 'żółw') = SAI, KHÔNG chấp nhận như đáp án đúng. Lý do: dấu Ba Lan là CHỮ CÁI thật (ł≠l [w]/[l], ó≠u khác chữ, ż/rz), gõ thiếu là sai chính tả — dạy đúng như người Ba Lan viết; học viên nghiêm túc phải dùng bàn phím Ba Lan, học gõ đúng từ đầu là kỹ năng thật. Chấm: KHỚP-ĐÚNG chuẩn (dấu bắt buộc), KHÔNG normalize bỏ dấu, KHÔNG cảnh-báo-nhẹ-mà-vẫn-đúng. Chữ đích vẫn luôn giữ đầy đủ dấu (xem tts_audio_policy/localization-boundaries). GHI CHÚ APP (không phải rule, chưa làm): app nên nhắc người dùng cài/dùng bàn phím Ba Lan hệ thống thay vì tự xây nút nhập ký tự trong bài — thuộc UX app, xem D-64.",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },

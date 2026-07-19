@@ -743,6 +743,33 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   pl.ruleStatus NOT_STARTED → VALIDATED_NOT_YET_PROVEN. Không đụng playable
   config/lesson hay ngôn ngữ khác. Commit riêng.
 
+- **D-64 · 2026-07-19 · owner · nl,pl — Owner DUYỆT 4 giả định sản phẩm của
+  nl/pl (chốt D-62/D-63), có 1 OVERRIDE quan trọng cho pl.** Cập nhật tracking
+  duyệt + 1 thay đổi nội dung coverage (answer_acceptance_pl). KHÔNG đổi status
+  ngôn ngữ (cả hai vẫn `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN).
+  - **D-nl-01 → DUYỆT:** baseline **nl-NL** (không Flemish).
+  - **D-nl-02 → DUYỆT:** trema/dấu **cảnh báo nhẹ** (tiền lệ es B-03); GIỮ
+    `answer_acceptance_nl` ở **DRAFT**.
+  - **D-pl-01 → DUYỆT:** baseline **pl-PL**.
+  - **⚠️ D-pl-02 → owner CHỌN C (KHÔNG phải B tôi đề xuất):** thiếu/sai dấu Ba
+    Lan = **SAI**, KHÔNG chấp nhận như đáp án đúng. **Lý do owner:** dấu Ba Lan
+    là CHỮ CÁI thật (ł≠l, ó≠u), gõ thiếu là sai chính tả — dạy đúng như người
+    Ba Lan viết; học viên nghiêm túc (sang Ba Lan sống/làm) phải dùng bàn phím
+    Ba Lan cho mọi việc, nên học gõ đúng từ đầu là kỹ năng thật. Đây là quyết
+    định **khác tiền lệ es B-03** (owner chủ động chọn nghiêm hơn vì bản chất
+    "dấu là chữ" của pl). `answer_acceptance_pl` đã cập nhật theo hướng C
+    (chấm khớp-đúng chuẩn, dấu bắt buộc, không normalize, không cảnh-báo-nhẹ)
+    và **nâng VALIDATED** (quyết định đã dứt khoát, không cần UI cảnh-báo-nhẹ).
+  - **📝 GHI CHÚ APP (không phải rule, KHÔNG làm bây giờ):** với ngôn ngữ có dấu
+    là chữ cái riêng (như pl), app NÊN NHẮC người dùng cài/dùng bàn phím ngôn
+    ngữ đó (bàn phím hệ thống), thay vì tự xây nút nhập ký tự trong bài. Thuộc
+    UX app — ghi lại đây + `pl/review-checklist.md` + `pl/coverage.json`
+    (answer_acceptance_pl note) để lần sau nhớ; chưa triển khai trong task
+    build-rule.
+  - **Các mục `native-review-nl.md` (6) / `native-review-pl.md` (7) GIỮ NGUYÊN**
+    chờ người bản ngữ. Ghi vào: `nl/review-checklist.md`, `pl/review-checklist.md`
+    (dấu ✅), `pl/coverage.json` (answer_acceptance_pl → C/VALIDATED). Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,
