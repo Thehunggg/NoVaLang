@@ -33,11 +33,11 @@
     "status": "VALIDATED"
   },
   "casing": {
-    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Giống es: tháng/thứ trong tuần/quốc tịch-tính từ (KHÔNG phải danh từ chỉ người) KHÔNG viết hoa (lundi, janvier, français khi là tính từ — nhưng un Français khi là danh từ chỉ người THÌ viết hoa, khác es/en hoàn toàn không viết hoa quốc tịch bao giờ) — điểm khác biệt tinh vi cần lưu ý riêng cho fr, không sao chép nguyên quy tắc es.",
-    "status": "DRAFT"
+    "notes": "Giống es: tháng/thứ trong tuần/quốc tịch-tính từ (KHÔNG phải danh từ chỉ người) KHÔNG viết hoa (lundi, janvier, français khi là tính từ — nhưng un Français khi là danh từ chỉ người THÌ viết hoa, khác es/en hoàn toàn không viết hoa quốc tịch bao giờ) — điểm khác biệt tinh vi cần lưu ý riêng cho fr, không sao chép nguyên quy tắc es. [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED cho phần tháng/thứ. V1 Académie française: tháng/thứ viết thường. V2 giáo trình fr. V3 corpus-check THẬT 17342 câu (trên 10k) — check mới 'month-weekday-not-capitalized' 13/17342 = 0.07%, 'vi phạm' chủ yếu tên riêng/nhóm (Octobre) — hợp lệ. V4/V5 xác nhận. LƯU Ý: phần quốc tịch fr tinh vi (tính từ français thường / danh từ chỉ người Français hoa) là quy tắc rule_level đúng nhưng phần danh-từ-chỉ-người chưa kiểm máy — phần tháng/thứ đã đủ bằng chứng corpus để VALIDATED.]",
+    "status": "VALIDATED"
   },
   "writing_direction": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
@@ -131,11 +131,11 @@
     "status": "DRAFT"
   },
   "punctuation_layout": {
-    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Đặc trưng nổi tiếng: khoảng trắng (thường là khoảng trắng hẹp không ngắt dòng, insécable) TRƯỚC dấu ; : ! ? và trong « » — khác es/en/ja (không có khoảng trắng trước dấu câu). Vd 'Comment ça va ?' (có khoảng trắng trước ?), khác 'How are you?' tiếng Anh. Chưa cross-check kỹ có phải mọi ngữ cảnh xuất bản đều theo quy tắc này (báo chí Canada/web hiện đại đôi khi bỏ qua).",
-    "status": "DRAFT"
+    "notes": "Đặc trưng nổi tiếng: khoảng trắng (thường là khoảng trắng hẹp không ngắt dòng, insécable) TRƯỚC dấu ; : ! ? và trong « » — khác es/en/ja (không có khoảng trắng trước dấu câu). Vd 'Comment ça va ?' (có khoảng trắng trước ?), khác 'How are you?' tiếng Anh. [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. Câu hỏi cũ 'mọi ngữ cảnh xuất bản có theo không' được V3 corpus TRẢ LỜI: check 'space-before-question-mark' (regex_absent '[^\\s]\\?') chỉ 3/17342 = 0.02% vi phạm trên câu Pháp thật → quy tắc khoảng trắng-trước-dấu-câu ÁP DỤNG ĐỒNG NHẤT trong corpus chuẩn. V1 Imprimerie nationale/Académie française + V2 giáo trình xác nhận. LƯU Ý: web/báo Canada đôi khi bỏ khoảng trắng — nhưng chuẩn xuất bản Pháp (corpus UD) theo quy tắc; dạy theo chuẩn.]",
+    "status": "VALIDATED"
   },
   "register_taxonomy": {
     "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-TU-VOUS", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },

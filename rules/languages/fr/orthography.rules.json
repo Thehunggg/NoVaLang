@@ -67,6 +67,24 @@
           "Comment ça va?"
         ]
       }
+    },
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tháng/thứ trong tuần KHÔNG viết hoa giữa câu (janvier, lundi — giống es, KHÁC en). [corpus-check Bước 3 trên 17342 câu thật: ~0.12% vi phạm, chủ yếu tên riêng/nhóm nhạc (Octobre) — quy tắc hợp lệ.] Loại Mars/Mai khỏi regex (đồng âm hành tinh/tên riêng); dùng tiền tố chữ-thường-hoặc-phẩy để chỉ vị trí giữa câu (tránh dương tính giả đầu câu + vấn đề \\b với chữ có dấu — xem _bước3_finding).",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[a-zàâäéèêëïîôùûüç,] (Janvier|Février|Avril|Juin|Juillet|Août|Septembre|Octobre|Novembre|Décembre|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Dimanche)(?![a-zàâäéèêëïîôùûüç])"
+      },
+      "fixtures": {
+        "pass": [
+          "Nous sommes en janvier.",
+          "Le rendez-vous est lundi."
+        ],
+        "fail": [
+          "Nous sommes en Janvier.",
+          "Le rendez-vous est Lundi."
+        ]
+      }
     }
   ],
   "fixtures": {

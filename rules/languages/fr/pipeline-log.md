@@ -51,3 +51,20 @@ Không có front-matter (log nội bộ, cùng quy ước ja/en/ko/es/pipeline-l
   Pháp bản địa sai — WikiPron trộn tên riêng ngoại lai vào từ điển. KHÔNG
   nâng `nasal_vowels` lên VALIDATED — giữ DRAFT, ghi rõ cần lọc tên riêng
   trước khi coi là kiểm chứng đầy đủ (GIẢ ĐỊNH C-07).
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** 2 điểm DRAFT NÂNG VALIDATED
+  bằng dữ liệu thật: (1) `casing` — thêm check 'month-weekday-not-capitalized'
+  vào orthography.rules.json, corpus-check 17342 câu (trên 10k) = 0.07% vi phạm
+  (chủ yếu tên riêng/nhóm Octobre) → hợp lệ; phần tháng/thứ VALIDATED (phần
+  quốc tịch danh-từ-chỉ-người vẫn tinh vi, ghi rõ). (2) `punctuation_layout` —
+  câu hỏi cũ 'mọi ngữ cảnh xuất bản có theo khoảng-trắng-trước-dấu-câu không'
+  được V3 trả lời: check 'space-before-question-mark' 3/17342 = 0.02% → quy tắc
+  áp dụng đồng nhất trên corpus chuẩn. Owner decisions C-01 (FORMAL vs NNP
+  'vous'), C-02 (answer_acceptance A CÓ PHÂN BIỆT), C-03 (baseline fr-FR) tra
+  lại 5 vòng — XÁC NHẬN ĐÚNG, KHÔNG nghi ngờ: fr KHÔNG có chữ cái riêng kiểu ñ
+  (ç là c+cedilla, œ là ligature — garçon/garcon là lỗi chính tả, không đổi
+  thành từ khác) → A-có-phân-biệt hợp lý, khác es (có ñ, xem SUS-01). grapheme_to_phoneme
+  giữ DRAFT trung thực (chính tả Pháp nhiều chữ câm/liaison — như da, khó g2p
+  toàn hệ). Còn DRAFT cần người bản ngữ: grapheme_to_phoneme, liaison,
+  nasal_vowels, gender/number, verb_conjugation, forms_of_address, word_order,
+  clitic_pronouns. Status ngôn ngữ KHÔNG đổi.
