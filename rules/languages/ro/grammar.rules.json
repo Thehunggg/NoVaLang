@@ -1,0 +1,68 @@
+{
+  "id": "ro/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "definite_article_suffix",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "ro-RO",
+    "word_order": "SVO_flexible_pro_drop",
+    "gender_system": {
+      "values": ["masculine", "feminine", "neuter"],
+      "neuter_note": "Giống TRUNG (neutru) = NAM ở số ít + NỮ ở số nhiều (un scaun / două scaune) — đặc trưng Rumani.",
+      "plural_endings": "-i (băiat->băieți), -e (carte->cărți/casă->case), -uri (trung: scaun->scaune, lucru->lucruri) + luân phiên gốc"
+    },
+    "definite_article_suffix": {
+      "note": "ĐẶC TRƯNG BALKAN — mạo từ xác định GẮN SAU danh từ (postposed).",
+      "masc_neut_sing": "-ul / -l (băiat->băiatul, om->omul, câine->câinele)",
+      "fem_sing": "-a (casă->casa, fată->fata)",
+      "masc_plur": "-i (băieți->băieții)",
+      "fem_neut_plur": "-le (case->casele)",
+      "indefinite_before": "un (nam/trung) / o (nữ) đứng TRƯỚC"
+    },
+    "case_system": {
+      "note": "Hệ cách rút gọn (Balkan)",
+      "nom_acc": "gộp (casa)",
+      "gen_dat": "gộp một dạng (casei 'của/cho nhà')",
+      "vocativ": "hô cách (băiete!, Ioane!)",
+      "marking": "chủ yếu trên mạo từ + một số đuôi"
+    },
+    "verb": {
+      "conjugation_groups": "4 nhóm (-a/-ea/-e/-i/-î)",
+      "subjunctive_sa": "thức giả định với 'să' thay nguyên mẫu (vreau să merg, KHÔNG vreau a merge)",
+      "future": "'o să' + giả định, hoặc voi/vei/va + nguyên mẫu",
+      "irregular": "a fi/a avea/a merge lexical"
+    },
+    "clitic_object": {
+      "note": "đại từ tân ngữ clitic đứng TRƯỚC động từ (îl văd), gắn sau ở mệnh lệnh (vezi-l)",
+      "clitic_doubling": "nhân đôi tân ngữ (Balkan): îl văd pe Ion 'tôi thấy Ion'"
+    }
+  },
+  "checks": [
+    {
+      "id": "definite-article-suffix",
+      "description": "Mạo từ xác định gắn sau danh từ theo giống-số (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng giống + đuôi danh từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["băiatul", "casa", "băieții"],
+        "fail": ["ul băiat", "băiata"]
+      }
+    },
+    {
+      "id": "subjunctive-sa-not-infinitive",
+      "description": "Dùng să + giả định thay nguyên mẫu (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Đặc trưng Balkan; cần phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["Vreau să merg.", "Trebuie să plec."],
+        "fail": ["Vreau a merge."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["băiatul", "Vreau să merg.", "un scaun"],
+    "fail": ["ul băiat", "Vreau a merge."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Romanian thật."
+  }
+}

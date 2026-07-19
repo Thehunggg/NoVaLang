@@ -1,0 +1,58 @@
+{
+  "id": "ro/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "ro-RO",
+    "address_forms": {
+      "tu": { "formality": "informal", "number": "singular", "verb_agreement": "ngôi 2 số ít (tu vorbești)", "usage": "thân mật — bạn bè, gia đình, ngang hàng, trẻ em" },
+      "dumneavoastră": { "formality": "formal", "number": "singular_formal_and_plural", "verb_agreement": "ngôi 2 số NHIỀU (dumneavoastră vorbiți)", "usage": "trang trọng cao — người lạ, lớn tuổi, công việc; viết tắt dvs." },
+      "dumneata": { "formality": "semi_formal", "note": "bán trang trọng (ngôi 2 số ít, sắc thái riêng), ĐANG GIẢM DÙNG — KHÔNG dạy ở baseline" }
+    },
+    "baseline": {
+      "value": "Dạy tu (thân mật) + dumneavoastră (trang trọng, chia ngôi 2 số nhiều). BỎ QUA dumneata (phức tạp/đang mờ). tu/dumneavoastră map CASUAL/FORMAL.",
+      "tts_locale": "ro-RO"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "tu + từ thân mật (salut, bă)",
+      "NATURAL_NEUTRAL_POLITE": "tu/dumneavoastră chuẩn mực — baseline mặc định app dạy",
+      "FORMAL": "dumneavoastră + từ trang trọng (Bună ziua, vă rog)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Rumani KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Lịch sự qua dumneavoastră (đại từ lịch sự + động từ ngôi 2 số nhiều) + thức điều kiện (ați putea...?) + từ vựng — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19): ngôn ngữ Rôman không có kính ngữ hình thái -> HONORIFIC not-applicable."
+      }
+    },
+    "politeness_devices": {
+      "conditional": "Ați putea...? (Ngài có thể...?), Aș vrea... (Tôi muốn...), vă rog (làm ơn), poftim (mời/xin)"
+    }
+  },
+  "checks": [
+    {
+      "id": "dumneavoastra-plural-verb",
+      "description": "dumneavoastră (trang trọng) chia động từ ngôi 2 số nhiều (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Vorbiți română?"],
+        "fail": ["Vorbești dumneavoastră română?"]
+      }
+    },
+    {
+      "id": "tu-singular-verb",
+      "description": "tu chia động từ ngôi 2 số ít (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Vorbești română?"],
+        "fail": ["Vorbiți tu română?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Vorbești română?", "Vorbiți română?", "Ați putea să mă ajutați?"],
+    "fail": ["Vorbești dumneavoastră română?", ""],
+    "_note": "Câu pass minh hoạ baseline (tu/dumneavoastră + điều kiện lịch sự)."
+  }
+}

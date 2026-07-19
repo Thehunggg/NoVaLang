@@ -865,6 +865,28 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   `catalog.json` cs.ruleStatus NOT_STARTED → VALIDATED_NOT_YET_PROVEN. Không
   đụng playable config/lesson hay ngôn ngữ khác. Commit riêng.
 
+- **D-69 · 2026-07-19 · derived · ro — `ro` (tiếng Rumani, ro-RO) build HOÀN
+  TẤT, trạng thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN
+  (ADR-014). Rôman Đông mang đặc trưng Balkan Sprachbund (mạo từ hậu tố, cách
+  rút gọn, giả định să, giống trung).** 24 hiện tượng; 4 `.rules.json` khớp
+  khuôn ja/en/es/de/it/pt/ru/nl/pl/sv/fi/cs. Dataset thật: CLDR ro, UD
+  Romanian-RRT (word-class), WikiPron `ron_latn_broad` (9286 cặp — bộ nhỏ,
+  corpus 33645 câu bù). Corpus UD RRT+Nonstandard. **g2p-check** xác nhận:
+  ș→[ʃ] 0.16%, ț→[t͡s] 2.33%, ă→[ə] 0.14%, â/î→[ɨ] 0.24/0.33%, ce→[t͡ʃ] 2.20%,
+  ge→[d͡ʒ] 4.23%, che→[k] 2.13%, ghe→[ɡ] 13.33% (bộ nhỏ 15 từ) →
+  `grapheme_to_phoneme` VALIDATED (c/g mềm-cứng như es/it). **corpus-check**
+  month-weekday **0.08%** (tên riêng/ngày trang trọng). Đặc trưng: mạo từ xác
+  định hậu tố (Balkan, ngược Rôman Tây), giống trung (neutru: nam ít/nữ nhiều),
+  hệ cách rút gọn (gen-dat), thức giả định să thay nguyên mẫu, nhân đôi tân ngữ.
+  HONORIFIC not-applicable (es B-02). D-ro-01 baseline ro-RO (vòng 1); D-ro-02
+  chính tả â/î theo quy tắc Academia Română 1993 (î đầu/cuối, â giữa — vòng 2);
+  D-ro-03 chấm thiếu dấu — áp tiền lệ pl D-64 (5 dấu là chữ → thiếu = sai; ș/ț
+  comma-below không cedilla), giữ `answer_acceptance_ro` DRAFT + flag owner;
+  D-ro-04 tu/dumneavoastră (bỏ dumneata — vòng 2). Ghi chú app (như pl D-64):
+  nhắc dùng bàn phím Rumani. Sự kiện Rumani thuần tuý → `native-review-ro.md`.
+  `catalog.json` ro.ruleStatus NOT_STARTED → VALIDATED_NOT_YET_PROVEN. Không
+  đụng playable config/lesson hay ngôn ngữ khác. Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

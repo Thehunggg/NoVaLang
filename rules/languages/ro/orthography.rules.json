@@ -1,0 +1,45 @@
+{
+  "id": "ro/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "„”",
+    "quote_marks_alternative": "«»",
+    "special_letters": "ă [ə], â [ɨ], î [ɨ], ș [ʃ], ț [t͡s] — là chữ. ș/ț PHẢI comma-below (U+0219/U+021B), không phải cedilla ş/ţ.",
+    "a_circumflex_rule": "â giữa từ (când), î đầu/cuối từ + phái sinh (început, a coborî) — quy tắc Viện Hàn lâm 1993.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "ianuarie/luni/română/român viết thường (trừ đầu câu) — giống es/it."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 33645 câu thật.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Ianuarie|Februarie|Martie|Aprilie|Iunie|Iulie|August|Septembrie|Octombrie|Noiembrie|Decembrie|Luni|Marți|Miercuri|Joi|Vineri|Sâmbătă|Duminică)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Astăzi este luni, trei ianuarie."],
+        "fail": ["Astăzi este Luni, trei Ianuarie."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Astăzi este luni.", "Ea vorbește română.", "București este capitala României."],
+    "fail": ["astăzi este luni.", "Astăzi este Ianuarie."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Romanian thật. Mai (tháng 5) bỏ khỏi regex vì đồng âm 'mai' (còn/hơn)."
+  }
+}
