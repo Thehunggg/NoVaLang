@@ -34,11 +34,11 @@
     "status": "VALIDATED"
   },
   "casing": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Hoa đầu câu + danh từ riêng. KHÁC de (không hoa mọi danh từ). Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (januari, måndag, svenska, engelska) — giống es/it/nl(một phần). [Bước 3: corpus-check month-weekday trên 11734 câu.]",
-    "status": "DRAFT"
+    "notes": "Hoa đầu câu + danh từ riêng. KHÁC de (không hoa mọi danh từ). Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (januari, måndag, svenska, engelska) — giống es/it/nl(một phần). [Bước 3: corpus-check month-weekday trên 11734 câu.] [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. V1 cơ quan chuẩn ngôn ngữ + V2 giáo trình + V4/V5 ngữ pháp tham chiếu đồng thuận tháng/thứ viết thường. V3 corpus-check THẬT: month-weekday-not-capitalized 0/11734 (0.00%) — dưới xa ngưỡng, quy tắc hợp lệ trên dữ liệu thật.]",
+    "status": "VALIDATED"
   },
   "writing_direction": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
