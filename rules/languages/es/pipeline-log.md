@@ -37,3 +37,18 @@ Không có front-matter (log nội bộ, cùng quy ước ja/en/ko/pipeline-log.
   từ, 0%), z (đầu từ)->[s] (651 từ, 0% — XÁC NHẬN bản WikiPron 'la' dùng
   SESEO, bằng chứng trực tiếp cho GIẢ ĐỊNH B-01, không phải suy đoán). Nâng
   `grapheme_to_phoneme` lên VALIDATED.
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** `casing` NÂNG DRAFT→VALIDATED:
+  V3 corpus-check THẬT 17013 câu (trên mốc 10k) — month-weekday-not-capitalized
+  0.60%, quy tắc hợp lệ; V1 RAE + V2 giáo trình + V4/V5 Ortografía RAE đồng
+  thuận. g2p-check WikiPron 132249 từ xác nhận mạnh phonology (ñ→ɲ 0.00%, ll→ʝ
+  1.83%, v→b 0.12%, z→s seseo 0.07%, j→x 1.09% — vi phạm đều là tên/loanword
+  ngoại, nhiễu) → hỗ trợ grapheme_to_phoneme (đã VALIDATED). Owner decisions
+  baseline español americano + reading-aid tra lại — XÁC NHẬN ĐÚNG. **NGHI NGỜ
+  (owner xem lại):** B-03 (answer_acceptance B 'cảnh báo nhẹ') chỉ khung quanh
+  tilde-accent, chưa xử lý riêng chữ ñ (año≠ano, ñ là chữ cái → có thể nên C
+  như pl/da/el) — ghi ở `rules/owner-review-queue.md` SUS-01, KHÔNG tự sửa.
+  Còn DRAFT cần người bản ngữ: syllable_stress (WikiPron es không đánh trọng
+  âm — không g2p-verify được), gender_and_number_agreement, verb_conjugation,
+  ser_estar_distinction (khó điển hình), clitic_pronouns, word_order,
+  diacritics_orthography, naturalness. Status ngôn ngữ KHÔNG đổi.

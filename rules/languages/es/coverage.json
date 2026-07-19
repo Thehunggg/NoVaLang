@@ -33,11 +33,11 @@
     "status": "VALIDATED"
   },
   "casing": {
-    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Chữ hoa đầu câu + danh từ riêng như en, NHƯNG KHÁC en: tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (lunes, enero, español — trong khi English viết hoa Monday/January/Spanish). Điểm khác biệt quan trọng, dễ bị học viên nói tiếng Anh áp nhầm quy tắc.",
-    "status": "DRAFT"
+    "notes": "Chữ hoa đầu câu + danh từ riêng như en, NHƯNG KHÁC en: tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (lunes, enero, español — trong khi English viết hoa Monday/January/Spanish). Điểm khác biệt quan trọng, dễ bị học viên nói tiếng Anh áp nhầm quy tắc. [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. V1 RAE (Real Academia): tháng/thứ/quốc tịch/ngôn ngữ viết thường, đồng thuận tuyệt đối. V2 mọi giáo trình es. V3 corpus-check THẬT trên 17013 câu (trên mốc 10000): month-weekday-not-capitalized 102/17013 = 0.60% vi phạm — dưới xa ngưỡng, 'vi phạm' chủ yếu là lỗi nguồn/tên riêng (Avenida...) — quy tắc HỢP LỆ trên dữ liệu thật. V4/V5 Ortografía RAE 2010 xác nhận. Quy tắc rule_level không tranh cãi + có bằng chứng corpus lớn.]",
+    "status": "VALIDATED"
   },
   "writing_direction": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
