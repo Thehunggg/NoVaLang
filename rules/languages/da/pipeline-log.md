@@ -28,3 +28,5 @@ Không có front-matter (log nội bộ).
   D-da-03 (chấm thiếu æ/ø/å — áp tiền lệ pl D-64). Sự kiện ngôn ngữ Đan Mạch
   thuần tuý → `native-review-da.md`. Trạng thái dừng ở VALIDATED_NOT_YET_PROVEN,
   KHÔNG FROZEN (ADR-014).
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** `casing` NÂNG DRAFT→VALIDATED: V3 corpus-check THẬT (month-weekday-not-capitalized 0.04%) trên corpus lớn; V1 cơ quan chuẩn + V2 giáo trình + V4/V5 đồng thuận tháng/thứ viết thường. answer_acceptance_da C (owner D-73, Phần A phiên này) tra lại — XÁC NHẬN ĐÚNG (æ/ø/å là chữ cái riêng). Còn DRAFT cần người bản ngữ (ngữ pháp/paradigm/g2p ngoại lệ) — giữ nguyên, đã tra 5 vòng, cần người bản ngữ. Status ngôn ngữ KHÔNG đổi.
