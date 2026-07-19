@@ -1,9 +1,9 @@
 {
   "_meta": {
     "targetCount": 60,
-    "decision": "D-01 (owner 2026-07-17): build rule cho 60 ngôn ngữ",
+    "decision": "D-55 (owner 2026-07-19): TÁCH mục tiêu playable (ngôn ngữ được HỌC, cần BUILD RULE) khỏi mục tiêu native (tiếng mẹ đẻ để DỊCH NGHĨA, KHÔNG cần rule). Thay D-01 cũ (\"build rule cho 60\").",
     "status": "APPROVED_BY_OWNER_2026-07-18 (D-37; zh=Hans mặc định; sửa sau tùy ý)",
-    "note": "Nháp do AI đề xuất, xếp theo (độ sẵn có dataset CLDR/UD/Wikipron + số người nói/độ cần học). Owner duyệt/sửa ở Bước 0. 'playable' (có bài học thật) chỉ en+ja; còn lại 'preview'. ruleStatus theo dõi tiến độ build rule, tách rời playable.",
+    "note": "Playable (cần rule) = 33, gắn với giới hạn ~33 ngôn ngữ của Azure Pronunciation Assessment (chấm phát âm, gói Max) — build rule cho ngôn ngữ không có voice là công thừa. Native (chỉ cần dịch) = 60; 33 playable NẰM TRONG 60 native. Thứ tự owner chốt: build rule 33 playable TRƯỚC, làm dịch 60 native SAU. Field 'target' trên mỗi entry là phân loại authoritative 2026-07-19: playable_needs_rule | native_only_no_rule | review_pending_not_in_owner_60. Field 'roles' là legacy (mô hình D-01 cũ), KHÔNG cập nhật ở bước tracking này.",
     "playable": [
       "en",
       "ja"
@@ -33,11 +33,139 @@
       "EXISTS_FROZEN_NARRATIVE",
       "IN_PROGRESS",
       "VALIDATED",
-      "FROZEN"
+      "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "FROZEN",
+      "FROZEN_RULE_LEVEL_LEXICAL_OPEN"
     ],
     "openQuestions": [
       "zh: giản thể (Hans) hay phồn thể (Hant)? — mặc định nháp Hans, cần owner chốt"
-    ]
+    ],
+    "ruleTargetCount": 33,
+    "nativeTargetCount": 60,
+    "targetCount_meaning": "targetCount = số dòng trong mảng languages[] mà tools/validate.mjs sanity-check (native universe). KHÔNG phải rule target. Rule target = ruleTargetCount (33). Native target = nativeTargetCount (60).",
+    "targetValues": [
+      "playable_needs_rule",
+      "native_only_no_rule",
+      "review_pending_not_in_owner_60"
+    ],
+    "languageTargets": {
+      "source": "owner 2026-07-19 (D-55)",
+      "ruleTargetCount": 33,
+      "nativeTargetCount": 60,
+      "order": "ISO 639-1 khi có, 639-3 khi không (yue)",
+      "playable33_needRule": [
+        "en",
+        "ja",
+        "ko",
+        "zh",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt",
+        "ru",
+        "vi",
+        "ar",
+        "nl",
+        "pl",
+        "sv",
+        "tr",
+        "el",
+        "cs",
+        "da",
+        "fi",
+        "nb",
+        "ro",
+        "th",
+        "id",
+        "hi",
+        "he",
+        "uk",
+        "hu",
+        "fil",
+        "ms",
+        "bg",
+        "hr",
+        "ca"
+      ],
+      "nativeOnly27_noRule": [
+        "fa",
+        "ur",
+        "bn",
+        "my",
+        "ta",
+        "te",
+        "mr",
+        "yue",
+        "km",
+        "lo",
+        "sk",
+        "lt",
+        "ne",
+        "si",
+        "gu",
+        "pa",
+        "kn",
+        "ml",
+        "sw",
+        "am",
+        "ha",
+        "yo",
+        "zu",
+        "mn",
+        "kk",
+        "uz",
+        "sr"
+      ],
+      "native60_full_note": "native60 = playable33 (33) + nativeOnly27 (27). 33 playable là tập con của 60 native.",
+      "builtSoFar_7": [
+        "ja",
+        "en",
+        "vi",
+        "zh",
+        "ko",
+        "es",
+        "fr"
+      ],
+      "playableNotBuilt_26": [
+        "de",
+        "it",
+        "pt",
+        "ru",
+        "ar",
+        "nl",
+        "pl",
+        "sv",
+        "tr",
+        "el",
+        "cs",
+        "da",
+        "fi",
+        "nb",
+        "ro",
+        "th",
+        "id",
+        "hi",
+        "he",
+        "uk",
+        "hu",
+        "fil",
+        "ms",
+        "bg",
+        "hr",
+        "ca"
+      ],
+      "codesNeedingOwnerConfirmation": {
+        "nb": "owner ghi 'Tiếng Na Uy' chung; dùng nb (Bokmål, chuẩn viết phổ biến + khớp Azure nb-NO). Xác nhận: nb chứ không phải nn (Nynorsk).",
+        "fil": "owner ghi 'Tagalog' (ISO tl); dùng fil (Filipino) để khớp entry catalog cũ + voice Azure fil-PH — vì 33 playable gắn với voice Azure. Xác nhận fil thay vì tl.",
+        "yue": "'Tiếng Quảng Đông' = yue (ISO 639-3, không có 639-1); mã mới, chưa có trong array. Azure hỗ trợ yue/zh-HK."
+      },
+      "conflictsWithRepo": [
+        "7 mã ORPHAN đang trong languages[] nhưng KHÔNG thuộc 60 native của owner: af, sl, lv, et, is, ga, eu — giữ nguyên, đánh target=review_pending_not_in_owner_60, CHỜ owner quyết (không tự xóa).",
+        "7 mã native-only của owner CHƯA có dòng trong languages[]: yue, ha, yo, zu, mn, kk, uz — ghi ở đây là authoritative; KHÔNG thêm dòng vào array (native-only không cần rule, array là lớp theo dõi rule). Thêm dòng khi/nếu chúng thành rule target.",
+        "shared/config/native_language_options.json có 100 entry (isSupportedAsNative=true) — KHÁC target 60 native. scripts/validate-curriculum.mjs (~dòng 1128) ÉP CỨNG native >= 100. Nằm ngoài phạm vi bước tracking này (shared/ + validator curriculum). BÁO owner, KHÔNG tự sửa."
+      ]
+    }
   },
   "languages": [
     {
@@ -53,7 +181,8 @@
         "t3"
       ],
       "status": "playable",
-      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN"
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN",
+      "target": "playable_needs_rule"
     },
     {
       "code": "ja",
@@ -68,7 +197,8 @@
         "t3"
       ],
       "status": "playable",
-      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN"
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN",
+      "target": "playable_needs_rule"
     },
     {
       "code": "zh",
@@ -84,7 +214,8 @@
       ],
       "status": "preview",
       "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN",
-      "note": "Hans (giản thể) — CHỐT theo D-37, xác nhận khi build zh 2026-07-18."
+      "note": "Hans (giản thể) — CHỐT theo D-37, xác nhận khi build zh 2026-07-18.",
+      "target": "playable_needs_rule"
     },
     {
       "code": "ko",
@@ -99,7 +230,8 @@
         "t3"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
     },
     {
       "code": "vi",
@@ -114,7 +246,8 @@
         "t3"
       ],
       "status": "preview",
-      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN"
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN",
+      "target": "playable_needs_rule"
     },
     {
       "code": "es",
@@ -127,7 +260,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
     },
     {
       "code": "fr",
@@ -140,7 +274,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
     },
     {
       "code": "de",
@@ -153,7 +288,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "pt",
@@ -166,7 +302,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "it",
@@ -179,7 +316,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "ru",
@@ -192,7 +330,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "id",
@@ -205,7 +344,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "hi",
@@ -218,7 +358,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "ar",
@@ -232,7 +373,8 @@
       ],
       "status": "preview",
       "ruleStatus": "NOT_STARTED",
-      "note": "RTL; MSA vs dialect cần cân nhắc sau"
+      "note": "RTL; MSA vs dialect cần cân nhắc sau",
+      "target": "playable_needs_rule"
     },
     {
       "code": "th",
@@ -245,7 +387,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "tr",
@@ -258,7 +401,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "nl",
@@ -271,7 +415,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "pl",
@@ -284,7 +429,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "uk",
@@ -297,7 +443,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "sv",
@@ -310,7 +457,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "ro",
@@ -323,7 +471,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "el",
@@ -336,7 +485,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "cs",
@@ -349,7 +499,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "da",
@@ -362,7 +513,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "fi",
@@ -375,7 +527,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "nb",
@@ -388,7 +541,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "hu",
@@ -401,7 +555,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "he",
@@ -415,7 +570,8 @@
       ],
       "status": "preview",
       "ruleStatus": "NOT_STARTED",
-      "note": "RTL"
+      "note": "RTL",
+      "target": "playable_needs_rule"
     },
     {
       "code": "fa",
@@ -429,7 +585,8 @@
       ],
       "status": "preview",
       "ruleStatus": "NOT_STARTED",
-      "note": "RTL"
+      "note": "RTL",
+      "target": "native_only_no_rule"
     },
     {
       "code": "bn",
@@ -442,7 +599,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "ta",
@@ -455,7 +614,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "te",
@@ -468,7 +629,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "ml",
@@ -481,7 +644,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "mr",
@@ -494,7 +659,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "ur",
@@ -508,7 +675,8 @@
       ],
       "status": "preview",
       "ruleStatus": "NOT_STARTED",
-      "note": "RTL"
+      "note": "RTL",
+      "target": "native_only_no_rule"
     },
     {
       "code": "pa",
@@ -521,7 +689,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "sw",
@@ -534,7 +704,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "fil",
@@ -547,7 +719,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "ms",
@@ -560,7 +733,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "my",
@@ -573,7 +747,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "km",
@@ -586,7 +762,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "lo",
@@ -599,7 +777,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "si",
@@ -612,7 +792,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "ne",
@@ -625,7 +807,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "gu",
@@ -638,7 +822,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "kn",
@@ -651,7 +837,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "am",
@@ -664,7 +852,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "af",
@@ -677,7 +867,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
     },
     {
       "code": "ca",
@@ -690,7 +882,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "hr",
@@ -703,7 +896,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "sr",
@@ -717,7 +911,8 @@
       ],
       "status": "preview",
       "ruleStatus": "NOT_STARTED",
-      "note": "cũng viết Latn; mặc định nháp Cyrl"
+      "note": "cũng viết Latn; mặc định nháp Cyrl",
+      "target": "native_only_no_rule"
     },
     {
       "code": "sk",
@@ -730,7 +925,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "sl",
@@ -743,7 +940,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
     },
     {
       "code": "bg",
@@ -756,7 +955,8 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "playable_needs_rule"
     },
     {
       "code": "lt",
@@ -769,7 +969,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
     },
     {
       "code": "lv",
@@ -782,7 +984,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
     },
     {
       "code": "et",
@@ -795,7 +999,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
     },
     {
       "code": "is",
@@ -808,7 +1014,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
     },
     {
       "code": "ga",
@@ -821,7 +1029,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
     },
     {
       "code": "eu",
@@ -834,7 +1044,9 @@
         "t1"
       ],
       "status": "preview",
-      "ruleStatus": "NOT_STARTED"
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
     }
   ]
 }
