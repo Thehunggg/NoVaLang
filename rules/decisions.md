@@ -635,6 +635,28 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   - Ghi vào: `rules/languages/de/review-checklist.md`,
     `rules/languages/it/review-checklist.md` (dấu ✅ mỗi mục). Commit riêng.
 
+- **D-59 · 2026-07-19 · derived · pt — `pt` (tiếng Bồ Đào Nha, baseline pt-BR)
+  build HOÀN TẤT, trạng thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG
+  FROZEN (ADR-014).** 24 hiện tượng trong `rules/languages/pt/coverage.json`;
+  4 `.rules.json` khớp khuôn ja/en/es/de/it. Dataset thật: CLDR pt, UD
+  Portuguese-GSD (word-class, Brazil), WikiPron `por_latn_bz_broad_filtered`
+  (187421 cặp, Brazil). Corpus 21377 câu (UD GSD+Bosque). **g2p-check** xác
+  nhận 9 quy tắc chữ→âm sạch (<1% mỗi cái): nh→[ɲ] 0.40%, lh→[ʎ] 0.08%, ç→[s]
+  0.03%, ch→[ʃ] 0.99%, ti→[t͡ʃ] 0.39% (vòm hoá Brazil), di→[d͡ʒ] 0.26%, l
+  cuối→[w] 0.21%, ão→[ɐ̃ w̃] 0.08%, rr→[ʁ]/[x]/[h] 0.15% → `grapheme_to_phoneme`
+  + `nasalization` VALIDATED high. **Phát hiện real-data:** ão bắn 100% lần
+  đầu do âm WikiPron cách nhau dấu cách ([ɐ̃ w̃] = 2 token) → sửa regex theo dữ
+  liệu → 0.08%. **corpus-check** month-weekday 1.64% (351/21377, tên riêng/quy
+  ước cũ, dưới ngưỡng). Đặc trưng Bồ: nguyên âm mũi, co kết giới từ+mạo từ
+  (do/da/no/na/ao/à/pelo), ser/estar, vòm hoá ti/di. HONORIFIC not-applicable
+  (tiền lệ es B-02). 3 mục review-checklist tự quyết (không có owner, đều chốt
+  ở VÒNG 1 đồng thuận): D-pt-01 baseline pt-BR, D-pt-02 chỉ dạy você (không
+  chia tu), D-pt-03 chấm điểm dấu — tự áp tiền lệ es B-03 (cảnh báo nhẹ) →
+  `answer_acceptance_pt` giữ DRAFT. Sự kiện ngôn ngữ Bồ thuần tuý →
+  `native-review-pt.md`. `catalog.json` pt.ruleStatus NOT_STARTED →
+  VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ
+  khác. Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

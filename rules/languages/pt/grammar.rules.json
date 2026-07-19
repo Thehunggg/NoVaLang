@@ -1,0 +1,81 @@
+{
+  "id": "pt/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "gender_and_number_agreement",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "pt-BR",
+    "word_order": "SVO_flexible_pro_drop",
+    "gender_system": {
+      "values": ["masculine", "feminine"],
+      "plural_endings": {
+        "vowel_+s": "livro->livros, casa->casas",
+        "r_z_s_+es": "flor->flores, luz->luzes, mês->meses",
+        "m_to_ns": "homem->homens, jardim->jardins",
+        "l_to_is": "animal->animais, papel->papéis",
+        "ão_variable": "-ões (coração->corações) | -ães (pão->pães) | -ãos (mão->mãos) — lexical"
+      },
+      "known_exceptions": ["a mão (nữ)", "o problema (nam, -a Hy Lạp)", "o dia (nam)", "a foto (nữ, rút gọn fotografia)"]
+    },
+    "definite_articles": {
+      "note": "Đơn giản hơn it — KHÔNG chọn theo âm đầu.",
+      "masc_sing": "o (o livro)",
+      "fem_sing": "a (a casa)",
+      "masc_plur": "os (os livros)",
+      "fem_plur": "as (as casas)"
+    },
+    "preposition_article_contraction": {
+      "note": "ĐẶC TRƯNG BỒ — bắt buộc co kết giới từ + mạo từ thành 1 từ.",
+      "de": { "de+o": "do", "de+a": "da", "de+os": "dos", "de+as": "das" },
+      "em": { "em+o": "no", "em+a": "na", "em+os": "nos", "em+as": "nas" },
+      "a": { "a+o": "ao", "a+a": "à", "a+os": "aos", "a+as": "às", "crase_note": "a+a=à (crase), dấu huyền chỉ dùng ở đây" },
+      "por": { "por+o": "pelo", "por+a": "pela", "por+os": "pelos", "por+as": "pelas" }
+    },
+    "verb_conjugation_groups": { "ar": "falar", "er": "comer", "ir": "partir" },
+    "verb_person_baseline_br": "você -> chia như ngôi 3 số ít (você fala), không dạy chia tu (falas). Bảng thực dùng BR: eu/você-ele-ela/nós/vocês-eles-elas.",
+    "compound_tense_auxiliary": {
+      "ter": "trợ động từ chính cho thì hoàn thành (tenho falado, tinha comido)",
+      "haver": "trang trọng/cổ (há de vir); KHÔNG như it/fr có 2 trợ động từ essere/avere",
+      "note": "pt gần như chỉ dùng ter — phân từ KHÔNG hoà giống với chủ ngữ trong thì kép với ter."
+    },
+    "ser_vs_estar": {
+      "ser": "bản chất/thường trực (Ele é médico. Ela é alta.)",
+      "estar": "trạng thái tạm thời/vị trí (Estou cansado. Ela está em casa.)",
+      "status": "Ranh giới phần lớn quy tắc được; nhiều trường hợp biên lexical."
+    },
+    "pro_drop": { "value": true, "note": "Chủ ngữ đại từ thường lược bỏ; pt-BR ít drop hơn pt-PT." },
+    "clitic_pronoun_placement": {
+      "br_colloquial_proclisis": "pt-BR đời thường ưa đứng TRƯỚC động từ (Me diga, Eu te amo)",
+      "br_subject_as_object": "pt-BR đời thường dùng đại từ chủ ngữ làm tân ngữ (Eu vi ele) — chuẩn viết vẫn o/a (Eu o vi)",
+      "mesoclisis": "dir-te-ei — gần như chỉ văn Bồ trang trọng, KHÔNG dạy baseline BR"
+    }
+  },
+  "checks": [
+    {
+      "id": "article-gender-number-agreement",
+      "description": "Mạo từ xác định khớp giống-số danh từ (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng giống danh từ khi generator chạy, không phải regex tĩnh." },
+      "fixtures": {
+        "pass": ["o livro", "a casa", "os livros", "as casas"],
+        "fail": ["o casa", "a livro", "os casa"]
+      }
+    },
+    {
+      "id": "preposition-article-contraction",
+      "description": "Giới từ de/em/a/por + mạo từ PHẢI co kết (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần phân tích cú pháp khi generator chạy." },
+      "fixtures": {
+        "pass": ["Vou ao mercado.", "A casa do João.", "Estou na escola.", "pelo caminho"],
+        "fail": ["Vou a o mercado.", "A casa de o João.", "Estou em a escola."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["A casa do João é grande.", "os livros", "Estou na escola."],
+    "fail": ["o casa", "Vou a o mercado."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Portuguese thật."
+  }
+}

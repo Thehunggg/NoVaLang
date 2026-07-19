@@ -1,0 +1,48 @@
+{
+  "id": "pt/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "pt-BR",
+    "grapheme_to_phoneme_rules": {
+      "nh": { "phoneme": "ɲ", "g2p_check": "4945 từ / 0.40% — OK (palatal nasal: senhor, nhoque)" },
+      "lh": { "phoneme": "ʎ", "g2p_check": "3661 từ / 0.08% — OK (palatal lateral: filho, trabalho)" },
+      "ç": { "phoneme": "s", "g2p_check": "6416 từ / 0.03% — OK (cedilha luôn [s] trước a/o/u)" },
+      "ch": { "phoneme": "ʃ", "g2p_check": "3856 từ / 0.99% — OK (ngoại lệ từ mượn Belchior=[k])" },
+      "ti_brazil": { "phoneme": "t͡ʃ", "g2p_check": "17336 từ / 0.39% — OK. VÒM HOÁ BRAZIL: t trước [i] -> [t͡ʃi] (tia, noite). Đặc trưng pt-BR, KHÔNG có ở pt-PT." },
+      "di_brazil": { "phoneme": "d͡ʒ", "g2p_check": "9633 từ / 0.26% — OK. Vòm hoá Brazil: d trước [i] -> [d͡ʒi] (dia, verdade)." },
+      "l_final": { "phoneme": "w", "g2p_check": "3751 từ / 0.21% — OK. NGUYÊN ÂM HOÁ 'l' cuối âm tiết -> [w]: Brasil=[bɾaziw], mal=[maw]. Đặc trưng Brazil." },
+      "ão": { "phoneme": "ɐ̃ w̃", "g2p_check": "4944 từ / 0.08% — OK (nguyên âm đôi MŨI: pão, coração). Âm cách nhau bởi dấu cách trong WikiPron -> [ɐ̃ w̃] 2 token." },
+      "rr": { "phoneme": "ʁ|x|h|χ", "g2p_check": "4580 từ / 0.15% — OK (R rung mạnh/hầu, biến thể vùng: carro)" }
+    },
+    "not_yet_g2p_checked": {
+      "nasal_vowel_coda": "Nguyên âm + m/n CUỐI âm tiết -> nguyên âm mũi, m/n không đọc như phụ âm (sim=[sĩ], bem=[bẽj̃], um=[ũ], tampa) — xem nasalization.",
+      "x_multivalue": "x đọc [ʃ] (xarope), [s] (próximo), [z] (exame), [ks] (táxi) — lexical",
+      "s_intervocalic": "s giữa 2 nguyên âm -> [z] (casa=[kaza]); ss -> [s] (massa)",
+      "o_e_unstressed": "o/e không nhấn cuối từ -> [u]/[i] ở pt-BR (menino=[meninu], leite=[lejtʃi]) — nuốt nguyên âm"
+    }
+  },
+  "checks": [
+    {
+      "id": "nh-to-palatal-nasal",
+      "description": "Digraph 'nh' phát âm [ɲ] (xác nhận g2p-check 4945 từ, 0.40%).",
+      "assert": { "type": "custom", "note": "Kiểm chữ->âm cần G2P engine lúc generator chạy; g2p-check.mjs đã xác nhận trên WikiPron Brazil thật." },
+      "fixtures": { "pass": ["senhor", "banho"], "fail": ["senhor-xyz"] }
+    },
+    {
+      "id": "ti-di-brazil-palatalization",
+      "description": "Vòm hoá Brazil: t/d trước [i] -> [t͡ʃ]/[d͡ʒ] (xác nhận g2p-check ti 0.39%, di 0.26%).",
+      "assert": { "type": "custom", "note": "Đặc trưng pt-BR; g2p-check xác nhận trên WikiPron Brazil. pt-PT KHÔNG áp." },
+      "fixtures": { "pass": ["tia", "dia"], "fail": ["tia-pt-eu"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["senhor", "filho", "chave", "coração"],
+    "fail": ["senhor-xyz"],
+    "_note": "fixtures minh hoạ quy tắc g2p đã xác nhận; dùng test implementation tương lai."
+  }
+}

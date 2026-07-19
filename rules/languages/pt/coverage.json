@@ -1,0 +1,198 @@
+{
+  "_meta": {
+    "language": "pt",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "pt-BR (tiếng Bồ Đào Nha Brazil)",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật. g2p-check/corpus-check chạy trên dữ liệu thật để nâng confidence.",
+    "corpus": {
+      "file": "tools/cache/corpus/pt-sentences.txt (không commit)",
+      "sentences": 21377,
+      "source": "UD Portuguese-GSD + UD Portuguese-Bosque train/dev/test (S-UD-CORPUS)",
+      "note": "Vượt mốc 10000 — corpus không yếu. Nguồn báo/web Bồ Đào Nha (chủ yếu Brazil + một phần Bồ)."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Bồ để chạy rule lên kiểm false-positive."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Bảng chữ Latin 26 chữ (k/w/y trước 2009 chỉ trong từ mượn, sau Acordo Ortográfico 1990 chính thức vào bảng chữ) + nguyên âm mang dấu á/â/ã/à/é/ê/í/ó/ô/õ/ú + ç (cedilha). Dấu ngã ã/õ đánh dấu nguyên âm mũi — đặc trưng Bồ. Sự kiện phổ thông.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận á â ã à é ê í ó ô õ ú ç.",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chữ hoa đầu câu + danh từ riêng (giống en/es/it, KHÁC de không hoa mọi danh từ). Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (janeiro, segunda-feira, português, brasileiro) — giống es/it, lỗi phổ biến của học viên nói tiếng Anh. [Bước 3: corpus-check month-weekday xác nhận sạch trên 21377 câu thật.]",
+    "status": "DRAFT"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang, chuẩn Latin.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ Latin.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (por_latn_bz_broad_filtered, 187421 cặp) -> grapheme-to-phoneme.data.json. Chuẩn pt-BR. Đặc trưng: hệ nguyên âm MŨI (ã/õ + nguyên âm trước m/n coda) — nhiều hơn es/it.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "[Bước 3: g2p-check.mjs trên WikiPron Brazil thật (187421 từ) xác nhận 9 quy tắc: nh->[ɲ] 0.40%; lh->[ʎ] 0.08%; ç->[s] 0.03%; ch->[ʃ] 0.99%; ti->[t͡ʃ] 0.39% (VÒM HOÁ BRAZIL — t trước [i] đọc [t͡ʃi]); di->[d͡ʒ] 0.26% (vòm hoá Brazil); l cuối từ->[w] 0.21% (NGUYÊN ÂM HOÁ 'l' — Brasil=[bɾaziw]); ão->[ɐ̃ w̃] 0.08% (nguyên âm đôi mũi); rr->[ʁ]/[x]/[h] 0.15% (R rung mạnh/hầu). CHÚ Ý tokenization: âm trong WikiPron cách nhau bởi dấu cách — 'ão' là [ɐ̃ w̃] (2 token), không phải 1 ký tự liền; g2p-check đầu tiên bắn 100% vì regex thiếu dấu cách, sửa theo dữ liệu -> 0.08%.] Chưa g2p-check thêm: x nhiều âm ([ʃ]/[s]/[z]/[ks] lexical), nguyên âm mũi trước m/n coda, s giữa 2 nguyên âm->[z].",
+    "status": "VALIDATED"
+  },
+  "syllable_stress": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Mặc định trọng âm áp chót (paroxítona: casa, gato). Đánh dấu khi lệch quy tắc: oxítona (trọng âm cuối) kết thúc a/e/o/em/ens đánh dấu (café, você, avó); proparoxítona (áp-áp-chót) LUÔN đánh dấu (médico, sábado, rápido). Giống nguyên tắc es/it nhưng hệ dấu phức tạp hơn (sắc á/é/í/ó/ú + mũ â/ê/ô phân biệt nguyên âm đóng/mở).",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Portuguese-GSD test split, Brazil) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "gender_and_number_agreement": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "2 giống: nam/nữ. Số nhiều thường thêm -s (livro->livros, casa->casas); từ kết thúc -r/-z/-s thêm -es (flor->flores, luz->luzes); -m -> -ns (homem->homens); -ão -> -ões/-ães/-ãos tuỳ từ (lexical: coração->corações, pão->pães, mão->mãos); -l -> -is (animal->animais). Mạo từ + tính từ hoà giống-số. Ngoại lệ giống lexical.",
+    "status": "DRAFT"
+  },
+  "definite_articles": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Mạo từ xác định đơn giản hơn it: o (nam ít) / a (nữ ít) / os (nam nhiều) / as (nữ nhiều). KHÔNG chọn theo âm đầu như it. Điểm khó thật sự nằm ở CO KẾT (contraction) với giới từ — xem preposition_article_contraction.",
+    "status": "DRAFT"
+  },
+  "preposition_article_contraction": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG BỒ (bắt buộc, không phải tuỳ chọn): giới từ de/em/a/por + mạo từ CO KẾT thành 1 từ. de+o=do, de+a=da, de+os=dos, de+as=das; em+o=no, em+a=na, em+os=nos, em+as=nas; a+o=ao, a+a=à (crase), a+os=aos, a+as=às; por+o=pelo, por+a=pela. Cũng co kết với mạo từ không xác định (de+um=dum — tuỳ chọn) và chỉ định (de+este=deste, em+isso=nisso). Học viên hay quên co kết (viết 'de o' thay 'do') — cần rule.",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "3 nhóm động từ theo đuôi nguyên mẫu -ar/-er/-ir, chia theo ngôi và nhiều thì/thức. pt-BR baseline dùng você -> chia như ngôi 3 số ít (você fala, không tu falas), đơn giản hoá bảng chia thực dùng. Thì hoàn thành (pretérito perfeito composto) dùng trợ động từ ter (tenho falado) — KHÁC it/fr có essere/avere, pt gần như chỉ ter (haver trang trọng/cổ). Động từ bất quy tắc (ser/estar/ter/ir/fazer/pôr) là lexical, CHƯA có bảng đầy đủ.",
+    "status": "DRAFT"
+  },
+  "ser_vs_estar": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG (giống es): 2 động từ 'to be' — ser (bản chất, thường trực: Ele é médico, Ela é alta) vs estar (trạng thái, tạm thời, vị trí: Estou cansado, Ela está em casa). Điểm khó trung tâm cho học viên nói tiếng Anh (1 'to be'). Ranh giới phần lớn quy tắc được nhưng nhiều trường hợp biên là lexical/ngữ nghĩa.",
+    "status": "DRAFT"
+  },
+  "clitic_pronouns": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Đại từ tân ngữ (me/te/o/a/lhe/nos/os/as/lhes). KHÁC BIỆT BRAZIL vs BỒ quan trọng: pt-BR đời thường ưa PROCLISE (đứng trước động từ: Me diga, Eu te amo) và thường dùng đại từ CHỦ NGỮ làm tân ngữ (Eu vi ele thay Eu o vi) — chuẩn viết vẫn dạy o/a. Mesóclise (chèn giữa động từ tương lai: dir-te-ei) gần như chỉ còn ở văn Bồ trang trọng, KHÔNG dạy ở baseline BR. Cần đánh dấu khác biệt vùng.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "pt-BR baseline: você (chuẩn toàn quốc, thân mật-trung tính, CHIA ĐỘNG TỪ NHƯ NGÔI 3 số ít) / o senhor, a senhora (trang trọng) / vocês (số nhiều). tu tồn tại ở một số vùng (Nam, Đông Bắc) nhưng thường vẫn chia động từ ngôi 3 kiểu você trong khẩu ngữ -> baseline BR dùng você, không dạy chia tu (falas/tens). KHÁC pt-PT (tu là thân mật chuẩn, você có thể mang sắc thái xa cách). você/senhor map CASUAL-NEUTRAL/FORMAL. Xem review-checklist D-pt-02 (quyết định sản phẩm).",
+    "status": "VALIDATED"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SVO mặc định, linh hoạt theo nhấn mạnh. Pro-drop: chủ ngữ đại từ thường lược bỏ vì đuôi động từ mang ngôi/số (falo = 'tôi nói'); pt-BR ít drop hơn pt-PT (dùng você/eu rõ hơn). Tính từ thường ĐỨNG SAU danh từ (uma casa grande), một số đứng trước đổi nghĩa (um grande homem 'vĩ nhân' / um homem grande 'người to lớn'). Giống es/it.",
+    "status": "DRAFT"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu câu chuẩn Latin (. , ? !) — KHÔNG có dấu lật ngược như es ¿¡. Dấu ngoặc kép: aspas \"…\" và “…”; guillemets «…» dùng nhiều ở Bồ, ít ở Brazil. Không có đặc trưng dấu câu gây khó riêng.",
+    "status": "DRAFT"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "5 dấu: sắc (agudo) á/é/í/ó/ú (trọng âm + nguyên âm mở); mũ (circunflexo) â/ê/ô (trọng âm + nguyên âm đóng); ngã (til) ã/õ (nguyên âm MŨI — đặc trưng Bồ); huyền (grave) à CHỈ dùng cho crase (a+a: à/às, vou à escola); cedilha ç ([s] trước a/o/u). Dấu phân biệt từ đồng âm: é 'là' / e 'và'; está 'đang' / esta 'này'; avó 'bà' / avô 'ông'; pôde 'đã có thể' / pode 'có thể'. Ảnh hưởng chấm điểm — xem answer_acceptance_pt.",
+    "status": "DRAFT"
+  },
+  "nasalization": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG TRUNG TÂM tiếng Bồ (nhiều hơn es/it/fr về mặt học viên nhận biết): nguyên âm mũi qua (1) dấu ngã ã/õ (irmã, pão, põe), (2) nguyên âm + m/n ở CUỐI âm tiết (coda) -> mũi, m/n không đọc như phụ âm riêng (sim=[sĩ], bem=[bẽj̃], um=[ũ], tem, com), (3) nguyên âm đôi mũi ão/ãe/õe. [Bước 3: g2p-check ão->[ɐ̃ w̃] 0.08% xác nhận nguyên âm đôi mũi.] Học viên nói tiếng Anh/Việt hay đọc m/n coda thành phụ âm — cần dạy rõ.",
+    "status": "VALIDATED"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~você + từ vựng thân mật (tá, valeu, cadê ở BR), NATURAL_NEUTRAL_POLITE~você chuẩn mực trung tính (baseline), FORMAL~o senhor/a senhora + từ vựng trang trọng. HONORIFIC: not-applicable cho pt — senhor/senhora đã đủ diễn tả qua FORMAL, tiếng Bồ không có hệ kính ngữ hình thái riêng biệt kiểu ja/ko. Tự áp theo TIỀN LỆ es B-02 (owner duyệt 2026-07-19) — pattern lặp lại.",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "NOT-APPLICABLE: chữ Latin. Chính tả pt kém minh bạch hơn es/it (nhiều nguyên âm mũi, x đa âm, s->[z]) nhưng vẫn Latin, không cần chú âm riêng như furigana.",
+    "status": "not-applicable"
+  },
+  "answer_acceptance_pt": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B03"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính sách chấm khi thiếu/sai dấu hoặc cedilha (gõ 'voce' thay 'você', 'nao' thay 'não', 'faca' thay 'faça'): TỰ ÁP theo TIỀN LỆ es B-03 (owner đã chọn 'cảnh báo nhẹ' cho es vì dấu đổi nghĩa từ) — tiếng Bồ cùng tình huống (dấu + til + cedilha phân biệt nghĩa: é/e, está/esta, faca 'con dao'/faça 'hãy làm', avó/avô). Đề xuất: CẢNH BÁO NHẸ (accept nhưng hiện dạng có dấu đúng). Giữ DRAFT tới khi owner xác nhận — xem review-checklist D-pt-03.",
+    "status": "DRAFT"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Đặc biệt: khác biệt từ vựng BR vs PT (ônibus/autocarro, trem/comboio, celular/telemóvel, café da manhã/pequeno-almoço) — baseline BR.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text Latin. Kế thừa _base/audio.rules.json. Locale: pt-BR (chuẩn Brazil, khớp WikiPron por_bz + UD GSD dataset). KHÔNG dùng pt-PT TTS cho nội dung baseline BR (âm khác rõ: vòm hoá ti/di, l cuối [w], nguyên âm không nhấn).",
+    "status": "VALIDATED"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "pt/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "“”",
+    "quote_marks_alternative": "«»",
+    "quote_marks_note": "Aspas “…” và \"…\" phổ biến ở Brazil; guillemets «…» dùng nhiều ở Bồ. KHÔNG có dấu lật ngược như es ¿¡.",
+    "capitalization_like_english_except": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "janeiro/segunda-feira/português/brasileiro viết thường (trừ đầu câu), KHÁC January/Monday/Portuguese tiếng Anh — lỗi phổ biến của học viên nói tiếng Anh. Giống es/it.",
+      "not_all_nouns": "KHÁC de: tiếng Bồ KHÔNG viết hoa mọi danh từ, chỉ danh từ riêng + đầu câu."
+    },
+    "cedilha_note": "ç (c-cedilha) là chữ thật, không thay bằng c thường: faça không phải faca."
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 21377 câu thật.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Janeiro|Fevereiro|Março|Abril|Maio|Junho|Julho|Agosto|Setembro|Outubro|Novembro|Dezembro|Domingo|Sábado)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Hoje é segunda-feira, 3 de janeiro."],
+        "fail": ["Hoje é Segunda-feira, 3 de Janeiro."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Hoje é segunda-feira.", "O Brasil é um país grande.", "Ela fala português."],
+    "fail": ["hoje é segunda.", "Hoje é 3 de Janeiro."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 đo tỷ lệ vi phạm trên UD Portuguese thật."
+  }
+}

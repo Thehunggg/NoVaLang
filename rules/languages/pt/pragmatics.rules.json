@@ -1,0 +1,65 @@
+{
+  "id": "pt/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "pt-BR",
+    "address_forms": {
+      "você": { "formality": "neutral-informal", "number": "singular", "verb_agreement": "ngôi 3 số ít", "usage": "chuẩn toàn quốc BR — bạn bè, đồng nghiệp, người lạ trung tính. Baseline dạy." },
+      "vocês": { "formality": "neutral", "number": "plural", "verb_agreement": "ngôi 3 số nhiều", "usage": "số nhiều của você (thay thế vós đã cổ)" },
+      "o senhor / a senhora": { "formality": "formal", "number": "singular", "verb_agreement": "ngôi 3 số ít", "usage": "trang trọng — người lớn tuổi, khách hàng, cấp trên, bối cảnh lịch sự" },
+      "tu": { "formality": "informal-regional", "number": "singular", "usage": "một số vùng BR (Nam, Đông Bắc); trong khẩu ngữ thường vẫn chia động từ ngôi 3 (tu fala) thay chuẩn (tu falas). KHÔNG dạy chia tu ở baseline BR." }
+    },
+    "baseline": {
+      "value": "Dạy você (thân mật-trung tính) + o senhor/a senhora (trang trọng). KHÔNG dạy chia động từ tu — pt-BR chuẩn dùng você chia ngôi 3, đơn giản hơn và phổ quát toàn quốc. KHÁC pt-PT (tu là thân mật chuẩn).",
+      "tts_locale": "pt-BR (xem D-pt-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "você + từ vựng thân mật BR (valeu, tá, cadê, a gente thay nós)",
+      "NATURAL_NEUTRAL_POLITE": "você chuẩn mực trung tính — baseline mặc định app dạy",
+      "FORMAL": "o senhor/a senhora + từ vựng trang trọng (Com licença, Poderia...)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Bồ KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語) / ko (-시-). Lịch sự thể hiện qua đại từ (o senhor) + thức điều kiện lịch sự (Poderia...? Gostaria...) + từ vựng — đã bao trong FORMAL, không phải modifier trực giao. Tự áp theo TIỀN LỆ es B-02 (owner duyệt 2026-07-19): ngôn ngữ châu Âu (Rôman) không có kính ngữ hình thái -> HONORIFIC not-applicable. Pattern lặp lại, không đưa lại checklist (Phần B mục 2)."
+      }
+    },
+    "politeness_devices": {
+      "conditional": "Thức điều kiện làm nhẹ yêu cầu: 'Poderia me ajudar?' (Ngài có thể...?), 'Gostaria de...' (Tôi muốn...), 'Você poderia...'. Tương đương chức năng ですます-mềm của ja nhưng là thức động từ, không phải kính ngữ."
+    }
+  },
+  "checks": [
+    {
+      "id": "voce-third-person-verb",
+      "description": "você chia động từ như ngôi 3 số ít (kiểm mẫu cố định BR baseline).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm tổng quát cần bảng chia động từ khi generator chạy."
+      },
+      "fixtures": {
+        "pass": ["Você fala português?"],
+        "fail": ["Você falas português?"]
+      }
+    },
+    {
+      "id": "senhor-formal-address",
+      "description": "o senhor/a senhora là dạng trang trọng, chia ngôi 3 (kiểm mẫu cố định).",
+      "assert": {
+        "type": "custom",
+        "note": "Ngữ cảnh trang trọng cần generator xác định."
+      },
+      "fixtures": {
+        "pass": ["O senhor gostaria de um café?"],
+        "fail": ["O senhor gostarias de um café?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Você fala português?", "O senhor gostaria de um café?", "Poderia me ajudar?"],
+    "fail": ["Você falas português?", ""],
+    "_note": "Câu pass minh hoạ baseline BR (você + senhor + điều kiện lịch sự)."
+  }
+}

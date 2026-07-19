@@ -1,0 +1,218 @@
+{
+  "id": "pt/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 187421,
+    "byScript": {
+      "por_latn_bz_broad_filtered": {
+        "count": 187421,
+        "sample": [
+          [
+            "ABC",
+            "a b e s e"
+          ],
+          [
+            "AEB",
+            "a ɛ b e"
+          ],
+          [
+            "AIDS",
+            "a j d s"
+          ],
+          [
+            "AIDS",
+            "a j d ʃ"
+          ],
+          [
+            "AIDS",
+            "a j d͡ʒ i s"
+          ],
+          [
+            "AIDS",
+            "a j d͡ʒ i ʃ"
+          ],
+          [
+            "ALERJ",
+            "a l ɛ ɻ ʒ i"
+          ],
+          [
+            "ALERJ",
+            "a l ɛ ɾ ʒ i"
+          ],
+          [
+            "ALERJ",
+            "a l ɛ ʁ ʒ e"
+          ],
+          [
+            "ALERJ",
+            "a l ɛ ʁ ʒ i"
+          ],
+          [
+            "ALUPEK",
+            "a l u p ɛ k e"
+          ],
+          [
+            "ALUPEK",
+            "a l u p ɛ k i"
+          ],
+          [
+            "AM",
+            "a e m e"
+          ],
+          [
+            "AM",
+            "a ẽ m i"
+          ],
+          [
+            "ANP",
+            "a e n e p e"
+          ],
+          [
+            "ANP",
+            "a ẽ n e p e"
+          ],
+          [
+            "ANP",
+            "a ẽ n i p e"
+          ],
+          [
+            "ARIE",
+            "a ɾ i e"
+          ],
+          [
+            "ARIE",
+            "a ɾ i i"
+          ],
+          [
+            "ASCII",
+            "a s k i"
+          ],
+          [
+            "ASCII",
+            "a ʃ k i"
+          ],
+          [
+            "Aaleniano",
+            "a a l e n i ɐ n o"
+          ],
+          [
+            "Aaleniano",
+            "a a l e n i ɐ̃ n u"
+          ],
+          [
+            "Aaleniano",
+            "a a l e n j ɐ n o"
+          ],
+          [
+            "Aaleniano",
+            "a a l e n j ɐ̃ n u"
+          ],
+          [
+            "Aarão",
+            "a a ɾ ɐ̃ w̃"
+          ],
+          [
+            "Aarão",
+            "a ɾ ɐ̃ w̃"
+          ],
+          [
+            "Abacar",
+            "a b a k a ɻ"
+          ],
+          [
+            "Abacar",
+            "a b a k a ɾ"
+          ],
+          [
+            "Abacar",
+            "a b a k a ʁ"
+          ],
+          [
+            "Abacaxis",
+            "a b a k a ʃ i s"
+          ],
+          [
+            "Abacaxis",
+            "a b a k a ʃ i ʃ"
+          ],
+          [
+            "Abadan",
+            "a b a d ɐ̃"
+          ],
+          [
+            "Abade",
+            "a b a d e"
+          ],
+          [
+            "Abade",
+            "a b a d͡ʒ i"
+          ],
+          [
+            "Abades",
+            "a b a d e s"
+          ],
+          [
+            "Abades",
+            "a b a d͡ʒ i s"
+          ],
+          [
+            "Abades",
+            "a b a d͡ʒ i ʃ"
+          ],
+          [
+            "Abadã",
+            "a b a d ɐ̃"
+          ],
+          [
+            "Abaetetuba",
+            "a b a ɛ t ɛ t u b a"
+          ],
+          [
+            "Abaetetuba",
+            "a b a ɛ t ɛ t u b ɐ"
+          ],
+          [
+            "Abaeté",
+            "a b a ɛ t ɛ"
+          ],
+          [
+            "Abaiara",
+            "a b a j a ɾ a"
+          ],
+          [
+            "Abaiara",
+            "a b a j a ɾ ɐ"
+          ],
+          [
+            "Abaitinga",
+            "a b a j t͡ʃ ĩ ɡ a"
+          ],
+          [
+            "Abaitinga",
+            "a b a j t͡ʃ ĩ ɡ ɐ"
+          ],
+          [
+            "Abakan",
+            "a b a k ɐ̃"
+          ],
+          [
+            "Abaporu",
+            "a b a p o ɾ u"
+          ],
+          [
+            "Abaré",
+            "a b a ɾ ɛ"
+          ],
+          [
+            "Abatiá",
+            "a b a t͡ʃ i a"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/por_latn_bz_broad_filtered.tsv"
+      }
+    }
+  }
+}
