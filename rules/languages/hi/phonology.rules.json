@@ -1,0 +1,47 @@
+{
+  "id": "hi/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "hi-IN",
+    "transparency_note": "Devanagari khá đều (phonemic) trừ XOÁ SCHWA. WikiPron RẤT LỚN (33057) → g2p-check tốt cho phụ âm gốc.",
+    "consonant_features": "4 chiều: k/kʰ/g/gʱ (क ख ग घ); RETROFLEX ट ठ ड ढ ण = ʈ ʈʰ ɖ ɖʱ ɳ; sibilant श ष स = ʃ ʂ s; भ=[bʱ]",
+    "vowel_inherent": "phụ âm mang 'a' (ə) cố hữu; matra đổi nguyên âm",
+    "g2p_check_results_33057_words": {
+      "श=>ʃ": "0.30% OK", "भ=>bʱ": "0.00% OK", "थ=>t̪ʰ": "0.48% OK", "ट=>ʈ": "0.00% OK"
+    },
+    "data_discipline_nukta": {
+      "finding": "ख→[kʰ] 19.48%, ज→[dʒ] 21.47%, ड→[ɖ] 60.60% 'vi phạm' = do NUKTA (़): chữ+nukta là ÂM KHÁC — ड़→[ɽ] (rất phổ biến, âm bản địa), ज़→[z], ख़→[x], फ़→[f], क़→[q], ग़→[ɣ] (vay Ba Tư/Ả Rập). Rule 'chữ GỐC không nukta → âm gốc' đúng 100%; nukta = chữ/âm riêng. KHÔNG phải rule sai.",
+      "schwa_deletion": "'a' cố hữu cuối từ (+ vài vị trí giữa) thường CÂM (राम=[raːm], नमक=[nəmək]) — quy tắc âm vị học, lexical, cần audio."
+    }
+  },
+  "checks": [
+    {
+      "id": "base-consonants-retroflex-aspirate",
+      "description": "Phụ âm gốc (श[ʃ] भ[bʱ] थ[t̪ʰ] ट[ʈ] retroflex + bật hơi) — g2p-check xác nhận <1% trên WikiPron 33057 từ.",
+      "assert": { "type": "custom", "note": "g2p-check.mjs xác nhận; nukta là chữ riêng (xem config)." },
+      "fixtures": { "pass": ["शहर", "भारत", "टमाटर"], "fail": ["शहर-as-s"] }
+    },
+    {
+      "id": "nukta-distinct-sound",
+      "description": "Chữ+nukta là âm KHÁC: ड़[ɽ] ज़[z] ख़[x] क़[q] ग़[ɣ] फ़[f] — không nhầm với chữ gốc.",
+      "assert": { "type": "custom", "note": "ड≠ड़; xác nhận qua g2p-check data-discipline (ड→ɖ 60% 'vi phạm' = ड़)." },
+      "fixtures": { "pass": ["पढ़ना", "ज़रूरी"], "fail": ["nukta-x"] }
+    },
+    {
+      "id": "schwa-deletion",
+      "description": "Schwa 'a' cố hữu thường câm cuối từ (राम=[raːm]) — cần audio.",
+      "assert": { "type": "custom", "note": "Quy tắc âm vị học lexical." },
+      "fixtures": { "pass": ["राम", "नमक"], "fail": ["schwa-x"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["शहर", "भारत", "पढ़ना", "राम"],
+    "fail": ["शहर-as-s"],
+    "_note": "g2p-check.mjs Bước 3 trên WikiPron thật (33057 từ): phụ âm gốc <1%; nukta + schwa deletion ghi rõ config."
+  }
+}

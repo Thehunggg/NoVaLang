@@ -1,0 +1,63 @@
+{
+  "id": "hi/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "postpositions",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "hi-IN",
+    "no_articles": "KHÔNG có mạo từ",
+    "gender": "2 giống (masc/fem, không trung); tính từ đổi đuôi hợp giống+số (अच्छा/अच्छी/अच्छे)",
+    "number_case": "danh từ có dạng TRỰC TIẾP (direct) vs XIÊN (oblique — trước hậu giới từ: लड़का→लड़के)",
+    "postpositions": {
+      "note": "HẬU GIỚI TỪ đứng SAU danh từ (dạng xiên), viết RỜI",
+      "list": "ने (ergative), को (tân ngữ/tới), से (từ/bằng/với), में (trong), पर (trên), का/के/की (sở hữu hợp giống+số), तक (đến), के लिए (cho)"
+    },
+    "ergativity": {
+      "note": "ĐẶC TRƯNG: thể HOÀN THÀNH của NGOẠI động từ → chủ ngữ + ने, động từ hợp giống/số với TÂN NGỮ",
+      "example": "राम ने रोटी खाई (Ram-ERG bánh(f) ăn-f) vs राम रोटी खाता है (hiện tại, không ने, hợp chủ ngữ)"
+    },
+    "verb": {
+      "agreement": "hợp giống+số+ngôi; trợ động từ होना chia (है/हैं/था/थी/थे)",
+      "tenses": "hiện tại (करता है), quá khứ (किया/करता था), tương lai (करेगा/करेगी), tiếp diễn (कर रहा है)",
+      "honorific": "आप → động từ + trợ động từ số nhiều"
+    },
+    "word_order": "SOV; tính từ + bổ ngữ TRƯỚC danh từ; hậu giới từ SAU; trợ động từ cuối"
+  },
+  "checks": [
+    {
+      "id": "postposition-after-noun-oblique",
+      "description": "Hậu giới từ đứng SAU danh từ dạng xiên (लड़के को) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần dạng xiên + phân tích khi generator chạy; dạng xiên lexical." },
+      "fixtures": {
+        "pass": ["लड़के को", "घर में", "राम का"],
+        "fail": ["को लड़का", "लड़का को"]
+      }
+    },
+    {
+      "id": "ergative-ne-perfective",
+      "description": "Thể hoàn thành ngoại động từ: chủ ngữ + ने, động từ hợp tân ngữ — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Cần phân tích thể + giống tân ngữ khi generator chạy." },
+      "fixtures": {
+        "pass": ["राम ने रोटी खाई", "उसने किताब पढ़ी"],
+        "fail": ["राम रोटी खाई"]
+      }
+    },
+    {
+      "id": "sov-verb-final",
+      "description": "Động từ cuối câu (SOV) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích cú pháp khi generator chạy." },
+      "fixtures": {
+        "pass": ["मैं हिन्दी सीखता हूँ", "वह किताब पढ़ता है"],
+        "fail": ["मैं सीखता हिन्दी"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["लड़के को", "राम ने रोटी खाई", "मैं हिन्दी सीखता हूँ"],
+    "fail": ["लड़का को", "राम रोटी खाई", "मैं सीखता हिन्दी"],
+    "_note": "Câu pass minh hoạ hậu giới từ + ergative + SOV; paradigm giống/xiên/động từ cần native review."
+  }
+}

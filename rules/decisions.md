@@ -973,6 +973,30 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-80 · 2026-07-19 · derived · hi — `hi` (tiếng Hindi, hi-IN) build HOÀN
+  TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
+  vòng.** Indo-Aryan, hệ chữ DEVANAGARI (Deva, abugida — không Latin), t1, 24
+  hiện tượng. Dataset CLDR/UD/WikiPron: WikiPron `hin_deva_broad` **33057 cặp**
+  (rất lớn); corpus UD Hindi-HDTB **16649 câu** (TRÊN 10000 — đầy đủ). g2p-check:
+  phụ âm gốc <1% (श 0.30%, भ 0.00%, थ 0.48%, ट 0.00%) → `grapheme_to_phoneme`
+  VALIDATED. **Kỷ luật dữ liệu:** ख/ज/ड "vi phạm" 19-60% = do NUKTA (ग): chữ+nukta
+  = ÂM KHÁC — ड़→[ɭ] (bản địa), ज़→[z], ख़→[x], क़→[q], ग़→[ɣ], फ़→[f] (vay Ba
+  Tư/Ả Rập); XOÁ SCHWA ('a' cố hữu cuối từ câm: राम=[raːm]) — không phải rule
+  sai, ghi rõ. corpus-check danda । 93% (7% mảnh câu) + no-Latin 0.55%. Casing
+  NOT-APPLICABLE (Devanagari UNICAMERAL — không hoa/thường). Đặc trưng: abugida
+  (phụ âm + matra + ghép), retroflex (ट/ड), bật hơi 4 chiều, HẬU GIỚI TỪ +
+  dạng xiên, **ERGATIVE** (ने thể hoàn thành, động từ hợp TÂN NGỮ), SOV, 3 mức
+  तू/तुम/आप + hậu tố tôn kính जी. HONORIFIC partial-native (आप/जी — gần
+  HONORIFIC hơn châu Âu nhưng không nhiều tầng như ja; es B-02 cho phần còn
+  lại). **5 giả định cần owner duyệt:** D-hi-01 (baseline hi-IN — v1), D-hi-02
+  (chuẩn Devanagari — v2), **D-hi-03 (reading-aid: NGHIÊNG B — hỗ trợ chuyển tự
+  IAST nhập môn ẩn dần như romaji ja, KHÁC el/uk vì abugida khó hơn — v3,
+  flag owner)**, D-hi-04 (chấm C matra/phụ âm/ghép/ड़ bản địa theo pl D-64;
+  NUKTA VAY क़/ख़/ग़/ज़/फ़ KHOAN DUNG như ë Nga — v4), D-hi-05 (dạy 3 mức
+  तू/तुम/आप, आप baseline, cảnh báo तू — v2). `native-review-hi.md` 7 mục.
+  Status: `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN. Validator: 4 lỗi vi/zh cũ, 0
+  lỗi mới; catalog 60.
+
 - **D-79 · 2026-07-19 · derived · id — `id` (tiếng Indonesia, id-ID / Bahasa
   Indonesia baku) build HOÀN TẤT tới `VALIDATED_NOT_YET_PROVEN` qua
   `/build-language` Bước 0–4, tra cứu 5 vòng.** Austronesian, chữ Latin (26
