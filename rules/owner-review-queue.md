@@ -13,7 +13,17 @@ giữ nguyên như owner đã duyệt cho tới khi owner quyết lại.
 
 ---
 
-## [SUS-01] es — `answer_acceptance_es` (B-03): quyết định "cảnh báo nhẹ" chỉ khung quanh TILDE, chưa xử lý riêng chữ ñ
+## [SUS-01] ✅ ĐÃ XỬ LÝ (owner duyệt 2026-07-19, D-74) — es `answer_acceptance_es`: tách ñ khỏi tilde
+
+> **✅ OWNER DUYỆT 2026-07-19 (D-74):** tách ñ khỏi quy tắc tilde. TILDE giữ
+> **B** (cảnh báo nhẹ). **ñ theo C** (thiếu ñ = SAI, không tính đúng) vì ñ là
+> chữ cái thứ 15 của bảng chữ TBN (año≠ano) — cùng bản chất pl/da/el. Đã cập
+> nhật `answer_acceptance_es` (2 phần tách bạch), nhắc cài bàn phím TBN cho ñ.
+> Mục này KHÉP LẠI.
+
+Nội dung gốc (giữ để lịch sử):
+
+## [SUS-01-gốc] es — `answer_acceptance_es` (B-03): quyết định "cảnh báo nhẹ" chỉ khung quanh TILDE, chưa xử lý riêng chữ ñ
 
 - **Owner đã chốt (2026-07-19, B-03):** phương án **B** — thiếu/sai **tilde**
   (dấu sắc: cómo/como, él/el, sí/si) = *cảnh báo nhẹ*, accept + hiện gợi ý

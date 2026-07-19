@@ -155,7 +155,7 @@
     "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md B-03, chọn B] Chính sách chấm điểm khi thiếu/sai tilde (vd gõ 'como' thay 'cómo', 'el' thay 'él'): CẢNH BÁO NHẸ — chấp nhận câu trả lời nhưng hiện gợi ý tilde đúng cho học viên, KHÔNG bỏ qua hoàn toàn (khác chính sách A mặc định của ko/_base) vì tilde tiếng Tây Ban Nha có thể đổi nghĩa/từ loại (si/sí, el/él) — lý do owner nêu rõ khi duyệt. Yêu cầu bổ sung: cần field UI hiển thị gợi ý tilde đúng (chưa có, thuộc phạm vi implementation, không phải rule).",
+    "notes": "HAI PHẦN TÁCH BẠCH (owner duyệt SUS-01, 2026-07-19, D-74). (1) DẤU TILDE (á é í ó ú — dấu trọng âm): phương án B CẢNH BÁO NHẸ [OWNER APPROVED 2026-07-19 B-03] — chấp nhận câu trả lời nhưng hiện gợi ý tilde đúng, KHÔNG bỏ qua hoàn toàn, vì tilde có thể đổi nghĩa/từ loại (si/sí, el/él). (2) CHỮ Ñ (chữ cái thứ 15 của bảng chữ TBN, KHÔNG phải n+dấu): phương án C — thiếu/gõ 'n' thay 'ñ' = SAI, KHÔNG tính đúng [OWNER APPROVED 2026-07-19 SUS-01/D-74], vì ñ là CHỮ CÁI RIÊNG đổi nghĩa từ (año 'năm' ≠ ano 'hậu môn') — cùng bản chất pl/da/el/sv/fi (đã duyệt C). Nhắc cài bàn phím TBN để gõ ñ (như pl/da). Yêu cầu bổ sung: field UI gợi ý tilde đúng cho phần (1) — thuộc implementation, không phải rule.",
     "status": "VALIDATED"
   },
   "naturalness_translation": {

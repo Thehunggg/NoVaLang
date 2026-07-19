@@ -973,6 +973,17 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-74 · 2026-07-19 · owner · es — Owner DUYỆT SUS-01: tách ñ khỏi quy tắc
+  tilde trong `answer_acceptance_es`.** Phát hiện khi rà lại 5 vòng (Phần B):
+  quyết định B-03 cũ (cảnh báo nhẹ) chỉ khung quanh tilde-accent, chưa xử lý
+  riêng chữ ñ. Owner quyết: **TILDE giữ B** (á é í ó ú — cảnh báo nhẹ, accept +
+  gợi ý). **ñ theo C** (thiếu ñ = SAI, không tính đúng) vì ñ là CHỮ CÁI thứ 15
+  của bảng chữ TBN (KHÔNG phải n+dấu; año 'năm' ≠ ano 'hậu môn' đổi nghĩa) —
+  cùng bản chất chữ-cái-riêng của pl/da/el/sv/fi đã duyệt C. Cập nhật
+  `answer_acceptance_es` (2 phần tách bạch), nhắc cài bàn phím TBN cho ñ. Đánh
+  dấu SUS-01 đã xử lý trong `rules/owner-review-queue.md`. Status es KHÔNG đổi
+  (VALIDATED). native-review không đụng. Commit riêng.
+
 - **D-73 · 2026-07-19 · owner · da,el — Owner DUYỆT 8 giả định sản phẩm của
   da/el (chốt D-71/D-72).** Cập nhật tracking duyệt + 2 thay đổi coverage
   (answer_acceptance_da/el → C/VALIDATED). KHÔNG đổi status ngôn ngữ (cả hai vẫn
