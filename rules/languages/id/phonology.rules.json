@@ -1,0 +1,45 @@
+{
+  "id": "id/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "id-ID",
+    "transparency_note": "Chính tả Indonesia KHÁ ĐỀU (phonemic) trừ 'e' nhập nhằng [e]/[ə]. WikiPron 18590 → g2p-check tốt.",
+    "vowels": "a[a] i[i] u[u] o[o] e[e ~ ə] (schwa nhập nhằng)",
+    "consonant_g2p": {
+      "c": "[t͡ʃ]", "j": "[d͡ʒ]", "y": "[j]", "ng": "[ŋ]", "ny": "[ɲ]", "sy": "[ʃ]", "kh": "[x]",
+      "glottal": "k cuối / ' → [ʔ]"
+    },
+    "g2p_check_results_18590_words": {
+      "ny=>ɲ": "0.68% OK", "ng=>ŋ": "0.67% OK", "sy=>ʃ": "6.76% OK"
+    },
+    "data_discipline": {
+      "affricate_tokenization": "c→[t͡ʃ] 5.41% + j→[d͡ʒ] 4.42% 'vi phạm' = ARTIFACT tie-bar-vs-space WikiPron (ánh xạ đúng).",
+      "y_digraph_precedence": "y→[j] báo 44.80% 'vi phạm' = y nằm TRONG digraph ny [ɲ] / sy [ʃ] bị nuốt trước → rule đúng, ưu tiên digraph (giống uk iotation, tr). Giữ high cho y đứng riêng.",
+      "schwa_e": "'e' đọc [e] HOẶC [ə] không phân biệt trong chính tả (emas [əmas]/enak [enak]) — LEXICAL, cần audio."
+    }
+  },
+  "checks": [
+    {
+      "id": "digraphs-and-consonants",
+      "description": "ng[ŋ] ny[ɲ] sy[ʃ] c[t͡ʃ] j[d͡ʒ] — g2p-check xác nhận trên WikiPron; y đúng (digraph-precedence).",
+      "assert": { "type": "custom", "note": "g2p-check.mjs xác nhận; y 'vi phạm' cao = trong ny/sy digraph, không phải rule sai." },
+      "fixtures": { "pass": ["nyanyi", "bunga", "syarat"], "fail": ["nyanyi-as-n"] }
+    },
+    {
+      "id": "schwa-e-ambiguity",
+      "description": "'e' = [e] hoặc [ə] không phân biệt chính tả — cần audio (lexical).",
+      "assert": { "type": "custom", "note": "emas [ə] / enak [e]; học theo từ." },
+      "fixtures": { "pass": ["emas", "enak"], "fail": ["schwa-x"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["nyanyi", "bunga", "syarat", "emas"],
+    "fail": ["nyanyi-as-n"],
+    "_note": "g2p-check.mjs Bước 3 trên WikiPron thật (18590 từ): ny/ng/sy <7%; c/j artifact tokenization; y digraph-precedence; 'e' schwa lexical — ghi rõ config."
+  }
+}

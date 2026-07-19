@@ -1,0 +1,69 @@
+{
+  "id": "id/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "affixation",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "id-ID",
+    "no_inflection": {
+      "note": "ĐIỂM DỄ NHẤT: không giống, không cách, không chia thì/ngôi, không số nhiều biến tố",
+      "tense_via_particles": "sudah (đã), sedang (đang), akan (sẽ), belum (chưa), telah (đã hoàn thành), masih (vẫn)",
+      "plural": "qua LÁY (buku-buku) hoặc lượng từ (banyak buku); bỏ qua nếu ngữ cảnh rõ",
+      "no_articles": true
+    },
+    "affixation": {
+      "note": "PHỤ TỐ PHÁI SINH — cần học",
+      "meN_prefix": "động từ chủ động, BIẾN ÂM MŨI theo phụ âm đầu gốc: me+pukul→memukul (p→m), me+tulis→menulis (t→n), me+sapu→menyapu (s→ny), me+kirim→mengirim (k→ng), me+baca→membaca",
+      "other_prefixes": "ber- (có/làm: berlari), di- (bị động: dibaca), ter- (vô tình/nhất: terbesar), pe(N)- (người/công cụ: penulis), ke-",
+      "suffixes": "-kan (gây khiến: membersihkan), -i (định vị/lặp: menemani), -an (danh từ: makanan)",
+      "circumfix": "ke-...-an (kebersihan 'sự sạch'), per-...-an, pe-...-an"
+    },
+    "reduplication": {
+      "full": "buku-buku (số nhiều), rumah-rumah",
+      "functions": "số nhiều, rải rác/lặp (jalan-jalan 'đi dạo'), cường độ; láy cố định (kupu-kupu 'bướm')",
+      "hyphen": "luôn viết với dấu nối -"
+    },
+    "word_order": {
+      "base": "SVO",
+      "head_initial": "tính từ/bổ ngữ SAU danh từ (rumah besar 'nhà lớn'), sở hữu sau (buku saya 'sách tôi')",
+      "passive": "di- + tác nhân phổ biến"
+    }
+  },
+  "checks": [
+    {
+      "id": "meN-nasalization",
+      "description": "Tiền tố meN- biến âm mũi theo phụ âm đầu gốc — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần bảng biến âm mũi + phân tích gốc khi generator chạy; nghĩa lexical." },
+      "fixtures": {
+        "pass": ["menulis", "membaca", "mengirim"],
+        "fail": ["mentulis", "menbaca"]
+      }
+    },
+    {
+      "id": "adjective-after-noun",
+      "description": "Tính từ đứng SAU danh từ (head-initial) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích cú pháp khi generator chạy." },
+      "fixtures": {
+        "pass": ["rumah besar", "buku merah"],
+        "fail": ["besar rumah"]
+      }
+    },
+    {
+      "id": "tense-via-particle-not-inflection",
+      "description": "Thì qua hư từ (sudah/sedang/akan), động từ KHÔNG chia — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Không biến tố động từ." },
+      "fixtures": {
+        "pass": ["saya sudah makan", "dia akan pergi"],
+        "fail": ["saya makaned"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["menulis surat", "rumah besar", "saya sudah makan", "buku-buku"],
+    "fail": ["mentulis", "besar rumah"],
+    "_note": "Câu pass minh hoạ meN- biến âm mũi + tính từ sau danh từ + thì-qua-hư-từ + láy; nghĩa phụ tố cụ thể cần native review."
+  }
+}

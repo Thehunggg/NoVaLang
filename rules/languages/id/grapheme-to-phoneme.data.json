@@ -1,0 +1,218 @@
+{
+  "id": "id/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 18590,
+    "byScript": {
+      "ind_latn_broad": {
+        "count": 18590,
+        "sample": [
+          [
+            "A",
+            "a"
+          ],
+          [
+            "AB",
+            "a b e"
+          ],
+          [
+            "ABG",
+            "a b e ɡ e"
+          ],
+          [
+            "ABK",
+            "a b e k a"
+          ],
+          [
+            "ABS",
+            "a b e ɛ s"
+          ],
+          [
+            "ABT",
+            "a b e t e"
+          ],
+          [
+            "ACL",
+            "a t͡ʃ e ɛ l"
+          ],
+          [
+            "AD",
+            "a d e"
+          ],
+          [
+            "ADB",
+            "a d e b e"
+          ],
+          [
+            "ADEM",
+            "a d ə m"
+          ],
+          [
+            "ADHD",
+            "a d e h a d e"
+          ],
+          [
+            "ADP",
+            "a d e p e"
+          ],
+          [
+            "ADR",
+            "a d e ɛ r"
+          ],
+          [
+            "AFK",
+            "a ɛ f k a"
+          ],
+          [
+            "AFTA",
+            "a f t a"
+          ],
+          [
+            "AI",
+            "a i"
+          ],
+          [
+            "AIPKI",
+            "a i p k i"
+          ],
+          [
+            "AJB",
+            "a d͡ʒ e b e"
+          ],
+          [
+            "AK",
+            "a k a"
+          ],
+          [
+            "AKAP",
+            "a k a p"
+          ],
+          [
+            "AKB",
+            "a k a b e"
+          ],
+          [
+            "AKBK",
+            "a k a b e k a"
+          ],
+          [
+            "AKDR",
+            "a k a d e ɛ r"
+          ],
+          [
+            "AKG",
+            "a k a ɡ e"
+          ],
+          [
+            "AKI",
+            "a k i"
+          ],
+          [
+            "AKP",
+            "a k a p e"
+          ],
+          [
+            "ALT",
+            "a ɛ l t e"
+          ],
+          [
+            "AMDAL",
+            "a m d a l"
+          ],
+          [
+            "ANKOVA",
+            "a n k o v a"
+          ],
+          [
+            "ANOVA",
+            "a n o v a"
+          ],
+          [
+            "AP",
+            "a p e"
+          ],
+          [
+            "APBJ",
+            "a p e b e d͡ʒ e"
+          ],
+          [
+            "APDP",
+            "a p e d e p e"
+          ],
+          [
+            "APHB",
+            "a p e h a b e"
+          ],
+          [
+            "APHT",
+            "a p e h a t e"
+          ],
+          [
+            "API",
+            "a p e i"
+          ],
+          [
+            "APILL",
+            "a p e i ɛ l ɛ l"
+          ],
+          [
+            "APPU",
+            "a p e p e u"
+          ],
+          [
+            "APS",
+            "a p e ɛ s"
+          ],
+          [
+            "ARDS",
+            "a ɛ r d e ɛ s"
+          ],
+          [
+            "ARFID",
+            "a ɛ r ɛ f i d e"
+          ],
+          [
+            "ART",
+            "a ɛ r t e"
+          ],
+          [
+            "AS",
+            "a ɛ s"
+          ],
+          [
+            "ASAP",
+            "a s a p"
+          ],
+          [
+            "ASEAN",
+            "a s ɛ a n"
+          ],
+          [
+            "ASI",
+            "a s i"
+          ],
+          [
+            "ASMR",
+            "a ɛ s ɛ m ɛ r"
+          ],
+          [
+            "ASN",
+            "a ɛ s ɛ n"
+          ],
+          [
+            "ASPD",
+            "a ɛ s p e d e"
+          ],
+          [
+            "ATHG",
+            "a t e h a ɡ e"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/ind_latn_broad.tsv"
+      }
+    }
+  }
+}

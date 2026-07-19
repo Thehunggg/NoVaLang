@@ -1,0 +1,36 @@
+{
+  "id": "id/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md", "writing-system.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "id-ID",
+    "alphabet": "26 chữ Latin chuẩn (a-z); q/x/z chỉ từ mượn/tên",
+    "digraphs": "ng [ŋ], ny [ɲ], sy [ʃ], kh [x]",
+    "hyphen_reduplication": "láy viết với dấu nối: buku-buku, orang-orang, jalan-jalan",
+    "casing_context": "KHÁC es/it: tháng/thứ VIẾT HOA (Januari, Senin) — như Anh; corpus 255 hoa / 3 thường",
+    "no_diacritics": "không dấu phụ (từ điển đôi khi đánh é phân biệt [e]/[ə], chính tả chuẩn không)"
+  },
+  "checks": [
+    {
+      "id": "months-capitalized-not-lowercase-rule",
+      "description": "KỶ LUẬT DỮ LIỆU: KHÔNG áp check 'month-always-lowercase' — tiếng Indonesia VIẾT HOA tháng/thứ (Januari, Senin) như Anh. corpus 5598 câu: 255 hoa vs 3 thường. Đây là ghi chú (custom), không phải regex chặn.",
+      "assert": { "type": "custom", "note": "Không có check lowercase-month cho id (khác Romance); tháng/thứ hoa." },
+      "fixtures": { "pass": ["Hari ini hari Senin.", "Saya lahir pada bulan Januari."], "fail": ["Saya lahir pada bulan januari."] }
+    },
+    {
+      "id": "reduplication-hyphen",
+      "description": "Láy viết với dấu nối '-' (buku-buku) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Dấu nối bắt buộc cho láy; loại láy lexical." },
+      "fixtures": { "pass": ["buku-buku", "orang-orang"], "fail": ["buku buku"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Selamat pagi!", "Hari ini hari Senin.", "buku-buku itu"],
+    "fail": ["bulan januari", "buku buku"],
+    "_note": "pass minh hoạ casing (tháng/thứ HOA) + láy có dấu nối; corpus Bước 3 xác nhận tháng hoa (255 vs 3). KHÔNG áp month-lowercase check (kỷ luật dữ liệu, như tr)."
+  }
+}

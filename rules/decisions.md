@@ -973,6 +973,31 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-79 · 2026-07-19 · derived · id — `id` (tiếng Indonesia, id-ID / Bahasa
+  Indonesia baku) build HOÀN TẤT tới `VALIDATED_NOT_YET_PROVEN` qua
+  `/build-language` Bước 0–4, tra cứu 5 vòng.** Austronesian, chữ Latin (26
+  chữ), t1, 24 hiện tượng. Dataset CLDR/UD/WikiPron: WikiPron `ind_latn_broad`
+  **18590 cặp**; corpus UD Indonesian-GSD **5598 câu** (DƯỚI 10000 — ghi rõ,
+  trên sàn 2000). g2p-check: digraph ny 0.68%, ng 0.67%, sy 6.76% →
+  `grapheme_to_phoneme` VALIDATED. **Kỷ luật dữ liệu (3 điểm):** (1) c/j
+  5.41%/4.42% 'vi phạm' = ARTIFACT tie-bar-vs-space tokenization (ánh xạ đúng);
+  (2) y→[j] báo 44.80% = y nằm TRONG digraph ny [ɲ]/sy [ʃ] bị nuốt trước
+  (digraph-precedence, giống uk/tr); (3) **casing CORPUS MÂU THUẪN GIẢ THUYẾT →
+  SỬA THEO DỮ LIỆU (như tr):** tiếng Indonesia VIẾT HOA tháng/thứ (Januari,
+  Senin) như Anh — corpus 255 hoa vs 3 thường → KHÔNG áp check month-lowercase.
+  'e' [e]/[ə] schwa lexical. HONORIFIC not-applicable HÌNH THÁI (es B-02);
+  reading-aid NOT-APPLICABLE (Latin). Đặc trưng: **KHÔNG biến tố** (không
+  giống/cách/chia thì/số nhiều — điểm DỄ nhất trong các ngôn ngữ đã build), thì
+  qua hư từ (sudah/sedang/akan), PHỤ TỐ PHÁI SINH (meN- biến âm mũi, ber-/di-/
+  ter-/-kan/-i/ke-...-an), LÁY (buku-buku), tính từ SAU danh từ, đại từ lịch sự
+  (saya/aku, Anda/kamu, kami/kita loại-trừ/bao-gồm). **5 giả định cần owner
+  duyệt:** D-id-01 (baseline id-ID — v1), D-id-02 (chuẩn EYD V/Badan Bahasa —
+  v2), D-id-03 (reading-aid N/A — v1), **D-id-04 (answer_acceptance DÙNG _base
+  MẶC ĐỊNH — id KHÔNG có dấu phụ/chữ-cái-riêng nên KHÔNG cần luật C riêng như
+  pl/tr/uk/bg — v3)**, D-id-05 (dạy đại từ lịch sự mức baku + kami/kita — v2).
+  `native-review-id.md` 7 mục. Status: `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN.
+  Validator: 4 lỗi vi/zh cũ, 0 lỗi mới; catalog 60.
+
 - **D-78 · 2026-07-19 · derived · bg — `bg` (tiếng Bulgaria, bg-BG) build HOÀN
   TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
   vòng.** Nam Slav, hệ chữ KIRIN (Cyrl), t1, 24 hiện tượng. Dataset
