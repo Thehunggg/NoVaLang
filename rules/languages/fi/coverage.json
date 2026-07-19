@@ -1,0 +1,206 @@
+{
+  "_meta": {
+    "language": "fi",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "fi-FI (yleiskieli — tiếng Phần Lan chuẩn viết)",
+    "family": "Uralic (Finnic) — KHÔNG phải Ấn-Âu; chắp dính (agglutinative)",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật. g2p-check/corpus-check chạy trên dữ liệu thật để nâng confidence.",
+    "corpus": {
+      "file": "tools/cache/corpus/fi-sentences.txt (không commit)",
+      "sentences": 30117,
+      "source": "UD Finnish-TDT + UD Finnish-FTB train/dev/test (S-UD-CORPUS)",
+      "note": "Vượt mốc 10000 — corpus không yếu."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Phần Lan. Chính tả rất đơn giản (gần 1:1 âm vị) NHƯNG hình thái CỰC nặng (15 cách, luân phiên phụ âm, hoà âm, chắp dính) — phần lớn ở lexical_level."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chữ Latin. 8 nguyên âm: a e i o u y ä ö (ä ö là CHỮ CÁI riêng, cuối bảng, KHÔNG phải a/o có dấu). Phụ âm chính: p t k d g n m s h l r v j (b c f q w x z š ž å chỉ trong từ mượn). CLDR xác nhận. Sự kiện phổ thông.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận a e i o u y ä ö + phụ âm bản ngữ + å š ž (mượn).",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Hoa đầu câu + danh từ riêng. Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (tammikuu, maanantai, suomi, suomalainen) — giống es/it/sv. [Bước 3: corpus-check month-weekday trên 30117 câu.]",
+    "status": "DRAFT"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ Latin.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (fin_latn_broad, 173449 cặp) -> grapheme-to-phoneme.data.json. Đặc trưng: đối lập ĐỘ DÀI phonemic ở CẢ nguyên âm lẫn phụ âm (tuli/tuuli/tulli khác nghĩa); 8 nguyên âm chia back/front cho hoà âm. Chính tả gần như 1:1 âm vị.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính tả Phần Lan GẦN NHƯ HOÀN HẢO 1:1 âm vị — mỗi chữ = một âm, chữ đôi = âm dài. [Bước 3: g2p-check.mjs trên WikiPron thật (173449 từ) xác nhận: aa->[ɑː] 0.01%; ää->[æː] 0.00%; ii->[iː] 0.00%; uu->[uː] 0.01%; kk->[kː] 0.18%; tt->[tː] 0.26%; ä->[æ] 0.02%; ö->[ø] 0.00%; y->[y] 1.07%; ng->[ŋː] 2.38%. VALIDATED high — hệ chữ->âm sạch nhất trong các ngôn ngữ đã build.] PHÁT HIỆN THẬT: nk->[ŋk] bắn 41.12% vì phần lớn là TỪ GHÉP (Anjalan+koski) giữ [nk] qua ranh giới hình vị; nk->[ŋk] chỉ trong nội bộ gốc từ -> để medium/lexical, không giả vờ VALIDATED.",
+    "status": "VALIDATED"
+  },
+  "vowel_length": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐỘ DÀI NGUYÊN ÂM PHONEMIC: nguyên âm đôi chính tả = nguyên âm DÀI (aa/ee/ii/oo/uu/yy/ää/öö -> [Vː]). Phân biệt nghĩa: tuli 'lửa' / tuuli 'gió'. [g2p-check aa 0.01%, ää 0.00%, ii 0.00%, uu 0.01% xác nhận.] Quy tắc rule_level tuyệt đối rõ.",
+    "status": "VALIDATED"
+  },
+  "consonant_length": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐỘ DÀI PHỤ ÂM PHONEMIC: phụ âm đôi = phụ âm DÀI/geminate (kk/tt/pp/ss/ll... -> [Cː]). Phân biệt nghĩa: tuli 'lửa' / tulli 'hải quan'; muta/mutta. [g2p-check kk 0.18%, tt 0.26% xác nhận.] Quy tắc rule_level rõ.",
+    "status": "VALIDATED"
+  },
+  "vowel_harmony": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG TRUNG TÂM (Ural): HOÀ ÂM NGUYÊN ÂM. Nguyên âm chia 2 nhóm: SAU (a o u) và TRƯỚC (ä ö y); e/i TRUNG TÍNH (đi với cả hai). Một từ (gốc + hậu tố) chỉ chứa nguyên âm CÙNG NHÓM -> hậu tố có 2 dạng, chọn theo gốc: talo+ssa 'trong nhà' (sau) nhưng metsä+ssä 'trong rừng' (trước); -lla/-llä, -sta/-stä. Quy tắc rule_level TUYỆT ĐỐI (máy áp được từ nguyên âm gốc). Điểm khó nhưng có quy luật rõ.",
+    "status": "DRAFT"
+  },
+  "consonant_gradation": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG TRUNG TÂM + KHÓ: LUÂN PHIÊN PHỤ ÂM (astevaihtelu). p/t/k trong âm tiết đổi giữa bậc MẠNH và YẾU khi biến cách: kk->k (kukka->kukan 'hoa'), pp->p (kauppa->kaupan), tt->t (tyttö->tytön), k->∅/v/j (jalka->jalan, lupa? no), p->v (leipä->leivän), t->d (katu->kadun 'phố'). Điều kiện (âm tiết đóng/mở khi thêm hậu tố) rule_level được, nhưng loại luân phiên nào áp cho từ nào + ngoại lệ là LEXICAL nặng. Rất khó cho học viên. Rule_level medium, lexical none.",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Finnish-TDT test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "case_system": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG TRUNG TÂM: 15 CÁCH (sijamuoto) — chắp dính (hậu tố cách gắn vào gốc, hoà âm). Nhóm chính: nominatiivi, genetiivi (-n), partitiivi (-a/-ä/-ta/-tä — RẤT quan trọng, không có tương đương Ấn-Âu), akkusatiivi; 6 cách ĐỊA ĐIỂM (bên trong: inessiivi -ssa/-ssä 'trong', elatiivi -sta/-stä 'từ trong', illatiivi -Vn 'vào trong'; bên ngoài: adessiivi -lla/-llä 'ở/bằng', ablatiivi -lta/-ltä 'từ', allatiivi -lle 'đến'); essiivi -na, translatiivi -ksi, abessiivi, komitatiivi, instruktiivi. Thay phần lớn giới từ Ấn-Âu bằng hậu tố cách. Hậu tố cách rule_level (+ hoà âm + luân phiên) nhưng bảng đầy đủ + gốc biến đổi là LEXICAL nặng, CHƯA có.",
+    "status": "DRAFT"
+  },
+  "no_gender_no_articles": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "THUẬN LỢI (đặc trưng đối lập): tiếng Phần Lan KHÔNG có giống ngữ pháp, KHÔNG có mạo từ (a/the), và MỘT đại từ ngôi 3 'hän' cho cả 'anh ấy/cô ấy' (không phân biệt giới). Học viên nói tiếng Anh khỏi lo giống/mạo từ nhưng phải bỏ thói quen thêm chúng.",
+    "status": "VALIDATED"
+  },
+  "possessive_suffixes": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Sở hữu bằng HẬU TỐ (chắp dính, hoà âm): -ni 'của tôi', -si 'của bạn', -nsa/-nsä 'của họ' (taloni 'nhà tôi', kirjani 'sách tôi'). Kết hợp với cách (talossani 'trong nhà tôi'). Yleiskieli dùng hậu tố sở hữu; puhekieli thường dùng đại từ sở hữu + hậu tố hoặc lược. Rule_level rõ.",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Động từ chia theo NGÔI (minä/sinä/hän/me/te/he) + thì/thức, có luân phiên phụ âm + hoà âm. 6 LOẠI ĐỘNG TỪ (verbityyppi) theo đuôi nguyên mẫu (-a/-ä, -da/-dä, -la/-nä, -ta/-tä, -ita, -eta). PHỦ ĐỊNH bằng ĐỘNG TỪ PHỦ ĐỊNH 'ei' chia theo ngôi (en/et/ei/emme/ette/eivät) + gốc động từ (en puhu 'tôi không nói') — đặc trưng, không có trợ động từ 'not' kiểu Ấn-Âu. Bất quy tắc (olla 'là', mennä, tehdä) + loại động từ cụ thể là lexical.",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SVO trung tính nhưng TỰ DO (hệ cách đánh dấu vai trò, cho đảo để nhấn mạnh/thông tin). Pro-drop ngôi 1/2 (đuôi động từ đủ rõ: puhun 'tôi nói'); ngôi 3 cần đại từ. Không mạo từ. Trật tự mang thông tin cũ/mới. Giống ru/pl về độ tự do.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "sinä (thân mật, số ít — 'sinuttelu') / te (trang trọng số ít HOẶC số nhiều — 'teitittely', giống fr vous, chia động từ ngôi 2 số nhiều). Tiếng Phần Lan hiện đại NGHIÊNG THÂN MẬT (sinä) rộng như sv/du nhưng te vẫn dùng trong dịch vụ trang trọng/với người lớn tuổi (nhiều hơn sv ni). Baseline: dạy sinä làm chuẩn thân mật-trung tính + te trang trọng/số nhiều. sinä/te map CASUAL/FORMAL. Xem review-checklist.",
+    "status": "VALIDATED"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu câu chuẩn Latin (. , ? !). Ngoặc kép: ”…” (cao-cao). KHÔNG có dấu lật ngược như es. Dấu phẩy dùng theo quy tắc mệnh đề (trước että, joka). Không đặc trưng gây khó riêng.",
+    "status": "DRAFT"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ä ö là CHỮ CÁI (không phải a/o có dấu) — có vị trí bảng chữ/từ điển riêng (cuối bảng), VÀ thuộc nhóm hoà âm TRƯỚC (khác a/o nhóm sau). Bỏ/thay = sai chính tả + phá hoà âm + đổi từ (tällä 'với cái này' / talla ~; sää 'thời tiết' / saa 'được'). å chỉ trong tên Thụy Điển; š/ž trong mượn hiếm. Ảnh hưởng chấm điểm — xem answer_acceptance_fi (giống bản chất pl/sv: dấu là chữ).",
+    "status": "DRAFT"
+  },
+  "spoken_vs_written": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG QUAN TRỌNG: khoảng cách LỚN giữa yleiskieli (chuẩn viết) và puhekieli (khẩu ngữ). Khác biệt hệ thống: minä->mä, sinä->sä, me olemme->me ollaan, hän->se (đồ vật hoá), tinh giản hậu tố. Baseline dạy yleiskieli (chuẩn viết, cần cho văn bản/chính thức) NHƯNG phải cảnh báo học viên rằng người Phần nói khác — xem review-checklist D-fi-02 (quyết định sản phẩm). Không phải rule máy-kiểm, là chính sách nội dung.",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~sinä + puhekieli (moi, mä, kiva), NATURAL_NEUTRAL_POLITE~sinä + yleiskieli chuẩn mực (baseline), FORMAL~te + yleiskieli trang trọng (Hyvää päivää, olkaa hyvä). HONORIFIC: not-applicable cho fi — te + gián tiếp đã đủ qua FORMAL, tiếng Phần Lan KHÔNG có hệ kính ngữ hình thái kiểu ja/ko. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19). Lưu ý: trục register chính của fi là yleiskieli/puhekieli (viết/nói) hơn là T-V.",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "NOT-APPLICABLE: chữ Latin + chính tả gần như 1:1 âm vị (minh bạch nhất trong các ngôn ngữ đã build) -> không cần trợ đọc. Trọng âm LUÔN ở âm tiết ĐẦU (cố định) -> không cần đánh dấu.",
+    "status": "not-applicable"
+  },
+  "answer_acceptance_fi": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính sách chấm khi thiếu/thay ä ö (gõ 'saa' thay 'sää', 'talla' thay 'tällä', hoặc 'a/o'): ä ö là CHỮ CÁI THẬT (vị trí bảng chữ riêng + thuộc nhóm hoà âm TRƯỚC, khác a/o nhóm sau) — GIỐNG BẢN CHẤT pl/sv. Đề xuất TỰ ÁP TIỀN LỆ pl D-64 (owner 2026-07-19): thiếu = SAI, không chấp nhận (dạy gõ đúng + bàn phím Phần Lan). Thêm lý do RIÊNG fi: bỏ ä/ö phá HOÀ ÂM -> sai hệ thống chứ không chỉ sai chữ. Giữ DRAFT + flag owner (áp tiền lệ sang ngôn ngữ mới). Ghi chú app (như pl): nhắc dùng bàn phím hệ thống Phần Lan.",
+    "status": "DRAFT"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Đặc biệt: chọn cách đúng (partitiivi vs akkusatiivi — điểm khó nhất), hoà âm hậu tố, luân phiên phụ âm, sinä/te, yleiskieli vs puhekieli đúng ngữ cảnh.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text Latin (đầy đủ ä ö + độ dài đôi). TTS fi-FI đọc trực tiếp (chính tả 1:1, trọng âm đầu từ cố định — TTS dễ). Kế thừa _base/audio.rules.json. Locale: fi-FI. Văn bản PHẢI giữ ä ö + chữ đôi (độ dài phonemic, bỏ đọc/nghĩa sai).",
+    "status": "VALIDATED"
+  }
+}

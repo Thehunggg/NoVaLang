@@ -1,0 +1,43 @@
+{
+  "id": "fi/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "””",
+    "extra_letters": "ä ö là chữ cái riêng (cuối bảng, nhóm hoà âm trước) — không phải a/o có dấu.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "tammikuu/maanantai/suomi/suomalainen viết thường (trừ đầu câu) — giống es/it/sv."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 30117 câu thật.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Tammikuu|Helmikuu|Maaliskuu|Huhtikuu|Toukokuu|Kesäkuu|Heinäkuu|Elokuu|Syyskuu|Lokakuu|Marraskuu|Joulukuu|Maanantai|Tiistai|Keskiviikko|Torstai|Perjantai|Lauantai|Sunnuntai)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Tänään on maanantai, kolmas tammikuuta."],
+        "fail": ["Tänään on Maanantai, kolmas Tammikuuta."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Tänään on maanantai.", "Hän puhuu suomea.", "Helsinki on Suomen pääkaupunki."],
+    "fail": ["tänään on maanantai.", "Tänään on Tammikuu."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Finnish thật."
+  }
+}

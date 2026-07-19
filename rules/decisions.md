@@ -793,6 +793,30 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ khác.
   Commit riêng.
 
+- **D-66 · 2026-07-19 · derived · fi — `fi` (tiếng Phần Lan, fi-FI yleiskieli)
+  build HOÀN TẤT, trạng thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG
+  FROZEN (ADR-014). Ngôn ngữ Ural (Uralic) T1 phi-Ấn-Âu ĐẦU TIÊN — chắp dính.**
+  25 hiện tượng; 4 `.rules.json` khớp khuôn ja/en/es/de/it/pt/ru/nl/pl/sv.
+  Dataset thật: CLDR fi, UD Finnish-TDT (word-class), WikiPron `fin_latn_broad`
+  (173449 cặp). Corpus 30117 câu (UD TDT+FTB). **g2p-check** xác nhận chính tả
+  gần như 1:1 âm vị (minh bạch nhất đã build): độ dài aa/ää/ii/uu 0.00-0.01%,
+  geminate kk/tt 0.18/0.26%, ä→[æ] 0.02%, ö→[ø] 0.00%, y→[y] 1.07%, ng→[ŋː]
+  2.38% → `grapheme_to_phoneme` + `vowel_length` + `consonant_length` VALIDATED.
+  **Phát hiện thật:** nk→[ŋk] bắn 41.12% vì phần lớn TỪ GHÉP giữ [nk] qua ranh
+  giới hình vị → giữ medium/lexical, không giả vờ high. **corpus-check**
+  month-weekday **0.00%** (30117 câu). Đặc trưng: 15 cách (partitiivi khó nhất),
+  hoà âm nguyên âm (sau a/o/u vs trước ä/ö/y), luân phiên phụ âm, chắp dính,
+  phủ định bằng động từ ei, KHÔNG giống/mạo từ, một đại từ hän. Thuận lợi: chính
+  tả 1:1 + trọng âm cố định. Hình thái CỰC nặng phần lớn ở lexical_level.
+  HONORIFIC not-applicable (es B-02). D-fi-01 baseline fi-FI (vòng 1); D-fi-02
+  yleiskieli baseline vs puhekieli (vòng 2, dạy chuẩn viết + cảnh báo khẩu ngữ);
+  D-fi-03 chấm thiếu ä/ö — áp tiền lệ pl D-64 (dấu là chữ + BỎ = PHÁ HOÀ ÂM →
+  thiếu = sai), giữ `answer_acceptance_fi` DRAFT + flag owner. Ghi chú app (như
+  pl D-64): nhắc dùng bàn phím Phần Lan. Sự kiện Phần Lan thuần tuý →
+  `native-review-fi.md`. `catalog.json` fi.ruleStatus NOT_STARTED →
+  VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ khác.
+  Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,
