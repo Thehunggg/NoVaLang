@@ -10,6 +10,12 @@ Bồ để trả lời). Sự kiện ngôn ngữ Bồ thuần tuý → `native-r
 
 Không có front-matter (checklist thao tác).
 
+> **✅ CẬP NHẬT 2026-07-19: owner ĐÃ DUYỆT cả 3 mục sản phẩm bên dưới**
+> (D-pt-01, D-pt-02, D-pt-03 — xem dấu ✅ ở cuối mỗi mục). Các mục
+> `native-review-pt.md` GIỮ NGUYÊN chờ người bản ngữ (owner không tự duyệt
+> được). Trạng thái ngôn ngữ KHÔNG đổi (vẫn `VALIDATED_NOT_YET_PROVEN`, không
+> FROZEN). Ghi kèm: `decisions.md` D-61.
+
 ---
 
 ## [D-pt-01] Baseline vùng miền: Brazil hay Bồ Đào Nha
@@ -31,6 +37,9 @@ tu PT), một phần chính tả đã hợp nhất sau Acordo 1990.
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A (pt-BR).** `coverage.json`
 > `tts_audio_policy` = VALIDATED, locale pt-BR. Owner có thể đổi sang pt-PT
 > sau; sẽ phải import lại WikiPron `por_po` + xử lý khác biệt phát âm/từ vựng.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: baseline pt-BR (Brazil).** Chốt chính thức,
+> thay dòng "TỰ QUYẾT (chưa có owner)" phía trên.
 
 ---
 
@@ -55,6 +64,9 @@ cho trang trọng.
 > `forms_of_address` VALIDATED với baseline você. Gắn với D-pt-01 (nếu đổi sang
 > pt-PT phải xem lại mục này).
 
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: chỉ dạy você (chia ngôi 3), không dạy chia
+> tu.** Chốt chính thức.
+
 ---
 
 ## [D-pt-03] Chấm điểm khi thiếu/sai dấu hoặc cedilha
@@ -75,3 +87,6 @@ está 'đang' / esta 'này'; faca 'con dao' / faça 'hãy làm'; avó 'bà' / av
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn B (cảnh báo nhẹ), theo tiền lệ
 > es B-03.** Nếu owner muốn khác (A: chấp nhận hoàn toàn), cập nhật sau.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: phương án B (thiếu dấu/cedilha cảnh báo nhẹ,
+> tiền lệ es B-03).** Owner đồng ý GIỮ `answer_acceptance_pt` ở **DRAFT**.

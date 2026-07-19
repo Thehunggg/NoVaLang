@@ -9,6 +9,12 @@ Nga để trả lời). Sự kiện ngôn ngữ Nga thuần tuý → `native-rev
 
 Không có front-matter (checklist thao tác).
 
+> **✅ CẬP NHẬT 2026-07-19: owner ĐÃ DUYỆT cả 3 mục sản phẩm bên dưới**
+> (D-ru-01, D-ru-02, D-ru-03 — xem dấu ✅ ở cuối mỗi mục). Các mục
+> `native-review-ru.md` GIỮ NGUYÊN chờ người bản ngữ (owner không tự duyệt
+> được). Trạng thái ngôn ngữ KHÔNG đổi (vẫn `VALIDATED_NOT_YET_PROVEN`, không
+> FROZEN). Ghi kèm: `decisions.md` D-61.
+
 ---
 
 ## [D-ru-01] Baseline vùng miền cho tiếng Nga
@@ -28,6 +34,8 @@ chính tả cốt lõi.
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A (ru-RU).** `tts_audio_policy`
 > = VALIDATED, locale ru-RU.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: baseline ru-RU.** Chốt chính thức.
 
 ---
 
@@ -51,6 +59,9 @@ không có trên bàn phím Nga, học viên không gõ được.
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A cho ё/е + trọng âm.** Nếu owner
 > muốn chặt hơn (B: hiện dạng chuẩn kèm cảnh báo), cập nhật sau.
 
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: chấm ё=е + normalize bỏ dấu trọng âm.** Owner
+> đồng ý GIỮ `answer_acceptance_ru` ở **DRAFT**.
+
 ---
 
 ## [D-ru-03] Hiển thị dấu trọng âm (ударение) làm trợ đọc mặc định
@@ -73,3 +84,7 @@ tương tự romaji của ja.
 
 > **TỰ QUYẾT (chưa có owner) 2026-07-19: Chọn A (hiện dấu trọng âm mặc định
 > trình độ đầu, ẩn-có-toggle cao hơn).** Owner chốt mức mặc định chính xác sau.
+
+> **✅ OWNER ĐÃ DUYỆT 2026-07-19: hiển thị dấu trọng âm làm trợ đọc, mặc định
+> trình độ đầu + ẩn-có-toggle (tiền lệ romaji ja).** Owner đồng ý GIỮ
+> `reading_aid_policy` ở **DRAFT**.

@@ -683,6 +683,25 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   → VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ
   khác. Commit riêng.
 
+- **D-61 · 2026-07-19 · owner · pt,ru — Owner DUYỆT 6 giả định sản phẩm của
+  pt/ru (chốt các mục TỰ QUYẾT ở D-59/D-60).** Cập nhật này CHỈ là tracking
+  duyệt — KHÔNG đổi status ngôn ngữ (cả hai vẫn `VALIDATED_NOT_YET_PROVEN`,
+  KHÔNG FROZEN), KHÔNG đụng rule/coverage/lesson.
+  - **D-pt-01 → DUYỆT:** baseline **pt-BR** (Brazil).
+  - **D-pt-02 → DUYỆT:** chỉ dạy **você**, không dạy chia `tu`.
+  - **D-pt-03 → DUYỆT:** thiếu dấu/cedilha **cảnh báo nhẹ** (tiền lệ es B-03);
+    GIỮ `answer_acceptance_pt` ở **DRAFT**.
+  - **D-ru-01 → DUYỆT:** baseline **ru-RU**.
+  - **D-ru-02 → DUYỆT:** chấm **ё=е** + normalize bỏ dấu trọng âm; GIỮ
+    `answer_acceptance_ru` ở **DRAFT**.
+  - **D-ru-03 → DUYỆT:** hiển thị dấu trọng âm làm trợ đọc, mặc định trình độ
+    đầu + ẩn-có-toggle (tiền lệ romaji ja); GIỮ `reading_aid_policy` ở **DRAFT**.
+  - **Các mục `native-review-pt.md` (7) / `native-review-ru.md` (7) GIỮ
+    NGUYÊN** chờ người bản ngữ (bảng cách/thể, giống danh từ, độ tự nhiên...):
+    owner KHÔNG tự duyệt được, không đánh dấu duyệt.
+  - Ghi vào: `rules/languages/pt/review-checklist.md`,
+    `rules/languages/ru/review-checklist.md` (dấu ✅ mỗi mục). Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,
