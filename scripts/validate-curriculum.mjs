@@ -1382,14 +1382,16 @@ async function main() {
     }
   }
 
-  // Daily Life Communication: 15 topics × 3 tiers (owner decision, 2026-07-18;
-  // replaces the prior 10-module × 8-unit × 3-lesson blueprint entirely).
-  // Content is written in incrementally — an empty topic (0 units) or an
-  // empty tier is a VALID, intentional state, not an error (see
-  // assertDailyLifeBlueprintShape in scripts/lib/daily-life-blueprint.mjs).
-  // What is still enforced hard: exactly 15 topics per language; every
-  // course's ready/playable status matches whether it actually has units;
-  // every unit that exists has >=1 lesson (an empty-but-created unit would
+  // Daily Life Communication: 16 modules × 3 tiers, Cơ bản tier fully named
+  // (owner decision, 2026-07-19; replaces the prior 15-topic × 3-tier empty
+  // skeleton). Every module's Cơ bản tier now has real named unit/lesson
+  // slots; only the Golden Lesson (ja-daily_life-m01-u1-l1) resolves to real
+  // five_cards content — every other Cơ bản slot is a NAMED placeholder
+  // (blueprint lesson, real title, no real exercises yet). Trung cấp/Cao cấp
+  // remain a valid empty shell (no units yet) for every module. What is
+  // still enforced hard: exactly 16 modules per language; every course's
+  // ready/playable status matches whether it contains a ready lesson; every
+  // unit that exists has >=1 lesson (an empty-but-created unit would
   // indicate a generator bug, not intentional "not written yet"); and the
   // Golden Lesson's own unit/course still match their frozen ADR-008 values.
   for (const language of ["en", "ja"]) {
@@ -1397,8 +1399,8 @@ async function main() {
       .filter((c) => c.languageCode === language && c.nicheId === "daily_life")
       .slice()
       .sort((a, b) => Number(a.order ?? 0) - Number(b.order ?? 0));
-    if (dailyCourses.length !== 15) {
-      fail(`${language} Daily Life must have exactly 15 topics, got ${dailyCourses.length}`);
+    if (dailyCourses.length !== 16) {
+      fail(`${language} Daily Life must have exactly 16 modules, got ${dailyCourses.length}`);
     }
     const dailyLessons = lessons.filter(
       (l) => l.languageCode === language && l.nicheId === "daily_life",
@@ -1406,14 +1408,20 @@ async function main() {
     for (const course of dailyCourses) {
       const isModuleOne = course.moduleId === "daily_life_m01_basic_social_survival";
       const hasUnits = (course.units ?? []).length > 0;
-      if (hasUnits && (course.contentStatus !== "ready" || course.playable !== true)) {
-        fail(`${course.id}: a topic with real units must be ready/playable`);
+      // Every module now has named Cơ bản units full of placeholder lessons
+      // (owner decision, 2026-07-19), so "has units" no longer implies "has
+      // real content" — a course is ready/playable only when it actually
+      // contains a ready lesson (today: only Module 1's Golden Lesson, ja).
+      const courseLessons = dailyLessons.filter((l) => l.moduleId === course.moduleId);
+      const hasReadyLesson = courseLessons.some((l) => l.playable === true);
+      if (hasReadyLesson && (course.contentStatus !== "ready" || course.playable !== true)) {
+        fail(`${course.id}: a module with a ready lesson must be ready/playable`);
       }
-      if (!hasUnits && (course.contentStatus !== "blueprint" || course.playable !== false)) {
-        fail(`${course.id}: an empty topic (no units yet) must stay blueprint/non-playable`);
+      if (!hasReadyLesson && (course.contentStatus !== "blueprint" || course.playable !== false)) {
+        fail(`${course.id}: a module with no ready lesson yet must stay blueprint/non-playable`);
       }
       if (isModuleOne && language === "ja" && !hasUnits) {
-        fail(`${course.id}: Topic 1 (Golden Lesson) must have at least one unit`);
+        fail(`${course.id}: Module 1 (Golden Lesson) must have at least one unit`);
       }
       if (course.unlockRequirement !== "core_foundation_completed") {
         fail(`${course.id}: missing unlockRequirement core_foundation_completed`);
@@ -1426,7 +1434,7 @@ async function main() {
           fail(`${unit.id}: missing/invalid tier (must be basic|intermediate|advanced)`);
         }
         if (unit.id === "ja-daily_life-m01-u1") {
-          if (unit.titleByNative?.vi !== "Chào và nói tên") {
+          if (unit.titleByNative?.vi !== "Bài 1: Làm quen lần đầu") {
             fail(`${unit.id}: must keep the approved Vietnamese Unit 1 title`);
           }
         } else {
@@ -1434,13 +1442,22 @@ async function main() {
         }
       }
     }
-    const moduleOneLessons = dailyLessons.filter((l) => l.moduleId === "daily_life_m01_basic_social_survival");
-    if (language === "ja" && (moduleOneLessons.length < 1 || moduleOneLessons.some((l) => l.playable !== true || l.contentStatus !== "ready"))) {
-      fail(`${language} Daily Life Topic 1 must contain at least the Golden Lesson, ready/playable`);
+    // Exactly one lesson across the whole Daily Life domain may be
+    // ready/playable: the Golden Lesson itself (APPROVED_JA_UNIT1_LESSON1).
+    // Every sibling lesson — including the new named placeholder lessons now
+    // sharing Module 1 with the Golden Lesson — must stay blueprint. This
+    // replaces a prior moduleId-based check that incorrectly required EVERY
+    // Module 1 lesson to be ready, which broke once Module 1 gained
+    // non-Golden placeholder siblings (owner decision, 2026-07-19).
+    if (language === "ja") {
+      const golden = dailyLessons.find((l) => isApprovedJaUnitOneLesson(l));
+      if (!golden || golden.playable !== true || golden.contentStatus !== "ready") {
+        fail(`${language} Daily Life must contain the Golden Lesson, ready/playable`);
+      }
     }
-    const laterLessons = dailyLessons.filter((l) => l.moduleId !== "daily_life_m01_basic_social_survival");
-    if (laterLessons.some((l) => l.playable === true || l.contentStatus !== "blueprint")) {
-      fail(`${language} Daily Life Module 2-10 must remain blueprint/non-playable`);
+    const nonGoldenLessons = dailyLessons.filter((l) => !isApprovedJaUnitOneLesson(l));
+    if (nonGoldenLessons.some((l) => l.playable === true || l.contentStatus !== "blueprint")) {
+      fail(`${language} Daily Life: only the Golden Lesson may be ready/playable; every other lesson must remain blueprint/non-playable`);
     }
   }
 

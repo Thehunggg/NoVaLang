@@ -3991,8 +3991,8 @@ async function main() {
         type: DAILY_LIFE_COURSE_META.type,
         playable: false,
         unlockRequirement: DAILY_LIFE_COURSE_META.unlockRequirement,
-        topicCount: 15,
-        note: "15-topic × 3-tier structure (owner decision, 2026-07-18). Topic 1 (Chào hỏi & làm quen) / Cơ bản has the Golden Reference Lesson (ja only, five_cards). Every other topic/tier is an empty, valid shell awaiting content — unit/lesson counts are not fixed per topic and grow as content is written in.",
+        topicCount: 16,
+        note: "16-module × 3-tier structure, Cơ bản tier fully named (owner decision, 2026-07-19). Module 1 (Chào hỏi & làm quen) / Cơ bản / Unit 1 has the Golden Reference Lesson (ja only, five_cards); every other Cơ bản lesson slot across all 16 modules is a named blueprint placeholder. Trung cấp/Cao cấp remain an empty, valid shell for every module awaiting content — unit/lesson counts there are not fixed and grow as content is written in.",
       },
       mainNiches: [
         "daily_life",

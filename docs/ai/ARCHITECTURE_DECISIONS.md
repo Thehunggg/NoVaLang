@@ -1155,3 +1155,131 @@ non-Golden Module 1 content and all Module 2–10 blueprint content dropped,
 not migrated). Per the Project Owner's explicit instruction, ADR-008 itself
 was not modified — this ADR was written to record the change and confirms no
 ADR-008-governed field required amendment.
+
+## ADR-021 — Daily Life domain: 16-module × 3-tier skeleton, Cơ bản tier fully named (33 units / 73 lessons)
+
+Status: `APPROVED / IMPLEMENTED (SKELETON ONLY — NO NEW LESSON CONTENT AUTHORED)`
+
+### Context
+
+ADR-020's 15-topic × 3-tier skeleton left every topic except Topic 1 as a
+fully empty `units: []` shell. The Project Owner subsequently supplied a
+complete, spelled-out Cơ bản (basic) tier structure — 16 modules, each with
+named units and named lessons, exact Vietnamese titles for every one — and
+requested it replace the 15-topic skeleton, with Trung cấp (intermediate)
+and Cao cấp (advanced) remaining a valid empty shell per module. The
+Project Owner's own task message contained an internal inconsistency (a
+header summary of "35 unit · 82 lesson" that did not match a manual count
+of "33 unit · 73 lesson" from the same message's fully detailed
+module-by-module list); per standing instruction to stop rather than guess
+on this kind of discrepancy, the mismatch was reported before any file was
+edited. The Project Owner confirmed the detailed list (33 units / 73
+lessons) was correct and the header was a summation error.
+
+### Decision
+
+- Replace the 15-topic empty-shell `DAILY_LIFE_MODULES` (ADR-020) with a
+  16-module structure. Every module's Cơ bản tier is now fully named: real
+  unit titles and real lesson titles (5-locale `titleByNative`, no
+  target-language sentence content), totaling exactly 33 units and 73
+  lesson slots across the 16 modules. Trung cấp and Cao cấp remain a valid,
+  intentional empty shell for every module — no `unit(...)` entries with
+  `tier: 'intermediate'`/`'advanced'` exist yet. `TIER_LEVELS` already
+  declares all three tiers structurally, independent of what content
+  exists, so this is not a schema change — it is the same "absence is
+  valid" pattern ADR-020 already established, now applied per-tier instead
+  of per-topic.
+- Progression principle for Trung cấp/Cao cấp, recorded verbatim per
+  Project Owner instruction for when that content is eventually authored:
+  Trung cấp và Cao cấp dựa trên cùng chủ đề của Cơ bản, nâng độ mạch
+  lạc/trơn tru (fluently), keigo tăng dần (Cơ bản teineigo → Trung cấp chia
+  thể → Cao cấp đầy đủ + kết hợp). Unit/lesson cụ thể chốt sau khi có nội
+  dung Cơ bản thật.
+- Exactly ONE lesson slot across the entire 16-module × 2-language skeleton
+  resolves to real, playable content: Module 1 / Unit 1 / Lesson 1 (ja),
+  the Golden Reference Lesson (ADR-008), unchanged, byte-for-byte identical
+  to before this task. Every other lesson slot — including Module 1's own
+  3 new named siblings and the same slot for `en` (which has no Golden
+  Lesson) — is a named BLUEPRINT placeholder: a real title, no real
+  exercise/dialogue/vocabulary content yet.
+- A course's `contentStatus`/`playable` is derived from whether it actually
+  contains a ready lesson, not from whether it has units. This is a
+  necessary correction from ADR-020's derivation (`hasUnits` as the
+  ready/playable proxy), which stops being valid once every module has
+  named units regardless of whether any of their lessons are real.
+- Module 1's `moduleId`, the Golden Lesson's id
+  (`ja-daily_life-m01-u1-l1`), and its containing unit id
+  (`ja-daily_life-m01-u1`) are unchanged. The unit's own title is
+  intentionally renamed from ADR-020's "Chào và nói tên" to the Project
+  Owner's new approved title "Làm quen lần đầu" (rendered with its unit-number
+  prefix as "Bài 1: Làm quen lần đầu" in the generated Vietnamese
+  `titleByNative`), because the unit now spans 3 lessons (Golden + 2 new
+  named siblings) instead of Golden alone — this rename is authorized by
+  this ADR and does not touch any ADR-008-governed field (Golden's own
+  lesson object, not its containing unit's title, is what ADR-008 freezes).
+
+### Engineering changes (mechanism, not content)
+
+- `FIVE_CARDS_REGISTRY` continues to resolve by the lesson's final id string
+  (ADR-019/ADR-020's fix), never by array position.
+- The generator's Module-1 special case (`buildReadyModuleOne`, routed
+  through a dedicated function) is replaced by one unified loop in
+  `buildDailyLifeCourses`, used identically for all 16 modules: every
+  lesson slot first tries `resolveApprovedFiveCardsLesson` (extracted from
+  `buildReadyModuleOne`'s lesson-building logic, field construction
+  unchanged); when it returns `null`, a named placeholder lesson is built
+  from the slot's own `titleByNative` instead. `buildReadyModuleOne` itself
+  is left on disk, unreferenced, matching the ADR-020 precedent for
+  superseded-but-not-deleted helpers.
+- A bare `{ order: N }` slot (no `titleByNative`) is reserved for a lesson
+  meant to resolve through the registry; if it fails to resolve for a given
+  language, generation now fails loudly with a clear error naming the exact
+  module/unit/lesson, instead of silently skipping the slot (ADR-020's
+  behavior) or fabricating content. This surfaced one real, expected gap
+  during implementation: the Golden slot has no `en` registry entry (Golden
+  is ja-only), so it was given a named placeholder title too — for `ja` the
+  registry lookup still wins and that title is never read; for `en` it
+  correctly becomes an ordinary named blueprint placeholder instead of
+  silently vanishing.
+- Unit container titles are now always taken from the blueprint's own
+  `unitDef.titleByNative`, never from the Golden source file's bundled
+  `approved.unit` override (which existed only to let `buildReadyModuleOne`
+  special-case Module 1's unit title). This override mechanism is retired
+  from the generation path entirely, not just for Module 1.
+
+### Consequences
+
+- Generated output: 35 courses (3 Core Foundation + 32 daily_life = 16
+  modules × 2 languages), 172 lessons (26 Core Foundation + 146 daily_life =
+  73 × 2 languages), 27 playable (26 Core Foundation + 1 Golden Lesson).
+  Verified via direct query of the generated output, not assumed from the
+  module/unit/lesson counts alone.
+- `npm run validate:curriculum` and `npm run smoke:curriculum` both PASS
+  with the same 4 pre-existing soft `rules/` warnings and zero new errors;
+  both scripts' Daily Life sections were updated for the 16-module count and
+  two real pre-existing bugs were fixed in the same edit: a moduleId-based
+  "every Module 1 lesson must be ready" check (would have wrongly failed
+  Module 1's new non-Golden siblings) corrected to gate on the Golden
+  Lesson's own id, and a "has units ⇒ ready" course check corrected to "has
+  a ready lesson ⇒ ready" for the reason above.
+- `flutter test` could not be run in this session's cloud environment (no
+  Flutter SDK); no `.dart` file was touched by this task. Real `flutter
+  test` verification on a machine with Flutter installed remains required —
+  see `docs/ai/ACTIVE_TASK.md`.
+- Future content authoring for Trung cấp/Cao cấp must follow the
+  progression principle recorded above and the same owner-content-approval
+  process as any other lesson content (this ADR authorizes structural
+  skeleton only).
+- Does not amend ADR-008, ADR-018, ADR-019, or ADR-020 (ADR-020's own record
+  of the 15-topic skeleton is retained for history; this ADR supersedes only
+  its `DAILY_LIFE_MODULES` content, not its reasoning about scope/language
+  footprint, which still applies).
+
+### Approval
+
+Approved by Project Owner, 2026-07-19, with the exact 16-module / 33-unit /
+73-lesson Cơ bản structure supplied in full, after the header/detailed-list
+discrepancy above was reported and resolved by explicit confirmation. Golden
+Lesson byte-identity, registry ID-based resolution, and Trung cấp/Cao cấp as
+a valid empty shell were all explicit, binding requirements of that
+instruction and are verified in `docs/ai/ACTIVE_TASK.md`.

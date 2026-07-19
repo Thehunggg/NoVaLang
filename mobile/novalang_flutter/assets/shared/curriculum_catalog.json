@@ -12,8 +12,8 @@
       "type": "communication",
       "playable": false,
       "unlockRequirement": "core_foundation_completed",
-      "topicCount": 15,
-      "note": "15-topic × 3-tier structure (owner decision, 2026-07-18). Topic 1 (Chào hỏi & làm quen) / Cơ bản has the Golden Reference Lesson (ja only, five_cards). Every other topic/tier is an empty, valid shell awaiting content — unit/lesson counts are not fixed per topic and grow as content is written in."
+      "topicCount": 16,
+      "note": "16-module × 3-tier structure, Cơ bản tier fully named (owner decision, 2026-07-19). Module 1 (Chào hỏi & làm quen) / Cơ bản / Unit 1 has the Golden Reference Lesson (ja only, five_cards); every other Cơ bản lesson slot across all 16 modules is a named blueprint placeholder. Trung cấp/Cao cấp remain an empty, valid shell for every module awaiting content — unit/lesson counts there are not fixed and grow as content is written in."
     },
     "mainNiches": [
       "daily_life",
@@ -92,11 +92,11 @@
     "katakana_starter",
     "alphabet_starter"
   ],
-  "courseCount": 33,
-  "lessonCount": 27,
+  "courseCount": 35,
+  "lessonCount": 172,
   "playableLessonCount": 27,
-  "blueprintLessonCount": 0,
-  "unitCount": 4,
+  "blueprintLessonCount": 145,
+  "unitCount": 69,
   "courses": [
     {
       "id": "ja-core_foundation-hiragana",
@@ -140,10 +140,10 @@
       "nicheId": "daily_life",
       "branch": "niche",
       "moduleId": "daily_life_m01_basic_social_survival",
-      "title": "English · Greetings & Getting Acquainted",
+      "title": "English · Daily Life Communication · Greetings & Getting Acquainted",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -151,11 +151,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic02_self_family",
-      "title": "English · Daily Life Communication · Myself & Family",
+      "moduleId": "daily_life_m02_thanks_apology_politeness",
+      "title": "English · Daily Life Communication · Thanks, Apologies & Politeness",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -163,11 +163,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic03_objects_demonstratives",
-      "title": "English · Daily Life Communication · Objects & Pointing Things Out",
+      "moduleId": "daily_life_m03_self_family",
+      "title": "English · Daily Life Communication · Myself & Family",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -175,11 +175,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic04_numbers_prices_money",
-      "title": "English · Daily Life Communication · Numbers, Prices & Money",
+      "moduleId": "daily_life_m04_communication_breakdown",
+      "title": "English · Daily Life Communication · When Communication Breaks Down",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -187,11 +187,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic05_time_date",
-      "title": "English · Daily Life Communication · Time & Dates",
+      "moduleId": "daily_life_m05_objects_demonstratives",
+      "title": "English · Daily Life Communication · Objects & Pointing Things Out",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -199,11 +199,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic06_shopping",
-      "title": "English · Daily Life Communication · Shopping",
+      "moduleId": "daily_life_m06_numbers_prices_money",
+      "title": "English · Daily Life Communication · Numbers, Prices & Money",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -211,11 +211,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic07_food_ordering",
-      "title": "English · Daily Life Communication · Eating & Ordering Food",
+      "moduleId": "daily_life_m07_time_date",
+      "title": "English · Daily Life Communication · Time & Dates",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -223,11 +223,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic08_directions_places",
-      "title": "English · Daily Life Communication · Directions & Places",
+      "moduleId": "daily_life_m08_shopping",
+      "title": "English · Daily Life Communication · Shopping",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 7,
       "playableLessonCount": 0
     },
     {
@@ -235,11 +235,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic09_transport_trains",
-      "title": "English · Daily Life Communication · Getting Around & Trains",
+      "moduleId": "daily_life_m09_food_ordering",
+      "title": "English · Daily Life Communication · Eating & Ordering Food",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -247,11 +247,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic10_home_daily_living",
-      "title": "English · Daily Life Communication · Home & Daily Living",
+      "moduleId": "daily_life_m10_directions_places",
+      "title": "English · Daily Life Communication · Directions & Places",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -259,11 +259,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic11_hobbies_free_time",
-      "title": "English · Daily Life Communication · Hobbies & Free Time",
+      "moduleId": "daily_life_m11_transport_trains",
+      "title": "English · Daily Life Communication · Getting Around & Trains",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -271,11 +271,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic12_meetups_invitations",
-      "title": "English · Daily Life Communication · Making Plans & Invitations",
+      "moduleId": "daily_life_m12_home_daily_living",
+      "title": "English · Daily Life Communication · Home & Daily Living",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -283,11 +283,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic13_description_feelings",
-      "title": "English · Daily Life Communication · Describing Things & Feelings",
+      "moduleId": "daily_life_m13_hobbies_free_time",
+      "title": "English · Daily Life Communication · Hobbies & Free Time",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -295,11 +295,11 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic14_health_problems",
-      "title": "English · Daily Life Communication · Health & When Something Goes Wrong",
+      "moduleId": "daily_life_m14_meetups_invitations",
+      "title": "English · Daily Life Communication · Making Plans & Invitations",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -307,11 +307,23 @@
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic15_thanks_apology_politeness",
-      "title": "English · Daily Life Communication · Thanks, Apologies & Politeness",
+      "moduleId": "daily_life_m15_description_feelings",
+      "title": "English · Daily Life Communication · Describing Things & Feelings",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
+      "playableLessonCount": 0
+    },
+    {
+      "id": "en-daily_life-m16",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m16_health_problems",
+      "title": "English · Daily Life Communication · Health & When Something Goes Wrong",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -320,10 +332,10 @@
       "nicheId": "daily_life",
       "branch": "niche",
       "moduleId": "daily_life_m01_basic_social_survival",
-      "title": "Japanese · Greetings & Getting Acquainted",
+      "title": "Japanese · Daily Life Communication · Greetings & Getting Acquainted",
       "contentStatus": "ready",
       "playable": true,
-      "lessonCount": 1,
+      "lessonCount": 5,
       "playableLessonCount": 1
     },
     {
@@ -331,11 +343,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic02_self_family",
-      "title": "Japanese · Daily Life Communication · Myself & Family",
+      "moduleId": "daily_life_m02_thanks_apology_politeness",
+      "title": "Japanese · Daily Life Communication · Thanks, Apologies & Politeness",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -343,11 +355,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic03_objects_demonstratives",
-      "title": "Japanese · Daily Life Communication · Objects & Pointing Things Out",
+      "moduleId": "daily_life_m03_self_family",
+      "title": "Japanese · Daily Life Communication · Myself & Family",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -355,11 +367,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic04_numbers_prices_money",
-      "title": "Japanese · Daily Life Communication · Numbers, Prices & Money",
+      "moduleId": "daily_life_m04_communication_breakdown",
+      "title": "Japanese · Daily Life Communication · When Communication Breaks Down",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -367,11 +379,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic05_time_date",
-      "title": "Japanese · Daily Life Communication · Time & Dates",
+      "moduleId": "daily_life_m05_objects_demonstratives",
+      "title": "Japanese · Daily Life Communication · Objects & Pointing Things Out",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -379,11 +391,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic06_shopping",
-      "title": "Japanese · Daily Life Communication · Shopping",
+      "moduleId": "daily_life_m06_numbers_prices_money",
+      "title": "Japanese · Daily Life Communication · Numbers, Prices & Money",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -391,11 +403,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic07_food_ordering",
-      "title": "Japanese · Daily Life Communication · Eating & Ordering Food",
+      "moduleId": "daily_life_m07_time_date",
+      "title": "Japanese · Daily Life Communication · Time & Dates",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -403,11 +415,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic08_directions_places",
-      "title": "Japanese · Daily Life Communication · Directions & Places",
+      "moduleId": "daily_life_m08_shopping",
+      "title": "Japanese · Daily Life Communication · Shopping",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 7,
       "playableLessonCount": 0
     },
     {
@@ -415,11 +427,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic09_transport_trains",
-      "title": "Japanese · Daily Life Communication · Getting Around & Trains",
+      "moduleId": "daily_life_m09_food_ordering",
+      "title": "Japanese · Daily Life Communication · Eating & Ordering Food",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -427,11 +439,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic10_home_daily_living",
-      "title": "Japanese · Daily Life Communication · Home & Daily Living",
+      "moduleId": "daily_life_m10_directions_places",
+      "title": "Japanese · Daily Life Communication · Directions & Places",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -439,11 +451,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic11_hobbies_free_time",
-      "title": "Japanese · Daily Life Communication · Hobbies & Free Time",
+      "moduleId": "daily_life_m11_transport_trains",
+      "title": "Japanese · Daily Life Communication · Getting Around & Trains",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -451,11 +463,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic12_meetups_invitations",
-      "title": "Japanese · Daily Life Communication · Making Plans & Invitations",
+      "moduleId": "daily_life_m12_home_daily_living",
+      "title": "Japanese · Daily Life Communication · Home & Daily Living",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -463,11 +475,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic13_description_feelings",
-      "title": "Japanese · Daily Life Communication · Describing Things & Feelings",
+      "moduleId": "daily_life_m13_hobbies_free_time",
+      "title": "Japanese · Daily Life Communication · Hobbies & Free Time",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
       "playableLessonCount": 0
     },
     {
@@ -475,11 +487,11 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic14_health_problems",
-      "title": "Japanese · Daily Life Communication · Health & When Something Goes Wrong",
+      "moduleId": "daily_life_m14_meetups_invitations",
+      "title": "Japanese · Daily Life Communication · Making Plans & Invitations",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 5,
       "playableLessonCount": 0
     },
     {
@@ -487,11 +499,23 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic15_thanks_apology_politeness",
-      "title": "Japanese · Daily Life Communication · Thanks, Apologies & Politeness",
+      "moduleId": "daily_life_m15_description_feelings",
+      "title": "Japanese · Daily Life Communication · Describing Things & Feelings",
       "contentStatus": "blueprint",
       "playable": false,
-      "lessonCount": 0,
+      "lessonCount": 4,
+      "playableLessonCount": 0
+    },
+    {
+      "id": "ja-daily_life-m16",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m16_health_problems",
+      "title": "Japanese · Daily Life Communication · Health & When Something Goes Wrong",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "lessonCount": 4,
       "playableLessonCount": 0
     }
   ]

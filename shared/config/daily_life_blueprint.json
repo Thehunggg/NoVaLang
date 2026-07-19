@@ -237,320 +237,199 @@
         "zh": "问候与结识"
       },
       "goalByNative": {
-        "en": "Learn greetings, self-introduction, and basic first-meeting conversation.",
-        "vi": "Học chào hỏi, tự giới thiệu và hội thoại cơ bản khi gặp lần đầu.",
-        "ja": "あいさつ、自己紹介、初対面での基本会話を学びます。",
-        "ko": "인사, 자기소개, 첫 만남에서의 기본 회화를 배웁니다.",
-        "zh": "学习问候、自我介绍与初次见面的基础对话。"
+        "en": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+        "vi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+        "ja": "時間帯に応じたあいさつ、自己紹介、初対面でのやり取り、知り合いへのあいさつを学びます。",
+        "ko": "시간대별 인사, 자기소개, 첫 만남, 아는 사람에게 인사하는 법을 배웁니다.",
+        "zh": "学习按时间问候、自我介绍、初次见面交流以及向熟人问候。"
       },
       "units": [
         {
           "titleByNative": {
-            "en": "Greetings and names",
-            "vi": "Chào và nói tên",
-            "ja": "あいさつと名前",
-            "ko": "인사와 이름",
-            "zh": "问候与姓名"
+            "en": "Meeting for the First Time",
+            "vi": "Làm quen lần đầu",
+            "ja": "初めて知り合う",
+            "ko": "처음 만나 인사 나누기",
+            "zh": "初次见面认识"
           },
           "lessons": [
             {
-              "order": 1
+              "order": 1,
+              "titleByNative": {
+                "en": "Greet & Introduce Yourself",
+                "vi": "Chào hỏi & tự giới thiệu",
+                "ja": "あいさつして自己紹介する",
+                "ko": "인사하고 자기소개하기",
+                "zh": "问候并自我介绍"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Greet & Introduce Yourself\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Chào hỏi & tự giới thiệu\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「あいさつして自己紹介する」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"인사하고 자기소개하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“问候并自我介绍”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Greet & Introduce Yourself\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Chào hỏi & tự giới thiệu\".",
+                "ja": "「あいさつして自己紹介する」が必要な実生活の場面。",
+                "ko": "\"인사하고 자기소개하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“问候并自我介绍”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Greet & Introduce Yourself\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Chào hỏi & tự giới thiệu\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「あいさつして自己紹介する」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"인사하고 자기소개하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“问候并自我介绍”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask the Other Person's Name",
+                "vi": "Hỏi tên người đối diện",
+                "ja": "相手の名前を聞く",
+                "ko": "상대방 이름 묻기",
+                "zh": "询问对方的名字"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask the Other Person's Name\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi tên người đối diện\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「相手の名前を聞く」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"상대방 이름 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问对方的名字”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask the Other Person's Name\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi tên người đối diện\".",
+                "ja": "「相手の名前を聞く」が必要な実生活の場面。",
+                "ko": "\"상대방 이름 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问对方的名字”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask the Other Person's Name\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi tên người đối diện\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「相手の名前を聞く」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"상대방 이름 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问对方的名字”。"
+              }
+            },
+            {
+              "order": 3,
+              "titleByNative": {
+                "en": "Respond When Introduced & Say Goodbye",
+                "vi": "Đáp làm quen & tạm biệt",
+                "ja": "自己紹介への返事とお別れのあいさつ",
+                "ko": "인사에 답하고 작별 인사하기",
+                "zh": "回应认识并道别"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Respond When Introduced & Say Goodbye\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Đáp làm quen & tạm biệt\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「自己紹介への返事とお別れのあいさつ」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"인사에 답하고 작별 인사하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“回应认识并道别”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Respond When Introduced & Say Goodbye\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Đáp làm quen & tạm biệt\".",
+                "ja": "「自己紹介への返事とお別れのあいさつ」が必要な実生活の場面。",
+                "ko": "\"인사에 답하고 작별 인사하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“回应认识并道别”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Respond When Introduced & Say Goodbye\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Đáp làm quen & tạm biệt\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「自己紹介への返事とお別れのあいさつ」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"인사에 답하고 작별 인사하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“回应认识并道别”。"
+              }
             }
           ],
           "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Meeting Someone You Already Know",
+            "vi": "Gặp lại người đã quen",
+            "ja": "知り合いに再会する",
+            "ko": "아는 사람을 다시 만나기",
+            "zh": "再次遇见认识的人"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Greet Someone You Know",
+                "vi": "Chào người đã quen",
+                "ja": "知り合いにあいさつする",
+                "ko": "아는 사람에게 인사하기",
+                "zh": "向认识的人问候"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Greet Someone You Know\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Chào người đã quen\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「知り合いにあいさつする」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"아는 사람에게 인사하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“向认识的人问候”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Greet Someone You Know\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Chào người đã quen\".",
+                "ja": "「知り合いにあいさつする」が必要な実生活の場面。",
+                "ko": "\"아는 사람에게 인사하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“向认识的人问候”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Greet Someone You Know\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Chào người đã quen\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「知り合いにあいさつする」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"아는 사람에게 인사하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“向认识的人问候”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask How Someone Is Doing & Reply",
+                "vi": "Hỏi thăm và đáp",
+                "ja": "様子を尋ねて答える",
+                "ko": "안부를 묻고 답하기",
+                "zh": "问候近况并回应"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「様子を尋ねて答える」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"안부를 묻고 답하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“问候近况并回应”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask How Someone Is Doing & Reply\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi thăm và đáp\".",
+                "ja": "「様子を尋ねて答える」が必要な実生活の場面。",
+                "ko": "\"안부를 묻고 답하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“问候近况并回应”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask How Someone Is Doing & Reply\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi thăm và đáp\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「様子を尋ねて答える」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"안부를 묻고 답하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“问候近况并回应”。"
+              }
+            }
+          ],
+          "order": 2,
           "tier": "basic"
         }
       ]
     },
     {
-      "moduleId": "daily_life_topic02_self_family",
+      "moduleId": "daily_life_m02_thanks_apology_politeness",
       "order": 2,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Myself & Family",
-        "vi": "Bản thân & gia đình",
-        "ja": "自分と家族",
-        "ko": "나와 가족",
-        "zh": "自己与家庭"
-      },
-      "goalByNative": {
-        "en": "Talk about yourself and your family.",
-        "vi": "Nói về bản thân và gia đình.",
-        "ja": "自分自身と家族について話します。",
-        "ko": "자신과 가족에 대해 이야기합니다.",
-        "zh": "谈论自己与家人。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic03_objects_demonstratives",
-      "order": 3,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Objects & Pointing Things Out",
-        "vi": "Đồ vật & chỉ định",
-        "ja": "ものと指示表現",
-        "ko": "물건과 지시 표현",
-        "zh": "物品与指示表达"
-      },
-      "goalByNative": {
-        "en": "Identify and point out everyday objects.",
-        "vi": "Gọi tên và chỉ vào các đồ vật hằng ngày.",
-        "ja": "身の回りのものを特定し、指し示します。",
-        "ko": "일상 물건을 가리키고 이름을 말합니다.",
-        "zh": "识别并指出日常物品。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic04_numbers_prices_money",
-      "order": 4,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Numbers, Prices & Money",
-        "vi": "Số đếm, giá cả, tiền",
-        "ja": "数字・値段・お金",
-        "ko": "숫자, 가격, 돈",
-        "zh": "数字、价格与金钱"
-      },
-      "goalByNative": {
-        "en": "Count, ask prices, and handle money in daily situations.",
-        "vi": "Đếm số, hỏi giá và dùng tiền trong tình huống hằng ngày.",
-        "ja": "数を数え、値段を尋ね、日常でお金を扱います。",
-        "ko": "수를 세고 가격을 묻고 일상에서 돈을 씁니다.",
-        "zh": "数数、问价并在日常情境中使用金钱。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic05_time_date",
-      "order": 5,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Time & Dates",
-        "vi": "Thời gian & ngày tháng",
-        "ja": "時間と日付",
-        "ko": "시간과 날짜",
-        "zh": "时间与日期"
-      },
-      "goalByNative": {
-        "en": "Tell time and talk about dates and schedules.",
-        "vi": "Nói giờ và nói về ngày tháng, lịch trình.",
-        "ja": "時間を言い、日付や予定について話します。",
-        "ko": "시간을 말하고 날짜와 일정에 대해 이야기합니다.",
-        "zh": "报时并谈论日期与日程。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic06_shopping",
-      "order": 6,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Shopping",
-        "vi": "Mua sắm",
-        "ja": "買い物",
-        "ko": "쇼핑",
-        "zh": "购物"
-      },
-      "goalByNative": {
-        "en": "Shop for everyday items and handle simple transactions.",
-        "vi": "Mua đồ hằng ngày và thực hiện giao dịch đơn giản.",
-        "ja": "日用品を買い、簡単な買い物のやり取りをします。",
-        "ko": "일상용품을 사고 간단한 거래를 합니다.",
-        "zh": "购买日常用品并完成简单交易。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic07_food_ordering",
-      "order": 7,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Eating & Ordering Food",
-        "vi": "Ăn uống & gọi món",
-        "ja": "食事と注文",
-        "ko": "식사와 주문",
-        "zh": "用餐与点菜"
-      },
-      "goalByNative": {
-        "en": "Order food and talk about meals.",
-        "vi": "Gọi món và nói về bữa ăn.",
-        "ja": "料理を注文し、食事について話します。",
-        "ko": "음식을 주문하고 식사에 대해 이야기합니다.",
-        "zh": "点菜并谈论用餐。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic08_directions_places",
-      "order": 8,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Directions & Places",
-        "vi": "Chỉ đường & nơi chốn",
-        "ja": "道案内と場所",
-        "ko": "길 안내와 장소",
-        "zh": "问路与地点"
-      },
-      "goalByNative": {
-        "en": "Ask for and give directions to places.",
-        "vi": "Hỏi đường và chỉ đường đến nơi cần đến.",
-        "ja": "場所への行き方を尋ね、案内します。",
-        "ko": "장소로 가는 길을 묻고 안내합니다.",
-        "zh": "问路并为他人指路。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic09_transport_trains",
-      "order": 9,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Getting Around & Trains",
-        "vi": "Đi lại & tàu điện",
-        "ja": "移動と電車",
-        "ko": "이동과 지하철",
-        "zh": "出行与电车"
-      },
-      "goalByNative": {
-        "en": "Get around by train and other everyday transport.",
-        "vi": "Đi lại bằng tàu điện và các phương tiện hằng ngày.",
-        "ja": "電車など日常の交通手段で移動します。",
-        "ko": "지하철 등 일상 교통수단으로 이동합니다.",
-        "zh": "乘坐电车等日常交通工具出行。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic10_home_daily_living",
-      "order": 10,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Home & Daily Living",
-        "vi": "Nhà cửa & đời sống hàng ngày",
-        "ja": "家と日常生活",
-        "ko": "집과 일상생활",
-        "zh": "家居与日常生活"
-      },
-      "goalByNative": {
-        "en": "Talk about your home and everyday routines.",
-        "vi": "Nói về nhà cửa và sinh hoạt hằng ngày.",
-        "ja": "自分の家や日常の暮らしについて話します。",
-        "ko": "집과 일상생활에 대해 이야기합니다.",
-        "zh": "谈论住所与日常生活。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic11_hobbies_free_time",
-      "order": 11,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Hobbies & Free Time",
-        "vi": "Sở thích & thời gian rảnh",
-        "ja": "趣味と自由時間",
-        "ko": "취미와 여가",
-        "zh": "爱好与空闲时间"
-      },
-      "goalByNative": {
-        "en": "Talk about hobbies and how you spend free time.",
-        "vi": "Nói về sở thích và cách dùng thời gian rảnh.",
-        "ja": "趣味や自由時間の過ごし方について話します。",
-        "ko": "취미와 여가 시간에 대해 이야기합니다.",
-        "zh": "谈论爱好与空闲时间的安排。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic12_meetups_invitations",
-      "order": 12,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Making Plans & Invitations",
-        "vi": "Hẹn gặp & rủ rê",
-        "ja": "約束と誘い",
-        "ko": "약속과 초대",
-        "zh": "约定与邀约"
-      },
-      "goalByNative": {
-        "en": "Make plans, invite someone, and arrange to meet.",
-        "vi": "Hẹn gặp, rủ ai đó đi cùng và sắp xếp gặp mặt.",
-        "ja": "予定を立て、人を誘い、会う約束をします。",
-        "ko": "약속을 정하고 사람을 초대하며 만남을 준비합니다.",
-        "zh": "约定计划、邀请他人并安排见面。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic13_description_feelings",
-      "order": 13,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Describing Things & Feelings",
-        "vi": "Mô tả & cảm nghĩ",
-        "ja": "描写と感想",
-        "ko": "묘사와 느낌",
-        "zh": "描述与感受"
-      },
-      "goalByNative": {
-        "en": "Describe people, things, and how you feel about them.",
-        "vi": "Mô tả người, sự vật và cảm nghĩ về chúng.",
-        "ja": "人やものを描写し、それについての感想を伝えます。",
-        "ko": "사람과 사물을 묘사하고 느낌을 말합니다.",
-        "zh": "描述人与事物并表达感受。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic14_health_problems",
-      "order": 14,
-      "levelRange": "A0–A1",
-      "levelCode": "A0",
-      "placementTag": "daily_life_basic",
-      "titleByNative": {
-        "en": "Health & When Something Goes Wrong",
-        "vi": "Sức khỏe & khi gặp vấn đề",
-        "ja": "健康とトラブル",
-        "ko": "건강과 문제 상황",
-        "zh": "健康与突发状况"
-      },
-      "goalByNative": {
-        "en": "Talk about health and handle everyday problems.",
-        "vi": "Nói về sức khỏe và xử lý các vấn đề thường gặp.",
-        "ja": "健康について話し、日常のトラブルに対応します。",
-        "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
-        "zh": "谈论健康并应对日常突发状况。"
-      },
-      "units": []
-    },
-    {
-      "moduleId": "daily_life_topic15_thanks_apology_politeness",
-      "order": 15,
       "levelRange": "A0–A1",
       "levelCode": "A0",
       "placementTag": "daily_life_basic",
@@ -562,13 +441,2847 @@
         "zh": "感谢、道歉与礼貌"
       },
       "goalByNative": {
-        "en": "Thank, apologize, and speak politely in daily situations.",
-        "vi": "Cảm ơn, xin lỗi và nói lịch sự trong tình huống hằng ngày.",
-        "ja": "感謝や謝罪を伝え、日常で丁寧に話します。",
-        "ko": "감사와 사과를 표현하고 일상에서 공손하게 말합니다.",
-        "zh": "在日常情境中表达感谢、道歉并礼貌交流。"
+        "en": "Learn to thank, apologize, ask permission, and make polite requests.",
+        "vi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+        "ja": "感謝、謝罪、許可を求めること、丁寧にお願いすることを学びます。",
+        "ko": "감사, 사과, 허락 구하기, 정중하게 부탁하는 법을 배웁니다.",
+        "zh": "学习感谢、道歉、请求许可以及礼貌地请求帮助。"
       },
-      "units": []
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Saying Thanks & Responding",
+            "vi": "Cảm ơn & đáp lại",
+            "ja": "感謝とその返事",
+            "ko": "감사 표현과 답하기",
+            "zh": "表达感谢与回应"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Thank Someone at Different Levels",
+                "vi": "Cảm ơn theo mức độ",
+                "ja": "程度に応じたお礼の言い方",
+                "ko": "정도에 따라 감사 표현하기",
+                "zh": "按程度表达感谢"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Thank Someone at Different Levels\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Cảm ơn theo mức độ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「程度に応じたお礼の言い方」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"정도에 따라 감사 표현하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“按程度表达感谢”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Thank Someone at Different Levels\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Cảm ơn theo mức độ\".",
+                "ja": "「程度に応じたお礼の言い方」が必要な実生活の場面。",
+                "ko": "\"정도에 따라 감사 표현하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“按程度表达感谢”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Thank Someone at Different Levels\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Cảm ơn theo mức độ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「程度に応じたお礼の言い方」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"정도에 따라 감사 표현하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“按程度表达感谢”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Reply When Someone Thanks You",
+                "vi": "Đáp khi được cảm ơn",
+                "ja": "お礼を言われたときの返事",
+                "ko": "감사 인사를 받았을 때 답하기",
+                "zh": "被感谢时如何回应"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Reply When Someone Thanks You\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Đáp khi được cảm ơn\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「お礼を言われたときの返事」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"감사 인사를 받았을 때 답하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“被感谢时如何回应”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Reply When Someone Thanks You\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Đáp khi được cảm ơn\".",
+                "ja": "「お礼を言われたときの返事」が必要な実生活の場面。",
+                "ko": "\"감사 인사를 받았을 때 답하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“被感谢时如何回应”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Reply When Someone Thanks You\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Đáp khi được cảm ơn\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「お礼を言われたときの返事」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"감사 인사를 받았을 때 답하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“被感谢时如何回应”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Apologizing & Asking for a Favor",
+            "vi": "Xin lỗi & nhờ vả",
+            "ja": "謝罪とお願い",
+            "ko": "사과와 부탁하기",
+            "zh": "道歉与请求帮忙"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Apologize & Ask Permission",
+                "vi": "Xin lỗi & xin phép",
+                "ja": "謝ることと許可を求めること",
+                "ko": "사과하고 허락 구하기",
+                "zh": "道歉与请求许可"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Apologize & Ask Permission\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Xin lỗi & xin phép\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「謝ることと許可を求めること」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"사과하고 허락 구하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“道歉与请求许可”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Apologize & Ask Permission\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Xin lỗi & xin phép\".",
+                "ja": "「謝ることと許可を求めること」が必要な実生活の場面。",
+                "ko": "\"사과하고 허락 구하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“道歉与请求许可”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Apologize & Ask Permission\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Xin lỗi & xin phép\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「謝ることと許可を求めること」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"사과하고 허락 구하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“道歉与请求许可”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask Someone for a Small Favor",
+                "vi": "Nhờ ai đó việc nhỏ",
+                "ja": "ちょっとしたお願いをする",
+                "ko": "작은 부탁하기",
+                "zh": "请人帮个小忙"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask Someone for a Small Favor\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nhờ ai đó việc nhỏ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「ちょっとしたお願いをする」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"작은 부탁하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“请人帮个小忙”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask Someone for a Small Favor\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nhờ ai đó việc nhỏ\".",
+                "ja": "「ちょっとしたお願いをする」が必要な実生活の場面。",
+                "ko": "\"작은 부탁하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“请人帮个小忙”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask Someone for a Small Favor\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nhờ ai đó việc nhỏ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「ちょっとしたお願いをする」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"작은 부탁하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“请人帮个小忙”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m03_self_family",
+      "order": 3,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Myself & Family",
+        "vi": "Bản thân & gia đình",
+        "ja": "自分と家族",
+        "ko": "나와 가족",
+        "zh": "自己与家庭"
+      },
+      "goalByNative": {
+        "en": "Talk about yourself, your hometown, your job, and your family.",
+        "vi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+        "ja": "自分自身、出身地、仕事、家族について話します。",
+        "ko": "자신, 고향, 직업, 가족에 대해 이야기합니다.",
+        "zh": "谈论自己、家乡、职业与家人。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Talking About Yourself",
+            "vi": "Nói về mình",
+            "ja": "自分について話す",
+            "ko": "자신에 대해 말하기",
+            "zh": "谈论自己"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Hometown & Nationality",
+                "vi": "Quê quán & quốc tịch",
+                "ja": "出身地と国籍",
+                "ko": "고향과 국적",
+                "zh": "家乡与国籍"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Hometown & Nationality\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Quê quán & quốc tịch\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「出身地と国籍」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"고향과 국적\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“家乡与国籍”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Hometown & Nationality\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Quê quán & quốc tịch\".",
+                "ja": "「出身地と国籍」が必要な実生活の場面。",
+                "ko": "\"고향과 국적\"가 필요한 실제 상황.",
+                "zh": "需要用到“家乡与国籍”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Hometown & Nationality\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Quê quán & quốc tịch\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「出身地と国籍」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"고향과 국적\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“家乡与国籍”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Job & School",
+                "vi": "Nghề nghiệp & trường lớp",
+                "ja": "仕事と学校",
+                "ko": "직업과 학교",
+                "zh": "职业与学校"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Job & School\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nghề nghiệp & trường lớp\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「仕事と学校」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"직업과 학교\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“职业与学校”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Job & School\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nghề nghiệp & trường lớp\".",
+                "ja": "「仕事と学校」が必要な実生活の場面。",
+                "ko": "\"직업과 학교\"가 필요한 실제 상황.",
+                "zh": "需要用到“职业与学校”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Job & School\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nghề nghiệp & trường lớp\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「仕事と学校」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"직업과 학교\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“职业与学校”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "My Family",
+            "vi": "Gia đình mình",
+            "ja": "自分の家族",
+            "ko": "우리 가족",
+            "zh": "我的家人"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Talk About Family Members",
+                "vi": "Kể các thành viên",
+                "ja": "家族について話す",
+                "ko": "가족 구성원 소개하기",
+                "zh": "介绍家庭成员"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Talk About Family Members\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Kể các thành viên\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「家族について話す」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"가족 구성원 소개하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“介绍家庭成员”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Talk About Family Members\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Kể các thành viên\".",
+                "ja": "「家族について話す」が必要な実生活の場面。",
+                "ko": "\"가족 구성원 소개하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“介绍家庭成员”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Talk About Family Members\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Kể các thành viên\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「家族について話す」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"가족 구성원 소개하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“介绍家庭成员”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Their Age & Occupation",
+                "vi": "Tuổi & nghề của họ",
+                "ja": "家族の年齢と仕事",
+                "ko": "가족의 나이와 직업",
+                "zh": "他们的年龄与职业"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Their Age & Occupation\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Tuổi & nghề của họ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「家族の年齢と仕事」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"가족의 나이와 직업\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“他们的年龄与职业”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Their Age & Occupation\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Tuổi & nghề của họ\".",
+                "ja": "「家族の年齢と仕事」が必要な実生活の場面。",
+                "ko": "\"가족의 나이와 직업\"가 필요한 실제 상황.",
+                "zh": "需要用到“他们的年龄与职业”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Their Age & Occupation\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Tuổi & nghề của họ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「家族の年齢と仕事」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"가족의 나이와 직업\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“他们的年龄与职业”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m04_communication_breakdown",
+      "order": 4,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "When Communication Breaks Down",
+        "vi": "Khi giao tiếp gặp trục trặc",
+        "ja": "コミュニケーションがうまくいかないとき",
+        "ko": "의사소통이 어려울 때",
+        "zh": "沟通遇到障碍时"
+      },
+      "goalByNative": {
+        "en": "Handle situations where you can't hear or understand, and ask for clarification.",
+        "vi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+        "ja": "聞こえない・分からないときの対応や、説明をお願いすることを学びます。",
+        "ko": "잘 안 들리거나 이해가 안 될 때 대처하고 설명을 요청하는 법을 배웁니다.",
+        "zh": "处理听不清或听不懂的情况，并请求解释说明。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "When You Can't Hear or Understand",
+            "vi": "Khi không nghe rõ / không hiểu",
+            "ja": "聞こえない・分からないとき",
+            "ko": "잘 안 들리거나 이해가 안 될 때",
+            "zh": "听不清或听不懂时"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask Someone to Repeat or Speak Slowly",
+                "vi": "Xin nói lại / nói chậm",
+                "ja": "もう一度言ってもらう・ゆっくり話してもらう",
+                "ko": "다시 말해달라고 하기 / 천천히 말해달라고 하기",
+                "zh": "请对方重复或说慢一点"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask Someone to Repeat or Speak Slowly\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Xin nói lại / nói chậm\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「もう一度言ってもらう・ゆっくり話してもらう」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"다시 말해달라고 하기 / 천천히 말해달라고 하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“请对方重复或说慢一点”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask Someone to Repeat or Speak Slowly\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Xin nói lại / nói chậm\".",
+                "ja": "「もう一度言ってもらう・ゆっくり話してもらう」が必要な実生活の場面。",
+                "ko": "\"다시 말해달라고 하기 / 천천히 말해달라고 하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“请对方重复或说慢一点”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask Someone to Repeat or Speak Slowly\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Xin nói lại / nói chậm\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「もう一度言ってもらう・ゆっくり話してもらう」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"다시 말해달라고 하기 / 천천히 말해달라고 하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“请对方重复或说慢一点”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Say You Don't Understand & Ask Again",
+                "vi": "Nói \"chưa hiểu\" & hỏi lại",
+                "ja": "「分かりません」と言って聞き直す",
+                "ko": "\"이해가 안 돼요\"라고 말하고 다시 묻기",
+                "zh": "说\"不明白\"并再次询问"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Say You Don't Understand & Ask Again\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nói \"chưa hiểu\" & hỏi lại\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「「分かりません」と言って聞き直す」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"\"이해가 안 돼요\"라고 말하고 다시 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“说\"不明白\"并再次询问”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Say You Don't Understand & Ask Again\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nói \"chưa hiểu\" & hỏi lại\".",
+                "ja": "「「分かりません」と言って聞き直す」が必要な実生活の場面。",
+                "ko": "\"\"이해가 안 돼요\"라고 말하고 다시 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“说\"不明白\"并再次询问”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Say You Don't Understand & Ask Again\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nói \"chưa hiểu\" & hỏi lại\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「「分かりません」と言って聞き直す」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"\"이해가 안 돼요\"라고 말하고 다시 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“说\"不明白\"并再次询问”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Asking for Clarification",
+            "vi": "Nhờ làm rõ",
+            "ja": "説明をお願いする",
+            "ko": "명확히 해달라고 부탁하기",
+            "zh": "请求解释清楚"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask What Something Means",
+                "vi": "Hỏi \"nghĩa là gì\"",
+                "ja": "「どういう意味ですか」と聞く",
+                "ko": "\"무슨 뜻이에요?\"라고 묻기",
+                "zh": "询问\"是什么意思\""
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask What Something Means\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi \"nghĩa là gì\"\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「「どういう意味ですか」と聞く」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"\"무슨 뜻이에요?\"라고 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问\"是什么意思\"”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask What Something Means\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi \"nghĩa là gì\"\".",
+                "ja": "「「どういう意味ですか」と聞く」が必要な実生活の場面。",
+                "ko": "\"\"무슨 뜻이에요?\"라고 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问\"是什么意思\"”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask What Something Means\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi \"nghĩa là gì\"\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「「どういう意味ですか」と聞く」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"\"무슨 뜻이에요?\"라고 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问\"是什么意思\"”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask Someone to Write It Down or Spell It",
+                "vi": "Xin viết ra / đánh vần",
+                "ja": "書いてもらう・スペルを教えてもらう",
+                "ko": "적어 달라고 하기 / 철자를 말해달라고 하기",
+                "zh": "请对方写下来或拼出来"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask Someone to Write It Down or Spell It\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Xin viết ra / đánh vần\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「書いてもらう・スペルを教えてもらう」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"적어 달라고 하기 / 철자를 말해달라고 하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“请对方写下来或拼出来”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask Someone to Write It Down or Spell It\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Xin viết ra / đánh vần\".",
+                "ja": "「書いてもらう・スペルを教えてもらう」が必要な実生活の場面。",
+                "ko": "\"적어 달라고 하기 / 철자를 말해달라고 하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“请对方写下来或拼出来”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask Someone to Write It Down or Spell It\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Xin viết ra / đánh vần\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「書いてもらう・スペルを教えてもらう」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"적어 달라고 하기 / 철자를 말해달라고 하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“请对方写下来或拼出来”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m05_objects_demonstratives",
+      "order": 5,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Objects & Pointing Things Out",
+        "vi": "Đồ vật & chỉ định",
+        "ja": "ものと指示表現",
+        "ko": "물건과 지시 표현",
+        "zh": "物品与指示表达"
+      },
+      "goalByNative": {
+        "en": "Point at and ask about objects, and identify who they belong to.",
+        "vi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+        "ja": "ものを指して尋ね、誰のものかを確認します。",
+        "ko": "물건을 가리키며 묻고 누구의 것인지 확인합니다.",
+        "zh": "指出并询问物品，确认物品的归属。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "What Is This?",
+            "vi": "Cái này là gì",
+            "ja": "これは何ですか",
+            "ko": "이것은 무엇인가요",
+            "zh": "这是什么"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Point & Ask About Nearby/Far Objects",
+                "vi": "Chỉ & hỏi đồ gần/xa",
+                "ja": "近く・遠くのものを指して尋ねる",
+                "ko": "가까운/먼 물건을 가리키며 묻기",
+                "zh": "指出并询问远近的物品"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Point & Ask About Nearby/Far Objects\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Chỉ & hỏi đồ gần/xa\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「近く・遠くのものを指して尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"가까운/먼 물건을 가리키며 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“指出并询问远近的物品”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Point & Ask About Nearby/Far Objects\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Chỉ & hỏi đồ gần/xa\".",
+                "ja": "「近く・遠くのものを指して尋ねる」が必要な実生活の場面。",
+                "ko": "\"가까운/먼 물건을 가리키며 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“指出并询问远近的物品”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Point & Ask About Nearby/Far Objects\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Chỉ & hỏi đồ gần/xa\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「近く・遠くのものを指して尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"가까운/먼 물건을 가리키며 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“指出并询问远近的物品”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Listen to the Answer & Confirm",
+                "vi": "Nghe đáp & xác nhận lại",
+                "ja": "答えを聞いて確認する",
+                "ko": "대답을 듣고 다시 확인하기",
+                "zh": "听懂回答并再次确认"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Listen to the Answer & Confirm\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nghe đáp & xác nhận lại\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「答えを聞いて確認する」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"대답을 듣고 다시 확인하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“听懂回答并再次确认”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Listen to the Answer & Confirm\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nghe đáp & xác nhận lại\".",
+                "ja": "「答えを聞いて確認する」が必要な実生活の場面。",
+                "ko": "\"대답을 듣고 다시 확인하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“听懂回答并再次确认”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Listen to the Answer & Confirm\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nghe đáp & xác nhận lại\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「答えを聞いて確認する」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"대답을 듣고 다시 확인하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“听懂回答并再次确认”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Whose Is This?",
+            "vi": "Đồ của ai",
+            "ja": "誰のものか",
+            "ko": "누구의 물건인가요",
+            "zh": "这是谁的东西"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Mine or Yours",
+                "vi": "Đồ của mình / của bạn",
+                "ja": "自分のもの・相手のもの",
+                "ko": "내 것 / 네 것",
+                "zh": "我的东西/你的东西"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Mine or Yours\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Đồ của mình / của bạn\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「自分のもの・相手のもの」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"내 것 / 네 것\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“我的东西/你的东西”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Mine or Yours\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Đồ của mình / của bạn\".",
+                "ja": "「自分のもの・相手のもの」が必要な実生活の場面。",
+                "ko": "\"내 것 / 네 것\"가 필요한 실제 상황.",
+                "zh": "需要用到“我的东西/你的东西”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Mine or Yours\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Đồ của mình / của bạn\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「自分のもの・相手のもの」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"내 것 / 네 것\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“我的东西/你的东西”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask & Answer About Ownership",
+                "vi": "Hỏi & đáp về sở hữu",
+                "ja": "所有について尋ねて答える",
+                "ko": "소유에 대해 묻고 답하기",
+                "zh": "询问并回答所属关系"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask & Answer About Ownership\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi & đáp về sở hữu\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「所有について尋ねて答える」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"소유에 대해 묻고 답하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问并回答所属关系”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask & Answer About Ownership\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi & đáp về sở hữu\".",
+                "ja": "「所有について尋ねて答える」が必要な実生活の場面。",
+                "ko": "\"소유에 대해 묻고 답하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问并回答所属关系”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask & Answer About Ownership\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi & đáp về sở hữu\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「所有について尋ねて答える」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"소유에 대해 묻고 답하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问并回答所属关系”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m06_numbers_prices_money",
+      "order": 6,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Numbers, Prices & Money",
+        "vi": "Số đếm, giá cả, tiền",
+        "ja": "数字・値段・お金",
+        "ko": "숫자, 가격, 돈",
+        "zh": "数字、价格与金钱"
+      },
+      "goalByNative": {
+        "en": "Count numbers, ask prices, and handle payment.",
+        "vi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+        "ja": "数を数え、値段を尋ね、支払いを行います。",
+        "ko": "숫자를 세고 가격을 물으며 결제를 처리합니다.",
+        "zh": "数数、问价并处理付款。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Counting",
+            "vi": "Số đếm",
+            "ja": "数を数える",
+            "ko": "숫자 세기",
+            "zh": "数数"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Small Numbers (1–10)",
+                "vi": "Số nhỏ (1-10)",
+                "ja": "小さい数字（1〜10）",
+                "ko": "작은 숫자 (1-10)",
+                "zh": "小数字（1-10）"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Small Numbers (1–10)\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Số nhỏ (1-10)\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「小さい数字（1〜10）」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"작은 숫자 (1-10)\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“小数字（1-10）”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Small Numbers (1–10)\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Số nhỏ (1-10)\".",
+                "ja": "「小さい数字（1〜10）」が必要な実生活の場面。",
+                "ko": "\"작은 숫자 (1-10)\"가 필요한 실제 상황.",
+                "zh": "需要用到“小数字（1-10）”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Small Numbers (1–10)\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Số nhỏ (1-10)\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「小さい数字（1〜10）」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"작은 숫자 (1-10)\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“小数字（1-10）”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Large Numbers (Tens/Hundreds/Thousands)",
+                "vi": "Số lớn (chục/trăm/nghìn)",
+                "ja": "大きい数字（十・百・千）",
+                "ko": "큰 숫자 (십/백/천)",
+                "zh": "大数字（十/百/千）"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Large Numbers (Tens/Hundreds/Thousands)\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Số lớn (chục/trăm/nghìn)\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「大きい数字（十・百・千）」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"큰 숫자 (십/백/천)\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“大数字（十/百/千）”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Large Numbers (Tens/Hundreds/Thousands)\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Số lớn (chục/trăm/nghìn)\".",
+                "ja": "「大きい数字（十・百・千）」が必要な実生活の場面。",
+                "ko": "\"큰 숫자 (십/백/천)\"가 필요한 실제 상황.",
+                "zh": "需要用到“大数字（十/百/千）”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Large Numbers (Tens/Hundreds/Thousands)\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Số lớn (chục/trăm/nghìn)\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「大きい数字（十・百・千）」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"큰 숫자 (십/백/천)\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“大数字（十/百/千）”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Asking Prices & Paying",
+            "vi": "Hỏi giá & trả tiền",
+            "ja": "値段を聞いて支払う",
+            "ko": "가격 묻고 돈 내기",
+            "zh": "问价与付款"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask How Much It Costs",
+                "vi": "Hỏi bao nhiêu tiền",
+                "ja": "いくらか尋ねる",
+                "ko": "얼마인지 묻기",
+                "zh": "询问多少钱"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask How Much It Costs\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi bao nhiêu tiền\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「いくらか尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"얼마인지 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问多少钱”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask How Much It Costs\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi bao nhiêu tiền\".",
+                "ja": "「いくらか尋ねる」が必要な実生活の場面。",
+                "ko": "\"얼마인지 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问多少钱”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask How Much It Costs\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi bao nhiêu tiền\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「いくらか尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"얼마인지 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问多少钱”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Understand the Price You Hear",
+                "vi": "Nghe hiểu giá",
+                "ja": "値段を聞き取る",
+                "ko": "가격을 듣고 이해하기",
+                "zh": "听懂价格"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Understand the Price You Hear\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nghe hiểu giá\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「値段を聞き取る」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"가격을 듣고 이해하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“听懂价格”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Understand the Price You Hear\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nghe hiểu giá\".",
+                "ja": "「値段を聞き取る」が必要な実生活の場面。",
+                "ko": "\"가격을 듣고 이해하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“听懂价格”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Understand the Price You Hear\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nghe hiểu giá\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「値段を聞き取る」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"가격을 듣고 이해하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“听懂价格”。"
+              }
+            },
+            {
+              "order": 3,
+              "titleByNative": {
+                "en": "Pay & Receive Change",
+                "vi": "Trả tiền & nhận tiền thừa",
+                "ja": "支払っておつりを受け取る",
+                "ko": "돈을 내고 거스름돈 받기",
+                "zh": "付款并收取找零"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Pay & Receive Change\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Trả tiền & nhận tiền thừa\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「支払っておつりを受け取る」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"돈을 내고 거스름돈 받기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“付款并收取找零”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Pay & Receive Change\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Trả tiền & nhận tiền thừa\".",
+                "ja": "「支払っておつりを受け取る」が必要な実生活の場面。",
+                "ko": "\"돈을 내고 거스름돈 받기\"가 필요한 실제 상황.",
+                "zh": "需要用到“付款并收取找零”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Pay & Receive Change\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Trả tiền & nhận tiền thừa\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「支払っておつりを受け取る」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"돈을 내고 거스름돈 받기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“付款并收取找零”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m07_time_date",
+      "order": 7,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Time & Dates",
+        "vi": "Thời gian & ngày tháng",
+        "ja": "時間と日付",
+        "ko": "시간과 날짜",
+        "zh": "时间与日期"
+      },
+      "goalByNative": {
+        "en": "Ask and tell the time, dates, and days of the week.",
+        "vi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+        "ja": "時間、日付、曜日を尋ねて答えます。",
+        "ko": "시간, 날짜, 요일을 묻고 답합니다.",
+        "zh": "询问并说出时间、日期与星期。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Telling Time",
+            "vi": "Giờ giấc",
+            "ja": "時間",
+            "ko": "시간",
+            "zh": "时刻"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask & Tell the Time",
+                "vi": "Hỏi & nói giờ",
+                "ja": "時間を尋ねて答える",
+                "ko": "시간 묻고 말하기",
+                "zh": "询问并说出时间"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask & Tell the Time\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi & nói giờ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「時間を尋ねて答える」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"시간 묻고 말하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问并说出时间”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask & Tell the Time\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi & nói giờ\".",
+                "ja": "「時間を尋ねて答える」が必要な実生活の場面。",
+                "ko": "\"시간 묻고 말하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问并说出时间”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask & Tell the Time\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi & nói giờ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「時間を尋ねて答える」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"시간 묻고 말하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问并说出时间”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Talk About a Duration",
+                "vi": "Nói khoảng thời gian",
+                "ja": "時間の長さについて話す",
+                "ko": "시간의 길이 말하기",
+                "zh": "谈论时间长度"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Talk About a Duration\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nói khoảng thời gian\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「時間の長さについて話す」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"시간의 길이 말하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“谈论时间长度”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Talk About a Duration\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nói khoảng thời gian\".",
+                "ja": "「時間の長さについて話す」が必要な実生活の場面。",
+                "ko": "\"시간의 길이 말하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“谈论时间长度”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Talk About a Duration\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nói khoảng thời gian\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「時間の長さについて話す」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"시간의 길이 말하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“谈论时间长度”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Dates & Weekdays",
+            "vi": "Ngày tháng & thứ",
+            "ja": "日付と曜日",
+            "ko": "날짜와 요일",
+            "zh": "日期与星期"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Days of the Week",
+                "vi": "Thứ trong tuần",
+                "ja": "曜日",
+                "ko": "요일",
+                "zh": "星期"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Days of the Week\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Thứ trong tuần\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「曜日」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"요일\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“星期”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Days of the Week\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Thứ trong tuần\".",
+                "ja": "「曜日」が必要な実生活の場面。",
+                "ko": "\"요일\"가 필요한 실제 상황.",
+                "zh": "需要用到“星期”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Days of the Week\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Thứ trong tuần\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「曜日」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"요일\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“星期”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Day & Month",
+                "vi": "Ngày & tháng",
+                "ja": "日にちと月",
+                "ko": "날짜와 월",
+                "zh": "日期与月份"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Day & Month\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Ngày & tháng\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「日にちと月」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"날짜와 월\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“日期与月份”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Day & Month\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Ngày & tháng\".",
+                "ja": "「日にちと月」が必要な実生活の場面。",
+                "ko": "\"날짜와 월\"가 필요한 실제 상황.",
+                "zh": "需要用到“日期与月份”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Day & Month\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Ngày & tháng\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「日にちと月」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"날짜와 월\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“日期与月份”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m08_shopping",
+      "order": 8,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Shopping",
+        "vi": "Mua sắm",
+        "ja": "買い物",
+        "ko": "쇼핑",
+        "zh": "购物"
+      },
+      "goalByNative": {
+        "en": "Shop at a convenience store, supermarket, and clothing store.",
+        "vi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+        "ja": "コンビニ、スーパー、洋服店で買い物をします。",
+        "ko": "편의점, 슈퍼마켓, 옷 가게에서 쇼핑합니다.",
+        "zh": "在便利店、超市和服装店购物。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Convenience Store",
+            "vi": "Cửa hàng tiện lợi",
+            "ja": "コンビニ",
+            "ko": "편의점",
+            "zh": "便利店"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Look For & Ask If They Sell It",
+                "vi": "Tìm & hỏi có bán không",
+                "ja": "探して売っているか尋ねる",
+                "ko": "찾아보고 파는지 묻기",
+                "zh": "寻找并询问是否有卖"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Look For & Ask If They Sell It\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Tìm & hỏi có bán không\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「探して売っているか尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"찾아보고 파는지 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“寻找并询问是否有卖”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Look For & Ask If They Sell It\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Tìm & hỏi có bán không\".",
+                "ja": "「探して売っているか尋ねる」が必要な実生活の場面。",
+                "ko": "\"찾아보고 파는지 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“寻找并询问是否有卖”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Look For & Ask If They Sell It\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Tìm & hỏi có bán không\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「探して売っているか尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"찾아보고 파는지 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“寻找并询问是否有卖”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Buy & Pay",
+                "vi": "Mua & thanh toán",
+                "ja": "買って支払う",
+                "ko": "구매하고 결제하기",
+                "zh": "购买并付款"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Buy & Pay\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Mua & thanh toán\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「買って支払う」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"구매하고 결제하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“购买并付款”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Buy & Pay\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Mua & thanh toán\".",
+                "ja": "「買って支払う」が必要な実生活の場面。",
+                "ko": "\"구매하고 결제하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“购买并付款”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Buy & Pay\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Mua & thanh toán\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「買って支払う」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"구매하고 결제하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“购买并付款”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Supermarket",
+            "vi": "Siêu thị",
+            "ja": "スーパー",
+            "ko": "슈퍼마켓",
+            "zh": "超市"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask Where an Item Is",
+                "vi": "Hỏi đồ ở đâu",
+                "ja": "商品がどこにあるか尋ねる",
+                "ko": "물건이 어디 있는지 묻기",
+                "zh": "询问商品位置"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask Where an Item Is\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi đồ ở đâu\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「商品がどこにあるか尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"물건이 어디 있는지 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问商品位置”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask Where an Item Is\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi đồ ở đâu\".",
+                "ja": "「商品がどこにあるか尋ねる」が必要な実生活の場面。",
+                "ko": "\"물건이 어디 있는지 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问商品位置”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask Where an Item Is\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi đồ ở đâu\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「商品がどこにあるか尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"물건이 어디 있는지 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问商品位置”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask About Quantity or Weight",
+                "vi": "Hỏi số lượng / cân đo",
+                "ja": "数量や重さを尋ねる",
+                "ko": "수량이나 무게 묻기",
+                "zh": "询问数量或重量"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask About Quantity or Weight\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi số lượng / cân đo\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「数量や重さを尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"수량이나 무게 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问数量或重量”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask About Quantity or Weight\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi số lượng / cân đo\".",
+                "ja": "「数量や重さを尋ねる」が必要な実生活の場面。",
+                "ko": "\"수량이나 무게 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问数量或重量”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask About Quantity or Weight\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi số lượng / cân đo\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「数量や重さを尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"수량이나 무게 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问数量或重量”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Clothing Store",
+            "vi": "Cửa hàng quần áo",
+            "ja": "洋服店",
+            "ko": "옷 가게",
+            "zh": "服装店"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask About Size & Color",
+                "vi": "Hỏi size & màu",
+                "ja": "サイズと色を尋ねる",
+                "ko": "사이즈와 색상 묻기",
+                "zh": "询问尺码与颜色"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask About Size & Color\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi size & màu\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「サイズと色を尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"사이즈와 색상 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问尺码与颜色”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask About Size & Color\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi size & màu\".",
+                "ja": "「サイズと色を尋ねる」が必要な実生活の場面。",
+                "ko": "\"사이즈와 색상 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问尺码与颜色”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask About Size & Color\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi size & màu\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「サイズと色を尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"사이즈와 색상 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问尺码与颜色”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask to Try It On",
+                "vi": "Xin thử đồ",
+                "ja": "試着をお願いする",
+                "ko": "입어봐도 되는지 묻기",
+                "zh": "请求试穿"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask to Try It On\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Xin thử đồ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「試着をお願いする」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"입어봐도 되는지 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“请求试穿”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask to Try It On\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Xin thử đồ\".",
+                "ja": "「試着をお願いする」が必要な実生活の場面。",
+                "ko": "\"입어봐도 되는지 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“请求试穿”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask to Try It On\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Xin thử đồ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「試着をお願いする」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"입어봐도 되는지 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“请求试穿”。"
+              }
+            },
+            {
+              "order": 3,
+              "titleByNative": {
+                "en": "Decide Whether to Buy",
+                "vi": "Quyết mua hay không",
+                "ja": "買うかどうか決める",
+                "ko": "살지 말지 결정하기",
+                "zh": "决定是否购买"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Decide Whether to Buy\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Quyết mua hay không\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「買うかどうか決める」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"살지 말지 결정하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“决定是否购买”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Decide Whether to Buy\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Quyết mua hay không\".",
+                "ja": "「買うかどうか決める」が必要な実生活の場面。",
+                "ko": "\"살지 말지 결정하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“决定是否购买”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Decide Whether to Buy\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Quyết mua hay không\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「買うかどうか決める」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"살지 말지 결정하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“决定是否购买”。"
+              }
+            }
+          ],
+          "order": 3,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m09_food_ordering",
+      "order": 9,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Eating & Ordering Food",
+        "vi": "Ăn uống & gọi món",
+        "ja": "食事と注文",
+        "ko": "식사와 주문",
+        "zh": "用餐与点菜"
+      },
+      "goalByNative": {
+        "en": "Order food at a restaurant and talk about food preferences.",
+        "vi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+        "ja": "お店で注文し、料理の好みについて話します。",
+        "ko": "식당에서 주문하고 음식 취향에 대해 이야기합니다.",
+        "zh": "在餐厅点菜并谈论饮食喜好。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Ordering at a Restaurant",
+            "vi": "Gọi món ở quán",
+            "ja": "お店で注文する",
+            "ko": "식당에서 주문하기",
+            "zh": "在餐厅点菜"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask for a Menu & Order",
+                "vi": "Xin menu & gọi món",
+                "ja": "メニューをもらって注文する",
+                "ko": "메뉴판 요청하고 주문하기",
+                "zh": "索要菜单并点菜"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask for a Menu & Order\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Xin menu & gọi món\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「メニューをもらって注文する」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"메뉴판 요청하고 주문하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“索要菜单并点菜”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask for a Menu & Order\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Xin menu & gọi món\".",
+                "ja": "「メニューをもらって注文する」が必要な実生活の場面。",
+                "ko": "\"메뉴판 요청하고 주문하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“索要菜单并点菜”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask for a Menu & Order\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Xin menu & gọi món\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「メニューをもらって注文する」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"메뉴판 요청하고 주문하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“索要菜单并点菜”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Order More or Change an Order",
+                "vi": "Gọi thêm / thay đổi",
+                "ja": "追加注文・注文の変更",
+                "ko": "추가 주문 / 주문 변경하기",
+                "zh": "加点或更改点单"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Order More or Change an Order\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Gọi thêm / thay đổi\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「追加注文・注文の変更」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"추가 주문 / 주문 변경하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“加点或更改点单”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Order More or Change an Order\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Gọi thêm / thay đổi\".",
+                "ja": "「追加注文・注文の変更」が必要な実生活の場面。",
+                "ko": "\"추가 주문 / 주문 변경하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“加点或更改点单”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Order More or Change an Order\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Gọi thêm / thay đổi\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「追加注文・注文の変更」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"추가 주문 / 주문 변경하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“加点或更改点单”。"
+              }
+            },
+            {
+              "order": 3,
+              "titleByNative": {
+                "en": "Ask for the Bill",
+                "vi": "Xin tính tiền",
+                "ja": "お会計をお願いする",
+                "ko": "계산 요청하기",
+                "zh": "请求结账"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask for the Bill\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Xin tính tiền\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「お会計をお願いする」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"계산 요청하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“请求结账”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask for the Bill\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Xin tính tiền\".",
+                "ja": "「お会計をお願いする」が必要な実生活の場面。",
+                "ko": "\"계산 요청하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“请求结账”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask for the Bill\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Xin tính tiền\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「お会計をお願いする」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"계산 요청하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“请求结账”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Talking About Food",
+            "vi": "Nói về món ăn",
+            "ja": "料理について話す",
+            "ko": "음식에 대해 말하기",
+            "zh": "谈论食物"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Like or Dislike",
+                "vi": "Thích / không thích",
+                "ja": "好き・嫌い",
+                "ko": "좋아함 / 싫어함",
+                "zh": "喜欢/不喜欢"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Like or Dislike\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Thích / không thích\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「好き・嫌い」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"좋아함 / 싫어함\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“喜欢/不喜欢”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Like or Dislike\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Thích / không thích\".",
+                "ja": "「好き・嫌い」が必要な実生活の場面。",
+                "ko": "\"좋아함 / 싫어함\"가 필요한 실제 상황.",
+                "zh": "需要用到“喜欢/不喜欢”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Like or Dislike\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Thích / không thích\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「好き・嫌い」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"좋아함 / 싫어함\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“喜欢/不喜欢”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask What a Dish Is or If It's Spicy",
+                "vi": "Hỏi món này là gì / có cay không",
+                "ja": "この料理は何か・辛いかを尋ねる",
+                "ko": "이 음식이 무엇인지 / 매운지 묻기",
+                "zh": "询问这是什么菜/是否辣"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask What a Dish Is or If It's Spicy\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi món này là gì / có cay không\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「この料理は何か・辛いかを尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"이 음식이 무엇인지 / 매운지 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问这是什么菜/是否辣”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask What a Dish Is or If It's Spicy\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi món này là gì / có cay không\".",
+                "ja": "「この料理は何か・辛いかを尋ねる」が必要な実生活の場面。",
+                "ko": "\"이 음식이 무엇인지 / 매운지 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问这是什么菜/是否辣”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask What a Dish Is or If It's Spicy\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi món này là gì / có cay không\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「この料理は何か・辛いかを尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"이 음식이 무엇인지 / 매운지 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问这是什么菜/是否辣”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m10_directions_places",
+      "order": 10,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Directions & Places",
+        "vi": "Chỉ đường & nơi chốn",
+        "ja": "道案内と場所",
+        "ko": "길 안내와 장소",
+        "zh": "问路与地点"
+      },
+      "goalByNative": {
+        "en": "Ask for directions, understand directions, and find nearby places.",
+        "vi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+        "ja": "道を尋ね、案内を理解し、近くの場所を探します。",
+        "ko": "길을 묻고 안내를 이해하며 근처 장소를 찾습니다.",
+        "zh": "问路、听懂指路并寻找附近地点。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Asking for Directions",
+            "vi": "Hỏi đường",
+            "ja": "道を尋ねる",
+            "ko": "길 묻기",
+            "zh": "问路"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask \"Where Is X?\"",
+                "vi": "Hỏi \"X ở đâu\"",
+                "ja": "「Xはどこですか」と尋ねる",
+                "ko": "\"X는 어디에 있어요?\" 묻기",
+                "zh": "询问\"X在哪里\""
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask \"Where Is X?\"\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi \"X ở đâu\"\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「「Xはどこですか」と尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"\"X는 어디에 있어요?\" 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问\"X在哪里\"”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask \"Where Is X?\"\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi \"X ở đâu\"\".",
+                "ja": "「「Xはどこですか」と尋ねる」が必要な実生活の場面。",
+                "ko": "\"\"X는 어디에 있어요?\" 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问\"X在哪里\"”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask \"Where Is X?\"\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi \"X ở đâu\"\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「「Xはどこですか」と尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"\"X는 어디에 있어요?\" 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问\"X在哪里\"”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Understand Directions",
+                "vi": "Nghe hiểu chỉ dẫn",
+                "ja": "案内を聞き取る",
+                "ko": "안내를 듣고 이해하기",
+                "zh": "听懂指路"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Understand Directions\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nghe hiểu chỉ dẫn\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「案内を聞き取る」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"안내를 듣고 이해하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“听懂指路”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Understand Directions\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nghe hiểu chỉ dẫn\".",
+                "ja": "「案内を聞き取る」が必要な実生活の場面。",
+                "ko": "\"안내를 듣고 이해하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“听懂指路”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Understand Directions\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nghe hiểu chỉ dẫn\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「案内を聞き取る」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"안내를 듣고 이해하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“听懂指路”。"
+              }
+            },
+            {
+              "order": 3,
+              "titleByNative": {
+                "en": "Confirm When Not Sure",
+                "vi": "Xác nhận lại khi chưa rõ",
+                "ja": "分からないときに確認し直す",
+                "ko": "확실하지 않을 때 다시 확인하기",
+                "zh": "不确定时再次确认"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Confirm When Not Sure\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Xác nhận lại khi chưa rõ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「分からないときに確認し直す」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"확실하지 않을 때 다시 확인하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“不确定时再次确认”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Confirm When Not Sure\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Xác nhận lại khi chưa rõ\".",
+                "ja": "「分からないときに確認し直す」が必要な実生活の場面。",
+                "ko": "\"확실하지 않을 때 다시 확인하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“不确定时再次确认”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Confirm When Not Sure\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Xác nhận lại khi chưa rõ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「分からないときに確認し直す」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"확실하지 않을 때 다시 확인하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“不确定时再次确认”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Finding Nearby Places",
+            "vi": "Tìm nơi gần đây",
+            "ja": "近くの場所を探す",
+            "ko": "근처 장소 찾기",
+            "zh": "寻找附近的地方"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask \"Is There a ... Nearby?\"",
+                "vi": "Hỏi \"gần đây có... không\"",
+                "ja": "「近くに〜はありますか」と尋ねる",
+                "ko": "\"근처에 ~있어요?\" 묻기",
+                "zh": "询问\"附近有没有...\""
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask \"Is There a ... Nearby?\"\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi \"gần đây có... không\"\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「「近くに〜はありますか」と尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"\"근처에 ~있어요?\" 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问\"附近有没有...\"”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask \"Is There a ... Nearby?\"\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi \"gần đây có... không\"\".",
+                "ja": "「「近くに〜はありますか」と尋ねる」が必要な実生活の場面。",
+                "ko": "\"\"근처에 ~있어요?\" 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问\"附近有没有...\"”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask \"Is There a ... Nearby?\"\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi \"gần đây có... không\"\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「「近くに〜はありますか」と尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"\"근처에 ~있어요?\" 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问\"附近有没有...\"”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask How Far or How Long",
+                "vi": "Hỏi xa/gần, bao lâu",
+                "ja": "遠さ・近さ、かかる時間を尋ねる",
+                "ko": "얼마나 멀고 가까운지, 얼마나 걸리는지 묻기",
+                "zh": "询问远近与所需时间"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask How Far or How Long\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi xa/gần, bao lâu\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「遠さ・近さ、かかる時間を尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"얼마나 멀고 가까운지, 얼마나 걸리는지 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问远近与所需时间”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask How Far or How Long\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi xa/gần, bao lâu\".",
+                "ja": "「遠さ・近さ、かかる時間を尋ねる」が必要な実生活の場面。",
+                "ko": "\"얼마나 멀고 가까운지, 얼마나 걸리는지 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问远近与所需时间”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask How Far or How Long\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi xa/gần, bao lâu\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「遠さ・近さ、かかる時間を尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"얼마나 멀고 가까운지, 얼마나 걸리는지 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问远近与所需时间”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m11_transport_trains",
+      "order": 11,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Getting Around & Trains",
+        "vi": "Đi lại & tàu điện",
+        "ja": "移動と電車",
+        "ko": "이동과 지하철",
+        "zh": "出行与电车"
+      },
+      "goalByNative": {
+        "en": "Take the train, bus, or taxi, and ask about times and prices.",
+        "vi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+        "ja": "電車・バス・タクシーを利用し、時刻や料金を尋ねます。",
+        "ko": "지하철, 버스, 택시를 이용하고 시간과 요금을 묻습니다.",
+        "zh": "乘坐电车、公交车、出租车并询问时间与价格。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Train / Bus",
+            "vi": "Tàu / xe buýt",
+            "ja": "電車・バス",
+            "ko": "지하철 / 버스",
+            "zh": "电车/公交车"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Buy a Ticket & Ask the Price",
+                "vi": "Mua vé & hỏi giá",
+                "ja": "切符を買って値段を尋ねる",
+                "ko": "표 사고 가격 묻기",
+                "zh": "买票并询问价格"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Buy a Ticket & Ask the Price\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Mua vé & hỏi giá\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「切符を買って値段を尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"표 사고 가격 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“买票并询问价格”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Buy a Ticket & Ask the Price\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Mua vé & hỏi giá\".",
+                "ja": "「切符を買って値段を尋ねる」が必要な実生活の場面。",
+                "ko": "\"표 사고 가격 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“买票并询问价格”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Buy a Ticket & Ask the Price\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Mua vé & hỏi giá\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「切符を買って値段を尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"표 사고 가격 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“买票并询问价格”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask Which Line Goes There",
+                "vi": "Hỏi tuyến nào tới nơi",
+                "ja": "どの路線で行けるか尋ねる",
+                "ko": "어느 노선으로 가는지 묻기",
+                "zh": "询问乘哪条线路到达"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask Which Line Goes There\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi tuyến nào tới nơi\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「どの路線で行けるか尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"어느 노선으로 가는지 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问乘哪条线路到达”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask Which Line Goes There\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi tuyến nào tới nơi\".",
+                "ja": "「どの路線で行けるか尋ねる」が必要な実生活の場面。",
+                "ko": "\"어느 노선으로 가는지 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问乘哪条线路到达”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask Which Line Goes There\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi tuyến nào tới nơi\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「どの路線で行けるか尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"어느 노선으로 가는지 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问乘哪条线路到达”。"
+              }
+            },
+            {
+              "order": 3,
+              "titleByNative": {
+                "en": "Ask About Times & Where to Get On/Off",
+                "vi": "Hỏi giờ & nơi lên xuống",
+                "ja": "時刻と乗り降りする場所を尋ねる",
+                "ko": "시간과 승하차 장소 묻기",
+                "zh": "询问时间与上下车地点"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask About Times & Where to Get On/Off\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi giờ & nơi lên xuống\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「時刻と乗り降りする場所を尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"시간과 승하차 장소 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问时间与上下车地点”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask About Times & Where to Get On/Off\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi giờ & nơi lên xuống\".",
+                "ja": "「時刻と乗り降りする場所を尋ねる」が必要な実生活の場面。",
+                "ko": "\"시간과 승하차 장소 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问时间与上下车地点”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask About Times & Where to Get On/Off\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi giờ & nơi lên xuống\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「時刻と乗り降りする場所を尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"시간과 승하차 장소 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问时间与上下车地点”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Taxi",
+            "vi": "Taxi",
+            "ja": "タクシー",
+            "ko": "택시",
+            "zh": "出租车"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Say Your Destination",
+                "vi": "Nói điểm đến",
+                "ja": "行き先を伝える",
+                "ko": "목적지 말하기",
+                "zh": "说出目的地"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Say Your Destination\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nói điểm đến\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「行き先を伝える」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"목적지 말하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“说出目的地”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Say Your Destination\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nói điểm đến\".",
+                "ja": "「行き先を伝える」が必要な実生活の場面。",
+                "ko": "\"목적지 말하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“说出目的地”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Say Your Destination\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nói điểm đến\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「行き先を伝える」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"목적지 말하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“说出目的地”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask How Long or How Much",
+                "vi": "Hỏi bao lâu / bao nhiêu tiền",
+                "ja": "かかる時間や料金を尋ねる",
+                "ko": "얼마나 걸리는지 / 얼마인지 묻기",
+                "zh": "询问需要多久/多少钱"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask How Long or How Much\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi bao lâu / bao nhiêu tiền\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「かかる時間や料金を尋ねる」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"얼마나 걸리는지 / 얼마인지 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问需要多久/多少钱”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask How Long or How Much\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi bao lâu / bao nhiêu tiền\".",
+                "ja": "「かかる時間や料金を尋ねる」が必要な実生活の場面。",
+                "ko": "\"얼마나 걸리는지 / 얼마인지 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问需要多久/多少钱”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask How Long or How Much\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi bao lâu / bao nhiêu tiền\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「かかる時間や料金を尋ねる」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"얼마나 걸리는지 / 얼마인지 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问需要多久/多少钱”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m12_home_daily_living",
+      "order": 12,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Home & Daily Living",
+        "vi": "Nhà cửa & đời sống hàng ngày",
+        "ja": "家と日常生活",
+        "ko": "집과 일상생활",
+        "zh": "家居与日常生活"
+      },
+      "goalByNative": {
+        "en": "Talk about your home and daily routines.",
+        "vi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+        "ja": "住まいと日常生活について話します。",
+        "ko": "거주지와 일상생활에 대해 이야기합니다.",
+        "zh": "谈论住所与日常生活。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Talking About Your Home",
+            "vi": "Nói về nhà mình",
+            "ja": "自分の家について話す",
+            "ko": "우리 집에 대해 말하기",
+            "zh": "谈论自己的家"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Where You Live & What Kind of Home",
+                "vi": "Sống ở đâu / kiểu nhà gì",
+                "ja": "どこに住んでいるか・どんな家か",
+                "ko": "어디에 사는지 / 어떤 집인지",
+                "zh": "住在哪里/什么样的房子"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Where You Live & What Kind of Home\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Sống ở đâu / kiểu nhà gì\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「どこに住んでいるか・どんな家か」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"어디에 사는지 / 어떤 집인지\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“住在哪里/什么样的房子”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Where You Live & What Kind of Home\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Sống ở đâu / kiểu nhà gì\".",
+                "ja": "「どこに住んでいるか・どんな家か」が必要な実生活の場面。",
+                "ko": "\"어디에 사는지 / 어떤 집인지\"가 필요한 실제 상황.",
+                "zh": "需要用到“住在哪里/什么样的房子”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Where You Live & What Kind of Home\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Sống ở đâu / kiểu nhà gì\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「どこに住んでいるか・どんな家か」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"어디에 사는지 / 어떤 집인지\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“住在哪里/什么样的房子”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Describe Rooms & Things in Your Home",
+                "vi": "Kể phòng & đồ trong nhà",
+                "ja": "部屋や家にあるものを説明する",
+                "ko": "방과 집안 물건 설명하기",
+                "zh": "介绍房间与家中物品"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Describe Rooms & Things in Your Home\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Kể phòng & đồ trong nhà\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「部屋や家にあるものを説明する」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"방과 집안 물건 설명하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“介绍房间与家中物品”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Describe Rooms & Things in Your Home\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Kể phòng & đồ trong nhà\".",
+                "ja": "「部屋や家にあるものを説明する」が必要な実生活の場面。",
+                "ko": "\"방과 집안 물건 설명하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“介绍房间与家中物品”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Describe Rooms & Things in Your Home\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Kể phòng & đồ trong nhà\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「部屋や家にあるものを説明する」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"방과 집안 물건 설명하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“介绍房间与家中物品”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "A Typical Day",
+            "vi": "Sinh hoạt một ngày",
+            "ja": "一日の生活",
+            "ko": "하루 일과",
+            "zh": "一天的生活"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Morning & Evening Routines",
+                "vi": "Việc sáng / tối",
+                "ja": "朝と夜にすること",
+                "ko": "아침/저녁 일과",
+                "zh": "早晚活动"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Morning & Evening Routines\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Việc sáng / tối\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「朝と夜にすること」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"아침/저녁 일과\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“早晚活动”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Morning & Evening Routines\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Việc sáng / tối\".",
+                "ja": "「朝と夜にすること」が必要な実生活の場面。",
+                "ko": "\"아침/저녁 일과\"가 필요한 실제 상황.",
+                "zh": "需要用到“早晚活动”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Morning & Evening Routines\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Việc sáng / tối\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「朝と夜にすること」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"아침/저녁 일과\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“早晚活动”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "What You Do at What Time",
+                "vi": "Mấy giờ làm gì",
+                "ja": "何時に何をするか",
+                "ko": "몇 시에 무엇을 하는지",
+                "zh": "几点做什么"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"What You Do at What Time\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Mấy giờ làm gì\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「何時に何をするか」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"몇 시에 무엇을 하는지\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“几点做什么”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"What You Do at What Time\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Mấy giờ làm gì\".",
+                "ja": "「何時に何をするか」が必要な実生活の場面。",
+                "ko": "\"몇 시에 무엇을 하는지\"가 필요한 실제 상황.",
+                "zh": "需要用到“几点做什么”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"What You Do at What Time\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Mấy giờ làm gì\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「何時に何をするか」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"몇 시에 무엇을 하는지\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“几点做什么”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m13_hobbies_free_time",
+      "order": 13,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Hobbies & Free Time",
+        "vi": "Sở thích & thời gian rảnh",
+        "ja": "趣味と自由時間",
+        "ko": "취미와 여가",
+        "zh": "爱好与空闲时间"
+      },
+      "goalByNative": {
+        "en": "Talk about hobbies and how you spend free time and weekends.",
+        "vi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+        "ja": "趣味や自由時間・週末の過ごし方について話します。",
+        "ko": "취미와 여가·주말을 보내는 방법에 대해 이야기합니다.",
+        "zh": "谈论爱好以及空闲时间与周末的安排。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Talking About Hobbies",
+            "vi": "Nói sở thích",
+            "ja": "趣味について話す",
+            "ko": "취미에 대해 말하기",
+            "zh": "谈论爱好"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "What You Like Doing in Your Free Time",
+                "vi": "Thích làm gì lúc rảnh",
+                "ja": "暇なときに何をするのが好きか",
+                "ko": "여가 시간에 좋아하는 일",
+                "zh": "空闲时喜欢做什么"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"What You Like Doing in Your Free Time\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Thích làm gì lúc rảnh\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「暇なときに何をするのが好きか」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"여가 시간에 좋아하는 일\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“空闲时喜欢做什么”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"What You Like Doing in Your Free Time\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Thích làm gì lúc rảnh\".",
+                "ja": "「暇なときに何をするのが好きか」が必要な実生活の場面。",
+                "ko": "\"여가 시간에 좋아하는 일\"가 필요한 실제 상황.",
+                "zh": "需要用到“空闲时喜欢做什么”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"What You Like Doing in Your Free Time\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Thích làm gì lúc rảnh\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「暇なときに何をするのが好きか」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"여가 시간에 좋아하는 일\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“空闲时喜欢做什么”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "How Often (Often / Sometimes)",
+                "vi": "Mức độ (hay / thỉnh thoảng)",
+                "ja": "頻度（よく・時々）",
+                "ko": "빈도 (자주/가끔)",
+                "zh": "频率（经常/偶尔）"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"How Often (Often / Sometimes)\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Mức độ (hay / thỉnh thoảng)\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「頻度（よく・時々）」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"빈도 (자주/가끔)\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“频率（经常/偶尔）”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"How Often (Often / Sometimes)\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Mức độ (hay / thỉnh thoảng)\".",
+                "ja": "「頻度（よく・時々）」が必要な実生活の場面。",
+                "ko": "\"빈도 (자주/가끔)\"가 필요한 실제 상황.",
+                "zh": "需要用到“频率（经常/偶尔）”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"How Often (Often / Sometimes)\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Mức độ (hay / thỉnh thoảng)\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「頻度（よく・時々）」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"빈도 (자주/가끔)\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“频率（经常/偶尔）”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Talking About the Weekend",
+            "vi": "Nói về cuối tuần",
+            "ja": "週末について話す",
+            "ko": "주말에 대해 말하기",
+            "zh": "谈论周末"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Tell What You Did on the Weekend",
+                "vi": "Kể cuối tuần làm gì",
+                "ja": "週末にしたことを話す",
+                "ko": "주말에 한 일 이야기하기",
+                "zh": "讲述周末做的事"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Tell What You Did on the Weekend\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Kể cuối tuần làm gì\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「週末にしたことを話す」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"주말에 한 일 이야기하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“讲述周末做的事”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Tell What You Did on the Weekend\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Kể cuối tuần làm gì\".",
+                "ja": "「週末にしたことを話す」が必要な実生活の場面。",
+                "ko": "\"주말에 한 일 이야기하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“讲述周末做的事”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Tell What You Did on the Weekend\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Kể cuối tuần làm gì\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「週末にしたことを話す」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"주말에 한 일 이야기하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“讲述周末做的事”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Ask & Answer About Plans",
+                "vi": "Hỏi & đáp kế hoạch",
+                "ja": "予定について尋ねて答える",
+                "ko": "계획 묻고 답하기",
+                "zh": "询问并回答计划"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask & Answer About Plans\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Hỏi & đáp kế hoạch\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「予定について尋ねて答える」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"계획 묻고 답하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“询问并回答计划”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask & Answer About Plans\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Hỏi & đáp kế hoạch\".",
+                "ja": "「予定について尋ねて答える」が必要な実生活の場面。",
+                "ko": "\"계획 묻고 답하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“询问并回答计划”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask & Answer About Plans\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Hỏi & đáp kế hoạch\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「予定について尋ねて答える」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"계획 묻고 답하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“询问并回答计划”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m14_meetups_invitations",
+      "order": 14,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Making Plans & Invitations",
+        "vi": "Hẹn gặp & rủ rê",
+        "ja": "約束と誘い",
+        "ko": "약속과 초대",
+        "zh": "约定与邀约"
+      },
+      "goalByNative": {
+        "en": "Invite someone out, confirm plans, and handle rescheduling.",
+        "vi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+        "ja": "人を誘い、約束を決め、変更にも対応します。",
+        "ko": "사람을 초대하고 약속을 정하며 일정 변경에도 대응합니다.",
+        "zh": "邀请他人、确定约会并处理改期。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Inviting Someone Out",
+            "vi": "Rủ đi chơi",
+            "ja": "遊びに誘う",
+            "ko": "놀러 가자고 하기",
+            "zh": "邀请出去玩"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask \"Do You Want to Go...?\"",
+                "vi": "Rủ \"đi... không?\"",
+                "ja": "「〜に行きませんか」と誘う",
+                "ko": "\"~하러 갈래요?\" 묻기",
+                "zh": "邀约\"要不要一起去...\""
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask \"Do You Want to Go...?\"\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Rủ \"đi... không?\"\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「「〜に行きませんか」と誘う」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"\"~하러 갈래요?\" 묻기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“邀约\"要不要一起去...\"”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask \"Do You Want to Go...?\"\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Rủ \"đi... không?\"\".",
+                "ja": "「「〜に行きませんか」と誘う」が必要な実生活の場面。",
+                "ko": "\"\"~하러 갈래요?\" 묻기\"가 필요한 실제 상황.",
+                "zh": "需要用到“邀约\"要不要一起去...\"”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask \"Do You Want to Go...?\"\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Rủ \"đi... không?\"\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「「〜に行きませんか」と誘う」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"\"~하러 갈래요?\" 묻기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“邀约\"要不要一起去...\"”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Accept or Politely Decline",
+                "vi": "Nhận / từ chối khéo",
+                "ja": "受ける・上手に断る",
+                "ko": "수락하거나 정중히 거절하기",
+                "zh": "接受或委婉拒绝"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Accept or Politely Decline\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nhận / từ chối khéo\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「受ける・上手に断る」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"수락하거나 정중히 거절하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“接受或委婉拒绝”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Accept or Politely Decline\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nhận / từ chối khéo\".",
+                "ja": "「受ける・上手に断る」が必要な実生活の場面。",
+                "ko": "\"수락하거나 정중히 거절하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“接受或委婉拒绝”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Accept or Politely Decline\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nhận / từ chối khéo\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「受ける・上手に断る」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"수락하거나 정중히 거절하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“接受或委婉拒绝”。"
+              }
+            },
+            {
+              "order": 3,
+              "titleByNative": {
+                "en": "Confirm Time & Place",
+                "vi": "Chốt giờ & chỗ",
+                "ja": "時間と場所を決める",
+                "ko": "시간과 장소 정하기",
+                "zh": "确定时间与地点"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Confirm Time & Place\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Chốt giờ & chỗ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「時間と場所を決める」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"시간과 장소 정하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“确定时间与地点”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Confirm Time & Place\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Chốt giờ & chỗ\".",
+                "ja": "「時間と場所を決める」が必要な実生活の場面。",
+                "ko": "\"시간과 장소 정하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“确定时间与地点”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Confirm Time & Place\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Chốt giờ & chỗ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「時間と場所を決める」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"시간과 장소 정하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“确定时间与地点”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Changing Plans",
+            "vi": "Đổi hẹn",
+            "ja": "約束の変更",
+            "ko": "약속 변경하기",
+            "zh": "更改约定"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask to Reschedule or Postpone",
+                "vi": "Xin đổi / hoãn",
+                "ja": "変更や延期をお願いする",
+                "ko": "변경/연기 요청하기",
+                "zh": "请求改期或延后"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask to Reschedule or Postpone\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Xin đổi / hoãn\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「変更や延期をお願いする」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"변경/연기 요청하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“请求改期或延后”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask to Reschedule or Postpone\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Xin đổi / hoãn\".",
+                "ja": "「変更や延期をお願いする」が必要な実生活の場面。",
+                "ko": "\"변경/연기 요청하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“请求改期或延后”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask to Reschedule or Postpone\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Xin đổi / hoãn\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「変更や延期をお願いする」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"변경/연기 요청하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“请求改期或延后”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Apologize for Being Late",
+                "vi": "Xin lỗi đến muộn",
+                "ja": "遅刻を謝る",
+                "ko": "늦은 것에 대해 사과하기",
+                "zh": "为迟到道歉"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Apologize for Being Late\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Xin lỗi đến muộn\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「遅刻を謝る」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"늦은 것에 대해 사과하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“为迟到道歉”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Apologize for Being Late\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Xin lỗi đến muộn\".",
+                "ja": "「遅刻を謝る」が必要な実生活の場面。",
+                "ko": "\"늦은 것에 대해 사과하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“为迟到道歉”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Apologize for Being Late\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Xin lỗi đến muộn\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「遅刻を謝る」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"늦은 것에 대해 사과하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“为迟到道歉”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m15_description_feelings",
+      "order": 15,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Describing Things & Feelings",
+        "vi": "Mô tả & cảm nghĩ",
+        "ja": "描写と感想",
+        "ko": "묘사와 느낌",
+        "zh": "描述与感受"
+      },
+      "goalByNative": {
+        "en": "Describe objects and places, and express simple feelings.",
+        "vi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+        "ja": "ものや場所を描写し、簡単な感想を伝えます。",
+        "ko": "물건과 장소를 묘사하고 간단한 느낌을 말합니다.",
+        "zh": "描述物品与地点并表达简单感受。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Describing Objects & Places",
+            "vi": "Tả đồ vật / nơi chốn",
+            "ja": "ものや場所を描写する",
+            "ko": "물건과 장소 묘사하기",
+            "zh": "描述物品与地点"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Big/Small, New/Old, Pretty",
+                "vi": "To/nhỏ, mới/cũ, đẹp",
+                "ja": "大きい・小さい、新しい・古い、きれい",
+                "ko": "크다/작다, 새것/헌것, 예쁘다",
+                "zh": "大/小、新/旧、漂亮"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Big/Small, New/Old, Pretty\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"To/nhỏ, mới/cũ, đẹp\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「大きい・小さい、新しい・古い、きれい」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"크다/작다, 새것/헌것, 예쁘다\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“大/小、新/旧、漂亮”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Big/Small, New/Old, Pretty\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"To/nhỏ, mới/cũ, đẹp\".",
+                "ja": "「大きい・小さい、新しい・古い、きれい」が必要な実生活の場面。",
+                "ko": "\"크다/작다, 새것/헌것, 예쁘다\"가 필요한 실제 상황.",
+                "zh": "需要用到“大/小、新/旧、漂亮”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Big/Small, New/Old, Pretty\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"To/nhỏ, mới/cũ, đẹp\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「大きい・小さい、新しい・古い、きれい」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"크다/작다, 새것/헌것, 예쁘다\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“大/小、新/旧、漂亮”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Simple Comparisons",
+                "vi": "So sánh đơn giản",
+                "ja": "簡単な比較",
+                "ko": "간단한 비교",
+                "zh": "简单比较"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Simple Comparisons\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"So sánh đơn giản\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「簡単な比較」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"간단한 비교\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“简单比较”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Simple Comparisons\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"So sánh đơn giản\".",
+                "ja": "「簡単な比較」が必要な実生活の場面。",
+                "ko": "\"간단한 비교\"가 필요한 실제 상황.",
+                "zh": "需要用到“简单比较”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Simple Comparisons\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"So sánh đơn giản\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「簡単な比較」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"간단한 비교\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“简单比较”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "Expressing Feelings",
+            "vi": "Nói cảm nghĩ",
+            "ja": "感想を伝える",
+            "ko": "느낌 말하기",
+            "zh": "表达感受"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Happy / Tired / Like It / Bored",
+                "vi": "Vui / mệt / thích / chán",
+                "ja": "うれしい・疲れた・好き・つまらない",
+                "ko": "기쁘다/피곤하다/좋아하다/지루하다",
+                "zh": "开心/累/喜欢/无聊"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Happy / Tired / Like It / Bored\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Vui / mệt / thích / chán\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「うれしい・疲れた・好き・つまらない」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"기쁘다/피곤하다/좋아하다/지루하다\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“开心/累/喜欢/无聊”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Happy / Tired / Like It / Bored\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Vui / mệt / thích / chán\".",
+                "ja": "「うれしい・疲れた・好き・つまらない」が必要な実生活の場面。",
+                "ko": "\"기쁘다/피곤하다/좋아하다/지루하다\"가 필요한 실제 상황.",
+                "zh": "需要用到“开心/累/喜欢/无聊”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Happy / Tired / Like It / Bored\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Vui / mệt / thích / chán\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「うれしい・疲れた・好き・つまらない」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"기쁘다/피곤하다/좋아하다/지루하다\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“开心/累/喜欢/无聊”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Simple Impressions & Compliments",
+                "vi": "Ấn tượng & khen đơn giản",
+                "ja": "簡単な感想とほめ言葉",
+                "ko": "간단한 인상과 칭찬",
+                "zh": "简单印象与夸奖"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Simple Impressions & Compliments\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Ấn tượng & khen đơn giản\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「簡単な感想とほめ言葉」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"간단한 인상과 칭찬\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“简单印象与夸奖”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Simple Impressions & Compliments\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Ấn tượng & khen đơn giản\".",
+                "ja": "「簡単な感想とほめ言葉」が必要な実生活の場面。",
+                "ko": "\"간단한 인상과 칭찬\"가 필요한 실제 상황.",
+                "zh": "需要用到“简单印象与夸奖”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Simple Impressions & Compliments\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Ấn tượng & khen đơn giản\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「簡単な感想とほめ言葉」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"간단한 인상과 칭찬\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“简单印象与夸奖”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
+    },
+    {
+      "moduleId": "daily_life_m16_health_problems",
+      "order": 16,
+      "levelRange": "A0–A1",
+      "levelCode": "A0",
+      "placementTag": "daily_life_basic",
+      "titleByNative": {
+        "en": "Health & When Something Goes Wrong",
+        "vi": "Sức khỏe & khi gặp rắc rối",
+        "ja": "健康とトラブル",
+        "ko": "건강과 문제 상황",
+        "zh": "健康与突发状况"
+      },
+      "goalByNative": {
+        "en": "Talk about your health and handle everyday problems.",
+        "vi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+        "ja": "健康について話し、日常のトラブルに対応します。",
+        "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
+        "zh": "谈论健康并应对日常生活中的突发状况。"
+      },
+      "units": [
+        {
+          "titleByNative": {
+            "en": "Talking About Health",
+            "vi": "Nói về sức khỏe",
+            "ja": "健康について話す",
+            "ko": "건강에 대해 말하기",
+            "zh": "谈论健康"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Say You're Tired or Where It Hurts",
+                "vi": "Nói mệt / đau ở đâu",
+                "ja": "疲れていることやどこが痛いか伝える",
+                "ko": "피곤하거나 아픈 곳 말하기",
+                "zh": "说累了或哪里疼"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Say You're Tired or Where It Hurts\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nói mệt / đau ở đâu\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「疲れていることやどこが痛いか伝える」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"피곤하거나 아픈 곳 말하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“说累了或哪里疼”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Say You're Tired or Where It Hurts\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nói mệt / đau ở đâu\".",
+                "ja": "「疲れていることやどこが痛いか伝える」が必要な実生活の場面。",
+                "ko": "\"피곤하거나 아픈 곳 말하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“说累了或哪里疼”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Say You're Tired or Where It Hurts\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nói mệt / đau ở đâu\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「疲れていることやどこが痛いか伝える」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"피곤하거나 아픈 곳 말하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“说累了或哪里疼”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Buy Medicine or Ask for Time Off",
+                "vi": "Mua thuốc / xin nghỉ",
+                "ja": "薬を買う・休みをお願いする",
+                "ko": "약 사기 / 휴가 요청하기",
+                "zh": "买药或请假"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Buy Medicine or Ask for Time Off\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Mua thuốc / xin nghỉ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「薬を買う・休みをお願いする」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"약 사기 / 휴가 요청하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“买药或请假”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Buy Medicine or Ask for Time Off\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Mua thuốc / xin nghỉ\".",
+                "ja": "「薬を買う・休みをお願いする」が必要な実生活の場面。",
+                "ko": "\"약 사기 / 휴가 요청하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“买药或请假”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Buy Medicine or Ask for Time Off\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Mua thuốc / xin nghỉ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「薬を買う・休みをお願いする」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"약 사기 / 휴가 요청하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“买药或请假”。"
+              }
+            }
+          ],
+          "order": 1,
+          "tier": "basic"
+        },
+        {
+          "titleByNative": {
+            "en": "When Something Goes Wrong",
+            "vi": "Khi gặp rắc rối",
+            "ja": "トラブルにあったとき",
+            "ko": "문제가 생겼을 때",
+            "zh": "遇到麻烦时"
+          },
+          "lessons": [
+            {
+              "order": 1,
+              "titleByNative": {
+                "en": "Ask for Help",
+                "vi": "Nhờ giúp đỡ",
+                "ja": "助けを求める",
+                "ko": "도움 요청하기",
+                "zh": "请求帮助"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Ask for Help\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Nhờ giúp đỡ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「助けを求める」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"도움 요청하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“请求帮助”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Ask for Help\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Nhờ giúp đỡ\".",
+                "ja": "「助けを求める」が必要な実生活の場面。",
+                "ko": "\"도움 요청하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“请求帮助”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Ask for Help\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Nhờ giúp đỡ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「助けを求める」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"도움 요청하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“请求帮助”。"
+              }
+            },
+            {
+              "order": 2,
+              "titleByNative": {
+                "en": "Report a Lost or Forgotten Item",
+                "vi": "Báo mất đồ / quên đồ",
+                "ja": "物をなくした・忘れたことを伝える",
+                "ko": "물건을 잃어버리거나 두고 온 것 신고하기",
+                "zh": "报告丢失或遗忘物品"
+              },
+              "goalByNative": {
+                "en": "Learn to use \"Report a Lost or Forgotten Item\" naturally in daily conversation.",
+                "vi": "Học cách dùng \"Báo mất đồ / quên đồ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+                "ja": "日常会話で「物をなくした・忘れたことを伝える」を自然に使えるようになります。",
+                "ko": "일상 대화에서 \"물건을 잃어버리거나 두고 온 것 신고하기\"를 자연스럽게 사용합니다.",
+                "zh": "在日常交流中自然使用“报告丢失或遗忘物品”。"
+              },
+              "situationByNative": {
+                "en": "A real-life moment where you need \"Report a Lost or Forgotten Item\".",
+                "vi": "Tình huống thật khi bạn cần dùng \"Báo mất đồ / quên đồ\".",
+                "ja": "「物をなくした・忘れたことを伝える」が必要な実生活の場面。",
+                "ko": "\"물건을 잃어버리거나 두고 온 것 신고하기\"가 필요한 실제 상황.",
+                "zh": "需要用到“报告丢失或遗忘物品”的真实场景。"
+              },
+              "canSayByNative": {
+                "en": "After this lesson, you can handle \"Report a Lost or Forgotten Item\" in simple conversations.",
+                "vi": "Sau bài này, bạn có thể dùng \"Báo mất đồ / quên đồ\" trong hội thoại đơn giản.",
+                "ja": "このレッスンの後、「物をなくした・忘れたことを伝える」を簡単な会話で使えます。",
+                "ko": "이 레슨 후 간단한 대화에서 \"물건을 잃어버리거나 두고 온 것 신고하기\"를 사용할 수 있습니다.",
+                "zh": "学完本课后，你可以在简单对话中使用“报告丢失或遗忘物品”。"
+              }
+            }
+          ],
+          "order": 2,
+          "tier": "basic"
+        }
+      ]
     }
   ]
 }

@@ -19,16 +19,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 
 const EXPECTED_VERSION = "curriculum-v3";
-// Daily Life is 15 topics × 2 languages (owner decision, 2026-07-18; replaces
-// the prior 10-module blueprint). Topic COUNT is a fixed structural
-// invariant (15 topics always exist as course shells), so course count stays
-// a real fixed number — but daily_life LESSON count is no longer fixed: it
-// grows as topics are written in incrementally, so it is checked via
-// self-consistency (see checkExpectedShape/checkDailyLifeBlueprint) instead
-// of a magic number that would need updating every time content is added.
-const EXPECTED_COURSE_COUNT = 33; // 3 foundation + 15 en daily topics + 15 ja daily topics
+// Daily Life is 16 modules × 2 languages, Cơ bản tier fully named (owner
+// decision, 2026-07-19; replaces the prior 15-topic empty-shell skeleton).
+// Module COUNT is a fixed structural invariant (16 modules always exist as
+// course shells), so course count stays a real fixed number — but
+// daily_life LESSON count is no longer fixed: it grows as more tiers are
+// written in incrementally, so it is checked via self-consistency (see
+// checkExpectedShape/checkDailyLifeBlueprint) instead of a magic number that
+// would need updating every time content is added. Only the Golden Lesson
+// (ja-daily_life-m01-u1-l1) resolves to real five_cards content today; every
+// other Cơ bản slot across all 16 modules is a named placeholder.
+const EXPECTED_COURSE_COUNT = 35; // 3 foundation + 16 en daily modules + 16 ja daily modules
 const EXPECTED_FOUNDATION_LESSON_COUNT = 26;
-const EXPECTED_DAILY_LIFE_TOPIC_COUNT = 15;
+const EXPECTED_DAILY_LIFE_TOPIC_COUNT = 16;
 const EXPECTED_HIRAGANA_46 = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
 const EXPECTED_KATAKANA_46 = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン".split("");
 const EXPECTED_ALPHABET_26 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -432,10 +435,12 @@ function checkAiRules(lessons) {
   }
 }
 
-// 15-topic × 3-tier structure (owner decision, 2026-07-18). An empty topic
-// (0 units) or an empty unit's worth of tiers is a VALID, intentional state
-// — content is written in incrementally, later, in separately authorized
-// tasks. Only Topic 1 (Golden Lesson, ja-only) has real content today.
+// 16-module × 3-tier structure, Cơ bản tier fully named (owner decision,
+// 2026-07-19). An empty tier (Trung cấp/Cao cấp, every module) is a VALID,
+// intentional state — content is written in incrementally, later, in
+// separately authorized tasks. Only the Golden Lesson
+// (ja-daily_life-m01-u1-l1) has real playable content today; every other Cơ
+// bản lesson slot across all 16 modules is a named blueprint placeholder.
 function checkDailyLifeBlueprint(courses, lessons, catalog) {
   const section = "Daily Life Communication blueprint";
   const arch = catalog.architecture?.dailyLifeCommunication;
@@ -455,11 +460,15 @@ function checkDailyLifeBlueprint(courses, lessons, catalog) {
       pass(section, `${languageCode}: ${EXPECTED_DAILY_LIFE_TOPIC_COUNT} Daily Life topics`);
     }
 
+    const dailyLessons = lessons.filter(
+      (lesson) => lesson.languageCode === languageCode && lesson.nicheId === "daily_life",
+    );
+
     for (const course of dailyCourses) {
       const hasUnits = (course.units ?? []).length > 0;
       const isModuleOne = course.moduleId === "daily_life_m01_basic_social_survival";
       if (isModuleOne && languageCode === "ja" && !hasUnits) {
-        fail(section, { courseId: course.id }, "Topic 1 (Golden Lesson) must have at least one unit");
+        fail(section, { courseId: course.id }, "Module 1 (Golden Lesson) must have at least one unit");
       }
       for (const unit of course.units ?? []) {
         if ((unit.lessonIds ?? []).length === 0) {
@@ -469,42 +478,46 @@ function checkDailyLifeBlueprint(courses, lessons, catalog) {
           fail(section, { courseId: course.id, unitId: unit.id }, `invalid tier '${unit.tier}'`);
         }
       }
-      if (hasUnits && (course.playable !== true || course.contentStatus !== "ready")) {
-        fail(section, { courseId: course.id }, "a topic with real units must be ready/playable");
+      // Every module now has named Cơ bản units full of placeholder lessons
+      // (owner decision, 2026-07-19), so "has units" no longer implies "has
+      // real content" — ready/playable is gated on whether the module
+      // actually contains a ready lesson (today: only Module 1's Golden
+      // Lesson, ja).
+      const hasReadyLesson = dailyLessons.some(
+        (lesson) => lesson.moduleId === course.moduleId && lesson.playable === true,
+      );
+      if (hasReadyLesson && (course.playable !== true || course.contentStatus !== "ready")) {
+        fail(section, { courseId: course.id }, "a module with a ready lesson must be ready/playable");
       }
-      if (!hasUnits && (course.playable !== false || course.contentStatus !== "blueprint")) {
-        fail(section, { courseId: course.id }, "an empty topic (no units yet) must be non-playable blueprint");
+      if (!hasReadyLesson && (course.playable !== false || course.contentStatus !== "blueprint")) {
+        fail(section, { courseId: course.id }, "a module with no ready lesson yet must be non-playable blueprint");
       }
       if (course.unlockRequirement !== "core_foundation_completed") {
         fail(section, { courseId: course.id }, "missing unlockRequirement");
       }
     }
-
-    const dailyLessons = lessons.filter(
-      (lesson) => lesson.languageCode === languageCode && lesson.nicheId === "daily_life",
-    );
     pass(section, `${languageCode}: ${dailyLessons.length} daily_life lesson(s) present`);
 
+    // Only the Golden Lesson itself may be ready/playable — gated on its
+    // exact id (isApprovedJaUnitOneLesson), not on moduleId. A prior
+    // moduleId-based gate incorrectly required EVERY Module 1 lesson to be
+    // ready, which broke once Module 1 gained named non-Golden placeholder
+    // siblings (owner decision, 2026-07-19); those siblings now correctly
+    // fall through to the same blueprint checks as any other lesson slot.
     for (const lesson of dailyLessons) {
-      const isModuleOne = lesson.moduleId === "daily_life_m01_basic_social_survival";
-      if (isModuleOne) {
+      if (isApprovedJaUnitOneLesson(lesson)) {
         if (lesson.playable !== true || lesson.contentStatus !== "ready") {
-          fail(section, { lessonId: lesson.id }, "Module 1 lesson must be ready/playable");
+          fail(section, { lessonId: lesson.id }, "Golden Lesson must be ready/playable");
         }
-        if (isApprovedJaUnitOneLesson(lesson)) {
-          checkApprovedJaUnitOneLesson(lesson);
-          continue;
-        }
-        if (
-          (lesson.exercises ?? []).length !== 10 ||
-          (lesson.dialogueGroups ?? []).length !== 3 ||
-          (lesson.dialogueGroups ?? []).some((group) => (group.lines ?? []).length < 4)
-        ) {
-          fail(section, { lessonId: lesson.id }, "Module 1 lesson content is incomplete");
-        }
-        if ((lesson.exercises?.[7]?.subQuestions ?? []).length !== 5) {
-          fail(section, { lessonId: lesson.id }, "Module 1 Exercise 8 must have five subQuestions");
-        }
+        // NOTE: five_cards lessons keep top-level `exercises`/`dialogueGroups`
+        // empty by design — real content lives under `fiveCardContent`
+        // (practice.exercises / dialogueGroups). A prior top-level-field
+        // check here was dead code (unreachable before Module 1 gained
+        // non-Golden siblings) and, if it ever ran, would always fail
+        // against Golden's real shape — removed rather than reactivated.
+        // `checkApprovedJaUnitOneLesson` below is the real, thorough content
+        // check (reads fiveCardContent).
+        checkApprovedJaUnitOneLesson(lesson);
         continue;
       }
       if (lesson.playable !== false || lesson.contentStatus !== "blueprint") {

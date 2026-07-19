@@ -282,16 +282,78 @@ function exercises(id, spec, language) {
   return [e1,e2,e3,e4,e5,e6,e7,e8,e9,e10];
 }
 
-// Topic 1 (Chào hỏi & làm quen) builder. Rewritten for the 15-topic × 3-tier
-// restructure (owner decision, 2026-07-18): iterates whatever units/lesson
-// slots moduleDef actually declares (no hard-coded 8×3), and resolves each
-// lesson slot's id from its EXPLICIT `order` field (never array position) —
-// see FIVE_CARDS_REGISTRY above and `unit()` in daily-life-blueprint.mjs.
-// There is no more generic-content fallback: a lesson slot with no matching
-// registry entry for this `language` is simply skipped (not fabricated), and
-// a unit that ends up with zero real lessons is not added to the course at
-// all (an empty topic/unit is a valid, intentional "not written yet" state,
-// not an error — see assertDailyLifeBlueprintShape).
+// Resolves ONE lesson slot to its approved five_cards content, if any exists
+// in FIVE_CARDS_REGISTRY for this `language` + final `lessonId`. Returns the
+// fully-built lesson object (via `makeLesson`), or `null` when no registry
+// entry matches. Extracted from `buildReadyModuleOne`'s inner lesson-building
+// logic (owner decision, 2026-07-19: every module's Cơ bản tier may now mix
+// one real five_cards lesson with several named blueprint placeholder
+// lessons in the same unit, not just Module 1) — the field construction
+// below is unchanged from the prior Module-1-only path, so the Golden Lesson
+// object it produces is unaffected by this extraction. Callers (the unified
+// loop in daily-life-blueprint.mjs) fall back to building a placeholder
+// lesson for a slot when this returns `null`.
+export function resolveApprovedFiveCardsLesson(language, lessonId, { unitId, lessonOrder, moduleId, makeLesson }) {
+  const approved = FIVE_CARDS_REGISTRY[language]?.[lessonId];
+  if (!approved) return null;
+  const approvedContent = withGeneratedQ14Romanization(approved.lesson.content);
+  const approvedVocabulary = approved.vocabulary;
+  const approvedDialogueGroups = approvedContent.dialogueGroups.map((group) => ({
+    id: `${lessonId}-${group.id}`,
+    titleByNative: group.titleByNative,
+    situationByNative: group.situationByNative,
+    explanationByNative: Object.fromEntries(
+      Object.entries(group.explanationByNative).map(([code, lines]) => [
+        code,
+        lines.join('\n'),
+      ]),
+    ),
+    lines: group.lines.map((item, index) => ({ ...item, id: `${lessonId}-${group.id}-${index + 1}` })),
+  }));
+  return makeLesson({
+    id: lessonId, languageCode: language, nicheId: 'daily_life', branch: 'niche',
+    moduleId, unitId, order: lessonOrder, level: 'A0', levelRange: 'A0–A1',
+    placementTag: 'daily_life_basic', template: 'vocabularyLesson',
+    title: approved.lesson.title, titleVi: approved.lesson.title, titleByNative: approved.lesson.titleByNative,
+    description: approved.lesson.description, descriptionVi: approved.lesson.description,
+    descriptionByNative: approved.lesson.descriptionByNative,
+    canDoObjective: approved.lesson.description, canDoObjectiveVi: approved.lesson.description,
+    canDoObjectiveByNative: approved.lesson.descriptionByNative,
+    goalByNative: approved.lesson.descriptionByNative,
+    situationByNative: Object.fromEntries(
+      Object.entries(approvedContent.intro.situationByNative).map(([code, lines]) => [
+        code,
+        lines.join('\n'),
+      ]),
+    ),
+    objectives: approvedContent.intro.objectives, objectivesVi: approvedContent.intro.objectives,
+    objectivesByNative: approvedContent.intro.objectivesByNative,
+    introPoints: approvedContent.intro.objectives, introPointsVi: approvedContent.intro.objectives,
+    introPointsByNative: approvedContent.intro.objectivesByNative,
+    estimatedMinutes: 12, track: `${language}-daily_life`, vocabulary: approvedVocabulary,
+    keyPhrases: [], dialogue: approvedDialogueGroups.flatMap((group) => group.lines),
+    dialogueGroups: approvedDialogueGroups, reviewItems: [], grammarFocus: null, grammarFocusVi: null,
+    cultureNote: null, cultureNoteVi: null, contextualVariations: [], communicationStrategyByNative: {},
+    lessonFormat: approved.lessonFormat, fiveCardContent: approvedContent,
+    contentStatus: 'ready', playable: true, comingSoon: false, canSkip: false,
+    exerciseStatus: 'ready',
+    learnSection: {
+      lessonIntro: { status: 'ready' }, vocabularyPhraseCards: { status: 'ready' },
+      miniDialogue: { status: 'ready', dialogueGroupCount: 3 }, grammarSentencePatterns: { status: 'ready' },
+      practiceExercises: { status: 'ready' },
+    },
+    saveToReview: { status: 'ready', itemIds: approvedVocabulary.map((card) => card.id) },
+    exercises: [],
+  });
+}
+
+// Topic 1 (Chào hỏi & làm quen) builder — SUPERSEDED, no longer called.
+// Kept on disk unreferenced (same precedent as content.mjs/dialogues.mjs
+// after ADR-020): daily-life-blueprint.mjs's `buildDailyLifeCourses` now
+// calls `resolveApprovedFiveCardsLesson` directly from its own unified loop
+// (used uniformly for all 16 modules) instead of special-casing Module 1
+// through this function. Left here in case any of its course/unit assembly
+// shape is useful reference later — not wired into generation.
 export function buildReadyModuleOne(language, context) {
   const { makeCourse, makeLesson, moduleDef, courseOrder } = context;
   const courseId = `${language}-daily_life-m01`;

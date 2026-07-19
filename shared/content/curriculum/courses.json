@@ -196,23 +196,23 @@
         "ko": "인사와 안면 트기",
         "zh": "问候与结识"
       },
-      "title": "English · Greetings & Getting Acquainted",
-      "titleVi": "Tiếng Anh · Chào hỏi & làm quen",
+      "title": "English · Daily Life Communication · Greetings & Getting Acquainted",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Chào hỏi & làm quen",
       "titleByNative": {
-        "en": "Greetings & Getting Acquainted",
-        "vi": "Chào hỏi & làm quen",
-        "ja": "あいさつと知り合い",
-        "ko": "인사와 안면 트기",
-        "zh": "问候与结识"
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Chào hỏi & làm quen",
+        "en": "English · Daily Life Communication · Greetings & Getting Acquainted",
+        "ja": "英語 · 日常会話 · あいさつと知り合い",
+        "ko": "영어 · 일상 회화 · 인사와 안면 트기",
+        "zh": "英语 · 日常交流 · 问候与结识"
       },
-      "description": "Learn greetings, self-introduction, and basic first-meeting conversation.",
-      "descriptionVi": "Học chào hỏi, tự giới thiệu và hội thoại cơ bản khi gặp lần đầu.",
+      "description": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+      "descriptionVi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
       "descriptionByNative": {
-        "en": "Learn greetings, self-introduction, and basic first-meeting conversation.",
-        "vi": "Học chào hỏi, tự giới thiệu và hội thoại cơ bản khi gặp lần đầu.",
-        "ja": "あいさつ、自己紹介、初対面での基本会話を学びます。",
-        "ko": "인사, 자기소개, 첫 만남에서의 기본 회화를 배웁니다.",
-        "zh": "学习问候、自我介绍与初次见面的基础对话。"
+        "en": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+        "vi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+        "ja": "時間帯に応じたあいさつ、自己紹介、初対面でのやり取り、知り合いへのあいさつを学びます。",
+        "ko": "시간대별 인사, 자기소개, 첫 만남, 아는 사람에게 인사하는 법을 배웁니다.",
+        "zh": "学习按时间问候、自我介绍、初次见面交流以及向熟人问候。"
       },
       "levelCode": "A0",
       "levelRange": "A0–A1",
@@ -222,601 +222,85 @@
       "contentStatus": "blueprint",
       "playable": false,
       "order": 11,
-      "unitIds": [],
+      "unitIds": [
+        "en-daily_life-m01-u1",
+        "en-daily_life-m01-u2"
+      ],
       "isComingSoon": true,
-      "units": []
+      "units": [
+        {
+          "id": "en-daily_life-m01-u1",
+          "title": "Unit 1: Meeting for the First Time",
+          "titleVi": "Bài 1: Làm quen lần đầu",
+          "titleByNative": {
+            "vi": "Bài 1: Làm quen lần đầu",
+            "en": "Unit 1: Meeting for the First Time",
+            "ja": "ユニット1: 初めて知り合う",
+            "ko": "유닛 1: 처음 만나 인사 나누기",
+            "zh": "单元1: 初次见面认识"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m01_basic_social_survival",
+          "goal": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+          "goalVi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+          "goalByNative": {
+            "en": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+            "vi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+            "ja": "時間帯に応じたあいさつ、自己紹介、初対面でのやり取り、知り合いへのあいさつを学びます。",
+            "ko": "시간대별 인사, 자기소개, 첫 만남, 아는 사람에게 인사하는 법을 배웁니다.",
+            "zh": "学习按时间问候、自我介绍、初次见面交流以及向熟人问候。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m01-u1-l1",
+            "en-daily_life-m01-u1-l2",
+            "en-daily_life-m01-u1-l3"
+          ]
+        },
+        {
+          "id": "en-daily_life-m01-u2",
+          "title": "Unit 2: Meeting Someone You Already Know",
+          "titleVi": "Bài 2: Gặp lại người đã quen",
+          "titleByNative": {
+            "vi": "Bài 2: Gặp lại người đã quen",
+            "en": "Unit 2: Meeting Someone You Already Know",
+            "ja": "ユニット2: 知り合いに再会する",
+            "ko": "유닛 2: 아는 사람을 다시 만나기",
+            "zh": "单元2: 再次遇见认识的人"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m01_basic_social_survival",
+          "goal": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+          "goalVi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+          "goalByNative": {
+            "en": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+            "vi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+            "ja": "時間帯に応じたあいさつ、自己紹介、初対面でのやり取り、知り合いへのあいさつを学びます。",
+            "ko": "시간대별 인사, 자기소개, 첫 만남, 아는 사람에게 인사하는 법을 배웁니다.",
+            "zh": "学习按时间问候、自我介绍、初次见面交流以及向熟人问候。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m01-u2-l1",
+            "en-daily_life-m01-u2-l2"
+          ]
+        }
+      ]
     },
     {
       "id": "en-daily_life-m02",
       "languageCode": "en",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic02_self_family",
-      "moduleTitle": "Myself & Family",
-      "moduleTitleVi": "Bản thân & gia đình",
-      "moduleTitleByNative": {
-        "en": "Myself & Family",
-        "vi": "Bản thân & gia đình",
-        "ja": "自分と家族",
-        "ko": "나와 가족",
-        "zh": "自己与家庭"
-      },
-      "title": "English · Daily Life Communication · Myself & Family",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Bản thân & gia đình",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Bản thân & gia đình",
-        "en": "English · Daily Life Communication · Myself & Family",
-        "ja": "英語 · 日常会話 · 自分と家族",
-        "ko": "영어 · 일상 회화 · 나와 가족",
-        "zh": "英语 · 日常交流 · 自己与家庭"
-      },
-      "description": "Talk about yourself and your family.",
-      "descriptionVi": "Nói về bản thân và gia đình.",
-      "descriptionByNative": {
-        "en": "Talk about yourself and your family.",
-        "vi": "Nói về bản thân và gia đình.",
-        "ja": "自分自身と家族について話します。",
-        "ko": "자신과 가족에 대해 이야기합니다.",
-        "zh": "谈论自己与家人。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 12,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m03",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic03_objects_demonstratives",
-      "moduleTitle": "Objects & Pointing Things Out",
-      "moduleTitleVi": "Đồ vật & chỉ định",
-      "moduleTitleByNative": {
-        "en": "Objects & Pointing Things Out",
-        "vi": "Đồ vật & chỉ định",
-        "ja": "ものと指示表現",
-        "ko": "물건과 지시 표현",
-        "zh": "物品与指示表达"
-      },
-      "title": "English · Daily Life Communication · Objects & Pointing Things Out",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Đồ vật & chỉ định",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Đồ vật & chỉ định",
-        "en": "English · Daily Life Communication · Objects & Pointing Things Out",
-        "ja": "英語 · 日常会話 · ものと指示表現",
-        "ko": "영어 · 일상 회화 · 물건과 지시 표현",
-        "zh": "英语 · 日常交流 · 物品与指示表达"
-      },
-      "description": "Identify and point out everyday objects.",
-      "descriptionVi": "Gọi tên và chỉ vào các đồ vật hằng ngày.",
-      "descriptionByNative": {
-        "en": "Identify and point out everyday objects.",
-        "vi": "Gọi tên và chỉ vào các đồ vật hằng ngày.",
-        "ja": "身の回りのものを特定し、指し示します。",
-        "ko": "일상 물건을 가리키고 이름을 말합니다.",
-        "zh": "识别并指出日常物品。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 13,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m04",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic04_numbers_prices_money",
-      "moduleTitle": "Numbers, Prices & Money",
-      "moduleTitleVi": "Số đếm, giá cả, tiền",
-      "moduleTitleByNative": {
-        "en": "Numbers, Prices & Money",
-        "vi": "Số đếm, giá cả, tiền",
-        "ja": "数字・値段・お金",
-        "ko": "숫자, 가격, 돈",
-        "zh": "数字、价格与金钱"
-      },
-      "title": "English · Daily Life Communication · Numbers, Prices & Money",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Số đếm, giá cả, tiền",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Số đếm, giá cả, tiền",
-        "en": "English · Daily Life Communication · Numbers, Prices & Money",
-        "ja": "英語 · 日常会話 · 数字・値段・お金",
-        "ko": "영어 · 일상 회화 · 숫자, 가격, 돈",
-        "zh": "英语 · 日常交流 · 数字、价格与金钱"
-      },
-      "description": "Count, ask prices, and handle money in daily situations.",
-      "descriptionVi": "Đếm số, hỏi giá và dùng tiền trong tình huống hằng ngày.",
-      "descriptionByNative": {
-        "en": "Count, ask prices, and handle money in daily situations.",
-        "vi": "Đếm số, hỏi giá và dùng tiền trong tình huống hằng ngày.",
-        "ja": "数を数え、値段を尋ね、日常でお金を扱います。",
-        "ko": "수를 세고 가격을 묻고 일상에서 돈을 씁니다.",
-        "zh": "数数、问价并在日常情境中使用金钱。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 14,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m05",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic05_time_date",
-      "moduleTitle": "Time & Dates",
-      "moduleTitleVi": "Thời gian & ngày tháng",
-      "moduleTitleByNative": {
-        "en": "Time & Dates",
-        "vi": "Thời gian & ngày tháng",
-        "ja": "時間と日付",
-        "ko": "시간과 날짜",
-        "zh": "时间与日期"
-      },
-      "title": "English · Daily Life Communication · Time & Dates",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Thời gian & ngày tháng",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Thời gian & ngày tháng",
-        "en": "English · Daily Life Communication · Time & Dates",
-        "ja": "英語 · 日常会話 · 時間と日付",
-        "ko": "영어 · 일상 회화 · 시간과 날짜",
-        "zh": "英语 · 日常交流 · 时间与日期"
-      },
-      "description": "Tell time and talk about dates and schedules.",
-      "descriptionVi": "Nói giờ và nói về ngày tháng, lịch trình.",
-      "descriptionByNative": {
-        "en": "Tell time and talk about dates and schedules.",
-        "vi": "Nói giờ và nói về ngày tháng, lịch trình.",
-        "ja": "時間を言い、日付や予定について話します。",
-        "ko": "시간을 말하고 날짜와 일정에 대해 이야기합니다.",
-        "zh": "报时并谈论日期与日程。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 15,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m06",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic06_shopping",
-      "moduleTitle": "Shopping",
-      "moduleTitleVi": "Mua sắm",
-      "moduleTitleByNative": {
-        "en": "Shopping",
-        "vi": "Mua sắm",
-        "ja": "買い物",
-        "ko": "쇼핑",
-        "zh": "购物"
-      },
-      "title": "English · Daily Life Communication · Shopping",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Mua sắm",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Mua sắm",
-        "en": "English · Daily Life Communication · Shopping",
-        "ja": "英語 · 日常会話 · 買い物",
-        "ko": "영어 · 일상 회화 · 쇼핑",
-        "zh": "英语 · 日常交流 · 购物"
-      },
-      "description": "Shop for everyday items and handle simple transactions.",
-      "descriptionVi": "Mua đồ hằng ngày và thực hiện giao dịch đơn giản.",
-      "descriptionByNative": {
-        "en": "Shop for everyday items and handle simple transactions.",
-        "vi": "Mua đồ hằng ngày và thực hiện giao dịch đơn giản.",
-        "ja": "日用品を買い、簡単な買い物のやり取りをします。",
-        "ko": "일상용품을 사고 간단한 거래를 합니다.",
-        "zh": "购买日常用品并完成简单交易。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 16,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m07",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic07_food_ordering",
-      "moduleTitle": "Eating & Ordering Food",
-      "moduleTitleVi": "Ăn uống & gọi món",
-      "moduleTitleByNative": {
-        "en": "Eating & Ordering Food",
-        "vi": "Ăn uống & gọi món",
-        "ja": "食事と注文",
-        "ko": "식사와 주문",
-        "zh": "用餐与点菜"
-      },
-      "title": "English · Daily Life Communication · Eating & Ordering Food",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Ăn uống & gọi món",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Ăn uống & gọi món",
-        "en": "English · Daily Life Communication · Eating & Ordering Food",
-        "ja": "英語 · 日常会話 · 食事と注文",
-        "ko": "영어 · 일상 회화 · 식사와 주문",
-        "zh": "英语 · 日常交流 · 用餐与点菜"
-      },
-      "description": "Order food and talk about meals.",
-      "descriptionVi": "Gọi món và nói về bữa ăn.",
-      "descriptionByNative": {
-        "en": "Order food and talk about meals.",
-        "vi": "Gọi món và nói về bữa ăn.",
-        "ja": "料理を注文し、食事について話します。",
-        "ko": "음식을 주문하고 식사에 대해 이야기합니다.",
-        "zh": "点菜并谈论用餐。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 17,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m08",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic08_directions_places",
-      "moduleTitle": "Directions & Places",
-      "moduleTitleVi": "Chỉ đường & nơi chốn",
-      "moduleTitleByNative": {
-        "en": "Directions & Places",
-        "vi": "Chỉ đường & nơi chốn",
-        "ja": "道案内と場所",
-        "ko": "길 안내와 장소",
-        "zh": "问路与地点"
-      },
-      "title": "English · Daily Life Communication · Directions & Places",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Chỉ đường & nơi chốn",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Chỉ đường & nơi chốn",
-        "en": "English · Daily Life Communication · Directions & Places",
-        "ja": "英語 · 日常会話 · 道案内と場所",
-        "ko": "영어 · 일상 회화 · 길 안내와 장소",
-        "zh": "英语 · 日常交流 · 问路与地点"
-      },
-      "description": "Ask for and give directions to places.",
-      "descriptionVi": "Hỏi đường và chỉ đường đến nơi cần đến.",
-      "descriptionByNative": {
-        "en": "Ask for and give directions to places.",
-        "vi": "Hỏi đường và chỉ đường đến nơi cần đến.",
-        "ja": "場所への行き方を尋ね、案内します。",
-        "ko": "장소로 가는 길을 묻고 안내합니다.",
-        "zh": "问路并为他人指路。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 18,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m09",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic09_transport_trains",
-      "moduleTitle": "Getting Around & Trains",
-      "moduleTitleVi": "Đi lại & tàu điện",
-      "moduleTitleByNative": {
-        "en": "Getting Around & Trains",
-        "vi": "Đi lại & tàu điện",
-        "ja": "移動と電車",
-        "ko": "이동과 지하철",
-        "zh": "出行与电车"
-      },
-      "title": "English · Daily Life Communication · Getting Around & Trains",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Đi lại & tàu điện",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Đi lại & tàu điện",
-        "en": "English · Daily Life Communication · Getting Around & Trains",
-        "ja": "英語 · 日常会話 · 移動と電車",
-        "ko": "영어 · 일상 회화 · 이동과 지하철",
-        "zh": "英语 · 日常交流 · 出行与电车"
-      },
-      "description": "Get around by train and other everyday transport.",
-      "descriptionVi": "Đi lại bằng tàu điện và các phương tiện hằng ngày.",
-      "descriptionByNative": {
-        "en": "Get around by train and other everyday transport.",
-        "vi": "Đi lại bằng tàu điện và các phương tiện hằng ngày.",
-        "ja": "電車など日常の交通手段で移動します。",
-        "ko": "지하철 등 일상 교통수단으로 이동합니다.",
-        "zh": "乘坐电车等日常交通工具出行。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 19,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m10",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic10_home_daily_living",
-      "moduleTitle": "Home & Daily Living",
-      "moduleTitleVi": "Nhà cửa & đời sống hàng ngày",
-      "moduleTitleByNative": {
-        "en": "Home & Daily Living",
-        "vi": "Nhà cửa & đời sống hàng ngày",
-        "ja": "家と日常生活",
-        "ko": "집과 일상생활",
-        "zh": "家居与日常生活"
-      },
-      "title": "English · Daily Life Communication · Home & Daily Living",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Nhà cửa & đời sống hàng ngày",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Nhà cửa & đời sống hàng ngày",
-        "en": "English · Daily Life Communication · Home & Daily Living",
-        "ja": "英語 · 日常会話 · 家と日常生活",
-        "ko": "영어 · 일상 회화 · 집과 일상생활",
-        "zh": "英语 · 日常交流 · 家居与日常生活"
-      },
-      "description": "Talk about your home and everyday routines.",
-      "descriptionVi": "Nói về nhà cửa và sinh hoạt hằng ngày.",
-      "descriptionByNative": {
-        "en": "Talk about your home and everyday routines.",
-        "vi": "Nói về nhà cửa và sinh hoạt hằng ngày.",
-        "ja": "自分の家や日常の暮らしについて話します。",
-        "ko": "집과 일상생활에 대해 이야기합니다.",
-        "zh": "谈论住所与日常生活。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 20,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m11",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic11_hobbies_free_time",
-      "moduleTitle": "Hobbies & Free Time",
-      "moduleTitleVi": "Sở thích & thời gian rảnh",
-      "moduleTitleByNative": {
-        "en": "Hobbies & Free Time",
-        "vi": "Sở thích & thời gian rảnh",
-        "ja": "趣味と自由時間",
-        "ko": "취미와 여가",
-        "zh": "爱好与空闲时间"
-      },
-      "title": "English · Daily Life Communication · Hobbies & Free Time",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Sở thích & thời gian rảnh",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Sở thích & thời gian rảnh",
-        "en": "English · Daily Life Communication · Hobbies & Free Time",
-        "ja": "英語 · 日常会話 · 趣味と自由時間",
-        "ko": "영어 · 일상 회화 · 취미와 여가",
-        "zh": "英语 · 日常交流 · 爱好与空闲时间"
-      },
-      "description": "Talk about hobbies and how you spend free time.",
-      "descriptionVi": "Nói về sở thích và cách dùng thời gian rảnh.",
-      "descriptionByNative": {
-        "en": "Talk about hobbies and how you spend free time.",
-        "vi": "Nói về sở thích và cách dùng thời gian rảnh.",
-        "ja": "趣味や自由時間の過ごし方について話します。",
-        "ko": "취미와 여가 시간에 대해 이야기합니다.",
-        "zh": "谈论爱好与空闲时间的安排。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 21,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m12",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic12_meetups_invitations",
-      "moduleTitle": "Making Plans & Invitations",
-      "moduleTitleVi": "Hẹn gặp & rủ rê",
-      "moduleTitleByNative": {
-        "en": "Making Plans & Invitations",
-        "vi": "Hẹn gặp & rủ rê",
-        "ja": "約束と誘い",
-        "ko": "약속과 초대",
-        "zh": "约定与邀约"
-      },
-      "title": "English · Daily Life Communication · Making Plans & Invitations",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Hẹn gặp & rủ rê",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Hẹn gặp & rủ rê",
-        "en": "English · Daily Life Communication · Making Plans & Invitations",
-        "ja": "英語 · 日常会話 · 約束と誘い",
-        "ko": "영어 · 일상 회화 · 약속과 초대",
-        "zh": "英语 · 日常交流 · 约定与邀约"
-      },
-      "description": "Make plans, invite someone, and arrange to meet.",
-      "descriptionVi": "Hẹn gặp, rủ ai đó đi cùng và sắp xếp gặp mặt.",
-      "descriptionByNative": {
-        "en": "Make plans, invite someone, and arrange to meet.",
-        "vi": "Hẹn gặp, rủ ai đó đi cùng và sắp xếp gặp mặt.",
-        "ja": "予定を立て、人を誘い、会う約束をします。",
-        "ko": "약속을 정하고 사람을 초대하며 만남을 준비합니다.",
-        "zh": "约定计划、邀请他人并安排见面。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 22,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m13",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic13_description_feelings",
-      "moduleTitle": "Describing Things & Feelings",
-      "moduleTitleVi": "Mô tả & cảm nghĩ",
-      "moduleTitleByNative": {
-        "en": "Describing Things & Feelings",
-        "vi": "Mô tả & cảm nghĩ",
-        "ja": "描写と感想",
-        "ko": "묘사와 느낌",
-        "zh": "描述与感受"
-      },
-      "title": "English · Daily Life Communication · Describing Things & Feelings",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Mô tả & cảm nghĩ",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Mô tả & cảm nghĩ",
-        "en": "English · Daily Life Communication · Describing Things & Feelings",
-        "ja": "英語 · 日常会話 · 描写と感想",
-        "ko": "영어 · 일상 회화 · 묘사와 느낌",
-        "zh": "英语 · 日常交流 · 描述与感受"
-      },
-      "description": "Describe people, things, and how you feel about them.",
-      "descriptionVi": "Mô tả người, sự vật và cảm nghĩ về chúng.",
-      "descriptionByNative": {
-        "en": "Describe people, things, and how you feel about them.",
-        "vi": "Mô tả người, sự vật và cảm nghĩ về chúng.",
-        "ja": "人やものを描写し、それについての感想を伝えます。",
-        "ko": "사람과 사물을 묘사하고 느낌을 말합니다.",
-        "zh": "描述人与事物并表达感受。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 23,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m14",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic14_health_problems",
-      "moduleTitle": "Health & When Something Goes Wrong",
-      "moduleTitleVi": "Sức khỏe & khi gặp vấn đề",
-      "moduleTitleByNative": {
-        "en": "Health & When Something Goes Wrong",
-        "vi": "Sức khỏe & khi gặp vấn đề",
-        "ja": "健康とトラブル",
-        "ko": "건강과 문제 상황",
-        "zh": "健康与突发状况"
-      },
-      "title": "English · Daily Life Communication · Health & When Something Goes Wrong",
-      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Sức khỏe & khi gặp vấn đề",
-      "titleByNative": {
-        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Sức khỏe & khi gặp vấn đề",
-        "en": "English · Daily Life Communication · Health & When Something Goes Wrong",
-        "ja": "英語 · 日常会話 · 健康とトラブル",
-        "ko": "영어 · 일상 회화 · 건강과 문제 상황",
-        "zh": "英语 · 日常交流 · 健康与突发状况"
-      },
-      "description": "Talk about health and handle everyday problems.",
-      "descriptionVi": "Nói về sức khỏe và xử lý các vấn đề thường gặp.",
-      "descriptionByNative": {
-        "en": "Talk about health and handle everyday problems.",
-        "vi": "Nói về sức khỏe và xử lý các vấn đề thường gặp.",
-        "ja": "健康について話し、日常のトラブルに対応します。",
-        "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
-        "zh": "谈论健康并应对日常突发状况。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 24,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "en-daily_life-m15",
-      "languageCode": "en",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic15_thanks_apology_politeness",
+      "moduleId": "daily_life_m02_thanks_apology_politeness",
       "moduleTitle": "Thanks, Apologies & Politeness",
       "moduleTitleVi": "Cảm ơn, xin lỗi, lịch sự",
       "moduleTitleByNative": {
@@ -835,14 +319,1522 @@
         "ko": "영어 · 일상 회화 · 감사, 사과, 공손함",
         "zh": "英语 · 日常交流 · 感谢、道歉与礼貌"
       },
-      "description": "Thank, apologize, and speak politely in daily situations.",
-      "descriptionVi": "Cảm ơn, xin lỗi và nói lịch sự trong tình huống hằng ngày.",
+      "description": "Learn to thank, apologize, ask permission, and make polite requests.",
+      "descriptionVi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
       "descriptionByNative": {
-        "en": "Thank, apologize, and speak politely in daily situations.",
-        "vi": "Cảm ơn, xin lỗi và nói lịch sự trong tình huống hằng ngày.",
-        "ja": "感謝や謝罪を伝え、日常で丁寧に話します。",
-        "ko": "감사와 사과를 표현하고 일상에서 공손하게 말합니다.",
-        "zh": "在日常情境中表达感谢、道歉并礼貌交流。"
+        "en": "Learn to thank, apologize, ask permission, and make polite requests.",
+        "vi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+        "ja": "感謝、謝罪、許可を求めること、丁寧にお願いすることを学びます。",
+        "ko": "감사, 사과, 허락 구하기, 정중하게 부탁하는 법을 배웁니다.",
+        "zh": "学习感谢、道歉、请求许可以及礼貌地请求帮助。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 12,
+      "unitIds": [
+        "en-daily_life-m02-u1",
+        "en-daily_life-m02-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m02-u1",
+          "title": "Unit 1: Saying Thanks & Responding",
+          "titleVi": "Bài 1: Cảm ơn & đáp lại",
+          "titleByNative": {
+            "vi": "Bài 1: Cảm ơn & đáp lại",
+            "en": "Unit 1: Saying Thanks & Responding",
+            "ja": "ユニット1: 感謝とその返事",
+            "ko": "유닛 1: 감사 표현과 답하기",
+            "zh": "单元1: 表达感谢与回应"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m02_thanks_apology_politeness",
+          "goal": "Learn to thank, apologize, ask permission, and make polite requests.",
+          "goalVi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+          "goalByNative": {
+            "en": "Learn to thank, apologize, ask permission, and make polite requests.",
+            "vi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+            "ja": "感謝、謝罪、許可を求めること、丁寧にお願いすることを学びます。",
+            "ko": "감사, 사과, 허락 구하기, 정중하게 부탁하는 법을 배웁니다.",
+            "zh": "学习感谢、道歉、请求许可以及礼貌地请求帮助。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m02-u1-l1",
+            "en-daily_life-m02-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m02-u2",
+          "title": "Unit 2: Apologizing & Asking for a Favor",
+          "titleVi": "Bài 2: Xin lỗi & nhờ vả",
+          "titleByNative": {
+            "vi": "Bài 2: Xin lỗi & nhờ vả",
+            "en": "Unit 2: Apologizing & Asking for a Favor",
+            "ja": "ユニット2: 謝罪とお願い",
+            "ko": "유닛 2: 사과와 부탁하기",
+            "zh": "单元2: 道歉与请求帮忙"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m02_thanks_apology_politeness",
+          "goal": "Learn to thank, apologize, ask permission, and make polite requests.",
+          "goalVi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+          "goalByNative": {
+            "en": "Learn to thank, apologize, ask permission, and make polite requests.",
+            "vi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+            "ja": "感謝、謝罪、許可を求めること、丁寧にお願いすることを学びます。",
+            "ko": "감사, 사과, 허락 구하기, 정중하게 부탁하는 법을 배웁니다.",
+            "zh": "学习感谢、道歉、请求许可以及礼貌地请求帮助。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m02-u2-l1",
+            "en-daily_life-m02-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m03",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m03_self_family",
+      "moduleTitle": "Myself & Family",
+      "moduleTitleVi": "Bản thân & gia đình",
+      "moduleTitleByNative": {
+        "en": "Myself & Family",
+        "vi": "Bản thân & gia đình",
+        "ja": "自分と家族",
+        "ko": "나와 가족",
+        "zh": "自己与家庭"
+      },
+      "title": "English · Daily Life Communication · Myself & Family",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Bản thân & gia đình",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Bản thân & gia đình",
+        "en": "English · Daily Life Communication · Myself & Family",
+        "ja": "英語 · 日常会話 · 自分と家族",
+        "ko": "영어 · 일상 회화 · 나와 가족",
+        "zh": "英语 · 日常交流 · 自己与家庭"
+      },
+      "description": "Talk about yourself, your hometown, your job, and your family.",
+      "descriptionVi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+      "descriptionByNative": {
+        "en": "Talk about yourself, your hometown, your job, and your family.",
+        "vi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+        "ja": "自分自身、出身地、仕事、家族について話します。",
+        "ko": "자신, 고향, 직업, 가족에 대해 이야기합니다.",
+        "zh": "谈论自己、家乡、职业与家人。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 13,
+      "unitIds": [
+        "en-daily_life-m03-u1",
+        "en-daily_life-m03-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m03-u1",
+          "title": "Unit 1: Talking About Yourself",
+          "titleVi": "Bài 1: Nói về mình",
+          "titleByNative": {
+            "vi": "Bài 1: Nói về mình",
+            "en": "Unit 1: Talking About Yourself",
+            "ja": "ユニット1: 自分について話す",
+            "ko": "유닛 1: 자신에 대해 말하기",
+            "zh": "单元1: 谈论自己"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m03_self_family",
+          "goal": "Talk about yourself, your hometown, your job, and your family.",
+          "goalVi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+          "goalByNative": {
+            "en": "Talk about yourself, your hometown, your job, and your family.",
+            "vi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+            "ja": "自分自身、出身地、仕事、家族について話します。",
+            "ko": "자신, 고향, 직업, 가족에 대해 이야기합니다.",
+            "zh": "谈论自己、家乡、职业与家人。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m03-u1-l1",
+            "en-daily_life-m03-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m03-u2",
+          "title": "Unit 2: My Family",
+          "titleVi": "Bài 2: Gia đình mình",
+          "titleByNative": {
+            "vi": "Bài 2: Gia đình mình",
+            "en": "Unit 2: My Family",
+            "ja": "ユニット2: 自分の家族",
+            "ko": "유닛 2: 우리 가족",
+            "zh": "单元2: 我的家人"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m03_self_family",
+          "goal": "Talk about yourself, your hometown, your job, and your family.",
+          "goalVi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+          "goalByNative": {
+            "en": "Talk about yourself, your hometown, your job, and your family.",
+            "vi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+            "ja": "自分自身、出身地、仕事、家族について話します。",
+            "ko": "자신, 고향, 직업, 가족에 대해 이야기합니다.",
+            "zh": "谈论自己、家乡、职业与家人。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m03-u2-l1",
+            "en-daily_life-m03-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m04",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m04_communication_breakdown",
+      "moduleTitle": "When Communication Breaks Down",
+      "moduleTitleVi": "Khi giao tiếp gặp trục trặc",
+      "moduleTitleByNative": {
+        "en": "When Communication Breaks Down",
+        "vi": "Khi giao tiếp gặp trục trặc",
+        "ja": "コミュニケーションがうまくいかないとき",
+        "ko": "의사소통이 어려울 때",
+        "zh": "沟通遇到障碍时"
+      },
+      "title": "English · Daily Life Communication · When Communication Breaks Down",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Khi giao tiếp gặp trục trặc",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Khi giao tiếp gặp trục trặc",
+        "en": "English · Daily Life Communication · When Communication Breaks Down",
+        "ja": "英語 · 日常会話 · コミュニケーションがうまくいかないとき",
+        "ko": "영어 · 일상 회화 · 의사소통이 어려울 때",
+        "zh": "英语 · 日常交流 · 沟通遇到障碍时"
+      },
+      "description": "Handle situations where you can't hear or understand, and ask for clarification.",
+      "descriptionVi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+      "descriptionByNative": {
+        "en": "Handle situations where you can't hear or understand, and ask for clarification.",
+        "vi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+        "ja": "聞こえない・分からないときの対応や、説明をお願いすることを学びます。",
+        "ko": "잘 안 들리거나 이해가 안 될 때 대처하고 설명을 요청하는 법을 배웁니다.",
+        "zh": "处理听不清或听不懂的情况，并请求解释说明。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 14,
+      "unitIds": [
+        "en-daily_life-m04-u1",
+        "en-daily_life-m04-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m04-u1",
+          "title": "Unit 1: When You Can't Hear or Understand",
+          "titleVi": "Bài 1: Khi không nghe rõ / không hiểu",
+          "titleByNative": {
+            "vi": "Bài 1: Khi không nghe rõ / không hiểu",
+            "en": "Unit 1: When You Can't Hear or Understand",
+            "ja": "ユニット1: 聞こえない・分からないとき",
+            "ko": "유닛 1: 잘 안 들리거나 이해가 안 될 때",
+            "zh": "单元1: 听不清或听不懂时"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m04_communication_breakdown",
+          "goal": "Handle situations where you can't hear or understand, and ask for clarification.",
+          "goalVi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+          "goalByNative": {
+            "en": "Handle situations where you can't hear or understand, and ask for clarification.",
+            "vi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+            "ja": "聞こえない・分からないときの対応や、説明をお願いすることを学びます。",
+            "ko": "잘 안 들리거나 이해가 안 될 때 대처하고 설명을 요청하는 법을 배웁니다.",
+            "zh": "处理听不清或听不懂的情况，并请求解释说明。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m04-u1-l1",
+            "en-daily_life-m04-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m04-u2",
+          "title": "Unit 2: Asking for Clarification",
+          "titleVi": "Bài 2: Nhờ làm rõ",
+          "titleByNative": {
+            "vi": "Bài 2: Nhờ làm rõ",
+            "en": "Unit 2: Asking for Clarification",
+            "ja": "ユニット2: 説明をお願いする",
+            "ko": "유닛 2: 명확히 해달라고 부탁하기",
+            "zh": "单元2: 请求解释清楚"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m04_communication_breakdown",
+          "goal": "Handle situations where you can't hear or understand, and ask for clarification.",
+          "goalVi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+          "goalByNative": {
+            "en": "Handle situations where you can't hear or understand, and ask for clarification.",
+            "vi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+            "ja": "聞こえない・分からないときの対応や、説明をお願いすることを学びます。",
+            "ko": "잘 안 들리거나 이해가 안 될 때 대처하고 설명을 요청하는 법을 배웁니다.",
+            "zh": "处理听不清或听不懂的情况，并请求解释说明。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m04-u2-l1",
+            "en-daily_life-m04-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m05",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m05_objects_demonstratives",
+      "moduleTitle": "Objects & Pointing Things Out",
+      "moduleTitleVi": "Đồ vật & chỉ định",
+      "moduleTitleByNative": {
+        "en": "Objects & Pointing Things Out",
+        "vi": "Đồ vật & chỉ định",
+        "ja": "ものと指示表現",
+        "ko": "물건과 지시 표현",
+        "zh": "物品与指示表达"
+      },
+      "title": "English · Daily Life Communication · Objects & Pointing Things Out",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Đồ vật & chỉ định",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Đồ vật & chỉ định",
+        "en": "English · Daily Life Communication · Objects & Pointing Things Out",
+        "ja": "英語 · 日常会話 · ものと指示表現",
+        "ko": "영어 · 일상 회화 · 물건과 지시 표현",
+        "zh": "英语 · 日常交流 · 物品与指示表达"
+      },
+      "description": "Point at and ask about objects, and identify who they belong to.",
+      "descriptionVi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+      "descriptionByNative": {
+        "en": "Point at and ask about objects, and identify who they belong to.",
+        "vi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+        "ja": "ものを指して尋ね、誰のものかを確認します。",
+        "ko": "물건을 가리키며 묻고 누구의 것인지 확인합니다.",
+        "zh": "指出并询问物品，确认物品的归属。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 15,
+      "unitIds": [
+        "en-daily_life-m05-u1",
+        "en-daily_life-m05-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m05-u1",
+          "title": "Unit 1: What Is This?",
+          "titleVi": "Bài 1: Cái này là gì",
+          "titleByNative": {
+            "vi": "Bài 1: Cái này là gì",
+            "en": "Unit 1: What Is This?",
+            "ja": "ユニット1: これは何ですか",
+            "ko": "유닛 1: 이것은 무엇인가요",
+            "zh": "单元1: 这是什么"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m05_objects_demonstratives",
+          "goal": "Point at and ask about objects, and identify who they belong to.",
+          "goalVi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+          "goalByNative": {
+            "en": "Point at and ask about objects, and identify who they belong to.",
+            "vi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+            "ja": "ものを指して尋ね、誰のものかを確認します。",
+            "ko": "물건을 가리키며 묻고 누구의 것인지 확인합니다.",
+            "zh": "指出并询问物品，确认物品的归属。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m05-u1-l1",
+            "en-daily_life-m05-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m05-u2",
+          "title": "Unit 2: Whose Is This?",
+          "titleVi": "Bài 2: Đồ của ai",
+          "titleByNative": {
+            "vi": "Bài 2: Đồ của ai",
+            "en": "Unit 2: Whose Is This?",
+            "ja": "ユニット2: 誰のものか",
+            "ko": "유닛 2: 누구의 물건인가요",
+            "zh": "单元2: 这是谁的东西"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m05_objects_demonstratives",
+          "goal": "Point at and ask about objects, and identify who they belong to.",
+          "goalVi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+          "goalByNative": {
+            "en": "Point at and ask about objects, and identify who they belong to.",
+            "vi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+            "ja": "ものを指して尋ね、誰のものかを確認します。",
+            "ko": "물건을 가리키며 묻고 누구의 것인지 확인합니다.",
+            "zh": "指出并询问物品，确认物品的归属。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m05-u2-l1",
+            "en-daily_life-m05-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m06",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m06_numbers_prices_money",
+      "moduleTitle": "Numbers, Prices & Money",
+      "moduleTitleVi": "Số đếm, giá cả, tiền",
+      "moduleTitleByNative": {
+        "en": "Numbers, Prices & Money",
+        "vi": "Số đếm, giá cả, tiền",
+        "ja": "数字・値段・お金",
+        "ko": "숫자, 가격, 돈",
+        "zh": "数字、价格与金钱"
+      },
+      "title": "English · Daily Life Communication · Numbers, Prices & Money",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Số đếm, giá cả, tiền",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Số đếm, giá cả, tiền",
+        "en": "English · Daily Life Communication · Numbers, Prices & Money",
+        "ja": "英語 · 日常会話 · 数字・値段・お金",
+        "ko": "영어 · 일상 회화 · 숫자, 가격, 돈",
+        "zh": "英语 · 日常交流 · 数字、价格与金钱"
+      },
+      "description": "Count numbers, ask prices, and handle payment.",
+      "descriptionVi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+      "descriptionByNative": {
+        "en": "Count numbers, ask prices, and handle payment.",
+        "vi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+        "ja": "数を数え、値段を尋ね、支払いを行います。",
+        "ko": "숫자를 세고 가격을 물으며 결제를 처리합니다.",
+        "zh": "数数、问价并处理付款。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 16,
+      "unitIds": [
+        "en-daily_life-m06-u1",
+        "en-daily_life-m06-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m06-u1",
+          "title": "Unit 1: Counting",
+          "titleVi": "Bài 1: Số đếm",
+          "titleByNative": {
+            "vi": "Bài 1: Số đếm",
+            "en": "Unit 1: Counting",
+            "ja": "ユニット1: 数を数える",
+            "ko": "유닛 1: 숫자 세기",
+            "zh": "单元1: 数数"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m06_numbers_prices_money",
+          "goal": "Count numbers, ask prices, and handle payment.",
+          "goalVi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+          "goalByNative": {
+            "en": "Count numbers, ask prices, and handle payment.",
+            "vi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+            "ja": "数を数え、値段を尋ね、支払いを行います。",
+            "ko": "숫자를 세고 가격을 물으며 결제를 처리합니다.",
+            "zh": "数数、问价并处理付款。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m06-u1-l1",
+            "en-daily_life-m06-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m06-u2",
+          "title": "Unit 2: Asking Prices & Paying",
+          "titleVi": "Bài 2: Hỏi giá & trả tiền",
+          "titleByNative": {
+            "vi": "Bài 2: Hỏi giá & trả tiền",
+            "en": "Unit 2: Asking Prices & Paying",
+            "ja": "ユニット2: 値段を聞いて支払う",
+            "ko": "유닛 2: 가격 묻고 돈 내기",
+            "zh": "单元2: 问价与付款"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m06_numbers_prices_money",
+          "goal": "Count numbers, ask prices, and handle payment.",
+          "goalVi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+          "goalByNative": {
+            "en": "Count numbers, ask prices, and handle payment.",
+            "vi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+            "ja": "数を数え、値段を尋ね、支払いを行います。",
+            "ko": "숫자를 세고 가격을 물으며 결제를 처리합니다.",
+            "zh": "数数、问价并处理付款。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m06-u2-l1",
+            "en-daily_life-m06-u2-l2",
+            "en-daily_life-m06-u2-l3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m07",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m07_time_date",
+      "moduleTitle": "Time & Dates",
+      "moduleTitleVi": "Thời gian & ngày tháng",
+      "moduleTitleByNative": {
+        "en": "Time & Dates",
+        "vi": "Thời gian & ngày tháng",
+        "ja": "時間と日付",
+        "ko": "시간과 날짜",
+        "zh": "时间与日期"
+      },
+      "title": "English · Daily Life Communication · Time & Dates",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Thời gian & ngày tháng",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Thời gian & ngày tháng",
+        "en": "English · Daily Life Communication · Time & Dates",
+        "ja": "英語 · 日常会話 · 時間と日付",
+        "ko": "영어 · 일상 회화 · 시간과 날짜",
+        "zh": "英语 · 日常交流 · 时间与日期"
+      },
+      "description": "Ask and tell the time, dates, and days of the week.",
+      "descriptionVi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+      "descriptionByNative": {
+        "en": "Ask and tell the time, dates, and days of the week.",
+        "vi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+        "ja": "時間、日付、曜日を尋ねて答えます。",
+        "ko": "시간, 날짜, 요일을 묻고 답합니다.",
+        "zh": "询问并说出时间、日期与星期。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 17,
+      "unitIds": [
+        "en-daily_life-m07-u1",
+        "en-daily_life-m07-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m07-u1",
+          "title": "Unit 1: Telling Time",
+          "titleVi": "Bài 1: Giờ giấc",
+          "titleByNative": {
+            "vi": "Bài 1: Giờ giấc",
+            "en": "Unit 1: Telling Time",
+            "ja": "ユニット1: 時間",
+            "ko": "유닛 1: 시간",
+            "zh": "单元1: 时刻"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m07_time_date",
+          "goal": "Ask and tell the time, dates, and days of the week.",
+          "goalVi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+          "goalByNative": {
+            "en": "Ask and tell the time, dates, and days of the week.",
+            "vi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+            "ja": "時間、日付、曜日を尋ねて答えます。",
+            "ko": "시간, 날짜, 요일을 묻고 답합니다.",
+            "zh": "询问并说出时间、日期与星期。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m07-u1-l1",
+            "en-daily_life-m07-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m07-u2",
+          "title": "Unit 2: Dates & Weekdays",
+          "titleVi": "Bài 2: Ngày tháng & thứ",
+          "titleByNative": {
+            "vi": "Bài 2: Ngày tháng & thứ",
+            "en": "Unit 2: Dates & Weekdays",
+            "ja": "ユニット2: 日付と曜日",
+            "ko": "유닛 2: 날짜와 요일",
+            "zh": "单元2: 日期与星期"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m07_time_date",
+          "goal": "Ask and tell the time, dates, and days of the week.",
+          "goalVi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+          "goalByNative": {
+            "en": "Ask and tell the time, dates, and days of the week.",
+            "vi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+            "ja": "時間、日付、曜日を尋ねて答えます。",
+            "ko": "시간, 날짜, 요일을 묻고 답합니다.",
+            "zh": "询问并说出时间、日期与星期。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m07-u2-l1",
+            "en-daily_life-m07-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m08",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m08_shopping",
+      "moduleTitle": "Shopping",
+      "moduleTitleVi": "Mua sắm",
+      "moduleTitleByNative": {
+        "en": "Shopping",
+        "vi": "Mua sắm",
+        "ja": "買い物",
+        "ko": "쇼핑",
+        "zh": "购物"
+      },
+      "title": "English · Daily Life Communication · Shopping",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Mua sắm",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Mua sắm",
+        "en": "English · Daily Life Communication · Shopping",
+        "ja": "英語 · 日常会話 · 買い物",
+        "ko": "영어 · 일상 회화 · 쇼핑",
+        "zh": "英语 · 日常交流 · 购物"
+      },
+      "description": "Shop at a convenience store, supermarket, and clothing store.",
+      "descriptionVi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+      "descriptionByNative": {
+        "en": "Shop at a convenience store, supermarket, and clothing store.",
+        "vi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+        "ja": "コンビニ、スーパー、洋服店で買い物をします。",
+        "ko": "편의점, 슈퍼마켓, 옷 가게에서 쇼핑합니다.",
+        "zh": "在便利店、超市和服装店购物。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 18,
+      "unitIds": [
+        "en-daily_life-m08-u1",
+        "en-daily_life-m08-u2",
+        "en-daily_life-m08-u3"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m08-u1",
+          "title": "Unit 1: Convenience Store",
+          "titleVi": "Bài 1: Cửa hàng tiện lợi",
+          "titleByNative": {
+            "vi": "Bài 1: Cửa hàng tiện lợi",
+            "en": "Unit 1: Convenience Store",
+            "ja": "ユニット1: コンビニ",
+            "ko": "유닛 1: 편의점",
+            "zh": "单元1: 便利店"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m08_shopping",
+          "goal": "Shop at a convenience store, supermarket, and clothing store.",
+          "goalVi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+          "goalByNative": {
+            "en": "Shop at a convenience store, supermarket, and clothing store.",
+            "vi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+            "ja": "コンビニ、スーパー、洋服店で買い物をします。",
+            "ko": "편의점, 슈퍼마켓, 옷 가게에서 쇼핑합니다.",
+            "zh": "在便利店、超市和服装店购物。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m08-u1-l1",
+            "en-daily_life-m08-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m08-u2",
+          "title": "Unit 2: Supermarket",
+          "titleVi": "Bài 2: Siêu thị",
+          "titleByNative": {
+            "vi": "Bài 2: Siêu thị",
+            "en": "Unit 2: Supermarket",
+            "ja": "ユニット2: スーパー",
+            "ko": "유닛 2: 슈퍼마켓",
+            "zh": "单元2: 超市"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m08_shopping",
+          "goal": "Shop at a convenience store, supermarket, and clothing store.",
+          "goalVi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+          "goalByNative": {
+            "en": "Shop at a convenience store, supermarket, and clothing store.",
+            "vi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+            "ja": "コンビニ、スーパー、洋服店で買い物をします。",
+            "ko": "편의점, 슈퍼마켓, 옷 가게에서 쇼핑합니다.",
+            "zh": "在便利店、超市和服装店购物。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m08-u2-l1",
+            "en-daily_life-m08-u2-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m08-u3",
+          "title": "Unit 3: Clothing Store",
+          "titleVi": "Bài 3: Cửa hàng quần áo",
+          "titleByNative": {
+            "vi": "Bài 3: Cửa hàng quần áo",
+            "en": "Unit 3: Clothing Store",
+            "ja": "ユニット3: 洋服店",
+            "ko": "유닛 3: 옷 가게",
+            "zh": "单元3: 服装店"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m08_shopping",
+          "goal": "Shop at a convenience store, supermarket, and clothing store.",
+          "goalVi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+          "goalByNative": {
+            "en": "Shop at a convenience store, supermarket, and clothing store.",
+            "vi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+            "ja": "コンビニ、スーパー、洋服店で買い物をします。",
+            "ko": "편의점, 슈퍼마켓, 옷 가게에서 쇼핑합니다.",
+            "zh": "在便利店、超市和服装店购物。"
+          },
+          "displayOrder": 3,
+          "order": 3,
+          "lessonIds": [
+            "en-daily_life-m08-u3-l1",
+            "en-daily_life-m08-u3-l2",
+            "en-daily_life-m08-u3-l3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m09",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m09_food_ordering",
+      "moduleTitle": "Eating & Ordering Food",
+      "moduleTitleVi": "Ăn uống & gọi món",
+      "moduleTitleByNative": {
+        "en": "Eating & Ordering Food",
+        "vi": "Ăn uống & gọi món",
+        "ja": "食事と注文",
+        "ko": "식사와 주문",
+        "zh": "用餐与点菜"
+      },
+      "title": "English · Daily Life Communication · Eating & Ordering Food",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Ăn uống & gọi món",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Ăn uống & gọi món",
+        "en": "English · Daily Life Communication · Eating & Ordering Food",
+        "ja": "英語 · 日常会話 · 食事と注文",
+        "ko": "영어 · 일상 회화 · 식사와 주문",
+        "zh": "英语 · 日常交流 · 用餐与点菜"
+      },
+      "description": "Order food at a restaurant and talk about food preferences.",
+      "descriptionVi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+      "descriptionByNative": {
+        "en": "Order food at a restaurant and talk about food preferences.",
+        "vi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+        "ja": "お店で注文し、料理の好みについて話します。",
+        "ko": "식당에서 주문하고 음식 취향에 대해 이야기합니다.",
+        "zh": "在餐厅点菜并谈论饮食喜好。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 19,
+      "unitIds": [
+        "en-daily_life-m09-u1",
+        "en-daily_life-m09-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m09-u1",
+          "title": "Unit 1: Ordering at a Restaurant",
+          "titleVi": "Bài 1: Gọi món ở quán",
+          "titleByNative": {
+            "vi": "Bài 1: Gọi món ở quán",
+            "en": "Unit 1: Ordering at a Restaurant",
+            "ja": "ユニット1: お店で注文する",
+            "ko": "유닛 1: 식당에서 주문하기",
+            "zh": "单元1: 在餐厅点菜"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m09_food_ordering",
+          "goal": "Order food at a restaurant and talk about food preferences.",
+          "goalVi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+          "goalByNative": {
+            "en": "Order food at a restaurant and talk about food preferences.",
+            "vi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+            "ja": "お店で注文し、料理の好みについて話します。",
+            "ko": "식당에서 주문하고 음식 취향에 대해 이야기합니다.",
+            "zh": "在餐厅点菜并谈论饮食喜好。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m09-u1-l1",
+            "en-daily_life-m09-u1-l2",
+            "en-daily_life-m09-u1-l3"
+          ]
+        },
+        {
+          "id": "en-daily_life-m09-u2",
+          "title": "Unit 2: Talking About Food",
+          "titleVi": "Bài 2: Nói về món ăn",
+          "titleByNative": {
+            "vi": "Bài 2: Nói về món ăn",
+            "en": "Unit 2: Talking About Food",
+            "ja": "ユニット2: 料理について話す",
+            "ko": "유닛 2: 음식에 대해 말하기",
+            "zh": "单元2: 谈论食物"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m09_food_ordering",
+          "goal": "Order food at a restaurant and talk about food preferences.",
+          "goalVi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+          "goalByNative": {
+            "en": "Order food at a restaurant and talk about food preferences.",
+            "vi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+            "ja": "お店で注文し、料理の好みについて話します。",
+            "ko": "식당에서 주문하고 음식 취향에 대해 이야기합니다.",
+            "zh": "在餐厅点菜并谈论饮食喜好。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m09-u2-l1",
+            "en-daily_life-m09-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m10",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m10_directions_places",
+      "moduleTitle": "Directions & Places",
+      "moduleTitleVi": "Chỉ đường & nơi chốn",
+      "moduleTitleByNative": {
+        "en": "Directions & Places",
+        "vi": "Chỉ đường & nơi chốn",
+        "ja": "道案内と場所",
+        "ko": "길 안내와 장소",
+        "zh": "问路与地点"
+      },
+      "title": "English · Daily Life Communication · Directions & Places",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Chỉ đường & nơi chốn",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Chỉ đường & nơi chốn",
+        "en": "English · Daily Life Communication · Directions & Places",
+        "ja": "英語 · 日常会話 · 道案内と場所",
+        "ko": "영어 · 일상 회화 · 길 안내와 장소",
+        "zh": "英语 · 日常交流 · 问路与地点"
+      },
+      "description": "Ask for directions, understand directions, and find nearby places.",
+      "descriptionVi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+      "descriptionByNative": {
+        "en": "Ask for directions, understand directions, and find nearby places.",
+        "vi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+        "ja": "道を尋ね、案内を理解し、近くの場所を探します。",
+        "ko": "길을 묻고 안내를 이해하며 근처 장소를 찾습니다.",
+        "zh": "问路、听懂指路并寻找附近地点。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 20,
+      "unitIds": [
+        "en-daily_life-m10-u1",
+        "en-daily_life-m10-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m10-u1",
+          "title": "Unit 1: Asking for Directions",
+          "titleVi": "Bài 1: Hỏi đường",
+          "titleByNative": {
+            "vi": "Bài 1: Hỏi đường",
+            "en": "Unit 1: Asking for Directions",
+            "ja": "ユニット1: 道を尋ねる",
+            "ko": "유닛 1: 길 묻기",
+            "zh": "单元1: 问路"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m10_directions_places",
+          "goal": "Ask for directions, understand directions, and find nearby places.",
+          "goalVi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+          "goalByNative": {
+            "en": "Ask for directions, understand directions, and find nearby places.",
+            "vi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+            "ja": "道を尋ね、案内を理解し、近くの場所を探します。",
+            "ko": "길을 묻고 안내를 이해하며 근처 장소를 찾습니다.",
+            "zh": "问路、听懂指路并寻找附近地点。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m10-u1-l1",
+            "en-daily_life-m10-u1-l2",
+            "en-daily_life-m10-u1-l3"
+          ]
+        },
+        {
+          "id": "en-daily_life-m10-u2",
+          "title": "Unit 2: Finding Nearby Places",
+          "titleVi": "Bài 2: Tìm nơi gần đây",
+          "titleByNative": {
+            "vi": "Bài 2: Tìm nơi gần đây",
+            "en": "Unit 2: Finding Nearby Places",
+            "ja": "ユニット2: 近くの場所を探す",
+            "ko": "유닛 2: 근처 장소 찾기",
+            "zh": "单元2: 寻找附近的地方"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m10_directions_places",
+          "goal": "Ask for directions, understand directions, and find nearby places.",
+          "goalVi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+          "goalByNative": {
+            "en": "Ask for directions, understand directions, and find nearby places.",
+            "vi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+            "ja": "道を尋ね、案内を理解し、近くの場所を探します。",
+            "ko": "길을 묻고 안내를 이해하며 근처 장소를 찾습니다.",
+            "zh": "问路、听懂指路并寻找附近地点。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m10-u2-l1",
+            "en-daily_life-m10-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m11",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m11_transport_trains",
+      "moduleTitle": "Getting Around & Trains",
+      "moduleTitleVi": "Đi lại & tàu điện",
+      "moduleTitleByNative": {
+        "en": "Getting Around & Trains",
+        "vi": "Đi lại & tàu điện",
+        "ja": "移動と電車",
+        "ko": "이동과 지하철",
+        "zh": "出行与电车"
+      },
+      "title": "English · Daily Life Communication · Getting Around & Trains",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Đi lại & tàu điện",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Đi lại & tàu điện",
+        "en": "English · Daily Life Communication · Getting Around & Trains",
+        "ja": "英語 · 日常会話 · 移動と電車",
+        "ko": "영어 · 일상 회화 · 이동과 지하철",
+        "zh": "英语 · 日常交流 · 出行与电车"
+      },
+      "description": "Take the train, bus, or taxi, and ask about times and prices.",
+      "descriptionVi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+      "descriptionByNative": {
+        "en": "Take the train, bus, or taxi, and ask about times and prices.",
+        "vi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+        "ja": "電車・バス・タクシーを利用し、時刻や料金を尋ねます。",
+        "ko": "지하철, 버스, 택시를 이용하고 시간과 요금을 묻습니다.",
+        "zh": "乘坐电车、公交车、出租车并询问时间与价格。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 21,
+      "unitIds": [
+        "en-daily_life-m11-u1",
+        "en-daily_life-m11-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m11-u1",
+          "title": "Unit 1: Train / Bus",
+          "titleVi": "Bài 1: Tàu / xe buýt",
+          "titleByNative": {
+            "vi": "Bài 1: Tàu / xe buýt",
+            "en": "Unit 1: Train / Bus",
+            "ja": "ユニット1: 電車・バス",
+            "ko": "유닛 1: 지하철 / 버스",
+            "zh": "单元1: 电车/公交车"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m11_transport_trains",
+          "goal": "Take the train, bus, or taxi, and ask about times and prices.",
+          "goalVi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+          "goalByNative": {
+            "en": "Take the train, bus, or taxi, and ask about times and prices.",
+            "vi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+            "ja": "電車・バス・タクシーを利用し、時刻や料金を尋ねます。",
+            "ko": "지하철, 버스, 택시를 이용하고 시간과 요금을 묻습니다.",
+            "zh": "乘坐电车、公交车、出租车并询问时间与价格。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m11-u1-l1",
+            "en-daily_life-m11-u1-l2",
+            "en-daily_life-m11-u1-l3"
+          ]
+        },
+        {
+          "id": "en-daily_life-m11-u2",
+          "title": "Unit 2: Taxi",
+          "titleVi": "Bài 2: Taxi",
+          "titleByNative": {
+            "vi": "Bài 2: Taxi",
+            "en": "Unit 2: Taxi",
+            "ja": "ユニット2: タクシー",
+            "ko": "유닛 2: 택시",
+            "zh": "单元2: 出租车"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m11_transport_trains",
+          "goal": "Take the train, bus, or taxi, and ask about times and prices.",
+          "goalVi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+          "goalByNative": {
+            "en": "Take the train, bus, or taxi, and ask about times and prices.",
+            "vi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+            "ja": "電車・バス・タクシーを利用し、時刻や料金を尋ねます。",
+            "ko": "지하철, 버스, 택시를 이용하고 시간과 요금을 묻습니다.",
+            "zh": "乘坐电车、公交车、出租车并询问时间与价格。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m11-u2-l1",
+            "en-daily_life-m11-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m12",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m12_home_daily_living",
+      "moduleTitle": "Home & Daily Living",
+      "moduleTitleVi": "Nhà cửa & đời sống hàng ngày",
+      "moduleTitleByNative": {
+        "en": "Home & Daily Living",
+        "vi": "Nhà cửa & đời sống hàng ngày",
+        "ja": "家と日常生活",
+        "ko": "집과 일상생활",
+        "zh": "家居与日常生活"
+      },
+      "title": "English · Daily Life Communication · Home & Daily Living",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Nhà cửa & đời sống hàng ngày",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Nhà cửa & đời sống hàng ngày",
+        "en": "English · Daily Life Communication · Home & Daily Living",
+        "ja": "英語 · 日常会話 · 家と日常生活",
+        "ko": "영어 · 일상 회화 · 집과 일상생활",
+        "zh": "英语 · 日常交流 · 家居与日常生活"
+      },
+      "description": "Talk about your home and daily routines.",
+      "descriptionVi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+      "descriptionByNative": {
+        "en": "Talk about your home and daily routines.",
+        "vi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+        "ja": "住まいと日常生活について話します。",
+        "ko": "거주지와 일상생활에 대해 이야기합니다.",
+        "zh": "谈论住所与日常生活。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 22,
+      "unitIds": [
+        "en-daily_life-m12-u1",
+        "en-daily_life-m12-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m12-u1",
+          "title": "Unit 1: Talking About Your Home",
+          "titleVi": "Bài 1: Nói về nhà mình",
+          "titleByNative": {
+            "vi": "Bài 1: Nói về nhà mình",
+            "en": "Unit 1: Talking About Your Home",
+            "ja": "ユニット1: 自分の家について話す",
+            "ko": "유닛 1: 우리 집에 대해 말하기",
+            "zh": "单元1: 谈论自己的家"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m12_home_daily_living",
+          "goal": "Talk about your home and daily routines.",
+          "goalVi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+          "goalByNative": {
+            "en": "Talk about your home and daily routines.",
+            "vi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+            "ja": "住まいと日常生活について話します。",
+            "ko": "거주지와 일상생활에 대해 이야기합니다.",
+            "zh": "谈论住所与日常生活。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m12-u1-l1",
+            "en-daily_life-m12-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m12-u2",
+          "title": "Unit 2: A Typical Day",
+          "titleVi": "Bài 2: Sinh hoạt một ngày",
+          "titleByNative": {
+            "vi": "Bài 2: Sinh hoạt một ngày",
+            "en": "Unit 2: A Typical Day",
+            "ja": "ユニット2: 一日の生活",
+            "ko": "유닛 2: 하루 일과",
+            "zh": "单元2: 一天的生活"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m12_home_daily_living",
+          "goal": "Talk about your home and daily routines.",
+          "goalVi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+          "goalByNative": {
+            "en": "Talk about your home and daily routines.",
+            "vi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+            "ja": "住まいと日常生活について話します。",
+            "ko": "거주지와 일상생활에 대해 이야기합니다.",
+            "zh": "谈论住所与日常生活。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m12-u2-l1",
+            "en-daily_life-m12-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m13",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m13_hobbies_free_time",
+      "moduleTitle": "Hobbies & Free Time",
+      "moduleTitleVi": "Sở thích & thời gian rảnh",
+      "moduleTitleByNative": {
+        "en": "Hobbies & Free Time",
+        "vi": "Sở thích & thời gian rảnh",
+        "ja": "趣味と自由時間",
+        "ko": "취미와 여가",
+        "zh": "爱好与空闲时间"
+      },
+      "title": "English · Daily Life Communication · Hobbies & Free Time",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Sở thích & thời gian rảnh",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Sở thích & thời gian rảnh",
+        "en": "English · Daily Life Communication · Hobbies & Free Time",
+        "ja": "英語 · 日常会話 · 趣味と自由時間",
+        "ko": "영어 · 일상 회화 · 취미와 여가",
+        "zh": "英语 · 日常交流 · 爱好与空闲时间"
+      },
+      "description": "Talk about hobbies and how you spend free time and weekends.",
+      "descriptionVi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+      "descriptionByNative": {
+        "en": "Talk about hobbies and how you spend free time and weekends.",
+        "vi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+        "ja": "趣味や自由時間・週末の過ごし方について話します。",
+        "ko": "취미와 여가·주말을 보내는 방법에 대해 이야기합니다.",
+        "zh": "谈论爱好以及空闲时间与周末的安排。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 23,
+      "unitIds": [
+        "en-daily_life-m13-u1",
+        "en-daily_life-m13-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m13-u1",
+          "title": "Unit 1: Talking About Hobbies",
+          "titleVi": "Bài 1: Nói sở thích",
+          "titleByNative": {
+            "vi": "Bài 1: Nói sở thích",
+            "en": "Unit 1: Talking About Hobbies",
+            "ja": "ユニット1: 趣味について話す",
+            "ko": "유닛 1: 취미에 대해 말하기",
+            "zh": "单元1: 谈论爱好"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m13_hobbies_free_time",
+          "goal": "Talk about hobbies and how you spend free time and weekends.",
+          "goalVi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+          "goalByNative": {
+            "en": "Talk about hobbies and how you spend free time and weekends.",
+            "vi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+            "ja": "趣味や自由時間・週末の過ごし方について話します。",
+            "ko": "취미와 여가·주말을 보내는 방법에 대해 이야기합니다.",
+            "zh": "谈论爱好以及空闲时间与周末的安排。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m13-u1-l1",
+            "en-daily_life-m13-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m13-u2",
+          "title": "Unit 2: Talking About the Weekend",
+          "titleVi": "Bài 2: Nói về cuối tuần",
+          "titleByNative": {
+            "vi": "Bài 2: Nói về cuối tuần",
+            "en": "Unit 2: Talking About the Weekend",
+            "ja": "ユニット2: 週末について話す",
+            "ko": "유닛 2: 주말에 대해 말하기",
+            "zh": "单元2: 谈论周末"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m13_hobbies_free_time",
+          "goal": "Talk about hobbies and how you spend free time and weekends.",
+          "goalVi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+          "goalByNative": {
+            "en": "Talk about hobbies and how you spend free time and weekends.",
+            "vi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+            "ja": "趣味や自由時間・週末の過ごし方について話します。",
+            "ko": "취미와 여가·주말을 보내는 방법에 대해 이야기합니다.",
+            "zh": "谈论爱好以及空闲时间与周末的安排。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m13-u2-l1",
+            "en-daily_life-m13-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m14",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m14_meetups_invitations",
+      "moduleTitle": "Making Plans & Invitations",
+      "moduleTitleVi": "Hẹn gặp & rủ rê",
+      "moduleTitleByNative": {
+        "en": "Making Plans & Invitations",
+        "vi": "Hẹn gặp & rủ rê",
+        "ja": "約束と誘い",
+        "ko": "약속과 초대",
+        "zh": "约定与邀约"
+      },
+      "title": "English · Daily Life Communication · Making Plans & Invitations",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Hẹn gặp & rủ rê",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Hẹn gặp & rủ rê",
+        "en": "English · Daily Life Communication · Making Plans & Invitations",
+        "ja": "英語 · 日常会話 · 約束と誘い",
+        "ko": "영어 · 일상 회화 · 약속과 초대",
+        "zh": "英语 · 日常交流 · 约定与邀约"
+      },
+      "description": "Invite someone out, confirm plans, and handle rescheduling.",
+      "descriptionVi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+      "descriptionByNative": {
+        "en": "Invite someone out, confirm plans, and handle rescheduling.",
+        "vi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+        "ja": "人を誘い、約束を決め、変更にも対応します。",
+        "ko": "사람을 초대하고 약속을 정하며 일정 변경에도 대응합니다.",
+        "zh": "邀请他人、确定约会并处理改期。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 24,
+      "unitIds": [
+        "en-daily_life-m14-u1",
+        "en-daily_life-m14-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m14-u1",
+          "title": "Unit 1: Inviting Someone Out",
+          "titleVi": "Bài 1: Rủ đi chơi",
+          "titleByNative": {
+            "vi": "Bài 1: Rủ đi chơi",
+            "en": "Unit 1: Inviting Someone Out",
+            "ja": "ユニット1: 遊びに誘う",
+            "ko": "유닛 1: 놀러 가자고 하기",
+            "zh": "单元1: 邀请出去玩"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m14_meetups_invitations",
+          "goal": "Invite someone out, confirm plans, and handle rescheduling.",
+          "goalVi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+          "goalByNative": {
+            "en": "Invite someone out, confirm plans, and handle rescheduling.",
+            "vi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+            "ja": "人を誘い、約束を決め、変更にも対応します。",
+            "ko": "사람을 초대하고 약속을 정하며 일정 변경에도 대응합니다.",
+            "zh": "邀请他人、确定约会并处理改期。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m14-u1-l1",
+            "en-daily_life-m14-u1-l2",
+            "en-daily_life-m14-u1-l3"
+          ]
+        },
+        {
+          "id": "en-daily_life-m14-u2",
+          "title": "Unit 2: Changing Plans",
+          "titleVi": "Bài 2: Đổi hẹn",
+          "titleByNative": {
+            "vi": "Bài 2: Đổi hẹn",
+            "en": "Unit 2: Changing Plans",
+            "ja": "ユニット2: 約束の変更",
+            "ko": "유닛 2: 약속 변경하기",
+            "zh": "单元2: 更改约定"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m14_meetups_invitations",
+          "goal": "Invite someone out, confirm plans, and handle rescheduling.",
+          "goalVi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+          "goalByNative": {
+            "en": "Invite someone out, confirm plans, and handle rescheduling.",
+            "vi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+            "ja": "人を誘い、約束を決め、変更にも対応します。",
+            "ko": "사람을 초대하고 약속을 정하며 일정 변경에도 대응합니다.",
+            "zh": "邀请他人、确定约会并处理改期。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m14-u2-l1",
+            "en-daily_life-m14-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m15",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m15_description_feelings",
+      "moduleTitle": "Describing Things & Feelings",
+      "moduleTitleVi": "Mô tả & cảm nghĩ",
+      "moduleTitleByNative": {
+        "en": "Describing Things & Feelings",
+        "vi": "Mô tả & cảm nghĩ",
+        "ja": "描写と感想",
+        "ko": "묘사와 느낌",
+        "zh": "描述与感受"
+      },
+      "title": "English · Daily Life Communication · Describing Things & Feelings",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Mô tả & cảm nghĩ",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Mô tả & cảm nghĩ",
+        "en": "English · Daily Life Communication · Describing Things & Feelings",
+        "ja": "英語 · 日常会話 · 描写と感想",
+        "ko": "영어 · 일상 회화 · 묘사와 느낌",
+        "zh": "英语 · 日常交流 · 描述与感受"
+      },
+      "description": "Describe objects and places, and express simple feelings.",
+      "descriptionVi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+      "descriptionByNative": {
+        "en": "Describe objects and places, and express simple feelings.",
+        "vi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+        "ja": "ものや場所を描写し、簡単な感想を伝えます。",
+        "ko": "물건과 장소를 묘사하고 간단한 느낌을 말합니다.",
+        "zh": "描述物品与地点并表达简单感受。"
       },
       "levelCode": "A0",
       "levelRange": "A0–A1",
@@ -852,9 +1844,190 @@
       "contentStatus": "blueprint",
       "playable": false,
       "order": 25,
-      "unitIds": [],
+      "unitIds": [
+        "en-daily_life-m15-u1",
+        "en-daily_life-m15-u2"
+      ],
       "isComingSoon": true,
-      "units": []
+      "units": [
+        {
+          "id": "en-daily_life-m15-u1",
+          "title": "Unit 1: Describing Objects & Places",
+          "titleVi": "Bài 1: Tả đồ vật / nơi chốn",
+          "titleByNative": {
+            "vi": "Bài 1: Tả đồ vật / nơi chốn",
+            "en": "Unit 1: Describing Objects & Places",
+            "ja": "ユニット1: ものや場所を描写する",
+            "ko": "유닛 1: 물건과 장소 묘사하기",
+            "zh": "单元1: 描述物品与地点"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m15_description_feelings",
+          "goal": "Describe objects and places, and express simple feelings.",
+          "goalVi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+          "goalByNative": {
+            "en": "Describe objects and places, and express simple feelings.",
+            "vi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+            "ja": "ものや場所を描写し、簡単な感想を伝えます。",
+            "ko": "물건과 장소를 묘사하고 간단한 느낌을 말합니다.",
+            "zh": "描述物品与地点并表达简单感受。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m15-u1-l1",
+            "en-daily_life-m15-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m15-u2",
+          "title": "Unit 2: Expressing Feelings",
+          "titleVi": "Bài 2: Nói cảm nghĩ",
+          "titleByNative": {
+            "vi": "Bài 2: Nói cảm nghĩ",
+            "en": "Unit 2: Expressing Feelings",
+            "ja": "ユニット2: 感想を伝える",
+            "ko": "유닛 2: 느낌 말하기",
+            "zh": "单元2: 表达感受"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m15_description_feelings",
+          "goal": "Describe objects and places, and express simple feelings.",
+          "goalVi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+          "goalByNative": {
+            "en": "Describe objects and places, and express simple feelings.",
+            "vi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+            "ja": "ものや場所を描写し、簡単な感想を伝えます。",
+            "ko": "물건과 장소를 묘사하고 간단한 느낌을 말합니다.",
+            "zh": "描述物品与地点并表达简单感受。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m15-u2-l1",
+            "en-daily_life-m15-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-daily_life-m16",
+      "languageCode": "en",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m16_health_problems",
+      "moduleTitle": "Health & When Something Goes Wrong",
+      "moduleTitleVi": "Sức khỏe & khi gặp rắc rối",
+      "moduleTitleByNative": {
+        "en": "Health & When Something Goes Wrong",
+        "vi": "Sức khỏe & khi gặp rắc rối",
+        "ja": "健康とトラブル",
+        "ko": "건강과 문제 상황",
+        "zh": "健康与突发状况"
+      },
+      "title": "English · Daily Life Communication · Health & When Something Goes Wrong",
+      "titleVi": "Tiếng Anh · Giao tiếp hằng ngày · Sức khỏe & khi gặp rắc rối",
+      "titleByNative": {
+        "vi": "Tiếng Anh · Giao tiếp hằng ngày · Sức khỏe & khi gặp rắc rối",
+        "en": "English · Daily Life Communication · Health & When Something Goes Wrong",
+        "ja": "英語 · 日常会話 · 健康とトラブル",
+        "ko": "영어 · 일상 회화 · 건강과 문제 상황",
+        "zh": "英语 · 日常交流 · 健康与突发状况"
+      },
+      "description": "Talk about your health and handle everyday problems.",
+      "descriptionVi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+      "descriptionByNative": {
+        "en": "Talk about your health and handle everyday problems.",
+        "vi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+        "ja": "健康について話し、日常のトラブルに対応します。",
+        "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
+        "zh": "谈论健康并应对日常生活中的突发状况。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 26,
+      "unitIds": [
+        "en-daily_life-m16-u1",
+        "en-daily_life-m16-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "en-daily_life-m16-u1",
+          "title": "Unit 1: Talking About Health",
+          "titleVi": "Bài 1: Nói về sức khỏe",
+          "titleByNative": {
+            "vi": "Bài 1: Nói về sức khỏe",
+            "en": "Unit 1: Talking About Health",
+            "ja": "ユニット1: 健康について話す",
+            "ko": "유닛 1: 건강에 대해 말하기",
+            "zh": "单元1: 谈论健康"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m16_health_problems",
+          "goal": "Talk about your health and handle everyday problems.",
+          "goalVi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+          "goalByNative": {
+            "en": "Talk about your health and handle everyday problems.",
+            "vi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+            "ja": "健康について話し、日常のトラブルに対応します。",
+            "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
+            "zh": "谈论健康并应对日常生活中的突发状况。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "en-daily_life-m16-u1-l1",
+            "en-daily_life-m16-u1-l2"
+          ]
+        },
+        {
+          "id": "en-daily_life-m16-u2",
+          "title": "Unit 2: When Something Goes Wrong",
+          "titleVi": "Bài 2: Khi gặp rắc rối",
+          "titleByNative": {
+            "vi": "Bài 2: Khi gặp rắc rối",
+            "en": "Unit 2: When Something Goes Wrong",
+            "ja": "ユニット2: トラブルにあったとき",
+            "ko": "유닛 2: 문제가 생겼을 때",
+            "zh": "单元2: 遇到麻烦时"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "en-daily_life",
+          "moduleId": "daily_life_m16_health_problems",
+          "goal": "Talk about your health and handle everyday problems.",
+          "goalVi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+          "goalByNative": {
+            "en": "Talk about your health and handle everyday problems.",
+            "vi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+            "ja": "健康について話し、日常のトラブルに対応します。",
+            "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
+            "zh": "谈论健康并应对日常生活中的突发状况。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "en-daily_life-m16-u2-l1",
+            "en-daily_life-m16-u2-l2"
+          ]
+        }
+      ]
     },
     {
       "id": "ja-daily_life-m01",
@@ -871,23 +2044,23 @@
         "ko": "인사와 안면 트기",
         "zh": "问候与结识"
       },
-      "title": "Japanese · Greetings & Getting Acquainted",
-      "titleVi": "Tiếng Nhật · Chào hỏi & làm quen",
+      "title": "Japanese · Daily Life Communication · Greetings & Getting Acquainted",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Chào hỏi & làm quen",
       "titleByNative": {
-        "en": "Greetings & Getting Acquainted",
-        "vi": "Chào hỏi & làm quen",
-        "ja": "あいさつと知り合い",
-        "ko": "인사와 안면 트기",
-        "zh": "问候与结识"
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Chào hỏi & làm quen",
+        "en": "Japanese · Daily Life Communication · Greetings & Getting Acquainted",
+        "ja": "日本語 · 日常会話 · あいさつと知り合い",
+        "ko": "일본어 · 일상 회화 · 인사와 안면 트기",
+        "zh": "日语 · 日常交流 · 问候与结识"
       },
-      "description": "Learn greetings, self-introduction, and basic first-meeting conversation.",
-      "descriptionVi": "Học chào hỏi, tự giới thiệu và hội thoại cơ bản khi gặp lần đầu.",
+      "description": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+      "descriptionVi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
       "descriptionByNative": {
-        "en": "Learn greetings, self-introduction, and basic first-meeting conversation.",
-        "vi": "Học chào hỏi, tự giới thiệu và hội thoại cơ bản khi gặp lần đầu.",
-        "ja": "あいさつ、自己紹介、初対面での基本会話を学びます。",
-        "ko": "인사, 자기소개, 첫 만남에서의 기본 회화를 배웁니다.",
-        "zh": "学习问候、自我介绍与初次见面的基础对话。"
+        "en": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+        "vi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+        "ja": "時間帯に応じたあいさつ、自己紹介、初対面でのやり取り、知り合いへのあいさつを学びます。",
+        "ko": "시간대별 인사, 자기소개, 첫 만남, 아는 사람에게 인사하는 법을 배웁니다.",
+        "zh": "学习按时间问候、自我介绍、初次见面交流以及向熟人问候。"
       },
       "levelCode": "A0",
       "levelRange": "A0–A1",
@@ -898,37 +2071,74 @@
       "playable": true,
       "order": 11,
       "unitIds": [
-        "ja-daily_life-m01-u1"
+        "ja-daily_life-m01-u1",
+        "ja-daily_life-m01-u2"
       ],
       "isComingSoon": false,
       "units": [
         {
           "id": "ja-daily_life-m01-u1",
-          "title": "Chào và nói tên",
-          "titleVi": "Chào và nói tên",
+          "title": "Unit 1: Meeting for the First Time",
+          "titleVi": "Bài 1: Làm quen lần đầu",
           "titleByNative": {
-            "vi": "Chào và nói tên",
-            "en": "Greetings and names",
-            "ja": "あいさつと名前"
+            "vi": "Bài 1: Làm quen lần đầu",
+            "en": "Unit 1: Meeting for the First Time",
+            "ja": "ユニット1: 初めて知り合う",
+            "ko": "유닛 1: 처음 만나 인사 나누기",
+            "zh": "单元1: 初次见面认识"
           },
           "levelCode": "A0",
           "levelRange": "A0–A1",
           "tier": "basic",
           "trackId": "ja-daily_life",
           "moduleId": "daily_life_m01_basic_social_survival",
-          "goal": "Learn greetings, self-introduction, and basic first-meeting conversation.",
-          "goalVi": "Học chào hỏi, tự giới thiệu và hội thoại cơ bản khi gặp lần đầu.",
+          "goal": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+          "goalVi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
           "goalByNative": {
-            "en": "Learn greetings, self-introduction, and basic first-meeting conversation.",
-            "vi": "Học chào hỏi, tự giới thiệu và hội thoại cơ bản khi gặp lần đầu.",
-            "ja": "あいさつ、自己紹介、初対面での基本会話を学びます。",
-            "ko": "인사, 자기소개, 첫 만남에서의 기본 회화를 배웁니다.",
-            "zh": "学习问候、自我介绍与初次见面的基础对话。"
+            "en": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+            "vi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+            "ja": "時間帯に応じたあいさつ、自己紹介、初対面でのやり取り、知り合いへのあいさつを学びます。",
+            "ko": "시간대별 인사, 자기소개, 첫 만남, 아는 사람에게 인사하는 법을 배웁니다.",
+            "zh": "学习按时间问候、自我介绍、初次见面交流以及向熟人问候。"
           },
           "displayOrder": 1,
           "order": 1,
           "lessonIds": [
-            "ja-daily_life-m01-u1-l1"
+            "ja-daily_life-m01-u1-l1",
+            "ja-daily_life-m01-u1-l2",
+            "ja-daily_life-m01-u1-l3"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m01-u2",
+          "title": "Unit 2: Meeting Someone You Already Know",
+          "titleVi": "Bài 2: Gặp lại người đã quen",
+          "titleByNative": {
+            "vi": "Bài 2: Gặp lại người đã quen",
+            "en": "Unit 2: Meeting Someone You Already Know",
+            "ja": "ユニット2: 知り合いに再会する",
+            "ko": "유닛 2: 아는 사람을 다시 만나기",
+            "zh": "单元2: 再次遇见认识的人"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m01_basic_social_survival",
+          "goal": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+          "goalVi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+          "goalByNative": {
+            "en": "Learn time-based greetings, self-introduction, meeting someone for the first time, and greeting people you already know.",
+            "vi": "Học chào hỏi theo thời điểm, tự giới thiệu, làm quen lần đầu và chào lại người đã quen.",
+            "ja": "時間帯に応じたあいさつ、自己紹介、初対面でのやり取り、知り合いへのあいさつを学びます。",
+            "ko": "시간대별 인사, 자기소개, 첫 만남, 아는 사람에게 인사하는 법을 배웁니다.",
+            "zh": "学习按时间问候、自我介绍、初次见面交流以及向熟人问候。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m01-u2-l1",
+            "ja-daily_life-m01-u2-l2"
           ]
         }
       ]
@@ -938,592 +2148,7 @@
       "languageCode": "ja",
       "nicheId": "daily_life",
       "branch": "niche",
-      "moduleId": "daily_life_topic02_self_family",
-      "moduleTitle": "Myself & Family",
-      "moduleTitleVi": "Bản thân & gia đình",
-      "moduleTitleByNative": {
-        "en": "Myself & Family",
-        "vi": "Bản thân & gia đình",
-        "ja": "自分と家族",
-        "ko": "나와 가족",
-        "zh": "自己与家庭"
-      },
-      "title": "Japanese · Daily Life Communication · Myself & Family",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Bản thân & gia đình",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Bản thân & gia đình",
-        "en": "Japanese · Daily Life Communication · Myself & Family",
-        "ja": "日本語 · 日常会話 · 自分と家族",
-        "ko": "일본어 · 일상 회화 · 나와 가족",
-        "zh": "日语 · 日常交流 · 自己与家庭"
-      },
-      "description": "Talk about yourself and your family.",
-      "descriptionVi": "Nói về bản thân và gia đình.",
-      "descriptionByNative": {
-        "en": "Talk about yourself and your family.",
-        "vi": "Nói về bản thân và gia đình.",
-        "ja": "自分自身と家族について話します。",
-        "ko": "자신과 가족에 대해 이야기합니다.",
-        "zh": "谈论自己与家人。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 12,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m03",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic03_objects_demonstratives",
-      "moduleTitle": "Objects & Pointing Things Out",
-      "moduleTitleVi": "Đồ vật & chỉ định",
-      "moduleTitleByNative": {
-        "en": "Objects & Pointing Things Out",
-        "vi": "Đồ vật & chỉ định",
-        "ja": "ものと指示表現",
-        "ko": "물건과 지시 표현",
-        "zh": "物品与指示表达"
-      },
-      "title": "Japanese · Daily Life Communication · Objects & Pointing Things Out",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Đồ vật & chỉ định",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Đồ vật & chỉ định",
-        "en": "Japanese · Daily Life Communication · Objects & Pointing Things Out",
-        "ja": "日本語 · 日常会話 · ものと指示表現",
-        "ko": "일본어 · 일상 회화 · 물건과 지시 표현",
-        "zh": "日语 · 日常交流 · 物品与指示表达"
-      },
-      "description": "Identify and point out everyday objects.",
-      "descriptionVi": "Gọi tên và chỉ vào các đồ vật hằng ngày.",
-      "descriptionByNative": {
-        "en": "Identify and point out everyday objects.",
-        "vi": "Gọi tên và chỉ vào các đồ vật hằng ngày.",
-        "ja": "身の回りのものを特定し、指し示します。",
-        "ko": "일상 물건을 가리키고 이름을 말합니다.",
-        "zh": "识别并指出日常物品。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 13,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m04",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic04_numbers_prices_money",
-      "moduleTitle": "Numbers, Prices & Money",
-      "moduleTitleVi": "Số đếm, giá cả, tiền",
-      "moduleTitleByNative": {
-        "en": "Numbers, Prices & Money",
-        "vi": "Số đếm, giá cả, tiền",
-        "ja": "数字・値段・お金",
-        "ko": "숫자, 가격, 돈",
-        "zh": "数字、价格与金钱"
-      },
-      "title": "Japanese · Daily Life Communication · Numbers, Prices & Money",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Số đếm, giá cả, tiền",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Số đếm, giá cả, tiền",
-        "en": "Japanese · Daily Life Communication · Numbers, Prices & Money",
-        "ja": "日本語 · 日常会話 · 数字・値段・お金",
-        "ko": "일본어 · 일상 회화 · 숫자, 가격, 돈",
-        "zh": "日语 · 日常交流 · 数字、价格与金钱"
-      },
-      "description": "Count, ask prices, and handle money in daily situations.",
-      "descriptionVi": "Đếm số, hỏi giá và dùng tiền trong tình huống hằng ngày.",
-      "descriptionByNative": {
-        "en": "Count, ask prices, and handle money in daily situations.",
-        "vi": "Đếm số, hỏi giá và dùng tiền trong tình huống hằng ngày.",
-        "ja": "数を数え、値段を尋ね、日常でお金を扱います。",
-        "ko": "수를 세고 가격을 묻고 일상에서 돈을 씁니다.",
-        "zh": "数数、问价并在日常情境中使用金钱。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 14,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m05",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic05_time_date",
-      "moduleTitle": "Time & Dates",
-      "moduleTitleVi": "Thời gian & ngày tháng",
-      "moduleTitleByNative": {
-        "en": "Time & Dates",
-        "vi": "Thời gian & ngày tháng",
-        "ja": "時間と日付",
-        "ko": "시간과 날짜",
-        "zh": "时间与日期"
-      },
-      "title": "Japanese · Daily Life Communication · Time & Dates",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Thời gian & ngày tháng",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Thời gian & ngày tháng",
-        "en": "Japanese · Daily Life Communication · Time & Dates",
-        "ja": "日本語 · 日常会話 · 時間と日付",
-        "ko": "일본어 · 일상 회화 · 시간과 날짜",
-        "zh": "日语 · 日常交流 · 时间与日期"
-      },
-      "description": "Tell time and talk about dates and schedules.",
-      "descriptionVi": "Nói giờ và nói về ngày tháng, lịch trình.",
-      "descriptionByNative": {
-        "en": "Tell time and talk about dates and schedules.",
-        "vi": "Nói giờ và nói về ngày tháng, lịch trình.",
-        "ja": "時間を言い、日付や予定について話します。",
-        "ko": "시간을 말하고 날짜와 일정에 대해 이야기합니다.",
-        "zh": "报时并谈论日期与日程。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 15,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m06",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic06_shopping",
-      "moduleTitle": "Shopping",
-      "moduleTitleVi": "Mua sắm",
-      "moduleTitleByNative": {
-        "en": "Shopping",
-        "vi": "Mua sắm",
-        "ja": "買い物",
-        "ko": "쇼핑",
-        "zh": "购物"
-      },
-      "title": "Japanese · Daily Life Communication · Shopping",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Mua sắm",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Mua sắm",
-        "en": "Japanese · Daily Life Communication · Shopping",
-        "ja": "日本語 · 日常会話 · 買い物",
-        "ko": "일본어 · 일상 회화 · 쇼핑",
-        "zh": "日语 · 日常交流 · 购物"
-      },
-      "description": "Shop for everyday items and handle simple transactions.",
-      "descriptionVi": "Mua đồ hằng ngày và thực hiện giao dịch đơn giản.",
-      "descriptionByNative": {
-        "en": "Shop for everyday items and handle simple transactions.",
-        "vi": "Mua đồ hằng ngày và thực hiện giao dịch đơn giản.",
-        "ja": "日用品を買い、簡単な買い物のやり取りをします。",
-        "ko": "일상용품을 사고 간단한 거래를 합니다.",
-        "zh": "购买日常用品并完成简单交易。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 16,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m07",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic07_food_ordering",
-      "moduleTitle": "Eating & Ordering Food",
-      "moduleTitleVi": "Ăn uống & gọi món",
-      "moduleTitleByNative": {
-        "en": "Eating & Ordering Food",
-        "vi": "Ăn uống & gọi món",
-        "ja": "食事と注文",
-        "ko": "식사와 주문",
-        "zh": "用餐与点菜"
-      },
-      "title": "Japanese · Daily Life Communication · Eating & Ordering Food",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Ăn uống & gọi món",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Ăn uống & gọi món",
-        "en": "Japanese · Daily Life Communication · Eating & Ordering Food",
-        "ja": "日本語 · 日常会話 · 食事と注文",
-        "ko": "일본어 · 일상 회화 · 식사와 주문",
-        "zh": "日语 · 日常交流 · 用餐与点菜"
-      },
-      "description": "Order food and talk about meals.",
-      "descriptionVi": "Gọi món và nói về bữa ăn.",
-      "descriptionByNative": {
-        "en": "Order food and talk about meals.",
-        "vi": "Gọi món và nói về bữa ăn.",
-        "ja": "料理を注文し、食事について話します。",
-        "ko": "음식을 주문하고 식사에 대해 이야기합니다.",
-        "zh": "点菜并谈论用餐。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 17,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m08",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic08_directions_places",
-      "moduleTitle": "Directions & Places",
-      "moduleTitleVi": "Chỉ đường & nơi chốn",
-      "moduleTitleByNative": {
-        "en": "Directions & Places",
-        "vi": "Chỉ đường & nơi chốn",
-        "ja": "道案内と場所",
-        "ko": "길 안내와 장소",
-        "zh": "问路与地点"
-      },
-      "title": "Japanese · Daily Life Communication · Directions & Places",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Chỉ đường & nơi chốn",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Chỉ đường & nơi chốn",
-        "en": "Japanese · Daily Life Communication · Directions & Places",
-        "ja": "日本語 · 日常会話 · 道案内と場所",
-        "ko": "일본어 · 일상 회화 · 길 안내와 장소",
-        "zh": "日语 · 日常交流 · 问路与地点"
-      },
-      "description": "Ask for and give directions to places.",
-      "descriptionVi": "Hỏi đường và chỉ đường đến nơi cần đến.",
-      "descriptionByNative": {
-        "en": "Ask for and give directions to places.",
-        "vi": "Hỏi đường và chỉ đường đến nơi cần đến.",
-        "ja": "場所への行き方を尋ね、案内します。",
-        "ko": "장소로 가는 길을 묻고 안내합니다.",
-        "zh": "问路并为他人指路。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 18,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m09",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic09_transport_trains",
-      "moduleTitle": "Getting Around & Trains",
-      "moduleTitleVi": "Đi lại & tàu điện",
-      "moduleTitleByNative": {
-        "en": "Getting Around & Trains",
-        "vi": "Đi lại & tàu điện",
-        "ja": "移動と電車",
-        "ko": "이동과 지하철",
-        "zh": "出行与电车"
-      },
-      "title": "Japanese · Daily Life Communication · Getting Around & Trains",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Đi lại & tàu điện",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Đi lại & tàu điện",
-        "en": "Japanese · Daily Life Communication · Getting Around & Trains",
-        "ja": "日本語 · 日常会話 · 移動と電車",
-        "ko": "일본어 · 일상 회화 · 이동과 지하철",
-        "zh": "日语 · 日常交流 · 出行与电车"
-      },
-      "description": "Get around by train and other everyday transport.",
-      "descriptionVi": "Đi lại bằng tàu điện và các phương tiện hằng ngày.",
-      "descriptionByNative": {
-        "en": "Get around by train and other everyday transport.",
-        "vi": "Đi lại bằng tàu điện và các phương tiện hằng ngày.",
-        "ja": "電車など日常の交通手段で移動します。",
-        "ko": "지하철 등 일상 교통수단으로 이동합니다.",
-        "zh": "乘坐电车等日常交通工具出行。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 19,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m10",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic10_home_daily_living",
-      "moduleTitle": "Home & Daily Living",
-      "moduleTitleVi": "Nhà cửa & đời sống hàng ngày",
-      "moduleTitleByNative": {
-        "en": "Home & Daily Living",
-        "vi": "Nhà cửa & đời sống hàng ngày",
-        "ja": "家と日常生活",
-        "ko": "집과 일상생활",
-        "zh": "家居与日常生活"
-      },
-      "title": "Japanese · Daily Life Communication · Home & Daily Living",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Nhà cửa & đời sống hàng ngày",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Nhà cửa & đời sống hàng ngày",
-        "en": "Japanese · Daily Life Communication · Home & Daily Living",
-        "ja": "日本語 · 日常会話 · 家と日常生活",
-        "ko": "일본어 · 일상 회화 · 집과 일상생활",
-        "zh": "日语 · 日常交流 · 家居与日常生活"
-      },
-      "description": "Talk about your home and everyday routines.",
-      "descriptionVi": "Nói về nhà cửa và sinh hoạt hằng ngày.",
-      "descriptionByNative": {
-        "en": "Talk about your home and everyday routines.",
-        "vi": "Nói về nhà cửa và sinh hoạt hằng ngày.",
-        "ja": "自分の家や日常の暮らしについて話します。",
-        "ko": "집과 일상생활에 대해 이야기합니다.",
-        "zh": "谈论住所与日常生活。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 20,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m11",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic11_hobbies_free_time",
-      "moduleTitle": "Hobbies & Free Time",
-      "moduleTitleVi": "Sở thích & thời gian rảnh",
-      "moduleTitleByNative": {
-        "en": "Hobbies & Free Time",
-        "vi": "Sở thích & thời gian rảnh",
-        "ja": "趣味と自由時間",
-        "ko": "취미와 여가",
-        "zh": "爱好与空闲时间"
-      },
-      "title": "Japanese · Daily Life Communication · Hobbies & Free Time",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Sở thích & thời gian rảnh",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Sở thích & thời gian rảnh",
-        "en": "Japanese · Daily Life Communication · Hobbies & Free Time",
-        "ja": "日本語 · 日常会話 · 趣味と自由時間",
-        "ko": "일본어 · 일상 회화 · 취미와 여가",
-        "zh": "日语 · 日常交流 · 爱好与空闲时间"
-      },
-      "description": "Talk about hobbies and how you spend free time.",
-      "descriptionVi": "Nói về sở thích và cách dùng thời gian rảnh.",
-      "descriptionByNative": {
-        "en": "Talk about hobbies and how you spend free time.",
-        "vi": "Nói về sở thích và cách dùng thời gian rảnh.",
-        "ja": "趣味や自由時間の過ごし方について話します。",
-        "ko": "취미와 여가 시간에 대해 이야기합니다.",
-        "zh": "谈论爱好与空闲时间的安排。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 21,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m12",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic12_meetups_invitations",
-      "moduleTitle": "Making Plans & Invitations",
-      "moduleTitleVi": "Hẹn gặp & rủ rê",
-      "moduleTitleByNative": {
-        "en": "Making Plans & Invitations",
-        "vi": "Hẹn gặp & rủ rê",
-        "ja": "約束と誘い",
-        "ko": "약속과 초대",
-        "zh": "约定与邀约"
-      },
-      "title": "Japanese · Daily Life Communication · Making Plans & Invitations",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Hẹn gặp & rủ rê",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Hẹn gặp & rủ rê",
-        "en": "Japanese · Daily Life Communication · Making Plans & Invitations",
-        "ja": "日本語 · 日常会話 · 約束と誘い",
-        "ko": "일본어 · 일상 회화 · 약속과 초대",
-        "zh": "日语 · 日常交流 · 约定与邀约"
-      },
-      "description": "Make plans, invite someone, and arrange to meet.",
-      "descriptionVi": "Hẹn gặp, rủ ai đó đi cùng và sắp xếp gặp mặt.",
-      "descriptionByNative": {
-        "en": "Make plans, invite someone, and arrange to meet.",
-        "vi": "Hẹn gặp, rủ ai đó đi cùng và sắp xếp gặp mặt.",
-        "ja": "予定を立て、人を誘い、会う約束をします。",
-        "ko": "약속을 정하고 사람을 초대하며 만남을 준비합니다.",
-        "zh": "约定计划、邀请他人并安排见面。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 22,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m13",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic13_description_feelings",
-      "moduleTitle": "Describing Things & Feelings",
-      "moduleTitleVi": "Mô tả & cảm nghĩ",
-      "moduleTitleByNative": {
-        "en": "Describing Things & Feelings",
-        "vi": "Mô tả & cảm nghĩ",
-        "ja": "描写と感想",
-        "ko": "묘사와 느낌",
-        "zh": "描述与感受"
-      },
-      "title": "Japanese · Daily Life Communication · Describing Things & Feelings",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Mô tả & cảm nghĩ",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Mô tả & cảm nghĩ",
-        "en": "Japanese · Daily Life Communication · Describing Things & Feelings",
-        "ja": "日本語 · 日常会話 · 描写と感想",
-        "ko": "일본어 · 일상 회화 · 묘사와 느낌",
-        "zh": "日语 · 日常交流 · 描述与感受"
-      },
-      "description": "Describe people, things, and how you feel about them.",
-      "descriptionVi": "Mô tả người, sự vật và cảm nghĩ về chúng.",
-      "descriptionByNative": {
-        "en": "Describe people, things, and how you feel about them.",
-        "vi": "Mô tả người, sự vật và cảm nghĩ về chúng.",
-        "ja": "人やものを描写し、それについての感想を伝えます。",
-        "ko": "사람과 사물을 묘사하고 느낌을 말합니다.",
-        "zh": "描述人与事物并表达感受。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 23,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m14",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic14_health_problems",
-      "moduleTitle": "Health & When Something Goes Wrong",
-      "moduleTitleVi": "Sức khỏe & khi gặp vấn đề",
-      "moduleTitleByNative": {
-        "en": "Health & When Something Goes Wrong",
-        "vi": "Sức khỏe & khi gặp vấn đề",
-        "ja": "健康とトラブル",
-        "ko": "건강과 문제 상황",
-        "zh": "健康与突发状况"
-      },
-      "title": "Japanese · Daily Life Communication · Health & When Something Goes Wrong",
-      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Sức khỏe & khi gặp vấn đề",
-      "titleByNative": {
-        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Sức khỏe & khi gặp vấn đề",
-        "en": "Japanese · Daily Life Communication · Health & When Something Goes Wrong",
-        "ja": "日本語 · 日常会話 · 健康とトラブル",
-        "ko": "일본어 · 일상 회화 · 건강과 문제 상황",
-        "zh": "日语 · 日常交流 · 健康与突发状况"
-      },
-      "description": "Talk about health and handle everyday problems.",
-      "descriptionVi": "Nói về sức khỏe và xử lý các vấn đề thường gặp.",
-      "descriptionByNative": {
-        "en": "Talk about health and handle everyday problems.",
-        "vi": "Nói về sức khỏe và xử lý các vấn đề thường gặp.",
-        "ja": "健康について話し、日常のトラブルに対応します。",
-        "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
-        "zh": "谈论健康并应对日常突发状况。"
-      },
-      "levelCode": "A0",
-      "levelRange": "A0–A1",
-      "placementTag": "daily_life_basic",
-      "type": "communication",
-      "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
-      "order": 24,
-      "unitIds": [],
-      "isComingSoon": true,
-      "units": []
-    },
-    {
-      "id": "ja-daily_life-m15",
-      "languageCode": "ja",
-      "nicheId": "daily_life",
-      "branch": "niche",
-      "moduleId": "daily_life_topic15_thanks_apology_politeness",
+      "moduleId": "daily_life_m02_thanks_apology_politeness",
       "moduleTitle": "Thanks, Apologies & Politeness",
       "moduleTitleVi": "Cảm ơn, xin lỗi, lịch sự",
       "moduleTitleByNative": {
@@ -1542,14 +2167,1522 @@
         "ko": "일본어 · 일상 회화 · 감사, 사과, 공손함",
         "zh": "日语 · 日常交流 · 感谢、道歉与礼貌"
       },
-      "description": "Thank, apologize, and speak politely in daily situations.",
-      "descriptionVi": "Cảm ơn, xin lỗi và nói lịch sự trong tình huống hằng ngày.",
+      "description": "Learn to thank, apologize, ask permission, and make polite requests.",
+      "descriptionVi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
       "descriptionByNative": {
-        "en": "Thank, apologize, and speak politely in daily situations.",
-        "vi": "Cảm ơn, xin lỗi và nói lịch sự trong tình huống hằng ngày.",
-        "ja": "感謝や謝罪を伝え、日常で丁寧に話します。",
-        "ko": "감사와 사과를 표현하고 일상에서 공손하게 말합니다.",
-        "zh": "在日常情境中表达感谢、道歉并礼貌交流。"
+        "en": "Learn to thank, apologize, ask permission, and make polite requests.",
+        "vi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+        "ja": "感謝、謝罪、許可を求めること、丁寧にお願いすることを学びます。",
+        "ko": "감사, 사과, 허락 구하기, 정중하게 부탁하는 법을 배웁니다.",
+        "zh": "学习感谢、道歉、请求许可以及礼貌地请求帮助。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 12,
+      "unitIds": [
+        "ja-daily_life-m02-u1",
+        "ja-daily_life-m02-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m02-u1",
+          "title": "Unit 1: Saying Thanks & Responding",
+          "titleVi": "Bài 1: Cảm ơn & đáp lại",
+          "titleByNative": {
+            "vi": "Bài 1: Cảm ơn & đáp lại",
+            "en": "Unit 1: Saying Thanks & Responding",
+            "ja": "ユニット1: 感謝とその返事",
+            "ko": "유닛 1: 감사 표현과 답하기",
+            "zh": "单元1: 表达感谢与回应"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m02_thanks_apology_politeness",
+          "goal": "Learn to thank, apologize, ask permission, and make polite requests.",
+          "goalVi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+          "goalByNative": {
+            "en": "Learn to thank, apologize, ask permission, and make polite requests.",
+            "vi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+            "ja": "感謝、謝罪、許可を求めること、丁寧にお願いすることを学びます。",
+            "ko": "감사, 사과, 허락 구하기, 정중하게 부탁하는 법을 배웁니다.",
+            "zh": "学习感谢、道歉、请求许可以及礼貌地请求帮助。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m02-u1-l1",
+            "ja-daily_life-m02-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m02-u2",
+          "title": "Unit 2: Apologizing & Asking for a Favor",
+          "titleVi": "Bài 2: Xin lỗi & nhờ vả",
+          "titleByNative": {
+            "vi": "Bài 2: Xin lỗi & nhờ vả",
+            "en": "Unit 2: Apologizing & Asking for a Favor",
+            "ja": "ユニット2: 謝罪とお願い",
+            "ko": "유닛 2: 사과와 부탁하기",
+            "zh": "单元2: 道歉与请求帮忙"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m02_thanks_apology_politeness",
+          "goal": "Learn to thank, apologize, ask permission, and make polite requests.",
+          "goalVi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+          "goalByNative": {
+            "en": "Learn to thank, apologize, ask permission, and make polite requests.",
+            "vi": "Học cách cảm ơn, xin lỗi, xin phép và nhờ vả một cách lịch sự.",
+            "ja": "感謝、謝罪、許可を求めること、丁寧にお願いすることを学びます。",
+            "ko": "감사, 사과, 허락 구하기, 정중하게 부탁하는 법을 배웁니다.",
+            "zh": "学习感谢、道歉、请求许可以及礼貌地请求帮助。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m02-u2-l1",
+            "ja-daily_life-m02-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m03",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m03_self_family",
+      "moduleTitle": "Myself & Family",
+      "moduleTitleVi": "Bản thân & gia đình",
+      "moduleTitleByNative": {
+        "en": "Myself & Family",
+        "vi": "Bản thân & gia đình",
+        "ja": "自分と家族",
+        "ko": "나와 가족",
+        "zh": "自己与家庭"
+      },
+      "title": "Japanese · Daily Life Communication · Myself & Family",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Bản thân & gia đình",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Bản thân & gia đình",
+        "en": "Japanese · Daily Life Communication · Myself & Family",
+        "ja": "日本語 · 日常会話 · 自分と家族",
+        "ko": "일본어 · 일상 회화 · 나와 가족",
+        "zh": "日语 · 日常交流 · 自己与家庭"
+      },
+      "description": "Talk about yourself, your hometown, your job, and your family.",
+      "descriptionVi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+      "descriptionByNative": {
+        "en": "Talk about yourself, your hometown, your job, and your family.",
+        "vi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+        "ja": "自分自身、出身地、仕事、家族について話します。",
+        "ko": "자신, 고향, 직업, 가족에 대해 이야기합니다.",
+        "zh": "谈论自己、家乡、职业与家人。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 13,
+      "unitIds": [
+        "ja-daily_life-m03-u1",
+        "ja-daily_life-m03-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m03-u1",
+          "title": "Unit 1: Talking About Yourself",
+          "titleVi": "Bài 1: Nói về mình",
+          "titleByNative": {
+            "vi": "Bài 1: Nói về mình",
+            "en": "Unit 1: Talking About Yourself",
+            "ja": "ユニット1: 自分について話す",
+            "ko": "유닛 1: 자신에 대해 말하기",
+            "zh": "单元1: 谈论自己"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m03_self_family",
+          "goal": "Talk about yourself, your hometown, your job, and your family.",
+          "goalVi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+          "goalByNative": {
+            "en": "Talk about yourself, your hometown, your job, and your family.",
+            "vi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+            "ja": "自分自身、出身地、仕事、家族について話します。",
+            "ko": "자신, 고향, 직업, 가족에 대해 이야기합니다.",
+            "zh": "谈论自己、家乡、职业与家人。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m03-u1-l1",
+            "ja-daily_life-m03-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m03-u2",
+          "title": "Unit 2: My Family",
+          "titleVi": "Bài 2: Gia đình mình",
+          "titleByNative": {
+            "vi": "Bài 2: Gia đình mình",
+            "en": "Unit 2: My Family",
+            "ja": "ユニット2: 自分の家族",
+            "ko": "유닛 2: 우리 가족",
+            "zh": "单元2: 我的家人"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m03_self_family",
+          "goal": "Talk about yourself, your hometown, your job, and your family.",
+          "goalVi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+          "goalByNative": {
+            "en": "Talk about yourself, your hometown, your job, and your family.",
+            "vi": "Nói về bản thân, quê quán, nghề nghiệp và gia đình.",
+            "ja": "自分自身、出身地、仕事、家族について話します。",
+            "ko": "자신, 고향, 직업, 가족에 대해 이야기합니다.",
+            "zh": "谈论自己、家乡、职业与家人。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m03-u2-l1",
+            "ja-daily_life-m03-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m04",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m04_communication_breakdown",
+      "moduleTitle": "When Communication Breaks Down",
+      "moduleTitleVi": "Khi giao tiếp gặp trục trặc",
+      "moduleTitleByNative": {
+        "en": "When Communication Breaks Down",
+        "vi": "Khi giao tiếp gặp trục trặc",
+        "ja": "コミュニケーションがうまくいかないとき",
+        "ko": "의사소통이 어려울 때",
+        "zh": "沟通遇到障碍时"
+      },
+      "title": "Japanese · Daily Life Communication · When Communication Breaks Down",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Khi giao tiếp gặp trục trặc",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Khi giao tiếp gặp trục trặc",
+        "en": "Japanese · Daily Life Communication · When Communication Breaks Down",
+        "ja": "日本語 · 日常会話 · コミュニケーションがうまくいかないとき",
+        "ko": "일본어 · 일상 회화 · 의사소통이 어려울 때",
+        "zh": "日语 · 日常交流 · 沟通遇到障碍时"
+      },
+      "description": "Handle situations where you can't hear or understand, and ask for clarification.",
+      "descriptionVi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+      "descriptionByNative": {
+        "en": "Handle situations where you can't hear or understand, and ask for clarification.",
+        "vi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+        "ja": "聞こえない・分からないときの対応や、説明をお願いすることを学びます。",
+        "ko": "잘 안 들리거나 이해가 안 될 때 대처하고 설명을 요청하는 법을 배웁니다.",
+        "zh": "处理听不清或听不懂的情况，并请求解释说明。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 14,
+      "unitIds": [
+        "ja-daily_life-m04-u1",
+        "ja-daily_life-m04-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m04-u1",
+          "title": "Unit 1: When You Can't Hear or Understand",
+          "titleVi": "Bài 1: Khi không nghe rõ / không hiểu",
+          "titleByNative": {
+            "vi": "Bài 1: Khi không nghe rõ / không hiểu",
+            "en": "Unit 1: When You Can't Hear or Understand",
+            "ja": "ユニット1: 聞こえない・分からないとき",
+            "ko": "유닛 1: 잘 안 들리거나 이해가 안 될 때",
+            "zh": "单元1: 听不清或听不懂时"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m04_communication_breakdown",
+          "goal": "Handle situations where you can't hear or understand, and ask for clarification.",
+          "goalVi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+          "goalByNative": {
+            "en": "Handle situations where you can't hear or understand, and ask for clarification.",
+            "vi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+            "ja": "聞こえない・分からないときの対応や、説明をお願いすることを学びます。",
+            "ko": "잘 안 들리거나 이해가 안 될 때 대처하고 설명을 요청하는 법을 배웁니다.",
+            "zh": "处理听不清或听不懂的情况，并请求解释说明。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m04-u1-l1",
+            "ja-daily_life-m04-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m04-u2",
+          "title": "Unit 2: Asking for Clarification",
+          "titleVi": "Bài 2: Nhờ làm rõ",
+          "titleByNative": {
+            "vi": "Bài 2: Nhờ làm rõ",
+            "en": "Unit 2: Asking for Clarification",
+            "ja": "ユニット2: 説明をお願いする",
+            "ko": "유닛 2: 명확히 해달라고 부탁하기",
+            "zh": "单元2: 请求解释清楚"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m04_communication_breakdown",
+          "goal": "Handle situations where you can't hear or understand, and ask for clarification.",
+          "goalVi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+          "goalByNative": {
+            "en": "Handle situations where you can't hear or understand, and ask for clarification.",
+            "vi": "Xử lý khi không nghe rõ, không hiểu, và xin giải thích rõ hơn.",
+            "ja": "聞こえない・分からないときの対応や、説明をお願いすることを学びます。",
+            "ko": "잘 안 들리거나 이해가 안 될 때 대처하고 설명을 요청하는 법을 배웁니다.",
+            "zh": "处理听不清或听不懂的情况，并请求解释说明。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m04-u2-l1",
+            "ja-daily_life-m04-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m05",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m05_objects_demonstratives",
+      "moduleTitle": "Objects & Pointing Things Out",
+      "moduleTitleVi": "Đồ vật & chỉ định",
+      "moduleTitleByNative": {
+        "en": "Objects & Pointing Things Out",
+        "vi": "Đồ vật & chỉ định",
+        "ja": "ものと指示表現",
+        "ko": "물건과 지시 표현",
+        "zh": "物品与指示表达"
+      },
+      "title": "Japanese · Daily Life Communication · Objects & Pointing Things Out",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Đồ vật & chỉ định",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Đồ vật & chỉ định",
+        "en": "Japanese · Daily Life Communication · Objects & Pointing Things Out",
+        "ja": "日本語 · 日常会話 · ものと指示表現",
+        "ko": "일본어 · 일상 회화 · 물건과 지시 표현",
+        "zh": "日语 · 日常交流 · 物品与指示表达"
+      },
+      "description": "Point at and ask about objects, and identify who they belong to.",
+      "descriptionVi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+      "descriptionByNative": {
+        "en": "Point at and ask about objects, and identify who they belong to.",
+        "vi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+        "ja": "ものを指して尋ね、誰のものかを確認します。",
+        "ko": "물건을 가리키며 묻고 누구의 것인지 확인합니다.",
+        "zh": "指出并询问物品，确认物品的归属。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 15,
+      "unitIds": [
+        "ja-daily_life-m05-u1",
+        "ja-daily_life-m05-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m05-u1",
+          "title": "Unit 1: What Is This?",
+          "titleVi": "Bài 1: Cái này là gì",
+          "titleByNative": {
+            "vi": "Bài 1: Cái này là gì",
+            "en": "Unit 1: What Is This?",
+            "ja": "ユニット1: これは何ですか",
+            "ko": "유닛 1: 이것은 무엇인가요",
+            "zh": "单元1: 这是什么"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m05_objects_demonstratives",
+          "goal": "Point at and ask about objects, and identify who they belong to.",
+          "goalVi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+          "goalByNative": {
+            "en": "Point at and ask about objects, and identify who they belong to.",
+            "vi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+            "ja": "ものを指して尋ね、誰のものかを確認します。",
+            "ko": "물건을 가리키며 묻고 누구의 것인지 확인합니다.",
+            "zh": "指出并询问物品，确认物品的归属。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m05-u1-l1",
+            "ja-daily_life-m05-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m05-u2",
+          "title": "Unit 2: Whose Is This?",
+          "titleVi": "Bài 2: Đồ của ai",
+          "titleByNative": {
+            "vi": "Bài 2: Đồ của ai",
+            "en": "Unit 2: Whose Is This?",
+            "ja": "ユニット2: 誰のものか",
+            "ko": "유닛 2: 누구의 물건인가요",
+            "zh": "单元2: 这是谁的东西"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m05_objects_demonstratives",
+          "goal": "Point at and ask about objects, and identify who they belong to.",
+          "goalVi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+          "goalByNative": {
+            "en": "Point at and ask about objects, and identify who they belong to.",
+            "vi": "Chỉ và hỏi về đồ vật, xác định đồ của ai.",
+            "ja": "ものを指して尋ね、誰のものかを確認します。",
+            "ko": "물건을 가리키며 묻고 누구의 것인지 확인합니다.",
+            "zh": "指出并询问物品，确认物品的归属。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m05-u2-l1",
+            "ja-daily_life-m05-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m06",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m06_numbers_prices_money",
+      "moduleTitle": "Numbers, Prices & Money",
+      "moduleTitleVi": "Số đếm, giá cả, tiền",
+      "moduleTitleByNative": {
+        "en": "Numbers, Prices & Money",
+        "vi": "Số đếm, giá cả, tiền",
+        "ja": "数字・値段・お金",
+        "ko": "숫자, 가격, 돈",
+        "zh": "数字、价格与金钱"
+      },
+      "title": "Japanese · Daily Life Communication · Numbers, Prices & Money",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Số đếm, giá cả, tiền",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Số đếm, giá cả, tiền",
+        "en": "Japanese · Daily Life Communication · Numbers, Prices & Money",
+        "ja": "日本語 · 日常会話 · 数字・値段・お金",
+        "ko": "일본어 · 일상 회화 · 숫자, 가격, 돈",
+        "zh": "日语 · 日常交流 · 数字、价格与金钱"
+      },
+      "description": "Count numbers, ask prices, and handle payment.",
+      "descriptionVi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+      "descriptionByNative": {
+        "en": "Count numbers, ask prices, and handle payment.",
+        "vi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+        "ja": "数を数え、値段を尋ね、支払いを行います。",
+        "ko": "숫자를 세고 가격을 물으며 결제를 처리합니다.",
+        "zh": "数数、问价并处理付款。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 16,
+      "unitIds": [
+        "ja-daily_life-m06-u1",
+        "ja-daily_life-m06-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m06-u1",
+          "title": "Unit 1: Counting",
+          "titleVi": "Bài 1: Số đếm",
+          "titleByNative": {
+            "vi": "Bài 1: Số đếm",
+            "en": "Unit 1: Counting",
+            "ja": "ユニット1: 数を数える",
+            "ko": "유닛 1: 숫자 세기",
+            "zh": "单元1: 数数"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m06_numbers_prices_money",
+          "goal": "Count numbers, ask prices, and handle payment.",
+          "goalVi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+          "goalByNative": {
+            "en": "Count numbers, ask prices, and handle payment.",
+            "vi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+            "ja": "数を数え、値段を尋ね、支払いを行います。",
+            "ko": "숫자를 세고 가격을 물으며 결제를 처리합니다.",
+            "zh": "数数、问价并处理付款。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m06-u1-l1",
+            "ja-daily_life-m06-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m06-u2",
+          "title": "Unit 2: Asking Prices & Paying",
+          "titleVi": "Bài 2: Hỏi giá & trả tiền",
+          "titleByNative": {
+            "vi": "Bài 2: Hỏi giá & trả tiền",
+            "en": "Unit 2: Asking Prices & Paying",
+            "ja": "ユニット2: 値段を聞いて支払う",
+            "ko": "유닛 2: 가격 묻고 돈 내기",
+            "zh": "单元2: 问价与付款"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m06_numbers_prices_money",
+          "goal": "Count numbers, ask prices, and handle payment.",
+          "goalVi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+          "goalByNative": {
+            "en": "Count numbers, ask prices, and handle payment.",
+            "vi": "Đếm số, hỏi giá và xử lý việc trả tiền.",
+            "ja": "数を数え、値段を尋ね、支払いを行います。",
+            "ko": "숫자를 세고 가격을 물으며 결제를 처리합니다.",
+            "zh": "数数、问价并处理付款。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m06-u2-l1",
+            "ja-daily_life-m06-u2-l2",
+            "ja-daily_life-m06-u2-l3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m07",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m07_time_date",
+      "moduleTitle": "Time & Dates",
+      "moduleTitleVi": "Thời gian & ngày tháng",
+      "moduleTitleByNative": {
+        "en": "Time & Dates",
+        "vi": "Thời gian & ngày tháng",
+        "ja": "時間と日付",
+        "ko": "시간과 날짜",
+        "zh": "时间与日期"
+      },
+      "title": "Japanese · Daily Life Communication · Time & Dates",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Thời gian & ngày tháng",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Thời gian & ngày tháng",
+        "en": "Japanese · Daily Life Communication · Time & Dates",
+        "ja": "日本語 · 日常会話 · 時間と日付",
+        "ko": "일본어 · 일상 회화 · 시간과 날짜",
+        "zh": "日语 · 日常交流 · 时间与日期"
+      },
+      "description": "Ask and tell the time, dates, and days of the week.",
+      "descriptionVi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+      "descriptionByNative": {
+        "en": "Ask and tell the time, dates, and days of the week.",
+        "vi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+        "ja": "時間、日付、曜日を尋ねて答えます。",
+        "ko": "시간, 날짜, 요일을 묻고 답합니다.",
+        "zh": "询问并说出时间、日期与星期。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 17,
+      "unitIds": [
+        "ja-daily_life-m07-u1",
+        "ja-daily_life-m07-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m07-u1",
+          "title": "Unit 1: Telling Time",
+          "titleVi": "Bài 1: Giờ giấc",
+          "titleByNative": {
+            "vi": "Bài 1: Giờ giấc",
+            "en": "Unit 1: Telling Time",
+            "ja": "ユニット1: 時間",
+            "ko": "유닛 1: 시간",
+            "zh": "单元1: 时刻"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m07_time_date",
+          "goal": "Ask and tell the time, dates, and days of the week.",
+          "goalVi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+          "goalByNative": {
+            "en": "Ask and tell the time, dates, and days of the week.",
+            "vi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+            "ja": "時間、日付、曜日を尋ねて答えます。",
+            "ko": "시간, 날짜, 요일을 묻고 답합니다.",
+            "zh": "询问并说出时间、日期与星期。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m07-u1-l1",
+            "ja-daily_life-m07-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m07-u2",
+          "title": "Unit 2: Dates & Weekdays",
+          "titleVi": "Bài 2: Ngày tháng & thứ",
+          "titleByNative": {
+            "vi": "Bài 2: Ngày tháng & thứ",
+            "en": "Unit 2: Dates & Weekdays",
+            "ja": "ユニット2: 日付と曜日",
+            "ko": "유닛 2: 날짜와 요일",
+            "zh": "单元2: 日期与星期"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m07_time_date",
+          "goal": "Ask and tell the time, dates, and days of the week.",
+          "goalVi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+          "goalByNative": {
+            "en": "Ask and tell the time, dates, and days of the week.",
+            "vi": "Hỏi và nói giờ, ngày tháng, thứ trong tuần.",
+            "ja": "時間、日付、曜日を尋ねて答えます。",
+            "ko": "시간, 날짜, 요일을 묻고 답합니다.",
+            "zh": "询问并说出时间、日期与星期。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m07-u2-l1",
+            "ja-daily_life-m07-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m08",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m08_shopping",
+      "moduleTitle": "Shopping",
+      "moduleTitleVi": "Mua sắm",
+      "moduleTitleByNative": {
+        "en": "Shopping",
+        "vi": "Mua sắm",
+        "ja": "買い物",
+        "ko": "쇼핑",
+        "zh": "购物"
+      },
+      "title": "Japanese · Daily Life Communication · Shopping",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Mua sắm",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Mua sắm",
+        "en": "Japanese · Daily Life Communication · Shopping",
+        "ja": "日本語 · 日常会話 · 買い物",
+        "ko": "일본어 · 일상 회화 · 쇼핑",
+        "zh": "日语 · 日常交流 · 购物"
+      },
+      "description": "Shop at a convenience store, supermarket, and clothing store.",
+      "descriptionVi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+      "descriptionByNative": {
+        "en": "Shop at a convenience store, supermarket, and clothing store.",
+        "vi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+        "ja": "コンビニ、スーパー、洋服店で買い物をします。",
+        "ko": "편의점, 슈퍼마켓, 옷 가게에서 쇼핑합니다.",
+        "zh": "在便利店、超市和服装店购物。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 18,
+      "unitIds": [
+        "ja-daily_life-m08-u1",
+        "ja-daily_life-m08-u2",
+        "ja-daily_life-m08-u3"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m08-u1",
+          "title": "Unit 1: Convenience Store",
+          "titleVi": "Bài 1: Cửa hàng tiện lợi",
+          "titleByNative": {
+            "vi": "Bài 1: Cửa hàng tiện lợi",
+            "en": "Unit 1: Convenience Store",
+            "ja": "ユニット1: コンビニ",
+            "ko": "유닛 1: 편의점",
+            "zh": "单元1: 便利店"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m08_shopping",
+          "goal": "Shop at a convenience store, supermarket, and clothing store.",
+          "goalVi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+          "goalByNative": {
+            "en": "Shop at a convenience store, supermarket, and clothing store.",
+            "vi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+            "ja": "コンビニ、スーパー、洋服店で買い物をします。",
+            "ko": "편의점, 슈퍼마켓, 옷 가게에서 쇼핑합니다.",
+            "zh": "在便利店、超市和服装店购物。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m08-u1-l1",
+            "ja-daily_life-m08-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m08-u2",
+          "title": "Unit 2: Supermarket",
+          "titleVi": "Bài 2: Siêu thị",
+          "titleByNative": {
+            "vi": "Bài 2: Siêu thị",
+            "en": "Unit 2: Supermarket",
+            "ja": "ユニット2: スーパー",
+            "ko": "유닛 2: 슈퍼마켓",
+            "zh": "单元2: 超市"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m08_shopping",
+          "goal": "Shop at a convenience store, supermarket, and clothing store.",
+          "goalVi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+          "goalByNative": {
+            "en": "Shop at a convenience store, supermarket, and clothing store.",
+            "vi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+            "ja": "コンビニ、スーパー、洋服店で買い物をします。",
+            "ko": "편의점, 슈퍼마켓, 옷 가게에서 쇼핑합니다.",
+            "zh": "在便利店、超市和服装店购物。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m08-u2-l1",
+            "ja-daily_life-m08-u2-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m08-u3",
+          "title": "Unit 3: Clothing Store",
+          "titleVi": "Bài 3: Cửa hàng quần áo",
+          "titleByNative": {
+            "vi": "Bài 3: Cửa hàng quần áo",
+            "en": "Unit 3: Clothing Store",
+            "ja": "ユニット3: 洋服店",
+            "ko": "유닛 3: 옷 가게",
+            "zh": "单元3: 服装店"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m08_shopping",
+          "goal": "Shop at a convenience store, supermarket, and clothing store.",
+          "goalVi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+          "goalByNative": {
+            "en": "Shop at a convenience store, supermarket, and clothing store.",
+            "vi": "Mua đồ ở cửa hàng tiện lợi, siêu thị và cửa hàng quần áo.",
+            "ja": "コンビニ、スーパー、洋服店で買い物をします。",
+            "ko": "편의점, 슈퍼마켓, 옷 가게에서 쇼핑합니다.",
+            "zh": "在便利店、超市和服装店购物。"
+          },
+          "displayOrder": 3,
+          "order": 3,
+          "lessonIds": [
+            "ja-daily_life-m08-u3-l1",
+            "ja-daily_life-m08-u3-l2",
+            "ja-daily_life-m08-u3-l3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m09",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m09_food_ordering",
+      "moduleTitle": "Eating & Ordering Food",
+      "moduleTitleVi": "Ăn uống & gọi món",
+      "moduleTitleByNative": {
+        "en": "Eating & Ordering Food",
+        "vi": "Ăn uống & gọi món",
+        "ja": "食事と注文",
+        "ko": "식사와 주문",
+        "zh": "用餐与点菜"
+      },
+      "title": "Japanese · Daily Life Communication · Eating & Ordering Food",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Ăn uống & gọi món",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Ăn uống & gọi món",
+        "en": "Japanese · Daily Life Communication · Eating & Ordering Food",
+        "ja": "日本語 · 日常会話 · 食事と注文",
+        "ko": "일본어 · 일상 회화 · 식사와 주문",
+        "zh": "日语 · 日常交流 · 用餐与点菜"
+      },
+      "description": "Order food at a restaurant and talk about food preferences.",
+      "descriptionVi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+      "descriptionByNative": {
+        "en": "Order food at a restaurant and talk about food preferences.",
+        "vi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+        "ja": "お店で注文し、料理の好みについて話します。",
+        "ko": "식당에서 주문하고 음식 취향에 대해 이야기합니다.",
+        "zh": "在餐厅点菜并谈论饮食喜好。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 19,
+      "unitIds": [
+        "ja-daily_life-m09-u1",
+        "ja-daily_life-m09-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m09-u1",
+          "title": "Unit 1: Ordering at a Restaurant",
+          "titleVi": "Bài 1: Gọi món ở quán",
+          "titleByNative": {
+            "vi": "Bài 1: Gọi món ở quán",
+            "en": "Unit 1: Ordering at a Restaurant",
+            "ja": "ユニット1: お店で注文する",
+            "ko": "유닛 1: 식당에서 주문하기",
+            "zh": "单元1: 在餐厅点菜"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m09_food_ordering",
+          "goal": "Order food at a restaurant and talk about food preferences.",
+          "goalVi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+          "goalByNative": {
+            "en": "Order food at a restaurant and talk about food preferences.",
+            "vi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+            "ja": "お店で注文し、料理の好みについて話します。",
+            "ko": "식당에서 주문하고 음식 취향에 대해 이야기합니다.",
+            "zh": "在餐厅点菜并谈论饮食喜好。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m09-u1-l1",
+            "ja-daily_life-m09-u1-l2",
+            "ja-daily_life-m09-u1-l3"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m09-u2",
+          "title": "Unit 2: Talking About Food",
+          "titleVi": "Bài 2: Nói về món ăn",
+          "titleByNative": {
+            "vi": "Bài 2: Nói về món ăn",
+            "en": "Unit 2: Talking About Food",
+            "ja": "ユニット2: 料理について話す",
+            "ko": "유닛 2: 음식에 대해 말하기",
+            "zh": "单元2: 谈论食物"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m09_food_ordering",
+          "goal": "Order food at a restaurant and talk about food preferences.",
+          "goalVi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+          "goalByNative": {
+            "en": "Order food at a restaurant and talk about food preferences.",
+            "vi": "Gọi món ở quán ăn và nói về sở thích món ăn.",
+            "ja": "お店で注文し、料理の好みについて話します。",
+            "ko": "식당에서 주문하고 음식 취향에 대해 이야기합니다.",
+            "zh": "在餐厅点菜并谈论饮食喜好。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m09-u2-l1",
+            "ja-daily_life-m09-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m10",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m10_directions_places",
+      "moduleTitle": "Directions & Places",
+      "moduleTitleVi": "Chỉ đường & nơi chốn",
+      "moduleTitleByNative": {
+        "en": "Directions & Places",
+        "vi": "Chỉ đường & nơi chốn",
+        "ja": "道案内と場所",
+        "ko": "길 안내와 장소",
+        "zh": "问路与地点"
+      },
+      "title": "Japanese · Daily Life Communication · Directions & Places",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Chỉ đường & nơi chốn",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Chỉ đường & nơi chốn",
+        "en": "Japanese · Daily Life Communication · Directions & Places",
+        "ja": "日本語 · 日常会話 · 道案内と場所",
+        "ko": "일본어 · 일상 회화 · 길 안내와 장소",
+        "zh": "日语 · 日常交流 · 问路与地点"
+      },
+      "description": "Ask for directions, understand directions, and find nearby places.",
+      "descriptionVi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+      "descriptionByNative": {
+        "en": "Ask for directions, understand directions, and find nearby places.",
+        "vi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+        "ja": "道を尋ね、案内を理解し、近くの場所を探します。",
+        "ko": "길을 묻고 안내를 이해하며 근처 장소를 찾습니다.",
+        "zh": "问路、听懂指路并寻找附近地点。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 20,
+      "unitIds": [
+        "ja-daily_life-m10-u1",
+        "ja-daily_life-m10-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m10-u1",
+          "title": "Unit 1: Asking for Directions",
+          "titleVi": "Bài 1: Hỏi đường",
+          "titleByNative": {
+            "vi": "Bài 1: Hỏi đường",
+            "en": "Unit 1: Asking for Directions",
+            "ja": "ユニット1: 道を尋ねる",
+            "ko": "유닛 1: 길 묻기",
+            "zh": "单元1: 问路"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m10_directions_places",
+          "goal": "Ask for directions, understand directions, and find nearby places.",
+          "goalVi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+          "goalByNative": {
+            "en": "Ask for directions, understand directions, and find nearby places.",
+            "vi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+            "ja": "道を尋ね、案内を理解し、近くの場所を探します。",
+            "ko": "길을 묻고 안내를 이해하며 근처 장소를 찾습니다.",
+            "zh": "问路、听懂指路并寻找附近地点。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m10-u1-l1",
+            "ja-daily_life-m10-u1-l2",
+            "ja-daily_life-m10-u1-l3"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m10-u2",
+          "title": "Unit 2: Finding Nearby Places",
+          "titleVi": "Bài 2: Tìm nơi gần đây",
+          "titleByNative": {
+            "vi": "Bài 2: Tìm nơi gần đây",
+            "en": "Unit 2: Finding Nearby Places",
+            "ja": "ユニット2: 近くの場所を探す",
+            "ko": "유닛 2: 근처 장소 찾기",
+            "zh": "单元2: 寻找附近的地方"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m10_directions_places",
+          "goal": "Ask for directions, understand directions, and find nearby places.",
+          "goalVi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+          "goalByNative": {
+            "en": "Ask for directions, understand directions, and find nearby places.",
+            "vi": "Hỏi đường, nghe hiểu chỉ dẫn và tìm nơi gần đây.",
+            "ja": "道を尋ね、案内を理解し、近くの場所を探します。",
+            "ko": "길을 묻고 안내를 이해하며 근처 장소를 찾습니다.",
+            "zh": "问路、听懂指路并寻找附近地点。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m10-u2-l1",
+            "ja-daily_life-m10-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m11",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m11_transport_trains",
+      "moduleTitle": "Getting Around & Trains",
+      "moduleTitleVi": "Đi lại & tàu điện",
+      "moduleTitleByNative": {
+        "en": "Getting Around & Trains",
+        "vi": "Đi lại & tàu điện",
+        "ja": "移動と電車",
+        "ko": "이동과 지하철",
+        "zh": "出行与电车"
+      },
+      "title": "Japanese · Daily Life Communication · Getting Around & Trains",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Đi lại & tàu điện",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Đi lại & tàu điện",
+        "en": "Japanese · Daily Life Communication · Getting Around & Trains",
+        "ja": "日本語 · 日常会話 · 移動と電車",
+        "ko": "일본어 · 일상 회화 · 이동과 지하철",
+        "zh": "日语 · 日常交流 · 出行与电车"
+      },
+      "description": "Take the train, bus, or taxi, and ask about times and prices.",
+      "descriptionVi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+      "descriptionByNative": {
+        "en": "Take the train, bus, or taxi, and ask about times and prices.",
+        "vi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+        "ja": "電車・バス・タクシーを利用し、時刻や料金を尋ねます。",
+        "ko": "지하철, 버스, 택시를 이용하고 시간과 요금을 묻습니다.",
+        "zh": "乘坐电车、公交车、出租车并询问时间与价格。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 21,
+      "unitIds": [
+        "ja-daily_life-m11-u1",
+        "ja-daily_life-m11-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m11-u1",
+          "title": "Unit 1: Train / Bus",
+          "titleVi": "Bài 1: Tàu / xe buýt",
+          "titleByNative": {
+            "vi": "Bài 1: Tàu / xe buýt",
+            "en": "Unit 1: Train / Bus",
+            "ja": "ユニット1: 電車・バス",
+            "ko": "유닛 1: 지하철 / 버스",
+            "zh": "单元1: 电车/公交车"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m11_transport_trains",
+          "goal": "Take the train, bus, or taxi, and ask about times and prices.",
+          "goalVi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+          "goalByNative": {
+            "en": "Take the train, bus, or taxi, and ask about times and prices.",
+            "vi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+            "ja": "電車・バス・タクシーを利用し、時刻や料金を尋ねます。",
+            "ko": "지하철, 버스, 택시를 이용하고 시간과 요금을 묻습니다.",
+            "zh": "乘坐电车、公交车、出租车并询问时间与价格。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m11-u1-l1",
+            "ja-daily_life-m11-u1-l2",
+            "ja-daily_life-m11-u1-l3"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m11-u2",
+          "title": "Unit 2: Taxi",
+          "titleVi": "Bài 2: Taxi",
+          "titleByNative": {
+            "vi": "Bài 2: Taxi",
+            "en": "Unit 2: Taxi",
+            "ja": "ユニット2: タクシー",
+            "ko": "유닛 2: 택시",
+            "zh": "单元2: 出租车"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m11_transport_trains",
+          "goal": "Take the train, bus, or taxi, and ask about times and prices.",
+          "goalVi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+          "goalByNative": {
+            "en": "Take the train, bus, or taxi, and ask about times and prices.",
+            "vi": "Đi tàu, xe buýt, taxi và hỏi giờ giấc, giá cả.",
+            "ja": "電車・バス・タクシーを利用し、時刻や料金を尋ねます。",
+            "ko": "지하철, 버스, 택시를 이용하고 시간과 요금을 묻습니다.",
+            "zh": "乘坐电车、公交车、出租车并询问时间与价格。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m11-u2-l1",
+            "ja-daily_life-m11-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m12",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m12_home_daily_living",
+      "moduleTitle": "Home & Daily Living",
+      "moduleTitleVi": "Nhà cửa & đời sống hàng ngày",
+      "moduleTitleByNative": {
+        "en": "Home & Daily Living",
+        "vi": "Nhà cửa & đời sống hàng ngày",
+        "ja": "家と日常生活",
+        "ko": "집과 일상생활",
+        "zh": "家居与日常生活"
+      },
+      "title": "Japanese · Daily Life Communication · Home & Daily Living",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Nhà cửa & đời sống hàng ngày",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Nhà cửa & đời sống hàng ngày",
+        "en": "Japanese · Daily Life Communication · Home & Daily Living",
+        "ja": "日本語 · 日常会話 · 家と日常生活",
+        "ko": "일본어 · 일상 회화 · 집과 일상생활",
+        "zh": "日语 · 日常交流 · 家居与日常生活"
+      },
+      "description": "Talk about your home and daily routines.",
+      "descriptionVi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+      "descriptionByNative": {
+        "en": "Talk about your home and daily routines.",
+        "vi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+        "ja": "住まいと日常生活について話します。",
+        "ko": "거주지와 일상생활에 대해 이야기합니다.",
+        "zh": "谈论住所与日常生活。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 22,
+      "unitIds": [
+        "ja-daily_life-m12-u1",
+        "ja-daily_life-m12-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m12-u1",
+          "title": "Unit 1: Talking About Your Home",
+          "titleVi": "Bài 1: Nói về nhà mình",
+          "titleByNative": {
+            "vi": "Bài 1: Nói về nhà mình",
+            "en": "Unit 1: Talking About Your Home",
+            "ja": "ユニット1: 自分の家について話す",
+            "ko": "유닛 1: 우리 집에 대해 말하기",
+            "zh": "单元1: 谈论自己的家"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m12_home_daily_living",
+          "goal": "Talk about your home and daily routines.",
+          "goalVi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+          "goalByNative": {
+            "en": "Talk about your home and daily routines.",
+            "vi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+            "ja": "住まいと日常生活について話します。",
+            "ko": "거주지와 일상생활에 대해 이야기합니다.",
+            "zh": "谈论住所与日常生活。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m12-u1-l1",
+            "ja-daily_life-m12-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m12-u2",
+          "title": "Unit 2: A Typical Day",
+          "titleVi": "Bài 2: Sinh hoạt một ngày",
+          "titleByNative": {
+            "vi": "Bài 2: Sinh hoạt một ngày",
+            "en": "Unit 2: A Typical Day",
+            "ja": "ユニット2: 一日の生活",
+            "ko": "유닛 2: 하루 일과",
+            "zh": "单元2: 一天的生活"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m12_home_daily_living",
+          "goal": "Talk about your home and daily routines.",
+          "goalVi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+          "goalByNative": {
+            "en": "Talk about your home and daily routines.",
+            "vi": "Nói về nhà ở và sinh hoạt hằng ngày.",
+            "ja": "住まいと日常生活について話します。",
+            "ko": "거주지와 일상생활에 대해 이야기합니다.",
+            "zh": "谈论住所与日常生活。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m12-u2-l1",
+            "ja-daily_life-m12-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m13",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m13_hobbies_free_time",
+      "moduleTitle": "Hobbies & Free Time",
+      "moduleTitleVi": "Sở thích & thời gian rảnh",
+      "moduleTitleByNative": {
+        "en": "Hobbies & Free Time",
+        "vi": "Sở thích & thời gian rảnh",
+        "ja": "趣味と自由時間",
+        "ko": "취미와 여가",
+        "zh": "爱好与空闲时间"
+      },
+      "title": "Japanese · Daily Life Communication · Hobbies & Free Time",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Sở thích & thời gian rảnh",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Sở thích & thời gian rảnh",
+        "en": "Japanese · Daily Life Communication · Hobbies & Free Time",
+        "ja": "日本語 · 日常会話 · 趣味と自由時間",
+        "ko": "일본어 · 일상 회화 · 취미와 여가",
+        "zh": "日语 · 日常交流 · 爱好与空闲时间"
+      },
+      "description": "Talk about hobbies and how you spend free time and weekends.",
+      "descriptionVi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+      "descriptionByNative": {
+        "en": "Talk about hobbies and how you spend free time and weekends.",
+        "vi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+        "ja": "趣味や自由時間・週末の過ごし方について話します。",
+        "ko": "취미와 여가·주말을 보내는 방법에 대해 이야기합니다.",
+        "zh": "谈论爱好以及空闲时间与周末的安排。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 23,
+      "unitIds": [
+        "ja-daily_life-m13-u1",
+        "ja-daily_life-m13-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m13-u1",
+          "title": "Unit 1: Talking About Hobbies",
+          "titleVi": "Bài 1: Nói sở thích",
+          "titleByNative": {
+            "vi": "Bài 1: Nói sở thích",
+            "en": "Unit 1: Talking About Hobbies",
+            "ja": "ユニット1: 趣味について話す",
+            "ko": "유닛 1: 취미에 대해 말하기",
+            "zh": "单元1: 谈论爱好"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m13_hobbies_free_time",
+          "goal": "Talk about hobbies and how you spend free time and weekends.",
+          "goalVi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+          "goalByNative": {
+            "en": "Talk about hobbies and how you spend free time and weekends.",
+            "vi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+            "ja": "趣味や自由時間・週末の過ごし方について話します。",
+            "ko": "취미와 여가·주말을 보내는 방법에 대해 이야기합니다.",
+            "zh": "谈论爱好以及空闲时间与周末的安排。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m13-u1-l1",
+            "ja-daily_life-m13-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m13-u2",
+          "title": "Unit 2: Talking About the Weekend",
+          "titleVi": "Bài 2: Nói về cuối tuần",
+          "titleByNative": {
+            "vi": "Bài 2: Nói về cuối tuần",
+            "en": "Unit 2: Talking About the Weekend",
+            "ja": "ユニット2: 週末について話す",
+            "ko": "유닛 2: 주말에 대해 말하기",
+            "zh": "单元2: 谈论周末"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m13_hobbies_free_time",
+          "goal": "Talk about hobbies and how you spend free time and weekends.",
+          "goalVi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+          "goalByNative": {
+            "en": "Talk about hobbies and how you spend free time and weekends.",
+            "vi": "Nói về sở thích và cách dùng thời gian rảnh, cuối tuần.",
+            "ja": "趣味や自由時間・週末の過ごし方について話します。",
+            "ko": "취미와 여가·주말을 보내는 방법에 대해 이야기합니다.",
+            "zh": "谈论爱好以及空闲时间与周末的安排。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m13-u2-l1",
+            "ja-daily_life-m13-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m14",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m14_meetups_invitations",
+      "moduleTitle": "Making Plans & Invitations",
+      "moduleTitleVi": "Hẹn gặp & rủ rê",
+      "moduleTitleByNative": {
+        "en": "Making Plans & Invitations",
+        "vi": "Hẹn gặp & rủ rê",
+        "ja": "約束と誘い",
+        "ko": "약속과 초대",
+        "zh": "约定与邀约"
+      },
+      "title": "Japanese · Daily Life Communication · Making Plans & Invitations",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Hẹn gặp & rủ rê",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Hẹn gặp & rủ rê",
+        "en": "Japanese · Daily Life Communication · Making Plans & Invitations",
+        "ja": "日本語 · 日常会話 · 約束と誘い",
+        "ko": "일본어 · 일상 회화 · 약속과 초대",
+        "zh": "日语 · 日常交流 · 约定与邀约"
+      },
+      "description": "Invite someone out, confirm plans, and handle rescheduling.",
+      "descriptionVi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+      "descriptionByNative": {
+        "en": "Invite someone out, confirm plans, and handle rescheduling.",
+        "vi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+        "ja": "人を誘い、約束を決め、変更にも対応します。",
+        "ko": "사람을 초대하고 약속을 정하며 일정 변경에도 대응합니다.",
+        "zh": "邀请他人、确定约会并处理改期。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 24,
+      "unitIds": [
+        "ja-daily_life-m14-u1",
+        "ja-daily_life-m14-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m14-u1",
+          "title": "Unit 1: Inviting Someone Out",
+          "titleVi": "Bài 1: Rủ đi chơi",
+          "titleByNative": {
+            "vi": "Bài 1: Rủ đi chơi",
+            "en": "Unit 1: Inviting Someone Out",
+            "ja": "ユニット1: 遊びに誘う",
+            "ko": "유닛 1: 놀러 가자고 하기",
+            "zh": "单元1: 邀请出去玩"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m14_meetups_invitations",
+          "goal": "Invite someone out, confirm plans, and handle rescheduling.",
+          "goalVi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+          "goalByNative": {
+            "en": "Invite someone out, confirm plans, and handle rescheduling.",
+            "vi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+            "ja": "人を誘い、約束を決め、変更にも対応します。",
+            "ko": "사람을 초대하고 약속을 정하며 일정 변경에도 대응합니다.",
+            "zh": "邀请他人、确定约会并处理改期。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m14-u1-l1",
+            "ja-daily_life-m14-u1-l2",
+            "ja-daily_life-m14-u1-l3"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m14-u2",
+          "title": "Unit 2: Changing Plans",
+          "titleVi": "Bài 2: Đổi hẹn",
+          "titleByNative": {
+            "vi": "Bài 2: Đổi hẹn",
+            "en": "Unit 2: Changing Plans",
+            "ja": "ユニット2: 約束の変更",
+            "ko": "유닛 2: 약속 변경하기",
+            "zh": "单元2: 更改约定"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m14_meetups_invitations",
+          "goal": "Invite someone out, confirm plans, and handle rescheduling.",
+          "goalVi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+          "goalByNative": {
+            "en": "Invite someone out, confirm plans, and handle rescheduling.",
+            "vi": "Rủ ai đó đi chơi, chốt hẹn và xử lý khi cần đổi hẹn.",
+            "ja": "人を誘い、約束を決め、変更にも対応します。",
+            "ko": "사람을 초대하고 약속을 정하며 일정 변경에도 대응합니다.",
+            "zh": "邀请他人、确定约会并处理改期。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m14-u2-l1",
+            "ja-daily_life-m14-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m15",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m15_description_feelings",
+      "moduleTitle": "Describing Things & Feelings",
+      "moduleTitleVi": "Mô tả & cảm nghĩ",
+      "moduleTitleByNative": {
+        "en": "Describing Things & Feelings",
+        "vi": "Mô tả & cảm nghĩ",
+        "ja": "描写と感想",
+        "ko": "묘사와 느낌",
+        "zh": "描述与感受"
+      },
+      "title": "Japanese · Daily Life Communication · Describing Things & Feelings",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Mô tả & cảm nghĩ",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Mô tả & cảm nghĩ",
+        "en": "Japanese · Daily Life Communication · Describing Things & Feelings",
+        "ja": "日本語 · 日常会話 · 描写と感想",
+        "ko": "일본어 · 일상 회화 · 묘사와 느낌",
+        "zh": "日语 · 日常交流 · 描述与感受"
+      },
+      "description": "Describe objects and places, and express simple feelings.",
+      "descriptionVi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+      "descriptionByNative": {
+        "en": "Describe objects and places, and express simple feelings.",
+        "vi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+        "ja": "ものや場所を描写し、簡単な感想を伝えます。",
+        "ko": "물건과 장소를 묘사하고 간단한 느낌을 말합니다.",
+        "zh": "描述物品与地点并表达简单感受。"
       },
       "levelCode": "A0",
       "levelRange": "A0–A1",
@@ -1559,9 +3692,190 @@
       "contentStatus": "blueprint",
       "playable": false,
       "order": 25,
-      "unitIds": [],
+      "unitIds": [
+        "ja-daily_life-m15-u1",
+        "ja-daily_life-m15-u2"
+      ],
       "isComingSoon": true,
-      "units": []
+      "units": [
+        {
+          "id": "ja-daily_life-m15-u1",
+          "title": "Unit 1: Describing Objects & Places",
+          "titleVi": "Bài 1: Tả đồ vật / nơi chốn",
+          "titleByNative": {
+            "vi": "Bài 1: Tả đồ vật / nơi chốn",
+            "en": "Unit 1: Describing Objects & Places",
+            "ja": "ユニット1: ものや場所を描写する",
+            "ko": "유닛 1: 물건과 장소 묘사하기",
+            "zh": "单元1: 描述物品与地点"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m15_description_feelings",
+          "goal": "Describe objects and places, and express simple feelings.",
+          "goalVi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+          "goalByNative": {
+            "en": "Describe objects and places, and express simple feelings.",
+            "vi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+            "ja": "ものや場所を描写し、簡単な感想を伝えます。",
+            "ko": "물건과 장소를 묘사하고 간단한 느낌을 말합니다.",
+            "zh": "描述物品与地点并表达简单感受。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m15-u1-l1",
+            "ja-daily_life-m15-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m15-u2",
+          "title": "Unit 2: Expressing Feelings",
+          "titleVi": "Bài 2: Nói cảm nghĩ",
+          "titleByNative": {
+            "vi": "Bài 2: Nói cảm nghĩ",
+            "en": "Unit 2: Expressing Feelings",
+            "ja": "ユニット2: 感想を伝える",
+            "ko": "유닛 2: 느낌 말하기",
+            "zh": "单元2: 表达感受"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m15_description_feelings",
+          "goal": "Describe objects and places, and express simple feelings.",
+          "goalVi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+          "goalByNative": {
+            "en": "Describe objects and places, and express simple feelings.",
+            "vi": "Mô tả đồ vật, nơi chốn và nói cảm nghĩ đơn giản.",
+            "ja": "ものや場所を描写し、簡単な感想を伝えます。",
+            "ko": "물건과 장소를 묘사하고 간단한 느낌을 말합니다.",
+            "zh": "描述物品与地点并表达简单感受。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m15-u2-l1",
+            "ja-daily_life-m15-u2-l2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-daily_life-m16",
+      "languageCode": "ja",
+      "nicheId": "daily_life",
+      "branch": "niche",
+      "moduleId": "daily_life_m16_health_problems",
+      "moduleTitle": "Health & When Something Goes Wrong",
+      "moduleTitleVi": "Sức khỏe & khi gặp rắc rối",
+      "moduleTitleByNative": {
+        "en": "Health & When Something Goes Wrong",
+        "vi": "Sức khỏe & khi gặp rắc rối",
+        "ja": "健康とトラブル",
+        "ko": "건강과 문제 상황",
+        "zh": "健康与突发状况"
+      },
+      "title": "Japanese · Daily Life Communication · Health & When Something Goes Wrong",
+      "titleVi": "Tiếng Nhật · Giao tiếp hằng ngày · Sức khỏe & khi gặp rắc rối",
+      "titleByNative": {
+        "vi": "Tiếng Nhật · Giao tiếp hằng ngày · Sức khỏe & khi gặp rắc rối",
+        "en": "Japanese · Daily Life Communication · Health & When Something Goes Wrong",
+        "ja": "日本語 · 日常会話 · 健康とトラブル",
+        "ko": "일본어 · 일상 회화 · 건강과 문제 상황",
+        "zh": "日语 · 日常交流 · 健康与突发状况"
+      },
+      "description": "Talk about your health and handle everyday problems.",
+      "descriptionVi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+      "descriptionByNative": {
+        "en": "Talk about your health and handle everyday problems.",
+        "vi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+        "ja": "健康について話し、日常のトラブルに対応します。",
+        "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
+        "zh": "谈论健康并应对日常生活中的突发状况。"
+      },
+      "levelCode": "A0",
+      "levelRange": "A0–A1",
+      "placementTag": "daily_life_basic",
+      "type": "communication",
+      "unlockRequirement": "core_foundation_completed",
+      "contentStatus": "blueprint",
+      "playable": false,
+      "order": 26,
+      "unitIds": [
+        "ja-daily_life-m16-u1",
+        "ja-daily_life-m16-u2"
+      ],
+      "isComingSoon": true,
+      "units": [
+        {
+          "id": "ja-daily_life-m16-u1",
+          "title": "Unit 1: Talking About Health",
+          "titleVi": "Bài 1: Nói về sức khỏe",
+          "titleByNative": {
+            "vi": "Bài 1: Nói về sức khỏe",
+            "en": "Unit 1: Talking About Health",
+            "ja": "ユニット1: 健康について話す",
+            "ko": "유닛 1: 건강에 대해 말하기",
+            "zh": "单元1: 谈论健康"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m16_health_problems",
+          "goal": "Talk about your health and handle everyday problems.",
+          "goalVi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+          "goalByNative": {
+            "en": "Talk about your health and handle everyday problems.",
+            "vi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+            "ja": "健康について話し、日常のトラブルに対応します。",
+            "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
+            "zh": "谈论健康并应对日常生活中的突发状况。"
+          },
+          "displayOrder": 1,
+          "order": 1,
+          "lessonIds": [
+            "ja-daily_life-m16-u1-l1",
+            "ja-daily_life-m16-u1-l2"
+          ]
+        },
+        {
+          "id": "ja-daily_life-m16-u2",
+          "title": "Unit 2: When Something Goes Wrong",
+          "titleVi": "Bài 2: Khi gặp rắc rối",
+          "titleByNative": {
+            "vi": "Bài 2: Khi gặp rắc rối",
+            "en": "Unit 2: When Something Goes Wrong",
+            "ja": "ユニット2: トラブルにあったとき",
+            "ko": "유닛 2: 문제가 생겼을 때",
+            "zh": "单元2: 遇到麻烦时"
+          },
+          "levelCode": "A0",
+          "levelRange": "A0–A1",
+          "tier": "basic",
+          "trackId": "ja-daily_life",
+          "moduleId": "daily_life_m16_health_problems",
+          "goal": "Talk about your health and handle everyday problems.",
+          "goalVi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+          "goalByNative": {
+            "en": "Talk about your health and handle everyday problems.",
+            "vi": "Nói về sức khỏe và xử lý khi gặp rắc rối trong đời sống.",
+            "ja": "健康について話し、日常のトラブルに対応します。",
+            "ko": "건강에 대해 말하고 일상 속 문제 상황에 대응합니다.",
+            "zh": "谈论健康并应对日常生活中的突发状况。"
+          },
+          "displayOrder": 2,
+          "order": 2,
+          "lessonIds": [
+            "ja-daily_life-m16-u2-l1",
+            "ja-daily_life-m16-u2-l2"
+          ]
+        }
+      ]
     }
   ]
 }
