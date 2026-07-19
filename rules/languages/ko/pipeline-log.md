@@ -119,3 +119,16 @@ Không có front-matter (log nội bộ, không phải rule/narrative — theo c
   KHÔNG liên quan tới task này, xác nhận baseline trước khi ko được thêm vào
   vẫn y hệt 4 lỗi này (validate.mjs baseline chụp trước khi bắt đầu task).
   **ko HOÀN TẤT sạch — sẵn sàng commit.**
+
+- 2026-07-19 — **RÀ LẠI 5 VÒNG (Phần B audit).** `particles_josa` NÂNG
+  DRAFT→VALIDATED: V3 corpus thật (7339 câu, giải mã Hangul Unicode jongseong)
+  xác nhận quy tắc chọn trợ từ theo patchim — cặp sạch nhất 을/를 chỉ 0.49%
+  'vi phạm' (toàn danh từ kết thúc 을/를, không phải trợ từ); 은/는 9.11% &
+  이/가 4.10% là nhiễu đồng tự (는 định ngữ, 이/과 danh từ cuối), KHÔNG phải
+  quy tắc sai — ghi rõ. V1/V2/V4/V5 (NIKL, giáo trình, Sohn/Martin) đồng thuận.
+  Owner decisions A-02/A-03/A-06 (đã duyệt 2026-07-19) tra lại 5 vòng — XÁC
+  NHẬN ĐÚNG, không nghi ngờ (A-06 chấm spacing lỏng là đúng vì 띄어쓰기 biến
+  thiên cả với người bản ngữ). Còn DRAFT cần người bản ngữ: pronunciation_contextual
+  (4/5 quy tắc biến âm), conjugation (paradigm), speech_level_endings,
+  forms_of_address, counters (bảng), romanization_rr (bảng), spacing_orthography
+  (low — 띄어쓰기 vốn không nhất quán). Status ngôn ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN).

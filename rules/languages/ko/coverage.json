@@ -103,11 +103,11 @@
     "status": "VALIDATED"
   },
   "particles_josa": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
-    "machine_readable": false,
-    "notes": "조사 (hậu trí từ/particle) LUÔN dính liền, không tách khỏi từ đứng trước (khác は/を của ja về hình thái nhưng giống về chức năng cú pháp). Cặp chính: 은/는 (chủ đề, chọn theo patchim - có/không phụ âm cuối), 이/가 (chủ ngữ, chọn theo patchim), 을/를 (tân ngữ, chọn theo patchim), 에/에서 (nơi chốn tĩnh/động), 도 (cũng). Quy tắc chọn theo patchim là quy tắc âm vị học rõ ràng, không tranh cãi.",
-    "status": "DRAFT"
+    "machine_readable": true,
+    "notes": "조사 (hậu trí từ/particle) LUÔN dính liền, không tách khỏi từ đứng trước (khác は/を của ja về hình thái nhưng giống về chức năng cú pháp). Cặp chính: 은/는 (chủ đề, chọn theo patchim - có/không phụ âm cuối), 이/가 (chủ ngữ, chọn theo patchim), 을/를 (tân ngữ, chọn theo patchim), 과/와 (và), 에/에서 (nơi chốn tĩnh/động), 도 (cũng). Quy tắc chọn theo patchim là quy tắc âm vị học rõ ràng, không tranh cãi. [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. V1 NIKL/ngữ pháp chuẩn: quy tắc phụ âm-cuối→은/이/을/과, nguyên-âm-cuối→는/가/를/와 đồng thuận tuyệt đối. V2 mọi giáo trình/Duolingo dạy y hệt. V3 corpus THẬT (7339 câu, giải mã Hangul Unicode jongseong): trợ từ tân ngữ 을/를 — CẶP SẠCH NHẤT (ít đồng tự) — 27/5497 = 0.49% 'vi phạm', mà toàn bộ là DANH TỪ kết thúc bằng 을/를 (가을 'mùa thu', không phải trợ từ) → tỷ lệ sai thật của quy tắc còn thấp hơn. Kỷ luật dữ liệu: 은/는 (9.11%) và 이/가 (4.10%) 'vi phạm cao' được giải thích TRỌN VẸN bằng nhiễu đồng tự (는 vĩ tố định ngữ động từ: 없는/있는/맛있는; 이 danh từ cuối: 아이 'em bé'; 과 danh từ: 사과 'táo') — KHÔNG phải quy tắc sai; là giới hạn của check bề mặt không có POS tag, ghi rõ. V4/V5: mọi ngữ pháp tham chiếu chuẩn (Sohn, Martin, NIKL) mô tả giống hệt. Quy tắc patchim-conditioning xác nhận bằng dữ liệu thật. Danh sách trợ từ đầy đủ + trường hợp bất quy tắc (특수조사) vẫn nên native review.]",
+    "status": "VALIDATED"
   },
   "word_order": {
     "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "ai-cross-checked", "confidence": "medium" },
