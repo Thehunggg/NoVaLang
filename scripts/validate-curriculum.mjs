@@ -1123,10 +1123,33 @@ async function main() {
   if (languageOptions.length < 40) {
     fail(`language catalog must have >= 40 learning languages — got ${languageOptions.length}`);
   }
-  if (nativeLanguageOptions.length < 100) {
-    fail(
-      `native language catalog must have >= 100 languages — got ${nativeLanguageOptions.length}`,
-    );
+  // Native language target is DYNAMIC (owner decision, 2026-07-19): the count
+  // is not hard-coded here. It is read from the authoritative target the owner
+  // maintains in rules/catalog.json._meta.nativeTargetCount (60 today). The
+  // generated native catalog is produced from `nativeSeeds` in
+  // scripts/generate-language-catalogs.mjs (which writes ALL of nativeSeeds),
+  // so its length must equal that declared target. When the owner expands the
+  // native set, they bump nativeTargetCount + add seeds; this check follows
+  // automatically instead of needing a manual number update here. (nativeSeeds
+  // stays inline in the generator per the owner's decision, and the generator
+  // has import-time writeFileSync side effects, so it is not imported directly;
+  // nativeTargetCount is the side-effect-free authoritative source.)
+  let expectedNativeCount = null;
+  try {
+    const rulesCatalog = await loadJson("rules/catalog.json");
+    const n = rulesCatalog?._meta?.nativeTargetCount;
+    if (Number.isInteger(n) && n > 0) expectedNativeCount = n;
+  } catch {
+    // rules/catalog.json missing/unreadable — fall through to the floor check.
+  }
+  if (expectedNativeCount != null) {
+    if (nativeLanguageOptions.length !== expectedNativeCount) {
+      fail(
+        `native language catalog must have exactly ${expectedNativeCount} languages (rules/catalog.json._meta.nativeTargetCount) — got ${nativeLanguageOptions.length}`,
+      );
+    }
+  } else if (nativeLanguageOptions.length < 1) {
+    fail("native language catalog is empty");
   }
   for (const item of languageOptions) {
     if (!item.code || !item.englishName || !item.nativeName || !item.flagEmoji) {

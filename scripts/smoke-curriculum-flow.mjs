@@ -747,15 +747,28 @@ function checkLanguageCatalogParity() {
     loadJson("mobile/novalang_flutter/assets/shared/language_options.json"),
     loadJson("mobile/novalang_flutter/assets/shared/native_language_options.json"),
     loadJson("shared/generated/curriculum_catalog.json"),
+    loadJson("rules/catalog.json").catch(() => null),
   ]).then(
-    ([learning, native, flutterLearning, flutterNative, catalog]) => {
+    ([learning, native, flutterLearning, flutterNative, catalog, rulesCatalog]) => {
       if (learning.length < 40) {
         fail(section, {}, `learning languages expected >= 40, got ${learning.length}`);
       } else {
         pass(section, `learning languages: ${learning.length}`);
       }
-      if (native.length < 100) {
-        fail(section, {}, `native languages expected >= 100, got ${native.length}`);
+      // Native count is DYNAMIC (owner decision, 2026-07-19): read the
+      // authoritative target from rules/catalog.json._meta.nativeTargetCount
+      // (60 today) instead of hard-coding a number here. The generated native
+      // catalog is produced from all of `nativeSeeds` in
+      // generate-language-catalogs.mjs, so its length must equal that target.
+      const expectedNative = rulesCatalog?._meta?.nativeTargetCount;
+      if (Number.isInteger(expectedNative) && expectedNative > 0) {
+        if (native.length !== expectedNative) {
+          fail(section, {}, `native languages expected exactly ${expectedNative} (rules/catalog.json._meta.nativeTargetCount), got ${native.length}`);
+        } else {
+          pass(section, `native languages: ${native.length} (matches nativeTargetCount)`);
+        }
+      } else if (native.length < 1) {
+        fail(section, {}, "native language catalog is empty");
       } else {
         pass(section, `native languages: ${native.length}`);
       }
