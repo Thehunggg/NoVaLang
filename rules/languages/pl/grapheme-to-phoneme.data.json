@@ -1,0 +1,218 @@
+{
+  "id": "pl/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 157042,
+    "byScript": {
+      "pol_latn_broad": {
+        "count": 157042,
+        "sample": [
+          [
+            "A",
+            "a"
+          ],
+          [
+            "AC",
+            "a t͡s ɛ"
+          ],
+          [
+            "ADHD",
+            "a d ɛ x a d ɛ"
+          ],
+          [
+            "AF",
+            "a ɛ f"
+          ],
+          [
+            "AIDS",
+            "ɛ j t s"
+          ],
+          [
+            "AK",
+            "a k a"
+          ],
+          [
+            "ASAP",
+            "a s a p"
+          ],
+          [
+            "AWPL",
+            "a v u p ɛ ɛ l"
+          ],
+          [
+            "Aalborg",
+            "ɔ l b ɔ r"
+          ],
+          [
+            "Aalborg",
+            "ɔ l b ɔ r k"
+          ],
+          [
+            "Aarhus",
+            "ɔ r x u s"
+          ],
+          [
+            "Abakan",
+            "a b a k a n"
+          ],
+          [
+            "Abasen",
+            "a b a s ɛ n"
+          ],
+          [
+            "Abasyn",
+            "a b a s ɨ n"
+          ],
+          [
+            "Abchaz",
+            "a p x a s"
+          ],
+          [
+            "Abchaza",
+            "a p x a z a"
+          ],
+          [
+            "Abchazach",
+            "a p x a z a x"
+          ],
+          [
+            "Abchazami",
+            "a p x a z a m i"
+          ],
+          [
+            "Abchazce",
+            "a p x a s t͡s ɛ"
+          ],
+          [
+            "Abchazek",
+            "a p x a z ɛ k"
+          ],
+          [
+            "Abchazem",
+            "a p x a z ɛ m"
+          ],
+          [
+            "Abchazi",
+            "a p x a ʑ i"
+          ],
+          [
+            "Abchazie",
+            "a p x a ʑ ɛ"
+          ],
+          [
+            "Abchazja",
+            "a p x a z j a"
+          ],
+          [
+            "Abchazji",
+            "a p x a z j i"
+          ],
+          [
+            "Abchazjo",
+            "a p x a z j ɔ"
+          ],
+          [
+            "Abchazją",
+            "a p x a z j ɔ w̃"
+          ],
+          [
+            "Abchazję",
+            "a p x a z j ɛ"
+          ],
+          [
+            "Abchazję",
+            "a p x a z j ɛ w̃"
+          ],
+          [
+            "Abchazka",
+            "a p x a s k a"
+          ],
+          [
+            "Abchazkach",
+            "a p x a s k a x"
+          ],
+          [
+            "Abchazkami",
+            "a p x a s k a m i"
+          ],
+          [
+            "Abchazki",
+            "a p x a s k i"
+          ],
+          [
+            "Abchazko",
+            "a p x a s k ɔ"
+          ],
+          [
+            "Abchazkom",
+            "a p x a s k ɔ m"
+          ],
+          [
+            "Abchazką",
+            "a p x a s k ɔ w̃"
+          ],
+          [
+            "Abchazkę",
+            "a p x a s k ɛ"
+          ],
+          [
+            "Abchazkę",
+            "a p x a s k ɛ w̃"
+          ],
+          [
+            "Abchazom",
+            "a p x a z ɔ m"
+          ],
+          [
+            "Abchazowi",
+            "a p x a z ɔ v i"
+          ],
+          [
+            "Abchazowie",
+            "a p x a z ɔ v j ɛ"
+          ],
+          [
+            "Abchazów",
+            "a p x a z u f"
+          ],
+          [
+            "Abdera",
+            "a b d ɛ r a"
+          ],
+          [
+            "Abdero",
+            "a b d ɛ r ɔ"
+          ],
+          [
+            "Abdery",
+            "a b d ɛ r ɘ"
+          ],
+          [
+            "Abderze",
+            "a b d ɛ ʐ ɛ"
+          ],
+          [
+            "Abderą",
+            "a b d ɛ r ɔ w̃"
+          ],
+          [
+            "Abderę",
+            "a b d ɛ r ɛ"
+          ],
+          [
+            "Abderę",
+            "a b d ɛ r ɛ w̃"
+          ],
+          [
+            "Abdiasz",
+            "a b d j a ʂ"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/pol_latn_broad.tsv"
+      }
+    }
+  }
+}

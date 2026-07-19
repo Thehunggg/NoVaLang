@@ -1,0 +1,56 @@
+{
+  "id": "pl/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "pl-PL",
+    "grapheme_to_phoneme_rules": {
+      "sz": { "phoneme": "ʂ", "g2p_check": "10803 từ / 0.05% — OK" },
+      "cz": { "phoneme": "t͡ʂ", "g2p_check": "17121 từ / 0.08% — OK" },
+      "rz": { "phoneme": "ʐ / ʂ", "g2p_check": "11958 từ / 3.69% — OK (LÀM CÂM -> [ʂ] sau vô thanh + cuối từ; phẳng rz->ʐ bắn 61.27%)" },
+      "ch_h": { "phoneme": "x", "g2p_check": "ch 11637 từ / 0.74% — OK (h cũng [x], đồng âm)" },
+      "ł": { "phoneme": "w", "g2p_check": "24547 từ / 2.32% — OK (ngoại lệ [ɫ] cách đọc cổ/vùng)" },
+      "dz": { "phoneme": "d͡z / d͡ʑ", "g2p_check": "5594 từ / 0.84% — OK ('dzi' LÀM MỀM -> [d͡ʑ]; phẳng dz bắn 67.02%)" },
+      "ć_ci": { "phoneme": "t͡ɕ", "g2p_check": "14821 từ / 0.34% — OK" },
+      "ń_ni": { "phoneme": "ɲ", "g2p_check": "3538 từ / 0.00% — OK" },
+      "ś_si": { "phoneme": "ɕ", "g2p_check": "11532 từ / 0.06% — OK" },
+      "ż": { "phoneme": "ʐ / ʂ", "g2p_check": "7684 từ / 0.00% — OK (đồng âm rz)" },
+      "ą": { "phoneme": "chứa ɔ (mũi)", "g2p_check": "15664 từ / 0.01% — OK" },
+      "ę": { "phoneme": "chứa ɛ (mũi)", "g2p_check": "14389 từ / 0.00% — OK" }
+    },
+    "final_devoicing": {
+      "note": "Làm câm cuối từ + đồng hoá thanh trong cụm.",
+      "b→p": "293 từ / 3.07% — OK",
+      "d→t": "726 từ / 0.41% — OK",
+      "g→k": "637 từ / 0.63% — OK"
+    },
+    "not_yet_g2p_checked": {
+      "nasal_context": "ą/ę hiện thực theo ngữ cảnh ([ɔn]/[ɔm]/[ɔw̃] trước tắc/xát; ę cuối từ mất mũi -> [ɛ])",
+      "voicing_assimilation": "cụm phụ âm đồng hoá thanh (prośba->[proʑba])",
+      "w_devoicing": "w sau phụ âm vô thanh -> [f] (twój=[tfuj])"
+    }
+  },
+  "checks": [
+    {
+      "id": "sibilant-digraphs",
+      "description": "sz/cz/rz/ż + ć/ś/ź/ń ánh xạ âm xuýt/vòm (xác nhận g2p-check).",
+      "assert": { "type": "custom", "note": "Kiểm chữ->âm cần G2P engine; g2p-check.mjs đã xác nhận trên WikiPron thật." },
+      "fixtures": { "pass": ["czas", "szum", "cień"], "fail": ["czas-xyz"] }
+    },
+    {
+      "id": "rz-devoicing-dz-softening",
+      "description": "rz->[ʂ] khi làm câm; dz->[d͡ʑ] khi 'dzi' (phát hiện real-data VÒNG 4).",
+      "assert": { "type": "custom", "note": "Đồng hoá thanh + làm mềm theo i; g2p-check xác nhận trên WikiPron." },
+      "fixtures": { "pass": ["przez", "dzień"], "fail": ["przez-voiced"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["czas", "cień", "dzień", "chleb"],
+    "fail": ["czas-xyz"],
+    "_note": "fixtures minh hoạ quy tắc g2p đã xác nhận; dùng test implementation tương lai."
+  }
+}

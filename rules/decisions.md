@@ -722,6 +722,27 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   VALIDATED_NOT_YET_PROVEN. Không đụng playable config/lesson hay ngôn ngữ khác.
   Commit riêng.
 
+- **D-63 · 2026-07-19 · derived · pl — `pl` (tiếng Ba Lan, pl-PL) build HOÀN
+  TẤT, trạng thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN
+  (ADR-014). Ngôn ngữ Slav Latin-script phức tạp (7 cách, thể, giống
+  nam-người).** 25 hiện tượng; 4 `.rules.json` khớp khuôn ja/en/es/de/it/pt/ru/
+  nl. Dataset thật: CLDR pl, UD Polish-PDB (word-class), WikiPron
+  `pol_latn_broad` (157042 cặp). Corpus 35926 câu (UD PDB+LFG). **g2p-check**
+  xác nhận 15 quy tắc chữ→âm sạch (0.00–3.69%): sz/cz/rz/ch/ł/dz/ć/ń/ś/ż + ą/ę
+  mũi + làm câm cuối từ b/d/g → `grapheme_to_phoneme` + `final_devoicing` +
+  `consonant_palatalization` + `nasal_vowels` VALIDATED. **Kỷ luật dữ liệu
+  (VÒNG 4):** (1) rz phẳng bắn 61.27% → rz làm câm [ʂ] sau vô thanh + cuối từ;
+  thêm [ʂ] → 3.69%. (2) dz phẳng bắn 67.02% → 'dzi' làm mềm [d͡ʑ]; thêm →
+  0.84%. **corpus-check** month-weekday **0.02%** (họ người). Đặc trưng: 7 cách
+  (có wołacz), giống nam-người, Pan/Pani ngôi 3 (không có 'vy' kiểu ru), trọng
+  âm đều, dấu-là-chữ. HONORIFIC not-applicable (es B-02). D-pl-01 baseline
+  pl-PL (vòng 1); D-pl-02 chấm thiếu dấu — dấu Ba Lan là CHỮ không phải accent,
+  cân nhắc tới VÒNG 2 (cách app xử lý), chọn cảnh báo nhẹ có chú thích →
+  `answer_acceptance_pl` DRAFT (điểm khác bản chất es/it/pt/nl, cần owner duyệt
+  rõ). Sự kiện Ba Lan thuần tuý → `native-review-pl.md`. `catalog.json`
+  pl.ruleStatus NOT_STARTED → VALIDATED_NOT_YET_PROVEN. Không đụng playable
+  config/lesson hay ngôn ngữ khác. Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "language": "pl",
+    "stage": "0-inventory",
+    "note": "Nguồn cho lớp máy-đọc-được của pl (tiếng Ba Lan chuẩn pl-PL, chữ Latin mở rộng). Dataset (CLDR/UD/WikiPron) import Bước 1, confidence:high, tải thật qua raw.githubusercontent.com. Nguồn S-* dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet (KHÔNG fetch toàn văn — D-51), confidence trần medium. g2p-check.mjs (Bước 3) xác nhận 15 quy tắc chữ->âm (kể cả làm mềm theo i, làm câm cuối từ, rz devoicing) trên WikiPron thật (157042 cặp)."
+  },
+  "sources": [
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (pl) — 32 chữ Latin mở rộng",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/pl/characters.json",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank (UD_Polish-PDB test split, word-class import)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Polish-PDB/master/pl_pdb-ud-test.conllu",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme (pol_latn_broad, 157042 cặp — broad transcription pl-PL)",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/pol_latn_broad.tsv",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD Polish-PDB + UD Polish-LFG (train/dev/test) — câu thật cho corpus check (35926 câu, tools/cache/corpus/pl-sentences.txt, không commit)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Polish-PDB/master/ + UD_Polish-LFG/master/",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "S-TRAINED-KNOWLEDGE",
+      "name": "Kiến thức ngôn ngữ học tiếng Ba Lan đã huấn luyện sẵn của người viết rule (Claude) — CHỈ dùng cho sự kiện chuẩn phổ thông; KHÔNG dùng làm nguồn duy nhất cho quyết định sản phẩm hay bảng dữ liệu đầy đủ",
+      "url": null,
+      "consulted": "2026-07-19",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "n/a — xem D-51"
+    }
+  ]
+}
