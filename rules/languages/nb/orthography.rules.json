@@ -1,0 +1,44 @@
+{
+  "id": "nb/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "«»",
+    "quote_marks_alternative": "””",
+    "extra_letters": "æ ø å là chữ cái riêng (cuối bảng, thứ tự æ ø å — giống da/sv). å thay 'aa' cũ.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "januar/mandag/norsk viết thường (trừ đầu câu) — giống sv/da/es. Danh từ chung KHÔNG hoa (khác de)."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 20044 câu thật — 16/20044 = 0.08% vi phạm (tên riêng); quy tắc hợp lệ.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Januar|Februar|April|Juni|Juli|September|Oktober|November|Desember|Mandag|Tirsdag|Onsdag|Torsdag|Fredag|Lørdag|Søndag)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["I dag er det mandag den tredje januar."],
+        "fail": ["I dag er det Mandag den tredje Januar."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["I dag er det mandag.", "Hun snakker norsk.", "Oslo er Norges hovedstad."],
+    "fail": ["i dag er det mandag.", "I dag er det Januar."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Norwegian-Bokmaal thật (20044 câu). Mars (hành tinh)/Mai/August/Mars bỏ khỏi regex vì đồng âm tên riêng/hành tinh."
+  }
+}

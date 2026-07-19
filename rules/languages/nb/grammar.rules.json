@@ -1,0 +1,65 @@
+{
+  "id": "nb/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "definite_suffix",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "nb-NO",
+    "word_order": {
+      "main_clause": "V2 — động từ chia ở vị trí THỨ HAI (Jeg leser en bok. I dag leser jeg.)",
+      "subordinate_clause": "ikke (phủ định) đứng TRƯỚC động từ (..., at jeg ikke forstår)"
+    },
+    "gender_articles": {
+      "en_ord": "giống đực (hankjønn): en bil",
+      "ei_ord": "giống cái (hunkjønn): ei bok — Bokmål CHO PHÉP gộp vào 'en' (felleskjønn: en bok cũng đúng)",
+      "et_ord": "giống trung (intetkjønn): et hus",
+      "gender_lexical": "phải học theo từng danh từ (như sv/da). Baseline: dạy 3 giống nhưng chấp nhận biến thể gộp masc+fem."
+    },
+    "definite_suffix": {
+      "note": "ĐẶC TRƯNG SCANDINAVIA — mạo từ xác định GẮN SAU danh từ.",
+      "en_singular": "-en / -n (bil->bilen, jente->jenta/jenten)",
+      "ei_singular": "-a (bok->boka) hoặc -en (boken) — biến thể",
+      "et_singular": "-et / -t (hus->huset, eple->eplet; -et đọc [ə], t câm)",
+      "plural": "-ene / -a (biler->bilene, barn->barna)",
+      "with_adjective": "GIỐNG sv, KHÁC da: XÁC ĐỊNH KÉP khi có tính từ — mạo từ TRƯỚC (den/det/de) + tính từ + danh từ VẪN CÓ hậu tố (den røde bilen, det store huset, de røde bilene)."
+    },
+    "adjective": {
+      "indefinite": "en rød bil / et rødt hus (et-ord +t) / røde biler (số nhiều -e)",
+      "definite": "den røde bilen (dạng -e + danh từ có hậu tố — xác định kép)"
+    },
+    "verb_no_person_agreement": {
+      "rule": "Động từ KHÔNG chia theo ngôi/số — jeg/du/han/vi/dere/de + CÙNG dạng (jeg er, du er, de er).",
+      "present": "-r (snakker, leser, bor)",
+      "past": "-et/-te/-de + động từ mạnh (đổi nguyên âm: skrive->skrev)",
+      "perfect": "har/er + phân từ (-et/-t: har snakket, er gått)"
+    }
+  },
+  "checks": [
+    {
+      "id": "definite-double-with-adjective",
+      "description": "Mạo từ xác định hậu tố; xác định KÉP khi có tính từ (mạo từ TRƯỚC + hậu tố — giống sv, khác da). Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng giống + phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["bilen", "huset", "den røde bilen"],
+        "fail": ["den bilen uten adjektiv", "den røde bil"]
+      }
+    },
+    {
+      "id": "verb-no-person-agreement",
+      "description": "Động từ không chia theo ngôi — cùng dạng mọi ngôi (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["jeg er", "du er", "de er"],
+        "fail": ["jeg eren", "du bist"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Jeg leser en bok.", "den røde bilen", "de er"],
+    "fail": ["den røde bil", "jeg eren"],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Norwegian-Bokmaal thật (20044 câu). Xác định kép (den røde bilen) là khác biệt chính với da."
+  }
+}

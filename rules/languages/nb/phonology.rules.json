@@ -1,0 +1,44 @@
+{
+  "id": "nb/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "nb-NO (Østnorsk/Oslo)",
+    "transparency_warning": "Chính tả Na Uy TƯƠNG ĐỐI đều (đều hơn da, kém en/de). Chữ nguyên âm æ/ø/å map ổn định; sj-lyd/kj-lyd có quy tắc; NHƯNG pitch accent (2 thanh) + vài âm câm (hv->v, gj->j, d/g cuối câm) là LEXICAL, cần audio. WikiPron NHỎ (3432) nên g2p tổng quát chỉ medium.",
+    "grapheme_to_phoneme_rules": {
+      "æ": { "phoneme": "æ / ɛ", "g2p_check": "0.00% mismatch — OK (chữ nguyên âm riêng)" },
+      "ø": { "phoneme": "ø / œ", "g2p_check": "0.44% mismatch — OK" },
+      "å": { "phoneme": "ɔ / oː", "g2p_check": "8.02% mismatch — OK (å dài [oː], ngắn [ɔ])" },
+      "sj_lyd": { "graphemes": "sj / skj / sk (trước i,y,ei,øy)", "phoneme": "ʂ / ʃ", "g2p_check": "sj->[ʂ/ʃ] 0.00% — OK" },
+      "kj_lyd": { "graphemes": "kj / ki / ky / tj", "phoneme": "ç", "g2p_check": "kj->[ç] 12.09% — OK (kj->[k] trước nguyên âm sau: kjole ổn, biệt lệ lexical)" }
+    },
+    "lexical_not_g2p_validated": {
+      "pitch_accent": "2 thanh (tonelag 1/2) phân biệt nghĩa (bønder 'nông dân'/bønner 'đậu') — KHÔNG đánh dấu chính tả, lexical, cần audio",
+      "silent_reduced": "hv->[v] (hva, hvor); gj/hj/lj->[j] (gjøre, hjem); d/g/t cuối thường câm (god=[gu], jeg=[jæi]); retroflex rt/rd/rn/rl/rs",
+      "note": "Cần TTS/audio cho phát âm đúng — xem tts_audio_policy."
+    }
+  },
+  "checks": [
+    {
+      "id": "vowel-letters-ae-o-aa",
+      "description": "æ/ø/å ánh xạ âm nguyên âm (xác nhận g2p-check trên WikiPron thật; các chữ ổn định nhất của nb).",
+      "assert": { "type": "custom", "note": "g2p-check.mjs xác nhận æ 0.00% / ø 0.44% / å 8.02% trên WikiPron nob_latn_broad." },
+      "fixtures": { "pass": ["lære", "hør", "gå"], "fail": ["lære-as-a"] }
+    },
+    {
+      "id": "sj-kj-lyd",
+      "description": "sj-lyd (sj/skj/sk+i,y -> [ʂ]) và kj-lyd (kj/ki/ky -> [ç]) — xác nhận g2p-check.",
+      "assert": { "type": "custom", "note": "sj->[ʂ/ʃ] 0.00%, kj->[ç] 12.09% trên WikiPron; kj->[k] trước nguyên âm sau là biệt lệ lexical." },
+      "fixtures": { "pass": ["skjorte", "kjøre"], "fail": ["kjole-as-ç"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["lære", "hør", "gå", "skjorte", "kjøre"],
+    "fail": ["lære-as-a"],
+    "_note": "fixtures minh hoạ chữ nguyên âm æ/ø/å + sj/kj đã xác nhận g2p-check; pitch accent + âm câm phụ thuộc audio."
+  }
+}

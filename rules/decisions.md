@@ -973,6 +973,33 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-81 · 2026-07-19 · derived · nb — `nb` (tiếng Na Uy Bokmål, nb-NO) build
+  HOÀN TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra
+  cứu 5 vòng.** North Germanic (Scandinavia, gần da/sv), chữ Latin 29 chữ
+  (a-z + æ ø å), t1, 24 hiện tượng. **Bokmål (nb), KHÔNG phải Nynorsk (nn).**
+  Dataset CLDR/UD/WikiPron: WikiPron `nob_latn_broad` **3432 cặp (bộ nhỏ)**;
+  corpus UD Norwegian-Bokmaal **20044 câu** (TRÊN 10000 — đầy đủ). g2p-check:
+  æ→[æ/ɛ] 0.00%, ø→[ø/œ] 0.44%, å→[ɔ/oː] 8.02%, sj-lyd sj→[ʂ/ʃ] 0.00%,
+  kj-lyd kj→[ç] 12.09% → `grapheme_to_phoneme` VALIDATED cho các chữ/tổ hợp đó
+  (kj→[k] trước nguyên âm sau, kjole, biệt lệ lexical). corpus-check
+  month-weekday-not-capitalized **0.08%** trên 20044 câu (bằng chứng mạnh, corpus
+  lớn) → `casing` VALIDATED. **Kỷ luật dữ liệu:** WikiPron nhỏ (3432) → g2p tổng
+  quát chỉ medium; **pitch accent** (2 thanh tonelag 1/2, phân biệt bønder/bønner,
+  KHÔNG đánh dấu — thay chức năng stød của da) + âm câm (hv→v, gj→j, d/g cuối câm)
+  ở lexical, cần audio — ghi rõ, không nâng cả hệ. Đặc trưng: hậu tố xác định +
+  **XÁC ĐỊNH KÉP** khi có tính từ (den røde bilen — mạo từ TRƯỚC + hậu tố, GIỐNG
+  sv KHÁC da), động từ KHÔNG chia theo ngôi (jeg/du/de er), V2, en/ei/et 3 giống
+  (Bokmål cho phép gộp masc+fem = felleskjønn), du phổ quát (De gần tuyệt chủng),
+  dere số nhiều. HONORIFIC not-applicable (tự áp tiền lệ es B-02). **3 giả định
+  cần owner duyệt (đợt Scandinavia, cùng bản chất da D-73):** D-nb-01 (baseline
+  nb-NO Bokmål Østnorsk — v1), D-nb-02 (dạy 3 giống chấp nhận gộp masc+fem, en
+  bok = ei bok — v2), D-nb-03 (chấm thiếu æ/ø/å = SAI, aa=å ở tên riêng lịch sử
+  — tự áp tiền lệ pl D-64 + da D-73, giữ DRAFT flag owner). `native-review-nb.md`
+  7 mục (giống, hậu tố+xác định kép, pitch accent, phát âm/âm câm, động từ mạnh,
+  du tự nhiên, Bokmål chuẩn) chờ người bản ngữ. Status:
+  `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN. Validator: 4 lỗi vi/zh cũ (ghi nợ),
+  0 lỗi mới; catalog 60.
+
 - **D-80 · 2026-07-19 · derived · hi — `hi` (tiếng Hindi, hi-IN) build HOÀN
   TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
   vòng.** Indo-Aryan, hệ chữ DEVANAGARI (Deva, abugida — không Latin), t1, 24

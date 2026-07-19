@@ -1,0 +1,58 @@
+{
+  "id": "nb/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "nb-NO",
+    "address_forms": {
+      "du": { "formality": "universal_neutral", "number": "singular", "usage": "HẦU HẾT mọi người kể cả người lạ/lớn tuổi/dịch vụ/trang trọng — Na Uy hiện đại dùng du gần như phổ quát. Baseline." },
+      "De": { "formality": "very_formal_archaic", "number": "singular", "capitalized": true, "usage": "trang trọng cao, ĐÃ RẤT HIẾM (gần như chỉ hoàng gia/văn bản rất trang trọng) — KHÔNG dạy làm chuẩn trang trọng" },
+      "dere": { "formality": "informal_plural", "number": "plural", "usage": "ngôi 2 số nhiều (các bạn)" }
+    },
+    "baseline": {
+      "value": "Dạy 'du' làm chuẩn phổ quát (thân mật + lịch sự trung tính gộp, như sv/da). 'De' = ghi chú trang trọng cổ, gần như không dùng. 'dere' = ngôi 2 số nhiều. KHÔNG dựng đối lập T-V mạnh. Lịch sự qua từ vựng + gián tiếp.",
+      "tts_locale": "nb-NO (Østnorsk baseline)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "du + từ thân mật (hei, hallo, ha det)",
+      "NATURAL_NEUTRAL_POLITE": "du chuẩn mực — baseline (du đã là mức lịch sự trung tính)",
+      "FORMAL": "du + từ trang trọng + gián tiếp (God dag, takk, unnskyld)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Na Uy KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-), và De gần như tuyệt chủng. Lịch sự qua từ vựng + gián tiếp — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": {
+      "indirect": "Kunne du...? (Bạn có thể...?), Jeg vil gjerne... (Tôi muốn...), unnskyld (xin lỗi/xin phép), takk (cảm ơn), vær så snill (làm ơn)"
+    }
+  },
+  "checks": [
+    {
+      "id": "du-universal-baseline",
+      "description": "du dùng phổ quát, động từ cùng dạng (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần ngữ cảnh khi generator chạy; động từ nb không đổi theo ngôi." },
+      "fixtures": {
+        "pass": ["Hva vil du drikke?", "Snakker du norsk?"],
+        "fail": ["Hva vil du drikker?"]
+      }
+    },
+    {
+      "id": "polite-indirect",
+      "description": "Lịch sự qua gián tiếp (kunne du), không qua đại từ trang trọng (kiểm mẫu).",
+      "assert": { "type": "custom", "note": "Không dùng De làm trang trọng chuẩn." },
+      "fixtures": {
+        "pass": ["Kunne du hjelpe meg?"],
+        "fail": ["Kunne du hjelper meg?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Snakker du norsk?", "Kunne du hjelpe meg?", "Tusen takk."],
+    "fail": ["Hva vil du drikker?", ""],
+    "_note": "Câu pass minh hoạ baseline (du phổ quát + gián tiếp lịch sự)."
+  }
+}
