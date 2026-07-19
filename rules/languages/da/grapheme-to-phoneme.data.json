@@ -1,0 +1,218 @@
+{
+  "id": "da/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 4773,
+    "byScript": {
+      "dan_latn_broad": {
+        "count": 4773,
+        "sample": [
+          [
+            "A",
+            "æː"
+          ],
+          [
+            "A'er",
+            "aːˀ ə r"
+          ],
+          [
+            "A'erne",
+            "æː ɐ n ə"
+          ],
+          [
+            "A'ernes",
+            "æː ɐ n ə s"
+          ],
+          [
+            "A'ers",
+            "æː ɐ s"
+          ],
+          [
+            "A'et",
+            "æː ə t"
+          ],
+          [
+            "A'ets",
+            "æː ə t s"
+          ],
+          [
+            "A's",
+            "æː s"
+          ],
+          [
+            "ABC",
+            "a b e s eː"
+          ],
+          [
+            "Aalborg",
+            "ɔ l b ɔ r"
+          ],
+          [
+            "Aarhus",
+            "ɔː r h uːˀ s"
+          ],
+          [
+            "Abildgård",
+            "ɑː b i l d ɡ ɔ r"
+          ],
+          [
+            "Amalie",
+            "a m aː l j ə"
+          ],
+          [
+            "Amerika",
+            "a m eː r i k a"
+          ],
+          [
+            "Arabien",
+            "a r aː b i ə n"
+          ],
+          [
+            "Arne",
+            "a r n ə"
+          ],
+          [
+            "Asien",
+            "aːˀ s i ə n"
+          ],
+          [
+            "Blåtand",
+            "b l ɔ t a n"
+          ],
+          [
+            "Brasilien",
+            "b r a s i l j ə n"
+          ],
+          [
+            "Britannien",
+            "b r i t a nˀ i ə n"
+          ],
+          [
+            "Christiansted",
+            "k r a s d j a n s d ɛ ð"
+          ],
+          [
+            "Christiansted",
+            "k r ɛ s d j a n s d ɛ ð"
+          ],
+          [
+            "Cypern",
+            "k y p ə r n"
+          ],
+          [
+            "Danmark",
+            "d a n m ɑ r ɡ"
+          ],
+          [
+            "Danmark",
+            "d a n m ɑ ɡ"
+          ],
+          [
+            "Dem",
+            "d ə m"
+          ],
+          [
+            "Dem",
+            "d ɛ m"
+          ],
+          [
+            "Egon",
+            "eː ɡ ɔ n"
+          ],
+          [
+            "Emil",
+            "e̝ m iːˀ l"
+          ],
+          [
+            "Erland",
+            "ɛ ə r l ə n d"
+          ],
+          [
+            "Europa",
+            "œ u̯ ʀ oː p æ"
+          ],
+          [
+            "Fyn",
+            "f yˀ n"
+          ],
+          [
+            "Færøerne",
+            "f ɛ r øː ə r n ə"
+          ],
+          [
+            "Gallien",
+            "ɡ a lˀ i ə n"
+          ],
+          [
+            "Grækenland",
+            "ɡ r ɛːˀ k ə n l a nˀ"
+          ],
+          [
+            "Grønland",
+            "ɡ r œ n l a n"
+          ],
+          [
+            "Gud",
+            "ɡ u d"
+          ],
+          [
+            "Gøteborg",
+            "ɡ øː t ə b ɔ r ɡ"
+          ],
+          [
+            "Hansen",
+            "h a nˀ s ə n"
+          ],
+          [
+            "Hundestjernen",
+            "h u n ə s t j ɛ r n ə n"
+          ],
+          [
+            "Hvidovre",
+            "v iː ð ɒ w ʁ ɐ"
+          ],
+          [
+            "Højlund",
+            "h ɔ jˀ l o n d"
+          ],
+          [
+            "Inn",
+            "ɪ n"
+          ],
+          [
+            "Istanbul",
+            "i s t a n b u l"
+          ],
+          [
+            "Jamaica",
+            "ɕ a m ɑ j k a"
+          ],
+          [
+            "Jensen",
+            "j ɛ n s ə n"
+          ],
+          [
+            "Jespersen",
+            "j ɛ s b ə r s ə n"
+          ],
+          [
+            "Jytte",
+            "j y t ə"
+          ],
+          [
+            "Jørgen",
+            "j œ r ə n"
+          ],
+          [
+            "Kaj",
+            "k a jˀ"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/dan_latn_broad.tsv"
+      }
+    }
+  }
+}

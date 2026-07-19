@@ -1,0 +1,43 @@
+{
+  "id": "da/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "da-DK",
+    "transparency_warning": "Chính tả Đan Mạch NỔI TIẾNG KHÔNG ĐỀU — spelling≠pronunciation nặng nhất trong Germanic. CHỈ chữ nguyên âm æ/ø/å map tương đối; phần lớn còn lại (soft d, stød, âm câm/giảm) là LEXICAL. WikiPron nhỏ (4773).",
+    "grapheme_to_phoneme_rules": {
+      "æ": { "phoneme": "ɛ / a", "g2p_check": "497 từ / 1.21% — OK (cũng [eˀ] có stød)" },
+      "ø": { "phoneme": "ø / œ / ɔ", "g2p_check": "454 từ / 7.05% — OK (ø->[ɔ] trước j: bøje)" },
+      "å": { "phoneme": "ɔ / ʌ", "g2p_check": "190 từ / 6.32% — OK" }
+    },
+    "lexical_not_g2p_validated": {
+      "soft_d": "d giữa/cuối sau nguyên âm -> [ð] (mad=[mað], gade); nhưng nhiều d câm",
+      "stod": "stød (ˀ) phân biệt nghĩa (mor/mord), lexical — xem stod",
+      "silent_reduced": "g/d/t cuối thường câm hoặc [ð]/[ð̞]; nguyên âm không nhấn giảm; r biến nguyên âm trước",
+      "note": "Cần TTS/audio cho phát âm đúng vì chính tả không đoán được — xem tts_audio_policy."
+    }
+  },
+  "checks": [
+    {
+      "id": "vowel-letters-ae-o-aa",
+      "description": "æ/ø/å ánh xạ âm nguyên âm (xác nhận g2p-check; các chữ ổn định nhất của da).",
+      "assert": { "type": "custom", "note": "g2p-check.mjs xác nhận trên WikiPron; phần còn lại của da lexical." },
+      "fixtures": { "pass": ["læse", "hør"], "fail": ["læse-as-a"] }
+    },
+    {
+      "id": "danish-irregular-warning",
+      "description": "Đánh dấu: phần lớn chữ->âm da là lexical (soft d/stød/âm câm), không g2p tổng quát.",
+      "assert": { "type": "custom", "note": "Không phải quy tắc dương; đánh dấu tính không đều để generator dựa vào audio." },
+      "fixtures": { "pass": ["mad", "gade"], "fail": ["placeholder-x"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["læse", "hør", "gå", "mad"],
+    "fail": ["læse-as-a"],
+    "_note": "fixtures minh hoạ chữ nguyên âm æ/ø/å đã xác nhận; phần còn lại của da phụ thuộc audio."
+  }
+}

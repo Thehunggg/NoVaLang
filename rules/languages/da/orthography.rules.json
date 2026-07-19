@@ -1,0 +1,44 @@
+{
+  "id": "da/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "»«",
+    "quote_marks_alternative": "””",
+    "extra_letters": "æ ø å là chữ cái riêng (cuối bảng, thứ tự æ ø å). å thay 'aa' cũ.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "januar/mandag/dansk viết thường (trừ đầu câu) — giống sv/es. (Da hoa mọi danh từ tới cải cách 1948; nay chỉ danh từ riêng, giống en.)"
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 5512 câu thật.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Januar|Februar|Marts|April|Juni|Juli|August|September|Oktober|November|December|Mandag|Tirsdag|Onsdag|Torsdag|Fredag|Lørdag|Søndag)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["I dag er det mandag den tredje januar."],
+        "fail": ["I dag er det Mandag den tredje Januar."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["I dag er det mandag.", "Hun taler dansk.", "København er Danmarks hovedstad."],
+    "fail": ["i dag er det mandag.", "I dag er det Januar."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Danish thật. Maj (tháng 5) bỏ khỏi regex vì đồng âm tên riêng."
+  }
+}

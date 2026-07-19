@@ -915,6 +915,31 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
     (dấu ✅), `cs/coverage.json` + `ro/coverage.json` (answer_acceptance →
     C/VALIDATED). Commit riêng.
 
+- **D-71 · 2026-07-19 · derived · da — `da` (tiếng Đan Mạch, da-DK) build HOÀN
+  TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4.** Bắc Âu
+  (North Germanic, cùng họ sv/nb), Latin-script, tier t1-only. Dataset
+  CLDR/UD/WikiPron — **bộ NHỎ NHẤT tới giờ** (WikiPron `dan_latn_broad` 4773
+  cặp; corpus UD Danish-DDT 5512 câu — **DƯỚI mốc 10000, trên sàn 2000**; ghi
+  rõ trung thực ở sources/coverage/validation). g2p-check trên 4773 từ thật:
+  CHỈ chữ nguyên âm æ→[ɛ]/[a] 1.21%, ø 7.05%, å 6.32% → `grapheme_to_phoneme`
+  VALIDATED cho các chữ này. **Kỷ luật dữ liệu (trung thực):** phần còn lại —
+  soft d→[ð], stød (âm tắc thanh hầu phân biệt nghĩa mor/mord), âm cuối
+  câm/giảm — KHÔNG g2p-validate được (chính tả Đan Mạch nổi tiếng cách xa phát
+  âm nhất Germanic); ghi rõ là lexical, KHÔNG nâng cả hệ; sk/ng bắn cao do
+  tokenization + từ ghép, không kết luận. corpus-check 5512 câu:
+  month-weekday-not-capitalized 0.04% (2/5512, đầu câu Lørdag) — casing có bằng
+  chứng. HONORIFIC not-applicable (tự áp tiền lệ es B-02). Đặc trưng đã ghi: hậu
+  tố xác định (bilen) NHƯNG mạo từ TRƯỚC khi có tính từ (den røde bil — KHÁC sv,
+  không xác định kép); động từ KHÔNG chia theo ngôi; en/et 2 giống; V2. **3 giả
+  định cần owner duyệt:** D-da-01 (baseline da-DK — vòng 1), D-da-02 (du phổ
+  quát, De gần tuyệt chủng — vòng 2), D-da-03 (chấm thiếu æ/ø/å = SAI — tự áp
+  tiền lệ pl D-64 vì æ ø å là chữ cái thật, cùng bản chất sv å/ä/ö đã được duyệt
+  C ở D-67; giữ `answer_acceptance_da` **DRAFT** + flag owner vì áp sang ngôn
+  ngữ MỚI; lưu ý aa=å ở tên riêng lịch sử Aabenraa). `native-review-da.md` 7
+  mục (en/et, hậu tố+số nhiều, stød, phát âm≠chính tả, động từ mạnh, du tự
+  nhiên, độ tự nhiên) chờ người bản ngữ. Status: `VALIDATED_NOT_YET_PROVEN`,
+  KHÔNG FROZEN. Validator: 4 lỗi vi/zh cũ (ghi nợ), 0 lỗi mới; catalog 60.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,
