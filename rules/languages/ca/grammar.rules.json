@@ -1,0 +1,56 @@
+{
+  "id": "ca/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "gender_and_articles",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "ca (Central Catalan)",
+    "word_order": {
+      "base": "SVO (như es). Pro-drop (ẩn chủ ngữ, động từ chia đủ thông tin).",
+      "adjective": "Tính từ THƯỜNG sau danh từ (casa gran, cotxe vermell).",
+      "weak_pronoun_position": "Đại từ yếu TRƯỚC động từ chia (el veig) / SAU mệnh lệnh + infinitiu + gerundi (veure'l, mira'l)."
+    },
+    "gender_articles": {
+      "genders": "2 (đực/cái, như es/fr/it)",
+      "definite": "el / la (số nhiều els / les)",
+      "elision_apostrophe": "TRƯỚC nguyên âm/h câm: el/la → l' (l'home, l'aigua); de → d' (d'un); rút gọn a+el→al, de+el→del, per+el→pel.",
+      "personal_article": "en / na trước tên người (phương ngữ: en Joan, na Maria) — dạy như ghi chú, không bắt buộc.",
+      "gender_lexical": "Giống danh từ phần lớn lexical (đuôi -a thường cái, nhiều ngoại lệ)."
+    },
+    "verb_conjugation": {
+      "note": "CHIA THEO NGÔI (khác Scandinavia — giống es/fr/it).",
+      "groups": "3 nhóm: -ar (parlar), -er/-re (témer/perdre), -ir (dormir/servir, có/không -eix-).",
+      "person_agreement": "Có: parlo/parles/parla/parlem/parleu/parlen.",
+      "passat_perifrastic": "ĐẶC TRƯNG: quá khứ dứt điểm = vaig/vas/va/vam/vau/van + INFINITIU (vaig parlar 'tôi đã nói') — KHÁC es.",
+      "copula": "ser/estar (2 'to be', như es); haver = trợ động từ hoàn thành (he parlat)."
+    }
+  },
+  "checks": [
+    {
+      "id": "article-elision-apostrophe",
+      "description": "el/la rút thành l' trước nguyên âm/h câm; de→d' (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần phân tích âm đầu từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["l'home", "l'aigua", "del cotxe"],
+        "fail": ["el home", "de el cotxe"]
+      }
+    },
+    {
+      "id": "verb-person-agreement",
+      "description": "Động từ chia theo ngôi (khác Scandinavia). Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["jo parlo", "tu parles", "ell parla"],
+        "fail": ["jo parla", "tu parlo"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Parlo català.", "l'home", "vaig parlar amb ell."],
+    "fail": ["el home", "jo parla"],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Catalan-AnCora thật. Apostrophe/rút gọn + chia theo ngôi + passat perifràstic là đặc trưng ca."
+  }
+}

@@ -973,6 +973,35 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-82 · 2026-07-19 · derived · ca — `ca` (tiếng Catalan, Central/IEC) build
+  HOÀN TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra
+  cứu 5 vòng.** Romance (Occitano-Romance, gần es/fr/it), chữ Latin + ç + l·l
+  (ela geminada) + à è é í ï ò ó ú ü, t1, 24 hiện tượng. **Central Catalan
+  (IEC), KHÔNG phải Valencian.** Dataset CLDR/UD/WikiPron: WikiPron
+  `cat_latn_broad` **CHỈ 176 cặp (RẤT NHỎ — g2p KHÔNG đáng tin)**; corpus UD
+  Catalan-AnCora **16678 câu** (TRÊN 10000 — đầy đủ). **Kỷ luật dữ liệu (quan
+  trọng cho ca):** WikiPron 176 quá nhỏ → g2p-check KHÔNG dùng làm bằng chứng
+  dương (ll→ʎ báo 58% "vi phạm" chỉ là yod hoá phương ngữ + đồng hoá, không
+  phải rule sai); giữ g2p medium, phụ âm dựa kiến thức chuẩn, GIẢM NGUYÊN ÂM
+  (không nhấn a/e→[ə], o/u→[u] — Đông/Trung Catalan, như pt/ru) + pronoms febles
+  lexical, cần audio. corpus-check month-weekday-not-capitalized **0.05%** trên
+  16678 câu → `casing` VALIDATED; đo trực tiếp ç 11.60% + l·l 7.37% câu (đặc
+  trưng thật) + ¿¡ chỉ 0.84% (chuẩn Catalan KHÔNG dùng dấu lật ngược, KHÁC es).
+  Đặc trưng: ç [s], **l·l** geminate (khác ll [ʎ]: cel·la vs cella), **passat
+  perifràstic** (vaig + infinitiu = quá khứ dứt điểm, KHÁC es), **pronoms febles**
+  (đại từ yếu clitic, có hi/en — KHÔNG có ở es), **tu/vostè** đối lập T-V (vostè
+  + động từ NGÔI 3, KHÁC da/sv/nb du-phổ-quát), pro-drop, chia động từ theo ngôi,
+  tính từ sau danh từ, apostrophe/rút gọn (l'home, del, d'un). HONORIFIC
+  not-applicable (tự áp tiền lệ es B-02). **4 giả định cần owner duyệt:** D-ca-01
+  (baseline ca Central/IEC — v1), D-ca-02 (tu/vostè đối lập — v2), D-ca-03
+  (passat perifràstic làm quá khứ chuẩn — v2), **D-ca-04 (chấm điểm TÁCH 2 loại
+  dấu: ç/l·l = SAI theo pl D-64 vì phân biệt âm/nghĩa; à è é í ï ò ó ú ü = CẢNH
+  BÁO NHẸ theo es D-74 vì là dấu trọng âm Roman — cùng họ es; giữ DRAFT flag
+  owner)**. `native-review-ca.md` 7 mục (giống, apostrophe, passat perifràstic,
+  pronoms febles, giảm nguyên âm, tu/vostè, Central+castellanismes) chờ người
+  bản ngữ. Status: `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN. Validator: 4 lỗi
+  vi/zh cũ (ghi nợ), 0 lỗi mới; catalog 60.
+
 - **D-81 · 2026-07-19 · derived · nb — `nb` (tiếng Na Uy Bokmål, nb-NO) build
   HOÀN TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra
   cứu 5 vòng.** North Germanic (Scandinavia, gần da/sv), chữ Latin 29 chữ

@@ -1,0 +1,45 @@
+{
+  "id": "ca/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "«»",
+    "quote_marks_alternative": "””",
+    "no_inverted_punctuation": "KHÁC es: Catalan chuẩn (IEC) KHÔNG dùng ¿ ¡ mở đầu — chỉ ? ! cuối câu. [corpus: ¿¡ 0.84%, nhiễu vay tiếng TBN.]",
+    "special_graphemes": "ç (c-cedilla, [s] trước a/o/u); l·l (ela geminada — L·L có punt volat U+00B7); à è é í ï ò ó ú ü.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "gener/dilluns/català viết thường (trừ đầu câu) — giống es/fr/it."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 16678 câu thật — 15/16678 = 0.09% vi phạm (tên riêng/headline); quy tắc hợp lệ mạnh.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Febrer|Abril|Juny|Juliol|Setembre|Octubre|Novembre|Desembre|Dilluns|Dimarts|Dimecres|Dijous|Divendres|Dissabte|Diumenge)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Avui és dilluns, tres de febrer."],
+        "fail": ["Avui és Dilluns, tres de Febrer."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Avui és dilluns.", "Ella parla català.", "Barcelona és la capital de Catalunya."],
+    "fail": ["avui és dilluns.", "Avui és Febrer."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Catalan-AnCora thật (16678 câu). Gener/Març/Maig/Agost bỏ khỏi regex vì đồng âm tên riêng/headline."
+  }
+}
