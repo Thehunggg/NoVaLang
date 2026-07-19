@@ -1,0 +1,68 @@
+{
+  "id": "tr/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "vowel_harmony",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "tr-TR",
+    "no_gender_no_articles": "KHÔNG có giống ngữ pháp, KHÔNG có mạo từ xác định (bir = một/một cái)",
+    "vowel_harmony": {
+      "two_way_e_a": "hậu tố e-type hoà trước/sau: -ler(sau nguyên âm trước e/i/ö/ü) / -lar(sau a/ı/o/u). evler/atlar, -de/-da",
+      "four_way_i": "hậu tố i-type hoà 4 chiều tròn/dẹt: -i/-ı/-u/-ü. evim/atım/okulum/gözüm",
+      "predictable": "đoán 100% từ nguyên âm cuối gốc; ngoại lệ: từ ngoại lai (kitap→kitabı không kitabü) + vài hậu tố cố định"
+    },
+    "consonant_mutation": {
+      "voicing": "cuối vô thanh + nguyên âm → hữu thanh: p→b, ç→c, t→d, k→ğ (kitap→kitabı, renk→rengi, sokak→sokağı)",
+      "suffix_devoicing": "-de/-den → -te/-ten sau phụ âm vô thanh (kitapta)",
+      "lexical": "từ đơn âm tiết nhiều khi KHÔNG biến (at→atı) — cần native"
+    },
+    "agglutination": "hậu tố xếp chồng thứ tự cố định: danh từ = gốc+số nhiều+sở hữu+cách (ev-ler-im-de-ki)",
+    "noun_case": {
+      "cases": "nominative(∅), accusative(-i, chỉ tân ngữ XÁC ĐỊNH), dative(-e 'tới'), locative(-de 'ở'), ablative(-den 'từ'), genitive(-in 'của')",
+      "all_harmonize": "mọi hậu tố cách hoà âm + biến âm theo gốc"
+    },
+    "verb_morphology": {
+      "structure": "gốc + (phủ định -me/-ma) + TAM (thì/thể/thức) + ngôi",
+      "tam": "hiện tại tiếp diễn -iyor, rộng -er/-ir, quá khứ xác định -di, evidential/kể -miş (chứng kiến vs nghe kể), tương lai -ecek, điều kiện -se",
+      "person": "-im/-sin/-∅/-iz/-siniz/-ler (hoà âm)"
+    },
+    "word_order": "SOV (động từ cuối); bổ ngữ/tính từ/sở hữu đứng TRƯỚC danh từ (büyük ev)"
+  },
+  "checks": [
+    {
+      "id": "vowel-harmony-suffix",
+      "description": "Hậu tố hoà âm theo nguyên âm cuối gốc (2 chiều e/a; 4 chiều i/ı/u/ü) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích nguyên âm gốc + sinh hậu tố khi generator chạy." },
+      "fixtures": {
+        "pass": ["evler", "atlar", "gözüm", "okulum"],
+        "fail": ["evlar", "atler"]
+      }
+    },
+    {
+      "id": "sov-verb-final",
+      "description": "Động từ đứng CUỐI câu (SOV) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích cú pháp khi generator chạy." },
+      "fixtures": {
+        "pass": ["Ben kitap okuyorum.", "Ali eve gitti."],
+        "fail": ["Ben okuyorum kitap."]
+      }
+    },
+    {
+      "id": "consonant-voicing-mutation",
+      "description": "Phụ âm cuối vô thanh hữu-thanh-hoá trước hậu tố nguyên âm (kitap→kitabı) — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Danh sách áp dụng/ngoại lệ lexical." },
+      "fixtures": {
+        "pass": ["kitabı", "rengi", "sokağı"],
+        "fail": ["kitapı", "renki"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["evler", "gözüm", "Ben kitap okuyorum.", "kitabı"],
+    "fail": ["evlar", "Ben okuyorum kitap.", "kitapı"],
+    "_note": "Câu pass minh hoạ hoà âm + SOV + biến âm; paradigm hậu tố đầy đủ cần native review."
+  }
+}

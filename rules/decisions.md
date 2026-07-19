@@ -973,6 +973,31 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-76 · 2026-07-19 · derived · tr — `tr` (tiếng Thổ Nhĩ Kỳ, tr-TR) build
+  HOÀN TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra
+  cứu 5 vòng.** Turkic (Oghuz), chữ Latin (29 chữ), t1, 24 hiện tượng. Dataset
+  CLDR/UD/WikiPron: WikiPron `tur_latn_broad` **12321 cặp**; corpus UD
+  Turkish-BOUN **9761 câu** (GẦN 10000 — tin cậy). g2p-check: chính tả RẤT ĐỀU
+  (cải cách Atatürk 1928) — ş 0.16%, j 1.75%, ü 0.77%, ı 1.29% →
+  `grapheme_to_phoneme` VALIDATED. **Kỷ luật dữ liệu (2 điểm):** (1) c 21% / ç
+  17% 'vi phạm' = ARTIFACT tie-bar-vs-space tokenization WikiPron (ç→[t͡ʃ]/c→[d͡ʒ]
+  đúng 100%, kiểm tay Acem→[a d͡ʒ e m]); ö 18% narrow [œ]/[ø] — không phải rule
+  sai. (2) **casing: CORPUS MÂU THUẪN GIẢ THUYẾT → SỬA THEO DỮ LIỆU** — ban đầu
+  định áp check 'month-always-lowercase' như es/it; corpus 9761 câu cho thấy
+  0.98% tháng/thứ VIẾT HOA, điều tra thấy tiếng Thổ (TDK) HOA tháng/thứ ở NGÀY
+  CỤ THỂ (5 Aralık) thường khi chung → BỎ check, ghi rõ quy tắc ngữ cảnh-ngày
+  (casing giữ medium). corpus-check no-q-w-x 1.14%. HONORIFIC not-applicable (es
+  B-02); reading-aid NOT-APPLICABLE (chữ Latin đều). Đặc trưng: CHẮP DÍNH
+  (agglutinative) + HOÀ ÂM NGUYÊN ÂM (2 chiều e/a + 4 chiều i/ı/u/ü) + biến âm
+  phụ âm (p→b, k→ğ) + 6 CÁCH (không giống, accusative chỉ tân ngữ xác định) +
+  evidential -miş + SOV + ı/i (không chấm/có chấm) + sen/siz + Bey/Hanım.
+  **5 giả định cần owner duyệt:** D-tr-01 (baseline tr-TR — v1), D-tr-02 (chuẩn
+  TDK — v2), D-tr-03 (reading-aid N/A — v1), D-tr-04 (chấm thiếu ç/ş/ğ/ı/ö/ü =
+  SAI theo pl D-64; circumflex â/î/û KHOAN DUNG như ru ё; LƯU Ý locale casing
+  ı/İ phải theo tr — v4), D-tr-05 (DẠY đối lập sen/siz + Bey/Hanım — v2).
+  `native-review-tr.md` 7 mục. Status: `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN.
+  Validator: 4 lỗi vi/zh cũ, 0 lỗi mới; catalog 60.
+
 - **D-75 · 2026-07-19 · derived · uk — `uk` (tiếng Ukraina, uk-UA) build HOÀN
   TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
   vòng.** Đông Slav, hệ chữ KIRIN (Cyrl — không Latin), t1, 24 hiện tượng.

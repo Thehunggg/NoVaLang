@@ -1,0 +1,39 @@
+{
+  "id": "tr/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "diacritics_orthography",
+  "enforces": ["orthography.md", "writing-system.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "tr-TR",
+    "alphabet": "29 chữ Latin: a b c ç d e f g ğ h ı i j k l m n o ö p r s ş t u ü v y z — KHÔNG q w x",
+    "dotted_dotless_i": {
+      "note": "ı (không chấm, [ɯ]) vs i (có chấm, [i]) = HAI CHỮ. Hoa: i→İ (có chấm), ı→I (không chấm). Thuật toán casing PHẢI theo locale tr (mặc định Unicode I→i làm SAI).",
+      "meaning_distinguishing": "'sık' (thường xuyên) vs 'sik' (tục); ı/i luôn phân biệt"
+    },
+    "apostrophe": "tách hậu tố khỏi tên riêng: İstanbul'da, Türkiye'nin, Ankara'ya",
+    "casing_context": "Tháng/thứ VIẾT HOA khi chỉ ngày cụ thể (5 Aralık), viết thường khi chung (kasım ayında) — theo TDK, KHÁC Romance",
+    "circumflex": "â î û hiếm, phân biệt vài cặp (kar 'tuyết'/kâr 'lợi nhuận') — ngày càng tuỳ chọn"
+  },
+  "checks": [
+    {
+      "id": "no-q-w-x-native",
+      "description": "Bảng chữ Thổ KHÔNG có q w x — nếu xuất hiện là từ ngoại lai/tên/lỗi, không phải Thổ chuẩn. [corpus-check Bước 3.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[qwxQWX]"
+      },
+      "fixtures": {
+        "pass": ["Merhaba, nasılsın?", "Türkçe öğreniyorum."],
+        "fail": ["Wikipedia bir web sitesidir."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Merhaba!", "İstanbul'da yaşıyorum.", "Türkçe öğreniyorum."],
+    "fail": ["Wikipedia web sitesi.", "sik yerine sık"],
+    "_note": "pass minh hoạ bảng chữ Thổ + apostrophe hậu tố; corpus-check Bước 3 trên UD Turkish-BOUN thật (9761 câu). KHÔNG áp check 'month-always-lowercase' vì tiếng Thổ hoa tháng ở ngày cụ thể (kỷ luật dữ liệu — xem coverage casing)."
+  }
+}
