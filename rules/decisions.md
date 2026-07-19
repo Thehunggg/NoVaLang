@@ -844,6 +844,27 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
     (dấu ✅), `sv/coverage.json` + `fi/coverage.json` (answer_acceptance →
     C/VALIDATED). Commit riêng.
 
+- **D-68 · 2026-07-19 · derived · cs — `cs` (tiếng Séc, cs-CZ spisovná) build
+  HOÀN TẤT, trạng thái `VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, KHÔNG FROZEN
+  (ADR-014). Slav Tây Latin-script phức tạp (7 cách, thể, clitic vị trí hai).**
+  25 hiện tượng; 4 `.rules.json` khớp khuôn ja/en/es/de/it/pt/ru/nl/pl/sv/fi.
+  Dataset thật: CLDR cs, UD Czech-CAC (word-class), WikiPron `ces_latn_narrow`
+  (65070 cặp — chỉ narrow). Corpus 34869 câu (UD CAC+FicTree). **g2p-check**
+  xác nhận: š→[ʃ] 0.05%, ž→[ʒ]/[ʃ] 0.00%, č→[t͡ʃ]/[d͡ʒ] 0.00%, ř→[r̝] 0.00%
+  (âm ĐẶC TRƯNG Séc), ch→[x] 0.45%, ň→[ɲ] 0.00%, độ dài á/í/ý 0.00-0.03% →
+  `grapheme_to_phoneme` + `final_devoicing` + `palatalization` VALIDATED.
+  **Kỷ luật dữ liệu:** ž phẳng bắn 16.63% → làm câm/đồng hoá thành [ʃ] cuối từ +
+  trước vô thanh; thêm [ʃ] → 0.00%. **corpus-check** month-weekday **0.01%**
+  (họ người). Đặc trưng: 7 cách (vokativ), giống nam animacy, clitic vị trí thứ
+  hai (Wackernagel), âm ř, độ dài phonemic, trọng âm cố định. HONORIFIC
+  not-applicable (es B-02). D-cs-01 baseline cs-CZ (vòng 1); D-cs-02 spisovná
+  vs obecná (vòng 2, dạy chuẩn viết + cảnh báo); D-cs-03 chấm thiếu dấu — áp
+  tiền lệ pl D-64 (háček đổi âm + acute đổi độ dài/nghĩa → thiếu = sai), giữ
+  `answer_acceptance_cs` DRAFT + flag owner. Ghi chú app (như pl D-64): nhắc
+  dùng bàn phím Séc. Sự kiện Séc thuần tuý → `native-review-cs.md`.
+  `catalog.json` cs.ruleStatus NOT_STARTED → VALIDATED_NOT_YET_PROVEN. Không
+  đụng playable config/lesson hay ngôn ngữ khác. Commit riêng.
+
 ## 12. Tách mục tiêu playable (rule) khỏi native (dịch) — 2026-07-19
 
 - **⭐ D-55 · 2026-07-19 · owner · ALL — TÁCH BẠCH hai loại mục tiêu ngôn ngữ,

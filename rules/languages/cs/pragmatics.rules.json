@@ -1,0 +1,58 @@
+{
+  "id": "cs/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "cs-CZ (spisovná)",
+    "address_forms": {
+      "ty": { "formality": "informal", "number": "singular", "verb_agreement": "ngôi 2 số ít (ty mluvíš)", "usage": "thân mật ('tykání') — bạn bè, gia đình, ngang hàng, trẻ em" },
+      "vy": { "formality": "formal_or_plural", "number": "singular_formal_and_plural", "verb_agreement": "ngôi 2 số nhiều (vy mluvíte)", "usage": "trang trọng ('vykání') — người lạ, lớn tuổi, công việc; hoặc số nhiều. Vy viết hoa trong thư." },
+      "title": { "usage": "pane/paní + họ/chức (pane Nováku, paní doktorko) — trang trọng" }
+    },
+    "baseline": {
+      "value": "Dạy ty (thân mật) + vy (trang trọng, chia ngôi 2 số nhiều). ty/vy map CASUAL/FORMAL (giống ru/fr). Trục register thứ hai: spisovná (chuẩn viết) vs obecná čeština (khẩu ngữ) — xem spoken_vs_written.",
+      "tts_locale": "cs-CZ"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "ty + obecná čeština/từ thân mật (ahoj, čau)",
+      "NATURAL_NEUTRAL_POLITE": "vy + spisovná chuẩn mực — baseline mặc định app dạy",
+      "FORMAL": "vy + tước hiệu (pane/paní) + từ trang trọng (Dobrý den, prosím)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Séc KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Lịch sự qua vy (vykání) + tước hiệu + thức điều kiện (mohl byste...?) + từ vựng — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19): ngôn ngữ Ấn-Âu không có kính ngữ hình thái -> HONORIFIC not-applicable."
+      }
+    },
+    "politeness_devices": {
+      "conditional": "Mohl byste...? / Mohla byste...? (Ngài/Bà có thể...?), Chtěl bych... (Tôi muốn...), prosím (làm ơn)"
+    }
+  },
+  "checks": [
+    {
+      "id": "vy-formal-plural-verb",
+      "description": "vy (trang trọng/số nhiều) chia động từ ngôi 2 số nhiều (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Mluvíte česky?"],
+        "fail": ["Mluvíš vy česky?"]
+      }
+    },
+    {
+      "id": "ty-informal-verb",
+      "description": "ty chia động từ ngôi 2 số ít (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Mluvíš česky?"],
+        "fail": ["Mluvíte ty česky?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Mluvíš česky?", "Mluvíte česky?", "Mohl byste mi pomoct?"],
+    "fail": ["Mluvíš vy česky?", ""],
+    "_note": "Câu pass minh hoạ baseline (ty/vy + điều kiện lịch sự)."
+  }
+}

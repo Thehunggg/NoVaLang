@@ -1,0 +1,218 @@
+{
+  "id": "cs/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 65070,
+    "byScript": {
+      "ces_latn_narrow": {
+        "count": 65070,
+        "sample": [
+          [
+            "AIDS",
+            "a ɪ t s"
+          ],
+          [
+            "AIDS",
+            "ɛ ɪ t s"
+          ],
+          [
+            "ASLO",
+            "a s l o"
+          ],
+          [
+            "Abcházie",
+            "a p x aː z ɪ j ɛ"
+          ],
+          [
+            "Abdiáš",
+            "a b ɟ ɪ j aː ʃ"
+          ],
+          [
+            "Abdon",
+            "a b d o n"
+          ],
+          [
+            "Abidžan",
+            "a b ɪ d ʒ a n"
+          ],
+          [
+            "Abigail",
+            "a b ɪ ɡ a ɪ l"
+          ],
+          [
+            "Abraham",
+            "a b r a ɦ a m"
+          ],
+          [
+            "Abrahamův",
+            "a b r a ɦ a m uː f"
+          ],
+          [
+            "Abrahám",
+            "a b r a ɦ aː m"
+          ],
+          [
+            "Abrhám",
+            "a b r̩ ɦ aː m"
+          ],
+          [
+            "Abrhámová",
+            "a b r̩ ɦ aː m o v aː"
+          ],
+          [
+            "Absolon",
+            "a p s o l o n"
+          ],
+          [
+            "Absolín",
+            "a p s o l iː n"
+          ],
+          [
+            "Absurdistán",
+            "a p s u r d ɪ s t aː n"
+          ],
+          [
+            "Abt",
+            "a p t"
+          ],
+          [
+            "Abuja",
+            "a b u d ʒ a"
+          ],
+          [
+            "Achilles",
+            "a x ɪ l ɛ s"
+          ],
+          [
+            "Achilleus",
+            "a x ɪ l ɛ u̯ s"
+          ],
+          [
+            "Achillův",
+            "a x ɪ l uː f"
+          ],
+          [
+            "Ada",
+            "a d a"
+          ],
+          [
+            "Adam",
+            "a d a m"
+          ],
+          [
+            "Adamcová",
+            "a d a m t͡s o v aː"
+          ],
+          [
+            "Adamec",
+            "a d a m ɛ t͡s"
+          ],
+          [
+            "Adamov",
+            "a d a m o f"
+          ],
+          [
+            "Adamský",
+            "a d a m s k iː"
+          ],
+          [
+            "Adamus",
+            "a d a m u s"
+          ],
+          [
+            "Adamů",
+            "a d a m uː"
+          ],
+          [
+            "Adamův",
+            "a d a m uː f"
+          ],
+          [
+            "Adin",
+            "a ɟ ɪ n"
+          ],
+          [
+            "Adina",
+            "a ɟ ɪ n a"
+          ],
+          [
+            "Adolf",
+            "a d o l f"
+          ],
+          [
+            "Adolfek",
+            "a d o l f ɛ k"
+          ],
+          [
+            "Adriana",
+            "a d r ɪ j a n a"
+          ],
+          [
+            "Adrianin",
+            "a d r ɪ j a ɲ ɪ n"
+          ],
+          [
+            "Adrianka",
+            "a d r ɪ j a ŋ k a"
+          ],
+          [
+            "Adrien",
+            "a d r ɪ j ɛ n"
+          ],
+          [
+            "Adámek",
+            "a d aː m ɛ k"
+          ],
+          [
+            "Adéla",
+            "a d ɛː l a"
+          ],
+          [
+            "Adélin",
+            "a d ɛː l ɪ n"
+          ],
+          [
+            "Adélka",
+            "a d ɛː l k a"
+          ],
+          [
+            "Afghánec",
+            "a v ɡ aː n ɛ t͡s"
+          ],
+          [
+            "Afghánistán",
+            "a v ɡ aː n ɪ s t aː n"
+          ],
+          [
+            "Afghánka",
+            "a v ɡ aː ŋ k a"
+          ],
+          [
+            "Afgánec",
+            "a v ɡ aː n ɛ t͡s"
+          ],
+          [
+            "Afgánistán",
+            "a v ɡ aː n ɪ s t aː n"
+          ],
+          [
+            "Afrika",
+            "a f r ɪ k a"
+          ],
+          [
+            "Afrikánce",
+            "a f r ɪ k aː n t͡s ɛ"
+          ],
+          [
+            "Afrikáncem",
+            "a f r ɪ k aː n t͡s ɛ m"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/ces_latn_narrow.tsv"
+      }
+    }
+  }
+}
