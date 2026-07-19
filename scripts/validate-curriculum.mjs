@@ -1029,11 +1029,22 @@ export function validateFiveCardsStructure(lesson) {
   if (
     realWorldPractice?.type !== "real_world_practice_dialogue" ||
     realWorldPractice?.nonGraded !== true ||
-    dialogueLines.length !== 14 ||
     !realWorldPractice?.scenarioTitleByNative?.vi ||
     !realWorldPractice?.scenarioDescriptionByNative?.vi
   ) {
-    fail(`${lesson.id}: exercise 14 must be a 14-line non-graded Real-World Practice dialogue with a localized scenario`);
+    fail(`${lesson.id}: exercise 14 must be a non-graded Real-World Practice dialogue with a localized scenario`);
+  }
+  // Owner decision (2026-07-19): Q14's line count is NOT fixed at 14 for a
+  // normal lesson — content decides how many turns the advanced bridge
+  // dialogue needs (fewer or more), with no mechanical padding/trimming
+  // (see LESSON_AUTHORING_STANDARD.md §18). This generic check therefore only
+  // enforces a small sanity FLOOR (a real dialogue needs at least a few turns)
+  // and NO upper cap. The Golden Reference Lesson keeps its exact 14-line lock
+  // separately via validateApprovedGoldenLessonContent (ADR-008), so this
+  // loosening never weakens Golden.
+  const Q14_MIN_LINES = 4;
+  if (dialogueLines.length < Q14_MIN_LINES) {
+    fail(`${lesson.id}: exercise 14 must have at least ${Q14_MIN_LINES} dialogue lines`);
   }
   for (const [lineIndex, entry] of dialogueLines.entries()) {
     if (!entry.speakerId || !approvedCharacterIds.has(entry.speakerId)) {

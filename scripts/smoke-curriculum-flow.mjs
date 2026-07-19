@@ -264,14 +264,18 @@ function checkFiveCardsLessonStructure(lesson, section) {
   }
   const realWorldPractice = exercises[13];
   const sceneDividers = realWorldPractice?.sceneDividers ?? [];
+  // Owner decision (2026-07-19): Q14 line count is NOT fixed at 14 for a normal
+  // lesson (see LESSON_AUTHORING_STANDARD.md §18). Generic guard enforces only a
+  // small sanity floor + no AI controls; the Golden Lesson's exact 14-line lock
+  // lives in checkApprovedJaUnitOneLesson, unchanged.
   if (
     realWorldPractice?.type !== "real_world_practice_dialogue" ||
     realWorldPractice?.nonGraded !== true ||
-    (realWorldPractice?.dialogueLines ?? []).length !== 14 ||
+    (realWorldPractice?.dialogueLines ?? []).length < 4 ||
     realWorldPractice?.maxCycles != null ||
     realWorldPractice?.scriptPolicy != null
   ) {
-    fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must be a non-graded 14-line dialogue without AI controls");
+    fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must be a non-graded dialogue (≥4 lines) without AI controls");
   }
   if (
     sceneDividers.length !== 1 ||
