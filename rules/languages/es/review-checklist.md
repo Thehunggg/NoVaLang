@@ -1,5 +1,10 @@
 # es — Review checklist (Bước 4)
 
+**Trạng thái: 3/3 mục ĐÃ DUYỆT bởi Project Owner, 2026-07-19.** Xem quyết
+định cụ thể ngay dưới mỗi mục. `coverage.json` đã cập nhật tương ứng
+(phenomenon liên quan chuyển DRAFT → VALIDATED); trạng thái ngôn ngữ vẫn
+`VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, không FROZEN.
+
 3 mục, đọc ước lượng < 5 phút. Đều là **quyết định sản phẩm** (owner không
 cần biết tiếng Tây Ban Nha để trả lời).
 
@@ -29,6 +34,12 @@ vosotros hơn) — rủi ro thấp nhất.
 **Nếu bạn không trả lời, tôi sẽ tự chọn C** (giữ DRAFT — đây là quyết định
 sản phẩm ảnh hưởng lâu dài, không phải việc tôi tự quyết được).
 
+> **✅ ĐÃ DUYỆT — Project Owner, 2026-07-19: Chọn A** (baseline Mỹ Latin
+> trung tính: tú + ustedes, seseo). **Ghi chú owner cho nội dung tương
+> lai:** vosotros dạy ở mức NHẬN BIẾT tại chặng Cao cấp, không bắt học
+> viên dùng chủ động. `coverage.json` phenomenon `forms_of_address` →
+> `VALIDATED`.
+
 ---
 
 ## [B-02] Xử lý HONORIFIC-modifier khi tiếng Tây Ban Nha không có hệ tương ứng
@@ -49,6 +60,10 @@ cho B ở mức độ app cần.
 
 **Nếu bạn không trả lời, tôi sẽ tự chọn A** (an toàn hơn, không tự phát
 minh hệ thống không có bằng chứng).
+
+> **✅ ĐÃ DUYỆT — Project Owner, 2026-07-19: Chọn A.** `coverage.json`
+> phenomenon `register_taxonomy` → `VALIDATED` (gộp chung với quyết định
+> B-01).
 
 ---
 
@@ -72,3 +87,9 @@ khắt khe cho lỗi bàn phím phổ biến. B cân bằng.
 **Nếu bạn không trả lời, tôi sẽ tự chọn A** (dùng nguyên `_base`
 `normalize_ignore` mặc định — không override, nhất quán với ko/en, không tự
 thêm tính năng UI mới cho B mà chưa được duyệt).
+
+> **✅ ĐÃ DUYỆT — Project Owner, 2026-07-19: Chọn B** (cảnh báo nhẹ + hiện
+> tilde đúng — KHÔNG bỏ qua hoàn toàn, vì tilde đổi nghĩa từ: si/sí, el/él).
+> `coverage.json` phenomenon `answer_acceptance_es` → `VALIDATED`. Cần bổ
+> sung field UI hiển thị gợi ý tilde đúng (thuộc phạm vi implementation,
+> chưa làm).

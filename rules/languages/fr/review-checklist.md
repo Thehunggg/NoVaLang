@@ -1,5 +1,10 @@
 # fr — Review checklist (Bước 4)
 
+**Trạng thái: 3/3 mục ĐÃ DUYỆT bởi Project Owner, 2026-07-19.** Xem quyết
+định cụ thể ngay dưới mỗi mục. `coverage.json` đã cập nhật tương ứng
+(phenomenon liên quan chuyển DRAFT → VALIDATED); trạng thái ngôn ngữ vẫn
+`VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT`, không FROZEN.
+
 3 mục, đọc ước lượng < 5 phút. Đều là **quyết định sản phẩm**.
 
 Không có front-matter (checklist thao tác, cùng quy ước ko/es).
@@ -25,6 +30,9 @@ thật trong tiếng Pháp (thư từ hành chính, giao tiếp ngoại giao).
 **Nếu bạn không trả lời, tôi sẽ tự chọn A** (giữ nguyên taxonomy, không tạo
 ngoại lệ cấu trúc mà chưa được duyệt).
 
+> **✅ ĐÃ DUYỆT — Project Owner, 2026-07-19: Chọn A.** `coverage.json`
+> phenomenon `register_taxonomy` → `VALIDATED`.
+
 ---
 
 ## [C-02] Chính sách chấm điểm khi thiếu dấu phụ/dấu nháy elision
@@ -46,6 +54,11 @@ bỏ qua elision dạy sai thói quen chính tả từ đầu.
 2 loại** (không override — an toàn nhất, nhất quán với ko/es, không tự
 thêm phân biệt phức tạp chưa được duyệt).
 
+> **✅ ĐÃ DUYỆT — Project Owner, 2026-07-19: Chọn A CÓ PHÂN BIỆT** (dấu phụ
+> bỏ qua theo `_base`; elision BẮT BUỘC đúng — "je ai" là lỗi chính tả
+> thật, không phải biến thể phong cách). `coverage.json` phenomenon
+> `answer_acceptance_fr` → `VALIDATED`.
+
 ---
 
 ## [C-03] Baseline vùng miền (Pháp métropolitain vs Québécois)
@@ -62,3 +75,6 @@ thể được dạy phổ biến nhất quốc tế.
 
 **Nếu bạn không trả lời, tôi sẽ tự chọn A** (theo dữ liệu đã có, rủi ro
 thấp nhất).
+
+> **✅ ĐÃ DUYỆT — Project Owner, 2026-07-19: Chọn A** (fr-FR). `coverage.json`
+> phenomenon `tts_audio_policy` → `VALIDATED`.

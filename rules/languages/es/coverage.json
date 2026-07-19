@@ -103,11 +103,11 @@
     "status": "DRAFT"
   },
   "forms_of_address": {
-    "rule_level": { "source": ["S-RAE-VOSEO-SESEO", "S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-RAE-VOSEO-SESEO", "S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
-    "machine_readable": false,
-    "notes": "tú (thân mật, ngôi 2 số ít chuẩn) vs usted (trang trọng, chia động từ như ngôi 3) vs vos (voseo, thay tú ở Argentina/Uruguay/Trung Mỹ, chia động từ riêng — RAE xác nhận vos là 'đặc trưng vùng', không phải chuẩn quốc tế chung). vosotros (số nhiều thân mật, CHỈ dùng ở Tây Ban Nha) vs ustedes (số nhiều, chuẩn cho cả trang trọng VÀ thân mật ở Mỹ Latin — Mỹ Latin không phân biệt vosotros/ustedes theo độ thân mật như Tây Ban Nha). Baseline dialect ảnh hưởng trực tiếp phenomenon này — xem GIẢ ĐỊNH B-01.",
-    "status": "DRAFT"
+    "machine_readable": true,
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md B-01, chọn A] Baseline chính thức: tú (thân mật, ngôi 2 số ít chuẩn) + ustedes (số nhiều, dùng cho CẢ trang trọng lẫn thân mật — chuẩn Mỹ Latin trung tính) + usted (trang trọng số ít, chia động từ như ngôi 3). KHÔNG dạy vos (voseo — đặc trưng vùng Argentina/Uruguay/Trung Mỹ theo RAE). vosotros (số nhiều thân mật kiểu Tây Ban Nha) dạy ở MỨC NHẬN BIẾT tại chặng cao (Cao cấp) — không bắt học viên dùng chủ động, chỉ để nhận biết khi đọc/nghe nội dung gốc Tây Ban Nha — ghi chú owner cho nội dung tương lai.",
+    "status": "VALIDATED"
   },
   "clitic_pronouns": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
@@ -138,11 +138,11 @@
     "status": "DRAFT"
   },
   "register_taxonomy": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-RAE-VOSEO-SESEO"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-RAE-VOSEO-SESEO", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Map taxonomy 6 mức ADR-016 — ĐỀ XUẤT (chưa duyệt): CASUAL~tú/vos + từ vựng thân mật, NATURAL_NEUTRAL_POLITE~tú chuẩn mực trung tính (baseline mặc định), FORMAL~usted. Không có HONORIFIC-modifier riêng biệt kiểu ja/ko trong tiếng Tây Ban Nha chuẩn (usted đã bao hàm lịch sự qua lựa chọn đại từ, không phải hình thái động từ kính ngữ riêng) — xem GIẢ ĐỊNH B-02.",
-    "status": "DRAFT"
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md B-01 (chọn A) + B-02 (chọn A)] Map taxonomy 6 mức ADR-016: CASUAL~tú + từ vựng thân mật, NATURAL_NEUTRAL_POLITE~tú chuẩn mực trung tính (baseline mặc định), FORMAL~usted/ustedes. HONORIFIC: not-applicable cho es — usted đã đủ diễn tả qua FORMAL, tiếng Tây Ban Nha không có hệ kính ngữ hình thái riêng biệt kiểu ja/ko.",
+    "status": "VALIDATED"
   },
   "reading_aid_policy": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
@@ -152,11 +152,11 @@
     "status": "not-applicable"
   },
   "answer_acceptance_es": {
-    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "low" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
-    "machine_readable": false,
-    "notes": "Chính sách chấm điểm khi thiếu/sai tilde (vd gõ 'como' thay 'cómo', 'el' thay 'él') — lỗi bàn phím rất phổ biến với người không quen gõ dấu Tây Ban Nha. CHƯA CHỐT chấp nhận/cảnh báo/coi sai — xem GIẢ ĐỊNH B-03, cùng loại quyết định với D-45 (dấu thanh tiếng Việt) đã có tiền lệ trong repo.",
-    "status": "DRAFT"
+    "machine_readable": true,
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md B-03, chọn B] Chính sách chấm điểm khi thiếu/sai tilde (vd gõ 'como' thay 'cómo', 'el' thay 'él'): CẢNH BÁO NHẸ — chấp nhận câu trả lời nhưng hiện gợi ý tilde đúng cho học viên, KHÔNG bỏ qua hoàn toàn (khác chính sách A mặc định của ko/_base) vì tilde tiếng Tây Ban Nha có thể đổi nghĩa/từ loại (si/sí, el/él) — lý do owner nêu rõ khi duyệt. Yêu cầu bổ sung: cần field UI hiển thị gợi ý tilde đúng (chưa có, thuộc phạm vi implementation, không phải rule).",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
@@ -167,10 +167,10 @@
     "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
   },
   "tts_audio_policy": {
-    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "speechText = surface text Latin (chính tả minh bạch, TTS đọc trực tiếp được). Kế thừa _base/audio.rules.json. Locale es-ES (Tây Ban Nha) hoặc es-419 (Mỹ Latin trung lập) — xem GIẢ ĐỊNH B-01, ảnh hưởng trực tiếp locale TTS chọn.",
-    "status": "DRAFT"
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md B-01, chọn A] speechText = surface text Latin (chính tả minh bạch, TTS đọc trực tiếp được). Kế thừa _base/audio.rules.json. Locale: es-419 (Mỹ Latin trung tính, seseo) — khớp baseline tú+ustedes đã duyệt.",
+    "status": "VALIDATED"
   }
 }

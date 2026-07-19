@@ -152,11 +152,11 @@
     "status": "DRAFT"
   },
   "register_taxonomy": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-WIKI-SPEECHLEVELS"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-WIKI-SPEECHLEVELS", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Map taxonomy 6 mức ADR-016 (CASUAL/NATURAL_NEUTRAL_POLITE/FORMAL + HONORIFIC/CEREMONIAL/SLANG) vào hệ đuôi câu tiếng Hàn — ĐỀ XUẤT (chưa duyệt): CASUAL~해체/반말, NATURAL_NEUTRAL_POLITE~해요체, FORMAL~하십시오체; HONORIFIC là modifier trực giao (chủ ngữ kính ngữ -시-, khiêm nhường ngữ, không phải một mức đuôi câu riêng — GIỐNG cấu trúc ja: modifier áp lên trên base register, không phải một bậc thêm). Đây LÀ quyết định sản phẩm/ngôn ngữ học cần duyệt, không tự chốt — xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT A-02.",
-    "status": "DRAFT"
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md A-02, chọn A] Map taxonomy 6 mức ADR-016 (CASUAL/NATURAL_NEUTRAL_POLITE/FORMAL + HONORIFIC/CEREMONIAL/SLANG) vào hệ đuôi câu tiếng Hàn: CASUAL~해체/반말, NATURAL_NEUTRAL_POLITE~해요체, FORMAL~하십시오체; HONORIFIC là modifier trực giao (chủ ngữ kính ngữ -시-, khiêm nhường ngữ, không phải một mức đuôi câu riêng — GIỐNG cấu trúc ja: modifier áp lên trên base register, không phải một bậc thêm).",
+    "status": "VALIDATED"
   },
   "punctuation_layout": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
@@ -166,18 +166,18 @@
     "status": "VALIDATED"
   },
   "reading_aid_policy": {
-    "rule_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
-    "machine_readable": false,
-    "notes": "GIẢ ĐỊNH SẢN PHẨM CHƯA DUYỆT: vì Hangul là script ngữ âm (không cần furigana), câu hỏi thật KHÔNG phải 'có hiện romaji không' theo nghĩa ja, mà là 'có cung cấp RR-romanization làm reading aid tạm thời cho người mới hoàn toàn chưa đọc được Hangul hay không, và ẩn/hiện theo trình độ như D-11 (ja) hay không'. CHƯA có quyết định owner cho ko. confidence:none, KHÔNG generator không được sinh bài dựa vào giả định này. Xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT A-03.",
-    "status": "DRAFT"
+    "machine_readable": true,
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md A-03, chọn A] Có cung cấp RR-romanization làm reading aid tạm thời cho người mới hoàn toàn chưa đọc được Hangul, theo đúng chính sách D-11 đã chốt cho ja: ẩn mặc định + toggle bật được ở trình độ A0-B1, ẩn hẳn không toggle ở B2+.",
+    "status": "VALIDATED"
   },
   "answer_acceptance_ko": {
-    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "low" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
-    "machine_readable": false,
-    "notes": "Phụ thuộc trực tiếp vào spacing_orthography (DRAFT, confidence low) — chính sách chấm điểm khi câu trả lời đúng nhưng lệch spacing (chấp nhận/cảnh báo nhẹ/coi là sai) CHƯA CHỐT. Chuẩn hoá char_width không áp dụng cho Hangul (không có full-width/half-width như katakana). Xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT A-06.",
-    "status": "DRAFT"
+    "machine_readable": true,
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md A-06, chọn A] Chính sách chấm điểm khi câu trả lời đúng nhưng lệch spacing (띄어쓰기): chấp nhận, dùng nguyên `_base/answer-acceptance` `normalize_ignore: [\"punctuation\", \"whitespace\", \"char_width\"]` sẵn có cho mọi ngôn ngữ, không override riêng cho ko. (char_width vẫn không áp dụng cho Hangul — không có full-width/half-width như katakana, chỉ whitespace/punctuation là phần thực sự dùng.) spacing_orthography (quy tắc spacing đúng ở trường hợp biên) vẫn giữ DRAFT — quyết định này chỉ chốt CHÍNH SÁCH CHẤM ĐIỂM, không chốt quy tắc spacing bản thân.",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },

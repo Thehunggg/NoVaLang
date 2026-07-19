@@ -138,11 +138,11 @@
     "status": "DRAFT"
   },
   "register_taxonomy": {
-    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-TU-VOUS"], "derived_by": "human", "confidence": "medium" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-TU-VOUS", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "Map taxonomy 6-mức — ĐỀ XUẤT (chưa duyệt): CASUAL~tu + từ vựng thân mật, NATURAL_NEUTRAL_POLITE~vous chuẩn mực (mặc định app), FORMAL~vous + đăng ký từ vựng trang trọng hơn (không có ranh giới vous/FORMAL rõ như tú/usted của es vì fr chỉ có 1 đại từ lịch sự cho cả 2 mức) — cần xác nhận cách phân biệt NATURAL_NEUTRAL_POLITE và FORMAL khi cả hai đều dùng vous. Không có HONORIFIC-modifier riêng biệt kiểu ja/ko. Xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT C-01.",
-    "status": "DRAFT"
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md C-01, chọn A] Map taxonomy 6-mức: CASUAL~tu + từ vựng thân mật, NATURAL_NEUTRAL_POLITE~vous chuẩn mực (mặc định app), FORMAL~vous + đăng ký từ vựng trang trọng hơn. KHÔNG phân biệt FORMAL/NATURAL_NEUTRAL_POLITE ở mức ngữ pháp (cả hai đều dùng cấu trúc 'vous' giống nhau) — chỉ khác ở LỰA CHỌN TỪ VỰNG ('je vous prie de' thay 'pouvez-vous'). Không có HONORIFIC-modifier riêng biệt kiểu ja/ko.",
+    "status": "VALIDATED"
   },
   "reading_aid_policy": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
@@ -152,11 +152,11 @@
     "status": "not-applicable"
   },
   "answer_acceptance_fr": {
-    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "low" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
-    "machine_readable": false,
-    "notes": "Chính sách chấm điểm khi thiếu dấu phụ (é/è/ê...) hoặc thiếu dấu nháy elision (l'ami gõ thành 'lami' hoặc 'le ami') — CHƯA CHỐT, cùng loại quyết định với es tilde/vi dấu thanh. Xem GIẢ ĐỊNH C-02.",
-    "status": "DRAFT"
+    "machine_readable": true,
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md C-02, chọn A CÓ PHÂN BIỆT] Chính sách chấm điểm CÓ PHÂN BIỆT 2 loại lỗi: (1) dấu phụ (é/è/ê...) — normalize bỏ qua, dùng nguyên `_base/answer-acceptance` mặc định, giống es/ko; (2) dấu nháy elision (l'ami gõ thành 'lami' hoặc 'le ami') — GIỮ NGUYÊN yêu cầu đúng, KHÔNG bỏ qua, vì đây là lỗi chính tả thật ('je ai' thay 'j'ai' là sai chính tả, không phải biến thể phong cách như dấu phụ) — lý do owner nêu rõ khi duyệt.",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
@@ -167,10 +167,10 @@
     "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
   },
   "tts_audio_policy": {
-    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "speechText = surface text Latin. Kế thừa _base/audio.rules.json. Locale fr-FR (Pháp) đề xuất mặc định — Québécois (fr-CA) khác biệt phát âm/từ vựng đáng kể, xem GIẢ ĐỊNH C-03 (nhẹ hơn B-01 của es vì không ảnh hưởng ngữ pháp cốt lõi, chỉ phát âm/từ vựng/TTS locale).",
-    "status": "DRAFT"
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md C-03, chọn A] speechText = surface text Latin. Kế thừa _base/audio.rules.json. Locale: fr-FR (Pháp métropolitain).",
+    "status": "VALIDATED"
   }
 }
