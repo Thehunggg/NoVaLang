@@ -71836,7 +71836,7 @@
       "titleVi": "Xin chào, tôi là…",
       "titleByNative": {
         "vi": "Xin chào, tôi là…",
-        "en": "Hello, I am…",
+        "en": "Hello, I’m…",
         "ja": "こんにちは、〜です"
       },
       "description": "Sau bài học này, người học có thể:",
@@ -72023,12 +72023,12 @@
           "meaningVi": "Trong bài này: Tôi là Tanaka.",
           "translationByNative": {
             "vi": "Trong bài này: Tôi là Tanaka.",
-            "en": "In this lesson: I am Tanaka.",
+            "en": "In this lesson: I’m Tanaka.",
             "ja": "このレッスンでは「田中です」という意味です。"
           },
           "translations": {
             "vi": "Trong bài này: Tôi là Tanaka.",
-            "en": "In this lesson: I am Tanaka.",
+            "en": "In this lesson: I’m Tanaka.",
             "ja": "このレッスンでは「田中です」という意味です。"
           },
           "exampleText": "田中です。",
@@ -72141,12 +72141,12 @@
           "speechText": "田中さん、今日もよろしくお願いします。",
           "translationByNative": {
             "vi": "Tanaka, hôm nay cũng cùng cố gắng nhé.",
-            "en": "Tanaka, let us do our best again today.",
+            "en": "Tanaka, let’s do our best again today.",
             "ja": "田中さん、今日も一緒に頑張りましょう。"
           },
           "translations": {
             "vi": "Tanaka, hôm nay cũng cùng cố gắng nhé.",
-            "en": "Tanaka, let us do our best again today.",
+            "en": "Tanaka, let’s do our best again today.",
             "ja": "田中さん、今日も一緒に頑張りましょう。"
           },
           "meaningVi": "Tanaka, hôm nay cũng cùng cố gắng nhé.",
@@ -72181,12 +72181,12 @@
           "speechText": "こんにちは。はじめまして。田中です。",
           "translationByNative": {
             "vi": "Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.",
-            "en": "Hello. Nice to meet you. I am Tanaka.",
+            "en": "Hello. Nice to meet you. I’m Tanaka.",
             "ja": "こんにちは。はじめまして。田中です。"
           },
           "translations": {
             "vi": "Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.",
-            "en": "Hello. Nice to meet you. I am Tanaka.",
+            "en": "Hello. Nice to meet you. I’m Tanaka.",
             "ja": "こんにちは。はじめまして。田中です。"
           },
           "meaningVi": "Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.",
@@ -72201,12 +72201,12 @@
           "speechText": "はじめまして。佐藤です。",
           "translationByNative": {
             "vi": "Rất vui được gặp bạn lần đầu. Mình là Sato.",
-            "en": "Nice to meet you. I am Sato.",
+            "en": "Nice to meet you. I’m Sato.",
             "ja": "はじめまして。佐藤です。"
           },
           "translations": {
             "vi": "Rất vui được gặp bạn lần đầu. Mình là Sato.",
-            "en": "Nice to meet you. I am Sato.",
+            "en": "Nice to meet you. I’m Sato.",
             "ja": "はじめまして。佐藤です。"
           },
           "meaningVi": "Rất vui được gặp bạn lần đầu. Mình là Sato.",
@@ -72261,12 +72261,12 @@
           "speechText": "あらためて、田中。よろしく！",
           "translationByNative": {
             "vi": "Nói lại nhé, mình là Tanaka. Làm quen nhé!",
-            "en": "Let me introduce myself again: I am Tanaka. Nice to meet you!",
+            "en": "Let me introduce myself again: I’m Tanaka. Nice to meet you!",
             "ja": "あらためて、田中。よろしく！"
           },
           "translations": {
             "vi": "Nói lại nhé, mình là Tanaka. Làm quen nhé!",
-            "en": "Let me introduce myself again: I am Tanaka. Nice to meet you!",
+            "en": "Let me introduce myself again: I’m Tanaka. Nice to meet you!",
             "ja": "あらためて、田中。よろしく！"
           },
           "meaningVi": "Nói lại nhé, mình là Tanaka. Làm quen nhé!",
@@ -72281,12 +72281,12 @@
           "speechText": "佐藤。よろしく！",
           "translationByNative": {
             "vi": "Mình là Sato. Làm quen nhé!",
-            "en": "I am Sato. Nice to meet you!",
+            "en": "I’m Sato. Nice to meet you!",
             "ja": "佐藤。よろしく！"
           },
           "translations": {
             "vi": "Mình là Sato. Làm quen nhé!",
-            "en": "I am Sato. Nice to meet you!",
+            "en": "I’m Sato. Nice to meet you!",
             "ja": "佐藤。よろしく！"
           },
           "meaningVi": "Mình là Sato. Làm quen nhé!",
@@ -72301,12 +72301,12 @@
           "speechText": "佐藤さんじゃなくて、佐藤でいい？",
           "translationByNative": {
             "vi": "Không cần gọi “Sato-san”, gọi Sato thôi được chứ?",
-            "en": "You do not need to call me “Sato-san”; is just “Sato” okay?",
+            "en": "You don’t need to call me “Sato-san”; is just “Sato” okay?",
             "ja": "「佐藤さん」ではなく、「佐藤」だけでいいですか。"
           },
           "translations": {
             "vi": "Không cần gọi “Sato-san”, gọi Sato thôi được chứ?",
-            "en": "You do not need to call me “Sato-san”; is just “Sato” okay?",
+            "en": "You don’t need to call me “Sato-san”; is just “Sato” okay?",
             "ja": "「佐藤さん」ではなく、「佐藤」だけでいいですか。"
           },
           "meaningVi": "Không cần gọi “Sato-san”, gọi Sato thôi được chứ?",
@@ -72321,12 +72321,12 @@
           "speechText": "うん、いいよ。田中もよろしく！",
           "translationByNative": {
             "vi": "Ừ, được. Tanaka cũng vậy nhé!",
-            "en": "Yes, that is fine. Same for you, Tanaka!",
+            "en": "Yeah, sure! You too, Tanaka!",
             "ja": "うん、いいよ。田中もよろしく！"
           },
           "translations": {
             "vi": "Ừ, được. Tanaka cũng vậy nhé!",
-            "en": "Yes, that is fine. Same for you, Tanaka!",
+            "en": "Yeah, sure! You too, Tanaka!",
             "ja": "うん、いいよ。田中もよろしく！"
           },
           "meaningVi": "Ừ, được. Tanaka cũng vậy nhé!",
@@ -72390,7 +72390,7 @@
           },
           "explanationByNative": {
             "vi": "Dùng おはようございます vì đây là buổi sáng.\nHọc sinh nói với giáo viên nên không dùng おはよう！\nよろしくお願いします ở đây thể hiện thiện chí học tập và hợp tác, không chỉ dùng khi mới gặp.",
-            "en": "Use おはようございます because it is morning.\nThe student is speaking to a teacher, so おはよう！ is not appropriate.\nHere, よろしくお願いします expresses willingness to learn and cooperate; it is not limited to first meetings.",
+            "en": "Use おはようございます because it’s morning.\nThe student is speaking to a teacher, so おはよう！ isn’t appropriate.\nHere, よろしくお願いします expresses willingness to learn and cooperate; it’s not limited to first meetings.",
             "ja": "朝なので「おはようございます」を使います。\n生徒が先生に話すため、「おはよう！」は使いません。\nここでの「よろしくお願いします」は、学習や協力への前向きな気持ちを表し、初対面だけに使う表現ではありません。"
           },
           "lines": [
@@ -72441,12 +72441,12 @@
               "speechText": "田中さん、今日もよろしくお願いします。",
               "translationByNative": {
                 "vi": "Tanaka, hôm nay cũng cùng cố gắng nhé.",
-                "en": "Tanaka, let us do our best again today.",
+                "en": "Tanaka, let’s do our best again today.",
                 "ja": "田中さん、今日も一緒に頑張りましょう。"
               },
               "translations": {
                 "vi": "Tanaka, hôm nay cũng cùng cố gắng nhé.",
-                "en": "Tanaka, let us do our best again today.",
+                "en": "Tanaka, let’s do our best again today.",
                 "ja": "田中さん、今日も一緒に頑張りましょう。"
               },
               "meaningVi": "Tanaka, hôm nay cũng cùng cố gắng nhé.",
@@ -72490,7 +72490,7 @@
           },
           "explanationByNative": {
             "vi": "Hai người cùng tuổi nhưng mới gặp nên dùng cách lịch sự cơ bản.\nKhông cần chuyển ngay sang cách quá thân mật.\nKhi quan hệ thoải mái hơn, họ có thể dùng cách nói ngắn hơn.",
-            "en": "They are the same age, but have just met, so they use standard polite speech.\nThere is no need to switch immediately to overly casual speech.\nWhen they become more comfortable with each other, they can use shorter expressions.",
+            "en": "They’re the same age, but have just met, so they use standard polite speech.\nThere’s no need to switch immediately to overly casual speech.\nWhen they become more comfortable with each other, they can use shorter expressions.",
             "ja": "同年代でも初対面なので、基本的な丁寧表現を使います。\nすぐにくだけすぎた話し方へ変える必要はありません。\n関係がより気楽になれば、短い言い方を使えます。"
           },
           "lines": [
@@ -72501,12 +72501,12 @@
               "speechText": "こんにちは。はじめまして。田中です。",
               "translationByNative": {
                 "vi": "Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.",
-                "en": "Hello. Nice to meet you. I am Tanaka.",
+                "en": "Hello. Nice to meet you. I’m Tanaka.",
                 "ja": "こんにちは。はじめまして。田中です。"
               },
               "translations": {
                 "vi": "Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.",
-                "en": "Hello. Nice to meet you. I am Tanaka.",
+                "en": "Hello. Nice to meet you. I’m Tanaka.",
                 "ja": "こんにちは。はじめまして。田中です。"
               },
               "meaningVi": "Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.",
@@ -72521,12 +72521,12 @@
               "speechText": "はじめまして。佐藤です。",
               "translationByNative": {
                 "vi": "Rất vui được gặp bạn lần đầu. Mình là Sato.",
-                "en": "Nice to meet you. I am Sato.",
+                "en": "Nice to meet you. I’m Sato.",
                 "ja": "はじめまして。佐藤です。"
               },
               "translations": {
                 "vi": "Rất vui được gặp bạn lần đầu. Mình là Sato.",
-                "en": "Nice to meet you. I am Sato.",
+                "en": "Nice to meet you. I’m Sato.",
                 "ja": "はじめまして。佐藤です。"
               },
               "meaningVi": "Rất vui được gặp bạn lần đầu. Mình là Sato.",
@@ -72590,7 +72590,7 @@
           },
           "explanationByNative": {
             "vi": "よろしく！ là dạng thân mật của よろしくお願いします trong quan hệ phù hợp.\nKhông phải cứ gặp lần đầu là dùng ngay よろしく！\nViệc chuyển sang cách nói thân mật cần dựa vào mức độ thoải mái, tuổi tác, quan hệ và bối cảnh.",
-            "en": "よろしく！ is a casual form of よろしくお願いします when the relationship is appropriate.\nDo not use よろしく！ immediately in every first meeting.\nThe switch to casual speech depends on comfort, age, relationship, and context.",
+            "en": "よろしく！ is a casual form of よろしくお願いします when the relationship is appropriate.\nDon’t use よろしく！ immediately in every first meeting.\nThe switch to casual speech depends on comfort, age, relationship, and context.",
             "ja": "「よろしく！」は、関係が適切な場合に使う「よろしくお願いします」のカジュアルな形です。\n初対面だからといって、すぐに「よろしく！」を使うわけではありません。\nカジュアルな話し方への切り替えは、親しさ、年齢、関係、状況によって判断します。"
           },
           "lines": [
@@ -72601,12 +72601,12 @@
               "speechText": "あらためて、田中。よろしく！",
               "translationByNative": {
                 "vi": "Nói lại nhé, mình là Tanaka. Làm quen nhé!",
-                "en": "Let me introduce myself again: I am Tanaka. Nice to meet you!",
+                "en": "Let me introduce myself again: I’m Tanaka. Nice to meet you!",
                 "ja": "あらためて、田中。よろしく！"
               },
               "translations": {
                 "vi": "Nói lại nhé, mình là Tanaka. Làm quen nhé!",
-                "en": "Let me introduce myself again: I am Tanaka. Nice to meet you!",
+                "en": "Let me introduce myself again: I’m Tanaka. Nice to meet you!",
                 "ja": "あらためて、田中。よろしく！"
               },
               "meaningVi": "Nói lại nhé, mình là Tanaka. Làm quen nhé!",
@@ -72621,12 +72621,12 @@
               "speechText": "佐藤。よろしく！",
               "translationByNative": {
                 "vi": "Mình là Sato. Làm quen nhé!",
-                "en": "I am Sato. Nice to meet you!",
+                "en": "I’m Sato. Nice to meet you!",
                 "ja": "佐藤。よろしく！"
               },
               "translations": {
                 "vi": "Mình là Sato. Làm quen nhé!",
-                "en": "I am Sato. Nice to meet you!",
+                "en": "I’m Sato. Nice to meet you!",
                 "ja": "佐藤。よろしく！"
               },
               "meaningVi": "Mình là Sato. Làm quen nhé!",
@@ -72641,12 +72641,12 @@
               "speechText": "佐藤さんじゃなくて、佐藤でいい？",
               "translationByNative": {
                 "vi": "Không cần gọi “Sato-san”, gọi Sato thôi được chứ?",
-                "en": "You do not need to call me “Sato-san”; is just “Sato” okay?",
+                "en": "You don’t need to call me “Sato-san”; is just “Sato” okay?",
                 "ja": "「佐藤さん」ではなく、「佐藤」だけでいいですか。"
               },
               "translations": {
                 "vi": "Không cần gọi “Sato-san”, gọi Sato thôi được chứ?",
-                "en": "You do not need to call me “Sato-san”; is just “Sato” okay?",
+                "en": "You don’t need to call me “Sato-san”; is just “Sato” okay?",
                 "ja": "「佐藤さん」ではなく、「佐藤」だけでいいですか。"
               },
               "meaningVi": "Không cần gọi “Sato-san”, gọi Sato thôi được chứ?",
@@ -72661,12 +72661,12 @@
               "speechText": "うん、いいよ。田中もよろしく！",
               "translationByNative": {
                 "vi": "Ừ, được. Tanaka cũng vậy nhé!",
-                "en": "Yes, that is fine. Same for you, Tanaka!",
+                "en": "Yeah, sure! You too, Tanaka!",
                 "ja": "うん、いいよ。田中もよろしく！"
               },
               "translations": {
                 "vi": "Ừ, được. Tanaka cũng vậy nhé!",
-                "en": "Yes, that is fine. Same for you, Tanaka!",
+                "en": "Yeah, sure! You too, Tanaka!",
                 "ja": "うん、いいよ。田中もよろしく！"
               },
               "meaningVi": "Ừ, được. Tanaka cũng vậy nhé!",
@@ -72871,12 +72871,12 @@
               "speechText": "はじめまして。田中です。よろしくお願いします。",
               "translationByNative": {
                 "vi": "Rất vui được gặp bạn lần đầu.\nTôi là Tanaka.\nRất mong được làm quen.",
-                "en": "Nice to meet you.\nI am Tanaka.\nI look forward to getting to know you.",
+                "en": "Nice to meet you.\nI’m Tanaka.\nI look forward to getting to know you.",
                 "ja": "はじめまして。\n田中です。\nよろしくお願いします。"
               },
               "translations": {
                 "vi": "Rất vui được gặp bạn lần đầu.\nTôi là Tanaka.\nRất mong được làm quen.",
-                "en": "Nice to meet you.\nI am Tanaka.\nI look forward to getting to know you.",
+                "en": "Nice to meet you.\nI’m Tanaka.\nI look forward to getting to know you.",
                 "ja": "はじめまして。\n田中です。\nよろしくお願いします。"
               },
               "meaningVi": "Rất vui được gặp bạn lần đầu.\nTôi là Tanaka.\nRất mong được làm quen.",
@@ -72899,7 +72899,7 @@
               "はじめまして thường vẫn được dùng ngay cả khi hai người cùng tuổi."
             ],
             "en": [
-              "In Japanese, polite and casual expressions do not always correspond one-to-one.",
+              "In Japanese, polite and casual expressions don’t always correspond one-to-one.",
               "The clear casual form of おはようございます is おはよう。",
               "よろしくお願いします can be shortened to よろしく。",
               "こんにちは has no single fixed casual equivalent.",
@@ -72939,7 +72939,7 @@
                 "When meeting a teacher.",
                 "When meeting a supervisor.",
                 "When meeting a coworker.",
-                "When meeting someone you do not know well.",
+                "When meeting someone you don’t know well.",
                 "At the start of a class or work shift."
               ],
               "ja": [
@@ -72969,7 +72969,7 @@
               "en": [
                 "Teachers",
                 "Older people",
-                "People you have just met",
+                "People you’ve just met",
                 "Coworkers",
                 "Customers"
               ],
@@ -72993,9 +72993,9 @@
                 "Không dùng trước khi đi ngủ."
               ],
               "en": [
-                "Do not use it as an afternoon greeting.",
-                "Do not use it as an evening greeting.",
-                "Do not use it before going to sleep."
+                "Don’t use it as an afternoon greeting.",
+                "Don’t use it as an evening greeting.",
+                "Don’t use it before going to sleep."
               ],
               "ja": [
                 "午後のあいさつとしては使いません。",
@@ -73038,7 +73038,7 @@
                 "Siblings",
                 "Family members",
                 "Close peers of the same age",
-                "Do not use bare おはよう with supervisors or customers unless the relationship is close enough."
+                "Don’t use bare おはよう with supervisors or customers unless the relationship is close enough."
               ],
               "ja": [
                 "標準的なカジュアル形：",
@@ -73114,8 +73114,8 @@
                 "When meeting someone new.",
                 "When meeting a teacher.",
                 "When meeting a coworker.",
-                "When meeting an acquaintance you are not very close to.",
-                "Do not treat times such as 11:00, 12:00, or 17:00 as fixed boundaries.",
+                "When meeting an acquaintance you’re not very close to.",
+                "Don’t treat times such as 11:00, 12:00, or 17:00 as fixed boundaries.",
                 "The greeting depends on the time, context, and customary usage."
               ],
               "ja": [
@@ -73150,12 +73150,12 @@
                 "Bạn bè trong một số tình huống"
               ],
               "en": [
-                "People you have just met",
+                "People you’ve just met",
                 "Neighbors",
                 "Teachers",
                 "Store staff",
                 "Coworkers",
-                "Acquaintances you do not know well",
+                "Acquaintances you don’t know well",
                 "Friends in some situations"
               ],
               "ja": [
@@ -73182,10 +73182,10 @@
                 "Không dùng như lời tạm biệt."
               ],
               "en": [
-                "Do not use it instead of a morning greeting when おはようございます is more natural.",
-                "Do not use it once evening has begun and こんばんは is more natural.",
-                "Do not use it before going to sleep.",
-                "Do not use it as a farewell."
+                "Don’t use it instead of a morning greeting when おはようございます is more natural.",
+                "Don’t use it once evening has begun and こんばんは is more natural.",
+                "Don’t use it before going to sleep.",
+                "Don’t use it as a farewell."
               ],
               "ja": [
                 "「おはようございます」の方が自然な朝の場面では、代わりに使いません。",
@@ -73249,7 +73249,7 @@
               ],
               "en": [
                 "These are context-dependent ways to begin a casual conversation.",
-                "They are not one-to-one replacements for こんにちは."
+                "They’re not one-to-one replacements for こんにちは."
               ],
               "ja": [
                 "これらは状況に応じたカジュアルな会話の始め方です。",
@@ -73283,7 +73283,7 @@
               ],
               "en": [
                 "Use it when meeting someone in the evening.",
-                "It is commonly used after it gets dark."
+                "It’s commonly used after it gets dark."
               ],
               "ja": [
                 "夜に人と会うときに使います。",
@@ -73309,7 +73309,7 @@
                 "Neighbors",
                 "Teachers",
                 "Coworkers",
-                "People you have just met",
+                "People you’ve just met",
                 "Acquaintances"
               ],
               "ja": [
@@ -73334,10 +73334,10 @@
                 "Không dùng giữa ban ngày."
               ],
               "en": [
-                "Do not use it to say “good night.”",
-                "Do not use it when saying goodbye.",
-                "Do not use it in the morning.",
-                "Do not use it during the daytime."
+                "Don’t use it to say “good night.”",
+                "Don’t use it when saying goodbye.",
+                "Don’t use it in the morning.",
+                "Don’t use it during the daytime."
               ],
               "ja": [
                 "「おやすみなさい」の意味では使いません。",
@@ -73373,7 +73373,7 @@
               ],
               "en": [
                 "Casual usage:",
-                "There is no single standard casual form.",
+                "There’s no single standard casual form.",
                 "With close friends in the evening, a speaker may:",
                 "Still use こんばんは。",
                 "Call the other person by name.",
@@ -73397,7 +73397,7 @@
                 "translation": "Chào buổi tối. Hôm nay lạnh nhỉ.",
                 "translationByNative": {
                   "vi": "Chào buổi tối. Hôm nay lạnh nhỉ.",
-                  "en": "Good evening. It is cold today, is it not?",
+                  "en": "Good evening. It’s cold today, isn’t it?",
                   "ja": "こんばんは。今日は寒いですね。"
                 },
                 "speechText": "こんばんは。きょうはさむいですね。"
@@ -73450,10 +73450,10 @@
                 "Không dùng thay lời chào buổi sáng, ban ngày hoặc buổi tối."
               ],
               "en": [
-                "Do not use it every day with the same person.",
-                "Do not use it from the second meeting onward.",
-                "Do not use it merely because you see a stranger without introducing yourself.",
-                "Do not use it instead of a morning, daytime, or evening greeting."
+                "Don’t use it every day with the same person.",
+                "Don’t use it from the second meeting onward.",
+                "Don’t use it merely because you see a stranger without introducing yourself.",
+                "Don’t use it instead of a morning, daytime, or evening greeting."
               ],
               "ja": [
                 "同じ相手に毎日使う表現ではありません。",
@@ -73485,10 +73485,10 @@
               ],
               "en": [
                 "Casual usage:",
-                "There is no mandatory standard casual form.",
+                "There’s no mandatory standard casual form.",
                 "Even two people of the same age can use:",
                 "はじめまして。",
-                "In a very relaxed situation, people may omit it and say their name directly, but this is not the default replacement."
+                "In a very relaxed situation, people may omit it and say their name directly, but this isn’t the default replacement."
               ],
               "ja": [
                 "カジュアルな言い方：",
@@ -73505,7 +73505,7 @@
                 "translation": "Rất vui được gặp bạn lần đầu. Tôi là Tanaka.",
                 "translationByNative": {
                   "vi": "Rất vui được gặp bạn lần đầu. Tôi là Tanaka.",
-                  "en": "Nice to meet you. I am Tanaka.",
+                  "en": "Nice to meet you. I’m Tanaka.",
                   "ja": "はじめまして。田中です。"
                 },
                 "speechText": "はじめまして。たなかです。"
@@ -73565,7 +73565,7 @@
                 "Meaning:\nTanaka.",
                 "Or:",
                 "田中だよ。",
-                "Meaning:\nI am Tanaka."
+                "Meaning:\nI’m Tanaka."
               ],
               "ja": [
                 "カジュアルな言い方：",
@@ -73592,8 +73592,8 @@
               "en": [
                 "Saying only the name is brief and casual.",
                 "～だよ adds a nuance of informing or explaining.",
-                "Do not teach ～だよ as a required replacement for ～です。",
-                "Use ～です with teachers, older people, or people you have just met."
+                "Don’t teach ～だよ as a required replacement for ～です。",
+                "Use ～です with teachers, older people, or people you’ve just met."
               ],
               "ja": [
                 "名前だけを言うのは、短くカジュアルな言い方です。",
@@ -73609,7 +73609,7 @@
                 "translation": "Tôi là Tanaka.",
                 "translationByNative": {
                   "vi": "Tôi là Tanaka.",
-                  "en": "I am Tanaka.",
+                  "en": "I’m Tanaka.",
                   "ja": "田中です。"
                 },
                 "speechText": "たなかです。"
@@ -73620,7 +73620,7 @@
                 "translation": "Tôi là Sato.",
                 "translationByNative": {
                   "vi": "Tôi là Sato.",
-                  "en": "I am Sato.",
+                  "en": "I’m Sato.",
                   "ja": "佐藤です。"
                 },
                 "speechText": "さとうです。"
@@ -73632,7 +73632,7 @@
             "overview": "Không dịch máy móc câu này trong mọi trường hợp thành “Nice to meet you”.\n\nNghĩa thay đổi theo ngữ cảnh.",
             "overviewByNative": {
               "vi": "Không dịch máy móc câu này trong mọi trường hợp thành “Nice to meet you”.\n\nNghĩa thay đổi theo ngữ cảnh.",
-              "en": "Do not mechanically translate this expression as “Nice to meet you” in every situation.\n\nIts meaning changes with context.",
+              "en": "Don’t mechanically translate this expression as “Nice to meet you” in every situation.\n\nIts meaning changes with context.",
               "ja": "どの場面でも機械的に「Nice to meet you」と訳してはいけません。\n\n意味は文脈によって変わります。"
             },
             "timingAndContext": [
@@ -73699,11 +73699,11 @@
                 "どうぞよろしくお願いします。\n→ Polite, and emphasizes goodwill a little more.",
                 "よろしくお願いします。\n→ Standard polite form.",
                 "よろしく！\n→ Casual; use it with friends or peers when the relationship is relaxed.",
-                "Do not use よろしく！ with:",
+                "Don’t use よろしく！ with:",
                 "Customers",
                 "Teachers",
                 "Supervisors",
-                "People you have just met in a formal setting"
+                "People you’ve just met in a formal setting"
               ],
               "ja": [
                 "バリエーション：",
@@ -73724,7 +73724,7 @@
                 "translation": "Rất vui được gặp bạn lần đầu. Tôi là Tanaka. Rất mong được làm quen.",
                 "translationByNative": {
                   "vi": "Rất vui được gặp bạn lần đầu. Tôi là Tanaka. Rất mong được làm quen.",
-                  "en": "Nice to meet you. I am Tanaka. I look forward to getting to know you.",
+                  "en": "Nice to meet you. I’m Tanaka. I look forward to getting to know you.",
                   "ja": "はじめまして。田中です。よろしくお願いします。"
                 },
                 "speechText": "はじめまして。たなかです。よろしくおねがいします。"
@@ -73735,7 +73735,7 @@
                 "translation": "Tớ là Tanaka. Làm quen nhé!",
                 "translationByNative": {
                   "vi": "Tớ là Tanaka. Làm quen nhé!",
-                  "en": "I am Tanaka. Nice to meet you!",
+                  "en": "I’m Tanaka. Nice to meet you!",
                   "ja": "田中。よろしく！"
                 },
                 "speechText": "たなか。よろしく！"
@@ -73825,7 +73825,7 @@
               "en": [
                 "When saying goodbye.",
                 "In some school contexts.",
-                "When you do not expect to meet again for some time."
+                "When you don’t expect to meet again for some time."
               ],
               "ja": [
                 "別れるとき。",
@@ -73845,9 +73845,9 @@
                 "Không dùng thay lời tự giới thiệu."
               ],
               "en": [
-                "Do not use it when you have just met.",
-                "Do not use it instead of こんにちは。",
-                "Do not use it instead of a self-introduction."
+                "Don’t use it when you’ve just met.",
+                "Don’t use it instead of こんにちは。",
+                "Don’t use it instead of a self-introduction."
               ],
               "ja": [
                 "会ったばかりのときには使いません。",
@@ -73872,7 +73872,7 @@
                 "Common casual expressions when parting:",
                 "じゃあ、また。\n→ Well then, see you later.",
                 "またね！\n→ See you!",
-                "Do not explore parting expressions in depth in Lesson 1."
+                "Don’t explore parting expressions in depth in Lesson 1."
               ],
               "ja": [
                 "別れ際によく使うカジュアルな表現：",
@@ -73944,12 +73944,12 @@
                 "speechText": "田中さん、今日もよろしくお願いします。",
                 "translationByNative": {
                   "vi": "Tanaka, hôm nay cũng cùng cố gắng nhé.",
-                  "en": "Tanaka, let us do our best again today.",
+                  "en": "Tanaka, let’s do our best again today.",
                   "ja": "田中さん、今日も一緒に頑張りましょう。"
                 },
                 "translations": {
                   "vi": "Tanaka, hôm nay cũng cùng cố gắng nhé.",
-                  "en": "Tanaka, let us do our best again today.",
+                  "en": "Tanaka, let’s do our best again today.",
                   "ja": "田中さん、今日も一緒に頑張りましょう。"
                 },
                 "meaningVi": "Tanaka, hôm nay cũng cùng cố gắng nhé.",
@@ -73988,9 +73988,9 @@
                 "よろしくお願いします ở đây thể hiện thiện chí học tập và hợp tác, không chỉ dùng khi mới gặp."
               ],
               "en": [
-                "Use おはようございます because it is morning.",
-                "The student is speaking to a teacher, so おはよう！ is not appropriate.",
-                "Here, よろしくお願いします expresses willingness to learn and cooperate; it is not limited to first meetings."
+                "Use おはようございます because it’s morning.",
+                "The student is speaking to a teacher, so おはよう！ isn’t appropriate.",
+                "Here, よろしくお願いします expresses willingness to learn and cooperate; it’s not limited to first meetings."
               ],
               "ja": [
                 "朝なので「おはようございます」を使います。",
@@ -74021,12 +74021,12 @@
                 "speechText": "こんにちは。はじめまして。田中です。",
                 "translationByNative": {
                   "vi": "Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.",
-                  "en": "Hello. Nice to meet you. I am Tanaka.",
+                  "en": "Hello. Nice to meet you. I’m Tanaka.",
                   "ja": "こんにちは。はじめまして。田中です。"
                 },
                 "translations": {
                   "vi": "Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.",
-                  "en": "Hello. Nice to meet you. I am Tanaka.",
+                  "en": "Hello. Nice to meet you. I’m Tanaka.",
                   "ja": "こんにちは。はじめまして。田中です。"
                 },
                 "meaningVi": "Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.",
@@ -74040,12 +74040,12 @@
                 "speechText": "はじめまして。佐藤です。",
                 "translationByNative": {
                   "vi": "Rất vui được gặp bạn lần đầu. Mình là Sato.",
-                  "en": "Nice to meet you. I am Sato.",
+                  "en": "Nice to meet you. I’m Sato.",
                   "ja": "はじめまして。佐藤です。"
                 },
                 "translations": {
                   "vi": "Rất vui được gặp bạn lần đầu. Mình là Sato.",
-                  "en": "Nice to meet you. I am Sato.",
+                  "en": "Nice to meet you. I’m Sato.",
                   "ja": "はじめまして。佐藤です。"
                 },
                 "meaningVi": "Rất vui được gặp bạn lần đầu. Mình là Sato.",
@@ -74103,8 +74103,8 @@
                 "Khi quan hệ thoải mái hơn, họ có thể dùng cách nói ngắn hơn."
               ],
               "en": [
-                "They are the same age, but have just met, so they use standard polite speech.",
-                "There is no need to switch immediately to overly casual speech.",
+                "They’re the same age, but have just met, so they use standard polite speech.",
+                "There’s no need to switch immediately to overly casual speech.",
                 "When they become more comfortable with each other, they can use shorter expressions."
               ],
               "ja": [
@@ -74136,12 +74136,12 @@
                 "speechText": "あらためて、田中。よろしく！",
                 "translationByNative": {
                   "vi": "Nói lại nhé, mình là Tanaka. Làm quen nhé!",
-                  "en": "Let me introduce myself again: I am Tanaka. Nice to meet you!",
+                  "en": "Let me introduce myself again: I’m Tanaka. Nice to meet you!",
                   "ja": "あらためて、田中。よろしく！"
                 },
                 "translations": {
                   "vi": "Nói lại nhé, mình là Tanaka. Làm quen nhé!",
-                  "en": "Let me introduce myself again: I am Tanaka. Nice to meet you!",
+                  "en": "Let me introduce myself again: I’m Tanaka. Nice to meet you!",
                   "ja": "あらためて、田中。よろしく！"
                 },
                 "meaningVi": "Nói lại nhé, mình là Tanaka. Làm quen nhé!",
@@ -74155,12 +74155,12 @@
                 "speechText": "佐藤。よろしく！",
                 "translationByNative": {
                   "vi": "Mình là Sato. Làm quen nhé!",
-                  "en": "I am Sato. Nice to meet you!",
+                  "en": "I’m Sato. Nice to meet you!",
                   "ja": "佐藤。よろしく！"
                 },
                 "translations": {
                   "vi": "Mình là Sato. Làm quen nhé!",
-                  "en": "I am Sato. Nice to meet you!",
+                  "en": "I’m Sato. Nice to meet you!",
                   "ja": "佐藤。よろしく！"
                 },
                 "meaningVi": "Mình là Sato. Làm quen nhé!",
@@ -74174,12 +74174,12 @@
                 "speechText": "佐藤さんじゃなくて、佐藤でいい？",
                 "translationByNative": {
                   "vi": "Không cần gọi “Sato-san”, gọi Sato thôi được chứ?",
-                  "en": "You do not need to call me “Sato-san”; is just “Sato” okay?",
+                  "en": "You don’t need to call me “Sato-san”; is just “Sato” okay?",
                   "ja": "「佐藤さん」ではなく、「佐藤」だけでいいですか。"
                 },
                 "translations": {
                   "vi": "Không cần gọi “Sato-san”, gọi Sato thôi được chứ?",
-                  "en": "You do not need to call me “Sato-san”; is just “Sato” okay?",
+                  "en": "You don’t need to call me “Sato-san”; is just “Sato” okay?",
                   "ja": "「佐藤さん」ではなく、「佐藤」だけでいいですか。"
                 },
                 "meaningVi": "Không cần gọi “Sato-san”, gọi Sato thôi được chứ?",
@@ -74193,12 +74193,12 @@
                 "speechText": "うん、いいよ。田中もよろしく！",
                 "translationByNative": {
                   "vi": "Ừ, được. Tanaka cũng vậy nhé!",
-                  "en": "Yes, that is fine. Same for you, Tanaka!",
+                  "en": "Yeah, sure! You too, Tanaka!",
                   "ja": "うん、いいよ。田中もよろしく！"
                 },
                 "translations": {
                   "vi": "Ừ, được. Tanaka cũng vậy nhé!",
-                  "en": "Yes, that is fine. Same for you, Tanaka!",
+                  "en": "Yeah, sure! You too, Tanaka!",
                   "ja": "うん、いいよ。田中もよろしく！"
                 },
                 "meaningVi": "Ừ, được. Tanaka cũng vậy nhé!",
@@ -74257,7 +74257,7 @@
               ],
               "en": [
                 "よろしく！ is a casual form of よろしくお願いします when the relationship is appropriate.",
-                "Do not use よろしく！ immediately in every first meeting.",
+                "Don’t use よろしく！ immediately in every first meeting.",
                 "The switch to casual speech depends on comfort, age, relationship, and context."
               ],
               "ja": [
@@ -74281,7 +74281,7 @@
             "meaning": "Tôi là [tên].",
             "meaningByNative": {
               "vi": "Tôi là [tên].",
-              "en": "I am [name].",
+              "en": "I’m [name].",
               "ja": "私は［名前］です。"
             },
             "examples": [
@@ -74291,7 +74291,7 @@
                 "translation": "Tôi là Tanaka.",
                 "translationByNative": {
                   "vi": "Tôi là Tanaka.",
-                  "en": "I am Tanaka.",
+                  "en": "I’m Tanaka.",
                   "ja": "田中です。"
                 },
                 "speechText": "たなかです。"
@@ -74311,7 +74311,7 @@
                 "Có thể nói:\n私は田中です。\n\nNhưng khi bối cảnh đã rõ là đang tự giới thiệu, tiếng Nhật thường bỏ chủ ngữ:\n田中です。"
               ],
               "en": [
-                "You can say:\n私は田中です。\n\nHowever, when it is clear that you are introducing yourself, Japanese often omits the subject:\n田中です。"
+                "You can say:\n私は田中です。\n\nHowever, when it’s clear that you’re introducing yourself, Japanese often omits the subject:\n田中です。"
               ],
               "ja": [
                 "次のように言えます：\n私は田中です。\n\nただし、自己紹介だと明らかな場合、日本語では主語を省くことがよくあります：\n田中です。"
@@ -74336,7 +74336,7 @@
                 "Introducing yourself",
                 "Answering with your name",
                 "Speaking with a teacher",
-                "Speaking with someone you have just met",
+                "Speaking with someone you’ve just met",
                 "In study or work settings"
               ],
               "ja": [
@@ -74359,7 +74359,7 @@
                 "Không được giải thích rằng です luôn đổi thành だよ。\n\nだよ có thêm sắc thái thông báo hoặc nhấn mạnh."
               ],
               "en": [
-                "Do not explain that です always changes to だよ。\n\nだよ adds a nuance of informing or emphasis."
+                "Don’t explain that です always changes to だよ。\n\nだよ adds a nuance of informing or emphasis."
               ],
               "ja": [
                 "「です」が常に「だよ」に変わると説明してはいけません。\n\n「だよ」には、伝達や強調のニュアンスが加わります。"
@@ -74382,7 +74382,7 @@
                 "translation": "Rất vui được gặp bạn lần đầu. Tôi là Sato.",
                 "translationByNative": {
                   "vi": "Rất vui được gặp bạn lần đầu. Tôi là Sato.",
-                  "en": "Nice to meet you. I am Sato.",
+                  "en": "Nice to meet you. I’m Sato.",
                   "ja": "はじめまして。佐藤です。"
                 },
                 "speechText": "はじめまして。さとうです。"
@@ -74497,7 +74497,7 @@
                 "Không được dạy các mức này như có thể thay thế tự do mà không xét quan hệ và tình huống."
               ],
               "en": [
-                "Do not teach these levels as freely interchangeable without considering the relationship and situation."
+                "Don’t teach these levels as freely interchangeable without considering the relationship and situation."
               ],
               "ja": [
                 "関係や状況を考えずに、これらを自由に置き換えられるものとして教えてはいけません。"
@@ -74578,7 +74578,7 @@
               ],
               "en": [
                 "Use it before going to sleep or when ending the evening to rest.",
-                "It is not a greeting used when you have just met."
+                "It’s not a greeting used when you’ve just met."
               ],
               "ja": [
                 "寝る前や、夜の活動を終えて休むときに使います。",
@@ -74958,7 +74958,7 @@
               "prompt": "Sắp xếp các thẻ thành câu “Tôi là Tanaka.”",
               "promptByNative": {
                 "vi": "Sắp xếp các thẻ thành câu “Tôi là Tanaka.”",
-                "en": "Arrange the cards to form the sentence “I am Tanaka.”",
+                "en": "Arrange the cards to form the sentence “I’m Tanaka.”",
                 "ja": "カードを並べて「私は田中です」という文を作ってください。"
               },
               "tokens": [
@@ -75117,7 +75117,7 @@
                 "explanation": "Audio gồm: おはようございます。 Chào buổi sáng. 私（わたし）は田中（たなか）です。 Tôi là Tanaka.",
                 "explanationByNative": {
                   "vi": "Audio gồm: おはようございます。 Chào buổi sáng. 私（わたし）は田中（たなか）です。 Tôi là Tanaka.",
-                  "en": "The audio says: おはようございます。 Good morning. 私（わたし）は田中（たなか）です。 I am Tanaka.",
+                  "en": "The audio says: おはようございます。 Good morning. 私（わたし）は田中（たなか）です。 I’m Tanaka.",
                   "ja": "音声の内容は「おはようございます。私（わたし）は田中（たなか）です。」です。"
                 }
               }
@@ -75720,7 +75720,7 @@
                     "explanation": "さん thường được đặt sau tên người khác. Ví dụ: 佐藤（さとう）さん. Thông thường không tự thêm さん vào tên của chính mình khi giới thiệu.",
                     "explanationByNative": {
                       "vi": "さん thường được đặt sau tên người khác. Ví dụ: 佐藤（さとう）さん. Thông thường không tự thêm さん vào tên của chính mình khi giới thiệu.",
-                      "en": "さん is usually placed after another person’s name. For example: 佐藤（さとう）さん. You normally do not add さん to your own name when introducing yourself.",
+                      "en": "さん is usually placed after another person’s name. For example: 佐藤（さとう）さん. You normally don’t add さん to your own name when introducing yourself.",
                       "ja": "「さん」は通常、相手の名前の後に付けます。例：佐藤（さとう）さん。自己紹介では、通常、自分の名前に「さん」を付けません。"
                     }
                   }
@@ -75871,7 +75871,7 @@
                     "incorrectMessage": "Ô đầu tiên chưa phù hợp với thời điểm của cuộc trò chuyện.",
                     "incorrectMessageByNative": {
                       "vi": "Ô đầu tiên chưa phù hợp với thời điểm của cuộc trò chuyện.",
-                      "en": "The first blank does not fit the time of the conversation.",
+                      "en": "The first blank doesn’t fit the time of the conversation.",
                       "ja": "最初の空欄は、会話の時間帯に合っていません。"
                     },
                     "correctAnswer": "こんにちは",
@@ -75886,7 +75886,7 @@
                     "incorrectMessage": "Câu kết của đoạn làm quen chưa chính xác.",
                     "incorrectMessageByNative": {
                       "vi": "Câu kết của đoạn làm quen chưa chính xác.",
-                      "en": "The closing expression in the introduction is not correct.",
+                      "en": "The closing expression in the introduction isn’t correct.",
                       "ja": "初対面の会話の結びが正しくありません。"
                     },
                     "correctAnswer": "よろしくお願（ねが）いします",
@@ -75953,7 +75953,7 @@
                 "explanation": "Đây là buổi sáng nên bắt đầu bằng おはようございます。 Vì gặp lần đầu nên dùng はじめまして, sau đó giới thiệu tên và kết thúc bằng よろしくお願（ねが）いします。",
                 "explanationByNative": {
                   "vi": "Đây là buổi sáng nên bắt đầu bằng おはようございます。 Vì gặp lần đầu nên dùng はじめまして, sau đó giới thiệu tên và kết thúc bằng よろしくお願（ねが）いします。",
-                  "en": "It is morning, so begin with おはようございます。 Because this is a first meeting, use はじめまして, then introduce your name and close with よろしくお願（ねが）いします。",
+                  "en": "It’s morning, so begin with おはようございます。 Because this is a first meeting, use はじめまして, then introduce your name and close with よろしくお願（ねが）いします。",
                   "ja": "朝なので「おはようございます」で始めます。初対面なので「はじめまして」を使い、名前を紹介して「よろしくお願（ねが）いします」で結びます。"
                 }
               }
@@ -76016,7 +76016,7 @@
               "prompt": "Hoàn thành lời tự giới thiệu. Chọn từng ô trống, rồi chọn thẻ phù hợp. Có một thẻ không cần dùng.",
               "promptByNative": {
                 "vi": "Hoàn thành lời tự giới thiệu. Chọn từng ô trống, rồi chọn thẻ phù hợp. Có một thẻ không cần dùng.",
-                "en": "Complete the self-introduction. Select each blank, then choose the appropriate card. One card is not needed.",
+                "en": "Complete the self-introduction. Select each blank, then choose the appropriate card. One card isn’t needed.",
                 "ja": "自己紹介を完成させてください。各空欄を選び、適切なカードを選んでください。使わないカードが一枚あります。"
               },
               "tokens": [
@@ -76102,7 +76102,7 @@
                 "explanation": "こんばんは là lời chào buổi tối, nhưng không cần thiết trong lời tự giới thiệu được yêu cầu ở câu này. Câu hoàn chỉnh gồm lời chào khi gặp lần đầu, tên người nói và câu kết lịch sự.",
                 "explanationByNative": {
                   "vi": "こんばんは là lời chào buổi tối, nhưng không cần thiết trong lời tự giới thiệu được yêu cầu ở câu này. Câu hoàn chỉnh gồm lời chào khi gặp lần đầu, tên người nói và câu kết lịch sự.",
-                  "en": "こんばんは is an evening greeting, but it is not needed in the self-introduction requested here. The complete answer includes a first-meeting greeting, the speaker’s name, and a polite closing.",
+                  "en": "こんばんは is an evening greeting, but it’s not needed in the self-introduction requested here. The complete answer includes a first-meeting greeting, the speaker’s name, and a polite closing.",
                   "ja": "「こんばんは」は夜のあいさつですが、この問題で求める自己紹介には不要です。完成した文には、初対面のあいさつ、話者の名前、丁寧な結びが含まれます。"
                 }
               }
@@ -76122,7 +76122,7 @@
               "scenarioDescription": "Buổi tối, du học sinh Tanaka không dùng được điện thoại nên không biết đường đến ký túc xá Sakura. Tanaka gặp Sato và hỏi đường. Sato dẫn Tanaka đến nơi.",
               "scenarioDescriptionByNative": {
                 "vi": "Buổi tối, du học sinh Tanaka không dùng được điện thoại nên không biết đường đến ký túc xá Sakura. Tanaka gặp Sato và hỏi đường. Sato dẫn Tanaka đến nơi.",
-                "en": "One evening, exchange student Tanaka cannot use their phone and does not know the way to Sakura Dormitory. Tanaka meets Sato and asks for directions. Sato guides Tanaka there.",
+                "en": "One evening, exchange student Tanaka can’t use their phone and doesn’t know the way to Sakura Dormitory. Tanaka meets Sato and asks for directions. Sato guides Tanaka there.",
                 "ja": "ある夜、留学生の田中さんはスマホが使えず、さくら寮への道が分かりません。田中さんは佐藤さんに会って道を尋ね、佐藤さんが寮まで案内します。"
               },
               "characterIds": [
