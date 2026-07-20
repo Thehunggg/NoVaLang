@@ -771,8 +771,18 @@ function checkLanguageCatalogParity() {
     loadJson("rules/catalog.json").catch(() => null),
   ]).then(
     ([learning, native, flutterLearning, flutterNative, catalog, rulesCatalog]) => {
-      if (learning.length < 40) {
-        fail(section, {}, `learning languages expected >= 40, got ${learning.length}`);
+      // Learning ("playable") count is DYNAMIC, mirroring the native count
+      // below: read from rules/catalog.json._meta.ruleTargetCount (33 today,
+      // owner D-55) instead of a stale hard-coded 40 floor.
+      const expectedLearning = rulesCatalog?._meta?.ruleTargetCount;
+      if (Number.isInteger(expectedLearning) && expectedLearning > 0) {
+        if (learning.length !== expectedLearning) {
+          fail(section, {}, `learning languages expected exactly ${expectedLearning} (rules/catalog.json._meta.ruleTargetCount), got ${learning.length}`);
+        } else {
+          pass(section, `learning languages: ${learning.length} (matches ruleTargetCount)`);
+        }
+      } else if (learning.length < 1) {
+        fail(section, {}, "learning language catalog is empty");
       } else {
         pass(section, `learning languages: ${learning.length}`);
       }
@@ -826,12 +836,18 @@ function checkLanguageCatalogParity() {
       } else {
         pass(section, "Flutter native_language_options.json synced");
       }
-      if ((catalog.languages ?? []).length < 40) {
-        fail(
-          section,
-          {},
-          `catalog.languages expected >= 40, got ${(catalog.languages ?? []).length}`,
-        );
+      if (Number.isInteger(expectedLearning) && expectedLearning > 0) {
+        if ((catalog.languages ?? []).length !== expectedLearning) {
+          fail(
+            section,
+            {},
+            `catalog.languages expected exactly ${expectedLearning} (rules/catalog.json._meta.ruleTargetCount), got ${(catalog.languages ?? []).length}`,
+          );
+        } else {
+          pass(section, `catalog.languages: ${catalog.languages.length} (matches ruleTargetCount)`);
+        }
+      } else if ((catalog.languages ?? []).length < 1) {
+        fail(section, {}, "catalog.languages is empty");
       } else {
         pass(section, `catalog.languages: ${catalog.languages.length}`);
       }

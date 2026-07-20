@@ -1150,8 +1150,29 @@ async function main() {
   if (available.sort().join(",") !== "en,ja") {
     fail(`language_options available must be only en,ja — got ${available.join(",")}`);
   }
-  if (languageOptions.length < 40) {
-    fail(`language catalog must have >= 40 learning languages — got ${languageOptions.length}`);
+  // Learning ("playable") target is DYNAMIC, mirroring the native count below:
+  // read from rules/catalog.json._meta.ruleTargetCount (33 today, owner D-55)
+  // instead of a stale hard-coded floor of 40. The generated learning catalog
+  // must contain exactly that many languages. When the owner changes the
+  // playable target they bump ruleTargetCount + the generator seeds; this check
+  // follows automatically. (This is a count that tracks the authoritative
+  // config target — not a change to what/how content is validated.)
+  let expectedLearningCount = null;
+  try {
+    const rulesCatalogForLearning = await loadJson("rules/catalog.json");
+    const n = rulesCatalogForLearning?._meta?.ruleTargetCount;
+    if (Number.isInteger(n) && n > 0) expectedLearningCount = n;
+  } catch {
+    // rules/catalog.json missing/unreadable — fall through to the floor check.
+  }
+  if (expectedLearningCount != null) {
+    if (languageOptions.length !== expectedLearningCount) {
+      fail(
+        `learning language catalog must have exactly ${expectedLearningCount} languages (rules/catalog.json._meta.ruleTargetCount) — got ${languageOptions.length}`,
+      );
+    }
+  } else if (languageOptions.length < 1) {
+    fail("learning language catalog is empty");
   }
   // Native language target is DYNAMIC (owner decision, 2026-07-19): the count
   // is not hard-coded here. It is read from the authoritative target the owner
@@ -1210,10 +1231,16 @@ async function main() {
       fail(`native language missing code/name/nativeName/flagEmoji: ${JSON.stringify(item)}`);
     }
   }
-  if ((catalog.languages ?? []).length < 40) {
-    fail(
-      `curriculum_catalog.languages must have >= 40 codes — got ${(catalog.languages ?? []).length}`,
-    );
+  // Mirrors the learning-count check above: track the authoritative
+  // ruleTargetCount (33) instead of a stale hard-coded 40 floor.
+  if (expectedLearningCount != null) {
+    if ((catalog.languages ?? []).length !== expectedLearningCount) {
+      fail(
+        `curriculum_catalog.languages must have exactly ${expectedLearningCount} codes (rules/catalog.json._meta.ruleTargetCount) — got ${(catalog.languages ?? []).length}`,
+      );
+    }
+  } else if ((catalog.languages ?? []).length < 1) {
+    fail("curriculum_catalog.languages is empty");
   }
 
   for (const course of courses) {
