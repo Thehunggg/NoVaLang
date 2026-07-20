@@ -1,0 +1,62 @@
+{
+  "id": "ms/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "ms-MY",
+    "address_forms": {
+      "saya": { "formality": "neutral_polite", "person": "1sg", "usage": "tôi (lịch sự/trung tính, baseline)" },
+      "aku": { "formality": "informal", "person": "1sg", "usage": "tôi (thân, bạn bè)" },
+      "anda": { "formality": "formal_written", "person": "2", "usage": "bạn (trang trọng/viết/quảng cáo)" },
+      "awak_kamu": { "formality": "informal", "person": "2", "usage": "bạn (thân, khẩu ngữ)" },
+      "kau": { "formality": "very_informal", "person": "2", "usage": "mày (rất thân)" },
+      "dia": { "person": "3", "usage": "anh/chị/nó" },
+      "titles": "encik (ông), puan (bà), cik (cô) + tên — tước hiệu lịch sự"
+    },
+    "baseline": {
+      "value": "Dạy saya (tôi lịch sự) + anda/awak (bạn) + encik/puan (tước hiệu). Chọn theo trang trọng/thân sơ. KHÔNG có hệ kính ngữ hình thái.",
+      "tts_locale": "ms-MY (xem D-ms-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "aku/awak + bahasa pasar (khẩu ngữ chợ)",
+      "NATURAL_NEUTRAL_POLITE": "saya + anda/awak — baseline",
+      "FORMAL": "saya + anda + encik/puan + bahasa baku (chuẩn mực) + từ vựng trang trọng",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Mã Lai KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko. Lịch sự qua đại từ + tước hiệu (encik/puan) + từ vựng. Tự áp TIỀN LỆ es B-02. (Bahasa istana — ngôn ngữ hoàng gia — tồn tại nhưng out-of-scope baseline.)"
+      }
+    },
+    "politeness_devices": {
+      "indirect": "Boleh...? (Có thể...?), Tolong... (Làm ơn...), sila (xin mời), terima kasih (cảm ơn), maaf (xin lỗi), minta maaf (xin lỗi)"
+    }
+  },
+  "checks": [
+    {
+      "id": "saya-vs-aku-register",
+      "description": "saya (lịch sự) vs aku (thân) theo ngữ cảnh. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần ngữ cảnh trang trọng khi generator chạy." },
+      "fixtures": {
+        "pass": ["Saya suka kopi.", "Aku suka kopi."],
+        "fail": [""]
+      }
+    },
+    {
+      "id": "polite-indirect",
+      "description": "Lịch sự qua gián tiếp (boleh/tolong). Kiểm mẫu.",
+      "assert": { "type": "custom", "note": "boleh/tolong/sila cho lịch sự." },
+      "fixtures": {
+        "pass": ["Boleh tolong saya?"],
+        "fail": [""]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Saya suka kopi.", "Boleh tolong saya?", "Terima kasih."],
+    "fail": [""],
+    "_note": "Câu pass minh hoạ saya + gián tiếp lịch sự. KHÔNG có corpus — cần người bản ngữ."
+  }
+}

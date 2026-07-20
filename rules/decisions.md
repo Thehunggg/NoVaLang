@@ -973,6 +973,35 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-89 · 2026-07-20 · derived · ms — `ms` (tiếng Mã Lai, Bahasa Melayu,
+  ms-MY) build HOÀN TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language`
+  Bước 0–4, tra cứu 5 vòng.** Austronesian, chữ Latin (Rumi) 26 chữ KHÔNG dấu
+  phụ, t1, 24 hiện tượng. RẤT GẦN id (đã build) — cùng gốc Mã Lai, khác chuẩn/
+  chính tả/từ vựng (ms wang / id uang). Dataset CLDR + WikiPron `msa_latn_broad`
+  6672 (chính tả đều → g2p sạch). **VƯỚNG DỮ LIỆU (ghi rõ, không thổi phồng —
+  bài học ca WikiPron 176): KHÔNG có UD_Malay → không có word-class dataset;
+  KHÔNG có corpus tiếng Mã Lai → corpus-check KHÔNG chạy được (0 câu).** g2p-check:
+  ng→[ŋ] 0.95%, ny→[ɲ] 0.00%, sy→[ʃ] 0.00%, c→[t͡ʃ] 1.06% (TẤT CẢ SẠCH trên
+  6672 từ) → `grapheme_to_phoneme` VALIDATED. **Kỷ luật dữ liệu:** casing +
+  word_class + ngữ pháp KHÔNG kiểm được trên dữ liệu Mã Lai thật → dựa kiến
+  thức + mô tả chuẩn + ĐỐI CHIẾU id (V5, S-ID-CROSSREF, KHÔNG copy id thành ms);
+  nhiều mục để medium/DRAFT với ghi chú 'cần người bản ngữ'. Casing: tháng/thứ
+  VIẾT HOA (Januari/Isnin như id) → KHÔNG áp rule lowercase. Đặc trưng: KHÔNG
+  biến tố (thì qua từ sudah/akan/sedang, như id/vi — thuận lợi), **phụ tố meN-**
+  biến âm mũi (menulis/membaca/mengambil), **trùng lặp** số nhiều (buku-buku),
+  **loại từ** ([số]+[loại từ]+[danh từ]: tiga buah buku), SVO + bổ nghĩa sau
+  danh từ (giống vi), không mạo từ, 'e' [e]/[ə] schwa + k cuối [ʔ] (audio).
+  **KHÔNG dấu phụ** → chấm chính tả ĐƠN GIẢN (khác pl/hr/hu — không có chính
+  sách dấu đặc biệt; đây là ngôn ngữ đơn giản nhất đợt về mặt dấu). HONORIFIC
+  not-applicable (es B-02; bahasa istana out-of-scope). **4 giả định cần owner
+  duyệt:** D-ms-01 (baseline ms-MY — v1), D-ms-02 (saya/anda baseline lịch sự —
+  v2), D-ms-03 (dạy bahasa baku chuẩn không bahasa pasar — v2, product), D-ms-04
+  (chấm chính tả đơn giản, không dấu phụ). `native-review-ms.md` 7 mục — ĐẶC
+  BIỆT quan trọng vì KHÔNG có corpus. Bù lại: hình thái đơn giản + rất gần id
+  (đã build+duyệt) nên rủi ro sai hệ thống thấp. Status:
+  `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN. Validator: 4 lỗi vi/zh cũ (ghi nợ),
+  0 lỗi mới; catalog 60.
+
 - **D-88 · 2026-07-20 · derived · fil — `fil` (tiếng Filipino = Tagalog chuẩn
   hoá, fil-PH) build HOÀN TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language`
   Bước 0–4, tra cứu 5 vòng.** Austronesian, chữ Latin (28 chữ + ng + ñ), t1, 24

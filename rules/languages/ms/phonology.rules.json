@@ -1,0 +1,43 @@
+{
+  "id": "ms/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "dataset",
+  "config": {
+    "baseline_variety": "ms-MY",
+    "transparency_note": "Chính tả Mã Lai RẤT ĐỀU (Latin, gần 1:1). g2p-check trên WikiPron thật 6672 từ xác nhận digraph. Chỉ 'e' [e]/[ə] + k cuối [ʔ] là lexical.",
+    "grapheme_to_phoneme_rules": {
+      "ng": { "phoneme": "ŋ", "g2p_check": "0.95% — OK (digraph)" },
+      "ny": { "phoneme": "ɲ", "g2p_check": "0.00% — OK" },
+      "sy": { "phoneme": "ʃ", "g2p_check": "0.00% — OK" },
+      "c": { "phoneme": "t͡ʃ", "g2p_check": "1.06% — OK" },
+      "kh": { "phoneme": "x", "note": "từ vay Ả Rập" }
+    },
+    "lexical_not_g2p": {
+      "e_schwa": "'e' đọc [e] (emak) hay [ə] schwa (beli) theo từ — chính tả chuẩn KHÔNG phân biệt (bỏ é), lexical, cần audio",
+      "final_k_glottal": "k cuối/giữa → [ʔ] (tidak [tidaʔ])"
+    }
+  },
+  "checks": [
+    {
+      "id": "digraph-consonants-ms",
+      "description": "ng[ŋ]/ny[ɲ]/sy[ʃ]/c[t͡ʃ] — digraph/phụ âm, xác nhận g2p-check trên WikiPron.",
+      "assert": { "type": "custom", "note": "g2p-check.mjs: ng 0.95%, ny 0.00%, sy 0.00%, c 1.06% trên 6672 từ — sạch." },
+      "fixtures": { "pass": ["bunga", "cinta"], "fail": ["bunga-as-n-g"] }
+    },
+    {
+      "id": "e-schwa-lexical",
+      "description": "'e' đọc [e] hay [ə] theo từ (không đánh dấu) → lexical, cần audio (đánh dấu).",
+      "assert": { "type": "custom", "note": "emak [e] vs beli [ə]; chính tả chuẩn không phân biệt." },
+      "fixtures": { "pass": ["emak", "beli"], "fail": ["placeholder-x"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["bunga", "cinta", "emak", "beli"],
+    "fail": ["bunga-as-n-g"],
+    "_note": "fixtures minh hoạ digraph sạch; 'e' [e]/[ə] + k cuối [ʔ] lexical cần audio. WikiPron 6672, chính tả đều."
+  }
+}
