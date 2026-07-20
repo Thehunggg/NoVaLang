@@ -1,0 +1,48 @@
+{
+  "id": "hr/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "dataset",
+  "config": {
+    "baseline_variety": "hr-HR",
+    "transparency_note": "Chính tả Croatia CỰC ĐỀU — gần 1 chữ = 1 âm (một trong những hệ đều nhất). g2p-check trên WikiPron thật 27457 từ (bộ LỚN) xác nhận. Chỉ pitch accent (4 kiểu) là lexical.",
+    "grapheme_to_phoneme_rules": {
+      "č": { "phoneme": "t͡ʃ", "g2p_check": "1.09% — OK (âm tắc-xát ngạc-lợi cứng)" },
+      "ć": { "phoneme": "t͡ɕ", "g2p_check": "1.90% — OK (âm tắc-xát ngạc mềm, KHÁC č)" },
+      "š": { "phoneme": "ʃ", "g2p_check": "0.31% — OK" },
+      "ž": { "phoneme": "ʒ", "g2p_check": "0.33% — OK" },
+      "c": { "phoneme": "t͡s", "g2p_check": "0.95% — OK" },
+      "đ": { "phoneme": "d͡ʑ", "note": "âm tắc-xát hữu thanh ngạc mềm" },
+      "dž": { "phoneme": "d͡ʒ", "note": "digraph, âm tắc-xát hữu thanh cứng" },
+      "lj": { "phoneme": "ʎ", "note": "digraph" },
+      "nj": { "phoneme": "ɲ", "note": "digraph" },
+      "h": { "phoneme": "x", "note": "âm xát vòm mềm" },
+      "r": { "phoneme": "r / r̩", "note": "r có thể làm âm tiết: vrt, prst" }
+    },
+    "lexical_not_g2p": {
+      "pitch_accent": "4 kiểu (ngắn-lên/ngắn-xuống/dài-lên/dài-xuống) + độ dài sau trọng âm — phân biệt nghĩa (grȁd/grȃd), KHÔNG đánh dấu, lexical, cần audio"
+    }
+  },
+  "checks": [
+    {
+      "id": "phonemic-consonants-hr",
+      "description": "č/ć/š/ž/c/đ ánh xạ âm ổn định (xác nhận g2p-check trên WikiPron LỚN — chính tả Croatia cực đều).",
+      "assert": { "type": "custom", "note": "g2p-check.mjs: č 1.09%, ć 1.90%, š 0.31%, ž 0.33%, c 0.95% trên 27457 từ." },
+      "fixtures": { "pass": ["čaša", "ćup", "škola", "žena"], "fail": ["čaša-as-c"] }
+    },
+    {
+      "id": "c-vs-cc-distinction",
+      "description": "č[t͡ʃ] ≠ ć[t͡ɕ] ≠ c[t͡s] — ba âm khác nhau, không được lẫn.",
+      "assert": { "type": "custom", "note": "Điểm khó cho học viên: 3 chữ, 3 âm tắc-xát riêng." },
+      "fixtures": { "pass": ["čas", "ćup", "cesta"], "fail": ["čas-as-cesta"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["čaša", "ćup", "škola", "žena", "cesta"],
+    "fail": ["čaša-as-c"],
+    "_note": "fixtures minh hoạ phụ âm phân biệt; g2p-check xác nhận chính tả đều trên WikiPron LỚN; chỉ pitch accent lexical."
+  }
+}

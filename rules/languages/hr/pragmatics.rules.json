@@ -1,0 +1,58 @@
+{
+  "id": "hr/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "hr-HR",
+    "address_forms": {
+      "ti": { "formality": "informal", "number": "singular", "verb_person": "2sg", "usage": "thân mật (bạn bè, gia đình, đồng trang lứa, trẻ em)" },
+      "Vi": { "formality": "formal", "number": "grammatical_plural_for_one_person", "verb_person": "2pl", "capitalized": true, "usage": "trang trọng (người lạ, lớn tuổi, cấp trên) — động từ NGÔI 2 SỐ NHIỀU, viết hoa Vi khi trang trọng" },
+      "vi_plural": { "formality": "neutral_plural", "usage": "vi (thường) = ngôi 2 số nhiều thật (các bạn)" }
+    },
+    "baseline": {
+      "value": "ĐỐI LẬP T-V THẬT (như ru/es, KHÁC scandinavia du-phổ-quát). Dạy ti (thân mật) / Vi (trang trọng, động từ ngôi 2 số nhiều, viết hoa). vokativ dùng khi gọi tên.",
+      "tts_locale": "hr-HR (xem D-hr-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "ti + từ thân mật (bok, ćao, hej)",
+      "NATURAL_NEUTRAL_POLITE": "ti/Vi theo quan hệ — baseline",
+      "FORMAL": "Vi + gián tiếp (dobar dan, hvala, molim, izvolite)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Croatia KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Lịch sự qua Vi + từ vựng + gián tiếp — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": {
+      "indirect": "Možete li...? (Ngài có thể...?), Htio bih... (Tôi muốn...), molim (làm ơn/xin mời), hvala (cảm ơn), izvolite (xin mời/của ngài đây), oprostite (xin lỗi)"
+    }
+  },
+  "checks": [
+    {
+      "id": "ti-vi-verb-agreement",
+      "description": "Vi đi với động từ ngôi 2 số nhiều; ti với ngôi 2 số ít. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần ngữ cảnh + phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["Govorite li hrvatski?", "Govoriš li hrvatski?"],
+        "fail": ["Vi govoriš hrvatski?"]
+      }
+    },
+    {
+      "id": "polite-indirect-formal",
+      "description": "Lịch sự qua gián tiếp + Vi (kiểm mẫu).",
+      "assert": { "type": "custom", "note": "FORMAL dùng Vi + gián tiếp." },
+      "fixtures": {
+        "pass": ["Možete li mi pomoći?"],
+        "fail": ["Možeš li mi pomoći? (khi cần trang trọng)"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Govoriš li hrvatski?", "Možete li mi pomoći?", "Hvala lijepa."],
+    "fail": ["Vi govoriš hrvatski?", ""],
+    "_note": "Câu pass minh hoạ baseline (ti/Vi đối lập T-V, Vi + động từ ngôi 2 số nhiều)."
+  }
+}

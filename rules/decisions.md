@@ -973,6 +973,33 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-84 · 2026-07-20 · derived · hr — `hr` (tiếng Croatia, hr-HR) build HOÀN
+  TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
+  vòng.** Nam Slav, chữ Latin (Gaj's alphabet, 30 chữ gồm digraph dž/lj/nj) +
+  č ć š ž đ, t1, 24 hiện tượng. **hr-HR (Latin), KHÁC sr (thường Cyrillic).**
+  Dataset CLDR/UD/WikiPron: WikiPron `hbs_latn_broad` **27457 cặp (LỚN, bộ
+  Serbo-Croatian macrolang Latin — phù hợp hr)**; corpus UD Croatian-SET **9010
+  câu** (GẦN 10000, hơi dưới — ghi rõ). g2p-check: chính tả Croatia **CỰC ĐỀU**
+  — č→[t͡ʃ] 1.09%, ć→[t͡ɕ] 1.90%, š→[ʃ] 0.31%, ž→[ʒ] 0.33%, c→[t͡s] 0.95% (TẤT
+  CẢ SẠCH) → `grapheme_to_phoneme` VALIDATED (chắc, điểm mạnh dữ liệu — khác
+  ca/da). corpus-check month-weekday-not-capitalized **0.00%** trên 9010 câu →
+  `casing` VALIDATED; đo trực tiếp č 57%/ć 47%/š 54%/ž 42%/đ 21% câu (chữ riêng
+  cực thường xuyên). **Kỷ luật dữ liệu:** hình thái Slav (7 CÁCH, thể
+  perfective/imperfective) + pitch accent (4 kiểu, không đánh dấu) ở
+  lexical/paradigm — cần bảng biến cách + audio + người bản ngữ; ghi rõ. Đặc
+  trưng: **7 CÁCH** (nom/gen/dat/acc/voc/lok/instr, KHÔNG mạo từ), **thể động
+  từ** (cặp từ vựng), **enclitic vị trí 2** (luật Wackernagel), ba âm tắc-xát
+  č[t͡ʃ]/ć[t͡ɕ]/c[t͡s] riêng, digraph dž/lj/nj (một chữ), ti/Vi đối lập T-V
+  (Vi + động từ ngôi 2 số nhiều, KHÁC scandinavia du-phổ-quát), pro-drop.
+  HONORIFIC not-applicable (es B-02). **4 giả định cần owner duyệt:** D-hr-01
+  (baseline hr-HR — v1), D-hr-02 (ti/Vi đối lập — v2), D-hr-03 (trình tự dạy
+  cách: nom/acc/lok trước — v2, quyết định sư phạm), D-hr-04 (thiếu č/ć/š/ž/đ =
+  SAI theo pl D-64, chữ cái riêng; giữ DRAFT flag owner; nhắc cài bàn phím
+  Croatia). `native-review-hr.md` 7 mục (biến cách, thể, enclitic, pitch accent,
+  ti/Vi, hr vs sr/bs, tự nhiên) chờ người bản ngữ. Status:
+  `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN. Validator: 4 lỗi vi/zh cũ (ghi nợ),
+  0 lỗi mới; catalog 60.
+
 - **D-83 · 2026-07-20 · owner · hi/nb/ca — Project Owner DUYỆT toàn bộ 12 giả
   định của phiên build hi+nb+ca (commit `d3caa42` + `bedb2c7` + `459d6ea`).**
   Trước khi ghi, đã đối chiếu nội dung THẬT của từng mục review-checklist với mô
