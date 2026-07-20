@@ -973,6 +973,29 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-91 · 2026-07-20 · owner · ar/he — TẠM DỪNG (coming_soon) 2 playable cuối
+  cùng; ghi NỢ HẠ TẦNG RTL.** Project Owner quyết: 2 ngôn ngữ playable còn lại
+  trong mục tiêu 33 — `ar` (Ả Rập MSA) và `he` (Hebrew) — **KHÔNG build rule
+  bây giờ**. Lý do: cả hai là **RTL (phải-sang-trái) + abjad**; cần hạ tầng RTL
+  sẵn sàng TRƯỚC, nếu không sẽ có rule mà hiển thị hỏng. **Đánh dấu:** trong
+  `rules/catalog.json`, ar/he giữ `ruleStatus: NOT_STARTED` (đúng — chưa build),
+  thêm `uiState: "coming_soon"` + `deferredReason` (RTL_INFRA_PENDING) + cập
+  nhật `note`; thêm khối `_meta.rtlInfraDebt`. **Frontend/UI: KHÔNG cần đổi —
+  cơ chế 'sắp có' ĐÃ CÓ và ar/he ĐÃ ở trạng thái đó**: `shared/config/language_options.json`
+  đặt ar/he `courseStatus: coming_soon` / `learningContentStatus: comingSoon`
+  (chỉ en+ja là `available`; toàn bộ 38 ngôn ngữ khác kể cả ar/he đều
+  coming_soon), nên UI Web+Flutter đã hiện ar/he 'sắp có', không cho chọn học.
+  Đã xác minh, không tự tạo cơ chế mới, không đụng language_options.json.
+  **NỢ HẠ TẦNG RTL (3 phần) — để tương lai không bất ngờ:** để có ar/he THẬT
+  (playable) cần ĐỦ (1) rule ngôn ngữ ar/he (chưa build), (2) validator/generator
+  xử lý text RTL đúng (chưa có — hạ tầng rule pipeline chưa từng gặp RTL),
+  (3) frontend render RTL đúng hướng Web+Flutter (chưa kiểm). RÀNG BUỘC task
+  này: KHÔNG build rule ar/he, KHÔNG đụng hạ tầng RTL, KHÔNG đụng ngôn ngữ khác/
+  nội dung — chỉ tracking + config trạng thái. **Playable giờ = 31/33 build rule
+  (VALIDATED_NOT_YET_PROVEN) + 2 coming_soon (ar, he).** Validator rules:
+  4 lỗi vi/zh cũ (ghi nợ), 0 lỗi mới, catalog 60. `validate:curriculum` +
+  `smoke:curriculum`: PASS (task này không đụng curriculum).
+
 - **D-90 · 2026-07-20 · owner · fil/ms — Project Owner DUYỆT toàn bộ 8 giả định
   của phiên build fil+ms (commit `58b5dcb` + `1ac6392`).** Nối tiếp D-87.
   **fil:** D-fil-01 baseline fil-PH ✓; D-fil-02 po/ho làm baseline lịch sự ✓;

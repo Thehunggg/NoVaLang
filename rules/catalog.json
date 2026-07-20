@@ -40,6 +40,18 @@
     "openQuestions": [
       "zh: giản thể (Hans) hay phồn thể (Hant)? — mặc định nháp Hans, cần owner chốt"
     ],
+    "rtlInfraDebt": {
+      "source": "owner 2026-07-20 (decisions D-91)",
+      "status": "DEFERRED — 2/33 playable còn lại (ar, he) TẠM DỪNG build rule",
+      "languages": ["ar", "he"],
+      "reason": "Cả hai RTL (phải-sang-trái) + abjad. Làm rule khi hạ tầng chưa xử RTL thì có rule mà hiển thị hỏng. UI đã ở 'sắp có' (shared/config/language_options.json: ar/he courseStatus=coming_soon, chỉ en+ja available) — KHÔNG cần đổi frontend.",
+      "requiredParts": [
+        "1) rule ngôn ngữ (ar/he) — CHƯA build (task này)",
+        "2) validator/generator xử lý text RTL đúng — CHƯA có",
+        "3) frontend render RTL đúng hướng (Web + Flutter) — CHƯA kiểm"
+      ],
+      "note": "Để có ar/he THẬT (playable) cần ĐỦ 3 phần trên. Ghi để tương lai không bất ngờ. 31/33 playable đã build rule; ar/he = coming_soon."
+    },
     "ruleTargetCount": 33,
     "nativeTargetCount": 60,
     "targetCount_meaning": "targetCount = số dòng trong mảng languages[] mà tools/validate.mjs sanity-check (native universe). KHÔNG phải rule target. Rule target = ruleTargetCount (33). Native target = nativeTargetCount (60).",
@@ -373,7 +385,9 @@
       ],
       "status": "preview",
       "ruleStatus": "NOT_STARTED",
-      "note": "RTL; MSA vs dialect cần cân nhắc sau",
+      "uiState": "coming_soon",
+      "deferredReason": "RTL_INFRA_PENDING — hệ chữ Ả Rập là abjad + RTL (phải-sang-trái). TẠM DỪNG build rule (owner 2026-07-20): cần hạ tầng RTL sẵn sàng trước (validator/generator xử text RTL + frontend render RTL) — làm rule khi hạ tầng chưa xử RTL thì có rule mà hiển thị hỏng. Vẫn thuộc mục tiêu 33 playable, CHƯA build. UI đã ở trạng thái 'sắp có' qua shared/config/language_options.json (courseStatus=coming_soon).",
+      "note": "RTL; MSA vs dialect cần cân nhắc sau. COMING_SOON — chờ hạ tầng RTL (xem _meta.rtlInfraDebt + decisions D-91).",
       "target": "playable_needs_rule"
     },
     {
@@ -570,7 +584,9 @@
       ],
       "status": "preview",
       "ruleStatus": "NOT_STARTED",
-      "note": "RTL",
+      "uiState": "coming_soon",
+      "deferredReason": "RTL_INFRA_PENDING — hệ chữ Hebrew là abjad + RTL (phải-sang-trái). TẠM DỪNG build rule (owner 2026-07-20): cần hạ tầng RTL sẵn sàng trước (validator/generator xử text RTL + frontend render RTL) — làm rule khi hạ tầng chưa xử RTL thì có rule mà hiển thị hỏng. Vẫn thuộc mục tiêu 33 playable, CHƯA build. UI đã ở trạng thái 'sắp có' qua shared/config/language_options.json (courseStatus=coming_soon).",
+      "note": "RTL. COMING_SOON — chờ hạ tầng RTL (xem _meta.rtlInfraDebt + decisions D-91).",
       "target": "playable_needs_rule"
     },
     {
