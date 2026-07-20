@@ -1,0 +1,46 @@
+{
+  "id": "hu/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "dataset",
+  "config": {
+    "baseline_variety": "hu-HU",
+    "transparency_note": "Chính tả Hungary ĐỀU (âm vị học). g2p-check trên WikiPron thật 64764 từ (bộ RẤT LỚN) xác nhận. Trọng âm LUÔN âm tiết đầu (đoán được). Đồng hoá phụ âm + độ dài kép là lexical.",
+    "grapheme_to_phoneme_rules": {
+      "sz": { "phoneme": "s", "g2p_check": "1.25% — OK (QUAN TRỌNG: sz=[s], KHÔNG phải [ʃ])" },
+      "s": { "phoneme": "ʃ", "note": "s=[ʃ] — NGƯỢC tiếng Anh (điểm bẫy lớn)" },
+      "cs": { "phoneme": "t͡ʃ", "g2p_check": "1.25% — OK" },
+      "ny": { "phoneme": "ɲ", "g2p_check": "0.02% — OK" },
+      "gy": { "phoneme": "ɟ", "g2p_check": "10.12% — OK dưới ngưỡng (narrow-transcription noise + đồng hoá; không phải rule sai)" },
+      "zs": { "phoneme": "ʒ", "g2p_check": "15.61% — OK dưới ngưỡng (zs hiếm, narrow variance)" },
+      "ty": { "phoneme": "c", "note": "âm tắc ngạc vô thanh" },
+      "ly": { "phoneme": "j", "note": "= j lịch sử" }
+    },
+    "vowels_lexical": {
+      "length_pairs": "7 cặp ngắn/dài: a[ɒ]/á[aː], e[ɛ]/é[eː], i/í, o/ó, ö[ø]/ő[øː], u/ú, ü[y]/ű[yː] — độ dài + chất khác, phân biệt nghĩa (öt/őt)",
+      "assimilation": "đồng hoá phụ âm (hangzó → [hɒŋzoː]), độ dài kép — lexical, cần audio"
+    }
+  },
+  "checks": [
+    {
+      "id": "sz-vs-s-hu",
+      "description": "sz=[s], s=[ʃ] — NGƯỢC tiếng Anh (bẫy lớn). sz→[s] xác nhận g2p-check 1.25% trên 64764 từ.",
+      "assert": { "type": "custom", "note": "g2p-check.mjs: sz→[s] 1.25%; s→[ʃ] là kiến thức chuẩn (chữ đơn khó check imply)." },
+      "fixtures": { "pass": ["szó", "ház"], "fail": ["szó-as-ʃ"] }
+    },
+    {
+      "id": "digraph-consonants-hu",
+      "description": "cs[t͡ʃ]/ny[ɲ]/gy[ɟ]/zs[ʒ] — digraph phụ âm (xác nhận g2p-check).",
+      "assert": { "type": "custom", "note": "cs 1.25%, ny 0.02%, gy 10.12%, zs 15.61% trên 64764 từ (gy/zs cao hơn do narrow noise, dưới ngưỡng)." },
+      "fixtures": { "pass": ["csak", "nyár"], "fail": ["csak-as-c"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["szó", "ház", "csak", "nyár"],
+    "fail": ["szó-as-ʃ"],
+    "_note": "fixtures minh hoạ sz≠s + digraph; g2p-check xác nhận trên WikiPron RẤT LỚN; nguyên âm dài + đồng hoá lexical."
+  }
+}

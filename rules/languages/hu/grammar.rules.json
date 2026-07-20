@@ -1,0 +1,62 @@
+{
+  "id": "hu/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "case_and_suffixes",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "hu-HU",
+    "agglutination": {
+      "note": "ĐẶC TRƯNG URAL: chắp dính — hậu tố xếp CHỒNG theo thứ tự cố định.",
+      "example": "ház + aim + ban = házaimban ('trong những ngôi nhà của tôi')",
+      "order": "gốc + (số nhiều -k) + (sở hữu) + (hậu tố cách)",
+      "no_declined_article": "mạo từ a/az bất biến (a trước phụ âm, az trước nguyên âm); không giống ngữ pháp"
+    },
+    "case_suffixes": {
+      "count_note": "~18 hậu tố cách (số đếm khác nhau theo nguồn)",
+      "examples": "-ban/-ben (trong), -ból/-ből (từ trong ra), -hoz/-hez/-höz (đến), -nak/-nek (cho/dativ), -val/-vel (với), -t/-ot/-et/-öt (akuzativ)",
+      "harmony": "hầu hết hậu tố có 2-3 biến thể chọn theo HOÀ ÂM NGUYÊN ÂM của gốc"
+    },
+    "vowel_harmony": {
+      "back_vowels": "a o u á ó ú → hậu tố dạng SAU (-ban, -hoz, -nak)",
+      "front_vowels": "e i ö ü ő ű é í → hậu tố dạng TRƯỚC (-ben, -hez/-höz, -nek)",
+      "rounding": "ö/ü gốc → biến thể tròn môi (-höz)",
+      "example": "házban / kertben / körhöz"
+    },
+    "verb_conjugation": {
+      "definite_indefinite": "HAI hệ chia: ĐỊNH (tân ngữ xác định: látom 'tôi thấy nó/cái đó') vs BẤT ĐỊNH (látok 'tôi thấy (cái gì đó)')",
+      "person": "chia theo ngôi + hệ định/bất định + hoà âm nguyên âm",
+      "no_gender": "KHÔNG giống ngữ pháp"
+    },
+    "word_order": {
+      "base": "TỰ DO theo topic-focus (không SVO cứng). Tiêu điểm (focus) đứng NGAY TRƯỚC động từ. Pro-drop."
+    }
+  },
+  "checks": [
+    {
+      "id": "vowel-harmony-suffix",
+      "description": "Hậu tố chọn dạng theo hoà âm nguyên âm gốc (sau/trước). Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích nguyên âm gốc khi generator chạy." },
+      "fixtures": {
+        "pass": ["házban", "kertben", "körhöz"],
+        "fail": ["házben", "kertban"]
+      }
+    },
+    {
+      "id": "definite-indefinite-verb",
+      "description": "Chọn hệ chia động từ theo tính xác định của tân ngữ. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích tân ngữ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Látom a házat.", "Látok egy házat."],
+        "fail": ["Látok a házat."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["A házban vagyok.", "Látom a házat.", "Budapesten élek."],
+    "fail": ["házben", "Látok a házat."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Hungarian-Szeged thật (1800 câu, nhỏ). Hoà âm nguyên âm + chắp dính + định/bất định là đặc trưng khó nhất."
+  }
+}

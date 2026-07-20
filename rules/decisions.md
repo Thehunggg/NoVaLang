@@ -973,6 +973,34 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-85 · 2026-07-20 · derived · hu — `hu` (tiếng Hungary, hu-HU) build HOÀN
+  TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
+  vòng.** Ural (Finno-Ugric, như fi), chữ Latin 44 chữ (gồm digraph
+  cs/dz/dzs/gy/ly/ny/sz/ty/zs) + á é í ó ö ő ú ü ű, t1, 24 hiện tượng. Dataset
+  CLDR/UD/WikiPron: WikiPron `hun_latn_narrow` **64764 cặp (RẤT LỚN — g2p
+  mạnh)**; corpus UD Hungarian-Szeged **CHỈ 1800 câu (DƯỚI 2000 — corpus check
+  YẾU, ghi rõ; tool tự cảnh báo)**. g2p-check: sz→[s] 1.25% (âm QUAN TRỌNG:
+  sz=s KHÔNG phải ʃ), cs→[t͡ʃ] 1.25%, ny→[ɲ] 0.02% (sạch) →
+  `grapheme_to_phoneme` VALIDATED; gy→[ɟ] 10.12% + zs→[ʒ] 15.61% cao hơn
+  (phiên âm NARROW + đồng hoá, dưới ngưỡng 20% — ghi rõ là noise, không phải
+  rule sai). corpus-check casing 0.00–0.17% trên 1800 câu (VALIDATED nhưng
+  bằng chứng yếu do corpus nhỏ, ~99 lần xuất hiện); đo trực tiếp á 94%/é 93%/
+  ó 66%/ö 63%/ő 64% câu. **Kỷ luật dữ liệu:** corpus dưới 2000 → casing yếu,
+  ghi rõ; hoà âm nguyên âm + ~18 hậu tố cách + chia định/bất định ở
+  lexical/paradigm — cần bảng hậu tố + người bản ngữ. Đặc trưng: **chắp dính**
+  (agglutinative, házaimban), **HOÀ ÂM NGUYÊN ÂM** (-ban/-ben/-höz theo gốc),
+  **chia ĐỊNH/BẤT ĐỊNH** (látom a házat / látok egy házat), **s=[ʃ] sz=[s]**
+  (NGƯỢC tiếng Anh), trọng âm luôn âm tiết đầu, KHÔNG giống ngữ pháp, trật tự
+  topic-focus, te/ön đối lập T-V (ön + động từ ngôi 3, KHÁC scandinavia),
+  pro-drop, mạo từ a/az bất biến. HONORIFIC not-applicable (es B-02). **4 giả
+  định cần owner duyệt:** D-hu-01 (baseline hu-HU — v1), D-hu-02 (te/ön đối
+  lập — v2), D-hu-03 (trình tự dạy hậu tố cách — v2, sư phạm), D-hu-04 (thiếu
+  á é í ó ö ő ú ü ű = SAI theo pl D-64, chữ cái riêng, phân biệt ngắn/dài ö/ő
+  ü/ű; giữ DRAFT flag owner, nhắc cài bàn phím Hungary). `native-review-hu.md`
+  7 mục (hoà âm, chắp dính, định/bất định, s/sz+độ dài, te/ön, trật tự, tự
+  nhiên) chờ người bản ngữ. Status: `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN.
+  Validator: 4 lỗi vi/zh cũ (ghi nợ), 0 lỗi mới; catalog 60.
+
 - **D-84 · 2026-07-20 · derived · hr — `hr` (tiếng Croatia, hr-HR) build HOÀN
   TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
   vòng.** Nam Slav, chữ Latin (Gaj's alphabet, 30 chữ gồm digraph dž/lj/nj) +
