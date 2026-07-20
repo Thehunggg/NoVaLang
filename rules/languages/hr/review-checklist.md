@@ -12,6 +12,22 @@ Không có front-matter (checklist thao tác).
 
 ---
 
+## ✅ OWNER DUYỆT 2026-07-20 (D-87)
+
+Tất cả 4 mục dưới đây đã được Project Owner DUYỆT (phiên build hr, commit
+`5bbda23`):
+- **D-hr-01** DUYỆT: baseline hr-HR (Latin, không sr Cyrillic).
+- **D-hr-02** DUYỆT: dạy ti/Vi đối lập T-V (Vi + động từ ngôi 2 số nhiều).
+- **D-hr-03** DUYỆT: trình tự dạy 7 cách (nom/acc/lok trước, đủ 7 sau).
+- **D-hr-04** DUYỆT: thiếu č/ć/š/ž/đ = SAI (chữ cái riêng, pl D-64); digraph
+  dž/lj/nj phải đúng. `answer_acceptance_hr` nâng **VALIDATED**. Nhắc cài bàn
+  phím Croatia.
+
+Status ngôn ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN). native-review giữ nguyên
+chờ người bản ngữ.
+
+---
+
 ## [D-hr-01] Baseline vùng miền cho tiếng Croatia
 
 Tiếng Croatia chuẩn (standardni hrvatski, dựa štokavian) do Institut za

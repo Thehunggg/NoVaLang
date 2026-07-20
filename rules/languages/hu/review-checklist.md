@@ -12,6 +12,22 @@ Không có front-matter (checklist thao tác).
 
 ---
 
+## ✅ OWNER DUYỆT 2026-07-20 (D-87)
+
+Tất cả 4 mục dưới đây đã được Project Owner DUYỆT (phiên build hu, commit
+`b936328`):
+- **D-hu-01** DUYỆT: baseline hu-HU.
+- **D-hu-02** DUYỆT: dạy te/ön đối lập T-V (ön + động từ ngôi 3); maga = ghi chú.
+- **D-hu-03** DUYỆT: trình tự dạy hậu tố cách (vài cái hay dùng trước).
+- **D-hu-04** DUYỆT: thiếu á é í ó ö ő ú ü ű = SAI (chữ cái riêng, phân biệt
+  ngắn/dài ö/ő ü/ű, pl D-64). `answer_acceptance_hu` nâng **VALIDATED**. Nhắc
+  cài bàn phím Hungary.
+
+Status ngôn ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN). native-review giữ nguyên
+chờ người bản ngữ.
+
+---
+
 ## [D-hu-01] Baseline vùng miền cho tiếng Hungary
 
 Tiếng Hungary chuẩn (magyar köznyelv) do MTA (Viện Hàn lâm) chuẩn hoá. Không có

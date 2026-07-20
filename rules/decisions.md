@@ -973,6 +973,26 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-87 · 2026-07-20 · owner · hr/hu/th — Project Owner DUYỆT toàn bộ 12 giả
+  định của phiên build hr+hu+th (commit `5bbda23` + `b936328` + `3c71688`).**
+  Nối tiếp D-83 (hi/nb/ca). **hr:** D-hr-01 baseline hr-HR (Latin, không sr
+  Cyrillic) ✓; D-hr-02 ti/Vi đối lập T-V (Vi + động từ ngôi 2 số nhiều) ✓;
+  D-hr-03 trình tự dạy 7 cách (nom/acc/lok trước) ✓; D-hr-04 thiếu č/ć/š/ž/đ =
+  SAI (chữ cái riêng, pl D-64), digraph dž/lj/nj phải đúng ✓. **hu:** D-hu-01
+  baseline hu-HU ✓; D-hu-02 te/ön đối lập T-V (ön + động từ ngôi 3) ✓; D-hu-03
+  trình tự dạy hậu tố cách ✓; D-hu-04 thiếu á é í ó ö ő ú ü ű = SAI (chữ cái
+  riêng, phân biệt ngắn/dài ö/ő ü/ű, pl D-64) ✓. **th:** D-th-01 baseline th-TH
+  ✓; D-th-02 dạy chữ Thái trực tiếp (như el/hi) ✓; D-th-03 trợ đọc RTGS/IPA+thanh
+  nhập môn ẩn dần (như hi) ✓; D-th-04 thiếu/sai dấu thanh/nguyên âm = SAI (pl
+  D-64 + hi D-hi-04) + KHÔNG nhận chuyển tự Latin làm đáp án ✓; ghi nhận
+  ราชาศัพท์ (kính ngữ hoàng gia) ngoài phạm vi cơ bản. **Hệ quả:**
+  `answer_acceptance_hr`, `answer_acceptance_hu`, `answer_acceptance_th` nâng
+  DRAFT → **VALIDATED** (quyết định dấu đã chốt); review-checklist mỗi ngôn ngữ
+  thêm banner ✅ OWNER DUYỆT. native-review-<lang>.md (mỗi ngôn ngữ 7 mục) GIỮ
+  NGUYÊN chờ người bản ngữ. Trạng thái tổng mỗi ngôn ngữ KHÔNG đổi (vẫn
+  `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN). Validator: 4 lỗi vi/zh cũ (ghi nợ),
+  0 lỗi mới; catalog 60.
+
 - **D-86 · 2026-07-20 · derived · th — `th` (tiếng Thái, th-TH Trung Thái/
   Bangkok) build HOÀN TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language`
   Bước 0–4, tra cứu 5 vòng.** Kra-Dai, HỆ CHỮ THÁI (abugida — dấu nguyên âm

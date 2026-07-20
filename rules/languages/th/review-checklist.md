@@ -13,6 +13,24 @@ Không có front-matter (checklist thao tác).
 
 ---
 
+## ✅ OWNER DUYỆT 2026-07-20 (D-87)
+
+Tất cả 4 mục dưới đây đã được Project Owner DUYỆT (phiên build th, commit
+`3c71688`):
+- **D-th-01** DUYỆT: baseline th-TH (Trung Thái/Bangkok).
+- **D-th-02** DUYỆT: dạy chữ Thái trực tiếp (không chuyển tự làm chính, như
+  el/hi).
+- **D-th-03** DUYỆT: trợ đọc RTGS/IPA+thanh nhập môn, ẩn dần (như hi).
+- **D-th-04** DUYỆT: thiếu/sai dấu thanh/nguyên âm = SAI (pl D-64 + hi D-hi-04);
+  KHÔNG nhận chuyển tự Latin làm đáp án. `answer_acceptance_th` nâng
+  **VALIDATED**. Nhắc cài bàn phím Thái. Ghi nhận ราชาศัพท์ (kính ngữ hoàng
+  gia) ngoài phạm vi cơ bản.
+
+Status ngôn ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN). native-review giữ nguyên
+chờ người bản ngữ.
+
+---
+
 ## [D-th-01] Baseline vùng miền cho tiếng Thái
 
 Tiếng Thái chuẩn = Trung Thái (Bangkok), do Raชบัณฑิตยสภา (Hội đồng Hoàng gia)
