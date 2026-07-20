@@ -168,7 +168,9 @@ void main() {
   });
 
   group('NovaLang neon-tech Coming soon badge', () {
-    testWidgets('uses centralized readable neon tokens', (tester) async {
+    testWidgets('uses distinct violet tone readable against dark surfaces', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: Scaffold(body: ComingSoonBadge(uiLanguageCode: 'en')),
@@ -179,18 +181,19 @@ void main() {
         find.byKey(const ValueKey('coming-soon-neon-badge')),
       );
       final decoration = container.decoration! as BoxDecoration;
-      expect(decoration.color, AppTheme.comingSoonBadgeBackground);
-      expect(decoration.border!.top.color, AppTheme.comingSoonBadgeBorder);
-      expect(decoration.boxShadow!.single.color, AppTheme.comingSoonBadgeGlow);
+      expect(decoration.border!.top.color, ComingSoonBadge.border);
+      expect(decoration.boxShadow!.single.color, ComingSoonBadge.glow);
+      expect(decoration.gradient, isNotNull);
       final text = tester.widget<Text>(find.text('Coming soon'));
-      expect(text.style!.color, AppTheme.comingSoonBadgeForeground);
+      expect(text.style!.color, ComingSoonBadge.foreground);
 
+      // Contrast against a representative violet fill composited on scaffold.
       final compositedBackground = Color.alphaBlend(
-        AppTheme.comingSoonBadgeBackground,
+        ComingSoonBadge.background,
         AppTheme.scaffoldBackground,
       );
       expect(
-        _contrast(AppTheme.comingSoonBadgeForeground, compositedBackground),
+        _contrast(ComingSoonBadge.foreground, compositedBackground),
         greaterThanOrEqualTo(4.5),
       );
     });
