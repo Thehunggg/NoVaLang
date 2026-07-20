@@ -12,6 +12,21 @@ Không có front-matter (checklist thao tác).
 
 ---
 
+## ✅ OWNER DUYỆT 2026-07-20 (D-83)
+
+Tất cả 3 mục dưới đây đã được Project Owner DUYỆT (phiên build nb, commit
+`bedb2c7`):
+- **D-nb-01** DUYỆT: baseline nb-NO (Bokmål, Østnorsk — KHÔNG Nynorsk).
+- **D-nb-02** DUYỆT: dạy 3 giống (en/ei/et), chấp nhận gộp masc+fem (en bok = ei
+  bok).
+- **D-nb-03** DUYỆT: thiếu æ/ø/å = SAI (pl D-64 + da D-73); aa=å ở tên riêng
+  lịch sử. `answer_acceptance_nb` nâng **VALIDATED**. Nhắc cài bàn phím Na Uy.
+
+Status ngôn ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN). native-review giữ nguyên
+chờ người bản ngữ.
+
+---
+
 ## [D-nb-01] Baseline vùng miền cho tiếng Na Uy
 
 Tiếng Na Uy có hai chuẩn viết: **Bokmål** (nb, ~85%) và Nynorsk (nn). Trong

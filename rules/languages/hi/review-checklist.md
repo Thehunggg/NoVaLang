@@ -11,6 +11,23 @@ Không có front-matter (checklist thao tác).
 
 ---
 
+## ✅ OWNER DUYỆT 2026-07-20 (D-83)
+
+Tất cả 5 mục dưới đây đã được Project Owner DUYỆT (phiên build hi, commit
+`d3caa42`):
+- **D-hi-01** DUYỆT: baseline hi-IN.
+- **D-hi-02** DUYỆT: dạy Devanagari trực tiếp (chuẩn chính tả).
+- **D-hi-03** DUYỆT: trợ đọc IAST nhập môn, ẩn dần (như romaji ja).
+- **D-hi-04** DUYỆT: matra/phụ âm/ghép/anusvara + ड़ढ़ bản địa = SAI (pl D-64);
+  nukta VAY क़/ख़/ग़/ज़/फ़ = KHOAN DUNG (như ё Nga/ग़ Ukraina). `answer_acceptance_hi`
+  nâng **VALIDATED**. Nhắc cài bàn phím Devanagari.
+- **D-hi-05** DUYỆT: dạy 3 mức तू/तुम/आप, आप baseline, cảnh báo तू.
+
+Status ngôn ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN). native-review giữ nguyên
+chờ người bản ngữ.
+
+---
+
 ## [D-hi-01] Baseline vùng miền
 
 **A.** `hi-IN` (Standard Hindi). **B.** Khác.

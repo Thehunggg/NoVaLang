@@ -973,6 +973,27 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-83 · 2026-07-20 · owner · hi/nb/ca — Project Owner DUYỆT toàn bộ 12 giả
+  định của phiên build hi+nb+ca (commit `d3caa42` + `bedb2c7` + `459d6ea`).**
+  Trước khi ghi, đã đối chiếu nội dung THẬT của từng mục review-checklist với mô
+  tả owner đưa — tất cả 12 khớp, không có mục nào lệch (owner có dặn: nếu D-hi-05
+  hoặc D-ca-01..03 lệch mô tả thì báo trước; đã kiểm, không lệch).
+  **hi:** D-hi-01 baseline hi-IN ✓; D-hi-02 dạy Devanagari trực tiếp ✓; D-hi-03
+  trợ đọc IAST nhập môn ẩn dần (như romaji ja) ✓; D-hi-04 matra/phụ âm/ghép/
+  anusvara + ड़ढ़ bản địa = SAI (pl D-64), nukta VAY क़/ख़/ग़/ज़/फ़ = KHOAN DUNG
+  (như ё Nga/ґ Ukraina) ✓; D-hi-05 dạy 3 mức तू/तुम/आप, आप baseline, cảnh báo तू
+  (register) ✓. **nb:** D-nb-01 baseline nb-NO Bokmål (không Nynorsk) ✓; D-nb-02
+  dạy 3 giống chấp nhận gộp masc+fem ✓; D-nb-03 thiếu æ/ø/å = SAI (pl D-64 + da
+  D-73) ✓. **ca:** D-ca-01 baseline ca Central/IEC ✓; D-ca-02 tu/vostè đối lập
+  T-V ✓; D-ca-03 passat perifràstic làm quá khứ chuẩn ✓; D-ca-04 TÁCH 2 loại dấu
+  — ç/l·l = SAI (chữ/âm phân biệt, pl D-64), à/è/é/í/ï/ò/ó/ú/ü = CẢNH BÁO NHẸ
+  (dấu trọng âm Roman, tiền lệ es D-74) ✓. **Hệ quả:** `answer_acceptance_hi`,
+  `answer_acceptance_nb`, `answer_acceptance_ca` nâng DRAFT → **VALIDATED** (quyết
+  định dấu đã chốt); review-checklist mỗi ngôn ngữ thêm banner ✅ OWNER DUYỆT.
+  native-review-<lang>.md GIỮ NGUYÊN chờ người bản ngữ. Trạng thái tổng mỗi ngôn
+  ngữ KHÔNG đổi (vẫn `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN). Validator: 4 lỗi
+  vi/zh cũ (ghi nợ), 0 lỗi mới; catalog 60.
+
 - **D-82 · 2026-07-19 · derived · ca — `ca` (tiếng Catalan, Central/IEC) build
   HOÀN TẤT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra
   cứu 5 vòng.** Romance (Occitano-Romance, gần es/fr/it), chữ Latin + ç + l·l

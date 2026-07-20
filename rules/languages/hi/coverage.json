@@ -158,8 +158,8 @@
     "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
     "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
     "machine_readable": true,
-    "notes": "HAI PHẦN. (1) MATRA + phụ âm + ghép + anusvara: BẮT BUỘC, thiếu/sai = SAI (matra đổi nghĩa hoàn toàn क≠का≠कि; anusvara đổi nghĩa) — áp TIỀN LỆ pl D-64 (phương án C). (2) NUKTA vay (क़/ख़/ग़/ज़/फ़): KHOAN DUNG — chấp nhận viết không nukta (कागज=कागज़) vì thực tế người bản ngữ hay bỏ, chuẩn chấp nhận cả hai — NGOẠI LỆ CÓ CƠ SỞ (như ё Nga/ґ Ukraina). NHƯNG ड़/ढ़ (âm bản địa ɽ) KHÔNG khoan dung (là âm khác thật, không phải chỉ vay). Chuyển tự Latin KHÔNG nhận làm đáp án. Giữ DRAFT + flag owner. Nhắc cài bàn phím Devanagari (InScript/phonetic). Xem review-checklist D-hi-04.",
-    "status": "DRAFT"
+    "notes": "HAI PHẦN. (1) MATRA + phụ âm + ghép + anusvara: BẮT BUỘC, thiếu/sai = SAI (matra đổi nghĩa hoàn toàn क≠का≠कि; anusvara đổi nghĩa) — áp TIỀN LỆ pl D-64 (phương án C). (2) NUKTA vay (क़/ख़/ग़/ज़/फ़): KHOAN DUNG — chấp nhận viết không nukta (कागज=कागज़) vì thực tế người bản ngữ hay bỏ, chuẩn chấp nhận cả hai — NGOẠI LỆ CÓ CƠ SỞ (như ё Nga/ґ Ukraina). NHƯNG ड़/ढ़ (âm bản địa ɽ) KHÔNG khoan dung (là âm khác thật, không phải chỉ vay). Chuyển tự Latin KHÔNG nhận làm đáp án. ✅ OWNER DUYỆT 2026-07-20 (D-83): C — matra/phụ âm/ghép/anusvara/ड़ढ़ bản địa = SAI (pl D-64); nukta VAY क़/ख़/ग़/ज़/फ़ = KHOAN DUNG (như ё Nga/ґ Ukraina). Nhắc cài bàn phím Devanagari (InScript/phonetic). Xem review-checklist D-hi-04.",
+    "status": "VALIDATED"
   },
   "naturalness_translation": {
     "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },

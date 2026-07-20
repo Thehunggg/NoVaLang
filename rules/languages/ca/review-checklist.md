@@ -12,6 +12,23 @@ Không có front-matter (checklist thao tác).
 
 ---
 
+## ✅ OWNER DUYỆT 2026-07-20 (D-83)
+
+Tất cả 4 mục dưới đây đã được Project Owner DUYỆT (phiên build ca, commit
+`459d6ea`):
+- **D-ca-01** DUYỆT: baseline ca Central/IEC (KHÔNG Valencian).
+- **D-ca-02** DUYỆT: dạy tu/vostè đối lập T-V (vostè + động từ ngôi 3).
+- **D-ca-03** DUYỆT: dạy passat perifràstic (vaig parlar) làm quá khứ dứt điểm
+  chuẩn.
+- **D-ca-04** DUYỆT: TÁCH 2 loại dấu — ç/l·l = SAI (chữ/âm phân biệt, pl D-64);
+  à è é í ï ò ó ú ü = CẢNH BÁO NHẸ (dấu trọng âm Roman, es D-74).
+  `answer_acceptance_ca` nâng **VALIDATED**. Nhắc cài bàn phím Catalan.
+
+Status ngôn ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN). native-review giữ nguyên
+chờ người bản ngữ.
+
+---
+
 ## [D-ca-01] Baseline vùng miền cho tiếng Catalan
 
 Catalan có biến thể lớn: **Central** (Barcelona, chuẩn IEC de facto) và
