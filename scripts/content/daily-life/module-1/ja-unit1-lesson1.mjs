@@ -409,8 +409,8 @@ const JA_UNIT1_LESSON1_SOURCE = {
         estimatedMinutes: 'Khoảng 8–10 phút',
         reviewTopics: 'Từ vựng · Nghe · Hội thoại · Ngữ pháp',
         groups: [
-          { id: 'free', number: '01', title: 'Luyện tập cơ bản', titleByNative: vi('Luyện tập cơ bản'), range: 'Câu 1–10', rangeByNative: vi('Câu 1–10'), details: 'Từ vựng · Nghe · Ngữ pháp\nHội thoại · Sắp xếp câu', detailsByNative: vi('Từ vựng · Nghe · Ngữ pháp\nHội thoại · Sắp xếp câu'), start: 1, end: 10, plan: 'free' },
-          { id: 'plus', number: '02', title: 'Luyện tập nâng cao', titleByNative: vi('Luyện tập nâng cao'), range: 'Câu 11–14', rangeByNative: vi('Câu 11–14'), details: 'Tình huống thực tế\nHội thoại thực hành nâng cao', detailsByNative: vi('Tình huống thực tế\nHội thoại thực hành nâng cao'), start: 11, end: 14, plan: 'plus' },
+          { id: 'free', number: '01', title: 'Luyện tập cơ bản', titleByNative: vi('Luyện tập cơ bản'), range: 'Câu 1–9', rangeByNative: vi('Câu 1–9'), details: 'Từ vựng · Nghe · Ngữ pháp\nHội thoại · Sắp xếp câu', detailsByNative: vi('Từ vựng · Nghe · Ngữ pháp\nHội thoại · Sắp xếp câu'), start: 1, end: 9, plan: 'free' },
+          { id: 'plus', number: '02', title: 'Luyện tập nâng cao', titleByNative: vi('Luyện tập nâng cao'), range: 'Câu 10–14', rangeByNative: vi('Câu 10–14'), details: 'Tình huống thực tế\nHội thoại thực hành nâng cao', detailsByNative: vi('Tình huống thực tế\nHội thoại thực hành nâng cao'), start: 10, end: 14, plan: 'plus' },
         ],
         exercises: PRACTICE_EXERCISES,
       },

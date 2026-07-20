@@ -74660,11 +74660,11 @@
                 "en": "Core Practice",
                 "ja": "基本練習"
               },
-              "range": "Câu 1–10",
+              "range": "Câu 1–9",
               "rangeByNative": {
-                "vi": "Câu 1–10",
-                "en": "Questions 1–10",
-                "ja": "第1問～第10問"
+                "vi": "Câu 1–9",
+                "en": "Questions 1–9",
+                "ja": "第1問～第9問"
               },
               "details": "Từ vựng · Nghe · Ngữ pháp\nHội thoại · Sắp xếp câu",
               "detailsByNative": {
@@ -74673,7 +74673,7 @@
                 "ja": "語彙・リスニング・文法\n会話・語順並べ替え"
               },
               "start": 1,
-              "end": 10,
+              "end": 9,
               "plan": "free"
             },
             {
@@ -74685,11 +74685,11 @@
                 "en": "Advanced Practice",
                 "ja": "発展練習"
               },
-              "range": "Câu 11–14",
+              "range": "Câu 10–14",
               "rangeByNative": {
-                "vi": "Câu 11–14",
-                "en": "Questions 11–14",
-                "ja": "第11問～第14問"
+                "vi": "Câu 10–14",
+                "en": "Questions 10–14",
+                "ja": "第10問～第14問"
               },
               "details": "Tình huống thực tế\nHội thoại thực hành nâng cao",
               "detailsByNative": {
@@ -74697,7 +74697,7 @@
                 "en": "Real-world situations\nAdvanced practice dialogue",
                 "ja": "実際の場面\n発展会話練習"
               },
-              "start": 11,
+              "start": 10,
               "end": 14,
               "plan": "plus"
             }
