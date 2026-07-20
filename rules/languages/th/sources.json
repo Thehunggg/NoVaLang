@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "language": "th",
+    "stage": "0-inventory",
+    "note": "Nguồn cho lớp máy-đọc-được của th (tiếng Thái chuẩn, Trung Thái/Bangkok, th-TH). Hệ chữ THÁI riêng (abugida — phụ âm mang nguyên âm cố hữu, dấu nguyên âm quanh phụ âm, dấu thanh), 5 THANH, KHÔNG khoảng trắng giữa từ (tokenization là vấn đề). Isolating (không biến tố, như zh/vi). Dataset (CLDR/UD/WikiPron) import Bước 1. WikiPron tha_thai_broad 18319 cặp (LỚN, có thanh điệu); corpus UD Thai-PUD CHỈ 1000 câu (test-only, DƯỚI 2000 — RẤT YẾU, ghi rõ). Tra cứu 5 vòng. Nguồn S-* dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet (KHÔNG fetch toàn văn — D-51), confidence trần medium. Dạy chữ Thái trực tiếp (như el/hi), không chuyển tự."
+  },
+  "sources": [
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (th)",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/th/characters.json",
+      "consulted": "2026-07-20",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank (UD_Thai-PUD test split, word-class import — chú ý: PUD test-only, đã tách từ sẵn)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Thai-PUD/master/th_pud-ud-test.conllu",
+      "consulted": "2026-07-20",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA 4.0 (per treebank)"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme (tha_thai_broad, 18319 cặp — có thanh điệu ˧˨˩˦˥; bộ LỚN)",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/tha_thai_broad.tsv",
+      "consulted": "2026-07-20",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD Thai-PUD (test) — câu thật cho corpus check (1000 câu, tools/cache/corpus/th-sentences.txt, không commit; test-only, DƯỚI 2000 — RẤT YẾU)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Thai-PUD/master/",
+      "consulted": "2026-07-20",
+      "derived_by": "dataset",
+      "confidence": "medium",
+      "license": "CC BY-SA 4.0 (per treebank)"
+    },
+    {
+      "id": "S-TRAINED-KNOWLEDGE",
+      "name": "Kiến thức ngôn ngữ học tiếng Thái đã huấn luyện sẵn của người viết rule (Claude) — CHỈ dùng cho sự kiện chuẩn phổ thông; KHÔNG dùng làm nguồn duy nhất cho quyết định sản phẩm hay bảng dữ liệu đầy đủ",
+      "url": null,
+      "consulted": "2026-07-20",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "n/a — xem D-51"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "th/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "writing_systems",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "script": "Thai (abugida), Unicode U+0E00–U+0E7F",
+    "casing": "NOT-APPLICABLE (unicameral — không hoa/thường)",
+    "word_spaces": "KHÔNG khoảng trắng giữa từ — khoảng trắng đánh dấu ranh giới cụm/câu",
+    "special_marks": "ๆ (mái yamok — lặp từ), ฯ (paiyannoi — viết tắt), ฯลฯ (v.v.)",
+    "digits": "số Thái ๐๑๒๓๔๕๖๗๘๙ (số Ả Rập cũng dùng)",
+    "no_inverted_punctuation": "KHÔNG dấu lật ngược es"
+  },
+  "checks": [
+    {
+      "id": "content-in-thai-script",
+      "description": "Nội dung học tiếng Thái phải viết bằng CHỮ THÁI (không chuyển tự Latin). [corpus-check Bước 3: 100% câu có chữ Thái; ký tự Thái 96.1% — Latin chỉ ở từ vay/viết tắt.]",
+      "assert": {
+        "type": "regex_present",
+        "pattern": "[\\u0E00-\\u0E7F]"
+      },
+      "fixtures": {
+        "pass": ["สวัสดีครับ", "ผมพูดภาษาไทย"],
+        "fail": ["sawatdi khrap"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["สวัสดีครับ", "ผมพูดภาษาไทย", "คุณพูดภาษาไทยไหม"],
+    "fail": ["sawatdi khrap", "khun phut phasa thai"],
+    "_note": "Câu pass minh hoạ chữ Thái; corpus-check Bước 3 trên UD Thai-PUD thật (1000 câu — RẤT YẾU). Casing not-applicable (unicameral)."
+  }
+}

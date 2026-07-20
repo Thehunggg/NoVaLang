@@ -973,6 +973,37 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-86 · 2026-07-20 · derived · th — `th` (tiếng Thái, th-TH Trung Thái/
+  Bangkok) build HOÀN TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language`
+  Bước 0–4, tra cứu 5 vòng.** Kra-Dai, HỆ CHỮ THÁI (abugida — dấu nguyên âm
+  quanh phụ âm, dấu thanh), t1, 24 hiện tượng. **Ngôn ngữ KHÓ nhất đợt build
+  này.** Dataset CLDR/UD/WikiPron: WikiPron `tha_thai_broad` **18319 cặp (có
+  thanh điệu ˧˨˩˦˥, LỚN)**; corpus UD Thai-PUD **CHỈ 1000 câu (test-only, DƯỚI
+  2000 — RẤT YẾU, ghi rõ; tool tự cảnh báo)**. g2p-check: âm ĐẦU ổn định ก→[k]
+  0.49%, ม→[m] 0.23% (sạch); **บ→[b] báo 37% = CODA NEUTRALIZATION thật** (บ/ป
+  cuối âm tiết → [p̚], âm cuối trung hoà) — KHÔNG phải rule sai, chẩn đoán đúng
+  theo dữ liệu (ưu tiên dữ liệu thật). corpus-check `content-in-thai-script`
+  0.00% trên 1000 câu (mọi câu chữ Thái); đo trực tiếp 98.9% có dấu thanh,
+  96.1% ký tự Thái. **Kỷ luật dữ liệu:** g2p Thái ĐA YẾU TỐ (thanh suy từ lớp
+  phụ âm × dấu thanh × loại âm tiết × độ dài + coda neutralization) →
+  `grapheme_to_phoneme`/`tones`/`consonant_classes` giữ DRAFT/medium, cần audio;
+  corpus rất nhỏ. Đặc trưng: hệ chữ abugida, **5 THANH**, **3 lớp phụ âm**,
+  **KHÔNG khoảng trắng giữa từ** (word segmentation — vấn đề máy), **ISOLATING**
+  (không biến tố như zh/vi — thuận lợi, thì/thể qua trợ từ จะ/แล้ว/กำลัง),
+  **loại từ** khi đếm ([danh từ]+[số]+[loại từ]), đại từ theo tuổi/giới/quan hệ,
+  trợ từ lịch sự **ครับ (nam)/ค่ะ (nữ) GẮN GIỚI người nói**, SVO + bổ nghĩa sau
+  danh từ. `casing` + `stroke_order` NOT-APPLICABLE (unicameral). **HONORIFIC:
+  ราชาศัพท์ (ngôn ngữ hoàng gia) TỒN TẠI — honorific thật, KHÁC es B-02 — nhưng
+  OUT-OF-SCOPE cho baseline người học** (chỉ ghi nhận). **4 giả định cần owner
+  duyệt:** D-th-01 (baseline th-TH — v1), D-th-02 (dạy chữ Thái trực tiếp,
+  không chuyển tự làm chính — v1, tiền lệ el/hi), D-th-03 (trợ đọc RTGS/IPA+thanh
+  nhập môn ẩn dần — v3, như hi/el; RTGS không ghi thanh nên cần bổ sung), D-th-04
+  (thiếu/sai dấu thanh/nguyên âm = SAI theo pl D-64 + hi D-hi-04; KHÔNG nhận
+  chuyển tự Latin làm đáp án; nhắc cài bàn phím Thái), giữ DRAFT flag owner.
+  `native-review-th.md` 7 mục (thanh, chính tả, loại từ, trợ từ thì, đại từ+giới,
+  tách từ, tự nhiên) chờ người bản ngữ. Status: `VALIDATED_NOT_YET_PROVEN`,
+  KHÔNG FROZEN. Validator: 4 lỗi vi/zh cũ (ghi nợ), 0 lỗi mới; catalog 60.
+
 - **D-85 · 2026-07-20 · derived · hu — `hu` (tiếng Hungary, hu-HU) build HOÀN
   TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language` Bước 0–4, tra cứu 5
   vòng.** Ural (Finno-Ugric, như fi), chữ Latin 44 chữ (gồm digraph

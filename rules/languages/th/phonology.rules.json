@@ -1,0 +1,46 @@
+{
+  "id": "th/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "th-TH (Trung Thái/Bangkok)",
+    "transparency_warning": "Chữ Thái ĐA YẾU TỐ, KHÔNG 1:1. Âm ĐẦU ổn định (WikiPron xác nhận) NHƯNG (1) âm CUỐI trung hoà (coda neutralization), (2) THANH tính từ đa yếu tố (lớp phụ âm × dấu thanh × loại âm tiết × độ dài). g2p rule_level MEDIUM. Dạy chữ trực tiếp + audio.",
+    "onset_g2p": {
+      "ก": { "phoneme": "k", "g2p_check": "0.49% (âm đầu) — OK" },
+      "ม": { "phoneme": "m", "g2p_check": "0.23% — OK" },
+      "note": "âm đầu ổn định trên WikiPron 18319 từ"
+    },
+    "coda_neutralization": {
+      "note": "PHỤ ÂM CUỐI trung hoà, không bật: บ/ป/พ cuối → [p̚]; ด/ต/ส/... cuối → [t̚]; ก/ค/ข cuối → [k̚]. → บ→[b] báo 37% 'vi phạm' trên g2p-check chỉ vì cuối âm tiết = [p̚], KHÔNG phải rule sai — hiện tượng Thái thật.",
+      "finals": "chỉ 6 âm cuối phụ âm sống: [p̚ t̚ k̚ m n ŋ] (+ bán nguyên âm)"
+    },
+    "tones": {
+      "count": "5 thanh (สามัญ trung / เอก thấp / โท xuống / ตรี cao / จัตวา lên)",
+      "derivation": "LỚP phụ âm đầu (cao/giữa/thấp) × dấu thanh (่้๊๋) × loại âm tiết (sống/chết) × độ dài nguyên âm — QUY TẮC ĐA YẾU TỐ",
+      "note": "phân biệt nghĩa; không đoán dễ với người mới → cần audio"
+    }
+  },
+  "checks": [
+    {
+      "id": "onset-consonants-stable",
+      "description": "Phụ âm ĐẦU ổn định (ก→[k], ม→[m]) — xác nhận g2p-check trên WikiPron lớn.",
+      "assert": { "type": "custom", "note": "g2p-check.mjs: ก 0.49%, ม 0.23% (âm đầu); âm cuối + thanh đa yếu tố." },
+      "fixtures": { "pass": ["กา", "มา"], "fail": ["กา-as-x"] }
+    },
+    {
+      "id": "coda-neutralization-note",
+      "description": "Âm cuối trung hoà: บ/ป cuối → [p̚] (đánh dấu hiện tượng, không phải lỗi).",
+      "assert": { "type": "custom", "note": "บ→b báo 37% trên g2p-check = coda neutralization thật, không phải rule sai." },
+      "fixtures": { "pass": ["รับ", "บ้าน"], "fail": ["placeholder-x"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["กา", "มา", "รับ", "บ้าน"],
+    "fail": ["กา-as-x"],
+    "_note": "fixtures minh hoạ âm đầu ổn định + coda neutralization; thanh điệu đa yếu tố cần audio. WikiPron lớn nhưng g2p Thái không 1:1."
+  }
+}
