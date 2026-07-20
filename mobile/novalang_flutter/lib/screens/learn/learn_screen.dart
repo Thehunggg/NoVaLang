@@ -298,6 +298,8 @@ class _LearnHeader extends StatelessWidget {
   final int completedCount;
   final int lessonCount;
 
+  static const _jaHeroAsset = 'assets/images/learn_hero_ja.webp';
+
   @override
   Widget build(BuildContext context) {
     final accent = _parseColor(learningOption.color) ?? const Color(0xFF22D3EE);
@@ -310,54 +312,110 @@ class _LearnHeader extends StatelessWidget {
         : const [Color(0xFF173247), Color(0xFF31465A), Color(0xFF151B2A)];
     final screenWidth = MediaQuery.sizeOf(context).width;
     final headerHeight = (screenWidth * 0.58).clamp(228.0, 320.0);
+    final useJaPhotoHero = learningOption.code == 'ja';
+    final readingColor = useJaPhotoHero
+        ? const Color(0xFFF9A8D4)
+        : const Color(0xFFCFFAFE);
+    final nicheColor = useJaPhotoHero
+        ? Colors.white
+        : const Color(0xFFCFFAFE);
 
     return SizedBox(
       height: headerHeight,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(useJaPhotoHero ? 18 : 8),
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: colors,
           ),
           border: Border.all(color: Colors.white.withValues(alpha: 0.10)),
+          boxShadow: useJaPhotoHero
+              ? [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.35),
+                    blurRadius: 18,
+                    offset: const Offset(0, 10),
+                    spreadRadius: -6,
+                  ),
+                ]
+              : null,
         ),
         clipBehavior: Clip.antiAlias,
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Positioned.fill(
-              left: screenWidth * 0.20,
-              child: SvgPicture.asset(
-                'assets/shared/${learningOption.heroAsset}',
-                fit: BoxFit.cover,
-                alignment: Alignment.centerRight,
-                placeholderBuilder: (_) => const SizedBox.shrink(),
-                errorBuilder: (_, _, _) => SvgPicture.asset(
-                  'assets/shared/language_hero/default.svg',
+            if (useJaPhotoHero)
+              Positioned.fill(
+                child: Image.asset(
+                  _jaHeroAsset,
+                  fit: BoxFit.cover,
+                  alignment: const Alignment(0.35, 0),
+                  filterQuality: FilterQuality.high,
+                  errorBuilder: (_, _, _) => const SizedBox.shrink(),
+                ),
+              )
+            else
+              Positioned.fill(
+                left: screenWidth * 0.20,
+                child: SvgPicture.asset(
+                  'assets/shared/${learningOption.heroAsset}',
                   fit: BoxFit.cover,
                   alignment: Alignment.centerRight,
-                ),
-              ),
-            ),
-            Positioned.fill(
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      const Color(0xFF080A14).withValues(alpha: 0.96),
-                      const Color(0xFF080A14).withValues(alpha: 0.72),
-                      const Color(
-                        0xFF080A14,
-                      ).withValues(alpha: learningOption.heroOverlayOpacity),
-                      Colors.transparent,
-                    ],
-                    stops: const [0, 0.48, 0.74, 1],
+                  placeholderBuilder: (_) => const SizedBox.shrink(),
+                  errorBuilder: (_, _, _) => SvgPicture.asset(
+                    'assets/shared/language_hero/default.svg',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.centerRight,
                   ),
                 ),
               ),
+            Positioned.fill(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: useJaPhotoHero
+                      ? LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          colors: [
+                            const Color(0xFF080A14).withValues(alpha: 0.88),
+                            const Color(0xFF080A14).withValues(alpha: 0.55),
+                            const Color(0xFF080A14).withValues(alpha: 0.18),
+                            Colors.transparent,
+                          ],
+                          stops: const [0, 0.38, 0.62, 0.92],
+                        )
+                      : LinearGradient(
+                          colors: [
+                            const Color(0xFF080A14).withValues(alpha: 0.96),
+                            const Color(0xFF080A14).withValues(alpha: 0.72),
+                            const Color(0xFF080A14).withValues(
+                              alpha: learningOption.heroOverlayOpacity,
+                            ),
+                            Colors.transparent,
+                          ],
+                          stops: const [0, 0.48, 0.74, 1],
+                        ),
+                ),
+              ),
             ),
+            if (useJaPhotoHero)
+              Positioned.fill(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        const Color(0xFF080A14).withValues(alpha: 0.42),
+                        Colors.transparent,
+                      ],
+                      stops: const [0, 0.55],
+                    ),
+                  ),
+                ),
+              ),
             Padding(
               padding: const EdgeInsets.all(18),
               child: Stack(
@@ -369,8 +427,10 @@ class _LearnHeader extends StatelessWidget {
                       height: 46,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.black.withValues(alpha: 0.22),
+                        borderRadius: BorderRadius.circular(
+                          useJaPhotoHero ? 12 : 999,
+                        ),
+                        color: Colors.black.withValues(alpha: 0.28),
                         border: Border.all(color: Colors.white24),
                       ),
                       child: Text(
@@ -388,7 +448,19 @@ class _LearnHeader extends StatelessWidget {
                         Text(
                           learningOption.nativeName,
                           style: Theme.of(context).textTheme.headlineMedium
-                              ?.copyWith(fontWeight: FontWeight.w900),
+                              ?.copyWith(
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            shadows: useJaPhotoHero
+                                ? const [
+                                    Shadow(
+                                      color: Color(0x88000000),
+                                      blurRadius: 10,
+                                      offset: Offset(0, 2),
+                                    ),
+                                  ]
+                                : null,
+                          ),
                         ),
                         if (learningOption.nativeNameReading?.isNotEmpty ==
                             true)
@@ -396,8 +468,8 @@ class _LearnHeader extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 2),
                             child: Text(
                               learningOption.nativeNameReading!,
-                              style: const TextStyle(
-                                color: Color(0xFFCFFAFE),
+                              style: TextStyle(
+                                color: readingColor,
                                 fontWeight: FontWeight.w700,
                                 fontSize: 12,
                               ),
@@ -408,7 +480,7 @@ class _LearnHeader extends StatelessWidget {
                           nicheTitle,
                           style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
-                            color: const Color(0xFFCFFAFE),
+                            color: nicheColor,
                             fontWeight: FontWeight.w800,
                           ),
                         ),
@@ -435,7 +507,9 @@ class _LearnHeader extends StatelessWidget {
                                 'lessonsAvailableCount',
                                 locale,
                               ).replaceAll('{n}', '$lessonCount'),
-                              color: accent,
+                              color: useJaPhotoHero
+                                  ? const Color(0xFFF9A8D4)
+                                  : accent,
                             ),
                             if (completedCount > 0)
                               _Chip(
