@@ -68,6 +68,14 @@ flutter:
     - assets/shared/language_hero/
     - assets/fonts/NotoSansJP-OFL.txt
     - assets/images/learn_hero_ja.webp
+    - assets/images/learn_hero_en.webp
+    - assets/images/learn_hero_fr.webp
+    - assets/images/learn_hero_it.webp
+    - assets/images/learn_hero_ko.webp
+    - assets/images/learn_hero_zh.webp
+    - assets/images/learn_hero_es.webp
+    - assets/images/learn_hero_vi.webp
+    - assets/images/learn_hero_pt.webp
 
   fonts:
     - family: NotoSansJP
