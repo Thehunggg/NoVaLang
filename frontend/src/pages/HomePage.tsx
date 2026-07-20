@@ -77,9 +77,9 @@ export function HomePage() {
 
       {needsCoreFoundation && (
         <Card className="mt-5 p-5">
-          <h3 className="font-display text-xl font-black">Start with Core Foundation</h3>
-          <p className="mt-2 text-sm text-slate-400">A0 learners practice letters and sounds first. Daily Life greetings unlock after you finish or skip this step.</p>
-          <Button className="mt-4" variant="secondary" onClick={skipCoreFoundation}>Skip Core Foundation</Button>
+          <h3 className="font-display text-xl font-black">{t("startWithBasics")}</h3>
+          <p className="mt-2 text-sm text-slate-400">{t("basicsHelp")}</p>
+          <Button className="mt-4" variant="secondary" onClick={skipCoreFoundation}>{t("skipBasics")}</Button>
         </Card>
       )}
 

@@ -1726,7 +1726,7 @@ class _FiveCardExerciseResultPageState
     final score = widget.results.values.where((value) => value).length;
     final gradedTotal = widget.practice.gradedTotalQuestions;
     return AppScaffold(
-      title: 'Hoàn thành bài tập',
+      title: L10n.text('exerciseResultsTitle', widget.uiLanguageCode),
       showBack: true,
       backEnabled: !_isCompleting,
       languageCode: widget.uiLanguageCode,
@@ -1735,7 +1735,7 @@ class _FiveCardExerciseResultPageState
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Hoàn thành bài tập',
+              L10n.text('exerciseResultsTitle', widget.uiLanguageCode),
               style: Theme.of(
                 context,
               ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w900),

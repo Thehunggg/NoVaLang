@@ -1,5 +1,35 @@
 # NovaLang Active Task — Task hiện tại
 
+## NỢ WEB — chuyển cho Codex (env build được `frontend/node_modules`) — 2026-07-20
+
+Ghi lại để không quên (ngoài reminder trong `scripts/check-hardcoded-ui.mjs`).
+Hai khoản nợ này **cần Codex** làm ở môi trường có thể cài `frontend/node_modules`
+và chạy `tsc -b && vite build` để kiểm chứng — ở env cloud hiện tại không build
+được web nên Claude Code không đụng tới (chỉ làm phần verify được: mobile +
+Core-Foundation web key-hoá + rule warn).
+
+1. **Web i18n chuẩn (hard-code rải khắp):** `PracticePage` (toàn màn kết
+   quả + intro), `AchievementBadge` (cả bảng huy hiệu tiếng Anh),
+   `NativeLanguageSelector` (chuỗi tiếng Việt/Anh cứng dòng ~30),
+   `LessonPage` (map inline chỉ en/vi/ja + câu giải thích cứng vi/en),
+   `CoursePath` (nhánh chỉ `vi`), `LandingPage`, `HomePage` (đã xử phần
+   Core Foundation), 4 component chết (`Quiz`/`LanguageCard`/`LessonCard`/
+   `Status`). Kèm: **enum nội bộ hiện thô ra UI** (`exercise.type`/`lesson.type`/
+   `difficulty`/`itemType` → "multiple choice · beginner"…) ở
+   `LessonPage`/`PracticePage`/`ReviewPage`/`MistakesPage`, và **sentinel
+   `⟦missing:…⟧`** hiện cho user. Cần key-hoá qua `t()`, lấp ~16 key đang bị
+   copy nguyên tiếng Anh vào map `ja`/`es` (`translations.ts`), map enum →
+   nhãn localize. **Sau khi dọn xong web → BẬT chặn cứng:** đặt
+   `STRICT_WEB = true` trong `scripts/check-hardcoded-ui.mjs` (và/hoặc cho CI
+   fail trên web findings).
+
+2. **Web đọc động danh sách ngôn ngữ học (mở 3 tầng khóa en/ja):** web đang
+   khóa cứng en/ja ở `LanguageCode = "en"|"ja"` (type), `normalizeLearningLanguage`
+   (ép mọi code ≠ ja về "en"), `finishOnboarding(language: LanguageCode)` +
+   courses chỉ có en/ja. Để web hiện/chọn được 33 ngôn ngữ (badge coming_soon,
+   cho bấm) như mobile → cần mở rộng `LanguageCode` toàn app + xử course rỗng.
+   Là task riêng, **cần env build web để `tsc` kiểm chứng**. → Codex.
+
 ## Task identity — Danh tính task
 
 - Task ID: `NOVALANG-DAILY-LIFE-16-MODULE-COBAN-NAMED-01`
