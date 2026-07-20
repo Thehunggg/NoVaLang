@@ -16,6 +16,21 @@ Không có front-matter (checklist thao tác).
 
 ---
 
+## ✅ OWNER DUYỆT 2026-07-20 (D-90)
+
+Tất cả 4 mục dưới đây đã được Project Owner DUYỆT (phiên build ms, commit
+`1ac6392`):
+- **D-ms-01** DUYỆT: baseline ms-MY (Malaysia).
+- **D-ms-02** DUYỆT: saya/anda làm baseline lịch sự.
+- **D-ms-03** DUYỆT: dạy bahasa baku (chuẩn), không bahasa pasar.
+- **D-ms-04** DUYỆT: chấm chính tả đơn giản (Mã Lai không dấu phụ).
+  `answer_acceptance_ms` = VALIDATED.
+
+Status ngôn ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN). native-review giữ nguyên
+chờ người bản ngữ — ĐẶC BIỆT quan trọng vì KHÔNG có corpus Mã Lai.
+
+---
+
 ## [D-ms-01] Baseline cho tiếng Mã Lai
 
 Mã Lai chuẩn: ms-MY (Malaysia, DBP — Dewan Bahasa dan Pustaka) hay Brunei

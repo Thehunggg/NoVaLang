@@ -973,6 +973,22 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-90 · 2026-07-20 · owner · fil/ms — Project Owner DUYỆT toàn bộ 8 giả định
+  của phiên build fil+ms (commit `58b5dcb` + `1ac6392`).** Nối tiếp D-87.
+  **fil:** D-fil-01 baseline fil-PH ✓; D-fil-02 po/ho làm baseline lịch sự ✓;
+  D-fil-03 dạy Filipino chuẩn (không Taglish) ✓; D-fil-04 accents á/à/â TÙY
+  CHỌN (khoan dung — Filipino thường bỏ dấu, không chấm sai khi thiếu; ñ đúng
+  khi xuất hiện) ✓. **ms:** D-ms-01 baseline ms-MY ✓; D-ms-02 saya/anda làm
+  baseline lịch sự ✓; D-ms-03 dạy bahasa baku (chuẩn), không bahasa pasar ✓;
+  D-ms-04 chấm chính tả đơn giản (Mã Lai không dấu phụ) ✓. **Hệ quả:**
+  `answer_acceptance_fil` nâng DRAFT → **VALIDATED**; `answer_acceptance_ms` đã
+  VALIDATED (thêm ghi chú owner). Review-checklist mỗi ngôn ngữ thêm banner ✅
+  OWNER DUYỆT. `native-review-fil.md`/`native-review-ms.md` (mỗi ngôn ngữ 7 mục)
+  GIỮ NGUYÊN chờ người bản ngữ — ĐẶC BIỆT quan trọng vì fil (corpus 222)/ms
+  (không corpus) dữ liệu yếu. Trạng thái tổng mỗi ngôn ngữ KHÔNG đổi (vẫn
+  `VALIDATED_NOT_YET_PROVEN`, KHÔNG FROZEN). Validator: 4 lỗi vi/zh cũ (ghi nợ),
+  0 lỗi mới; catalog 60.
+
 - **D-89 · 2026-07-20 · derived · ms — `ms` (tiếng Mã Lai, Bahasa Melayu,
   ms-MY) build HOÀN TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language`
   Bước 0–4, tra cứu 5 vòng.** Austronesian, chữ Latin (Rumi) 26 chữ KHÔNG dấu

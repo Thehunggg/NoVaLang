@@ -15,6 +15,22 @@ Không có front-matter (checklist thao tác).
 
 ---
 
+## ✅ OWNER DUYỆT 2026-07-20 (D-90)
+
+Tất cả 4 mục dưới đây đã được Project Owner DUYỆT (phiên build fil, commit
+`58b5dcb`):
+- **D-fil-01** DUYỆT: baseline fil-PH.
+- **D-fil-02** DUYỆT: po/ho làm baseline lịch sự.
+- **D-fil-03** DUYỆT: dạy Filipino chuẩn (không Taglish).
+- **D-fil-04** DUYỆT: accents á/à/â TÙY CHỌN (khoan dung — Filipino thường bỏ
+  dấu, không chấm sai khi thiếu); ñ đúng khi xuất hiện. `answer_acceptance_fil`
+  nâng **VALIDATED**.
+
+Status ngôn ngữ KHÔNG đổi (VALIDATED_NOT_YET_PROVEN). native-review giữ nguyên
+chờ người bản ngữ — ĐẶC BIỆT quan trọng vì corpus rất nhỏ (222).
+
+---
+
 ## [D-fil-01] Baseline cho tiếng Filipino
 
 Filipino (quốc ngữ) = Tagalog chuẩn hoá, do KWF (Komisyon sa Wikang Filipino)
