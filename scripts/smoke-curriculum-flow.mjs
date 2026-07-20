@@ -227,7 +227,11 @@ function checkApprovedJaUnitOneLesson(lesson) {
 function checkFiveCardsLessonStructure(lesson, section) {
   const content = lesson?.fiveCardContent ?? {};
   if ((content.mainCards ?? []).join(",") !== "intro,vocabulary,dialogue,grammar,practice") fail(section, { lessonId: lesson.id }, "must contain exactly five main cards in order");
-  if ((lesson.vocabulary ?? []).length !== 8 || (content.vocabularyDetails ?? []).length !== 8) fail(section, { lessonId: lesson.id }, "Card 2 must contain exactly 8 vocabulary cards");
+  // Card 2 vocabulary count is a RANGE (6–15), not a fixed 8 (ADR-019
+  // amendment, owner decision 2026-07-19). `vocabulary` and `vocabularyDetails`
+  // must still have the same count. Mirrors validateFiveCardsStructure.
+  const vocabCount = (lesson.vocabulary ?? []).length;
+  if (vocabCount < 6 || vocabCount > 15 || (content.vocabularyDetails ?? []).length !== vocabCount) fail(section, { lessonId: lesson.id }, "Card 2 must contain 6–15 vocabulary cards with matching vocabularyDetails");
   const groups = content.dialogueGroups ?? [];
   if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 4 || (group.lines ?? []).length > 6)) fail(section, { lessonId: lesson.id }, "Card 3 must contain exactly 3 dialogues of 4–6 lines");
   const approvedCharacters = content.approvedCharacterNamePool ?? [];
@@ -379,6 +383,11 @@ function checkLessonExercises(lessons) {
       continue;
     }
     if (isBlueprintLesson(lesson)) continue;
+    // five_cards lessons carry their 14 exercises in fiveCardContent.practice
+    // (validated by checkFiveCardsScopeGuard) and keep top-level exercises[]
+    // empty — the "10 exercises" slot model is the legacy/blueprint shape only
+    // (ADR-019: five_cards is a reusable format, not Golden-only).
+    if (lesson.lessonFormat === "five_cards") continue;
     const exercises = lesson.exercises ?? [];
     if (exercises.length !== 10) {
       fail(section, { lessonId: lesson.id }, `expected 10 exercises, got ${exercises.length}`);
@@ -522,6 +531,14 @@ function checkDailyLifeBlueprint(courses, lessons, catalog) {
         // `checkApprovedJaUnitOneLesson` below is the real, thorough content
         // check (reads fiveCardContent).
         checkApprovedJaUnitOneLesson(lesson);
+        continue;
+      }
+      // Approved sibling five_cards lessons (e.g. ja-daily_life-m01-u1-l2) are
+      // intentionally ready/playable, not blueprint placeholders. Their full
+      // structure is validated by checkFiveCardsScopeGuard (ADR-019: five_cards
+      // is a reusable format, not Golden-only), so they legitimately skip the
+      // blueprint requirement below.
+      if (lesson.lessonFormat === "five_cards" && lesson.playable === true) {
         continue;
       }
       if (lesson.playable !== false || lesson.contentStatus !== "blueprint") {

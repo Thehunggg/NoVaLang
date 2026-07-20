@@ -1532,9 +1532,28 @@ async function main() {
         fail(`${language} Daily Life must contain the Golden Lesson, ready/playable`);
       }
     }
-    const nonGoldenLessons = dailyLessons.filter((l) => !isApprovedJaUnitOneLesson(l));
-    if (nonGoldenLessons.some((l) => l.playable === true || l.contentStatus !== "blueprint")) {
-      fail(`${language} Daily Life: only the Golden Lesson may be ready/playable; every other lesson must remain blueprint/non-playable`);
+    // Approved, ready/playable Daily Life five_cards lessons. The Golden Lesson
+    // was the first; owner-approved sibling lessons are added here by their
+    // final id (which is language-prefixed, so an entry is ja-only by
+    // construction). Every OTHER Daily Life lesson must remain a blueprint
+    // placeholder — a named slot with no real content. This replaces the prior
+    // "only the Golden Lesson" guard (owner decision: five_cards is a reusable
+    // format, more than one approved lesson may now be playable).
+    const APPROVED_READY_DAILY_LESSON_IDS = new Set([
+      APPROVED_JA_UNIT1_LESSON1,
+      "ja-daily_life-m01-u1-l2",
+    ]);
+    const unexpectedReady = dailyLessons.filter(
+      (l) =>
+        !APPROVED_READY_DAILY_LESSON_IDS.has(l.id) &&
+        (l.playable === true || l.contentStatus !== "blueprint"),
+    );
+    if (unexpectedReady.length) {
+      fail(
+        `${language} Daily Life: only approved five_cards lessons may be ready/playable; every other lesson must remain blueprint/non-playable (offending: ${unexpectedReady
+          .map((l) => l.id)
+          .join(", ")})`,
+      );
     }
   }
 

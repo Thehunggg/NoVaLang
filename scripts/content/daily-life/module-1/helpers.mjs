@@ -1,6 +1,7 @@
 import { MODULE_ONE_CONTENT, moduleOneNative as N } from './content.mjs';
 import { MODULE_ONE_DIALOGUES } from './dialogues.mjs';
 import { JA_UNIT1_LESSON1 } from './ja-unit1-lesson1.mjs';
+import { JA_UNIT1_LESSON2 } from './ja-unit1-lesson2.mjs';
 import { prepareJapaneseRomanization, toReadableRomaji } from '../../../lib/japanese-pronunciation.mjs';
 import { resolveLanguageDisplayName } from '../../../lib/language-names.mjs';
 
@@ -12,17 +13,21 @@ import { resolveLanguageDisplayName } from '../../../lib/language-names.mjs';
 // await — ESM blocks the whole import graph on this before any dependent
 // module's synchronous code runs, so buildReadyModuleOne() below stays a
 // plain synchronous function.
-const GOLDEN_Q14 = JA_UNIT1_LESSON1.lesson.content.practice.exercises.find(
-  (exercise) => exercise.type === 'real_world_practice_dialogue',
-);
-const GOLDEN_Q14_TARGETS =
-  GOLDEN_Q14?.dialogueLines?.map((line) => line.targetText) ?? [];
+// Every approved five_cards lesson's Q14 (real_world_practice_dialogue) has its
+// romanization generated at build time from targetText via toReadableRomaji
+// (withGeneratedQ14Romanization below). Collect those targetTexts from each
+// registered lesson so the async tokenizer can pre-build them all in one pass.
+const q14Targets = (lesson) =>
+  lesson.lesson.content.practice.exercises
+    .find((exercise) => exercise.type === 'real_world_practice_dialogue')
+    ?.dialogueLines?.map((line) => line.targetText) ?? [];
 
 await prepareJapaneseRomanization([
   ...MODULE_ONE_CONTENT.flatMap((spec) =>
     (spec.lines ?? []).map((line) => line.ja),
   ),
-  ...GOLDEN_Q14_TARGETS,
+  ...q14Targets(JA_UNIT1_LESSON1),
+  ...q14Targets(JA_UNIT1_LESSON2),
 ]);
 
 // Registry of approved five_cards lessons, keyed by language then the FINAL
@@ -39,7 +44,10 @@ await prepareJapaneseRomanization([
 // exactly one entry here keyed by that lesson's real, final id — the
 // generation loop does not need to change.
 const FIVE_CARDS_REGISTRY = {
-  ja: { 'ja-daily_life-m01-u1-l1': JA_UNIT1_LESSON1 },
+  ja: {
+    'ja-daily_life-m01-u1-l1': JA_UNIT1_LESSON1,
+    'ja-daily_life-m01-u1-l2': JA_UNIT1_LESSON2,
+  },
 };
 
 const CODES = ['vi', 'en', 'ja', 'ko', 'zh'];

@@ -76477,416 +76477,3636 @@
       "levelRange": "A0–A1",
       "placementTag": "daily_life_basic",
       "template": "vocabularyLesson",
-      "title": "Ask the Other Person's Name",
+      "title": "Hỏi tên người đối diện",
       "titleVi": "Hỏi tên người đối diện",
       "titleByNative": {
-        "en": "Ask the Other Person's Name",
         "vi": "Hỏi tên người đối diện",
-        "ja": "相手の名前を聞く",
-        "ko": "상대방 이름 묻기",
-        "zh": "询问对方的名字"
+        "en": "Asking the other person’s name",
+        "ja": "相手の名前を聞く"
       },
-      "description": "Learn to use \"Ask the Other Person's Name\" naturally in daily conversation.",
-      "descriptionVi": "Học cách dùng \"Hỏi tên người đối diện\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "description": "Sau bài học này, người học có thể:",
+      "descriptionVi": "Sau bài học này, người học có thể:",
       "descriptionByNative": {
-        "en": "Learn to use \"Ask the Other Person's Name\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Hỏi tên người đối diện\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「相手の名前を聞く」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"상대방 이름 묻기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“询问对方的名字”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
-      "canDoObjective": "Learn to use \"Ask the Other Person's Name\" naturally in daily conversation.",
-      "canDoObjectiveVi": "Học cách dùng \"Hỏi tên người đối diện\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "canDoObjective": "Sau bài học này, người học có thể:",
+      "canDoObjectiveVi": "Sau bài học này, người học có thể:",
       "canDoObjectiveByNative": {
-        "en": "Learn to use \"Ask the Other Person's Name\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Hỏi tên người đối diện\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「相手の名前を聞く」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"상대방 이름 묻기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“询问对方的名字”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
       "goalByNative": {
-        "en": "Learn to use \"Ask the Other Person's Name\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Hỏi tên người đối diện\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「相手の名前を聞く」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"상대방 이름 묻기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“询问对方的名字”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
       "situationByNative": {
-        "en": "A real-life moment where you need \"Ask the Other Person's Name\".",
-        "vi": "Tình huống thật khi bạn cần dùng \"Hỏi tên người đối diện\".",
-        "ja": "「相手の名前を聞く」が必要な実生活の場面。",
-        "ko": "\"상대방 이름 묻기\"가 필요한 실제 상황.",
-        "zh": "需要用到“询问对方的名字”的真实场景。"
-      },
-      "canSayByNative": {
-        "en": "After this lesson, you can handle \"Ask the Other Person's Name\" in simple conversations.",
-        "vi": "Sau bài này, bạn có thể dùng \"Hỏi tên người đối diện\" trong hội thoại đơn giản.",
-        "ja": "このレッスンの後、「相手の名前を聞く」を簡単な会話で使えます。",
-        "ko": "이 레슨 후 간단한 대화에서 \"상대방 이름 묻기\"를 사용할 수 있습니다.",
-        "zh": "学完本课后，你可以在简单对话中使用“询问对方的名字”。"
+        "vi": "Bạn vừa gặp một người mới và đã giới thiệu tên mình.\nBây giờ bạn muốn hỏi tên của người đối diện.",
+        "en": "You have just met someone new and introduced your own name.\nNow you want to ask the other person’s name.",
+        "ja": "あなたは新しい人に会い、自分の名前を伝えたところです。\n次に、相手の名前を聞きたいと思っています。"
       },
       "objectives": [
-        "Learn to use \"Ask the Other Person's Name\" naturally in daily conversation."
+        "Hiểu sự khác nhau cơ bản giữa 名前 và お名前.",
+        "Hỏi tên người đối diện bằng お名前は？",
+        "Hỏi đầy đủ hơn bằng お名前は何ですか。",
+        "Dùng 失礼ですが khi muốn mở đầu câu hỏi một cách lịch sự hơn.",
+        "Dùng すみません để thu hút sự chú ý hoặc mở đầu một câu hỏi.",
+        "Xác nhận tên vừa nghe bằng [Tên]さんですね.",
+        "Yêu cầu người đối diện nói lại bằng もう一度お願いします.",
+        "Không thêm さん hoặc お vào tên của chính mình khi tự giới thiệu."
       ],
       "objectivesVi": [
-        "Học cách dùng \"Hỏi tên người đối diện\" một cách tự nhiên trong giao tiếp hằng ngày."
+        "Hiểu sự khác nhau cơ bản giữa 名前 và お名前.",
+        "Hỏi tên người đối diện bằng お名前は？",
+        "Hỏi đầy đủ hơn bằng お名前は何ですか。",
+        "Dùng 失礼ですが khi muốn mở đầu câu hỏi một cách lịch sự hơn.",
+        "Dùng すみません để thu hút sự chú ý hoặc mở đầu một câu hỏi.",
+        "Xác nhận tên vừa nghe bằng [Tên]さんですね.",
+        "Yêu cầu người đối diện nói lại bằng もう一度お願いします.",
+        "Không thêm さん hoặc お vào tên của chính mình khi tự giới thiệu."
       ],
+      "objectivesByNative": {
+        "vi": [
+          "Hiểu sự khác nhau cơ bản giữa 名前 và お名前.",
+          "Hỏi tên người đối diện bằng お名前は？",
+          "Hỏi đầy đủ hơn bằng お名前は何ですか。",
+          "Dùng 失礼ですが khi muốn mở đầu câu hỏi một cách lịch sự hơn.",
+          "Dùng すみません để thu hút sự chú ý hoặc mở đầu một câu hỏi.",
+          "Xác nhận tên vừa nghe bằng [Tên]さんですね.",
+          "Yêu cầu người đối diện nói lại bằng もう一度お願いします.",
+          "Không thêm さん hoặc お vào tên của chính mình khi tự giới thiệu."
+        ],
+        "en": [
+          "Understand the basic difference between 名前 and お名前.",
+          "Ask the other person’s name with お名前は？",
+          "Ask more fully with お名前は何ですか。",
+          "Use 失礼ですが to open a question more politely.",
+          "Use すみません to get attention or begin a question.",
+          "Confirm the name you just heard with [Name]さんですね.",
+          "Ask the other person to repeat with もう一度お願いします.",
+          "Don’t add さん or お to your own name when introducing yourself."
+        ],
+        "ja": [
+          "「名前」と「お名前」の基本的な違いを理解できます。",
+          "「お名前は？」で相手の名前を聞けます。",
+          "「お名前は何ですか。」でより丁寧に聞けます。",
+          "「失礼ですが」を使って、より丁寧に質問を切り出せます。",
+          "「すみません」で注意を引いたり、質問を始めたりできます。",
+          "「〜さんですね」で聞いた名前を確認できます。",
+          "「もう一度お願いします」で言い直してもらえます。",
+          "自己紹介では、自分の名前に「さん」や「お」を付けません。"
+        ]
+      },
       "introPoints": [
-        "A real-life moment where you need \"Ask the Other Person's Name\".",
-        "After this lesson, you can handle \"Ask the Other Person's Name\" in simple conversations."
+        "Hiểu sự khác nhau cơ bản giữa 名前 và お名前.",
+        "Hỏi tên người đối diện bằng お名前は？",
+        "Hỏi đầy đủ hơn bằng お名前は何ですか。",
+        "Dùng 失礼ですが khi muốn mở đầu câu hỏi một cách lịch sự hơn.",
+        "Dùng すみません để thu hút sự chú ý hoặc mở đầu một câu hỏi.",
+        "Xác nhận tên vừa nghe bằng [Tên]さんですね.",
+        "Yêu cầu người đối diện nói lại bằng もう一度お願いします.",
+        "Không thêm さん hoặc お vào tên của chính mình khi tự giới thiệu."
       ],
       "introPointsVi": [
-        "Tình huống thật khi bạn cần dùng \"Hỏi tên người đối diện\".",
-        "Sau bài này, bạn có thể dùng \"Hỏi tên người đối diện\" trong hội thoại đơn giản."
+        "Hiểu sự khác nhau cơ bản giữa 名前 và お名前.",
+        "Hỏi tên người đối diện bằng お名前は？",
+        "Hỏi đầy đủ hơn bằng お名前は何ですか。",
+        "Dùng 失礼ですが khi muốn mở đầu câu hỏi một cách lịch sự hơn.",
+        "Dùng すみません để thu hút sự chú ý hoặc mở đầu một câu hỏi.",
+        "Xác nhận tên vừa nghe bằng [Tên]さんですね.",
+        "Yêu cầu người đối diện nói lại bằng もう一度お願いします.",
+        "Không thêm さん hoặc お vào tên của chính mình khi tự giới thiệu."
       ],
       "introPointsByNative": {
         "vi": [
-          "Tình huống thật khi bạn cần dùng \"Hỏi tên người đối diện\".",
-          "Sau bài này, bạn có thể dùng \"Hỏi tên người đối diện\" trong hội thoại đơn giản."
+          "Hiểu sự khác nhau cơ bản giữa 名前 và お名前.",
+          "Hỏi tên người đối diện bằng お名前は？",
+          "Hỏi đầy đủ hơn bằng お名前は何ですか。",
+          "Dùng 失礼ですが khi muốn mở đầu câu hỏi một cách lịch sự hơn.",
+          "Dùng すみません để thu hút sự chú ý hoặc mở đầu một câu hỏi.",
+          "Xác nhận tên vừa nghe bằng [Tên]さんですね.",
+          "Yêu cầu người đối diện nói lại bằng もう一度お願いします.",
+          "Không thêm さん hoặc お vào tên của chính mình khi tự giới thiệu."
         ],
         "en": [
-          "A real-life moment where you need \"Ask the Other Person's Name\".",
-          "After this lesson, you can handle \"Ask the Other Person's Name\" in simple conversations."
+          "Understand the basic difference between 名前 and お名前.",
+          "Ask the other person’s name with お名前は？",
+          "Ask more fully with お名前は何ですか。",
+          "Use 失礼ですが to open a question more politely.",
+          "Use すみません to get attention or begin a question.",
+          "Confirm the name you just heard with [Name]さんですね.",
+          "Ask the other person to repeat with もう一度お願いします.",
+          "Don’t add さん or お to your own name when introducing yourself."
         ],
         "ja": [
-          "「相手の名前を聞く」が必要な実生活の場面。",
-          "このレッスンの後、「相手の名前を聞く」を簡単な会話で使えます。"
-        ],
-        "ko": [
-          "\"상대방 이름 묻기\"가 필요한 실제 상황.",
-          "이 레슨 후 간단한 대화에서 \"상대방 이름 묻기\"를 사용할 수 있습니다."
-        ],
-        "zh": [
-          "需要用到“询问对方的名字”的真实场景。",
-          "学完本课后，你可以在简单对话中使用“询问对方的名字”。"
+          "「名前」と「お名前」の基本的な違いを理解できます。",
+          "「お名前は？」で相手の名前を聞けます。",
+          "「お名前は何ですか。」でより丁寧に聞けます。",
+          "「失礼ですが」を使って、より丁寧に質問を切り出せます。",
+          "「すみません」で注意を引いたり、質問を始めたりできます。",
+          "「〜さんですね」で聞いた名前を確認できます。",
+          "「もう一度お願いします」で言い直してもらえます。",
+          "自己紹介では、自分の名前に「さん」や「お」を付けません。"
         ]
       },
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 12,
       "track": "ja-daily_life",
-      "vocabulary": [],
+      "vocabulary": [
+        {
+          "id": "namae",
+          "displayText": "名前（なまえ）",
+          "reading": "なまえ",
+          "romanization": "namae",
+          "speechText": "なまえ",
+          "meaningVi": "Tên.",
+          "translationByNative": {
+            "vi": "Tên.",
+            "en": "Name.",
+            "ja": "名前。"
+          },
+          "translations": {
+            "vi": "Tên.",
+            "en": "Name.",
+            "ja": "名前。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "onamae",
+          "displayText": "お名前（なまえ）",
+          "reading": "おなまえ",
+          "romanization": "onamae",
+          "speechText": "おなまえ",
+          "meaningVi": "Tên — cách nói lịch sự hơn.",
+          "translationByNative": {
+            "vi": "Tên — cách nói lịch sự hơn.",
+            "en": "Name — a more polite way to say it.",
+            "ja": "名前（より丁寧な言い方）。"
+          },
+          "translations": {
+            "vi": "Tên — cách nói lịch sự hơn.",
+            "en": "Name — a more polite way to say it.",
+            "ja": "名前（より丁寧な言い方）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "nan-desu-ka",
+          "displayText": "何（なん）ですか",
+          "reading": "なんですか",
+          "romanization": "nan desu ka",
+          "speechText": "なんですか",
+          "meaningVi": "Là gì?",
+          "translationByNative": {
+            "vi": "Là gì?",
+            "en": "What is it?",
+            "ja": "何ですか。"
+          },
+          "translations": {
+            "vi": "Là gì?",
+            "en": "What is it?",
+            "ja": "何ですか。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "onamae-wa-nan-desu-ka",
+          "displayText": "お名前（なまえ）は何（なん）ですか",
+          "reading": "おなまえはなんですか",
+          "romanization": "onamae wa nan desu ka",
+          "speechText": "おなまえはなんですか",
+          "meaningVi": "Tên bạn là gì?",
+          "translationByNative": {
+            "vi": "Tên bạn là gì?",
+            "en": "What is your name?",
+            "ja": "お名前は何ですか。"
+          },
+          "translations": {
+            "vi": "Tên bạn là gì?",
+            "en": "What is your name?",
+            "ja": "お名前は何ですか。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "onamae-wa",
+          "displayText": "お名前（なまえ）は？",
+          "reading": "おなまえは？",
+          "romanization": "onamae wa?",
+          "speechText": "おなまえは",
+          "meaningVi": "Còn tên bạn là...? / Tên bạn là gì?",
+          "translationByNative": {
+            "vi": "Còn tên bạn là...? / Tên bạn là gì?",
+            "en": "And your name is…? / What is your name?",
+            "ja": "お名前は？（あなたのお名前は？）"
+          },
+          "translations": {
+            "vi": "Còn tên bạn là...? / Tên bạn là gì?",
+            "en": "And your name is…? / What is your name?",
+            "ja": "お名前は？（あなたのお名前は？）"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "shitsurei-desu-ga",
+          "displayText": "失礼（しつれい）ですが",
+          "reading": "しつれいですが",
+          "romanization": "shitsurei desu ga",
+          "speechText": "しつれいですが",
+          "meaningVi": "Xin phép cho tôi hỏi...",
+          "translationByNative": {
+            "vi": "Xin phép cho tôi hỏi...",
+            "en": "Excuse me for asking…",
+            "ja": "失礼ですが…（お尋ねします）。"
+          },
+          "translations": {
+            "vi": "Xin phép cho tôi hỏi...",
+            "en": "Excuse me for asking…",
+            "ja": "失礼ですが…（お尋ねします）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "sumimasen",
+          "displayText": "すみません",
+          "reading": "すみません",
+          "romanization": "sumimasen",
+          "speechText": "すみません",
+          "meaningVi": "Xin lỗi / Cho hỏi...",
+          "translationByNative": {
+            "vi": "Xin lỗi / Cho hỏi...",
+            "en": "Excuse me. / Sorry.",
+            "ja": "すみません（あのう、失礼します）。"
+          },
+          "translations": {
+            "vi": "Xin lỗi / Cho hỏi...",
+            "en": "Excuse me. / Sorry.",
+            "ja": "すみません（あのう、失礼します）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "mou-ichido",
+          "displayText": "もう一度（いちど）",
+          "reading": "もういちど",
+          "romanization": "mō ichido",
+          "speechText": "もういちど",
+          "meaningVi": "Một lần nữa.",
+          "translationByNative": {
+            "vi": "Một lần nữa.",
+            "en": "One more time.",
+            "ja": "もう一度。"
+          },
+          "translations": {
+            "vi": "Một lần nữa.",
+            "en": "One more time.",
+            "ja": "もう一度。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "san",
+          "displayText": "～さん",
+          "reading": "～さん",
+          "romanization": "~san",
+          "speechText": "さん",
+          "meaningVi": "Cách gọi lịch sự đặt sau tên người khác.",
+          "translationByNative": {
+            "vi": "Cách gọi lịch sự đặt sau tên người khác.",
+            "en": "A polite suffix placed after another person’s name.",
+            "ja": "相手の名前の後に付ける丁寧な呼び方。"
+          },
+          "translations": {
+            "vi": "Cách gọi lịch sự đặt sau tên người khác.",
+            "en": "A polite suffix placed after another person’s name.",
+            "ja": "相手の名前の後に付ける丁寧な呼び方。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "desu-ne",
+          "displayText": "～ですね",
+          "displayTextByNative": {
+            "vi": "～ですね",
+            "en": "～ですね",
+            "ja": "「～ですね」"
+          },
+          "reading": "～ですね",
+          "readingByNative": {
+            "vi": "～ですね",
+            "en": "～ですね",
+            "ja": "「～ですね」"
+          },
+          "romanization": "~desu ne",
+          "speechText": "ですね",
+          "meaningVi": "Dùng để xác nhận thông tin vừa nghe.",
+          "translationByNative": {
+            "vi": "Dùng để xác nhận thông tin vừa nghe.",
+            "en": "Used to confirm information you just heard.",
+            "ja": "聞いた情報を確認するときに使います。"
+          },
+          "translations": {
+            "vi": "Dùng để xác nhận thông tin vừa nghe.",
+            "en": "Used to confirm information you just heard.",
+            "ja": "聞いた情報を確認するときに使います。"
+          },
+          "audioLocale": "ja-JP"
+        }
+      ],
       "keyPhrases": [],
-      "dialogue": [],
+      "dialogue": [
+        {
+          "targetText": "こんにちは。",
+          "displayText": "こんにちは。",
+          "reading": "こんにちは。",
+          "speechText": "こんにちは",
+          "translationByNative": {
+            "vi": "Xin chào.",
+            "en": "Hello.",
+            "ja": "こんにちは。"
+          },
+          "translations": {
+            "vi": "Xin chào.",
+            "en": "Hello.",
+            "ja": "こんにちは。"
+          },
+          "meaningVi": "Xin chào.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-short-1"
+        },
+        {
+          "targetText": "こんにちは。",
+          "displayText": "こんにちは。",
+          "reading": "こんにちは。",
+          "speechText": "こんにちは",
+          "translationByNative": {
+            "vi": "Xin chào.",
+            "en": "Hello.",
+            "ja": "こんにちは。"
+          },
+          "translations": {
+            "vi": "Xin chào.",
+            "en": "Hello.",
+            "ja": "こんにちは。"
+          },
+          "meaningVi": "Xin chào.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-short-2"
+        },
+        {
+          "targetText": "すみません、お名前は？",
+          "displayText": "すみません、お名前は？",
+          "reading": "すみません、おなまえは？",
+          "speechText": "すみません、おなまえは",
+          "translationByNative": {
+            "vi": "Xin lỗi, tên bạn là gì?",
+            "en": "Excuse me, what is your name?",
+            "ja": "失礼ですが、お名前は何ですか。"
+          },
+          "translations": {
+            "vi": "Xin lỗi, tên bạn là gì?",
+            "en": "Excuse me, what is your name?",
+            "ja": "失礼ですが、お名前は何ですか。"
+          },
+          "meaningVi": "Xin lỗi, tên bạn là gì?",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-short-3"
+        },
+        {
+          "targetText": "伊藤です。",
+          "displayText": "伊藤です。",
+          "reading": "いとうです。",
+          "speechText": "いとうです",
+          "translationByNative": {
+            "vi": "Tôi là Itō.",
+            "en": "I’m Itō.",
+            "ja": "伊藤です。"
+          },
+          "translations": {
+            "vi": "Tôi là Itō.",
+            "en": "I’m Itō.",
+            "ja": "伊藤です。"
+          },
+          "meaningVi": "Tôi là Itō.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-short-4"
+        },
+        {
+          "targetText": "伊藤さんですね。私は田中です。",
+          "displayText": "伊藤さんですね。私は田中です。",
+          "reading": "いとうさんですね。わたしはたなかです。",
+          "speechText": "いとうさんですね。わたしはたなかです",
+          "translationByNative": {
+            "vi": "Bạn là Itō phải không. Tôi là Tanaka.",
+            "en": "You’re Itō, right? I’m Tanaka.",
+            "ja": "伊藤さんですね。私は田中です。"
+          },
+          "translations": {
+            "vi": "Bạn là Itō phải không. Tôi là Tanaka.",
+            "en": "You’re Itō, right? I’m Tanaka.",
+            "ja": "伊藤さんですね。私は田中です。"
+          },
+          "meaningVi": "Bạn là Itō phải không. Tôi là Tanaka.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-short-5"
+        },
+        {
+          "targetText": "はじめまして。佐藤です。",
+          "displayText": "はじめまして。佐藤です。",
+          "reading": "はじめまして。さとうです。",
+          "speechText": "はじめまして。さとうです",
+          "translationByNative": {
+            "vi": "Rất vui được gặp bạn. Tôi là Satō.",
+            "en": "Nice to meet you. I’m Satō.",
+            "ja": "はじめまして。佐藤です。"
+          },
+          "translations": {
+            "vi": "Rất vui được gặp bạn. Tôi là Satō.",
+            "en": "Nice to meet you. I’m Satō.",
+            "ja": "はじめまして。佐藤です。"
+          },
+          "meaningVi": "Rất vui được gặp bạn. Tôi là Satō.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-polite-1"
+        },
+        {
+          "targetText": "はじめまして。",
+          "displayText": "はじめまして。",
+          "reading": "はじめまして。",
+          "speechText": "はじめまして",
+          "translationByNative": {
+            "vi": "Rất vui được gặp bạn.",
+            "en": "Nice to meet you.",
+            "ja": "はじめまして。"
+          },
+          "translations": {
+            "vi": "Rất vui được gặp bạn.",
+            "en": "Nice to meet you.",
+            "ja": "はじめまして。"
+          },
+          "meaningVi": "Rất vui được gặp bạn.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-polite-2"
+        },
+        {
+          "targetText": "失礼ですが、お名前は何ですか。",
+          "displayText": "失礼ですが、お名前は何ですか。",
+          "reading": "しつれいですが、おなまえはなんですか。",
+          "speechText": "しつれいですが、おなまえはなんですか",
+          "translationByNative": {
+            "vi": "Xin lỗi, tên bạn là gì?",
+            "en": "Excuse me, what is your name?",
+            "ja": "失礼ですが、お名前は何ですか。"
+          },
+          "translations": {
+            "vi": "Xin lỗi, tên bạn là gì?",
+            "en": "Excuse me, what is your name?",
+            "ja": "失礼ですが、お名前は何ですか。"
+          },
+          "meaningVi": "Xin lỗi, tên bạn là gì?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-polite-3"
+        },
+        {
+          "targetText": "田中です。",
+          "displayText": "田中です。",
+          "reading": "たなかです。",
+          "speechText": "たなかです",
+          "translationByNative": {
+            "vi": "Tôi là Tanaka.",
+            "en": "I’m Tanaka.",
+            "ja": "田中です。"
+          },
+          "translations": {
+            "vi": "Tôi là Tanaka.",
+            "en": "I’m Tanaka.",
+            "ja": "田中です。"
+          },
+          "meaningVi": "Tôi là Tanaka.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-polite-4"
+        },
+        {
+          "targetText": "田中さんですね。よろしくお願いします。",
+          "displayText": "田中さんですね。よろしくお願いします。",
+          "reading": "たなかさんですね。よろしくおねがいします。",
+          "speechText": "たなかさんですね。よろしくおねがいします",
+          "translationByNative": {
+            "vi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+            "en": "You’re Tanaka, right? I look forward to getting to know you.",
+            "ja": "田中さんですね。よろしくお願いします。"
+          },
+          "translations": {
+            "vi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+            "en": "You’re Tanaka, right? I look forward to getting to know you.",
+            "ja": "田中さんですね。よろしくお願いします。"
+          },
+          "meaningVi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-polite-5"
+        },
+        {
+          "targetText": "すみません、お名前は？",
+          "displayText": "すみません、お名前は？",
+          "reading": "すみません、おなまえは？",
+          "speechText": "すみません、おなまえは",
+          "translationByNative": {
+            "vi": "Xin lỗi, tên bạn là gì?",
+            "en": "Excuse me, what is your name?",
+            "ja": "失礼ですが、お名前は何ですか。"
+          },
+          "translations": {
+            "vi": "Xin lỗi, tên bạn là gì?",
+            "en": "Excuse me, what is your name?",
+            "ja": "失礼ですが、お名前は何ですか。"
+          },
+          "meaningVi": "Xin lỗi, tên bạn là gì?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-1"
+        },
+        {
+          "targetText": "伊藤です。",
+          "displayText": "伊藤です。",
+          "reading": "いとうです。",
+          "speechText": "いとうです",
+          "translationByNative": {
+            "vi": "Tôi là Itō.",
+            "en": "I’m Itō.",
+            "ja": "伊藤です。"
+          },
+          "translations": {
+            "vi": "Tôi là Itō.",
+            "en": "I’m Itō.",
+            "ja": "伊藤です。"
+          },
+          "meaningVi": "Tôi là Itō.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-2"
+        },
+        {
+          "targetText": "すみません、もう一度お願いします。",
+          "displayText": "すみません、もう一度お願いします。",
+          "reading": "すみません、もういちどおねがいします。",
+          "speechText": "すみません、もういちどおねがいします",
+          "translationByNative": {
+            "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+            "en": "Sorry, could you say that once more?",
+            "ja": "すみません、もう一度お願いします。"
+          },
+          "translations": {
+            "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+            "en": "Sorry, could you say that once more?",
+            "ja": "すみません、もう一度お願いします。"
+          },
+          "meaningVi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-3"
+        },
+        {
+          "targetText": "伊藤です。い・と・う、です。",
+          "displayText": "伊藤です。い・と・う、です。",
+          "reading": "いとうです。い・と・う、です。",
+          "speechText": "いとうです。い、と、う、です",
+          "translationByNative": {
+            "vi": "Tôi là Itō. I-tô-u ạ.",
+            "en": "I’m Itō. I-to-u.",
+            "ja": "伊藤です。い・と・う、です。"
+          },
+          "translations": {
+            "vi": "Tôi là Itō. I-tô-u ạ.",
+            "en": "I’m Itō. I-to-u.",
+            "ja": "伊藤です。い・と・う、です。"
+          },
+          "meaningVi": "Tôi là Itō. I-tô-u ạ.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-4"
+        },
+        {
+          "targetText": "伊藤さんですね。",
+          "displayText": "伊藤さんですね。",
+          "reading": "いとうさんですね。",
+          "speechText": "いとうさんですね",
+          "translationByNative": {
+            "vi": "Bạn là Itō phải không.",
+            "en": "You’re Itō, right?",
+            "ja": "伊藤さんですね。"
+          },
+          "translations": {
+            "vi": "Bạn là Itō phải không.",
+            "en": "You’re Itō, right?",
+            "ja": "伊藤さんですね。"
+          },
+          "meaningVi": "Bạn là Itō phải không.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-5"
+        }
+      ],
+      "dialogueGroups": [
+        {
+          "id": "ja-daily_life-m01-u1-l2-ask-name-short",
+          "titleByNative": {
+            "vi": "Hỏi tên một cách ngắn gọn",
+            "en": "Asking a name briefly",
+            "ja": "短く名前を聞く"
+          },
+          "situationByNative": {
+            "vi": "Hai người vừa gặp, một người hỏi tên ngắn gọn.",
+            "en": "Two people have just met; one asks the name briefly.",
+            "ja": "初対面の二人。一方が短く名前を聞きます。"
+          },
+          "explanationByNative": {
+            "vi": "お名前は？ là cách hỏi tên ngắn gọn, tự nhiên khi ngữ cảnh đã rõ.\n～さんですね dùng để xác nhận tên vừa nghe.",
+            "en": "お名前は？ is a short, natural way to ask a name when the context is clear.\n～さんですね is used to confirm the name you just heard.",
+            "ja": "「お名前は？」は、場面が明らかなときに使える、短く自然な聞き方です。\n「～さんですね」は、聞いた名前を確認するために使います。"
+          },
+          "lines": [
+            {
+              "targetText": "こんにちは。",
+              "displayText": "こんにちは。",
+              "reading": "こんにちは。",
+              "speechText": "こんにちは",
+              "translationByNative": {
+                "vi": "Xin chào.",
+                "en": "Hello.",
+                "ja": "こんにちは。"
+              },
+              "translations": {
+                "vi": "Xin chào.",
+                "en": "Hello.",
+                "ja": "こんにちは。"
+              },
+              "meaningVi": "Xin chào.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-short-1"
+            },
+            {
+              "targetText": "こんにちは。",
+              "displayText": "こんにちは。",
+              "reading": "こんにちは。",
+              "speechText": "こんにちは",
+              "translationByNative": {
+                "vi": "Xin chào.",
+                "en": "Hello.",
+                "ja": "こんにちは。"
+              },
+              "translations": {
+                "vi": "Xin chào.",
+                "en": "Hello.",
+                "ja": "こんにちは。"
+              },
+              "meaningVi": "Xin chào.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-short-2"
+            },
+            {
+              "targetText": "すみません、お名前は？",
+              "displayText": "すみません、お名前は？",
+              "reading": "すみません、おなまえは？",
+              "speechText": "すみません、おなまえは",
+              "translationByNative": {
+                "vi": "Xin lỗi, tên bạn là gì?",
+                "en": "Excuse me, what is your name?",
+                "ja": "失礼ですが、お名前は何ですか。"
+              },
+              "translations": {
+                "vi": "Xin lỗi, tên bạn là gì?",
+                "en": "Excuse me, what is your name?",
+                "ja": "失礼ですが、お名前は何ですか。"
+              },
+              "meaningVi": "Xin lỗi, tên bạn là gì?",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-short-3"
+            },
+            {
+              "targetText": "伊藤です。",
+              "displayText": "伊藤です。",
+              "reading": "いとうです。",
+              "speechText": "いとうです",
+              "translationByNative": {
+                "vi": "Tôi là Itō.",
+                "en": "I’m Itō.",
+                "ja": "伊藤です。"
+              },
+              "translations": {
+                "vi": "Tôi là Itō.",
+                "en": "I’m Itō.",
+                "ja": "伊藤です。"
+              },
+              "meaningVi": "Tôi là Itō.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-short-4"
+            },
+            {
+              "targetText": "伊藤さんですね。私は田中です。",
+              "displayText": "伊藤さんですね。私は田中です。",
+              "reading": "いとうさんですね。わたしはたなかです。",
+              "speechText": "いとうさんですね。わたしはたなかです",
+              "translationByNative": {
+                "vi": "Bạn là Itō phải không. Tôi là Tanaka.",
+                "en": "You’re Itō, right? I’m Tanaka.",
+                "ja": "伊藤さんですね。私は田中です。"
+              },
+              "translations": {
+                "vi": "Bạn là Itō phải không. Tôi là Tanaka.",
+                "en": "You’re Itō, right? I’m Tanaka.",
+                "ja": "伊藤さんですね。私は田中です。"
+              },
+              "meaningVi": "Bạn là Itō phải không. Tôi là Tanaka.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-short-5"
+            }
+          ]
+        },
+        {
+          "id": "ja-daily_life-m01-u1-l2-ask-name-polite",
+          "titleByNative": {
+            "vi": "Hỏi tên lịch sự hơn",
+            "en": "Asking a name more politely",
+            "ja": "より丁寧に名前を聞く"
+          },
+          "situationByNative": {
+            "vi": "Hai người gặp nhau lần đầu và nói chuyện lịch sự.",
+            "en": "Two people meet for the first time and speak politely.",
+            "ja": "初対面の二人が丁寧に話します。"
+          },
+          "explanationByNative": {
+            "vi": "失礼ですが làm cho câu hỏi lịch sự hơn.\nお名前は何ですか。 là cách hỏi tên đầy đủ và lịch sự.",
+            "en": "失礼ですが makes the question more polite.\nお名前は何ですか。 is a full, polite way to ask a name.",
+            "ja": "「失礼ですが」は、質問をより丁寧にします。\n「お名前は何ですか。」は、丁寧で完全な聞き方です。"
+          },
+          "lines": [
+            {
+              "targetText": "はじめまして。佐藤です。",
+              "displayText": "はじめまして。佐藤です。",
+              "reading": "はじめまして。さとうです。",
+              "speechText": "はじめまして。さとうです",
+              "translationByNative": {
+                "vi": "Rất vui được gặp bạn. Tôi là Satō.",
+                "en": "Nice to meet you. I’m Satō.",
+                "ja": "はじめまして。佐藤です。"
+              },
+              "translations": {
+                "vi": "Rất vui được gặp bạn. Tôi là Satō.",
+                "en": "Nice to meet you. I’m Satō.",
+                "ja": "はじめまして。佐藤です。"
+              },
+              "meaningVi": "Rất vui được gặp bạn. Tôi là Satō.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-polite-1"
+            },
+            {
+              "targetText": "はじめまして。",
+              "displayText": "はじめまして。",
+              "reading": "はじめまして。",
+              "speechText": "はじめまして",
+              "translationByNative": {
+                "vi": "Rất vui được gặp bạn.",
+                "en": "Nice to meet you.",
+                "ja": "はじめまして。"
+              },
+              "translations": {
+                "vi": "Rất vui được gặp bạn.",
+                "en": "Nice to meet you.",
+                "ja": "はじめまして。"
+              },
+              "meaningVi": "Rất vui được gặp bạn.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-polite-2"
+            },
+            {
+              "targetText": "失礼ですが、お名前は何ですか。",
+              "displayText": "失礼ですが、お名前は何ですか。",
+              "reading": "しつれいですが、おなまえはなんですか。",
+              "speechText": "しつれいですが、おなまえはなんですか",
+              "translationByNative": {
+                "vi": "Xin lỗi, tên bạn là gì?",
+                "en": "Excuse me, what is your name?",
+                "ja": "失礼ですが、お名前は何ですか。"
+              },
+              "translations": {
+                "vi": "Xin lỗi, tên bạn là gì?",
+                "en": "Excuse me, what is your name?",
+                "ja": "失礼ですが、お名前は何ですか。"
+              },
+              "meaningVi": "Xin lỗi, tên bạn là gì?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-polite-3"
+            },
+            {
+              "targetText": "田中です。",
+              "displayText": "田中です。",
+              "reading": "たなかです。",
+              "speechText": "たなかです",
+              "translationByNative": {
+                "vi": "Tôi là Tanaka.",
+                "en": "I’m Tanaka.",
+                "ja": "田中です。"
+              },
+              "translations": {
+                "vi": "Tôi là Tanaka.",
+                "en": "I’m Tanaka.",
+                "ja": "田中です。"
+              },
+              "meaningVi": "Tôi là Tanaka.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-polite-4"
+            },
+            {
+              "targetText": "田中さんですね。よろしくお願いします。",
+              "displayText": "田中さんですね。よろしくお願いします。",
+              "reading": "たなかさんですね。よろしくおねがいします。",
+              "speechText": "たなかさんですね。よろしくおねがいします",
+              "translationByNative": {
+                "vi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+                "en": "You’re Tanaka, right? I look forward to getting to know you.",
+                "ja": "田中さんですね。よろしくお願いします。"
+              },
+              "translations": {
+                "vi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+                "en": "You’re Tanaka, right? I look forward to getting to know you.",
+                "ja": "田中さんですね。よろしくお願いします。"
+              },
+              "meaningVi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-polite-5"
+            }
+          ]
+        },
+        {
+          "id": "ja-daily_life-m01-u1-l2-ask-name-repeat",
+          "titleByNative": {
+            "vi": "Khi không nghe rõ tên",
+            "en": "When you can’t hear the name clearly",
+            "ja": "名前が聞き取れないとき"
+          },
+          "situationByNative": {
+            "vi": "Người nghe không nghe rõ tên và nhờ nói lại.",
+            "en": "The listener can’t catch the name and asks for it again.",
+            "ja": "聞き手が名前を聞き取れず、言い直しをお願いします。"
+          },
+          "explanationByNative": {
+            "vi": "もう一度お願いします dùng để nhờ nói lại.\nCó thể đánh vần từng âm để người nghe nghe rõ.",
+            "en": "もう一度お願いします is used to ask someone to repeat.\nYou can spell out each sound so the listener can hear clearly.",
+            "ja": "「もう一度お願いします」は、言い直しをお願いするときに使います。\n一音ずつ区切って言うと、相手が聞き取りやすくなります。"
+          },
+          "lines": [
+            {
+              "targetText": "すみません、お名前は？",
+              "displayText": "すみません、お名前は？",
+              "reading": "すみません、おなまえは？",
+              "speechText": "すみません、おなまえは",
+              "translationByNative": {
+                "vi": "Xin lỗi, tên bạn là gì?",
+                "en": "Excuse me, what is your name?",
+                "ja": "失礼ですが、お名前は何ですか。"
+              },
+              "translations": {
+                "vi": "Xin lỗi, tên bạn là gì?",
+                "en": "Excuse me, what is your name?",
+                "ja": "失礼ですが、お名前は何ですか。"
+              },
+              "meaningVi": "Xin lỗi, tên bạn là gì?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-1"
+            },
+            {
+              "targetText": "伊藤です。",
+              "displayText": "伊藤です。",
+              "reading": "いとうです。",
+              "speechText": "いとうです",
+              "translationByNative": {
+                "vi": "Tôi là Itō.",
+                "en": "I’m Itō.",
+                "ja": "伊藤です。"
+              },
+              "translations": {
+                "vi": "Tôi là Itō.",
+                "en": "I’m Itō.",
+                "ja": "伊藤です。"
+              },
+              "meaningVi": "Tôi là Itō.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-2"
+            },
+            {
+              "targetText": "すみません、もう一度お願いします。",
+              "displayText": "すみません、もう一度お願いします。",
+              "reading": "すみません、もういちどおねがいします。",
+              "speechText": "すみません、もういちどおねがいします",
+              "translationByNative": {
+                "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                "en": "Sorry, could you say that once more?",
+                "ja": "すみません、もう一度お願いします。"
+              },
+              "translations": {
+                "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                "en": "Sorry, could you say that once more?",
+                "ja": "すみません、もう一度お願いします。"
+              },
+              "meaningVi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-3"
+            },
+            {
+              "targetText": "伊藤です。い・と・う、です。",
+              "displayText": "伊藤です。い・と・う、です。",
+              "reading": "いとうです。い・と・う、です。",
+              "speechText": "いとうです。い、と、う、です",
+              "translationByNative": {
+                "vi": "Tôi là Itō. I-tô-u ạ.",
+                "en": "I’m Itō. I-to-u.",
+                "ja": "伊藤です。い・と・う、です。"
+              },
+              "translations": {
+                "vi": "Tôi là Itō. I-tô-u ạ.",
+                "en": "I’m Itō. I-to-u.",
+                "ja": "伊藤です。い・と・う、です。"
+              },
+              "meaningVi": "Tôi là Itō. I-tô-u ạ.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-4"
+            },
+            {
+              "targetText": "伊藤さんですね。",
+              "displayText": "伊藤さんですね。",
+              "reading": "いとうさんですね。",
+              "speechText": "いとうさんですね",
+              "translationByNative": {
+                "vi": "Bạn là Itō phải không.",
+                "en": "You’re Itō, right?",
+                "ja": "伊藤さんですね。"
+              },
+              "translations": {
+                "vi": "Bạn là Itō phải không.",
+                "en": "You’re Itō, right?",
+                "ja": "伊藤さんですね。"
+              },
+              "meaningVi": "Bạn là Itō phải không.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-5"
+            }
+          ]
+        }
+      ],
       "reviewItems": [],
       "grammarFocus": null,
       "grammarFocusVi": null,
       "cultureNote": null,
       "cultureNoteVi": null,
-      "contentStatus": "blueprint",
-      "playable": false,
-      "comingSoon": true,
-      "canSkip": true,
-      "exerciseStatus": "placeholder",
-      "learnSection": {
-        "vocabularyPhraseCards": {
-          "status": "placeholder"
+      "contextualVariations": [],
+      "communicationStrategyByNative": {},
+      "lessonFormat": "five_cards",
+      "fiveCardContent": {
+        "mainCards": [
+          "intro",
+          "vocabulary",
+          "dialogue",
+          "grammar",
+          "practice"
+        ],
+        "targetLanguage": "ja",
+        "targetLocale": "ja-JP",
+        "cultureContext": "Japan",
+        "approvedCharacterNamePool": [
+          {
+            "id": "tanaka",
+            "displayName": "田中（たなか）",
+            "canonicalName": "田中",
+            "audioName": "たなか"
+          },
+          {
+            "id": "ito",
+            "displayName": "伊藤（いとう）",
+            "canonicalName": "伊藤",
+            "audioName": "いとう"
+          },
+          {
+            "id": "sato",
+            "displayName": "佐藤（さとう）",
+            "canonicalName": "佐藤",
+            "audioName": "さとう"
+          }
+        ],
+        "intro": {
+          "objectives": [
+            "Hiểu sự khác nhau cơ bản giữa 名前 và お名前.",
+            "Hỏi tên người đối diện bằng お名前は？",
+            "Hỏi đầy đủ hơn bằng お名前は何ですか。",
+            "Dùng 失礼ですが khi muốn mở đầu câu hỏi một cách lịch sự hơn.",
+            "Dùng すみません để thu hút sự chú ý hoặc mở đầu một câu hỏi.",
+            "Xác nhận tên vừa nghe bằng [Tên]さんですね.",
+            "Yêu cầu người đối diện nói lại bằng もう一度お願いします.",
+            "Không thêm さん hoặc お vào tên của chính mình khi tự giới thiệu."
+          ],
+          "objectivesByNative": {
+            "vi": [
+              "Hiểu sự khác nhau cơ bản giữa 名前 và お名前.",
+              "Hỏi tên người đối diện bằng お名前は？",
+              "Hỏi đầy đủ hơn bằng お名前は何ですか。",
+              "Dùng 失礼ですが khi muốn mở đầu câu hỏi một cách lịch sự hơn.",
+              "Dùng すみません để thu hút sự chú ý hoặc mở đầu một câu hỏi.",
+              "Xác nhận tên vừa nghe bằng [Tên]さんですね.",
+              "Yêu cầu người đối diện nói lại bằng もう一度お願いします.",
+              "Không thêm さん hoặc お vào tên của chính mình khi tự giới thiệu."
+            ],
+            "en": [
+              "Understand the basic difference between 名前 and お名前.",
+              "Ask the other person’s name with お名前は？",
+              "Ask more fully with お名前は何ですか。",
+              "Use 失礼ですが to open a question more politely.",
+              "Use すみません to get attention or begin a question.",
+              "Confirm the name you just heard with [Name]さんですね.",
+              "Ask the other person to repeat with もう一度お願いします.",
+              "Don’t add さん or お to your own name when introducing yourself."
+            ],
+            "ja": [
+              "「名前」と「お名前」の基本的な違いを理解できます。",
+              "「お名前は？」で相手の名前を聞けます。",
+              "「お名前は何ですか。」でより丁寧に聞けます。",
+              "「失礼ですが」を使って、より丁寧に質問を切り出せます。",
+              "「すみません」で注意を引いたり、質問を始めたりできます。",
+              "「〜さんですね」で聞いた名前を確認できます。",
+              "「もう一度お願いします」で言い直してもらえます。",
+              "自己紹介では、自分の名前に「さん」や「お」を付けません。"
+            ]
+          },
+          "situation": [
+            "Bạn vừa gặp một người mới và đã giới thiệu tên mình.",
+            "Bây giờ bạn muốn hỏi tên của người đối diện."
+          ],
+          "situationByNative": {
+            "vi": [
+              "Bạn vừa gặp một người mới và đã giới thiệu tên mình.",
+              "Bây giờ bạn muốn hỏi tên của người đối diện."
+            ],
+            "en": [
+              "You have just met someone new and introduced your own name.",
+              "Now you want to ask the other person’s name."
+            ],
+            "ja": [
+              "あなたは新しい人に会い、自分の名前を伝えたところです。",
+              "次に、相手の名前を聞きたいと思っています。"
+            ]
+          },
+          "examples": [
+            {
+              "label": "Bạn có thể hỏi:",
+              "labelByNative": {
+                "vi": "Bạn có thể hỏi:",
+                "en": "You can ask:",
+                "ja": "次のように聞けます。"
+              },
+              "speaker": "",
+              "targetText": "お名前は？",
+              "displayText": "お名前は？",
+              "reading": "おなまえは？",
+              "speechText": "おなまえは",
+              "translationByNative": {
+                "vi": "Tên bạn là gì?",
+                "en": "What is your name?",
+                "ja": "お名前は何ですか。"
+              },
+              "translations": {
+                "vi": "Tên bạn là gì?",
+                "en": "What is your name?",
+                "ja": "お名前は何ですか。"
+              },
+              "meaningVi": "Tên bạn là gì?",
+              "audioLocale": "ja-JP"
+            },
+            {
+              "label": "Sau khi nghe tên, bạn xác nhận:",
+              "labelByNative": {
+                "vi": "Sau khi nghe tên, bạn xác nhận:",
+                "en": "After hearing the name, you confirm:",
+                "ja": "名前を聞いた後、確認します。"
+              },
+              "speaker": "",
+              "targetText": "伊藤さんですね。",
+              "displayText": "伊藤さんですね。",
+              "reading": "いとうさんですね。",
+              "speechText": "いとうさんですね",
+              "translationByNative": {
+                "vi": "Bạn là Itō phải không.",
+                "en": "You’re Itō, right?",
+                "ja": "伊藤さんですね。"
+              },
+              "translations": {
+                "vi": "Bạn là Itō phải không.",
+                "en": "You’re Itō, right?",
+                "ja": "伊藤さんですね。"
+              },
+              "meaningVi": "Bạn là Itō phải không.",
+              "audioLocale": "ja-JP"
+            },
+            {
+              "label": "Nếu không nghe rõ, bạn nói:",
+              "labelByNative": {
+                "vi": "Nếu không nghe rõ, bạn nói:",
+                "en": "If you didn’t hear clearly, you say:",
+                "ja": "聞き取れなかったときは、次のように言います。"
+              },
+              "speaker": "",
+              "targetText": "すみません、もう一度お願いします。",
+              "displayText": "すみません、もう一度お願いします。",
+              "reading": "すみません、もういちどおねがいします。",
+              "speechText": "すみません、もういちどおねがいします",
+              "translationByNative": {
+                "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                "en": "Sorry, could you say that once more?",
+                "ja": "すみません、もう一度お願いします。"
+              },
+              "translations": {
+                "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                "en": "Sorry, could you say that once more?",
+                "ja": "すみません、もう一度お願いします。"
+              },
+              "meaningVi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+              "audioLocale": "ja-JP"
+            }
+          ],
+          "importantNote": [
+            "Trong tình huống đã rõ là đang hỏi người đối diện, không cần thêm あなた.",
+            "私は田中です。 và 私の名前は田中です。 đều đúng.",
+            "Không nói 私のお名前は田中です。"
+          ],
+          "importantNoteByNative": {
+            "vi": [
+              "Trong tình huống đã rõ là đang hỏi người đối diện, không cần thêm あなた.",
+              "私は田中です。 và 私の名前は田中です。 đều đúng.",
+              "Không nói 私のお名前は田中です。"
+            ],
+            "en": [
+              "When it’s clear you’re asking the other person, you don’t need to add あなた.",
+              "Both 私は田中です。 and 私の名前は田中です。 are correct.",
+              "Don’t say 私のお名前は田中です。"
+            ],
+            "ja": [
+              "相手に尋ねているのが明らかな場面では、「あなた」を付ける必要はありません。",
+              "「私は田中です。」も「私の名前は田中です。」も正しい言い方です。",
+              "「私のお名前は田中です。」とは言いません。"
+            ]
+          }
         },
-        "grammarSentencePatterns": {
-          "status": "placeholder"
+        "vocabularyDetails": [
+          {
+            "id": "namae",
+            "overview": "Tên.",
+            "overviewByNative": {
+              "vi": "Tên.",
+              "en": "Name.",
+              "ja": "名前。"
+            },
+            "examples": [
+              {
+                "text": "私の名前は田中です。",
+                "reading": "わたしのなまえはたなかです。",
+                "translation": "Tên tôi là Tanaka.",
+                "translationByNative": {
+                  "vi": "Tên tôi là Tanaka.",
+                  "en": "My name is Tanaka.",
+                  "ja": "私の名前は田中です。"
+                },
+                "speechText": "わたしのなまえはたなかです。"
+              }
+            ],
+            "notes": [
+              "Không nên hiểu 名前 = tên mình và お名前 = tên người khác như một quy tắc tuyệt đối."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Không nên hiểu 名前 = tên mình và お名前 = tên người khác như một quy tắc tuyệt đối."
+              ],
+              "en": [
+                "Don’t treat 名前 = your name and お名前 = someone else’s name as an absolute rule."
+              ],
+              "ja": [
+                "「名前＝自分の名前」「お名前＝相手の名前」という絶対的な規則として覚えないでください。"
+              ]
+            }
+          },
+          {
+            "id": "onamae",
+            "overview": "Tên — cách nói lịch sự hơn.",
+            "overviewByNative": {
+              "vi": "Tên — cách nói lịch sự hơn.",
+              "en": "Name — a more polite way to say it.",
+              "ja": "名前（より丁寧な言い方）。"
+            },
+            "examples": [
+              {
+                "text": "お名前は？",
+                "reading": "おなまえは？",
+                "translation": "Tên bạn là gì?",
+                "translationByNative": {
+                  "vi": "Tên bạn là gì?",
+                  "en": "What is your name?",
+                  "ja": "お名前は何ですか。"
+                },
+                "speechText": "おなまえは？"
+              }
+            ]
+          },
+          {
+            "id": "nan-desu-ka",
+            "overview": "Là gì?",
+            "overviewByNative": {
+              "vi": "Là gì?",
+              "en": "What is it?",
+              "ja": "何ですか。"
+            },
+            "examples": [
+              {
+                "text": "これは何ですか。",
+                "reading": "これはなんですか。",
+                "translation": "Cái này là gì?",
+                "translationByNative": {
+                  "vi": "Cái này là gì?",
+                  "en": "What is this?",
+                  "ja": "これは何ですか。"
+                },
+                "speechText": "これはなんですか。"
+              }
+            ],
+            "notes": [
+              "Trong ～は何ですか, 何 được đọc là なん."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Trong ～は何ですか, 何 được đọc là なん."
+              ],
+              "en": [
+                "In ～は何ですか, 何 is read なん."
+              ],
+              "ja": [
+                "「～は何ですか」では、「何」は「なん」と読みます。"
+              ]
+            }
+          },
+          {
+            "id": "onamae-wa-nan-desu-ka",
+            "overview": "Tên bạn là gì?",
+            "overviewByNative": {
+              "vi": "Tên bạn là gì?",
+              "en": "What is your name?",
+              "ja": "お名前は何ですか。"
+            },
+            "examples": [
+              {
+                "text": "失礼ですが、お名前は何ですか。",
+                "reading": "しつれいですが、おなまえはなんですか。",
+                "translation": "Xin lỗi, tên bạn là gì?",
+                "translationByNative": {
+                  "vi": "Xin lỗi, tên bạn là gì?",
+                  "en": "Excuse me, what is your name?",
+                  "ja": "失礼ですが、お名前は何ですか。"
+                },
+                "speechText": "しつれいですが、おなまえはなんですか。"
+              }
+            ]
+          },
+          {
+            "id": "onamae-wa",
+            "overview": "Còn tên bạn là...? / Tên bạn là gì?",
+            "overviewByNative": {
+              "vi": "Còn tên bạn là...? / Tên bạn là gì?",
+              "en": "And your name is…? / What is your name?",
+              "ja": "お名前は？（あなたのお名前は？）"
+            }
+          },
+          {
+            "id": "shitsurei-desu-ga",
+            "overview": "Xin phép cho tôi hỏi...",
+            "overviewByNative": {
+              "vi": "Xin phép cho tôi hỏi...",
+              "en": "Excuse me for asking…",
+              "ja": "失礼ですが…（お尋ねします）。"
+            }
+          },
+          {
+            "id": "sumimasen",
+            "overview": "Xin lỗi / Cho hỏi...",
+            "overviewByNative": {
+              "vi": "Xin lỗi / Cho hỏi...",
+              "en": "Excuse me. / Sorry.",
+              "ja": "すみません（あのう、失礼します）。"
+            }
+          },
+          {
+            "id": "mou-ichido",
+            "overview": "Một lần nữa.",
+            "overviewByNative": {
+              "vi": "Một lần nữa.",
+              "en": "One more time.",
+              "ja": "もう一度。"
+            },
+            "examples": [
+              {
+                "text": "すみません、もう一度お願いします。",
+                "reading": "すみません、もういちどおねがいします。",
+                "translation": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                "translationByNative": {
+                  "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                  "en": "Sorry, could you say that once more?",
+                  "ja": "すみません、もう一度お願いします。"
+                },
+                "speechText": "すみません、もういちどおねがいします。"
+              }
+            ]
+          },
+          {
+            "id": "san",
+            "overview": "Cách gọi lịch sự đặt sau tên người khác.",
+            "overviewByNative": {
+              "vi": "Cách gọi lịch sự đặt sau tên người khác.",
+              "en": "A polite suffix placed after another person’s name.",
+              "ja": "相手の名前の後に付ける丁寧な呼び方。"
+            },
+            "notes": [
+              "Thường không thêm さん vào tên của chính mình."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Thường không thêm さん vào tên của chính mình."
+              ],
+              "en": [
+                "You usually don’t add さん to your own name."
+              ],
+              "ja": [
+                "自分の名前には、ふつう「さん」を付けません。"
+              ]
+            }
+          },
+          {
+            "id": "desu-ne",
+            "overview": "Dùng để xác nhận thông tin vừa nghe.",
+            "overviewByNative": {
+              "vi": "Dùng để xác nhận thông tin vừa nghe.",
+              "en": "Used to confirm information you just heard.",
+              "ja": "聞いた情報を確認するときに使います。"
+            },
+            "notes": [
+              "Dùng để xác nhận, không phải để hỏi lại."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Dùng để xác nhận, không phải để hỏi lại."
+              ],
+              "en": [
+                "Used to confirm, not to ask again."
+              ],
+              "ja": [
+                "確認のために使い、聞き直すためではありません。"
+              ]
+            }
+          }
+        ],
+        "dialogueGroups": [
+          {
+            "id": "ask-name-short",
+            "title": "Hỏi tên một cách ngắn gọn",
+            "titleByNative": {
+              "vi": "Hỏi tên một cách ngắn gọn",
+              "en": "Asking a name briefly",
+              "ja": "短く名前を聞く"
+            },
+            "situation": "Hai người vừa gặp, một người hỏi tên ngắn gọn.",
+            "situationByNative": {
+              "vi": "Hai người vừa gặp, một người hỏi tên ngắn gọn.",
+              "en": "Two people have just met; one asks the name briefly.",
+              "ja": "初対面の二人。一方が短く名前を聞きます。"
+            },
+            "lines": [
+              {
+                "targetText": "こんにちは。",
+                "displayText": "こんにちは。",
+                "reading": "こんにちは。",
+                "speechText": "こんにちは",
+                "translationByNative": {
+                  "vi": "Xin chào.",
+                  "en": "Hello.",
+                  "ja": "こんにちは。"
+                },
+                "translations": {
+                  "vi": "Xin chào.",
+                  "en": "Hello.",
+                  "ja": "こんにちは。"
+                },
+                "meaningVi": "Xin chào.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
+              {
+                "targetText": "こんにちは。",
+                "displayText": "こんにちは。",
+                "reading": "こんにちは。",
+                "speechText": "こんにちは",
+                "translationByNative": {
+                  "vi": "Xin chào.",
+                  "en": "Hello.",
+                  "ja": "こんにちは。"
+                },
+                "translations": {
+                  "vi": "Xin chào.",
+                  "en": "Hello.",
+                  "ja": "こんにちは。"
+                },
+                "meaningVi": "Xin chào.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "すみません、お名前は？",
+                "displayText": "すみません、お名前は？",
+                "reading": "すみません、おなまえは？",
+                "speechText": "すみません、おなまえは",
+                "translationByNative": {
+                  "vi": "Xin lỗi, tên bạn là gì?",
+                  "en": "Excuse me, what is your name?",
+                  "ja": "失礼ですが、お名前は何ですか。"
+                },
+                "translations": {
+                  "vi": "Xin lỗi, tên bạn là gì?",
+                  "en": "Excuse me, what is your name?",
+                  "ja": "失礼ですが、お名前は何ですか。"
+                },
+                "meaningVi": "Xin lỗi, tên bạn là gì?",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
+              {
+                "targetText": "伊藤です。",
+                "displayText": "伊藤です。",
+                "reading": "いとうです。",
+                "speechText": "いとうです",
+                "translationByNative": {
+                  "vi": "Tôi là Itō.",
+                  "en": "I’m Itō.",
+                  "ja": "伊藤です。"
+                },
+                "translations": {
+                  "vi": "Tôi là Itō.",
+                  "en": "I’m Itō.",
+                  "ja": "伊藤です。"
+                },
+                "meaningVi": "Tôi là Itō.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "伊藤さんですね。私は田中です。",
+                "displayText": "伊藤さんですね。私は田中です。",
+                "reading": "いとうさんですね。わたしはたなかです。",
+                "speechText": "いとうさんですね。わたしはたなかです",
+                "translationByNative": {
+                  "vi": "Bạn là Itō phải không. Tôi là Tanaka.",
+                  "en": "You’re Itō, right? I’m Tanaka.",
+                  "ja": "伊藤さんですね。私は田中です。"
+                },
+                "translations": {
+                  "vi": "Bạn là Itō phải không. Tôi là Tanaka.",
+                  "en": "You’re Itō, right? I’m Tanaka.",
+                  "ja": "伊藤さんですね。私は田中です。"
+                },
+                "meaningVi": "Bạn là Itō phải không. Tôi là Tanaka.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              }
+            ],
+            "explanation": [
+              "お名前は？ là cách hỏi tên ngắn gọn, tự nhiên khi ngữ cảnh đã rõ.",
+              "～さんですね dùng để xác nhận tên vừa nghe."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "お名前は？ là cách hỏi tên ngắn gọn, tự nhiên khi ngữ cảnh đã rõ.",
+                "～さんですね dùng để xác nhận tên vừa nghe."
+              ],
+              "en": [
+                "お名前は？ is a short, natural way to ask a name when the context is clear.",
+                "～さんですね is used to confirm the name you just heard."
+              ],
+              "ja": [
+                "「お名前は？」は、場面が明らかなときに使える、短く自然な聞き方です。",
+                "「～さんですね」は、聞いた名前を確認するために使います。"
+              ]
+            }
+          },
+          {
+            "id": "ask-name-polite",
+            "title": "Hỏi tên lịch sự hơn",
+            "titleByNative": {
+              "vi": "Hỏi tên lịch sự hơn",
+              "en": "Asking a name more politely",
+              "ja": "より丁寧に名前を聞く"
+            },
+            "situation": "Hai người gặp nhau lần đầu và nói chuyện lịch sự.",
+            "situationByNative": {
+              "vi": "Hai người gặp nhau lần đầu và nói chuyện lịch sự.",
+              "en": "Two people meet for the first time and speak politely.",
+              "ja": "初対面の二人が丁寧に話します。"
+            },
+            "lines": [
+              {
+                "targetText": "はじめまして。佐藤です。",
+                "displayText": "はじめまして。佐藤です。",
+                "reading": "はじめまして。さとうです。",
+                "speechText": "はじめまして。さとうです",
+                "translationByNative": {
+                  "vi": "Rất vui được gặp bạn. Tôi là Satō.",
+                  "en": "Nice to meet you. I’m Satō.",
+                  "ja": "はじめまして。佐藤です。"
+                },
+                "translations": {
+                  "vi": "Rất vui được gặp bạn. Tôi là Satō.",
+                  "en": "Nice to meet you. I’m Satō.",
+                  "ja": "はじめまして。佐藤です。"
+                },
+                "meaningVi": "Rất vui được gặp bạn. Tôi là Satō.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "はじめまして。",
+                "displayText": "はじめまして。",
+                "reading": "はじめまして。",
+                "speechText": "はじめまして",
+                "translationByNative": {
+                  "vi": "Rất vui được gặp bạn.",
+                  "en": "Nice to meet you.",
+                  "ja": "はじめまして。"
+                },
+                "translations": {
+                  "vi": "Rất vui được gặp bạn.",
+                  "en": "Nice to meet you.",
+                  "ja": "はじめまして。"
+                },
+                "meaningVi": "Rất vui được gặp bạn.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
+              {
+                "targetText": "失礼ですが、お名前は何ですか。",
+                "displayText": "失礼ですが、お名前は何ですか。",
+                "reading": "しつれいですが、おなまえはなんですか。",
+                "speechText": "しつれいですが、おなまえはなんですか",
+                "translationByNative": {
+                  "vi": "Xin lỗi, tên bạn là gì?",
+                  "en": "Excuse me, what is your name?",
+                  "ja": "失礼ですが、お名前は何ですか。"
+                },
+                "translations": {
+                  "vi": "Xin lỗi, tên bạn là gì?",
+                  "en": "Excuse me, what is your name?",
+                  "ja": "失礼ですが、お名前は何ですか。"
+                },
+                "meaningVi": "Xin lỗi, tên bạn là gì?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "田中です。",
+                "displayText": "田中です。",
+                "reading": "たなかです。",
+                "speechText": "たなかです",
+                "translationByNative": {
+                  "vi": "Tôi là Tanaka.",
+                  "en": "I’m Tanaka.",
+                  "ja": "田中です。"
+                },
+                "translations": {
+                  "vi": "Tôi là Tanaka.",
+                  "en": "I’m Tanaka.",
+                  "ja": "田中です。"
+                },
+                "meaningVi": "Tôi là Tanaka.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
+              {
+                "targetText": "田中さんですね。よろしくお願いします。",
+                "displayText": "田中さんですね。よろしくお願いします。",
+                "reading": "たなかさんですね。よろしくおねがいします。",
+                "speechText": "たなかさんですね。よろしくおねがいします",
+                "translationByNative": {
+                  "vi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+                  "en": "You’re Tanaka, right? I look forward to getting to know you.",
+                  "ja": "田中さんですね。よろしくお願いします。"
+                },
+                "translations": {
+                  "vi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+                  "en": "You’re Tanaka, right? I look forward to getting to know you.",
+                  "ja": "田中さんですね。よろしくお願いします。"
+                },
+                "meaningVi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              }
+            ],
+            "explanation": [
+              "失礼ですが làm cho câu hỏi lịch sự hơn.",
+              "お名前は何ですか。 là cách hỏi tên đầy đủ và lịch sự."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "失礼ですが làm cho câu hỏi lịch sự hơn.",
+                "お名前は何ですか。 là cách hỏi tên đầy đủ và lịch sự."
+              ],
+              "en": [
+                "失礼ですが makes the question more polite.",
+                "お名前は何ですか。 is a full, polite way to ask a name."
+              ],
+              "ja": [
+                "「失礼ですが」は、質問をより丁寧にします。",
+                "「お名前は何ですか。」は、丁寧で完全な聞き方です。"
+              ]
+            }
+          },
+          {
+            "id": "ask-name-repeat",
+            "title": "Khi không nghe rõ tên",
+            "titleByNative": {
+              "vi": "Khi không nghe rõ tên",
+              "en": "When you can’t hear the name clearly",
+              "ja": "名前が聞き取れないとき"
+            },
+            "situation": "Người nghe không nghe rõ tên và nhờ nói lại.",
+            "situationByNative": {
+              "vi": "Người nghe không nghe rõ tên và nhờ nói lại.",
+              "en": "The listener can’t catch the name and asks for it again.",
+              "ja": "聞き手が名前を聞き取れず、言い直しをお願いします。"
+            },
+            "lines": [
+              {
+                "targetText": "すみません、お名前は？",
+                "displayText": "すみません、お名前は？",
+                "reading": "すみません、おなまえは？",
+                "speechText": "すみません、おなまえは",
+                "translationByNative": {
+                  "vi": "Xin lỗi, tên bạn là gì?",
+                  "en": "Excuse me, what is your name?",
+                  "ja": "失礼ですが、お名前は何ですか。"
+                },
+                "translations": {
+                  "vi": "Xin lỗi, tên bạn là gì?",
+                  "en": "Excuse me, what is your name?",
+                  "ja": "失礼ですが、お名前は何ですか。"
+                },
+                "meaningVi": "Xin lỗi, tên bạn là gì?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "伊藤です。",
+                "displayText": "伊藤です。",
+                "reading": "いとうです。",
+                "speechText": "いとうです",
+                "translationByNative": {
+                  "vi": "Tôi là Itō.",
+                  "en": "I’m Itō.",
+                  "ja": "伊藤です。"
+                },
+                "translations": {
+                  "vi": "Tôi là Itō.",
+                  "en": "I’m Itō.",
+                  "ja": "伊藤です。"
+                },
+                "meaningVi": "Tôi là Itō.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "すみません、もう一度お願いします。",
+                "displayText": "すみません、もう一度お願いします。",
+                "reading": "すみません、もういちどおねがいします。",
+                "speechText": "すみません、もういちどおねがいします",
+                "translationByNative": {
+                  "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                  "en": "Sorry, could you say that once more?",
+                  "ja": "すみません、もう一度お願いします。"
+                },
+                "translations": {
+                  "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                  "en": "Sorry, could you say that once more?",
+                  "ja": "すみません、もう一度お願いします。"
+                },
+                "meaningVi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "伊藤です。い・と・う、です。",
+                "displayText": "伊藤です。い・と・う、です。",
+                "reading": "いとうです。い・と・う、です。",
+                "speechText": "いとうです。い、と、う、です",
+                "translationByNative": {
+                  "vi": "Tôi là Itō. I-tô-u ạ.",
+                  "en": "I’m Itō. I-to-u.",
+                  "ja": "伊藤です。い・と・う、です。"
+                },
+                "translations": {
+                  "vi": "Tôi là Itō. I-tô-u ạ.",
+                  "en": "I’m Itō. I-to-u.",
+                  "ja": "伊藤です。い・と・う、です。"
+                },
+                "meaningVi": "Tôi là Itō. I-tô-u ạ.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "伊藤さんですね。",
+                "displayText": "伊藤さんですね。",
+                "reading": "いとうさんですね。",
+                "speechText": "いとうさんですね",
+                "translationByNative": {
+                  "vi": "Bạn là Itō phải không.",
+                  "en": "You’re Itō, right?",
+                  "ja": "伊藤さんですね。"
+                },
+                "translations": {
+                  "vi": "Bạn là Itō phải không.",
+                  "en": "You’re Itō, right?",
+                  "ja": "伊藤さんですね。"
+                },
+                "meaningVi": "Bạn là Itō phải không.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              }
+            ],
+            "explanation": [
+              "もう一度お願いします dùng để nhờ nói lại.",
+              "Có thể đánh vần từng âm để người nghe nghe rõ."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "もう一度お願いします dùng để nhờ nói lại.",
+                "Có thể đánh vần từng âm để người nghe nghe rõ."
+              ],
+              "en": [
+                "もう一度お願いします is used to ask someone to repeat.",
+                "You can spell out each sound so the listener can hear clearly."
+              ],
+              "ja": [
+                "「もう一度お願いします」は、言い直しをお願いするときに使います。",
+                "一音ずつ区切って言うと、相手が聞き取りやすくなります。"
+              ]
+            }
+          }
+        ],
+        "grammarPatterns": [
+          {
+            "title": "名前 và お名前",
+            "titleByNative": {
+              "vi": "名前 và お名前",
+              "en": "名前 and お名前",
+              "ja": "「名前」と「お名前」"
+            },
+            "formula": "お名前は？ / 私は[名前]です。",
+            "formulaReading": "おなまえは？ / わたしは[なまえ]です。",
+            "meaning": "Cách dùng lịch sự theo ngữ cảnh, không phải quy tắc mình/người khác.",
+            "meaningByNative": {
+              "vi": "Cách dùng lịch sự theo ngữ cảnh, không phải quy tắc mình/người khác.",
+              "en": "Polite usage depends on context, not a “my name / your name” rule.",
+              "ja": "丁寧さは場面によって決まり、「自分／相手」の規則ではありません。"
+            },
+            "examples": [
+              {
+                "text": "お名前は？",
+                "reading": "おなまえは？",
+                "translation": "Tên bạn là gì? (hỏi người khác)",
+                "translationByNative": {
+                  "vi": "Tên bạn là gì? (hỏi người khác)",
+                  "en": "What is your name? (asking someone)",
+                  "ja": "お名前は？（相手に聞く）"
+                },
+                "speechText": "おなまえは？"
+              },
+              {
+                "text": "私は田中です。",
+                "reading": "わたしはたなかです。",
+                "translation": "Tôi là Tanaka. (nói tên mình)",
+                "translationByNative": {
+                  "vi": "Tôi là Tanaka. (nói tên mình)",
+                  "en": "I’m Tanaka. (saying your own name)",
+                  "ja": "私は田中です。（自分の名前を言う）"
+                },
+                "speechText": "わたしはたなかです。"
+              }
+            ],
+            "explanation": [
+              "Hỏi người khác: お名前は？ Tự nói tên mình: 私は田中です。 Không nói 私のお名前は田中です。"
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Hỏi người khác: お名前は？ Tự nói tên mình: 私は田中です。 Không nói 私のお名前は田中です。"
+              ],
+              "en": [
+                "Ask others: お名前は？ Say your own name: 私は田中です。 Don’t say 私のお名前は田中です。"
+              ],
+              "ja": [
+                "相手に聞くとき：お名前は？ 自分の名前を言うとき：私は田中です。「私のお名前は田中です。」とは言いません。"
+              ]
+            }
+          },
+          {
+            "title": "～は何ですか",
+            "titleByNative": {
+              "vi": "～は何ですか",
+              "en": "～は何ですか",
+              "ja": "「～は何ですか」"
+            },
+            "formula": "[名詞] + は + 何ですか",
+            "formulaReading": "[めいし] + は + なんですか",
+            "meaning": "Hỏi “…là gì?”",
+            "meaningByNative": {
+              "vi": "Hỏi “…là gì?”",
+              "en": "Ask “What is …?”",
+              "ja": "「～は何ですか」と尋ねます。"
+            },
+            "examples": [
+              {
+                "text": "お名前は何ですか。",
+                "reading": "おなまえはなんですか。",
+                "translation": "Tên bạn là gì?",
+                "translationByNative": {
+                  "vi": "Tên bạn là gì?",
+                  "en": "What is your name?",
+                  "ja": "お名前は何ですか。"
+                },
+                "speechText": "おなまえはなんですか。"
+              }
+            ],
+            "explanation": [
+              "Trong cấu trúc này 何 đọc là なん. Dạng ngắn: お名前は？"
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Trong cấu trúc này 何 đọc là なん. Dạng ngắn: お名前は？"
+              ],
+              "en": [
+                "In this pattern 何 is read なん. Short form: お名前は？"
+              ],
+              "ja": [
+                "この構文では「何」は「なん」と読みます。短い形：お名前は？"
+              ]
+            }
+          },
+          {
+            "title": "～ですね",
+            "titleByNative": {
+              "vi": "～ですね",
+              "en": "～ですね",
+              "ja": "「～ですね」"
+            },
+            "formula": "[名前] + さん + ですね",
+            "formulaReading": "[なまえ] + さん + ですね",
+            "meaning": "Xác nhận thông tin vừa nghe.",
+            "meaningByNative": {
+              "vi": "Xác nhận thông tin vừa nghe.",
+              "en": "Confirm information you just heard.",
+              "ja": "聞いた情報を確認します。"
+            },
+            "examples": [
+              {
+                "text": "伊藤さんですね。",
+                "reading": "いとうさんですね。",
+                "translation": "Bạn là Itō phải không.",
+                "translationByNative": {
+                  "vi": "Bạn là Itō phải không.",
+                  "en": "You’re Itō, right?",
+                  "ja": "伊藤さんですね。"
+                },
+                "speechText": "いとうさんですね。"
+              }
+            ],
+            "explanation": [
+              "Dùng để xác nhận tên vừa nghe, không phải hỏi tên lại."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Dùng để xác nhận tên vừa nghe, không phải hỏi tên lại."
+              ],
+              "en": [
+                "Used to confirm the name you heard, not to ask again."
+              ],
+              "ja": [
+                "聞いた名前を確認するために使い、名前を聞き直すためではありません。"
+              ]
+            }
+          }
+        ],
+        "practice": {
+          "title": "Bài tập",
+          "titleByNative": {
+            "vi": "Bài tập",
+            "en": "Exercises",
+            "ja": "練習"
+          },
+          "japaneseTitle": "練習（れんしゅう）",
+          "totalQuestions": 14,
+          "estimatedMinutes": "Khoảng 8–10 phút",
+          "estimatedMinutesByNative": {
+            "vi": "Khoảng 8–10 phút",
+            "en": "About 8–10 minutes",
+            "ja": "約8～10分"
+          },
+          "reviewTopics": "Từ vựng · Hội thoại · Ngữ pháp",
+          "reviewTopicsByNative": {
+            "vi": "Từ vựng · Hội thoại · Ngữ pháp",
+            "en": "Vocabulary · Dialogue · Grammar",
+            "ja": "語彙・会話・文法"
+          },
+          "groups": [
+            {
+              "id": "free",
+              "number": "01",
+              "title": "Luyện tập cơ bản",
+              "titleByNative": {
+                "vi": "Luyện tập cơ bản",
+                "en": "Core Practice",
+                "ja": "基本練習"
+              },
+              "range": "Câu 1–9",
+              "rangeByNative": {
+                "vi": "Câu 1–9",
+                "en": "Questions 1–9",
+                "ja": "第1問～第9問"
+              },
+              "details": "Từ vựng · Nghe · Ngữ pháp\nHội thoại",
+              "detailsByNative": {
+                "vi": "Từ vựng · Nghe · Ngữ pháp\nHội thoại",
+                "en": "Vocabulary · Listening · Grammar\nDialogue",
+                "ja": "語彙・リスニング・文法\n会話"
+              },
+              "start": 1,
+              "end": 9,
+              "plan": "free"
+            },
+            {
+              "id": "plus",
+              "number": "02",
+              "title": "Luyện tập nâng cao",
+              "titleByNative": {
+                "vi": "Luyện tập nâng cao",
+                "en": "Advanced Practice",
+                "ja": "発展練習"
+              },
+              "range": "Câu 10–14",
+              "rangeByNative": {
+                "vi": "Câu 10–14",
+                "en": "Questions 10–14",
+                "ja": "第10問～第14問"
+              },
+              "details": "Tình huống thực tế\nHội thoại thực hành nâng cao",
+              "detailsByNative": {
+                "vi": "Tình huống thực tế\nHội thoại thực hành nâng cao",
+                "en": "Real-world situations\nAdvanced practice dialogue",
+                "ja": "実際の場面\n発展会話練習"
+              },
+              "start": 10,
+              "end": 14,
+              "plan": "plus"
+            }
+          ],
+          "exercises": [
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-1",
+              "order": 1,
+              "plan": "free",
+              "type": "multiple_choice",
+              "prompt": "お名前は？ có nghĩa là gì?",
+              "promptByNative": {
+                "vi": "お名前は？ có nghĩa là gì?",
+                "en": "What does お名前は？ mean?",
+                "ja": "「お名前は？」はどういう意味ですか。"
+              },
+              "options": [
+                {
+                  "id": "meaning_your_name",
+                  "text": "Tên bạn là gì?",
+                  "textByNative": {
+                    "vi": "Tên bạn là gì?",
+                    "en": "What is your name?",
+                    "ja": "お名前は何ですか。"
+                  },
+                  "canonicalText": "Tên bạn là gì?",
+                  "canonicalTextByNative": {
+                    "vi": "Tên bạn là gì?",
+                    "en": "What is your name?",
+                    "ja": "お名前は何ですか。"
+                  },
+                  "audioText": "Tên bạn là gì?",
+                  "audioTextByNative": {
+                    "vi": "Tên bạn là gì?",
+                    "en": "What is your name?",
+                    "ja": "お名前は何ですか。"
+                  }
+                },
+                {
+                  "id": "meaning_im_tanaka",
+                  "text": "Tôi là Tanaka.",
+                  "textByNative": {
+                    "vi": "Tôi là Tanaka.",
+                    "en": "I’m Tanaka.",
+                    "ja": "田中です。"
+                  },
+                  "canonicalText": "Tôi là Tanaka.",
+                  "canonicalTextByNative": {
+                    "vi": "Tôi là Tanaka.",
+                    "en": "I’m Tanaka.",
+                    "ja": "田中です。"
+                  },
+                  "audioText": "Tôi là Tanaka.",
+                  "audioTextByNative": {
+                    "vi": "Tôi là Tanaka.",
+                    "en": "I’m Tanaka.",
+                    "ja": "田中です。"
+                  }
+                },
+                {
+                  "id": "meaning_see_you",
+                  "text": "Hẹn gặp lại.",
+                  "textByNative": {
+                    "vi": "Hẹn gặp lại.",
+                    "en": "See you again.",
+                    "ja": "また会いましょう。"
+                  },
+                  "canonicalText": "Hẹn gặp lại.",
+                  "canonicalTextByNative": {
+                    "vi": "Hẹn gặp lại.",
+                    "en": "See you again.",
+                    "ja": "また会いましょう。"
+                  },
+                  "audioText": "Hẹn gặp lại.",
+                  "audioTextByNative": {
+                    "vi": "Hẹn gặp lại.",
+                    "en": "See you again.",
+                    "ja": "また会いましょう。"
+                  }
+                },
+                {
+                  "id": "meaning_thanks",
+                  "text": "Xin cảm ơn.",
+                  "textByNative": {
+                    "vi": "Xin cảm ơn.",
+                    "en": "Thank you.",
+                    "ja": "ありがとうございます。"
+                  },
+                  "canonicalText": "Xin cảm ơn.",
+                  "canonicalTextByNative": {
+                    "vi": "Xin cảm ơn.",
+                    "en": "Thank you.",
+                    "ja": "ありがとうございます。"
+                  },
+                  "audioText": "Xin cảm ơn.",
+                  "audioTextByNative": {
+                    "vi": "Xin cảm ơn.",
+                    "en": "Thank you.",
+                    "ja": "ありがとうございます。"
+                  }
+                }
+              ],
+              "correctOptionId": "meaning_your_name",
+              "feedback": {
+                "correctAnswer": "Tên bạn là gì?",
+                "correctAnswerByNative": {
+                  "vi": "Tên bạn là gì?",
+                  "en": "What is your name?",
+                  "ja": "お名前は何ですか。"
+                },
+                "explanation": "お名前は？ là cách hỏi tên ngắn gọn.",
+                "explanationByNative": {
+                  "vi": "お名前は？ là cách hỏi tên ngắn gọn.",
+                  "en": "お名前は？ is a short way to ask someone’s name.",
+                  "ja": "「お名前は？」は、名前を短く聞く言い方です。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-2",
+              "order": 2,
+              "plan": "free",
+              "type": "multiple_choice",
+              "prompt": "Bạn muốn hỏi một cách lịch sự: “Tên bạn là gì?”",
+              "promptByNative": {
+                "vi": "Bạn muốn hỏi một cách lịch sự: “Tên bạn là gì?”",
+                "en": "You want to ask politely: “What is your name?”",
+                "ja": "丁寧に「お名前は何ですか。」と聞きたいとき、どれを使いますか。"
+              },
+              "options": [
+                {
+                  "id": "ask_full",
+                  "text": "お名前は何ですか。",
+                  "canonicalText": "お名前は何ですか。",
+                  "audioText": "お名前は何ですか。"
+                },
+                {
+                  "id": "self_intro",
+                  "text": "私は田中です。",
+                  "canonicalText": "私は田中です。",
+                  "audioText": "私は田中です。"
+                },
+                {
+                  "id": "confirm",
+                  "text": "伊藤さんですね。",
+                  "canonicalText": "伊藤さんですね。",
+                  "audioText": "伊藤さんですね。"
+                },
+                {
+                  "id": "closing",
+                  "text": "よろしくお願いします。",
+                  "canonicalText": "よろしくお願いします。",
+                  "audioText": "よろしくお願いします。"
+                }
+              ],
+              "correctOptionId": "ask_full",
+              "feedback": {
+                "correctAnswer": "お名前は何ですか。",
+                "explanation": "お名前は何ですか。 là cách hỏi tên đầy đủ và lịch sự.",
+                "explanationByNative": {
+                  "vi": "お名前は何ですか。 là cách hỏi tên đầy đủ và lịch sự.",
+                  "en": "お名前は何ですか。 is a full, polite way to ask a name.",
+                  "ja": "「お名前は何ですか。」は、丁寧で完全な聞き方です。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-3",
+              "order": 3,
+              "plan": "free",
+              "type": "matching",
+              "prompt": "Nối mỗi mục với nghĩa phù hợp.",
+              "promptByNative": {
+                "vi": "Nối mỗi mục với nghĩa phù hợp.",
+                "en": "Match each item with its meaning.",
+                "ja": "それぞれの項目を正しい意味と結び付けてください。"
+              },
+              "pairs": [
+                {
+                  "id": "namae",
+                  "left": {
+                    "id": "namae_l",
+                    "text": "名前"
+                  },
+                  "right": {
+                    "id": "namae_r",
+                    "text": "Tên",
+                    "textByNative": {
+                      "vi": "Tên",
+                      "en": "Name",
+                      "ja": "名前"
+                    }
+                  }
+                },
+                {
+                  "id": "onamae_wa",
+                  "left": {
+                    "id": "onamae_wa_l",
+                    "text": "お名前は？"
+                  },
+                  "right": {
+                    "id": "onamae_wa_r",
+                    "text": "Tên bạn là gì?",
+                    "textByNative": {
+                      "vi": "Tên bạn là gì?",
+                      "en": "What is your name?",
+                      "ja": "お名前は何ですか。"
+                    }
+                  }
+                },
+                {
+                  "id": "mou_ichido",
+                  "left": {
+                    "id": "mou_l",
+                    "text": "もう一度お願いします"
+                  },
+                  "right": {
+                    "id": "mou_r",
+                    "text": "Vui lòng nói lại một lần nữa",
+                    "textByNative": {
+                      "vi": "Vui lòng nói lại một lần nữa",
+                      "en": "Please say it once more",
+                      "ja": "もう一度お願いします"
+                    }
+                  }
+                },
+                {
+                  "id": "san_desu_ne",
+                  "left": {
+                    "id": "sdn_l",
+                    "text": "～さんですね"
+                  },
+                  "right": {
+                    "id": "sdn_r",
+                    "text": "Xác nhận tên vừa nghe",
+                    "textByNative": {
+                      "vi": "Xác nhận tên vừa nghe",
+                      "en": "Confirming the name you just heard",
+                      "ja": "聞いた名前の確認"
+                    }
+                  }
+                }
+              ],
+              "feedback": {
+                "explanation": "Mỗi mục gắn với một chức năng giao tiếp cụ thể.",
+                "explanationByNative": {
+                  "vi": "Mỗi mục gắn với một chức năng giao tiếp cụ thể.",
+                  "en": "Each item maps to a specific communicative function.",
+                  "ja": "それぞれの項目は、特定のコミュニケーション機能に対応しています。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-4",
+              "order": 4,
+              "plan": "free",
+              "type": "sentence_ordering",
+              "prompt": "Sắp xếp các thẻ thành câu “Tên bạn là gì?”",
+              "promptByNative": {
+                "vi": "Sắp xếp các thẻ thành câu “Tên bạn là gì?”",
+                "en": "Arrange the cards to form “What is your name?”",
+                "ja": "カードを並べて「お名前は何ですか」という文を作ってください。"
+              },
+              "tokens": [
+                {
+                  "id": "onamae",
+                  "text": "お名前（なまえ）",
+                  "canonicalText": "お名前",
+                  "audioText": "おなまえ"
+                },
+                {
+                  "id": "wa",
+                  "text": "は",
+                  "canonicalText": "は",
+                  "audioText": "は"
+                },
+                {
+                  "id": "nan",
+                  "text": "何（なん）",
+                  "canonicalText": "何",
+                  "audioText": "なん"
+                },
+                {
+                  "id": "desuka",
+                  "text": "ですか",
+                  "canonicalText": "ですか",
+                  "audioText": "ですか"
+                },
+                {
+                  "id": "san",
+                  "text": "さん",
+                  "canonicalText": "さん",
+                  "audioText": "さん"
+                },
+                {
+                  "id": "kochirakoso",
+                  "text": "こちらこそ",
+                  "canonicalText": "こちらこそ",
+                  "audioText": "こちらこそ"
+                }
+              ],
+              "correctTokenIds": [
+                "onamae",
+                "wa",
+                "nan",
+                "desuka"
+              ],
+              "feedback": {
+                "correctAnswer": "お名前（なまえ）は何（なん）ですか。",
+                "canonicalAnswer": "お名前は何ですか。",
+                "audioText": "おなまえはなんですか。",
+                "explanation": "お名前 + は + 何 + ですか → お名前は何ですか。 さん và こちらこそ không dùng ở đây.",
+                "explanationByNative": {
+                  "vi": "お名前 + は + 何 + ですか → お名前は何ですか。 さん và こちらこそ không dùng ở đây.",
+                  "en": "お名前 + は + 何 + ですか → お名前は何ですか。 さん and こちらこそ aren’t used here.",
+                  "ja": "「お名前」＋「は」＋「何」＋「ですか」→「お名前は何ですか。」「さん」と「こちらこそ」はここでは使いません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-5",
+              "order": 5,
+              "plan": "free",
+              "type": "dialogue_fill",
+              "prompt": "Điền chỗ trống để hoàn thành hội thoại.",
+              "promptByNative": {
+                "vi": "Điền chỗ trống để hoàn thành hội thoại.",
+                "en": "Fill in the blank to complete the dialogue.",
+                "ja": "空欄を埋めて会話を完成させてください。"
+              },
+              "dialogue": [
+                "田中: すみません、お名前（なまえ）は？",
+                "伊藤: 伊藤（いとう）です。",
+                "田中: すみません、{{slot_1}}。"
+              ],
+              "slots": [
+                {
+                  "id": "slot_1",
+                  "answerId": "mou_ichido",
+                  "placeholder": "________"
+                }
+              ],
+              "wordBank": [
+                {
+                  "id": "mou_ichido",
+                  "text": "もう一度（いちど）お願（ねが）いします",
+                  "canonicalText": "もう一度お願いします",
+                  "audioText": "もういちどおねがいします"
+                },
+                {
+                  "id": "mata_ashita",
+                  "text": "また明日（あした）",
+                  "canonicalText": "また明日",
+                  "audioText": "またあした"
+                },
+                {
+                  "id": "kochira_koso",
+                  "text": "こちらこそ",
+                  "canonicalText": "こちらこそ",
+                  "audioText": "こちらこそ"
+                }
+              ],
+              "feedback": {
+                "correctAnswer": "すみません、もう一度（いちど）お願（ねが）いします。",
+                "canonicalAnswer": "すみません、もう一度お願いします。",
+                "audioText": "すみません、もういちどおねがいします。",
+                "explanation": "Khi chưa nghe rõ, dùng もう一度お願いします để nhờ nói lại.",
+                "explanationByNative": {
+                  "vi": "Khi chưa nghe rõ, dùng もう一度お願いします để nhờ nói lại.",
+                  "en": "When you didn’t hear clearly, use もう一度お願いします to ask them to repeat.",
+                  "ja": "聞き取れなかったときは、「もう一度お願いします」で言い直しをお願いします。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-6",
+              "order": 6,
+              "plan": "free",
+              "type": "listening_multiple_choice",
+              "prompt": "Bạn vừa nghe câu nào?",
+              "promptByNative": {
+                "vi": "Bạn vừa nghe câu nào?",
+                "en": "Which sentence did you just hear?",
+                "ja": "今聞いた文はどれですか。"
+              },
+              "audioText": "おなまえはなんですか。",
+              "options": [
+                {
+                  "id": "ask_name",
+                  "text": "Hỏi tên người đối diện",
+                  "textByNative": {
+                    "vi": "Hỏi tên người đối diện",
+                    "en": "Asking the other person’s name",
+                    "ja": "相手の名前を聞く"
+                  },
+                  "canonicalText": "Hỏi tên người đối diện",
+                  "canonicalTextByNative": {
+                    "vi": "Hỏi tên người đối diện",
+                    "en": "Asking the other person’s name",
+                    "ja": "相手の名前を聞く"
+                  },
+                  "audioText": "Hỏi tên người đối diện",
+                  "audioTextByNative": {
+                    "vi": "Hỏi tên người đối diện",
+                    "en": "Asking the other person’s name",
+                    "ja": "相手の名前を聞く"
+                  }
+                },
+                {
+                  "id": "self_name",
+                  "text": "Tự giới thiệu tên mình",
+                  "textByNative": {
+                    "vi": "Tự giới thiệu tên mình",
+                    "en": "Introducing your own name",
+                    "ja": "自分の名前を名乗る"
+                  },
+                  "canonicalText": "Tự giới thiệu tên mình",
+                  "canonicalTextByNative": {
+                    "vi": "Tự giới thiệu tên mình",
+                    "en": "Introducing your own name",
+                    "ja": "自分の名前を名乗る"
+                  },
+                  "audioText": "Tự giới thiệu tên mình",
+                  "audioTextByNative": {
+                    "vi": "Tự giới thiệu tên mình",
+                    "en": "Introducing your own name",
+                    "ja": "自分の名前を名乗る"
+                  }
+                },
+                {
+                  "id": "confirm_name",
+                  "text": "Xác nhận tên vừa nghe",
+                  "textByNative": {
+                    "vi": "Xác nhận tên vừa nghe",
+                    "en": "Confirming the name you just heard",
+                    "ja": "聞いた名前の確認"
+                  },
+                  "canonicalText": "Xác nhận tên vừa nghe",
+                  "canonicalTextByNative": {
+                    "vi": "Xác nhận tên vừa nghe",
+                    "en": "Confirming the name you just heard",
+                    "ja": "聞いた名前の確認"
+                  },
+                  "audioText": "Xác nhận tên vừa nghe",
+                  "audioTextByNative": {
+                    "vi": "Xác nhận tên vừa nghe",
+                    "en": "Confirming the name you just heard",
+                    "ja": "聞いた名前の確認"
+                  }
+                },
+                {
+                  "id": "farewell",
+                  "text": "Nói lời tạm biệt",
+                  "textByNative": {
+                    "vi": "Nói lời tạm biệt",
+                    "en": "Saying goodbye",
+                    "ja": "別れのあいさつをする"
+                  },
+                  "canonicalText": "Nói lời tạm biệt",
+                  "canonicalTextByNative": {
+                    "vi": "Nói lời tạm biệt",
+                    "en": "Saying goodbye",
+                    "ja": "別れのあいさつをする"
+                  },
+                  "audioText": "Nói lời tạm biệt",
+                  "audioTextByNative": {
+                    "vi": "Nói lời tạm biệt",
+                    "en": "Saying goodbye",
+                    "ja": "別れのあいさつをする"
+                  }
+                }
+              ],
+              "correctOptionId": "ask_name",
+              "feedback": {
+                "correctAnswer": "Hỏi tên người đối diện",
+                "correctAnswerByNative": {
+                  "vi": "Hỏi tên người đối diện",
+                  "en": "Asking the other person’s name",
+                  "ja": "相手の名前を聞く"
+                },
+                "explanation": "Câu nghe được là お名前は何ですか。 — một câu hỏi tên.",
+                "explanationByNative": {
+                  "vi": "Câu nghe được là お名前は何ですか。 — một câu hỏi tên.",
+                  "en": "The audio is お名前は何ですか。 — a question asking for a name.",
+                  "ja": "音声は「お名前は何ですか。」で、名前を尋ねる文です。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-7",
+              "order": 7,
+              "plan": "free",
+              "type": "multiple_choice",
+              "prompt": "Chọn từ điền vào chỗ trống: 伊藤さん___。",
+              "promptByNative": {
+                "vi": "Chọn từ điền vào chỗ trống: 伊藤さん___。",
+                "en": "Choose the word for the blank: 伊藤さん___。",
+                "ja": "空欄に入る語を選んでください：伊藤さん___。"
+              },
+              "options": [
+                {
+                  "id": "desu_ne",
+                  "text": "ですね",
+                  "canonicalText": "ですね",
+                  "audioText": "ですね"
+                },
+                {
+                  "id": "nan_desu_ka",
+                  "text": "何ですか",
+                  "canonicalText": "何ですか",
+                  "audioText": "何ですか"
+                },
+                {
+                  "id": "mou_ichido",
+                  "text": "もう一度",
+                  "canonicalText": "もう一度",
+                  "audioText": "もう一度"
+                },
+                {
+                  "id": "onamae_wa",
+                  "text": "お名前は",
+                  "canonicalText": "お名前は",
+                  "audioText": "お名前は"
+                }
+              ],
+              "correctOptionId": "desu_ne",
+              "feedback": {
+                "correctAnswer": "ですね",
+                "explanation": "～さんですね dùng để xác nhận tên vừa nghe.",
+                "explanationByNative": {
+                  "vi": "～さんですね dùng để xác nhận tên vừa nghe.",
+                  "en": "～さんですね is used to confirm the name you just heard.",
+                  "ja": "「～さんですね」は、聞いた名前を確認するために使います。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-8",
+              "order": 8,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Người đối diện vừa nói tên nhưng bạn không nghe rõ.",
+              "contextByNative": {
+                "vi": "Người đối diện vừa nói tên nhưng bạn không nghe rõ.",
+                "en": "The other person just said their name, but you didn’t hear it clearly.",
+                "ja": "相手が名前を言いましたが、聞き取れませんでした。"
+              },
+              "prompt": "Bạn nên nói gì?",
+              "promptByNative": {
+                "vi": "Bạn nên nói gì?",
+                "en": "What should you say?",
+                "ja": "どう言えばよいですか。"
+              },
+              "options": [
+                {
+                  "id": "ask_repeat",
+                  "text": "すみません、もう一度お願いします。",
+                  "canonicalText": "すみません、もう一度お願いします。",
+                  "audioText": "すみません、もう一度お願いします。"
+                },
+                {
+                  "id": "wrong_self",
+                  "text": "お名前は田中です。",
+                  "canonicalText": "お名前は田中です。",
+                  "audioText": "お名前は田中です。"
+                },
+                {
+                  "id": "wrong_kochira",
+                  "text": "こちらこそ。",
+                  "canonicalText": "こちらこそ。",
+                  "audioText": "こちらこそ。"
+                },
+                {
+                  "id": "wrong_bye",
+                  "text": "さようなら。",
+                  "canonicalText": "さようなら。",
+                  "audioText": "さようなら。"
+                }
+              ],
+              "correctOptionId": "ask_repeat",
+              "feedback": {
+                "correctAnswer": "すみません、もう一度お願いします。",
+                "explanation": "Khi không nghe rõ, nhờ nói lại bằng すみません、もう一度お願いします。",
+                "explanationByNative": {
+                  "vi": "Khi không nghe rõ, nhờ nói lại bằng すみません、もう一度お願いします。",
+                  "en": "When you can’t hear clearly, ask them to repeat with すみません、もう一度お願いします。",
+                  "ja": "聞き取れないときは、「すみません、もう一度お願いします。」で言い直しをお願いします。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-9",
+              "order": 9,
+              "plan": "free",
+              "type": "checkpoint",
+              "prompt": "Checkpoint 5 câu nhỏ",
+              "promptByNative": {
+                "vi": "Checkpoint 5 câu nhỏ",
+                "en": "Five-question checkpoint",
+                "ja": "5問チェックポイント"
+              },
+              "subQuestions": [
+                {
+                  "id": "q9_1",
+                  "prompt": "お名前 có nghĩa gì?",
+                  "promptByNative": {
+                    "vi": "お名前 có nghĩa gì?",
+                    "en": "What does お名前 mean?",
+                    "ja": "「お名前」はどういう意味ですか。"
+                  },
+                  "options": [
+                    {
+                      "id": "polite_name",
+                      "text": "Tên (cách nói lịch sự)",
+                      "textByNative": {
+                        "vi": "Tên (cách nói lịch sự)",
+                        "en": "Name (polite)",
+                        "ja": "名前（丁寧な言い方）"
+                      },
+                      "canonicalText": "Tên (cách nói lịch sự)",
+                      "canonicalTextByNative": {
+                        "vi": "Tên (cách nói lịch sự)",
+                        "en": "Name (polite)",
+                        "ja": "名前（丁寧な言い方）"
+                      },
+                      "audioText": "Tên (cách nói lịch sự)",
+                      "audioTextByNative": {
+                        "vi": "Tên (cách nói lịch sự)",
+                        "en": "Name (polite)",
+                        "ja": "名前（丁寧な言い方）"
+                      }
+                    },
+                    {
+                      "id": "goodbye",
+                      "text": "Lời tạm biệt",
+                      "textByNative": {
+                        "vi": "Lời tạm biệt",
+                        "en": "A goodbye",
+                        "ja": "別れのあいさつ"
+                      },
+                      "canonicalText": "Lời tạm biệt",
+                      "canonicalTextByNative": {
+                        "vi": "Lời tạm biệt",
+                        "en": "A goodbye",
+                        "ja": "別れのあいさつ"
+                      },
+                      "audioText": "Lời tạm biệt",
+                      "audioTextByNative": {
+                        "vi": "Lời tạm biệt",
+                        "en": "A goodbye",
+                        "ja": "別れのあいさつ"
+                      }
+                    },
+                    {
+                      "id": "thanks",
+                      "text": "Lời cảm ơn",
+                      "textByNative": {
+                        "vi": "Lời cảm ơn",
+                        "en": "A thank-you",
+                        "ja": "お礼の言葉"
+                      },
+                      "canonicalText": "Lời cảm ơn",
+                      "canonicalTextByNative": {
+                        "vi": "Lời cảm ơn",
+                        "en": "A thank-you",
+                        "ja": "お礼の言葉"
+                      },
+                      "audioText": "Lời cảm ơn",
+                      "audioTextByNative": {
+                        "vi": "Lời cảm ơn",
+                        "en": "A thank-you",
+                        "ja": "お礼の言葉"
+                      }
+                    },
+                    {
+                      "id": "sorry",
+                      "text": "Lời xin lỗi",
+                      "textByNative": {
+                        "vi": "Lời xin lỗi",
+                        "en": "An apology",
+                        "ja": "おわびの言葉"
+                      },
+                      "canonicalText": "Lời xin lỗi",
+                      "canonicalTextByNative": {
+                        "vi": "Lời xin lỗi",
+                        "en": "An apology",
+                        "ja": "おわびの言葉"
+                      },
+                      "audioText": "Lời xin lỗi",
+                      "audioTextByNative": {
+                        "vi": "Lời xin lỗi",
+                        "en": "An apology",
+                        "ja": "おわびの言葉"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "polite_name",
+                  "feedback": {
+                    "correctAnswer": "Tên (cách nói lịch sự)",
+                    "correctAnswerByNative": {
+                      "vi": "Tên (cách nói lịch sự)",
+                      "en": "Name (polite)",
+                      "ja": "名前（丁寧な言い方）"
+                    },
+                    "explanation": "お名前 là cách nói lịch sự của 名前.",
+                    "explanationByNative": {
+                      "vi": "お名前 là cách nói lịch sự của 名前.",
+                      "en": "お名前 is the polite form of 名前.",
+                      "ja": "「お名前」は「名前」の丁寧な言い方です。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_2",
+                  "prompt": "Tự giới thiệu “Tôi là Tanaka” nói thế nào?",
+                  "promptByNative": {
+                    "vi": "Tự giới thiệu “Tôi là Tanaka” nói thế nào?",
+                    "en": "How do you say “I’m Tanaka”?",
+                    "ja": "「私は田中です」はどう言いますか。"
+                  },
+                  "options": [
+                    {
+                      "id": "self_tanaka",
+                      "text": "私は田中です。",
+                      "canonicalText": "私は田中です。",
+                      "audioText": "私は田中です。"
+                    },
+                    {
+                      "id": "ask_name",
+                      "text": "お名前は？",
+                      "canonicalText": "お名前は？",
+                      "audioText": "お名前は？"
+                    },
+                    {
+                      "id": "ito",
+                      "text": "伊藤です。",
+                      "canonicalText": "伊藤です。",
+                      "audioText": "伊藤です。"
+                    },
+                    {
+                      "id": "bye",
+                      "text": "さようなら。",
+                      "canonicalText": "さようなら。",
+                      "audioText": "さようなら。"
+                    }
+                  ],
+                  "correctOptionId": "self_tanaka",
+                  "feedback": {
+                    "correctAnswer": "私は田中です。",
+                    "explanation": "私は田中です。 dùng để tự giới thiệu tên mình.",
+                    "explanationByNative": {
+                      "vi": "私は田中です。 dùng để tự giới thiệu tên mình.",
+                      "en": "私は田中です。 introduces your own name.",
+                      "ja": "「私は田中です。」は自分の名前を名乗る言い方です。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_3",
+                  "prompt": "Xác nhận “佐藤です” thì nói gì?",
+                  "promptByNative": {
+                    "vi": "Xác nhận “佐藤です” thì nói gì?",
+                    "en": "How do you confirm “佐藤です”?",
+                    "ja": "「佐藤です」をどう確認しますか。"
+                  },
+                  "options": [
+                    {
+                      "id": "confirm_sato",
+                      "text": "佐藤さんですね。",
+                      "canonicalText": "佐藤さんですね。",
+                      "audioText": "佐藤さんですね。"
+                    },
+                    {
+                      "id": "self_sato",
+                      "text": "佐藤です。",
+                      "canonicalText": "佐藤です。",
+                      "audioText": "佐藤です。"
+                    },
+                    {
+                      "id": "ask",
+                      "text": "お名前は？",
+                      "canonicalText": "お名前は？",
+                      "audioText": "お名前は？"
+                    },
+                    {
+                      "id": "repeat",
+                      "text": "もう一度お願いします。",
+                      "canonicalText": "もう一度お願いします。",
+                      "audioText": "もう一度お願いします。"
+                    }
+                  ],
+                  "correctOptionId": "confirm_sato",
+                  "feedback": {
+                    "correctAnswer": "佐藤さんですね。",
+                    "explanation": "～さんですね dùng để xác nhận tên.",
+                    "explanationByNative": {
+                      "vi": "～さんですね dùng để xác nhận tên.",
+                      "en": "～さんですね confirms the name.",
+                      "ja": "「～さんですね」で名前を確認します。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_4",
+                  "prompt": "Trong お名前は何ですか, 何 đọc là gì?",
+                  "promptByNative": {
+                    "vi": "Trong お名前は何ですか, 何 đọc là gì?",
+                    "en": "In お名前は何ですか, how is 何 read?",
+                    "ja": "「お名前は何ですか」で「何」はどう読みますか。"
+                  },
+                  "options": [
+                    {
+                      "id": "nan",
+                      "text": "なん",
+                      "canonicalText": "なん",
+                      "audioText": "なん"
+                    },
+                    {
+                      "id": "nani",
+                      "text": "なに",
+                      "canonicalText": "なに",
+                      "audioText": "なに"
+                    },
+                    {
+                      "id": "nanno",
+                      "text": "なんの",
+                      "canonicalText": "なんの",
+                      "audioText": "なんの"
+                    },
+                    {
+                      "id": "itsu",
+                      "text": "いつ",
+                      "canonicalText": "いつ",
+                      "audioText": "いつ"
+                    }
+                  ],
+                  "correctOptionId": "nan",
+                  "feedback": {
+                    "correctAnswer": "なん",
+                    "explanation": "Trong ～は何ですか, 何 được đọc là なん.",
+                    "explanationByNative": {
+                      "vi": "Trong ～は何ですか, 何 được đọc là なん.",
+                      "en": "In ～は何ですか, 何 is read なん.",
+                      "ja": "「～は何ですか」では、「何」は「なん」と読みます。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_5",
+                  "prompt": "Yêu cầu nói lại thì nói gì?",
+                  "promptByNative": {
+                    "vi": "Yêu cầu nói lại thì nói gì?",
+                    "en": "How do you ask someone to repeat?",
+                    "ja": "言い直しをお願いするとき、どう言いますか。"
+                  },
+                  "options": [
+                    {
+                      "id": "repeat",
+                      "text": "もう一度お願いします。",
+                      "canonicalText": "もう一度お願いします。",
+                      "audioText": "もう一度お願いします。"
+                    },
+                    {
+                      "id": "closing",
+                      "text": "よろしくお願いします。",
+                      "canonicalText": "よろしくお願いします。",
+                      "audioText": "よろしくお願いします。"
+                    },
+                    {
+                      "id": "kochira",
+                      "text": "こちらこそ。",
+                      "canonicalText": "こちらこそ。",
+                      "audioText": "こちらこそ。"
+                    },
+                    {
+                      "id": "first",
+                      "text": "はじめまして。",
+                      "canonicalText": "はじめまして。",
+                      "audioText": "はじめまして。"
+                    }
+                  ],
+                  "correctOptionId": "repeat",
+                  "feedback": {
+                    "correctAnswer": "もう一度お願いします。",
+                    "explanation": "もう一度お願いします dùng để nhờ nói lại.",
+                    "explanationByNative": {
+                      "vi": "もう一度お願いします dùng để nhờ nói lại.",
+                      "en": "もう一度お願いします is used to ask someone to repeat.",
+                      "ja": "「もう一度お願いします」は、言い直しをお願いするときに使います。"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-10",
+              "order": 10,
+              "plan": "plus",
+              "type": "chat_text_fill",
+              "prompt": "Hoàn thành đoạn chat",
+              "promptByNative": {
+                "vi": "Hoàn thành đoạn chat",
+                "en": "Complete the chat",
+                "ja": "チャットを完成させる"
+              },
+              "chat": {
+                "timestamp": "14:00",
+                "context": "Hai người gặp nhau. Nhập từ phù hợp vào hai ô trống.",
+                "contextByNative": {
+                  "vi": "Hai người gặp nhau. Nhập từ phù hợp vào hai ô trống.",
+                  "en": "Two people meet. Enter the right words in the two blanks.",
+                  "ja": "二人が出会います。二つの空欄に適切な語を入力してください。"
+                },
+                "speakers": [
+                  {
+                    "id": "a",
+                    "label": "A",
+                    "alignment": "right"
+                  },
+                  {
+                    "id": "b",
+                    "label": "B",
+                    "alignment": "left"
+                  }
+                ],
+                "messages": [
+                  {
+                    "id": "message_1",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "displayText": "こんにちは。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_2",
+                    "speakerId": "b",
+                    "segments": [
+                      {
+                        "displayText": "こんにちは。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_3",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "displayText": "すみません、"
+                      },
+                      {
+                        "slotId": "chat_ask_name_slot"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_4",
+                    "speakerId": "b",
+                    "segments": [
+                      {
+                        "displayText": "伊藤（いとう）です。",
+                        "canonicalText": "伊藤です。",
+                        "audioText": "いとうです。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_5",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "slotId": "chat_confirm_name_slot"
+                      },
+                      {
+                        "displayText": "さんですね。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_6",
+                    "speakerId": "b",
+                    "segments": [
+                      {
+                        "displayText": "はい。\nよろしくお願（ねが）いします。",
+                        "canonicalText": "はい。よろしくお願いします。",
+                        "audioText": "はい。よろしくおねがいします。"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "slots": [
+                {
+                  "id": "chat_ask_name_slot",
+                  "displayText": "お名前（なまえ）は",
+                  "canonicalText": "お名前は",
+                  "audioText": "おなまえは",
+                  "acceptedAnswers": [
+                    "お名前は",
+                    "おなまえは",
+                    "お名前は？",
+                    "おなまえは？"
+                  ]
+                },
+                {
+                  "id": "chat_confirm_name_slot",
+                  "displayText": "伊藤（いとう）",
+                  "canonicalText": "伊藤",
+                  "audioText": "いとう",
+                  "acceptedAnswers": [
+                    "伊藤",
+                    "いとう",
+                    "イトウ"
+                  ]
+                }
+              ],
+              "feedback": {
+                "correctAnswer": "お名前（なまえ）は？\n伊藤（いとう）さんですね。",
+                "canonicalAnswer": "お名前は？ 伊藤さんですね。",
+                "audioText": "おなまえは？ いとうさんですね。",
+                "correctMessage": "Bạn làm tốt lắm!",
+                "correctMessageByNative": {
+                  "vi": "Bạn làm tốt lắm!",
+                  "en": "Great job!",
+                  "ja": "よくできました！"
+                },
+                "slotFeedback": {
+                  "chat_ask_name_slot": {
+                    "incorrectMessage": "Ô này chưa phải là câu hỏi tên.",
+                    "incorrectMessageByNative": {
+                      "vi": "Ô này chưa phải là câu hỏi tên.",
+                      "en": "This blank isn’t the way to ask a name.",
+                      "ja": "この空欄は、名前の聞き方になっていません。"
+                    },
+                    "correctAnswer": "お名前は",
+                    "explanation": "Dùng お名前は để hỏi tên người đối diện.",
+                    "explanationByNative": {
+                      "vi": "Dùng お名前は để hỏi tên người đối diện.",
+                      "en": "Use お名前は to ask the other person’s name.",
+                      "ja": "相手の名前を聞くには「お名前は」を使います。"
+                    }
+                  },
+                  "chat_confirm_name_slot": {
+                    "incorrectMessage": "Tên vừa nghe chưa đúng.",
+                    "incorrectMessageByNative": {
+                      "vi": "Tên vừa nghe chưa đúng.",
+                      "en": "The name you heard isn’t right.",
+                      "ja": "聞いた名前が正しくありません。"
+                    },
+                    "correctAnswer": "伊藤",
+                    "explanation": "Người kia nói 伊藤です nên xác nhận 伊藤さんですね。",
+                    "explanationByNative": {
+                      "vi": "Người kia nói 伊藤です nên xác nhận 伊藤さんですね。",
+                      "en": "They said 伊藤です, so confirm with 伊藤さんですね。",
+                      "ja": "相手は「伊藤です」と言ったので、「伊藤さんですね。」と確認します。"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-11",
+              "order": 11,
+              "plan": "plus",
+              "type": "multiple_choice",
+              "context": "Bạn muốn hỏi tên một cách đầy đủ và lịch sự hơn.",
+              "contextByNative": {
+                "vi": "Bạn muốn hỏi tên một cách đầy đủ và lịch sự hơn.",
+                "en": "You want to ask someone’s name more fully and politely.",
+                "ja": "より丁寧に、きちんと名前を聞きたいとき。"
+              },
+              "prompt": "Chọn câu phù hợp nhất.",
+              "promptByNative": {
+                "vi": "Chọn câu phù hợp nhất.",
+                "en": "Choose the most appropriate sentence.",
+                "ja": "最も適切な文を選んでください。"
+              },
+              "options": [
+                {
+                  "id": "full_polite",
+                  "text": "失礼ですが、お名前は何ですか。",
+                  "canonicalText": "失礼ですが、お名前は何ですか。",
+                  "audioText": "失礼ですが、お名前は何ですか。"
+                },
+                {
+                  "id": "short",
+                  "text": "お名前は？",
+                  "canonicalText": "お名前は？",
+                  "audioText": "お名前は？"
+                },
+                {
+                  "id": "self",
+                  "text": "私は田中です。",
+                  "canonicalText": "私は田中です。",
+                  "audioText": "私は田中です。"
+                },
+                {
+                  "id": "repeat",
+                  "text": "もう一度お願いします。",
+                  "canonicalText": "もう一度お願いします。",
+                  "audioText": "もう一度お願いします。"
+                }
+              ],
+              "correctOptionId": "full_polite",
+              "feedback": {
+                "correctAnswer": "失礼ですが、お名前は何ですか。",
+                "explanation": "失礼ですが、お名前は何ですか。 là cách hỏi tên đầy đủ và lịch sự nhất.",
+                "explanationByNative": {
+                  "vi": "失礼ですが、お名前は何ですか。 là cách hỏi tên đầy đủ và lịch sự nhất.",
+                  "en": "失礼ですが、お名前は何ですか。 is the fullest, most polite way to ask a name.",
+                  "ja": "「失礼ですが、お名前は何ですか。」は、最も丁寧で完全な名前の聞き方です。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-12",
+              "order": 12,
+              "plan": "plus",
+              "type": "multiple_choice",
+              "prompt": "Chọn đoạn hội thoại tự nhiên nhất.",
+              "promptByNative": {
+                "vi": "Chọn đoạn hội thoại tự nhiên nhất.",
+                "en": "Choose the most natural dialogue.",
+                "ja": "最も自然な会話を選んでください。"
+              },
+              "options": [
+                {
+                  "id": "natural",
+                  "text": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 伊藤さんですね。私は田中です。",
+                  "canonicalText": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 伊藤さんですね。私は田中です。",
+                  "audioText": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 伊藤さんですね。私は田中です。"
+                },
+                {
+                  "id": "wrong_ono",
+                  "text": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 私のお名前は田中です。",
+                  "canonicalText": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 私のお名前は田中です。",
+                  "audioText": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 私のお名前は田中です。"
+                },
+                {
+                  "id": "wrong_self_san",
+                  "text": "田中: お名前は？\n伊藤: 伊藤です。\n田中: 私は田中さんです。",
+                  "canonicalText": "田中: お名前は？\n伊藤: 伊藤です。\n田中: 私は田中さんです。",
+                  "audioText": "田中: お名前は？\n伊藤: 伊藤です。\n田中: 私は田中さんです。"
+                },
+                {
+                  "id": "wrong_loop",
+                  "text": "田中: すみません、もう一度お願いします。\n伊藤: 伊藤です。\n田中: お名前は何ですか。\n伊藤: 伊藤です。",
+                  "canonicalText": "田中: すみません、もう一度お願いします。\n伊藤: 伊藤です。\n田中: お名前は何ですか。\n伊藤: 伊藤です。",
+                  "audioText": "田中: すみません、もう一度お願いします。\n伊藤: 伊藤です。\n田中: お名前は何ですか。\n伊藤: 伊藤です。"
+                }
+              ],
+              "correctOptionId": "natural",
+              "feedback": {
+                "correctAnswer": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 伊藤さんですね。私は田中です。",
+                "explanation": "A tự nhiên: hỏi tên, nghe, xác nhận rồi giới thiệu mình. B sai vì 私のお名前, C sai vì tự thêm さん cho mình, D lặp vòng không tự nhiên.",
+                "explanationByNative": {
+                  "vi": "A tự nhiên: hỏi tên, nghe, xác nhận rồi giới thiệu mình. B sai vì 私のお名前, C sai vì tự thêm さん cho mình, D lặp vòng không tự nhiên.",
+                  "en": "A is natural: ask, listen, confirm, then introduce yourself. B is wrong (私のお名前), C is wrong (adding さん to your own name), D loops unnaturally.",
+                  "ja": "自然なのはA：名前を聞き、聞き取り、確認してから自分を名乗ります。Bは「私のお名前」が誤り、Cは自分に「さん」を付けるのが誤り、Dは同じやり取りを繰り返して不自然です。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-13",
+              "order": 13,
+              "plan": "plus",
+              "type": "slot_ordering",
+              "prompt": "Hoàn thành câu hỏi tên lịch sự. Chọn từng ô trống, rồi chọn thẻ phù hợp. Có thẻ không cần dùng.",
+              "promptByNative": {
+                "vi": "Hoàn thành câu hỏi tên lịch sự. Chọn từng ô trống, rồi chọn thẻ phù hợp. Có thẻ không cần dùng.",
+                "en": "Complete the polite name question. Select each blank, then choose the right card. One card isn’t needed.",
+                "ja": "丁寧な名前の質問を完成させてください。各空欄を選び、適切なカードを選んでください。使わないカードがあります。"
+              },
+              "tokens": [
+                {
+                  "id": "shitsurei",
+                  "text": "失礼（しつれい）",
+                  "canonicalText": "失礼",
+                  "audioText": "しつれい"
+                },
+                {
+                  "id": "desuga",
+                  "text": "ですが",
+                  "canonicalText": "ですが",
+                  "audioText": "ですが"
+                },
+                {
+                  "id": "onamae",
+                  "text": "お名前（なまえ）",
+                  "canonicalText": "お名前",
+                  "audioText": "おなまえ"
+                },
+                {
+                  "id": "wa",
+                  "text": "は",
+                  "canonicalText": "は",
+                  "audioText": "は"
+                },
+                {
+                  "id": "nan",
+                  "text": "何（なん）",
+                  "canonicalText": "何",
+                  "audioText": "なん"
+                },
+                {
+                  "id": "desuka",
+                  "text": "ですか",
+                  "canonicalText": "ですか",
+                  "audioText": "ですか"
+                },
+                {
+                  "id": "san_distractor",
+                  "text": "さん",
+                  "canonicalText": "さん",
+                  "audioText": "さん"
+                },
+                {
+                  "id": "mou_ichido_distractor",
+                  "text": "もう一度（いちど）",
+                  "canonicalText": "もう一度",
+                  "audioText": "もういちど"
+                }
+              ],
+              "answerSlots": [
+                {
+                  "id": "intro",
+                  "expectedTokenId": "shitsurei"
+                },
+                {
+                  "id": "connector",
+                  "expectedTokenId": "desuga",
+                  "afterText": "、"
+                },
+                {
+                  "id": "topic_word",
+                  "expectedTokenId": "onamae"
+                },
+                {
+                  "id": "topic",
+                  "expectedTokenId": "wa"
+                },
+                {
+                  "id": "question_word",
+                  "expectedTokenId": "nan"
+                },
+                {
+                  "id": "copula",
+                  "expectedTokenId": "desuka",
+                  "afterText": "。"
+                }
+              ],
+              "unusedTokenIds": [
+                "san_distractor",
+                "mou_ichido_distractor"
+              ],
+              "feedback": {
+                "correctAnswer": "失礼（しつれい）ですが、お名前（なまえ）は何（なん）ですか。",
+                "canonicalAnswer": "失礼ですが、お名前は何ですか。",
+                "audioText": "しつれいですが、おなまえはなんですか。",
+                "explanation": "Câu đầy đủ: 失礼ですが、お名前は何ですか。 さん và もう一度 không dùng ở đây.",
+                "explanationByNative": {
+                  "vi": "Câu đầy đủ: 失礼ですが、お名前は何ですか。 さん và もう一度 không dùng ở đây.",
+                  "en": "Full sentence: 失礼ですが、お名前は何ですか。 さん and もう一度 aren’t used here.",
+                  "ja": "完成文：失礼ですが、お名前は何ですか。「さん」と「もう一度」はここでは使いません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u1-l2-practice-14",
+              "order": 14,
+              "plan": "plus",
+              "type": "real_world_practice_dialogue",
+              "nonGraded": true,
+              "scenarioTitle": "Làm quen và hỏi tên trong nhóm",
+              "scenarioTitleByNative": {
+                "vi": "Làm quen và hỏi tên trong nhóm",
+                "en": "Meeting and asking names in a group",
+                "ja": "グループでの自己紹介と名前の確認"
+              },
+              "scenarioDescription": "Ba người gặp nhau. Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận, và khi nghe chưa rõ thì nhờ nói lại.",
+              "scenarioDescriptionByNative": {
+                "vi": "Ba người gặp nhau. Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận, và khi nghe chưa rõ thì nhờ nói lại.",
+                "en": "Three people meet. Satō and Tanaka greet each other, then Itō arrives. They ask names, confirm them, and ask for a repeat when they can’t hear clearly.",
+                "ja": "三人が出会います。佐藤さんと田中さんがあいさつをした後、伊藤さんが来ます。名前を聞き、確認し、聞き取れないときは言い直しをお願いします。"
+              },
+              "characterIds": [
+                "sato",
+                "tanaka",
+                "ito"
+              ],
+              "dialogueLines": [
+                {
+                  "targetText": "こんにちは。はじめまして。佐藤です。",
+                  "displayText": "こんにちは。はじめまして。佐藤です。",
+                  "reading": "こんにちは。はじめまして。さとうです。",
+                  "speechText": "こんにちは。はじめまして。さとうです",
+                  "translationByNative": {
+                    "vi": "Xin chào. Rất vui được gặp bạn. Tôi là Satō.",
+                    "en": "Hello. Nice to meet you. I’m Satō.",
+                    "ja": "こんにちは。はじめまして。佐藤です。"
+                  },
+                  "translations": {
+                    "vi": "Xin chào. Rất vui được gặp bạn. Tôi là Satō.",
+                    "en": "Hello. Nice to meet you. I’m Satō.",
+                    "ja": "こんにちは。はじめまして。佐藤です。"
+                  },
+                  "meaningVi": "Xin chào. Rất vui được gặp bạn. Tôi là Satō.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "konnichiwa. hajimemashite. Satō desu."
+                },
+                {
+                  "targetText": "こんにちは。田中です。よろしくお願いします。",
+                  "displayText": "こんにちは。田中です。よろしくお願いします。",
+                  "reading": "こんにちは。たなかです。よろしくおねがいします。",
+                  "speechText": "こんにちは。たなかです。よろしくおねがいします",
+                  "translationByNative": {
+                    "vi": "Xin chào. Tôi là Tanaka. Rất mong được làm quen.",
+                    "en": "Hello. I’m Tanaka. I look forward to getting to know you.",
+                    "ja": "こんにちは。田中です。よろしくお願いします。"
+                  },
+                  "translations": {
+                    "vi": "Xin chào. Tôi là Tanaka. Rất mong được làm quen.",
+                    "en": "Hello. I’m Tanaka. I look forward to getting to know you.",
+                    "ja": "こんにちは。田中です。よろしくお願いします。"
+                  },
+                  "meaningVi": "Xin chào. Tôi là Tanaka. Rất mong được làm quen.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "konnichiwa. Tanaka desu. yoroshiku onegai shimasu."
+                },
+                {
+                  "targetText": "よろしくお願いします。",
+                  "displayText": "よろしくお願いします。",
+                  "reading": "よろしくおねがいします。",
+                  "speechText": "よろしくおねがいします",
+                  "translationByNative": {
+                    "vi": "Rất mong được làm quen.",
+                    "en": "I look forward to getting to know you.",
+                    "ja": "よろしくお願いします。"
+                  },
+                  "translations": {
+                    "vi": "Rất mong được làm quen.",
+                    "en": "I look forward to getting to know you.",
+                    "ja": "よろしくお願いします。"
+                  },
+                  "meaningVi": "Rất mong được làm quen.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "yoroshiku onegai shimasu."
+                },
+                {
+                  "targetText": "こんにちは。",
+                  "displayText": "こんにちは。",
+                  "reading": "こんにちは。",
+                  "speechText": "こんにちは",
+                  "translationByNative": {
+                    "vi": "Xin chào.",
+                    "en": "Hello.",
+                    "ja": "こんにちは。"
+                  },
+                  "translations": {
+                    "vi": "Xin chào.",
+                    "en": "Hello.",
+                    "ja": "こんにちは。"
+                  },
+                  "meaningVi": "Xin chào.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "konnichiwa."
+                },
+                {
+                  "targetText": "こんにちは。すみません、お名前は？",
+                  "displayText": "こんにちは。すみません、お名前は？",
+                  "reading": "こんにちは。すみません、おなまえは？",
+                  "speechText": "こんにちは。すみません、おなまえは",
+                  "translationByNative": {
+                    "vi": "Xin chào. Xin lỗi, tên bạn là gì?",
+                    "en": "Hello. Excuse me, what is your name?",
+                    "ja": "こんにちは。すみません、お名前は何ですか。"
+                  },
+                  "translations": {
+                    "vi": "Xin chào. Xin lỗi, tên bạn là gì?",
+                    "en": "Hello. Excuse me, what is your name?",
+                    "ja": "こんにちは。すみません、お名前は何ですか。"
+                  },
+                  "meaningVi": "Xin chào. Xin lỗi, tên bạn là gì?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "konnichiwa. sumimasen, onamae wa?"
+                },
+                {
+                  "targetText": "伊藤です。",
+                  "displayText": "伊藤です。",
+                  "reading": "いとうです。",
+                  "speechText": "いとうです",
+                  "translationByNative": {
+                    "vi": "Tôi là Itō.",
+                    "en": "I’m Itō.",
+                    "ja": "伊藤です。"
+                  },
+                  "translations": {
+                    "vi": "Tôi là Itō.",
+                    "en": "I’m Itō.",
+                    "ja": "伊藤です。"
+                  },
+                  "meaningVi": "Tôi là Itō.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "Itō desu."
+                },
+                {
+                  "targetText": "すみません、もう一度お願いします。",
+                  "displayText": "すみません、もう一度お願いします。",
+                  "reading": "すみません、もういちどおねがいします。",
+                  "speechText": "すみません、もういちどおねがいします",
+                  "translationByNative": {
+                    "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                    "en": "Sorry, could you say that once more?",
+                    "ja": "すみません、もう一度お願いします。"
+                  },
+                  "translations": {
+                    "vi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                    "en": "Sorry, could you say that once more?",
+                    "ja": "すみません、もう一度お願いします。"
+                  },
+                  "meaningVi": "Xin lỗi, làm ơn nói lại một lần nữa.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "sumimasen, mōichido onegai shimasu."
+                },
+                {
+                  "targetText": "伊藤です。い・と・う、です。",
+                  "displayText": "伊藤です。い・と・う、です。",
+                  "reading": "いとうです。い・と・う、です。",
+                  "speechText": "いとうです。い、と、う、です",
+                  "translationByNative": {
+                    "vi": "Tôi là Itō. I-tô-u ạ.",
+                    "en": "I’m Itō. I-to-u.",
+                    "ja": "伊藤です。い・と・う、です。"
+                  },
+                  "translations": {
+                    "vi": "Tôi là Itō. I-tô-u ạ.",
+                    "en": "I’m Itō. I-to-u.",
+                    "ja": "伊藤です。い・と・う、です。"
+                  },
+                  "meaningVi": "Tôi là Itō. I-tô-u ạ.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "Itō desu. i- to- u, desu."
+                },
+                {
+                  "targetText": "あ、伊藤さんですね。",
+                  "displayText": "あ、伊藤さんですね。",
+                  "reading": "あ、いとうさんですね。",
+                  "speechText": "あ、いとうさんですね",
+                  "translationByNative": {
+                    "vi": "À, bạn là Itō phải không.",
+                    "en": "Ah, you’re Itō, right?",
+                    "ja": "あ、伊藤さんですね。"
+                  },
+                  "translations": {
+                    "vi": "À, bạn là Itō phải không.",
+                    "en": "Ah, you’re Itō, right?",
+                    "ja": "あ、伊藤さんですね。"
+                  },
+                  "meaningVi": "À, bạn là Itō phải không.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "a, Itō-san desu ne."
+                },
+                {
+                  "targetText": "はい。お名前は？",
+                  "displayText": "はい。お名前は？",
+                  "reading": "はい。おなまえは？",
+                  "speechText": "はい。おなまえは",
+                  "translationByNative": {
+                    "vi": "Vâng. Còn tên bạn là gì?",
+                    "en": "Yes. And your name is?",
+                    "ja": "はい。お名前は？"
+                  },
+                  "translations": {
+                    "vi": "Vâng. Còn tên bạn là gì?",
+                    "en": "Yes. And your name is?",
+                    "ja": "はい。お名前は？"
+                  },
+                  "meaningVi": "Vâng. Còn tên bạn là gì?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "hai. onamae wa?"
+                },
+                {
+                  "targetText": "田中です。",
+                  "displayText": "田中です。",
+                  "reading": "たなかです。",
+                  "speechText": "たなかです",
+                  "translationByNative": {
+                    "vi": "Tôi là Tanaka.",
+                    "en": "I’m Tanaka.",
+                    "ja": "田中です。"
+                  },
+                  "translations": {
+                    "vi": "Tôi là Tanaka.",
+                    "en": "I’m Tanaka.",
+                    "ja": "田中です。"
+                  },
+                  "meaningVi": "Tôi là Tanaka.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "Tanaka desu."
+                },
+                {
+                  "targetText": "田中さんですね。よろしくお願いします。",
+                  "displayText": "田中さんですね。よろしくお願いします。",
+                  "reading": "たなかさんですね。よろしくおねがいします。",
+                  "speechText": "たなかさんですね。よろしくおねがいします",
+                  "translationByNative": {
+                    "vi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+                    "en": "You’re Tanaka, right? I look forward to getting to know you.",
+                    "ja": "田中さんですね。よろしくお願いします。"
+                  },
+                  "translations": {
+                    "vi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+                    "en": "You’re Tanaka, right? I look forward to getting to know you.",
+                    "ja": "田中さんですね。よろしくお願いします。"
+                  },
+                  "meaningVi": "Bạn là Tanaka phải không. Rất mong được làm quen.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "Tanaka-san desu ne. yoroshiku onegai shimasu."
+                },
+                {
+                  "targetText": "はい。よろしくお願いします。",
+                  "displayText": "はい。よろしくお願いします。",
+                  "reading": "はい。よろしくおねがいします。",
+                  "speechText": "はい。よろしくおねがいします",
+                  "translationByNative": {
+                    "vi": "Vâng. Rất mong được làm quen.",
+                    "en": "Yes. I look forward to getting to know you.",
+                    "ja": "はい。よろしくお願いします。"
+                  },
+                  "translations": {
+                    "vi": "Vâng. Rất mong được làm quen.",
+                    "en": "Yes. I look forward to getting to know you.",
+                    "ja": "はい。よろしくお願いします。"
+                  },
+                  "meaningVi": "Vâng. Rất mong được làm quen.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "hai. yoroshiku onegai shimasu."
+                }
+              ],
+              "sceneDividers": [
+                {
+                  "afterDialogueLine": 3,
+                  "targetText": "別の人が来たとき",
+                  "translationByNative": {
+                    "vi": "Khi có người khác đến",
+                    "en": "When another person arrives",
+                    "ja": "別の人が来たとき"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "contentStatus": "ready",
+      "playable": true,
+      "comingSoon": false,
+      "canSkip": false,
+      "exerciseStatus": "ready",
+      "learnSection": {
+        "lessonIntro": {
+          "status": "ready"
+        },
+        "vocabularyPhraseCards": {
+          "status": "ready"
         },
         "miniDialogue": {
-          "status": "placeholder"
+          "status": "ready",
+          "dialogueGroupCount": 3
         },
-        "cultureNuanceNote": {
-          "status": "placeholder"
+        "grammarSentencePatterns": {
+          "status": "ready"
         },
-        "contextualVariations": {
-          "status": "placeholder"
-        },
-        "communicationStrategy": {
-          "status": "placeholder"
+        "practiceExercises": {
+          "status": "ready"
         }
       },
-      "practiceStages": [
-        {
-          "key": "warmup",
-          "labelByNative": {
-            "en": "Warm-up",
-            "vi": "Khởi động",
-            "ja": "ウォームアップ",
-            "ko": "워밍업",
-            "zh": "热身"
-          },
-          "goalByNative": {
-            "en": "Recognize phrases, listen basically, understand meaning, and use simple patterns.",
-            "vi": "Nhận diện từ/cụm câu, nghe cơ bản, hiểu nghĩa, dùng mẫu câu đơn giản.",
-            "ja": "フレーズを認識し、基本の聞き取りと意味理解、簡単な文型を使います。",
-            "ko": "표현을 인식하고 기본 듣기·의미 이해·간단한 문형을 사용합니다.",
-            "zh": "识别短语，进行基础听力与意义理解，并使用简单句型。"
-          },
-          "exerciseOrders": [
-            1,
-            2,
-            3,
-            4,
-            5
-          ],
-          "exercises": [
-            {
-              "order": 1,
-              "type": "matchPairs",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 2,
-              "type": "listenAndChoose",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 3,
-              "type": "multipleChoiceMeaning",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 4,
-              "type": "fillBlank",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 5,
-              "type": "arrangeWords",
-              "plan": "free",
-              "status": "placeholder"
-            }
-          ]
-        },
-        {
-          "key": "real_world",
-          "labelByNative": {
-            "en": "Real-world Practice",
-            "vi": "Thực chiến",
-            "ja": "実践練習",
-            "ko": "실전 연습",
-            "zh": "实战练习"
-          },
-          "goalByNative": {
-            "en": "Use sentences in dialogue, choose natural responses, advanced listening, AI Q&A, and checkpoint.",
-            "vi": "Dùng câu trong hội thoại, chọn phản hồi tự nhiên, nghe nâng cao, AI Q&A và checkpoint.",
-            "ja": "会話で文を使い、自然な返事を選び、高度な聞き取り・AI質問・チェックを行います。",
-            "ko": "대화에서 문장을 쓰고 자연스러운 대답을 고르며 심화 듣기·AI Q&A·체크포인트를 합니다.",
-            "zh": "在对话中用句，选择自然回应，完成进阶听力、AI问答与检查点。"
-          },
-          "exerciseOrders": [
-            6,
-            7,
-            8,
-            9,
-            10
-          ],
-          "exercises": [
-            {
-              "order": 6,
-              "type": "dialogueCompletion",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 7,
-              "type": "naturalResponseChoice",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 8,
-              "type": "plusListeningVocabularyChallenge",
-              "plan": "plus",
-              "status": "placeholder"
-            },
-            {
-              "order": 9,
-              "type": "controlledAiQa",
-              "plan": "plus",
-              "status": "placeholder"
-            },
-            {
-              "order": 10,
-              "type": "reviewCheckpoint",
-              "plan": "plus",
-              "status": "placeholder"
-            }
-          ]
-        }
-      ],
       "saveToReview": {
-        "status": "placeholder"
+        "status": "ready",
+        "itemIds": [
+          "namae",
+          "onamae",
+          "nan-desu-ka",
+          "onamae-wa-nan-desu-ka",
+          "onamae-wa",
+          "shitsurei-desu-ga",
+          "sumimasen",
+          "mou-ichido",
+          "san",
+          "desu-ne"
+        ]
       },
-      "unlockRequirement": "core_foundation_completed",
-      "courseType": "communication",
-      "exercises": [
-        {
-          "id": "ja-daily_life-m01-u1-l2-e1",
-          "order": 1,
-          "type": "matchPairs",
-          "titleByNative": {
-            "en": "Match phrase and meaning",
-            "vi": "Nối cụm câu với nghĩa",
-            "ja": "フレーズと意味をつなげる",
-            "ko": "표현과 뜻 연결하기",
-            "zh": "匹配短语和意思"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u1-l2-e2",
-          "order": 2,
-          "type": "listenAndChoose",
-          "titleByNative": {
-            "en": "Listen and choose",
-            "vi": "Nghe và chọn",
-            "ja": "聞いて選ぶ",
-            "ko": "듣고 고르기",
-            "zh": "听音选择"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u1-l2-e3",
-          "order": 3,
-          "type": "multipleChoiceMeaning",
-          "titleByNative": {
-            "en": "Choose the correct meaning",
-            "vi": "Chọn nghĩa đúng",
-            "ja": "正しい意味を選ぶ",
-            "ko": "맞는 뜻 고르기",
-            "zh": "选择正确意思"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u1-l2-e4",
-          "order": 4,
-          "type": "fillBlank",
-          "titleByNative": {
-            "en": "Fill the missing word",
-            "vi": "Điền từ còn thiếu",
-            "ja": "空欄を埋める",
-            "ko": "빈칸 채우기",
-            "zh": "填空"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u1-l2-e5",
-          "order": 5,
-          "type": "arrangeWords",
-          "titleByNative": {
-            "en": "Arrange the sentence",
-            "vi": "Sắp xếp câu",
-            "ja": "文を並べる",
-            "ko": "문장 배열하기",
-            "zh": "排列句子"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u1-l2-e6",
-          "order": 6,
-          "type": "dialogueCompletion",
-          "titleByNative": {
-            "en": "Complete the dialogue",
-            "vi": "Hoàn thành hội thoại",
-            "ja": "会話を完成させる",
-            "ko": "대화 완성하기",
-            "zh": "完成对话"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u1-l2-e7",
-          "order": 7,
-          "type": "naturalResponseChoice",
-          "titleByNative": {
-            "en": "Choose a natural response",
-            "vi": "Chọn phản hồi tự nhiên",
-            "ja": "自然な返事を選ぶ",
-            "ko": "자연스러운 대답 고르기",
-            "zh": "选择自然回应"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u1-l2-e8",
-          "order": 8,
-          "type": "plusListeningVocabularyChallenge",
-          "titleByNative": {
-            "en": "Plus · Listening challenge",
-            "vi": "Plus · Thử thách nghe",
-            "ja": "Plus・リスニングチャレンジ",
-            "ko": "Plus · 듣기 챌린지",
-            "zh": "Plus · 听力挑战"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u1-l2-e9",
-          "order": 9,
-          "type": "controlledAiQa",
-          "titleByNative": {
-            "en": "Plus · AI Q&A practice",
-            "vi": "Plus · Luyện hỏi đáp AI",
-            "ja": "Plus・AI質問練習",
-            "ko": "Plus · AI 질의응답 연습",
-            "zh": "Plus · AI问答练习"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u1-l2-e10",
-          "order": 10,
-          "type": "reviewCheckpoint",
-          "titleByNative": {
-            "en": "Plus · Review checkpoint",
-            "vi": "Plus · Kiểm tra tổng hợp",
-            "ja": "Plus・復習チェック",
-            "ko": "Plus · 복습 체크",
-            "zh": "Plus · 复习检查"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        }
-      ],
+      "exercises": [],
       "displayOrder": 2
     },
     {
