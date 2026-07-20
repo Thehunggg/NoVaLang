@@ -80,14 +80,24 @@ export function runSoftLinguisticChecks(lessons, rulesRoot) {
         const endersSource = check.enders_regex_source || '(です|ます|でした|ました|ません|ましょう)(か)?(ね|よ)?|ください|は';
         const enders = new RegExp(`(${endersSource})[。！？]?$`);
         const skipSingle = check.skip_single_character !== false;
-        for (const v of lesson.vocabulary || []) {
-          if (!v.displayText) continue;
-          const t = v.displayText;
-          const stripped = t.replace(/^[～\s]+/, '').replace(/[。！？]+$/, '');
-          if (skipSingle && [...stripped].length <= 1) continue;
-          if (exemptions.some((ex) => stripped.endsWith(ex))) continue;
-          if (!enders.test(t)) {
-            warnings.push(`${lesson.id}: vocabulary[${v.id}] '${t}' không kết bằng です/ます-family/ください/は？ và không trong fixed_expression_exemptions — rules/ ja register (baseline-polite-sentence-ends-desu-masu)`);
+        // v1.3.0 (owner-approved, rules/decisions.md D-92): the register check
+        // validates SENTENCES. A vocab card's main headword (v.displayText) is a
+        // lexical dictionary entry — a word/phrase, not a sentence — so it is
+        // exempt when the rule sets skip_vocabulary_card_headword. This is the
+        // only field the soft layer feeds this check (dialogue was already
+        // excluded per G-04, no machine-readable register field), so the check
+        // emits no headword false-positives once the flag is on.
+        const skipVocabHeadword = check.skip_vocabulary_card_headword === true;
+        if (!skipVocabHeadword) {
+          for (const v of lesson.vocabulary || []) {
+            if (!v.displayText) continue;
+            const t = v.displayText;
+            const stripped = t.replace(/^[～\s]+/, '').replace(/[。！？]+$/, '');
+            if (skipSingle && [...stripped].length <= 1) continue;
+            if (exemptions.some((ex) => stripped.endsWith(ex))) continue;
+            if (!enders.test(t)) {
+              warnings.push(`${lesson.id}: vocabulary[${v.id}] '${t}' không kết bằng です/ます-family/ください/は？ và không trong fixed_expression_exemptions — rules/ ja register (baseline-polite-sentence-ends-desu-masu)`);
+            }
           }
         }
       }

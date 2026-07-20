@@ -159,12 +159,21 @@ if (lang === 'ja') {
   if (check) {
     const exemptions = [...new Set(check.fixed_expression_exemptions || [])];
     I(`ja/pragmatics check '${check.id}': fixed_expression_exemptions=[${exemptions.join(', ')}] (endsWith, A3)`);
-    I("G-04 (C3): KHÔNG áp check này lên lesson.dialogueGroups — chưa có trường register máy-đọc-được để phân biệt nhóm hội thoại casual có chủ ý; chỉ áp lên vocabulary[] (headword baseline).");
+    I("G-04 (C3): KHÔNG áp check này lên lesson.dialogueGroups — chưa có trường register máy-đọc-được để phân biệt nhóm hội thoại casual có chủ ý.");
     const endersSource = check.enders_regex_source || '(です|ます|でした|ました|ません|ましょう)(か)?(ね|よ)?|ください|は';
     const enders = new RegExp(`(${endersSource})[。！？]?$`);
     const skipSingle = check.skip_single_character !== false;
+    // v1.3.0 (owner-approved, rules/decisions.md D-92): a vocab card headword is
+    // a lexical entry, not a sentence — exempt from the register check when the
+    // rule sets skip_vocabulary_card_headword. With dialogue already excluded
+    // (G-04), the check then has no headword input to false-positive on.
+    const skipVocabHeadword = check.skip_vocabulary_card_headword === true;
     const texts = [];
-    for (const v of lesson.vocabulary || []) if (v.displayText) texts.push({ src: `vocabulary[${v.id}]`, text: v.displayText });
+    if (skipVocabHeadword) {
+      I("v1.3.0 (D-92): KHÔNG áp check register lên headword vocab card (mục từ điển, không phải câu) — MỌI headword vocab tự động miễn.");
+    } else {
+      for (const v of lesson.vocabulary || []) if (v.displayText) texts.push({ src: `vocabulary[${v.id}]`, text: v.displayText });
+    }
     for (const t of texts) {
       const stripped = t.text.replace(/^[～\s]+/, '').replace(/[。！？]+$/, '');
       if (skipSingle && [...stripped].length <= 1) { I(`${t.src}: '${t.text}' — bỏ qua (skip_single_character)`); continue; }

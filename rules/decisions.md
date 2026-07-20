@@ -973,6 +973,33 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-92 · 2026-07-20 · owner · ja register — NỚI: check "câu baseline kết bằng
+  です/ます" KHÔNG áp cho HEADWORD vocab card (amendment có kiểm soát cho rule
+  FROZEN).** Bối cảnh: khi thêm Lesson 2 (`ja-daily_life-m01-u1-l2`, "Hỏi tên"),
+  `validate:curriculum` sinh 5 cảnh báo mềm register trên các từ vựng đơn 名前/
+  お名前/失礼ですが/もう一度/～さん — báo rằng chúng "không kết bằng です/ます".
+  **Owner xác nhận đây là false-positive:** một headword từ điển (từ/cụm chính của
+  vocab card) KHÔNG phải câu → không thể/không cần kết bằng です・ます. **Quyết
+  định:** sửa ĐÚNG GỐC, structural, KHÔNG vá lẻ bằng cách thêm 5 từ vào
+  `fixed_expression_exemptions` (vá lẻ → bài sau lại báo). Thêm cờ
+  `skip_vocabulary_card_headword: true` vào check `baseline-polite-sentence-ends-
+  desu-masu` (`rules/languages/ja/pragmatics.rules.json`, v1.2.0 → **v1.3.0**):
+  MỌI headword vocab tự động miễn check register. **Vì sao an toàn/đủ:** ở tầng
+  soft-check, check này TRƯỚC ĐÂY chỉ chạy trên `vocabulary[].displayText` —
+  dialogue đã bị loại từ trước (G-04: không có trường register máy-đọc-được để
+  tách hội thoại casual có chủ ý). Vậy headword là điểm áp DUY NHẤT còn lại, và
+  nó chính là cái không nên áp. Sau v1.3.0, tầng soft-check không còn bắt nhầm
+  headword nào; logic/fixtures của check giữ nguyên (dành cho tầng CÂU thật khi
+  có trường register máy-đọc-được — đó là việc tương lai, KHÔNG làm trong task
+  này để tránh regress trên nội dung casual có chủ ý). **Phạm vi:** chỉ sửa điểm
+  này của rule ja + 2 nơi thực thi (`tools/lib/soft-linguistic-checks.mjs` dùng
+  bởi `validate-curriculum`, và bản sao trong `tools/lesson-check.mjs`). KHÔNG
+  đụng phần khác của rule ja, KHÔNG đụng ngôn ngữ khác, KHÔNG đụng nội dung bài
+  (L2/Golden). **Kết quả:** 5 cảnh báo register L2 → 0. 4 cảnh báo cũ của Golden
+  là loại KHÁC (`text-fields`: thiếu `reading`/`romanization` trên desu/kochira-
+  koso/sayounara — không phải register) → giữ nguyên, ngoài phạm vi task này.
+  `validate:curriculum` + `smoke:curriculum`: PASS; Golden byte-identical, L2 PASS.
+
 - **D-91 · 2026-07-20 · owner · ar/he — TẠM DỪNG (coming_soon) 2 playable cuối
   cùng; ghi NỢ HẠ TẦNG RTL.** Project Owner quyết: 2 ngôn ngữ playable còn lại
   trong mục tiêu 33 — `ar` (Ả Rập MSA) và `he` (Hebrew) — **KHÔNG build rule
