@@ -973,6 +973,33 @@ NGUYÊN TẮC — id bền + hiển thị qua i18n — không chốt chuỗi ký
   kỹ thuật: lần fetch WikiPron đầu qua proxy trả rỗng → parse 0 pairs; chạy
   lại sau khi cache đúng → 19133.]
 
+- **D-88 · 2026-07-20 · derived · fil — `fil` (tiếng Filipino = Tagalog chuẩn
+  hoá, fil-PH) build HOÀN TẮT tới `VALIDATED_NOT_YET_PROVEN` qua `/build-language`
+  Bước 0–4, tra cứu 5 vòng.** Austronesian, chữ Latin (28 chữ + ng + ñ), t1, 24
+  hiện tượng. Dataset CLDR/UD/WikiPron: WikiPron `tgl_latn_broad` **28295 cặp
+  (LỚN — g2p đáng tin)**; corpus UD Tagalog TRG+Ugnayan **CHỈ 222 câu (test-only,
+  RẤT NHỎ — Tagalog không có UD lớn; DƯỚI 2000 nhiều)**. **GHI RÕ ĐỘ TIN THẤP ở
+  chỗ thiếu corpus — KHÔNG thổi phồng từ dữ liệu mỏng (bài học từ ca WikiPron
+  176):** g2p dùng WikiPron lớn nên tin được (ng→[ŋ] 0.59% sạch → VALIDATED);
+  NHƯNG casing + ngữ pháp bằng chứng yếu (corpus 222) → nhiều mục để medium/DRAFT
+  với ghi chú 'cần người bản ngữ'. **Kỷ luật dữ liệu:** (1) ép ny→[nj] báo 100%
+  → 'ny' KHÔNG phải digraph Tagalog, BỎ giả thuyết; (2) casing tháng/thứ VIẾT
+  HOA (Enero/Lunes, quy ước en/es) → KHÔNG áp rule lowercase (giả thuyết
+  lowercase bị dữ liệu bác, như tr/id); (3) accents 0/222 câu → Filipino thường
+  BỎ dấu. Đặc trưng: **hệ TIÊU ĐIỂM/TRIGGER** (Austronesian alignment — động từ
+  đánh dấu tiêu điểm actor -um-/mag- vs object -in/i-/-an; tiểu từ ang/ng),
+  **phụ tố + trùng lặp** (trung tố s-um-ulat; lặp âm tiết đầu susulat 'sẽ viết'),
+  **tiểu từ ang/ng/sa** (không biến cách danh từ), **po/ho** tiểu từ tôn trọng
+  (quan trọng xã hội), VSO + linker na/-ng, ng[ŋ] một chữ, trọng âm + âm tắc
+  thanh hầu (không viết → audio). HONORIFIC not-applicable (po/ho ~ register,
+  es B-02). **4 giả định cần owner duyệt:** D-fil-01 (baseline fil-PH — v1),
+  D-fil-02 (po/ho baseline lịch sự — v2), D-fil-03 (dạy Filipino chuẩn không
+  Taglish — v2, product), **D-fil-04 (accents á/à/â TUỲ CHỌN — không bắt buộc,
+  NGOẠI LỆ khoan dung như ru ё, KHÁC pl/hr; bằng chứng: 0/222 câu có dấu; ñ đúng
+  khi xuất hiện)**, giữ DRAFT flag owner. `native-review-fil.md` 7 mục — ĐẶC
+  BIỆT quan trọng vì corpus nhỏ. Status: `VALIDATED_NOT_YET_PROVEN`, KHÔNG
+  FROZEN. Validator: 4 lỗi vi/zh cũ (ghi nợ), 0 lỗi mới; catalog 60.
+
 - **D-87 · 2026-07-20 · owner · hr/hu/th — Project Owner DUYỆT toàn bộ 12 giả
   định của phiên build hr+hu+th (commit `5bbda23` + `b936328` + `3c71688`).**
   Nối tiếp D-83 (hi/nb/ca). **hr:** D-hr-01 baseline hr-HR (Latin, không sr

@@ -1,0 +1,41 @@
+{
+  "id": "fil/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "dataset",
+  "config": {
+    "baseline_variety": "fil-PH",
+    "transparency_note": "Chính tả Filipino TƯƠNG ĐỐI ĐỀU (Latin, phần lớn 1:1). g2p-check trên WikiPron thật 28295 từ (bộ LỚN) xác nhận ng. LEXICAL: âm tắc thanh hầu [ʔ] + trọng âm (thường KHÔNG viết) — cần audio.",
+    "grapheme_to_phoneme_rules": {
+      "ng": { "phoneme": "ŋ", "g2p_check": "0.59% — OK (digraph)" },
+      "vowels": "a e i o u (e/o phần lớn ở từ vay; bản địa nghiêng i/u)",
+      "not_a_digraph": "'ny' KHÔNG phải digraph Tagalog (g2p-check báo 100% khi ép ny→[nj] → BỎ giả thuyết; chỉ n+y ngẫu nhiên)"
+    },
+    "lexical_not_g2p": {
+      "glottal_stop": "âm tắc thanh hầu [ʔ] cuối/giữa — THƯỜNG KHÔNG viết; phân biệt nghĩa (bata [bataʔ] 'trẻ con')",
+      "stress": "trọng âm phân biệt nghĩa (áso 'chó'/asó 'khói') — thường không đánh dấu; accents á/à/â tồn tại nhưng bị bỏ trong văn thường"
+    }
+  },
+  "checks": [
+    {
+      "id": "ng-digraph",
+      "description": "ng → [ŋ] (digraph) — xác nhận g2p-check 0.59% trên WikiPron LỚN.",
+      "assert": { "type": "custom", "note": "g2p-check.mjs: ng→[ŋ] 0.59% trên 28295 từ. 'ny' bị loại (không phải digraph)." },
+      "fixtures": { "pass": ["ngayon", "bahay"], "fail": ["ngayon-as-n-g"] }
+    },
+    {
+      "id": "glottal-stress-lexical",
+      "description": "Âm tắc thanh hầu + trọng âm không viết → lexical, cần audio (đánh dấu).",
+      "assert": { "type": "custom", "note": "[ʔ] + trọng âm phân biệt nghĩa, thường không viết; audio là kênh phát âm." },
+      "fixtures": { "pass": ["bata", "aso"], "fail": ["placeholder-x"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["ngayon", "bahay", "bata", "aso"],
+    "fail": ["ngayon-as-n-g"],
+    "_note": "fixtures minh hoạ ng digraph; âm tắc thanh hầu + trọng âm lexical cần audio. WikiPron LỚN nhưng glottal/stress không viết."
+  }
+}
