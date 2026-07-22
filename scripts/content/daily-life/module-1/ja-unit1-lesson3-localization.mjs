@@ -194,6 +194,23 @@ add('Cuối buổi học, bạn muốn chào thầy/cô rồi về.', 'At the en
 add('Hoàn thành đoạn chat', 'Complete the chat', 'チャットを完成させる');
 add('Bạn làm tốt lắm!', 'Great job!', 'よくできました！');
 add('Bạn về trước đồng nghiệp ở công ty.', 'You are leaving before your coworkers at work.', '会社で同僚より先に帰るとき。');
+// "Tham khảo thêm" (§B2b) — 4 biến thể của お別れ, mỗi mục đủ trường.
+add('Hẹn gặp lại nhé (rất thân mật).', 'See you (very casual).', 'またね。（とてもカジュアル。）');
+add('Bạn bè thân, người ngang hàng.', 'Close friends and peers.', '親しい友達や同年代の人。');
+add('Chia tay bạn bè trong sinh hoạt hằng ngày, không trang trọng.', 'Parting from friends in everyday life, not formal.', '日常で友達と別れるとき、改まらない場面。');
+add('Ngắn và thân mật hơn じゃあ、また; không dùng với thầy cô hay người trên.', 'Shorter and more casual than じゃあ、また; not for teachers or superiors.', '「じゃあ、また」より短くカジュアル。先生や目上には使いません。');
+add('Thôi nhé (chào tạm biệt thân mật).', 'Bye then (casual goodbye).', 'じゃあね。（カジュアルなお別れ。）');
+add('Bạn bè thân.', 'Close friends.', '親しい友達。');
+add('Kết thúc cuộc trò chuyện thân mật rồi rời đi.', 'Ending a casual conversation before leaving.', 'カジュアルな会話を終えて立ち去るとき。');
+add('Cũng thân mật như またね; nhấn "じゃあ" khi kết thúc, không trang trọng.', 'As casual as またね; emphasizes “じゃあ” at the end, not formal.', '「またね」同様カジュアル。最後に「じゃあ」を強調。改まりません。');
+add('Đi cẩn thận nhé / Giữ gìn nhé.', 'Take care (on your way).', '気をつけて。');
+add('Bạn bè, người thân, đồng nghiệp.', 'Friends, family, coworkers.', '友達、家族、同僚。');
+add('Khi ai đó sắp lên đường (về nhà, đi xa).', 'When someone is about to set off (heading home, traveling).', '相手が出かける・帰るとき。');
+add('お元気で dặn giữ sức khỏe khi lâu mới gặp; 気をつけて dặn an toàn ngay trên đường đi.', 'お元気で wishes lasting good health when you won’t meet for a while; 気をつけて is about being safe right now on the way.', '「お元気で」はしばらく会わないときの健康を願う言葉。「気をつけて」は今この道中の安全を願う言葉。');
+add('Vậy, hẹn gặp lại (lịch sự hơn じゃあ、また).', 'Well then, see you (more polite than じゃあ、また).', 'では、また。（「じゃあ、また」より丁寧。）');
+add('Người trên, đồng nghiệp, hoàn cảnh cần lịch sự vừa phải.', 'Superiors, coworkers, situations needing moderate politeness.', '目上、同僚、適度な丁寧さが必要な場面。');
+add('Chia tay khi cần lịch sự hơn mức nói với bạn bè.', 'Parting when you need to be more polite than with friends.', '友達より丁寧にすべき場面での別れ。');
+add('では trang trọng hơn じゃあ; dùng được với người trên, còn じゃあ、また chỉ hợp bạn bè.', 'では is more formal than じゃあ; usable with superiors, while じゃあ、また suits friends only.', '「では」は「じゃあ」より改まった言い方で目上にも使えます。「じゃあ、また」は友達向けです。');
 
 export const supportTextByVietnamese = new Map(rows);
 

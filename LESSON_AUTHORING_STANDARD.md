@@ -99,25 +99,46 @@ cần. KHÔNG viết như danh sách kiến thức khô cứng.
   học sâu ở cấp phù hợp; không đơn giản hoá thành quy tắc tuyệt đối nếu thực tế
   không đúng.
 
-**B2b. Card 2 — "Tham khảo thêm" (TÙY CHỌN, mở rộng).** (Owner 2026-07-20)
-Trường **optional** `reference` trên mỗi `vocabularyDetails[i]` (mảng chuỗi
-native, localize vi/en/ja qua `localizeSupport`): các cách nói khác / biến thể /
-mở rộng để người học THÍCH thì đọc. Quy định:
-- **KHÔNG bắt buộc:** bài không có `reference` vẫn PASS. Golden + L2 (không có)
-  vẫn PASS — validator (`validateFiveCardsStructure`) chỉ kiểm id-match +
-  `examples`, KHÔNG cấm trường lạ trên `vocabularyDetails`, nên đây là slot có
-  sẵn, không cần đổi validator.
-- **KHÔNG tính vào ngân sách từ mới** (§F-d): là phần mở rộng, không phải từ phải nhớ.
-- **KHÔNG xuất hiện trong Practice (Q1–Q13) hay Q14.** Chỉ là tư liệu đọc thêm.
-- **Dịch nghĩa:** CÓ — vi/en/ja qua `localizeSupport` (như mọi support text).
-  **Audio/`reading`/`romanization`:** KHÔNG cần (validator `requireReading`/
-  `requireSpeech`/`validateNoRawKanaInRomanization` chỉ quét `vocabulary[]`,
-  `vocabularyDetails[].examples[]`, dialogue, grammar examples — KHÔNG quét
-  `reference`). Nếu có kanji thì vẫn nên viết dạng furigana 漢字（かな） trong
-  chuỗi cho dễ đọc, nhưng không bị code ép.
-- **Render UI:** tầng hiển thị "tham khảo thêm" là việc UI/Codex (PHẦN C) — dữ
-  liệu có sẵn trong `.mjs`; chưa render cũng không sao (không ảnh hưởng
-  validator/bài).
+**B2b. Card 2 — "Tham khảo thêm" (TÙY CHỌN, cấu trúc đầy đủ).** (Owner
+2026-07-20) Trường **optional** `vocabularyReferences` — MỘT mảng đặt ở cấp
+`fiveCardContent` (card 2), chứa các CÁCH NÓI KHÁC của từ trong bài; người học
+THÍCH thì đọc, **KHÔNG bắt buộc nhớ**.
+
+**Nội dung (luật viết):**
+- **Tối đa 3–5 mục/bài.** Cách chọn: lấy **1–2 từ CÓ NHIỀU CÁCH NÓI NHẤT** trong
+  bài rồi bổ sung biến thể của **chính từ đó** — KHÔNG rải mỗi từ một mục.
+- Mỗi mục là một object, **BẮT BUỘC đủ trường, KHÔNG để nghĩa trống**:
+
+  ```js
+  {
+    term: 'またね',           // từ/cách nói (furigana 漢字（かな） nếu có kanji)
+    reading: 'またね',        // reading kana thuần (như từ chính)
+    speechText: 'またね',     // audio — BẮT BUỘC mỗi mục
+    meaning: '…',            // NGHĨA đầy đủ (native, localize vi/en/ja)
+    forWord: 'じゃあ、また',   // THAM KHẢO CHO TỪ CHÍNH NÀO trong bài (target, ja)
+    forWho: '…',            // DÙNG CHO AI (bạn bè/thầy cô/người trên… — native)
+    whenToUse: '…',         // DÙNG KHI NÀO (tình huống, thời điểm — native)
+    difference: '…',        // KHÁC GÌ so với từ chính (vì sao tồn tại — native)
+  }
+  ```
+  → Chất lượng giải thích **NGANG từ chính**, chỉ khác ở chỗ không bắt buộc nhớ.
+- **KHÔNG tính vào ngân sách từ mới** (§F-d).
+- **KHÔNG dùng ở Practice Q1–Q13.** **ĐƯỢC** dùng ở **Q14** nếu làm hội thoại tự
+  nhiên/hay hơn (Q14 nâng cao, cho phép yếu tố đoán được qua ngữ cảnh).
+- **Mức FREE** cho mọi người dùng (không phải nội dung Plus).
+
+**Ràng buộc kỹ thuật:**
+- **Optional:** bài không có `vocabularyReferences` vẫn validate PASS (Golden + L2
+  vẫn PASS). `validateFiveCardsStructure` không cấm trường lạ ở `fiveCardContent`,
+  nên đây là slot có sẵn — **không cần đổi validator**.
+- **Localize:** các trường native (`meaning`/`forWho`/`whenToUse`/`difference`)
+  đi qua `localizeSupport` → sinh `*ByNative` vi/en/ja. `term`/`reading`/
+  `speechText`/`forWord` là target-language (ja), giữ nguyên.
+- `speechText` **BẮT BUỘC** ở mỗi mục (luật viết bài; validator hiện chỉ quét
+  audio ở `vocabulary[]`/`examples`/dialogue/Q14 — người viết tự đảm bảo, và
+  ledger liệt kê để owner soi).
+- Render UI: xem **§C-Ref** (Cursor làm; prompt DATA chỉ ghi yêu cầu, không sửa
+  frontend).
 
 **B3. Card 3 — Dialogue.** (Owner §6; ràng buộc §D3)
 - **Đúng 3 nhóm, mỗi nhóm 4–6 dòng** (code ép). Tự nhiên, mục đích giao tiếp
@@ -261,6 +282,22 @@ Không hardcode một native language vào logic.
 **C4. Listening không lộ đáp án.** (Owner §16) Với bài nghe: KHÔNG hiển thị
 nguyên văn audio trước khi người học trả lời (validator có check chống lộ với
 một số dạng — §D10 — nhưng UI vẫn phải đảm bảo hành vi thật).
+
+**C-Ref. Khối "Tham khảo thêm" (card 2) — YÊU CẦU RENDER (Cursor làm; xem dữ
+liệu §B2b).** (Owner 2026-07-20) Dữ liệu: `fiveCardContent.vocabularyReferences`
+(mảng optional; bài không có thì KHÔNG hiện khối này).
+- **Vị trí:** đặt ở **CUỐI card Vocabulary (card 2)**, sau danh sách từ vựng
+  chính.
+- **Mặc định THU GỌN** (collapsed) — có tiêu đề "Tham khảo thêm" (localize theo
+  `uiLanguageCode`), bấm mới mở ra; không tự bung.
+- **Mỗi mục hiển thị đủ:** `term` (+ furigana), `reading`, **NÚT LOA RIÊNG** phát
+  `speechText`, `meaning` (theo `nativeLanguageCode`), "Tham khảo cho:" `forWord`,
+  "Dùng cho:" `forWho`, "Dùng khi:" `whenToUse`, "Khác gì:" `difference`.
+- **Mức FREE** — hiện cho mọi người dùng, không khóa Plus.
+- **Áp cả web + mobile.** Nhãn/tiêu đề qua i18n (không hard-code) — cần key mới:
+  `vocabularyReferencesTitle`, `referenceForWord`, `referenceForWho`,
+  `referenceWhenToUse`, `referenceDifference` (Cursor thêm vào i18n web +
+  `mobile_ui.json`, đủ locale).
 
 ---
 
@@ -416,7 +453,14 @@ chỉ bài dạng **danh sách** (số đếm, ngày tháng, giờ) mới 12–1
 10–20 phút, nhồi 15 từ + 3 ngữ pháp là quá tải. Mục **"tham khảo thêm"** (§B2b)
 KHÔNG tính vào ngân sách này.
 
-**F-e. SAU MỖI BÀI (bắt buộc, đúng thứ tự):**
+**F-e. LUẬT — DẠY LẠI TRONG NGỮ CẢNH MỚI (làm rõ "không lặp trọng tâm"):** một
+từ **ĐÃ DẠY VẪN ĐƯỢC** đưa lại làm từ vựng chính ở bài sau **NẾU** dạy trong
+**NGỮ CẢNH / CÁCH DÙNG MỚI** (một từ có nhiều ngữ cảnh — vd một từ dùng ở tình
+huống A bài này, tình huống B bài sau). **CẤM** lặp y nguyên ngữ cảnh cũ chỉ để
+đủ số. **Ghi rõ trong sổ kiến thức:** từ đó đã dạy ngữ cảnh nào (bài nào), bài
+sau dạy ngữ cảnh nào — để phân biệt "dạy lại có chủ đích" với "lặp thừa".
+
+**F-f. SAU MỖI BÀI (bắt buộc, đúng thứ tự):**
 1. Cập nhật `ja-knowledge-ledger.md` (chạy `npm run gen:ja-ledger` — sinh lại
    từ file bài thật, không viết tay).
 2. Ráp `.mjs` + thêm nhánh `FIVE_CARDS_REGISTRY` cho id bài trong
@@ -428,8 +472,8 @@ KHÔNG tính vào ngân sách này.
 5. Xuất bản **bản đọc** (readable) cho Owner duyệt tiếng Nhật. CHƯA coi là xong
    tới khi Owner duyệt.
 
-**F-f. CÂU LỆNH NGẮN:** khi Owner nói **"build N bài tiếp"** → tự chạy TOÀN BỘ
-quy trình F-a…F-e cho N bài tuần tự, KHÔNG cần Owner nhắc lại chi tiết. Chạm
+**F-g. CÂU LỆNH NGẮN:** khi Owner nói **"build N bài tiếp"** → tự chạy TOÀN BỘ
+quy trình F-a…F-f cho N bài tuần tự, KHÔNG cần Owner nhắc lại chi tiết. Chạm
 giới hạn thì dừng, lần sau tiếp (không mất tiến độ).
 
 ---

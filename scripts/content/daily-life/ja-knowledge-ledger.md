@@ -56,6 +56,15 @@ Domain: `daily_life` · ngôn ngữ: `ja` · số bài đã có nội dung thậ
 | また＋[時] | Hẹn gặp lại vào thời điểm nào đó. | M1·U1·L3 |
 | 「～も」（…も） | Thêm も sau danh từ để nói "…cũng vậy". | M1·U1·L3 |
 
+## THAM KHẢO ĐÃ DÙNG ("tham khảo thêm" — KHÔNG coi là đã dạy chính thức)
+
+| Cách nói (term) | reading | Tham khảo cho | Bài |
+|---|---|---|---|
+| またね | またね | じゃあ、また | M1·U1·L3 |
+| じゃあね | じゃあね | じゃあ、また | M1·U1·L3 |
+| 気（き）をつけて | きをつけて | お元気で | M1·U1·L3 |
+| では、また | では、また | じゃあ、また | M1·U1·L3 |
+
 ## NHÂN VẬT ĐÃ DÙNG
 
 - `teacher` — 先生（せんせい）

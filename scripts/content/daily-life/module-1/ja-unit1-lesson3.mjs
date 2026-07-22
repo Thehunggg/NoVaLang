@@ -250,14 +250,22 @@ const JA_UNIT1_LESSON3_SOURCE = {
         ],
       },
       vocabularyDetails: [
-        { id: 'kochira-koso', overview: 'Tôi cũng vậy / Chính tôi mới phải nói thế.', examples: [example('こちらこそ、よろしくお願いします。', 'こちらこそ、よろしくおねがいします。', 'Tôi cũng rất mong được làm quen.')], reference: ['Dạng đầy đủ: こちらこそ、よろしくお願いします。'] },
+        { id: 'kochira-koso', overview: 'Tôi cũng vậy / Chính tôi mới phải nói thế.', examples: [example('こちらこそ、よろしくお願いします。', 'こちらこそ、よろしくおねがいします。', 'Tôi cũng rất mong được làm quen.')] },
         { id: 'douzo-yoroshiku', overview: 'Rất mong được làm quen (thân thiện hơn một chút).', examples: [example('はじめまして。田中です。どうぞよろしく。', 'はじめまして。たなかです。どうぞよろしく。', 'Rất vui được gặp. Tôi là Tanaka. Rất mong được làm quen.')] },
         { id: 'sou-desu-ka', overview: 'Vậy à. / Ra vậy.', examples: [example('そうですか。田中さんですね。', 'そうですか。たなかさんですね。', 'Ra vậy. Bạn là Tanaka nhỉ.')] },
         { id: 'watashi-mo', overview: 'Tôi cũng vậy.', examples: [example('私もよろしくお願いします。', 'わたしもよろしくおねがいします。', 'Tôi cũng mong được làm quen.')] },
-        { id: 'shitsurei-shimasu', overview: 'Tôi xin phép. / Xin lỗi (khi rời đi).', examples: [example('では、失礼します。', 'では、しつれいします。', 'Vậy, tôi xin phép.')], reference: ['Cách nói lịch sự khác khi chia tay: では、また。'] },
+        { id: 'shitsurei-shimasu', overview: 'Tôi xin phép. / Xin lỗi (khi rời đi).', examples: [example('では、失礼します。', 'では、しつれいします。', 'Vậy, tôi xin phép.')] },
         { id: 'osaki-ni-shitsurei', overview: 'Tôi xin phép về trước.', examples: [example('お先に失礼します。', 'おさきにしつれいします。', 'Tôi xin phép về trước.')] },
-        { id: 'ogenki-de', overview: 'Giữ sức khỏe nhé (khi lâu mới gặp lại).', examples: [example('では、お元気で。', 'では、おげんきで。', 'Vậy, giữ sức khỏe nhé.')], reference: ['Khi ai đó đi đường xa: 気をつけて。 (Đi cẩn thận nhé.)'] },
-        { id: 'jaa-mata', overview: 'Thôi, hẹn gặp lại (thân mật).', examples: [example('じゃあ、また明日。', 'じゃあ、またあした。', 'Thôi, hẹn mai gặp.')], notes: ['Trong tình huống thân mật, thường bỏ chủ ngữ và nói ngắn.'], reference: ['Thân mật hơn nữa: またね！ / じゃあね。'] },
+        { id: 'ogenki-de', overview: 'Giữ sức khỏe nhé (khi lâu mới gặp lại).', examples: [example('では、お元気で。', 'では、おげんきで。', 'Vậy, giữ sức khỏe nhé.')] },
+        { id: 'jaa-mata', overview: 'Thôi, hẹn gặp lại (thân mật).', examples: [example('じゃあ、また明日。', 'じゃあ、またあした。', 'Thôi, hẹn mai gặp.')], notes: ['Trong tình huống thân mật, thường bỏ chủ ngữ và nói ngắn.'] },
+      ],
+      // "Tham khảo thêm" (§B2b) — biến thể của お別れ (じゃあ、また / お元気で). FREE,
+      // không tính ngân sách từ mới, không dùng ở Q1–Q13. Mỗi mục đủ trường.
+      vocabularyReferences: [
+        { term: 'またね', reading: 'またね', speechText: 'またね', meaning: 'Hẹn gặp lại nhé (rất thân mật).', forWord: 'じゃあ、また', forWho: 'Bạn bè thân, người ngang hàng.', whenToUse: 'Chia tay bạn bè trong sinh hoạt hằng ngày, không trang trọng.', difference: 'Ngắn và thân mật hơn じゃあ、また; không dùng với thầy cô hay người trên.' },
+        { term: 'じゃあね', reading: 'じゃあね', speechText: 'じゃあね', meaning: 'Thôi nhé (chào tạm biệt thân mật).', forWord: 'じゃあ、また', forWho: 'Bạn bè thân.', whenToUse: 'Kết thúc cuộc trò chuyện thân mật rồi rời đi.', difference: 'Cũng thân mật như またね; nhấn "じゃあ" khi kết thúc, không trang trọng.' },
+        { term: '気（き）をつけて', reading: 'きをつけて', speechText: 'きをつけて', meaning: 'Đi cẩn thận nhé / Giữ gìn nhé.', forWord: 'お元気で', forWho: 'Bạn bè, người thân, đồng nghiệp.', whenToUse: 'Khi ai đó sắp lên đường (về nhà, đi xa).', difference: 'お元気で dặn giữ sức khỏe khi lâu mới gặp; 気をつけて dặn an toàn ngay trên đường đi.' },
+        { term: 'では、また', reading: 'では、また', speechText: 'では、また', meaning: 'Vậy, hẹn gặp lại (lịch sự hơn じゃあ、また).', forWord: 'じゃあ、また', forWho: 'Người trên, đồng nghiệp, hoàn cảnh cần lịch sự vừa phải.', whenToUse: 'Chia tay khi cần lịch sự hơn mức nói với bạn bè.', difference: 'では trang trọng hơn じゃあ; dùng được với người trên, còn じゃあ、また chỉ hợp bạn bè.' },
       ],
       dialogueGroups: [
         {

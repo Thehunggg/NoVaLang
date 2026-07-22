@@ -86,6 +86,21 @@ async function main() {
   }
   p();
 
+  // ── THAM KHẢO ĐÃ DÙNG (không coi là đã dạy chính thức) ─────────────────
+  p("## THAM KHẢO ĐÃ DÙNG (\"tham khảo thêm\" — KHÔNG coi là đã dạy chính thức)");
+  p();
+  p("| Cách nói (term) | reading | Tham khảo cho | Bài |");
+  p("|---|---|---|---|");
+  let anyRef = false;
+  for (const l of taught) {
+    for (const r of l.fiveCardContent?.vocabularyReferences ?? []) {
+      anyRef = true;
+      p(`| ${r.term ?? ""} | ${r.reading ?? ""} | ${r.forWord ?? ""} | ${short(l.id)} |`);
+    }
+  }
+  if (!anyRef) p("| _(chưa có)_ | | | |");
+  p();
+
   // ── NHÂN VẬT + BỐI CẢNH HỘI THOẠI ──────────────────────────────────────
   p("## NHÂN VẬT ĐÃ DÙNG");
   const chars = new Map();

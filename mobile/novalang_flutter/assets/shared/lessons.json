@@ -81102,21 +81102,7 @@
                 },
                 "speechText": "こちらこそ、よろしくおねがいします。"
               }
-            ],
-            "reference": [
-              "Dạng đầy đủ: こちらこそ、よろしくお願いします。"
-            ],
-            "referenceByNative": {
-              "vi": [
-                "Dạng đầy đủ: こちらこそ、よろしくお願いします。"
-              ],
-              "en": [
-                "Full form: こちらこそ、よろしくお願いします。"
-              ],
-              "ja": [
-                "丁寧な形：こちらこそ、よろしくお願いします。"
-              ]
-            }
+            ]
           },
           {
             "id": "douzo-yoroshiku",
@@ -81204,21 +81190,7 @@
                 },
                 "speechText": "では、しつれいします。"
               }
-            ],
-            "reference": [
-              "Cách nói lịch sự khác khi chia tay: では、また。"
-            ],
-            "referenceByNative": {
-              "vi": [
-                "Cách nói lịch sự khác khi chia tay: では、また。"
-              ],
-              "en": [
-                "Another polite parting: では、また。"
-              ],
-              "ja": [
-                "別の丁寧なお別れ：では、また。"
-              ]
-            }
+            ]
           },
           {
             "id": "osaki-ni-shitsurei",
@@ -81262,21 +81234,7 @@
                 },
                 "speechText": "では、おげんきで。"
               }
-            ],
-            "reference": [
-              "Khi ai đó đi đường xa: 気をつけて。 (Đi cẩn thận nhé.)"
-            ],
-            "referenceByNative": {
-              "vi": [
-                "Khi ai đó đi đường xa: 気をつけて。 (Đi cẩn thận nhé.)"
-              ],
-              "en": [
-                "When someone is traveling: 気をつけて。 (Take care on your way.)"
-              ],
-              "ja": [
-                "出かける相手に：気をつけて。"
-              ]
-            }
+            ]
           },
           {
             "id": "jaa-mata",
@@ -81312,20 +81270,128 @@
               "ja": [
                 "カジュアルな場面では、主語を省いて短く言うことが多いです。"
               ]
+            }
+          }
+        ],
+        "vocabularyReferences": [
+          {
+            "term": "またね",
+            "reading": "またね",
+            "speechText": "またね",
+            "meaning": "Hẹn gặp lại nhé (rất thân mật).",
+            "meaningByNative": {
+              "vi": "Hẹn gặp lại nhé (rất thân mật).",
+              "en": "See you (very casual).",
+              "ja": "またね。（とてもカジュアル。）"
             },
-            "reference": [
-              "Thân mật hơn nữa: またね！ / じゃあね。"
-            ],
-            "referenceByNative": {
-              "vi": [
-                "Thân mật hơn nữa: またね！ / じゃあね。"
-              ],
-              "en": [
-                "Even more casual: またね！ / じゃあね。"
-              ],
-              "ja": [
-                "もっとカジュアル：またね！／じゃあね。"
-              ]
+            "forWord": "じゃあ、また",
+            "forWho": "Bạn bè thân, người ngang hàng.",
+            "forWhoByNative": {
+              "vi": "Bạn bè thân, người ngang hàng.",
+              "en": "Close friends and peers.",
+              "ja": "親しい友達や同年代の人。"
+            },
+            "whenToUse": "Chia tay bạn bè trong sinh hoạt hằng ngày, không trang trọng.",
+            "whenToUseByNative": {
+              "vi": "Chia tay bạn bè trong sinh hoạt hằng ngày, không trang trọng.",
+              "en": "Parting from friends in everyday life, not formal.",
+              "ja": "日常で友達と別れるとき、改まらない場面。"
+            },
+            "difference": "Ngắn và thân mật hơn じゃあ、また; không dùng với thầy cô hay người trên.",
+            "differenceByNative": {
+              "vi": "Ngắn và thân mật hơn じゃあ、また; không dùng với thầy cô hay người trên.",
+              "en": "Shorter and more casual than じゃあ、また; not for teachers or superiors.",
+              "ja": "「じゃあ、また」より短くカジュアル。先生や目上には使いません。"
+            }
+          },
+          {
+            "term": "じゃあね",
+            "reading": "じゃあね",
+            "speechText": "じゃあね",
+            "meaning": "Thôi nhé (chào tạm biệt thân mật).",
+            "meaningByNative": {
+              "vi": "Thôi nhé (chào tạm biệt thân mật).",
+              "en": "Bye then (casual goodbye).",
+              "ja": "じゃあね。（カジュアルなお別れ。）"
+            },
+            "forWord": "じゃあ、また",
+            "forWho": "Bạn bè thân.",
+            "forWhoByNative": {
+              "vi": "Bạn bè thân.",
+              "en": "Close friends.",
+              "ja": "親しい友達。"
+            },
+            "whenToUse": "Kết thúc cuộc trò chuyện thân mật rồi rời đi.",
+            "whenToUseByNative": {
+              "vi": "Kết thúc cuộc trò chuyện thân mật rồi rời đi.",
+              "en": "Ending a casual conversation before leaving.",
+              "ja": "カジュアルな会話を終えて立ち去るとき。"
+            },
+            "difference": "Cũng thân mật như またね; nhấn \"じゃあ\" khi kết thúc, không trang trọng.",
+            "differenceByNative": {
+              "vi": "Cũng thân mật như またね; nhấn \"じゃあ\" khi kết thúc, không trang trọng.",
+              "en": "As casual as またね; emphasizes “じゃあ” at the end, not formal.",
+              "ja": "「またね」同様カジュアル。最後に「じゃあ」を強調。改まりません。"
+            }
+          },
+          {
+            "term": "気（き）をつけて",
+            "reading": "きをつけて",
+            "speechText": "きをつけて",
+            "meaning": "Đi cẩn thận nhé / Giữ gìn nhé.",
+            "meaningByNative": {
+              "vi": "Đi cẩn thận nhé / Giữ gìn nhé.",
+              "en": "Take care (on your way).",
+              "ja": "気をつけて。"
+            },
+            "forWord": "お元気で",
+            "forWho": "Bạn bè, người thân, đồng nghiệp.",
+            "forWhoByNative": {
+              "vi": "Bạn bè, người thân, đồng nghiệp.",
+              "en": "Friends, family, coworkers.",
+              "ja": "友達、家族、同僚。"
+            },
+            "whenToUse": "Khi ai đó sắp lên đường (về nhà, đi xa).",
+            "whenToUseByNative": {
+              "vi": "Khi ai đó sắp lên đường (về nhà, đi xa).",
+              "en": "When someone is about to set off (heading home, traveling).",
+              "ja": "相手が出かける・帰るとき。"
+            },
+            "difference": "お元気で dặn giữ sức khỏe khi lâu mới gặp; 気をつけて dặn an toàn ngay trên đường đi.",
+            "differenceByNative": {
+              "vi": "お元気で dặn giữ sức khỏe khi lâu mới gặp; 気をつけて dặn an toàn ngay trên đường đi.",
+              "en": "お元気で wishes lasting good health when you won’t meet for a while; 気をつけて is about being safe right now on the way.",
+              "ja": "「お元気で」はしばらく会わないときの健康を願う言葉。「気をつけて」は今この道中の安全を願う言葉。"
+            }
+          },
+          {
+            "term": "では、また",
+            "reading": "では、また",
+            "speechText": "では、また",
+            "meaning": "Vậy, hẹn gặp lại (lịch sự hơn じゃあ、また).",
+            "meaningByNative": {
+              "vi": "Vậy, hẹn gặp lại (lịch sự hơn じゃあ、また).",
+              "en": "Well then, see you (more polite than じゃあ、また).",
+              "ja": "では、また。（「じゃあ、また」より丁寧。）"
+            },
+            "forWord": "じゃあ、また",
+            "forWho": "Người trên, đồng nghiệp, hoàn cảnh cần lịch sự vừa phải.",
+            "forWhoByNative": {
+              "vi": "Người trên, đồng nghiệp, hoàn cảnh cần lịch sự vừa phải.",
+              "en": "Superiors, coworkers, situations needing moderate politeness.",
+              "ja": "目上、同僚、適度な丁寧さが必要な場面。"
+            },
+            "whenToUse": "Chia tay khi cần lịch sự hơn mức nói với bạn bè.",
+            "whenToUseByNative": {
+              "vi": "Chia tay khi cần lịch sự hơn mức nói với bạn bè.",
+              "en": "Parting when you need to be more polite than with friends.",
+              "ja": "友達より丁寧にすべき場面での別れ。"
+            },
+            "difference": "では trang trọng hơn じゃあ; dùng được với người trên, còn じゃあ、また chỉ hợp bạn bè.",
+            "differenceByNative": {
+              "vi": "では trang trọng hơn じゃあ; dùng được với người trên, còn じゃあ、また chỉ hợp bạn bè.",
+              "en": "では is more formal than じゃあ; usable with superiors, while じゃあ、また suits friends only.",
+              "ja": "「では」は「じゃあ」より改まった言い方で目上にも使えます。「じゃあ、また」は友達向けです。"
             }
           }
         ],
