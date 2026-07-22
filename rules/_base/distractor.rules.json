@@ -1,29 +1,62 @@
 {
   "id": "_base/distractor",
+  "version": "1.1.0",
+  "status": "FROZEN",
+  "depends_on": [],
   "phenomenon": "distractor_generation",
   "enforces": ["rules/content/naturalness-and-register.md"],
+  "changeLog": [
+    {
+      "version": "1.1.0",
+      "date": "2026-07-18",
+      "change": "G-01 (Golden Lesson audit, rules/decisions.md mục 0.1): length_ratio_max và same_word_class chuyển từ áp DÙ SAO cho mọi distractor sang CHỈ áp khi provenance = auto_generated. Sửa GỐC bằng cơ chế provenance, KHÔNG thêm danh sách ngoại lệ liệt kê tay từng câu. Bằng chứng: A1 (length_ratio_max 1.5 kết án sai 4 nhiễu chào-hỏi tự nhiên ở Q1/Q2/Q7), A2 (same_word_class kết án sai chủ ý sư phạm phân biệt です/さん/は/こんにちは ở Q7)."
+    }
+  ],
   "config": {
+    "provenanceScopedKeys": ["length_ratio_max", "same_word_class"],
+    "provenanceScopedKeysApplyWhen": "content.provenance == 'auto_generated'",
+    "provenanceExemptValues": ["hand_authored", "owner_approved"],
+    "provenancePolicyNote": "G-01: length_ratio_max/same_word_class chỉ máy-kiểm được ý nghĩa khi CHÍNH generator vừa tạo ra distractor đó (không có người duyệt ý đồ sư phạm ở bước tạo). Nội dung hand_authored/owner_approved đã qua người duyệt — người duyệt đã tự chịu trách nhiệm về độ dài/loại từ của nhiễu (có thể CHỦ Ý khác, vd dạy phân biệt chức năng ngữ pháp) — 2 rule này KHÔNG áp. Đây là phân biệt theo NGUỒN GỐC nội dung (provenance field trên chính distractor/exercise), không phải danh sách từ/câu ngoại lệ liệt kê tay — khớp D-26 'không dùng máy móc để tự động kết án nội dung đã người duyệt'.",
     "same_language_as_answer": true,
     "same_word_class": true,
     "length_ratio_max": 1.5,
     "forbid_synonym_of_answer": true,
     "forbid_above_level": true,
-    "must_not_satisfy_question_rule": true
+    "must_not_satisfy_question_rule": true,
+    "alwaysAppliesRegardlessOfProvenance": ["same_language_as_answer", "forbid_synonym_of_answer", "forbid_above_level", "must_not_satisfy_question_rule"]
   },
+  "implementationNote": "Field 'provenance' trên distractor/exercise option CHƯA tồn tại trong schema thật (shared/**) tại thời điểm sửa rule này (2026-07-18) — việc thêm field đó vào schema/generator là thay đổi shared/ và cần task/change-control riêng, ngoài phạm vi rules/**+tools/** của phiên này. Rule này ghi lại ĐÚNG chính sách sản phẩm (G-01) để generator tương lai và mọi công cụ kiểm (vd tools/lesson-check.mjs) tuân theo khi field đó có mặt; cho tới lúc đó, coi mọi distractor CHƯA có field provenance rõ ràng là auto_generated (an toàn hơn — áp đủ rule) trừ khi có ghi chú owner_approved/hand_authored tường minh trong chính nội dung/change-control của bài đó (như Golden Lesson, ADR-008).",
   "fixtures": {
     "pass": [
       {
-        "note": "Đáp án あ; nhiễu い/う/え cùng script, không thoả luật câu (không bắt đầu bằng あ).",
+        "note": "Auto-generated: đáp án あ; nhiễu い/う/え cùng script, không thoả luật câu (không bắt đầu bằng あ), đúng length_ratio_max/same_word_class.",
+        "provenance": "auto_generated",
         "answer": "あ",
         "distractors": ["い", "う", "え"]
+      },
+      {
+        "note": "G-01: hand_authored/owner_approved, đáp án です (2 ký tự) với nhiễu こんにちは (5 ký tự, ratio 2.5) khác loại từ hoàn toàn (copula vs thán từ) — CHỦ Ý sư phạm (dạy phân biệt chức năng), miễn length_ratio_max/same_word_class theo provenance, vẫn PASS vì không vi phạm 4 rule luôn-áp còn lại.",
+        "provenance": "owner_approved",
+        "answer": "です",
+        "distractors": ["さん", "は", "こんにちは"],
+        "length_ratio_max_exempted": true,
+        "same_word_class_exempted": true
       }
     ],
     "fail": [
       {
-        "note": "飴（あめ）làm nhiễu cho あ là SAI: nó cũng bắt đầu bằng あ nên thoả luật câu.",
+        "note": "飴（あめ）làm nhiễu cho あ là SAI: nó cũng bắt đầu bằng あ nên thoả luật câu — rule này áp KHÔNG PHÂN BIỆT provenance.",
+        "provenance": "auto_generated",
         "answer": "あ",
         "distractors": ["飴（あめ）", "い", "う"],
         "violated": "must_not_satisfy_question_rule"
+      },
+      {
+        "note": "G-01: auto_generated (KHÔNG có người duyệt) mà nhiễu dài gấp 2.5 lần đáp án → vẫn SAI, vì provenance không phải hand_authored/owner_approved nên length_ratio_max vẫn áp đầy đủ.",
+        "provenance": "auto_generated",
+        "answer": "です",
+        "distractors": ["こんにちは"],
+        "violated": "length_ratio_max"
       }
     ]
   }

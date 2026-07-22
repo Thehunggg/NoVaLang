@@ -19,10 +19,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 
 const EXPECTED_VERSION = "curriculum-v3";
-const EXPECTED_COURSE_COUNT = 23; // 3 foundation + 10 en daily + 10 ja daily
-const EXPECTED_LESSON_COUNT = 506; // 26 foundation + 480 daily blueprint
-const EXPECTED_PLAYABLE_LESSON_COUNT = 74;
-const EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE = 240;
+// Daily Life is 16 modules × 2 languages, Cơ bản tier fully named (owner
+// decision, 2026-07-19; replaces the prior 15-topic empty-shell skeleton).
+// Module COUNT is a fixed structural invariant (16 modules always exist as
+// course shells), so course count stays a real fixed number — but
+// daily_life LESSON count is no longer fixed: it grows as more tiers are
+// written in incrementally, so it is checked via self-consistency (see
+// checkExpectedShape/checkDailyLifeBlueprint) instead of a magic number that
+// would need updating every time content is added. Only the Golden Lesson
+// (ja-daily_life-m01-u1-l1) resolves to real five_cards content today; every
+// other Cơ bản slot across all 16 modules is a named placeholder.
+const EXPECTED_COURSE_COUNT = 35; // 3 foundation + 16 en daily modules + 16 ja daily modules
+const EXPECTED_FOUNDATION_LESSON_COUNT = 26;
+const EXPECTED_DAILY_LIFE_TOPIC_COUNT = 16;
 const EXPECTED_HIRAGANA_46 = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
 const EXPECTED_KATAKANA_46 = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン".split("");
 const EXPECTED_ALPHABET_26 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -152,8 +161,8 @@ function checkApprovedJaUnitOneLesson(lesson) {
   if (practice.totalQuestions !== 14 || exercises.length !== 14) {
     fail(section, { lessonId: lesson.id }, "Card 5 trial must contain exactly 14 exercises");
   }
-  if (exercises.some((exercise, index) => exercise.order !== index + 1 || exercise.plan !== (index < 10 ? "free" : "plus"))) {
-    fail(section, { lessonId: lesson.id }, "Card 5 trial plan boundary must be Free 1–10 and Plus 11–14");
+  if (exercises.some((exercise, index) => exercise.order !== index + 1 || exercise.plan !== (index < 9 ? "free" : "plus"))) {
+    fail(section, { lessonId: lesson.id }, "Card 5 trial plan boundary must be Free 1–9 and Plus 10–14");
   }
   const checkpoint = exercises[8];
   if (checkpoint?.type !== "checkpoint" || (checkpoint.subQuestions ?? []).length !== 5 || (checkpoint.subQuestions ?? []).some((item) => (item.options ?? []).length !== 4 || !item.options.some((option) => option.id === item.correctOptionId))) {
@@ -206,17 +215,99 @@ function checkApprovedJaUnitOneLesson(lesson) {
   pass(section, "approved five-card Japanese lesson shape is complete");
 }
 
+/**
+ * Generic structural shape check for ANY lesson with
+ * lessonFormat === "five_cards" (NovaLang Lesson Format 2.0/3.0), used only
+ * by checkFiveCardsScopeGuard below. Deliberately excludes Golden-Lesson
+ * literal content (exact dialogue text, exact token/slot ids, exact
+ * こんにちは wording) — that full check remains
+ * checkApprovedJaUnitOneLesson, unchanged, called only for the approved
+ * Golden Lesson ID at its existing call sites.
+ */
+function checkFiveCardsLessonStructure(lesson, section) {
+  const content = lesson?.fiveCardContent ?? {};
+  if ((content.mainCards ?? []).join(",") !== "intro,vocabulary,dialogue,grammar,practice") fail(section, { lessonId: lesson.id }, "must contain exactly five main cards in order");
+  // Card 2 vocabulary count is a RANGE (6–15), not a fixed 8 (ADR-019
+  // amendment, owner decision 2026-07-19). `vocabulary` and `vocabularyDetails`
+  // must still have the same count. Mirrors validateFiveCardsStructure.
+  const vocabCount = (lesson.vocabulary ?? []).length;
+  if (vocabCount < 6 || vocabCount > 15 || (content.vocabularyDetails ?? []).length !== vocabCount) fail(section, { lessonId: lesson.id }, "Card 2 must contain 6–15 vocabulary cards with matching vocabularyDetails");
+  const groups = content.dialogueGroups ?? [];
+  if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 4 || (group.lines ?? []).length > 6)) fail(section, { lessonId: lesson.id }, "Card 3 must contain exactly 3 dialogues of 4–6 lines");
+  const approvedCharacters = content.approvedCharacterNamePool ?? [];
+  const approvedCharacterIds = new Set(approvedCharacters.map((item) => item?.id));
+  if (
+    !content.targetLanguage || content.targetLanguage !== lesson.languageCode || !content.targetLocale || !content.cultureContext ||
+    approvedCharacters.length === 0 ||
+    approvedCharacters.some((item) => !item?.id || !item?.displayName || !item?.canonicalName || !item?.audioName) ||
+    groups.some((group) => (group.lines ?? []).some((line) => !line.speakerId || !approvedCharacterIds.has(line.speakerId)))
+  ) fail(section, { lessonId: lesson.id }, "Card 3 character metadata or approved speaker IDs are incomplete");
+  if ((content.grammarPatterns ?? []).length !== 3) fail(section, { lessonId: lesson.id }, "Card 4 must contain exactly 3 grammar patterns");
+  const practice = content.practice ?? {};
+  const exercises = practice.exercises ?? [];
+  if ((lesson.exercises ?? []).length !== 0 || lesson.exerciseStatus !== "ready") {
+    fail(section, { lessonId: lesson.id }, "legacy exercises must remain empty while Card 5 practice is ready");
+  }
+  if (practice.totalQuestions !== 14 || exercises.length !== 14) {
+    fail(section, { lessonId: lesson.id }, "Card 5 practice must contain exactly 14 exercises");
+  }
+  if (exercises.some((exercise, index) => exercise.order !== index + 1 || exercise.plan !== (index < 9 ? "free" : "plus"))) {
+    fail(section, { lessonId: lesson.id }, "Card 5 practice plan boundary must be Free 1–9 and Plus 10–14");
+  }
+  const checkpoint = exercises[8];
+  if (checkpoint?.type !== "checkpoint" || (checkpoint.subQuestions ?? []).length !== 5 || (checkpoint.subQuestions ?? []).some((item) => (item.options ?? []).length !== 4 || !item.options.some((option) => option.id === item.correctOptionId))) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 9 }, "checkpoint must have five four-option stable-id questions");
+  }
+  const advancedOrdering = exercises[12];
+  if (advancedOrdering?.type !== "slot_ordering" || (advancedOrdering?.answerSlots ?? []).length !== 6 || !(advancedOrdering?.unusedTokenIds ?? []).length) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 13 }, "exercise 13 must use six answer slots and include an unused distractor token");
+  }
+  const chatFill = exercises[9];
+  if (chatFill?.type !== "chat_text_fill" || (chatFill.chat?.messages ?? []).length !== 6 || (chatFill.slots ?? []).length !== 2 || !chatFill.slots?.every((slot) => slot.displayText && slot.canonicalText && slot.audioText && (slot.acceptedAnswers ?? []).length)) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 10 }, "exercise 10 must be a six-message, two-slot chat text fill with complete slot fields");
+  }
+  const realWorldPractice = exercises[13];
+  const sceneDividers = realWorldPractice?.sceneDividers ?? [];
+  // Owner decision (2026-07-19): Q14 line count is NOT fixed at 14 for a normal
+  // lesson (see LESSON_AUTHORING_STANDARD.md §18). Generic guard enforces only a
+  // small sanity floor + no AI controls; the Golden Lesson's exact 14-line lock
+  // lives in checkApprovedJaUnitOneLesson, unchanged.
+  if (
+    realWorldPractice?.type !== "real_world_practice_dialogue" ||
+    realWorldPractice?.nonGraded !== true ||
+    (realWorldPractice?.dialogueLines ?? []).length < 4 ||
+    realWorldPractice?.maxCycles != null ||
+    realWorldPractice?.scriptPolicy != null
+  ) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must be a non-graded dialogue (≥4 lines) without AI controls");
+  }
+  if (
+    sceneDividers.length !== 1 ||
+    !(sceneDividers[0]?.translationByNative?.vi && sceneDividers[0]?.translationByNative?.en && sceneDividers[0]?.translationByNative?.ja)
+  ) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must keep exactly one localized non-spoken scene divider");
+  }
+  if (/(ミン|Minh|Hưng|Linh)/u.test(JSON.stringify(content))) fail(section, { lessonId: lesson.id }, "five_cards lesson must not contain a leftover draft Vietnamese character name");
+  const entries = [
+    ...(lesson.vocabulary ?? []),
+    ...groups.flatMap((group) => group.lines ?? []),
+    ...(content.vocabularyDetails ?? []).flatMap((detail) => detail.examples ?? []),
+    ...(content.grammarPatterns ?? []).flatMap((pattern) => pattern.examples ?? []),
+  ];
+  for (const entry of entries) {
+    const text = String(entry.targetText ?? entry.displayText ?? entry.text ?? "");
+    if (/[㐀-鿿]/u.test(text) && !String(entry.reading ?? "").trim()) fail(section, { lessonId: lesson.id }, `Kanji entry missing reading: ${text}`);
+  }
+}
+
 function checkFiveCardsScopeGuard(lessons) {
   const section = "Five-cards scope guard";
   const fiveCardLessons = lessons.filter((lesson) => lesson.lessonFormat === "five_cards");
-  if (fiveCardLessons.length !== 1 || fiveCardLessons[0]?.id !== APPROVED_JA_UNIT1_LESSON1) {
-    fail(
-      section,
-      { ids: fiveCardLessons.map((lesson) => lesson.id) },
-      "only ja-daily_life-m01-u1-l1 may opt into five_cards",
-    );
+  if (fiveCardLessons.length === 0) {
+    fail(section, {}, "at least one five_cards lesson is expected");
   } else {
-    pass(section, "only approved Japanese Daily Life Unit 1 Lesson 1 uses five_cards");
+    for (const lesson of fiveCardLessons) checkFiveCardsLessonStructure(lesson, section);
+    pass(section, `${fiveCardLessons.length} five_cards lesson(s) pass structural checks`);
   }
 
   for (const lesson of lessons) {
@@ -247,17 +338,26 @@ function checkExpectedShape(coursesJson, lessonsJson) {
     fail(section, {}, `expected ${EXPECTED_COURSE_COUNT} courses, got ${coursesJson.courses.length}`);
   }
 
-  if (lessonsJson.lessons.length === EXPECTED_LESSON_COUNT) {
-    pass(section, `lesson count=${EXPECTED_LESSON_COUNT}`);
+  const allLessons = lessonsJson.lessons ?? [];
+  const foundationLessons = allLessons.filter((l) => l.nicheId === "core_foundation");
+  const dailyLifeLessons = allLessons.filter((l) => l.nicheId === "daily_life");
+  if (foundationLessons.length === EXPECTED_FOUNDATION_LESSON_COUNT) {
+    pass(section, `foundation lesson count=${EXPECTED_FOUNDATION_LESSON_COUNT}`);
   } else {
-    fail(section, {}, `expected ${EXPECTED_LESSON_COUNT} lessons, got ${lessonsJson.lessons.length}`);
+    fail(section, {}, `expected ${EXPECTED_FOUNDATION_LESSON_COUNT} Core Foundation lessons, got ${foundationLessons.length}`);
+  }
+  if (allLessons.length === foundationLessons.length + dailyLifeLessons.length) {
+    pass(section, `lesson total=${allLessons.length} (foundation + daily_life, no other niche)`);
+  } else {
+    fail(section, {}, `lesson total ${allLessons.length} does not equal foundation (${foundationLessons.length}) + daily_life (${dailyLifeLessons.length})`);
   }
 
-  const playable = (lessonsJson.lessons ?? []).filter((l) => !isBlueprintLesson(l));
-  if (playable.length === EXPECTED_PLAYABLE_LESSON_COUNT) {
-    pass(section, `playable lesson count=${EXPECTED_PLAYABLE_LESSON_COUNT}`);
+  const playable = allLessons.filter((l) => !isBlueprintLesson(l));
+  const expectedPlayable = foundationLessons.length + dailyLifeLessons.filter((l) => l.playable === true).length;
+  if (playable.length === expectedPlayable) {
+    pass(section, `playable lesson count=${playable.length}`);
   } else {
-    fail(section, {}, `expected ${EXPECTED_PLAYABLE_LESSON_COUNT} playable lessons, got ${playable.length}`);
+    fail(section, {}, `expected ${expectedPlayable} playable lessons, got ${playable.length}`);
   }
 }
 
@@ -283,6 +383,11 @@ function checkLessonExercises(lessons) {
       continue;
     }
     if (isBlueprintLesson(lesson)) continue;
+    // five_cards lessons carry their 14 exercises in fiveCardContent.practice
+    // (validated by checkFiveCardsScopeGuard) and keep top-level exercises[]
+    // empty — the "10 exercises" slot model is the legacy/blueprint shape only
+    // (ADR-019: five_cards is a reusable format, not Golden-only).
+    if (lesson.lessonFormat === "five_cards") continue;
     const exercises = lesson.exercises ?? [];
     if (exercises.length !== 10) {
       fail(section, { lessonId: lesson.id }, `expected 10 exercises, got ${exercises.length}`);
@@ -343,13 +448,17 @@ function checkAiRules(lessons) {
   }
 }
 
+// 16-module × 3-tier structure, Cơ bản tier fully named (owner decision,
+// 2026-07-19). An empty tier (Trung cấp/Cao cấp, every module) is a VALID,
+// intentional state — content is written in incrementally, later, in
+// separately authorized tasks. Only the Golden Lesson
+// (ja-daily_life-m01-u1-l1) has real playable content today; every other Cơ
+// bản lesson slot across all 16 modules is a named blueprint placeholder.
 function checkDailyLifeBlueprint(courses, lessons, catalog) {
   const section = "Daily Life Communication blueprint";
   const arch = catalog.architecture?.dailyLifeCommunication;
-  if (arch?.status === "partial" && arch?.playable === false && arch?.moduleCount === 10) {
-    pass(section, "catalog marks Daily Life as partial roadmap with Module 1 ready");
-  } else if (arch?.status === "blueprint" && arch?.playable === false && arch?.moduleCount === 10) {
-    pass(section, "catalog marks Daily Life as blueprint 10-module roadmap");
+  if (arch?.status === "partial" && arch?.playable === false && arch?.topicCount === EXPECTED_DAILY_LIFE_TOPIC_COUNT) {
+    pass(section, `catalog marks Daily Life as ${EXPECTED_DAILY_LIFE_TOPIC_COUNT}-topic roadmap with Topic 1 ready`);
   } else {
     fail(section, {}, "catalog.architecture.dailyLifeCommunication missing/incorrect");
   }
@@ -358,66 +467,78 @@ function checkDailyLifeBlueprint(courses, lessons, catalog) {
     const dailyCourses = courses.filter(
       (course) => course.languageCode === languageCode && course.nicheId === "daily_life",
     );
-    if (dailyCourses.length !== 10) {
-      fail(section, {}, `${languageCode}: expected 10 Daily Life modules, got ${dailyCourses.length}`);
+    if (dailyCourses.length !== EXPECTED_DAILY_LIFE_TOPIC_COUNT) {
+      fail(section, {}, `${languageCode}: expected ${EXPECTED_DAILY_LIFE_TOPIC_COUNT} Daily Life topics, got ${dailyCourses.length}`);
     } else {
-      pass(section, `${languageCode}: 10 Daily Life modules`);
-    }
-
-    for (const course of dailyCourses) {
-      if ((course.units ?? []).length !== 8) {
-        fail(section, { courseId: course.id }, `expected 8 units, got ${(course.units ?? []).length}`);
-      }
-      for (const unit of course.units ?? []) {
-        if ((unit.lessonIds ?? []).length !== 3) {
-          fail(section, { courseId: course.id, unitId: unit.id }, "expected 3 lessons per unit");
-        }
-      }
-      const isModuleOne = course.moduleId === "daily_life_m01_basic_social_survival";
-      if (isModuleOne && (course.playable !== true || course.contentStatus !== "ready")) {
-        fail(section, { courseId: course.id }, "Daily Life Module 1 must be ready/playable");
-      }
-      if (!isModuleOne && (course.playable !== false || course.contentStatus !== "blueprint")) {
-        fail(section, { courseId: course.id }, "Daily Life Module 2-10 must be non-playable blueprint");
-      }
-      if (course.unlockRequirement !== "core_foundation_completed") {
-        fail(section, { courseId: course.id }, "missing unlockRequirement");
-      }
+      pass(section, `${languageCode}: ${EXPECTED_DAILY_LIFE_TOPIC_COUNT} Daily Life topics`);
     }
 
     const dailyLessons = lessons.filter(
       (lesson) => lesson.languageCode === languageCode && lesson.nicheId === "daily_life",
     );
-    if (dailyLessons.length !== EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE) {
-      fail(
-        section,
-        {},
-        `${languageCode}: expected ${EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE} lessons, got ${dailyLessons.length}`,
-      );
-    } else {
-      pass(section, `${languageCode}: ${EXPECTED_DAILY_LIFE_LESSONS_PER_LANGUAGE} roadmap lessons`);
-    }
 
+    for (const course of dailyCourses) {
+      const hasUnits = (course.units ?? []).length > 0;
+      const isModuleOne = course.moduleId === "daily_life_m01_basic_social_survival";
+      if (isModuleOne && languageCode === "ja" && !hasUnits) {
+        fail(section, { courseId: course.id }, "Module 1 (Golden Lesson) must have at least one unit");
+      }
+      for (const unit of course.units ?? []) {
+        if ((unit.lessonIds ?? []).length === 0) {
+          fail(section, { courseId: course.id, unitId: unit.id }, "a created unit must contain at least one lesson");
+        }
+        if (!["basic", "intermediate", "advanced"].includes(unit.tier)) {
+          fail(section, { courseId: course.id, unitId: unit.id }, `invalid tier '${unit.tier}'`);
+        }
+      }
+      // Every module now has named Cơ bản units full of placeholder lessons
+      // (owner decision, 2026-07-19), so "has units" no longer implies "has
+      // real content" — ready/playable is gated on whether the module
+      // actually contains a ready lesson (today: only Module 1's Golden
+      // Lesson, ja).
+      const hasReadyLesson = dailyLessons.some(
+        (lesson) => lesson.moduleId === course.moduleId && lesson.playable === true,
+      );
+      if (hasReadyLesson && (course.playable !== true || course.contentStatus !== "ready")) {
+        fail(section, { courseId: course.id }, "a module with a ready lesson must be ready/playable");
+      }
+      if (!hasReadyLesson && (course.playable !== false || course.contentStatus !== "blueprint")) {
+        fail(section, { courseId: course.id }, "a module with no ready lesson yet must be non-playable blueprint");
+      }
+      if (course.unlockRequirement !== "core_foundation_completed") {
+        fail(section, { courseId: course.id }, "missing unlockRequirement");
+      }
+    }
+    pass(section, `${languageCode}: ${dailyLessons.length} daily_life lesson(s) present`);
+
+    // Only the Golden Lesson itself may be ready/playable — gated on its
+    // exact id (isApprovedJaUnitOneLesson), not on moduleId. A prior
+    // moduleId-based gate incorrectly required EVERY Module 1 lesson to be
+    // ready, which broke once Module 1 gained named non-Golden placeholder
+    // siblings (owner decision, 2026-07-19); those siblings now correctly
+    // fall through to the same blueprint checks as any other lesson slot.
     for (const lesson of dailyLessons) {
-      const isModuleOne = lesson.moduleId === "daily_life_m01_basic_social_survival";
-      if (isModuleOne) {
+      if (isApprovedJaUnitOneLesson(lesson)) {
         if (lesson.playable !== true || lesson.contentStatus !== "ready") {
-          fail(section, { lessonId: lesson.id }, "Module 1 lesson must be ready/playable");
+          fail(section, { lessonId: lesson.id }, "Golden Lesson must be ready/playable");
         }
-        if (isApprovedJaUnitOneLesson(lesson)) {
-          checkApprovedJaUnitOneLesson(lesson);
-          continue;
-        }
-        if (
-          (lesson.exercises ?? []).length !== 10 ||
-          (lesson.dialogueGroups ?? []).length !== 3 ||
-          (lesson.dialogueGroups ?? []).some((group) => (group.lines ?? []).length < 4)
-        ) {
-          fail(section, { lessonId: lesson.id }, "Module 1 lesson content is incomplete");
-        }
-        if ((lesson.exercises?.[7]?.subQuestions ?? []).length !== 5) {
-          fail(section, { lessonId: lesson.id }, "Module 1 Exercise 8 must have five subQuestions");
-        }
+        // NOTE: five_cards lessons keep top-level `exercises`/`dialogueGroups`
+        // empty by design — real content lives under `fiveCardContent`
+        // (practice.exercises / dialogueGroups). A prior top-level-field
+        // check here was dead code (unreachable before Module 1 gained
+        // non-Golden siblings) and, if it ever ran, would always fail
+        // against Golden's real shape — removed rather than reactivated.
+        // `checkApprovedJaUnitOneLesson` below is the real, thorough content
+        // check (reads fiveCardContent).
+        checkApprovedJaUnitOneLesson(lesson);
+        continue;
+      }
+      // Approved sibling five_cards lessons (e.g. ja-daily_life-m01-u1-l2) are
+      // intentionally ready/playable, not blueprint placeholders. Their full
+      // structure is validated by checkFiveCardsScopeGuard (ADR-019: five_cards
+      // is a reusable format, not Golden-only), so they legitimately skip the
+      // blueprint requirement below.
+      if (lesson.lessonFormat === "five_cards" && lesson.playable === true) {
         continue;
       }
       if (lesson.playable !== false || lesson.contentStatus !== "blueprint") {
@@ -647,15 +768,38 @@ function checkLanguageCatalogParity() {
     loadJson("mobile/novalang_flutter/assets/shared/language_options.json"),
     loadJson("mobile/novalang_flutter/assets/shared/native_language_options.json"),
     loadJson("shared/generated/curriculum_catalog.json"),
+    loadJson("rules/catalog.json").catch(() => null),
   ]).then(
-    ([learning, native, flutterLearning, flutterNative, catalog]) => {
-      if (learning.length < 40) {
-        fail(section, {}, `learning languages expected >= 40, got ${learning.length}`);
+    ([learning, native, flutterLearning, flutterNative, catalog, rulesCatalog]) => {
+      // Learning ("playable") count is DYNAMIC, mirroring the native count
+      // below: read from rules/catalog.json._meta.ruleTargetCount (33 today,
+      // owner D-55) instead of a stale hard-coded 40 floor.
+      const expectedLearning = rulesCatalog?._meta?.ruleTargetCount;
+      if (Number.isInteger(expectedLearning) && expectedLearning > 0) {
+        if (learning.length !== expectedLearning) {
+          fail(section, {}, `learning languages expected exactly ${expectedLearning} (rules/catalog.json._meta.ruleTargetCount), got ${learning.length}`);
+        } else {
+          pass(section, `learning languages: ${learning.length} (matches ruleTargetCount)`);
+        }
+      } else if (learning.length < 1) {
+        fail(section, {}, "learning language catalog is empty");
       } else {
         pass(section, `learning languages: ${learning.length}`);
       }
-      if (native.length < 100) {
-        fail(section, {}, `native languages expected >= 100, got ${native.length}`);
+      // Native count is DYNAMIC (owner decision, 2026-07-19): read the
+      // authoritative target from rules/catalog.json._meta.nativeTargetCount
+      // (60 today) instead of hard-coding a number here. The generated native
+      // catalog is produced from all of `nativeSeeds` in
+      // generate-language-catalogs.mjs, so its length must equal that target.
+      const expectedNative = rulesCatalog?._meta?.nativeTargetCount;
+      if (Number.isInteger(expectedNative) && expectedNative > 0) {
+        if (native.length !== expectedNative) {
+          fail(section, {}, `native languages expected exactly ${expectedNative} (rules/catalog.json._meta.nativeTargetCount), got ${native.length}`);
+        } else {
+          pass(section, `native languages: ${native.length} (matches nativeTargetCount)`);
+        }
+      } else if (native.length < 1) {
+        fail(section, {}, "native language catalog is empty");
       } else {
         pass(section, `native languages: ${native.length}`);
       }
@@ -692,12 +836,18 @@ function checkLanguageCatalogParity() {
       } else {
         pass(section, "Flutter native_language_options.json synced");
       }
-      if ((catalog.languages ?? []).length < 40) {
-        fail(
-          section,
-          {},
-          `catalog.languages expected >= 40, got ${(catalog.languages ?? []).length}`,
-        );
+      if (Number.isInteger(expectedLearning) && expectedLearning > 0) {
+        if ((catalog.languages ?? []).length !== expectedLearning) {
+          fail(
+            section,
+            {},
+            `catalog.languages expected exactly ${expectedLearning} (rules/catalog.json._meta.ruleTargetCount), got ${(catalog.languages ?? []).length}`,
+          );
+        } else {
+          pass(section, `catalog.languages: ${catalog.languages.length} (matches ruleTargetCount)`);
+        }
+      } else if ((catalog.languages ?? []).length < 1) {
+        fail(section, {}, "catalog.languages is empty");
       } else {
         pass(section, `catalog.languages: ${catalog.languages.length}`);
       }

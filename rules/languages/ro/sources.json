@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "language": "ro",
+    "stage": "0-inventory",
+    "note": "Nguồn cho lớp máy-đọc-được của ro (tiếng Rumani chuẩn ro-RO). Ngôn ngữ Rôman NHƯNG mang đặc trưng Balkan (Sprachbund): mạo từ xác định HẬU TỐ, hệ cách rút gọn, thức giả định 'să', giống trung. Dataset (CLDR/UD/WikiPron) import Bước 1, confidence:high, tải thật qua raw.githubusercontent.com. WikiPron ro nhỏ (9286 cặp) — đủ xác nhận quy tắc cốt lõi; corpus lớn (33645 câu) bù lại. Nguồn S-* dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet (KHÔNG fetch toàn văn — D-51), confidence trần medium."
+  },
+  "sources": [
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (ro) — Latin + ă â î ș ț",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/ro/characters.json",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank (UD_Romanian-RRT test split, word-class import)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Romanian-RRT/master/ro_rrt-ud-test.conllu",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme (ron_latn_broad, 9286 cặp — broad transcription ro-RO; bộ nhỏ)",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/ron_latn_broad.tsv",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD Romanian-RRT + UD Romanian-Nonstandard (train/dev/test) — câu thật cho corpus check (33645 câu, tools/cache/corpus/ro-sentences.txt, không commit)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Romanian-RRT/master/ + UD_Romanian-Nonstandard/master/",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "S-TRAINED-KNOWLEDGE",
+      "name": "Kiến thức ngôn ngữ học tiếng Rumani đã huấn luyện sẵn của người viết rule (Claude) — CHỈ dùng cho sự kiện chuẩn phổ thông; KHÔNG dùng làm nguồn duy nhất cho quyết định sản phẩm hay bảng dữ liệu đầy đủ",
+      "url": null,
+      "consulted": "2026-07-19",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "n/a — xem D-51"
+    }
+  ]
+}

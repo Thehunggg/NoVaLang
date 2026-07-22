@@ -1,0 +1,90 @@
+{
+  "id": "de/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": [
+    "orthography.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "S-DUDEN-RECHTSCHREIBUNG",
+    "CLDR"
+  ],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "„ … “",
+    "quote_marks_alternative": "» … «",
+    "quote_marks_note": "Ngoặc kép Đức: „ mở (dưới) … “ đóng (trên), hoặc guillemets »…« hướng vào. KHÁC en \" \". App chọn mặc định thực dụng chưa cross-check kỹ.",
+    "noun_capitalization": {
+      "rule": "MỌI danh từ (chung + riêng) viết hoa chữ đầu — das Haus, die Katze, der Tisch. Đặc trưng nổi bật nhất của chính tả Đức.",
+      "note": "Kiểm 'mọi danh từ viết hoa' cần POS lúc generator chạy (assert custom), không phải regex toàn-dòng."
+    },
+    "formal_pronoun_capitalization": {
+      "rule": "Đại từ trang trọng Sie/Ihnen/Ihr viết hoa; đại từ thân mật du/ihr thường (chỉ hoa đầu câu). sie (cô ấy/họ) thường.",
+      "note": "sie/Sie đồng âm khác hoa-thường — KHÔNG phân biệt được bằng regex đơn thuần giữa câu; cần ngữ cảnh."
+    },
+    "sentence_initial_capital": true,
+    "comma_before_subordinate_clause": {
+      "rule": "Mệnh đề phụ mở đầu bằng liên từ phụ thuộc (dass/weil/wenn/ob/obwohl/damit...) PHẢI có dấu phẩy ngăn cách với mệnh đề chính. KHÁC tiếng Anh.",
+      "corpus_finding": "Bước 3: 'dass' giữa câu 607 lần, 10.05% thiếu phẩy trước — nhưng ~một nửa là 'so dass' (comma đứng trước 'so' không phải 'dass') + corpus review web có lỗi phẩy thật của người dùng. KHÔNG dùng làm regex enforced (dương-tính-giả cao); giữ assert custom, cần POS/parse.",
+      "note": "Kiểm đúng cần phân tích cú pháp lúc generator chạy."
+    },
+    "umlaut_and_eszett_reference": "Xem umlaut_orthography trong coverage.json + answer_acceptance_de: ä/ö/ü/ß, chuyển tự ae/oe/ue/ss."
+  },
+  "checks": [
+    {
+      "id": "noun-capitalization",
+      "description": "Mọi danh từ viết hoa chữ đầu (kiểm mẫu cố định; kiểm tổng quát cần POS).",
+      "assert": {
+        "type": "custom",
+        "note": "Cần POS-tagging lúc generator chạy để xác định danh từ; không phải regex tĩnh."
+      },
+      "fixtures": {
+        "pass": [
+          "Das Haus ist groß.",
+          "Die Katze schläft."
+        ],
+        "fail": [
+          "Das haus ist groß.",
+          "Die katze schläft."
+        ]
+      }
+    },
+    {
+      "id": "sentence-initial-capital",
+      "description": "Câu bắt đầu bằng chữ hoa.",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm chữ đầu câu hoa; đơn giản nhưng cần xác định ranh giới câu lúc generator chạy."
+      },
+      "fixtures": {
+        "pass": [
+          "Guten Morgen.",
+          "Wie geht es Ihnen?"
+        ],
+        "fail": [
+          "guten Morgen.",
+          "wie geht es Ihnen?"
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "Die Kosten sind definitiv auch im Rahmen.",
+      "Das Haus ist groß.",
+      "Wie geht es Ihnen?"
+    ],
+    "fail": [
+      "die kosten sind definitiv auch im rahmen.",
+      "das haus ist groß."
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD German-GSD (Bước 3 mục 6)."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "fi/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "fi-FI (yleiskieli)",
+    "address_forms": {
+      "sinä": { "formality": "informal", "number": "singular", "verb_agreement": "ngôi 2 số ít (sinä puhut)", "usage": "thân mật — 'sinuttelu'; phổ biến rộng ở Phần Lan hiện đại" },
+      "te": { "formality": "formal_or_plural", "number": "singular_formal_and_plural", "verb_agreement": "ngôi 2 số nhiều (te puhutte)", "usage": "trang trọng ('teitittely', giống fr vous) — dịch vụ trang trọng, người lớn tuổi; hoặc số nhiều. Dùng nhiều hơn sv 'ni'." }
+    },
+    "baseline": {
+      "value": "Dạy sinä (thân mật-trung tính, baseline) + te (trang trọng/số nhiều). sinä/te map CASUAL/FORMAL. Trục register QUAN TRỌNG hơn của fi là yleiskieli (viết) vs puhekieli (nói) — xem spoken_vs_written + review-checklist D-fi-02.",
+      "tts_locale": "fi-FI"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "sinä + puhekieli (moi, mä/sä, kiva)",
+      "NATURAL_NEUTRAL_POLITE": "sinä + yleiskieli chuẩn mực — baseline mặc định app dạy",
+      "FORMAL": "te + yleiskieli trang trọng (Hyvää päivää, olkaa hyvä, anteeksi)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Phần Lan KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Lịch sự qua te (teitittely) + thức điều kiện (voisitteko...?) + từ vựng — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19). Trục lịch sự chính của fi là yleiskieli/puhekieli hơn là kính ngữ."
+      }
+    },
+    "politeness_devices": {
+      "conditional": "Voisitteko...? / Voisitko...? (Ngài/Bạn có thể...?), Haluaisin... (Tôi muốn...), olkaa hyvä / ole hyvä (làm ơn), kiitos (cảm ơn)"
+    }
+  },
+  "checks": [
+    {
+      "id": "sina-second-person-singular",
+      "description": "sinä chia động từ ngôi 2 số ít (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Puhutko sinä suomea?"],
+        "fail": ["Puhutteko sinä suomea?"]
+      }
+    },
+    {
+      "id": "te-formal-plural",
+      "description": "te (trang trọng/số nhiều) chia động từ ngôi 2 số nhiều (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia khi generator chạy." },
+      "fixtures": {
+        "pass": ["Puhutteko te suomea?"],
+        "fail": ["Puhutko te suomea?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Puhutko sinä suomea?", "Puhutteko te suomea?", "Voisitteko auttaa minua?"],
+    "fail": ["Puhutteko sinä suomea?", ""],
+    "_note": "Câu pass minh hoạ baseline (sinä/te + điều kiện lịch sự)."
+  }
+}

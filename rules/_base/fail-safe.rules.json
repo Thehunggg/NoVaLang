@@ -1,5 +1,8 @@
 {
   "id": "_base/fail-safe",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "depends_on": [],
   "phenomenon": "fail_safe",
   "enforces": ["rules/content/naturalness-and-register.md"],
   "config": {

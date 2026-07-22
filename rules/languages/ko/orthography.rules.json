@@ -1,0 +1,93 @@
+{
+  "id": "ko/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "spacing_orthography",
+  "enforces": [
+    "writing-system.md",
+    "orthography.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "S-NIKL-SPACING",
+    "CLDR"
+  ],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "particle_josa_never_separated_by_space": true,
+    "particle_josa_lexicon_status": "PENDING — bảng đóng đầy đủ 조사 chưa được cross-check (xem coverage.json particles_josa, status DRAFT)",
+    "compound_noun_spacing_status": "AMBIGUOUS — xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT A-06, không mã hoá thành check cứng",
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "\"\"",
+    "quote_marks_traditional": "「」",
+    "quote_marks_note": "Hàn hiện đại chủ yếu dùng dấu ngoặc kép kiểu Tây phương \" \"; 「」 vẫn thấy trong xuất bản trang trọng/truyền thống — KHÔNG giống ja (ja bắt buộc 「」). Chưa cross-check nguồn thứ hai độc lập ngoài trained-knowledge.",
+    "full_width_ja_style_punctuation": false,
+    "_punctuation_note": "KHÁC ja: ja dùng 。、full-width bắt buộc (xem ja/orthography.rules.json). ko dùng dấu câu kiểu phương Tây tiêu chuẩn, half-width. Đây là khác biệt thật giữa hai ngôn ngữ, không phải sao chép nhầm khuôn ja."
+  },
+  "checks": [
+    {
+      "id": "line-contains-hangul",
+      "description": "Mỗi câu target-language phải chứa ít nhất một ký tự Hangul (âm tiết tổ hợp hoặc jamo rời).",
+      "assert": {
+        "type": "regex_present",
+        "pattern": "[\\uac00-\\ud7a3\\u3131-\\u318e]"
+      },
+      "fixtures": {
+        "pass": [
+          "저는 학생이에요."
+        ],
+        "fail": [
+          "Hello world."
+        ]
+      }
+    },
+    {
+      "id": "no-japanese-style-fullwidth-terminator",
+      "description": "KHÔNG dùng 。hoặc 、 (dấu câu full-width kiểu ja) trong câu tiếng Hàn — ko dùng dấu Tây phương .",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[。、]"
+      },
+      "fixtures": {
+        "pass": [
+          "저는 학생이에요."
+        ],
+        "fail": [
+          "저는 학생이에요。"
+        ]
+      }
+    },
+    {
+      "id": "words-have-space-separation",
+      "description": "Câu phải có ít nhất một khoảng trắng phân tách từ (KHÁC ja — ko không viết liền toàn câu). Check thô ở mức câu có >=2 từ; KHÔNG kiểm spacing chi tiết từng từ (xem compound_noun_spacing_status — chưa đủ nguồn).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm đầy đủ (particle dính liền đúng chỗ, danh từ ghép, danh từ phụ thuộc) cần bảng 조사 đóng + phân tích hình vị khi generator chạy, không phải regex tĩnh. Bảng này CHƯA sẵn sàng (coverage.json spacing_orthography: DRAFT/low) — generator KHÔNG được sinh bài kiểm spacing nghiêm ngặt cho tới khi nâng confidence."
+      },
+      "fixtures": {
+        "pass": [
+          "저는 학교에 가요."
+        ],
+        "fail": [
+          "저는학교에가요."
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "잡스는 워즈니악에게 보수를 반씩 나누는 조건으로 도움을 청하고 워즈니악은 불과 4일만에 45개의 칩만으로 게임을 설계해내지만, 잡스는 워즈니악에게 기본 수고비의 절반인 350달러만을 주었다.",
+      "공기가 좋고 뒷산에서는 아직도 개구리가 합창하는 서울에서 드물게 오염되지 않은 곳입니다",
+      "이종범이 누구야"
+    ],
+    "fail": [
+      "저는학생이에요。",
+      "Hello, I am a student."
+    ],
+    "_note": "3 câu pass lấy từ corpus thật UD Korean-GSD (Bước 3 mục 6, xem tools/cache/corpus/ko-sentences.txt)."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "da/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "da-DK",
+    "address_forms": {
+      "du": { "formality": "universal_neutral", "number": "singular", "usage": "HẦU HẾT mọi người kể cả người lạ/lớn tuổi/dịch vụ — như sv. Baseline phổ quát." },
+      "De": { "formality": "very_formal_archaic", "number": "singular_and_plural", "capitalized": true, "usage": "trang trọng cao, ĐÃ RẤT HIẾM (hoàng gia, văn bản rất trang trọng) — KHÔNG dạy làm chuẩn trang trọng" },
+      "I": { "formality": "informal_plural", "capitalized": true, "usage": "ngôi 2 số nhiều thân mật (viết hoa để phân biệt i 'trong')" }
+    },
+    "baseline": {
+      "value": "Dạy 'du' làm chuẩn phổ quát (thân mật + lịch sự trung tính gộp, như sv). 'De' = ghi chú trang trọng cổ, gần như không dùng. 'I' = số nhiều thân mật. KHÔNG dựng đối lập T-V mạnh. Lịch sự qua từ vựng + gián tiếp.",
+      "tts_locale": "da-DK (xem D-da-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "du + từ thân mật (hej, hejsa)",
+      "NATURAL_NEUTRAL_POLITE": "du chuẩn mực — baseline (du đã là mức lịch sự trung tính)",
+      "FORMAL": "du + từ trang trọng + gián tiếp (Goddag, tak, undskyld)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Đan Mạch KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-), và De gần như tuyệt chủng. Lịch sự qua từ vựng + gián tiếp — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": {
+      "indirect": "Kunne du...? (Bạn có thể...?), Jeg vil gerne... (Tôi muốn...), undskyld (xin lỗi/xin phép), tak (cảm ơn)"
+    }
+  },
+  "checks": [
+    {
+      "id": "du-universal-baseline",
+      "description": "du dùng phổ quát, động từ cùng dạng (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần ngữ cảnh khi generator chạy; động từ da không đổi theo ngôi." },
+      "fixtures": {
+        "pass": ["Hvad vil du drikke?", "Taler du dansk?"],
+        "fail": ["Hvad vil du drikker?"]
+      }
+    },
+    {
+      "id": "polite-indirect",
+      "description": "Lịch sự qua gián tiếp (kunne du), không qua đại từ trang trọng (kiểm mẫu).",
+      "assert": { "type": "custom", "note": "Không dùng De làm trang trọng chuẩn." },
+      "fixtures": {
+        "pass": ["Kunne du hjælpe mig?"],
+        "fail": ["Kunne du hjælper mig?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Taler du dansk?", "Kunne du hjælpe mig?", "Tak skal du have."],
+    "fail": ["Hvad vil du drikker?", ""],
+    "_note": "Câu pass minh hoạ baseline (du phổ quát + gián tiếp lịch sự)."
+  }
+}

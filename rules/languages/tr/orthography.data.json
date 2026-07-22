@@ -1,0 +1,14 @@
+{
+  "id": "tr/orthography.data",
+  "kind": "charset",
+  "source": "CLDR",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "exemplarCharacters": "[a b c ç d e f g ğ h ı iİ j k l m n o ö p r s ş t u ü v y z]",
+    "auxiliary": "[áàăâåäãā æ éèĕêëē íìĭîïī ñ óòŏôøō œ q ß úùŭûū w x ÿ]",
+    "punctuation": "[\\- ‐‑ – — , ; \\: ! ? . … '‘’ \"“” ( ) \\[ \\] § @ * / \\& # † ‡ ′ ″]",
+    "numbers": "[\\- ‑ , . % ‰ + − 0 1 2 3 4 5 6 7 8 9]",
+    "index": "[A B C Ç D E F G H I İ J K L M N O Ö P Q R S Ş T U Ü V W X Y Z]"
+  }
+}

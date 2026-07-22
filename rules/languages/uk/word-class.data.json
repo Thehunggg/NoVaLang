@@ -1,0 +1,47 @@
+{
+  "id": "uk/word-class.data",
+  "kind": "word_class",
+  "source": "UD",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "uposCounts": {
+      "NOUN": 4537,
+      "ADJ": 1976,
+      "PUNCT": 3130,
+      "PRON": 519,
+      "CCONJ": 630,
+      "VERB": 1589,
+      "DET": 630,
+      "PROPN": 633,
+      "PART": 374,
+      "ADV": 718,
+      "ADP": 1588,
+      "SCONJ": 261,
+      "AUX": 120,
+      "X": 125,
+      "NUM": 390,
+      "SYM": 17,
+      "INTJ": 10
+    },
+    "uposTags": [
+      "ADJ",
+      "ADP",
+      "ADV",
+      "AUX",
+      "CCONJ",
+      "DET",
+      "INTJ",
+      "NOUN",
+      "NUM",
+      "PART",
+      "PRON",
+      "PROPN",
+      "PUNCT",
+      "SCONJ",
+      "SYM",
+      "VERB",
+      "X"
+    ]
+  }
+}

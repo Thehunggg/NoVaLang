@@ -1,0 +1,67 @@
+{
+  "id": "cs/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "case_system",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "cs-CZ (spisovná)",
+    "word_order": "SVO_free_case_marked_pro_drop",
+    "no_articles": true,
+    "case_system": {
+      "cases": ["nominativ (1)", "genitiv (2)", "dativ (3)", "akuzativ (4)", "vokativ (5)", "lokál (6)", "instrumentál (7)"],
+      "count": 7,
+      "note_vok": "Vokativ (hô cách, cách 5) — dùng khi gọi (pane! Marie!). Lokál (6) chỉ với giới từ.",
+      "consonant_alternation": "biến cách kèm luân phiên (kniha->knize dativ, ruka->ruce, Bůh->Bože) — lexical",
+      "status": "PENDING — bảng đuôi 7 cách × 3 giống × animacy × số là hình thái LEXICAL nặng, CHƯA đầy đủ."
+    },
+    "gender_animacy": {
+      "genders": ["masculine", "feminine", "neuter"],
+      "masculine_animacy": "giống nam chia SỐNG (pán->pány acc pl) / KHÔNG SỐNG (hrad->hrady) — ảnh hưởng akuzativ + số nhiều"
+    },
+    "verb": {
+      "aspect": "imperfective (dělat) / perfective (udělat); perfective hiện tại = tương lai",
+      "conjugation_classes": "5 lớp theo nguyên âm chủ đề",
+      "past": "phân từ -l + hoà giống-số + trợ động từ být ngôi 1/2 (dělal jsem)",
+      "byt_present": "být chia đầy đủ hiện tại (jsem/jsi/je/jsme/jste/jsou)"
+    },
+    "numeral_case": {
+      "n_1": "jeden/jedna/jedno hoà giống như tính từ",
+      "n_2_3_4": "+ danh cách số nhiều (dva stoly)",
+      "n_5_plus": "+ sở hữu cách số nhiều + động từ số ít (pět stolů)"
+    },
+    "clitic_second_position": {
+      "note": "ĐẶC TRƯNG (Wackernagel): clitic ở vị trí THỨ HAI",
+      "clitics": ["jsem/jsi (trợ quá khứ)", "se/si (phản thân)", "mi/ti/mu (dativ ngắn)", "mě/tě/ho (akuzativ ngắn)"],
+      "internal_order": "trợ động từ > se/si > dativ > akuzativ",
+      "example": "Včera jsem se ti smál. (Hôm qua tôi đã cười bạn.)"
+    }
+  },
+  "checks": [
+    {
+      "id": "numeral-governs-case",
+      "description": "Số đếm chi phối cách danh từ (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng biến cách khi generator chạy." },
+      "fixtures": {
+        "pass": ["dva stoly", "pět stolů", "jeden stůl"],
+        "fail": ["dva stolů", "pět stoly"]
+      }
+    },
+    {
+      "id": "clitic-second-position",
+      "description": "Clitic (jsem/se/mi...) ở vị trí thứ hai (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Luật Wackernagel; cần phân tích cú pháp khi generator chạy." },
+      "fixtures": {
+        "pass": ["Včera jsem se ti smál.", "Dal mi to."],
+        "fail": ["Včera se ti jsem smál."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Dva stoly.", "Včera jsem se ti smál.", "Jsem student."],
+    "fail": ["dva stolů", "Včera se ti jsem smál."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Czech thật."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "nl/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "word_order",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "nl-NL",
+    "word_order": {
+      "main_clause": "V2 — động từ chia ở vị trí THỨ HAI (Ik lees een boek. Vandaag lees ik.)",
+      "subordinate_clause": "động từ về CUỐI (..., omdat ik moe ben.)",
+      "verb_bracket": "khung động từ: trợ động từ vị trí 2 + phân từ/nguyên mẫu cuối (Ik heb een boek gelezen.)",
+      "underlying": "SOV nền tảng + V2 bề mặt"
+    },
+    "articles_gender": {
+      "de": "giống chung (commune) — ~2/3 danh từ",
+      "het": "giống trung — ~1/3 danh từ",
+      "een": "không xác định, mọi giống",
+      "plural_always_de": true,
+      "de_het_lexical": "phần lớn phải học theo từng danh từ (điểm khó bậc nhất)",
+      "demonstratives": { "de_near": "deze", "het_near": "dit", "de_far": "die", "het_far": "dat" }
+    },
+    "adjective_inflection": {
+      "add_e": "tính từ thêm -e (de mooie man, een mooie vrouw, mooie huizen)",
+      "exception_no_e": "het-word KHÔNG xác định số ít -> KHÔNG -e (een mooi huis)"
+    },
+    "verb_conjugation": {
+      "present": "ik werk (thân) / jij-hij werkt (thân+t) / wij-jullie-zij werken (nguyên mẫu)",
+      "past_weak": "-te/-de theo ''t kofschip' (thân kết thúc âm vô thanh -> -te: werkte; hữu thanh -> -de: speelde)",
+      "perfect": "hebben/zijn + ge-...-t/-d/-en (Ik heb gewerkt. Ik ben gegaan.)",
+      "strong_irregular": "động từ mạnh (đổi nguyên âm) + hebben/zijn/gaan/zullen bất quy tắc = lexical"
+    },
+    "separable_verbs": {
+      "rule": "tiền tố tách nhảy về CUỐI mệnh đề chính (opstaan -> Ik sta om 7 uur op)",
+      "participle": "ge- chèn giữa (opgestaan)",
+      "common_prefixes": ["op", "aan", "uit", "mee", "af", "in", "door", "na", "toe"]
+    },
+    "diminutive": {
+      "suffix_variants": ["-je", "-tje", "-etje", "-pje", "-kje"],
+      "selection": "theo âm cuối gốc (huis->huisje, boom->boompje, man->mannetje, koning->koninkje)",
+      "always_het": "danh từ giảm nhẹ luôn là het-word (het huisje)"
+    }
+  },
+  "checks": [
+    {
+      "id": "v2-main-clause",
+      "description": "Mệnh đề chính: động từ chia ở vị trí thứ 2 (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm V2 cần phân tích cú pháp khi generator chạy, không phải regex tĩnh." },
+      "fixtures": {
+        "pass": ["Ik lees een boek.", "Vandaag lees ik een boek.", "Ik sta om zeven uur op."],
+        "fail": ["Vandaag ik lees een boek."]
+      }
+    },
+    {
+      "id": "de-het-article-agreement",
+      "description": "de/het khớp giống danh từ (kiểm mẫu cố định, lexical).",
+      "assert": { "type": "custom", "note": "de/het theo từng danh từ; cần bảng khi generator chạy." },
+      "fixtures": {
+        "pass": ["de man", "het huis", "het huisje"],
+        "fail": ["het man", "de huis"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Ik heb een boek gelezen.", "het huis", "Ik sta om zeven uur op."],
+    "fail": ["Vandaag ik lees een boek.", "het man"],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Dutch thật."
+  }
+}

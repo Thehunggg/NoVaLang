@@ -1,0 +1,75 @@
+{
+  "id": "de/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": [
+    "pronunciation.md"
+  ],
+  "sources": [
+    "WIKIPRON",
+    "S-TRAINED-KNOWLEDGE"
+  ],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "grapheme_to_phoneme_rules": {
+      "sch": {
+        "phoneme": "ʃ",
+        "g2p_check": "6330 từ áp dụng / 1.17% vi phạm — OK. Ngoại lệ: hậu tố giảm nhẹ -chen sau s (Häus-chen -> s ç), KHÔNG phải digraph sch."
+      },
+      "w_initial": {
+        "phoneme": "v",
+        "g2p_check": "765 từ / 0.13% — OK (vi phạm duy nhất là entry WikiPron lỗi 'wir->m ɐ')."
+      },
+      "z_initial": {
+        "phoneme": "ts",
+        "g2p_check": "810 từ / 0.99% — OK. Ngoại lệ: từ mượn zoom/zappen (/z/). WikiPron ghi lẫn t͡s (tie-bar) và 't s' (tách) — cùng âm."
+      },
+      "v_initial": {
+        "phoneme": "f (từ gốc Đức) hoặc v (từ mượn)",
+        "g2p_check": "1354 từ / 0.15% — OK. viel/Vater->[f]; Vase/Villa->[v]."
+      }
+    },
+    "not_yet_g2p_checked": {
+      "note": "Chưa g2p-check trực tiếp, mô tả từ kiến thức chuẩn (confidence medium):",
+      "ei_au_eu": "ei->[aɪ], au->[aʊ], eu/äu->[ɔʏ] (nguyên âm đôi)",
+      "ie": "ie->[iː] (i dài, không phải nguyên âm đôi)",
+      "ch": "ch->[ç] sau nguyên âm trước/phụ âm (ich, Milch); ch->[x] sau nguyên âm sau (Bach, doch)",
+      "auslautverhartung": "Auslautverhärtung — làm điếc âm tắc cuối âm tiết: b/d/g cuối -> [p]/[t]/[k] (Tag->[taːk], und->[ʊnt], gib->[ɡiːp])",
+      "eszett": "ß -> [s] (luôn vô thanh)"
+    },
+    "stress_note": "Trọng âm KHÔNG đánh dấu trong chính tả (khác es tilde). Từ gốc Đức trọng âm ở thân từ; tiền tố tách mang trọng âm, tiền tố không tách (be-/ge-/ver-/ent-) không mang. Cần từ điển phát âm để kiểm — giữ DRAFT (xem syllable_stress coverage)."
+  },
+  "checks": [
+    {
+      "id": "sch-to-esh",
+      "description": "Digraph 'sch' phát âm [ʃ] (xác nhận g2p-check 6330 từ, 1.17% vi phạm là -chen).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm chữ->âm cần từ điển phát âm/G2P engine lúc generator chạy; g2p-check.mjs đã xác nhận trên WikiPron thật."
+      },
+      "fixtures": {
+        "pass": [
+          "Schule",
+          "Fisch"
+        ],
+        "fail": [
+          "Sxule",
+          "Fisk"
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "Schule",
+      "Wasser",
+      "Zeit",
+      "viel"
+    ],
+    "fail": [
+      "Sxule"
+    ],
+    "_note": "fixtures minh hoạ 4 quy tắc g2p đã xác nhận (sch/w/z/v); dùng test implementation tương lai."
+  }
+}

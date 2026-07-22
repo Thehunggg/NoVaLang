@@ -1,0 +1,45 @@
+{
+  "id": "cs/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "„”",
+    "diacritics_are_meaningful": "háček (č š ž ř ě ň ď ť) đổi âm; acute/kroužek (á é í ó ú ů ý) = độ dài. Bỏ = sai + đổi nghĩa (byt/být, s/š).",
+    "ch_is_one_letter": "digraph 'ch' xếp như một chữ, sau h trong bảng chữ.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "leden/pondělí/čeština/český viết thường (trừ đầu câu) — giống ru/pl.",
+      "formal_you_optional_capital": "Vy/Vás viết hoa trong thư lịch sự."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 34869 câu thật.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Leden|Únor|Březen|Duben|Květen|Červen|Červenec|Srpen|Září|Říjen|Listopad|Prosinec|Pondělí|Úterý|Středa|Čtvrtek|Pátek|Sobota|Neděle)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Dnes je pondělí třetího ledna."],
+        "fail": ["Dnes je Pondělí třetího Ledna."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Dnes je pondělí.", "Mluví česky.", "Praha je hlavní město České republiky."],
+    "fail": ["dnes je pondělí.", "Dnes je Ledna."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Czech thật. Máj (thơ ca tháng 5) hiếm; dùng Květen chuẩn."
+  }
+}

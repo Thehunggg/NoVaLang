@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "language": "hi",
+    "stage": "0-inventory",
+    "note": "Nguồn cho lớp máy-đọc-được của hi (tiếng Hindi chuẩn, hi-IN). Hệ chữ DEVANAGARI (Deva — abugida: phụ âm mang nguyên âm cố hữu 'a', nguyên âm phụ bằng matra). Ấn-Âu nhánh Indo-Aryan. Dataset (CLDR/UD/WikiPron) import Bước 1. WikiPron hi RẤT LỚN (33057 cặp); corpus UD Hindi-HDTB 16649 câu (TRÊN mốc 10000 — đầy đủ). Tra cứu 5 vòng. Nguồn S-* dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet (KHÔNG fetch toàn văn — D-51), confidence trần medium."
+  },
+  "sources": [
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (hi) — Devanagari",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/hi/characters.json",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme (hin_deva_broad, 33057 cặp — broad transcription hi-IN; bộ RẤT LỚN)",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/hin_deva_broad.tsv",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank (UD_Hindi-HDTB test split, word-class import)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Hindi-HDTB/master/hi_hdtb-ud-test.conllu",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-NC-SA (per treebank)"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD Hindi-HDTB (train/dev/test) — câu thật cho corpus check (16649 câu, tools/cache/corpus/hi-sentences.txt, không commit; TRÊN mốc 10000)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Hindi-HDTB/master/",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-NC-SA (per treebank)"
+    },
+    {
+      "id": "S-TRAINED-KNOWLEDGE",
+      "name": "Kiến thức ngôn ngữ học tiếng Hindi đã huấn luyện sẵn của người viết rule (Claude) — CHỈ dùng cho sự kiện chuẩn phổ thông; KHÔNG dùng làm nguồn duy nhất cho quyết định sản phẩm hay bảng dữ liệu đầy đủ",
+      "url": null,
+      "consulted": "2026-07-19",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "n/a — xem D-51"
+    }
+  ]
+}

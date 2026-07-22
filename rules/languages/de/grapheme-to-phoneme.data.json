@@ -1,0 +1,218 @@
+{
+  "id": "de/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 57662,
+    "byScript": {
+      "deu_latn_broad_filtered": {
+        "count": 57662,
+        "sample": [
+          [
+            "'n",
+            "m"
+          ],
+          [
+            "'n",
+            "n"
+          ],
+          [
+            "'n",
+            "ŋ"
+          ],
+          [
+            "'n",
+            "ə n"
+          ],
+          [
+            "'ne",
+            "n ə"
+          ],
+          [
+            "'nem",
+            "n ə m"
+          ],
+          [
+            "'nen",
+            "n ə n"
+          ],
+          [
+            "'ner",
+            "n ɐ"
+          ],
+          [
+            "'türlich",
+            "t yː ɐ̯ l ɪ ç"
+          ],
+          [
+            "A",
+            "ʔ aː"
+          ],
+          [
+            "AAD",
+            "aː ʔ aː d eː"
+          ],
+          [
+            "ABC",
+            "a b e t s eː"
+          ],
+          [
+            "ABC",
+            "aː b e t s eː"
+          ],
+          [
+            "ADHS",
+            "aː d eː h aː ʔ ɛ s"
+          ],
+          [
+            "AKH",
+            "a k a h aː"
+          ],
+          [
+            "ALG",
+            "aː ʔ ɛ l ɡ eː"
+          ],
+          [
+            "ASEAN",
+            "aː z e a n"
+          ],
+          [
+            "Aa",
+            "aː"
+          ],
+          [
+            "Aa",
+            "ʔ a ʔ a"
+          ],
+          [
+            "Aachen",
+            "aː x ə n"
+          ],
+          [
+            "Aachener",
+            "aː x ə n ɐ"
+          ],
+          [
+            "Aachenerin",
+            "aː x ə n ə ʁ ɪ n"
+          ],
+          [
+            "Aake",
+            "aː k ə"
+          ],
+          [
+            "Aakerbeere",
+            "aː k ɐ b eː ʁ ə"
+          ],
+          [
+            "Aal",
+            "aː l"
+          ],
+          [
+            "Aalauge",
+            "aː l a ʊ̯ ɡ ə"
+          ],
+          [
+            "Aale",
+            "ʔ aː l ə"
+          ],
+          [
+            "Aalen",
+            "aː l ə n"
+          ],
+          [
+            "Aales",
+            "ʔ aː l ə s"
+          ],
+          [
+            "Aalfang",
+            "ɑː l f a ŋ"
+          ],
+          [
+            "Aalfell",
+            "aː l f ɛ l"
+          ],
+          [
+            "Aalfett",
+            "aː l f ɛ t"
+          ],
+          [
+            "Aalfischer",
+            "aː l f ɪ ʃ ɐ"
+          ],
+          [
+            "Aalhaut",
+            "aː l h a ʊ̯ t"
+          ],
+          [
+            "Aalkorb",
+            "aː l k ɔ ʁ p"
+          ],
+          [
+            "Aalleiter",
+            "aː l l a ɪ̯ t ɐ"
+          ],
+          [
+            "Aalmolch",
+            "aː l m ɔ l ç"
+          ],
+          [
+            "Aalmutter",
+            "aː l m ʊ t ɐ"
+          ],
+          [
+            "Aalmuttern",
+            "aː l m ʊ t ɐ n"
+          ],
+          [
+            "Aalquappe",
+            "aː l k v a p ə"
+          ],
+          [
+            "Aalraupe",
+            "aː l ʁ a ʊ̯ p ə"
+          ],
+          [
+            "Aalreuse",
+            "aː l ʁ ɔ ɪ̯ z ə"
+          ],
+          [
+            "Aalreusen",
+            "aː l ʁ ɔ ɪ̯ z n̩"
+          ],
+          [
+            "Aalräucherei",
+            "aː l ʁ ɔ ɪ̯ ç ə ʁ a ɪ̯"
+          ],
+          [
+            "Aalräuchereien",
+            "aː l ʁ ɔ ɪ̯ ç ə ʁ a ɪ̯ ə n"
+          ],
+          [
+            "Aals",
+            "ʔ aː l s"
+          ],
+          [
+            "Aalspeer",
+            "aː l ʃ p eː ɐ̯"
+          ],
+          [
+            "Aalstechen",
+            "aː l ʃ t ɛ ç n̩"
+          ],
+          [
+            "Aalstrich",
+            "aː l ʃ t ʁ ɪ ç"
+          ],
+          [
+            "Aalsuppe",
+            "aː l z ʊ p ə"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/deu_latn_broad_filtered.tsv"
+      }
+    }
+  }
+}

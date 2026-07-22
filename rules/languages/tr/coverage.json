@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "language": "tr",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "tr-TR (tiếng Thổ Nhĩ Kỳ chuẩn Istanbul)",
+    "family": "Turkic (Oghuz), hệ chữ Latin (29 chữ)",
+    "difficulty_self_assessment": "KHÓ (typology rất khác châu Âu): CHẮP DÍNH (agglutinative — hậu tố xếp chồng) + HOÀ ÂM NGUYÊN ÂM (vowel harmony) + biến âm phụ âm + SOV. Chữ Latin nhưng ı/i (không chấm/có chấm) là bẫy. Tra cứu 5 vòng.",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật.",
+    "corpus": {
+      "file": "tools/cache/corpus/tr-sentences.txt (không commit)",
+      "sentences": 9761,
+      "source": "UD Turkish-BOUN (train/dev/test) (S-UD-CORPUS)",
+      "note": "GẦN mốc 10000 (9761 — chỉ thiếu chút, trên sàn 2000 rất nhiều) — corpus check tin cậy."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Thổ. Chính tả Thổ RẤT ĐỀU (một-chữ-một-âm, thiết kế bởi cải cách Atatürk 1928) — g2p rất tin cậy. Cái KHÓ là NGỮ PHÁP CHẮP DÍNH + HOÀ ÂM (khác hẳn châu Âu), không phải chữ→âm."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Bảng chữ Latin Thổ 29 chữ (a b c ç d e f g ğ h ı i j k l m n o ö p r s ş t u ü v y z). KHÔNG có q w x (chỉ trong từ ngoại lai/tên). ĐẶC TRƯNG: ı (i KHÔNG chấm) vs i (có chấm) là HAI CHỮ khác nhau — và giữ phân biệt khi viết hoa: I (hoa của ı) vs İ (hoa của i, có chấm). ç ğ ö ş ü là chữ riêng. ğ (yumuşak ge) không đứng đầu từ. CLDR xác nhận.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận 29 chữ Latin Thổ + ı/İ.",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Hoa đầu câu + danh từ riêng. ĐẶC TRƯNG ı/İ khi đổi hoa-thường: i→İ (hoa CÓ chấm), ı→I (hoa KHÔNG chấm) — thuật toán lowercase/uppercase PHẢI theo locale tr (mặc định Unicode sai: I→i mất chấm). [KỶ LUẬT DỮ LIỆU — corpus-check Bước 3: KHÁC es/it/pl! Tháng/thứ tiếng Thổ KHÔNG luôn viết thường — theo TDK (Türk Dil Kurumu) tháng/thứ VIẾT HOA khi chỉ NGÀY CỤ THỂ (5 Aralık 1390, 10 Kasım'da) nhưng viết thường khi nói chung (kasım ayında). Corpus 9761 câu có 96 (0.98%) tháng/thứ viết hoa — ĐÚNG luật ngày cụ thể, KHÔNG phải lỗi. Vì thế KHÔNG áp check 'month-always-lowercase' như Romance — giữ medium, ghi rõ quy tắc ngữ cảnh-ngày, cần native cho ranh giới.] Quốc tịch/ngôn ngữ tiếng Thổ VIẾT HOA (Türk, Türkçe, İngilizce) — khác es.",
+    "status": "DRAFT"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ Latin.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (tur_latn_broad, 12321 cặp) -> grapheme-to-phoneme.data.json. 8 nguyên âm ĐỐI XỨNG theo hoà âm: trước (e i ö ü) / sau (a ı o u), tròn (o ö u ü) / dẹt (a e ı i). Phụ âm: c[d͡ʒ] ç[t͡ʃ] ş[ʃ] j[ʒ] ğ (kéo dài nguyên âm/~câm) y[j]. Không thanh điệu; trọng âm thường âm tiết cuối (có ngoại lệ).",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính tả Thổ RẤT ĐỀU (một-chữ-một-âm, cải cách Atatürk 1928). [Bước 3: g2p-check.mjs trên WikiPron thật 12321 từ.] Sạch: ş→[ʃ] 0.16%, j→[ʒ] 1.75%, ü→[y] 0.77%, ı→[ɯ] 1.29%. VALIDATED. KỶ LUẬT DỮ LIỆU (ngoại lệ KHÔNG phá rule): c→[d͡ʒ] báo 21.34% + ç→[t͡ʃ] 16.99% 'vi phạm' = ARTIFACT TOKENIZATION của WikiPron (phiên âm khi thì tie-bar 't͡ʃ' MỘT token, khi thì tách 't ʃ' HAI token — g2p-check khớp chuỗi con nên 't ʃ' không chứa 't͡ʃ'); kiểm tay xác nhận ç→[t͡ʃ]/c→[d͡ʒ] ĐÚNG 100% (Acem→[a d͡ʒ e m]). ö→[ø] báo 17.92% = biến thể narrow [œ]/[ø] — broad ö→[ø] đúng. Ghi rõ, giữ high. ğ = kéo dài nguyên âm trước / ~câm (dağ→[daː]) — lexical theo ngữ cảnh.",
+    "status": "VALIDATED"
+  },
+  "vowel_harmony": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG ĐỊNH DANH tiếng Thổ: nguyên âm hậu tố HOÀ theo nguyên âm gốc. (1) Hoà âm 2 chiều trước/sau (e-type: e/a): -ler/-lar số nhiều (evler 'nhà-số nhiều' / atlar 'ngựa-số nhiều'), -de/-da locative. (2) Hoà âm 4 chiều tròn/dẹt (i-type: i/ı/u/ü): -im/-ım/-um/-üm sở hữu ngôi 1 (evim/atım/okulum/gözüm). Quy tắc rule_level HỆ THỐNG + rõ ràng (đoán được 100% từ nguyên âm cuối gốc). Ngoại lệ: từ ngoại lai không hoà (kitap+ı không kitap+ü), một số hậu tố cố định. g2p-check phụ âm hoà âm gián tiếp xác nhận qua tính đều của chính tả. Là điểm dạy trung tâm; paradigm hậu tố cụ thể cần native cho ngoại lệ.",
+    "status": "DRAFT"
+  },
+  "consonant_mutation": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Biến âm phụ âm ở ranh giới hậu tố: (1) BẬT→HỮU THANH trước nguyên âm: p→b, ç→c, t→d, k→ğ (kitap→kitabı, ağaç→ağacı, renk→rengi, sokak→sokağı). (2) Hậu tố -de/-den → -te/-ten sau phụ âm vô thanh (kitapta không kitapda). Quy tắc rule_level hệ thống nhưng danh sách từ áp dụng/ngoại lệ (từ đơn âm tiết nhiều khi không biến: at→atı không adı) → lexical, cần native.",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Turkish-BOUN test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "agglutination": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG: CHẮP DÍNH — hậu tố xếp chồng theo THỨ TỰ CỐ ĐỊNH trên một gốc (ev-ler-im-de-ki 'cái ở trong những-nhà-của-tôi'). Danh từ: gốc + số nhiều + sở hữu + cách. Không có mạo từ (bir = một/một cái). Quy tắc thứ tự hậu tố hệ thống; sinh từ có thể rất dài. Kết hợp hoà âm (mọi hậu tố hoà theo gốc). Paradigm đầy đủ + ngoại lệ cần native.",
+    "status": "DRAFT"
+  },
+  "noun_case": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "6 CÁCH (hậu tố hoà âm, KHÔNG có giống): nominative (∅), accusative (-i/-ı/-u/-ü, chỉ tân ngữ XÁC ĐỊNH), dative (-e/-a 'tới'), locative (-de/-da/-te/-ta 'ở'), ablative (-den/-dan/-ten/-tan 'từ'), genitive (-in/-ın/-un/-ün 'của'). KHÁC Ấn-Âu: không giống, không hợp tính từ, hậu tố đều (chỉ đổi theo hoà âm + biến âm). Accusative CHỈ dùng khi tân ngữ xác định — điểm khó. Paradigm rule_level rõ; ngoại lệ biến âm gốc cần native.",
+    "status": "DRAFT"
+  },
+  "verb_morphology": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Động từ CHẮP DÍNH: gốc + (phủ định -me/-ma) + THÌ/THỂ/THỨC (TAM) + NGÔI. Thì/thức: hiện tại tiếp diễn -iyor, rộng/thói quen -er/-ir, quá khứ xác định -di, quá khứ kể/gián tiếp (evidential) -miş (đặc trưng — phân biệt chứng kiến/nghe kể), tương lai -ecek/-acak, điều kiện -se. Ngôi: -im/-sin/-∅/-iz/-siniz/-ler. Tất cả HOÀ ÂM. Evidential -miş là điểm dạy đặc trưng. Paradigm cụ thể + động từ bất quy tắc (không nhiều) cần native.",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SOV (động từ cuối câu) — khác hẳn châu Âu SVO. Bổ ngữ đứng TRƯỚC danh từ (büyük ev 'nhà lớn', tính từ trước; sở hữu trước). Linh hoạt cho nhấn mạnh (thông tin cũ-mới) nhờ hậu tố cách đánh dấu vai, nhưng SOV là mặc định. Không mạo từ.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "CÓ đối lập T-V: sen (số ít, thân mật) / siz (số nhiều HOẶC lịch sự số ít — người lạ/lớn tuổi/trang trọng, như fr vous). Động từ theo ngôi tương ứng (-sin/-siniz). Kèm danh xưng lịch sự: Bey (ông, sau tên: Ahmet Bey), Hanım (bà, sau tên: Ayşe Hanım). Đây là quyết định sản phẩm (dạy đối lập) — xem review-checklist D-tr-05.",
+    "status": "VALIDATED"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu câu chuẩn Latin (. , ? !). Dấu nháy ' dùng TÁCH hậu tố khỏi tên riêng (İstanbul'da 'ở Istanbul', Türkiye'nin 'của Thổ') — đặc trưng chính tả, bắt buộc. Ngoặc kép \"...\" hoặc «...».",
+    "status": "DRAFT"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ç ş ğ ı ö ü là CHỮ CÁI RIÊNG (không phải c/s/g/i/o/u có dấu): đổi âm/nghĩa (kis? — thực ra ı vs i: 'sık' 'thường xuyên' vs 'sik' tục; 'kar' tuyết vs 'kâr' lợi nhuận với â). ĐẶC BIỆT ı (không chấm) vs i (có chấm) = HAI CHỮ, hai âm ([ɯ] vs [i]). Bỏ/thay = sai chính tả + đổi nghĩa. Circumflex â/î/û hiếm, phân biệt vài cặp (kar/kâr) — ngày càng tuỳ chọn. Ảnh hưởng chấm điểm — xem answer_acceptance_tr (bản chất giống pl/da: chữ cái riêng).",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~sen + từ thân mật (selam, merhaba), NATURAL_NEUTRAL_POLITE~siz lịch sự trung tính hoặc sen ngang hàng (baseline), FORMAL~siz + từ trang trọng + Bey/Hanım (Merhaba, lütfen, teşekkür ederim, özür dilerim). HONORIFIC: not-applicable cho tr — không có hệ kính ngữ hình thái kiểu ja/ko; lịch sự qua siz + từ vựng + Bey/Hanım (đã bao trong FORMAL + forms_of_address). Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19).",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "NOT-APPLICABLE: chữ Latin (người học phương Tây đọc được ngay). Chính tả một-chữ-một-âm nên không cần chú đọc; audio TTS là kênh phát âm. Chỉ cần lưu ý ı/i + ç/ş/ğ/ö/ü khi gõ.",
+    "status": "not-applicable"
+  },
+  "answer_acceptance_tr": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "HAI PHẦN (owner DUYỆT 2026-07-19 D-77 / D-tr-04). (1) ç ş ğ ı ö ü: phương án C — thiếu/thay (i thay ı, c thay ç, s thay ş, g thay ğ, o thay ö, u thay ü) = SAI, không chấp nhận, vì là CHỮ CÁI RIÊNG (đổi âm/nghĩa; đặc biệt ı≠i: 'sık'≠'sik'). Nhắc cài bàn phím Thổ. Áp tiền lệ pl D-64. (2) circumflex â/î/û: KHOAN DUNG — chấp nhận a/i/u thay â/î/û (cảnh báo nhẹ), vì dấu phụ hiếm, ngày càng tuỳ chọn theo TDK (chỉ giữ khi tránh nhầm kar/kâr) — NGOẠI LỆ CÓ CƠ SỞ (như ё Nga/ґ Ukraina). LƯU Ý KỸ THUẬT (implementation, không phải rule): so khớp đáp án + lowercase/uppercase PHẢI dùng locale tr (i↔İ, ı↔I) — dùng locale mặc định làm sai chấm i.",
+    "status": "VALIDATED"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Lưu ý: đối lập sen/siz + Bey/Hanım, evidential -miş (chứng kiến vs nghe kể — dịch đúng sắc thái), accusative chỉ tân ngữ xác định, SOV tự nhiên, hoà âm mọi hậu tố.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text Latin Thổ (đầy đủ ç ğ ı i ö ş ü). TTS tr-TR đọc trực tiếp (chính tả đều nên TTS rất tốt). Kế thừa _base/audio.rules.json. Locale: tr-TR. Văn bản PHẢI giữ ı/i phân biệt + ç/ğ/ö/ş/ü (chữ riêng). ğ kéo dài nguyên âm — engine xử lý.",
+    "status": "VALIDATED"
+  }
+}

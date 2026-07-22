@@ -1,0 +1,127 @@
+{
+  "id": "ja/pragmatics.rules",
+  "version": "1.3.0",
+  "status": "FROZEN",
+  "changeLog": [
+    {
+      "version": "1.1.0",
+      "date": "2026-07-18",
+      "change": "A3 (Golden Lesson audit, rules/decisions.md mục 0.1): thêm 'fixed_expression_exemptions' cho check baseline-polite-sentence-ends-desu-masu — ngoại lệ trước đây chỉ loại trừ 'corpus văn viết chung', không loại trừ cụm chào hỏi/từ cố định xuất hiện ngay trong nội dung bài (register baseline thật). Danh sách 4 mục lấy trực tiếp từ headword thật trong Golden Lesson vocabulary[] (shared/generated/lessons.json, lesson ja-daily_life-m01-u1-l1): こんにちは/こんばんは/はじめまして/さようなら — không suy đoán thêm mục chưa có bằng chứng."
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-07-18",
+      "change": "SỬA GỐC theo dữ liệu thật (chạy check trên toàn bộ 506 bài generic + Golden — không phải chỉ mở rộng exemption hẹp). Phát hiện: check cũ coi 'baseline polite' = CHỈ です/ます-family, và không loại trừ vocabulary là ký tự đơn (bảng chữ cái). Đọc tay toàn bộ 41 chuỗi ja daily_life bị bắt nhầm ngoài Golden: 100% là báo động giả, chia 5 nhóm thật — enders regex thiếu 'ですか'/'ましたか' (chỉ có 'ますか'), thiếu trợ từ cuối câu ね/よ gắn sau です/ます, thiếu hẳn cấu trúc yêu cầu lịch sự て-form/N+を+ください (một dạng baseline-polite hợp lệ khác, không phải biến thể です/ます), thiếu 5 cụm cố định mới (ありがとう/どういたしまして/こちらこそ/どうぞ/ようこそ), và câu hỏi rút gọn N+は？ (owner quyết: coi là hợp lệ, xem AskUserQuestion 2026-07-18). Sửa: (1) enders_regex mở rộng có tham số hoá trong config, (2) polite_request_ending (て-form/N+を+ください) là lớp baseline-polite riêng, không phải biến thể desu/masu, (3) ellipsis_topic_question (N+は？) hợp lệ theo quyết định owner, (4) fixed_expression_exemptions +5 mục, chuyển từ khớp-nguyên-văn sang khớp-hậu-tố (endsWith) để phủ cả trường hợp cụm cố định đứng cuối câu dài hơn (vd '...ありがとう。'), (5) skip_single_character: true — không áp check này lên vocabulary là 1 ký tự (bảng chữ cái hiragana/katakana). tools/lesson-check.mjs cập nhật logic khớp. Chạy lại 506 bài: báo động giả register về 0/138 (xem rules/_legacy/golden-lesson-test-2026-07-18.md phần thống kê mới)."
+    },
+    {
+      "version": "1.3.0",
+      "date": "2026-07-20",
+      "change": "SỬA GỐC (owner duyệt, rules/decisions.md D-92): check register 'câu baseline kết bằng です/ます' KHÔNG áp cho HEADWORD của vocab card (trường từ vựng chính — từ/cụm điển, không phải câu). Trước đây lớp soft-check CHỈ chạy check này trên vocabulary[].displayText — đúng cái không nên chạy: một headword từ điển (名前, お名前, もう一度, ～さん, 失礼ですが...) là mục từ vựng, không phải câu, nên 'kết thúc bằng gì' vô nghĩa. Dialogue đã bị loại từ trước (G-04: không có trường register máy-đọc-được để phân biệt hội thoại casual có chủ ý). Sửa: thêm 'skip_vocabulary_card_headword: true' — MỌI headword vocab tự động miễn check register (structural, không phải thêm từ vào danh sách exemption → bài sau không tái phát). Cả tools/lib/soft-linguistic-checks.mjs và tools/lesson-check.mjs cập nhật để tôn trọng cờ này. Check register vẫn giữ nguyên logic/fixtures (dành cho tầng CÂU thật khi có trường register máy-đọc-được), nhưng ở tầng soft-check hiện tại không còn đầu vào nào bị bắt nhầm. Sau sửa: 5 cảnh báo mềm register của L2 (ja-daily_life-m01-u1-l2) về 0; báo động giả register toàn bộ về 0. KHÔNG đụng phần khác của rule ja, KHÔNG đụng ngôn ngữ khác, KHÔNG đụng nội dung bài."
+    }
+  ],
+  "phenomenon": "honorifics_keigo",
+  "enforces": [
+    "style-and-register.md",
+    "grammar-particles.md"
+  ],
+  "sources": [
+    "S-BUNKA-KEIGO",
+    "S-NRGRAMMAR",
+    "S-FROZEN"
+  ],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "keigo": {
+      "main_categories": [
+        "kenjougo",
+        "sonkeigo",
+        "teineigo"
+      ],
+      "polite_verb_suffix": "ます",
+      "polite_copula": "です",
+      "honorific_prefix_exists": true,
+      "sonkeigo_refers_to": "actions_of_respected_person",
+      "kenjougo_refers_to": "speaker_own_actions"
+    },
+    "sentence_final_particles": {
+      "ka": "question",
+      "ne": "agreement_seeking",
+      "yo": "assertion_new_info",
+      "gender_associations_exist": true,
+      "_guidance": "Dịch theo chức năng, không map cố định (S-FROZEN); phần chủ quan → native review"
+    },
+    "forms_of_address": {
+      "neutral_polite_suffix": "さん",
+      "second_person_pronoun_common_polite": false,
+      "teacher_title": "先生"
+    },
+    "register_note": "Baseline NATURAL_NEUTRAL_POLITE (ADR-016/D-24) = thể です/ます, KHÔNG phải keigo tối đa"
+  },
+  "checks": [
+    {
+      "id": "baseline-polite-sentence-ends-desu-masu",
+      "description": "Câu baseline NATURAL_NEUTRAL_POLITE thuộc MỘT trong ba lớp: (1) kết bằng です/ます-family, cho phép có か (hỏi) và/hoặc ね/よ (trợ từ cuối câu) gắn sau — vd です/ますか/ですね/ますよ; (2) câu yêu cầu lịch sự kết bằng ください (て-form+ください hoặc N+を+ください) — một cấu trúc baseline-polite hợp lệ RIÊNG, không phải biến thể です/ます; (3) câu hỏi rút gọn kiểu N+は？ (lược bỏ phần đã rõ từ ngữ cảnh — owner xác nhận 2026-07-18: đây là cách hỏi tự nhiên, lịch sự trung tính, không phải câu thiếu lịch sự). KHÔNG áp cho corpus văn viết chung, KHÔNG áp cho HEADWORD của vocab card (trường từ vựng chính — mục từ điển, không phải câu; xem skip_vocabulary_card_headword, v1.3.0 owner-approved), KHÔNG áp cho vocabulary là 1 ký tự đơn (bảng chữ cái — không phải câu), VÀ KHÔNG áp cho cụm chào hỏi/từ cố định trong fixed_expression_exemptions (khớp theo HẬU TỐ — endsWith — không chỉ khớp nguyên văn, để phủ cả trường hợp cụm cố định đứng cuối câu dài hơn).",
+      "enders_regex_source": "(です|ます|でした|ました|ません|ましょう)(か)?(ね|よ)?|ください|は",
+      "enders_regex_note": "Ghép với dấu câu cuối tuỳ chọn ([。！？]?) rồi neo cuối chuỗi ($) khi dùng thật. Ba nhóm: (a) です/ます-family + hỏi/trợ từ cuối câu tuỳ chọn — sửa 2026-07-18: thêm biến thể ですか/ましたか (trước chỉ có ますか) và ね/よ gắn sau です/ます (trước không có, khiến 'いいですね' bị bắt nhầm); (b) 'ください' (yêu cầu lịch sự, て-form hoặc N+を+ください — lớp baseline-polite riêng, KHÔNG map vào です/ます); (c) 'は' (câu hỏi rút gọn N+は？, owner quyết 2026-07-18).",
+      "skip_single_character": true,
+      "skip_single_character_note": "Không áp check này khi chuỗi chỉ có 1 ký tự (vd bảng chữ cái hiragana/katakana あ/い/か...) — về cấu trúc không phải câu, 'kết thúc bằng gì' vô nghĩa. Phát hiện từ chạy thật 506 bài: 20 bài hiragana/katakana bị bắt nhầm 100% vì lý do này.",
+      "skip_vocabulary_card_headword": true,
+      "skip_vocabulary_card_headword_note": "v1.3.0 (owner duyệt 2026-07-20, rules/decisions.md D-92): check register này áp cho CÂU (xem fixtures — toàn câu đầy đủ). HEADWORD của vocab card (trường từ vựng chính, vd 名前/お名前/もう一度/～さん/失礼ですが) là MỤC TỪ ĐIỂN — một từ/cụm, KHÔNG phải câu — nên không thể và không cần 'kết bằng です/ます'. Đây là điểm structural, không phải danh sách từ: MỌI headword vocab tự động miễn (bài sau không tái phát). Đây là điểm áp DUY NHẤT còn lại của check ở tầng soft-check (dialogue đã loại từ trước theo G-04 vì thiếu trường register máy-đọc-được để tách hội thoại casual có chủ ý); vì vậy sau v1.3.0 tầng soft-check không còn bắt nhầm headword nào. Logic/fixtures của check giữ nguyên, dành cho tầng CÂU thật khi có trường register.",
+      "fixed_expression_exemptions": ["こんにちは", "こんばんは", "はじめまして", "さようなら", "ありがとう", "どういたしまして", "こちらこそ", "どうぞ", "ようこそ"],
+      "fixed_expression_exemptions_match": "endsWith",
+      "fixed_expression_exemptions_note": "A3 (2026-07-18, mở rộng sau khi chạy 506 bài thật): cụm chào hỏi/từ cố định (fixed expression) không mang được です/ます theo đúng ngữ pháp (không phải câu thiếu lịch sự) — khi đứng riêng HOẶC đứng cuối một câu dài hơn (vd '手伝ってくれてありがとう。') KHÔNG bị coi là vi phạm baseline です/ます. Khớp theo HẬU TỐ (endsWith trên chuỗi đã bỏ dấu câu cuối), không chỉ khớp nguyên văn — sửa từ bản 1.1.0 (chỉ khớp nguyên văn, bỏ sót các câu dài kết bằng cụm cố định). 4 mục đầu từ Golden Lesson; 5 mục sau (ありがとう/どういたしまして/こちらこそ/どうぞ/ようこそ) từ chạy thật 505 bài generic, đều có bằng chứng cụ thể trong rules/_legacy/golden-lesson-test-2026-07-18.md — không suy đoán thêm mục chưa có bằng chứng.",
+      "assert": {
+        "type": "custom",
+        "note": "máy kiểm khi generator chạy; không chạy trên corpus vì corpus không phải baseline-register; bỏ qua chuỗi 1 ký tự; bỏ qua chuỗi có HẬU TỐ khớp fixed_expression_exemptions trước khi kiểm enders_regex_source"
+      },
+      "fixtures": {
+        "pass": [
+          "田中さんは先生です。",
+          "水を飲みます。",
+          "全く同感です。",
+          "一部を抜粋します。",
+          "こんにちは",
+          "こんばんは",
+          "はじめまして",
+          "さようなら",
+          "そうですか。",
+          "いいですね。",
+          "高いですよ。",
+          "どこから来ましたか。",
+          "説明してください。",
+          "お水をください。",
+          "あなたは？",
+          "手伝ってくれてありがとう。",
+          "ペンをどうぞ。"
+        ],
+        "fail": [
+          "田中は先生だ。",
+          "水を飲む。"
+        ],
+        "_note": "2 câu pass cuối (trước そうですか。) từ corpus thật UD GSD (Bước 3 mục 6). 4 fixed expression Golden (こんにちは..さようなら) đứng riêng, PASS vì fixed_expression_exemptions. Từ そうですか。 trở xuống (2026-07-18): 9 fixture pass mới, lấy nguyên văn từ 41 chuỗi bị bắt nhầm khi chạy thật 505 bài generic — đại diện đủ 5 nhóm đã sửa (ですか/ましたか, ですね/ですよ, ください, N+は？, cụm cố định làm hậu tố)."
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      {
+        "text": "田中さんは先生です。",
+        "note": "さん + です: baseline lịch sự trung tính"
+      },
+      {
+        "text": "先生、おはようございます。",
+        "note": "gọi giáo viên bằng 先生"
+      }
+    ],
+    "fail": [
+      {
+        "text": "田中あなたは先生です。",
+        "note": "SAI: gọi trực tiếp bằng あなた khi biết tên không phải cách lịch sự thông dụng"
+      },
+      {
+        "text": "田中くんは先生です。",
+        "note": "SAI ngữ cảnh baseline: くん không phải hậu tố trung tính-lịch sự mặc định"
+      }
+    ]
+  }
+}

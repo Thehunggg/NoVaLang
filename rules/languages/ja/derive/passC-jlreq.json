@@ -1,0 +1,18 @@
+{
+  "punctuation_layout.sentence_terminator": {
+    "claim": "both",
+    "note": "縦組は句点[。]専用；横組は3方式（，．／，。／、。）を併記，。は公用文採用 — JLREQ §id137–id141, n46 — jlreq"
+  },
+  "punctuation_layout.comma": {
+    "claim": "both",
+    "note": "縦組は読点[、]；横組は，(COMMA)と、(IDEOGRAPHIC COMMA)双方の方式を併記 — JLREQ §id138–id141 — jlreq"
+  },
+  "punctuation_layout.quote_marks": {
+    "claim": "「」",
+    "note": "縦組は「」を用いる；横組では“”を「」の代わりに使う方法もあるが「」使用が増加 — JLREQ §id143–id144, n47 — jlreq"
+  },
+  "punctuation_layout.words_separated_by_spaces": {
+    "claim": false,
+    "note": "漢字・平仮名・片仮名は外枠を密着させるベタ組が原則（composed without intervening spacing, set solid）— JLREQ §id4, fig1_8 — jlreq"
+  }
+}

@@ -43,9 +43,9 @@
     },
     {
       "id": "WIKIPRON",
-      "name": "WikiPron grapheme-to-phoneme (ja)",
-      "url": "https://github.com/CUNY-CL/wikipron",
-      "consulted": "2026-07-18",
+      "name": "WikiPron grapheme-to-phoneme",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/jpn_hira_narrow_filtered.tsv https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/jpn_kana_narrow_filtered.tsv https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/jpn_hani_narrow_filtered.tsv",
+      "consulted": "2026-07-17",
       "derived_by": "dataset",
       "confidence": "high",
       "license": "Apache-2.0"
@@ -130,6 +130,24 @@
       "derived_by": "dataset",
       "confidence": "medium",
       "license": "research"
+    },
+    {
+      "id": "S-NRGRAMMAR",
+      "name": "An Introduction to Japanese — Syntax, Grammar & Language (Michiel Kamermans / Pomax, nrGrammar)",
+      "url": "https://raw.githubusercontent.com/Pomax/nrGrammar/master/ (data/pages/en-GB/*.txt)",
+      "consulted": "2026-07-17",
+      "derived_by": "ai-cross-checked",
+      "confidence": "medium",
+      "license": "tham khảo trích xuất sự kiện ngôn ngữ + ghi nguồn; không sao chép văn bản (repo không cấp license tái sử dụng nội dung)"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD Japanese GSD (train/dev/test) + PUD — câu thật cho corpus check (9100 câu)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Japanese-GSD/master/ + UD_Japanese-PUD/master/",
+      "consulted": "2026-07-17",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA"
     }
   ]
 }

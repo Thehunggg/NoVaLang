@@ -1,0 +1,44 @@
+{
+  "id": "sv/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "””",
+    "quote_marks_alternative": "»»",
+    "extra_letters": "å ä ö là chữ cái riêng (cuối bảng chữ, sau z) — không phải a/o có dấu.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "januari/måndag/svenska/engelska viết thường (trừ đầu câu) — giống es/it. KHÁC de (không hoa mọi danh từ)."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 11734 câu thật.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Januari|Februari|Mars|April|Juni|Juli|Augusti|September|Oktober|November|December|Måndag|Tisdag|Onsdag|Torsdag|Fredag|Lördag|Söndag)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Idag är det måndag den tredje januari."],
+        "fail": ["Idag är det Måndag den tredje Januari."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Idag är det måndag.", "Hon talar svenska.", "Stockholm är Sveriges huvudstad."],
+    "fail": ["idag är det måndag.", "Idag är det Januari."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Swedish thật. Maj (tháng 5) bỏ khỏi regex vì đồng âm tên riêng."
+  }
+}

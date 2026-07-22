@@ -1,0 +1,19 @@
+{
+  "phoneme_inventory.moraic_nasal_is_separate_unit": { "claim": true, "note": "Nguồn gọi ん là 'syllabic ん' và liệt kê 'moraic nasal' trong review domains — pronunciation.md" },
+  "mora_timing.n_counts_as_unit": { "claim": true, "note": "'syllabic ん ambiguity'; 'moraic nasal' — pronunciation.md" },
+  "rendaku.fully_predictable": { "claim": false, "note": "'rendaku... là review domains; surface kanji alone không đủ chọn reading trusted' — reading-system.md" },
+  "kana_orthography.particle_topic_spelled": { "claim": "は", "note": "Bảng は → わ / wa; 'canonical text và literal kana reading luôn giữ は/へ/を' — grammar-particles.md" },
+  "kana_orthography.particle_direction_spelled": { "claim": "へ", "note": "Bảng へ → え / e; fixture 町へようこそ → machi e yōkoso — grammar-particles.md" },
+  "kana_orthography.particle_object_spelled": { "claim": "を", "note": "Bảng を → お / o — grammar-particles.md" },
+  "kana_orthography.long_o_hiragana_default": { "claim": "おう", "note": "'ましょ + う' ghép long vowel → mashō; さようなら → sayōnara — romanization.md" },
+  "kana_orthography.sokuon_symbol": { "claim": "small_tsu", "note": "'small-tsu gemination kể cả analyzer token split' — pronunciation.md" },
+  "loanword_katakana.script_for_loanwords": { "claim": "katakana", "note": "'Katakana dùng cho các phạm vi được orthographic convention hỗ trợ, gồm nhiều loanwords' — writing-system.md" },
+  "loanword_katakana.transliteration_fully_deterministic": { "claim": false, "note": "'Katakana loanword spelling phải được review theo official guidance và usage context' — orthography.md" },
+  "punctuation_layout.words_separated_by_spaces": { "claim": false, "note": "Fixture 今は東京に住んでいます không có khoảng trắng giữa từ (romaji mới có spacing) — romanization.md" },
+  "punctuation_layout.question_mark_required_with_ka": { "claim": false, "note": "Fixture これは何ですか → kore wa nan desu ka: câu か không mang ？ — romanization.md" },
+  "word_order.adposition_type": { "claim": "postposition", "note": "Fixtures: 今は / 東京に / 町へ — trợ từ luôn đứng sau danh từ — romanization.md" },
+  "counters.sound_changes_occur": { "claim": true, "note": "'Exact tests hiện bảo vệ... numbers/counters' trong Confirmed contextual behavior — pronunciation.md" },
+  "honorifics_keigo.polite_verb_suffix": { "claim": "ます", "note": "Hint/feedback 'dùng です／ます'; fixture lịch sự 住んでいます → sunde imasu — style-and-register.md" },
+  "honorifics_keigo.honorific_prefix_exists": { "claim": true, "note": "'punctuation và honorific prefix theo binding rules trong executable tests' — romanization.md" },
+  "forms_of_address.neutral_polite_suffix": { "claim": "さん", "note": "Owner decision 14: 高橋さん → Takahashi-san; さん là suffix xưng hô chuẩn trong nguồn — romanization.md" }
+}

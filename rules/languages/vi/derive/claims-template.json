@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "language": "vi",
+    "purpose": "Khung claim ĐÓNG cho Bước 2 (derive 2 lượt độc lập). Hai lượt điền cùng khung này, mỗi lượt CHỈ đọc MỘT nguồn; derive.mjs diff. Key nguồn không đề cập → BỎ QUA key đó (không đoán)."
+  },
+  "claims": {
+    "casing.sentence_initial_capitalized": { "type": "boolean", "question": "Chữ đầu câu luôn viết hoa" },
+    "casing.proper_nouns_capitalized": { "type": "boolean", "question": "Danh từ riêng (tên người, địa danh) luôn viết hoa" },
+    "casing.personal_pronoun_not_fixed_capital": { "type": "boolean", "question": "Đại từ nhân xưng (tôi, anh, em...) KHÔNG có quy tắc viết hoa cố định như 'I' tiếng Anh" },
+    "tone_system.tone_count_standard": { "type": "integer", "question": "Số thanh điệu chuẩn trong tiếng Việt (thường tính theo giọng Hà Nội/miền Bắc)" },
+    "tone_system.tones_are_phonemic": { "type": "boolean", "question": "Thanh điệu có phân biệt nghĩa từ (khác từ hoàn toàn khi đổi thanh)" },
+    "tone_system.marked_directly_on_vowel": { "type": "boolean", "question": "Dấu thanh ghi trực tiếp trên chữ cái nguyên âm (không cần hệ thống romanize riêng)" },
+    "grapheme_to_phoneme.orthography_mostly_phonemic": { "type": "boolean", "question": "Chính tả tiếng Việt (chữ Quốc ngữ) khá đều đặn/gần với cách phát âm (so với tiếng Anh)" },
+    "grapheme_to_phoneme.same_sound_multiple_spellings_exist": { "type": "boolean", "question": "Có trường hợp cùng một âm được viết bằng nhiều chữ khác nhau tùy vị trí/từ nguyên (vd c/k/q cùng âm /k/)" },
+    "phoneme_inventory.is_monosyllabic_analytic": { "type": "boolean", "question": "Tiếng Việt là ngôn ngữ đơn lập/phân tích tính (isolating/analytic) — hình vị thường trùng âm tiết" },
+    "syllable_structure.each_syllable_written_separately": { "type": "boolean", "question": "Mỗi âm tiết được viết tách rời bằng khoảng trắng" },
+    "word_segmentation.space_marks_syllable_not_word": { "type": "boolean", "question": "Khoảng trắng phân tách ÂM TIẾT chứ không nhất thiết phân tách TỪ (một từ có thể gồm nhiều âm tiết viết cách nhau)" },
+    "word_segmentation.compound_words_common": { "type": "boolean", "question": "Từ ghép (nhiều âm tiết hợp thành 1 từ, vd 'học sinh') rất phổ biến trong tiếng Việt" },
+    "word_order.basic": { "enum": ["SVO", "SOV", "VSO"], "question": "Trật tự từ cơ bản" },
+    "word_order.adjective_after_noun": { "type": "boolean", "question": "Tính từ đứng SAU danh từ nó bổ nghĩa (khác tiếng Anh)" },
+    "classifiers.required_before_countable_noun": { "type": "boolean", "question": "Danh từ đếm được thường cần loại từ (classifier) đứng trước khi đếm số lượng cụ thể" },
+    "classifiers.example_con_for_animals": { "type": "boolean", "question": "Loại từ 'con' dùng cho động vật là ví dụ chuẩn/phổ biến" },
+    "inflection_morphology.no_verb_conjugation": { "type": "boolean", "question": "Động từ KHÔNG chia theo thì/ngôi/số (không biến hình)" },
+    "inflection_morphology.tense_marked_by_particles": { "type": "boolean", "question": "Thì (quá khứ/hiện tại/tương lai) diễn đạt bằng từ phụ trợ rời (đã/đang/sẽ) thay vì biến đổi động từ" },
+    "pronoun_system.kinship_terms_used_as_pronouns": { "type": "boolean", "question": "Đại từ nhân xưng chủ yếu dùng từ chỉ quan hệ họ hàng/thân tộc (anh, chị, em, ông, bà, cô, chú...)" },
+    "pronoun_system.choice_depends_on_relative_age_status": { "type": "boolean", "question": "Việc chọn đại từ phụ thuộc vào tuổi tác/vai vế TƯƠNG ĐỐI giữa người nói và người nghe (không cố định)" },
+    "pronoun_system.neutral_pronouns_exist": { "type": "boolean", "question": "Có tồn tại một số đại từ trung tính không phụ thuộc quan hệ (vd 'tôi' dùng được rộng rãi)" },
+    "sentence_final_particles.exist_in_vietnamese": { "type": "boolean", "question": "Tiếng Việt có trợ từ/tiểu từ tình thái cuối câu (à, ạ, nhé, nhỉ, đấy...) mang sắc thái, chức năng gần giống ね/よ tiếng Nhật" },
+    "sentence_final_particles.a_marks_politeness": { "type": "boolean", "question": "Tiểu từ 'ạ' cuối câu đánh dấu sự lễ phép khi nói với người lớn tuổi/bề trên" },
+    "politeness_particle_da.dạ_vâng_signal_respect": { "type": "boolean", "question": "'Dạ'/'vâng' đầu câu là tín hiệu lễ phép/đồng ý khi nói với người lớn tuổi hoặc bề trên" },
+    "register_taxonomy.mainly_pronoun_and_particle_choice": { "type": "boolean", "question": "Khác biệt register (formal/casual) trong tiếng Việt chủ yếu thể hiện qua CHỌN ĐẠI TỪ + tiểu từ cuối câu, không phải biến đổi ngữ pháp động từ" },
+    "forms_of_address.title_or_kinship_before_name_formal": { "type": "boolean", "question": "Xưng hô trang trọng thường dùng danh xưng/từ thân tộc + tên (vd 'anh Nam', 'chị Lan') thay vì gọi trống tên" },
+    "answer_acceptance_vi.diacritic_stripped_input_common": { "type": "boolean", "question": "Người dùng thực tế có thể gõ tiếng Việt không dấu (do bàn phím/thói quen) — vấn đề thực tế cần app xử lý" },
+    "naturalness_translation.pronoun_choice_affects_naturalness": { "type": "boolean", "question": "Chọn sai đại từ nhân xưng (theo tuổi/vai vế) làm câu nghe kỳ/không tự nhiên dù ngữ pháp đúng" }
+  }
+}

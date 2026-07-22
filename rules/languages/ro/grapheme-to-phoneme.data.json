@@ -1,0 +1,218 @@
+{
+  "id": "ro/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 9286,
+    "byScript": {
+      "ron_latn_broad": {
+        "count": 9286,
+        "sample": [
+          [
+            "A",
+            "a"
+          ],
+          [
+            "Aalboaiei",
+            "a a l b o̯ a j e j"
+          ],
+          [
+            "Aalexoaiei",
+            "a a l e k s o̯ a j e j"
+          ],
+          [
+            "Aancuței",
+            "a a ŋ k u t͡s e j"
+          ],
+          [
+            "Aanei",
+            "a a n e j"
+          ],
+          [
+            "Aanicăi",
+            "a a n i k ə j"
+          ],
+          [
+            "Aanii",
+            "a a n i j"
+          ],
+          [
+            "Aaniței",
+            "a a n i t͡s e j"
+          ],
+          [
+            "Aanuței",
+            "a a n u t͡s e j"
+          ],
+          [
+            "Aaxiniei",
+            "a a k s i n i e j"
+          ],
+          [
+            "Ababei",
+            "a b a b e j"
+          ],
+          [
+            "Abaclia",
+            "a b a k l i a"
+          ],
+          [
+            "Abaclie",
+            "a b a k l i e"
+          ],
+          [
+            "Abacliei",
+            "a b a k l i e j"
+          ],
+          [
+            "Abaclii",
+            "a b a k l i j"
+          ],
+          [
+            "Abaclio",
+            "a b a k l i o"
+          ],
+          [
+            "Abadan",
+            "a b a d a n"
+          ],
+          [
+            "Abadanul",
+            "a b a d a n u l"
+          ],
+          [
+            "Abadanule",
+            "a b a d a n u l e"
+          ],
+          [
+            "Abadanului",
+            "a b a d a n u l u j"
+          ],
+          [
+            "Abageriu",
+            "a b a d͡ʒ e r i w"
+          ],
+          [
+            "Abageru",
+            "a b a d͡ʒ e r u"
+          ],
+          [
+            "Abagiu",
+            "a b a d͡ʒ i w"
+          ],
+          [
+            "Abakan",
+            "a b a k a n"
+          ],
+          [
+            "Abakanul",
+            "a b a k a n u l"
+          ],
+          [
+            "Abakanule",
+            "a b a k a n u l e"
+          ],
+          [
+            "Abakanului",
+            "a b a k a n u l u j"
+          ],
+          [
+            "Abdulah",
+            "a b d u l a h"
+          ],
+          [
+            "Abejenoaiei",
+            "a b e ʒ e n o̯ a j e j"
+          ],
+          [
+            "Abel",
+            "a b e l"
+          ],
+          [
+            "Abiculesei",
+            "a b i k u l e s e j"
+          ],
+          [
+            "Abogătoae",
+            "a b o ɡ ə t o̯ a e"
+          ],
+          [
+            "Abușan",
+            "a b u ʃ a n"
+          ],
+          [
+            "Accadân",
+            "a k k a d ɨ n"
+          ],
+          [
+            "Adjud",
+            "a d ʒ u d"
+          ],
+          [
+            "Africa",
+            "a f r i k a"
+          ],
+          [
+            "Agîrbiceanu",
+            "a ɡ ɨ r b i t͡ʃ e̯ a n u"
+          ],
+          [
+            "Agăș",
+            "a ɡ ə ʃ"
+          ],
+          [
+            "Aiud",
+            "a j u d"
+          ],
+          [
+            "Alba",
+            "a l b a"
+          ],
+          [
+            "Albania",
+            "a l b a n i a"
+          ],
+          [
+            "Albania",
+            "a l b a n i j a"
+          ],
+          [
+            "Aldebaran",
+            "a l d e b a r a n"
+          ],
+          [
+            "Alexandra",
+            "a l e k s a n d r a"
+          ],
+          [
+            "Alexandria",
+            "a l e k s a n d r i a"
+          ],
+          [
+            "Alexandru",
+            "a l e k s a n d r u"
+          ],
+          [
+            "Algeria",
+            "a l d͡ʒ e r i a"
+          ],
+          [
+            "Anca",
+            "a n c a"
+          ],
+          [
+            "Andijan",
+            "a n d i ʒ a n"
+          ],
+          [
+            "Andorra",
+            "a n d o r a"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/ron_latn_broad.tsv"
+      }
+    }
+  }
+}

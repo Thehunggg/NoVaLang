@@ -1,0 +1,48 @@
+{
+  "id": "hi/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "punctuation_layout",
+  "enforces": ["orthography.md", "writing-system.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "hi-IN",
+    "script": "Devanagari (Deva), abugida, LTR, UNICAMERAL (không hoa/thường)",
+    "danda": "। (U+0964) = dấu kết câu (पूर्ण विराम), KHÔNG dùng '.' Latin",
+    "matra": "nguyên âm phụ bằng dấu (का कि की...) — bắt buộc, phân biệt nghĩa",
+    "nukta": "़ tạo phụ âm vay/bản địa (ड़ ढ़ bản địa; क़ ख़ ग़ ज़ फ़ vay — nukta tuỳ chọn)",
+    "no_casing": "unicameral — không có quy tắc viết hoa"
+  },
+  "checks": [
+    {
+      "id": "danda-sentence-terminator",
+      "description": "Câu Hindi kết bằng danda । (không '.' Latin). [corpus-check Bước 3: 15472/16649 câu chứa ।.] Check: mỗi dòng PHẢI có danda.",
+      "assert": {
+        "type": "regex_present",
+        "pattern": "।"
+      },
+      "fixtures": {
+        "pass": ["यह मेरी किताब है ।", "मैं हिन्दी सीखता हूँ ।"],
+        "fail": ["यह मेरी किताब है."]
+      }
+    },
+    {
+      "id": "devanagari-not-latin-native",
+      "description": "Văn bản Hindi bản địa dùng Devanagari; chữ Latin chỉ trong từ mượn/viết tắt (ít). [corpus 0.55% có Latin — hợp lệ.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[a-zA-Z]{4,}"
+      },
+      "fixtures": {
+        "pass": ["मैं भारत में रहता हूँ ।", "यह किताब अच्छी है ।"],
+        "fail": ["This is English text."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["नमस्ते ।", "यह मेरी किताब है ।", "मैं हिन्दी सीखता हूँ ।"],
+    "fail": ["यह किताब है.", "This is English."],
+    "_note": "pass minh hoạ danda + Devanagari; corpus-check Bước 3 trên UD Hindi-HDTB thật (16649 câu)."
+  }
+}

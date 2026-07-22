@@ -1,0 +1,14 @@
+Baseline mốc: `node scripts/validate-curriculum.mjs` TRƯỚC khi nối lớp validate
+của rules/ (Bước 2, cùng ngày). Dùng để đối chiếu sau khi nối: lớp validate cũ
+phải pass/fail y hệt, chỉ THÊM cảnh báo mềm mới từ lớp rules/, không được gãy
+thêm gì.
+
+Lệnh chạy: node scripts/validate-curriculum.mjs
+Ngày chạy: 2026-07-18
+Môi trường: cần `npm install` trước (node_modules rỗng lúc bắt đầu phiên; sau
+khi cài, `kuromoji` 0.1.2 có mặt, script chạy được).
+Exit code: 0
+
+--- STDOUT+STDERR ---
+validate:curriculum PASS — 23 courses, 506 lessons, version curriculum-v3
+--- HẾT ---

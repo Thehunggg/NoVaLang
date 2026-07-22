@@ -1,0 +1,57 @@
+{
+  "id": "fr/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "forms_of_address",
+  "enforces": [
+    "style-and-register.md"
+  ],
+  "sources": [
+    "S-TU-VOUS",
+    "S-TRAINED-KNOWLEDGE"
+  ],
+  "derived_by": "human",
+  "config": {
+    "address_forms": {
+      "tu": { "formality": "informal", "note": "Thân mật/bình đẳng — bạn bè, gia đình, trẻ em. Hệ 2 chiều ĐƠN GIẢN hơn es (không phân mảnh vùng miền kiểu tú/usted/vos/vosotros)." },
+      "vous": { "formality": "formal_or_plural", "note": "Vừa là 'lịch sự số ít' vừa là 'ngôi 2 số nhiều bất kể thân mật hay không' — khác es phân biệt vosotros(thân mật số nhiều)/ustedes(trang trọng). Mặc định dùng vous khi không chắc." }
+    },
+    "register_taxonomy_mapping_proposal": {
+      "CASUAL": "tu + từ vựng thân mật",
+      "NATURAL_NEUTRAL_POLITE": "vous chuẩn mực — mức mặc định app dạy",
+      "FORMAL": "vous + đăng ký từ vựng trang trọng hơn (KHÔNG có đại từ riêng cho FORMAL khác NATURAL_NEUTRAL_POLITE — cả hai đều dùng vous, khác biệt chỉ ở từ vựng/cấu trúc câu) — xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT C-01.",
+      "HONORIFIC_modifier": "KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja/ko.",
+      "status": "ĐỀ XUẤT, CHƯA DUYỆT."
+    }
+  },
+  "checks": [
+    {
+      "id": "vous-triggers-plural-verb-form",
+      "description": "vous luôn chia động từ dạng số nhiều/ngôi 2 số nhiều dù chỉ nói với 1 người (kiểm mẫu cố định).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm tổng quát cần bảng chia động từ đầy đủ khi generator chạy, không phải regex tĩnh."
+      },
+      "fixtures": {
+        "pass": [
+          "Comment allez-vous ?"
+        ],
+        "fail": [
+          "Comment vas-vous ?"
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "Le comportement de la Turquie vis-à-vis du problème palestinien a fait qu'elle n'est plus en odeur de sainteté auprès de la communauté juive en générale, et américaine en particulier.",
+      "Comment allez-vous ?",
+      "Tu vas bien ?"
+    ],
+    "fail": [
+      "Comment vas-vous ?",
+      ""
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD French-GSD (Bước 3 mục 6); câu tu/vous cụ thể ít gặp trong văn bản báo/bách khoa nên minh hoạ riêng (giống phát hiện speech_level của ko)."
+  }
+}

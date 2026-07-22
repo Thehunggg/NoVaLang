@@ -49,9 +49,21 @@ async function loadLearningCatalogCodes() {
   const codes = options
     .filter((item) => item.isSupportedAsLearning)
     .map((item) => item.code);
-  if (codes.length < 40) {
+  // Sanity floor tracks the authoritative playable/rule target (owner D-55: 33),
+  // read from rules/catalog.json._meta.ruleTargetCount instead of a stale 40.
+  let expected = 33;
+  try {
+    const rc = JSON.parse(
+      await readFile(path.join(ROOT, "rules", "catalog.json"), "utf8"),
+    );
+    const n = rc?._meta?.ruleTargetCount;
+    if (Number.isInteger(n) && n > 0) expected = n;
+  } catch {
+    // fall through to the default expected count
+  }
+  if (codes.length !== expected) {
     throw new Error(
-      `language_options.json must list >= 40 learning languages, got ${codes.length}`,
+      `language_options.json must list exactly ${expected} learning languages, got ${codes.length}`,
     );
   }
   return codes;
@@ -3991,11 +4003,8 @@ async function main() {
         type: DAILY_LIFE_COURSE_META.type,
         playable: false,
         unlockRequirement: DAILY_LIFE_COURSE_META.unlockRequirement,
-        moduleCount: 10,
-        unitsPerModule: 8,
-        lessonsPerUnit: 3,
-        lessonsPerLanguage: 240,
-        note: "Daily Life Module 1 (First Conversations) is ready/playable for en+ja. Modules 2–10 remain blueprint-only.",
+        topicCount: 16,
+        note: "16-module × 3-tier structure, Cơ bản tier fully named (owner decision, 2026-07-19). Module 1 (Chào hỏi & làm quen) / Cơ bản / Unit 1 has the Golden Reference Lesson (ja only, five_cards); every other Cơ bản lesson slot across all 16 modules is a named blueprint placeholder. Trung cấp/Cao cấp remain an empty, valid shell for every module awaiting content — unit/lesson counts there are not fixed and grow as content is written in.",
       },
       mainNiches: [
         "daily_life",

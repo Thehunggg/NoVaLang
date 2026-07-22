@@ -1,0 +1,44 @@
+{
+  "id": "ms/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-ID-CROSSREF"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "“”",
+    "no_diacritics": "Chính tả Mã Lai chuẩn hiện đại KHÔNG có dấu phụ (a-z thuần). Digraph ng/ny/sy/kh/gh.",
+    "capitalization": {
+      "months_capitalized": true,
+      "weekdays_capitalized": true,
+      "languages_and_nationalities_capitalized": true,
+      "note": "GIỐNG id/en: Januari/Isnin/Melayu VIẾT HOA. KHÔNG áp rule lowercase. KHÔNG có corpus Mã Lai để tự kiểm — dựa đối chiếu id + kiến thức (confidence medium)."
+    },
+    "corpus_caveat": "KHÔNG có corpus Mã Lai → check này chỉ có fixture, không corpus-verify được. Ghi rõ."
+  },
+  "checks": [
+    {
+      "id": "content-latin-no-foreign-script",
+      "description": "Nội dung Mã Lai (Rumi) viết bằng chữ Latin, không lẫn hệ chữ khác (vd Jawi/Ả Rập out-of-scope). KHÔNG có corpus để kiểm — chỉ fixture.",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[\\u4E00-\\u9FFF\\u0E00-\\u0E7F\\u0400-\\u04FF\\u0600-\\u06FF\\u0370-\\u03FF]"
+      },
+      "fixtures": {
+        "pass": ["Saya makan nasi.", "Selamat pagi."],
+        "fail": ["Saya makan 米."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Saya makan nasi.", "Selamat pagi.", "Kuala Lumpur ibu negara Malaysia."],
+    "fail": ["Saya makan 米."],
+    "_note": "Câu pass minh hoạ chữ Latin Mã Lai. KHÔNG có corpus (UD_Malay không tồn tại) — check fixture-only, ghi rõ. Casing: tháng/thứ VIẾT HOA (Januari/Isnin) như id."
+  }
+}

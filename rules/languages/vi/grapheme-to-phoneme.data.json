@@ -1,0 +1,218 @@
+{
+  "id": "vi/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 24796,
+    "byScript": {
+      "vie_latn_hanoi_narrow_filtered": {
+        "count": 24796,
+        "sample": [
+          [
+            "A",
+            "ʔ aː ˧˧"
+          ],
+          [
+            "A Di Đà",
+            "ʔ aː ˧˧ z i ˧˧ ʔ ɗ aː ˨˩"
+          ],
+          [
+            "A Di Đà Phật",
+            "ʔ aː ˧˧ z i ˧˧ ʔ ɗ aː ˨˩ f ə t̚ ˧˨ ʔ"
+          ],
+          [
+            "A Lưới",
+            "ʔ aː ˧˧ l ɨ ə j ˧˦"
+          ],
+          [
+            "A Lịch Sơn",
+            "ʔ aː ˧˧ l ï k̟̚ ˧˨ ʔ s əː n ˧˧"
+          ],
+          [
+            "A Lịch Sơn Đắc Lộ",
+            "ʔ aː ˧˧ l ï k̟̚ ˧˨ ʔ s əː n ˧˧ ʔ ɗ a k̚ ˧˦ l o ˧˨ ʔ"
+          ],
+          [
+            "A Phú Hãn",
+            "ʔ aː ˧˧ f u ˧˦ h aː n ˦ˀ˥"
+          ],
+          [
+            "A Q",
+            "ʔ aː ˧˧ k w i ˧˧"
+          ],
+          [
+            "A Sào",
+            "ʔ aː ˧˧ s aː w ˨˩"
+          ],
+          [
+            "A Tu La",
+            "ʔ aː ˧˧ t u ˧˧ l aː ˧˧"
+          ],
+          [
+            "A Tư Đà",
+            "ʔ aː ˧˧ t ɨ ˧˧ ʔ ɗ aː ˨˩"
+          ],
+          [
+            "ACE",
+            "ʔ a j ŋ̟ ˧˧ t͡ɕ i ˧˨ ʔ ʔ ɛ m ˧˧"
+          ],
+          [
+            "ADN",
+            "ʔ aː ˧˧ ʔ ɗ e ˧˧ ʔ ɛ n ˧˧"
+          ],
+          [
+            "AI",
+            "ʔ ə j ˧˧ ʔ aː j ˧˧"
+          ],
+          [
+            "AI tạo sinh",
+            "ʔ ə j ˧˧ ʔ aː j ˧˧ t aː w ˧˨ ʔ s ï ŋ ˧˧"
+          ],
+          [
+            "AQ",
+            "ʔ aː ˧˧ k w i ˧˧"
+          ],
+          [
+            "Ai Ca",
+            "ʔ aː j ˧˧ k aː ˧˧"
+          ],
+          [
+            "Ai Cập",
+            "ʔ aː j ˧˧ k ə p̚ ˧˨ ʔ"
+          ],
+          [
+            "Ai Cập cổ đại",
+            "ʔ aː j ˧˧ k ə p̚ ˧˨ ʔ k o ˧˩ ʔ ɗ aː j ˧˨ ʔ"
+          ],
+          [
+            "Ai Lao",
+            "ʔ aː j ˧˧ l aː w ˧˧"
+          ],
+          [
+            "Alexanđê",
+            "ʔ aː ˧˧ l ɛ k̚ ˧˦ s aː n ˧˧ ʔ ɗ e ˧˧"
+          ],
+          [
+            "Ambrôsiô",
+            "ʔ aː m ˧˧ ʔ ɓ ɹ o ˧˧ s i ˧˧ ʔ o ˧˧"
+          ],
+          [
+            "An",
+            "ʔ aː n ˧˧"
+          ],
+          [
+            "An Dương",
+            "ʔ aː n ˧˧ z ɨ ə ŋ ˧˧"
+          ],
+          [
+            "An Giang",
+            "ʔ aː n ˧˧ z aː ŋ ˧˧"
+          ],
+          [
+            "An Huy",
+            "ʔ aː n ˧˧ h w i ˧˧"
+          ],
+          [
+            "An Hải",
+            "ʔ aː n ˧˧ h aː j ˧˩"
+          ],
+          [
+            "An Lão",
+            "ʔ aː n ˧˧ l aː w ˦ˀ˥"
+          ],
+          [
+            "An Lê Mân",
+            "ʔ aː n ˧˧ l e ˧˧ m ə n ˧˧"
+          ],
+          [
+            "An Nam",
+            "ʔ aː n ˧˧ n aː m ˧˧"
+          ],
+          [
+            "An Ngãi",
+            "ʔ aː n ˧˧ ŋ aː j ˦ˀ˥"
+          ],
+          [
+            "An Phong",
+            "ʔ aː n ˧˧ f a w ŋ͡m ˧˧"
+          ],
+          [
+            "An Tôn",
+            "ʔ aː n ˧˧ t o n ˧˧"
+          ],
+          [
+            "An Vĩnh",
+            "ʔ aː n ˧˧ v ï ŋ ˦ˀ˥"
+          ],
+          [
+            "Anh",
+            "ʔ a j ŋ̟ ˧˧"
+          ],
+          [
+            "Anh Cát Lợi",
+            "ʔ a j ŋ̟ ˧˧ k aː t̚ ˧˦ l əː j ˧˨ ʔ"
+          ],
+          [
+            "Anh Quốc",
+            "ʔ a j ŋ̟ ˧˧ k u ə k̚ ˧˦"
+          ],
+          [
+            "Anh giáo",
+            "ʔ a j ŋ̟ ˧˧ z aː w ˧˦"
+          ],
+          [
+            "Anh ngữ",
+            "ʔ a j ŋ̟ ˧˧ ŋ ɨ ˦ˀ˥"
+          ],
+          [
+            "Anh văn",
+            "ʔ a j ŋ̟ ˧˧ v a n ˧˧"
+          ],
+          [
+            "Anphongsô",
+            "ʔ aː n ˧˧ f a w ŋ͡m ˧˧ s o ˧˧"
+          ],
+          [
+            "Anphonsô",
+            "ʔ aː n ˧˧ f ɔ n ˧˧ s o ˧˧"
+          ],
+          [
+            "Antôn",
+            "ʔ aː n ˧˧ t o n ˧˧"
+          ],
+          [
+            "Anê",
+            "ʔ aː n ˧˧ n e ˧˧"
+          ],
+          [
+            "Augustinô",
+            "ʔ a w ˧˧ ɣ u ˧˧ s t i n ˧˧ n o ˧˧"
+          ],
+          [
+            "B",
+            "ʔ ɓ e ˧˧"
+          ],
+          [
+            "B",
+            "ʔ ɓ e ˧˧ ʔ ɓ ɔ ˨˩"
+          ],
+          [
+            "B",
+            "ʔ ɓ əː ˨˩"
+          ],
+          [
+            "BLDS",
+            "ʔ ɓ o ˧˨ ʔ l w ə t̚ ˧˨ ʔ z ə n ˧˧ s ɨ ˧˨ ʔ"
+          ],
+          [
+            "BTC",
+            "ʔ ɓ aː n ˧˧ t o ˧˩ t͡ɕ ɨ k̚ ˧˦"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/vie_latn_hanoi_narrow_filtered.tsv"
+      }
+    }
+  }
+}

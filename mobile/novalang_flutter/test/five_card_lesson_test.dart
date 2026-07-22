@@ -101,11 +101,11 @@ void main() {
         'Tình huống thực tế\nHội thoại thực hành nâng cao',
       );
       expect(
-        exercises.take(10).every((item) => item['plan'] == 'free'),
+        exercises.take(9).every((item) => item['plan'] == 'free'),
         isTrue,
       );
       expect(
-        exercises.skip(10).every((item) => item['plan'] == 'plus'),
+        exercises.skip(9).every((item) => item['plan'] == 'plus'),
         isTrue,
       );
       final checkpoint = exercises[8];

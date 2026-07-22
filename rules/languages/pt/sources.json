@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "language": "pt",
+    "stage": "0-inventory",
+    "note": "Nguồn cho lớp máy-đọc-được của pt (baseline pt-BR, tiếng Bồ Đào Nha Brazil). Dataset (CLDR/UD/WikiPron) import Bước 1, confidence:high, tải thật qua raw.githubusercontent.com. Nguồn S-* dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet (KHÔNG fetch toàn văn — D-51), confidence trần medium. g2p-check.mjs (Bước 3) xác nhận 9 quy tắc chữ->âm trên WikiPron Brazil thật (187421 cặp)."
+  },
+  "sources": [
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (pt)",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/pt/characters.json",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank (UD_Portuguese-GSD test split, word-class import — Brazilian)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Portuguese-GSD/master/pt_gsd-ud-test.conllu",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme (por_latn_bz_broad_filtered, 187421 cặp — broad transcription pt-BR Brazil)",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/por_latn_bz_broad_filtered.tsv",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD Portuguese-GSD + UD Portuguese-Bosque (train/dev/test) — câu thật cho corpus check (21377 câu, tools/cache/corpus/pt-sentences.txt, không commit)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Portuguese-GSD/master/ + UD_Portuguese-Bosque/master/",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "S-TRAINED-KNOWLEDGE",
+      "name": "Kiến thức ngôn ngữ học tiếng Bồ Đào Nha đã huấn luyện sẵn của người viết rule (Claude) — CHỈ dùng cho sự kiện chuẩn phổ thông; KHÔNG dùng làm nguồn duy nhất cho quyết định sản phẩm hay bảng dữ liệu đầy đủ",
+      "url": null,
+      "consulted": "2026-07-19",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "n/a — xem D-51"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "hu/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "hu-HU",
+    "address_forms": {
+      "te": { "formality": "informal", "number": "singular", "verb_person": "2sg", "usage": "thân mật (bạn bè, gia đình, đồng trang lứa, trẻ em)" },
+      "ön": { "formality": "formal_official", "number": "singular", "verb_person": "3sg", "usage": "trang trọng chính thức (người lạ, công việc) — động từ NGÔI 3" },
+      "maga": { "formality": "formal_familiar", "number": "singular", "verb_person": "3sg", "usage": "trang trọng nhưng thân hơn ön (hàng xóm lớn tuổi...) — động từ NGÔI 3; sắc thái tế nhị" },
+      "ti": { "formality": "informal_plural", "usage": "các bạn (thân mật số nhiều)" },
+      "onok": { "formality": "formal_plural", "usage": "önök/maguk (trang trọng số nhiều, động từ ngôi 3 số nhiều)" }
+    },
+    "baseline": {
+      "value": "ĐỐI LẬP T-V THẬT (như ru/es, KHÁC scandinavia). Dạy te (thân mật) / ön (trang trọng, động từ ngôi 3). maga = biến thể trang trọng-thân, sắc thái tế nhị (dạy sau/ghi chú).",
+      "tts_locale": "hu-HU (xem D-hu-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "te + từ thân mật (szia, helló, cső)",
+      "NATURAL_NEUTRAL_POLITE": "te/ön theo quan hệ — baseline",
+      "FORMAL": "ön + gián tiếp (jó napot, köszönöm, kérem)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Hungary KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Lịch sự qua ön/maga + từ vựng + gián tiếp — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": {
+      "indirect": "Tudna...? (Ngài có thể...?), Szeretnék... (Tôi muốn...), kérem (làm ơn), köszönöm (cảm ơn), elnézést (xin lỗi), tessék (xin mời/của ngài đây)"
+    }
+  },
+  "checks": [
+    {
+      "id": "te-on-verb-agreement",
+      "description": "ön/maga đi với động từ ngôi 3; te với ngôi 2. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần ngữ cảnh + phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["Ön beszél magyarul?", "Te beszélsz magyarul?"],
+        "fail": ["Ön beszélsz magyarul?"]
+      }
+    },
+    {
+      "id": "polite-indirect-formal",
+      "description": "Lịch sự qua gián tiếp + ön (kiểm mẫu).",
+      "assert": { "type": "custom", "note": "FORMAL dùng ön + gián tiếp." },
+      "fixtures": {
+        "pass": ["Tudna nekem segíteni?"],
+        "fail": ["Tudsz nekem segíteni? (khi cần trang trọng)"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Te beszélsz magyarul?", "Ön beszél magyarul?", "Köszönöm szépen."],
+    "fail": ["Ön beszélsz magyarul?", ""],
+    "_note": "Câu pass minh hoạ baseline (te/ön đối lập T-V, ön + động từ ngôi 3)."
+  }
+}

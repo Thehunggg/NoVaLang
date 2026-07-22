@@ -1,0 +1,218 @@
+{
+  "id": "fil/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 28295,
+    "byScript": {
+      "tgl_latn_broad": {
+        "count": 28295,
+        "sample": [
+          [
+            "'day",
+            "d a j"
+          ],
+          [
+            "'di",
+            "d e ʔ"
+          ],
+          [
+            "'di",
+            "d i ʔ"
+          ],
+          [
+            "'eka",
+            "ʔ e k a ʔ"
+          ],
+          [
+            "'ika",
+            "ʔ i k a ʔ"
+          ],
+          [
+            "'ka",
+            "k a ʔ"
+          ],
+          [
+            "'lika",
+            "l i k a"
+          ],
+          [
+            "'ng",
+            "ŋ"
+          ],
+          [
+            "'no",
+            "n o"
+          ],
+          [
+            "'t",
+            "t"
+          ],
+          [
+            "'to",
+            "t o"
+          ],
+          [
+            "'tsaka",
+            "t͡s a k a ʔ"
+          ],
+          [
+            "'tsaka",
+            "t͡ʃ a k a ʔ"
+          ],
+          [
+            "'y",
+            "j"
+          ],
+          [
+            "'yan",
+            "j a n"
+          ],
+          [
+            "'yo",
+            "j o"
+          ],
+          [
+            "'yon",
+            "j o n"
+          ],
+          [
+            "'yun",
+            "j u n"
+          ],
+          [
+            "A",
+            "a"
+          ],
+          [
+            "A",
+            "ʔ a"
+          ],
+          [
+            "A",
+            "ʔ e j"
+          ],
+          [
+            "A'TIN",
+            "ʔ e j t i n"
+          ],
+          [
+            "AFAM",
+            "ʔ a f a m"
+          ],
+          [
+            "AFAM",
+            "ʔ a p a m"
+          ],
+          [
+            "Aaron",
+            "ʔ a ɾ o n"
+          ],
+          [
+            "Aaron",
+            "ʔ a ʔ a ɾ o n"
+          ],
+          [
+            "Aaron",
+            "ʔ e j ɾ o n"
+          ],
+          [
+            "Abad",
+            "ʔ a b a d"
+          ],
+          [
+            "Abadiano",
+            "ʔ a b a d j a n o"
+          ],
+          [
+            "Abadilla",
+            "ʔ a b a d i l j a"
+          ],
+          [
+            "Abalos",
+            "ʔ a b a l o s"
+          ],
+          [
+            "Abarca",
+            "ʔ a b a ɾ k a"
+          ],
+          [
+            "Abaya",
+            "ʔ a b a j a"
+          ],
+          [
+            "Abby",
+            "ʔ a b i"
+          ],
+          [
+            "Abdurahman",
+            "ʔ a b d u ɾ a m a n"
+          ],
+          [
+            "Abe",
+            "ʔ a b e"
+          ],
+          [
+            "Abejuela",
+            "ʔ a b e h u e l a"
+          ],
+          [
+            "Abel",
+            "ʔ a b e l"
+          ],
+          [
+            "Abelgas",
+            "ʔ a b e l ɡ a s"
+          ],
+          [
+            "Abella",
+            "ʔ a b e l j a"
+          ],
+          [
+            "Abellano",
+            "ʔ a b e l j a n o"
+          ],
+          [
+            "Abellera",
+            "ʔ a b e l j e ɾ a"
+          ],
+          [
+            "Abenojar",
+            "ʔ a b e n o h a ɾ"
+          ],
+          [
+            "Abesamis",
+            "ʔ a b e s a m i s"
+          ],
+          [
+            "Abigail",
+            "ʔ a b i ɡ e j l"
+          ],
+          [
+            "Abing",
+            "ʔ a b i ŋ"
+          ],
+          [
+            "Abisinya",
+            "ʔ a b i s i n j a"
+          ],
+          [
+            "Abisinyo",
+            "ʔ a b i s i n j o"
+          ],
+          [
+            "Ablog",
+            "ʔ a b l o ɡ"
+          ],
+          [
+            "Abra",
+            "ʔ a b ɾ a"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/tgl_latn_broad.tsv"
+      }
+    }
+  }
+}

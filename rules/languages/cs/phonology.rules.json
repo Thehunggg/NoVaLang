@@ -1,0 +1,48 @@
+{
+  "id": "cs/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "cs-CZ",
+    "transcription": "narrow (WikiPron chỉ có bản narrow cho cs)",
+    "grapheme_to_phoneme_rules": {
+      "š": { "phoneme": "ʃ", "g2p_check": "5532 từ / 0.05% — OK" },
+      "ž": { "phoneme": "ʒ / ʃ", "g2p_check": "2892 từ / 0.00% (thêm [ʃ]) — OK (làm câm/đồng hoá: Ambrož->[ʃ], Anežka->[ʃk])" },
+      "č": { "phoneme": "t͡ʃ / d͡ʒ", "g2p_check": "5694 từ / 0.00% — OK (đồng hoá thanh)" },
+      "ř": { "phoneme": "r̝", "g2p_check": "5350 từ / 0.00% — OK (âm ĐẶC TRƯNG Séc: raised alveolar trill; cũng vô thanh [r̝̊] cuối từ/cạnh vô thanh)" },
+      "ch": { "phoneme": "x", "g2p_check": "3810 từ / 0.45% — OK (digraph một chữ)" },
+      "ň": { "phoneme": "ɲ", "g2p_check": "786 từ / 0.00% — OK" },
+      "long_vowels": { "phoneme": "Vː (acute/kroužek)", "g2p_check": "á->[aː] 0.00%, í->[iː] 0.00%, ý->[iː] 0.03% — OK (ý=í về âm)" }
+    },
+    "not_yet_g2p_checked": {
+      "palatal_de_te_ne": "dě/tě/ně -> [ɟɛ]/[cɛ]/[ɲɛ]; di/ti/ni -> [ɟɪ]/[cɪ]/[ɲɪ] (mềm) vs dy/ty/ny cứng",
+      "be_pe_ve_me": "bě/pě/vě -> [bjɛ]/[pjɛ]/[vjɛ]; mě -> [mɲɛ]",
+      "h": "h -> [ɦ] (hữu thanh, khác ch [x])",
+      "c": "c -> [t͡s]; ě sau b/p/v/f -> [jɛ]",
+      "voicing_assimilation": "cụm phụ âm đồng hoá thanh theo phụ âm cuối cụm"
+    }
+  },
+  "checks": [
+    {
+      "id": "hacek-sibilants-r-caron",
+      "description": "š/ž/č + ř (âm đặc trưng) ánh xạ âm (xác nhận g2p-check; ř 0.00%).",
+      "assert": { "type": "custom", "note": "Kiểm chữ->âm cần G2P engine; g2p-check.mjs đã xác nhận trên WikiPron narrow thật." },
+      "fixtures": { "pass": ["řeka", "čas"], "fail": ["řeka-xyz"] }
+    },
+    {
+      "id": "vowel-length-final-devoicing",
+      "description": "Độ dài acute/kroužek (byt/být) + làm câm cuối từ (xác nhận g2p-check).",
+      "assert": { "type": "custom", "note": "Độ dài + đồng hoá thanh; g2p-check xác nhận trên WikiPron narrow." },
+      "fixtures": { "pass": ["být", "led"], "fail": ["být-short"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["řeka", "čas", "být", "kůň"],
+    "fail": ["řeka-xyz"],
+    "_note": "fixtures minh hoạ quy tắc g2p đã xác nhận; dùng test implementation tương lai."
+  }
+}

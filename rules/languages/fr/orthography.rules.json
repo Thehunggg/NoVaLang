@@ -1,0 +1,102 @@
+{
+  "id": "fr/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "elision",
+  "enforces": [
+    "orthography.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "CLDR"
+  ],
+  "derived_by": "human",
+  "config": {
+    "elidable_words": ["le", "la", "de", "que", "je", "ne", "se", "ce", "me", "te"],
+    "elision_trigger": "từ sau bắt đầu bằng nguyên âm (a e i o u y) hoặc h câm",
+    "elision_mark": "'",
+    "example": ["l'ami", "d'accord", "qu'il", "j'ai", "n'est-ce pas"],
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "narrow_no_break_space_before": [";", ":", "!", "?", "»"],
+    "narrow_no_break_space_after": ["«"],
+    "quote_marks": "« »",
+    "punctuation_spacing_note": "CHƯA cross-check kỹ liệu quy tắc khoảng trắng hẹp trước ; : ! ? có áp dụng đồng nhất trong xuất bản web/Canada hiện đại hay không — xem coverage.json punctuation_layout DRAFT.",
+    "h_aspire_vs_h_muet": {
+      "status": "PENDING — cần lexicon, xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT C-06",
+      "note": "'h' tiếng Pháp không phát âm trong CẢ hai loại, nhưng chỉ h muet cho elision/liaison (l'homme, l'histoire); h aspiré CẤM elision/liaison (le héros, la haute, le hasard) dù cũng không phát âm được ký tự h. Không thể phân biệt bằng quy tắc chính tả/phát âm đơn thuần — hoàn toàn LEXICAL (phải biết từng từ), tương tự rendaku lexical của ja hay động từ bất quy tắc của ko/es."
+    },
+    "semi_vowel_elision_exceptions": {
+      "status": "PENDING — cần lexicon, xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT C-06 (gộp cùng h_aspire_vs_h_muet — cùng loại vấn đề: chính tả bắt đầu bằng nguyên âm nhưng phát âm bắt đầu bằng bán nguyên âm/phụ âm)",
+      "note": "Một nhóm từ nhỏ viết bằng nguyên âm nhưng phát âm bắt đầu bằng bán nguyên âm (/w/, /j/), KHÔNG elide: que oui (không phải qu'oui), le onze (không phải l'onze — số 11), le yaourt, le yacht. Phát hiện ở Bước 3 (xem _bước3_finding) khi 'que oui' vẫn còn nằm trong 141 vi phạm còn lại sau khi đã loại h khỏi trigger."
+    },
+    "_bước3_finding": "3 vòng sửa thật trên check 'elision-applied-before-vowel', chạy trên 17342 câu UD French-GSD/PUD thật: (1) ban đầu coi 'h' là trigger elision tự động (giống nguyên âm) -> 740/17342 (4.27%) vi phạm, đọc tay xác nhận TOÀN BỘ là h aspiré hợp lệ (de haute valeur, de hauteur, de houx...) -> bỏ 'h' khỏi trigger. (2) Sau khi bỏ h, vẫn còn 582/17342 (3.36%) — điều tra bằng grep trực tiếp phát hiện BUG THẬT trong chính regex: JS '\\\\b' (word boundary) không coi ký tự có dấu (é/è/ê/à...) là 'word character' (JS \\\\w chỉ ASCII [A-Za-z0-9_], flag 'u' của corpus-check.mjs KHÔNG sửa việc này) — nên '\\\\bme' khớp NHẦM bên trong 'même' (ê không phải \\\\w -> \\\\b kích hoạt ngay trước 'me'). Sửa: thay '\\\\b' đầu pattern bằng '(?:^|[\\\\s(«\"\\'])' (khoảng trắng/dấu ngoặc mở, không phụ thuộc \\\\w) -> còn 141/17342 (0.81%). (3) 141 còn lại là 2 lớp thật: proper noun/từ mượn nước ngoài (de Yesa, de Ibrahim — không elide theo quy ước biên tập, không phải lỗi máy) và bán-nguyên-âm lexical (que oui — xem semi_vowel_elision_exceptions). Dừng ở đây, 0.81% dưới ngưỡng RULE NGHI NGỜ SAI, phần còn lại là exception thật cần lexicon (C-06), không phải regex sửa được thêm."
+  },
+  "checks": [
+    {
+      "id": "elision-applied-before-vowel",
+      "description": "le/la/de/que/je/ne/se/ce/me/te phải elision (viết l'/d'/qu'/j'/n'/s'/c'/m'/t') khi từ sau bắt đầu bằng NGUYÊN ÂM THẬT — kiểm mẫu cố định. KHÔNG áp cho từ bắt đầu bằng 'h' (loại khỏi trigger set sau Bước 3 — xem _bước3_finding trong config): 'h' tiếng Pháp chia 2 loại từ-vựng-quyết-định (h muet elide bình thường: l'homme; h aspiré KHÔNG elide: le héros/la haute/le hasard) — không thể phân biệt bằng regex, cần lexicon riêng.",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "(?:^|[\\s(«\"'])(le|la|je|ne|se|ce|me|te|de|que) [aeiouyAEIOUY][a-zàâäéèêëïîôùûü]*"
+      },
+      "fixtures": {
+        "pass": [
+          "L'ami arrive.",
+          "J'ai faim."
+        ],
+        "fail": [
+          "Le ami arrive.",
+          "Je ai faim."
+        ]
+      }
+    },
+    {
+      "id": "space-before-question-mark",
+      "description": "Khoảng trắng trước dấu ? (chuẩn xuất bản Pháp — insécable).",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[^\\s]\\?"
+      },
+      "fixtures": {
+        "pass": [
+          "Comment ça va ?"
+        ],
+        "fail": [
+          "Comment ça va?"
+        ]
+      }
+    },
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tháng/thứ trong tuần KHÔNG viết hoa giữa câu (janvier, lundi — giống es, KHÁC en). [corpus-check Bước 3 trên 17342 câu thật: ~0.12% vi phạm, chủ yếu tên riêng/nhóm nhạc (Octobre) — quy tắc hợp lệ.] Loại Mars/Mai khỏi regex (đồng âm hành tinh/tên riêng); dùng tiền tố chữ-thường-hoặc-phẩy để chỉ vị trí giữa câu (tránh dương tính giả đầu câu + vấn đề \\b với chữ có dấu — xem _bước3_finding).",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[a-zàâäéèêëïîôùûüç,] (Janvier|Février|Avril|Juin|Juillet|Août|Septembre|Octobre|Novembre|Décembre|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Dimanche)(?![a-zàâäéèêëïîôùûüç])"
+      },
+      "fixtures": {
+        "pass": [
+          "Nous sommes en janvier.",
+          "Le rendez-vous est lundi."
+        ],
+        "fail": [
+          "Nous sommes en Janvier.",
+          "Le rendez-vous est Lundi."
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "L'œuvre est située dans la galerie des batailles, dans le château de Versailles.",
+      "L'ami arrive.",
+      "Comment ça va ?"
+    ],
+    "fail": [
+      "Le ami arrive.",
+      "Comment ça va?"
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD French-GSD (Bước 3 mục 6)."
+  }
+}

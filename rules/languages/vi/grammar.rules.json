@@ -1,0 +1,106 @@
+{
+  "id": "vi/grammar.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "phenomenon": "word_order",
+  "enforces": [
+    "grammar (word order, classifiers, inflection)"
+  ],
+  "sources": [
+    "S-WIKIPEDIA-VI",
+    "UD"
+  ],
+  "derived_by": "human",
+  "config": {
+    "word_order": {
+      "basic": "SVO",
+      "adjective_after_noun": true,
+      "_note": "Khác tiếng Anh: tính từ đứng SAU danh từ."
+    },
+    "classifiers": {
+      "required_before_countable_noun": true,
+      "example_con_for_animals": true,
+      "examples": [
+        {
+          "classifier": "con",
+          "used_for": "động vật",
+          "example": "con chó (con dog = the dog)"
+        },
+        {
+          "classifier": "cái",
+          "used_for": "đồ vật vô tri chung",
+          "example": "cái bàn (the table)"
+        },
+        {
+          "classifier": "quyển/cuốn",
+          "used_for": "sách vở",
+          "example": "quyển sách (the book)"
+        }
+      ]
+    },
+    "inflection_morphology": {
+      "no_verb_conjugation": true,
+      "tense_marked_by_particles": true,
+      "tense_particles": [
+        {
+          "particle": "đã",
+          "meaning": "quá khứ"
+        },
+        {
+          "particle": "đang",
+          "meaning": "đang diễn ra"
+        },
+        {
+          "particle": "sẽ",
+          "meaning": "tương lai"
+        }
+      ]
+    },
+    "word_segmentation": {
+      "space_marks_syllable_not_word": true,
+      "compound_words_common": true
+    }
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "sentence": "Con mèo đen ngủ.",
+        "note": "SVO + tính từ 'đen' sau danh từ 'mèo'"
+      },
+      {
+        "sentence": "Tôi có ba con chó.",
+        "note": "classifier 'con' trước danh từ động vật đếm được"
+      },
+      {
+        "sentence": "Tôi đã ăn cơm.",
+        "note": "quá khứ diễn đạt bằng 'đã', động từ 'ăn' không biến đổi"
+      },
+      {
+        "sentence": "học sinh chăm chỉ",
+        "note": "từ ghép 'học sinh' (2 âm tiết = 1 từ) + tính từ sau"
+      },
+      {
+        "sentence": "Dấu ấn từ vỉa hè đô thị.",
+        "note": "corpus báo chí thật (S-BINHVQ-NEWS-SAMPLE)"
+      },
+      {
+        "sentence": "Mong luật sư tư vấn giúp.",
+        "note": "corpus báo chí thật"
+      }
+    ],
+    "fail": [
+      {
+        "sentence": "Con đen mèo ngủ.",
+        "note": "SAI: tính từ phải đứng SAU danh từ, không phải trước"
+      },
+      {
+        "sentence": "Tôi có ba chó.",
+        "note": "SAI: thiếu classifier 'con' trước danh từ đếm được"
+      },
+      {
+        "sentence": "Tôi ăned cơm.",
+        "note": "SAI: động từ tiếng Việt không biến hình theo thì kiểu thêm hậu tố"
+      }
+    ]
+  }
+}

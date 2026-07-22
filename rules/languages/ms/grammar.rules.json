@@ -1,0 +1,61 @@
+{
+  "id": "ms/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "affixation_reduplication",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "S-ID-CROSSREF"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "ms-MY",
+    "confidence_note": "KHÔNG có UD/corpus Mã Lai → ngữ pháp dựa kiến thức + mô tả chuẩn + đối chiếu id (V5). Cần người bản ngữ. Không thổi phồng độ tin.",
+    "no_inflection": {
+      "note": "KHÔNG biến tố (như id): không cách, KHÔNG giống, KHÔNG số nhiều hình thái, KHÔNG chia động từ theo ngôi/thì.",
+      "tense_aspect_words": "sudah (đã), akan (sẽ), sedang (đang), telah (đã, trang trọng), belum (chưa)"
+    },
+    "affixation": {
+      "note": "PHỤ TỐ phong phú",
+      "meN_prefix": "meN- biến âm mũi theo phụ âm đầu gốc: men+tulis→menulis, mem+baca→membaca, meng+ambil→mengambil, meny+sapu→menyapu",
+      "other_prefix": "ber- (có/mang), di- (bị động), ter- (vô tình/nhất), peN- (người/công cụ)",
+      "suffix": "-kan (chuyển tác), -i, -an (danh hoá)",
+      "circumfix": "ke-...-an (trừu tượng: keindahan 'vẻ đẹp')"
+    },
+    "reduplication": {
+      "plural": "buku-buku 'các quyển sách' (số nhiều)",
+      "nuance": "jalan-jalan 'đi dạo', kanak-kanak 'trẻ con' (lexical)"
+    },
+    "classifiers_penjodoh_bilangan": {
+      "pattern": "[số] + [loại từ] + [danh từ]: tiga BUAH buku 'ba quyển sách'",
+      "common": "orang (người), ekor (con/vật), buah (vật/quả), batang (thanh), keping (mảnh)"
+    },
+    "word_order": {
+      "base": "SVO. Bổ nghĩa SAU danh từ (rumah besar 'nhà lớn', buku saya 'sách của tôi') — giống vi.",
+      "passive": "di- (bị động chuẩn), ter- (vô tình). Không mạo từ. Pro-drop được."
+    }
+  },
+  "checks": [
+    {
+      "id": "meN-nasal-assimilation",
+      "description": "Tiền tố meN- biến âm mũi theo phụ âm đầu gốc. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "men-/mem-/meng-/meny- theo phụ âm đầu; cần bảng biến âm khi generator chạy." },
+      "fixtures": {
+        "pass": ["menulis", "membaca", "mengambil"],
+        "fail": ["menbaca"]
+      }
+    },
+    {
+      "id": "modifier-after-noun",
+      "description": "Bổ nghĩa (tính từ/sở hữu) SAU danh từ. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "rumah besar / buku saya (giống vi)." },
+      "fixtures": {
+        "pass": ["rumah besar", "buku saya"],
+        "fail": ["besar rumah"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Saya makan nasi.", "menulis surat", "tiga buah buku"],
+    "fail": ["menbaca", "besar rumah"],
+    "_note": "Câu pass minh hoạ phụ tố + loại từ + trật tự. KHÔNG có corpus Mã Lai — cần người bản ngữ xác nhận."
+  }
+}

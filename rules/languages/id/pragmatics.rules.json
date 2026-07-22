@@ -1,0 +1,57 @@
+{
+  "id": "id/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "id-ID",
+    "pronouns": {
+      "i": { "saya": "lịch sự/trung tính (baseline)", "aku": "thân mật", "gua/gue": "rất suồng (Jakarta gaul)" },
+      "you": { "Anda": "lịch sự (viết hoa)", "kamu": "thân mật", "kau": "thân/văn học", "lu/lo": "suồng" },
+      "we": { "kami": "loại trừ người nghe", "kita": "BAO GỒM người nghe — phân biệt quan trọng" },
+      "titles": "Bapak/Pak (ông), Ibu/Bu (bà), Mas (anh), Mbak (chị), Kakak/Adik — thay đại từ khi lịch sự"
+    },
+    "register_note": {
+      "value": "Đại từ NHẠY LỊCH SỰ thay cho đối lập T-V hình thái. Baseline = bahasa baku (chuẩn: saya/Anda). Khoảng cách baku↔gaul (khẩu ngữ) LỚN — dạy baku làm nền.",
+      "tts_locale": "id-ID"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "aku/kamu + bahasa gaul (halo, gimana, nggak)",
+      "NATURAL_NEUTRAL_POLITE": "saya/Anda — bahasa baku (baseline)",
+      "FORMAL": "saya/Bapak-Ibu + từ trang trọng (Selamat pagi, tolong, terima kasih, maaf, permisi)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Indonesia KHÔNG có hệ kính ngữ HÌNH THÁI (biến tố) kiểu ja/ko. Lịch sự qua CHỌN ĐẠI TỪ + danh xưng (Bapak/Ibu) + từ vựng — đã bao trong pronouns_register + FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": "Bisakah Anda...? (Ngài có thể...?), tolong (làm ơn/giúp), silakan (xin mời), maaf (xin lỗi), permisi (xin phép), terima kasih (cảm ơn)"
+  },
+  "checks": [
+    {
+      "id": "pronoun-register-choice",
+      "description": "Chọn đại từ theo lịch sự (saya/Anda lịch sự vs aku/kamu thân) nhất quán — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Nhất quán mức đại từ trong một ngữ cảnh." },
+      "fixtures": {
+        "pass": ["Apa kabar Anda?", "Apa kabar kamu?"],
+        "fail": ["Saya suka kamu punya, Anda"]
+      }
+    },
+    {
+      "id": "kami-vs-kita",
+      "description": "kami (loại trừ người nghe) vs kita (bao gồm) — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Phân biệt clusivity theo ngữ cảnh." },
+      "fixtures": {
+        "pass": ["Kita pergi bersama.", "Kami sudah selesai."],
+        "fail": ["clusivity-x"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Selamat pagi!", "Terima kasih banyak.", "Kita pergi bersama.", "Apa kabar Anda?"],
+    "fail": ["Saya suka kamu Anda", ""],
+    "_note": "Câu pass minh hoạ đại từ lịch sự + kami/kita + lịch sự baku."
+  }
+}

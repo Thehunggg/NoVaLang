@@ -1,0 +1,58 @@
+{
+  "id": "uk/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "noun_case",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "uk-UA",
+    "no_articles": "KHÔNG có mạo từ (như mọi Slavic) — xác định/không xác định qua trật tự + ngữ cảnh",
+    "gender": {
+      "count": 3,
+      "values": "masculine / feminine / neuter + animacy (động vật ảnh hưởng accusative)",
+      "ending_heuristic": "phụ âm cuối→thường masc, -а/-я→thường fem, -о/-е→thường neut; nhiều biệt lệ lexical"
+    },
+    "noun_case": {
+      "count": 7,
+      "cases": "nominative (називний), genitive (родовий), dative (давальний), accusative (знахідний), instrumental (орудний), locative (місцевий), VOCATIVE (кличний)",
+      "vocative_note": "ĐẶC TRƯNG Ukraina: giữ VOCATIVE sống (Петре! Мамо! Друже! пане!) — khác ru đã mất/thay bằng nominative. Điểm dạy đặc trưng.",
+      "declension": "4 lớp biến cách chính × giống × số; biến âm gốc (о/і: стіл→стола, ніч→ночі); paradigm cụ thể cần native"
+    },
+    "adjective_agreement": "tính từ hợp giống + cách + số với danh từ (гарний/гарна/гарне)",
+    "verb": {
+      "aspect": "доконаний/недоконаний (perfective/imperfective) — trục cốt lõi",
+      "present": "chia ngôi+số (2 nhóm -е-/-и-: читаю/читаєш/читає...; говорю/говориш...)",
+      "past": "chia GIỐNG + SỐ, KHÔNG theo ngôi (читав m/читала f/читало n/читали pl) — đặc trưng Slavic",
+      "future": "imperfective: phân tích (буду читати) HOẶC tổng hợp (читатиму — đặc trưng Ukraina); perfective: прочитаю",
+      "irregular": "бути (là), дати, їсти, хотіти... lexical"
+    },
+    "word_order": "SVO nền, TỰ DO cao (cách đánh dấu vai nghĩa); giới từ + cách cụ thể (в/на + locative/accusative)"
+  },
+  "checks": [
+    {
+      "id": "seven-cases-incl-vocative",
+      "description": "Danh từ chia 7 cách gồm vocative (đặc trưng Ukraina) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần bảng biến cách + phân tích khi generator chạy; paradigm lexical." },
+      "fixtures": {
+        "pass": ["Петре!", "друже", "у Києві"],
+        "fail": ["Петр!"]
+      }
+    },
+    {
+      "id": "past-tense-gender-agreement",
+      "description": "Quá khứ chia theo GIỐNG+SỐ không theo ngôi — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích giống chủ ngữ khi generator chạy." },
+      "fixtures": {
+        "pass": ["він читав", "вона читала", "вони читали"],
+        "fail": ["вона читав"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Петре!", "він читав", "у Києві живуть люди"],
+    "fail": ["вона читав", "Петр!"],
+    "_note": "Câu pass minh hoạ vocative + quá khứ hợp giống; paradigm 7 cách cần native review."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "pl/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "case_system",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "pl-PL",
+    "word_order": "SVO_free_case_marked_pro_drop",
+    "no_articles": true,
+    "case_system": {
+      "cases": ["mianownik (nom)", "dopełniacz (gen)", "celownik (dat)", "biernik (acc)", "narzędnik (instr)", "miejscownik (loc)", "wołacz (voc)"],
+      "count": 7,
+      "note_voc": "Wołacz (hô cách) là cách thứ 7 — nhiều hơn ru; dùng khi gọi tên (Panie! Aniu!).",
+      "roles": {
+        "nom": "chủ ngữ (kto? co?)",
+        "gen": "sở hữu/phủ định/sau nhiều giới từ (kogo? czego?)",
+        "dat": "tân ngữ gián tiếp (komu? czemu?)",
+        "acc": "tân ngữ trực tiếp (kogo? co?)",
+        "instr": "công cụ/'với'/sau być (kim? czym?)",
+        "loc": "chỉ với giới từ w/na/o (o kim? o czym?)",
+        "voc": "hô gọi"
+      },
+      "consonant_alternation": "biến cách thường kèm luân phiên phụ âm/nguyên âm (ręka->ręce, Bóg->Boże) — lexical.",
+      "status": "PENDING — bảng đuôi 7 cách × 3 giống × số × loại là hình thái LEXICAL nặng, CHƯA đầy đủ."
+    },
+    "gender_number": {
+      "singular": ["masculine (stół)", "feminine (kobieta)", "neuter (okno)"],
+      "plural_virility": {
+        "note": "ĐỐI LẬP GIỐNG NAM-NGƯỜI (męskoosobowy) — đặc trưng Ba Lan",
+        "masculine_personal": "nhóm 'nam là người' (mężczyźni) — động từ/tính từ/số từ dạng riêng",
+        "non_masculine_personal": "phần còn lại (kobiety, psy, stoły) — dạng khác"
+      }
+    },
+    "verb": {
+      "aspect": "imperfective (robić) / perfective (zrobić); perfective hiện tại = nghĩa tương lai",
+      "present_groups": "4 nhóm chia (-ę/-isz, -ę/-esz, -am/-asz, -em/-esz)",
+      "past": "chia GIỐNG-SỐ + đuôi ngôi di động (byłem/byłam 'tôi đã là')",
+      "być_present_not_dropped": "być chia đầy đủ ở hiện tại (jestem/jesteś...), KHÁC ru (lược есть)",
+      "irregular": "być/mieć/iść/jeść bất quy tắc = lexical"
+    },
+    "numeral_case": {
+      "n_1": "jeden/jedna/jedno hoà giống-cách như tính từ",
+      "n_2_3_4": "+ danh cách số nhiều (dwa stoły)",
+      "n_5_plus": "+ sở hữu cách số nhiều + động từ số ít trung (pięć stołów)",
+      "masculine_personal": "dạng số từ riêng (dwaj mężczyźni / dwóch mężczyzn)"
+    }
+  },
+  "checks": [
+    {
+      "id": "numeral-governs-case",
+      "description": "Số đếm chi phối cách danh từ (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng biến cách khi generator chạy." },
+      "fixtures": {
+        "pass": ["dwa stoły", "pięć stołów", "jeden stół"],
+        "fail": ["dwa stołów", "pięć stoły"]
+      }
+    },
+    {
+      "id": "byc-present-not-dropped",
+      "description": "być chia đầy đủ ở hiện tại, không lược (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "KHÁC ru; cần phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["Jestem studentem.", "Ona jest lekarką."],
+        "fail": ["Ja student."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Jestem studentem.", "dwa stoły", "pięć stołów"],
+    "fail": ["dwa stołów", "Ja student."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Polish thật."
+  }
+}

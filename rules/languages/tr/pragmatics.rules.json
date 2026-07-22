@@ -1,0 +1,56 @@
+{
+  "id": "tr/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "tr-TR",
+    "address_forms": {
+      "sen": { "form": "sen", "formality": "informal", "number": "singular", "usage": "bạn bè, gia đình, trẻ, ngang hàng" },
+      "siz": { "form": "siz", "formality": "formal_or_plural", "number": "plural_or_polite_singular", "usage": "số nhiều HOẶC lịch sự với 1 người lạ/lớn tuổi/cấp trên (như fr vous); động từ -siniz" },
+      "titles": "Bey (ông, sau tên: Ahmet Bey), Hanım (bà, sau tên: Ayşe Hanım)"
+    },
+    "t_v_distinction": {
+      "value": "CÓ đối lập T-V thật. Dạy cả sen và siz + Bey/Hanım. Xem review-checklist D-tr-05.",
+      "tts_locale": "tr-TR"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "sen + từ thân mật (selam, merhaba, naber)",
+      "NATURAL_NEUTRAL_POLITE": "siz lịch sự trung tính (người lạ) HOẶC sen ngang hàng — baseline",
+      "FORMAL": "siz + từ trang trọng + Bey/Hanım (Merhaba, lütfen, teşekkür ederim, özür dilerim)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Thổ KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja/ko. Lịch sự qua siz + từ vựng + Bey/Hanım — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": "...abilir misiniz? (Ngài có thể...?), lütfen (làm ơn), rica ederim (xin mời/không có gì), özür dilerim (xin lỗi), teşekkür ederim (cảm ơn)"
+  },
+  "checks": [
+    {
+      "id": "sen-siz-agreement",
+      "description": "sen → động từ ngôi 2 số ít; siz → ngôi 2 số nhiều (lịch sự) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích ngôi động từ + hoà âm khi generator chạy." },
+      "fixtures": {
+        "pass": ["Nasılsın?", "Nasılsınız?"],
+        "fail": ["Siz nasılsın?"]
+      }
+    },
+    {
+      "id": "polite-title-after-name",
+      "description": "Bey/Hanım đứng SAU tên (Ahmet Bey), không trước — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Vị trí danh xưng." },
+      "fixtures": {
+        "pass": ["Ahmet Bey, hoş geldiniz."],
+        "fail": ["Bey Ahmet, hoş geldiniz."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Nasılsın?", "Nasılsınız?", "Teşekkür ederim.", "Ahmet Bey, hoş geldiniz."],
+    "fail": ["Siz nasılsın?", ""],
+    "_note": "Câu pass minh hoạ đối lập sen/siz + Bey/Hanım + lịch sự."
+  }
+}

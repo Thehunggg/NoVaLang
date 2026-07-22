@@ -1,0 +1,62 @@
+{
+  "id": "fil/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "verb_focus_system",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "fil-PH",
+    "confidence_note": "Corpus RẤT NHỎ (222 câu) — ngữ pháp dựa kiến thức + mô tả học thuật, CẦN người bản ngữ. Không thổi phồng độ tin.",
+    "verb_focus_system": {
+      "note": "ĐẶC TRƯNG khó nhất (Austronesian alignment): động từ đánh dấu TIÊU ĐIỂM là actor/object/location...",
+      "actor_focus": "-um- (chèn), mag-, ma- : Kumain ang bata 'bé ăn' (tiêu điểm = bé)",
+      "object_focus": "-in, i-, -an : Kinain ng bata ang kanin 'cơm bị bé ăn' (tiêu điểm = cơm)",
+      "ang_marks_focus": "tiểu từ 'ang' đánh dấu danh từ tiêu điểm; 'ng' đánh dấu tác nhân/tân ngữ không tiêu điểm"
+    },
+    "affixation_reduplication": {
+      "prefix": "mag-, na-, ma-, maka-",
+      "infix": "-um-, -in- chèn sau phụ âm đầu: sulat → s-um-ulat, s-in-ulat",
+      "suffix": "-an, -in",
+      "reduplication": "lặp âm tiết đầu = chưa hoàn thành/tương lai: sulat → susulat 'sẽ viết', kain → kakain"
+    },
+    "case_marking_particles": {
+      "ang": "tiêu điểm/chủ đề",
+      "ng": "[naŋ] tác nhân/sở hữu/tân ngữ không tiêu điểm",
+      "sa": "nơi chốn/hướng/gián tiếp",
+      "proper_nouns": "si/ni/kay (tên người)",
+      "no_noun_declension": "danh từ KHÔNG biến cách; tiểu từ làm việc đó"
+    },
+    "word_order": {
+      "base": "VSO / động-từ-đầu (Kumain ang bata). Linh hoạt nhờ ang.",
+      "linker": "na/-ng nối bổ nghĩa: magandang babae 'phụ nữ đẹp', babaeng maganda",
+      "enclitics": "na/pa/ba/po vị trí thứ 2"
+    }
+  },
+  "checks": [
+    {
+      "id": "focus-particle-agreement",
+      "description": "Phụ tố tiêu điểm động từ khớp tiểu từ ang/ng (actor vs object focus). Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích tiêu điểm + phụ tố khi generator chạy; hệ trigger phức, cần người bản ngữ." },
+      "fixtures": {
+        "pass": ["Kumain ang bata.", "Kinain ng bata ang kanin."],
+        "fail": ["Kumain ng bata."]
+      }
+    },
+    {
+      "id": "linker-na-ng",
+      "description": "Bổ nghĩa nối bằng linker na/-ng. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "magandang babae / babaeng maganda." },
+      "fixtures": {
+        "pass": ["magandang babae"],
+        "fail": ["maganda babae"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Kumain ang bata.", "Sinulat ko ang liham.", "magandang babae"],
+    "fail": ["Kumain ng bata.", "maganda babae"],
+    "_note": "Câu pass minh hoạ hệ tiêu điểm + linker. Corpus RẤT NHỎ (222) — cần người bản ngữ xác nhận."
+  }
+}

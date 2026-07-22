@@ -1,0 +1,44 @@
+{
+  "id": "hr/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "„”",
+    "quote_marks_alternative": "»«",
+    "special_letters": "č ć š ž đ (chữ riêng) + digraph dž lj nj (tính như một chữ). KHÔNG dấu lật ngược es.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "siječanj/ponedjeljak/hrvatski viết thường (trừ đầu câu) — chuẩn Slav."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 9010 câu thật — 1/9010 = 0.011% (Listopad, cũng là tên riêng); quy tắc hợp lệ rất mạnh.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Siječnja|Veljače|Ožujka|Travnja|Svibnja|Lipnja|Srpnja|Kolovoza|Rujna|Studenoga|Prosinca|Ponedjeljak|Utorak|Srijeda|Četvrtak|Petak|Subota|Nedjelja)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Danas je ponedjeljak, treći siječnja."],
+        "fail": ["Danas je Ponedjeljak, treći Siječnja."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Danas je ponedjeljak.", "Ona govori hrvatski.", "Zagreb je glavni grad Hrvatske."],
+    "fail": ["danas je ponedjeljak.", "Danas je Siječanj."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Croatian-SET thật (9010 câu). Dùng dạng genitiv của tháng (hay gặp trong ngày tháng); Listopada/Svibnja bỏ nếu đồng âm tên riêng."
+  }
+}

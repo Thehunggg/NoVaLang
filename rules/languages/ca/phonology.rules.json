@@ -1,0 +1,46 @@
+{
+  "id": "ca/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "ca (Central Catalan)",
+    "transparency_warning": "WikiPron ca RẤT NHỎ (176 cặp) — g2p-check KHÔNG đáng tin cho ca, KHÔNG dùng làm bằng chứng dương. Phụ âm Catalan tương đối đều (ç→[s], ll→[ʎ], ny→[ɲ], x→[ʃ]) nhưng NGUYÊN ÂM phụ thuộc trọng âm (giảm nguyên âm) → lexical, cần audio. Dựa corpus cho orthography + audio cho phát âm.",
+    "consonant_rules": {
+      "ç": "[s] (trước a/o/u và cuối từ: caça, feliç)",
+      "c": "[s] trước e/i; [k] khác",
+      "ll": "[ʎ] (phương ngữ có yod hoá [j]: mirall)",
+      "ny": "[ɲ] (canya)",
+      "x": "[ʃ] (xocolata; [ks] trong từ bác học)",
+      "ig_final": "[tʃ] (faig, roig)",
+      "j_g": "[ʒ] (jardí, gel)",
+      "betacism": "b/d/g → xát [β/ð/ɣ] giữa nguyên âm (như es)"
+    },
+    "vowel_reduction_lexical": {
+      "note": "ĐẶC TRƯNG (Đông/Trung Catalan): nguyên âm KHÔNG NHẤN a/e→[ə], o/u→[u]. WikiPron xác nhận del→[dəl], barca→[barkə]. KHÔNG đánh dấu chính tả → LEXICAL, cần audio. Valencian không giảm mạnh.",
+      "l_l_geminada": "l·l = [ɫː] geminate (KHÁC ll [ʎ]) — cel·la vs cella"
+    }
+  },
+  "checks": [
+    {
+      "id": "consonant-graphemes-ca",
+      "description": "ç→[s], ll→[ʎ], ny→[ɲ], x→[ʃ] — quy tắc phụ âm Catalan (kiến thức chuẩn; WikiPron quá nhỏ để xác nhận thống kê).",
+      "assert": { "type": "custom", "note": "WikiPron ca chỉ 176 cặp — KHÔNG đủ g2p-check; đánh dấu quy tắc phụ âm, phát âm dựa audio." },
+      "fixtures": { "pass": ["caça", "canya"], "fail": ["caça-as-k"] }
+    },
+    {
+      "id": "vowel-reduction-warning",
+      "description": "Đánh dấu: nguyên âm không nhấn giảm ([ə]/[u]) — lexical, không g2p tổng quát từ chữ.",
+      "assert": { "type": "custom", "note": "Giảm nguyên âm phụ thuộc trọng âm + phương ngữ; generator dựa audio, không đoán từ chữ." },
+      "fixtures": { "pass": ["barca", "del"], "fail": ["placeholder-x"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["caça", "canya", "mirall", "barca"],
+    "fail": ["caça-as-k"],
+    "_note": "fixtures minh hoạ phụ âm đặc trưng; giảm nguyên âm + l·l geminate phụ thuộc audio. WikiPron ca quá nhỏ (176) để g2p-check thống kê."
+  }
+}

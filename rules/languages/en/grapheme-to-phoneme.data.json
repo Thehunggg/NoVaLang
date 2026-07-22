@@ -1,0 +1,218 @@
+{
+  "id": "en/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 99645,
+    "byScript": {
+      "eng_latn_us_broad_filtered": {
+        "count": 99645,
+        "sample": [
+          [
+            "'Murica",
+            "m ɚ ə k ə"
+          ],
+          [
+            "'Murica",
+            "m ɚ ɪ k ə"
+          ],
+          [
+            "'akikiki",
+            "ɑ k ɪ k iː k i"
+          ],
+          [
+            "'bout",
+            "b a ʊ t"
+          ],
+          [
+            "'cause",
+            "k ʌ z"
+          ],
+          [
+            "'cept",
+            "k s ɛ p t"
+          ],
+          [
+            "'cept",
+            "s ɛ p t"
+          ],
+          [
+            "'cuzzi",
+            "k uː z i"
+          ],
+          [
+            "'d",
+            "d"
+          ],
+          [
+            "'dine",
+            "d iː n"
+          ],
+          [
+            "'dswounds",
+            "d z w u n d z"
+          ],
+          [
+            "'em",
+            "ə m"
+          ],
+          [
+            "'emselves",
+            "ə m s ɛ l v z"
+          ],
+          [
+            "'fore",
+            "f ɔ ɹ"
+          ],
+          [
+            "'fraid",
+            "f ɹ e ɪ d"
+          ],
+          [
+            "'ho",
+            "h o ʊ"
+          ],
+          [
+            "'kay",
+            "k e ɪ"
+          ],
+          [
+            "'ll",
+            "ə l"
+          ],
+          [
+            "'low",
+            "l a ʊ"
+          ],
+          [
+            "'m",
+            "m"
+          ],
+          [
+            "'m",
+            "m̩"
+          ],
+          [
+            "'m",
+            "ə m"
+          ],
+          [
+            "'mater",
+            "m e ɪ t ɚ"
+          ],
+          [
+            "'mong",
+            "m ʌ ŋ"
+          ],
+          [
+            "'n",
+            "n"
+          ],
+          [
+            "'n'",
+            "ə n"
+          ],
+          [
+            "'nuff",
+            "n ʌ f"
+          ],
+          [
+            "'rents",
+            "ɹ ɛ n t s"
+          ],
+          [
+            "'s",
+            "s"
+          ],
+          [
+            "'s",
+            "t͡ʃ"
+          ],
+          [
+            "'s",
+            "ə z"
+          ],
+          [
+            "'s",
+            "ɪ z"
+          ],
+          [
+            "'s",
+            "ʃ"
+          ],
+          [
+            "'sblood",
+            "z b l ʌ d"
+          ],
+          [
+            "'scuse",
+            "s k j uː s"
+          ],
+          [
+            "'scuse",
+            "s k j uː z"
+          ],
+          [
+            "'sdeath",
+            "z d ɛ θ"
+          ],
+          [
+            "'sfar",
+            "s f ɑː"
+          ],
+          [
+            "'sfar",
+            "s f ɑː ɹ"
+          ],
+          [
+            "'splode",
+            "s p l o ʊ d"
+          ],
+          [
+            "'sup",
+            "s ʌ p"
+          ],
+          [
+            "'swounds",
+            "z w u n d z"
+          ],
+          [
+            "'tis",
+            "t ɪ z"
+          ],
+          [
+            "'tisn't",
+            "t ɪ z n̩ t"
+          ],
+          [
+            "'tisn't",
+            "t ɪ z ə n t"
+          ],
+          [
+            "'tshall",
+            "t͡ʃ ə l"
+          ],
+          [
+            "'tude",
+            "t u d"
+          ],
+          [
+            "'twas",
+            "t w ʌ z"
+          ],
+          [
+            "'twill",
+            "t w ɪ l"
+          ],
+          [
+            "'ud",
+            "uː d"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/eng_latn_us_broad_filtered.tsv"
+      }
+    }
+  }
+}

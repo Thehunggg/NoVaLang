@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "language": "zh",
+    "purpose": "Khung claim ĐÓNG cho Bước 2 (derive 2 lượt độc lập). Hai lượt điền cùng khung này, mỗi lượt CHỈ đọc MỘT nguồn; derive.mjs diff. Key nguồn không đề cập → BỎ QUA key đó (không đoán)."
+  },
+  "claims": {
+    "writing_systems.script_is_logographic": { "type": "boolean", "question": "Hán tự là chữ biểu ý/biểu âm (logographic) — mỗi chữ đại diện một hình vị/âm tiết, không phải chữ cái ghi âm" },
+    "writing_systems.simplified_is_standard_mainland": { "type": "boolean", "question": "Chữ giản thể (simplified, Hans) là chuẩn chính thức ở Trung Quốc đại lục" },
+    "casing.no_case_distinction": { "type": "boolean", "question": "Hán tự không có khái niệm chữ hoa/chữ thường" },
+    "writing_direction.modern_standard_horizontal_ltr": { "type": "boolean", "question": "Văn bản Trung hiện đại chuẩn viết ngang trái-sang-phải (dọc là truyền thống/hiếm)" },
+    "tone_system.tone_count_standard": { "type": "integer", "question": "Số thanh điệu chuẩn của tiếng Quan thoại (không tính thanh nhẹ/khinh thanh)" },
+    "tone_system.neutral_tone_exists": { "type": "boolean", "question": "Có tồn tại thanh nhẹ (khinh thanh, neutral tone) ngoài 4 thanh chính" },
+    "tone_system.tones_are_phonemic": { "type": "boolean", "question": "Thanh điệu phân biệt nghĩa từ hoàn toàn (đổi thanh = đổi từ)" },
+    "pinyin_romanization.official_standard": { "type": "boolean", "question": "Bính âm (Pinyin) là hệ La-tinh hóa chính thức được quốc tế công nhận (ISO)" },
+    "pinyin_romanization.tone_marked_on_vowel": { "type": "boolean", "question": "Dấu thanh trong bính âm ghi trên nguyên âm chính của âm tiết" },
+    "grapheme_to_phoneme.character_reading_not_predictable_from_shape": { "type": "boolean", "question": "Không thể suy chắc cách đọc một chữ Hán chỉ từ hình dạng chữ (phải học/tra từng chữ)" },
+    "grapheme_to_phoneme.phonetic_component_sometimes_hints_sound": { "type": "boolean", "question": "Một số chữ Hán hình thanh (phần lớn chữ) có thành phần biểu âm gợi ý cách đọc, nhưng KHÔNG đáng tin cậy hoàn toàn" },
+    "phoneme_inventory.syllable_structure_initial_final": { "type": "boolean", "question": "Âm tiết tiếng Quan thoại phân tích thành thanh mẫu (âm đầu, có thể rỗng) + vận mẫu (phần còn lại) + thanh điệu" },
+    "word_segmentation.no_spaces_between_words": { "type": "boolean", "question": "Văn viết tiếng Trung chuẩn KHÔNG chèn khoảng trắng giữa các từ (khác cả tiếng Việt)" },
+    "word_segmentation.word_boundary_often_ambiguous": { "type": "boolean", "question": "Ranh giới từ (đâu là 1 từ, đâu là nhiều từ ghép) thường mơ hồ/cần phân tích ngữ cảnh" },
+    "word_order.basic": { "enum": ["SVO", "SOV", "VSO"], "question": "Trật tự từ cơ bản" },
+    "word_order.topic_prominent": { "type": "boolean", "question": "Tiếng Trung có tính chất 'chủ đề nổi bật' (topic-prominent) — chủ đề câu có thể khác chủ ngữ ngữ pháp" },
+    "word_order.adjective_before_noun": { "type": "boolean", "question": "Tính từ đứng TRƯỚC danh từ nó bổ nghĩa" },
+    "classifiers.required_before_countable_noun": { "type": "boolean", "question": "Danh từ đếm được cần lượng từ (measure word/classifier) đứng trước khi đếm số lượng cụ thể" },
+    "classifiers.ge_is_general_default": { "type": "boolean", "question": "个 (gè) là lượng từ chung/mặc định phổ biến nhất, dùng được cho nhiều danh từ khi không chắc lượng từ riêng" },
+    "inflection_morphology.no_verb_conjugation": { "type": "boolean", "question": "Động từ KHÔNG chia theo thì/ngôi/số (không biến hình)" },
+    "inflection_morphology.aspect_marked_by_particles_not_tense": { "type": "boolean", "question": "Khía cạnh (aspect: hoàn thành/tiếp diễn/kinh nghiệm) diễn đạt bằng trợ từ rời (了/着/过) thay vì biến đổi động từ theo thì" },
+    "pronoun_system.fixed_pronouns_not_kinship_based": { "type": "boolean", "question": "Đại từ nhân xưng cơ bản (我/你/他/她) CỐ ĐỊNH, không phụ thuộc tuổi/vai vế như hệ thân tộc tiếng Việt" },
+    "pronoun_system.nin_is_polite_you": { "type": "boolean", "question": "您 (nín) là dạng lịch sự/kính trọng của 'bạn' (you), dùng với người lớn tuổi/bề trên/khách hàng" },
+    "register_taxonomy.mainly_word_choice_and_pronoun": { "type": "boolean", "question": "Khác biệt register trong tiếng Trung chủ yếu qua CHỌN TỪ + cặp 您/你, không có hệ ngữ pháp kính ngữ riêng phức tạp như tiếng Nhật" },
+    "sentence_final_particles.ma_marks_yes_no_question": { "type": "boolean", "question": "吗 (ma) cuối câu đánh dấu câu hỏi có/không" },
+    "sentence_final_particles.ba_marks_suggestion": { "type": "boolean", "question": "吧 (ba) cuối câu đánh dấu đề nghị/gợi ý/phỏng đoán nhẹ" },
+    "forms_of_address.xiansheng_nvshi_formal_title": { "type": "boolean", "question": "先生 (tiên sinh/ông) và 女士 (nữ sĩ/bà) là danh xưng trang trọng đặt sau họ" },
+    "naturalness_translation.word_order_literal_translation_risk": { "type": "boolean", "question": "Dịch trực dịch theo trật tự từ một ngôn ngữ khác sang tiếng Trung dễ ra câu không tự nhiên (do topic-prominent + aspect particle khác cấu trúc)" }
+  }
+}

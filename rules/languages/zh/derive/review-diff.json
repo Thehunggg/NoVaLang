@@ -1,0 +1,179 @@
+{
+  "generatedAt": "2026-07-18T03:49:30.838Z",
+  "passes": [
+    "passA-internal",
+    "passD-wikipedia"
+  ],
+  "agree": [],
+  "conflict": [],
+  "onlyOne": [
+    {
+      "phenomenon": "casing.no_case_distinction",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Chinese writing is indeed a unicase writing system—it does not have the distinction between uppercase and lowercase\" — Wikipedia: Unicase"
+    },
+    {
+      "phenomenon": "classifiers.ge_is_general_default",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"the classifier gè (个/個)...also serves as a general classifier, which may often be used in place of other classifiers\" — Wikipedia: Chinese classifier"
+    },
+    {
+      "phenomenon": "classifiers.required_before_countable_noun",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"When a noun is preceded by a numeral..., the use of a classifier or measure word is in most cases considered mandatory\" — Wikipedia: Chinese classifier / Measure word"
+    },
+    {
+      "phenomenon": "forms_of_address.xiansheng_nvshi_formal_title",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Xiānshēng (先生)...can either follow the surname...In modern Standard Chinese, it is also used...as the title 'Mr'\"; nǚshì used for women — Wikipedia: Chinese titles"
+    },
+    {
+      "phenomenon": "grapheme_to_phoneme.character_reading_not_predictable_from_shape",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Chinese characters do not represent their pronunciation, making it impossible to predict how to read a character based solely on its shape\" — Wikipedia: Chinese character sounds"
+    },
+    {
+      "phenomenon": "grapheme_to_phoneme.phonetic_component_sometimes_hints_sound",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"a semantic component gives a broad category of meaning, while a phonetic component suggests the sound\"; but relationship \"largely broken down\" over time — Wikipedia: Semantic-phonetic compound / Chinese character sounds"
+    },
+    {
+      "phenomenon": "inflection_morphology.aspect_marked_by_particles_not_tense",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Mandarin Chinese has aspect equipped with aspectual particles (e.g., le, zhe, guo)...signal grammatical aspects\" — Wikipedia: Chinese particles / Chinese grammar"
+    },
+    {
+      "phenomenon": "inflection_morphology.no_verb_conjugation",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Chinese has no tenses, no voices, and no grammatical number\"; \"Chinese does not have grammatical markers of tense\" — Wikipedia: Chinese grammar"
+    },
+    {
+      "phenomenon": "naturalness_translation.word_order_literal_translation_risk",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Wrong word order is a characteristic of Chinglish\"; Westernised Chinese direct glosses from English \"pose comprehension issues\" — Wikipedia: Chinglish / Westernised Chinese language"
+    },
+    {
+      "phenomenon": "phoneme_inventory.syllable_structure_initial_final",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Mandarin Chinese is organized around syllables that are created by an initial followed by a final\" — Wikipedia (syllable structure, Mandarin phonology sources)"
+    },
+    {
+      "phenomenon": "pinyin_romanization.official_standard",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"The ISO adopted pinyin as the standard romanization for modern Chinese in 1982 (ISO 7098:1982...)\" — Wikipedia: Pinyin"
+    },
+    {
+      "phenomenon": "pinyin_romanization.tone_marked_on_vowel",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"The diacritic is placed over the letter that represents the syllable nucleus\" — Wikipedia: Pinyin"
+    },
+    {
+      "phenomenon": "pronoun_system.fixed_pronouns_not_kinship_based",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"The singular pronouns in Mandarin are wǒ 我 'I', nǐ 你 'you', nín 您 'you (formal)', and tā...\" — Wikipedia: Pronouns in Chinese"
+    },
+    {
+      "phenomenon": "pronoun_system.nin_is_polite_you",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"the second-person singular pronoun 你 (nǐ) can be substituted with its polite form 您 (nín)...to express politeness\" — Wikipedia: Pronouns in Chinese"
+    },
+    {
+      "phenomenon": "register_taxonomy.mainly_word_choice_and_pronoun",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"honorific language in Chinese is achieved by using honorific...alternatives, prefixing/suffixing...or dropping casual-sounding words\" vs. Japanese/Korean's elaborate grammatical systems — Wikipedia: Chinese honorifics"
+    },
+    {
+      "phenomenon": "sentence_final_particles.ba_marks_suggestion",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"ba (吧) is used for soliciting approval, softening an imperative...used to form first-person imperatives, equivalent to 'let's...'\" — Wikipedia: Sentence-final particle"
+    },
+    {
+      "phenomenon": "sentence_final_particles.ma_marks_yes_no_question",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"yes-no questions can be marked with the sentence-final particle 'ma'\" — Wikipedia: Sentence-final particle / Chinese grammar"
+    },
+    {
+      "phenomenon": "tone_system.neutral_tone_exists",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Mandarin Chinese also has a so-called neutral or floating tone (T0)\" — Wikipedia: Standard Chinese phonology"
+    },
+    {
+      "phenomenon": "tone_system.tone_count_standard",
+      "pass": "passD-wikipedia",
+      "claim": 4,
+      "note": "\"four lexical tones (T1, high level; T2, rising; T3, falling-rising; T4, falling) as well as a neutral tone\" — Wikipedia: Standard Chinese phonology"
+    },
+    {
+      "phenomenon": "tone_system.tones_are_phonemic",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"two phonemic tones are considered contrastive if there exists a minimal pair\"; ma = mother/hemp/horse/scold by tone — Wikipedia: Minimal pair / Tone (linguistics)"
+    },
+    {
+      "phenomenon": "word_order.adjective_before_noun",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Modifiers usually precede the word they modify, so that adjectives precede nouns\" — Wikipedia: Chinese adjectives"
+    },
+    {
+      "phenomenon": "word_order.basic",
+      "pass": "passD-wikipedia",
+      "claim": "SVO",
+      "note": "\"Chinese is classified as an SVO (subject–verb–object) language\" — Wikipedia: Chinese grammar"
+    },
+    {
+      "phenomenon": "word_order.topic_prominent",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Chinese can be considered a topic-prominent language: there is a strong preference for sentences that begin with the topic...\" — Wikipedia: Chinese grammar"
+    },
+    {
+      "phenomenon": "word_segmentation.no_spaces_between_words",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Chinese sentences are traditionally written as strings of characters, with no marks between words\" — Wikipedia: Chinese word-segmented writing"
+    },
+    {
+      "phenomenon": "word_segmentation.word_boundary_often_ambiguous",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"different segmentations of a given Chinese string can represent very different meanings\" (乒乓球拍卖完了 example) — Wikipedia: Chinese word-segmented writing"
+    },
+    {
+      "phenomenon": "writing_direction.modern_standard_horizontal_ltr",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"the layout used in Western scripts...became predominant in mainland China, where it was mandated by the Chinese government in 1955\" — Wikipedia: Horizontal and vertical writing in East Asian scripts"
+    },
+    {
+      "phenomenon": "writing_systems.script_is_logographic",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Chinese characters are logographs...representing the smallest units of meaning called morphemes\" — Wikipedia: Chinese character classification / Writing system"
+    },
+    {
+      "phenomenon": "writing_systems.simplified_is_standard_mainland",
+      "pass": "passD-wikipedia",
+      "claim": true,
+      "note": "\"Simplified Chinese characters are the standard forms used in mainland China, Malaysia, and Singapore\" — Wikipedia: Simplified Chinese characters"
+    }
+  ]
+}

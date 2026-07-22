@@ -1,0 +1,57 @@
+{
+  "id": "hi/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "hi-IN",
+    "address_forms": {
+      "tu": { "form": "तू", "formality": "very_intimate_or_condescending", "usage": "rất thân (bạn thân/thần linh) HOẶC bề trên xuống — CẨN THẬN, dễ thô với người lạ", "verb": "số ít" },
+      "tum": { "form": "तुम", "formality": "informal", "usage": "thân mật/ngang hàng (bạn bè, em)", "verb": "số ít thân mật" },
+      "aap": { "form": "आप", "formality": "formal_respect", "usage": "lịch sự/trang trọng/tôn kính (người lạ/lớn tuổi/cấp trên) — BASELINE an toàn", "verb": "số nhiều" }
+    },
+    "three_level": {
+      "value": "3 MỨC (không phải T-V 2 mức): तू < तुम < आप. Dạy आप làm baseline an toàn; तुम thân mật; तू cẩn thận. Xem review-checklist D-hi-05.",
+      "tts_locale": "hi-IN"
+    },
+    "honorific_ji": "hậu tố जी tôn kính sau tên/danh xưng: रामजी, माताजी, जी हाँ (vâng)",
+    "register_taxonomy_mapping": {
+      "CASUAL": "तू/तुम + từ thân mật (नमस्ते, क्या हाल है, अरे)",
+      "NATURAL_NEUTRAL_POLITE": "आप lịch sự trung tính — baseline",
+      "FORMAL": "आप + động từ số nhiều + từ trang trọng (नमस्ते, कृपया, धन्यवाद, माफ़ कीजिए) + जी",
+      "HONORIFIC_modifier": {
+        "value": "partial-native",
+        "reason": "hi CÓ yếu tố tôn kính hình thái bản địa (आप + động từ số nhiều + जी) — GẦN HONORIFIC hơn châu Âu, nhưng KHÔNG nhiều tầng như ja 敬語/ko. Map आप-level + जी vào FORMAL + HONORIFIC nhẹ. Phần không tôn kính áp es B-02; phần आप/जी là honorific nhẹ bản địa."
+      }
+    },
+    "politeness_devices": "क्या आप...? (Ngài có thể...?), कृपया (làm ơn), माफ़ कीजिए/क्षमा करें (xin lỗi), धन्यवाद/शुक्रिया (cảm ơn), जी हाँ/जी नहीं (vâng/không lịch sự)"
+  },
+  "checks": [
+    {
+      "id": "aap-plural-verb",
+      "description": "आप dùng động từ số nhiều (आप कैसे हैं?); तुम/तू số ít — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích ngôi+số động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["आप कैसे हैं?", "तुम कैसे हो?"],
+        "fail": ["आप कैसे हो?"]
+      }
+    },
+    {
+      "id": "honorific-ji",
+      "description": "हậu tố जी tôn kính sau tên/danh xưng — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "जी theo ngữ cảnh tôn kính." },
+      "fixtures": {
+        "pass": ["रामजी, नमस्ते।", "जी हाँ"],
+        "fail": ["honorific-x"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["आप कैसे हैं?", "तुम कैसे हो?", "धन्यवाद।", "रामजी, नमस्ते।"],
+    "fail": ["आप कैसे हो?", ""],
+    "_note": "Câu pass minh hoạ 3 mức तू/तुम/आप + जी + lịch sự."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "fi/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "fi-FI",
+    "transparency": "Chính tả Phần Lan GẦN NHƯ HOÀN HẢO 1:1 âm vị — mỗi chữ = một âm, chữ đôi = âm dài. Hệ chữ->âm minh bạch nhất trong các ngôn ngữ đã build.",
+    "grapheme_to_phoneme_rules": {
+      "long_vowels": { "phoneme": "Vː (chữ đôi)", "g2p_check": "aa->[ɑː] 0.01%, ää->[æː] 0.00%, ii->[iː] 0.00%, uu->[uː] 0.01% — OK" },
+      "geminate_consonants": { "phoneme": "Cː (chữ đôi)", "g2p_check": "kk->[kː] 0.18%, tt->[tː] 0.26% — OK" },
+      "ä": { "phoneme": "æ", "g2p_check": "35691 từ / 0.02% — OK" },
+      "ö": { "phoneme": "ø", "g2p_check": "11675 từ / 0.00% — OK" },
+      "y": { "phoneme": "y", "g2p_check": "27863 từ / 1.07% — OK (ngoại lệ tên nước ngoài)" },
+      "a": { "phoneme": "ɑ", "note": "a Phần Lan là [ɑ] sau (back)" },
+      "ng": { "phoneme": "ŋː", "g2p_check": "1889 từ / 2.38% — OK" }
+    },
+    "medium_not_g2p_validated": {
+      "nk": { "phoneme": "ŋk", "g2p_check": "6406 từ / 41.12% — KHÔNG VALIDATED: phần lớn là TỪ GHÉP (Anjalan+koski) giữ [nk] qua ranh giới hình vị; nk->[ŋk] chỉ trong nội bộ gốc từ. Để medium/lexical." }
+    },
+    "stress": "Trọng âm CHÍNH LUÔN ở âm tiết ĐẦU (cố định) — không cần đánh dấu, dễ cho TTS + học viên."
+  },
+  "checks": [
+    {
+      "id": "vowel-consonant-length",
+      "description": "Chữ đôi = âm dài (nguyên âm + phụ âm) — phân biệt nghĩa (tuli/tuuli/tulli). Xác nhận g2p-check.",
+      "assert": { "type": "custom", "note": "g2p-check.mjs đã xác nhận độ dài trên WikiPron thật; chính tả 1:1." },
+      "fixtures": { "pass": ["tuuli", "tulli"], "fail": ["tuuli-short"] }
+    },
+    {
+      "id": "front-back-vowels",
+      "description": "ä->[æ], ö->[ø], y->[y] (nguyên âm trước); a->[ɑ], o, u (sau). Xác nhận g2p-check.",
+      "assert": { "type": "custom", "note": "Chính tả 1:1; g2p-check xác nhận. Nhóm trước/sau liên quan hoà âm." },
+      "fixtures": { "pass": ["sää", "yö"], "fail": ["sää-as-back"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["tuuli", "tulli", "sää", "yö"],
+    "fail": ["tuuli-short"],
+    "_note": "fixtures minh hoạ độ dài + nguyên âm trước; g2p đã xác nhận."
+  }
+}

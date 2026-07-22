@@ -1,0 +1,60 @@
+{
+  "id": "pl/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "pl-PL",
+    "address_forms": {
+      "ty": { "formality": "informal", "number": "singular", "verb_agreement": "ngôi 2 số ít", "usage": "bạn bè, gia đình, ngang hàng thân, trẻ em" },
+      "Pan": { "formality": "formal", "gender": "masculine", "verb_agreement": "ngôi 3 số ít", "usage": "trang trọng với nam — dùng như danh từ ngôi 3 (Czy Pan mówi po polsku?)" },
+      "Pani": { "formality": "formal", "gender": "feminine", "verb_agreement": "ngôi 3 số ít", "usage": "trang trọng với nữ" },
+      "Państwo": { "formality": "formal", "number": "plural_mixed", "verb_agreement": "ngôi 3 số nhiều", "usage": "số nhiều lịch sự (quý ông bà)" },
+      "wy": { "note": "ngôi 2 số nhiều thân mật; KHÔNG dùng làm trang trọng số ít (khác ru вы)" }
+    },
+    "baseline": {
+      "value": "Dạy ty (thân mật) + Pan/Pani (trang trọng, danh từ + động từ ngôi 3). ĐẶC TRƯNG: trang trọng Ba Lan KHÔNG dùng đại từ 'vy' mà dùng Pan/Pani ngôi 3 — điểm khác biệt lớn với ru/fr. ty/Pan(i) map CASUAL/FORMAL.",
+      "tts_locale": "pl-PL (xem D-pl-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "ty + từ thân mật (cześć, siema, hej)",
+      "NATURAL_NEUTRAL_POLITE": "Pan/Pani chuẩn mực trung tính — baseline mặc định app dạy",
+      "FORMAL": "Pan/Pani + tước hiệu + từ trang trọng (Dzień dobry, proszę, uprzejmie)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Ba Lan KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Hệ Pan/Pani là T-V (danh từ lịch sự + động từ ngôi 3), lịch sự thể hiện qua đó + thức điều kiện (czy mógłby Pan...?) + từ vựng — đã bao trong FORMAL, không phải modifier trực giao. Tự áp theo TIỀN LỆ es B-02 (owner duyệt 2026-07-19): ngôn ngữ Ấn-Âu không có kính ngữ hình thái -> HONORIFIC not-applicable."
+      }
+    },
+    "politeness_devices": {
+      "conditional": "Czy mógłby Pan...? / Czy mogłaby Pani...? (Ngài/Bà có thể...?), Chciałbym... (Tôi muốn...), proszę (làm ơn)"
+    }
+  },
+  "checks": [
+    {
+      "id": "pan-pani-third-person-verb",
+      "description": "Pan/Pani chia động từ ngôi 3 số ít (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Czy Pan mówi po polsku?"],
+        "fail": ["Czy Pan mówisz po polsku?"]
+      }
+    },
+    {
+      "id": "ty-second-person-verb",
+      "description": "ty chia động từ ngôi 2 số ít (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Czy mówisz po polsku?"],
+        "fail": ["Czy mówi po polsku ty?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Czy Pan mówi po polsku?", "Czy mówisz po polsku?", "Czy mógłby Pan mi pomóc?"],
+    "fail": ["Czy Pan mówisz po polsku?", ""],
+    "_note": "Câu pass minh hoạ baseline (ty/Pan-Pani + điều kiện lịch sự)."
+  }
+}

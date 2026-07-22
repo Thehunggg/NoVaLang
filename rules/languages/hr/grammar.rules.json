@@ -1,0 +1,59 @@
+{
+  "id": "hr/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "case_system",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "hr-HR",
+    "case_system": {
+      "note": "ĐẶC TRƯNG SLAV: 7 CÁCH, không mạo từ.",
+      "cases": "nominativ (chủ ngữ), genitiv (sở hữu/phủ định/sau nhiều giới từ), dativ (gián tiếp), akuzativ (trực tiếp), vokativ (hô gọi), lokativ (nơi chốn, luôn sau giới từ), instrumental (công cụ/cùng với)",
+      "applies_to": "danh từ + tính từ + đại từ + số — đều biến cách × giống × số",
+      "no_articles": "KHÔNG mạo từ (cách + trật tự thay chức năng)"
+    },
+    "gender_number": {
+      "genders": "3 (muški đực / ženski cái / srednji trung)",
+      "number": "số ít / số nhiều + dạng đếm đặc biệt sau 2,3,4 (paucal)",
+      "gender_hint": "-a thường cái, phụ âm cuối thường đực, -o/-e trung (nhiều ngoại lệ lexical)"
+    },
+    "verb": {
+      "person_agreement": "chia 6 ngôi (radim/radiš/radi/radimo/radite/rade)",
+      "aspect": "THỂ perfective/imperfective là cặp từ vựng (pisati/napisati, čitati/pročitati) — ĐẶC TRƯNG khó",
+      "past": "perfekt = biti (enclitic sam/si/je...) + phân từ -l (hợp giống/số: radio/radila)",
+      "future": "futur I = htjeti (ću/ćeš/će) + infinitiv",
+      "copula_enclitic": "biti: sam/si/je/smo/ste/su (enclitic, vị trí 2)"
+    },
+    "word_order": {
+      "base": "SVO nền nhưng TỰ DO (cách đánh dấu chức năng). Pro-drop.",
+      "enclitic_second_position": "Enclitic (je, sam, se, ga, mu, ću...) đứng VỊ TRÍ THỨ HAI (luật Wackernagel): 'Vidio SAM ga', 'Ja SAM ga vidio'."
+    }
+  },
+  "checks": [
+    {
+      "id": "case-agreement",
+      "description": "Danh từ/tính từ biến cách hợp giới từ/chức năng (kiểm mẫu cố định — cần bảng paradigm khi generator chạy).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng biến cách + phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["u školi", "iz Zagreba", "s prijateljem"],
+        "fail": ["u škola", "iz Zagreb"]
+      }
+    },
+    {
+      "id": "enclitic-second-position",
+      "description": "Enclitic đứng vị trí thứ hai (Wackernagel). Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích cú pháp khi generator chạy." },
+      "fixtures": {
+        "pass": ["Vidio sam ga.", "Ja sam ga vidio."],
+        "fail": ["Sam vidio ga."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Idem u školu.", "Vidio sam ga.", "Ona čita knjigu."],
+    "fail": ["u škola", "Sam vidio ga."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Croatian-SET thật. 7 cách + enclitic vị trí 2 + thể là đặc trưng khó nhất."
+  }
+}

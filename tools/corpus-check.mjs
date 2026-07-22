@@ -14,7 +14,8 @@ import { join } from 'node:path';
 const argv = process.argv.slice(2);
 const corpusPath = argv[0];
 const target = argv[1];
-const sampleN = Number((argv.indexOf('--sample') >= 0 ? argv[argv.indexOf('--sample') + 1 : ''] : '') || 5);
+const sampleIdx = argv.indexOf('--sample');
+const sampleN = Number((sampleIdx >= 0 ? argv[sampleIdx + 1] : '') || 5);
 
 if (!corpusPath || !target) { console.error('usage: node tools/corpus-check.mjs <corpusFile> <rulesJson|langDir> [--sample N]'); process.exit(2); }
 if (!existsSync(corpusPath)) { console.error(`corpus không tồn tại: ${corpusPath}`); process.exit(2); }

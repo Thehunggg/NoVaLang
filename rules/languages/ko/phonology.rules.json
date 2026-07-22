@@ -1,0 +1,73 @@
+{
+  "id": "ko/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "pronunciation_contextual",
+  "enforces": [
+    "pronunciation.md",
+    "romanization.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "WIKIPRON",
+    "S-NIKL-ROMAN",
+    "S-WIKI-ROMAN"
+  ],
+  "derived_by": "human",
+  "config": {
+    "sound_change_rules": {
+      "liaison_yeoneum": {
+        "name_ko": "연음",
+        "description": "Phụ âm cuối (종성) của âm tiết trước nối sang làm phụ âm đầu của âm tiết sau nếu âm tiết sau bắt đầu bằng nguyên âm (có ㅇ câm ở đầu).",
+        "example": "한국어 -> [한구거]"
+      },
+      "nasalization_bieumhwa": {
+        "name_ko": "비음화",
+        "description": "Phụ âm tắc cuối âm tiết (ㄱ/ㄷ/ㅂ...) đồng hoá thành âm mũi (ㅇ/ㄴ/ㅁ) khi đứng trước phụ âm mũi.",
+        "example": "국물 -> [궁물]"
+      },
+      "aspiration_gyeogeumhwa": {
+        "name_ko": "격음화",
+        "description": "Phụ âm gặp ㅎ (trước hoặc sau) bật hơi hoá (ㄱ+ㅎ/ㅎ+ㄱ -> ㅋ, tương tự ㄷ->ㅌ, ㅂ->ㅍ, ㅈ->ㅊ).",
+        "example": "좋다 -> [조타]"
+      },
+      "tensification_gyeongeumhwa": {
+        "name_ko": "경음화",
+        "description": "Phụ âm đầu âm tiết sau căng hoá (ㄱ->ㄲ, ㄷ->ㄸ, ㅂ->ㅃ, ㅅ->ㅆ, ㅈ->ㅉ) khi đứng sau phụ âm tắc cuối âm tiết trước (ㄱ/ㄷ/ㅂ...).",
+        "example": "학교 -> [학꾜]"
+      },
+      "palatalization_gugaeeumhwa": {
+        "name_ko": "구개음화",
+        "description": "ㄷ/ㅌ cuối gốc từ vòm hoá thành ㅈ/ㅊ khi gặp hậu tố/trợ từ bắt đầu bằng 이.",
+        "example": "굳이 -> [구지]"
+      }
+    },
+    "confidence_note": "5 quy tắc trên là kiến thức âm vị học tiếng Hàn chuẩn, phổ thông (dạy trong mọi giáo trình sơ cấp), nhưng CHƯA được cross-check bằng 2 nguồn độc lập đọc nguyên văn (WebFetch bị chặn — D-51). confidence:medium trong coverage.json, KHÔNG phải high. Danh sách CHƯA đầy đủ (còn ㄹ đồng hoá, 사이시옷... chưa liệt kê) — không tự bổ sung thêm khi chưa có nguồn.",
+    "field_scoped_constraints": {
+      "romanization_no_raw_hangul_leak": {
+        "description": "Trường romanization (nếu có) không được chứa ký tự Hangul thô — tương tự bug đã sửa cho ja (ADR-015).",
+        "applies_to_field": "romanization",
+        "not_a_corpus_check": true
+      },
+      "pronunciation_no_raw_hangul": {
+        "description": "Trường pronunciation/IPA-adjacent (nếu dùng) không được lẫn Hangul thô.",
+        "applies_to_field": "pronunciation",
+        "not_a_corpus_check": true
+      }
+    },
+    "_bước3_finding": "Ban đầu 2 constraint trên viết dạng checks[] regex_absent — corpus-check.mjs áp lên TOÀN BỘ dòng corpus (câu tiếng Hàn thật, tất nhiên chứa Hangul) chứ không áp riêng lên trường romanization/pronunciation của generator tương lai, gây 100%/100% 'vi phạm' giả (RULE NGHI NGỜ SAI). Sửa: chuyển sang field_scoped_constraints (config, không phải checks[]) — CÙNG cách ja/phonology.rules.json đã chọn không có checks[] cho phenomenon không hợp kiểu kiểm text-toàn-dòng. Việc kiểm thật (field romanization không lẫn Hangul) thuộc về validator cấp generator sau này (giống scripts/validate-curriculum.mjs validateNoRawKanaInRomanization của ja), không phải corpus-check.mjs."
+  },
+  "fixtures": {
+    "pass": [
+      "한국어",
+      "학교",
+      "좋다",
+      "국물"
+    ],
+    "fail": [
+      "한국어a",
+      ""
+    ],
+    "_note": "fixtures dùng để kiểm implementation romanizer tương lai (chưa viết — xem GIẢ ĐỊNH A-01), KHÔNG phải kiểm nội dung sinh sẵn."
+  }
+}

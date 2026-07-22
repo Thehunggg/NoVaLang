@@ -1,0 +1,44 @@
+{
+  "id": "bg/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "bg-BG",
+    "transparency_note": "Chính tả Bulgaria KHÁ ĐỀU (phonemic) trừ giảm nguyên âm không nhấn. WikiPron RẤT LỚN (47572) → g2p-check rất tốt.",
+    "vowels": "а[a] е[ɛ] и[i] о[ɔ] у[u] ъ[ɤ] (ер голям — nguyên âm đặc trưng)",
+    "consonant_g2p": {
+      "г": "[g] (KHÁC Ukraina [ɦ])", "ж": "[ʒ]", "ш": "[ʃ]", "ч": "[t͡ʃ]", "ц": "[t͡s]",
+      "х": "[x]", "щ": "[ʃt] (2 âm sht — KHÁC Nga [ɕː])", "й": "[j]"
+    },
+    "g2p_check_results_47572_words": {
+      "ш=>ʃ": "0.00% OK", "ч=>t͡ʃ": "0.08% OK", "ц=>t͡s": "0.25% OK", "х=>x": "0.00% OK", "ж=>ʒ": "4.22% OK (biến âm cuối câm [ʃ])"
+    },
+    "data_discipline": {
+      "sht_tokenization": "щ→[ʃt] báo 100% 'vi phạm' = ARTIFACT: WikiPron tách 'ʃ t' (2 token), pattern 'ʃt' không khớp. Kiểm tay: щ→[ʃ t] ĐÚNG 100% (щ=sht, khác Nga [ɕː]). KHÔNG rule sai.",
+      "vowel_reduction": "ъ→[ɤ] báo 67% 'vi phạm' = GIẢM NGUYÊN ÂM: ъ NHẤN→[ɤ], KHÔNG nhấn→[ɐ] (а/ъ trộn). Quy tắc âm vị học thật, ghi rõ; broad ъ→[ɤ] đúng cho vị trí nhấn."
+    }
+  },
+  "checks": [
+    {
+      "id": "consonants-cyrillic-bg",
+      "description": "Phụ âm Kirin Bulgaria ш[ʃ] ч[t͡ʃ] ц[t͡s] х[x] г[g] — g2p-check xác nhận <1% (trừ ж biến âm cuối) trên WikiPron 47572 từ.",
+      "assert": { "type": "custom", "note": "g2p-check.mjs xác nhận; щ→[ʃt] đúng (artifact tokenization, xem config)." },
+      "fixtures": { "pass": ["жена", "щастие", "хляб"], "fail": ["жена-as-z"] }
+    },
+    {
+      "id": "unstressed-vowel-reduction",
+      "description": "Nguyên âm không nhấn giảm (а/ъ→[ɐ], о→[o~u]) — cần trọng âm/audio.",
+      "assert": { "type": "custom", "note": "ъ nhấn→[ɤ], không nhấn→[ɐ]; xác nhận g2p-check data-discipline." },
+      "fixtures": { "pass": ["ъгъл", "вода"], "fail": ["reduction-x"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["жена", "щастие", "хляб", "ъгъл"],
+    "fail": ["жена-as-z"],
+    "_note": "g2p-check.mjs Bước 3 trên WikiPron thật (47572 từ): phụ âm <1%; щ→[ʃt] + ъ giảm ghi rõ config."
+  }
+}

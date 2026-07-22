@@ -1,0 +1,60 @@
+{
+  "id": "ca/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "ca (Central Catalan)",
+    "address_forms": {
+      "tu": { "formality": "informal", "number": "singular", "verb_person": "2sg", "usage": "thân mật (bạn bè, gia đình, đồng trang lứa)" },
+      "voste": { "formality": "formal", "number": "singular", "verb_person": "3sg", "usage": "trang trọng (người lạ, lớn tuổi, dịch vụ) — động từ NGÔI 3 (như usted es)" },
+      "vosaltres": { "formality": "informal", "number": "plural", "verb_person": "2pl", "usage": "các bạn (thân mật số nhiều)" },
+      "vostes": { "formality": "formal", "number": "plural", "verb_person": "3pl", "usage": "trang trọng số nhiều" },
+      "vos": { "formality": "formal_archaic_regional", "usage": "trang trọng cổ/vùng (ngôi 2 số nhiều dùng số ít) — hiếm, ghi chú" }
+    },
+    "baseline": {
+      "value": "ĐỐI LẬP T-V THẬT (như es, KHÁC da/sv 'du phổ quát'). Dạy tu (thân mật) / vostè (trang trọng + động từ ngôi 3). Số nhiều vosaltres/vostès. vós = ghi chú cổ/vùng.",
+      "tts_locale": "ca (Central — xem D-ca-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "tu + từ thân mật (hola, adéu, ei)",
+      "NATURAL_NEUTRAL_POLITE": "tu/vostè theo ngữ cảnh — baseline (chọn theo quan hệ)",
+      "FORMAL": "vostè + gián tiếp (bon dia, gràcies, si us plau, disculpi)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Catalan KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語)/ko (-시-). Lịch sự qua vostè + từ vựng + gián tiếp — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": {
+      "indirect": "Podria...? (Ngài có thể...?), Voldria... (Tôi muốn...), si us plau (làm ơn), gràcies (cảm ơn), disculpi/perdoni (xin lỗi, dạng vostè)"
+    }
+  },
+  "checks": [
+    {
+      "id": "tu-voste-verb-agreement",
+      "description": "vostè đi với động từ ngôi 3 (như usted); tu với ngôi 2. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần ngữ cảnh + phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["Vostè parla català?", "Tu parles català?"],
+        "fail": ["Vostè parles català?"]
+      }
+    },
+    {
+      "id": "polite-indirect-formal",
+      "description": "Lịch sự qua gián tiếp + vostè (kiểm mẫu).",
+      "assert": { "type": "custom", "note": "FORMAL dùng vostè + gián tiếp." },
+      "fixtures": {
+        "pass": ["Podria ajudar-me?"],
+        "fail": ["Podria ajudes-me?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Tu parles català?", "Vostè parla català?", "Moltes gràcies."],
+    "fail": ["Vostè parles català?", ""],
+    "_note": "Câu pass minh hoạ baseline (tu/vostè đối lập T-V, vostè + động từ ngôi 3)."
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "writing_systems.script_is_logographic": {
+    "claim": true,
+    "note": "\"Chinese characters are logographs...representing the smallest units of meaning called morphemes\" — Wikipedia: Chinese character classification / Writing system"
+  },
+  "writing_systems.simplified_is_standard_mainland": {
+    "claim": true,
+    "note": "\"Simplified Chinese characters are the standard forms used in mainland China, Malaysia, and Singapore\" — Wikipedia: Simplified Chinese characters"
+  },
+  "casing.no_case_distinction": {
+    "claim": true,
+    "note": "\"Chinese writing is indeed a unicase writing system—it does not have the distinction between uppercase and lowercase\" — Wikipedia: Unicase"
+  },
+  "writing_direction.modern_standard_horizontal_ltr": {
+    "claim": true,
+    "note": "\"the layout used in Western scripts...became predominant in mainland China, where it was mandated by the Chinese government in 1955\" — Wikipedia: Horizontal and vertical writing in East Asian scripts"
+  },
+  "tone_system.tone_count_standard": {
+    "claim": 4,
+    "note": "\"four lexical tones (T1, high level; T2, rising; T3, falling-rising; T4, falling) as well as a neutral tone\" — Wikipedia: Standard Chinese phonology"
+  },
+  "tone_system.neutral_tone_exists": {
+    "claim": true,
+    "note": "\"Mandarin Chinese also has a so-called neutral or floating tone (T0)\" — Wikipedia: Standard Chinese phonology"
+  },
+  "tone_system.tones_are_phonemic": {
+    "claim": true,
+    "note": "\"two phonemic tones are considered contrastive if there exists a minimal pair\"; ma = mother/hemp/horse/scold by tone — Wikipedia: Minimal pair / Tone (linguistics)"
+  },
+  "pinyin_romanization.official_standard": {
+    "claim": true,
+    "note": "\"The ISO adopted pinyin as the standard romanization for modern Chinese in 1982 (ISO 7098:1982...)\" — Wikipedia: Pinyin"
+  },
+  "pinyin_romanization.tone_marked_on_vowel": {
+    "claim": true,
+    "note": "\"The diacritic is placed over the letter that represents the syllable nucleus\" — Wikipedia: Pinyin"
+  },
+  "grapheme_to_phoneme.character_reading_not_predictable_from_shape": {
+    "claim": true,
+    "note": "\"Chinese characters do not represent their pronunciation, making it impossible to predict how to read a character based solely on its shape\" — Wikipedia: Chinese character sounds"
+  },
+  "grapheme_to_phoneme.phonetic_component_sometimes_hints_sound": {
+    "claim": true,
+    "note": "\"a semantic component gives a broad category of meaning, while a phonetic component suggests the sound\"; but relationship \"largely broken down\" over time — Wikipedia: Semantic-phonetic compound / Chinese character sounds"
+  },
+  "phoneme_inventory.syllable_structure_initial_final": {
+    "claim": true,
+    "note": "\"Mandarin Chinese is organized around syllables that are created by an initial followed by a final\" — Wikipedia (syllable structure, Mandarin phonology sources)"
+  },
+  "word_segmentation.no_spaces_between_words": {
+    "claim": true,
+    "note": "\"Chinese sentences are traditionally written as strings of characters, with no marks between words\" — Wikipedia: Chinese word-segmented writing"
+  },
+  "word_segmentation.word_boundary_often_ambiguous": {
+    "claim": true,
+    "note": "\"different segmentations of a given Chinese string can represent very different meanings\" (乒乓球拍卖完了 example) — Wikipedia: Chinese word-segmented writing"
+  },
+  "word_order.basic": {
+    "claim": "SVO",
+    "note": "\"Chinese is classified as an SVO (subject–verb–object) language\" — Wikipedia: Chinese grammar"
+  },
+  "word_order.topic_prominent": {
+    "claim": true,
+    "note": "\"Chinese can be considered a topic-prominent language: there is a strong preference for sentences that begin with the topic...\" — Wikipedia: Chinese grammar"
+  },
+  "word_order.adjective_before_noun": {
+    "claim": true,
+    "note": "\"Modifiers usually precede the word they modify, so that adjectives precede nouns\" — Wikipedia: Chinese adjectives"
+  },
+  "classifiers.required_before_countable_noun": {
+    "claim": true,
+    "note": "\"When a noun is preceded by a numeral..., the use of a classifier or measure word is in most cases considered mandatory\" — Wikipedia: Chinese classifier / Measure word"
+  },
+  "classifiers.ge_is_general_default": {
+    "claim": true,
+    "note": "\"the classifier gè (个/個)...also serves as a general classifier, which may often be used in place of other classifiers\" — Wikipedia: Chinese classifier"
+  },
+  "inflection_morphology.no_verb_conjugation": {
+    "claim": true,
+    "note": "\"Chinese has no tenses, no voices, and no grammatical number\"; \"Chinese does not have grammatical markers of tense\" — Wikipedia: Chinese grammar"
+  },
+  "inflection_morphology.aspect_marked_by_particles_not_tense": {
+    "claim": true,
+    "note": "\"Mandarin Chinese has aspect equipped with aspectual particles (e.g., le, zhe, guo)...signal grammatical aspects\" — Wikipedia: Chinese particles / Chinese grammar"
+  },
+  "pronoun_system.fixed_pronouns_not_kinship_based": {
+    "claim": true,
+    "note": "\"The singular pronouns in Mandarin are wǒ 我 'I', nǐ 你 'you', nín 您 'you (formal)', and tā...\" — Wikipedia: Pronouns in Chinese"
+  },
+  "pronoun_system.nin_is_polite_you": {
+    "claim": true,
+    "note": "\"the second-person singular pronoun 你 (nǐ) can be substituted with its polite form 您 (nín)...to express politeness\" — Wikipedia: Pronouns in Chinese"
+  },
+  "register_taxonomy.mainly_word_choice_and_pronoun": {
+    "claim": true,
+    "note": "\"honorific language in Chinese is achieved by using honorific...alternatives, prefixing/suffixing...or dropping casual-sounding words\" vs. Japanese/Korean's elaborate grammatical systems — Wikipedia: Chinese honorifics"
+  },
+  "sentence_final_particles.ma_marks_yes_no_question": {
+    "claim": true,
+    "note": "\"yes-no questions can be marked with the sentence-final particle 'ma'\" — Wikipedia: Sentence-final particle / Chinese grammar"
+  },
+  "sentence_final_particles.ba_marks_suggestion": {
+    "claim": true,
+    "note": "\"ba (吧) is used for soliciting approval, softening an imperative...used to form first-person imperatives, equivalent to 'let's...'\" — Wikipedia: Sentence-final particle"
+  },
+  "forms_of_address.xiansheng_nvshi_formal_title": {
+    "claim": true,
+    "note": "\"Xiānshēng (先生)...can either follow the surname...In modern Standard Chinese, it is also used...as the title 'Mr'\"; nǚshì used for women — Wikipedia: Chinese titles"
+  },
+  "naturalness_translation.word_order_literal_translation_risk": {
+    "claim": true,
+    "note": "\"Wrong word order is a characteristic of Chinglish\"; Westernised Chinese direct glosses from English \"pose comprehension issues\" — Wikipedia: Chinglish / Westernised Chinese language"
+  }
+}

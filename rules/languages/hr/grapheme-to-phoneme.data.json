@@ -1,0 +1,218 @@
+{
+  "id": "hr/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 27457,
+    "byScript": {
+      "hbs_latn_broad": {
+        "count": 27457,
+        "sample": [
+          [
+            "Abadžić",
+            "â b a d͡ʒ i t͡ɕ"
+          ],
+          [
+            "Abaz",
+            "a b a z"
+          ],
+          [
+            "Abel",
+            "ǎː b e l"
+          ],
+          [
+            "Abesinac",
+            "a b e s ǐː n a t͡s"
+          ],
+          [
+            "Abesinija",
+            "a b e s ǐː n i j a"
+          ],
+          [
+            "Abhaz",
+            "ǎ b x aː z"
+          ],
+          [
+            "Abhazija",
+            "ǎ b x aː z i j a"
+          ],
+          [
+            "Abhažanka",
+            "a b x ǎ ʒ aː n k a"
+          ],
+          [
+            "Abidjan",
+            "ǎ b i d͡ʒ a n"
+          ],
+          [
+            "Abidžan",
+            "ǎ b i d͡ʒ a n"
+          ],
+          [
+            "Aboridžinica",
+            "a b o r ǐ d͡ʒ i n i t͡s a"
+          ],
+          [
+            "Ada",
+            "ǎː d a"
+          ],
+          [
+            "Adam",
+            "ǎ d a m"
+          ],
+          [
+            "Adela",
+            "ǎ d e l a"
+          ],
+          [
+            "Aden",
+            "âː d e n"
+          ],
+          [
+            "Adonis",
+            "â d o n i s"
+          ],
+          [
+            "Adriana",
+            "a d r i ǎ n a"
+          ],
+          [
+            "Adrijanopolj",
+            "a d r i j a n ǒ p o ʎ"
+          ],
+          [
+            "Advent",
+            "ǎ d ʋ e n t"
+          ],
+          [
+            "Afganistan",
+            "a f ɡ a n ǐ s t aː n"
+          ],
+          [
+            "Afrika",
+            "ǎ f r i k a"
+          ],
+          [
+            "Afrikanac",
+            "a f r i k ǎː n a t͡s"
+          ],
+          [
+            "Afrikanka",
+            "a f r ǐ k aː n k a"
+          ],
+          [
+            "Afričanka",
+            "a f r ǐ t͡ʃ aː n k a"
+          ],
+          [
+            "Afrodita",
+            "a f r ǒ d i t a"
+          ],
+          [
+            "Agbaba",
+            "a ɡ b â b a"
+          ],
+          [
+            "Agić",
+            "ǎː ɡ i t͡ɕ"
+          ],
+          [
+            "Agneza",
+            "a ɡ n ěː z a"
+          ],
+          [
+            "Ahil",
+            "ǎ x i l"
+          ],
+          [
+            "Ahmet",
+            "a x m e t"
+          ],
+          [
+            "Ahmetović",
+            "a x m ěː t o ʋ i t͡ɕ"
+          ],
+          [
+            "Alabama",
+            "a l a b ǎ m a"
+          ],
+          [
+            "Alaburić",
+            "a l a b û r i t͡ɕ"
+          ],
+          [
+            "Alat",
+            "â l a t"
+          ],
+          [
+            "Alavanja",
+            "â l a ʋ a ɲ a"
+          ],
+          [
+            "Albanac",
+            "a l b ǎː n a t͡s"
+          ],
+          [
+            "Albanija",
+            "ǎ l b aː n i j a"
+          ],
+          [
+            "Albanka",
+            "ǎ l b aː n k a"
+          ],
+          [
+            "Aleksandar",
+            "a l e k s âː n d a r"
+          ],
+          [
+            "Aleksandar",
+            "a l e k s ǎː n d a r"
+          ],
+          [
+            "Aleksandar",
+            "a l ě k s aː n d a r"
+          ],
+          [
+            "Aleksandra",
+            "a l ě k s aː n d r a"
+          ],
+          [
+            "Aleksandrija",
+            "a l e k s ǎ n d r i j a"
+          ],
+          [
+            "Aleksandropolj",
+            "a l e k s a n d r ǒ p o ʎ"
+          ],
+          [
+            "Aleksej",
+            "a l ě k s e j"
+          ],
+          [
+            "Aleksinac",
+            "ǎ l e k s i n a t͡s"
+          ],
+          [
+            "Aljaska",
+            "ǎ ʎ a s k a"
+          ],
+          [
+            "Alpe",
+            "âː l p e"
+          ],
+          [
+            "Alžir",
+            "ǎ l ʒ iː r"
+          ],
+          [
+            "Alžirac",
+            "a l ʒ ǐː r a t͡s"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/hbs_latn_broad.tsv"
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "fi/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "case_system",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "fi-FI (yleiskieli)",
+    "typology": "Uralic, chắp dính (agglutinative) — hậu tố xếp chồng vào gốc",
+    "no_gender": true,
+    "no_articles": true,
+    "one_third_person_pronoun": "hän (cả anh ấy/cô ấy — không phân biệt giới)",
+    "vowel_harmony": {
+      "back": ["a", "o", "u"],
+      "front": ["ä", "ö", "y"],
+      "neutral": ["e", "i"],
+      "rule": "Hậu tố hoà âm theo nguyên âm gốc: -ssa/-ssä, -lla/-llä, -sta/-stä (talossa / metsässä)."
+    },
+    "case_system": {
+      "count": 15,
+      "grammatical": { "nominatiivi": "-", "genetiivi": "-n", "partitiivi": "-a/-ä/-ta/-tä (đối tượng chưa trọn/lượng — điểm khó nhất)", "akkusatiivi": "-n/- (đối tượng trọn)" },
+      "locative_internal": { "inessiivi": "-ssa/-ssä (trong)", "elatiivi": "-sta/-stä (từ trong)", "illatiivi": "-Vn/-hVn (vào trong)" },
+      "locative_external": { "adessiivi": "-lla/-llä (ở/bằng)", "ablatiivi": "-lta/-ltä (từ)", "allatiivi": "-lle (đến)" },
+      "other": { "essiivi": "-na/-nä", "translatiivi": "-ksi", "abessiivi": "-tta/-ttä", "komitatiivi": "-ine-", "instruktiivi": "-in" },
+      "note": "Hậu tố cách gắn vào gốc (có luân phiên phụ âm + hoà âm). Thay phần lớn giới từ Ấn-Âu. Bảng đầy đủ + gốc biến đổi = LEXICAL nặng."
+    },
+    "consonant_gradation": {
+      "note": "p/t/k luân phiên mạnh<->yếu khi biến cách",
+      "examples": { "kk->k": "kukka->kukan", "pp->p": "kauppa->kaupan", "tt->t": "tyttö->tytön", "t->d": "katu->kadun", "k->∅": "jalka->jalan", "p->v": "leipä->leivän" },
+      "status": "loại luân phiên nào áp cho từ nào = lexical"
+    },
+    "possessive_suffix": { "-ni": "của tôi", "-si": "của bạn", "-nsa/-nsä": "của họ", "example": "taloni, talossani (trong nhà tôi)" },
+    "verb": {
+      "types": "6 loại theo đuôi nguyên mẫu",
+      "person_endings": "-n/-t/-∅/-mme/-tte/-vat (minä puhun, sinä puhut, hän puhuu)",
+      "negation": "ĐỘNG TỪ PHỦ ĐỊNH 'ei' chia theo ngôi (en/et/ei/emme/ette/eivät) + gốc: en puhu 'tôi không nói'"
+    },
+    "word_order": "SVO trung tính, tự do (case-marked); pro-drop ngôi 1/2"
+  },
+  "checks": [
+    {
+      "id": "vowel-harmony-suffix",
+      "description": "Hậu tố hoà âm theo nguyên âm gốc (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần phân tích nguyên âm gốc + bảng hậu tố khi generator chạy." },
+      "fixtures": {
+        "pass": ["talossa", "metsässä", "kädellä"],
+        "fail": ["talossä", "metsässa"]
+      }
+    },
+    {
+      "id": "negation-verb",
+      "description": "Phủ định bằng động từ 'ei' chia theo ngôi + gốc động từ (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần bảng chia khi generator chạy." },
+      "fixtures": {
+        "pass": ["en puhu", "et puhu", "emme puhu"],
+        "fail": ["en puhun", "ei puhut"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Minä puhun suomea.", "talossa", "en puhu englantia"],
+    "fail": ["talossä", "en puhun"],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Finnish thật."
+  }
+}

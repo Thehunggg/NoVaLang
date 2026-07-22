@@ -1,5 +1,8 @@
 {
   "id": "_base/answer-acceptance",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "depends_on": [],
   "phenomenon": "answer_acceptance",
   "enforces": ["rules/content/naturalness-and-register.md"],
   "config": {

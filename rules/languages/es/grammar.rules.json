@@ -1,0 +1,73 @@
+{
+  "id": "es/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "gender_and_number_agreement",
+  "enforces": [
+    "grammar-and-usage.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "UD"
+  ],
+  "derived_by": "human",
+  "config": {
+    "word_order": "SVO_flexible_pro_drop",
+    "gender_system": {
+      "values": ["masculine", "feminine"],
+      "predictable_by_ending": { "-o": "masculine (phần lớn)", "-a": "feminine (phần lớn)" },
+      "known_exceptions": ["el día (nam, kết thúc -a)", "la mano (nữ, kết thúc -o)", "el mapa", "el problema", "la foto", "la moto"],
+      "exception_list_status": "PENDING — danh sách trên chỉ là ví dụ minh hoạ phổ biến, CHƯA đầy đủ, xem GIẢ ĐỊNH B-05"
+    },
+    "agreement_rule": "Mạo từ + tính từ PHẢI hoà giống-số với danh từ trung tâm (el gato negro / la gata negra / los gatos negros / las gatas negras).",
+    "verb_conjugation_groups": {
+      "ar": { "infinitive_ending": "-ar", "example": "hablar" },
+      "er": { "infinitive_ending": "-er", "example": "comer" },
+      "ir": { "infinitive_ending": "-ir", "example": "vivir" }
+    },
+    "irregular_verb_lexicon_status": "PENDING — ser/estar/ir/tener/hacer... CHƯA có bảng chia đầy đủ theo thì/thức trong phiên này, xem GIẢ ĐỊNH B-06.",
+    "pro_drop": {
+      "value": true,
+      "note": "Chủ ngữ đại từ (yo/tú/él...) thường bị lược bỏ vì đuôi động từ đã mang thông tin ngôi/số. Học viên nói tiếng Anh (không pro-drop) hay giữ đại từ thừa."
+    },
+    "clitic_pronoun_placement": {
+      "before_conjugated_verb": true,
+      "attached_after_infinitive_gerund_affirmative_imperative": true,
+      "example_before": "Lo veo.",
+      "example_attached": "Voy a verlo. / Viéndolo. / Dímelo.",
+      "leismo_status": "RAE chấp nhận leísmo hạn chế (le thay lo, chỉ người, số ít) nhưng KHÔNG chấp nhận laísmo — CHƯA cross-check kỹ, xem GIẢ ĐỊNH B-07."
+    }
+  },
+  "checks": [
+    {
+      "id": "adjective-gender-agreement-o-a",
+      "description": "Tính từ đuôi -o/-a phải khớp giống với danh từ (kiểm mẫu cố định el/la + noun + adj, không phải kiểm tổng quát toàn từ vựng).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm tổng quát cần bảng giống danh từ + phân tích cú pháp cụm danh từ khi generator chạy, không phải regex tĩnh."
+      },
+      "fixtures": {
+        "pass": [
+          "el gato negro",
+          "la gata negra"
+        ],
+        "fail": [
+          "el gato negra",
+          "la gata negro"
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "Producto del fin del imperio y las invasiones germanas la población isleña cayó a 1 millón durante el período sajón, permaneciendo hasta el siglo XI cuando volvió a aumentar llegando a 5 a 7 millones en el siglo XV, pero tras la peste negra volvió a reducirse a solo 2 a 4 millones.",
+      "el gato negro",
+      "Lo veo."
+    ],
+    "fail": [
+      "el gato negra",
+      "El coche es rojo la"
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD Spanish-GSD (Bước 3 mục 6)."
+  }
+}

@@ -1,24 +1,73 @@
 # NovaLang Active Task — Task hiện tại
 
+## NỢ WEB — chuyển cho Codex (env build được `frontend/node_modules`) — 2026-07-20
+
+Ghi lại để không quên (ngoài reminder trong `scripts/check-hardcoded-ui.mjs`).
+Hai khoản nợ này **cần Codex** làm ở môi trường có thể cài `frontend/node_modules`
+và chạy `tsc -b && vite build` để kiểm chứng — ở env cloud hiện tại không build
+được web nên Claude Code không đụng tới (chỉ làm phần verify được: mobile +
+Core-Foundation web key-hoá + rule warn).
+
+1. **Web i18n chuẩn (hard-code rải khắp):** `PracticePage` (toàn màn kết
+   quả + intro), `AchievementBadge` (cả bảng huy hiệu tiếng Anh),
+   `NativeLanguageSelector` (chuỗi tiếng Việt/Anh cứng dòng ~30),
+   `LessonPage` (map inline chỉ en/vi/ja + câu giải thích cứng vi/en),
+   `CoursePath` (nhánh chỉ `vi`), `LandingPage`, `HomePage` (đã xử phần
+   Core Foundation), 4 component chết (`Quiz`/`LanguageCard`/`LessonCard`/
+   `Status`). Kèm: **enum nội bộ hiện thô ra UI** (`exercise.type`/`lesson.type`/
+   `difficulty`/`itemType` → "multiple choice · beginner"…) ở
+   `LessonPage`/`PracticePage`/`ReviewPage`/`MistakesPage`, và **sentinel
+   `⟦missing:…⟧`** hiện cho user. Cần key-hoá qua `t()`, lấp ~16 key đang bị
+   copy nguyên tiếng Anh vào map `ja`/`es` (`translations.ts`), map enum →
+   nhãn localize. **Sau khi dọn xong web → BẬT chặn cứng:** đặt
+   `STRICT_WEB = true` trong `scripts/check-hardcoded-ui.mjs` (và/hoặc cho CI
+   fail trên web findings).
+
+2. **Web đọc động danh sách ngôn ngữ học (mở 3 tầng khóa en/ja):** web đang
+   khóa cứng en/ja ở `LanguageCode = "en"|"ja"` (type), `normalizeLearningLanguage`
+   (ép mọi code ≠ ja về "en"), `finishOnboarding(language: LanguageCode)` +
+   courses chỉ có en/ja. Để web hiện/chọn được 33 ngôn ngữ (badge coming_soon,
+   cho bấm) như mobile → cần mở rộng `LanguageCode` toàn app + xử course rỗng.
+   Là task riêng, **cần env build web để `tsc` kiểm chứng**. → Codex.
+
 ## Task identity — Danh tính task
 
-- Task ID: `NOVALANG-JAPANESE-FULL-PROFILE-FINAL-CLOSURE-01`
-- Task name: `Japanese Full Language Profile final documentation closure`
-- Status: `CLOSED / FROZEN`
-- Current owner: `Codex — SOLE WRITER`
-- Claude Code: `READ-ONLY`
-- Codex: `WRITE`
+- Task ID: `NOVALANG-DAILY-LIFE-16-MODULE-COBAN-NAMED-01`
+  (supersedes `NOVALANG-DAILY-LIFE-15-TOPIC-RESTRUCTURE-01`'s skeleton — see
+  the 2026-07-19 entry below for the full replacement; that task's own entry
+  is kept for history, not deleted)
+- Task name: `Replace the 15-topic empty-shell blueprint with the 16-module × 3-tier skeleton, Cơ bản tier fully named (33 units / 73 lessons, en+ja), Trung cấp/Cao cấp valid empty shell, keep Golden Lesson byte-identical`
+- Status: `IMPLEMENTATION_COMPLETE / VALIDATED / FLUTTER_TEST_VERIFICATION_PENDING`
+- Current owner: `Claude Code — SOLE WRITER (this task only)`
+- Claude Code: `WRITE`
+- Codex: `READ-ONLY`
 - Cursor: `READ-ONLY`
 - Default next owner: `Project Owner`
-- Last updated: `2026-07-17`
-- Final verdict: `JAPANESE_FULL_PROFILE_FINAL_CLOSURE_COMPLETED`
-- Ownership note: Project Owner assigned Codex as the sole writer for
-  `NOVALANG-JAPANESE-FULL-PROFILE-FINAL-CLOSURE-01`; Claude Code and Cursor
-  are READ-ONLY. Existing dirty-worktree changes remain preserved; no reset,
-  clean, stash, checkout, restore, commit, or push is authorized. The approved
-  scope permits status/documentation updates only. Curriculum, schema,
-  generated content, Flutter/runtime, pronunciation/romanization pipeline,
-  English, and other languages remain forbidden. The prior
+- Last updated: `2026-07-19`
+- Final verdict: `NODE_LAYER_VERIFIED_GOLDEN_BYTE_IDENTICAL / VALIDATE_AND_SMOKE_PASS / FLUTTER_TEST_NOT_RUN_NO_SDK_IN_CLOUD_ENV`
+- Ownership note: Project Owner explicitly assigned Claude Code as writer for
+  this scoped task in the current conversation (blueprint restructure,
+  registry ID-key fix, validator/smoke updates, new ADR-020), per AGENTS.md's
+  "project owner explicitly assigns ownership in the current conversation"
+  clause, continuing directly from this same session's
+  `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01` and stray-branch-review work
+  below. Scope: `scripts/lib/daily-life-blueprint.mjs`,
+  `scripts/content/daily-life/module-1/helpers.mjs`,
+  `scripts/validate-curriculum.mjs`, `scripts/smoke-curriculum-flow.mjs`,
+  `scripts/generate-curriculum.mjs` (catalog metadata only), plus generated
+  output (`shared/generated/**`, `shared/content/curriculum/**`,
+  `shared/config/daily_life_blueprint.json`,
+  `mobile/novalang_flutter/assets/shared/**`) and this file +
+  `ARCHITECTURE_DECISIONS.md`. Per explicit Project Owner instruction,
+  ADR-008 itself was NOT modified. No `.dart` file, no file under
+  `frontend/src/**`, and no file under `rules/**` was touched — confirmed by
+  `git status --short` after every edit. The prior
+  `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01`
+  (`NODE_LAYER_IMPLEMENTATION_COMPLETE / FLUTTER_TEST_VERIFICATION_PENDING`,
+  Claude Code — unaffected by this task, its own flutter-test debt is still
+  open and separate from this task's),
+  `NOVALANG-JAPANESE-FULL-PROFILE-FINAL-CLOSURE-01`
+  (`CLOSED / FROZEN`, Codex — unaffected by this task) and
   `NOVALANG-ENGLISH-STYLE-PROFILE-IMPLEMENTATION-01`,
   `NOVALANG-VOCABULARY-SCROLL-CROSS-PLATFORM-RUNTIME-FIX-05`,
   `NOVALANG-VOCABULARY-SCROLL-RUNTIME-FIX-04`,
@@ -26,6 +75,396 @@
   `NOVALANG-VOCABULARY-SCROLL-ROOT-CAUSE-FIX-02`, and
   `NOVALANG-MULTILINGUAL-NATURALNESS-REGISTER-RULE-01` history below remains
   preserved and is not superseded outside this scoped correction.
+
+## `validateFiveCardsStructure` Card 2 vocabulary count: fixed 8 → range 6–15 — 2026-07-19
+
+Follow-up correction to ADR-019: `scripts/validate-curriculum.mjs`'s Card 2
+check required exactly 8 vocabulary cards for every five_cards lesson, not
+just Golden. Confirmed via source read that "8" was never a documented
+Format 2.0/3.0 requirement (`.cursor/rules/03_novalang_lesson_format_2_0.mdc`
+Card 2 only says to preserve the approved source's data/order, no literal
+count) — it was Golden's own actual count, hard-coded into the generic
+validator when ADR-019 generalized it. Project Owner identified this as a
+Golden-derived implementation accident, not a product decision, and
+specified: min 6 / max 15, `vocabulary`/`vocabularyDetails` must still match
+count and ids 1-1. Full record: ADR-019 amendment (2026-07-19).
+
+**File changed:** `scripts/validate-curriculum.mjs` only (validator logic;
+no generator, no generated output, no other file touched).
+
+**Verification:**
+- Baseline (before edit): `validate:curriculum` PASS, 35 courses, 172
+  lessons, same 4 pre-existing soft warnings; `smoke:curriculum` PASS, all
+  sections identical to the last recorded run.
+- Golden Lesson vocabulary confirmed 8/8 (`lesson.vocabulary` and
+  `fiveCardContent.vocabularyDetails`), matching ids, before making any
+  change.
+- After the edit: `validate:curriculum` — **PASS**, identical numbers (35
+  courses, 172 lessons, same 4 warnings, 0 new errors). `smoke:curriculum` —
+  **PASS**, every section identical to baseline. `git status` after
+  regenerating nothing: only `scripts/validate-curriculum.mjs` modified —
+  confirms this was a pure validator-logic change with zero effect on
+  generated output (Golden Lesson untouched by construction, not just by
+  re-diff).
+- Isolated boundary test (the exact new range-check logic, copy-tested
+  standalone rather than importing the whole validator module, which runs
+  `main()` — and therefore a real curriculum validation pass — as an
+  import-time side effect): 5 → FAIL (below min), 6 → PASS, 8 → PASS
+  (Golden's real shape), 10 → PASS, 15 → PASS (at max), 16 → FAIL (above
+  max); a `vocabulary`/`vocabularyDetails` count mismatch and a same-count
+  id-order mismatch both correctly fail with distinct messages.
+
+No commit yet at the time this entry was written — commit/push follow
+immediately, per this task's own explicit authorization ("Commit + push khi
+sạch").
+
+## Daily Life domain: 16-module × 3-tier restructure, Cơ bản fully named — 2026-07-19
+
+Superseded the 15-topic empty-shell skeleton (below) with the Project
+Owner's fully-detailed Cơ bản (basic) tier: 16 modules, each with a named
+Cơ bản unit/lesson structure (33 units / 73 lessons total, exact titles
+Project-Owner-specified in Vietnamese, translated into en/ja/ko/zh). Trung
+cấp/Cao cấp remain a valid, intentional empty shell for every module — no
+`unit(...)` entries yet. Golden Lesson (`ja-daily_life-m01-u1-l1`) keeps its
+exact position (Module 1 / Unit 1 / Lesson 1) and content, byte-for-byte
+identical, verified by direct JSON diff against the last committed
+`shared/generated/lessons.json`, not just a hash/count check. Full decision
+record is ADR-021; this entry is the task-log summary.
+
+**Pre-flight, before any edit (per explicit Project Owner instruction not to
+guess at a discrepancy):** the Project Owner's own task message had a header
+summary ("16 module · 35 unit · 82 lesson") that didn't match a manual count
+of the same message's fully-detailed module-by-module list ("16 module · 33
+unit · 73 lesson"). Stopped and reported the discrepancy with both options
+before writing any code. Project Owner confirmed: the detailed list is
+correct (33/73); the header was a summation error, not a sign of missing
+list content. Proceeded strictly from the detailed per-unit/per-lesson list
+using the confirmed 33/73 numbers.
+
+**Files changed (code):** `scripts/lib/daily-life-blueprint.mjs` (new
+16-module `DAILY_LIFE_MODULES` — 33 named Cơ bản units / 73 named Cơ bản
+lesson slots, generated programmatically from a data table to avoid
+hand-transcription errors at this scale, then spliced in; new `lessonSlot(order,
+titleByNative)` helper reusing the existing generic `autoLesson()`
+templating — i18n-key/pair-agnostic, no target-language sentence hard-coded
+into the skeleton; `assertDailyLifeBlueprintShape` updated 15→16;
+`buildDailyLifeCourses` rewritten to a single unified loop — the prior
+`mod.order === 1` special case that routed Module 1 through a separate
+function is gone, every module's every lesson slot now tries
+`resolveApprovedFiveCardsLesson` first and falls back to building a named
+placeholder lesson; a course's `contentStatus`/`playable` is now derived
+from whether it actually contains a ready lesson, not from whether it has
+units — every module now has named units, so "has units" alone stopped
+being a valid proxy for "has real content"; unit container titles now
+always come from the blueprint's own `unitDef.titleByNative`, never from the
+Golden source file's bundled `approved.unit` override, which is retired from
+the generation path system-wide, not just for Module 1),
+`scripts/content/daily-life/module-1/helpers.mjs` (new exported
+`resolveApprovedFiveCardsLesson(language, lessonId, {...})`, extracted from
+`buildReadyModuleOne`'s inner lesson-building logic with the field
+construction unchanged; `buildReadyModuleOne` itself is left on disk,
+unreferenced — same precedent as `content.mjs`/`dialogues.mjs` after
+ADR-020, not deleted), `scripts/validate-curriculum.mjs` and
+`scripts/smoke-curriculum-flow.mjs` (module count 15→16; Golden's Unit 1
+Vietnamese title lock updated to the new approved value; two real bugs
+fixed — a moduleId-based "every Module 1 lesson must be ready" check that
+would have wrongly failed the new non-Golden Module 1 siblings, corrected to
+gate on the Golden Lesson's own id; and a "has units ⇒ ready/playable"
+course-level check, corrected to "has a ready lesson ⇒ ready/playable" for
+the same reason. A third, pre-existing but previously-dead code path in the
+smoke test — a top-level `lesson.exercises`/`lesson.dialogueGroups` length
+check that would always fail against a real five_cards lesson's actual shape
+(content lives under `fiveCardContent`, not those top-level fields) — was
+reachable for the first time under the new data and removed rather than
+"fixed", since `checkApprovedJaUnitOneLesson` already performs the real,
+thorough Golden content check on the correct fields), `scripts/generate-curriculum.mjs`
+(catalog `architecture.dailyLifeCommunication.topicCount` 15→16, note text
+updated).
+
+**Real bug found and fixed mid-implementation (not by guessing — by running
+the generator and reading the thrown error):** the Golden Lesson's slot
+(Module 1 / Unit 1 / Lesson 1) is language-agnostic in the shared blueprint
+data — for `ja` it resolves through `FIVE_CARDS_REGISTRY`; for `en`, no such
+registry entry exists (Golden is ja-only). The first generation attempt
+correctly fail-loud-threw on this (a new guard added specifically to prevent
+the Golden slot from ever silently resolving to nothing) instead of silently
+producing broken data. Fixed by giving that slot a named placeholder title
+too (`lessonSlot(1, ...)`, "Greet & Introduce Yourself" / "Chào hỏi & tự
+giới thiệu" / ...) — for `ja` the registry lookup still wins and this title
+is never read; for `en` it now correctly becomes a normal named blueprint
+placeholder instead of the old ADR-020 behavior of silently dropping the
+whole unit. This was treated as a technical/generation-mechanics fix within
+scope (matches the Project Owner's own written rule "mỗi lesson trừ Golden =
+1 slot rỗng có tên"), not a product decision requiring a stop.
+
+**Generated output regenerated + synced:** `shared/generated/*.json`,
+`shared/content/curriculum/*.json`, `shared/config/daily_life_blueprint.json`,
+`mobile/novalang_flutter/assets/shared/*.json`.
+
+**Verification performed (all in this cloud session):**
+- Baseline captured before any edit: `validate:curriculum` PASS, 33 courses,
+  27 lessons (the ADR-020 15-topic skeleton's closing state), same 4
+  pre-existing soft `rules/` warnings.
+- `npm run generate:curriculum` — PASS: **35 courses, 172 lessons** (27
+  playable: 26 Core Foundation + 1 Golden Lesson; 145 blueprint).
+- Direct structural query of the generated output confirms: 32 daily_life
+  courses (16 modules × en/ja), 66 total units (33 × 2 languages), 146
+  lesson slots (73 × 2 languages) — matching the Project Owner's confirmed
+  33 unit / 73 lesson Cơ bản count exactly, doubled for the two languages.
+  Every one of those 66 units has `tier: "basic"` — zero intermediate/advanced
+  units exist yet, confirming Trung cấp/Cao cấp are the intended empty
+  shell.
+- Golden Lesson (`ja-daily_life-m01-u1-l1`) full object diffed via
+  `JSON.stringify` equality against the pre-task committed
+  `shared/generated/lessons.json` — **byte-for-byte identical**.
+- `ja-daily_life-m01` course: `playable: true`, `contentStatus: "ready"`
+  (has the Golden Lesson). `en-daily_life-m01` course: `playable: false`,
+  `contentStatus: "blueprint"` (no real content for en) — confirms the new
+  "ready iff has a ready lesson" course-status derivation is correct in both
+  directions.
+- `npm run validate:curriculum` — **PASS**, 35 courses, 172 lessons, same 4
+  pre-existing soft warnings, zero new ones.
+- `npm run sync:flutter-assets` — ran, verified `Flutter courses.json out of
+  sync` warning clears afterward.
+- `npm run smoke:curriculum` — **PASS**, all sections including `Approved
+  Japanese Daily Life Unit 1 Lesson 1: 2 pass, 0 fail` (Golden's full
+  content-lock check, unchanged) and `Five-cards scope guard: 2 pass, 0
+  fail` (ADR-019's check).
+- `node --check` passed on all 5 edited `.mjs` files at every intermediate
+  step.
+
+**Known, explicitly flagged gap — not silently skipped:** `flutter test`
+could not be run (same cloud-environment constraint as every prior task in
+this session's lineage: no Flutter SDK available). No `.dart` file was
+touched by this task. Real `flutter test` verification on a machine with
+Flutter installed is required before this task is considered fully closed —
+see "Next exact action" below.
+
+Commit + push performed for this task's code + generated-output + docs
+files, per explicit Project Owner authorization ("Commit + push khi sạch,
+báo cáo") once `validate:curriculum` + `smoke:curriculum` both PASS cleanly.
+
+## Daily Life domain: 15-topic × 3-tier restructure — 2026-07-18
+
+Executed the previously reported and approved plan (read-only scope report,
+then explicit scope decision: vi/zh untouched; en gets the same empty
+skeleton as ja; drop all non-Golden Module 1 content and all Module 2–10
+blueprint content, no migration). Full technical detail, exact before/after
+numbers, and the ID-key registry fix are recorded in ADR-020; this entry is
+the task-log summary.
+
+**Files changed (code):** `scripts/lib/daily-life-blueprint.mjs` (new
+15-topic `DAILY_LIFE_MODULES`, `unit()` now requires explicit `order`/`tier`,
+`TIER_LEVELS`, rewritten `assertDailyLifeBlueprintShape`, `buildDailyLifeCourses`
+uses explicit order fields instead of array position),
+`scripts/content/daily-life/module-1/helpers.mjs` (`buildReadyModuleOne`
+rewritten to iterate whatever units/lessons the blueprint actually declares
+instead of a hard-coded 8×3 loop, no more generic-content fallback,
+`FIVE_CARDS_REGISTRY` keyed by final lesson id instead of
+`${unitIndex}-${lessonIndex}` position), `scripts/validate-curriculum.mjs`
+and `scripts/smoke-curriculum-flow.mjs` (Daily Life sections: 15-topic count
+instead of 10-module, no fixed unit/lesson-per-unit counts, course
+ready/playable status derived from whether it actually has units, total
+lesson/course counts are self-consistency checks instead of magic numbers),
+`scripts/generate-curriculum.mjs` (catalog `architecture.dailyLifeCommunication`
+metadata: `topicCount: 15` replacing `moduleCount`/`unitsPerModule`/
+`lessonsPerUnit`/`lessonsPerLanguage`). `content.mjs`/`dialogues.mjs` and the
+generic-lesson-building helper functions in `helpers.mjs` are now
+unreferenced but were left on disk (not deleted), flagged in ADR-020 as a
+possible future cleanup/reuse decision, not resolved in this task.
+
+**Generated output regenerated + synced:** `shared/generated/*.json`,
+`shared/content/curriculum/*.json`, `shared/config/daily_life_blueprint.json`,
+`mobile/novalang_flutter/assets/shared/*.json`.
+
+**Verification performed (all in this cloud session):**
+- Baseline captured before any edit: `npm run validate:curriculum` PASS, 23
+  courses, 506 lessons, same 4 pre-existing soft `rules/` warnings.
+- After the restructure: `npm run generate:curriculum` — PASS, no thrown
+  error, **33 courses, 27 lessons** (26 foundation unchanged + 1 Golden;
+  every one of the other 14 topics × 2 languages, plus `en`'s Topic 1, has
+  `units: []`, `contentStatus: "blueprint"`, `playable: false`).
+- `npm run validate:curriculum` — **PASS**, same 4 pre-existing soft warnings,
+  zero new ones.
+- `npm run smoke:curriculum` — **PASS**, including `Approved Japanese Daily
+  Life Unit 1 Lesson 1: 2 pass, 0 fail` (Golden's full content-lock check,
+  unchanged) and `Five-cards scope guard: 2 pass, 0 fail` (ADR-019's check).
+- Direct JSON diff: `ja-daily_life-m01-u1-l1`'s full lesson object compared
+  against the last git-committed `shared/generated/lessons.json` (before this
+  task) — **byte-for-byte identical**. Its unit's `titleByNative` is also
+  unchanged (`"Chào và nói tên"` / `"Greetings and names"` / `"あいさつと名前"`);
+  only its unit's sibling-lesson count (3→1, the 2 non-Golden lessons
+  dropped) and the surrounding course/topic title (renamed from "First
+  Conversations" to "Chào hỏi & làm quen" / "Greetings & Getting Acquainted",
+  matching the new topic name) changed — both intentional, neither governed
+  by ADR-008.
+- `node --check` passed on all 5 edited `.mjs` files at every intermediate
+  step; found and fixed one real bug of my own along the way (the "Topic 1
+  must have a unit" structural check I wrote initially did not account for
+  language — it wrongly flagged `en`'s intentionally-empty Topic 1 as an
+  error; fixed to be `ja`-specific, then re-verified PASS).
+- Flutter/React empty-course rendering safety was verified by source read
+  before implementing (not assumed): `CurriculumModuleGroup.fromUnits`
+  (`mobile/novalang_flutter/lib/models/course_unit.dart`) groups by iterating
+  actual `CourseUnit` objects, so a course with `units: []` simply produces
+  no card (no crash, no empty tile); `daily_life_module_card.dart`'s progress
+  calculation already guards divide-by-zero.
+
+**Known, explicitly flagged gaps — not silently skipped:**
+- `flutter test` could not be run (same cloud-environment constraint as
+  `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01`: no Flutter SDK). No `.dart`
+  file was touched by this task either. Real `flutter test` verification on
+  a machine with Flutter installed is required before this task is
+  considered fully closed.
+- `content.mjs`/`dialogues.mjs` and the now-unreferenced generic-lesson
+  helper functions in `helpers.mjs` were left on disk rather than deleted —
+  an explicit, flagged scope decision (see ADR-020), not an oversight.
+- ADR-008 was deliberately **not** modified, per explicit Project Owner
+  instruction; this task's own conclusion is that no ADR-008-governed field
+  needed to change (verified, not assumed — see the byte-identical diff
+  above), so no amendment was requested.
+
+No commit yet at the time this entry was written — commit/push follow
+immediately after, per explicit Project Owner authorization for this task
+(only once `validate:curriculum` + `smoke:curriculum` both PASS cleanly, per
+the Project Owner's own stated condition).
+
+## Five_cards format generalization — 2026-07-18
+
+Executed the previously reported and approved plan (see the earlier
+"Kế hoạch tổng quát hoá `five_cards`" report in this session): `helpers.mjs`
+now looks up approved five_cards content through `FIVE_CARDS_REGISTRY`
+(keyed `languageCode` → `"${unitOrder}-${lessonOrder}"`, today exactly
+`{ ja: { '1-1': JA_UNIT1_LESSON1 } }`) instead of the hard-coded position
+condition; `validate-curriculum.mjs`'s `validateApprovedJaUnitOneLesson` is
+split into `validateFiveCardsStructure` (generic, runs for every
+`lessonFormat: five_cards` lesson, exported at module scope) and
+`validateApprovedGoldenLessonContent` (literal Golden-content lock, runs
+only for `ja-daily_life-m01-u1-l1`); `smoke-curriculum-flow.mjs`'s
+`checkFiveCardsScopeGuard` now requires every five_cards lesson to pass a
+structural check instead of requiring exactly one lesson with exactly the
+Golden id — this specific change was flagged in the original plan as a real
+product decision needing separate confirmation, and the Project Owner's
+execution instruction explicitly named it. New ADR-019 records the full
+decision. Full technical detail (exact classification of every check,
+generalizations made, verification evidence) is in ADR-019; this entry is
+the task-log summary.
+
+**Scope discipline:** only `scripts/content/daily-life/module-1/helpers.mjs`,
+`scripts/validate-curriculum.mjs`, and `scripts/smoke-curriculum-flow.mjs`
+were changed as code; `docs/ai/ARCHITECTURE_DECISIONS.md` and this file are
+the only other changed files. Zero files under `shared/**`,
+`mobile/novalang_flutter/lib/**`, or `rules/**` were touched — verified by
+`git status --short` after every edit step, not assumed.
+
+**Verification performed (all in this cloud session):**
+- `npm run validate:curriculum` baseline captured BEFORE any edit: PASS, 23
+  courses, 506 lessons, 4 pre-existing soft `rules/` warnings, exit 0.
+- After all 3 files were edited: `npm run generate:curriculum` (which now
+  runs the new registry-based `helpers.mjs`) was executed, and
+  `shared/generated/lessons.json`/`courses.json`/`curriculum_catalog.json`
+  were SHA-256 hash-compared before vs. after — **byte-for-byte identical**.
+  `git status --short shared/generated/` showed zero diff. This proves the
+  registry refactor is a true no-op for the existing 506-lesson corpus, not
+  just "validator still passes."
+- `npm run validate:curriculum` re-run on the freshly regenerated output:
+  output identical to the pre-edit baseline (same 23/506/4-warnings/PASS).
+- `npm run smoke:curriculum`: PASS, including `Five-cards scope guard: 2
+  pass, 0 fail` (the rewritten guard) and `Approved Japanese Daily Life Unit
+  1 Lesson 1: 2 pass, 0 fail` (the untouched Golden-content smoke check).
+- Proof requested by Project Owner (scratchpad only, never written to the
+  repo, not committed): a Node script imported the newly-exported
+  `validateFiveCardsStructure` directly and built a brand-new minimal
+  five_cards lesson object with a new, non-Golden ID
+  (`scratch-five-cards-proof-lesson`) never added to `FIVE_CARDS_REGISTRY`
+  or any real content file. The complete minimal lesson passed with **0
+  errors**. The same object with only 7 (not 8) vocabulary items failed with
+  **exactly 1 error**: `"Card 2 must contain exactly 8 vocabulary cards"` —
+  proving the structural check is real, generic, and fails at the correct
+  location, not just decorative.
+- `node --check` passed on all 3 edited files at every intermediate step.
+
+**Known, explicitly flagged gap — not silently skipped:** `flutter test`
+could **not** be run. This cloud session's environment has no Flutter/Dart
+SDK installed anywhere (`flutter: command not found`; `find / -iname
+"*flutter*"` and `*dart-sdk*` found nothing; confirmed with the Project
+Owner before proceeding, who explicitly authorized continuing without it).
+No `.dart` file was modified by this task; the generated
+`shared/generated/*.json` that the Flutter app's tests actually read is
+proven byte-for-byte unchanged (see above), and the Flutter/Web render layer
+already branches on `lesson.lessonFormat == 'five_cards'` generically
+(confirmed by source read, not changed by this task) — so there is a strong
+theoretical case that `flutter test` (in particular
+`golden_reference_lesson_invariants_test.dart` and `five_card_lesson_test.dart`,
+which read only the generated JSON asset, never the validator source) would
+be unaffected. **This is not the same as having actually run it.** Real
+`flutter test` verification on a machine with the Flutter SDK installed is
+required before this task can be marked fully closed — see "Next exact
+action" below. Do not report this task as fully done until that check runs.
+
+No commit beyond this task's own 3 approved code files + these 2 docs files.
+Push: performed for the code commit, per explicit Project Owner
+authorization to commit/push step by step for this task specifically (this
+authorization is scoped to this task; it does not change the standing
+"never commit/push without approval" default for other tasks).
+
+## Stray branch review — `claude/golden-lesson-ja-rule-validation-r81zix` — 2026-07-18
+
+While investigating remote branches for collision risk during the five_cards
+task above, found `origin/claude/golden-lesson-ja-rule-validation-r81zix`: 5
+commits (04:06–04:21 UTC), same author identity as this session's own `main`
+commits, doing the same `/build-language` rules-pipeline work items (C6/INV-9,
+C7, A3, G-01, a new `tools/lesson-check.mjs` tool) that `main` also
+independently completed 15–90 minutes later under different commit hashes
+(`9ae79e9`, `5a02a7f`, `3c621da`, `0e837ad`, `e8303ce`). `git merge-tree`
+confirmed 6 real content conflicts (one `add/add` on `tools/lesson-check.mjs`
+— both sides wrote it from scratch, independently, differently).
+
+Compared the two solutions file-by-file by actually running both
+`tools/lesson-check.mjs` implementations against the Golden Lesson (not just
+reading code): `main`'s version ran clean — 0 errors, 4 warnings, matching
+exactly the known `validate:curriculum` baseline. The branch's version
+**FAILED live** — 13 + 205 violations, mostly false positives, root-caused to
+two concrete bugs: (1) its G-01 "curated content" exemption does exact-string
+`Set.has()` matching, which misses real matches differing only by trailing
+punctuation (e.g. `"Chào buổi sáng"` vs `"Chào buổi sáng."`); (2) its
+pragmatics check extracts every Japanese-looking string from the whole lesson
+tree, so one dialogue line gets counted 3–5× across its
+`targetText`/`displayText`/`reading`/`speechText`/`translationByNative.ja`
+duplicate representations. `main`'s `pragmatics.rules.json` (v1.2.0) and
+`exercise-phenomena.map.json` are also more complete: they were built and
+verified against the full 506-lesson corpus (not just Golden Lesson), covering
+polite-request (て-form+ください) and ellipsis-question (N+は？) baseline
+forms the branch's version never implemented, and per-language
+`coveragePhenomena` overrides the branch's flat `coverage:[...]` mapping
+lacks (real accuracy gap for non-ja languages, e.g. `reading_system` wrongly
+applied to vi/en). Full file-by-file verdict recorded in this session's
+conversation; not duplicated here.
+
+**Decision (Project Owner, 2026-07-18): `main` wins on all 6 conflicting
+files — no merge from the branch into `main`.** The branch is **not**
+deleted — it stays on `origin` as an idea reference (566 lines of real,
+non-trivial tooling: `tools/lesson-check.mjs` + 3 new `tools/lib/*.mjs`
+files, none of which exist on `main`). Two ideas from it are worth revisiting
+later, **not now**:
+
+1. `lesson-check.mjs`'s data-driven architecture (reads every `.rules.json`'s
+   `checks[]` automatically instead of `main`'s 3 hard-coded checks; has
+   `--all` and `--self-test` modes `main`'s version lacks).
+2. The `length_ratio_exempt_if_curated` idea for G-01 (auto-detect that a
+   distractor is real approved content appearing elsewhere in the lesson,
+   instead of `main`'s simpler caller-supplied `--assume-provenance` flag) —
+   worth retrying if the exact-string-match bug above is fixed first (e.g.
+   normalize trailing punctuation before comparing).
+
+Deferred deliberately: `main`'s current tooling runs correctly today: a
+lesson-check rearchitecture now is an unforced risk, not a fix for a live
+problem. Needs its own future task/ADR when picked up — not implemented as
+part of this note. No file under `tools/**` or `rules/**` was touched by this
+review or this note; investigation was git-plumbing-only (`git fetch`,
+`git log`, `git diff`, `git merge-tree`, and a disposable `git worktree`
+removed after use to run the branch's tool for comparison) plus reading
+`shared/generated/lessons.json` (unchanged, read-only).
 
 ## Japanese Full Profile final closure — 2026-07-17
 
@@ -802,6 +1241,38 @@ Phase B does not start until Phase A scoped tests pass.
   started. Manual Android/Web runtime verification is not claimed as PASS.
 
 ## Next exact action — Hành động tiếp theo chính xác
+
+**For `NOVALANG-DAILY-LIFE-15-TOPIC-RESTRUCTURE-01` (skeleton complete,
+Flutter test verification pending — DO NOT close until this runs):** Project
+Owner (or a session with the Flutter SDK installed): run the full `flutter
+test` suite in `mobile/novalang_flutter/`. `shared/generated/lessons.json`'s
+Golden Lesson object was proven byte-for-byte identical to before this task
+(direct JSON diff, not just a hash check), and no `.dart` file was touched —
+so the expectation is that Golden-specific tests still pass, but tests that
+assumed the OLD 10-module/24-lesson/8-unit Module 1 shape (course/unit
+counts, "24 ready lessons" style assertions, if any exist in the Dart test
+suite) may need updating for the new 15-topic/mostly-empty shape. This has
+not been empirically confirmed and must not be reported as PASS until real
+`flutter test` runs. Also pending, deliberately deferred, not urgent:
+whether to physically delete `content.mjs`/`dialogues.mjs` and the now-dead
+generic-lesson helper functions in `helpers.mjs` (currently left in place,
+unreferenced) — a separate decision, see ADR-020.
+
+**For `NOVALANG-FIVE-CARDS-FORMAT-GENERALIZATION-01` (Node layer complete,
+Flutter test verification pending — DO NOT close until this runs):** Project
+Owner (or a session with the Flutter SDK installed): run the full `flutter
+test` suite in `mobile/novalang_flutter/` — in particular
+`test/golden_reference_lesson_invariants_test.dart` and
+`test/five_card_lesson_test.dart` — and confirm the result count matches
+whatever the suite reported before this task (this task could not capture
+that number itself; no Flutter SDK was available in this cloud session).
+Since `shared/generated/lessons.json`/`courses.json` are proven byte-for-byte
+unchanged by this task (SHA-256 verified) and no `.dart` file was touched,
+the expectation is an identical pass count with zero new failures — but that
+expectation has not been empirically confirmed and must not be reported as
+PASS until it is. Only after this check should
+`NODE_LAYER_IMPLEMENTATION_COMPLETE / FLUTTER_TEST_VERIFICATION_PENDING` be
+updated to a fully closed status.
 
 **For `NOVALANG-DOMAIN-TAXONOMY-RESTRUCTURE-01` (complete):** Project Owner:
 manually verify the real Learning Focus screen (Android and/or Web) shows all

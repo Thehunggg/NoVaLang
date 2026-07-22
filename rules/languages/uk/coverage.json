@@ -1,0 +1,186 @@
+{
+  "_meta": {
+    "language": "uk",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "uk-UA (tiếng Ukraina chuẩn / стандартна українська)",
+    "family": "East Slavic (Đông Slav, cùng nhánh ru/be), hệ chữ Kirin (Cyrl)",
+    "difficulty_self_assessment": "KHÓ: hệ chữ Kirin (không Latin) + 3 giống + 7 CÁCH (có VOCATIVE — khác ru đã mất) + động từ theo thể (aspect) + mềm hoá (palatalization). Tra cứu 5 vòng cho mọi quyết định sản phẩm.",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật. g2p-check/corpus-check chạy trên dữ liệu thật để nâng confidence.",
+    "corpus": {
+      "file": "tools/cache/corpus/uk-sentences.txt (không commit)",
+      "sentences": 7092,
+      "source": "UD Ukrainian-IU (train/dev/test) (S-UD-CORPUS)",
+      "note": "DƯỚI mốc 10000 (chỉ có UD-IU chính) nhưng TRÊN sàn 2000 — corpus check yếu hơn một số ngôn ngữ trước, ghi rõ, không giả vờ đủ 10k."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Ukraina. Chính tả Ukraina KHÁ ĐỀU (phonemic hơn tiếng Anh/Pháp) — g2p-check trên 53021 từ thật đạt rất tốt (phụ âm <1%). Cái KHÓ là NGỮ PHÁP HÌNH THÁI (7 cách, mềm hoá, thể động từ) + học HỆ CHỮ KIRIN."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Bảng chữ KIRIN Ukraina 33 chữ (а б в г ґ д е є ж з и і ї й к л м н о п р с т у ф х ц ч ш щ ь ю я) + dấu nháy apostrophe ' (не là chữ cái). Bicameral (hoa/thường). KHÁC bảng Nga: CÓ і/ї/є/ґ; KHÔNG có ы/э/ъ/ё. ь = dấu mềm (не âm riêng, làm mềm phụ âm trước). CLDR xác nhận. Sự kiện phổ thông.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận 33 chữ Kirin Ukraina + dấu nháy '.",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Hoa đầu câu + danh từ riêng. Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (січень, понеділок, українська) — giống ru/pl/es. Đại từ trang trọng Ви có thể viết hoa trong thư từ lịch sự. [Bước 3: corpus-check month-weekday-not-capitalized trên 7092 câu thật — 3/7092 = 0.04% vi phạm (tên riêng: Середа là họ người) — quy tắc hợp lệ. V1 Правопис (Chính tả Ukraina 2019) + V2 giáo trình + V4/V5 đồng thuận.]",
+    "status": "VALIDATED"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang (như Latin).",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ cái Kirin (alphabetic), không có thứ tự nét chuẩn hoá kiểu CJK.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (ukr_cyrl_narrow, 53021 cặp — bộ RẤT LỚN) -> grapheme-to-phoneme.data.json. Đặc trưng vs ru: г→[ɦ] (hữu thanh thanh hầu, KHÔNG [g] như Nga); ґ→[g] (chữ riêng); и→[ɪ] (không [i]); і→[i]; ї→[ji]; о không giảm (akannya của Nga KHÔNG có ở Ukraina — nguyên âm không nhấn giữ chất lượng). Phụ âm mềm/cứng (palatalized) phân biệt nghĩa. в→[w]/[u̯] cuối/trước phụ âm.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính tả Ukraina KHÁ ĐỀU (phonemic — hơn tiếng Anh/Pháp; không có akannya/giảm nguyên âm mạnh như Nga). [Bước 3: g2p-check.mjs trên WikiPron thật 53021 từ.] Phụ âm <1%: ж→[ʒ] 0.13%, ш→[ʃ] 0.96%, ч→[t͡ʃ] 0.23%, ц→[t͡s] 0.12%, х→[x] 0.70%, ґ→[ɡ] 0.00%, ї→[ji] 0.30%. VALIDATED. KỶ LUẬT DỮ LIỆU (ngoại lệ CÓ QUY LUẬT): nguyên âm iotated я/ю/є → [ja/ju/je] CHỈ ở đầu từ / sau nguyên âm / sau dấu nháy / sau ь; SAU PHỤ ÂM chúng làm MỀM phụ âm + đọc [a/u/e] (ню→[nʲu]) — vì thế 'ю→ju' bắn 97.48% 'vi phạm' = đúng quy luật iotation, KHÔNG phải rule sai (ghi rõ trong phonology.rules.json, giữ high cho phụ âm + quy tắc iotation). г→[ɦ] KHÁC [g] (đặc trưng Ukraina), ґ→[g] chữ riêng.",
+    "status": "VALIDATED"
+  },
+  "stress_system": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Trọng âm ĐỘNG + DI ĐỘNG (thay đổi theo dạng biến cách/chia), KHÔNG đánh dấu trong văn bản thường (giống ru) — chỉ đánh dấu trong từ điển/sách học. Vị trí trọng âm mỗi từ + mỗi dạng = lexical, cần audio. Không có akannya (nguyên âm không nhấn Ukraina giữ chất lượng, khác Nga) — thuận lợi cho phát âm.",
+    "status": "DRAFT"
+  },
+  "palatalization": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Phụ âm CỨNG vs MỀM (palatalized) phân biệt nghĩa. Làm mềm bởi: dấu mềm ь (кінь), nguyên âm mềm я/ю/є/і/ї sau phụ âm, hoặc й. Đánh dấu ˈ/ʲ trong WikiPron. Quy tắc rule_level hệ thống nhưng ngoại lệ + cặp cứng/mềm cụ thể cần native. Dấu nháy ' NGĂN mềm hoá (phụ âm giữ cứng + [j] tách: об'єкт [obˈjɛkt], п'ять).",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Ukrainian-IU test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "gender_and_number": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "3 GIỐNG (masc/fem/neut) + tính ĐỘNG VẬT (animacy — ảnh hưởng accusative). Đoán giống qua đuôi (phụ âm cuối thường masc, -а/-я thường fem, -о/-е thường neut) nhưng nhiều biệt lệ → lexical. Số ít/nhiều + có dạng kép cổ trong vài danh từ (два столи). KHÔNG có mạo từ (như mọi Slavic).",
+    "status": "DRAFT"
+  },
+  "noun_case": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG KHÓ: 7 CÁCH — nominative, genitive, dative, accusative, instrumental, locative, VOCATIVE (кличний — Ukraina GIỮ vocative sống: Петре! Мамо! Друже! — KHÁC ru đã mất/thay bằng nom). Danh từ + tính từ + đại từ + số từ đều chia theo cách × giống × số. Bảng biến cách hệ thống (4 lớp biến cách chính) nhưng nhiều biệt lệ + biến âm gốc → paradigm cụ thể cần native. Vocative là điểm dạy đặc trưng Ukraina.",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Chia theo NGÔI + SỐ + THÌ (hiện tại/quá khứ/tương lai) + THỂ (aspect: доконаний/недоконаний = perfective/imperfective — trục cốt lõi Slavic). Quá khứ chia theo GIỐNG + SỐ (không theo ngôi: читав m / читала f / читало n / читали pl) — đặc trưng Slavic. 2 nhóm chia (thематичні -е-/-и-). Tương lai imperfective phân tích (буду читати) hoặc tổng hợp (читатиму — đặc trưng Ukraina). Động từ bất quy tắc + cặp thể lexical.",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SVO nền nhưng TỰ DO cao (cách đánh dấu vai nghĩa → trật tự linh hoạt cho nhấn mạnh/thông tin cũ-mới). Không có mạo từ; xác định/không xác định thể hiện qua trật tự + ngữ cảnh. Giới từ + cách cụ thể (в/на + locative/accusative).",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "CÓ đối lập T-V thật: ти (số ít, thân mật) / ви (số nhiều HOẶC lịch sự số ít — người lạ/lớn tuổi/trang trọng, như fr vous / ru вы). Ви lịch sự có thể viết hoa trong thư từ. Kèm VOCATIVE khi gọi (пане! пані! Петре!). Đây là quyết định sản phẩm (dạy đối lập) — xem review-checklist D-uk-05.",
+    "status": "VALIDATED"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu câu chuẩn Latin (. , ? !). Ngoặc kép: «...» (guillemets, như ru) hoặc dạng ngoặc kép thấp-cao kiểu Đức. Dấu gạch ngang dài — dùng thay động từ 'là' (Київ — столиця). Dấu nháy ' (apostrophe) là chính tả bắt buộc (ngăn mềm hoá: об'єкт) — không phải dấu câu nhưng bắt buộc.",
+    "status": "DRAFT"
+  },
+  "apostrophe_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu nháy ' (U+2019 hoặc U+0027) BẮT BUỘC sau phụ âm môi/р trước я/ю/є/ї để chỉ [j] tách + phụ âm KHÔNG mềm: об'єкт, п'ять, м'ясо, сім'я, здоров'я. Bỏ dấu nháy = sai chính tả + sai phát âm (мяко sai, có thể đổi cách đọc). [corpus: 628/7092 câu chứa dấu nháy — đặc trưng phổ biến.] Ảnh hưởng chấm điểm — xem answer_acceptance_uk.",
+    "status": "DRAFT"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "і/ї/є/ґ là CHỮ CÁI RIÊNG của bảng chữ Ukraina (không phải biến thể có dấu): ї [ji] ≠ і [i] ≠ и [ɪ] (ba chữ, ba âm khác nhau); є [je] ≠ е [e]; ґ [g] ≠ г [ɦ]. й [j] cũng chữ riêng. Bỏ/thay = sai chính tả + đổi âm/nghĩa. Dấu mềm ь là chữ riêng (làm mềm). Ảnh hưởng chấm điểm — xem answer_acceptance_uk (bản chất giống pl/da/el: chữ cái riêng).",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~ти + từ thân mật (привіт), NATURAL_NEUTRAL_POLITE~ви lịch sự trung tính hoặc ти ngang hàng (baseline), FORMAL~ви + từ trang trọng + vocative (Доброго дня, будь ласка, дякую, перепрошую). HONORIFIC: not-applicable cho uk — không có hệ kính ngữ hình thái kiểu ja/ko; lịch sự qua ви + từ vựng + vocative (đã bao trong FORMAL + forms_of_address). Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19, ngôn ngữ châu Âu).",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "APPLICABLE về nguyên tắc (uk là hệ chữ Kirin, không Latin — người học phương Tây cần thời gian nhận diện). Không có hệ trợ đọc chuẩn kiểu furigana; chuyển tự Latin (romanization, chuẩn quốc gia KMU 2010 / BGN-PCGN) tồn tại nhưng là chuyển tự, không phải chú đọc. QUYẾT ĐỊNH SẢN PHẨM (xem review-checklist D-uk-03): có hiển thị chuyển tự Latin cho người mới không. Đề xuất: dạy CHỮ KIRIN trực tiếp, KHÔNG dùng chuyển tự làm nạng (nhất quán triết lý 'học hệ chữ thật' như el); audio TTS là kênh phát âm chính.",
+    "status": "DRAFT"
+  },
+  "answer_acceptance_uk": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "HAI PHẦN (owner DUYỆT 2026-07-19 D-77 / D-uk-04). (1) і/ї/є/ь + dấu nháy ' + chuyển tự Latin: phương án C — thiếu/thay (и thay і/ї, е thay є, bỏ ь, bỏ ', gõ Latin) = SAI, không chấp nhận, vì і/ї/є/ь là CHỮ CÁI RIÊNG (đổi âm/nghĩa: ї[ji]≠і[i]≠и[ɪ]) + dấu nháy đổi cách đọc. Nhắc cài bàn phím Ukraina. (2) ґ/г: KHOAN DUNG — chấp nhận г [ɦ] thay ґ [g] (hoặc chỉ cảnh báo nhẹ), vì ґ từng bị cấm thời Soviet 1933–1990 nên thực tế hay nhầm — NGOẠI LỆ CÓ CƠ SỞ LỊCH SỬ (như ё Nga). Áp tiền lệ pl D-64 cho phần (1); phần (2) là ngoại lệ owner-approved.",
+    "status": "VALIDATED"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Lưu ý: đối lập ти/ви (chọn đúng theo quan hệ), vocative khi gọi (Оксано!, пане Петре!), không dùng русизми (từ vay mượn Nga không chuẩn) — dùng từ Ukraina chuẩn (дякую không спасибі trong ngữ cảnh trang trọng), thì tương lai tổng hợp читатиму đặc trưng.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text chữ Kirin (đầy đủ і/ї/є/ґ/ь + dấu nháy '). TTS uk-UA đọc trực tiếp (chính tả đều nên TTS tốt; nhưng trọng âm di động không đánh dấu → engine phải biết vị trí, có thể sai với từ hiếm). Kế thừa _base/audio.rules.json. Locale: uk-UA. Văn bản PHẢI giữ і/ї/є/ґ (chữ riêng) + dấu nháy ' + ь.",
+    "status": "VALIDATED"
+  }
+}

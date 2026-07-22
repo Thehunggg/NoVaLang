@@ -1,0 +1,68 @@
+{
+  "id": "fr/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "liaison",
+  "enforces": [
+    "pronunciation.md"
+  ],
+  "sources": [
+    "S-WIKI-LIAISON",
+    "S-TRAINED-KNOWLEDGE",
+    "WIKIPRON"
+  ],
+  "derived_by": "human",
+  "config": {
+    "liaison_types": {
+      "obligatoire": {
+        "contexts": ["determiner + noun", "adjective + noun (khi tính từ đứng trước)", "sau giới từ/trạng từ ngắn"],
+        "example": ["les_amis", "un_ingénieur", "les_autres_entreprises"]
+      },
+      "interdite": {
+        "contexts": ["giữa danh từ số ít làm chủ ngữ và động từ theo sau", "giữa danh từ số ít và tính từ theo sau"],
+        "example_no_liaison": ["Le chat # est là (không nối)"]
+      },
+      "facultative": {
+        "contexts": ["sau dạng chia của être/avoir", "sau trạng từ dài", "giữa danh từ số nhiều và tính từ theo sau"],
+        "note": "Nối càng nhiều nghe càng trang trọng/thanh lịch — biến thiên theo phong cách nói, không sai nếu bỏ qua."
+      }
+    },
+    "confidence_note": "Xác nhận qua nhiều nguồn WebSearch độc lập (Master Your French, Comme une Française, Lawless French, Français interactif/UT Austin), đồng thuận hoàn toàn về 3 loại — nhưng chưa đối chiếu Grammaire officielle gốc (WebFetch bị chặn, D-51). confidence:medium.",
+    "nasal_vowels": {
+      "an_en": { "ipa": "ɑ̃", "example": "enfant" },
+      "in_ain_ein": { "ipa": "ɛ̃", "example": "pain" },
+      "on": { "ipa": "ɔ̃", "example": "bon" },
+      "un": { "ipa": "œ̃", "note": "Nhiều người Pháp hiện đại hợp nhất un vào ɛ̃ (biến thể vùng/thế hệ) — chưa xác nhận tỷ lệ thật." }
+    }
+  },
+  "checks": [
+    {
+      "id": "no-raw-liaison-consonant-leak-in-romanization",
+      "description": "Nếu có trường phiên âm/pronunciation riêng, không được để sót ký hiệu liaison chưa xử lý (vd dấu gạch dưới đánh dấu nội bộ).",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "_"
+      },
+      "fixtures": {
+        "pass": [
+          "lezami"
+        ],
+        "fail": [
+          "les_amis"
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "Les commotions cérébrales sont devenu si courantes dans ce sport qu'on les considére presque comme la routine.",
+      "les amis",
+      "un ingénieur"
+    ],
+    "fail": [
+      "les_amis",
+      ""
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD French-GSD (Bước 3 mục 6)."
+  }
+}

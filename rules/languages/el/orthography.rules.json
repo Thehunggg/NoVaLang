@@ -1,0 +1,60 @@
+{
+  "id": "el/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "diacritics_orthography",
+  "enforces": ["orthography.md", "writing-system.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "el-GR",
+    "script": "Greek (Grek), bicameral, 24 chữ, LTR",
+    "final_sigma": "σ ở đầu/giữa từ, ς ở CUỐI từ (bắt buộc theo vị trí)",
+    "accent_system": {
+      "system": "monotonic (chuẩn từ 1982)",
+      "marks": "tonos (´) đánh trọng âm trên nguyên âm âm tiết nhấn (bắt buộc với từ đa âm tiết) + dieresis (¨) tách nguyên âm (ϊ ϋ) + kết hợp (ΐ ΰ)",
+      "abolished": "polytonic (dấu mũ περισπωμένη + spiritus δασεία/ψιλή) — KHÔNG dùng trong el hiện đại",
+      "meaning_distinguishing": "tonos phân biệt nghĩa: πότε 'khi nào'/ποτέ 'không bao giờ'; νόμος 'luật'/νομός 'tỉnh'"
+    },
+    "punctuation": {
+      "question_mark": "; (ερωτηματικό, U+003B) — KHÔNG '?' Latin",
+      "semicolon": "· (άνω τελεία / ano teleia, U+00B7)",
+      "period_comma": ". , (như Latin)",
+      "quotes": "«…» (guillemets) hoặc \"…\""
+    },
+    "casing": {
+      "note": "Hoa đầu câu + danh từ riêng. KHÁC da/sv: tháng/thứ VIẾT HOA (Ιανουάριος, Δευτέρα). Chữ hoa đơn BỎ tonos (Α không Ά)."
+    }
+  },
+  "checks": [
+    {
+      "id": "monotonic-no-polytonic",
+      "description": "el hiện đại dùng hệ MONOTONIC — không được có ký tự polytonic (khối Greek Extended U+1F00–1FFF: dấu mũ/spiritus cổ). [corpus-check Bước 3 trên 4285 câu thật: 0 vi phạm.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[\\u1F00-\\u1FFF]"
+      },
+      "fixtures": {
+        "pass": ["Η Αθήνα είναι η πρωτεύουσα της Ελλάδας.", "Καλημέρα, τι κάνεις;"],
+        "fail": ["ἡ Ἀθῆναι ἐστι καλή."]
+      }
+    },
+    {
+      "id": "greek-question-mark",
+      "description": "Dấu hỏi tiếng Hy Lạp là ';' (U+003B), KHÔNG dùng '?' Latin. [corpus-check Bước 3 trên 4285 câu thật: 0 câu chứa '?'.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\?"
+      },
+      "fixtures": {
+        "pass": ["Τι ώρα είναι;", "Πώς σε λένε;"],
+        "fail": ["Τι ώρα είναι?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Καλημέρα!", "Πώς σε λένε;", "Η Ελλάδα είναι όμορφη."],
+    "fail": ["Πως σε λενε?", "ἡ πόλις"],
+    "_note": "pass minh hoạ monotonic + dấu hỏi Hy Lạp; corpus-check Bước 3 trên UD Greek thật (4285 câu) — cả 2 check 0% vi phạm."
+  }
+}

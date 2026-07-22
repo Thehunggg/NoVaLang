@@ -4,12 +4,82 @@
     "purpose": "Bản đồ: mỗi loại bài tập cần những hiện tượng ngôn ngữ nào. Generator của app BẮT BUỘC đọc file này; invariant 9 dùng nó để chặn sinh item thuộc hiện tượng có confidence:none trong coverage.json của ngôn ngữ.",
     "q15": "DEFERRED",
     "plans": { "free": "Q1-Q10", "plus": "Q11-Q14" },
-    "phenomenaVocabulary": [
-      "vocabulary_meaning", "native_translation", "target_orthography", "reading_system",
-      "word_order", "particles", "grammar_usage", "listening", "pronunciation",
-      "register", "pragmatics", "naturalness", "typing_input", "punctuation_layout",
-      "audio_playback", "reading_aid"
-    ]
+    "phenomenaVocabularyNote": "SỬA 2026-07-18 (Golden Lesson audit, C6 + việc-kế-tiếp mục 3): tên trong requiredPhenomena là tên TRỪU TƯỢNG, ổn định qua mọi ngôn ngữ (exercise không biết ngôn ngữ cụ thể). Trước đây validate.mjs (INV-9) chỉ đối chiếu các tên này với chính danh sách bên dưới (tự tham chiếu) — KHÔNG BAO GIỜ đối chiếu với coverage.json thật, nên register/naturalness/reading_aid/audio_playback... không bao giờ được phát hiện là không khớp register_taxonomy/naturalness_translation/reading_aid_policy/tts_audio_policy... Mỗi mục dưới đây giờ có 'coveragePhenomena' (danh sách phenomenon id THẬT áp dụng mặc định) và tuỳ chọn 'perLanguage' (override khi một ngôn ngữ dùng id khác hoặc không áp dụng). 'coveragePhenomena': null nghĩa là khái niệm curriculum, không phải phenomenon rule (không đối chiếu được, không phải lỗi). tools/validate.mjs INV-9 dùng đúng cấu trúc này để đối chiếu với coverage.json thật của từng ngôn ngữ.",
+    "phenomenaVocabulary": {
+      "vocabulary_meaning": {
+        "coveragePhenomena": null,
+        "note": "Khái niệm curriculum (nghĩa của một mục từ vựng cụ thể) — không phải một phenomenon rule trong coverage.json."
+      },
+      "native_translation": {
+        "coveragePhenomena": ["naturalness_translation"]
+      },
+      "target_orthography": {
+        "coveragePhenomena": ["writing_systems"],
+        "perLanguage": { "ja": ["writing_systems", "kana_orthography", "kanji_joyo"] }
+      },
+      "reading_system": {
+        "coveragePhenomena": null,
+        "perLanguage": { "ja": ["reading_system"], "zh": ["pinyin_romanization"] },
+        "note": "vi/en dùng chữ Latin trực tiếp — không có phenomenon 'bảng đọc riêng' tách khỏi chính tả."
+      },
+      "word_order": {
+        "coveragePhenomena": ["word_order"]
+      },
+      "particles": {
+        "coveragePhenomena": null,
+        "perLanguage": { "ja": ["particles"] },
+        "note": "Chỉ ja có coverage phenomenon trợ từ ngữ pháp dạng này hiện nay."
+      },
+      "grammar_usage": {
+        "coveragePhenomena": ["word_class"],
+        "perLanguage": {
+          "ja": ["word_class", "conjugation"],
+          "en": ["word_class", "inflection_morphology", "articles", "contractions"],
+          "vi": ["word_class", "inflection_morphology", "classifiers"],
+          "zh": ["word_class", "inflection_morphology", "classifiers"]
+        }
+      },
+      "listening": {
+        "coveragePhenomena": ["tts_audio_policy"]
+      },
+      "pronunciation": {
+        "coveragePhenomena": ["phoneme_inventory"],
+        "perLanguage": {
+          "ja": ["phoneme_inventory", "pronunciation_contextual", "mora_timing"],
+          "en": ["phoneme_inventory", "vowel_reduction", "lexical_stress", "accent_variety"],
+          "vi": ["phoneme_inventory", "tone_system", "syllable_structure"],
+          "zh": ["phoneme_inventory", "tone_system"]
+        }
+      },
+      "register": {
+        "coveragePhenomena": ["register_taxonomy"]
+      },
+      "pragmatics": {
+        "coveragePhenomena": ["forms_of_address"],
+        "perLanguage": {
+          "ja": ["forms_of_address", "sentence_final_particles", "honorifics_keigo"],
+          "vi": ["forms_of_address", "sentence_final_particles", "politeness_particle_da", "pronoun_system"],
+          "zh": ["forms_of_address", "sentence_final_particles", "pronoun_system"]
+        },
+        "note": "sentence_final_particles CHỈ đưa vào cho ja/vi/zh (có thật) — en có phenomenon này trong coverage.json nhưng confidence=none ĐÚNG (tiếng Anh không có trợ từ cuối câu kiểu này), không phải lỗ hổng, nên không đưa vào default để tránh INV-9 báo sai."
+      },
+      "naturalness": {
+        "coveragePhenomena": ["naturalness_translation"]
+      },
+      "typing_input": {
+        "coveragePhenomena": ["answer_acceptance_{lang}"],
+        "note": "INCOMPLETE — xem C1/G-02 (rules/decisions.md mục 0.1, rules/_legacy/golden-lesson-test-2026-07-18.md): chưa có spec chuẩn hoá romaji/tách từ riêng; hiện chỉ được phủ MỘT PHẦN bởi answer_acceptance_{lang} (khoan dung typo chung), chưa phải spec input romaji chuyên dụng."
+      },
+      "punctuation_layout": {
+        "coveragePhenomena": ["punctuation_layout"]
+      },
+      "audio_playback": {
+        "coveragePhenomena": ["tts_audio_policy"]
+      },
+      "reading_aid": {
+        "coveragePhenomena": ["reading_aid_policy"]
+      }
+    }
   },
   "exercises": [
     { "questionId": "Q1", "type": "meaning_multiple_choice", "plan": "free", "requiredPhenomena": ["vocabulary_meaning", "native_translation"] },

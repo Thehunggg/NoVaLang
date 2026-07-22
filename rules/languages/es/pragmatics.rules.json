@@ -1,0 +1,72 @@
+{
+  "id": "es/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": [
+    "style-and-register.md"
+  ],
+  "sources": [
+    "S-RAE-VOSEO-SESEO",
+    "S-TRAINED-KNOWLEDGE"
+  ],
+  "derived_by": "human",
+  "config": {
+    "address_forms": {
+      "tu": { "formality": "informal", "regions": "phổ biến khắp thế giới nói tiếng Tây Ban Nha, trừ vùng dùng voseo thay thế" },
+      "usted": { "formality": "formal", "regions": "phổ biến khắp nơi, chia động từ như ngôi 3 số ít" },
+      "vos": { "formality": "informal_regional", "regions": "Argentina, Uruguay, phần lớn Trung Mỹ, một số vùng Colombia/Bolivia — RAE xác nhận là đặc trưng vùng, không phải chuẩn quốc tế chung", "conjugation_note": "Chia động từ RIÊNG khác tú (vd tú hablas -> vos hablás)." },
+      "vosotros_vs_ustedes": {
+        "spain": "vosotros (số nhiều thân mật) khác ustedes (số nhiều trang trọng)",
+        "latin_america": "CHỈ dùng ustedes cho cả thân mật lẫn trang trọng số nhiều, không dùng vosotros trong giao tiếp thường ngày"
+      }
+    },
+    "baseline_dialect_proposal": {
+      "value": "GIẢ ĐỊNH CHƯA DUYỆT: tú + ustedes (không vosotros, không voseo) làm baseline trung tính quốc tế — tương tự cách en đã chọn 'General International English/en-US'.",
+      "reasoning": "tú được hiểu và dùng ở mọi vùng (kể cả vùng voseo, tú vẫn được hiểu dù ít dùng hơn); ustedes (thay vì vosotros) phủ được cả Tây Ban Nha lẫn Mỹ Latin cho ngôi 2 số nhiều, trong khi vosotros KHÔNG dùng ở Mỹ Latin.",
+      "status": "GIẢ ĐỊNH CẦN NGƯỜI DUYỆT B-01 — ảnh hưởng trực tiếp tới locale TTS (es-ES vs es-419), bảng chia động từ dạy, và toàn bộ nội dung xưng hô."
+    },
+    "ser_estar": {
+      "ser": "Bản chất/đặc điểm cố hữu, thời gian, nguồn gốc, nghề nghiệp, quan hệ (Soy médico. Es la una. Somos de Vietnam.)",
+      "estar": "Trạng thái/vị trí/tạm thời/kết quả (Estoy cansado. Está en Madrid. La puerta está abierta.)",
+      "confidence": "Đây là kiến thức ngữ pháp cơ bản chuẩn, dạy trong mọi giáo trình sơ cấp — nhưng CHƯA cross-check bằng nguồn thứ 2 độc lập đọc nguyên văn trong phiên này."
+    },
+    "register_taxonomy_mapping_proposal": {
+      "CASUAL": "tú/vos + từ vựng thân mật, rút gọn",
+      "NATURAL_NEUTRAL_POLITE": "tú chuẩn mực trung tính — mức mặc định app dạy",
+      "FORMAL": "usted",
+      "HONORIFIC_modifier": "KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja/ko — usted đã bao hàm lịch sự qua lựa chọn đại từ/chia động từ, không phải một modifier trực giao thêm. Cần xác nhận cách xử lý trong taxonomy 6-mức — xem GIẢ ĐỊNH B-02.",
+      "status": "ĐỀ XUẤT, CHƯA DUYỆT."
+    }
+  },
+  "checks": [
+    {
+      "id": "usted-triggers-third-person-verb-form",
+      "description": "usted chia động từ như ngôi 3 số ít (kiểm mẫu cố định, không phải kiểm tổng quát).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm tổng quát cần bảng chia động từ đầy đủ khi generator chạy, không phải regex tĩnh."
+      },
+      "fixtures": {
+        "pass": [
+          "¿Cómo está usted?"
+        ],
+        "fail": [
+          "¿Cómo estás usted?"
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "MADRID, 3 (EUROPA PRESS) Las tenistas españolas Anabel Medina, Carla Suárez, María José Martínez, Nuria Llagostera, Arantxa Parra y Lourdes Domínguez han decidido retirar su plante para disputar la próxima eliminatoria de la Copa Federación tras llegar a un acuerdo con la Real Federación Española de Tenis (RFET) después de más de cuatro horas de reunión en el Consejo Superior de Deportes (CSD) con la mediación del secretario de Estado para el Deporte, Jaime Lissavetzky.",
+      "¿Cómo está usted?",
+      "Soy médico."
+    ],
+    "fail": [
+      "¿Cómo estás usted?",
+      ""
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD Spanish-GSD (Bước 3 mục 6)."
+  }
+}

@@ -83,6 +83,10 @@ for (const f of managedMd) {
 if (!hadErr('INV-1')) OK('INV-1 cô lập ngôn ngữ: không phát hiện tham chiếu chéo trong file pipeline');
 
 // INV-3: FROZEN => version>=1.0.0 và depends_on cũng FROZEN
+// (D-49, 2026-07-18: Gate 5 — chờ 48h giữa VALIDATED và FROZEN — đã BỎ cho
+// phạm vi build rule ngôn ngữ. Review thật đến từ native review + corpus
+// check, không từ thời gian chờ. Không có kiểm 48h nào ở đây trước đây ngoài
+// dòng thông báo dưới; sửa lại cho khớp chính sách hiện hành.)
 for (const meta of Object.values(mdMeta)) {
   if (meta.status !== 'FROZEN') continue;
   if (!/^[1-9]\d*\.\d+\.\d+$/.test(meta.version || '')) E(3, `FROZEN cần version>=1.0.0: ${meta.rel}`);
@@ -91,7 +95,60 @@ for (const meta of Object.values(mdMeta)) {
     if (dm && dm.status !== 'FROZEN') E(3, `${meta.rel} FROZEN nhưng depends_on '${dep}' chưa FROZEN`);
   }
 }
-if (!hadErr('INV-3')) OK('INV-3 FROZEN: hợp lệ (48h VALIDATED kiểm qua pipeline-log khi freeze)');
+
+// INV-3 (mở rộng, Golden Lesson audit 2026-07-18, item 2 việc-kế-tiếp):
+// mdMeta ở trên chỉ phủ file .md pipeline-managed — hiện KHÔNG có file nào
+// (16 file ja FROZEN đều nằm trong narrative-allowlist, được miễn INV-2/3).
+// Trạng thái FROZEN THẬT nằm ở *.rules.json (version/status) + catalog.json
+// (ruleStatus) + coverage.json (_meta.stage/frozenAt) — layer trước đây
+// KHÔNG được INV-3 kiểm. Bổ sung: (a) mọi *.rules.json dưới _base/ và
+// _script/** cũng phải có version/status hợp lệ nếu tự nhận FROZEN; (b) mọi
+// ngôn ngữ đang FROZEN (catalog ruleStatus bắt đầu bằng FROZEN, hoặc
+// coverage._meta.stage chứa 'frozen') phải có coverage._meta.baseDependencies
+// khớp với version HIỆN TẠI trên đĩa của từng _base/_script layer nó phụ
+// thuộc — nếu lệch (ai đó sửa _base/_script mà không qua change control cho
+// ngôn ngữ phụ thuộc) → CHẶN (lỗi), không tự hạ trạng thái ngôn ngữ.
+const baseScriptJsonFiles = rulesFilesForInv3();
+function rulesFilesForInv3() {
+  return files.filter(
+    (f) => f.rel.endsWith('.rules.json') && (f.rel.startsWith('rules/_base/') || f.rel.startsWith('rules/_script/')),
+  );
+}
+const liveLayerVersions = {}; // id -> version (chỉ file có version/status hợp lệ)
+for (const f of baseScriptJsonFiles) {
+  let j;
+  try { j = readJson(f.abs); } catch { continue; }
+  if (!j.id) continue;
+  if (j.status !== undefined || j.version !== undefined) {
+    if (j.status && !FM.status.includes(j.status)) E(3, `status lạ '${j.status}': ${f.rel}`);
+    if (j.status === 'FROZEN' && !/^[1-9]\d*\.\d+\.\d+$/.test(j.version || '')) {
+      E(3, `${f.rel} status FROZEN nhưng version không phải semver >=1.0.0`);
+    }
+  }
+  if (j.version) liveLayerVersions[j.id] = j.version;
+}
+for (const l of catalog.languages || []) {
+  const frozenByCatalog = typeof l.ruleStatus === 'string' && l.ruleStatus.startsWith('FROZEN');
+  const covPath = join(RULES, 'languages', l.code, 'coverage.json');
+  if (!existsSync(covPath)) continue;
+  const cov = readJson(covPath);
+  const stage = cov._meta && cov._meta.stage;
+  const frozenByCoverage = typeof stage === 'string' && stage.includes('frozen');
+  if (!frozenByCatalog && !frozenByCoverage) continue;
+  const pinned = (cov._meta && cov._meta.baseDependencies) || null;
+  if (!pinned) {
+    W(3, `${l.code} FROZEN nhưng coverage._meta.baseDependencies chưa có — không đối chiếu được version _base/_script`);
+    continue;
+  }
+  for (const [id, pinnedVersion] of Object.entries(pinned)) {
+    const liveVersion = liveLayerVersions[id];
+    if (!liveVersion) { W(3, `${l.code}: lớp phụ thuộc '${id}' (pin ${pinnedVersion}) không còn tồn tại/không có version`); continue; }
+    if (liveVersion !== pinnedVersion) {
+      E(3, `${l.code} đang khai FROZEN nhưng lớp phụ thuộc '${id}' đã đổi version kể từ lúc freeze (pin ${pinnedVersion} -> hiện tại ${liveVersion}) — cần re-validate ngôn ngữ này trước khi coi FROZEN hợp lệ`);
+    }
+  }
+}
+if (!hadErr('INV-3')) OK('INV-3 FROZEN: hợp lệ (D-49: không còn yêu cầu chờ 48h; đã đối chiếu version _base/_script với bản chụp lúc freeze)');
 
 // INV-4 + INV-5: *.rules.json có id + >=1 fixture pass và >=1 fail
 const rulesFiles = files.filter((f) => f.rel.endsWith('.rules.json'));
@@ -155,19 +212,61 @@ for (const f of managedMd) {
 }
 if (!hadErr('INV-8')) OK('INV-8 sources: mọi tham chiếu nguồn hợp lệ');
 
-// INV-9: exercise-phenomena.map.json hợp lệ
+// INV-9: exercise-phenomena.map.json hợp lệ VÀ khớp coverage.json THẬT
+// (Golden Lesson audit 2026-07-18, C6 + việc-kế-tiếp mục 3: trước đây chỉ
+// đối chiếu tự tham chiếu với chính phenomenaVocabulary — không bao giờ
+// phát hiện được register/naturalness/reading_aid/audio_playback... không
+// khớp register_taxonomy/naturalness_translation/reading_aid_policy/
+// tts_audio_policy... trong coverage.json thật. Nay dùng
+// phenomenaVocabulary[name].coveragePhenomena (+ perLanguage override) để
+// đối chiếu với coverage.json của từng ngôn ngữ có trong catalog.)
 const mapPath = join(RULES, 'exercise-phenomena.map.json');
 if (!existsSync(mapPath)) E(9, 'thiếu rules/exercise-phenomena.map.json');
 else {
   const map = readJson(mapPath);
-  const vocab = new Set((map._meta && map._meta.phenomenaVocabulary) || []);
+  const vocab = (map._meta && map._meta.phenomenaVocabulary) || {};
+  const vocabIsObject = vocab && typeof vocab === 'object' && !Array.isArray(vocab);
+  if (!vocabIsObject) {
+    E(9, 'phenomenaVocabulary phải là object {tên: {coveragePhenomena, perLanguage?}}, không phải mảng phẳng (tự tham chiếu cũ)');
+  }
+  const coverageCache = {};
+  const covOf = (lang) => {
+    if (lang in coverageCache) return coverageCache[lang];
+    const p = join(RULES, 'languages', lang, 'coverage.json');
+    coverageCache[lang] = existsSync(p) ? readJson(p) : null;
+    return coverageCache[lang];
+  };
+  const langsWithCoverage = (catalog.languages || []).map((l) => l.code).filter((c) => existsSync(join(RULES, 'languages', c, 'coverage.json')));
+
   for (const ex of map.exercises || []) {
     if (!ex.questionId || !ex.type) E(9, 'exercise thiếu questionId/type');
     for (const p of ex.requiredPhenomena || []) {
-      if (vocab.size && !vocab.has(p)) W(9, `${ex.questionId} dùng phenomenon '${p}' không có trong phenomenaVocabulary`);
+      const entry = vocabIsObject ? vocab[p] : undefined;
+      if (!entry) { E(9, `${ex.questionId} dùng phenomenon '${p}' không có trong phenomenaVocabulary`); continue; }
+      for (const lang of langsWithCoverage) {
+        const effective = (entry.perLanguage && entry.perLanguage[lang]) || entry.coveragePhenomena;
+        if (!effective) continue; // null = khái niệm curriculum hoặc không áp dụng cho ngôn ngữ này — không phải lỗi
+        const cov = covOf(lang);
+        if (!cov) continue;
+        const covStage = cov._meta && cov._meta.stage;
+        const isUsable = typeof covStage === 'string' && (covStage.includes('frozen') || covStage === 'validated');
+        for (const rawId of effective) {
+          const covId = rawId.replace('{lang}', lang);
+          const ph = cov[covId];
+          if (!ph) {
+            W(9, `${ex.questionId} ('${p}') -> '${covId}' không có trong coverage.json của ${lang}`);
+            continue;
+          }
+          const conf = ph.rule_level && ph.rule_level.confidence;
+          if (conf === 'none') {
+            const msg = `${ex.questionId} ('${p}') -> '${covId}' trong coverage.json của ${lang} có rule_level.confidence=none — không đủ căn cứ để generator sinh bài`;
+            if (isUsable) E(9, msg); else W(9, msg);
+          }
+        }
+      }
     }
   }
-  if (!hadErr('INV-9')) OK(`INV-9 map: ${(map.exercises || []).length} bài, phenomena hợp lệ`);
+  if (!hadErr('INV-9')) OK(`INV-9 map: ${(map.exercises || []).length} bài, phenomena khớp coverage.json thật của ${langsWithCoverage.length} ngôn ngữ`);
 }
 
 // Extra: catalog

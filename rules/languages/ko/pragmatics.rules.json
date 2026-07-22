@@ -1,0 +1,61 @@
+{
+  "id": "ko/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "speech_level_endings",
+  "enforces": [
+    "style-and-register.md"
+  ],
+  "sources": [
+    "S-WIKI-SPEECHLEVELS",
+    "S-TRAINED-KNOWLEDGE"
+  ],
+  "derived_by": "human",
+  "config": {
+    "structural_note": "KHÁC ja: tiếng Hàn KHÔNG có trợ từ cuối câu tuỳ chọn kiểu ね/よ tách rời khỏi lịch sự. Lịch sự + loại câu (trần thuật/nghi vấn/mệnh lệnh/đề nghị) GỘP LÀM MỘT trong đuôi động từ/tính từ cuối câu — bắt buộc ngữ pháp, không thể bỏ qua.",
+    "modern_active_levels": [
+      { "id": "hasipsio_che", "hangul": "하십시오체", "use": "Formal cao nhất còn dùng phổ biến — dịch vụ công cộng, phát thanh, kinh doanh, phát biểu.", "example_statement": "습니다", "example_question": "습니까" },
+      { "id": "haeyo_che", "hangul": "해요체", "use": "Lịch sự thường ngày — người lạ, đồng nghiệp, người lớn tuổi hơn không thân. Mức mặc định NATURAL_NEUTRAL_POLITE của app.", "example_statement": "아요/어요" },
+      { "id": "hae_che", "hangul": "해체", "alias": "반말 (banmal)", "use": "Thân mật — bạn bè thân, người nhỏ tuổi hơn/em út trong gia đình.", "example_statement": "아/어 (bỏ 요)" }
+    ],
+    "archaic_or_rare_levels": [
+      "하오체 (hao-che)",
+      "하게체 (hage-che)",
+      "해라체 (haera-che, vẫn dùng trong văn viết/truyền thông trung lập, không hẳn archaic)",
+      "하소서체 (hasoseo-che, cổ/hoàng gia, ngoài scope)"
+    ],
+    "app_scope_note": "GIẢ ĐỊNH CẦN NGƯỜI DUYỆT A-02: đề xuất app chỉ dạy chủ động 3 mức hiện đại (하십시오체/해요체/해체), các mức còn lại chỉ nêu tên khi cần (vd đọc hiểu văn bản trang trọng) — CHƯA duyệt.",
+    "register_taxonomy_mapping_proposal": {
+      "CASUAL": "hae_che (해체/반말)",
+      "NATURAL_NEUTRAL_POLITE": "haeyo_che (해요체)",
+      "FORMAL": "hasipsio_che (하십시오체)",
+      "HONORIFIC_modifier": "Chủ ngữ kính ngữ -시- (subject honorification) và khiêm nhường ngữ (humble forms, vd 드리다 thay cho 주다) — TRỰC GIAO với 3 mức trên, không phải một mức riêng, giống cấu trúc HONORIFIC của ja.",
+      "status": "ĐỀ XUẤT, CHƯA DUYỆT — xem GIẢ ĐỊNH CẦN NGƯỜI DUYỆT A-02."
+    },
+    "_bước3_finding": "Ban đầu 2 quy tắc dưới đây (haeyo-che/hasipsio-che ending) viết dạng checks[] regex_present, áp lên TOÀN BỘ corpus UD Korean-GSD/PUD (7339 câu văn viết bách khoa/tường thuật trung lập, KHÔNG phải hội thoại trực tiếp) — kết quả 85.62%/95.95% 'vi phạm', đúng dấu hiệu 'RULE NGHI NGỜ SAI' của corpus-check.mjs. Nguyên nhân THẬT: quy tắc không sai về mặt ngôn ngữ học, mà bị áp SAI PHẠM VI — văn tường thuật/bách khoa tiếng Hàn dùng thể trần thuật trung lập (다/이다/했다...), không phải 해요체/하십시오체 (hai thể chỉ xuất hiện khi có người nói trực tiếp hướng tới người nghe cụ thể). Đây là phát hiện thật, đúng vai trò Bước 3 (rule bị vi phạm hàng loạt = rule sai chỗ áp dụng, không phải văn bản sai) — không phải bug cần 'sửa quy tắc', mà là bug 'áp quy tắc nhầm loại văn bản'. Sửa: bỏ khỏi checks[] (không corpus-check ở mức toàn-dòng), chuyển thành ending_patterns mô tả — validator thật (sau này) chỉ áp khi có nhãn speech-level đã biết cho câu đó, không áp mù lên mọi câu.",
+    "ending_patterns": {
+      "haeyo_che": {
+        "pattern_note": "Câu ở mức 해요체 kết thúc bằng 요 (sau khi bỏ dấu câu).",
+        "example_pass": ["저는 학생이에요.", "이거 뭐예요?"],
+        "example_fail_wrong_level": ["저는 학생이야."]
+      },
+      "hasipsio_che": {
+        "pattern_note": "Câu ở mức 하십시오체 kết thúc bằng 습니다/습니까/ㅂ니다/ㅂ니까.",
+        "example_pass": ["감사합니다.", "어디십니까?"],
+        "example_fail_wrong_level": ["감사해요."]
+      }
+    }
+  },
+  "fixtures": {
+    "pass": [
+      "저는 학생이에요.",
+      "감사합니다.",
+      "이종범이 누구야"
+    ],
+    "fail": [
+      "저는학생이에요",
+      ""
+    ],
+    "_note": "'이종범이 누구야' lấy từ corpus thật UD Korean-GSD (해체/반말 tự nhiên trong văn nói)."
+  }
+}

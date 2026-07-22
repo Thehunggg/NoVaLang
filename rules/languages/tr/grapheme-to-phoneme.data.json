@@ -1,0 +1,218 @@
+{
+  "id": "tr/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 12321,
+    "byScript": {
+      "tur_latn_broad": {
+        "count": 12321,
+        "sample": [
+          [
+            "Abana",
+            "a b a n a"
+          ],
+          [
+            "Acem",
+            "a d͡ʒ e m"
+          ],
+          [
+            "Acıgöl",
+            "a d͡ʒ ɯ ɟ ø l"
+          ],
+          [
+            "Acıpayam",
+            "a d͡ʒ ɯ pʰ a̟ j a̟ m"
+          ],
+          [
+            "Adaklı",
+            "a d a k ɫ ɯ"
+          ],
+          [
+            "Adal",
+            "ɑ d ɑ ɫ"
+          ],
+          [
+            "Adalar",
+            "a d a ɫ a ɾ"
+          ],
+          [
+            "Adalet",
+            "a d aː l e t"
+          ],
+          [
+            "Adana",
+            "ɑ d ɑ n ɑ"
+          ],
+          [
+            "Adapazarı",
+            "a d a p a z a ɾ ɯ"
+          ],
+          [
+            "Adilcevaz",
+            "aː d i l d ʒ e v a z"
+          ],
+          [
+            "Adıyaman",
+            "a d ɯ j a m a n"
+          ],
+          [
+            "Afganistan",
+            "a f ɡ a n i s t a n"
+          ],
+          [
+            "Afyonkarahisar",
+            "a f j o n k a ɾ a h i s a ɾ"
+          ],
+          [
+            "Afyonkarahisarlı",
+            "a f j o n k a ɾ a h i s a ɾ ɫ ɯ"
+          ],
+          [
+            "Afşar",
+            "a f ʃ a ɾ"
+          ],
+          [
+            "Afşin",
+            "a f ʃ i n"
+          ],
+          [
+            "Ahlat",
+            "a h ɫ a t"
+          ],
+          [
+            "Ahmetli",
+            "a x m e t l i"
+          ],
+          [
+            "Ahu",
+            "aː h u"
+          ],
+          [
+            "Ahırlı",
+            "a h ɯ ɾ ɫ ɯ"
+          ],
+          [
+            "Akdağmadeni",
+            "a k d aː m a d e n i"
+          ],
+          [
+            "Akdeniz",
+            "a k d e n i z"
+          ],
+          [
+            "Akdoğu",
+            "a k d oː u"
+          ],
+          [
+            "Akhisar",
+            "a k ç i s a ɾ̥"
+          ],
+          [
+            "Akkuş",
+            "a k k u ʃ"
+          ],
+          [
+            "Akkışla",
+            "a k kʰ ɯ ʃ ɫ a"
+          ],
+          [
+            "Akpazar",
+            "a k p a z a ɾ"
+          ],
+          [
+            "Akpınar",
+            "a k p ɯ n a ɾ"
+          ],
+          [
+            "Aksaray",
+            "ɑ k s ɑ ɾ ɑ j"
+          ],
+          [
+            "Akseki",
+            "a k s e c i"
+          ],
+          [
+            "Aksoy",
+            "a k s o j"
+          ],
+          [
+            "Aksu",
+            "a k s u"
+          ],
+          [
+            "Akyaka",
+            "a k j a k a"
+          ],
+          [
+            "Akyazı",
+            "a k j a̟ z ɯ"
+          ],
+          [
+            "Akyurt",
+            "a k j u̟ ɾ tʰ"
+          ],
+          [
+            "Akçaabat",
+            "a k t͡ʃ aː b a t"
+          ],
+          [
+            "Akçadağ",
+            "a k t ʃ a d aː"
+          ],
+          [
+            "Akçakale",
+            "a k t ʃʰ a kʰ a l e"
+          ],
+          [
+            "Akçakent",
+            "a k t͡ʃ a c e n t"
+          ],
+          [
+            "Akçakoca",
+            "a k t͡ʃ a k o d͡ʒ a"
+          ],
+          [
+            "Akören",
+            "a k̟ʰ ø ɾ ɛ n"
+          ],
+          [
+            "Akın",
+            "a k ɯ n"
+          ],
+          [
+            "Akıncılar",
+            "a k ɯ n d͡ʒ ɯ ɫ a ɾ"
+          ],
+          [
+            "Akşehir",
+            "a k ʃ e ç i ɾ̥"
+          ],
+          [
+            "Alaca",
+            "a ɫ a d͡ʒ a"
+          ],
+          [
+            "Alacakaya",
+            "a ɫ a d͡ʒ a k a j a"
+          ],
+          [
+            "Aladağ",
+            "a ɫ a d aː"
+          ],
+          [
+            "Alakaya",
+            "a ɫ a k a j a"
+          ],
+          [
+            "Alanya",
+            "ɑ ɫ ɑ n j ɑ"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/tur_latn_broad.tsv"
+      }
+    }
+  }
+}

@@ -75,6 +75,21 @@
     "fallbackLocale": "en"
   },
   {
+    "code": "yue",
+    "englishName": "Cantonese",
+    "nativeName": "廣東話",
+    "flagEmoji": "🇭🇰",
+    "aliases": [
+      "cantonese",
+      "廣東話",
+      "yue"
+    ],
+    "direction": "ltr",
+    "isSupportedAsNative": true,
+    "isAvailableForUi": false,
+    "fallbackLocale": "en"
+  },
+  {
     "code": "es",
     "englishName": "Spanish",
     "nativeName": "Español",
@@ -225,14 +240,14 @@
     "fallbackLocale": "en"
   },
   {
-    "code": "no",
+    "code": "nb",
     "englishName": "Norwegian",
     "nativeName": "Norsk",
     "flagEmoji": "🇳🇴",
     "aliases": [
       "norwegian",
       "norsk",
-      "no"
+      "nb"
     ],
     "direction": "ltr",
     "isSupportedAsNative": true,
@@ -600,14 +615,14 @@
     "fallbackLocale": "en"
   },
   {
-    "code": "tl",
+    "code": "fil",
     "englishName": "Filipino / Tagalog",
     "nativeName": "Filipino",
     "flagEmoji": "🇵🇭",
     "aliases": [
       "filipino / tagalog",
       "filipino",
-      "tl"
+      "fil"
     ],
     "direction": "ltr",
     "isSupportedAsNative": true,
@@ -720,21 +735,6 @@
     "fallbackLocale": "en"
   },
   {
-    "code": "af",
-    "englishName": "Afrikaans",
-    "nativeName": "Afrikaans",
-    "flagEmoji": "🇿🇦",
-    "aliases": [
-      "afrikaans",
-      "afrikaans",
-      "af"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
     "code": "zu",
     "englishName": "Zulu",
     "nativeName": "isiZulu",
@@ -743,21 +743,6 @@
       "zulu",
       "isizulu",
       "zu"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "xh",
-    "englishName": "Xhosa",
-    "nativeName": "isiXhosa",
-    "flagEmoji": "🇿🇦",
-    "aliases": [
-      "xhosa",
-      "isixhosa",
-      "xh"
     ],
     "direction": "ltr",
     "isSupportedAsNative": true,
@@ -795,21 +780,6 @@
     "fallbackLocale": "en"
   },
   {
-    "code": "ig",
-    "englishName": "Igbo",
-    "nativeName": "Igbo",
-    "flagEmoji": "🇳🇬",
-    "aliases": [
-      "igbo",
-      "igbo",
-      "ig"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
     "code": "ha",
     "englishName": "Hausa",
     "nativeName": "Hausa",
@@ -818,21 +788,6 @@
       "hausa",
       "hausa",
       "ha"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "so",
-    "englishName": "Somali",
-    "nativeName": "Soomaali",
-    "flagEmoji": "🇸🇴",
-    "aliases": [
-      "somali",
-      "soomaali",
-      "so"
     ],
     "direction": "ltr",
     "isSupportedAsNative": true,
@@ -863,51 +818,6 @@
       "sinhala",
       "සිංහල",
       "si"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "ka",
-    "englishName": "Georgian",
-    "nativeName": "ქართული",
-    "flagEmoji": "🇬🇪",
-    "aliases": [
-      "georgian",
-      "ქართული",
-      "ka"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "hy",
-    "englishName": "Armenian",
-    "nativeName": "Հայերեն",
-    "flagEmoji": "🇦🇲",
-    "aliases": [
-      "armenian",
-      "հայերեն",
-      "hy"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "az",
-    "englishName": "Azerbaijani",
-    "nativeName": "Azərbaycanca",
-    "flagEmoji": "🇦🇿",
-    "aliases": [
-      "azerbaijani",
-      "azərbaycanca",
-      "az"
     ],
     "direction": "ltr",
     "isSupportedAsNative": true,
@@ -960,21 +870,6 @@
     "fallbackLocale": "en"
   },
   {
-    "code": "sl",
-    "englishName": "Slovenian",
-    "nativeName": "Slovenščina",
-    "flagEmoji": "🌐",
-    "aliases": [
-      "slovenian",
-      "slovenščina",
-      "sl"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
     "code": "lt",
     "englishName": "Lithuanian",
     "nativeName": "Lietuvių",
@@ -990,81 +885,6 @@
     "fallbackLocale": "en"
   },
   {
-    "code": "lv",
-    "englishName": "Latvian",
-    "nativeName": "Latviešu",
-    "flagEmoji": "🇱🇻",
-    "aliases": [
-      "latvian",
-      "latviešu",
-      "lv"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "et",
-    "englishName": "Estonian",
-    "nativeName": "Eesti",
-    "flagEmoji": "🇪🇪",
-    "aliases": [
-      "estonian",
-      "eesti",
-      "et"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "is",
-    "englishName": "Icelandic",
-    "nativeName": "Íslenska",
-    "flagEmoji": "🇮🇸",
-    "aliases": [
-      "icelandic",
-      "íslenska",
-      "is"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "ga",
-    "englishName": "Irish",
-    "nativeName": "Gaeilge",
-    "flagEmoji": "🇮🇪",
-    "aliases": [
-      "irish",
-      "gaeilge",
-      "ga"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "cy",
-    "englishName": "Welsh",
-    "nativeName": "Cymraeg",
-    "flagEmoji": "🇬🇧",
-    "aliases": [
-      "welsh",
-      "cymraeg",
-      "cy"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
     "code": "ca",
     "englishName": "Catalan",
     "nativeName": "Català",
@@ -1073,426 +893,6 @@
       "catalan",
       "català",
       "ca"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "eu",
-    "englishName": "Basque",
-    "nativeName": "Euskara",
-    "flagEmoji": "🇪🇸",
-    "aliases": [
-      "basque",
-      "euskara",
-      "eu"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "gl",
-    "englishName": "Galician",
-    "nativeName": "Galego",
-    "flagEmoji": "🇪🇸",
-    "aliases": [
-      "galician",
-      "galego",
-      "gl"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "la",
-    "englishName": "Latin",
-    "nativeName": "Latina",
-    "flagEmoji": "🏛️",
-    "aliases": [
-      "latin",
-      "latina",
-      "la"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "eo",
-    "englishName": "Esperanto",
-    "nativeName": "Esperanto",
-    "flagEmoji": "🌐",
-    "aliases": [
-      "esperanto",
-      "esperanto",
-      "eo"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "sq",
-    "englishName": "Albanian",
-    "nativeName": "Shqip",
-    "flagEmoji": "🇦🇱",
-    "aliases": [
-      "albanian",
-      "shqip",
-      "sq"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "mk",
-    "englishName": "Macedonian",
-    "nativeName": "Македонски",
-    "flagEmoji": "🇲🇰",
-    "aliases": [
-      "macedonian",
-      "македонски",
-      "mk"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "bs",
-    "englishName": "Bosnian",
-    "nativeName": "Bosanski",
-    "flagEmoji": "🇧🇦",
-    "aliases": [
-      "bosnian",
-      "bosanski",
-      "bs"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "mt",
-    "englishName": "Maltese",
-    "nativeName": "Malti",
-    "flagEmoji": "🇲🇹",
-    "aliases": [
-      "maltese",
-      "malti",
-      "mt"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "be",
-    "englishName": "Belarusian",
-    "nativeName": "Беларуская",
-    "flagEmoji": "🇧🇾",
-    "aliases": [
-      "belarusian",
-      "беларуская",
-      "be"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "jv",
-    "englishName": "Javanese",
-    "nativeName": "Basa Jawa",
-    "flagEmoji": "🇮🇩",
-    "aliases": [
-      "javanese",
-      "basa jawa",
-      "jv"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "ceb",
-    "englishName": "Cebuano",
-    "nativeName": "Cebuano",
-    "flagEmoji": "🇵🇭",
-    "aliases": [
-      "cebuano",
-      "cebuano",
-      "ceb"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "haw",
-    "englishName": "Hawaiian",
-    "nativeName": "ʻŌlelo Hawaiʻi",
-    "flagEmoji": "🌺",
-    "aliases": [
-      "hawaiian",
-      "ʻōlelo hawaiʻi",
-      "haw"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "mi",
-    "englishName": "Māori",
-    "nativeName": "Te Reo Māori",
-    "flagEmoji": "🇳🇿",
-    "aliases": [
-      "māori",
-      "te reo māori",
-      "mi"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "ht",
-    "englishName": "Haitian Creole",
-    "nativeName": "Kreyòl ayisyen",
-    "flagEmoji": "🇭🇹",
-    "aliases": [
-      "haitian creole",
-      "kreyòl ayisyen",
-      "ht"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "qu",
-    "englishName": "Quechua",
-    "nativeName": "Runa Simi",
-    "flagEmoji": "🇵🇪",
-    "aliases": [
-      "quechua",
-      "runa simi",
-      "qu"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "gn",
-    "englishName": "Guaraní",
-    "nativeName": "Avañe'ẽ",
-    "flagEmoji": "🇵🇾",
-    "aliases": [
-      "guaraní",
-      "avañe'ẽ",
-      "gn"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "yi",
-    "englishName": "Yiddish",
-    "nativeName": "ייִדיש",
-    "flagEmoji": "🌐",
-    "aliases": [
-      "yiddish",
-      "ייִדיש",
-      "yi"
-    ],
-    "direction": "rtl",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "lb",
-    "englishName": "Luxembourgish",
-    "nativeName": "Lëtzebuergesch",
-    "flagEmoji": "🇱🇺",
-    "aliases": [
-      "luxembourgish",
-      "lëtzebuergesch",
-      "lb"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "gd",
-    "englishName": "Scottish Gaelic",
-    "nativeName": "Gàidhlig",
-    "flagEmoji": "🇬🇧",
-    "aliases": [
-      "scottish gaelic",
-      "gàidhlig",
-      "gd"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "br",
-    "englishName": "Breton",
-    "nativeName": "Brezhoneg",
-    "flagEmoji": "🇫🇷",
-    "aliases": [
-      "breton",
-      "brezhoneg",
-      "br"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "fo",
-    "englishName": "Faroese",
-    "nativeName": "Føroyskt",
-    "flagEmoji": "🇫🇴",
-    "aliases": [
-      "faroese",
-      "føroyskt",
-      "fo"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "se",
-    "englishName": "Northern Sami",
-    "nativeName": "Davvisámegiella",
-    "flagEmoji": "🇳🇴",
-    "aliases": [
-      "northern sami",
-      "davvisámegiella",
-      "se"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "mg",
-    "englishName": "Malagasy",
-    "nativeName": "Malagasy",
-    "flagEmoji": "🇲🇬",
-    "aliases": [
-      "malagasy",
-      "malagasy",
-      "mg"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "rw",
-    "englishName": "Kinyarwanda",
-    "nativeName": "Ikinyarwanda",
-    "flagEmoji": "🇷🇼",
-    "aliases": [
-      "kinyarwanda",
-      "ikinyarwanda",
-      "rw"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "sn",
-    "englishName": "Shona",
-    "nativeName": "ChiShona",
-    "flagEmoji": "🇿🇼",
-    "aliases": [
-      "shona",
-      "chishona",
-      "sn"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "ps",
-    "englishName": "Pashto",
-    "nativeName": "پښتو",
-    "flagEmoji": "🇦🇫",
-    "aliases": [
-      "pashto",
-      "پښتو",
-      "ps"
-    ],
-    "direction": "rtl",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "ku",
-    "englishName": "Kurdish",
-    "nativeName": "Kurdî",
-    "flagEmoji": "🌐",
-    "aliases": [
-      "kurdish",
-      "kurdî",
-      "ku"
-    ],
-    "direction": "ltr",
-    "isSupportedAsNative": true,
-    "isAvailableForUi": false,
-    "fallbackLocale": "en"
-  },
-  {
-    "code": "bo",
-    "englishName": "Tibetan",
-    "nativeName": "བོད་ཡིག",
-    "flagEmoji": "🏔️",
-    "aliases": [
-      "tibetan",
-      "བོད་ཡིག",
-      "bo"
     ],
     "direction": "ltr",
     "isSupportedAsNative": true,

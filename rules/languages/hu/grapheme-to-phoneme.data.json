@@ -1,0 +1,218 @@
+{
+  "id": "hu/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 64764,
+    "byScript": {
+      "hun_latn_narrow": {
+        "count": 64764,
+        "sample": [
+          [
+            "A",
+            "aː"
+          ],
+          [
+            "A",
+            "ɒː"
+          ],
+          [
+            "AEÁ",
+            "ɒ ɛ aː"
+          ],
+          [
+            "AH",
+            "ɒ ɦ aː"
+          ],
+          [
+            "AIDS",
+            "eː t͡s"
+          ],
+          [
+            "AIDS",
+            "eː t͡sː"
+          ],
+          [
+            "APEH",
+            "ɒ p ɛ x"
+          ],
+          [
+            "Aachen",
+            "aː ɦ ɛ n"
+          ],
+          [
+            "Aba",
+            "ɒ b ɒ"
+          ],
+          [
+            "Abajkovics",
+            "ɒ b ɒ j k o v i t͡ʃ"
+          ],
+          [
+            "Abaliget",
+            "ɒ b ɒ l i ɡ ɛ t"
+          ],
+          [
+            "Abasár",
+            "ɒ b ɒ ʃ aː r"
+          ],
+          [
+            "Abaújlak",
+            "ɒ b ɒ uː j l ɒ k"
+          ],
+          [
+            "Abaújszántó",
+            "ɒ b ɒ uː j s aː n t oː"
+          ],
+          [
+            "Abbázia",
+            "ɒ bː aː z i j ɒ"
+          ],
+          [
+            "Abda",
+            "ɒ b d ɒ"
+          ],
+          [
+            "Aberdeen",
+            "ɒ b ɛ r d iː n"
+          ],
+          [
+            "Abházia",
+            "ɒ p h aː z i j ɒ"
+          ],
+          [
+            "Abidjan",
+            "ɒ b i d͡ʒː aː n"
+          ],
+          [
+            "Abigél",
+            "ɒ b i ɡ eː l"
+          ],
+          [
+            "Abkarovics",
+            "ɒ p k ɒ r o v i t͡ʃ"
+          ],
+          [
+            "Abodi",
+            "ɒ b o d i"
+          ],
+          [
+            "Abony",
+            "ɒ b o ɲ"
+          ],
+          [
+            "Abádszalók",
+            "ɒ b aː t͡sː ɒ l oː k"
+          ],
+          [
+            "Abán",
+            "ɒ b aː n"
+          ],
+          [
+            "Abát",
+            "ɒ b aː t"
+          ],
+          [
+            "Aconcagua",
+            "ɒ k o ŋ k ɒ ɡ v ɒ"
+          ],
+          [
+            "Ada",
+            "ɒ d ɒ"
+          ],
+          [
+            "Adolf",
+            "ɒ d o l f"
+          ],
+          [
+            "Adony",
+            "ɒ d o ɲ"
+          ],
+          [
+            "Adorján",
+            "ɒ d o r j aː n"
+          ],
+          [
+            "Adri",
+            "ɒ d r i"
+          ],
+          [
+            "Adria",
+            "ɒ d r i j ɒ"
+          ],
+          [
+            "Adrienn",
+            "ɒ d r i j ɛ nː"
+          ],
+          [
+            "Ady",
+            "ɒ d i"
+          ],
+          [
+            "Adél",
+            "ɒ d eː l"
+          ],
+          [
+            "Afganisztán",
+            "ɒ v ɡ ɒ n i s t aː n"
+          ],
+          [
+            "Afrika",
+            "ɒ f r i k ɒ"
+          ],
+          [
+            "Agamemnón",
+            "ɒ ɡ ɒ m ɛ m n oː n"
+          ],
+          [
+            "Agárd",
+            "ɒ ɡ aː r d"
+          ],
+          [
+            "Ajak",
+            "ɒ j ɒ k"
+          ],
+          [
+            "Ajka",
+            "ɒ j k ɒ"
+          ],
+          [
+            "Ajtai",
+            "ɒ j t ɒ j i"
+          ],
+          [
+            "Aka",
+            "ɒ k ɒ"
+          ],
+          [
+            "Akasztó",
+            "ɒ k ɒ s t oː"
+          ],
+          [
+            "Akhilleusz",
+            "ɒ k i lː ɛ u s"
+          ],
+          [
+            "Aladár",
+            "ɒ l ɒ d aː r"
+          ],
+          [
+            "Alaszka",
+            "ɒ l ɒ s k ɒ"
+          ],
+          [
+            "Albert",
+            "ɒ l b ɛ r t"
+          ],
+          [
+            "Albertirsa",
+            "ɒ l b ɛ r t i r ʃ ɒ"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/hun_latn_narrow.tsv"
+      }
+    }
+  }
+}

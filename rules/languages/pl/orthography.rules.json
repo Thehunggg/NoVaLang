@@ -1,0 +1,44 @@
+{
+  "id": "pl/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR"],
+  "derived_by": "human",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "„”",
+    "diacritics_are_letters": "ą ć ę ł ń ó ś ź ż là CHỮ CÁI THẬT, không phải dấu phụ — bỏ dấu = sai chính tả.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_language_adjectives_not_capitalized": true,
+      "note": "styczeń/poniedziałek/polski viết thường (trừ đầu câu) — giống ru/es/it. Tên dân tộc danh từ hoa (Polak) nhưng tính từ ngôn ngữ thường (język polski).",
+      "formal_pan_pani_capitalized": "Pan/Pani viết hoa (danh từ lịch sự, quy ước)."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 35926 câu thật.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Styczeń|Luty|Marzec|Kwiecień|Czerwiec|Lipiec|Sierpień|Wrzesień|Październik|Listopad|Grudzień|Poniedziałek|Wtorek|Środa|Czwartek|Piątek|Sobota|Niedziela)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Dzisiaj jest poniedziałek, trzeci stycznia."],
+        "fail": ["Dzisiaj jest Poniedziałek, trzeci Stycznia."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Dzisiaj jest poniedziałek.", "Ona mówi po polsku.", "Warszawa jest stolicą Polski."],
+    "fail": ["dzisiaj jest poniedziałek.", "Dzisiaj jest Stycznia."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Polish thật. Maj (tháng 5) bỏ khỏi regex vì đồng âm tên riêng."
+  }
+}

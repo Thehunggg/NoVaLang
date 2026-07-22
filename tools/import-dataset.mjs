@@ -5,6 +5,7 @@
 //   node tools/import-dataset.mjs cldr <lang> [--locale <cldrLocale>]
 //   node tools/import-dataset.mjs ud   <lang> --url <conllu-url>
 //   node tools/import-dataset.mjs wikipron <lang> --url <tsv-url>
+//   node tools/import-dataset.mjs lexicon <lang> --url <json-url> --name <out.data.json> [--kind] [--source-id]
 //
 // CLDR chạy được ngay với URL mặc định. UD/Wikipron cần --url của treebank/tsv cụ thể
 // (đường dẫn khác nhau theo ngôn ngữ) — ghi vào sources.json để tái lập.
@@ -18,6 +19,7 @@ const argv = process.argv.slice(2);
 const cmd = argv[0];
 const lang = argv[1];
 const opt = (name) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : null; };
+const optAll = (name) => argv.flatMap((a, i) => (a === name ? [argv[i + 1]] : []));
 
 if (!cmd || !lang) {
   console.error('usage: node tools/import-dataset.mjs <cldr|ud|wikipron> <lang> [opts]');
@@ -90,14 +92,23 @@ async function ud() {
 }
 
 async function wikipron() {
-  const url = opt('--url');
-  if (!url) { console.error('wikipron cần --url <tsv-url>'); process.exit(2); }
-  const text = await fetchCached(url, `wikipron/${lang}.tsv`);
-  const pairs = [];
-  for (const line of text.split(/\r?\n/)) {
-    if (!line) continue;
-    const [word, ipa] = line.split('\t');
-    if (word && ipa) pairs.push([word, ipa]);
+  // Nhiều --url cho ngôn ngữ đa hệ chữ (ja: hira/kata/hani...). Nhãn hệ chữ lấy
+  // từ tên file (vd jpn_hira_narrow_filtered.tsv -> jpn_hira_narrow_filtered).
+  const urls = optAll('--url');
+  if (!urls.length) { console.error('wikipron cần ≥1 --url <tsv-url>'); process.exit(2); }
+  const byScript = {};
+  let total = 0;
+  for (const url of urls) {
+    const label = (url.split('/').pop() || 'main').replace(/\.tsv$/, '');
+    const text = await fetchCached(url, `wikipron/${lang}-${label}.tsv`);
+    const pairs = [];
+    for (const line of text.split(/\r?\n/)) {
+      if (!line) continue;
+      const [word, ipa] = line.split('\t');
+      if (word && ipa) pairs.push([word, ipa]);
+    }
+    byScript[label] = { count: pairs.length, sample: pairs.slice(0, 50), url };
+    total += pairs.length;
   }
   writeData('grapheme-to-phoneme.data.json', {
     id: `${lang}/grapheme-to-phoneme.data`,
@@ -105,11 +116,34 @@ async function wikipron() {
     source: 'WIKIPRON',
     derived_by: 'dataset',
     confidence: 'high',
-    data: { count: pairs.length, sample: pairs.slice(0, 50), url },
+    data: { count: total, byScript },
   });
-  upsertSource({ id: 'WIKIPRON', name: 'WikiPron grapheme-to-phoneme', url, consulted: today, derived_by: 'dataset', confidence: 'high', license: 'Apache-2.0' });
+  upsertSource({ id: 'WIKIPRON', name: 'WikiPron grapheme-to-phoneme', url: urls.join(' '), consulted: today, derived_by: 'dataset', confidence: 'high', license: 'Apache-2.0' });
 }
 
-const runner = { cldr, ud, wikipron }[cmd];
+async function lexicon() {
+  // Import bảng từ vựng đóng (closed-class wordlist) máy đọc được nhưng KHÔNG
+  // phải chuẩn cộng đồng như CLDR/UD (vd package của 1 tác giả) — ghi
+  // confidence:medium (không phải high), cần cross-check Bước 2 như dataset đơn nguồn.
+  //   node tools/import-dataset.mjs lexicon <lang> --url <json-url> --name <out.data.json> --kind <label> --source-id <ID>
+  const url = opt('--url');
+  const outName = opt('--name');
+  const kind = opt('--kind') || 'lexicon';
+  const sourceId = opt('--source-id') || 'LEXICON';
+  if (!url || !outName) { console.error('lexicon cần --url <json-url> --name <out.data.json> [--kind] [--source-id]'); process.exit(2); }
+  const text = await fetchCached(url, `lexicon/${lang}-${outName}`);
+  const data = JSON.parse(text);
+  writeData(outName, {
+    id: `${lang}/${outName.replace(/\.data\.json$/, '')}`,
+    kind,
+    source: sourceId,
+    derived_by: 'dataset',
+    confidence: 'medium',
+    data: { count: Array.isArray(data) ? data.length : Object.keys(data).length, entries: data },
+  });
+  upsertSource({ id: sourceId, name: `Lexicon: ${outName} (đơn tác giả, không phải chuẩn cộng đồng)`, url, consulted: today, derived_by: 'dataset', confidence: 'medium', license: 'xem repo nguồn' });
+}
+
+const runner = { cldr, ud, wikipron, lexicon }[cmd];
 if (!runner) { console.error(`lệnh lạ: ${cmd}`); process.exit(2); }
 runner().then(() => console.log('done')).catch((e) => { console.error('LỖI:', e.message); process.exit(1); });

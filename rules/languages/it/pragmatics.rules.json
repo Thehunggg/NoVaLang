@@ -1,0 +1,45 @@
+{
+  "id": "it/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE"],
+  "derived_by": "human",
+  "config": {
+    "address_forms": {
+      "tu": { "formality": "informal", "number": "singular", "usage": "bạn bè, gia đình, người cùng tuổi đã thân" },
+      "Lei": { "formality": "formal", "number": "singular", "capitalized_convention": true, "usage": "người lạ, quan hệ công việc/dịch vụ — chia động từ như ngôi 3 số ít giống cái", "note": "Viết hoa Lei để phân biệt lei 'cô ấy'." },
+      "voi": { "formality": "plural_or_regional_formal", "usage": "số nhiều; miền Nam/văn cổ dùng làm trang trọng số ít, chuẩn hiện đại dùng Lei" }
+    },
+    "baseline": {
+      "value": "Dạy tu + Lei (số ít), voi (số nhiều) — chuẩn giáo trình phổ thông. Không có biến thể vùng gây chia rẽ lớn kiểu tú/vos của es.",
+      "tts_locale": "it-IT"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "tu + từ vựng thân mật (ciao, ci vediamo)",
+      "NATURAL_NEUTRAL_POLITE": "mức chuẩn mực trung tính, tu hoặc Lei tuỳ quan hệ (baseline)",
+      "FORMAL": "Lei + từ vựng trang trọng (buongiorno, arrivederci, Vorrei...)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Ý không có hệ kính ngữ hình thái riêng biệt kiểu ja/ko. Lịch sự qua đại từ (Lei) + điều kiện thức lịch sự (vorrei, potrebbe) + từ vựng, đã bao trong FORMAL. Tự áp theo TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": {
+      "condizionale": "Điều kiện thức (condizionale) làm nhẹ yêu cầu: 'Vorrei...' (Tôi muốn...), 'Potrebbe...?' (Ngài có thể...?) — tương đương chức năng ますmềm của ja nhưng là thức động từ."
+    }
+  },
+  "checks": [
+    {
+      "id": "lei-third-person-singular-verb",
+      "description": "Lei (trang trọng) chia động từ như ngôi 3 số ít (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng chia động từ khi generator chạy." },
+      "fixtures": { "pass": ["Lei come sta?"], "fail": ["Lei come stai?"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Allarme per la sicurezza del capo dello Stato.", "Lei come sta?", "Vorrei un caffè."],
+    "fail": ["Lei come stai?", ""],
+    "_note": "Câu pass đầu lấy từ corpus thật UD Italian-ISDT (Bước 3 mục 6)."
+  }
+}

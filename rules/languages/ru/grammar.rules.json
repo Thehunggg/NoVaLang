@@ -1,0 +1,74 @@
+{
+  "id": "ru/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "case_system",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "ru-RU",
+    "word_order": "SVO_neutral_but_free_case_marked",
+    "no_articles": true,
+    "case_system": {
+      "cases": ["именительный (nom)", "родительный (gen)", "дательный (dat)", "винительный (acc)", "творительный (instr)", "предложный (prep)"],
+      "roles": {
+        "nom": "chủ ngữ (кто? что?)",
+        "gen": "sở hữu, phủ định, sau nhiều giới từ (кого? чего?)",
+        "dat": "tân ngữ gián tiếp (кому? чему?)",
+        "acc": "tân ngữ trực tiếp (кого? что?)",
+        "instr": "công cụ/phương tiện (кем? чем?)",
+        "prep": "sau в/на/о — chỉ dùng với giới từ (о ком? о чём?)"
+      },
+      "animacy": "Cách винительный phụ thuộc SỐNG/KHÔNG SỐNG: danh từ sống nam số ít acc = gen (вижу брата); không sống = nom (вижу стол).",
+      "status": "PENDING — bảng đuôi biến cách đầy đủ (3 giống × 6 cách × số × loại declension) là hình thái LEXICAL, CHƯA có đầy đủ."
+    },
+    "gender_system": {
+      "values": ["masculine", "feminine", "neuter"],
+      "typical_endings": { "masc": "phụ âm cuối (стол)", "fem": "-а/-я (книга)", "neut": "-о/-е (окно)" },
+      "known_exceptions": ["папа/дядя (-а nhưng NAM)", "путь (nam bất thường)", "имя/время (trung -я)"]
+    },
+    "verb_aspect": {
+      "imperfective": "quá trình/lặp lại (делать); có thì hiện tại/quá khứ/tương lai (буду делать)",
+      "perfective": "hoàn thành/kết quả (сделать); CHỈ quá khứ + tương lai đơn (сделаю), KHÔNG có hiện tại",
+      "pairing": "cặp thể phần lớn LEXICAL (tiền tố/đổi thân/bổ sung) — học theo từng cặp"
+    },
+    "verb_conjugation": {
+      "conjugation_I": "-е-/-ё- (читать: читаю/читаешь/читает/читаем/читаете/читают)",
+      "conjugation_II": "-и- (говорить: говорю/говоришь/говорит/говорим/говорите/говорят)",
+      "past_tense": "hoà GIỐNG-SỐ, không theo ngôi: -л/-ла/-ло/-ли (он читал / она читала)",
+      "no_present_copula": "KHÔNG dùng 'быть' hiện tại: 'Я студент' (không 'Я есть студент')"
+    },
+    "numeral_case_agreement": {
+      "n_1": "1 (один/одна/одно) + danh cách số ít (один стол)",
+      "n_2_3_4": "2/3/4 + SỞ HỮU CÁCH SỐ ÍT (два стола, три книги)",
+      "n_5_plus": "5+ + sở hữu cách số NHIỀU (пять столов)",
+      "compound": "kết thúc bằng 1 -> theo 1 (двадцать один стол); kết thúc 2-4 -> theo 2-4"
+    }
+  },
+  "checks": [
+    {
+      "id": "numeral-governs-case",
+      "description": "Số đếm chi phối cách danh từ theo sau (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng biến cách khi generator chạy, không phải regex tĩnh." },
+      "fixtures": {
+        "pass": ["один стол", "два стола", "пять столов"],
+        "fail": ["два стол", "пять стола", "один столов"]
+      }
+    },
+    {
+      "id": "no-present-copula",
+      "description": "KHÔNG dùng 'быть' ở hiện tại (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần phân tích cú pháp khi generator chạy." },
+      "fixtures": {
+        "pass": ["Я студент.", "Она врач."],
+        "fail": ["Я есть студент."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["два стола", "Я студент.", "Она читала книгу."],
+    "fail": ["два стол", "Я есть студент."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Russian thật."
+  }
+}

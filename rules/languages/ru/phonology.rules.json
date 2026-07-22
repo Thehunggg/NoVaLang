@@ -1,0 +1,54 @@
+{
+  "id": "ru/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "ru-RU",
+    "transcription": "narrow (WikiPron chỉ có bản narrow cho ru)",
+    "consonant_rules_stress_independent": {
+      "ш": { "phoneme": "ʂ", "g2p_check": "65559 từ / 0.03% — OK (retroflex cứng)" },
+      "щ": { "phoneme": "ɕ", "g2p_check": "18151 từ / 0.28% — OK ([ɕː] dài mềm)" },
+      "ц": { "phoneme": "ts", "g2p_check": "24408 từ / 0.16% — OK (affricate cứng)" },
+      "х": { "phoneme": "x", "g2p_check": "42050 từ / 0.34% — OK (fricative velar)" },
+      "ч": { "phoneme": "t͡ɕ", "g2p_check": "43003 từ / 4.33% — OK (affricate mềm; ngoại lệ чн->[ʂn] конечно/скучно + чж loanword)" },
+      "ж": { "phoneme": "ʐ", "g2p_check": "32408 từ / 7.13% — chủ yếu do LÀM CÂM CUỐI TỪ (Анкоридж->[...ʂ]) + дж loanword; giữa từ ж->[ʐ] ổn định" }
+    },
+    "final_devoicing": {
+      "note": "QUY TẮC LỚN — phụ âm hữu thanh cuối từ LÀM CÂM (devoice). [g2p-check xác nhận:]",
+      "г→k": "639 từ / 2.35% — OK (ngoại lệ Бог->[box], г->[x] vài từ)",
+      "б→p": "218 từ / 2.29% — OK",
+      "д→t": "865 từ / 0.58% — OK",
+      "з→s": "385 từ / 3.12% — OK (ngoại lệ giới từ proclitic без/близ)",
+      "ж→ʂ": "câm cuối từ (xem ж bên trên)",
+      "pairs": "б→п, в→ф, г→к, д→т, ж→ш, з→с ở cuối từ"
+    },
+    "not_yet_g2p_checked_stress_dependent": {
+      "vowel_reduction": "о không nhấn -> [ɐ]/[ə] (akanye); е/я không nhấn -> [ɪ]. PHỤ THUỘC TRỌNG ÂM tự do KHÔNG đánh dấu -> không kiểm được bằng regex tĩnh, xem vowel_reduction/word_stress.",
+      "palatalization_by_soft_vowel": "phụ âm + я/е/ё/ю/и/ь -> mềm [ʲ], xem palatalization.rules trong grammar? (thực ra ở đây) — WikiPron narrow xác nhận [ʲ] tồn tại khắp dataset.",
+      "iotation": "я/е/ё/ю đầu từ hoặc sau nguyên âm/ъ/ь -> [ja]/[je]/[jo]/[ju] (ёж=[joʂ])"
+    }
+  },
+  "checks": [
+    {
+      "id": "sibilant-consonants",
+      "description": "ш/щ/ц/ч/х ánh xạ âm ổn định độc lập trọng âm (xác nhận g2p-check).",
+      "assert": { "type": "custom", "note": "Kiểm chữ->âm cần G2P engine lúc generator chạy; g2p-check.mjs đã xác nhận trên WikiPron narrow thật." },
+      "fixtures": { "pass": ["шум", "час"], "fail": ["шум-xyz"] }
+    },
+    {
+      "id": "final-devoicing",
+      "description": "Phụ âm hữu thanh cuối từ làm câm: б→п г→к д→т ж→ш з→с (xác nhận g2p-check 0.58-3.12%).",
+      "assert": { "type": "custom", "note": "Quy tắc âm vị lớn; g2p-check xác nhận trên WikiPron narrow." },
+      "fixtures": { "pass": ["год", "друг"], "fail": ["год-voiced-final"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["шум", "час", "год", "друг"],
+    "fail": ["шум-xyz"],
+    "_note": "fixtures minh hoạ quy tắc g2p đã xác nhận; dùng test implementation tương lai."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "ja/phonology.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "phenomenon": "phoneme_inventory",
+  "enforces": [
+    "pronunciation.md",
+    "reading-system.md"
+  ],
+  "sources": [
+    "S-NRGRAMMAR",
+    "WIKIPRON",
+    "S-FROZEN"
+  ],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "vowel_count": 5,
+    "timing_unit": "mora",
+    "long_vowel_extra_unit": true,
+    "n_counts_as_unit": true,
+    "sokuon_counts_as_unit": {
+      "value": true,
+      "note": "1 nguồn (Wikipedia) — nrGrammar chỉ mô tả 'short pause', FROZEN im lặng; giữ medium, không nâng"
+    },
+    "vowel_length_contrastive": {
+      "value": true,
+      "note": "1 nguồn (Wikipedia); minimal pair はっか/はつか của nrGrammar chứng gemination, không chứng vowel length"
+    },
+    "gemination_contrastive": true,
+    "rendaku": {
+      "applies_to": "second_element_initial",
+      "change_direction": "voiceless_to_voiced",
+      "fully_predictable": false,
+      "lyman_blocking": {
+        "value": true,
+        "note": "1 nguồn (Wikipedia — luật Lyman); nrGrammar nói 'no rules to tell' → lexical_level giữ none, app không dạy rendaku theo từ"
+      }
+    }
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "word": "おばあさん",
+        "mora_count": 5,
+        "note": "nguyên âm dài +1 mora"
+      },
+      {
+        "word": "にっぽん",
+        "mora_count": 4,
+        "note": "っ +1, ん +1"
+      },
+      {
+        "word": "はっか",
+        "contrasts_with": "はつか",
+        "note": "gemination phân biệt nghĩa (nrGrammar)"
+      }
+    ],
+    "fail": [
+      {
+        "word": "おばあさん",
+        "mora_count": 4,
+        "note": "SAI: bỏ sót mora của nguyên âm dài"
+      },
+      {
+        "word": "にっぽん",
+        "mora_count": 3,
+        "note": "SAI: っ/ん phải tính mora riêng"
+      }
+    ]
+  }
+}

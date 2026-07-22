@@ -1,0 +1,218 @@
+{
+  "id": "ca/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 176,
+    "byScript": {
+      "cat_latn_broad": {
+        "count": 176,
+        "sample": [
+          [
+            "A",
+            "a"
+          ],
+          [
+            "Bosch",
+            "b ɔ s k"
+          ],
+          [
+            "Canigó",
+            "k a n i ɡ u"
+          ],
+          [
+            "Cànoes",
+            "k a n u s"
+          ],
+          [
+            "Elna",
+            "e l n ə"
+          ],
+          [
+            "Elna",
+            "j e l n ə"
+          ],
+          [
+            "Granollers",
+            "ɡ ɾ ə n u j ɛ s"
+          ],
+          [
+            "Sàhara",
+            "s a h a ɾ a"
+          ],
+          [
+            "Sàhara",
+            "s a h ə ɾ ə"
+          ],
+          [
+            "ab",
+            "a b"
+          ],
+          [
+            "ab",
+            "a p"
+          ],
+          [
+            "ab",
+            "a β"
+          ],
+          [
+            "adiós",
+            "a d i o s"
+          ],
+          [
+            "ahí",
+            "a i"
+          ],
+          [
+            "al",
+            "a l"
+          ],
+          [
+            "al",
+            "ə l"
+          ],
+          [
+            "alegr",
+            "a l e k r"
+          ],
+          [
+            "alegrs",
+            "a l e t s"
+          ],
+          [
+            "alguerès",
+            "a l ɡ a ɾ e s"
+          ],
+          [
+            "amb",
+            "a m"
+          ],
+          [
+            "amb",
+            "a n"
+          ],
+          [
+            "amb",
+            "e n"
+          ],
+          [
+            "amb",
+            "ə m"
+          ],
+          [
+            "amb",
+            "ə m b"
+          ],
+          [
+            "anigueré",
+            "a n i ɡ a ɾ e"
+          ],
+          [
+            "anis",
+            "a n i s"
+          ],
+          [
+            "arrés",
+            "a r e s"
+          ],
+          [
+            "babaiana",
+            "b ə β ə a n ə"
+          ],
+          [
+            "babaiana",
+            "b ə β ə j a n ə"
+          ],
+          [
+            "barca",
+            "b a l k a"
+          ],
+          [
+            "budell",
+            "b u ɾ e ʎ"
+          ],
+          [
+            "c",
+            "k"
+          ],
+          [
+            "c",
+            "s"
+          ],
+          [
+            "c",
+            "s e"
+          ],
+          [
+            "canviar",
+            "k a m b i a"
+          ],
+          [
+            "cent",
+            "s e n"
+          ],
+          [
+            "cent",
+            "s e n t"
+          ],
+          [
+            "del",
+            "d e l"
+          ],
+          [
+            "del",
+            "d ə l"
+          ],
+          [
+            "dire",
+            "d i ɾ a"
+          ],
+          [
+            "diure",
+            "d i w ɾ a"
+          ],
+          [
+            "eba",
+            "ɛ b a"
+          ],
+          [
+            "el",
+            "e l"
+          ],
+          [
+            "el",
+            "ə l"
+          ],
+          [
+            "els",
+            "e l s"
+          ],
+          [
+            "els",
+            "e l z"
+          ],
+          [
+            "els",
+            "ə l s"
+          ],
+          [
+            "els",
+            "ə l z"
+          ],
+          [
+            "enlloc",
+            "a ɲ ɔ k"
+          ],
+          [
+            "enlloc",
+            "a ɲ ʎ ɔ k"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/cat_latn_broad.tsv"
+      }
+    }
+  }
+}

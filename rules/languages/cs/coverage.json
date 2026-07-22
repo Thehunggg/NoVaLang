@@ -1,0 +1,220 @@
+{
+  "_meta": {
+    "language": "cs",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "cs-CZ (spisovná čeština — tiếng Séc chuẩn viết)",
+    "family": "Slav Tây (West Slavic), Latin-script",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật. g2p-check/corpus-check chạy trên dữ liệu thật để nâng confidence.",
+    "corpus": {
+      "file": "tools/cache/corpus/cs-sentences.txt (không commit)",
+      "sentences": 34869,
+      "source": "UD Czech-CAC + UD Czech-FicTree train/dev/test (S-UD-CORPUS)",
+      "note": "Vượt mốc 10000 — corpus không yếu."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Séc. Nặng hình thái (7 cách, thể, giống + animacy) — phần lớn ở lexical_level."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chữ Latin + dấu: HÁČEK (č š ž ř ě ň ď ť), ACUTE (á é í ó ú ý = độ dài), KROUŽEK (ů = độ dài, biến thể ú). Digraph 'ch' coi như MỘT chữ (xếp sau h trong bảng chữ). Dấu là CHỮ/thay đổi nghĩa (s≠š, e≠ě, a≠á). CLDR xác nhận. Sự kiện phổ thông.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận á č ď é ě í ň ó ř š ť ú ů ý ž + ch.",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Hoa đầu câu + danh từ riêng. Tháng/thứ trong tuần/quốc tịch/tên ngôn ngữ KHÔNG viết hoa (leden, pondělí, čeština, český) — giống ru/pl. Đại từ lịch sự Vy/Vás viết hoa trong thư từ. [Bước 3: corpus-check month-weekday trên 34869 câu.] [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. V1 cơ quan chuẩn ngôn ngữ + V2 giáo trình + V4/V5 ngữ pháp tham chiếu đồng thuận tháng/thứ viết thường. V3 corpus-check THẬT: month-weekday-not-capitalized 2/34869 (0.01%) — dưới xa ngưỡng, quy tắc hợp lệ trên dữ liệu thật.]",
+    "status": "VALIDATED"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ Latin.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (ces_latn_narrow, 65070 cặp) -> grapheme-to-phoneme.data.json. Đặc trưng: âm ř [r̝] (raised alveolar trill — âm hiếm, khó); đối lập độ dài nguyên âm phonemic; phụ âm vòm ď/ť/ň; h -> [ɦ] hữu thanh. Trọng âm LUÔN âm tiết đầu.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính tả Séc khá đều (dấu = âm cố định). [Bước 3: g2p-check.mjs trên WikiPron narrow thật (65070 từ) xác nhận: š->[ʃ] 0.05%; ž->[ʒ]/[ʃ] 0.00% (làm câm/đồng hoá); č->[t͡ʃ]/[d͡ʒ] 0.00%; ř->[r̝] 0.00% (âm đặc trưng Séc); ch->[x] 0.45%; ň->[ɲ] 0.00%; á->[aː] 0.00%; í->[iː] 0.00%; ý->[iː] 0.03% (ý=í về âm). VALIDATED high.] Chưa g2p-check thêm: ě palatal hoá phụ âm trước / [jɛ]; ď/ť palatal; h->[ɦ]; c->[t͡s]; đồng hoá thanh trong cụm.",
+    "status": "VALIDATED"
+  },
+  "final_devoicing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LÀM CÂM CUỐI TỪ + ĐỒNG HOÁ THANH trong cụm (giống ru/pl): phụ âm hữu thanh cuối từ -> vô thanh (b->p, d->t, ž->š, z->s, h->x). [g2p-check: d$->[t] 0.00%; ž bắn 16.63% khi chỉ ʒ, về 0.00% khi thêm [ʃ] — xác nhận ž làm câm/đồng hoá thành [ʃ] cuối từ + trước vô thanh: Ambrož->[...ʃ], Anežka->[...ʃk].] Quy tắc âm vị lớn.",
+    "status": "VALIDATED"
+  },
+  "vowel_length": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐỘ DÀI NGUYÊN ÂM PHONEMIC, đánh dấu bằng ACUTE (á é í ó ú ý) + KROUŽEK (ů): nguyên âm dài. Phân biệt nghĩa: byt 'căn hộ' / být 'là'; pas 'hộ chiếu' / pás 'thắt lưng'. [g2p-check á->[aː] 0.00%, í->[iː] 0.00%, ý->[iː] 0.03% xác nhận.] Trọng âm (luôn âm tiết đầu) ĐỘC LẬP với độ dài — điểm khó (âm tiết dài không nhất thiết được nhấn). Quy tắc rule_level rõ.",
+    "status": "DRAFT"
+  },
+  "palatalization": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Phụ âm vòm: ď [ɟ], ť [c], ň [ɲ] (viết dấu háček hoặc qua i/ě). ě LÀM VÒM phụ âm trước: dě/tě/ně -> [ɟɛ]/[cɛ]/[ɲɛ]; bě/pě/vě/mě -> [bjɛ]/[pjɛ]/[vjɛ]/[mɲɛ]. di/ti/ni -> [ɟɪ]/[cɪ]/[ɲɪ] (mềm) nhưng dy/ty/ny -> cứng. [g2p-check ň->[ɲ] 0.00% xác nhận.] Quy tắc rule_level rõ, cần dạy tường minh.",
+    "status": "VALIDATED"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Czech-CAC test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "case_system": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG TRUNG TÂM: 7 cách (pád) — nominativ, genitiv, dativ, akuzativ, VOKATIV (hô cách, cách 5), lokál (chỉ với giới từ), instrumentál. Danh/tính/đại/số từ biến cách theo giống-số-cách. Đuôi biến cách + luân phiên phụ âm (kniha->knize dativ, ruka->ruce) là hình thái LEXICAL nặng, CHƯA có đầy đủ. UD xác nhận 7 cách trong dữ liệu thật.",
+    "status": "DRAFT"
+  },
+  "gender_and_number": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "3 giống: nam (thường phụ âm), nữ (thường -a/-e), trung (thường -o/-e/-í). Giống NAM chia SỐNG/KHÔNG SỐNG (animate/inanimate) — ảnh hưởng cách akuzativ + số nhiều (pán->pány người / hrad->hrady lâu đài). Điểm khó (giống pl męskoosobowy nhưng ở số ít+nhiều). Giống + animacy phần lớn lexical.",
+    "status": "DRAFT"
+  },
+  "verb_aspect": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG (giống ru/pl): cặp THỂ — chưa hoàn thành (imperfective: dělat) vs hoàn thành (perfective: udělat). Perfective ở dạng hiện tại mang nghĩa tương lai. Cặp thể (tiền tố u-/na-/z-, đổi thân) phần lớn LEXICAL.",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Chia theo ngôi (já/ty/on-ona-ono/my/vy/oni) + số, 5 lớp động từ (theo nguyên âm chủ đề). Quá khứ: phân từ -l + hoà giống-số + trợ động từ být ngôi 1/2 (dělal jsem 'tôi đã làm'). Hiện tại být lược ở vị ngữ danh từ? KHÔNG — být chia đầy đủ hiện tại (jsem/jsi/je). Bất quy tắc (být/mít/jít/jíst) lexical.",
+    "status": "DRAFT"
+  },
+  "no_articles": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Tiếng Séc KHÔNG có mạo từ (a/the). Xác định qua ngữ cảnh/trật tự từ/chỉ định (ten). Học viên nói tiếng Anh hay thêm mạo từ thừa — cần nêu rõ.",
+    "status": "VALIDATED"
+  },
+  "numeral_case_agreement": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG (giống ru/pl): số 1 (jeden/jedna/jedno) hoà giống như tính từ; 2/3/4 + danh cách số NHIỀU (dva stoly); 5 trở lên + SỞ HỮU CÁCH SỐ NHIỀU + động từ số ít (pět stolů). Quy tắc rule_level rõ, nhiều nhánh, cần dạy tường minh.",
+    "status": "DRAFT"
+  },
+  "clitic_second_position": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG SÉC (luật Wackernagel): clitic (se/si, mi/ti/mu, tôi/bạn... dạng ngắn, jsem/jsi trợ động từ quá khứ) đứng ở VỊ TRÍ THỨ HAI trong câu (sau thành phần đầu tiên có trọng lượng): 'Včera jsem se ti smál' (Hôm qua tôi đã cười bạn). Thứ tự clitic nội bộ cố định (trợ động từ > se/si > dativ > akuzativ). Điểm khó riêng, không có ở es/de. Quy tắc rule_level rõ nhưng phức.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đối lập ty/vy (giống ru ты/вы, fr tu/vous): ty (thân mật, số ít — 'tykání') / vy (trang trọng số ít HOẶC số nhiều — 'vykání', chia động từ ngôi 2 số nhiều; Vy viết hoa trong thư lịch sự). Trang trọng còn dùng tước hiệu (pane/paní + họ/chức). ty/vy map CASUAL/FORMAL. Không tranh cãi vùng miền.",
+    "status": "VALIDATED"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SVO trung tính nhưng RẤT TỰ DO (hệ cách đánh dấu vai trò — đảo để nhấn mạnh/thông tin cũ-mới). Pro-drop (đuôi động từ + trợ động từ mang ngôi). NHƯNG clitic bị ràng buộc vị trí thứ hai (xem clitic_second_position). Không mạo từ. Giống ru/pl về độ tự do + thêm ràng buộc clitic.",
+    "status": "DRAFT"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu câu chuẩn (. , ? !). Ngoặc kép chính: „…\" (thấp-cao, giống de/pl). Dấu PHẨY bắt buộc trước mệnh đề phụ (že, který, protože) + ngăn liên từ. Không có dấu lật ngược như es.",
+    "status": "DRAFT"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu Séc là CHỮ/thay đổi nghĩa: HÁČEK (č/š/ž/ř/ě/ň/ď/ť — phụ âm/âm khác hẳn: s [s]/š [ʃ]); ACUTE + KROUŽEK (á/é/í/ó/ú/ů/ý — ĐỘ DÀI, phân biệt nghĩa byt/být). Bỏ dấu = sai chính tả + đổi từ + đổi âm. GIỐNG BẢN CHẤT pl. Ảnh hưởng chấm điểm — xem answer_acceptance_cs.",
+    "status": "DRAFT"
+  },
+  "spoken_vs_written": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG: hai tầng — spisovná čeština (chuẩn viết/trang trọng) vs obecná čeština (khẩu ngữ thông dụng, Bohemia): -ý->-ej (dobrý->dobrej), -é->-ý (dobré->dobrý), ú-/u- đầu từ, v- giả (okno->vokno). Baseline dạy spisovná (chuẩn) + cảnh báo obecná — xem review-checklist D-cs-02. Không phải rule máy-kiểm, là chính sách nội dung.",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~ty + obecná čeština/từ thân mật (ahoj, čau), NATURAL_NEUTRAL_POLITE~vy + spisovná chuẩn mực (baseline), FORMAL~vy + tước hiệu + từ trang trọng (Dobrý den, prosím). HONORIFIC: not-applicable cho cs — vy + tước hiệu đã đủ qua FORMAL, tiếng Séc KHÔNG có hệ kính ngữ hình thái kiểu ja/ko. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19).",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "NOT-APPLICABLE: chữ Latin. Trọng âm LUÔN ở âm tiết ĐẦU (cố định) -> không cần đánh dấu trọng âm. (Độ dài đã đánh dấu bằng acute/kroužek trong chính tả — là chữ, không phải trợ đọc thêm.)",
+    "status": "not-applicable"
+  },
+  "answer_acceptance_cs": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "OWNER DECISION 2026-07-19 (D-70, phương án C): thiếu dấu Séc (gõ 'reka' thay 'řeka', 'byt' thay 'být') = SAI, KHÔNG chấp nhận. Lý do: dấu Séc (háček đổi ÂM: s/š; acute/kroužek đổi ĐỘ DÀI/NGHĨA: byt/být) là chữ, không phải accent — áp tiền lệ pl D-64. Chấm: KHỚP-ĐÚNG chuẩn (dấu bắt buộc), KHÔNG normalize bỏ dấu. Chữ đích luôn giữ đầy đủ dấu (xem tts_audio_policy/localization-boundaries). GHI CHÚ APP (không phải rule, chưa làm): app nên nhắc người dùng cài/dùng bàn phím Séc hệ thống (xem D-70).",
+    "status": "VALIDATED"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Đặc biệt: chọn thể, cách đúng sau giới từ/số từ, vị trí clitic thứ hai, ty/vy, spisovná vs obecná đúng ngữ cảnh.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text Latin (đầy đủ dấu Séc). TTS cs-CZ đọc trực tiếp (trọng âm đầu từ cố định — TTS dễ). Kế thừa _base/audio.rules.json. Locale: cs-CZ. Văn bản PHẢI giữ đầy đủ dấu (háček + độ dài — bỏ đọc/nghĩa sai).",
+    "status": "VALIDATED"
+  }
+}

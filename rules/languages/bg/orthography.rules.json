@@ -1,0 +1,51 @@
+{
+  "id": "bg/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md", "writing-system.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "bg-BG",
+    "script": "Cyrillic (Cyrl), 30 chữ, bicameral, LTR",
+    "distinctive_letters": "ъ [ɤ] (nguyên âm, ер голям); щ [ʃt]; KHÔNG có ы/э/і/ё",
+    "punctuation": { "quotes": "„...“ hoặc «...»", "standard": ". , ? !" },
+    "casing": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "note": "януари/понеделник/български viết thường (trừ đầu câu) — giống ru/uk/pl. Вие lịch sự có thể hoa."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ KHÔNG viết hoa giữa câu (януари, понеделник). [corpus-check Bước 3 trên 11138 câu thật: 0.16% vi phạm, tên riêng (свети Августин, Юлиян).]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[а-яъ,] (Януари|Февруари|Април|Юни|Юли|Септември|Октомври|Ноември|Декември|Понеделник|Вторник|Сряда|Четвъртък|Петък|Събота|Неделя)(?![а-яъ])"
+      },
+      "fixtures": {
+        "pass": ["Ще се видим през януари.", "Днес е понеделник."],
+        "fail": ["Ще се видим през Януари."]
+      }
+    },
+    {
+      "id": "no-non-bulgarian-cyrillic",
+      "description": "Văn bản Bulgaria chuẩn KHÔNG dùng chữ Kirin chỉ-có-ở-ngôn-ngữ-khác (ы э ё і ї є ґ ў) — nếu xuất hiện là Nga/Ukraina/Belarus/lỗi.",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[ыэёіїєґўЫЭЁІЇЄҐЎ]"
+      },
+      "fixtures": {
+        "pass": ["България е красива страна.", "Уча български език."],
+        "fail": ["Это русский текст."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Добър ден!", "Ще се видим през януари.", "България е красива."],
+    "fail": ["Ще се видим през Януари.", "Это русский текст."],
+    "_note": "pass minh hoạ casing + bảng chữ Bulgaria; corpus-check Bước 3 trên UD Bulgarian-BTB thật (11138 câu)."
+  }
+}

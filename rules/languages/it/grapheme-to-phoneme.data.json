@@ -1,0 +1,218 @@
+{
+  "id": "it/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 89403,
+    "byScript": {
+      "ita_latn_broad_filtered": {
+        "count": 89403,
+        "sample": [
+          [
+            "'gna",
+            "ɲ a"
+          ],
+          [
+            "'ndrangheta",
+            "n d r a n ɡ e t a"
+          ],
+          [
+            "'ndranghetista",
+            "n d r a n ɡ e t i s t a"
+          ],
+          [
+            "'ndranghetiste",
+            "n d r a n ɡ e t i s t e"
+          ],
+          [
+            "'ndranghetisti",
+            "n d r a n ɡ e t i s t i"
+          ],
+          [
+            "'ndrina",
+            "n d r i n a"
+          ],
+          [
+            "'nduja",
+            "a n d u j a"
+          ],
+          [
+            "'nduja",
+            "n d u j a"
+          ],
+          [
+            "'nne",
+            "n e"
+          ],
+          [
+            "'sta",
+            "s t a"
+          ],
+          [
+            "'ste",
+            "s t e"
+          ],
+          [
+            "'sti",
+            "s t i"
+          ],
+          [
+            "'sto",
+            "s t o"
+          ],
+          [
+            "A",
+            "a"
+          ],
+          [
+            "ACE",
+            "a t͡ʃ e"
+          ],
+          [
+            "AFI",
+            "a f i"
+          ],
+          [
+            "AIDS",
+            "a j d i ɛ s s e"
+          ],
+          [
+            "AIDS",
+            "a j d͡z"
+          ],
+          [
+            "ASCII",
+            "a ʃ ʃ i"
+          ],
+          [
+            "Abacuc",
+            "a b a k u k"
+          ],
+          [
+            "Abacucco",
+            "a b a k u k k o"
+          ],
+          [
+            "Abatantuono",
+            "a b a t a n t w ɔ n o"
+          ],
+          [
+            "Abate",
+            "a b a t e"
+          ],
+          [
+            "Abatemarco",
+            "a b a t e m a r k o"
+          ],
+          [
+            "Abbadia",
+            "a b b a d i a"
+          ],
+          [
+            "Abbagnale",
+            "a b b a ɲ ɲ a l e"
+          ],
+          [
+            "Abbasanta",
+            "a b b a s a n t a"
+          ],
+          [
+            "Abbasanta",
+            "a b b a z a n t a"
+          ],
+          [
+            "Abbate",
+            "a b b a t e"
+          ],
+          [
+            "Abbateggio",
+            "a b b a t e d d͡ʒ o"
+          ],
+          [
+            "Abbatiello",
+            "a b b a t j ɛ l l o"
+          ],
+          [
+            "Abbiategrasso",
+            "a b b j a t e ɡ r a s s o"
+          ],
+          [
+            "Abbondanza",
+            "a b b o n d a n t͡s a"
+          ],
+          [
+            "Abdera",
+            "a b d ɛ r a"
+          ],
+          [
+            "Abdia",
+            "a b d i a"
+          ],
+          [
+            "Abdone",
+            "a b d o n e"
+          ],
+          [
+            "Abelardo",
+            "a b e l a r d o"
+          ],
+          [
+            "Abele",
+            "a b ɛ l e"
+          ],
+          [
+            "Abkhazia",
+            "a b k a z j a"
+          ],
+          [
+            "Abramo",
+            "a b r a m o"
+          ],
+          [
+            "Abraàm",
+            "a b r a a m"
+          ],
+          [
+            "Abriola",
+            "a b r i ɔ l a"
+          ],
+          [
+            "Abruzzo",
+            "a b r u t t͡s o"
+          ],
+          [
+            "Abulfeda",
+            "a b u l f ɛ d a"
+          ],
+          [
+            "Acate",
+            "a k a t e"
+          ],
+          [
+            "Accardo",
+            "a k k a r d o"
+          ],
+          [
+            "Acceglio",
+            "a t t͡ʃ e ʎ ʎ o"
+          ],
+          [
+            "Acceglio",
+            "a t t͡ʃ ɛ ʎ ʎ o"
+          ],
+          [
+            "Accettura",
+            "a t t͡ʃ e t t u r a"
+          ],
+          [
+            "Acciano",
+            "a t t͡ʃ a n o"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/ita_latn_broad_filtered.tsv"
+      }
+    }
+  }
+}

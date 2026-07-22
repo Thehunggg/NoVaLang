@@ -1,77 +1,1068 @@
 {
   "_meta": {
     "targetCount": 60,
-    "decision": "D-01 (owner 2026-07-17): build rule cho 60 ngôn ngữ",
+    "decision": "D-55 (owner 2026-07-19): TÁCH mục tiêu playable (ngôn ngữ được HỌC, cần BUILD RULE) khỏi mục tiêu native (tiếng mẹ đẻ để DỊCH NGHĨA, KHÔNG cần rule). Thay D-01 cũ (\"build rule cho 60\").",
     "status": "APPROVED_BY_OWNER_2026-07-18 (D-37; zh=Hans mặc định; sửa sau tùy ý)",
-    "note": "Nháp do AI đề xuất, xếp theo (độ sẵn có dataset CLDR/UD/Wikipron + số người nói/độ cần học). Owner duyệt/sửa ở Bước 0. 'playable' (có bài học thật) chỉ en+ja; còn lại 'preview'. ruleStatus theo dõi tiến độ build rule, tách rời playable.",
-    "playable": ["en", "ja"],
-    "namedNativeLanguages": ["vi", "en", "ja", "ko", "zh"],
-    "roleValues": ["learning", "native"],
-    "tierValues": ["t1", "t3"],
-    "statusValues": ["playable", "preview"],
-    "ruleStatusValues": ["NOT_STARTED", "DRAFT_STYLE_ONLY", "EXISTS_FROZEN_NARRATIVE", "IN_PROGRESS", "VALIDATED", "FROZEN"],
-    "openQuestions": ["zh: giản thể (Hans) hay phồn thể (Hant)? — mặc định nháp Hans, cần owner chốt"]
+    "note": "Playable (cần rule) = 33, gắn với giới hạn ~33 ngôn ngữ của Azure Pronunciation Assessment (chấm phát âm, gói Max) — build rule cho ngôn ngữ không có voice là công thừa. Native (chỉ cần dịch) = 60; 33 playable NẰM TRONG 60 native. Thứ tự owner chốt: build rule 33 playable TRƯỚC, làm dịch 60 native SAU. Field 'target' trên mỗi entry là phân loại authoritative 2026-07-19: playable_needs_rule | native_only_no_rule | review_pending_not_in_owner_60. Field 'roles' là legacy (mô hình D-01 cũ), KHÔNG cập nhật ở bước tracking này.",
+    "playable": [
+      "en",
+      "ja"
+    ],
+    "namedNativeLanguages": [
+      "vi",
+      "en",
+      "ja",
+      "ko",
+      "zh"
+    ],
+    "roleValues": [
+      "learning",
+      "native"
+    ],
+    "tierValues": [
+      "t1",
+      "t3"
+    ],
+    "statusValues": [
+      "playable",
+      "preview"
+    ],
+    "ruleStatusValues": [
+      "NOT_STARTED",
+      "DRAFT_STYLE_ONLY",
+      "EXISTS_FROZEN_NARRATIVE",
+      "IN_PROGRESS",
+      "VALIDATED",
+      "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "FROZEN",
+      "FROZEN_RULE_LEVEL_LEXICAL_OPEN"
+    ],
+    "openQuestions": [
+      "zh: giản thể (Hans) hay phồn thể (Hant)? — mặc định nháp Hans, cần owner chốt"
+    ],
+    "rtlInfraDebt": {
+      "source": "owner 2026-07-20 (decisions D-91)",
+      "status": "DEFERRED — 2/33 playable còn lại (ar, he) TẠM DỪNG build rule",
+      "languages": ["ar", "he"],
+      "reason": "Cả hai RTL (phải-sang-trái) + abjad. Làm rule khi hạ tầng chưa xử RTL thì có rule mà hiển thị hỏng. UI đã ở 'sắp có' (shared/config/language_options.json: ar/he courseStatus=coming_soon, chỉ en+ja available) — KHÔNG cần đổi frontend.",
+      "requiredParts": [
+        "1) rule ngôn ngữ (ar/he) — CHƯA build (task này)",
+        "2) validator/generator xử lý text RTL đúng — CHƯA có",
+        "3) frontend render RTL đúng hướng (Web + Flutter) — CHƯA kiểm"
+      ],
+      "note": "Để có ar/he THẬT (playable) cần ĐỦ 3 phần trên. Ghi để tương lai không bất ngờ. 31/33 playable đã build rule; ar/he = coming_soon."
+    },
+    "ruleTargetCount": 33,
+    "nativeTargetCount": 60,
+    "targetCount_meaning": "targetCount = số dòng trong mảng languages[] mà tools/validate.mjs sanity-check (native universe). KHÔNG phải rule target. Rule target = ruleTargetCount (33). Native target = nativeTargetCount (60).",
+    "targetValues": [
+      "playable_needs_rule",
+      "native_only_no_rule",
+      "review_pending_not_in_owner_60"
+    ],
+    "languageTargets": {
+      "source": "owner 2026-07-19 (D-55)",
+      "ruleTargetCount": 33,
+      "nativeTargetCount": 60,
+      "order": "ISO 639-1 khi có, 639-3 khi không (yue)",
+      "playable33_needRule": [
+        "en",
+        "ja",
+        "ko",
+        "zh",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt",
+        "ru",
+        "vi",
+        "ar",
+        "nl",
+        "pl",
+        "sv",
+        "tr",
+        "el",
+        "cs",
+        "da",
+        "fi",
+        "nb",
+        "ro",
+        "th",
+        "id",
+        "hi",
+        "he",
+        "uk",
+        "hu",
+        "fil",
+        "ms",
+        "bg",
+        "hr",
+        "ca"
+      ],
+      "nativeOnly27_noRule": [
+        "fa",
+        "ur",
+        "bn",
+        "my",
+        "ta",
+        "te",
+        "mr",
+        "yue",
+        "km",
+        "lo",
+        "sk",
+        "lt",
+        "ne",
+        "si",
+        "gu",
+        "pa",
+        "kn",
+        "ml",
+        "sw",
+        "am",
+        "ha",
+        "yo",
+        "zu",
+        "mn",
+        "kk",
+        "uz",
+        "sr"
+      ],
+      "native60_full_note": "native60 = playable33 (33) + nativeOnly27 (27). 33 playable là tập con của 60 native.",
+      "builtSoFar_7": [
+        "ja",
+        "en",
+        "vi",
+        "zh",
+        "ko",
+        "es",
+        "fr"
+      ],
+      "playableNotBuilt_26": [
+        "de",
+        "it",
+        "pt",
+        "ru",
+        "ar",
+        "nl",
+        "pl",
+        "sv",
+        "tr",
+        "el",
+        "cs",
+        "da",
+        "fi",
+        "nb",
+        "ro",
+        "th",
+        "id",
+        "hi",
+        "he",
+        "uk",
+        "hu",
+        "fil",
+        "ms",
+        "bg",
+        "hr",
+        "ca"
+      ],
+      "codesNeedingOwnerConfirmation": {
+        "nb": "owner ghi 'Tiếng Na Uy' chung; dùng nb (Bokmål, chuẩn viết phổ biến + khớp Azure nb-NO). Xác nhận: nb chứ không phải nn (Nynorsk).",
+        "fil": "owner ghi 'Tagalog' (ISO tl); dùng fil (Filipino) để khớp entry catalog cũ + voice Azure fil-PH — vì 33 playable gắn với voice Azure. Xác nhận fil thay vì tl.",
+        "yue": "'Tiếng Quảng Đông' = yue (ISO 639-3, không có 639-1); mã mới, chưa có trong array. Azure hỗ trợ yue/zh-HK."
+      },
+      "conflictsWithRepo": [
+        "7 mã ORPHAN đang trong languages[] nhưng KHÔNG thuộc 60 native của owner: af, sl, lv, et, is, ga, eu — giữ nguyên, đánh target=review_pending_not_in_owner_60, CHỜ owner quyết (không tự xóa).",
+        "7 mã native-only của owner CHƯA có dòng trong languages[]: yue, ha, yo, zu, mn, kk, uz — ghi ở đây là authoritative; KHÔNG thêm dòng vào array (native-only không cần rule, array là lớp theo dõi rule). Thêm dòng khi/nếu chúng thành rule target.",
+        "shared/config/native_language_options.json có 100 entry (isSupportedAsNative=true) — KHÁC target 60 native. scripts/validate-curriculum.mjs (~dòng 1128) ÉP CỨNG native >= 100. Nằm ngoài phạm vi bước tracking này (shared/ + validator curriculum). BÁO owner, KHÔNG tự sửa."
+      ]
+    }
   },
   "languages": [
-    { "code": "en", "name": "English", "writingSystem": "Latn", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "playable", "ruleStatus": "DRAFT_STYLE_ONLY" },
-    { "code": "ja", "name": "Japanese", "writingSystem": "Jpan", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "playable", "ruleStatus": "EXISTS_FROZEN_NARRATIVE" },
-    { "code": "zh", "name": "Chinese (Mandarin)", "writingSystem": "Hans", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "script Hans/Hant cần owner chốt" },
-    { "code": "ko", "name": "Korean", "writingSystem": "Kore", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "vi", "name": "Vietnamese", "writingSystem": "Latn", "roles": ["learning", "native"], "tier": ["t1", "t3"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "es", "name": "Spanish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "fr", "name": "French", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "de", "name": "German", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "pt", "name": "Portuguese", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "it", "name": "Italian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ru", "name": "Russian", "writingSystem": "Cyrl", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "id", "name": "Indonesian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "hi", "name": "Hindi", "writingSystem": "Deva", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ar", "name": "Arabic (MSA)", "writingSystem": "Arab", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "RTL; MSA vs dialect cần cân nhắc sau" },
-    { "code": "th", "name": "Thai", "writingSystem": "Thai", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "tr", "name": "Turkish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "nl", "name": "Dutch", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "pl", "name": "Polish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "uk", "name": "Ukrainian", "writingSystem": "Cyrl", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "sv", "name": "Swedish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ro", "name": "Romanian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "el", "name": "Greek", "writingSystem": "Grek", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "cs", "name": "Czech", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "da", "name": "Danish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "fi", "name": "Finnish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "nb", "name": "Norwegian Bokmål", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "hu", "name": "Hungarian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "he", "name": "Hebrew", "writingSystem": "Hebr", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "RTL" },
-    { "code": "fa", "name": "Persian", "writingSystem": "Arab", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "RTL" },
-    { "code": "bn", "name": "Bengali", "writingSystem": "Beng", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ta", "name": "Tamil", "writingSystem": "Taml", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "te", "name": "Telugu", "writingSystem": "Telu", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ml", "name": "Malayalam", "writingSystem": "Mlym", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "mr", "name": "Marathi", "writingSystem": "Deva", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ur", "name": "Urdu", "writingSystem": "Arab", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "RTL" },
-    { "code": "pa", "name": "Punjabi (Gurmukhi)", "writingSystem": "Guru", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "sw", "name": "Swahili", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "fil", "name": "Filipino", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ms", "name": "Malay", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "my", "name": "Burmese", "writingSystem": "Mymr", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "km", "name": "Khmer", "writingSystem": "Khmr", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "lo", "name": "Lao", "writingSystem": "Laoo", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "si", "name": "Sinhala", "writingSystem": "Sinh", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ne", "name": "Nepali", "writingSystem": "Deva", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "gu", "name": "Gujarati", "writingSystem": "Gujr", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "kn", "name": "Kannada", "writingSystem": "Knda", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "am", "name": "Amharic", "writingSystem": "Ethi", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "af", "name": "Afrikaans", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ca", "name": "Catalan", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "hr", "name": "Croatian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "sr", "name": "Serbian", "writingSystem": "Cyrl", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED", "note": "cũng viết Latn; mặc định nháp Cyrl" },
-    { "code": "sk", "name": "Slovak", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "sl", "name": "Slovenian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "bg", "name": "Bulgarian", "writingSystem": "Cyrl", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "lt", "name": "Lithuanian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "lv", "name": "Latvian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "et", "name": "Estonian", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "is", "name": "Icelandic", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "ga", "name": "Irish", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" },
-    { "code": "eu", "name": "Basque", "writingSystem": "Latn", "roles": ["learning"], "tier": ["t1"], "status": "preview", "ruleStatus": "NOT_STARTED" }
+    {
+      "code": "en",
+      "name": "English",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "playable",
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "writingSystem": "Jpan",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "playable",
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "zh",
+      "name": "Chinese (Mandarin)",
+      "writingSystem": "Hans",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "preview",
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN",
+      "note": "Hans (giản thể) — CHỐT theo D-37, xác nhận khi build zh 2026-07-18.",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "ko",
+      "name": "Korean",
+      "writingSystem": "Kore",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "vi",
+      "name": "Vietnamese",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning",
+        "native"
+      ],
+      "tier": [
+        "t1",
+        "t3"
+      ],
+      "status": "preview",
+      "ruleStatus": "FROZEN_RULE_LEVEL_LEXICAL_OPEN",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "it",
+      "name": "Italian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "writingSystem": "Cyrl",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "id",
+      "name": "Indonesian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "writingSystem": "Deva",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "ar",
+      "name": "Arabic (MSA)",
+      "writingSystem": "Arab",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "uiState": "coming_soon",
+      "deferredReason": "RTL_INFRA_PENDING — hệ chữ Ả Rập là abjad + RTL (phải-sang-trái). TẠM DỪNG build rule (owner 2026-07-20): cần hạ tầng RTL sẵn sàng trước (validator/generator xử text RTL + frontend render RTL) — làm rule khi hạ tầng chưa xử RTL thì có rule mà hiển thị hỏng. Vẫn thuộc mục tiêu 33 playable, CHƯA build. UI đã ở trạng thái 'sắp có' qua shared/config/language_options.json (courseStatus=coming_soon).",
+      "note": "RTL; MSA vs dialect cần cân nhắc sau. COMING_SOON — chờ hạ tầng RTL (xem _meta.rtlInfraDebt + decisions D-91).",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "th",
+      "name": "Thai",
+      "writingSystem": "Thai",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "tr",
+      "name": "Turkish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "nl",
+      "name": "Dutch",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "pl",
+      "name": "Polish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "uk",
+      "name": "Ukrainian",
+      "writingSystem": "Cyrl",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "sv",
+      "name": "Swedish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "ro",
+      "name": "Romanian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "el",
+      "name": "Greek",
+      "writingSystem": "Grek",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "cs",
+      "name": "Czech",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "da",
+      "name": "Danish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "fi",
+      "name": "Finnish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "nb",
+      "name": "Norwegian Bokmål",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "hu",
+      "name": "Hungarian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "he",
+      "name": "Hebrew",
+      "writingSystem": "Hebr",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "uiState": "coming_soon",
+      "deferredReason": "RTL_INFRA_PENDING — hệ chữ Hebrew là abjad + RTL (phải-sang-trái). TẠM DỪNG build rule (owner 2026-07-20): cần hạ tầng RTL sẵn sàng trước (validator/generator xử text RTL + frontend render RTL) — làm rule khi hạ tầng chưa xử RTL thì có rule mà hiển thị hỏng. Vẫn thuộc mục tiêu 33 playable, CHƯA build. UI đã ở trạng thái 'sắp có' qua shared/config/language_options.json (courseStatus=coming_soon).",
+      "note": "RTL. COMING_SOON — chờ hạ tầng RTL (xem _meta.rtlInfraDebt + decisions D-91).",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "fa",
+      "name": "Persian",
+      "writingSystem": "Arab",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "note": "RTL",
+      "target": "native_only_no_rule"
+    },
+    {
+      "code": "bn",
+      "name": "Bengali",
+      "writingSystem": "Beng",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "ta",
+      "name": "Tamil",
+      "writingSystem": "Taml",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "te",
+      "name": "Telugu",
+      "writingSystem": "Telu",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "ml",
+      "name": "Malayalam",
+      "writingSystem": "Mlym",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "mr",
+      "name": "Marathi",
+      "writingSystem": "Deva",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "writingSystem": "Arab",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "note": "RTL",
+      "target": "native_only_no_rule"
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi (Gurmukhi)",
+      "writingSystem": "Guru",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "sw",
+      "name": "Swahili",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "fil",
+      "name": "Filipino",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "ms",
+      "name": "Malay",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "my",
+      "name": "Burmese",
+      "writingSystem": "Mymr",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "km",
+      "name": "Khmer",
+      "writingSystem": "Khmr",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "lo",
+      "name": "Lao",
+      "writingSystem": "Laoo",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "si",
+      "name": "Sinhala",
+      "writingSystem": "Sinh",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "ne",
+      "name": "Nepali",
+      "writingSystem": "Deva",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "gu",
+      "name": "Gujarati",
+      "writingSystem": "Gujr",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "kn",
+      "name": "Kannada",
+      "writingSystem": "Knda",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "am",
+      "name": "Amharic",
+      "writingSystem": "Ethi",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "af",
+      "name": "Afrikaans",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
+    },
+    {
+      "code": "ca",
+      "name": "Catalan",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "hr",
+      "name": "Croatian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "sr",
+      "name": "Serbian",
+      "writingSystem": "Cyrl",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "note": "cũng viết Latn; mặc định nháp Cyrl",
+      "target": "native_only_no_rule"
+    },
+    {
+      "code": "sk",
+      "name": "Slovak",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "sl",
+      "name": "Slovenian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
+    },
+    {
+      "code": "bg",
+      "name": "Bulgarian",
+      "writingSystem": "Cyrl",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+      "target": "playable_needs_rule"
+    },
+    {
+      "code": "lt",
+      "name": "Lithuanian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "native_only_no_rule",
+      "note": "Native-only (D-55, 2026-07-19): chỉ cần bản dịch nghĩa, KHÔNG build rule."
+    },
+    {
+      "code": "lv",
+      "name": "Latvian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
+    },
+    {
+      "code": "et",
+      "name": "Estonian",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
+    },
+    {
+      "code": "is",
+      "name": "Icelandic",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
+    },
+    {
+      "code": "ga",
+      "name": "Irish",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
+    },
+    {
+      "code": "eu",
+      "name": "Basque",
+      "writingSystem": "Latn",
+      "roles": [
+        "learning"
+      ],
+      "tier": [
+        "t1"
+      ],
+      "status": "preview",
+      "ruleStatus": "NOT_STARTED",
+      "target": "review_pending_not_in_owner_60",
+      "note": "CONFLICT (D-55, 2026-07-19): KHÔNG có trong danh sách 60 native của owner. Chưa xóa — chờ owner quyết giữ hay bỏ."
+    }
   ]
 }

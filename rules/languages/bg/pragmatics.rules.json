@@ -1,0 +1,56 @@
+{
+  "id": "bg/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "bg-BG",
+    "address_forms": {
+      "ti": { "form": "ти", "formality": "informal", "number": "singular", "usage": "bạn bè, gia đình, trẻ, ngang hàng" },
+      "vie": { "form": "Вие", "formality": "formal_or_plural", "number": "plural_or_polite_singular", "usage": "số nhiều HOẶC lịch sự với 1 người lạ/lớn tuổi/cấp trên (như fr vous); VIẾT HOA Вие/Ви khi lịch sự" },
+      "titles": "господин (ông), госпожа (bà), госпожица (cô)"
+    },
+    "t_v_distinction": {
+      "value": "CÓ đối lập T-V thật. Dạy cả ти và Вие + господин/госпожа. Xem review-checklist D-bg-05.",
+      "tts_locale": "bg-BG"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "ти + từ thân mật (здравей, здрасти)",
+      "NATURAL_NEUTRAL_POLITE": "Вие lịch sự trung tính (người lạ) HOẶC ти ngang hàng — baseline",
+      "FORMAL": "Вие + từ trang trọng + господин/госпожа (Добър ден, моля, благодаря, извинете)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Bulgaria KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja/ko. Lịch sự qua Вие + từ vựng — đã bao trong FORMAL. Tự áp TIỀN LỆ es B-02 (owner duyệt 2026-07-19)."
+      }
+    },
+    "politeness_devices": "Бихте ли...? (Ngài có thể...?), моля (làm ơn), заповядайте (xin mời), извинете (xin lỗi), благодаря (cảm ơn)"
+  },
+  "checks": [
+    {
+      "id": "ti-vie-agreement",
+      "description": "ти → động từ ngôi 2 số ít; Вие → ngôi 2 số nhiều (lịch sự) — kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần phân tích ngôi động từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["Как си?", "Как сте?"],
+        "fail": ["Вие как си?"]
+      }
+    },
+    {
+      "id": "polite-formal-vie",
+      "description": "Lịch sự qua Вие + господин/госпожа (không hình thái kính ngữ) — kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Chọn ти/Вие theo ngữ cảnh khi generator chạy." },
+      "fixtures": {
+        "pass": ["Добър ден, господин Петров!"],
+        "fail": ["Добър ден, как си?"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Как си?", "Как сте?", "Благодаря ви!", "Добър ден, господин Петров!"],
+    "fail": ["Вие как си?", ""],
+    "_note": "Câu pass minh hoạ đối lập ти/Вие + господин/госпожа + lịch sự."
+  }
+}

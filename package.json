@@ -17,6 +17,8 @@
     "review:curriculum:export": "node scripts/export-curriculum-review.mjs",
     "smoke:curriculum": "node scripts/smoke-curriculum-flow.mjs",
     "smoke:answer-unicode": "node scripts/smoke-answer-unicode.mjs",
+    "check:hardcoded-ui": "node scripts/check-hardcoded-ui.mjs",
+    "gen:ja-ledger": "node scripts/gen-ja-knowledge-ledger.mjs",
     "test:japanese-pronunciation": "node scripts/test-japanese-pronunciation.mjs",
     "test:q14-romanization": "node scripts/test-q14-romanization.mjs",
     "validate:curriculum": "node scripts/validate-curriculum.mjs && node scripts/validate-localization-purity.mjs",

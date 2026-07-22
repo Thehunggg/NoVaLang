@@ -1,0 +1,45 @@
+{
+  "id": "ro/word-class.data",
+  "kind": "word_class",
+  "source": "UD",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "uposCounts": {
+      "NOUN": 4047,
+      "PRON": 907,
+      "VERB": 1749,
+      "ADV": 662,
+      "AUX": 618,
+      "ADP": 2335,
+      "PUNCT": 2068,
+      "DET": 855,
+      "ADJ": 1167,
+      "CCONJ": 471,
+      "NUM": 461,
+      "PART": 358,
+      "SCONJ": 143,
+      "PROPN": 456,
+      "INTJ": 6,
+      "X": 8
+    },
+    "uposTags": [
+      "ADJ",
+      "ADP",
+      "ADV",
+      "AUX",
+      "CCONJ",
+      "DET",
+      "INTJ",
+      "NOUN",
+      "NUM",
+      "PART",
+      "PRON",
+      "PROPN",
+      "PUNCT",
+      "SCONJ",
+      "VERB",
+      "X"
+    ]
+  }
+}

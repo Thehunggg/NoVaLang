@@ -1,0 +1,47 @@
+{
+  "id": "ro/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "ro-RO",
+    "dataset_note": "WikiPron ro nhỏ (9286 cặp); quy tắc cốt lõi xác nhận, corpus lớn (33645) bù.",
+    "grapheme_to_phoneme_rules": {
+      "ș": { "phoneme": "ʃ", "g2p_check": "607 từ / 0.16% — OK" },
+      "ț": { "phoneme": "t͡s", "g2p_check": "901 từ / 2.33% — OK (cũng [t͡sʲ] trước i cuối)" },
+      "ă": { "phoneme": "ə", "g2p_check": "2204 từ / 0.14% — OK" },
+      "â_î": { "phoneme": "ɨ", "g2p_check": "â 417 từ / 0.24%; î 302 từ / 0.33% — OK (cùng âm)" },
+      "ce_ci": { "phoneme": "t͡ʃ", "g2p_check": "ce 409 từ / 2.20% — OK (c mềm trước e/i)" },
+      "ge_gi": { "phoneme": "d͡ʒ", "g2p_check": "ge 213 từ / 4.23% — OK (g mềm trước e/i)" },
+      "che_chi": { "phoneme": "k", "g2p_check": "che 47 từ / 2.13% — OK (c cứng)" },
+      "ghe_ghi": { "phoneme": "ɡ", "g2p_check": "ghe 15 từ / 13.33% — OK (bộ nhỏ; cũng ɟ palatal)" }
+    },
+    "not_yet_g2p_checked": {
+      "diphthongs": "ea [e̯a], oa [o̯a], ia [ja], ie [je]; e đầu đại từ -> [je] (el=[jel], este=[jeste])",
+      "x": "x -> [ks] hoặc [ɡz] (examen)",
+      "hard_c_g": "c/g trước a/o/u/ă/â/î -> [k]/[ɡ] cứng"
+    }
+  },
+  "checks": [
+    {
+      "id": "romanian-letters",
+      "description": "ș/ț/ă/â/î ánh xạ âm (xác nhận g2p-check).",
+      "assert": { "type": "custom", "note": "Kiểm chữ->âm cần G2P engine; g2p-check.mjs đã xác nhận trên WikiPron thật." },
+      "fixtures": { "pass": ["și", "țară"], "fail": ["și-xyz"] }
+    },
+    {
+      "id": "c-g-softening",
+      "description": "c/g mềm trước e/i -> [t͡ʃ]/[d͡ʒ]; ch/gh -> [k]/[ɡ] cứng (xác nhận g2p-check).",
+      "assert": { "type": "custom", "note": "Như es/it; g2p-check xác nhận trên WikiPron." },
+      "fixtures": { "pass": ["cine", "ghem"], "fail": ["cine-hard"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["și", "țară", "cine", "român"],
+    "fail": ["și-xyz"],
+    "_note": "fixtures minh hoạ quy tắc g2p đã xác nhận; dùng test implementation tương lai."
+  }
+}

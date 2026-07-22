@@ -1,0 +1,45 @@
+{
+  "id": "tr/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["pronunciation.md"],
+  "sources": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "baseline_variety": "tr-TR",
+    "transparency_note": "Chính tả Thổ RẤT ĐỀU (một-chữ-một-âm, cải cách Atatürk 1928) → g2p rất tin cậy.",
+    "vowels": "a[a] e[e] ı[ɯ] i[i] o[o] ö[ø] u[u] ü[y] — 8 nguyên âm đối xứng hoà âm",
+    "consonant_g2p": {
+      "c": "[d͡ʒ]", "ç": "[t͡ʃ]", "ş": "[ʃ]", "j": "[ʒ]", "y": "[j]", "v": "[v]",
+      "ğ": "yumuşak ge — kéo dài nguyên âm trước / ~câm (dağ→[daː]); không đứng đầu từ"
+    },
+    "g2p_check_results_12321_words": {
+      "ş=>ʃ": "0.16% OK", "j=>ʒ": "1.75% OK", "ü=>y": "0.77% OK", "ı=>ɯ": "1.29% OK"
+    },
+    "data_discipline": {
+      "affricate_tokenization": "c→[d͡ʒ] báo 21.34% + ç→[t͡ʃ] 16.99% 'vi phạm' = ARTIFACT: WikiPron phiên âm khi thì tie-bar 't͡ʃ' (1 token) khi thì tách 't ʃ' (2 token); g2p-check khớp chuỗi con nên 't ʃ' không chứa 't͡ʃ'. Kiểm tay: Acem→[a d͡ʒ e m], Akçaabat→[a k t͡ʃ...] — ánh xạ ĐÚNG 100%. KHÔNG phải rule sai.",
+      "o_umlaut": "ö→[ø] báo 17.92% = biến thể narrow [œ]/[ø]; broad ö→[ø] đúng.",
+      "gh_soft": "ğ = kéo dài/câm theo ngữ cảnh (dağ→daː, değil→[deil]) — lexical/ngữ cảnh, không ánh xạ 1-âm cố định."
+    }
+  },
+  "checks": [
+    {
+      "id": "phonemic-one-letter-one-sound",
+      "description": "Nguyên âm 8 + phụ âm ş[ʃ] j[ʒ] ü[y] ı[ɯ] — g2p-check xác nhận <2% trên WikiPron; c/ç đúng (artifact tokenization, xem config).",
+      "assert": { "type": "custom", "note": "g2p-check.mjs xác nhận; c/ç 'vi phạm' cao = tie-bar-vs-space tokenization, không phải rule sai." },
+      "fixtures": { "pass": ["şeker", "gün", "kız"], "fail": ["şeker-as-s"] }
+    },
+    {
+      "id": "soft-g-lengthens",
+      "description": "ğ kéo dài nguyên âm trước / ~câm, không đứng đầu từ.",
+      "assert": { "type": "custom", "note": "ğ ngữ cảnh: dağ→[daː]." },
+      "fixtures": { "pass": ["dağ", "değil"], "fail": ["ğol"] }
+    }
+  ],
+  "fixtures": {
+    "pass": ["şeker", "gün", "kız", "dağ"],
+    "fail": ["şeker-as-s"],
+    "_note": "g2p-check.mjs Bước 3 trên WikiPron thật (12321 từ): ş/j/ü/ı <2%; c/ç đúng (artifact tokenization ghi rõ config)."
+  }
+}

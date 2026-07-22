@@ -1,0 +1,58 @@
+{
+  "id": "fil/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "fil-PH",
+    "address_forms": {
+      "ka_ikaw": { "formality": "informal", "number": "singular", "usage": "ngôi 2 thân (ka enclitic / ikaw đầu câu)" },
+      "kayo": { "formality": "polite_or_plural", "usage": "ngôi 2 số nhiều HOẶC lịch sự cho 1 người (như vous/Vi)" },
+      "po_ho": { "type": "respect_particle", "usage": "'po' (trang trọng) / 'ho' (thân-lịch sự) cuối câu/xen câu — đánh dấu TÔN TRỌNG với người lớn tuổi/địa vị. Đặc trưng văn hoá Philippines." }
+    },
+    "baseline": {
+      "value": "Dạy ka/ikaw (thân) + kayo (lịch sự/số nhiều) + TIỂU TỪ 'po'/'ho' (tôn trọng). po/ho rất quan trọng xã hội — thiếu po với người lớn tuổi bị coi bất lịch sự.",
+      "tts_locale": "fil-PH (xem D-fil-01)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "ka + bỏ po (bạn bè, đồng trang lứa)",
+      "NATURAL_NEUTRAL_POLITE": "+ po/ho + kayo — baseline lịch sự (với người lạ/lớn tuổi)",
+      "FORMAL": "po/ho đầy đủ + từ vựng trang trọng (có thể code-switch Anh/TBN)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "po/ho là TIỂU TỪ TÔN TRỌNG (register lịch sự), KHÔNG phải hệ kính ngữ hình thái nhiều tầng kiểu ja (敬語)/ko. Đã bao trong POLITE/FORMAL. Tự áp TIỀN LỆ es B-02. Ghi nhận po/ho quan trọng văn hoá."
+      }
+    },
+    "politeness_devices": {
+      "indirect": "Pwede po ba...? (Xin phép được...?), Maaari po...? (Có thể...?), salamat (po) (cảm ơn), pasensya na (xin lỗi), paki- (tiền tố nhờ vả: pakibigay 'làm ơn đưa')"
+    }
+  },
+  "checks": [
+    {
+      "id": "po-respect-particle",
+      "description": "Tiểu từ 'po/ho' đánh dấu tôn trọng (với người lớn tuổi/lịch sự). Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần ngữ cảnh quan hệ khi generator chạy; po enclitic vị trí thích hợp." },
+      "fixtures": {
+        "pass": ["Magandang umaga po.", "Salamat po."],
+        "fail": ["Magandang po umaga."]
+      }
+    },
+    {
+      "id": "ka-vs-kayo",
+      "description": "ka (thân) vs kayo (lịch sự/số nhiều). Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "kayo cho lịch sự 1 người hoặc số nhiều." },
+      "fixtures": {
+        "pass": ["Kumusta ka?", "Kumusta po kayo?"],
+        "fail": [""]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Magandang umaga po.", "Salamat po.", "Kumusta ka?"],
+    "fail": ["Magandang po umaga.", ""],
+    "_note": "Câu pass minh hoạ po/ho tôn trọng + ka/kayo. Corpus nhỏ — cần người bản ngữ xác nhận vị trí po."
+  }
+}

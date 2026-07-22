@@ -1,0 +1,60 @@
+{
+  "id": "vi/phonology.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": [
+    "reading-aid (D-44 gợi ý đọc dấu thanh), phoneme_inventory"
+  ],
+  "sources": [
+    "S-WIKIPEDIA-VI",
+    "WIKIPRON"
+  ],
+  "derived_by": "human",
+  "config": {
+    "dialect": "Hà Nội (Bắc) — D-43",
+    "orthography_mostly_phonemic": true,
+    "same_sound_multiple_spellings_exist": true,
+    "same_sound_examples": [
+      {
+        "sound": "/k/",
+        "spellings": [
+          "c",
+          "k",
+          "q"
+        ]
+      }
+    ],
+    "is_monosyllabic_analytic": true,
+    "each_syllable_written_separately": true,
+    "reading_aid_policy": "not-applicable cho romanization (đã Latin); CÓ gợi ý mô tả thanh điệu bằng lời + audio, ẩn mặc định + toggle (D-44)"
+  },
+  "fixtures": {
+    "pass": [
+      {
+        "word": "cá",
+        "note": "âm /k/ viết bằng 'c' trước a/o/u"
+      },
+      {
+        "word": "kem",
+        "note": "âm /k/ viết bằng 'k' trước i/e/ê"
+      },
+      {
+        "word": "quả",
+        "note": "âm /k/ viết bằng 'qu' trước nguyên âm tròn môi"
+      },
+      {
+        "word": "học sinh",
+        "syllables": 2,
+        "words": 1,
+        "note": "từ ghép 2 âm tiết viết cách nhau = 1 từ"
+      }
+    ],
+    "fail": [
+      {
+        "word": "kả",
+        "note": "SAI chính tả: 'k' không đứng trước 'a' (phải là 'c')"
+      }
+    ]
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "id": "es/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 132249,
+    "byScript": {
+      "spa_latn_la_broad_filtered": {
+        "count": 132249,
+        "sample": [
+          [
+            "'tamo'",
+            "t a m o"
+          ],
+          [
+            "'tamos",
+            "t a m o s"
+          ],
+          [
+            "'tas",
+            "t a s"
+          ],
+          [
+            "ACIP",
+            "a s i p"
+          ],
+          [
+            "ACNUR",
+            "a ɡ n u ɾ"
+          ],
+          [
+            "ADIF",
+            "a d i f"
+          ],
+          [
+            "AEAT",
+            "a e a t"
+          ],
+          [
+            "AFI",
+            "a f i"
+          ],
+          [
+            "AFIP",
+            "a f i p"
+          ],
+          [
+            "AINE",
+            "a i n e"
+          ],
+          [
+            "AMAF",
+            "a m a f"
+          ],
+          [
+            "AMBA",
+            "a m b a"
+          ],
+          [
+            "AMLO",
+            "a m l o"
+          ],
+          [
+            "AMPA",
+            "a m p a"
+          ],
+          [
+            "AMPAs",
+            "a m p a s"
+          ],
+          [
+            "ANCAP",
+            "a n k a p"
+          ],
+          [
+            "ANDA",
+            "a n d a"
+          ],
+          [
+            "ANP",
+            "a e n e p e"
+          ],
+          [
+            "AOVE",
+            "a o b e"
+          ],
+          [
+            "APEC",
+            "a p e k"
+          ],
+          [
+            "APRA",
+            "a p ɾ a"
+          ],
+          [
+            "ARYM",
+            "a ɾ i m"
+          ],
+          [
+            "ATE",
+            "a t e"
+          ],
+          [
+            "AVE",
+            "a b e"
+          ],
+          [
+            "Aarón",
+            "a a ɾ o n"
+          ],
+          [
+            "Ababa",
+            "a b a b a"
+          ],
+          [
+            "Abad",
+            "a b a d"
+          ],
+          [
+            "Abadiano",
+            "a b a d j a n o"
+          ],
+          [
+            "Abadán",
+            "a b a d a n"
+          ],
+          [
+            "Abadón",
+            "a b a d o n"
+          ],
+          [
+            "Abanto",
+            "a b a n t o"
+          ],
+          [
+            "Abarca",
+            "a b a ɾ k a"
+          ],
+          [
+            "Abascal",
+            "a b a s k a l"
+          ],
+          [
+            "Abdiel",
+            "a b d j e l"
+          ],
+          [
+            "Abdías",
+            "a b d i a s"
+          ],
+          [
+            "Abdón",
+            "a b d o n"
+          ],
+          [
+            "Abeita",
+            "a b e i t a"
+          ],
+          [
+            "Abel",
+            "a b e l"
+          ],
+          [
+            "Abelardo",
+            "a b e l a ɾ d o"
+          ],
+          [
+            "Abelito",
+            "a b e l i t o"
+          ],
+          [
+            "Abellano",
+            "a b e ʝ a n o"
+          ],
+          [
+            "Abello",
+            "a b e ʝ o"
+          ],
+          [
+            "Abendaño",
+            "a b e n d a ɲ o"
+          ],
+          [
+            "Aberásturi",
+            "a b e ɾ a s t u ɾ i"
+          ],
+          [
+            "Abeyta",
+            "a b e i t a"
+          ],
+          [
+            "Abigaíl",
+            "a b i ɡ a i l"
+          ],
+          [
+            "Abimael",
+            "a b i m a e l"
+          ],
+          [
+            "Abisinia",
+            "a b i s i n j a"
+          ],
+          [
+            "Abiyán",
+            "a b i ʝ a n"
+          ],
+          [
+            "Abjasia",
+            "a b x a s j a"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/spa_latn_la_broad_filtered.tsv"
+      }
+    }
+  }
+}

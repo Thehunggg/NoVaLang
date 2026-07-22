@@ -1,0 +1,53 @@
+{
+  "id": "th/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "isolating_grammar",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "th-TH",
+    "isolating": {
+      "note": "ĐƠN LẬP (isolating, như zh/vi) — KHÔNG biến tố.",
+      "no_inflection": "không cách, không giống, không số nhiều hình thái, KHÔNG chia động từ theo ngôi/thì",
+      "tense_aspect_particles": "จะ (tương lai), แล้ว (hoàn thành/rồi), กำลัง (đang), เคย (từng), ได้ (đã/có thể)"
+    },
+    "word_order": {
+      "base": "SVO",
+      "modifier_after_noun": "bổ nghĩa SAU danh từ: บ้านใหญ่ 'nhà lớn' (nhà+lớn), รถของผม 'xe của tôi'",
+      "question_particle": "ไหม / หรือ cuối câu (nghi vấn); pro-drop nhiều"
+    },
+    "classifiers": {
+      "note": "LOẠI TỪ (ลักษณนาม, như zh/vi) khi đếm",
+      "pattern": "[danh từ] + [số] + [loại từ]: หนังสือ สาม เล่ม 'sách ba quyển'",
+      "common": "คน (người), ตัว (con/vật), อัน (cái), เล่ม (quyển), ใบ (tờ/lá), คัน (xe)"
+    },
+    "no_copula_with_adjective": "tính từ làm vị ngữ KHÔNG cần 'là' (เขาสูง 'anh ấy cao', không cần copula); เป็น/คือ 'là' chỉ dùng với danh từ"
+  },
+  "checks": [
+    {
+      "id": "classifier-order",
+      "description": "Đếm dùng [danh từ]+[số]+[loại từ]. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần từ điển loại từ theo danh từ khi generator chạy." },
+      "fixtures": {
+        "pass": ["หนังสือสามเล่ม", "คนสองคน"],
+        "fail": ["สามหนังสือ"]
+      }
+    },
+    {
+      "id": "tense-via-particle-not-inflection",
+      "description": "Thì/thể qua trợ từ, KHÔNG chia động từ. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Động từ Thái bất biến; จะ/แล้ว/กำลัง đánh dấu thì/thể." },
+      "fixtures": {
+        "pass": ["ผมจะไป", "ผมไปแล้ว"],
+        "fail": ["placeholder-inflected-verb"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["ผมพูดภาษาไทย", "หนังสือสามเล่ม", "ผมจะไป"],
+    "fail": ["สามหนังสือ"],
+    "_note": "Câu pass minh hoạ isolating (không biến tố) + loại từ + trợ từ thì. corpus PUD (1000, yếu) đã tách từ."
+  }
+}

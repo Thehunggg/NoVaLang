@@ -1,0 +1,44 @@
+{
+  "id": "hu/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "„”",
+    "quote_marks_alternative": "»«",
+    "special_letters": "á é í ó ö ő ú ü ű (chữ riêng, ngắn/dài) + digraph cs dz dzs gy ly ny sz ty zs. KHÔNG dấu lật ngược es.",
+    "capitalization": {
+      "months_not_capitalized": true,
+      "weekdays_not_capitalized": true,
+      "languages_and_nationalities_not_capitalized": true,
+      "note": "január/hétfő/magyar viết thường (trừ đầu câu) — khác en."
+    }
+  },
+  "checks": [
+    {
+      "id": "month-weekday-not-capitalized",
+      "description": "Tên tháng/thứ trong tuần không viết hoa (trừ đầu câu). [corpus-check Bước 3 trên 1800 câu thật — 0/1800 = 0.00%; corpus nhỏ (chỉ 99 lần) nên bằng chứng yếu hơn hr/ca, ghi rõ.]",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "\\b(Január|Február|Március|Április|Június|Július|Augusztus|Szeptember|Október|November|December|Hétfő|Kedd|Szerda|Csütörtök|Péntek|Szombat|Vasárnap)\\b(?<!^\\w+)"
+      },
+      "fixtures": {
+        "pass": ["Ma hétfő van, január harmadika."],
+        "fail": ["Ma Hétfő van, Január harmadika."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Ma hétfő van.", "Ő magyarul beszél.", "Budapest Magyarország fővárosa."],
+    "fail": ["ma hétfő van.", "Ma Január van."],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Hungarian-Szeged thật (1800 câu — dưới 2000, yếu). Május bỏ khỏi regex vì đồng âm tên riêng."
+  }
+}

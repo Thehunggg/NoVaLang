@@ -1,0 +1,184 @@
+{
+  "_meta": {
+    "language": "nl",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "nl-NL (tiếng Hà Lan chuẩn, Hà Lan)",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật. g2p-check/corpus-check chạy trên dữ liệu thật để nâng confidence.",
+    "corpus": {
+      "file": "tools/cache/corpus/nl-sentences.txt (không commit)",
+      "sentences": 30723,
+      "source": "UD Dutch-Alpino + UD Dutch-LassySmall train/dev/test (S-UD-CORPUS)",
+      "note": "Vượt mốc 10000 — corpus không yếu."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Hà Lan để chạy rule lên kiểm false-positive."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chữ Latin 26 chữ + nguyên âm mang dấu (á é í ó ú trọng âm/mượn; ë ï ö ü trema tách âm tiết) + DIGRAPH IJ (ij) coi gần như 1 chữ (viết hoa cả hai: IJsland). CLDR xác nhận {ij} trong exemplar. Sự kiện phổ thông.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận á ä é ë í ï ó ö ú ü + digraph {ij}.",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Hoa đầu câu + danh từ riêng. KHÁC de (không hoa mọi danh từ). Tháng/thứ trong tuần KHÔNG viết hoa (januari, maandag) — giống es/it. NHƯNG KHÁC es/it: tên NGÔN NGỮ + tính từ/danh từ QUỐC TỊCH VIẾT HOA trong tiếng Hà Lan (Nederlands, het Engels, een Nederlandse man) — điểm riêng cần lưu ý. Digraph IJ đầu từ viết hoa CẢ HAI chữ (IJsland, niet Ijsland). [Bước 3: corpus-check month-weekday.] [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. V1 cơ quan chuẩn ngôn ngữ + V2 giáo trình + V4/V5 ngữ pháp tham chiếu đồng thuận tháng/thứ viết thường. V3 corpus-check THẬT: month-weekday-not-capitalized 27/30723 (0.09%) — dưới xa ngưỡng, quy tắc hợp lệ trên dữ liệu thật.]",
+    "status": "VALIDATED"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ Latin.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (nld_latn_broad_filtered, 58535 cặp) -> grapheme-to-phoneme.data.json. Đặc trưng: nhiều nguyên âm đôi (ij/ui/ei/ou/au); âm hầu [x]/[ɣ] (hard g, ch); đối lập nguyên âm dài/ngắn qua chính tả nhân đôi.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "[Bước 3: g2p-check.mjs trên WikiPron thật (58535 từ) xác nhận: ch->[x] 18.69% (ngoại lệ -isch->[-is], ch câm); ij->[ɛ i̯] 11.30%; ui->[œ y̯] 2.92%; oe->[u] 0.41%; sch->chứa[s] 0.74% (đầu từ [sx], cuối [s]); aa->[aː] 0.17%, oo->[oː] 2.35% (NGUYÊN ÂM DÀI qua nhân đôi); ng->[ŋ] 9.01%; ge->[ɣ]/[x] 15.58% (hard g). PHÁT HIỆN THẬT: (1) ij/ui bắn 100% lần đầu do âm WikiPron cách nhau dấu cách + dấu phi-âm-tiết [i̯]/[y̯] (U+032F) — [ɛ i̯]/[œ y̯] là 2 token, sửa regex theo dữ liệu -> 11.30%/2.92%. (2) 'g' phẳng bắn 21.98% (>ngưỡng) vì digraph 'ng' NUỐT g thành [ŋ] + loanword g->[ɡ]; tách thành ng->[ŋ] + ge->[ɣ] riêng thay vì bỏ quy tắc g->[ɣ].] Chưa g2p-check: v/w, eu->[øː], schwa cuối từ.",
+    "status": "VALIDATED"
+  },
+  "final_devoicing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LÀM CÂM CUỐI TỪ (giống de): phụ âm hữu thanh cuối từ -> vô thanh (d->t, b->p, z->s, v->f, g->x). Chính tả GIỮ chữ hữu thanh nhưng đọc câm: 'hond' viết d đọc [hɔnt], 'heb' đọc [hɛp]. [g2p-check: d$->[t] 0.59%, b$->[p] 4.49% — xác nhận.] Ảnh hưởng vần/số nhiều (hond->honden khôi phục [d]).",
+    "status": "VALIDATED"
+  },
+  "vowel_length_spelling": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG CHÍNH TẢ Hà Lan: nguyên âm DÀI/NGẮN đánh dấu qua ÂM TIẾT MỞ/ĐÓNG + nhân đôi phụ âm/nguyên âm. Âm tiết mở nguyên âm dài (ma-nen [maːnə] 'trăng số nhiều'); âm tiết đóng nhân đôi phụ âm giữ nguyên âm ngắn (man-nen [mɑnə] 'đàn ông'). Nguyên âm dài cuối âm tiết đóng viết đôi (maan, boot). [g2p-check aa->[aː] 0.17%, oo->[oː] 2.35%.] Quy tắc chính tả rule_level rõ, cần dạy tường minh.",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Dutch-Alpino test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "gender_and_articles": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Mạo từ xác định: de (giống chung — commune, gộp nam+nữ cổ) / het (giống trung). Mạo từ không xác định: een (mọi giống). de vs het phần lớn LEXICAL (phải học theo từng danh từ — điểm khó bậc nhất cho học viên, ~2/3 danh từ là de). Số nhiều LUÔN dùng de. Chỉ định: deze/dit (de/het gần), die/dat (xa). Tính từ thêm -e trừ khi het-word không xác định số ít (een mooi huis / het mooie huis).",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG (giống de): mệnh đề chính V2 — động từ chia ở vị trí THỨ HAI (Ik lees een boek / Vandaag lees ik). Mệnh đề phụ động từ về CUỐI (..., omdat ik moe ben). Cụm động từ tách khung (Ik heb een boek gelezen). SOV nền tảng + V2 bề mặt. Điểm khó cho người nói tiếng Anh (SVO cứng).",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Nguyên mẫu -en (werken). Hiện tại: ik werk (thân), jij/hij werkt (thân+t), wij/jullie/zij werken (=nguyên mẫu). Quá khứ yếu: -te/-de (werkte) theo quy tắc ''t kofschip' (thân kết thúc âm vô thanh -> -te). Hoàn thành: hebben/zijn + phân từ ge-...-t/-d/-en. Động từ mạnh (đổi nguyên âm) + hebben/zijn/gaan bất quy tắc là lexical.",
+    "status": "DRAFT"
+  },
+  "separable_verbs": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG (giống de): động từ tách được — tiền tố nhảy về CUỐI mệnh đề chính (opstaan -> 'Ik sta om 7 uur op'). Phân từ chèn ge- giữa (opgestaan). Tiền tố tách phổ biến: op/aan/uit/mee/af/in/door/na/toe. Động từ nào tách là lexical; quy tắc vị trí rule_level.",
+    "status": "DRAFT"
+  },
+  "diminutive": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG Hà Lan — hậu tố GIẢM NHẸ -je RẤT năng sản (nhiều hơn de -chen/-lein): huis->huisje, boom->boompje, man->mannetje, koning->koninkje. Biến thể -je/-tje/-etje/-pje/-kje theo âm cuối gốc. Danh từ giảm nhẹ LUÔN là het-word (het huisje). Quy tắc chọn biến thể rule_level (theo âm cuối), gốc là lexical.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "je/jij (thân mật, số ít; je không nhấn, jij nhấn) / u (trang trọng, số ít+nhiều — chia động từ ngôi 3 số ít: u heeft/hebt) / jullie (thân mật số nhiều). Tiếng Hà Lan dùng je/jij rộng hơn (ít trang trọng hơn de Sie). ge/gij là dạng Flemish/nl-BE (không dùng baseline nl-NL). je/u map CASUAL/FORMAL. Xem review-checklist D-nl-01 (nl-NL vs nl-BE).",
+    "status": "VALIDATED"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Dấu câu chuẩn Latin (. , ? !). Ngoặc kép: „…\" (thấp-cao) truyền thống + \"…\" hiện đại. KHÔNG có dấu lật ngược như es. Không có đặc trưng dấu câu gây khó riêng.",
+    "status": "DRAFT"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Trema (¨) tách âm tiết khi nguyên âm có thể đọc thành nguyên âm đôi: geïnteresseerd, coördinatie, zeeën. Dấu sắc đánh trọng âm nhấn mạnh/phân biệt: één 'một' (số) vs een 'một' (mạo từ); vóór vs voor. Dấu huyền/mũ chủ yếu ở từ mượn Pháp (café, scène). Ảnh hưởng chấm điểm — xem answer_acceptance_nl.",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~je/jij + từ thân mật (hoi, doei), NATURAL_NEUTRAL_POLITE~je hoặc u chuẩn mực (baseline), FORMAL~u + từ trang trọng (Goedendag, alstublieft). HONORIFIC: not-applicable cho nl — u đã đủ diễn tả qua FORMAL, tiếng Hà Lan KHÔNG có hệ kính ngữ hình thái kiểu ja/ko. Tự áp theo TIỀN LỆ es B-02 (owner duyệt 2026-07-19).",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "NOT-APPLICABLE: chữ Latin.",
+    "status": "not-applicable"
+  },
+  "answer_acceptance_nl": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B03"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính sách chấm khi thiếu trema/dấu (gõ 'geinteresseerd' thay 'geïnteresseerd', 'een' thay 'één'): TỰ ÁP theo TIỀN LỆ es B-03 (cảnh báo nhẹ). Lưu ý một số dấu ĐỔI NGHĨA (één 'một'/een 'mạo từ'; vóór/voor) -> cảnh báo nhẹ chứ không bỏ qua hoàn toàn. IJ vs Y: chấp nhận không thay thế (ij là chữ Hà Lan, không dùng y). Giữ DRAFT tới khi owner xác nhận — xem review-checklist D-nl-02.",
+    "status": "DRAFT"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Lưu ý khác biệt nl-NL vs nl-BE (Flemish) về từ vựng/giọng điệu — baseline nl-NL.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text Latin. Kế thừa _base/audio.rules.json. Locale: nl-NL (chuẩn Hà Lan, khớp WikiPron/UD dataset). KHÔNG dùng nl-BE (Flemish) TTS cho baseline nl-NL (khác rõ: g mềm hơn ở miền Nam).",
+    "status": "VALIDATED"
+  }
+}

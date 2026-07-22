@@ -524,23 +524,28 @@ class L10n {
     },
     'learnSubtitle': {
       'en':
-          'Follow your language path. Absolute beginners start with Core Foundation.',
+          'Follow your language path. Complete beginners start with the basics.',
       'vi':
-          'Theo lộ trình ngôn ngữ của bạn. Người mới bắt đầu từ Core Foundation.',
+          'Theo lộ trình ngôn ngữ của bạn. Người mới bắt đầu học phần nền tảng trước.',
     },
     'coreFoundationRequired': {
-      'en': 'Start with Core Foundation',
-      'vi': 'Bắt đầu với Core Foundation',
+      'en': 'Start with the basics',
+      'vi': 'Bắt đầu với phần nền tảng',
     },
     'coreFoundationRequiredHelp': {
       'en':
-          'A0 learners practice letters and sounds first. Daily Life greetings unlock after you finish or skip this step.',
+          'Complete beginners practice letters and sounds first. Everyday greetings unlock after you finish or skip this step.',
       'vi':
-          'Người học A0 luyện chữ cái và âm trước. Daily Life (chào hỏi) mở sau khi bạn hoàn thành hoặc bỏ qua bước này.',
+          'Người mới học luyện chữ cái và âm trước. Các bài chào hỏi hằng ngày sẽ mở sau khi bạn hoàn thành hoặc bỏ qua bước này.',
     },
     'skipCoreFoundation': {
-      'en': 'Skip Core Foundation',
-      'vi': 'Bỏ qua Core Foundation',
+      'en': 'Skip the basics',
+      'vi': 'Bỏ qua phần nền tảng',
+    },
+    'exerciseResultsTitle': {
+      'en': 'Exercises complete',
+      'vi': 'Hoàn thành bài tập',
+      'ja': '練習完了',
     },
     'vocabulary': {
       'en': 'Vocabulary',

@@ -1,0 +1,218 @@
+{
+  "id": "fi/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 173449,
+    "byScript": {
+      "fin_latn_broad": {
+        "count": 173449,
+        "sample": [
+          [
+            "'auhelawa",
+            "ɑ u̯ h e l ɑ w ɑ"
+          ],
+          [
+            "'patafysiikka",
+            "p ɑ t ɑ f y s iː kː ɑ"
+          ],
+          [
+            "AIDS",
+            "ɑ i̯ d s"
+          ],
+          [
+            "AMK",
+            "ɑ m k"
+          ],
+          [
+            "AMK",
+            "ɑː æ m k oː"
+          ],
+          [
+            "ATK",
+            "ɑː t eː k oː"
+          ],
+          [
+            "Aabraham",
+            "ɑː b r ɑ h ɑ m"
+          ],
+          [
+            "Aada",
+            "ɑː d ɑ"
+          ],
+          [
+            "Aadam",
+            "ɑː d ɑ m"
+          ],
+          [
+            "Aadolf",
+            "ɑː d o l f"
+          ],
+          [
+            "Aake",
+            "ɑː k e"
+          ],
+          [
+            "Aakko",
+            "ɑː kː o"
+          ],
+          [
+            "Aakula",
+            "ɑː k u l ɑ"
+          ],
+          [
+            "Aallotar",
+            "ɑː lː o t ɑ r"
+          ],
+          [
+            "Aaltio",
+            "ɑː l t i o"
+          ],
+          [
+            "Aalto",
+            "ɑː l t o"
+          ],
+          [
+            "Aaltola",
+            "ɑː l t o l ɑ"
+          ],
+          [
+            "Aaltonen",
+            "ɑː l t o n e n"
+          ],
+          [
+            "Aamon",
+            "ɑː m o n"
+          ],
+          [
+            "Aamos",
+            "ɑː m o s"
+          ],
+          [
+            "Aamu",
+            "ɑː m u"
+          ],
+          [
+            "Aamulehti",
+            "ɑː m u l e h t i"
+          ],
+          [
+            "Aamurusko",
+            "ɑː m u r u s k o"
+          ],
+          [
+            "Aapeli",
+            "ɑː p e l i"
+          ],
+          [
+            "Aapo",
+            "ɑː p o"
+          ],
+          [
+            "Aappo",
+            "ɑː pː o"
+          ],
+          [
+            "Aapro",
+            "ɑː p r o"
+          ],
+          [
+            "Aaretti",
+            "ɑː r e tː i"
+          ],
+          [
+            "Aarikka",
+            "ɑː r i kː ɑ"
+          ],
+          [
+            "Aarne",
+            "ɑː r n e"
+          ],
+          [
+            "Aarni",
+            "ɑː r n i"
+          ],
+          [
+            "Aarnio",
+            "ɑː r n i o"
+          ],
+          [
+            "Aarno",
+            "ɑː r n o"
+          ],
+          [
+            "Aaro",
+            "ɑː r o"
+          ],
+          [
+            "Aaron",
+            "ɑː r o n"
+          ],
+          [
+            "Aarre",
+            "ɑː rː e"
+          ],
+          [
+            "Aarre",
+            "ɑː rː eˣ"
+          ],
+          [
+            "Aarto",
+            "ɑː r t o"
+          ],
+          [
+            "Aartolahti",
+            "ɑː r t o l ɑ h t i"
+          ],
+          [
+            "Aasia",
+            "ɑː s i ɑ"
+          ],
+          [
+            "Aatami",
+            "ɑː t ɑ m i"
+          ],
+          [
+            "Aatamila",
+            "ɑː t ɑ m i l ɑ"
+          ],
+          [
+            "Aataminsilta",
+            "ɑː t ɑ m i n s i l t ɑ"
+          ],
+          [
+            "Aato",
+            "ɑː t o"
+          ],
+          [
+            "Aatola",
+            "ɑː t o l ɑ"
+          ],
+          [
+            "Aatos",
+            "ɑː t o s"
+          ],
+          [
+            "Aatsinki",
+            "ɑː t s i ŋ k i"
+          ],
+          [
+            "Aatto",
+            "ɑː tː o"
+          ],
+          [
+            "Aatu",
+            "ɑː t u"
+          ],
+          [
+            "Aava",
+            "ɑː ʋ ɑ"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/fin_latn_broad.tsv"
+      }
+    }
+  }
+}

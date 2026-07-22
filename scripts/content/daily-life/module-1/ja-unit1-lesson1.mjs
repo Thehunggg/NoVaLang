@@ -43,7 +43,12 @@ const dialogueLine = (speakerId, text, reading, translation, speechText) => ({
   speakerReading: undefined,
 });
 
-const example = (text, reading, translation) => ({ text, reading, translation });
+// Owner decision (2026-07-19): every vocabulary example must carry audio
+// (speech) so the UI can render a per-example speaker button (LESSON_AUTHORING_
+// STANDARD.md §C1/§D8). speechText defaults to the example's already-authored
+// kana `reading` (pure kana is the safe TTS surface for Japanese) — no reading
+// is invented here; each call already supplies its kana reading.
+const example = (text, reading, translation, speechText = reading) => ({ text, reading, translation, speechText });
 const option = (id, text, canonicalText = text, audioText = canonicalText) => ({ id, text, canonicalText, audioText });
 const token = (id, text, canonicalText = text, audioText = canonicalText) => ({ id, text, canonicalText, audioText });
 
@@ -137,7 +142,7 @@ const PRACTICE_EXERCISES = [
     ],
   },
   {
-    id: 'ja-daily_life-m01-u1-l1-practice-10', order: 10, plan: 'free', type: 'chat_text_fill',
+    id: 'ja-daily_life-m01-u1-l1-practice-10', order: 10, plan: 'plus', type: 'chat_text_fill',
     prompt: 'Hoàn thành đoạn chat',
     chat: {
       timestamp: '11:00',
@@ -404,8 +409,8 @@ const JA_UNIT1_LESSON1_SOURCE = {
         estimatedMinutes: 'Khoảng 8–10 phút',
         reviewTopics: 'Từ vựng · Nghe · Hội thoại · Ngữ pháp',
         groups: [
-          { id: 'free', number: '01', title: 'Luyện tập cơ bản', titleByNative: vi('Luyện tập cơ bản'), range: 'Câu 1–10', rangeByNative: vi('Câu 1–10'), details: 'Từ vựng · Nghe · Ngữ pháp\nHội thoại · Sắp xếp câu', detailsByNative: vi('Từ vựng · Nghe · Ngữ pháp\nHội thoại · Sắp xếp câu'), start: 1, end: 10, plan: 'free' },
-          { id: 'plus', number: '02', title: 'Luyện tập nâng cao', titleByNative: vi('Luyện tập nâng cao'), range: 'Câu 11–14', rangeByNative: vi('Câu 11–14'), details: 'Tình huống thực tế\nHội thoại thực hành nâng cao', detailsByNative: vi('Tình huống thực tế\nHội thoại thực hành nâng cao'), start: 11, end: 14, plan: 'plus' },
+          { id: 'free', number: '01', title: 'Luyện tập cơ bản', titleByNative: vi('Luyện tập cơ bản'), range: 'Câu 1–9', rangeByNative: vi('Câu 1–9'), details: 'Từ vựng · Nghe · Ngữ pháp\nHội thoại · Sắp xếp câu', detailsByNative: vi('Từ vựng · Nghe · Ngữ pháp\nHội thoại · Sắp xếp câu'), start: 1, end: 9, plan: 'free' },
+          { id: 'plus', number: '02', title: 'Luyện tập nâng cao', titleByNative: vi('Luyện tập nâng cao'), range: 'Câu 10–14', rangeByNative: vi('Câu 10–14'), details: 'Tình huống thực tế\nHội thoại thực hành nâng cao', detailsByNative: vi('Tình huống thực tế\nHội thoại thực hành nâng cao'), start: 10, end: 14, plan: 'plus' },
         ],
         exercises: PRACTICE_EXERCISES,
       },

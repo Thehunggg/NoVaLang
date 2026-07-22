@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "language": "uk",
+    "stage": "0-inventory",
+    "note": "Nguồn cho lớp máy-đọc-được của uk (tiếng Ukraina chuẩn, uk-UA). Hệ chữ KIRIN (Cyrl) — 33 chữ, KHÁC bảng Nga (có і ї є ґ; KHÔNG có ы э ъ ё). Slavic Đông. Dataset (CLDR/UD/WikiPron) import Bước 1, confidence:high, tải thật qua raw.githubusercontent.com. WikiPron uk RẤT LỚN (53021 cặp, narrow) → g2p-check đạt rất tốt. Corpus UD Ukrainian-IU 7092 câu (DƯỚI mốc 10000 nhưng TRÊN sàn 2000 — ghi rõ). Tra cứu 5 vòng cho mọi quyết định sản phẩm. Nguồn S-* dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet (KHÔNG fetch toàn văn — D-51), confidence trần medium."
+  },
+  "sources": [
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (uk) — bảng chữ Kirin Ukraina (33 chữ: а-я + і ї є ґ, dấu nháy ')",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/uk/characters.json",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme (ukr_cyrl_narrow, 53021 cặp — narrow transcription uk-UA; bộ RẤT LỚN)",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/ukr_cyrl_narrow.tsv",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank (UD_Ukrainian-IU test split, word-class import)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Ukrainian-IU/master/uk_iu-ud-test.conllu",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-NC-SA (per treebank)"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD Ukrainian-IU (train/dev/test) — câu thật cho corpus check (7092 câu, tools/cache/corpus/uk-sentences.txt, không commit; DƯỚI mốc 10000 — ghi rõ)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Ukrainian-IU/master/",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-NC-SA (per treebank)"
+    },
+    {
+      "id": "S-TRAINED-KNOWLEDGE",
+      "name": "Kiến thức ngôn ngữ học tiếng Ukraina đã huấn luyện sẵn của người viết rule (Claude) — CHỈ dùng cho sự kiện chuẩn phổ thông; KHÔNG dùng làm nguồn duy nhất cho quyết định sản phẩm hay bảng dữ liệu đầy đủ",
+      "url": null,
+      "consulted": "2026-07-19",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "n/a — xem D-51"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "th/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": ["style-and-register.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "th-TH",
+    "politeness_particles": {
+      "note": "TRỢ TỪ LỊCH SỰ cuối câu — GẮN GIỚI người nói",
+      "male": "ครับ (khráp) — nam, mọi câu",
+      "female": "ค่ะ (khâ, câu trần thuật) / คะ (khá, câu hỏi) — nữ",
+      "usage": "thêm vào cuối câu để lịch sự; bỏ = thân mật/trống"
+    },
+    "pronouns": {
+      "first_person": "ผม (nam) / ดิฉัน (nữ trang trọng), ฉัน (nữ thân) — 'tôi'",
+      "second_person": "คุณ (bạn, lịch sự) / เธอ (thân) / xưng theo quan hệ พี่ (anh/chị), น้อง (em)",
+      "note": "chọn theo tuổi/địa vị/giới/thân sơ — phức, lexical/register. Pro-drop nhiều."
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "bỏ ครับ/ค่ะ, đại từ thân (เธอ, ฉัน), ngôn ngữ suồng sã",
+      "NATURAL_NEUTRAL_POLITE": "+ ครับ/ค่ะ + คุณ + ผม/ดิฉัน — baseline",
+      "FORMAL": "từ vựng trang trọng + đầy đủ trợ từ lịch sự + xưng hô trang trọng",
+      "HONORIFIC_modifier": {
+        "value": "exists-but-out-of-scope",
+        "reason": "Thái CÓ honorific THẬT: ราชาศัพท์ (ngôn ngữ hoàng gia — hệ từ vựng kính ngữ cho hoàng gia) + từ vựng nhà chùa (พระ). KHÁC es B-02 (es không có): Thái có honorific hình thái-từ vựng thật, NHƯNG OUT-OF-SCOPE cho baseline người học (chỉ ghi nhận, không dạy). Baseline dùng ครับ/ค่ะ + từ vựng lịch sự thường."
+      }
+    },
+    "politeness_devices": {
+      "indirect": "ขอ... (xin...), ...ได้ไหม (...được không?), กรุณา (làm ơn, trang trọng), ขอบคุณ (cảm ơn), ขอโทษ (xin lỗi)"
+    }
+  },
+  "checks": [
+    {
+      "id": "polite-particle-gendered",
+      "description": "Trợ từ lịch sự ครับ (nam)/ค่ะ (nữ) cuối câu, gắn giới người nói. Kiểm mẫu cố định.",
+      "assert": { "type": "custom", "note": "Cần biết giới người nói + ngữ cảnh khi generator chạy." },
+      "fixtures": {
+        "pass": ["สวัสดีครับ", "สวัสดีค่ะ"],
+        "fail": ["สวัสดีครับค่ะ"]
+      }
+    },
+    {
+      "id": "polite-indirect",
+      "description": "Lịch sự qua trợ từ + gián tiếp (...ได้ไหม). Kiểm mẫu.",
+      "assert": { "type": "custom", "note": "Baseline dùng ครับ/ค่ะ + gián tiếp." },
+      "fixtures": {
+        "pass": ["ช่วยผมได้ไหมครับ"],
+        "fail": [""]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["สวัสดีครับ", "สวัสดีค่ะ", "ขอบคุณครับ"],
+    "fail": ["สวัสดีครับค่ะ", ""],
+    "_note": "Câu pass minh hoạ trợ từ lịch sự gắn giới (ครับ nam / ค่ะ nữ). ราชาศัพท์ honorific ngoài phạm vi baseline."
+  }
+}

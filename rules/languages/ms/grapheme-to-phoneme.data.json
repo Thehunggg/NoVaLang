@@ -1,0 +1,218 @@
+{
+  "id": "ms/grapheme-to-phoneme.data",
+  "kind": "grapheme_to_phoneme",
+  "source": "WIKIPRON",
+  "derived_by": "dataset",
+  "confidence": "high",
+  "data": {
+    "count": 6672,
+    "byScript": {
+      "msa_latn_broad": {
+        "count": 6672,
+        "sample": [
+          [
+            "ABDB",
+            "e b i d i b i"
+          ],
+          [
+            "APM",
+            "e j p i e m"
+          ],
+          [
+            "APMM",
+            "e p i e m e m"
+          ],
+          [
+            "ATM",
+            "e t i e m"
+          ],
+          [
+            "Aceh",
+            "a t͡ʃ e h"
+          ],
+          [
+            "Afrika",
+            "a f r i k a"
+          ],
+          [
+            "Afrikaans",
+            "a f r i k a n s"
+          ],
+          [
+            "Ahad",
+            "a h a t"
+          ],
+          [
+            "Ainu",
+            "a i̯ n u"
+          ],
+          [
+            "Akan",
+            "a k a n"
+          ],
+          [
+            "Aklan",
+            "a k l a n"
+          ],
+          [
+            "Albania",
+            "a l b e n i a"
+          ],
+          [
+            "Allah",
+            "a l l a h"
+          ],
+          [
+            "Amerika",
+            "a m e r i k a"
+          ],
+          [
+            "Amerika",
+            "ə m e r i k a"
+          ],
+          [
+            "Antartika",
+            "a n t a r t i k a"
+          ],
+          [
+            "Arab",
+            "a r a b"
+          ],
+          [
+            "Arau",
+            "a r a u̯"
+          ],
+          [
+            "Arbaa",
+            "a b a ʔ ə"
+          ],
+          [
+            "Arbaa",
+            "a r b a ʔ a"
+          ],
+          [
+            "Arbaa",
+            "a r b a ʔ ə"
+          ],
+          [
+            "Armenia",
+            "a r m e n i a"
+          ],
+          [
+            "Asyura",
+            "a ʃ u r a"
+          ],
+          [
+            "Asyura",
+            "a ʃ u r ə"
+          ],
+          [
+            "Australia",
+            "a u s t r a l i a"
+          ],
+          [
+            "Australia",
+            "ɔ s t r e l i ə"
+          ],
+          [
+            "Ayu",
+            "a j u"
+          ],
+          [
+            "Azerbaijan",
+            "a z ə b a i̯ d͡ʒ a n"
+          ],
+          [
+            "Azerbaijan",
+            "a z ə r b a i̯ d͡ʒ a n"
+          ],
+          [
+            "BBNU",
+            "b i b i e n j u"
+          ],
+          [
+            "BNM",
+            "b i e n e m"
+          ],
+          [
+            "BSMM",
+            "b i e s e m e m"
+          ],
+          [
+            "Baba",
+            "b a b a"
+          ],
+          [
+            "Bachok",
+            "b a t͡ʃ h o k"
+          ],
+          [
+            "Bagus",
+            "b a ɡ o s"
+          ],
+          [
+            "Bagus",
+            "b a ɡ u s"
+          ],
+          [
+            "Baitulmuqaddis",
+            "b a j t u l m u q a d i s"
+          ],
+          [
+            "Bali",
+            "b a l i"
+          ],
+          [
+            "Belanda",
+            "b ə l a n d a"
+          ],
+          [
+            "Belanda",
+            "b ə l a n d ə"
+          ],
+          [
+            "Belgium",
+            "b e l d͡ʒ i u m"
+          ],
+          [
+            "Belgium",
+            "b e l ɡ i u m"
+          ],
+          [
+            "Benggala",
+            "b ə ŋ ɡ a l a"
+          ],
+          [
+            "Bentala",
+            "b ə n t a l a"
+          ],
+          [
+            "Bentala",
+            "b ə n t a l ə"
+          ],
+          [
+            "Bentong",
+            "b ə n t o ŋ"
+          ],
+          [
+            "Bera",
+            "b ə r a"
+          ],
+          [
+            "Berahim",
+            "b ə r a h e m"
+          ],
+          [
+            "Berahim",
+            "b ə r a h i m"
+          ],
+          [
+            "Betlehem",
+            "b e t l e h e m"
+          ]
+        ],
+        "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/msa_latn_broad.tsv"
+      }
+    }
+  }
+}

@@ -1,12 +1,71 @@
 {
   "id": "_base/text-fields",
+  "version": "1.1.0",
+  "status": "FROZEN",
+  "depends_on": [],
   "phenomenon": "text_field_separation",
   "enforces": ["rules/languages/ja/tts-and-audio.md"],
+  "changeLog": [
+    {
+      "version": "1.1.0",
+      "date": "2026-07-18",
+      "change": "C7 (Golden Lesson audit, rules/decisions.md mục 0.1): thêm 'fieldNameMapping' — bảng ánh xạ giữa 3 bộ tên trường (rule _base này / schema thật vocabulary[] + multiple_choice options[] / ADR-015) đang sống song song không thống nhất. Đối chiếu trực tiếp shared/generated/lessons.json (Golden Lesson, Q1/Q2/Q7 options + vocabulary[0]) để lấy tên field THẬT, không đoán."
+    }
+  ],
   "config": {
     "store_separately": ["displayText", "canonicalText", "audioText"],
     "displayText": "UI hiển thị",
     "canonicalText": "máy chấm đáp án dùng",
     "audioText": "TTS đọc"
+  },
+  "fieldNameMapping": {
+    "note": "C7: ba tầng governance đặt tên khác nhau cho cùng 3-5 vai trò (hiển thị / máy-chấm / TTS / đọc bản ngữ / La-tinh hoá). Bảng này KHÔNG đổi schema thật (shared/** — ngoài phạm vi rules/**+tools/** của phiên này); chỉ ghi lại ánh xạ để lesson-check.mjs và người đọc rule không nhầm tên. Xác nhận bằng dữ liệu thật: shared/generated/lessons.json, lesson ja-daily_life-m01-u1-l1, vocabulary[0] và Q1/Q2/Q7 options.",
+    "roles": [
+      {
+        "role": "UI hiển thị (có thể kèm chú thích/furigana)",
+        "_base/text-fields": "displayText",
+        "schema_vocabulary[]": "displayText",
+        "schema_multiple_choice_options[]": "text",
+        "ADR-015": "surfaceText"
+      },
+      {
+        "role": "Máy chấm đáp án dùng (so khớp, không hiển thị chú thích)",
+        "_base/text-fields": "canonicalText",
+        "schema_vocabulary[]": null,
+        "schema_multiple_choice_options[]": "canonicalText",
+        "ADR-015": null,
+        "gap_note": "vocabulary[] KHÔNG có field canonicalText riêng — không rõ vocab được máy-chấm-dùng ở đâu ngoài displayText (vocab hiện không phải câu hỏi trực tiếp chấm điểm). ADR-015 cũng không có khái niệm 'canonical' tách biệt surfaceText. Đây là GAP thật, không tự bịa lời giải — cần owner/schema quyết khi có nhu cầu chấm điểm trực tiếp trên vocabulary item."
+      },
+      {
+        "role": "TTS đọc",
+        "_base/text-fields": "audioText",
+        "schema_vocabulary[]": "speechText",
+        "schema_multiple_choice_options[]": "audioText",
+        "ADR-015": "ttsText"
+      },
+      {
+        "role": "Đọc bản ngữ (kana...), luôn literal — KHÔNG có trong _base/text-fields",
+        "_base/text-fields": null,
+        "schema_vocabulary[]": "reading",
+        "schema_multiple_choice_options[]": null,
+        "ADR-015": "reading",
+        "gap_note": "_base/text-fields chưa có vai trò 'reading' riêng (chỉ có 3 vai trò); options[] cũng không có reading riêng (đúng — options thường đã ở dạng hiển thị cuối). Không phải lỗi, chỉ là _base/text-fields hẹp hơn ADR-015 (thiếu 2/5 vai trò: reading, romanization)."
+      },
+      {
+        "role": "La-tinh hoá cho người học — KHÔNG có trong _base/text-fields",
+        "_base/text-fields": null,
+        "schema_vocabulary[]": "romanization",
+        "schema_multiple_choice_options[]": null,
+        "ADR-015": "romanization"
+      },
+      {
+        "role": "IPA/phát âm khác (dự phòng, ADR-015 'reserved, unused')",
+        "_base/text-fields": null,
+        "schema_vocabulary[]": null,
+        "schema_multiple_choice_options[]": null,
+        "ADR-015": "pronunciation"
+      }
+    ]
   },
   "fixtures": {
     "pass": [

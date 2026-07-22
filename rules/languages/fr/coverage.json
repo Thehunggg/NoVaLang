@@ -1,0 +1,176 @@
+{
+  "_meta": {
+    "language": "fr",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-18",
+    "legend": {
+      "confidence": "high=dataset chuẩn hoặc đã xác nhận | medium=WebSearch snippet + kiến thức đã huấn luyện, cross-check nhiều truy vấn (xem D-51) | low | none=chưa có nguồn tin cậy",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc implementation đã test",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51 (rules/decisions.md): phiên này KHÔNG fetch được web ngoài. Derive Bước 2 dùng WebSearch (snippet) + kiến thức ngôn ngữ học đã huấn luyện. confidence trần medium cho các mục không có dataset trực tiếp.",
+    "corpus": {
+      "file": "tools/cache/corpus/fr-sentences.txt (không commit)",
+      "sentences": 17342,
+      "source": "UD French-GSD train/dev/test + UD_French-PUD (S-UD-CORPUS)",
+      "note": "Vượt mốc 10000 — corpus không yếu."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "Theo yêu cầu Project Owner (2026-07-18): KHÔNG tự gắn FROZEN. Chưa có bài học thật (playable) tiếng Pháp nào để chạy rule lên kiểm tra false-positive."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Latin + dấu phụ (é è ê ë à â ù û ü î ï ô ç) + 2 ligature (œ, æ). Sự kiện phổ thông, không tranh cãi.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json.",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Giống es: tháng/thứ trong tuần/quốc tịch-tính từ (KHÔNG phải danh từ chỉ người) KHÔNG viết hoa (lundi, janvier, français khi là tính từ — nhưng un Français khi là danh từ chỉ người THÌ viết hoa, khác es/en hoàn toàn không viết hoa quốc tịch bao giờ) — điểm khác biệt tinh vi cần lưu ý riêng cho fr, không sao chép nguyên quy tắc es. [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED cho phần tháng/thứ. V1 Académie française: tháng/thứ viết thường. V2 giáo trình fr. V3 corpus-check THẬT 17342 câu (trên 10k) — check mới 'month-weekday-not-capitalized' 13/17342 = 0.07%, 'vi phạm' chủ yếu tên riêng/nhóm (Octobre) — hợp lệ. V4/V5 xác nhận. LƯU Ý: phần quốc tịch fr tinh vi (tính từ français thường / danh từ chỉ người Français hoa) là quy tắc rule_level đúng nhưng phần danh-từ-chỉ-người chưa kiểm máy — phần tháng/thứ đã đủ bằng chứng corpus để VALIDATED.]",
+    "status": "VALIDATED"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang, chuẩn Latin.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE: chữ Latin.",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (fra_latn_broad_filtered) -> grapheme-to-phoneme.data.json.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Chính tả tiếng Pháp KÉM minh bạch hơn hẳn tiếng Tây Ban Nha (nhiều phụ âm cuối câm, nguyên âm ghép phức tạp: eau/au/ou/eu đều là 1 âm, nhiều cách viết cho cùng 1 âm) — gần độ phức tạp của tiếng Anh hơn là tiếng Tây Ban Nha. Cần đo tỷ lệ khớp WikiPron cụ thể ở Bước 3.",
+    "status": "DRAFT"
+  },
+  "liaison": {
+    "rule_level": { "source": "S-WIKI-LIAISON", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Phụ âm cuối câm được đọc khi từ sau bắt đầu bằng nguyên âm/h câm. 3 loại: obligatoire (bắt buộc — mạo từ+danh từ, tính từ+danh từ, sau giới từ/trạng từ ngắn: les_amis, un_ingénieur), interdite (cấm — sau danh từ số ít làm chủ ngữ trước động từ, giữa danh từ số ít và tính từ theo sau), facultative (tuỳ chọn — sau động từ être/avoir dạng chia, sau trạng từ dài, giữa danh từ số nhiều và tính từ — dùng nhiều hơn nghe trang trọng/thanh lịch hơn). Xác nhận qua nhiều nguồn WebSearch độc lập, đồng thuận hoàn toàn. Đây là lớp phức tạp tương đương は/へ/を (ja) hoặc biến âm (ko) về vai trò (chữ viết != cách đọc theo ngữ cảnh).",
+    "status": "DRAFT"
+  },
+  "elision": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Quy tắc CHÍNH TẢ bắt buộc (khác liaison là quy tắc phát âm): nguyên âm cuối của le/la/de/que/je/ne/se/ce/me/te bị lược bỏ và thay bằng dấu nháy đơn (') khi từ sau bắt đầu bằng nguyên âm THẬT (không phải mọi 'h' — xem h_aspire_vs_h_muet) — l'ami, d'accord, qu'il, j'ai, n'est-ce pas. [Bước 3: 3 vòng sửa thật trên 17342 câu UD French-GSD/PUD — (1) loại 'h' khỏi trigger (740->giảm sau khi phát hiện h aspiré không elide), (2) sửa bug \\b không nhận ký tự có dấu là word-char trong JS regex (gây khớp nhầm bên trong 'même') — xem orthography.rules.json _bước3_finding, (3) còn lại 141/17342 (0.81%) là exception lexical thật (proper noun nước ngoài, bán-nguyên-âm như 'que oui') — dưới ngưỡng rule-sai, giữ VALIDATED cho quy tắc CHÍNH (nguyên âm thật), lexical_level (h aspiré + bán-nguyên-âm) vẫn none/PENDING (C-06).]",
+    "status": "VALIDATED"
+  },
+  "nasal_vowels": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "4 nguyên âm mũi phân biệt nghĩa: an/en (ɑ̃), in/ain/ein (ɛ̃), on (ɔ̃), un (œ̃ — nhiều người Pháp hiện đại đã hợp nhất un vào in/ɛ̃, biến thể vùng/thế hệ). [Bước 3: g2p-check.mjs trên WikiPron thật (97301 từ) — 'on' cuối từ->[ɔ̃]: 2843 từ áp dụng, 54 vi phạm (1.90%, 'ok'); 'an' cuối từ->[ɑ̃]: 413 từ áp dụng, **83 vi phạm (20.10%, RULE NGHI NGỜ SAI theo chính công cụ)**. Đọc tay: TOÀN BỘ vi phạm 'an' là tên riêng/từ mượn nước ngoài giữ nguyên cách đọc gốc (Batman, Bowman, Brian, Dylan, Erdogan — tiếng Anh/Ireland/Turkish) — WikiPron trộn lẫn tên riêng ngoại lai vào danh sách từ, không phải quy tắc tiếng Pháp bản địa sai. KHÔNG nâng confidence — cần lọc tên riêng khỏi tập kiểm trước khi coi là validated, hoặc thu hẹp phạm vi quy tắc thành 'từ vựng tiếng Pháp bản địa/đã Pháp hoá' — xem GIẢ ĐỊNH C-07.]",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (French-GSD test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "gender_and_number_agreement": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Danh từ có giống nam/nữ, KÉM đoán được qua đuôi hơn tiếng Tây Ban Nha (không có quy tắc -o/-a đáng tin cậy tương đương — phải học từng từ phần lớn, dù có xu hướng thống kê theo đuôi -tion/-sion nữ, -ment nam...). Mạo từ/tính từ PHẢI hoà giống-số. Số nhiều thường thêm -s (câm khi nói, chỉ ảnh hưởng chính tả + liaison).",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "3 nhóm động từ theo đuôi nguyên mẫu (-er đều đặn phần lớn, -ir, -re) chia theo 6 ngôi (je/tu/il-elle-on/nous/vous/ils-elles). Nhiều đuôi ĐỌC GIỐNG NHAU dù viết khác (parle/parles/parlent đều đọc [paʁl]) — điểm khác biệt lớn với ja/ko/es (chia động từ ảnh hưởng cách đọc). Động từ bất quy tắc (être, avoir, aller, faire...) CHƯA có bảng đầy đủ.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": "S-TU-VOUS", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Hệ 2 chiều (ĐƠN GIẢN hơn tiếng Tây Ban Nha — không có phân mảnh vùng miền kiểu tú/usted/vos/vosotros): tu (thân mật/bình đẳng) vs vous (lịch sự/khoảng cách xã hội, CŨNG là ngôi 2 số nhiều bất kể thân mật hay không — khác es phân biệt vosotros/ustedes). Mặc định dùng vous khi không chắc — quy tắc xã hội rõ ràng, ít tranh cãi hơn hệ xưng hô Hàn/Tây Ban Nha.",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SVO tương đối cố định (kém linh hoạt hơn es/ja/ko) — không pro-drop (chủ ngữ đại từ BẮT BUỘC, khác es), tính từ phần lớn đứng SAU danh từ (une voiture rouge) nhưng một nhóm tính từ ngắn thông dụng đứng TRƯỚC (un grand homme, une belle femme — nhóm BAGS: Beauty/Age/Goodness/Size).",
+    "status": "DRAFT"
+  },
+  "clitic_pronouns": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Đại từ tân ngữ (le/la/les, lui/leur) đứng TRƯỚC động từ chia (je le vois), trừ mệnh lệnh khẳng định (gắn sau: donne-le-moi). y (thay cho địa điểm/cụm giới từ à+việc) và en (thay cho cụm de+danh từ/số lượng) là 2 đại từ ĐẶC TRƯNG tiếng Pháp không có tương đương trực tiếp trong es/en — cần chú ý riêng khi dạy.",
+    "status": "DRAFT"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đặc trưng nổi tiếng: khoảng trắng (thường là khoảng trắng hẹp không ngắt dòng, insécable) TRƯỚC dấu ; : ! ? và trong « » — khác es/en/ja (không có khoảng trắng trước dấu câu). Vd 'Comment ça va ?' (có khoảng trắng trước ?), khác 'How are you?' tiếng Anh. [RÀ LẠI 5 VÒNG 2026-07-19 → NÂNG VALIDATED. Câu hỏi cũ 'mọi ngữ cảnh xuất bản có theo không' được V3 corpus TRẢ LỜI: check 'space-before-question-mark' (regex_absent '[^\\s]\\?') chỉ 3/17342 = 0.02% vi phạm trên câu Pháp thật → quy tắc khoảng trắng-trước-dấu-câu ÁP DỤNG ĐỒNG NHẤT trong corpus chuẩn. V1 Imprimerie nationale/Académie française + V2 giáo trình xác nhận. LƯU Ý: web/báo Canada đôi khi bỏ khoảng trắng — nhưng chuẩn xuất bản Pháp (corpus UD) theo quy tắc; dạy theo chuẩn.]",
+    "status": "VALIDATED"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-TU-VOUS", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md C-01, chọn A] Map taxonomy 6-mức: CASUAL~tu + từ vựng thân mật, NATURAL_NEUTRAL_POLITE~vous chuẩn mực (mặc định app), FORMAL~vous + đăng ký từ vựng trang trọng hơn. KHÔNG phân biệt FORMAL/NATURAL_NEUTRAL_POLITE ở mức ngữ pháp (cả hai đều dùng cấu trúc 'vous' giống nhau) — chỉ khác ở LỰA CHỌN TỪ VỰNG ('je vous prie de' thay 'pouvez-vous'). Không có HONORIFIC-modifier riêng biệt kiểu ja/ko.",
+    "status": "VALIDATED"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "NOT-APPLICABLE theo nghĩa furigana/romaji: chữ Latin, không cần lớp annotation-cách-đọc-riêng. (Lưu ý: chính tả kém minh bạch hơn es đáng kể, nhưng đây là vấn đề grapheme_to_phoneme/pronunciation guide, không phải reading_aid_policy theo định nghĩa ja/ko.)",
+    "status": "not-applicable"
+  },
+  "answer_acceptance_fr": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md C-02, chọn A CÓ PHÂN BIỆT] Chính sách chấm điểm CÓ PHÂN BIỆT 2 loại lỗi: (1) dấu phụ (é/è/ê...) — normalize bỏ qua, dùng nguyên `_base/answer-acceptance` mặc định, giống es/ko; (2) dấu nháy elision (l'ami gõ thành 'lami' hoặc 'le ami') — GIỮ NGUYÊN yêu cầu đúng, KHÔNG bỏ qua, vì đây là lỗi chính tả thật ('je ai' thay 'j'ai' là sai chính tả, không phải biến thể phong cách như dấu phụ) — lý do owner nêu rõ khi duyệt.",
+    "status": "VALIDATED"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_DECISION"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "[OWNER APPROVED 2026-07-19 — review-checklist.md C-03, chọn A] speechText = surface text Latin. Kế thừa _base/audio.rules.json. Locale: fr-FR (Pháp métropolitain).",
+    "status": "VALIDATED"
+  }
+}

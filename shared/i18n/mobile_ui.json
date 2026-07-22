@@ -439,24 +439,24 @@
     "ja": "現在のレベルを維持"
   },
   "learnSubtitle": {
-    "en": "Follow your language path. Absolute beginners start with Core Foundation.",
-    "vi": "Theo lộ trình ngôn ngữ của bạn. Người mới bắt đầu từ Core Foundation.",
-    "ja": "学習パスに沿って進みます。初心者はCore Foundationから始めます。"
+    "en": "Follow your language path. Complete beginners start with the basics.",
+    "vi": "Theo lộ trình ngôn ngữ của bạn. Người mới bắt đầu học phần nền tảng trước.",
+    "ja": "学習パスに沿って進みます。初心者はまず基礎から始めます。"
   },
   "coreFoundationRequired": {
-    "en": "Start with Core Foundation",
-    "vi": "Bắt đầu với Core Foundation",
-    "ja": "Core Foundationから始める"
+    "en": "Start with the basics",
+    "vi": "Bắt đầu với phần nền tảng",
+    "ja": "基礎から始めましょう"
   },
   "coreFoundationRequiredHelp": {
-    "en": "A0 learners practice letters and sounds first. Daily Life greetings unlock after you finish or skip this step.",
-    "vi": "Người học A0 luyện chữ cái và âm trước. Daily Life (chào hỏi) mở sau khi bạn hoàn thành hoặc bỏ qua bước này.",
-    "ja": "A0学習者はまず文字と音を練習します。日常生活のあいさつは完了またはスキップ後に開放されます。"
+    "en": "Complete beginners practice letters and sounds first. Everyday greetings unlock after you finish or skip this step.",
+    "vi": "Người mới học luyện chữ cái và âm trước. Các bài chào hỏi hằng ngày sẽ mở sau khi bạn hoàn thành hoặc bỏ qua bước này.",
+    "ja": "初心者はまず文字と音を練習します。日常のあいさつは、この段階を終えるかスキップすると開放されます。"
   },
   "skipCoreFoundation": {
-    "en": "Skip Core Foundation",
-    "vi": "Bỏ qua Core Foundation",
-    "ja": "Core Foundationをスキップ"
+    "en": "Skip the basics",
+    "vi": "Bỏ qua phần nền tảng",
+    "ja": "基礎をスキップ"
   },
   "lessonsAvailableCount": {
     "en": "{n} lessons",
@@ -852,6 +852,7 @@
   "exerciseMeaning": {"en": "Meaning", "vi": "Nghĩa", "ja": "意味"},
   "exerciseAnswerHint": {"en": "Tap the cards below to make a sentence.", "vi": "Chạm vào các thẻ bên dưới để tạo câu.", "ja": "下のカードをタップして文を作りましょう。"},
   "exerciseInputHint": {"en": "Enter your answer", "vi": "Nhập câu trả lời", "ja": "答えを入力"},
+  "exerciseResultsTitle": {"en": "Exercises complete", "vi": "Hoàn thành bài tập", "ja": "練習完了"},
   "exerciseInputIncorrect": {"en": "Not correct yet", "vi": "Chưa đúng", "ja": "まだ正しくありません"},
   "exerciseTypeChoice": {"en": "Choose an answer", "vi": "Chọn đáp án", "ja": "答えを選ぶ"},
   "exerciseTypeMatching": {"en": "Match words", "vi": "Nối từ", "ja": "ことばを結ぶ"},

@@ -1,0 +1,84 @@
+{
+  "id": "de/pragmatics.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "register_taxonomy",
+  "enforces": [
+    "style-and-register.md"
+  ],
+  "sources": [
+    "S-TRAINED-KNOWLEDGE",
+    "S-DUDEN-RECHTSCHREIBUNG"
+  ],
+  "derived_by": "human",
+  "config": {
+    "address_forms": {
+      "du": { "formality": "informal", "number": "singular", "usage": "bạn bè, gia đình, trẻ em, đồng nghiệp thân, người cùng tuổi đã thân" },
+      "ihr": { "formality": "informal", "number": "plural", "usage": "số nhiều thân mật (nhiều 'du')" },
+      "Sie": { "formality": "formal", "number": "singular_and_plural", "capitalized": true, "usage": "người lạ, người lớn tuổi, quan hệ công việc/dịch vụ, bối cảnh trang trọng — chia động từ như ngôi 3 số nhiều", "note": "VIẾT HOA để phân biệt sie (cô ấy/họ)." }
+    },
+    "baseline": {
+      "value": "Dạy CẢ du lẫn Sie ngay từ đầu — chuẩn giáo trình phổ thông (Goethe-Institut/Duden). Không có biến thể vùng gây chia rẽ kiểu tú/vos của es, nên KHÔNG cần đưa checklist baseline vùng miền như es B-01.",
+      "tts_locale": "de-DE (xem D-de-01 nếu owner muốn de-AT/de-CH)"
+    },
+    "register_taxonomy_mapping": {
+      "CASUAL": "du/ihr + từ vựng thân mật, rút gọn (mach's gut, tschüss)",
+      "NATURAL_NEUTRAL_POLITE": "mức chuẩn mực trung tính — du hoặc Sie tuỳ quan hệ, không suồng sã không trịnh trọng (baseline mặc định app dạy)",
+      "FORMAL": "Sie + từ vựng trang trọng (Guten Tag, auf Wiedersehen, Ich hätte gern...)",
+      "HONORIFIC_modifier": {
+        "value": "not-applicable",
+        "reason": "Tiếng Đức KHÔNG có hệ kính ngữ hình thái riêng biệt kiểu ja (敬語) / ko (-시-). Lịch sự thể hiện qua đại từ (Sie) + Konjunktiv II lịch sự (hätte/wäre/könnte) + từ vựng — đã bao trong FORMAL, không phải modifier trực giao. Tự áp theo TIỀN LỆ es B-02 (owner duyệt 2026-07-19): ngôn ngữ châu Âu không có kính ngữ hình thái -> HONORIFIC not-applicable. Pattern lặp lại, không đưa lại checklist (Phần B mục 2)."
+      }
+    },
+    "politeness_devices": {
+      "konjunktiv_II": "Konjunktiv II (thức giả định II) làm nhẹ yêu cầu lịch sự: 'Ich hätte gern...' (Tôi muốn...), 'Könnten Sie...?' (Ngài có thể...?), 'Ich würde sagen...'. Tương đương chức năng với ですます-mềm của ja nhưng bản chất là thức động từ, không phải kính ngữ."
+    }
+  },
+  "checks": [
+    {
+      "id": "sie-formal-capitalized",
+      "description": "Đại từ trang trọng Sie/Ihnen/Ihr viết hoa (kiểm mẫu cố định).",
+      "assert": {
+        "type": "custom",
+        "note": "sie/Sie đồng âm; phân biệt hoa-thường cần ngữ cảnh ngữ pháp lúc generator chạy, không phải regex tĩnh."
+      },
+      "fixtures": {
+        "pass": [
+          "Wie geht es Ihnen?",
+          "Können Sie mir helfen?"
+        ],
+        "fail": [
+          "Wie geht es ihnen?"
+        ]
+      }
+    },
+    {
+      "id": "sie-third-person-plural-verb",
+      "description": "Sie (trang trọng) chia động từ như ngôi 3 số nhiều (kiểm mẫu cố định).",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm tổng quát cần bảng chia động từ khi generator chạy."
+      },
+      "fixtures": {
+        "pass": [
+          "Sie kommen aus Deutschland."
+        ],
+        "fail": [
+          "Sie kommt aus Deutschland."
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "Anmerkenswert ist, dass der Laden auch ausbildet.",
+      "Wie geht es Ihnen?",
+      "Ich hätte gern einen Kaffee."
+    ],
+    "fail": [
+      "Wie geht es ihnen?",
+      ""
+    ],
+    "_note": "Câu pass đầu lấy từ corpus thật UD German-GSD (Bước 3 mục 6)."
+  }
+}

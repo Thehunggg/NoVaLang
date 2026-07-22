@@ -1,0 +1,43 @@
+{
+  "id": "fil/orthography.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "casing",
+  "enforces": ["orthography.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "CLDR", "S-UD-CORPUS"],
+  "derived_by": "ai-cross-checked",
+  "config": {
+    "words_separated_by_spaces": true,
+    "sentence_terminator": ".",
+    "comma": ",",
+    "question_mark": "?",
+    "exclamation_mark": "!",
+    "quote_marks_primary": "“”",
+    "special_letters": "ng (digraph, [ŋ]) + ñ (từ vay TBN, hiếm). Accents á/à/â tuỳ chọn (thường bỏ).",
+    "capitalization": {
+      "months_capitalized": true,
+      "weekdays_capitalized": true,
+      "languages_and_nationalities_capitalized": true,
+      "note": "KHÁC Roman/Slav: Enero/Lunes/Filipino VIẾT HOA (quy ước en/es). corpus xác nhận; KHÔNG áp rule lowercase (giả thuyết lowercase bị dữ liệu bác — như tr/id)."
+    }
+  },
+  "checks": [
+    {
+      "id": "content-latin-script",
+      "description": "Nội dung Filipino viết bằng chữ Latin (không lẫn chữ hệ khác). [corpus-check Bước 3: 0/222 câu có chữ ngoài Latin.] Corpus RẤT NHỎ (222) — bằng chứng yếu, ghi rõ.",
+      "assert": {
+        "type": "regex_absent",
+        "pattern": "[\\u4E00-\\u9FFF\\u0E00-\\u0E7F\\u0400-\\u04FF\\u0600-\\u06FF\\u0370-\\u03FF\\u3040-\\u30FF]"
+      },
+      "fixtures": {
+        "pass": ["Kumain ang bata.", "Magandang umaga po."],
+        "fail": ["Kumain ang 子供."]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Kumain ang bata.", "Sinulat ko ang liham.", "Magandang umaga po."],
+    "fail": ["Kumain ang 子供."],
+    "_note": "Câu pass minh hoạ chữ Latin Filipino; corpus RẤT NHỎ (222, UD Tagalog test-only) — check yếu. Casing: tháng/thứ VIẾT HOA (không lowercase như Roman)."
+  }
+}

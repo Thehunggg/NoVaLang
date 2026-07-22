@@ -1,0 +1,30 @@
+{
+  "id": "zh/phonology.rules",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "phenomenon": "grapheme_to_phoneme",
+  "enforces": ["phoneme_inventory, pinyin_romanization"],
+  "sources": ["S-WIKIPEDIA-ZH", "WIKIPRON"],
+  "derived_by": "human",
+  "config": {
+    "character_reading_not_predictable_from_shape": true,
+    "phonetic_component_sometimes_hints_sound": true,
+    "phonetic_component_reliability": "not_fully_reliable — chỉ gợi ý, không suy chắc được, giống thanh phù kanji ja",
+    "syllable_structure": "initial (thanh mẫu, có thể rỗng) + final (vận mẫu) + tone",
+    "reading_requires_lexical_lookup": true,
+    "_note": "Hán tự logographic — đọc PHẢI tra theo từng chữ, không suy được bằng rule chung chữ→âm như chữ Latin.",
+    "_data_gap": "WikiPron cmn_hani (168655 mục) khóa theo chữ PHỒN THỂ (Hant), không phải giản thể (Hans, D-37) — xác nhận qua 42 cặp giản/phồn đã biết (40/42 chỉ có Hant). Bảng tra Hans→âm trực tiếp CHƯA có nguồn; cần bảng chuyển đổi S2T (vd OpenCC) làm cầu nối trước khi generator dùng được — xem coverage.json, đề xuất báo cáo cuối."
+  },
+  "fixtures": {
+    "pass": [
+      { "character": "妈", "pinyin": "mā", "note": "thanh 1 (cao ngang) — đối chiếu WikiPron qua bản Hant 媽 = 'm ä ⁵⁵'" },
+      { "character": "麻", "pinyin": "má", "note": "thanh 2 (lên) — WikiPron 麻 (giống cả 2 script) = 'm ä ³⁵'" },
+      { "character": "马", "pinyin": "mǎ", "note": "thanh 3 (xuống-lên) — đối chiếu WikiPron qua bản Hant 馬 = 'm ä ²¹⁴'" },
+      { "character": "骂", "pinyin": "mà", "note": "thanh 4 (xuống) — đối chiếu WikiPron qua bản Hant 罵 = 'm ä ⁵¹'" },
+      { "character": "妈", "phonetic_component": "马", "note": "妈 = 女(nghĩa) + 马(gợi ý âm mǎ→mā) — thanh phù chỉ gợi ý, không chắc chắn" }
+    ],
+    "fail": [
+      { "character": "妈", "pinyin": "ma", "note": "SAI: thiếu dấu thanh — mất thông tin phân biệt nghĩa" }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "language": "cs",
+    "stage": "0-inventory",
+    "note": "Nguồn cho lớp máy-đọc-được của cs (tiếng Séc chuẩn cs-CZ, spisovná čeština). Ngôn ngữ Slav Tây Latin-script — 7 cách, thể động từ, âm ř đặc trưng, clitic vị trí thứ hai. Dataset (CLDR/UD/WikiPron) import Bước 1, confidence:high, tải thật qua raw.githubusercontent.com. WikiPron cs chỉ có bản narrow (ces_latn_narrow). Nguồn S-* dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet (KHÔNG fetch toàn văn — D-51), confidence trần medium. g2p-check.mjs (Bước 3) xác nhận sibilants/ř/độ dài/làm câm cuối từ trên WikiPron thật (65070 cặp)."
+  },
+  "sources": [
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (cs) — Latin + háček/acute + ů + ch",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/cs/characters.json",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank (UD_Czech-CAC test split, word-class import)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Czech-CAC/master/cs_cac-ud-test.conllu",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA-NC (per treebank)"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme (ces_latn_narrow, 65070 cặp — narrow transcription cs-CZ; chỉ có bản narrow)",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/ces_latn_narrow.tsv",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD Czech-CAC + UD Czech-FicTree (train/dev/test) — câu thật cho corpus check (34869 câu, tools/cache/corpus/cs-sentences.txt, không commit)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Czech-CAC/master/ + UD_Czech-FicTree/master/",
+      "consulted": "2026-07-19",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA-NC (per treebank)"
+    },
+    {
+      "id": "S-TRAINED-KNOWLEDGE",
+      "name": "Kiến thức ngôn ngữ học tiếng Séc đã huấn luyện sẵn của người viết rule (Claude) — CHỈ dùng cho sự kiện chuẩn phổ thông; KHÔNG dùng làm nguồn duy nhất cho quyết định sản phẩm hay bảng dữ liệu đầy đủ",
+      "url": null,
+      "consulted": "2026-07-19",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "n/a — xem D-51"
+    }
+  ]
+}

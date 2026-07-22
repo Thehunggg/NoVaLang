@@ -9,6 +9,8 @@ Node ESM thuần, không phụ thuộc npm ngoài. Chạy từ **gốc repo**.
 | `import-dataset.mjs` | 1 | Import CLDR / UD / Wikipron → `*.data.json` + `sources.json` |
 | `derive.mjs` | 2 | Diff 2 lượt derive độc lập; trùng→medium, lệch→review |
 | `corpus-check.mjs` | 3 | Chạy assert dạng văn bản lên corpus thật, đo tỷ lệ vi phạm |
+| `g2p-check.mjs` | 3 | Đo tỷ lệ khớp G2P (grapheme→phone) trên TSV WikiPron |
+| `lesson-check.mjs` | mọi lúc | Chạy rule thật (`_base`+`languages/<lang>`) lên MỘT lesson JSON cụ thể (đọc `shared/**`, không sửa). `node tools/lesson-check.mjs --lang <code> --lesson-id <id> [--file <path>] [--assume-provenance auto_generated\|hand_authored\|owner_approved]` |
 
 ## Quy ước
 

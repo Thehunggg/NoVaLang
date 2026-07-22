@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "language": "fr",
+    "stage": "0-inventory",
+    "note": "Nguồn cho lớp máy-đọc-được của fr. Dataset (CLDR/UD/WikiPron) import ở Bước 1, confidence:high, derived_by:dataset. Các nguồn S-* còn lại tra qua WebSearch (snippet + URL, KHÔNG fetch được toàn văn — D-51, rules/decisions.md). confidence trần medium cho nhóm này. WIKIPRON dùng bản chung (fra_latn_broad_filtered, không phân biệt vùng) — ổn định hơn tình huống es (không có vấn đề dialect-split ở mức dataset)."
+  },
+  "sources": [
+    {
+      "id": "CLDR",
+      "name": "Unicode CLDR exemplar characters (fr)",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-misc-full/main/fr/characters.json",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Unicode-3.0"
+    },
+    {
+      "id": "WIKIPRON",
+      "name": "WikiPron grapheme-to-phoneme (fra_latn_broad_filtered)",
+      "url": "https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/fra_latn_broad_filtered.tsv",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "UD",
+      "name": "Universal Dependencies treebank (UD_French-GSD test split, word-class import)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_French-GSD/master/fr_gsd-ud-test.conllu",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "S-UD-CORPUS",
+      "name": "UD French-GSD (train/dev/test) + UD_French-PUD — câu thật cho corpus check (17342 câu, tools/cache/corpus/fr-sentences.txt, không commit)",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_French-GSD/master/ + UD_French-PUD/master/",
+      "consulted": "2026-07-18",
+      "derived_by": "dataset",
+      "confidence": "high",
+      "license": "CC BY-SA (per treebank)"
+    },
+    {
+      "id": "S-WIKI-LIAISON",
+      "name": "Tổng hợp WebSearch nhiều nguồn độc lập (Master Your French, Comme une Française, Lawless French, Français interactif/UT Austin) — 3 loại liaison obligatoire/interdite/facultative, đồng thuận hoàn toàn",
+      "url": "https://www.masteryourfrench.com/french-pronunciation/required-liaisons/",
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "secondary summary, chưa đối chiếu Grammaire de l'Académie française gốc — xem D-51"
+    },
+    {
+      "id": "S-TU-VOUS",
+      "name": "Tổng hợp WebSearch (Vaia, Talk in French, Regina Coeli) về hệ tu/vous — đồng thuận: tu=thân mật/bình đẳng, vous=lịch sự/khoảng cách xã hội, mặc định vous khi không chắc",
+      "url": "https://www.vaia.com/en-us/explanations/french/french-grammar/french-linguistic-politeness/",
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "secondary summary — xem D-51"
+    },
+    {
+      "id": "S-TRAINED-KNOWLEDGE",
+      "name": "Kiến thức ngôn ngữ học tiếng Pháp đã huấn luyện sẵn của người viết rule (Claude) — CHỈ dùng cho sự kiện chuẩn, phổ thông, không tranh cãi",
+      "url": null,
+      "consulted": "2026-07-18",
+      "derived_by": "human",
+      "confidence": "medium",
+      "license": "n/a — xem D-51"
+    }
+  ]
+}

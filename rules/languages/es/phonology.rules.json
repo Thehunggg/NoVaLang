@@ -1,0 +1,80 @@
+{
+  "id": "es/phonology.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "syllable_stress",
+  "enforces": [
+    "pronunciation.md"
+  ],
+  "sources": [
+    "S-WIKI-STRESS",
+    "S-TRAINED-KNOWLEDGE",
+    "WIKIPRON"
+  ],
+  "derived_by": "human",
+  "config": {
+    "stress_categories": {
+      "aguda": {
+        "stress_position": "last_syllable",
+        "tilde_required_if_ends_with": ["vowel", "n", "s"],
+        "example_with_tilde": ["comí", "adiós", "león"],
+        "example_without_tilde": ["comer", "control", "reloj"]
+      },
+      "llana_or_grave": {
+        "stress_position": "second_to_last_syllable",
+        "tilde_required_if_NOT_ends_with": ["vowel", "n", "s"],
+        "example_with_tilde": ["árbol", "carácter", "sandía"],
+        "example_without_tilde": ["casa", "coches", "comen"]
+      },
+      "esdrujula": {
+        "stress_position": "third_to_last_syllable",
+        "tilde_always_required": true,
+        "example": ["teléfono", "helicóptero", "lógico"]
+      },
+      "sobresdrujula": {
+        "stress_position": "fourth_to_last_syllable_or_further",
+        "tilde_always_required": true,
+        "example": ["cómetelo", "haciéndosela", "ponértemelo"]
+      }
+    },
+    "confidence_note": "4 nguồn WebSearch độc lập (SpanishDict, StudySpanish, Berges Institute, Orbis Latinus) đồng thuận HOÀN TOÀN, không có điểm lệch — nhưng vẫn tra qua snippet, chưa đối chiếu văn bản RAE Ortografía gốc (WebFetch bị chặn — D-51). confidence:medium.",
+    "diacritic_disambiguation_pairs": {
+      "note": "Tilde diacrítica phân biệt từ đồng âm khác từ loại — CHƯA xác nhận danh sách đầy đủ và chính sách RAE 2010 (đơn giản hoá sólo/solo, pronombres demostrativos). Xem GIẢ ĐỊNH B-04.",
+      "examples_confident": ["él (đại từ) / el (mạo từ)", "tú (đại từ) / tu (sở hữu)", "sí (có/chính mình) / si (nếu)", "más (hơn) / mas (nhưng, cổ)"],
+      "examples_uncertain_post_2010": ["sólo / solo — RAE 2010 không còn bắt buộc tilde"]
+    }
+  },
+  "checks": [
+    {
+      "id": "esdrujula-has-tilde",
+      "description": "Từ esdrújula/sobresdrújula LUÔN có tilde — kiểm mẫu cố định trong danh sách ví dụ đã xác nhận.",
+      "assert": {
+        "type": "custom",
+        "note": "Kiểm tổng quát cần đếm âm tiết + xác định vị trí trọng âm thật (yêu cầu phân tích âm vị học hoặc từ điển phát âm) khi generator chạy, không phải regex tĩnh trên danh sách từ hữu hạn."
+      },
+      "fixtures": {
+        "pass": [
+          "teléfono",
+          "rápido"
+        ],
+        "fail": [
+          "telefono",
+          "rapido"
+        ]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": [
+      "teléfono",
+      "árbol",
+      "comí",
+      "casa"
+    ],
+    "fail": [
+      "telefono",
+      "arbol"
+    ],
+    "_note": "fixtures minh hoạ 4 loại trọng âm, dùng để test implementation tương lai (chưa viết)."
+  }
+}

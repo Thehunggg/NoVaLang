@@ -1,5 +1,8 @@
 {
   "id": "_script/Latn/script",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "depends_on": [],
   "phenomenon": "script_defaults",
   "enforces": "guidance-only",
   "config": {

@@ -1,0 +1,63 @@
+{
+  "id": "da/grammar.rules",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "phenomenon": "definite_suffix",
+  "enforces": ["grammar-and-usage.md"],
+  "sources": ["S-TRAINED-KNOWLEDGE", "UD"],
+  "derived_by": "human",
+  "config": {
+    "baseline_variety": "da-DK",
+    "word_order": {
+      "main_clause": "V2 — động từ chia ở vị trí THỨ HAI (Jeg læser en bog. I dag læser jeg.)",
+      "subordinate_clause": "ikke (phủ định) đứng TRƯỚC động từ (..., at jeg ikke forstår)"
+    },
+    "gender_articles": {
+      "en_ord": "giống chung (fælleskøn, ~75%): en bil",
+      "et_ord": "giống trung (intetkøn): et hus",
+      "en_et_lexical": "phải học theo từng danh từ (như sv/nb)"
+    },
+    "definite_suffix": {
+      "note": "ĐẶC TRƯNG SCANDINAVIA — mạo từ xác định GẮN SAU danh từ.",
+      "en_singular": "-en / -n (bil->bilen, pige->pigen)",
+      "et_singular": "-et / -t (hus->huset, æble->æblet)",
+      "plural": "-ne / -ene (biler->bilerne, huse->husene)",
+      "with_adjective": "KHÁC sv: khi có tính từ -> MẠO TỪ TRƯỚC (den/det + tính từ + danh từ KHÔNG hậu tố: den røde bil, det store hus). KHÔNG xác định kép như sv."
+    },
+    "adjective": {
+      "indefinite": "en rød bil / et rødt hus (et-ord +t) / røde biler (số nhiều -e)",
+      "definite": "den røde bil (dạng -e)"
+    },
+    "verb_no_person_agreement": {
+      "rule": "Động từ KHÔNG chia theo ngôi/số — jeg/du/han/vi/I/de + CÙNG dạng (jeg er, du er, de er).",
+      "present": "-r (taler, læser, bor)",
+      "past": "-ede/-te + động từ mạnh (đổi nguyên âm: skrive->skrev)",
+      "perfect": "har/er + phân từ (-et/-t: har talt, er gået)"
+    }
+  },
+  "checks": [
+    {
+      "id": "definite-suffix-or-preposed-with-adj",
+      "description": "Mạo từ xác định hậu tố; nhưng mạo từ TRƯỚC khi có tính từ (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Kiểm tổng quát cần bảng giống + phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["bilen", "huset", "den røde bil"],
+        "fail": ["den bil", "den røde bilen"]
+      }
+    },
+    {
+      "id": "verb-no-person-agreement",
+      "description": "Động từ không chia theo ngôi — cùng dạng mọi ngôi (kiểm mẫu cố định).",
+      "assert": { "type": "custom", "note": "Cần phân tích khi generator chạy." },
+      "fixtures": {
+        "pass": ["jeg er", "du er", "de er"],
+        "fail": ["jeg eren", "du bist"]
+      }
+    }
+  ],
+  "fixtures": {
+    "pass": ["Jeg læser en bog.", "den røde bil", "de er"],
+    "fail": ["den røde bilen", "jeg eren"],
+    "_note": "Câu pass minh hoạ; corpus-check Bước 3 trên UD Danish thật."
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "language": "hi",
+    "stage": "0-inventory",
+    "generatedAt": "2026-07-19",
+    "baseline_variety": "hi-IN (tiếng Hindi chuẩn / मानक हिन्दी)",
+    "family": "Indo-Aryan (Ấn-Âu), hệ chữ Devanagari (Deva, abugida)",
+    "difficulty_self_assessment": "KHÓ: hệ chữ DEVANAGARI (abugida — phụ âm + matra + ký tự ghép/conjunct, không Latin) + giống + hậu giới từ (postposition) + ERGATIVE (ने ở thể hoàn thành) + động từ hợp giống/số + 3 mức tôn kính (तू/तुम/आप). Tra cứu 5 vòng.",
+    "legend": {
+      "confidence": "high=dataset chuẩn (CLDR/UD/WikiPron) hoặc g2p-check/corpus-check xác nhận | medium=kiến thức ngôn ngữ học đã huấn luyện + cross-check nhiều nguồn (D-51) | low | none",
+      "machine_readable": "true nếu có dataset/bảng máy đọc được hoặc check đã chạy trên dữ liệu thật",
+      "note": "confidence ở giai đoạn 0 là SƠ BỘ; Bước 1-3 chốt lại."
+    },
+    "environment_note": "D-51: phiên này KHÔNG fetch web toàn văn (chỉ raw.githubusercontent.com). Derive dùng kiến thức ngôn ngữ học đã huấn luyện + WebSearch snippet; dataset tải thật.",
+    "corpus": {
+      "file": "tools/cache/corpus/hi-sentences.txt (không commit)",
+      "sentences": 16649,
+      "source": "UD Hindi-HDTB (train/dev/test) (S-UD-CORPUS)",
+      "note": "TRÊN mốc 10000 (16649) — corpus check ĐẦY ĐỦ, tin cậy."
+    },
+    "status": "VALIDATED_NOT_YET_PROVEN_ON_REAL_CONTENT",
+    "status_note": "KHÔNG tự gắn FROZEN (ADR-014). Chưa có bài học thật (playable) tiếng Hindi. Devanagari khá đều (phonemic) trừ XOÁ SCHWA (a cố hữu cuối từ thường câm) — g2p-check trên 33057 từ đạt tốt cho phụ âm gốc. Cái khó: hệ chữ abugida + ergative + hợp giống động từ."
+  },
+  "writing_systems": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "DEVANAGARI (abugida): phụ âm mang NGUYÊN ÂM CỐ HỮU 'a' (क=[kə]); nguyên âm khác bằng MATRA (dấu phụ: का कि की कु कू के कै को कौ); nguyên âm độc lập đầu từ (अ आ इ...). Ký tự GHÉP (conjunct/संयुक्त) khi phụ âm không có nguyên âm giữa (क्+त=क्त). Dấu virama ् bỏ nguyên âm cố hữu. NUKTA (़) tạo phụ âm vay mượn (ड़[ɽ] ज़[z] ख़[x] फ़[f] क़[q] ग़[ɣ]). Anusvara ं / chandrabindu ँ (mũi hoá). UNICAMERAL (không hoa/thường). CLDR xác nhận.",
+    "status": "VALIDATED"
+  },
+  "charset_exemplars": {
+    "rule_level": { "source": "CLDR", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import CLDR Bước 1 -> orthography.data.json. Xác nhận phụ âm + nguyên âm độc lập + matra + nukta + dấu Devanagari.",
+    "status": "VALIDATED"
+  },
+  "casing": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "NOT-APPLICABLE (kiểu Latin): Devanagari UNICAMERAL — KHÔNG có chữ hoa/thường. Vì thế KHÔNG có quy tắc viết hoa đầu câu / tháng-thứ / danh từ riêng như Latin. Tên riêng không đánh dấu bằng hoa (nhận biết qua ngữ cảnh).",
+    "status": "not-applicable"
+  },
+  "writing_direction": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "LTR ngang. Có đường ngang trên (shirorekha शिरोरेखा) nối chữ trong từ.",
+    "status": "VALIDATED"
+  },
+  "stroke_order": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "NOT-APPLICABLE cho pedagogy stroke-order kiểu CJK. (Devanagari viết tay có quy ước nét + shirorekha nhưng không phải hệ stroke-order chuẩn hoá bắt buộc như kanji.)",
+    "status": "not-applicable"
+  },
+  "phoneme_inventory": {
+    "rule_level": { "source": ["WIKIPRON", "S-TRAINED-KNOWLEDGE"], "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import WikiPron Bước 1 (hin_deva_broad, 33057 cặp — RẤT LỚN) -> grapheme-to-phoneme.data.json. Đặc trưng Indo-Aryan: phụ âm 4 chiều (vô thanh/hữu thanh × không bật hơi/BẬT HƠI: क kʰ? क=k ख=kʰ ग=g घ=gʱ) + RETROFLEX (ट ठ ड ढ ण = ʈ ʈʰ ɖ ɖʱ ɳ) — điểm khó phát âm. Nguyên âm dài/ngắn + mũi hoá. NUKTA thêm âm vay (z x f q ɣ ɽ). Không thanh điệu.",
+    "status": "VALIDATED"
+  },
+  "grapheme_to_phoneme": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Devanagari khá đều (phonemic) trừ XOÁ SCHWA. [Bước 3: g2p-check.mjs trên WikiPron thật 33057 từ.] Phụ âm GỐC sạch: श→[ʃ] 0.30%, भ→[bʱ] 0.00%, थ→[t̪ʰ] 0.48%, ट→[ʈ] 0.00%. VALIDATED. KỶ LUẬT DỮ LIỆU (ngoại lệ CÓ HỆ THỐNG, KHÔNG phá rule): ख→[kʰ] 19.48%, ज→[dʒ] 21.47%, ड→[ɖ] 60.60% 'vi phạm' = do NUKTA (़): chữ có nukta là ÂM KHÁC — ड़→[ɽ] (rất phổ biến), ज़→[z], ख़→[x], फ़→[f], क़→[q], ग़→[ɣ]. Rule 'chữ GỐC → âm gốc' đúng; nukta tạo chữ+âm riêng. Ghi rõ, giữ high. XOÁ SCHWA: 'a' cố hữu cuối từ (và nhiều vị trí giữa) thường CÂM (राम = [raːm] không [raːmə]) — quy tắc âm vị học, lexical theo từ, cần audio.",
+    "status": "VALIDATED"
+  },
+  "schwa_deletion": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "WIKIPRON"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG hi (điểm khó đọc): nguyên âm cố hữu 'a' (schwa ə) của phụ âm THƯỜNG BỊ CÂM ở cuối từ + một số vị trí giữa (नमक = [nəmək] chứ नमकः không; राम=[raːm]). Quy tắc có hệ thống (phụ thuộc cấu trúc âm tiết) nhưng nhiều biệt lệ + khác biệt vùng → lexical, cần audio. Chính tả GIỮ phụ âm (không đánh dấu schwa câm) → đọc≠viết một phần.",
+    "status": "DRAFT"
+  },
+  "word_class": {
+    "rule_level": { "source": "UD", "derived_by": "dataset", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Đã import UD (Hindi-HDTB test split) -> word-class.data.json.",
+    "status": "VALIDATED"
+  },
+  "gender_and_number": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "2 GIỐNG (masc/fem — không trung). Đoán qua đuôi (-आ thường masc, -ई thường fem) nhưng nhiều biệt lệ → lexical. Số ít/nhiều. Tính từ ĐỔI ĐUÔI hợp giống+số (अच्छा/अच्छी/अच्छे). Danh từ có dạng trực tiếp (direct) vs xiên (oblique — trước hậu giới từ). KHÔNG có mạo từ.",
+    "status": "DRAFT"
+  },
+  "postpositions": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG: HẬU GIỚI TỪ (postposition, đứng SAU danh từ — thay cho cách): ने (ergative), को (tân ngữ/tới), से (từ/bằng), में (trong), पर (trên), का/के/की (sở hữu, hợp giống+số). Danh từ trước hậu giới từ chuyển sang dạng XIÊN (oblique: लड़का→लड़के). Hậu giới từ viết RỜI (trừ đại từ ghép: मुझको). Quy tắc rule_level rõ; dạng xiên lexical.",
+    "status": "DRAFT"
+  },
+  "ergativity": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "ĐẶC TRƯNG KHÓ (hiếm ở châu Âu): ERGATIVE — ở thể HOÀN THÀNH (perfective) của ngoại động từ, CHỦ NGỮ mang hậu giới từ ने, và ĐỘNG TỪ hợp giống/số với TÂN NGỮ (không phải chủ ngữ): राम ने रोटी खाई (Ram-ने bánh ăn-fem = 'Ram đã ăn bánh', động từ hợp với रोटी fem). Ngoài thể hoàn thành: chủ ngữ trực tiếp, động từ hợp chủ ngữ. Điểm dạy đặc trưng + khó. Paradigm cần native.",
+    "status": "DRAFT"
+  },
+  "verb_conjugation": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Động từ hợp GIỐNG + SỐ + NGÔI. Thì/thể: hiện tại (करता है), quá khứ (किया), tương lai (करेगा), tiếp diễn (कर रहा है), thói quen. Cấu trúc phân tích với trợ động từ होना (là/có) chia. Kính ngữ ảnh hưởng dạng (आप → số nhiều). Ergative đổi cách hợp (xem ergativity). Động từ bất quy tắc (होना, जाना, करना, देना, लेना) lexical.",
+    "status": "DRAFT"
+  },
+  "word_order": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "UD"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "SOV (động từ cuối câu) — khác châu Âu SVO. Bổ ngữ/tính từ TRƯỚC danh từ; hậu giới từ SAU danh từ. Tương đối tự do nhờ hậu giới từ đánh dấu vai. Trợ động từ cuối cùng.",
+    "status": "DRAFT"
+  },
+  "forms_of_address": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "3 MỨC tôn kính (nhiều hơn T-V 2 mức): तू (rất thân/thân mật cao HOẶC bề trên xuống — cẩn thận, có thể thô), तुम (thân mật/ngang hàng), आप (lịch sự/trang trọng/tôn kính — dùng động từ số nhiều). आप là baseline an toàn với người lạ. Đây là quyết định sản phẩm (dạy 3 mức) — xem review-checklist D-hi-05.",
+    "status": "VALIDATED"
+  },
+  "punctuation_layout": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "S-UD-CORPUS"], "derived_by": "ai-cross-checked", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "ĐẶC TRƯNG: dấu kết câu = DANDA । (पूर्ण विराम, U+0964) — KHÔNG dùng '.' Latin. [corpus-check Bước 3: 15472/16649 câu chứa ।.] Dấu phẩy , dấu hỏi ? dấu than ! theo Latin hiện đại. Số có thể dùng chữ số Devanagari (०१२...) hoặc Latin (0-9) — Latin phổ biến hơn ngày nay.",
+    "status": "DRAFT"
+  },
+  "diacritics_orthography": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "CLDR"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "MATRA (dấu nguyên âm) là BẮT BUỘC + phân biệt nghĩa: क[kə]≠का[kaː]≠कि[ki]≠की[kiː] — bỏ/sai matra = sai từ hoàn toàn. Anusvara ं + chandrabindu ँ (mũi hoá) phân biệt nghĩa. Virama ् (ghép phụ âm). NUKTA ़: bắt buộc cho vài chữ (ड़/ढ़ là âm bản địa THẬT — không phải vay), TUỲ CHỌN cho chữ vay Ba Tư/Ả Rập (क़/ख़/ग़/ज़/फ़ nhiều khi viết không nukta: कागज़/कागज) — như ё Nga. Ảnh hưởng chấm điểm — xem answer_acceptance_hi.",
+    "status": "DRAFT"
+  },
+  "register_taxonomy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_es_B02"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "Map taxonomy 6 mức ADR-016: CASUAL~तू/तुम + từ thân mật (नमस्ते, क्या हाल), NATURAL_NEUTRAL_POLITE~आप lịch sự trung tính (baseline), FORMAL~आप + từ trang trọng/tôn kính (नमस्ते, कृपया, धन्यवाद, माफ़ कीजिए) + tôn kính động từ số nhiều. HONORIFIC: hi CÓ yếu tố tôn kính hình thái (आप + động từ số nhiều + hậu tố जी: रामजी, माताजी) — GẦN với HONORIFIC hơn châu Âu, nhưng KHÔNG nhiều tầng như ja 敬語. Map आप-level + जी vào FORMAL/HONORIFIC nhẹ. Diglossia Hindi (Sanskrit-hoá) vs Hindustani (Urdu-hoá) — dạy Hindi chuẩn phổ thông. es B-02 áp cho phần không có tôn kính; phần आप/जी là honorific nhẹ bản địa (khác es).",
+    "status": "DRAFT"
+  },
+  "reading_aid_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "APPLICABLE (hệ chữ Devanagari MỚI, không Latin — người học phương Tây cần thời gian; abugida phức tạp hơn Kirin/Hy Lạp). Chuyển tự Latin (IAST học thuật / ITRANS / Hunterian) tồn tại nhưng là chuyển tự, không phải chú đọc chuẩn. QUYẾT ĐỊNH SẢN PHẨM (review-checklist D-hi-03): đề xuất dạy Devanagari trực tiếp NHƯNG có thể hỗ trợ chuyển tự IAST cho nhập môn (abugida khó hơn các chữ đã làm) — cân nhắc như romaji ja (ẩn dần). audio TTS là kênh phát âm chính (xoá schwa cần audio). Flag owner.",
+    "status": "DRAFT"
+  },
+  "answer_acceptance_hi": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE", "PROJECT_OWNER_PRECEDENT_pl_D64"], "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "HAI PHẦN. (1) MATRA + phụ âm + ghép + anusvara: BẮT BUỘC, thiếu/sai = SAI (matra đổi nghĩa hoàn toàn क≠का≠कि; anusvara đổi nghĩa) — áp TIỀN LỆ pl D-64 (phương án C). (2) NUKTA vay (क़/ख़/ग़/ज़/फ़): KHOAN DUNG — chấp nhận viết không nukta (कागज=कागज़) vì thực tế người bản ngữ hay bỏ, chuẩn chấp nhận cả hai — NGOẠI LỆ CÓ CƠ SỞ (như ё Nga/ґ Ukraina). NHƯNG ड़/ढ़ (âm bản địa ɽ) KHÔNG khoan dung (là âm khác thật, không phải chỉ vay). Chuyển tự Latin KHÔNG nhận làm đáp án. ✅ OWNER DUYỆT 2026-07-20 (D-83): C — matra/phụ âm/ghép/anusvara/ड़ढ़ bản địa = SAI (pl D-64); nukta VAY क़/ख़/ग़/ज़/फ़ = KHOAN DUNG (như ё Nga/ґ Ukraina). Nhắc cài bàn phím Devanagari (InScript/phonetic). Xem review-checklist D-hi-04.",
+    "status": "VALIDATED"
+  },
+  "naturalness_translation": {
+    "rule_level": { "source": "S-TRAINED-KNOWLEDGE", "derived_by": "human", "confidence": "medium" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": false,
+    "notes": "Áp dụng ADR-016. CẦN native review trước khi PASS release. Lưu ý: 3 mức तू/तुम/आप (chọn đúng — आp an toàn), ergative ने đúng thể hoàn thành, động từ hợp giống với tân ngữ (ergative) hoặc chủ ngữ, hậu giới từ + dạng xiên, hậu tố tôn kính जी, tránh Sanskrit-hoá/Urdu-hoá quá mức (dùng Hindi phổ thông), SOV.",
+    "status": "DRAFT",
+    "native_review": "PENDING — chỉ khung checklist, chưa gửi review."
+  },
+  "tts_audio_policy": {
+    "rule_level": { "source": ["S-TRAINED-KNOWLEDGE"], "derived_by": "human", "confidence": "high" },
+    "lexical_level": { "source": null, "derived_by": null, "confidence": "none" },
+    "machine_readable": true,
+    "notes": "speechText = surface text Devanagari (đầy đủ matra + nukta bản địa + anusvara). TTS hi-IN đọc trực tiếp — QUAN TRỌNG: engine phải XOÁ SCHWA đúng (राम=[raːm] không [raːmə]) nếu không phát âm sai; đây là điểm TTS hi dễ lỗi, cần kiểm audio. Kế thừa _base/audio.rules.json. Locale: hi-IN. Văn bản PHẢI giữ matra + ड़/ढ़ (âm bản địa).",
+    "status": "VALIDATED"
+  }
+}
