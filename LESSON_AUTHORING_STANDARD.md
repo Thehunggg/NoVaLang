@@ -99,6 +99,26 @@ cần. KHÔNG viết như danh sách kiến thức khô cứng.
   học sâu ở cấp phù hợp; không đơn giản hoá thành quy tắc tuyệt đối nếu thực tế
   không đúng.
 
+**B2b. Card 2 — "Tham khảo thêm" (TÙY CHỌN, mở rộng).** (Owner 2026-07-20)
+Trường **optional** `reference` trên mỗi `vocabularyDetails[i]` (mảng chuỗi
+native, localize vi/en/ja qua `localizeSupport`): các cách nói khác / biến thể /
+mở rộng để người học THÍCH thì đọc. Quy định:
+- **KHÔNG bắt buộc:** bài không có `reference` vẫn PASS. Golden + L2 (không có)
+  vẫn PASS — validator (`validateFiveCardsStructure`) chỉ kiểm id-match +
+  `examples`, KHÔNG cấm trường lạ trên `vocabularyDetails`, nên đây là slot có
+  sẵn, không cần đổi validator.
+- **KHÔNG tính vào ngân sách từ mới** (§F-d): là phần mở rộng, không phải từ phải nhớ.
+- **KHÔNG xuất hiện trong Practice (Q1–Q13) hay Q14.** Chỉ là tư liệu đọc thêm.
+- **Dịch nghĩa:** CÓ — vi/en/ja qua `localizeSupport` (như mọi support text).
+  **Audio/`reading`/`romanization`:** KHÔNG cần (validator `requireReading`/
+  `requireSpeech`/`validateNoRawKanaInRomanization` chỉ quét `vocabulary[]`,
+  `vocabularyDetails[].examples[]`, dialogue, grammar examples — KHÔNG quét
+  `reference`). Nếu có kanji thì vẫn nên viết dạng furigana 漢字（かな） trong
+  chuỗi cho dễ đọc, nhưng không bị code ép.
+- **Render UI:** tầng hiển thị "tham khảo thêm" là việc UI/Codex (PHẦN C) — dữ
+  liệu có sẵn trong `.mjs`; chưa render cũng không sao (không ảnh hưởng
+  validator/bài).
+
 **B3. Card 3 — Dialogue.** (Owner §6; ràng buộc §D3)
 - **Đúng 3 nhóm, mỗi nhóm 4–6 dòng** (code ép). Tự nhiên, mục đích giao tiếp
   rõ, lượt sau phản ứng hợp lý với lượt trước, phù hợp tình huống. Trọng tâm là
@@ -363,6 +383,54 @@ hỏi, KHÔNG bộ 20 câu, KHÔNG schema/generation nội dung**. File:
 thường", không build shell mới). Khi làm cần: Owner duyệt nội dung + cách chấm
 (graded? Free/Plus?), schema mới cho activity tổng hợp (khác 5-card lesson),
 generation + validator + UI thật thay shell.
+
+---
+
+## PHẦN F — QUY TRÌNH BUILD BÀI (Owner 2026-07-20)
+
+**F-a. CHECKLIST ĐỌC TRƯỚC (bắt buộc mỗi lần build bài):**
+- `LESSON_AUTHORING_STANDARD.md` (file này).
+- `scripts/content/daily-life/ja-knowledge-ledger.md` (SỔ KIẾN THỨC — chỉ mục
+  tra nhanh từ/ngữ pháp/nhân vật/bối cảnh đã dạy + đang ở bài nào).
+- `rules/languages/<mã>/` (rule ngôn ngữ FROZEN — vd `rules/languages/ja/`).
+- `scripts/content/daily-life/module-1/ja-unit1-lesson1.mjs` (Golden) +
+  `ja-unit1-lesson2.mjs` (L2) — làm MẪU phong cách.
+- `scripts/lib/daily-life-blueprint.mjs` (khung 16 module) — lấy ĐÚNG bài tiếp
+  theo, đúng thứ tự, đúng mục tiêu. KHÔNG tự đổi thứ tự curriculum.
+
+**F-b. NGUỒN NỘI DUNG (cố định):**
+- CHÍNH (bám sát): 3 giáo trình sơ cấp — **Minna no Nihongo, Genki, Marugoto**.
+- PHỤ (chỉ đối chiếu): Duolingo, Bunpro.
+- **KHÔNG bịa** từ vựng/ngữ pháp/hội thoại; không thêm từ/ngữ pháp vượt trình độ.
+  Không chắc → **HỎI Owner**, đừng đoán. (KHÔNG cần lập bảng đối chiếu nguồn/số
+  bài — Owner tự kiểm nội dung tiếng Nhật khi duyệt bản đọc.)
+
+**F-c. LUẬT — ÔN LẠI CÓ KẾ HOẠCH (bắt buộc):** mỗi bài PHẢI cho xuất hiện lại
+**3–5 mục** (từ/mẫu) từ **bài liền trước** + **2–3 mục** từ **bài cách 3–4 bài**
+— trong ví dụ / hội thoại / practice / Q14, **KHÔNG dạy lại như kiến thức mới**
+(không đưa thành headword vocab hay grammar pattern mới). Tra sổ kiến thức để
+chọn mục ôn.
+
+**F-d. LUẬT — NGÂN SÁCH TỪ MỚI:** bài thường **6–10 từ mới** (dù §D2 cho 6–15);
+chỉ bài dạng **danh sách** (số đếm, ngày tháng, giờ) mới 12–15. Lý do: bài
+10–20 phút, nhồi 15 từ + 3 ngữ pháp là quá tải. Mục **"tham khảo thêm"** (§B2b)
+KHÔNG tính vào ngân sách này.
+
+**F-e. SAU MỖI BÀI (bắt buộc, đúng thứ tự):**
+1. Cập nhật `ja-knowledge-ledger.md` (chạy `npm run gen:ja-ledger` — sinh lại
+   từ file bài thật, không viết tay).
+2. Ráp `.mjs` + thêm nhánh `FIVE_CARDS_REGISTRY` cho id bài trong
+   `helpers.mjs` (+ pre-tokenize Q14 targets nếu có).
+3. `npm run generate:curriculum` → `sync:flutter-assets` → `validate:curriculum`
+   + `smoke:curriculum` **PASS** (4 lỗi mềm cũ vi/zh, **0 lỗi mới**; Golden + các
+   bài trước vẫn PASS).
+4. **Commit riêng từng bài.**
+5. Xuất bản **bản đọc** (readable) cho Owner duyệt tiếng Nhật. CHƯA coi là xong
+   tới khi Owner duyệt.
+
+**F-f. CÂU LỆNH NGẮN:** khi Owner nói **"build N bài tiếp"** → tự chạy TOÀN BỘ
+quy trình F-a…F-e cho N bài tuần tự, KHÔNG cần Owner nhắc lại chi tiết. Chạm
+giới hạn thì dừng, lần sau tiếp (không mất tiến độ).
 
 ---
 
