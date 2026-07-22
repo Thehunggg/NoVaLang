@@ -77,36 +77,54 @@
 
 ## Tầng X — NGUỒN XÁC MINH NGÔN NGỮ (feed §G8)
 
-> ⚠️ **PROMPT CỦA OWNER BỊ CẮT giữa mục này** (dừng ở "X2 … NINJAL-LWP — NLB
-> (corpus BCCWJ) và…"). Phần dưới điền ĐÚNG những gì owner đã cung; **X2 (phần
-> còn lại) + X3 đang CHỜ owner gửi tiếp** — chưa build bài tới khi đủ.
+> ⚠️ **WEBFETCH BỊ CHẶN trong môi trường build này** — mọi lần tra outbound trả
+> **HTTP 403** (kể cả Wikipedia, edrdg.org, nlb.ninjal.ac.jp, nlt.tsukuba…,
+> nlp.ist.i.kyoto-u.ac.jp). → **KHÔNG tự xác minh được điều khoản/đường dẫn của
+> cả 3 nguồn.** Theo luật "không tra được = ghi CHƯA XÁC MINH, không bịa": tên
+> nguồn dưới đây là **owner cung**; đường dẫn ghi là **trang gốc tiêu chuẩn của
+> nguồn (CHƯA XÁC MINH bằng fetch)**; **owner cần tự mở kiểm điều khoản trước khi
+> dùng vào sản phẩm.**
 
 - **X1 — Cấu trúc BẮT BUỘC của từ** (động từ đòi trợ từ/cách nào; đổi dạng thì
   đổi ra sao):
   - **Nguồn:** Kyoto University Case Frame Dictionary (格フレーム辞書 — Kawahara &
-    Kurohashi), từ điển khung cách (case frame) tự động dựng từ corpus lớn.
-  - **Đường lấy:** tài nguyên NLP của ĐH Kyoto (cần owner/kỹ thuật xác nhận link
-    tải + bản dùng được).
-  - **Giấy phép:** **CHƯA XÁC MINH** — nhiều tài nguyên ĐH Kyoto cho dùng nghiên
-    cứu; dùng thương mại cần kiểm điều khoản gốc.
-  - **Giới hạn:** trả lời "động từ này đi với cách/trợ từ nào" — KHÔNG thay được
-    khâu người duyệt cho sắc thái.
+    Kurohashi) — từ điển khung cách (case frame) tự động dựng từ corpus lớn.
+  - **Đường lấy (trang gốc, CHƯA XÁC MINH bằng fetch):** tài nguyên NLP ĐH Kyoto,
+    `https://nlp.ist.i.kyoto-u.ac.jp/`.
+  - **Giấy phép: CHƯA XÁC MINH** (fetch 403). Owner cần kiểm: dùng nghiên cứu vs
+    thương mại, điều kiện ghi công.
+  - **Giới hạn:** trả lời "động từ này đi với cách/trợ từ nào" — KHÔNG thay khâu
+    người duyệt cho sắc thái.
 - **X2 — Kết hợp từ THỰC TẾ / collocation** (người bản ngữ có thật sự ghép các từ
-  này):
-  - **Nguồn (owner cung, đang dở):** **NINJAL-LWP — NLB** (Lago Word Profiler
-    trên corpus **BCCWJ** — Balanced Corpus of Contemporary Written Japanese)
-    và **‹CHỜ OWNER — prompt bị cắt ở đây›**.
-  - **Đường lấy:** NLB — https://nlb.ninjal.ac.jp/ (**kiểm điều khoản trước khi
-    dùng**); nguồn thứ hai đang chờ.
-  - **Giấy phép:** **CHƯA XÁC MINH** — công cụ tra online của NINJAL; bản thân
-    corpus BCCWJ có điều khoản riêng.
+  này) — **hai công cụ lexical profiling của NINJAL:**
+  - **Nguồn 1:** **NINJAL-LWP for BCCWJ (NLB)** — Lago Word Profiler trên corpus
+    **BCCWJ** (Balanced Corpus of Contemporary Written Japanese).
+    Trang gốc (CHƯA XÁC MINH bằng fetch): `https://nlb.ninjal.ac.jp/`.
+  - **Nguồn 2:** **NINJAL-LWP for TWC (NLT)** — tra **Tsukuba Web Corpus** (~1,1
+    tỷ từ), cùng hệ lexical profiling của NINJAL; corpus web lớn.
+    Trang gốc (CHƯA XÁC MINH bằng fetch): `https://nlt.tsukuba.lagoinst.info/`.
+  - **Giấy phép: CHƯA XÁC MINH** (fetch 403). Công cụ tra online của NINJAL;
+    corpus BCCWJ/TWC có điều khoản riêng — owner cần kiểm.
   - **Giới hạn:** tra tần suất/đối tác kết hợp — không tự xác nhận tính tự nhiên
     của câu hoàn chỉnh.
 - **X3 — Loại từ + biến đổi dạng** (từ thuộc loại nào, chia/biến đổi theo quy tắc
   nào):
-  - **‹CHỜ OWNER — prompt bị cắt, chưa có nguồn X3›.** (Repo đã có
-    `rules/languages/ja/word-class.data.json` + pipeline romaji làm nền, nhưng
-    nguồn tầng X chính thức cho X3 do owner chốt.)
+  - **Nguồn:** **JMdict/EDICT (EDRDG)** — đánh dấu tự/tha động từ (quyết định
+    **を** hay **が**) + loại động từ để suy quy tắc chia; kèm **KANJIDIC** nếu
+    cần thông tin kanji.
+  - **Đường lấy (trang gốc, CHƯA XÁC MINH bằng fetch):** `https://www.edrdg.org/`
+    (điều khoản: `https://www.edrdg.org/edrdg/licence.html`).
+  - **Giấy phép (owner cung — CHƯA XÁC MINH bằng fetch):** **CC BY-SA** — dùng
+    thương mại được, **phải ghi công**. Owner cần xác nhận đúng phiên bản CC
+    BY-SA trên trang gốc.
+  - **Giới hạn:** cho loại từ / tính tự-tha; KHÔNG cho ngữ cảnh/sắc thái.
+  - Nền sẵn có trong repo (không thay nguồn X3 chính thức):
+    `rules/languages/ja/word-class.data.json` + pipeline romaji.
+
+> **Hệ quả cho luật G8/G4 ("không tra được = không dùng"):** vì cả 3 nguồn hiện
+> **CHƯA XÁC MINH** (môi trường chặn fetch), luật tầng X **chưa chạy thật được**.
+> Trước khi build bài tiếng Nhật thật: owner (hoặc phiên có mạng) **mở 3 trang
+> gốc, xác nhận đường dẫn + điều khoản**, đổi trạng thái sang "ĐÃ XÁC MINH".
 
 ## Danh sách CỤM CỐ ĐỊNH (feed §G1 / §G2)
 
