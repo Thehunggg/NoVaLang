@@ -85,9 +85,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
       finishOnboarding: (selectedLanguage, selectedLevel, dailyGoalMinutes, profileInfo, nicheInfo) => {
         setLearningLanguage(selectedLanguage);
         setProgress((current) => {
-          const course = courses.find((item) => item.language === selectedLanguage)!;
-          const firstLesson = course.levels.find((item) => item.id === selectedLevel)?.units[0]?.lessons[0] ?? course.levels[0].units[0].lessons[0];
-          const starting = unlockStartingPointFromPlacement(course, { completed: true, score: 0, level: selectedLevel, date: new Date().toISOString(), startingUnitId: firstLesson.unitId, startingLessonId: firstLesson.id });
+          const course = courses.find((item) => item.language === selectedLanguage);
+          const firstLesson = course
+            ? (course.levels.find((item) => item.id === selectedLevel)?.units[0]?.lessons[0] ?? course.levels[0]?.units[0]?.lessons[0])
+            : undefined;
+          const starting = course && firstLesson
+            ? unlockStartingPointFromPlacement(course, { completed: true, score: 0, level: selectedLevel, date: new Date().toISOString(), startingUnitId: firstLesson.unitId, startingLessonId: firstLesson.id })
+            : { currentUnitId: null as string | null, unlockedLessonId: null as string | null, placedLessonIds: [] as string[] };
           const experienceLevel: ExperienceLevel = selectedLevel === "A0" || selectedLevel.startsWith("A1") ? "beginner" : selectedLevel.startsWith("A2") ? "elementary" : "intermediate";
           const nextNiches = nicheInfo?.selectedNiches?.length
             ? nicheInfo.selectedNiches.slice(0, 2)
@@ -125,7 +129,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
       },
       selectLanguage: (selectedLanguage) => { setLearningLanguage(selectedLanguage); setProgress((current) => ({ ...current, selectedLanguage, learningLanguage: selectedLanguage })); },
       applyPlacement: (incomingResult, startFromZero = false) => setProgress((current) => {
-        const course = courses.find((item) => item.language === current.selectedLanguage)!;
+        const course = courses.find((item) => item.language === current.selectedLanguage);
+        if (!course) {
+          return {
+            ...current,
+            placementResult: incomingResult,
+            selectedLevel: startFromZero ? "A0" : incomingResult.level,
+            currentLevel: startFromZero ? "A0" : incomingResult.level,
+          };
+        }
         const firstLesson = course.levels[0].units[0].lessons[0];
         const result = startFromZero ? { ...incomingResult, level: "A0" as const, startingUnitId: firstLesson.unitId, startingLessonId: firstLesson.id } : incomingResult;
         const starting = unlockStartingPointFromPlacement(course, result);

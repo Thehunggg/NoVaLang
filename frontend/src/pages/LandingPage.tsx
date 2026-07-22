@@ -4,7 +4,7 @@ import { Mascot } from "../components/learning/Mascot";
 import { NativeLanguageSelector } from "../components/NativeLanguageSelector";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
-import { languages } from "../data/fallbackCourses";
+import { allLearningLanguages, isCourseAvailable, getLearningLanguageLabel } from "../data/fallbackCourses";
 import { useTranslation } from "../i18n/useTranslation";
 
 export function LandingPage() {
@@ -40,13 +40,13 @@ export function LandingPage() {
             <h2 className="mt-3 font-display text-3xl font-black sm:text-4xl">{t("foundationCourses")}</h2>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {languages.map((language) => (
+            {allLearningLanguages.map((language) => (
               <Card key={language.code} className="p-6">
                 <span className="text-5xl">{language.flag}</span>
                 <p className="mt-5 text-sm font-black" style={{ color: language.color }}>{language.greeting}</p>
-                <h3 className="mt-1 font-display text-2xl font-black">{language.name}</h3>
+                <h3 className="mt-1 font-display text-2xl font-black">{getLearningLanguageLabel(language.code)}</h3>
                 <p className="mt-3 min-h-16 text-sm leading-6 text-slate-500">{language.description}</p>
-                <div className="mt-5 flex items-center justify-between text-xs font-black text-slate-400"><span>8 levels · micro-lessons</span><ArrowRight size={17} /></div>
+                <div className="mt-5 flex items-center justify-between text-xs font-black text-slate-400"><span>{isCourseAvailable(language.code) ? "8 levels · micro-lessons" : t("comingSoon")}</span><ArrowRight size={17} /></div>
               </Card>
             ))}
           </div>

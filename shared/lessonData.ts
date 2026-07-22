@@ -3,7 +3,10 @@
 import type { ExamLevel, ExamTrackOption, TrackSkill } from "./types.js";
 import { getLevelDisplayName, levelOrder } from "./levelDisplay.js";
 import examTracksConfig from "./config/exam_tracks.json" with { type: "json" };
-import { learningLanguages } from "./languageOptions.js";
+import {
+  allLearningLanguages,
+  learningLanguages,
+} from "./languageOptions.js";
 import {
   curriculumCourses,
   curriculumLessons,
@@ -11,9 +14,18 @@ import {
 } from "./curriculumJson.js";
 
 export { nativeLanguages } from "./nativeLanguages.js";
-export { languageOptions, learningLanguages, getLanguageOption, getLearningLanguage } from "./languageOptions.js";
+export {
+  languageOptions,
+  learningLanguages,
+  allLearningLanguageOptions,
+  allLearningLanguages,
+  getLanguageOption,
+  getLearningLanguage,
+  getLearningLanguageLabel,
+  isCourseAvailable,
+} from "./languageOptions.js";
 
-/** Learning languages — sourced from shared/config/language_options.json */
+/** Available playable learning languages — sourced from courseStatus in config. */
 export const languages: Language[] = learningLanguages;
 
 type PronSeed = [symbol: string, pronunciation: string, word: string, meaning: string, sentence: string, translation: string];
@@ -391,6 +403,7 @@ export const getPlacementByLanguage = (language: string) => {
   return legacyCourses.find((course) => course.language === language)?.placementTest ?? [];
 };
 export const isLanguageCode = (value: string): value is LanguageCode =>
+  allLearningLanguages.some((language) => language.code === value) ||
   languages.some((language) => language.code === value);
 
 export {

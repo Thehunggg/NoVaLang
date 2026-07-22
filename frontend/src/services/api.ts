@@ -1,5 +1,5 @@
 import type { Course, Language, LanguageCode, Lesson, NativeLanguage, PlacementQuestion, PracticeSet } from "../types/index";
-import { getCourseByLanguage, getLessonById, getPlacementByLanguage, getReviewCatalog, isLanguageCode, languages, makePracticeSet } from "../data/fallbackCourses";
+import { getCourseByLanguage, getLessonById, getPlacementByLanguage, getReviewCatalog, languages, makePracticeSet } from "../data/fallbackCourses";
 import { nativeLanguages } from "../data/nativeLanguages";
 
 const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
@@ -35,7 +35,7 @@ export const fetchReviewCatalog = async (language: LanguageCode) => {
   return { data: bundledReview, source: result.source };
 };
 export const fetchPractice = async (language: string, completedLessonIds: string[] = []) => {
-  const safeLanguage = isLanguageCode(language) ? language : "en";
+  const safeLanguage = language.trim() || "ja";
   const suffix = completedLessonIds.length ? `/${completedLessonIds.map(encodeURIComponent).join(",")}` : "";
   const bundledPractice = makePracticeSet(safeLanguage, completedLessonIds);
   const result = await withFallback<PracticeSet>(`/practice/${safeLanguage}${suffix}`, () => bundledPractice);
