@@ -7,7 +7,7 @@ mình:
 | Bạn là | Đọc bắt buộc |
 |---|---|
 | Ai cũng đọc | **PHẦN A — Nguyên tắc chung** |
-| Viết nội dung lesson | PHẦN A + **PHẦN B** + **PHẦN D** |
+| Viết nội dung lesson | PHẦN A + **PHẦN B** + **PHẦN D** + **PHẦN G** |
 | Build UI / render | PHẦN A + **PHẦN C** + **PHẦN D** |
 | Sửa validator/schema | PHẦN A + **PHẦN D** (kèm file:dòng) |
 
@@ -486,6 +486,10 @@ sẵn 33 file rỗng**.
 — trong ví dụ / hội thoại / practice / Q14, **KHÔNG dạy lại như kiến thức mới**
 (không đưa thành headword vocab hay grammar pattern mới). Tra sổ kiến thức để
 chọn mục ôn.
+> **Vế "bài cách 3–4 bài" CHỈ áp khi ĐÃ ĐỦ số bài trước đó.** Các bài đầu chuỗi
+> (chưa có bài cách 3–4 bài) → **bỏ vế này, KHÔNG bịa mục ôn** cho đủ số. Vế "bài
+> liền trước" cũng bỏ ở bài đầu tiên tuyệt đối của một ngôn ngữ (không có bài
+> trước).
 
 **F-d. LUẬT — NGÂN SÁCH TỪ MỚI:** bài thường **6–10 từ mới** (dù §D2 cho 6–15);
 chỉ bài dạng **danh sách** (số đếm, ngày tháng, giờ) mới 12–15. Lý do: bài
@@ -515,6 +519,99 @@ sau dạy ngữ cảnh nào — để phân biệt "dạy lại có chủ đích
 quy trình F-a…F-f cho N bài tuần tự, KHÔNG cần Owner nhắc lại chi tiết. Chạm
 giới hạn thì dừng, lần sau tiếp (không mất tiến độ).
 
+**F-h. GHI CHÚ ĐỊNH LƯỢNG (các con số là ƯỚC LƯỢNG VẬN HÀNH, KHÔNG bất biến):**
+các con số định lượng trong chuẩn này — số **từ mới** (§F-d), số **mục ôn**
+(§F-c), số **mục tham khảo** (§B2b), số nhân vật hội thoại (§G6) … — là **ước
+lượng vận hành phục vụ chất lượng học, Owner chỉnh được**, KHÔNG phải hằng số bất
+biến. Chỉ **ràng buộc code (PHẦN D)** mới là ngưỡng cứng do validator ép; đừng
+lẫn "khuyến nghị vận hành" với "luật validator".
+
+---
+
+## PHẦN G — ĐỘ TIN CẬY NGÔN NGỮ (LANGUAGE RELIABILITY — mọi ngôn ngữ)
+
+> Nhóm luật **provenance**: mọi câu/cụm trong bài phải **truy được nguồn gốc**.
+> Áp cho MỌI ngôn ngữ. Tên nguồn / danh sách / ngưỡng CỤ THỂ của từng ngôn ngữ
+> nằm ở **file nguồn riêng** (`scripts/content/sources/<mã>.md`) — PHẦN G chỉ
+> định nghĩa **cơ chế trừu tượng**. Gom + thay các mảnh provenance từng rải ở
+> §A3 / §B8 / §F-b.
+
+**G1 — PHÂN HAI LOẠI VẬT LIỆU.**
+- **LOẠI A (cụm cố định):** đơn vị nguồn dạy **NGUYÊN KHỐI**, mọi chỗ xuất hiện
+  đều y hệt, **KHÔNG có ô trống**.
+- **LOẠI B (mẫu ngữ pháp):** khung **CÓ Ô TRỐNG**, nguồn dạy kèm nhiều ví dụ thay
+  thế đa dạng.
+- Phân loại theo **CÁCH NGUỒN TRÌNH BÀY** + theo **DANH SÁCH cụm cố định** của
+  ngôn ngữ đó (danh sách ở tầng riêng — file nguồn riêng, sinh khi làm ngôn ngữ
+  đó). **KHÔNG theo cảm giác AI.**
+- Nghi ngờ thuộc loại nào → **xử như LOẠI A** + hỏi owner để bổ sung danh sách.
+
+**G2 — LOẠI A: chỉ dùng NGUYÊN MẪU.** Đúng dạng có trong nguồn hoặc danh sách đã
+duyệt. **CẤM thêm / bớt / ghép / đảo / suy biến thể.** Không có trong nguồn →
+**KHÔNG DÙNG.** CẤM dùng LOẠI A làm vật liệu điền vào ô trống của LOẠI B.
+
+**G3 — LOẠI B: luật thay thế theo mẫu.**
+- Lấy mẫu từ nguồn (mẫu ngữ pháp = **quy ước chung của ngôn ngữ**, không của riêng
+  tài liệu nào). Câu ví dụ **TỰ VIẾT bằng thay thế — KHÔNG chép ví dụ của tài
+  liệu.**
+- Thay **HẾT** từ nội dung trong ô trống bằng **từ ĐÃ DẠY**. Không thay-một-chữ.
+- **GIỮ NGUYÊN phần ngữ pháp cốt lõi** của mẫu (phần "cốt lõi không được đụng" do
+  **file nguồn riêng từng ngôn ngữ** định nghĩa).
+- Từ thay vào phải **HỢP NGHĨA** với vị trí đó (kiểm bằng **tầng X — §G8**).
+- Chỉ thay trong **CÙNG NHÓM VAI VẾ**; muốn đổi sang vai đòi cách nói khác → đó là
+  **bài dạy riêng về register**, KHÔNG phải thay thế.
+
+**G4 — KHÔNG CHẮC → KHÔNG DÙNG.** Không lấy "đúng ngữ pháp" làm lý do giữ câu chưa
+xác minh. **Thà câu đơn giản chắc đúng.**
+
+**G5 — BA BẬC TIN CẬY** (gắn cho **MỌI câu** trong BÁO CÁO cho owner):
+- **CHẮC:** chép **nguyên mẫu** từ nguồn / danh sách đã duyệt (ghi kèm tìm thấy ở
+  đâu).
+- **THEO LUẬT:** câu thay thế **tuân đủ §G3** (kiểm được từng điều kiện).
+- **CẦN SOI KỸ:** mọi thứ còn lại (cụm mới, yếu tố mượn trước, câu ghép nhiều
+  mẫu).
+- **AI KHÔNG được tự xếp câu nó tạo vào bậc CHẮC.** Danh sách **CẦN SOI KỸ đặt
+  ĐẦU** bản báo cáo. Ghi nguồn / bậc **CHỈ nằm trong báo cáo cho owner — KHÔNG
+  vào data app.**
+
+**G6 — HỘI THOẠI NÂNG CAO (câu cuối bài).**
+- Nhiều nhân vật (**3–4** khi vốn từ đủ; bài đầu ít từ thì ngắn hơn, lớn dần).
+- **BẮT BUỘC giải thích tình huống + vai vế TRƯỚC hội thoại.**
+- Xen kẽ mức **trang trọng / thân mật THEO VAI VẾ.**
+- **Lũy tiến:** bài sau dùng thêm vật liệu bài trước; đơn vị sau dùng của đơn vị
+  trước; phần sau dùng của phần trước.
+- Được dùng yếu tố **CAO HƠN TRÌNH ĐỘ (i+1)** nhưng **CHỈ** từ: **(a)** nguyên
+  mẫu **có thật trong nguồn V1/V2**, hoặc **(b)** chương trình bài sau **KHI bài
+  đó ĐÃ VIẾT THẬT trong repo**. Bài sau chưa tồn tại → chỉ còn kênh (a). KHÔNG có
+  nguồn → **KHÔNG dùng**. Mọi yếu tố mượn trước phải **ĐÁNH DẤU trong báo cáo**
+  (thuộc CẦN SOI KỸ).
+
+**G7 — PHẠM VI TỪ VỰNG.** Card nội dung + bài tập **chấm điểm** chỉ dùng **TỪ ĐÃ
+DẠY** (tra sổ kiến thức). **Ngoại lệ duy nhất:** hội thoại nâng cao (§G6) và mục
+tham khảo (§B2b). Cần từ mới để tự nhiên → **dạy nó**, hoặc **đổi cách viết**,
+hoặc **đưa vào tham khảo**. (Bản provenance của §A3 / §B8.)
+
+**G8 — LUẬT TẦNG X (XÁC MINH NGÔN NGỮ) — MỌI ngôn ngữ.** Ba câu hỏi **bắt buộc
+tra NGUỒN DỮ LIỆU (KHÔNG dựa trí nhớ mô hình):**
+- **X1:** từ này **BẮT BUỘC** đi với cấu trúc / thành phần ngữ pháp nào? (và khi
+  biến đổi dạng thì cấu trúc đó đổi thế nào?)
+- **X2:** người bản ngữ **CÓ THẬT SỰ** kết hợp các từ này với nhau không?
+- **X3:** từ này thuộc **loại nào**, biến đổi dạng theo **quy tắc nào**?
+- Nguồn để tra X1–X3 do **file nguồn riêng từng ngôn ngữ** chỉ định (**tầng X**).
+  **KHÔNG TRA ĐƯỢC → KHÔNG DÙNG** tổ hợp đó — chọn vật liệu khác đã tra được, hoặc
+  hỏi owner. Kết quả tra ghi thành **bảng trong BÁO CÁO** (không vào app).
+
+**G9 — LUẬT CHỐT NGUỒN.** Nội dung không có ở V1 → V2 → V3 (ghi rõ "ra ngoài V1")
+→ cả ba không có → **DỪNG, hỏi owner. KHÔNG tự soạn.** (Bản gắn-nhãn-tin-cậy của
+luật chốt §F-b.)
+
+**G — GIỚI HẠN THẬT (ghi rõ, không giấu).** Hệ luật G + tầng X chỉ chặn được **lỗi
+TRA CỨU ĐƯỢC**: cấu trúc bắt buộc (X1), kết hợp từ phổ biến (X2), loại từ / biến
+đổi dạng (X3), từ chưa dạy (§G7). Chúng **KHÔNG chặn được sắc thái tinh tế**
+(giọng điệu, độ tự nhiên sâu, hàm ý văn hoá) — **chốt cuối là NGƯỜI DUYỆT biết
+ngôn ngữ đó.** Ngôn ngữ **chưa có người duyệt** → độ tin cậy **thấp hơn một bậc**;
+**ghi nhận điều này khi quyết định thứ tự ra mắt** ngôn ngữ.
+
 ---
 
 ## Changelog file này
@@ -522,6 +619,16 @@ giới hạn thì dừng, lần sau tiếp (không mất tiến độ).
 - **2026-07-19 (bản 1)** — Tạo mới. Gom 24 nguyên tắc Owner + đối chiếu code.
   Nới Q14 số dòng (bỏ ép đúng 14 cho lesson thường, sàn ≥4; Golden khoá 14
   riêng). Free/Plus + audio-example + furigana + bài-20-câu: DỪNG chờ Owner.
+- **2026-07-22 (bản 4 — nhóm luật ĐỘ TIN CẬY NGÔN NGỮ)** — Thêm **PHẦN G**
+  (G1 phân LOẠI A/B · G2 nguyên mẫu LOẠI A · G3 thay thế theo mẫu LOẠI B · G4
+  không chắc → không dùng · G5 ba bậc tin cậy trong báo cáo · G6 hội thoại nâng
+  cao + i+1 có nguồn · G7 phạm vi từ đã dạy · G8 tầng X xác minh X1/X2/X3 · G9
+  chốt nguồn) + **giới hạn thật** (luật + tầng X không chặn sắc thái tinh tế —
+  chốt cuối là người duyệt; chưa có người duyệt → tin cậy thấp hơn một bậc). Toàn
+  bộ định nghĩa **trừu tượng theo LOẠI**, không tên ngôn ngữ/nguồn/ví dụ cụ thể.
+  **F-c** thêm điều kiện "vế bài cách 3–4 bài chỉ áp khi đủ số bài trước". **F-h**
+  ghi rõ các con số định lượng là **ước lượng vận hành** (owner chỉnh được), chỉ
+  PHẦN D là ngưỡng cứng. Thêm PHẦN G vào bảng người-đọc cho người viết nội dung.
 - **2026-07-22 (bản 3 — sửa lỗi tầng nguồn nội dung)** — **F-b** viết lại thành
   **QUY TRÌNH 5 VÒNG KIỂM NGUỒN định nghĩa theo LOẠI** (V1 viện ngôn ngữ chính
   thức · V2 giáo trình lớn thứ hai · V3 giáo trình thương mại phổ biến · V4 hai
