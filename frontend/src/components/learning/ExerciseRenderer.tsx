@@ -37,8 +37,20 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
   };
 
   const locale = progress.nativeLanguage as SupportedUILanguage;
-  const localizedText = (map: Partial<Record<string, string>> | undefined, fallback = "") => map?.[progress.nativeLanguage] ?? (progress.nativeLanguage === "en" ? fallback : `⟦missing-content:${progress.nativeLanguage}⟧`);
-  const localizedList = (map: Partial<Record<string, string[]>> | undefined, fallback: string[] = []) => map?.[progress.nativeLanguage] ?? (progress.nativeLanguage === "en" ? fallback : [`⟦missing-content:${progress.nativeLanguage}⟧`]);
+  const localizedText = (map: Partial<Record<string, string>> | undefined, fallback = "") => {
+    const value = map?.[progress.nativeLanguage];
+    if (value?.trim()) return value;
+    if (progress.nativeLanguage === "en" && fallback) return fallback;
+    if (import.meta.env.DEV && map) console.warn(`[i18n] missing exercise text for ${progress.nativeLanguage}`);
+    return fallback || "";
+  };
+  const localizedList = (map: Partial<Record<string, string[]>> | undefined, fallback: string[] = []) => {
+    const value = map?.[progress.nativeLanguage];
+    if (value?.length) return value;
+    if (progress.nativeLanguage === "en" && fallback.length) return fallback;
+    if (import.meta.env.DEV && map) console.warn(`[i18n] missing exercise list for ${progress.nativeLanguage}`);
+    return fallback;
+  };
   const choiceTypes = ["multiple_choice", "fill_blank", "fill_missing_character", "sound_to_character", "next_in_sequence", "choose_correct_pair", "listening_placeholder", "choose_correct_sound", "choose_correct_letter", "choose_word_starting_with_letter", "choose_word_starting_with_kana", "choose_correct_reading", "choose_meaning", "choose_correct_sentence", "read_short_sentence", "answer_question", "choose_summary", "listen_and_choose_meaning", "listen_and_choose_sentence", "match_character_to_pronunciation", "dialogue_choice"];
   const isChoice = choiceTypes.includes(exercise.type);
   const options = [...new Set(getExerciseOptions(exercise, progress.nativeLanguage) ?? [])];
@@ -105,7 +117,7 @@ export function ExerciseRenderer({ exercise, onAnswer }: { exercise: Exercise; o
           </div>
         </div>
 
-        <p className="text-xs font-black uppercase tracking-wider text-violet-300">Plus · {subQuestionIndex + 1}/{subQuestions.length}</p>
+        <p className="text-xs font-black uppercase tracking-wider text-violet-300">{t("plusLabel")} · {subQuestionIndex + 1}/{subQuestions.length}</p>
         <div className="grid gap-3 sm:grid-cols-2">
           {currentOptions.map((option) => (
             <button key={option} disabled={subChecked || submitted} onClick={() => setSubAnswer(option)} className={`min-h-14 rounded-2xl border p-4 text-left text-sm font-extrabold transition disabled:opacity-70 ${subAnswer === option ? "border-cyan-300/50 bg-cyan-300/15 text-white" : "border-white/10 bg-white/[.045] text-slate-200 hover:border-cyan-300/40 hover:bg-cyan-300/10"}`}>

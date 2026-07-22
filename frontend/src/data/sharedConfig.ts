@@ -31,7 +31,9 @@ export const localizedConfigLabel = (label: LocalizedLabel, uiLanguage: Supporte
 export const sharedMobileUiText = (key: string, uiLanguage: SupportedUILanguage): string => {
   const entry = (mobileUiJson as Record<string, Record<string, string>>)[key];
   const value = entry?.[uiLanguage];
-  return value?.trim() ? value : `⟦missing:${key}:${uiLanguage}⟧`;
+  if (value?.trim()) return value;
+  if (import.meta.env.DEV) console.warn(`[i18n] missing mobile UI key ${key}:${uiLanguage}`);
+  return "";
 };
 
 export const placementLevelFromScore = (score: number): LevelId =>

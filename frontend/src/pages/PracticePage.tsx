@@ -13,6 +13,7 @@ import { useApp } from "../context/AppContext";
 import { languages } from "../data/fallbackCourses";
 import { fetchPractice } from "../services/api";
 import type { Exercise, PracticeSet } from "../types/index";
+import { exerciseTypeKey } from "../i18n/labels";
 import { useTranslation } from "../i18n/useTranslation";
 import { getExerciseExplanation, getExerciseQuestion } from "../utils/checkAnswer";
 import { validatePracticeExercises } from "../utils/practiceValidation";
@@ -32,6 +33,7 @@ export function PracticePage() {
   const load = () => fetchPractice(meta.code, progress.completedLessonIds.filter((id) => id.startsWith(meta.code))).then((result) => { validatePracticeExercises(meta.code, progress.nativeLanguage, result.data.exercises); setPractice(result.data); });
   useEffect(() => { load(); }, [language, progress.nativeLanguage]);
   const exercise: Exercise | undefined = practice?.exercises[index];
+  const completedPool = progress.completedLessonIds.filter((id) => id.startsWith(meta.code)).length;
 
   const answer = (correct: boolean) => {
     if (correct) setScore((value) => value + 1);
@@ -50,12 +52,77 @@ export function PracticePage() {
 
   if (finished) {
     const accuracy = Math.round((score / practice.exercises.length) * 100);
-    return <PageContainer className="py-10"><Card className="mx-auto max-w-xl p-8 text-center"><Mascot size="md" /><Badge tone="green">Practice complete</Badge><h1 className="mt-4 font-display text-3xl font-black">Heart signal restored</h1><p className="mt-2 text-sm text-slate-500">Practice awards up to 15 XP and restores one heart.</p><div className="mt-7 grid grid-cols-3 gap-3"><div className="rounded-2xl bg-violet-300/10 p-4"><Zap className="mx-auto text-violet-300" /><strong className="mt-2 block">+{Math.max(5, Math.round((score / practice.exercises.length) * 15))}</strong><span className="text-xs text-slate-500">XP</span></div><div className="rounded-2xl bg-cyan-300/10 p-4"><Target className="mx-auto text-cyan-300" /><strong className="mt-2 block">{accuracy}%</strong><span className="text-xs text-slate-500">Accuracy</span></div><div className="rounded-2xl bg-rose-300/10 p-4"><Heart className="mx-auto text-rose-300" fill="currentColor" /><strong className="mt-2 block">+1</strong><span className="text-xs text-slate-500">Heart</span></div></div><div className="mt-7 flex flex-col gap-3 sm:flex-row"><Button variant="ghost" className="flex-1" onClick={restart}><RotateCcw size={17} /> New set</Button><Link to="/" className="flex-1"><Button className="w-full">Course path <ArrowRight size={17} /></Button></Link></div></Card></PageContainer>;
+    return (
+      <PageContainer className="py-10">
+        <Card className="mx-auto max-w-xl p-8 text-center">
+          <Mascot size="md" />
+          <Badge tone="green">{t("practiceComplete")}</Badge>
+          <h1 className="mt-4 font-display text-3xl font-black">{t("practiceHeartRestored")}</h1>
+          <p className="mt-2 text-sm text-slate-500">{t("practiceAwardsHelp")}</p>
+          <div className="mt-7 grid grid-cols-3 gap-3">
+            <div className="rounded-2xl bg-violet-300/10 p-4"><Zap className="mx-auto text-violet-300" /><strong className="mt-2 block">+{Math.max(5, Math.round((score / practice.exercises.length) * 15))}</strong><span className="text-xs text-slate-500">XP</span></div>
+            <div className="rounded-2xl bg-cyan-300/10 p-4"><Target className="mx-auto text-cyan-300" /><strong className="mt-2 block">{accuracy}%</strong><span className="text-xs text-slate-500">{t("accuracy")}</span></div>
+            <div className="rounded-2xl bg-rose-300/10 p-4"><Heart className="mx-auto text-rose-300" fill="currentColor" /><strong className="mt-2 block">+1</strong><span className="text-xs text-slate-500">{t("heart")}</span></div>
+          </div>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <Button variant="ghost" className="flex-1" onClick={restart}><RotateCcw size={17} /> {t("newPracticeSet")}</Button>
+            <Link to="/" className="flex-1"><Button className="w-full">{t("coursePathButton")} <ArrowRight size={17} /></Button></Link>
+          </div>
+        </Card>
+      </PageContainer>
+    );
   }
 
-  if (!started) return <PageContainer className="py-10"><Card className="mx-auto max-w-2xl overflow-hidden"><div className="bg-gradient-to-br from-violet-400/15 to-cyan-300/10 p-8"><Mascot size="md" message="Nova selects signals from lessons you have already explored." /><Badge tone="pink"><Sparkles size={12} /> Review chamber</Badge><h1 className="mt-4 font-display text-3xl font-black">{practice.title}</h1><p className="mt-3 text-sm leading-6 text-slate-400">{practice.exercises.length} mixed exercises · no hearts lost · one heart restored at the end.</p></div><div className="p-8"><div className="flex items-center justify-between rounded-2xl bg-white/[.04] p-4"><span className="flex items-center gap-2 font-extrabold"><Brain className="text-violet-300" /> Completed lesson pool</span><span className="text-sm font-black text-cyan-300">{progress.completedLessonIds.filter((id) => id.startsWith(meta.code)).length || "Recovery"}</span></div><Button className="mt-6 w-full" onClick={() => setStarted(true)}>Start practice <ArrowRight size={18} /></Button></div></Card></PageContainer>;
+  if (!started) {
+    return (
+      <PageContainer className="py-10">
+        <Card className="mx-auto max-w-2xl overflow-hidden">
+          <div className="bg-gradient-to-br from-violet-400/15 to-cyan-300/10 p-8">
+            <Mascot size="md" message={t("practiceNovaSelects")} />
+            <Badge tone="pink"><Sparkles size={12} /> {t("reviewChamber")}</Badge>
+            <h1 className="mt-4 font-display text-3xl font-black">{practice.title}</h1>
+            <p className="mt-3 text-sm leading-6 text-slate-400">{t("practiceMixedHelp", { count: practice.exercises.length })}</p>
+          </div>
+          <div className="p-8">
+            <div className="flex items-center justify-between rounded-2xl bg-white/[.04] p-4">
+              <span className="flex items-center gap-2 font-extrabold"><Brain className="text-violet-300" /> {t("completedLessonPool")}</span>
+              <span className="text-sm font-black text-cyan-300">{completedPool || t("recoveryMode")}</span>
+            </div>
+            <Button className="mt-6 w-full" onClick={() => setStarted(true)}>{t("startPractice")} <ArrowRight size={18} /></Button>
+          </div>
+        </Card>
+      </PageContainer>
+    );
+  }
 
-  return <PageContainer className="py-7 sm:py-10"><div className="mx-auto max-w-3xl"><div className="mb-5 flex items-center gap-4"><Link to="/" className="rounded-xl p-2 text-slate-500 hover:bg-white/5"><X size={19} /></Link><div className="flex-1"><ProgressBar value={index + 1} max={practice.exercises.length} /></div><span className="text-sm font-black text-cyan-300">{score} {t("correct")}</span></div><QuizCard eyebrow={`${t("practice")} · ${exercise?.type.split("_").join(" ")}`} title={exercise ? getExerciseQuestion(exercise, progress.nativeLanguage) : t("review")} >{exercise && <ExerciseRenderer exercise={exercise} onAnswer={answer} />}{feedback && <div className={`mt-5 rounded-2xl border p-4 ${feedback.correct ? "border-emerald-300/25 bg-emerald-300/10" : "border-rose-300/25 bg-rose-300/10"}`}><p className={feedback.correct ? "font-black text-emerald-200" : "font-black text-rose-200"}>{feedback.correct ? <Check className="mr-2 inline" size={18} /> : <X className="mr-2 inline" size={18} />}{feedback.correct ? t("correctSignal") : t("notQuite")}</p><p className="mt-2 text-sm text-slate-400">{feedback.explanation}</p><Button className="mt-4 w-full" onClick={next}>{index === practice.exercises.length - 1 ? t("completed") : t("nextExercise")}<ArrowRight size={17} /></Button></div>}</QuizCard></div></PageContainer>;
+  return (
+    <PageContainer className="py-7 sm:py-10">
+      <div className="mx-auto max-w-3xl">
+        <div className="mb-5 flex items-center gap-4">
+          <Link to="/" className="rounded-xl p-2 text-slate-500 hover:bg-white/5"><X size={19} /></Link>
+          <div className="flex-1"><ProgressBar value={index + 1} max={practice.exercises.length} /></div>
+          <span className="text-sm font-black text-cyan-300">{score} {t("correct")}</span>
+        </div>
+        <QuizCard
+          eyebrow={`${t("practice")} · ${exercise ? t(exerciseTypeKey(exercise.type)) : t("review")}`}
+          title={exercise ? getExerciseQuestion(exercise, progress.nativeLanguage) : t("review")}
+        >
+          {exercise && <ExerciseRenderer exercise={exercise} onAnswer={answer} />}
+          {feedback && (
+            <div className={`mt-5 rounded-2xl border p-4 ${feedback.correct ? "border-emerald-300/25 bg-emerald-300/10" : "border-rose-300/25 bg-rose-300/10"}`}>
+              <p className={feedback.correct ? "font-black text-emerald-200" : "font-black text-rose-200"}>
+                {feedback.correct ? <Check className="mr-2 inline" size={18} /> : <X className="mr-2 inline" size={18} />}
+                {feedback.correct ? t("correctSignal") : t("notQuite")}
+              </p>
+              <p className="mt-2 text-sm text-slate-400">{feedback.explanation}</p>
+              <Button className="mt-4 w-full" onClick={next}>
+                {index === practice.exercises.length - 1 ? t("completed") : t("nextExercise")}
+                <ArrowRight size={17} />
+              </Button>
+            </div>
+          )}
+        </QuizCard>
+      </div>
+    </PageContainer>
+  );
 }
-
-
