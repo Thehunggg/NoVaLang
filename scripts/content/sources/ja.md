@@ -75,6 +75,95 @@
 
 ---
 
+## Tầng X — NGUỒN XÁC MINH NGÔN NGỮ (feed §G8)
+
+> ⚠️ **PROMPT CỦA OWNER BỊ CẮT giữa mục này** (dừng ở "X2 … NINJAL-LWP — NLB
+> (corpus BCCWJ) và…"). Phần dưới điền ĐÚNG những gì owner đã cung; **X2 (phần
+> còn lại) + X3 đang CHỜ owner gửi tiếp** — chưa build bài tới khi đủ.
+
+- **X1 — Cấu trúc BẮT BUỘC của từ** (động từ đòi trợ từ/cách nào; đổi dạng thì
+  đổi ra sao):
+  - **Nguồn:** Kyoto University Case Frame Dictionary (格フレーム辞書 — Kawahara &
+    Kurohashi), từ điển khung cách (case frame) tự động dựng từ corpus lớn.
+  - **Đường lấy:** tài nguyên NLP của ĐH Kyoto (cần owner/kỹ thuật xác nhận link
+    tải + bản dùng được).
+  - **Giấy phép:** **CHƯA XÁC MINH** — nhiều tài nguyên ĐH Kyoto cho dùng nghiên
+    cứu; dùng thương mại cần kiểm điều khoản gốc.
+  - **Giới hạn:** trả lời "động từ này đi với cách/trợ từ nào" — KHÔNG thay được
+    khâu người duyệt cho sắc thái.
+- **X2 — Kết hợp từ THỰC TẾ / collocation** (người bản ngữ có thật sự ghép các từ
+  này):
+  - **Nguồn (owner cung, đang dở):** **NINJAL-LWP — NLB** (Lago Word Profiler
+    trên corpus **BCCWJ** — Balanced Corpus of Contemporary Written Japanese)
+    và **‹CHỜ OWNER — prompt bị cắt ở đây›**.
+  - **Đường lấy:** NLB — https://nlb.ninjal.ac.jp/ (**kiểm điều khoản trước khi
+    dùng**); nguồn thứ hai đang chờ.
+  - **Giấy phép:** **CHƯA XÁC MINH** — công cụ tra online của NINJAL; bản thân
+    corpus BCCWJ có điều khoản riêng.
+  - **Giới hạn:** tra tần suất/đối tác kết hợp — không tự xác nhận tính tự nhiên
+    của câu hoàn chỉnh.
+- **X3 — Loại từ + biến đổi dạng** (từ thuộc loại nào, chia/biến đổi theo quy tắc
+  nào):
+  - **‹CHỜ OWNER — prompt bị cắt, chưa có nguồn X3›.** (Repo đã có
+    `rules/languages/ja/word-class.data.json` + pipeline romaji làm nền, nhưng
+    nguồn tầng X chính thức cho X3 do owner chốt.)
+
+## Danh sách CỤM CỐ ĐỊNH (feed §G1 / §G2)
+
+- **Đường dẫn file danh sách:** *(chưa khởi tạo)*.
+- **Trạng thái duyệt:** `CHƯA KHỞI TẠO`. Tới khi có danh sách duyệt: gặp cụm nghi
+  là cố định → **xử như LOẠI A + hỏi owner** (§G1). Nguồn để rút cụm cố định:
+  V1 (Irodori) — các mẫu chào hỏi/lịch sự dạy nguyên khối.
+
+## PHẦN CỐT LÕI KHÔNG ĐƯỢC THAY khi thay thế theo mẫu (feed §G3)
+
+- Với mẫu ngữ pháp (LOẠI B) tiếng Nhật: **trợ từ + đuôi động từ/tính từ + trật tự
+  đầu-cuối câu là CỐT LÕI, không đụng**; chỉ thay **danh từ/động từ nội dung** ở ô
+  trống bằng từ ĐÃ DẠY. Quy tắc chia/biến đổi dạng: theo `rules/languages/ja/`
+  (FROZEN) — file nguồn này không định nghĩa lại.
+
+## Cơ chế HỖ TRỢ ĐỌC của tiếng Nhật (feed §C2/§E3 — chi tiết cụ thể ở đây, không ở file chung)
+
+Repo có **HAI kiểu**, dùng đúng chỗ (KHÔNG có bước tự động ghép `displayText` +
+`reading`; KHÔNG ruby; không tồn tại parser `漢字（かな）→ ruby`):
+
+1. **Vocab card / Dialogue line / Q14 line** (mặc định): `displayText`
+   (= `targetText`) lưu văn bản chuẩn **CÓ kanji** (`田中さん、今日も…`); `reading`
+   là **trường RIÊNG kana thuần** (`たなかさん、きょうも…`), hiển thị như **dòng
+   trợ đọc riêng / toggle**.
+2. **Chat_text_fill segment (Q10)** + đôi chỗ furigana nội dòng: `displayText`
+   **nhúng sẵn `漢字（かな）`** (vd `私（わたし）は田中（たなか）です。`), hiển thị
+   nguyên văn (parens LÀ furigana, dữ liệu pre-authored).
+
+Chính sách romaji/romanization theo trình độ + TTS locale: theo
+`rules/languages/ja/` (FROZEN).
+
+## Sổ kiến thức + bài mẫu của tiếng Nhật (feed §F-a/§F-f)
+
+- **Sổ kiến thức:** `scripts/content/daily-life/ja-knowledge-ledger.md`.
+- **Lệnh sinh sổ:** `npm run gen:ja-ledger` (sinh lại từ file bài thật —
+  KHÔNG viết tay).
+- **Bài đã APPROVED làm MẪU phong cách:**
+  `scripts/content/daily-life/module-1/ja-unit1-lesson1.mjs` (Golden),
+  `ja-unit1-lesson2.mjs` (L2), `ja-unit1-lesson3.mjs` (L3).
+
+## Ví dụ "Tham khảo thêm" (§B2b) — bằng tiếng Nhật (ví dụ cụ thể để ở đây, không ở file chung)
+
+```js
+{
+  term: 'またね',           // furigana 漢字（かな） nếu có kanji
+  reading: 'またね',        // reading kana thuần
+  speechText: 'またね',     // audio — BẮT BUỘC mỗi mục
+  meaning: '…',            // NGHĨA đầy đủ (native, localize đủ locale)
+  forWord: 'じゃあ、また',   // THAM KHẢO CHO TỪ CHÍNH NÀO (target ja)
+  forWho: '…',            // DÙNG CHO AI (bạn bè/thầy cô/người trên… — native)
+  whenToUse: '…',         // DÙNG KHI NÀO (tình huống, thời điểm — native)
+  difference: '…',        // KHÁC GÌ so với từ chính (— native)
+}
+```
+
+---
+
 ## Ghi chú giấy phép (QUAN TRỌNG)
 
 - **Audio Irodori/Marugoto:** miễn phí tải, NHƯNG điều khoản cho phép **NHÚNG vào
