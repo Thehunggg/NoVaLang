@@ -429,18 +429,57 @@ generation + validator + UI thật thay shell.
 - `LESSON_AUTHORING_STANDARD.md` (file này).
 - `scripts/content/daily-life/ja-knowledge-ledger.md` (SỔ KIẾN THỨC — chỉ mục
   tra nhanh từ/ngữ pháp/nhân vật/bối cảnh đã dạy + đang ở bài nào).
+- `scripts/content/sources/<mã>.md` (FILE NGUỒN RIÊNG — V1..V5 + giấy phép của
+  ngôn ngữ đó; vd `scripts/content/sources/ja.md`). **Chưa có file này cho ngôn
+  ngữ đang build → DỪNG, chạy vòng tra "ngôn ngữ mới" ở §F-b trước.**
 - `rules/languages/<mã>/` (rule ngôn ngữ FROZEN — vd `rules/languages/ja/`).
 - `scripts/content/daily-life/module-1/ja-unit1-lesson1.mjs` (Golden) +
   `ja-unit1-lesson2.mjs` (L2) — làm MẪU phong cách.
 - `scripts/lib/daily-life-blueprint.mjs` (khung 16 module) — lấy ĐÚNG bài tiếp
   theo, đúng thứ tự, đúng mục tiêu. KHÔNG tự đổi thứ tự curriculum.
 
-**F-b. NGUỒN NỘI DUNG (cố định):**
-- CHÍNH (bám sát): 3 giáo trình sơ cấp — **Minna no Nihongo, Genki, Marugoto**.
-- PHỤ (chỉ đối chiếu): Duolingo, Bunpro.
-- **KHÔNG bịa** từ vựng/ngữ pháp/hội thoại; không thêm từ/ngữ pháp vượt trình độ.
-  Không chắc → **HỎI Owner**, đừng đoán. (KHÔNG cần lập bảng đối chiếu nguồn/số
-  bài — Owner tự kiểm nội dung tiếng Nhật khi duyệt bản đọc.)
+**F-b. NGUỒN NỘI DUNG — QUY TRÌNH 5 VÒNG KIỂM NGUỒN (định nghĩa theo LOẠI
+nguồn; áp cho MỌI ngôn ngữ).**
+
+> **Tầng:** tên giáo trình CỤ THỂ của từng ngôn ngữ **KHÔNG ghi ở đây** (ghi vào
+> file chung = sai tầng — mai build tiếng Hàn thì tên tiếng Nhật vô nghĩa). Tên
+> cụ thể nằm ở **file nguồn riêng** `scripts/content/sources/<mã>.md` (vd
+> `scripts/content/sources/ja.md`). File chung này chỉ định nghĩa 5 vòng theo
+> LOẠI nguồn.
+
+**Năm vòng (định nghĩa theo LOẠI, không theo tên):**
+- **V1 — TÀI LIỆU CHUẨN CỦA VIỆN NGÔN NGỮ CHÍNH THỨC** nước đó. Ưu tiên bộ **MIỄN
+  PHÍ, có audio, giấy phép cho phép phỏng theo**. Đây là **NGUỒN CHÍNH + CHỐT CHẶN
+  CUỐI**.
+- **V2 — GIÁO TRÌNH LỚN THỨ HAI** (cùng viện đó, hoặc uy tín tương đương). Dùng khi
+  V1 không phủ chủ đề.
+- **V3 — GIÁO TRÌNH THƯƠNG MẠI PHỔ BIẾN NHẤT** của tiếng đó — đối chiếu cách trình
+  bày ngữ pháp sơ cấp. (Thường bản quyền, không mở nguyên văn → chỉ đối chiếu ở
+  **mức chủ đề**, KHÔNG bịa số bài/số trang.)
+- **V4 — HAI APP HỌC TIẾNG LỚN** — đối chiếu cách trình bày / độ khó / thứ tự dạy.
+  **CHỈ đối chiếu, KHÔNG dùng làm nguồn nội dung chính.**
+- **V5 — KHUNG NĂNG LỰC CHÍNH THỨC + KỲ THI CHUẨN** của tiếng đó — kiểm **ĐÚNG CẤP
+  ĐỘ** (từ/ngữ pháp này có thuộc trình độ đang dạy không, hay vượt trình độ). Rồi
+  **ĐỐI CHIẾU CHÉO và CHỐT**.
+
+**LUẬT CHỐT khi các nguồn đá nhau:**
+- Theo **V1** (tài liệu viện ngôn ngữ chính thức).
+- V1 **KHÔNG có** nội dung đó → theo **V2**. Vẫn không có → **V3**, và **GHI RÕ
+  trong bài "nội dung này ra ngoài V1"** để owner biết.
+- Vẫn mâu thuẫn sau 5 vòng → chọn hợp lý nhất, **GHI RÕ đã chọn gì, vì sao, HỎI
+  owner**.
+- **TUYỆT ĐỐI KHÔNG BỊA** từ vựng/ngữ pháp/hội thoại; không thêm vượt trình độ.
+  Không chắc → **HỎI owner**. (KHÔNG cần bảng đối chiếu nguồn/số bài — owner tự
+  kiểm nội dung khi duyệt bản đọc.)
+
+**KHI BẮT ĐẦU NGÔN NGỮ MỚI (bắt buộc TRƯỚC khi build bài đầu tiên của ngôn ngữ
+X):** chạy MỘT vòng tra xác định — (a) viện ngôn ngữ chính thức của X là gì · (b)
+tài liệu chuẩn / miễn phí nào · (c) khung năng lực + kỳ thi chuẩn nào · (d) 2 app
+lớn nào dạy X · (e) **GIẤY PHÉP** từng nguồn (được phỏng theo không · có audio
+không · dùng thương mại được không) → ghi thành **file nguồn riêng**
+`scripts/content/sources/<X>.md` (theo template `scripts/content/sources/_TEMPLATE.md`)
+→ **rồi mới build**. Chỉ tạo file riêng KHI thật sự build bài cho X — **KHÔNG tạo
+sẵn 33 file rỗng**.
 
 **F-c. LUẬT — ÔN LẠI CÓ KẾ HOẠCH (bắt buộc):** mỗi bài PHẢI cho xuất hiện lại
 **3–5 mục** (từ/mẫu) từ **bài liền trước** + **2–3 mục** từ **bài cách 3–4 bài**
@@ -483,6 +522,16 @@ giới hạn thì dừng, lần sau tiếp (không mất tiến độ).
 - **2026-07-19 (bản 1)** — Tạo mới. Gom 24 nguyên tắc Owner + đối chiếu code.
   Nới Q14 số dòng (bỏ ép đúng 14 cho lesson thường, sàn ≥4; Golden khoá 14
   riêng). Free/Plus + audio-example + furigana + bài-20-câu: DỪNG chờ Owner.
+- **2026-07-22 (bản 3 — sửa lỗi tầng nguồn nội dung)** — **F-b** viết lại thành
+  **QUY TRÌNH 5 VÒNG KIỂM NGUỒN định nghĩa theo LOẠI** (V1 viện ngôn ngữ chính
+  thức · V2 giáo trình lớn thứ hai · V3 giáo trình thương mại phổ biến · V4 hai
+  app lớn chỉ đối chiếu · V5 khung năng lực + kỳ thi chuẩn), + luật chốt khi nguồn
+  đá nhau, + quy trình bắt buộc khi bắt đầu ngôn ngữ mới. **Kéo tên giáo trình
+  tiếng Nhật cụ thể (Minna/Genki/Marugoto/Duolingo/Bunpro) RA KHỎI file chung** —
+  chuyển vào file nguồn riêng `scripts/content/sources/<mã>.md` (template
+  `scripts/content/sources/_TEMPLATE.md`; tiếng Nhật đã điền `ja.md`). **F-a** thêm
+  file nguồn riêng vào checklist đọc trước. Không đụng nội dung bài / rule ngôn
+  ngữ / frontend.
 - **2026-07-19 (bản 2 — Owner mở khoá Golden)** — Áp rule mới cho MỌI bài kể cả
   Golden (ADR-008 Amendment). **E1** Free/Plus → Q1–Q9 / Q10–Q14 (Golden Q10
   free→plus, boundary `index<9`, invariant test cập nhật). **E2** audio mọi
