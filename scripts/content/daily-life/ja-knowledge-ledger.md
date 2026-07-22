@@ -5,11 +5,11 @@
 > sau khi thêm/đổi bài. (Sinh từ `shared/generated/lessons.json`, vốn build
 > từ các file `.mjs` đã duyệt.)
 
-Domain: `daily_life` · ngôn ngữ: `ja` · số bài đã có nội dung thật: **2**.
+Domain: `daily_life` · ngôn ngữ: `ja` · số bài đã có nội dung thật: **3**.
 
 ## ĐANG Ở ĐÂU
-- **Bài cuối đã xong:** `ja-daily_life-m01-u1-l2` (M1·U1·L2) — 相手の名前を聞く / Hỏi tên người đối diện
-- **Bài tiếp theo:** `ja-daily_life-m01-u1-l3` (M1·U1·L3) — 自己紹介への返事とお別れのあいさつ / Đáp làm quen & tạm biệt
+- **Bài cuối đã xong:** `ja-daily_life-m01-u1-l3` (M1·U1·L3) — 自己紹介への返事とお別れのあいさつ / Đáp làm quen & tạm biệt
+- **Bài tiếp theo:** `ja-daily_life-m01-u2-l1` (M1·U2·L1) — 知り合いにあいさつする / Chào người đã quen
 
 ## TỪ VỰNG ĐÃ DẠY (headword — từ nào, bài nào)
 
@@ -33,6 +33,14 @@ Domain: `daily_life` · ngôn ngữ: `ja` · số bài đã có nội dung thậ
 | もう一度（いちど） | もういちど | Một lần nữa. | M1·U1·L2 |
 | ～さん | ～さん | Cách gọi lịch sự đặt sau tên người khác. | M1·U1·L2 |
 | ～ですね | ～ですね | Dùng để xác nhận thông tin vừa nghe. | M1·U1·L2 |
+| こちらこそ | こちらこそ | Tôi cũng vậy / Chính tôi mới phải nói thế. | M1·U1·L3 |
+| どうぞよろしく | どうぞよろしく | Rất mong được làm quen (thân thiện hơn một chút). | M1·U1·L3 |
+| そうですか | そうですか | Vậy à. / Ra vậy. | M1·U1·L3 |
+| 私（わたし）も | わたしも | Tôi cũng vậy. | M1·U1·L3 |
+| 失礼（しつれい）します | しつれいします | Tôi xin phép. / Xin lỗi (khi rời đi). | M1·U1·L3 |
+| お先（さき）に失礼（しつれい）します | おさきにしつれいします | Tôi xin phép về trước. | M1·U1·L3 |
+| お元気（げんき）で | おげんきで | Giữ sức khỏe nhé (khi lâu mới gặp lại). | M1·U1·L3 |
+| じゃあ、また | じゃあ、また | Thôi, hẹn gặp lại (thân mật). | M1·U1·L3 |
 
 ## NGỮ PHÁP ĐÃ DẠY (mẫu nào, bài nào)
 
@@ -44,6 +52,9 @@ Domain: `daily_life` · ngôn ngữ: `ja` · số bài đã có nội dung thậ
 | 「名前」と「お名前」 | Cách dùng lịch sự theo ngữ cảnh, không phải quy tắc mình/người khác. | M1·U1·L2 |
 | 「～は何ですか」 | Hỏi “…là gì?” | M1·U1·L2 |
 | 「～ですね」 | Xác nhận thông tin vừa nghe. | M1·U1·L2 |
+| 「こちらこそ」— 気持ちを返す | Đáp lại lời chúc/thiện chí — "chính tôi mới phải nói vậy". | M1·U1·L3 |
+| また＋[時] | Hẹn gặp lại vào thời điểm nào đó. | M1·U1·L3 |
+| 「～も」（…も） | Thêm も sau danh từ để nói "…cũng vậy". | M1·U1·L3 |
 
 ## NHÂN VẬT ĐÃ DÙNG
 
@@ -65,4 +76,10 @@ Domain: `daily_life` · ngôn ngữ: `ja` · số bài đã có nội dung thậ
   - Hỏi tên lịch sự hơn — Hai người gặp nhau lần đầu và nói chuyện lịch sự.
   - Khi không nghe rõ tên — Người nghe không nghe rõ tên và nhờ nói lại.
   - _(Q14)_ Làm quen và hỏi tên trong nhóm — Ba người gặp nhau. Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận, và khi nghe chưa rõ thì nhờ nói lại.
+
+**M1·U1·L3** — Đáp làm quen & tạm biệt
+  - Đáp lại khi được làm quen — Hai người vừa giới thiệu tên, một người đáp lại thiện chí.
+  - Rời lớp một cách lịch sự — Hết buổi, một người xin phép về trước.
+  - Bạn bè chào tạm biệt — Hai người bạn chia tay, hẹn tuần sau.
+  - _(Q14)_ Chào tạm biệt sau khi làm quen — Ba người vừa làm quen. Cuối buổi, họ đáp lời làm quen rồi lần lượt xin phép về, hẹn gặp lại và dặn nhau giữ sức khỏe.
 

@@ -87,8 +87,8 @@
   ],
   "courseCount": 35,
   "lessonCount": 172,
-  "playableLessonCount": 28,
-  "blueprintLessonCount": 144,
+  "playableLessonCount": 29,
+  "blueprintLessonCount": 143,
   "unitCount": 69,
   "courses": [
     {
@@ -329,7 +329,7 @@
       "contentStatus": "ready",
       "playable": true,
       "lessonCount": 5,
-      "playableLessonCount": 2
+      "playableLessonCount": 3
     },
     {
       "id": "ja-daily_life-m02",

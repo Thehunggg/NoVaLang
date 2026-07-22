@@ -1569,6 +1569,7 @@ async function main() {
     const APPROVED_READY_DAILY_LESSON_IDS = new Set([
       APPROVED_JA_UNIT1_LESSON1,
       "ja-daily_life-m01-u1-l2",
+      "ja-daily_life-m01-u1-l3",
     ]);
     const unexpectedReady = dailyLessons.filter(
       (l) =>
