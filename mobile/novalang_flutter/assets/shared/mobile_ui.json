@@ -971,5 +971,30 @@
   "completeLesson": {"en": "Complete lesson", "vi": "Hoàn thành bài học", "ja": "レッスンを完了"},
   "deviceLanguageSuggestion": {"en": "It looks like your device language is {language}.\nDo you want to use {language} as your native/UI language?", "vi": "Có vẻ ngôn ngữ thiết bị của bạn là {language}.\nBạn có muốn dùng {language} làm ngôn ngữ mẹ đẻ/giao diện không?", "ja": "端末の言語は{language}のようです。\n{language}を母語・UI言語として使用しますか？"},
   "useDeviceLanguage": {"en": "Use {language}", "vi": "Dùng {language}", "ja": "{language}を使う"},
-  "searchAnotherLanguage": {"en": "Search another language", "vi": "Tìm ngôn ngữ khác", "ja": "別の言語を探す"}
+  "searchAnotherLanguage": {"en": "Search another language", "vi": "Tìm ngôn ngữ khác", "ja": "別の言語を探す"},
+  "vocabularyReferencesTitle": {
+    "en": "Further references",
+    "vi": "Tham khảo thêm",
+    "ja": "参考表現"
+  },
+  "referenceForWord": {
+    "en": "Reference for",
+    "vi": "Tham khảo cho",
+    "ja": "参照する語"
+  },
+  "referenceForWho": {
+    "en": "Used with",
+    "vi": "Dùng cho",
+    "ja": "使う相手"
+  },
+  "referenceWhenToUse": {
+    "en": "Used when",
+    "vi": "Dùng khi",
+    "ja": "使う場面"
+  },
+  "referenceDifference": {
+    "en": "How it differs",
+    "vi": "Khác gì",
+    "ja": "主な語との違い"
+  }
 }

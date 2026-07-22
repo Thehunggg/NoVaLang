@@ -417,6 +417,13 @@ class _LessonVocabularyPageState extends State<LessonVocabularyPage> {
                   const SliverToBoxAdapter(child: SizedBox(height: 12)),
                 ],
               ),
+            SliverToBoxAdapter(
+              child: _VocabularyReferencesSection(
+                references: _list(content['vocabularyReferences']),
+                uiLanguageCode: widget.uiLanguageCode,
+                learningLanguageCode: widget.learningLanguageCode,
+              ),
+            ),
             const SliverToBoxAdapter(child: SizedBox(height: 24)),
           ],
         ),
@@ -1118,6 +1125,235 @@ class _ExampleRow extends StatelessWidget {
       ],
     ),
   );
+}
+
+class _VocabularyReferencesSection extends StatefulWidget {
+  const _VocabularyReferencesSection({
+    required this.references,
+    required this.uiLanguageCode,
+    required this.learningLanguageCode,
+  });
+
+  final List<dynamic> references;
+  final String uiLanguageCode;
+  final String learningLanguageCode;
+
+  @override
+  State<_VocabularyReferencesSection> createState() =>
+      _VocabularyReferencesSectionState();
+}
+
+class _VocabularyReferencesSectionState
+    extends State<_VocabularyReferencesSection> {
+  bool _expanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final items = widget.references
+        .map(_map)
+        .where((item) => _text(item['term']).trim().isNotEmpty)
+        .toList(growable: false);
+    if (items.isEmpty) return const SizedBox.shrink();
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 8, bottom: 8),
+      child: DecoratedBox(
+        key: const ValueKey('vocabulary-references-section'),
+        decoration: BoxDecoration(
+          color: AppTheme.lessonSurface,
+          border: Border.all(color: AppTheme.lessonBorderSubtle),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Material(
+              color: Colors.transparent,
+              child: InkWell(
+                key: const ValueKey('vocabulary-references-toggle'),
+                borderRadius: BorderRadius.circular(8),
+                onTap: () => setState(() => _expanded = !_expanded),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 10,
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          L10n.text(
+                            'vocabularyReferencesTitle',
+                            widget.uiLanguageCode,
+                          ),
+                          style: Theme.of(context).textTheme.titleMedium
+                              ?.copyWith(fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                      Icon(
+                        _expanded
+                            ? Icons.keyboard_arrow_up
+                            : Icons.keyboard_arrow_down,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            if (_expanded)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+                child: Column(
+                  children: [
+                    for (var index = 0; index < items.length; index++) ...[
+                      if (index > 0) const SizedBox(height: 10),
+                      _VocabularyReferenceItem(
+                        item: items[index],
+                        index: index,
+                        uiLanguageCode: widget.uiLanguageCode,
+                        learningLanguageCode: widget.learningLanguageCode,
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _VocabularyReferenceItem extends StatelessWidget {
+  const _VocabularyReferenceItem({
+    required this.item,
+    required this.index,
+    required this.uiLanguageCode,
+    required this.learningLanguageCode,
+  });
+
+  final Map<String, dynamic> item;
+  final int index;
+  final String uiLanguageCode;
+  final String learningLanguageCode;
+
+  @override
+  Widget build(BuildContext context) {
+    final term = _text(item['term']);
+    final reading = _text(item['reading']);
+    final speechText = _text(item['speechText']);
+    final meaning = _text(item['meaning']);
+    final forWord = _text(item['forWord']);
+    final forWho = _text(item['forWho']);
+    final whenToUse = _text(item['whenToUse']);
+    final difference = _text(item['difference']);
+
+    return DecoratedBox(
+      key: ValueKey('vocabulary-reference-item-$index'),
+      decoration: BoxDecoration(
+        color: AppTheme.lessonSurfaceElevated,
+        border: Border.all(color: AppTheme.lessonBorderSubtle),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(12, 10, 8, 12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        term,
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(fontWeight: FontWeight.w900),
+                      ),
+                      if (reading.isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 2),
+                          child: Text(
+                            reading,
+                            style: const TextStyle(
+                              color: AppTheme.contentAccentForeground,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                if (speechText.isNotEmpty)
+                  SpeakerButton(
+                    key: ValueKey('vocabulary-reference-audio-$index'),
+                    speechText: speechText,
+                    languageCode: learningLanguageCode,
+                    uiLanguageCode: uiLanguageCode,
+                  ),
+              ],
+            ),
+            if (meaning.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Text(meaning, style: const TextStyle(height: 1.4)),
+              ),
+            if (forWord.isNotEmpty)
+              _ReferenceLabeledLine(
+                label: L10n.text('referenceForWord', uiLanguageCode),
+                value: forWord,
+              ),
+            if (forWho.isNotEmpty)
+              _ReferenceLabeledLine(
+                label: L10n.text('referenceForWho', uiLanguageCode),
+                value: forWho,
+              ),
+            if (whenToUse.isNotEmpty)
+              _ReferenceLabeledLine(
+                label: L10n.text('referenceWhenToUse', uiLanguageCode),
+                value: whenToUse,
+              ),
+            if (difference.isNotEmpty)
+              _ReferenceLabeledLine(
+                label: L10n.text('referenceDifference', uiLanguageCode),
+                value: difference,
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ReferenceLabeledLine extends StatelessWidget {
+  const _ReferenceLabeledLine({required this.label, required this.value});
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: const TextStyle(
+              color: AppTheme.contentAccentForeground,
+              fontWeight: FontWeight.w800,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(value, style: const TextStyle(height: 1.4)),
+        ],
+      ),
+    );
+  }
 }
 
 class _DetailList extends StatelessWidget {
