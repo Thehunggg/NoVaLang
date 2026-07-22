@@ -1,6 +1,7 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useTranslation } from "../../i18n/useTranslation";
+import { displayNativeText } from "../../utils/nativeContent";
 import { SpeakerButton } from "../ui/SpeakerButton";
 
 export type VocabularyReferenceItem = {
@@ -27,16 +28,16 @@ type Props = {
 const normalizeLocale = (code: string) =>
   code.trim().toLowerCase().replace(/_/g, "-").split("-")[0] ?? "en";
 
-/** Resolve *ByNative for the selected native language only — no cross-locale fallback. */
-const byNativeOnly = (
+/** Resolve *ByNative or already-resolved string; hide missing sentinels for end users. */
+const resolveReferenceField = (
+  resolved: string | undefined,
   byNative: Partial<Record<string, string>> | undefined,
   nativeLanguageCode: string,
-  path: string,
 ): string => {
+  const fromResolved = displayNativeText(resolved);
+  if (fromResolved) return fromResolved;
   const locale = normalizeLocale(nativeLanguageCode);
-  const value = byNative?.[locale]?.trim();
-  if (value) return value;
-  return `⟦missing-content:${path}:${locale}⟧`;
+  return displayNativeText(byNative?.[locale]);
 };
 
 export function VocabularyReferencesBlock({
@@ -83,29 +84,29 @@ export function VocabularyReferencesBlock({
         <div className="space-y-3 border-t border-white/10 px-4 py-4">
           {items.map((item, index) => {
             const term = item.term!.trim();
-            const reading = item.reading?.trim() ?? "";
-            const speechText = item.speechText?.trim() ?? "";
-            const meaning = byNativeOnly(
+            const reading = displayNativeText(item.reading);
+            const speechText = displayNativeText(item.speechText);
+            const meaning = resolveReferenceField(
+              item.meaning,
               item.meaningByNative,
               nativeLanguageCode,
-              `vocabularyReferences[${index}].meaning`,
             );
-            const forWho = byNativeOnly(
+            const forWho = resolveReferenceField(
+              item.forWho,
               item.forWhoByNative,
               nativeLanguageCode,
-              `vocabularyReferences[${index}].forWho`,
             );
-            const whenToUse = byNativeOnly(
+            const whenToUse = resolveReferenceField(
+              item.whenToUse,
               item.whenToUseByNative,
               nativeLanguageCode,
-              `vocabularyReferences[${index}].whenToUse`,
             );
-            const difference = byNativeOnly(
+            const difference = resolveReferenceField(
+              item.difference,
               item.differenceByNative,
               nativeLanguageCode,
-              `vocabularyReferences[${index}].difference`,
             );
-            const forWord = item.forWord?.trim() ?? "";
+            const forWord = displayNativeText(item.forWord);
 
             return (
               <article
@@ -133,7 +134,9 @@ export function VocabularyReferencesBlock({
                   ) : null}
                 </div>
 
-                <p className="mt-3 text-sm leading-6 text-slate-200">{meaning}</p>
+                {meaning ? (
+                  <p className="mt-3 text-sm leading-6 text-slate-200">{meaning}</p>
+                ) : null}
 
                 {forWord ? (
                   <LabeledValue label={t("referenceForWord")} value={forWord} />
@@ -157,13 +160,14 @@ export function VocabularyReferencesBlock({
 }
 
 function LabeledValue({ label, value }: { label: string; value: string }) {
-  if (!value.trim()) return null;
+  const safe = displayNativeText(value);
+  if (!safe) return null;
   return (
     <div className="mt-3">
       <p className="text-xs font-black uppercase tracking-wider text-cyan-300">
         {label}
       </p>
-      <p className="mt-1 text-sm leading-6 text-slate-300">{value}</p>
+      <p className="mt-1 text-sm leading-6 text-slate-300">{safe}</p>
     </div>
   );
 }

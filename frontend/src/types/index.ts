@@ -1,5 +1,7 @@
 export type {
   ContentItem, Course, CourseLevel, DialogueLine, Difficulty, ExampleSentence, ExamLevel, ExamTrack, ExamTrackOption, Exercise, ExerciseType,
+  FiveCardCharacterContext, FiveCardCharacterName, FiveCardChatExercise, FiveCardChatMessage, FiveCardChatMessageSegment, FiveCardChatSlot,
+  FiveCardContent, FiveCardPractice, FiveCardPracticeAnswerSlot, FiveCardPracticeExercise, FiveCardPracticeOption, FiveCardPracticeToken,
   GrammarPoint, Language, LanguageCode, Lesson, LessonExample, LessonType, LevelId, LocalizedAnswers, LocalizedText, MatchPair, MicroLesson,
   ExerciseSubQuestion, LearnCard, LearningLanguageCode, MistakeRecord, NativeLanguage, NativeLanguageCode, PlacementQuestion, PlacementResult, PracticeSet,
   PronunciationItem, QuizQuestion, ReviewedStatus, ReviewItem, SavedFlashcard, SupportedUILanguage, TrackSkill, TrackType, Unit, VocabularyItem

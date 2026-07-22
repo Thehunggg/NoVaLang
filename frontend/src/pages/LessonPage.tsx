@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight, BookMarked, Check, Clock3, Heart, Lock, Sparkles
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ExerciseRenderer } from "../components/learning/ExerciseRenderer";
+import { FiveCardLessonShell } from "../components/learning/fiveCard/FiveCardLessonShell";
 import { Mascot } from "../components/learning/Mascot";
 import { QuizCard } from "../components/learning/QuizCard";
 import { PageContainer } from "../components/layout/PageContainer";
@@ -17,6 +18,7 @@ import { difficultyKey, exerciseTypeKey, lessonTypeKey } from "../i18n/labels";
 import { fetchLesson } from "../services/api";
 import type { ContentItem, Lesson, MicroLesson, VocabularyItem } from "../types/index";
 import { getExerciseExplanation, getExerciseQuestion } from "../utils/checkAnswer";
+import { shouldUseFiveCardFlow } from "../utils/fiveCardPractice";
 import { firstIncompleteMicroLesson } from "../utils/lessonEngine";
 import { getLocalizedAnswers, getLocalizedText } from "../utils/localizedText";
 
@@ -38,6 +40,10 @@ export function LessonPage() {
   if (!lesson) return <div className="grid min-h-[65vh] place-items-center text-sm font-bold text-slate-500">{t("loading")}</div>;
   const lessonLevelName = getLevelDisplayName(lesson.levelId, lesson.language, native); const lessonTitle = getLocalizedText(lesson.titleTranslations ?? lesson.title, native); const lessonDescription = getLocalizedText(lesson.descriptionTranslations ?? lesson.description, native); const lessonCanDo = getLocalizedText(lesson.canDoTranslations ?? lesson.canDo, native);
   if (!isLessonUnlocked(lesson)) return <PageContainer className="grid min-h-[70vh] place-items-center py-12"><Card className="max-w-md p-8 text-center"><Lock className="mx-auto text-slate-600" size={44} /><h1 className="mt-5 font-display text-2xl font-black">{t("lockedLessonTitle")}</h1><p className="mt-3 text-sm text-slate-500">{t("lockedLessonText")}</p><Link to="/"><Button className="mt-6">{t("backToCourse")}</Button></Link></Card></PageContainer>;
+
+  if (shouldUseFiveCardFlow(lesson)) {
+    return <FiveCardLessonShell lesson={lesson} />;
+  }
 
   const openMicro = (item: MicroLesson) => { if (!isMicroLessonUnlocked(lesson, item)) return; setMicro(item); saveLessonStep(lesson.id, Math.max(0, item.order - 1)); setStage("content"); setIndex(0); setScore(0); setFeedback(null); setCompletion(undefined); };
   const answer = (correct: boolean) => { const exercise = micro?.exercises[index]; if (!exercise) return; if (correct) setScore((value) => value + 1); else { loseHeart(); addMistake(exercise, lesson.id); } setFeedback({ correct, explanation: getExerciseExplanation(exercise, native) }); };
@@ -77,5 +83,6 @@ function ContentCard({ item, lesson, nativeLanguage, saved, onSave }: { item: Co
 }
 
 function SpeechDebugPanel() {
-  return <Card className="mt-8 border-dashed border-amber-300/20 p-4"><p className="text-[10px] font-black uppercase tracking-wider text-amber-300">Development · Speech test</p><div className="mt-3 flex flex-wrap gap-3"><SpeakerButton text="あめ" languageCode="ja" label="雨（あめ）" /><SpeakerButton text="apple" languageCode="en" label="apple" /><SpeakerButton text="hola" languageCode="es" label="hola" /></div></Card>;
+  const { t } = useTranslation();
+  return <Card className="mt-8 border-dashed border-amber-300/20 p-4"><p className="text-[10px] font-black uppercase tracking-wider text-amber-300">{t("speechDebugTitle")}</p><div className="mt-3 flex flex-wrap gap-3"><SpeakerButton text="あめ" languageCode="ja" label="雨（あめ）" /><SpeakerButton text="apple" languageCode="en" label="apple" /><SpeakerButton text="hola" languageCode="es" label="hola" /></div></Card>;
 }
