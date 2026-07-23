@@ -16,7 +16,7 @@
 | Tên ngôn ngữ | Tiếng Nhật (日本語) |
 | Cấp độ đang nhắm | A1–A2 (JF Standard) ≈ JLPT N5 |
 | Cập nhật lần cuối | 2026-07-23 |
-| Trạng thái | `READY_FOR_AUTHORING` (Irodori + `N5 Grammar Master (japanvitta.com).pdf` + vocab JLPT/kanji/ngữ pháp hanabira đều chữ thật, dùng được ngay; Sou Matome N1–N5 + sách N5 scan còn ẢNH SCAN, chờ OCR; giấy phép nội dung hanabira grammar CHƯA XÁC ĐỊNH biến thể CC cụ thể — cần owner xác nhận trước khi dùng chính thức) |
+| Trạng thái | `READY_FOR_AUTHORING` (Irodori + `N5 Grammar Master (japanvitta.com).pdf` + vocab JLPT/kanji/ngữ pháp hanabira đều chữ thật, dùng được ngay — **ngữ pháp N3–N1 ngoài phạm vi Irodori nay dựa vào hanabira, đọc được, không cần sách scan**; sách "まるごとマスター" N5 scan đã owner xóa 2026-07-23. **Còn tồn đọng, chưa xóa:** 5 file Nihongo Sou Matome N1–N5 (ẢNH SCAN, không đọc được), `irodori/Irodori.pdf` (trùng Z_all+ZZ_all), 3 file kanji subset (`kanji-jouyou`/`kanji-kyouiku`/`kanji-wanikani.json`, trùng `kanji.json`) — đã đề xuất xóa, owner chưa thao tác xong; giấy phép nội dung hanabira grammar CHƯA XÁC ĐỊNH biến thể CC cụ thể — cần owner xác nhận trước khi dùng chính thức) |
 
 ---
 
@@ -102,7 +102,6 @@ Cấu trúc thư mục (quy ước `local-sources/<mã ISO>/<loại-nguồn>/`, 
 | `grammar-books/Nihongo_Sou_Matome_N3_Bunpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N3** — toàn bộ ngữ pháp N3 | **ẢNH SCAN — CẦN OCR** (~118 ảnh nhúng) |
 | `grammar-books/Nihongo Sou Matome N4- Bumpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N4** — toàn bộ ngữ pháp N4 | **ẢNH SCAN — CẦN OCR** (~188 ảnh nhúng; font nhúng lỗi khi trích bằng pdftotext) |
 | `grammar-books/Nihongo_Sou_Matome_N5.pdf` | Nihongo Sou Matome N5 — tên file **KHÔNG có hậu tố Bunpou** như N1–N4 | **JLPT N5** — **CHƯA XÁC MINH** chỉ ngữ pháp hay gồm cả từ vựng/kanji N5 (cần OCR trước mới biết chắc phạm vi) | **ẢNH SCAN — CẦN OCR** (~131 ảnh nhúng) |
-| `grammar-books/日本語N5文法・読解まるごとマスター.pdf` | Sách thương mại tiếng Nhật (dòng "まるごとマスター" — **KHÁC** bộ *Marugoto* của Japan Foundation ở V2, trùng tên tình cờ, không liên quan) | **JLPT N5** — ngữ pháp + đọc hiểu (文法・読解) | **ẢNH SCAN — CẦN OCR** (~67 ảnh nhúng, 0 font, 0 ký tự trích được toàn bộ file) |
 | `grammar-books/N5 Grammar Master (japanvitta.com).pdf` | **JLPTsensei.com** — *"JLPT N5 Grammar Master: 80 Grammar Lessons You Must Know to Pass the JLPT"*, Complete Study Guide, tác giả Cruise Bogedin, © 2020 (tải qua japanvitta.com — tên file chỉ ghi nơi tải, KHÔNG phải tác giả gốc) | **JLPT N5** — đúng **80 điểm ngữ pháp N5**, mỗi điểm có nghĩa + cách dùng + ghi chú ngữ pháp + nhiều câu ví dụ (romaji + dịch nghĩa). Vai trò gợi ý trong hệ 5-vòng §F-b: **giáo trình thương mại phổ biến (kiểu V3)** — chỉ đối chiếu cách trình bày/thứ tự ngữ pháp N5, KHÔNG dùng làm nguồn chính thay Irodori (V1) — owner xác nhận lại khi thật sự build bài dùng tới | **Chữ thật** — trích được đầy đủ mục lục 80 điểm ngữ pháp + nội dung chi tiết (nghĩa, cách chia, ví dụ) |
 | `vocab-3000/Collins_Japanese_3000_words_and_phrases.pdf` | Collins — *Japanese 3000 Words and Phrases* (HarperCollins, 2019) | Không theo cấp JLPT — từ vựng/cụm đời sống theo 10 chủ đề: essentials, transport, in the home, at the shops, day-to-day, leisure, sport, health, planet earth, celebrations and festivals | **Chữ thật** |
 | `jmdict/jmdict-eng-3.6.2.json` | JMdict/EDICT bản **jmdict-simplified v3.6.2** (dictDate 2026-07-20, gloss eng) — **217.974 mục từ** | Feed **§X3** (loại từ/tự-tha) + một phần **§X1** (tự/tha → suy を/が) — xem chi tiết ở §Tầng X dưới đây. Giấy phép CC BY-SA, phiên bản cụ thể CHƯA XÁC MINH bằng fetch | **Chữ thật** — đúng cấu trúc jmdict-simplified, đã kiểm mục thật |
@@ -132,7 +131,11 @@ Hàn/Thái/Trung (`markdown_grammar_korean/`, `grammar_kr_KOREAN_*.json`,
   `word_type` rỗng toàn bộ.
 - **Kanji (kanji-data-master):** dùng được ngay — đủ on/kun, nghĩa, cấp
   JLPT, lớp học, tần suất. Nguồn kanji tốt nhất hiện có trong
-  `local-sources/ja/`, giấy phép rõ ràng nhất (MIT).
+  `local-sources/ja/`, giấy phép rõ ràng nhất (MIT). **Lưu ý còn trên đĩa:**
+  `kanji-jouyou.json`/`kanji-kyouiku.json`/`kanji-wanikani.json` chỉ là bản
+  lọc subset của `kanji.json` (đã kiểm cùng cấu trúc trường) — dùng
+  `kanji.json` một mình là đủ (tự lọc lại qua `grade`/`wk_level` khi cần), 3
+  file kia dư thừa, có thể xóa — **vẫn CÒN TRÊN ĐĨA**, chưa bị xóa.
 - **Ngữ pháp hanabira (.md + .json):** đây là **nguồn ngữ pháp tốt nhất hiện
   có cho phạm vi ngoài A2** — trả lời đúng khoảng trống owner nêu (Irodori
   dừng ở A2/B1, Sou Matome + sách N-level scan chưa đọc được). Dùng được
@@ -145,14 +148,19 @@ Hàn/Thái/Trung (`markdown_grammar_korean/`, `grammar_kr_KOREAN_*.json`,
   mại — theo đúng §G4 "không chắc → không dùng".
 
 **Giới hạn đã biết (báo cáo, không giấu):**
-- **6/11 file (Nihongo Sou Matome N1–N5 + sách "まるごとマスター" N5) là ẢNH
-  SCAN — chưa OCR được nội dung thật.** Cho tới khi OCR xong, các file này
-  CHỈ xác nhận "có tồn tại, đúng cấp JLPT nào" qua tên file — **CHƯA thể mở
-  đối chiếu mẫu ngữ pháp cụ thể theo §G8** từ chúng. OCR 6 file này là bước
-  cần làm **TRƯỚC** khi dùng chúng làm nguồn V1/V2 mẫu ngữ pháp thật cho
-  §G3/§G8 — không nằm trong phạm vi việc quét/nhận diện lần này (§F-b vẫn ưu
-  tiên Irodori/JF Standard làm V1 chính; Sou Matome + sách N5 scan đóng vai
-  V2/tham chiếu ngữ pháp khi có nội dung đọc được).
+- **`日本語N5文法・読解まるごとマスター.pdf` (ảnh scan N5) đã được owner XÓA
+  TAY 2026-07-23** — xác nhận không còn trong `local-sources/ja/grammar-books/`
+  bằng quét trực tiếp lại (không đoán). Gỡ khỏi bảng danh mục trên.
+- **CÒN LẠI 5/9 file (Nihongo Sou Matome N1–N5) vẫn là ẢNH SCAN — chưa OCR
+  được nội dung thật, VẪN CÒN TRÊN ĐĨA** (owner có ý định xóa cùng đợt nhưng
+  quét lại xác nhận 5 file này **chưa thực sự bị xóa** — khác với báo cáo ban
+  đầu; đã báo lại owner). Cho tới khi OCR hoặc xóa xong, các file này CHỈ xác
+  nhận "có tồn tại, đúng cấp JLPT nào" qua tên file — **CHƯA thể mở đối chiếu
+  mẫu ngữ pháp cụ thể theo §G8** từ chúng. §F-b vẫn ưu tiên Irodori/JF
+  Standard làm V1 chính, còn ngữ pháp trung/cao cấp (N3–N1, nơi Irodori
+  không phủ vì chỉ tới A2/B1) hiện dựa vào **hanabira** (chữ thật, đọc được
+  ngay — xem mục GitHub bổ sung ở trên), KHÔNG còn phụ thuộc các sách scan
+  này.
 - **`N5 Grammar Master (japanvitta.com).pdf` là CHỮ THẬT, đọc được ngay** —
   80 điểm ngữ pháp N5 đầy đủ (JLPTsensei.com). Đây là nguồn **thương mại**
   (giống vai trò V3 trong §F-b: đối chiếu cách trình bày/thứ tự, KHÔNG thay
