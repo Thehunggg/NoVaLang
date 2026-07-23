@@ -105,7 +105,7 @@ Cấu trúc thư mục (quy ước `local-sources/<mã ISO>/<loại-nguồn>/`, 
 | `grammar-books/日本語N5文法・読解まるごとマスター.pdf` | Sách thương mại tiếng Nhật (dòng "まるごとマスター" — **KHÁC** bộ *Marugoto* của Japan Foundation ở V2, trùng tên tình cờ, không liên quan) | **JLPT N5** — ngữ pháp + đọc hiểu (文法・読解) | **ẢNH SCAN — CẦN OCR** (~67 ảnh nhúng, 0 font, 0 ký tự trích được toàn bộ file) |
 | `grammar-books/N5 Grammar Master (japanvitta.com).pdf` | **JLPTsensei.com** — *"JLPT N5 Grammar Master: 80 Grammar Lessons You Must Know to Pass the JLPT"*, Complete Study Guide, tác giả Cruise Bogedin, © 2020 (tải qua japanvitta.com — tên file chỉ ghi nơi tải, KHÔNG phải tác giả gốc) | **JLPT N5** — đúng **80 điểm ngữ pháp N5**, mỗi điểm có nghĩa + cách dùng + ghi chú ngữ pháp + nhiều câu ví dụ (romaji + dịch nghĩa). Vai trò gợi ý trong hệ 5-vòng §F-b: **giáo trình thương mại phổ biến (kiểu V3)** — chỉ đối chiếu cách trình bày/thứ tự ngữ pháp N5, KHÔNG dùng làm nguồn chính thay Irodori (V1) — owner xác nhận lại khi thật sự build bài dùng tới | **Chữ thật** — trích được đầy đủ mục lục 80 điểm ngữ pháp + nội dung chi tiết (nghĩa, cách chia, ví dụ) |
 | `vocab-3000/Collins_Japanese_3000_words_and_phrases.pdf` | Collins — *Japanese 3000 Words and Phrases* (HarperCollins, 2019) | Không theo cấp JLPT — từ vựng/cụm đời sống theo 10 chủ đề: essentials, transport, in the home, at the shops, day-to-day, leisure, sport, health, planet earth, celebrations and festivals | **Chữ thật** |
-| `jmdict/` | — | **Trống — không có file cục bộ.** JMdict/EDICT (§Tầng X, X3 dưới đây) là **dataset online** (EDRDG, CC BY-SA), tra trực tuyến khi cần — không tải bản offline vào đây | — |
+| `jmdict/jmdict-eng-3.6.2.json` | JMdict/EDICT bản **jmdict-simplified v3.6.2** (dictDate 2026-07-20, gloss eng) — **217.974 mục từ** | Feed **§X3** (loại từ/tự-tha) + một phần **§X1** (tự/tha → suy を/が) — xem chi tiết ở §Tầng X dưới đây. Giấy phép CC BY-SA, phiên bản cụ thể CHƯA XÁC MINH bằng fetch | **Chữ thật** — đúng cấu trúc jmdict-simplified, đã kiểm mục thật |
 
 ### Nguồn mở GitHub bổ sung (thêm 2026-07-23): từ vựng JLPT + kanji + ngữ pháp hanabira
 
@@ -220,11 +220,34 @@ Hàn/Thái/Trung (`markdown_grammar_korean/`, `grammar_kr_KOREAN_*.json`,
   - **Giới hạn:** cho loại từ / tính tự-tha; KHÔNG cho ngữ cảnh/sắc thái.
   - Nền sẵn có trong repo (không thay nguồn X3 chính thức):
     `rules/languages/ja/word-class.data.json` + pipeline romaji.
+  - **CẬP NHẬT 2026-07-23 — bản JMdict THẬT đã có cục bộ:**
+    `local-sources/ja/jmdict/jmdict-eng-3.6.2.json` (~111.9MB, jmdict-simplified
+    v3.6.2, dictDate 2026-07-20, gloss tiếng Anh, **217.974 mục từ** — khớp quy
+    mô JMdict-eng đầy đủ). **Chữ thật, đọc được, đúng cấu trúc jmdict-simplified**
+    (đã kiểm trực tiếp, không đoán): mỗi mục có `id`, `kanji[].text`,
+    `kana[].text`, `sense[].partOfSpeech[]` (vd `v1`=nhóm 1/ichidan,
+    `v5k`=godan đuôi く, `vt`=tha động từ, `vi`=tự động từ — **đủ cho §X3 loại
+    từ/biến đổi dạng VÀ một phần §X1 tự/tha → suy を/が**), `sense[].gloss[].text`
+    (nghĩa). Ví dụ đã kiểm thật (không nhạy cảm): mục `id 1202450`
+    (開ける/空ける/明ける, kana あける) có sense `["v1","vt"]` cho nghĩa "to open
+    (a door, etc.)" nhưng sense khác cùng mục lại là `["v1","vi"]` cho nghĩa
+    "to dawn" (ứng với chữ 明ける) — cho thấy dữ liệu phân biệt tự/tha **theo
+    từng nghĩa**, không chỉ theo từ. **Giới hạn còn lại:** JMdict không tự gắn
+    cấp JLPT (khác với vocab Tanos đã ghi ở trên) — nếu cần lọc theo cấp phải
+    tự đối chiếu chéo với nguồn vocab JLPT khác. File nguyên bản LỚN (112MB,
+    217k mục) — build bài chỉ cần tra vài từ mỗi lần, nên **trích subset nhỏ
+    (chỉ từ liên quan tới lesson đang build, hoặc build index tra nhanh theo
+    kanji/kana) sẽ hợp lý cho tốc độ** — **CHƯA làm** trong lần kiểm này, để
+    dành cho lúc thật sự trích/build.
 
-> **Hệ quả cho luật G8/G4 ("không tra được = không dùng"):** vì cả 3 nguồn hiện
-> **CHƯA XÁC MINH** (môi trường chặn fetch), luật tầng X **chưa chạy thật được**.
-> Trước khi build bài tiếng Nhật thật: owner (hoặc phiên có mạng) **mở 3 trang
-> gốc, xác nhận đường dẫn + điều khoản**, đổi trạng thái sang "ĐÃ XÁC MINH".
+> **Hệ quả cho luật G8/G4 ("không tra được = không dùng"):** **X3 nay ĐÃ CÓ dữ
+> liệu thật, đọc được cục bộ** (JMdict, xem cập nhật trên) — chạy được, nhưng
+> **giấy phép cụ thể (CC BY-SA đúng phiên bản nào) vẫn CHƯA XÁC MINH bằng fetch**
+> (môi trường build này chặn outbound), owner vẫn cần tự mở
+> `edrdg.org/edrdg/licence.html` xác nhận trước khi dùng chính thức. **X1
+> (Kyoto Case Frame)** và **X2 (NINJAL-LWP)** vẫn chưa có bản cục bộ — vẫn
+> **CHƯA XÁC MINH**, owner (hoặc phiên có mạng) cần mở 2 trang gốc còn lại,
+> xác nhận đường dẫn + điều khoản, đổi trạng thái sang "ĐÃ XÁC MINH".
 
 ## Danh sách CỤM CỐ ĐỊNH (feed §G1 / §G2)
 
