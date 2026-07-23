@@ -259,8 +259,70 @@ class L10n {
     },
     'guest': {'en': 'Continue as Guest', 'vi': 'Tiếp tục với tư cách khách'},
     'tagline': {
-      'en': 'Master languages through AI-powered quests.',
-      'vi': 'Làm chủ ngôn ngữ qua những hành trình học tập được hỗ trợ bởi AI.',
+      'en': 'New language. A wider world. New opportunities. A new you.',
+      'vi':
+          'Ngôn ngữ mới. Thế giới rộng mở. Cơ hội mới. Một phiên bản mới của bạn.',
+      'ja': '新しい言葉。広がる世界。新しい可能性。新しい自分。',
+      'ko': '새로운 언어. 더 넓은 세상. 새로운 기회. 새로운 나.',
+      'zh': '新的语言。更广阔的世界。新的机遇。全新的自己。',
+      'th': 'ภาษาใหม่ โลกที่กว้างขึ้น โอกาสใหม่ ตัวตนใหม่ของคุณ',
+      'es':
+          'Un nuevo idioma. Un mundo más amplio. Nuevas oportunidades. Un nuevo tú.',
+      'fr':
+          'Une nouvelle langue. Un monde plus vaste. De nouvelles possibilités. Un nouveau vous.',
+      'it':
+          'Una nuova lingua. Un mondo più ampio. Nuove opportunità. Un nuovo te.',
+      'ru': 'Новый язык. Более широкий мир. Новые возможности. Новый ты.',
+      'ar': 'لغة جديدة. عالم أوسع. فرص جديدة. نسخة جديدة منك.',
+      'de':
+          'Eine neue Sprache. Eine größere Welt. Neue Chancen. Ein neues Ich.',
+      'pt':
+          'Um novo idioma. Um mundo mais amplo. Novas oportunidades. Um novo você.',
+    },
+    'authOr': {
+      'en': 'or',
+      'vi': 'hoặc',
+      'ja': 'または',
+      'ko': '또는',
+      'zh': '或',
+      'th': 'หรือ',
+      'es': 'o',
+      'fr': 'ou',
+      'it': 'o',
+      'ru': 'или',
+      'ar': 'أو',
+      'de': 'oder',
+      'pt': 'ou',
+    },
+    'authLegalPrefix': {
+      'en': 'By continuing, you agree to our',
+      'vi': 'Khi tiếp tục, bạn đồng ý với',
+      'ja': '続行すると、以下に同意したことになります',
+      'ko': '계속하면 다음 약관에 동의하는 것으로 간주됩니다',
+      'zh': '继续即表示您同意我们的',
+      'th': 'เมื่อดำเนินการต่อ คุณยอมรับ',
+      'es': 'Al continuar, aceptas nuestros',
+      'fr': 'En continuant, vous acceptez nos',
+      'it': 'Continuando, accetti i nostri',
+      'ru': 'Продолжая, вы соглашаетесь с нашими',
+      'ar': 'بالمتابعة، فإنك توافق على',
+      'de': 'Indem du fortfährst, stimmst du unseren',
+      'pt': 'Ao continuar, você concorda com nossos',
+    },
+    'authLanguagesBadge': {
+      'en': '25+ Languages',
+      'vi': 'Hơn 25 ngôn ngữ',
+      'ja': '25以上の言語',
+      'ko': '25개 이상의 언어',
+      'zh': '25+ 种语言',
+      'th': 'มากกว่า 25 ภาษา',
+      'es': 'Más de 25 idiomas',
+      'fr': 'Plus de 25 langues',
+      'it': 'Oltre 25 lingue',
+      'ru': 'Более 25 языков',
+      'ar': 'أكثر من 25 لغة',
+      'de': 'Über 25 Sprachen',
+      'pt': 'Mais de 25 idiomas',
     },
     'google': {'en': 'Continue with Google', 'vi': 'Tiếp tục với Google'},
     'facebook': {'en': 'Continue with Facebook', 'vi': 'Tiếp tục với Facebook'},
@@ -942,6 +1004,38 @@ class L10n {
     final fromJson = MobileUiStrings.instance.lookup(key, languageCode);
     if (fromJson != null) return fromJson;
     return _fallbackText(key, languageCode);
+  }
+
+  /// Login slogan is intentionally resolved from the inline catalog while
+  /// its Shared i18n source is outside the current Login-only change scope.
+  /// Unsupported device/browser locales use the approved English fallback.
+  static String loginSlogan(String languageCode) {
+    final fromJson = MobileUiStrings.instance.lookup(
+      'loginSlogan',
+      languageCode,
+    );
+    if (fromJson != null && fromJson.trim().isNotEmpty) return fromJson;
+    final map = _fallback['tagline']!;
+    final locale = languageCode
+        .trim()
+        .toLowerCase()
+        .replaceAll('_', '-')
+        .split('-')
+        .first;
+    return map[locale] ?? map['en']!;
+  }
+
+  static String authOr(String languageCode) {
+    final fromJson = MobileUiStrings.instance.lookup('authOr', languageCode);
+    if (fromJson != null && fromJson.trim().isNotEmpty) return fromJson;
+    final map = _fallback['authOr']!;
+    final locale = languageCode
+        .trim()
+        .toLowerCase()
+        .replaceAll('_', '-')
+        .split('-')
+        .first;
+    return map[locale] ?? map['en']!;
   }
 
   static String _fallbackText(String key, String languageCode) {

@@ -30,8 +30,29 @@ export const setNativeLanguage = (language: NativeLanguageCode): SupportedUILang
 
 export const updateNativeLanguage = setNativeLanguage;
 
-const normalizeLearningLanguage = (value?: string | null): LanguageCode =>
-  value === "ja" || value === "japanese" ? "ja" : "en";
+const LEARNING_LANGUAGE_ALIASES: Record<string, string> = {
+  japanese: "ja",
+  english: "en",
+  vietnamese: "vi",
+  spanish: "es",
+  french: "fr",
+  german: "de",
+  korean: "ko",
+  chinese: "zh",
+  mandarin: "zh",
+};
+
+/** Preserve catalog codes; do not coerce unknown languages to English. */
+const normalizeLearningLanguage = (value?: string | null): LanguageCode => {
+  const trimmed = (value ?? "").trim();
+  if (!trimmed) return "ja";
+  const lower = trimmed.toLowerCase();
+  if (LEARNING_LANGUAGE_ALIASES[lower]) return LEARNING_LANGUAGE_ALIASES[lower];
+  if (/^[a-z]{2,3}(-[a-z0-9]+)?$/i.test(trimmed)) {
+    return lower.split("-")[0];
+  }
+  return lower;
+};
 const normalizeLevel = (value?: string | null) => levelOrder.includes(value as AppProgress["currentLevel"]) ? value as AppProgress["currentLevel"] : "A0";
 
 const MAX_ACTIVE_TRACKS = 2;
@@ -82,7 +103,7 @@ const normalizeCurrentTrack = (value: string | null | undefined, activeTracks: s
   if (activeTracks.includes(normalized)) return normalized;
   return activeTracks[0] ?? "daily_life";
 };
-export const getLearningLanguage = (): LanguageCode => { try { return normalizeLearningLanguage(localStorage.getItem(LEARNING_LANGUAGE_KEY)); } catch { return "en"; } };
+export const getLearningLanguage = (): LanguageCode => { try { return normalizeLearningLanguage(localStorage.getItem(LEARNING_LANGUAGE_KEY)); } catch { return "ja"; } };
 export const setLearningLanguage = (language: LanguageCode): void => { try { localStorage.setItem(LEARNING_LANGUAGE_KEY, language); } catch { /* In-memory state remains functional. */ } };
 
 export const initialAppProgress: AppProgress = {

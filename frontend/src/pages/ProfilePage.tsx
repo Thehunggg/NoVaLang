@@ -11,7 +11,7 @@ import { Card } from "../components/ui/Card";
 import { Modal } from "../components/ui/Modal";
 import { useApp } from "../context/AppContext";
 import { useAuth } from "../context/AuthContext";
-import { courses, getLevelDisplayName, languages } from "../data/fallbackCourses";
+import { courses, getLevelDisplayName, allLearningLanguages, getLearningLanguageLabel, isCourseAvailable } from "../data/fallbackCourses";
 import { groupedNiches, nicheCategory, nicheTitle } from "../data/niches";
 import { useTranslation } from "../i18n/useTranslation";
 import type { LanguageCode, LevelDecisionAfterNicheChange } from "../types/index";
@@ -25,11 +25,11 @@ export function ProfilePage() {
   const [draftNiches, setDraftNiches] = useState<Set<string>>(new Set(progress.selectedNiches));
   const [draftPrimary, setDraftPrimary] = useState<string | null>(progress.primaryNiche);
   const navigate = useNavigate();
-  const language = languages.find((item) => item.code === progress.selectedLanguage) ?? languages[0];
+  const language = allLearningLanguages.find((item) => item.code === progress.selectedLanguage) ?? allLearningLanguages[0];
   const nativeLanguage = getNativeLanguageInfo(progress.nativeLanguage); const currentLevelName = getLevelDisplayName(progress.currentLevel, progress.learningLanguage, progress.nativeLanguage);
   const displayName = progress.displayName || user?.name || "Nova learner";
   const avatar = displayName.trim().slice(0, 1).toUpperCase() || "N";
-  const languageName = (code: LanguageCode) => code === "en" ? t("english") : code === "ja" ? t("japanese") : t("spanish");
+  const languageName = (code: LanguageCode) => getLearningLanguageLabel(code);
   const groups = groupedNiches();
   const allNiches = Object.values(groups).flat();
   const selectedNicheLabels = progress.selectedNiches.map((id) => nicheTitle(allNiches.find((niche) => niche.id === id) ?? allNiches[0], progress.effectiveUILanguage)).join(", ");
@@ -50,7 +50,11 @@ export function ProfilePage() {
     if (decision === "placement") navigate(`/placement/${progress.selectedLanguage}`);
     if (decision === "manual") navigate("/onboarding");
     if (decision === "restart") {
-      const course = courses.find((item) => item.language === progress.selectedLanguage)!;
+      const course = courses.find((item) => item.language === progress.selectedLanguage);
+      if (!course) {
+        applyPlacement({ completed: true, score: 0, level: "A0", date: new Date().toISOString(), startingUnitId: "", startingLessonId: "" }, true);
+        return;
+      }
       const first = course.levels[0].units[0].lessons[0];
       applyPlacement({ completed: true, score: 0, level: "A0", date: new Date().toISOString(), startingUnitId: first.unitId, startingLessonId: first.id }, true);
     }
@@ -68,7 +72,7 @@ export function ProfilePage() {
     <SettingsCard icon={<LanguagesIcon />} title={t("languageSettingsSection")} eyebrow={t("settings")}>
       <div className="grid gap-3 sm:grid-cols-3"><InfoTile label={t("nativeLanguage")} value={`${nativeLanguage.flagEmoji} ${nativeLanguage.nativeName}`} sub={nativeLanguage.name} /><InfoTile label={t("uiLanguage")} value={progress.effectiveUILanguage === "vi" ? t("vietnamese") : progress.effectiveUILanguage === "ja" ? t("japanese") : progress.effectiveUILanguage === "es" ? t("spanish") : t("english")} sub={progress.effectiveUILanguage.toUpperCase()} /><InfoTile label={t("learningLanguage")} value={`${language.flag} ${languageName(progress.learningLanguage)}`} sub={progress.learningLanguage.toUpperCase()} /></div>
       <div className="mt-5"><NativeLanguageSelector compact /></div>
-      <div className="mt-5 grid gap-2 sm:grid-cols-3">{languages.map((item) => <button key={item.code} onClick={() => item.code !== progress.selectedLanguage && setPendingLanguage(item.code)} className={`rounded-2xl border p-3 text-left text-sm font-black ${item.code === progress.selectedLanguage ? "border-violet-300/45 bg-violet-300/10" : "border-white/10 bg-white/[.035]"}`}>{item.flag} {languageName(item.code)}</button>)}</div>
+      <div className="mt-5 grid max-h-64 gap-2 overflow-y-auto sm:grid-cols-3">{allLearningLanguages.map((item) => <button key={item.code} onClick={() => item.code !== progress.selectedLanguage && setPendingLanguage(item.code)} className={`rounded-2xl border p-3 text-left text-sm font-black ${item.code === progress.selectedLanguage ? "border-violet-300/45 bg-violet-300/10" : "border-white/10 bg-white/[.035]"}`}>{item.flag} {languageName(item.code)}{!isCourseAvailable(item.code) ? ` · ${t("comingSoon")}` : ""}</button>)}</div>
     </SettingsCard>
 
     <SettingsCard icon={<Sparkles />} title={t("learningPreferences")} eyebrow={t("primaryFocus")}>
@@ -84,7 +88,7 @@ export function ProfilePage() {
     <SettingsCard icon={<Heart />} title={t("account")} eyebrow={t("legal")}><InfoTile label={t("termsOfService")} value={t("termsPlaceholder")} /><InfoTile label={t("privacyPolicy")} value={t("privacyPlaceholder")} /><div className="mt-4 flex flex-wrap gap-3"><Button variant="ghost" onClick={signOut}><LogOut size={17} />{t("signOut")}</Button><Button variant="danger" onClick={() => setConfirmReset(true)}><RotateCcw size={17} />{t("resetLocalData")}</Button></div></SettingsCard>
   </div>
 
-  <section className="mt-7"><div className="mb-5 flex items-center gap-3"><Trophy className="text-amber-300" /><div><p className="text-xs font-black uppercase tracking-wider text-amber-300">{t("achievementGrid")}</p><h2 className="font-display text-2xl font-black">{t("completed")}</h2></div></div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{achievementCatalog.map((achievement) => <AchievementBadge key={achievement.id} title={achievement.title} description={achievement.description} earned={progress.achievements.includes(achievement.id)} />)}</div></section>
+  <section className="mt-7"><div className="mb-5 flex items-center gap-3"><Trophy className="text-amber-300" /><div><p className="text-xs font-black uppercase tracking-wider text-amber-300">{t("achievementGrid")}</p><h2 className="font-display text-2xl font-black">{t("completed")}</h2></div></div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{achievementCatalog.map((achievement) => <AchievementBadge key={achievement.id} titleKey={achievement.titleKey} descriptionKey={achievement.descriptionKey} earned={progress.achievements.includes(achievement.id)} />)}</div></section>
 
   <Modal open={editingNiche} title={t("changeNiche")} onClose={() => setEditingNiche(false)}><div className="max-h-[65vh] space-y-4 overflow-y-auto pr-1">{Object.entries(groups).map(([category, niches]) => <div key={category} className="rounded-2xl border border-white/10 bg-white/[.035] p-4"><h3 className="font-display font-black">{nicheCategory(category, progress.effectiveUILanguage)}</h3><div className="mt-3 flex flex-wrap gap-2">{niches.map((niche) => { const selected = draftNiches.has(niche.id); return <button key={niche.id} onClick={() => selected ? setDraftPrimary(niche.id) : toggleDraftNiche(niche.id)} onDoubleClick={() => toggleDraftNiche(niche.id)} className={`rounded-full border px-3 py-2 text-xs font-black ${selected ? "border-cyan-300/45 bg-cyan-300/10 text-white" : "border-white/10 bg-white/[.035] text-slate-400"}`}>{draftPrimary === niche.id && <Star className="mr-1 inline text-amber-300" size={13} />}{nicheTitle(niche, progress.effectiveUILanguage)} {!niche.isReady && `· ${t("comingSoon")}`}</button>; })}</div></div>)}</div><Button className="mt-5 w-full" onClick={saveNicheChange}>{t("save")}</Button></Modal>
   <Modal open={decisionOpen} title={t("nicheChangeQuestion")} onClose={() => setDecisionOpen(false)}><div className="grid gap-3"><Button onClick={() => chooseDecision("placement")}>{t("takePlacementTest")}</Button><Button variant="secondary" onClick={() => chooseDecision("manual")}>{t("enterLevelManually")}</Button><Button variant="ghost" onClick={() => chooseDecision("restart")}>{t("startFromBeginning")}</Button><Button variant="ghost" onClick={() => chooseDecision("keep")}>{t("keepCurrentLevel")}</Button></div></Modal>

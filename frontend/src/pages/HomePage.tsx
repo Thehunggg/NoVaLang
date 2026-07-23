@@ -10,7 +10,7 @@ import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { ProgressBar } from "../components/ui/ProgressBar";
 import { useApp } from "../context/AppContext";
-import { getLevelDisplayName, languages } from "../data/fallbackCourses";
+import { getLevelDisplayName, allLearningLanguages, isCourseAvailable, getLearningLanguageLabel } from "../data/fallbackCourses";
 import { useTranslation } from "../i18n/useTranslation";
 import { fetchCourse } from "../services/api";
 import type { Course, LanguageCode } from "../types/index";
@@ -20,20 +20,28 @@ export function HomePage() {
   const { t } = useTranslation();
   const [course, setCourse] = useState<Course>();
   const [offline, setOffline] = useState(false);
-  const language = languages.find((item) => item.code === progress.selectedLanguage)!;
+  const language = allLearningLanguages.find((item) => item.code === progress.selectedLanguage)
+    ?? allLearningLanguages.find((item) => item.code === "ja")
+    ?? allLearningLanguages[0];
   const minutesToday = progress.studyMinutesToday;
   const currentLevelName = getLevelDisplayName(progress.currentLevel, progress.selectedLanguage, progress.nativeLanguage);
   const needsCoreFoundation =
     progress.currentLevel === "A0" &&
     !progress.coreFoundationCompleted &&
     !progress.coreFoundationSkipped;
+  const courseReady = isCourseAvailable(progress.selectedLanguage);
 
   useEffect(() => {
+    if (!courseReady) {
+      setCourse(undefined);
+      setOffline(false);
+      return;
+    }
     fetchCourse(progress.selectedLanguage).then((result) => {
       setCourse(result.data);
       setOffline(result.source === "fallback");
     });
-  }, [progress.selectedLanguage]);
+  }, [progress.selectedLanguage, courseReady]);
 
   const visibleCourse = useMemo(() => {
     if (!course) return undefined;
@@ -55,7 +63,7 @@ export function HomePage() {
     };
   }, [course, needsCoreFoundation]);
 
-  const label = (code: LanguageCode) => code === "en" ? t("english") : code === "ja" ? t("japanese") : t("spanish");
+  const label = (code: LanguageCode) => getLearningLanguageLabel(code);
 
   return (
     <PageContainer className="py-7 sm:py-10">
@@ -68,14 +76,23 @@ export function HomePage() {
       <div className="mt-4 flex flex-wrap items-center gap-2">
         <Badge tone="cyan">{t("currentLevel")} {currentLevelName}</Badge>
         {offline && <Badge tone="amber"><CloudOff size={12} /> {t("offlinePack")}</Badge>}
-        {languages.map((item) => (
+        {!courseReady && <Badge tone="pink">{t("comingSoon")}</Badge>}
+        {allLearningLanguages.map((item) => (
           <button key={item.code} onClick={() => selectLanguage(item.code)} className={`rounded-lg border px-3 py-2 text-sm font-black ${item.code === progress.selectedLanguage ? "border-cyan-300/40 bg-cyan-300/10" : "border-white/[.07] bg-white/[.03] text-slate-500"}`}>
             {item.flag} {label(item.code)}
+            {!isCourseAvailable(item.code) ? ` · ${t("comingSoon")}` : ""}
           </button>
         ))}
       </div>
 
-      {needsCoreFoundation && (
+      {!courseReady && (
+        <Card className="mt-5 p-5">
+          <h3 className="font-display text-xl font-black">{t("comingSoon")}</h3>
+          <p className="mt-2 text-sm text-slate-400">{t("moreRoadmap")}</p>
+        </Card>
+      )}
+
+      {needsCoreFoundation && courseReady && (
         <Card className="mt-5 p-5">
           <h3 className="font-display text-xl font-black">{t("startWithBasics")}</h3>
           <p className="mt-2 text-sm text-slate-400">{t("basicsHelp")}</p>
@@ -94,7 +111,7 @@ export function HomePage() {
         <Card className="p-4 sm:p-6">
           <div className="mb-6">
             <p className="text-xs font-black uppercase tracking-[.16em] text-fuchsia-300">{t("coursePath")}</p>
-            <h2 className="mt-2 font-display text-2xl font-black">{visibleCourse ? `${label(language.code)} · ${t("coursePath")}` : t("loading")}</h2>
+            <h2 className="mt-2 font-display text-2xl font-black">{visibleCourse ? `${label(language.code)} · ${t("coursePath")}` : courseReady ? t("loading") : t("comingSoon")}</h2>
           </div>
           {visibleCourse && <CoursePath course={visibleCourse} completedIds={progress.completedLessonIds} unlockedIds={progress.unlockedLessonIds} placedIds={progress.placedLessonIds} currentLessonId={progress.currentLessonId} nativeLanguage={progress.nativeLanguage} />}
         </Card>

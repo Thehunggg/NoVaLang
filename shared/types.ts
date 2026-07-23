@@ -1,4 +1,4 @@
-export type LearningLanguageCode = "en" | "ja";
+export type LearningLanguageCode = string;
 export type LanguageCode = LearningLanguageCode;
 export type SupportedUILanguage = "en" | "vi" | "ja" | "es";
 export type NativeMeaningLanguage = "vi" | "en" | "ja" | "ko" | "zh";

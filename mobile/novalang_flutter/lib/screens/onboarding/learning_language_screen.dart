@@ -11,7 +11,7 @@ import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/onboarding_header.dart';
 import '../../widgets/common/responsive_page.dart';
 import '../../widgets/language/language_search_field.dart';
-import '../../widgets/language/language_search_list.dart';
+import '../../widgets/language/learning_language_list.dart';
 import '../../widgets/language/coming_soon_badge.dart';
 
 const _popularLearningCodes = [
@@ -83,7 +83,7 @@ class _LearningLanguageScreenState
                   onChanged: (value) => setState(() => query = value),
                 ),
                 const SizedBox(height: 16),
-                LanguageSearchList(
+                LearningLanguageList(
                   items: items,
                   locale: locale,
                   query: query,

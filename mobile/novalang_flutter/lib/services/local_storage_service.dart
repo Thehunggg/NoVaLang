@@ -9,6 +9,7 @@ class LocalStorageService {
   static const _profilesKey = 'novalang_profiles_v2';
   static const _activeUserIdKey = 'novalang_active_user_id_v2';
   static const _legacyProfileKey = 'novalang_mobile_profile_v1';
+  static const _uiLanguagePreferenceKey = 'novalang_ui_language_preference_v1';
 
   Future<Map<String, UserProfile>> _loadProfileMap() async {
     final prefs = await SharedPreferences.getInstance();
@@ -55,9 +56,7 @@ class LocalStorageService {
 
   Future<void> _saveProfileMap(Map<String, UserProfile> profiles) async {
     final prefs = await SharedPreferences.getInstance();
-    final encoded = profiles.map(
-      (key, value) => MapEntry(key, value.toJson()),
-    );
+    final encoded = profiles.map((key, value) => MapEntry(key, value.toJson()));
     await prefs.setString(_profilesKey, jsonEncode(encoded));
   }
 
@@ -85,13 +84,25 @@ class LocalStorageService {
     await prefs.remove(_activeUserIdKey);
   }
 
-  /// Clears all local test data (profiles, active user, legacy profile).
+  Future<String?> loadUiLanguagePreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.getString(_uiLanguagePreferenceKey)?.trim();
+    return value == null || value.isEmpty ? null : value;
+  }
+
+  Future<void> saveUiLanguagePreference(String languageCode) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_uiLanguagePreferenceKey, languageCode);
+  }
+
+  /// Clears all local test data, including the explicit UI-language choice.
   /// Lesson progress and mock auth state live inside profile JSON.
   Future<void> clearAllLocalTestData() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_profilesKey);
     await prefs.remove(_activeUserIdKey);
     await prefs.remove(_legacyProfileKey);
+    await prefs.remove(_uiLanguagePreferenceKey);
   }
 
   Future<UserProfile?> loadProfileForUser(String userId) async {

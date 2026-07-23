@@ -46,7 +46,7 @@ export type NativeLanguageOptionRecord = {
   fallbackLocale?: string;
 };
 
-/** All learning-language catalog entries (~40 languages). */
+/** All learning-language catalog entries from config (no invented allowlist). */
 export const languageOptions: LanguageOptionRecord[] =
   languageOptionsConfig as LanguageOptionRecord[];
 
@@ -54,30 +54,37 @@ export const languageOptions: LanguageOptionRecord[] =
 export const nativeLanguageOptions: NativeLanguageOptionRecord[] =
   nativeLanguageOptionsConfig as NativeLanguageOptionRecord[];
 
-const isLearningLanguageCode = (code: string): code is LanguageCode =>
-  code === "en" || code === "ja";
+const toLanguage = (item: LanguageOptionRecord): Language => ({
+  code: item.code,
+  name: item.englishName,
+  nativeName: item.nativeName,
+  flag: item.flagEmoji,
+  color: item.color ?? "#22d3ee",
+  greeting: item.greeting ?? "",
+  description: item.description ?? "",
+});
 
-/** Learning languages with playable courses (en/ja for now). */
+/** Learning languages with playable courses (driven by courseStatus in config). */
 export const learningLanguages: Language[] = languageOptions
   .filter(
-    (item): item is LanguageOptionRecord & { code: LanguageCode } =>
+    (item) =>
       item.isSupportedAsLearning &&
-      isLearningLanguageCode(item.code) &&
       (item.courseStatus ?? "coming_soon") === "available",
   )
-  .map((item) => ({
-    code: item.code,
-    name: item.englishName,
-    nativeName: item.nativeName,
-    flag: item.flagEmoji,
-    color: item.color ?? "#22d3ee",
-    greeting: item.greeting ?? "",
-    description: item.description ?? "",
-  }));
+  .map(toLanguage);
 
 /** All languages marked as learning targets (including coming soon). */
 export const allLearningLanguageOptions: LanguageOptionRecord[] =
   languageOptions.filter((item) => item.isSupportedAsLearning);
+
+/** Picker list: available first, then coming soon — same catalog as Flutter. */
+export const allLearningLanguages: Language[] = [...allLearningLanguageOptions]
+  .sort((a, b) => {
+    const av = (a.courseStatus ?? "coming_soon") === "available" ? 1 : 0;
+    const bv = (b.courseStatus ?? "coming_soon") === "available" ? 1 : 0;
+    return bv - av;
+  })
+  .map(toLanguage);
 
 export const getLanguageOption = (code: string) =>
   languageOptions.find((item) => item.code === code) ??
@@ -87,7 +94,11 @@ export const getNativeLanguageOption = (code: string) =>
   nativeLanguageOptions.find((item) => item.code === code);
 
 export const getLearningLanguage = (code: LanguageCode) =>
+  allLearningLanguages.find((item) => item.code === code) ??
   learningLanguages.find((item) => item.code === code);
+
+export const getLearningLanguageLabel = (code: string) =>
+  getLanguageOption(code)?.englishName ?? code;
 
 export const isCourseAvailable = (code: string) =>
   (getLanguageOption(code) as LanguageOptionRecord | undefined)?.courseStatus ===
