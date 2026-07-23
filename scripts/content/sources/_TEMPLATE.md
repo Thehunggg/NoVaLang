@@ -58,6 +58,44 @@
 
 ---
 
+## ĐƯỜNG DẪN FILE NGUỒN CỤC BỘ (`local-sources/`, nếu ngôn ngữ này có)
+
+> `local-sources/` đã **gitignore toàn bộ** — file gốc (PDF/scan/sách…) không
+> bao giờ được commit/push, dù có bản quyền hay không. Mục này chỉ ghi
+> **DANH MỤC/METADATA** (file nào dạy gì), KHÔNG chép nội dung nguyên văn.
+
+**Quy ước thư mục (bắt buộc, để nhất quán — không tự chế mỗi ngôn ngữ một
+kiểu):**
+
+- Mỗi ngôn ngữ **một** thư mục gốc: **`local-sources/<mã ISO>/`** — dùng
+  đúng mã ISO đang dùng trong `rules/languages/<mã>/` (vd `ja`, `ko`, `zh`),
+  **KHÔNG** dùng tên tiếng Anh đầy đủ (không `japanese/`, `korean/`…) để
+  tránh lệch với hệ mã đã có trong repo.
+- Bên trong, chia theo **LOẠI nguồn** (folder con KHÔNG DẤU, không tên tiếng
+  Việt có dấu — tránh lỗi mã hoá đường dẫn): ví dụ `irodori/`,
+  `grammar-books/`, `vocab-3000/`, `jmdict/` — tên cụ thể tuỳ ngôn ngữ, miễn
+  **mô tả rõ loại nguồn** + nhất quán trong chính ngôn ngữ đó. Không bắt buộc
+  đúng 4 tên này — mỗi ngôn ngữ có thể có loại nguồn khác.
+
+**Khi có file nguồn cục bộ mới (owner bỏ PDF vào, hoặc bắt đầu ngôn ngữ
+mới):** Claude quét bằng cách **MỞ FILE THẬT** (không đoán qua tên file) —
+với mỗi file, xác định: **(a)** tên file, nằm thư mục con nào; **(b)** **CHỮ
+THẬT hay ẢNH SCAN** (cần OCR) — trích thử một đoạn văn bản, ảnh scan sẽ
+không trích được gì hoặc chỉ ra lỗi; **(c)** nguồn/bộ sách gì, cấp độ nào,
+chủ đề/phạm vi nào — rồi ghi thành **bảng danh mục** vào mục này (file nguồn
+riêng của ngôn ngữ đó), theo đúng khuôn bảng đã dùng ở
+`scripts/content/sources/ja.md` (mục "Danh mục FILE NGUỒN CỤC BỘ"). Ghi rõ
+**giới hạn đã biết** (file nào chưa OCR được, file nào trùng lặp/chưa rõ
+ranh giới…) — không giấu.
+
+**Bảng danh mục ở đây (điền khi có file):**
+
+| File | Bộ / cấp độ | Chủ đề · phạm vi | Chữ thật hay ảnh scan |
+|---|---|---|---|
+| … | … | … | … |
+
+---
+
 ## Tầng X — NGUỒN XÁC MINH NGÔN NGỮ (feed §G8; điền trước khi build)
 
 Ba câu hỏi tầng X phải **tra được từ NGUỒN DỮ LIỆU** (không trí nhớ mô hình). Mỗi
@@ -112,4 +150,24 @@ X + giấy phép** rồi mới build (§F-b):
       hạn.
 - [ ] **Danh sách cụm cố định:** `ĐÃ DUYỆT` (hoặc owner xác nhận tạm chấp nhận).
 - [ ] **Phần cốt lõi không được thay:** đã định nghĩa.
+- [ ] **Nếu có file nguồn cục bộ** (`local-sources/<mã>/`): đã quét + ghi bảng
+      danh mục ("ĐƯỜNG DẪN FILE NGUỒN CỤC BỘ" ở trên), đã xác định file nào
+      chữ thật / file nào ảnh scan cần OCR.
 - Thiếu **bất kỳ** mục nào → **DỪNG, chưa build** (§F-b, §G8).
+
+---
+
+## GHI CHÚ CHO OWNER — thêm ngôn ngữ mới có tài liệu offline (PDF/scan)
+
+Khi muốn thêm nguồn cục bộ (PDF/sách scan/audio…) cho một ngôn ngữ:
+
+1. Tạo thư mục **`local-sources/<mã ISO>/`** (vd `local-sources/ko/`) — dùng
+   đúng mã ISO như trong `rules/languages/<mã>/`.
+2. Bỏ file (PDF/…) vào trong, chia theo loại nguồn nếu có nhiều loại (thư
+   mục con tuỳ đặt, không dấu — Claude có thể đề xuất tên khi quét).
+3. Nói Claude: **"quét local-sources/<mã>/ và ghi danh mục vào file nguồn
+   riêng"** — Claude sẽ mở từng file thật, xác định chữ thật/ảnh scan, ghi
+   bảng danh mục vào `scripts/content/sources/<mã>.md` (mục "ĐƯỜNG DẪN FILE
+   NGUỒN CỤC BỘ" ở trên), y như đã làm cho `ja`.
+4. `local-sources/` luôn gitignore — file gốc KHÔNG BAO GIỜ được commit, chỉ
+   commit bảng danh mục + luật (do Claude viết, không chép nguyên văn sách).

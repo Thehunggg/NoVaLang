@@ -1220,6 +1220,66 @@ Phase B does not start until Phase A scoped tests pass.
   - **Legacy id resolution:** `finance_accounting` (the old combined legacy id) has no single unambiguous forward target now that `finance_accounting_audit` is split into `finance` + `accounting_audit`. Resolved by mirroring the codebase's own existing precedent for exactly this situation (`environment_energy_agriculture`, added under `NOVALANG-LEARNING-FOCUS-INTEGRATION-FIX-01`): removed `'finance_accounting': 'finance_accounting_audit'` from all 3 `nicheLegacyIdMap` copies (`niche_labels.json`, `lib/models/user_profile.dart`, `lib/state/lesson_provider.dart`) and added `'finance_accounting'` to `UserProfile.ambiguousLegacyNicheIds` — a user with this legacy id resolves to the literal string `finance_accounting` (not silently reassigned to one specific new domain the system guessed at), exactly matching how `environment_energy_agriculture` is already handled. `test/learning_focus_screen_test.dart`'s previously-intentionally-failing "legacy career niche IDs migrate forward" test updated to assert this new resolution (mirrors the existing `environment_energy_agriculture` assertions) instead of the stale `finance_accounting_audit` target, and now passes.
   - **Full re-validation:** `sync:flutter-assets` re-run after the `niche_labels.json` edit, verified byte-identical. `flutter analyze` — 0 issues. Scoped test — **34/34 PASS** (0 intentional failures remaining). Full `flutter test` — **499/499 PASS** (zero regressions from touching `user_profile.dart`/`lesson_provider.dart`, both used well beyond the niche system). `frontend` `tsc -b && vite build` — PASS (re-verified after the `legacyIdMap` edit). `git diff --check` — 0 errors on every file touched this task. No curriculum/Golden Lesson/`rules/languages/`/backend/subscription/Usage Ledger/completion-pipeline file touched. No commit, no push. Task complete.
 
+## NOVALANG-JA-LESSON-AUTHORING-SOURCES-01 (local-only track, `LESSON_AUTHORING_STANDARD.md`)
+
+Separate task lineage, own file (`LESSON_AUTHORING_STANDARD.md` +
+`scripts/content/sources/*.md`), local-only sessions (owner's machine, reads
+`local-sources/`). Not tracked under the "Task identity" block above, which
+belongs to the 16-module curriculum-restructure lineage. Commits so far:
+`051a3f5`, `9dee027`, `7fcc7ae`, `ca8d695`, `3ae0b7b` (PHẦN G G1–G9, ja
+per-language source file V1–V5 + Tầng X, `local-sources/` gitignored).
+
+- `2026-07-23`: **G8 addition + ja local-source identification + local-sources
+  convention.** (1) `LESSON_AUTHORING_STANDARD.md` §G8 gained the one bullet
+  not yet present: language with an existing local source file must verify
+  X1–X3 / fixed-expression / grammar-pattern cross-checks by **opening the
+  real local file** — model memory is forbidden even when it looks right;
+  the report must name which source and which section was opened. Kept
+  abstract (no language name/path in the shared file) — path/filenames live
+  only in the per-language source file. (2) Opened and identified every real
+  local Japanese source file (`local-sources/`, 9 PDFs, 590MB total) by
+  actually extracting text samples (`pdftotext`) and counting embedded image
+  objects, not guessing from filenames: **Irodori Z_all.pdf** = Starter+
+  Elementary1+Elementary2 (A1–A2, real text); **ZZ_all.pdf** = Pre-Intermediate
+  (A2/B1, real text); **Irodori.pdf** = a larger Irodori merge, real text,
+  confirmed to include Starter (A1) but its exact full scope vs. the other
+  two files is **unverified** (flagged for owner, not guessed); **all 5
+  Nihongo Sou Matome N1–N5 grammar books are scanned images (118–1079
+  embedded images each, 0 parseable font/text) — need OCR before they can
+  serve as a real V1/V2 grammar source**; **Collins Japanese 3000 Words and
+  Phrases** = real text, topic-based vocabulary (not JLPT-leveled). No local
+  JMdict file exists — confirmed it is an online-only dataset reference for
+  Tầng X (X3), not a local file. Full catalog with per-file "chữ thật/ảnh
+  scan" status written to `scripts/content/sources/ja.md` (new "Danh mục FILE
+  NGUỒN CỤC BỘ" section). (3) Reorganized `local-sources/japanese/` (flat,
+  9 files) → **`local-sources/ja/`** (ISO code, matching `rules/languages/ja/`
+  convention) with typed subfolders `irodori/`, `grammar-books/`,
+  `vocab-3000/`, `jmdict/` (empty — see above). Raw filenames inside were
+  left untouched (only the containing folders were renamed/created) to avoid
+  any risk of breaking an existing reference; `local-sources/` remains 100%
+  gitignored throughout — verified `git status --short local-sources/` empty
+  before and after the reorganization. (4) `_TEMPLATE.md` gained a new
+  "ĐƯỜNG DẪN FILE NGUỒN CỤC BỘ" section (folder convention + scan procedure +
+  empty catalog table to fill) and a short, commit-able "GHI CHÚ CHO OWNER"
+  block explaining how to add a new language's offline sources (create
+  `local-sources/<mã ISO>/`, drop files in, ask Claude to scan) — placed in
+  `_TEMPLATE.md` rather than a `local-sources/README` since that directory is
+  entirely gitignored and would never reach git.
+  - **Validation:** `npm run validate:curriculum` — PASS, 35 courses/172
+    lessons, same 4 pre-existing soft warnings, 0 new. `npm run
+    smoke:curriculum` — PASS, every section 0 fail (unaffected — this task
+    touched only docs/rules + a gitignored local folder, no generated
+    content, no `.mjs` generator logic). `git status --short` after the
+    reorganization showed only the 3 intended files modified
+    (`LESSON_AUTHORING_STANDARD.md`, `scripts/content/sources/ja.md`,
+    `scripts/content/sources/_TEMPLATE.md`) — zero files under
+    `local-sources/` appeared, confirming no copyrighted source material is
+    stageable/committable.
+  - **Explicitly NOT done this task (per its own scope):** JMdict/EDICT
+    extraction, a real fixed-expression (LOẠI A) list, OCR of the 5 Sou
+    Matome scans, and any review/edit of the existing L2/L3 lesson files.
+    These are the recorded next steps below.
+
 ## NOVALANG-RUNTIME-REVIEW-BLOCKERS-03 handoff
 
 - Automated corrective work is complete. Root cause: practice-group canonical
@@ -1241,6 +1301,17 @@ Phase B does not start until Phase A scoped tests pass.
   started. Manual Android/Web runtime verification is not claimed as PASS.
 
 ## Next exact action — Hành động tiếp theo chính xác
+
+**For `NOVALANG-JA-LESSON-AUTHORING-SOURCES-01` (local-only, see its own
+section above):** trích JMdict (X3 tầng xác minh, dataset online — cần mạng,
+môi trường cloud này bị chặn fetch nên phải chạy ở máy có mạng) + tạo danh
+sách cụm cố định (LOẠI A) đã duyệt cho ja + rà soát/sửa lại L2/L3
+(`ja-unit1-lesson2.mjs`/`ja-unit1-lesson3.mjs`) theo bộ luật G1–G9 vừa vá. OCR
+5 file Nihongo Sou Matome (N1–N5, hiện toàn ảnh scan) là điều kiện cần trước
+khi dùng chúng làm nguồn mẫu ngữ pháp thật — chưa có trong phạm vi việc vừa
+xong. Owner cũng cần xác nhận nên giữ bản Irodori nào (`Irodori.pdf` vs.
+`Z_all.pdf`+`ZZ_all.pdf`) làm nguồn chính, tránh 2 bài đối chiếu 2 bản khác
+nhau.
 
 **For `NOVALANG-DAILY-LIFE-15-TOPIC-RESTRUCTURE-01` (skeleton complete,
 Flutter test verification pending — DO NOT close until this runs):** Project

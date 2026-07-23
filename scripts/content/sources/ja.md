@@ -15,8 +15,8 @@
 | `languageCode` | `ja` |
 | Tên ngôn ngữ | Tiếng Nhật (日本語) |
 | Cấp độ đang nhắm | A1–A2 (JF Standard) ≈ JLPT N5 |
-| Cập nhật lần cuối | 2026-07-22 |
-| Trạng thái | `READY_FOR_AUTHORING` |
+| Cập nhật lần cuối | 2026-07-23 |
+| Trạng thái | `READY_FOR_AUTHORING` (Irodori chữ thật, dùng được ngay; Sou Matome N1–N5 còn ẢNH SCAN, chờ OCR trước khi dùng làm nguồn mẫu ngữ pháp) |
 
 ---
 
@@ -72,6 +72,53 @@
 - **Cách dùng:** kiểm từ/ngữ pháp đang dạy có thuộc A1–A2 / N5 không, hay vượt
   trình độ. Vượt → bỏ hoặc chuyển "tham khảo thêm" (§B2b), không đưa thành trọng
   tâm.
+
+---
+
+## Danh mục FILE NGUỒN CỤC BỘ (`local-sources/ja/`) — feed §F-a + §G8 bổ sung
+
+> **Luật cụ thể ja (feed §G8 bổ sung 2026-07-23):** build bài ja **BẮT BUỘC mở
+> đối chiếu file thật** trong `local-sources/ja/` trước khi build — KHÔNG thay
+> bằng trí nhớ mô hình dù có vẻ đúng: **Irodori** (`irodori/`) cho chủ đề/cách
+> nói/tình huống đời sống, **sách N-level** (`grammar-books/`) cho mẫu ngữ
+> pháp đúng cấp, **JMdict/EDICT** (tầng X3 ở dưới — dataset online, không có
+> file cục bộ) cho loại từ/tự-tha động từ/quy tắc chia. **Báo cáo mỗi bài phải
+> ghi rõ đã mở file nào trong bảng dưới đây, phần/chủ đề nào của file đó**,
+> không ghi chung chung "đã tra Irodori".
+
+Cấu trúc thư mục (quy ước `local-sources/<mã ISO>/<loại-nguồn>/`, xem
+`_TEMPLATE.md` mục "ĐƯỜNG DẪN FILE NGUỒN CỤC BỘ"): `local-sources/ja/irodori/`,
+`grammar-books/`, `vocab-3000/`, `jmdict/` (trống — xem ghi chú cuối bảng).
+Đã quét trực tiếp từng file (không đoán qua tên) bằng trích văn bản mẫu +
+đếm ảnh nhúng, 2026-07-23:
+
+| File | Bộ / cấp độ | Chủ đề · phạm vi | Chữ thật hay ảnh scan |
+|---|---|---|---|
+| `irodori/Z_all.pdf` | Irodori — **Starter + Elementary 1 + Elementary 2** (A1–A2, JF Standard) | 3 phần, mỗi phần 9 chủ đề / 18 lesson — hội thoại + ngữ pháp đời sống hàng ngày | **Chữ thật** — trích được nội dung/ToC thật |
+| `irodori/ZZ_all.pdf` | Irodori — **Pre-Intermediate** (A2/B1, JF Standard) | 9 chủ đề / 18 lesson, 4 dạng hoạt động (nói/nghe/đọc/viết) | **Chữ thật** |
+| `irodori/Irodori.pdf` | Irodori — bản gộp lớn nhất (158MB); ToC xác nhận có Starter (A1) trở lên | **CHƯA XÁC MINH chắc chắn phạm vi đầy đủ** (dung lượng không khớp phép cộng Z_all+ZZ_all — có thể là bản merge khác/edition khác) — **cần owner xác nhận nên dùng bản nào làm chính** để tránh 2 bài khác nhau vô tình đối chiếu 2 bản Irodori khác nhau | **Chữ thật** |
+| `grammar-books/Nihongo_Sou_Matome_N1_Bunpou.pdf` | Nihongo Sou Matome — 文法 (Ngữ pháp) | **JLPT N1** — toàn bộ ngữ pháp N1 | **ẢNH SCAN — CẦN OCR** (không trích được văn bản; ~1079 ảnh nhúng, 0 font) |
+| `grammar-books/Nihongo Sou Matome N2 - Bumpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N2** — toàn bộ ngữ pháp N2 | **ẢNH SCAN — CẦN OCR** (~1050 ảnh nhúng) |
+| `grammar-books/Nihongo_Sou_Matome_N3_Bunpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N3** — toàn bộ ngữ pháp N3 | **ẢNH SCAN — CẦN OCR** (~118 ảnh nhúng) |
+| `grammar-books/Nihongo Sou Matome N4- Bumpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N4** — toàn bộ ngữ pháp N4 | **ẢNH SCAN — CẦN OCR** (~188 ảnh nhúng; font nhúng lỗi khi trích bằng pdftotext) |
+| `grammar-books/Nihongo_Sou_Matome_N5.pdf` | Nihongo Sou Matome N5 — tên file **KHÔNG có hậu tố Bunpou** như N1–N4 | **JLPT N5** — **CHƯA XÁC MINH** chỉ ngữ pháp hay gồm cả từ vựng/kanji N5 (cần OCR trước mới biết chắc phạm vi) | **ẢNH SCAN — CẦN OCR** (~131 ảnh nhúng) |
+| `vocab-3000/Collins_Japanese_3000_words_and_phrases.pdf` | Collins — *Japanese 3000 Words and Phrases* (HarperCollins, 2019) | Không theo cấp JLPT — từ vựng/cụm đời sống theo 10 chủ đề: essentials, transport, in the home, at the shops, day-to-day, leisure, sport, health, planet earth, celebrations and festivals | **Chữ thật** |
+| `jmdict/` | — | **Trống — không có file cục bộ.** JMdict/EDICT (§Tầng X, X3 dưới đây) là **dataset online** (EDRDG, CC BY-SA), tra trực tuyến khi cần — không tải bản offline vào đây | — |
+
+**Giới hạn đã biết (báo cáo, không giấu):**
+- **5/9 file (toàn bộ Nihongo Sou Matome N1–N5) là ẢNH SCAN — chưa OCR được
+  nội dung thật.** Cho tới khi OCR xong, các file này CHỈ xác nhận "có tồn
+  tại, đúng cấp JLPT nào" qua tên file — **CHƯA thể mở đối chiếu mẫu ngữ pháp
+  cụ thể theo §G8** từ chúng. OCR 5 file này là bước cần làm **TRƯỚC** khi
+  dùng chúng làm nguồn V1/V2 mẫu ngữ pháp thật cho §G3/§G8 — không nằm trong
+  phạm vi việc quét/nhận diện lần này (§F-b vẫn ưu tiên Irodori/JF Standard
+  làm V1 chính; Sou Matome đóng vai V2/tham chiếu ngữ pháp khi có nội dung
+  đọc được).
+- **3 file Irodori trùng lặp/chưa rõ ràng ranh giới** (`Irodori.pdf` vs
+  `Z_all.pdf` + `ZZ_all.pdf`) — xem cột "Chủ đề · phạm vi" ở trên. Owner nên
+  xác nhận giữ bản nào làm nguồn chính cho từng cấp độ (Starter/Elementary
+  1/Elementary 2/Pre-Intermediate) để build bài sau này luôn đối chiếu đúng
+  MỘT bản nhất quán.
 
 ---
 
