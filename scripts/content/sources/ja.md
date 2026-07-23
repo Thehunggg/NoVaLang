@@ -16,7 +16,7 @@
 | Tên ngôn ngữ | Tiếng Nhật (日本語) |
 | Cấp độ đang nhắm | A1–A2 (JF Standard) ≈ JLPT N5 |
 | Cập nhật lần cuối | 2026-07-23 |
-| Trạng thái | `READY_FOR_AUTHORING` (Irodori + `N5 Grammar Master (japanvitta.com).pdf` chữ thật, dùng được ngay; Sou Matome N1–N5 + sách N5 scan còn ẢNH SCAN, chờ OCR trước khi dùng làm nguồn mẫu ngữ pháp) |
+| Trạng thái | `READY_FOR_AUTHORING` (Irodori + `N5 Grammar Master (japanvitta.com).pdf` + vocab JLPT/kanji/ngữ pháp hanabira đều chữ thật, dùng được ngay; Sou Matome N1–N5 + sách N5 scan còn ẢNH SCAN, chờ OCR; giấy phép nội dung hanabira grammar CHƯA XÁC ĐỊNH biến thể CC cụ thể — cần owner xác nhận trước khi dùng chính thức) |
 
 ---
 
@@ -107,6 +107,43 @@ Cấu trúc thư mục (quy ước `local-sources/<mã ISO>/<loại-nguồn>/`, 
 | `vocab-3000/Collins_Japanese_3000_words_and_phrases.pdf` | Collins — *Japanese 3000 Words and Phrases* (HarperCollins, 2019) | Không theo cấp JLPT — từ vựng/cụm đời sống theo 10 chủ đề: essentials, transport, in the home, at the shops, day-to-day, leisure, sport, health, planet earth, celebrations and festivals | **Chữ thật** |
 | `jmdict/` | — | **Trống — không có file cục bộ.** JMdict/EDICT (§Tầng X, X3 dưới đây) là **dataset online** (EDRDG, CC BY-SA), tra trực tuyến khi cần — không tải bản offline vào đây | — |
 
+### Nguồn mở GitHub bổ sung (thêm 2026-07-23): từ vựng JLPT + kanji + ngữ pháp hanabira
+
+Owner tải nguyên **2 repo GitHub** vào `local-sources/ja/` (không tạo thư mục
+con loại nguồn riêng — repo tự có cấu trúc): `hanabira.org-main/` (app
+Hanabira.org đầy đủ — backend Express/Flask, frontend Next.js, Docker,
+nginx, CICD…) và `kanji-data-master/`. **Chỉ 2–3 đường dẫn NỘI DUNG bên
+trong `hanabira.org-main/` dùng được cho việc build bài** — phần còn lại là
+mã nguồn hạ tầng ứng dụng, không cần catalog. Repo cũng có nội dung tiếng
+Hàn/Thái/Trung (`markdown_grammar_korean/`, `grammar_kr_KOREAN_*.json`,
+`grammar_th_CU-TFL_*.json`, `grammar_cn_HSK_*.json`) — ngoài phạm vi file
+`ja.md` này, không catalog ở đây.
+
+| Nguồn (đường dẫn) | Định dạng | Trường dữ liệu | Phạm vi / cấp độ | Giấy phép | Đọc được? |
+|---|---|---|---|---|---|
+| `hanabira.org-main/backend/express/json_data/wordsTanos_openai_JLPT_N{1..5}_tanos_vocab_list.json` | JSON | `vocabulary_original` (chữ gốc), `vocabulary_simplified` (kana), `vocabulary_english` (nghĩa), `word_type` (⚠ **rỗng `"nan"` toàn bộ, đã kiểm N1+N5 — KHÔNG dùng được cho loại từ/tự-tha, không feed §X3**), `vocabulary_audio` (đường dẫn — KHÔNG có file audio thật kèm theo), `p_tag` (cấp JLPT), `s_tag` | N1(3476)+N2(1835)+N3(1835)+N4(634)+N5(669) = **8449 từ**, phủ đủ N5–N1 | Gốc **Tanos.co.uk — Creative Commons BY** (ghi rõ trong `README.md` repo, dòng có chữ "Licence: Creative Commons BY") — dùng thương mại được kèm ghi công | **Chữ thật** |
+| `hanabira.org-main/frontend-next/content/markdown_grammar_japanese/*.md` (805 file) | Markdown | Mỗi file = 1 điểm ngữ pháp, đủ mục: Introduction · Core Grammar Explanation (nghĩa/cấu trúc/formation diagram) · Comparative Analysis (so mẫu gần giống) · Examples in Context (formal/informal/written/spoken) · Cultural Notes (register/lịch sự/thành ngữ) · Common Mistakes and Tips · Summary + quiz | 805 điểm — README repo ghi rõ mục tiêu "prepare for JLPT N5-N1" → phủ **ĐỦ 5 cấp, vượt xa trần A2/B1 của Irodori** | `README.md`: *"Creative Commons License for in house created hanabira.org content"* — **CHƯA XÁC ĐỊNH biến thể CC cụ thể** (BY / BY-SA / BY-NC?). Đã quét toàn repo tìm "NonCommercial"/"BY-NC" — **không thấy** — nhưng chưa đủ để coi là xác nhận. Nội dung gốc dẫn ở repo riêng `github.com/tristcoil/hanabira.org-japanese-content` (chưa mở — WebFetch bị chặn) | **Chữ thật** — chất lượng RẤT TỐT (ví dụ đủ 4 văn phong, common-mistakes, cultural/register notes — khớp hẳn §B4/§B9/ADR-016) |
+| `hanabira.org-main/backend/express/json_data/grammar_ja_JLPT_N{1..5}_0001.json` | JSON | Bản **có cấu trúc** của cùng kho ngữ pháp trên: `title`, `short_explanation`, `long_explanation`, `formation` (công thức), `examples[]` (`jp`/`romaji`/`en`/đường dẫn audio) | N1(245)+N2(191)+N3(132)+N4(124)+N5(136) = **828 điểm**, **có tag cấp độ rõ theo từng file** (tiện hơn .md — tên file .md không tự ghi cấp) | Cùng ghi chú giấy phép như dòng .md ở trên (CHƯA XÁC ĐỊNH biến thể CC cụ thể) | **Chữ thật** |
+| `kanji-data-master/kanji.json` (+ `kanji-jouyou.json`, `kanji-kyouiku.json`) | JSON | Mỗi kanji: `strokes`, `grade` (lớp học), `freq` (tần suất), `jlpt_old`/`jlpt_new` (JLPT hệ cũ 4 cấp / hệ mới 5 cấp), `meanings[]`, `readings_on[]`, `readings_kun[]` + dữ liệu WaniKani (`wk_level`, `wk_meanings`, `wk_readings_on/kun`, `wk_radicals`) | `kanji.json` = **13.108 kanji** (khớp KANJIDIC2 đầy đủ); `kanji-jouyou.json` = **2.136** (đúng số Jōyō chính thức); `kanji-kyouiku.json` = **1.006** (đúng số Kyōiku chính thức) — phủ mọi cấp JLPT qua `jlpt_new` | **MIT License** (David Gouveia, 2019) — rõ ràng, dùng thương mại được, không ràng buộc share-alike. Nguồn gốc dữ liệu: KANJIDIC (EDRDG) + JLPT (Tanos.co.uk) + WaniKani API, ghi rõ trong `README.md` repo | **Chữ thật** |
+
+**Đánh giá dùng được cho việc gì:**
+- **Từ vựng JLPT (wordsTanos):** dùng được ngay để tra nghĩa/reading/cấp độ
+  1 từ khi build vocab card — **KHÔNG** giúp §X3 (loại từ/tự-tha) vì
+  `word_type` rỗng toàn bộ.
+- **Kanji (kanji-data-master):** dùng được ngay — đủ on/kun, nghĩa, cấp
+  JLPT, lớp học, tần suất. Nguồn kanji tốt nhất hiện có trong
+  `local-sources/ja/`, giấy phép rõ ràng nhất (MIT).
+- **Ngữ pháp hanabira (.md + .json):** đây là **nguồn ngữ pháp tốt nhất hiện
+  có cho phạm vi ngoài A2** — trả lời đúng khoảng trống owner nêu (Irodori
+  dừng ở A2/B1, Sou Matome + sách N-level scan chưa đọc được). Dùng được
+  NGAY để đọc/đối chiếu mẫu ngữ pháp N5–N1 thật, không cần OCR. **NHƯNG** vai
+  trò trong hệ V1–V5 (§F-b) đề xuất tạm là **kiểu V2** (nguồn lớn thứ hai,
+  dùng khi Irodori/V1 không phủ — tức mọi thứ trên A2/B1) — đây là ĐỀ XUẤT,
+  chưa chốt, và **giấy phép nội dung cụ thể cần owner xác nhận** (mở
+  `github.com/tristcoil/hanabira.org-japanese-content` xem có LICENSE file
+  riêng ghi rõ biến thể CC) trước khi dùng chính thức cho bài build thương
+  mại — theo đúng §G4 "không chắc → không dùng".
+
 **Giới hạn đã biết (báo cáo, không giấu):**
 - **6/11 file (Nihongo Sou Matome N1–N5 + sách "まるごとマスター" N5) là ẢNH
   SCAN — chưa OCR được nội dung thật.** Cho tới khi OCR xong, các file này
@@ -126,6 +163,15 @@ Cấu trúc thư mục (quy ước `local-sources/<mã ISO>/<loại-nguồn>/`, 
   xác nhận giữ bản nào làm nguồn chính cho từng cấp độ (Starter/Elementary
   1/Elementary 2/Pre-Intermediate) để build bài sau này luôn đối chiếu đúng
   MỘT bản nhất quán.
+- **3 nguồn GitHub mới (vocab JLPT / kanji / ngữ pháp hanabira) KHÔNG giải
+  quyết Tầng X (§X1–§X3 dưới đây).** Vai trò của chúng là **V1/V2 nội dung**
+  (§F-b) — vốn từ/mẫu ngữ pháp để BUILD bài — khác với Tầng X là **xác minh
+  kết hợp/cấu trúc/loại từ** trước khi DÙNG một từ/mẫu cụ thể. Cụ thể:
+  `word_type` trong vocab JLPT rỗng toàn bộ → không feed §X3; grammar
+  hanabira có trường `formation` (công thức) nhưng đây là mẫu NGỮ PHÁP câu,
+  khác phạm vi hẹp của §X1 (case frame BẮT BUỘC của riêng ĐỘNG TỪ) — có thể
+  dùng tham khảo chéo khi liên quan, nhưng không thay Kyoto Case Frame/NINJAL
+  LWP/JMdict đã ghi ở Tầng X bên dưới.
 
 ---
 

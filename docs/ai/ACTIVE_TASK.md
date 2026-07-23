@@ -1280,6 +1280,42 @@ per-language source file V1–V5 + Tầng X, `local-sources/` gitignored).
     Matome scans, and any review/edit of the existing L2/L3 lesson files.
     These are the recorded next steps below.
 
+- `2026-07-23` (later same day, check-only follow-ups, `ja.md` commits only):
+  two more owner-added local sources were checked and cataloged, no
+  processing/build:
+  1. Two new files in `grammar-books/`: `日本語N5文法・読解まるごとマスター.pdf`
+     (scanned image, 67 embedded images/0 text — needs OCR, same as Sou
+     Matome; unrelated to the Japan Foundation "Marugoto" V2 source despite
+     the similar title) and `N5 Grammar Master (japanvitta.com).pdf` (real
+     text — JLPTsensei.com's 80-point JLPT N5 grammar guide).
+  2. Two full GitHub repos added directly under `local-sources/ja/`:
+     `hanabira.org-main/` and `kanji-data-master/`. Identified and cataloged
+     the actual content paths inside (not the app scaffolding): **JLPT
+     vocabulary** (`hanabira.org-main/backend/express/json_data/
+     wordsTanos_openai_JLPT_N{1..5}_tanos_vocab_list.json` — 8449 words
+     N1–N5, real text, source Tanos.co.uk CC BY); **kanji**
+     (`kanji-data-master/kanji.json` + jouyou/kyouiku variants — 13108/
+     2136/1006 entries matching official counts, MIT license, richest kanji
+     source in `local-sources/ja/` so far); **grammar** — the significant
+     find — 805 markdown lessons
+     (`hanabira.org-main/frontend-next/content/markdown_grammar_japanese/`)
+     plus 828 structured JSON entries
+     (`backend/express/json_data/grammar_ja_JLPT_N{1..5}_0001.json`)
+     covering JLPT N5–N1, i.e. **real, readable grammar content beyond
+     Irodori's A2/B1 ceiling** — directly closes the gap this task lineage
+     had flagged repeatedly (Irodori stops at A2, Sou Matome/N-level books
+     are unreadable scans). **Open item: the hanabira in-house content's
+     exact Creative Commons variant (BY/BY-SA/BY-NC) is not stated precisely
+     in the bundled README — no NC/NonCommercial wording was found anywhere
+     in the repo by direct text search, but this is not the same as a
+     confirmed license; owner should open the linked content repo
+     (`github.com/tristcoil/hanabira.org-japanese-content`) to confirm
+     before this grammar source is used for real lesson builds.** Full
+     catalog + this caveat written to `scripts/content/sources/ja.md`.
+  - `validate:curriculum` + `smoke:curriculum` PASS (unchanged counts), only
+    `scripts/content/sources/ja.md` committed both times, `local-sources/`
+    confirmed untracked after each.
+
 ## NOVALANG-RUNTIME-REVIEW-BLOCKERS-03 handoff
 
 - Automated corrective work is complete. Root cause: practice-group canonical
