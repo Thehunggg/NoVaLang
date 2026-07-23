@@ -16,7 +16,7 @@
 | Tên ngôn ngữ | Tiếng Nhật (日本語) |
 | Cấp độ đang nhắm | A1–A2 (JF Standard) ≈ JLPT N5 |
 | Cập nhật lần cuối | 2026-07-23 |
-| Trạng thái | `READY_FOR_AUTHORING` (Irodori chữ thật, dùng được ngay; Sou Matome N1–N5 còn ẢNH SCAN, chờ OCR trước khi dùng làm nguồn mẫu ngữ pháp) |
+| Trạng thái | `READY_FOR_AUTHORING` (Irodori + `N5 Grammar Master (japanvitta.com).pdf` chữ thật, dùng được ngay; Sou Matome N1–N5 + sách N5 scan còn ẢNH SCAN, chờ OCR trước khi dùng làm nguồn mẫu ngữ pháp) |
 
 ---
 
@@ -102,18 +102,25 @@ Cấu trúc thư mục (quy ước `local-sources/<mã ISO>/<loại-nguồn>/`, 
 | `grammar-books/Nihongo_Sou_Matome_N3_Bunpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N3** — toàn bộ ngữ pháp N3 | **ẢNH SCAN — CẦN OCR** (~118 ảnh nhúng) |
 | `grammar-books/Nihongo Sou Matome N4- Bumpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N4** — toàn bộ ngữ pháp N4 | **ẢNH SCAN — CẦN OCR** (~188 ảnh nhúng; font nhúng lỗi khi trích bằng pdftotext) |
 | `grammar-books/Nihongo_Sou_Matome_N5.pdf` | Nihongo Sou Matome N5 — tên file **KHÔNG có hậu tố Bunpou** như N1–N4 | **JLPT N5** — **CHƯA XÁC MINH** chỉ ngữ pháp hay gồm cả từ vựng/kanji N5 (cần OCR trước mới biết chắc phạm vi) | **ẢNH SCAN — CẦN OCR** (~131 ảnh nhúng) |
+| `grammar-books/日本語N5文法・読解まるごとマスター.pdf` | Sách thương mại tiếng Nhật (dòng "まるごとマスター" — **KHÁC** bộ *Marugoto* của Japan Foundation ở V2, trùng tên tình cờ, không liên quan) | **JLPT N5** — ngữ pháp + đọc hiểu (文法・読解) | **ẢNH SCAN — CẦN OCR** (~67 ảnh nhúng, 0 font, 0 ký tự trích được toàn bộ file) |
+| `grammar-books/N5 Grammar Master (japanvitta.com).pdf` | **JLPTsensei.com** — *"JLPT N5 Grammar Master: 80 Grammar Lessons You Must Know to Pass the JLPT"*, Complete Study Guide, tác giả Cruise Bogedin, © 2020 (tải qua japanvitta.com — tên file chỉ ghi nơi tải, KHÔNG phải tác giả gốc) | **JLPT N5** — đúng **80 điểm ngữ pháp N5**, mỗi điểm có nghĩa + cách dùng + ghi chú ngữ pháp + nhiều câu ví dụ (romaji + dịch nghĩa). Vai trò gợi ý trong hệ 5-vòng §F-b: **giáo trình thương mại phổ biến (kiểu V3)** — chỉ đối chiếu cách trình bày/thứ tự ngữ pháp N5, KHÔNG dùng làm nguồn chính thay Irodori (V1) — owner xác nhận lại khi thật sự build bài dùng tới | **Chữ thật** — trích được đầy đủ mục lục 80 điểm ngữ pháp + nội dung chi tiết (nghĩa, cách chia, ví dụ) |
 | `vocab-3000/Collins_Japanese_3000_words_and_phrases.pdf` | Collins — *Japanese 3000 Words and Phrases* (HarperCollins, 2019) | Không theo cấp JLPT — từ vựng/cụm đời sống theo 10 chủ đề: essentials, transport, in the home, at the shops, day-to-day, leisure, sport, health, planet earth, celebrations and festivals | **Chữ thật** |
 | `jmdict/` | — | **Trống — không có file cục bộ.** JMdict/EDICT (§Tầng X, X3 dưới đây) là **dataset online** (EDRDG, CC BY-SA), tra trực tuyến khi cần — không tải bản offline vào đây | — |
 
 **Giới hạn đã biết (báo cáo, không giấu):**
-- **5/9 file (toàn bộ Nihongo Sou Matome N1–N5) là ẢNH SCAN — chưa OCR được
-  nội dung thật.** Cho tới khi OCR xong, các file này CHỈ xác nhận "có tồn
-  tại, đúng cấp JLPT nào" qua tên file — **CHƯA thể mở đối chiếu mẫu ngữ pháp
-  cụ thể theo §G8** từ chúng. OCR 5 file này là bước cần làm **TRƯỚC** khi
-  dùng chúng làm nguồn V1/V2 mẫu ngữ pháp thật cho §G3/§G8 — không nằm trong
-  phạm vi việc quét/nhận diện lần này (§F-b vẫn ưu tiên Irodori/JF Standard
-  làm V1 chính; Sou Matome đóng vai V2/tham chiếu ngữ pháp khi có nội dung
-  đọc được).
+- **6/11 file (Nihongo Sou Matome N1–N5 + sách "まるごとマスター" N5) là ẢNH
+  SCAN — chưa OCR được nội dung thật.** Cho tới khi OCR xong, các file này
+  CHỈ xác nhận "có tồn tại, đúng cấp JLPT nào" qua tên file — **CHƯA thể mở
+  đối chiếu mẫu ngữ pháp cụ thể theo §G8** từ chúng. OCR 6 file này là bước
+  cần làm **TRƯỚC** khi dùng chúng làm nguồn V1/V2 mẫu ngữ pháp thật cho
+  §G3/§G8 — không nằm trong phạm vi việc quét/nhận diện lần này (§F-b vẫn ưu
+  tiên Irodori/JF Standard làm V1 chính; Sou Matome + sách N5 scan đóng vai
+  V2/tham chiếu ngữ pháp khi có nội dung đọc được).
+- **`N5 Grammar Master (japanvitta.com).pdf` là CHỮ THẬT, đọc được ngay** —
+  80 điểm ngữ pháp N5 đầy đủ (JLPTsensei.com). Đây là nguồn **thương mại**
+  (giống vai trò V3 trong §F-b: đối chiếu cách trình bày/thứ tự, KHÔNG thay
+  Irodori làm nguồn chính) — chưa gán cứng vào V1–V5 nào, để owner/người
+  build bài xác nhận khi thật sự dùng tới.
 - **3 file Irodori trùng lặp/chưa rõ ràng ranh giới** (`Irodori.pdf` vs
   `Z_all.pdf` + `ZZ_all.pdf`) — xem cột "Chủ đề · phạm vi" ở trên. Owner nên
   xác nhận giữ bản nào làm nguồn chính cho từng cấp độ (Starter/Elementary
