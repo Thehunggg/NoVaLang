@@ -13,11 +13,34 @@ final profileProvider = NotifierProvider<ProfileNotifier, UserProfile>(
 );
 
 class ProfileNotifier extends Notifier<UserProfile> {
+  String? _preferredUiLanguageCode;
+
+  /// The UI language explicitly persisted by a returning user.
+  ///
+  /// A null value means this installation has not stored a profile yet, so
+  /// Login-only copy may follow the device/browser locale without mutating the
+  /// profile defaults.
+  String? get preferredUiLanguageCode => _preferredUiLanguageCode;
+
   @override
   UserProfile build() => UserProfile.defaults();
 
   Future<void> load() async {
-    state = await ref.read(localStorageServiceProvider).loadProfile();
+    final storage = ref.read(localStorageServiceProvider);
+    final loaded = await storage.loadProfile();
+    var preferredUiLanguageCode = await storage.loadUiLanguagePreference();
+    final defaults = UserProfile.defaults();
+    final hasLegacyExplicitSelection =
+        loaded.onboardingComplete ||
+        loaded.displayName.trim().isNotEmpty ||
+        loaded.nativeLanguageCode != defaults.nativeLanguageCode ||
+        loaded.uiLanguageCode != defaults.uiLanguageCode;
+    if (preferredUiLanguageCode == null && hasLegacyExplicitSelection) {
+      preferredUiLanguageCode = loaded.uiLanguageCode;
+      await storage.saveUiLanguagePreference(preferredUiLanguageCode);
+    }
+    _preferredUiLanguageCode = preferredUiLanguageCode;
+    state = loaded;
   }
 
   Future<void> _commit(UserProfile profile) async {
@@ -25,16 +48,20 @@ class ProfileNotifier extends Notifier<UserProfile> {
     await ref.read(localStorageServiceProvider).saveProfile(profile);
   }
 
-  Future<void> setNativeLanguage(
-    String code, {
-    String? uiLanguageCode,
-  }) =>
-      _commit(
-        state.copyWith(
-          nativeLanguageCode: code,
-          uiLanguageCode: uiLanguageCode ?? code,
-        ),
-      );
+  Future<void> setNativeLanguage(String code, {String? uiLanguageCode}) async {
+    final selectedUiLanguageCode = uiLanguageCode ?? code;
+    _preferredUiLanguageCode = selectedUiLanguageCode;
+    await ref
+        .read(localStorageServiceProvider)
+        .saveUiLanguagePreference(selectedUiLanguageCode);
+    await _commit(
+      state.copyWith(
+        nativeLanguageCode: code,
+        uiLanguageCode: selectedUiLanguageCode,
+      ),
+    );
+  }
+
   Future<void> setUserInfo({
     required String displayName,
     String? ageRange,
@@ -99,6 +126,7 @@ class ProfileNotifier extends Notifier<UserProfile> {
   /// Debug-only: wipe all local profiles and progress, then return to auth.
   Future<void> resetLocalTestData() async {
     await ref.read(localStorageServiceProvider).clearAllLocalTestData();
+    _preferredUiLanguageCode = null;
     state = UserProfile.defaults();
   }
 

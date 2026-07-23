@@ -67,6 +67,8 @@ flutter:
     - assets/shared/
     - assets/shared/language_hero/
     - assets/fonts/NotoSansJP-OFL.txt
+    - assets/images/login_hero_artwork.png
+    - assets/images/native_language_world.webp
     - assets/images/learn_hero_ja.webp
     - assets/images/learn_hero_en.webp
     - assets/images/learn_hero_fr.webp

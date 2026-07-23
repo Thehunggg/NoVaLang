@@ -2,39 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/constants/app_constants.dart';
 import '../../core/platform/app_platform.dart';
 import '../../core/utils/localization.dart';
 import '../../models/auth_provider_option.dart';
 import '../../services/mock_auth_service.dart';
 import '../../state/profile_provider.dart';
 import '../../state/shared_data_provider.dart';
-import '../../widgets/common/app_button.dart';
-import '../../widgets/common/nova_mascot.dart';
-import '../../widgets/common/responsive_page.dart';
+import '../../widgets/auth/login_final_visual.dart';
 
 class AuthScreen extends ConsumerWidget {
   const AuthScreen({super.key});
 
-  static IconData _iconFor(String id) => switch (id) {
-    'google' => Icons.alternate_email,
-    'facebook' => Icons.groups_outlined,
-    'instagram' => Icons.camera_alt_outlined,
-    'apple' => Icons.apple,
-    'email' => Icons.mail_outline,
-    'guest' => Icons.person_outline,
-    _ => Icons.login,
-  };
-
   static List<AuthProviderOption> _visibleProviders(
     List<AuthProviderOption> providers,
-  ) =>
-      providers
-          .where(
-            (provider) =>
-                provider.id != 'apple' || AppPlatform.supportsAppleSignIn,
-          )
-          .toList(growable: false);
+  ) {
+    const rank = {
+      'google': 0,
+      'facebook': 1,
+      'instagram': 2,
+      'email': 3,
+      'apple': 4,
+    };
+    final visible = providers
+        .where(
+          (provider) =>
+              !provider.isGuest &&
+              (provider.id != 'apple' || AppPlatform.supportsAppleSignIn),
+        )
+        .toList();
+    visible.sort(
+      (left, right) => (rank[left.id] ?? 99).compareTo(rank[right.id] ?? 99),
+    );
+    return List.unmodifiable(visible);
+  }
 
   static void _redirectAfterAuth(BuildContext context, WidgetRef ref) {
     final profile = ref.read(profileProvider);
@@ -44,12 +44,19 @@ class AuthScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locale = ref.watch(profileProvider).uiLanguageCode;
+    final profile = ref.watch(profileProvider);
+    final locale = profile.uiLanguageCode;
+    final explicitUiLocale = ref
+        .read(profileProvider.notifier)
+        .preferredUiLanguageCode;
+    final sloganLocale = explicitUiLocale == null
+        ? View.of(context).platformDispatcher.locale.languageCode
+        : locale;
     final providersAsync = ref.watch(authProvidersProvider);
 
-    void showLater() => ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(L10n.text('providerLater', locale))),
-    );
+    void showLater() => ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(L10n.text('providerLater', locale))));
 
     Future<void> handleProvider(AuthProviderOption provider) async {
       if (provider.isGuest) {
@@ -58,12 +65,10 @@ class AuthScreen extends ConsumerWidget {
         _redirectAfterAuth(context, ref);
         return;
       }
-
       if (!MockAuthService.enabled || !provider.supportsMockLogin) {
         showLater();
         return;
       }
-
       switch (provider.id) {
         case 'google':
           await ref.read(profileProvider.notifier).signInGoogleMock();
@@ -81,82 +86,15 @@ class AuthScreen extends ConsumerWidget {
       }
     }
 
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(0xFF090612), Color(0xFF171022), Color(0xFF07171B)],
-          ),
-        ),
-        child: SafeArea(
-          child: ResponsivePage(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const SizedBox(height: 12),
-                const Center(child: NovaMascot(size: 132)),
-                Text(
-                  AppConstants.appName,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  L10n.text('tagline', locale),
-                  textAlign: TextAlign.center,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyLarge?.copyWith(color: Colors.white70),
-                ),
-                if (MockAuthService.enabled) ...[
-                  const SizedBox(height: 8),
-                  Text(
-                    L10n.text('mockAuthDevNote', locale),
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: Colors.white38,
-                    ),
-                  ),
-                ],
-                const SizedBox(height: 28),
-                providersAsync.when(
-                  loading: () => const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 24),
-                      child: CircularProgressIndicator(),
-                    ),
-                  ),
-                  error: (error, _) => Center(
-                    child: Text(L10n.text('authProvidersError', locale)),
-                  ),
-                  data: (providers) {
-                    final visible = _visibleProviders(providers);
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        for (var index = 0; index < visible.length; index++) ...[
-                          _ProviderButton(
-                            provider: visible[index],
-                            locale: locale,
-                            outlined: index != 0,
-                            onPressed: () => handleProvider(visible[index]),
-                          ),
-                          if (index != visible.length - 1)
-                            const SizedBox(height: 10),
-                        ],
-                      ],
-                    );
-                  },
-                ),
-              ],
-            ),
-          ),
-        ),
+    return LoginFinalVisual(
+      uiLanguageCode: locale,
+      sloganLanguageCode: sloganLocale,
+      providersAsync: providersAsync.when(
+        data: (providers) => AsyncData(_visibleProviders(providers)),
+        error: AsyncError.new,
+        loading: AsyncLoading.new,
       ),
+      onProviderPressed: handleProvider,
     );
   }
 
@@ -192,33 +130,8 @@ class AuthScreen extends ConsumerWidget {
     );
     controller.dispose();
     if (!context.mounted || email == null) return;
-
     await ref.read(profileProvider.notifier).signInEmailMock(email);
     if (!context.mounted) return;
     _redirectAfterAuth(context, ref);
-  }
-}
-
-class _ProviderButton extends StatelessWidget {
-  const _ProviderButton({
-    required this.provider,
-    required this.locale,
-    required this.outlined,
-    required this.onPressed,
-  });
-
-  final AuthProviderOption provider;
-  final String locale;
-  final bool outlined;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return AppButton(
-      label: provider.localizedLabel(locale),
-      icon: AuthScreen._iconFor(provider.id),
-      outlined: outlined,
-      onPressed: onPressed,
-    );
   }
 }

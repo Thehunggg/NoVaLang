@@ -179,8 +179,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
       );
     }
 
-    if (lesson.id == 'ja-daily_life-m01-u1-l1' &&
-        lesson.lessonFormat == 'five_cards') {
+    if (lesson.lessonFormat == 'five_cards') {
       if (_shouldUseFiveCardRenderer(lesson)) {
         return LessonFiveCardMenu(
           lesson: lesson,

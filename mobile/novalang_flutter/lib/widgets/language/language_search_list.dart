@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../core/theme/app_theme.dart';
 import '../../core/utils/localization.dart';
 import '../../models/language_option.dart';
 import '../common/app_card.dart';
 import 'coming_soon_badge.dart';
+import 'language_picker_surface.dart';
 
 /// Shared language list with Popular / All sections for large catalogs.
 class LanguageSearchList extends StatelessWidget {
@@ -16,6 +18,8 @@ class LanguageSearchList extends StatelessWidget {
     this.query = '',
     this.showComingSoonBadge = false,
     this.trailingBuilder,
+    this.loginGlass = false,
+    this.showResultsWhenQueryEmpty = true,
   });
 
   final List<LanguageOption> items;
@@ -25,9 +29,15 @@ class LanguageSearchList extends StatelessWidget {
   final String query;
   final bool showComingSoonBadge;
   final Widget Function(LanguageOption language)? trailingBuilder;
+  final bool loginGlass;
+  final bool showResultsWhenQueryEmpty;
 
   @override
   Widget build(BuildContext context) {
+    if (!showResultsWhenQueryEmpty && query.trim().isEmpty) {
+      return const SizedBox.shrink();
+    }
+
     final filtered = items.where((item) => item.matches(query)).toList();
     final popular = <LanguageOption>[];
     if (query.isEmpty && popularCodes.isNotEmpty) {
@@ -86,6 +96,7 @@ class LanguageSearchList extends StatelessWidget {
       locale: locale,
       showComingSoonBadge: showComingSoonBadge,
       trailing: trailingBuilder?.call(language),
+      loginGlass: loginGlass,
       onTap: () => onTap(language),
     );
   }
@@ -98,6 +109,7 @@ class _LanguageListTile extends StatelessWidget {
     required this.onTap,
     this.showComingSoonBadge = false,
     this.trailing,
+    this.loginGlass = false,
   });
 
   final LanguageOption language;
@@ -105,16 +117,24 @@ class _LanguageListTile extends StatelessWidget {
   final VoidCallback onTap;
   final bool showComingSoonBadge;
   final Widget? trailing;
+  final bool loginGlass;
 
   @override
   Widget build(BuildContext context) {
     final accent =
         _parseColor(language.color) ?? Theme.of(context).colorScheme.primary;
 
-    return AppCard(
-      onTap: onTap,
-      child: Row(
-        children: [
+    final content = Row(
+      children: [
+        if (loginGlass)
+          LanguagePickerBadge(
+            accent: accent,
+            child: Text(
+              language.flagEmoji,
+              style: const TextStyle(fontSize: 24),
+            ),
+          )
+        else
           Container(
             width: 52,
             height: 52,
@@ -134,35 +154,42 @@ class _LanguageListTile extends StatelessWidget {
               style: const TextStyle(fontSize: 24),
             ),
           ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  language.nativeName,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w800,
-                  ),
+        const SizedBox(width: 14),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                language.nativeName,
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: loginGlass ? AppTheme.contentPrimaryForeground : null,
+                  fontWeight: FontWeight.w800,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  language.englishName,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                language.englishName,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: loginGlass
+                      ? AppTheme.contentSecondaryForeground
+                      : Colors.white70,
                 ),
-                if (showComingSoonBadge && language.isComingSoonContent) ...[
-                  const SizedBox(height: 8),
-                  ComingSoonBadge(uiLanguageCode: locale),
-                ],
+              ),
+              if (showComingSoonBadge && language.isComingSoonContent) ...[
+                const SizedBox(height: 8),
+                ComingSoonBadge(uiLanguageCode: locale),
               ],
-            ),
+            ],
           ),
-          ?trailing,
-        ],
-      ),
+        ),
+        ?trailing,
+      ],
     );
+
+    if (loginGlass) {
+      return LanguagePickerSurface(onTap: onTap, child: content);
+    }
+    return AppCard(onTap: onTap, child: content);
   }
 
   Color? _parseColor(String? hex) {
