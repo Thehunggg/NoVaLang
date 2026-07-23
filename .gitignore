@@ -12,3 +12,6 @@ tools/cache/
 rules/**/corpus/
 *.corpus.txt
 *.dataset.json
+
+# Local-only source materials (KHÔNG commit)
+local-sources/
