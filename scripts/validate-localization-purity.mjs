@@ -3,9 +3,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { JA_UNIT1_LESSON1 } from './content/daily-life/module-1/ja-unit1-lesson1.mjs';
+import { NATIVE_CODES } from './lib/native-localization.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const REQUIRED_UI_LOCALES = ['vi', 'en', 'ja'];
 const SAME_EN_JA_ALLOWLIST = new Set([
   'xp',
   'emailMockHint',
@@ -21,6 +21,13 @@ const fail = (message) => errors.push(message);
 const readJson = async (relativePath) => JSON.parse(
   await readFile(path.join(ROOT, relativePath), 'utf8'),
 );
+// Single source of truth: which locales mobile_ui.json entries are required
+// to have, driven by isAvailableForUi in
+// shared/config/native_language_options.json (was a hard-coded ['vi','en','ja']
+// literal, now dynamic — see docs/ai commit history for the consolidation).
+const REQUIRED_UI_LOCALES = (await readJson('shared/config/native_language_options.json'))
+  .filter((item) => item.isAvailableForUi)
+  .map((item) => item.code);
 
 function validateLocaleMap(value, label) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) {
@@ -120,7 +127,7 @@ function scanGeneratedPurity(node, path, lessonId) {
   const keys = Object.keys(node);
   const isLocaleMap = keys.includes('vi')
     && (keys.includes('en') || keys.includes('ja'))
-    && keys.every((key) => ['vi', 'en', 'ja', 'ko', 'zh'].includes(key));
+    && keys.every((key) => NATIVE_CODES.includes(key));
   if (isLocaleMap) {
     for (const code of ['en', 'ja']) {
       const localized = node[code];

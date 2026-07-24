@@ -18,6 +18,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { KATAKANA_E8_SPECS } from "./katakana-e8-specs.mjs";
 import { ENGLISH_E8_SPECS } from "./english-e8-specs.mjs";
+import { NATIVE_CODES } from "./lib/native-localization.mjs";
 import {
   DAILY_LIFE_COURSE_META,
   DAILY_LIFE_MODULES,
@@ -37,8 +38,26 @@ const OUT_DIRS = [
 
 const VERSION = "curriculum-v3";
 const GENERATED_AT = "2026-07-10T00:00:00.000Z";
-const NATIVE_CODES = ["vi", "en", "ja", "ko", "zh"];
-const PLAYABLE_LANGUAGES = ["en", "ja"];
+/**
+ * Metadata label only (catalog.architecture.playableLanguages) — driven by
+ * courseStatus in shared/config/language_options.json instead of a literal
+ * copy, so it can't silently drift from the config when a language's status
+ * changes. This does NOT drive which languages get real lesson content built
+ * (see dailyLifePacks below) — that still requires an explicit content
+ * source per language and must not be inferred/auto-generated.
+ */
+async function loadPlayableLanguageCodes() {
+  const raw = await readFile(
+    path.join(ROOT, "shared", "config", "language_options.json"),
+    "utf8",
+  );
+  const options = JSON.parse(raw);
+  return options
+    .filter(
+      (item) => item.isSupportedAsLearning && item.courseStatus === "available",
+    )
+    .map((item) => item.code);
+}
 
 async function loadLearningCatalogCodes() {
   const raw = await readFile(
@@ -3972,6 +3991,7 @@ function jaKatakanaFoundationUnitV2() {
 async function main() {
   assertDailyLifeBlueprintShape();
   const LEARNING_CATALOG = await loadLearningCatalogCodes();
+  const PLAYABLE_LANGUAGES = await loadPlayableLanguageCodes();
   const dailyLifePacks = [
     ...buildDailyLifeCourses("en", { makeCourse, makeLesson }),
     ...buildDailyLifeCourses("ja", { makeCourse, makeLesson }),

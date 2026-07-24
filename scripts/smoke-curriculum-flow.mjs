@@ -10,6 +10,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  NATIVE_CODES as ALL_NATIVE_CODES,
   looksVietnamese,
   validateByNativeMap,
   validateTranslationsMap,
@@ -43,7 +44,6 @@ const EXPECTED_KATAKANA_ROWS = [
   "アイウエオ", "カキクケコ", "サシスセソ", "タチツテト", "ナニヌネノ",
   "ハヒフヘホ", "マミムメモ", "ヤユヨ", "ラリルレロ", "ワヲン",
 ];
-const ALL_NATIVE_CODES = ["vi", "en", "ja", "ko", "zh"];
 const MEANING_CHOICE_TYPES = new Set(["chooseMeaning", "listenAndChoose", "multipleChoiceMeaning"]);
 const SUPPORTED_TYPES = new Set([
   "characterCard",

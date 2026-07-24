@@ -5,6 +5,7 @@ import { JA_UNIT1_LESSON2 } from './ja-unit1-lesson2.mjs';
 import { JA_UNIT1_LESSON3 } from './ja-unit1-lesson3.mjs';
 import { prepareJapaneseRomanization, toReadableRomaji } from '../../../lib/japanese-pronunciation.mjs';
 import { resolveLanguageDisplayName } from '../../../lib/language-names.mjs';
+import { NATIVE_CODES as CODES } from '../../../lib/native-localization.mjs';
 
 // Tokenizer-based Japanese romanization (JapanesePronunciationProfile,
 // scripts/lib/japanese-pronunciation.mjs) needs an async morphological
@@ -53,7 +54,6 @@ const FIVE_CARDS_REGISTRY = {
   },
 };
 
-const CODES = ['vi', 'en', 'ja', 'ko', 'zh'];
 const AUDIO = { en: 'en-US', ja: 'ja-JP' };
 const localized = (en, vi, ja) => N(en, vi, ja);
 const target = (line, language) => line[language];

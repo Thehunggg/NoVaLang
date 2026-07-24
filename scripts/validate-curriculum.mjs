@@ -8,6 +8,7 @@ import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  NATIVE_CODES,
   looksVietnamese,
   validateByNativeMap,
   validateTranslationsMap,
@@ -18,7 +19,6 @@ import { runSoftLinguisticChecks } from "../tools/lib/soft-linguistic-checks.mjs
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const NATIVE_CODES = ["vi", "en", "ja", "ko", "zh"];
 const FREE_TYPES = new Set([
   "characterCard",
   "chooseMeaning",

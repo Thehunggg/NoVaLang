@@ -4,8 +4,7 @@
  */
 import { resolveApprovedFiveCardsLesson } from '../content/daily-life/module-1/helpers.mjs';
 import { resolveLanguageDisplayName } from './language-names.mjs';
-
-const NATIVE_CODES = ["vi", "en", "ja", "ko", "zh"];
+import { NATIVE_CODES } from './native-localization.mjs';
 
 function t(map) {
   for (const code of NATIVE_CODES) {
