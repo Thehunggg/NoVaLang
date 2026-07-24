@@ -840,11 +840,11 @@
     "zh": "核心句型"
   },
   "lessonMenuExerciseDescription": {
-    "en": "Practice will be added next",
-    "vi": "Bài tập sẽ được bổ sung sau",
-    "ja": "練習は次に追加されます",
-    "ko": "연습은 다음에 추가됩니다",
-    "zh": "练习将在下一步添加"
+    "en": "Practice what you learned",
+    "vi": "Luyện tập nội dung đã học",
+    "ja": "学んだ内容を練習",
+    "ko": "배운 내용 연습하기",
+    "zh": "练习所学内容"
   },
   "exerciseYourAnswer": {"en": "Your answer", "vi": "Câu trả lời của bạn", "ja": "あなたの答え"},
   "exerciseOptions": {"en": "Options", "vi": "Các lựa chọn", "ja": "選択肢"},

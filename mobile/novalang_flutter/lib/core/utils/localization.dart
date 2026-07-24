@@ -652,8 +652,8 @@ class L10n {
       'vi': 'Các mẫu câu chính',
     },
     'lessonMenuExerciseDescription': {
-      'en': 'Practice will be added next',
-      'vi': 'Bài tập sẽ được bổ sung sau',
+      'en': 'Practice what you learned',
+      'vi': 'Luyện tập nội dung đã học',
     },
     'lessonsCompletedSingular': {
       'en': '{n} lesson completed',
