@@ -112,7 +112,7 @@ class _LearningLanguageTile extends StatelessWidget {
     final comingSoon = !language.isCourseAvailable;
 
     return LearningLanguageElevatedCard(
-      onTap: onTap,
+      onTap: comingSoon ? null : onTap,
       muted: comingSoon,
       // Extra right/top inset keeps the Coming Soon badge clear of the card rim.
       padding: const EdgeInsets.fromLTRB(16, 16, 14, 16),

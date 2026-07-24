@@ -77,12 +77,12 @@ export function HomePage() {
         <Badge tone="cyan">{t("currentLevel")} {currentLevelName}</Badge>
         {offline && <Badge tone="amber"><CloudOff size={12} /> {t("offlinePack")}</Badge>}
         {!courseReady && <Badge tone="pink">{t("comingSoon")}</Badge>}
-        {allLearningLanguages.map((item) => (
-          <button key={item.code} onClick={() => selectLanguage(item.code)} className={`rounded-lg border px-3 py-2 text-sm font-black ${item.code === progress.selectedLanguage ? "border-cyan-300/40 bg-cyan-300/10" : "border-white/[.07] bg-white/[.03] text-slate-500"}`}>
+        {allLearningLanguages.map((item) => { const available = isCourseAvailable(item.code); return (
+          <button key={item.code} disabled={!available} onClick={() => available && selectLanguage(item.code)} className={`rounded-lg border px-3 py-2 text-sm font-black ${item.code === progress.selectedLanguage ? "border-cyan-300/40 bg-cyan-300/10" : "border-white/[.07] bg-white/[.03] text-slate-500"} ${!available ? "cursor-not-allowed opacity-45" : ""}`}>
             {item.flag} {label(item.code)}
-            {!isCourseAvailable(item.code) ? ` · ${t("comingSoon")}` : ""}
+            {!available ? ` · ${t("comingSoon")}` : ""}
           </button>
-        ))}
+        ); })}
       </div>
 
       {!courseReady && (
