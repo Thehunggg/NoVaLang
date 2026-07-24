@@ -614,6 +614,20 @@ class _FiveCardExerciseSessionPageState
       trialUnlockExerciseFormat;
   bool get canContinueToPlus => hasPlus || hasTrialUnlock;
 
+  /// Index of the first Plus-gated exercise, read from each exercise's own
+  /// `plan` field (the single source of truth shared with the Web client),
+  /// instead of a hard-coded position. `null` when the lesson has no Plus
+  /// exercise (whole lesson is free — no paywall). The free/plus split is a
+  /// clean partition in the dataset (all `free` then all `plus`), so the first
+  /// `plus` index is the boundary between the last free and first plus
+  /// exercise.
+  int? get _firstPlusIndex {
+    for (var i = 0; i < widget.practice.exercises.length; i++) {
+      if (widget.practice.exercises[i].plan == 'plus') return i;
+    }
+    return null;
+  }
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.inactive ||
@@ -742,7 +756,13 @@ class _FiveCardExerciseSessionPageState
             subResults.where((item) => item).length + (checked == true ? 1 : 0);
         results[exercise.id] = score == exercise.subQuestions.length;
       }
-      if (index == 9 && !canContinueToPlus) {
+      // Paywall boundary read from the exercise `plan` field (unified with the
+      // Web client) instead of a hard-coded index. Fire the free-checkpoint
+      // when advancing off the last free exercise into the first Plus exercise.
+      final firstPlusIndex = _firstPlusIndex;
+      if (firstPlusIndex != null &&
+          index == firstPlusIndex - 1 &&
+          !canContinueToPlus) {
         setState(() => checkpoint = true);
         return;
       }
@@ -957,7 +977,7 @@ class _FiveCardExerciseSessionPageState
         plus: canContinueToPlus,
         onPlus: () => setState(() {
           checkpoint = false;
-          index = 10;
+          index = _firstPlusIndex ?? index + 1;
         }),
       );
     }
