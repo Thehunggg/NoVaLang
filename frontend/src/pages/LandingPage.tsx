@@ -55,15 +55,15 @@ export function LandingPage() {
       <section className="relative px-5 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: Layers3, title: t("featuresPath") },
-            { icon: Heart, title: t("featuresHeart") },
-            { icon: Flame, title: t("featuresDaily") },
-            { icon: BrainCircuit, title: t("featuresReview") }
-          ].map(({ icon: Icon, title }) => (
+            { icon: Layers3, title: t("featuresPath"), desc: t("featuresPathDesc") },
+            { icon: Heart, title: t("featuresHeart"), desc: t("featuresHeartDesc") },
+            { icon: Flame, title: t("featuresDaily"), desc: t("featuresDailyDesc") },
+            { icon: BrainCircuit, title: t("featuresReview"), desc: t("featuresReviewDesc") }
+          ].map(({ icon: Icon, title, desc }) => (
             <Card key={title} className="p-5">
               <Icon className="text-cyan-300" />
               <h3 className="mt-4 font-display text-lg font-black">{title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-500">{t("tagline")}</p>
+              <p className="mt-2 text-sm leading-6 text-slate-500">{desc}</p>
             </Card>
           ))}
         </div>

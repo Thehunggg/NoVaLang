@@ -19,7 +19,9 @@ const STRICT_MOBILE = false;
 const WEB_DIR = path.join(ROOT, "frontend", "src");
 const MOBILE_DIR = path.join(ROOT, "mobile", "novalang_flutter", "lib");
 
-const SKIP_PATH = /(^|\/)(data|generated|test|assets)(\/|$)|\.g\.dart$|content\.mjs$/;
+// i18n/ is the legitimate home of UI strings (translations source) — never a
+// "hard-coded" violation, so it is skipped even though it is full of literals.
+const SKIP_PATH = /(^|\/)(data|generated|test|assets|i18n)(\/|$)|\.g\.dart$|content\.mjs$/;
 
 const hasLetter = (s) => /[A-Za-zÀ-ỹ぀-ヿ㐀-鿿가-힯]/.test(s);
 const SAFE = [
@@ -62,12 +64,17 @@ async function walk(dir, exts) {
   return out;
 }
 
-function scanWebLine(line) {
+function scanWebLine(line, file) {
   const hits = [];
   if (/^\s*(import|\/\/|\*)/.test(line)) return hits;
   for (const m of line.matchAll(/\b(placeholder|aria-label|alt|title)\s*=\s*"([^"]+)"/g)) {
     if (!isSafe(m[2])) hits.push(`${m[1]}="${m[2]}"`);
   }
+  // The `>text<` JSX-text heuristic only applies to .tsx. Running it on plain
+  // .ts produces false positives from TypeScript generics/expressions
+  // (e.g. `<T>(): Promise<...>` → "T): Promise"), so scan .ts for attribute
+  // literals only.
+  if (file && !file.endsWith(".tsx")) return hits;
   for (const m of line.matchAll(/>\s*([^<>{}]*?[A-Za-zÀ-ỹ鿿][^<>{}]*?)\s*</g)) {
     const text = m[1].trim();
     if (!isSafe(text) && looksLikeUiText(text)) {
@@ -97,7 +104,7 @@ async function scan(dir, exts, lineScanner) {
     const rel = path.relative(ROOT, file);
     const lines = (await readFile(file, "utf8")).split("\n");
     lines.forEach((line, i) => {
-      for (const hit of lineScanner(line)) findings.push({ rel, line: i + 1, hit });
+      for (const hit of lineScanner(line, file)) findings.push({ rel, line: i + 1, hit });
     });
   }
   return findings;
@@ -124,7 +131,7 @@ async function main() {
     `check-hardcoded-ui — web=${STRICT_WEB ? "STRICT" : "WARN"}, mobile=${STRICT_MOBILE ? "STRICT" : "WARN"}`,
   );
 
-  const web = await scan(WEB_DIR, [".tsx"], scanWebLine);
+  const web = await scan(WEB_DIR, [".tsx", ".ts"], scanWebLine);
   const mobile = await scan(MOBILE_DIR, [".dart"], scanDartLine);
 
   const webCount = report("WEB (React, frontend/src)", web, STRICT_WEB);

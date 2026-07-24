@@ -24,8 +24,11 @@ export const nicheLegacyIdMap =
 
 const pickLabel = (value: string | Record<string, string> | undefined, language: SupportedUILanguage, fallback: string) => {
   if (!value) return fallback;
-  if (typeof value === "string") return language === "vi" ? value : language === "en" ? fallback : `⟦missing:${language}⟧`;
-  return value[language] ?? `⟦missing:${language}⟧`;
+  // Legacy shape: a bare string is a Vietnamese-only label. Non-vi falls back to
+  // the provided (English source) label — never a visible ⟦missing⟧ sentinel.
+  if (typeof value === "string") return language === "vi" ? value : fallback;
+  // Localized map: requested locale → English → source fallback (no sentinel).
+  return value[language] ?? value.en ?? fallback;
 };
 
 export const nicheOptions = rawNiches as NicheOption[];
