@@ -1,4 +1,5 @@
 ﻿import type { SupportedUILanguage } from "../types/index";
+import { uiSupportedLanguageCodes } from "../../../shared/nativeLanguages";
 
 const en = {
   appName: "NovaLang", tagline: "Master languages through AI-powered quests.", signIn: "Sign in", signOut: "Sign out", startLearning: "Start learning", exploreCourses: "Explore courses",
@@ -218,7 +219,13 @@ const es: Record<TranslationKey, string> = {
 };
 
 export const translations: Record<SupportedUILanguage, Record<TranslationKey, string>> = { en, vi, ja, es };
-export const supportedUILanguages: SupportedUILanguage[] = ["en", "vi", "ja", "es"];
+// Driven by shared/config/native_language_options.json (isAvailableForUi) — not
+// hard-coded. `es` has a full translation set above but stays excluded until the
+// config flag is turned on, keeping web and mobile in sync on "officially offered"
+// UI locales without discarding the already-written Spanish strings.
+export const supportedUILanguages: SupportedUILanguage[] = uiSupportedLanguageCodes.filter(
+  (code): code is SupportedUILanguage => code in translations,
+);
 export const isNativeLanguageUISupported = (code: string): code is SupportedUILanguage => supportedUILanguages.includes(code as SupportedUILanguage);
 export const isUISupportedForNativeLanguage = isNativeLanguageUISupported;
 export const getEffectiveUILanguage = (nativeLanguageCode: string): SupportedUILanguage => isNativeLanguageUISupported(nativeLanguageCode) ? nativeLanguageCode : "en";
