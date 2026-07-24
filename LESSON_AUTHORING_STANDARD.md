@@ -270,7 +270,7 @@ ngôn ngữ đó** (chi tiết cụ thể — định dạng chú âm, ví dụ 
 → **Người build UI:** repo có sẵn **HAI kiểu** render, dùng đúng chỗ (không có
 bước tự động ghép `displayText` + `reading`): **(1)** trường `reading` hiển thị
 như **dòng trợ đọc riêng / toggle** (`five_card_practice.dart` `hasReading` =
-`reading` ≠ `targetText`; `lesson_five_card_pages.dart:~599/973/1089`); **(2)**
+`reading` ≠ `targetText`; `lesson_five_card_pages.dart:~606/980/1096`); **(2)**
 hỗ trợ đọc **nhúng sẵn trong `displayText`** (dữ liệu pre-authored, hiển thị
 nguyên văn). Validator ép: hệ chữ cần chú âm ⇒ trường `reading` không rỗng (§D9).
 
