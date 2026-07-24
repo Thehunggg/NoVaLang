@@ -1,5 +1,47 @@
 # NovaLang Active Task — Task hiện tại
 
+## Cuối phiên 2026-07-24
+
+### ĐÃ XONG
+- **Vá hệ luật G1–G9** (độ tin cậy ngôn ngữ + Tầng X) vào
+  `LESSON_AUTHORING_STANDARD.md`.
+- **Dựng tầng nguồn ja trong `local-sources/`** — Irodori / hanabira / JMdict /
+  kanji-data / open-anki đọc được; sách scan N-level (Nihongo Sou Matome N1–N5,
+  N5 まるごと) không đọc được (toàn ảnh, cần OCR). Danh mục đầy đủ + trạng thái
+  "chữ thật / ảnh scan" trong `scripts/content/sources/ja.md`. `local-sources/`
+  đã gitignore 100%.
+- **Gộp nhánh + ĐƯA MAIN LÊN:** `origin/main` giờ = `62083af` (bản đầy đủ nhất) —
+  fast-forward thuần từ `claude/build-language-jp-o91o6h`, 0 xung đột, không merge
+  commit. **Mốc quay lại nếu cần: `fceae1b`.** **Từ nay branch ngôn ngữ mới TỪ
+  `main`** (không tách từ branch build-language cũ nữa).
+- **Sửa hết bug frontend đã rà:** gom danh sách locale vi/en/ja về nguồn tập
+  trung (`shared/nativeLanguages.ts`); chặn bấm ngôn ngữ `coming_soon` (web ×3 +
+  Flutter); `kanaExplanation` → key i18n (`LessonPage`); `CoursePath` localize
+  cho mọi ngôn ngữ (bỏ nhánh chỉ `vi`); dọn sentinel `⟦missing⟧` + nhánh `es`
+  chết + 4 component web chết + placeholder "sẽ bổ sung" trên thẻ Exercise;
+  **thống nhất Free/Plus** — web + Flutter cùng đọc field `plan` (Q1–9 free,
+  Q10–14 khóa), Flutter bỏ hard-code `index==9`.
+
+### CẦN KIỂM TAY (local, có Flutter SDK — cloud không test được)
+- **Paywall:** Q1–Q9 free, Q10 khóa (commit `62083af`) — chạy `flutter test` +
+  kiểm tay để chốt runtime.
+- **Màn đăng nhập / onboarding redesign** chạy đúng.
+
+### CÒN TREO — cần LOCAL (có nguồn thật)
+- Trích **subset JMdict** (112MB → JSON nhỏ dùng được).
+- Tạo **danh sách cụm cố định ja** (quét bài + đối chiếu nguồn, chống nhiễm độc,
+  **OWNER DUYỆT** trước khi dùng).
+- **Rà + sửa L2/L3** (câu `私もよろしくお願いします` + đối chiếu nguồn thật).
+- **Build bài tiếp theo** theo G1–G9 + nguồn.
+
+### DỌN DẸP (tùy chọn)
+- Xóa 2 nhánh đã gộp trọn vào main: `fix/curriculum-quality-gates`,
+  `rescue/login-onboarding-redesign`.
+
+### TỒN ĐỌNG owner tự làm
+- Xóa 9 file thừa trong `local-sources/`.
+- Xác minh điều khoản bản quyền Irodori + loại giấy phép CC của hanabira.
+
 ## NỢ WEB — chuyển cho Codex (env build được `frontend/node_modules`) — 2026-07-20
 
 Ghi lại để không quên (ngoài reminder trong `scripts/check-hardcoded-ui.mjs`).
