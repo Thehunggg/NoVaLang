@@ -117,6 +117,46 @@ const EXPECTED_KATAKANA_ROWS = [
 export const errors = [];
 const fail = (msg) => errors.push(msg);
 
+/**
+ * §B2c — 5 trường chi tiết từ vựng, khuôn lấy từ Golden L1 (không tự nghĩ khuôn
+ * mới): dùng lúc nào · dùng với ai · tránh khi nào · mức lịch sự · cách nói
+ * thân mật tương đương.
+ */
+export const VOCABULARY_DETAIL_FIELDS = [
+  "timingAndContext",
+  "appropriateFor",
+  "avoid",
+  "register",
+  "casual",
+];
+
+/** Gom CẢNH BÁO MỀM §B2c — không bao giờ đẩy vào `errors`, không chặn build. */
+const vocabularyDetailWarnings = [];
+
+/**
+ * CẢNH BÁO MỀM: thẻ `vocabularyDetails` **thiếu hẳn key** của một trường chi
+ * tiết = CHƯA ĐIỀN (§B2c) → cảnh báo.
+ *
+ * Mảng rỗng `[]` / chuỗi rỗng `''` = ĐÃ KIỂM, cụm này thật sự không có thông
+ * tin ở trường đó → im lặng. Phân biệt bằng `hasOwnProperty`, KHÔNG bằng độ
+ * dài — đó chính là cơ chế đánh dấu mà §B2c đề xuất, và nó hoạt động được vì
+ * dữ liệu hiện tại thiếu key hẳn chứ không phải rỗng.
+ *
+ * Mức mềm là cố ý: L2/L3 đang trống toàn bộ, fail cứng sẽ chặn mọi thứ.
+ */
+function collectVocabularyDetailWarnings(lesson) {
+  for (const card of lesson.fiveCardContent?.vocabularyDetails ?? []) {
+    const missing = VOCABULARY_DETAIL_FIELDS.filter(
+      (field) => !Object.prototype.hasOwnProperty.call(card, field),
+    );
+    if (missing.length) {
+      vocabularyDetailWarnings.push(
+        `${lesson.id} · ${card.id}: chưa điền ${missing.join(", ")}`,
+      );
+    }
+  }
+}
+
 async function loadJson(rel) {
   const raw = await readFile(path.join(ROOT, rel), "utf8");
   return JSON.parse(raw);
@@ -1666,6 +1706,7 @@ async function main() {
     if (lesson.languageCode === "ja") validateNoRawKanaInRomanization(lesson);
     if (lesson.lessonFormat === "five_cards") {
       validateFiveCardsStructure(lesson);
+      collectVocabularyDetailWarnings(lesson);
       if (isApprovedJaUnitOneLesson(lesson)) validateApprovedGoldenLessonContent(lesson);
       continue;
     }
@@ -2404,6 +2445,16 @@ async function main() {
     }
   } catch (error) {
     console.warn(`[rules/] lớp cảnh báo mềm gặp lỗi nội bộ, bỏ qua (không chặn build): ${error.message}`);
+  }
+
+  // --- Lớp CẢNH BÁO MỀM §B2c: trường chi tiết từ vựng chưa điền (2026-07-25) ---
+  // KHÔNG chặn build (L2/L3 đang trống toàn bộ; fail cứng sẽ chặn mọi thứ).
+  if (vocabularyDetailWarnings.length) {
+    console.warn(
+      `\n[§B2c] ${vocabularyDetailWarnings.length} cảnh báo mềm — trường chi tiết từ vựng CHƯA ĐIỀN ` +
+        `(không chặn build; '[]' / '' = đã kiểm & thật sự không có, sẽ không cảnh báo):`,
+    );
+    for (const w of vocabularyDetailWarnings) console.warn(`  ! ${w}`);
   }
 
   if (errors.length) {

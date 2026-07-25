@@ -42,6 +42,34 @@
 - Xóa 9 file thừa trong `local-sources/`.
 - Xác minh điều khoản bản quyền Irodori + loại giấy phép CC của hanabira.
 
+## NỢ KỸ THUẬT — `MAX_TRAILING_BLANK_RATIO` đếm KHÔNG SÁT ý định §E4 — 2026-07-25
+
+Phát hiện khi soạn nội dung ĐỢT 2 (câu 9–18, `dialogue_multi_blank_choice`) của
+bài tổng hợp Unit 1. **Chưa sửa code** — ghi lại để làm thành task riêng.
+
+`endsWithBlank()` (`scripts/lib/unit-comprehensive-test.mjs:167-175`) gộp
+`segments` của **mọi lượt nói** rồi xét xem **đoạn cuối cùng** có phải ô trống
+không:
+
+```js
+const last = segments[segments.length - 1];
+return Boolean(last && last.blankId);
+```
+
+Vấn đề: câu tiếng Nhật luôn kết bằng 「。」, mà 「。」 là một đoạn **văn bản**
+(`seg('。')`), không phải `blankSeg`. Nên một câu khoét đúng ngay trước dấu
+chấm cuối — tức đúng cái §E4 muốn chặn — vẫn cho `endsWithBlank === false`.
+Thực đo trên 10 câu ĐỢT 2: luật máy đếm **0/10**, trong khi đếm theo ý định
+§E4 (ô nằm cuối lượt nói cuối, phía sau chỉ còn dấu câu) là **2/10**.
+
+Hệ quả: `MAX_TRAILING_BLANK_RATIO` hiện gần như **không bao giờ kích hoạt** cho
+`dialogue_multi_blank_choice` và `sentence_multi_blank_choice` viết theo lối tự
+nhiên → luật §E4 đang được giữ **bằng tay trong bản đọc**, không phải bằng máy.
+
+Hướng sửa (chưa làm): bỏ qua các đoạn văn bản chỉ chứa dấu câu kết
+(`。` `.` `!` `！` `？` `?`, có thể kèm khoảng trắng) khi tìm đoạn cuối, rồi mới
+xét `blankId`. Cần thêm test cho cả hai kind. Không đụng ngưỡng `0.5`.
+
 ## NỢ WEB — chuyển cho Codex (env build được `frontend/node_modules`) — 2026-07-20
 
 Ghi lại để không quên (ngoài reminder trong `scripts/check-hardcoded-ui.mjs`).

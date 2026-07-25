@@ -142,6 +142,47 @@ THÍCH thì đọc, **KHÔNG bắt buộc nhớ**.
 - Render UI: xem **§C-Ref** (Cursor làm; prompt DATA chỉ ghi yêu cầu, không sửa
   frontend).
 
+**B2c. Card 2 — 5 TRƯỜNG CHI TIẾT từ vựng (BA MỨC lịch sự).** (Owner
+2026-07-25) Golden L1 điền 5 trường chi tiết cho mỗi thẻ; **từ L2 trở đi các
+trường này bị bỏ trống**, UI hiện "Không có nội dung". UI đúng thiết kế — lỗi ở
+DỮ LIỆU. Đây là luật chặn việc đó lặp lại.
+
+**5 trường (khuôn lấy từ Golden L1, KHÔNG tự nghĩ khuôn mới):**
+
+| Trường | Kiểu | Nội dung |
+|---|---|---|
+| `timingAndContext` | array | Dùng vào lúc nào / hoàn cảnh nào |
+| `appropriateFor` | array | Dùng được với ai (đối tượng) |
+| `avoid` | array | KHÔNG dùng khi nào |
+| `register` | string | Mức lịch sự của CHÍNH cụm này |
+| `casual` | array | Cách nói THÂN MẬT tương đương + dùng với ai |
+
+Mỗi trường native phải đi qua `localizeSupport` → sinh `*ByNative` đủ locale.
+**Không hard-code một ngôn ngữ** (§A, TRANSLATION_STANDARD).
+
+**BA MỨC (Owner chốt 2026-07-25).** Từ vựng có ba mức: **trang trọng · lịch sự ·
+thân mật**. **Không bắt buộc từ nào cũng đủ ba mức**, NHƯNG **mức nào CÓ thì
+BẮT BUỘC ghi vào — cấm bỏ trống**. Ánh xạ vào khuôn hiện tại:
+
+- mức của chính cụm → `register`
+- mức **thân mật** tương đương → `casual`
+- mức **trang trọng** tương đương → **CHƯA CÓ TRƯỜNG.** Golden L1 không có
+  `formal`, nên hiện không chỗ nào ghi được. **ĐỀ XUẤT (chờ owner chốt):** thêm
+  `formal` (array, cùng khuôn `casual`). Trước khi owner chốt, mức trang trọng
+  ghi tạm trong `otherExpressions` hoặc `notes` và nêu rõ ở bản đọc.
+
+**PHÂN BIỆT "ĐÃ KIỂM, KHÔNG CÓ" vs "CHƯA ĐIỀN" (ĐỀ XUẤT — chờ owner chốt).**
+Nếu cả hai đều để trống thì lần sau không ai biết cái nào đã làm. Hiện trạng đã
+kiểm: 5 trường này ở L2/L3 **vắng mặt hẳn** (`hasOwnProperty === false`), không
+phải mảng rỗng — nên quy ước dưới đây **không cần migrate dữ liệu cũ**:
+
+- **thiếu key hẳn** = **CHƯA ĐIỀN** → validator cảnh báo
+- **`[]` (mảng rỗng) / `''` (chuỗi rỗng)** = **ĐÃ KIỂM, cụm này thật sự không có
+  thông tin ở trường đó** → validator im lặng
+
+Người viết phải **mở nguồn thật đối chiếu (G8)** trước khi đánh dấu `[]`; đánh
+`[]` cho nhanh mà chưa tra là vi phạm G4.
+
 **B3. Card 3 — Dialogue.** (Owner §6; ràng buộc §D3)
 - **Đúng 3 nhóm, mỗi nhóm 4–6 dòng** (code ép). Tự nhiên, mục đích giao tiếp
   rõ, lượt sau phản ứng hợp lý với lượt trước, phù hợp tình huống. Trọng tâm là
@@ -231,6 +272,65 @@ cấp).** (Owner §18)
 
 **B15. Dịch nghĩa review.** (Owner §20, A7) Native language giả định để owner
 kiểm; chất lượng cao, tự nhiên, đúng sắc thái — không word-by-word.
+
+**B16. DANH SÁCH KIỂM TRƯỚC KHI NỘP BÀI.** (Owner 2026-07-25) Rút từ **5 vòng
+sửa thật** của bài tổng hợp Unit 1 (đợt 1 sửa 3 lần, đợt 2 sửa 1 lần). Mỗi mục
+dưới đây là một lỗi **đã thực sự lọt qua** rồi mới bị bắt. Chạy hết trước khi
+nộp — kể cả khi thấy chắc.
+
+**Cân bằng hình thức**
+- **Đáp án đúng rải đều A/B/C/D.** UI **KHÔNG xáo trộn phương án** lúc chạy
+  (render đúng thứ tự dữ liệu) → **dữ liệu phải tự rải**. Đã dính: cả 8 câu đáp
+  án đều là A.
+- **Mỗi cụm làm phương án sai tối đa 2 câu/đợt.** Đếm theo **cụm GÂY SAI** (cụm
+  ở ô khiến phương án đó sai), không đếm cụm đi kèm vô can. Quá 2 → sinh mẫu
+  "thấy X thì loại". Đã dính: 1 cụm dùng ở 5/8 câu.
+- **Mỗi ô trống phải được ÍT NHẤT một phương án sai kiểm.** Nếu cả 4 phương án
+  cùng giá trị ở một ô thì ô đó không kiểm gì.
+
+**Phương án sai phải SAI THẬT**
+- Trước khi chốt, tự hỏi: **"câu này có phải là câu hợp lệ trong ĐÚNG bối cảnh
+  đó không?"** Nếu có → không dùng làm phương án sai.
+- Bẫy đã dính, **cấm dùng lại làm lý do sai**:
+  - "lược trợ từ trước `お願いします`" — lược trợ từ là **chuẩn đời thường**
+    (`コーヒーお願いします`), không sai ngữ pháp;
+  - "hỏi tên đối phương sau khi tự giới thiệu" — **tự nhiên**, không sai;
+  - bất kỳ luật nào **chính bài học đã dặn đừng tuyệt đối hoá**.
+- **Ưu tiên lỗi TỰ NÓ SAI** hơn lỗi chỉ sai vì bối cảnh: bài học **cấm nguyên
+  văn** > sai trợ từ cơ học > ngược trình tự hành vi > sai thời điểm > lạc mạch.
+- Lỗi chỉ sai vì bối cảnh **được phép**, nhưng bối cảnh đó phải nằm trong trường
+  `context` (UI có hiện) — không được nằm trong đầu người viết.
+
+**Nhất quán nội bộ**
+- **Không để câu tự mâu thuẫn.** Soi MỌI cụm trong cùng một câu xem có hợp nhau
+  về **thời gian / quan hệ / nơi chốn** không. Đã dính: lời chúc "lâu mới gặp
+  lại" đặt cạnh lời hẹn "tuần sau".
+- **Vai nhân vật NHẤT QUÁN TOÀN BÀI.** Một tên không được lúc là thầy, lúc là
+  đồng nghiệp, lúc là hàng xóm. Chốt bảng vai **trước khi viết câu đầu tiên**.
+  Đã dính: 1 tên mang 5 vai khác nhau trong cùng một bài.
+
+**CHUẨN XÃ HỘI + VAI VẾ — tầng KHÔNG luật máy nào bắt**
+> Bốn ca dưới đây đều **hợp dữ liệu bài, tra nguồn ra, validator im lặng** —
+> nhưng sai chuẩn xã hội. Đây là tầng phải kiểm **bằng người**.
+- Lời chào/chia tay có đúng **quan hệ + nơi chốn** không (đã dính: lời chào buổi
+  tối dùng với đồng nghiệp **trong công sở**, nơi chuẩn là lời chào riêng của
+  môi trường làm việc).
+- **Cách xưng hô có đúng vai vế** không (đã dính: gọi thầy bằng hậu tố dành cho
+  người ngang hàng).
+- **Độ trang trọng có khớp quan hệ** không (đã dính: cụm trang trọng dành cho
+  người trên đặt vào miệng hai người bạn ngang hàng).
+- Bối cảnh có đòi **lớp kính ngữ nằm NGOÀI vốn đã dạy** không (đã dính: nhân
+  viên khách sạn nói với khách). Nếu có → **đổi bối cảnh**, đừng viết bừa.
+- **Nếu cụm chuẩn xã hội không có trong vốn đã dạy → ĐỔI BỐI CẢNH**, không được
+  dùng cụm sai chuẩn cho tiện.
+
+**Bảng tự kiểm**
+- Tổng phải **khớp**: số phương án sai = số câu × 3. Kiểm **cả chiều dọc** (mỗi
+  câu đúng 3 mục). Đã dính: bảng ghi 6 nhưng liệt kê 7, và một mục bỏ lửng
+  `...` chưa điền.
+- **Không tin luật máy khi chưa kiểm chứng.** Đã dính:
+  `MAX_TRAILING_BLANK_RATIO` đếm 0% trong khi thực tế 20% (xem nợ kỹ thuật ở
+  `docs/ai/ACTIVE_TASK.md`). Đếm theo **ý định của luật**, và báo cả hai số.
 
 ---
 
