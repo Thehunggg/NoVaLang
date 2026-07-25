@@ -80360,16 +80360,16 @@
           "reading": "おげんきで",
           "romanization": "o-genki de",
           "speechText": "おげんきで",
-          "meaningVi": "Giữ sức khỏe nhé (khi lâu mới gặp lại).",
+          "meaningVi": "Giữ sức khỏe nhé (khi chia tay từ một tuần trở lên).",
           "translationByNative": {
-            "vi": "Giữ sức khỏe nhé (khi lâu mới gặp lại).",
-            "en": "Take care (until we meet again).",
-            "ja": "お元気で。"
+            "vi": "Giữ sức khỏe nhé (khi chia tay từ một tuần trở lên).",
+            "en": "Take care (when parting for a week or more).",
+            "ja": "お元気で（一週間以上会わないときに使います）。"
           },
           "translations": {
-            "vi": "Giữ sức khỏe nhé (khi lâu mới gặp lại).",
-            "en": "Take care (until we meet again).",
-            "ja": "お元気で。"
+            "vi": "Giữ sức khỏe nhé (khi chia tay từ một tuần trở lên).",
+            "en": "Take care (when parting for a week or more).",
+            "ja": "お元気で（一週間以上会わないときに使います）。"
           },
           "audioLocale": "ja-JP"
         },
@@ -81202,11 +81202,11 @@
           },
           {
             "id": "ogenki-de",
-            "overview": "Giữ sức khỏe nhé (khi lâu mới gặp lại).",
+            "overview": "Giữ sức khỏe nhé (khi chia tay từ một tuần trở lên).",
             "overviewByNative": {
-              "vi": "Giữ sức khỏe nhé (khi lâu mới gặp lại).",
-              "en": "Take care (until we meet again).",
-              "ja": "お元気で。"
+              "vi": "Giữ sức khỏe nhé (khi chia tay từ một tuần trở lên).",
+              "en": "Take care (when parting for a week or more).",
+              "ja": "お元気で（一週間以上会わないときに使います）。"
             },
             "examples": [
               {

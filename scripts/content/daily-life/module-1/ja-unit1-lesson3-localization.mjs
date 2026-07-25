@@ -48,7 +48,7 @@ add('Vậy à. / Ra vậy.', 'I see. / Is that so.', 'そうですか。');
 add('Tôi cũng vậy.', 'Me too. / I also.', '私も。');
 add('Tôi xin phép. / Xin lỗi (khi rời đi).', 'Excuse me. / I’ll be going.', '失礼します。（その場を離れるとき。）');
 add('Tôi xin phép về trước.', 'Excuse me for leaving before you.', 'お先に失礼します。');
-add('Giữ sức khỏe nhé (khi lâu mới gặp lại).', 'Take care (until we meet again).', 'お元気で。');
+add('Giữ sức khỏe nhé (khi chia tay từ một tuần trở lên).', 'Take care (when parting for a week or more).', 'お元気で（一週間以上会わないときに使います）。');
 add('Thôi, hẹn gặp lại (thân mật).', 'Well, see you (casual).', 'じゃあ、また。');
 
 // ── Vocabulary "tham khảo thêm" (reference — optional, §B2b) ─────────────
