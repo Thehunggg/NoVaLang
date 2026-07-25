@@ -80503,37 +80503,41 @@
           "id": "ja-daily_life-m01-u1-l3-leave-polite-1"
         },
         {
-          "targetText": "はい、また明日。",
-          "displayText": "はい、また明日。",
-          "reading": "はい、またあした。",
-          "speechText": "はい、またあした",
+          "targetText": "はい、また来週。",
+          "displayText": "はい、また来週。",
+          "reading": "はい、またらいしゅう。",
+          "speechText": "はい、またらいしゅう",
           "translationByNative": {
-            "vi": "Vâng, hẹn mai gặp."
+            "vi": "Vâng, hẹn tuần sau.",
+            "en": "Sure, see you next week.",
+            "ja": "はい、また来週。"
           },
           "translations": {
-            "vi": "Vâng, hẹn mai gặp."
+            "vi": "Vâng, hẹn tuần sau.",
+            "en": "Sure, see you next week.",
+            "ja": "はい、また来週。"
           },
-          "meaningVi": "Vâng, hẹn mai gặp.",
+          "meaningVi": "Vâng, hẹn tuần sau.",
           "audioLocale": "ja-JP",
           "speakerId": "sato",
           "id": "ja-daily_life-m01-u1-l3-leave-polite-2"
         },
         {
-          "targetText": "また明日。お元気で。",
-          "displayText": "また明日。お元気で。",
-          "reading": "またあした。おげんきで。",
-          "speechText": "またあした。おげんきで",
+          "targetText": "また来週。お元気で。",
+          "displayText": "また来週。お元気で。",
+          "reading": "またらいしゅう。おげんきで。",
+          "speechText": "またらいしゅう。おげんきで",
           "translationByNative": {
-            "vi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
-            "en": "See you tomorrow. Take care.",
-            "ja": "また明日。お元気で。"
+            "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+            "en": "See you next week. Take care.",
+            "ja": "また来週。お元気で。"
           },
           "translations": {
-            "vi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
-            "en": "See you tomorrow. Take care.",
-            "ja": "また明日。お元気で。"
+            "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+            "en": "See you next week. Take care.",
+            "ja": "また来週。お元気で。"
           },
-          "meaningVi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
+          "meaningVi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
           "audioLocale": "ja-JP",
           "speakerId": "tanaka",
           "id": "ja-daily_life-m01-u1-l3-leave-polite-3"
@@ -80576,10 +80580,14 @@
           "reading": "またらいしゅう。おげんきで。",
           "speechText": "またらいしゅう。おげんきで",
           "translationByNative": {
-            "vi": "Hẹn tuần sau. Giữ sức khỏe nhé."
+            "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+            "en": "See you next week. Take care.",
+            "ja": "また来週。お元気で。"
           },
           "translations": {
-            "vi": "Hẹn tuần sau. Giữ sức khỏe nhé."
+            "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+            "en": "See you next week. Take care.",
+            "ja": "また来週。お元気で。"
           },
           "meaningVi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
           "audioLocale": "ja-JP",
@@ -80729,9 +80737,9 @@
             "ja": "終わりに、一人が先に失礼します。"
           },
           "explanationByNative": {
-            "vi": "お先に失礼します dùng khi rời đi trước người khác.\nお元気で dùng khi sẽ lâu mới gặp lại.",
-            "en": "お先に失礼します is used when leaving before others.\nお元気で is used when you won’t meet again for a while.",
-            "ja": "「お先に失礼します」は人より先に帰るときに使います。\n「お元気で」は、しばらく会わないときに使います。"
+            "vi": "お先に失礼します dùng khi rời đi trước người khác.\nお元気で dùng khi chia tay từ một tuần trở lên.",
+            "en": "お先に失礼します is used when leaving before others.\nお元気で is used when parting for a week or more.",
+            "ja": "「お先に失礼します」は人より先に帰るときに使います。\n「お元気で」は、一週間以上会わないときに使います。"
           },
           "lines": [
             {
@@ -80751,37 +80759,41 @@
               "id": "ja-daily_life-m01-u1-l3-leave-polite-1"
             },
             {
-              "targetText": "はい、また明日。",
-              "displayText": "はい、また明日。",
-              "reading": "はい、またあした。",
-              "speechText": "はい、またあした",
+              "targetText": "はい、また来週。",
+              "displayText": "はい、また来週。",
+              "reading": "はい、またらいしゅう。",
+              "speechText": "はい、またらいしゅう",
               "translationByNative": {
-                "vi": "Vâng, hẹn mai gặp."
+                "vi": "Vâng, hẹn tuần sau.",
+                "en": "Sure, see you next week.",
+                "ja": "はい、また来週。"
               },
               "translations": {
-                "vi": "Vâng, hẹn mai gặp."
+                "vi": "Vâng, hẹn tuần sau.",
+                "en": "Sure, see you next week.",
+                "ja": "はい、また来週。"
               },
-              "meaningVi": "Vâng, hẹn mai gặp.",
+              "meaningVi": "Vâng, hẹn tuần sau.",
               "audioLocale": "ja-JP",
               "speakerId": "sato",
               "id": "ja-daily_life-m01-u1-l3-leave-polite-2"
             },
             {
-              "targetText": "また明日。お元気で。",
-              "displayText": "また明日。お元気で。",
-              "reading": "またあした。おげんきで。",
-              "speechText": "またあした。おげんきで",
+              "targetText": "また来週。お元気で。",
+              "displayText": "また来週。お元気で。",
+              "reading": "またらいしゅう。おげんきで。",
+              "speechText": "またらいしゅう。おげんきで",
               "translationByNative": {
-                "vi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
-                "en": "See you tomorrow. Take care.",
-                "ja": "また明日。お元気で。"
+                "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                "en": "See you next week. Take care.",
+                "ja": "また来週。お元気で。"
               },
               "translations": {
-                "vi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
-                "en": "See you tomorrow. Take care.",
-                "ja": "また明日。お元気で。"
+                "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                "en": "See you next week. Take care.",
+                "ja": "また来週。お元気で。"
               },
-              "meaningVi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
+              "meaningVi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
               "audioLocale": "ja-JP",
               "speakerId": "tanaka",
               "id": "ja-daily_life-m01-u1-l3-leave-polite-3"
@@ -80844,10 +80856,14 @@
               "reading": "またらいしゅう。おげんきで。",
               "speechText": "またらいしゅう。おげんきで",
               "translationByNative": {
-                "vi": "Hẹn tuần sau. Giữ sức khỏe nhé."
+                "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                "en": "See you next week. Take care.",
+                "ja": "また来週。お元気で。"
               },
               "translations": {
-                "vi": "Hẹn tuần sau. Giữ sức khỏe nhé."
+                "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                "en": "See you next week. Take care.",
+                "ja": "また来週。お元気で。"
               },
               "meaningVi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
               "audioLocale": "ja-JP",
@@ -81478,36 +81494,40 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "はい、また明日。",
-                "displayText": "はい、また明日。",
-                "reading": "はい、またあした。",
-                "speechText": "はい、またあした",
+                "targetText": "はい、また来週。",
+                "displayText": "はい、また来週。",
+                "reading": "はい、またらいしゅう。",
+                "speechText": "はい、またらいしゅう",
                 "translationByNative": {
-                  "vi": "Vâng, hẹn mai gặp."
+                  "vi": "Vâng, hẹn tuần sau.",
+                  "en": "Sure, see you next week.",
+                  "ja": "はい、また来週。"
                 },
                 "translations": {
-                  "vi": "Vâng, hẹn mai gặp."
+                  "vi": "Vâng, hẹn tuần sau.",
+                  "en": "Sure, see you next week.",
+                  "ja": "はい、また来週。"
                 },
-                "meaningVi": "Vâng, hẹn mai gặp.",
+                "meaningVi": "Vâng, hẹn tuần sau.",
                 "audioLocale": "ja-JP",
                 "speakerId": "sato"
               },
               {
-                "targetText": "また明日。お元気で。",
-                "displayText": "また明日。お元気で。",
-                "reading": "またあした。おげんきで。",
-                "speechText": "またあした。おげんきで",
+                "targetText": "また来週。お元気で。",
+                "displayText": "また来週。お元気で。",
+                "reading": "またらいしゅう。おげんきで。",
+                "speechText": "またらいしゅう。おげんきで",
                 "translationByNative": {
-                  "vi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
-                  "en": "See you tomorrow. Take care.",
-                  "ja": "また明日。お元気で。"
+                  "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                  "en": "See you next week. Take care.",
+                  "ja": "また来週。お元気で。"
                 },
                 "translations": {
-                  "vi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
-                  "en": "See you tomorrow. Take care.",
-                  "ja": "また明日。お元気で。"
+                  "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                  "en": "See you next week. Take care.",
+                  "ja": "また来週。お元気で。"
                 },
-                "meaningVi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
+                "meaningVi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
                 "audioLocale": "ja-JP",
                 "speakerId": "tanaka"
               },
@@ -81529,20 +81549,20 @@
             ],
             "explanation": [
               "お先に失礼します dùng khi rời đi trước người khác.",
-              "お元気で dùng khi sẽ lâu mới gặp lại."
+              "お元気で dùng khi chia tay từ một tuần trở lên."
             ],
             "explanationByNative": {
               "vi": [
                 "お先に失礼します dùng khi rời đi trước người khác.",
-                "お元気で dùng khi sẽ lâu mới gặp lại."
+                "お元気で dùng khi chia tay từ một tuần trở lên."
               ],
               "en": [
                 "お先に失礼します is used when leaving before others.",
-                "お元気で is used when you won’t meet again for a while."
+                "お元気で is used when parting for a week or more."
               ],
               "ja": [
                 "「お先に失礼します」は人より先に帰るときに使います。",
-                "「お元気で」は、しばらく会わないときに使います。"
+                "「お元気で」は、一週間以上会わないときに使います。"
               ]
             }
           },
@@ -81582,10 +81602,14 @@
                 "reading": "またらいしゅう。おげんきで。",
                 "speechText": "またらいしゅう。おげんきで",
                 "translationByNative": {
-                  "vi": "Hẹn tuần sau. Giữ sức khỏe nhé."
+                  "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                  "en": "See you next week. Take care.",
+                  "ja": "また来週。お元気で。"
                 },
                 "translations": {
-                  "vi": "Hẹn tuần sau. Giữ sức khỏe nhé."
+                  "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                  "en": "See you next week. Take care.",
+                  "ja": "また来週。お元気で。"
                 },
                 "meaningVi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
                 "audioLocale": "ja-JP",
@@ -82874,9 +82898,9 @@
                     "speakerId": "b",
                     "segments": [
                       {
-                        "displayText": "じゃあ、また明日（あした）。",
-                        "canonicalText": "じゃあ、また明日。",
-                        "audioText": "じゃあ、またあした。"
+                        "displayText": "じゃあ、また来週（らいしゅう）。",
+                        "canonicalText": "じゃあ、また来週。",
+                        "audioText": "じゃあ、またらいしゅう。"
                       }
                     ]
                   },
@@ -82885,9 +82909,9 @@
                     "speakerId": "a",
                     "segments": [
                       {
-                        "displayText": "また明日（あした）。",
-                        "canonicalText": "また明日。",
-                        "audioText": "またあした。"
+                        "displayText": "また来週（らいしゅう）。",
+                        "canonicalText": "また来週。",
+                        "audioText": "またらいしゅう。"
                       },
                       {
                         "slotId": "chat_farewell_slot"
@@ -82965,11 +82989,11 @@
                       "ja": "この空欄はお別れのあいさつです。"
                     },
                     "correctAnswer": "お元気で",
-                    "explanation": "お元気で dùng khi sẽ lâu mới gặp lại.",
+                    "explanation": "お元気で dùng khi chia tay từ một tuần trở lên.",
                     "explanationByNative": {
-                      "vi": "お元気で dùng khi sẽ lâu mới gặp lại.",
-                      "en": "お元気で is used when you won’t meet again for a while.",
-                      "ja": "「お元気で」は、しばらく会わないときに使います。"
+                      "vi": "お元気で dùng khi chia tay từ một tuần trở lên.",
+                      "en": "お元気で is used when parting for a week or more.",
+                      "ja": "「お元気で」は、一週間以上会わないときに使います。"
                     }
                   }
                 }
@@ -83267,44 +83291,44 @@
                   "romanization": "kyō wa koko de shitsurei shimasu."
                 },
                 {
-                  "targetText": "はい。また明日。",
-                  "displayText": "はい。また明日。",
-                  "reading": "はい。またあした。",
-                  "speechText": "はい。またあした",
+                  "targetText": "はい。また来週。",
+                  "displayText": "はい。また来週。",
+                  "reading": "はい。またらいしゅう。",
+                  "speechText": "はい。またらいしゅう",
                   "translationByNative": {
-                    "vi": "Vâng. Hẹn mai gặp.",
-                    "en": "Sure. See you tomorrow.",
-                    "ja": "はい。また明日。"
+                    "vi": "Vâng. Hẹn tuần sau.",
+                    "en": "Sure. See you next week.",
+                    "ja": "はい。また来週。"
                   },
                   "translations": {
-                    "vi": "Vâng. Hẹn mai gặp.",
-                    "en": "Sure. See you tomorrow.",
-                    "ja": "はい。また明日。"
+                    "vi": "Vâng. Hẹn tuần sau.",
+                    "en": "Sure. See you next week.",
+                    "ja": "はい。また来週。"
                   },
-                  "meaningVi": "Vâng. Hẹn mai gặp.",
+                  "meaningVi": "Vâng. Hẹn tuần sau.",
                   "audioLocale": "ja-JP",
                   "speakerId": "tanaka",
-                  "romanization": "hai. mata ashita."
+                  "romanization": "hai. mata raishū."
                 },
                 {
-                  "targetText": "また明日。お元気で。",
-                  "displayText": "また明日。お元気で。",
-                  "reading": "またあした。おげんきで。",
-                  "speechText": "またあした。おげんきで",
+                  "targetText": "また来週。お元気で。",
+                  "displayText": "また来週。お元気で。",
+                  "reading": "またらいしゅう。おげんきで。",
+                  "speechText": "またらいしゅう。おげんきで",
                   "translationByNative": {
-                    "vi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
-                    "en": "See you tomorrow. Take care.",
-                    "ja": "また明日。お元気で。"
+                    "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                    "en": "See you next week. Take care.",
+                    "ja": "また来週。お元気で。"
                   },
                   "translations": {
-                    "vi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
-                    "en": "See you tomorrow. Take care.",
-                    "ja": "また明日。お元気で。"
+                    "vi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
+                    "en": "See you next week. Take care.",
+                    "ja": "また来週。お元気で。"
                   },
-                  "meaningVi": "Hẹn mai gặp. Giữ sức khỏe nhé.",
+                  "meaningVi": "Hẹn tuần sau. Giữ sức khỏe nhé.",
                   "audioLocale": "ja-JP",
                   "speakerId": "sato",
-                  "romanization": "mata ashita. ogenkide."
+                  "romanization": "mata raishū. ogenkide."
                 },
                 {
                   "targetText": "お元気で。",

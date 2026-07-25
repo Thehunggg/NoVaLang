@@ -76,7 +76,7 @@ add('そうですか thể hiện mình đã nghe và tiếp nhận thông tin.'
 add('Rời lớp một cách lịch sự', 'Leaving class politely', '丁寧に退出する');
 add('Hết buổi, một người xin phép về trước.', 'At the end, one person excuses themselves to leave first.', '終わりに、一人が先に失礼します。');
 add('お先に失礼します dùng khi rời đi trước người khác.', 'お先に失礼します is used when leaving before others.', '「お先に失礼します」は、人より先に帰るときに使います。');
-add('お元気で dùng khi sẽ lâu mới gặp lại.', 'お元気で is used when you won’t meet again for a while.', '「お元気で」は、しばらく会わないときに使います。');
+add('お元気で dùng khi chia tay từ một tuần trở lên.', 'お元気で is used when parting for a week or more.', '「お元気で」は、一週間以上会わないときに使います。');
 add('Bạn bè chào tạm biệt', 'Friends saying goodbye', '友達同士のお別れ');
 add('Hai người bạn chia tay, hẹn tuần sau.', 'Two friends part, planning to meet next week.', '友達二人が、また来週と言って別れます。');
 add('じゃあ、また và また来週 là cách chào thân mật giữa bạn bè.', 'じゃあ、また and また来週 are casual farewells between friends.', '「じゃあ、また」「また来週」は友達同士のカジュアルなお別れです。');
@@ -89,6 +89,9 @@ add('また＋[mốc thời gian]', 'また＋[time]', 'また＋[時]');
 add('Hẹn gặp lại vào thời điểm nào đó.', 'Arrange to meet again at some time.', 'いつまた会うかを言います。');
 add('Hẹn mai gặp.', 'See you tomorrow.', 'また明日。');
 add('Hẹn tuần sau.', 'See you next week.', 'また来週。');
+add('Vâng. Hẹn tuần sau.', 'Sure. See you next week.', 'はい。また来週。');
+add('Vâng, hẹn tuần sau.', 'Sure, see you next week.', 'はい、また来週。');
+add('Hẹn tuần sau. Giữ sức khỏe nhé.', 'See you next week. Take care.', 'また来週。お元気で。');
 add('Hẹn lát nữa.', 'See you later.', 'また後で。');
 add('～も (…cũng…)', '～も (also / too)', '「～も」（…も）');
 add('Thêm も sau danh từ để nói "…cũng vậy".', 'Add も after a noun to say “… too”.', '名詞の後に「も」を付けて「…も」と言います。');
