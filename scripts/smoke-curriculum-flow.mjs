@@ -361,6 +361,61 @@ function checkExpectedShape(coursesJson, lessonsJson) {
   }
 }
 
+/**
+ * Bài tổng hợp cuối unit (ADR-022). Unit KHÔNG có bài tổng hợp là trạng thái
+ * HỢP LỆ — section này chỉ soi những unit thật sự có bài. Luật đầy đủ do
+ * `validate-curriculum.mjs` ép; ở đây kiểm các bất biến then chốt để smoke
+ * bắt sớm nếu output lệch.
+ */
+function checkUnitComprehensiveTests(courses) {
+  const section = "Unit comprehensive tests";
+  const units = courses.flatMap((course) => course.units ?? []);
+  const withTest = units.filter((unit) => unit.comprehensiveTest);
+
+  if (withTest.length === 0) {
+    // Chưa có unit nào đăng ký bài tổng hợp — đúng trạng thái hiện tại.
+    pass(section, "no unit declares a comprehensive test yet (valid state)");
+    return;
+  }
+
+  for (const unit of withTest) {
+    const test = unit.comprehensiveTest;
+    const context = { unitId: unit.id };
+    const lessonCount = (unit.lessonIds ?? []).length;
+    const expected = lessonCount === 3 ? 25 : lessonCount === 2 ? 18 : null;
+
+    if (expected === null) {
+      fail(section, context, `unit has ${lessonCount} lessons — no approved question-count plan`);
+      continue;
+    }
+    if (test.totalQuestions !== expected || (test.questions ?? []).length !== expected) {
+      fail(
+        section,
+        context,
+        `unit with ${lessonCount} lessons must have ${expected} questions ` +
+          `(totalQuestions=${test.totalQuestions}, questions=${(test.questions ?? []).length})`,
+      );
+      continue;
+    }
+    if (test.plan !== "plus" || test.graded !== true) {
+      fail(section, context, `comprehensive test must be plan='plus' and graded=true`);
+      continue;
+    }
+    if (test.format !== "unit_comprehensive_cloze") {
+      fail(section, context, `format must be 'unit_comprehensive_cloze' (got '${test.format}')`);
+      continue;
+    }
+    const outsideUnit = (test.questions ?? []).flatMap((q) =>
+      (q.reviews ?? []).map((r) => r.lessonId).filter((id) => !(unit.lessonIds ?? []).includes(id)),
+    );
+    if (outsideUnit.length > 0) {
+      fail(section, context, `reviews reference lessons outside the unit (§G7): ${[...new Set(outsideUnit)].join(", ")}`);
+      continue;
+    }
+    pass(section, `${unit.id}: ${expected}-question comprehensive test passes smoke checks`);
+  }
+}
+
 function checkCourseLessonLinks(courses, lessonById) {
   const section = "Course lesson links";
   for (const course of courses) {
@@ -1674,6 +1729,7 @@ async function main() {
 
   checkExpectedShape(coursesJson, lessonsJson);
   checkFiveCardsScopeGuard(lessons);
+  checkUnitComprehensiveTests(courses);
   checkCourseLessonLinks(courses, lessonById);
   checkLessonExercises(lessons);
   checkAiRules(lessons);

@@ -15,6 +15,17 @@ import {
 } from "./lib/native-localization.mjs";
 import { containsKana } from "./lib/japanese-pronunciation.mjs";
 import { requireGeneratedQ14Romanization } from "./lib/q14-romanization-validation.mjs";
+// Bài tổng hợp cuối unit (ADR-022): dùng CHUNG hằng số với generator để ngưỡng
+// vận hành (§F-h) chỉ nằm MỘT nơi — owner chỉnh một chỗ là cả generator lẫn
+// validator cùng đổi, không lệch nhau.
+import {
+  planForLessonCount,
+  BLANKS_BY_KIND,
+  CHOICE_OPTION_COUNT,
+  DIALOGUE_TURN_RANGE,
+  MAX_TRAILING_BLANK_RATIO,
+  MAX_CONSECUTIVE_SAME_LESSON,
+} from "./lib/unit-comprehensive-test.mjs";
 import { runSoftLinguisticChecks } from "../tools/lib/soft-linguistic-checks.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -898,6 +909,207 @@ function validateHiraganaLessonOneSpec(lesson) {
 }
 
 /**
+ * BÀI TỔNG HỢP CUỐI UNIT (ADR-022) — kiểm trên OUTPUT ĐÃ SINH.
+ *
+ * Generator (`scripts/lib/unit-comprehensive-test.mjs`) đã throw ngay khi
+ * nguồn sai, nhưng hàm này kiểm lại trên JSON đã sinh — cùng mô hình
+ * `validateFiveCardsStructure` (generator dựng, validator soi lại output).
+ * Bắt được cả trường hợp generated JSON bị sửa tay (điều bị cấm nhưng vẫn có
+ * thể xảy ra) và là cửa kiểm mà CI/owner thật sự chạy.
+ *
+ * Unit KHÔNG có `comprehensiveTest` là HỢP LỆ — không lỗi, không cảnh báo.
+ *
+ * Exported ở module scope để script độc lập import chạy thử trực tiếp.
+ */
+export function validateUnitComprehensiveTest(unit) {
+  const test = unit?.comprehensiveTest;
+  if (!test) return; // unit chưa có bài tổng hợp — trạng thái hợp lệ.
+
+  const lessonIds = unit.lessonIds ?? [];
+  const at = `${unit.id} comprehensiveTest`;
+
+  if (test.unitId !== unit.id) {
+    fail(`${at}: unitId='${test.unitId}' không khớp unit chứa nó ('${unit.id}')`);
+  }
+  if (test.format !== "unit_comprehensive_cloze") {
+    fail(`${at}: format phải là 'unit_comprehensive_cloze' (đang '${test.format}')`);
+  }
+  if (test.plan !== "plus") fail(`${at}: plan phải là 'plus' (đang '${test.plan}')`);
+  if (test.graded !== true) fail(`${at}: graded phải là true`);
+
+  // sourceLessonIds phải đúng các lesson của unit.
+  const src = test.sourceLessonIds ?? [];
+  if (src.join(",") !== lessonIds.join(",")) {
+    fail(`${at}: sourceLessonIds [${src.join(", ")}] không khớp lessonIds của unit [${lessonIds.join(", ")}]`);
+  }
+
+  // Số câu + chia mức suy ra từ số lesson thật.
+  let plan;
+  try {
+    plan = planForLessonCount(lessonIds.length);
+  } catch (error) {
+    fail(`${at}: ${error.message}`);
+    return;
+  }
+  const questions = test.questions ?? [];
+  if (test.totalQuestions !== plan.totalQuestions || questions.length !== plan.totalQuestions) {
+    fail(
+      `${at}: unit ${lessonIds.length} lesson phải có đúng ${plan.totalQuestions} câu ` +
+        `(chia ${plan.sections.map((s) => s.count).join("/")}) — ` +
+        `totalQuestions=${test.totalQuestions}, questions=${questions.length}`,
+    );
+    return;
+  }
+
+  // order 1..N đủ, không trùng.
+  const orders = questions.map((q) => q.order).sort((a, b) => a - b);
+  const expectedOrders = Array.from({ length: plan.totalQuestions }, (_, i) => i + 1);
+  if (orders.join(",") !== expectedOrders.join(",")) {
+    fail(`${at}: order phải là 1..${plan.totalQuestions} đủ và không trùng (đang: ${orders.join(",")})`);
+    return;
+  }
+
+  const kindForOrder = (order) =>
+    plan.sections.find((s) => order >= s.start && order <= s.end)?.kind ?? null;
+  const bodySegments = (q) =>
+    q.kind === "dialogue_multi_blank_choice"
+      ? (q.dialogue ?? []).flatMap((t) => t.segments ?? [])
+      : (q.segments ?? []);
+
+  const ordered = [...questions].sort((a, b) => a.order - b.order);
+
+  for (const q of ordered) {
+    const qAt = `${at} câu order=${q.order}`;
+
+    const expectedKind = kindForOrder(q.order);
+    if (q.kind !== expectedKind) {
+      fail(`${qAt}: kind='${q.kind}' nhưng dải order này phải là '${expectedKind}'`);
+      continue;
+    }
+
+    // Thân câu đúng trường theo kind.
+    if (q.kind === "dialogue_multi_blank_choice") {
+      const turns = (q.dialogue ?? []).length;
+      if (turns < DIALOGUE_TURN_RANGE.min || turns > DIALOGUE_TURN_RANGE.max) {
+        fail(`${qAt}: hội thoại ${turns} lượt — phải ${DIALOGUE_TURN_RANGE.min}–${DIALOGUE_TURN_RANGE.max} lượt`);
+      }
+      if (q.segments) fail(`${qAt}: kind hội thoại không dùng 'segments'`);
+    } else {
+      if (!(q.segments ?? []).length) fail(`${qAt}: thiếu 'segments'`);
+      if (q.dialogue) fail(`${qAt}: kind này không dùng 'dialogue'`);
+    }
+
+    // Số ô theo kind.
+    const rule = BLANKS_BY_KIND[q.kind] ?? {};
+    const blanks = q.blanks ?? [];
+    if (rule.exactly !== undefined && blanks.length !== rule.exactly) {
+      fail(`${qAt}: có ${blanks.length} ô — kind này phải đúng ${rule.exactly}`);
+    }
+    if (rule.min !== undefined && blanks.length < rule.min) {
+      fail(`${qAt}: có ${blanks.length} ô — kind này cần tối thiểu ${rule.min}`);
+    }
+
+    // blankId khớp 1-1 giữa thân câu và blanks[].
+    const bodyIds = bodySegments(q).filter((s) => s.blankId).map((s) => s.blankId);
+    const declaredIds = blanks.map((b) => b.id);
+    const onlyDeclared = declaredIds.filter((id) => !bodyIds.includes(id));
+    const onlyBody = bodyIds.filter((id) => !declaredIds.includes(id));
+    if (onlyDeclared.length || onlyBody.length) {
+      fail(
+        `${qAt}: blankId lệch — khai nhưng không có trong câu: [${onlyDeclared.join(", ")}]; ` +
+          `có trong câu nhưng không khai: [${onlyBody.join(", ")}]`,
+      );
+    }
+
+    // acceptedAnswers chứa canonicalAnswer.
+    for (const b of blanks) {
+      if (!(b.acceptedAnswers ?? []).length) {
+        fail(`${qAt}: ô '${b.id}' thiếu acceptedAnswers`);
+      } else if (!b.acceptedAnswers.includes(b.canonicalAnswer)) {
+        fail(`${qAt}: ô '${b.id}' có acceptedAnswers không chứa canonicalAnswer ('${b.canonicalAnswer}')`);
+      }
+    }
+
+    // Phương án chọn.
+    if (q.kind === "typed_blank") {
+      if (q.options || q.correctOptionId) fail(`${qAt}: câu tự gõ không dùng options/correctOptionId`);
+    } else {
+      const options = q.options ?? [];
+      if (options.length !== CHOICE_OPTION_COUNT) {
+        fail(`${qAt}: có ${options.length} phương án — phải đúng ${CHOICE_OPTION_COUNT}`);
+      }
+      if (!hasUnique(options.map((o) => o.id))) fail(`${qAt}: trùng id phương án`);
+      for (const opt of options) {
+        const answered = Object.keys(opt.answersByBlankId ?? {});
+        const missing = declaredIds.filter((id) => !answered.includes(id));
+        const extra = answered.filter((id) => !declaredIds.includes(id));
+        if (missing.length || extra.length) {
+          fail(
+            `${qAt}: phương án '${opt.id}' phải phủ đúng đủ mọi ô — ` +
+              `thiếu: [${missing.join(", ")}]; dư: [${extra.join(", ")}]`,
+          );
+        }
+      }
+      const correct = options.find((o) => o.id === q.correctOptionId);
+      if (!correct) {
+        fail(`${qAt}: correctOptionId='${q.correctOptionId}' không trỏ tới phương án nào`);
+      } else {
+        for (const b of blanks) {
+          const filled = correct.answersByBlankId?.[b.id];
+          if (!(b.acceptedAnswers ?? []).includes(filled)) {
+            fail(`${qAt}: phương án đúng điền '${filled}' vào ô '${b.id}' nhưng không có trong acceptedAnswers`);
+          }
+        }
+      }
+    }
+
+    // §G7 — mọi mục ôn phải trỏ về lesson thuộc unit này.
+    if (!(q.reviews ?? []).length) {
+      fail(`${qAt}: thiếu reviews — không chứng minh được §G7`);
+    }
+    for (const r of q.reviews ?? []) {
+      if (!lessonIds.includes(r.lessonId)) {
+        fail(`${qAt}: reviews trỏ lesson '${r.lessonId}' không thuộc unit này — vi phạm §G7`);
+      }
+    }
+  }
+
+  // Luật toàn bài: vị trí ô trống + trộn xen kẽ lesson.
+  const endsWithBlank = (q) => {
+    const segs = bodySegments(q);
+    return Boolean(segs[segs.length - 1]?.blankId);
+  };
+  const trailing = ordered.filter(endsWithBlank).length;
+  const ratio = trailing / ordered.length;
+  if (ratio > MAX_TRAILING_BLANK_RATIO) {
+    fail(
+      `${at}: ${trailing}/${ordered.length} câu (${Math.round(ratio * 100)}%) kết thúc bằng ô trống — ` +
+        `vượt ngưỡng ${Math.round(MAX_TRAILING_BLANK_RATIO * 100)}% (§E4: ô trống phải rải, ` +
+        `luôn khoét cuối câu khiến người học đoán theo thói quen)`,
+    );
+  }
+
+  let run = 0;
+  let runLesson = null;
+  for (const q of ordered) {
+    const lessons = new Set((q.reviews ?? []).map((r) => r.lessonId));
+    const only = lessons.size === 1 ? [...lessons][0] : null;
+    if (only && only === runLesson) run += 1;
+    else {
+      run = only ? 1 : 0;
+      runLesson = only;
+    }
+    if (run > MAX_CONSECUTIVE_SAME_LESSON) {
+      fail(
+        `${at}: ${run} câu liên tiếp chỉ ôn lesson '${runLesson}' (tới order=${q.order}) — ` +
+          `vượt ngưỡng ${MAX_CONSECUTIVE_SAME_LESSON} (§E4: kiến thức các lesson phải xen kẽ)`,
+      );
+      break;
+    }
+  }
+}
+
+/**
  * Structural contract for ANY lesson with `lessonFormat === 'five_cards'`
  * (NovaLang Lesson Format 2.0/3.0, .cursor/rules/03_.../04_...): shape,
  * required fields, and generic quality rules that do not depend on which
@@ -1254,6 +1466,8 @@ async function main() {
           fail(`Course ${course.id} unit ${unit.id} references missing lesson ${lessonId}`);
         }
       }
+      // Bài tổng hợp cuối unit (ADR-022) — no-op khi unit chưa có bài.
+      validateUnitComprehensiveTest(unit);
     }
   }
 
