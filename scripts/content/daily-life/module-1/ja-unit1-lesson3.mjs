@@ -71,10 +71,10 @@ const PRACTICE_EXERCISES = [
   },
   {
     id: 'ja-daily_life-m01-u1-l3-practice-4', order: 4, plan: 'free', type: 'sentence_ordering',
-    prompt: 'Sắp xếp thành câu “Tôi cũng mong được làm quen.”',
-    tokens: [token('watashi', '私（わたし）', '私', 'わたし'), token('mo', 'も'), token('yoroshiku', 'よろしく'), token('onegai', 'お願（ねが）いします', 'お願いします', 'おねがいします'), token('san', 'さん'), token('desune', 'ですね')],
-    correctTokenIds: ['watashi', 'mo', 'yoroshiku', 'onegai'],
-    feedback: { correctAnswer: '私（わたし）もよろしくお願（ねが）いします。', canonicalAnswer: '私もよろしくお願いします。', audioText: 'わたしもよろしくおねがいします。', explanation: '私 + も + よろしく + お願いします → 私もよろしくお願いします。 さん và ですね không dùng ở đây.' },
+    prompt: 'Sắp xếp thành câu đáp lại lời làm quen.',
+    tokens: [token('kochirakoso', 'こちらこそ'), token('yoroshiku', 'よろしく'), token('onegai', 'お願（ねが）いします', 'お願いします', 'おねがいします'), token('watashi', '私（わたし）', '私', 'わたし'), token('mo', 'も'), token('san', 'さん')],
+    correctTokenIds: ['kochirakoso', 'yoroshiku', 'onegai'],
+    feedback: { correctAnswer: 'こちらこそよろしくお願（ねが）いします。', canonicalAnswer: 'こちらこそよろしくお願いします。', audioText: 'こちらこそよろしくおねがいします。', explanation: 'こちらこそ + よろしく + お願いします → こちらこそよろしくお願いします。 私、も、さん không dùng ở đây.' },
   },
   {
     id: 'ja-daily_life-m01-u1-l3-practice-5', order: 5, plan: 'free', type: 'dialogue_fill',
@@ -162,17 +162,17 @@ const PRACTICE_EXERCISES = [
   {
     id: 'ja-daily_life-m01-u1-l3-practice-13', order: 13, plan: 'plus', type: 'slot_ordering',
     prompt: 'Sắp xếp thành câu xin phép về trước lịch sự. Có thẻ không cần dùng.',
-    tokens: [token('watashi', '私（わたし）', '私', 'わたし'), token('mo', 'も'), token('o', 'お'), token('sakini', '先（さき）に', '先に', 'さきに'), token('shitsurei', '失礼（しつれい）', '失礼', 'しつれい'), token('shimasu', 'します'), token('kochira_distractor', 'こちらこそ'), token('mata_distractor', 'また')],
+    tokens: [token('tanakasan', '田中（たなか）さん', '田中さん', 'たなかさん'), token('soredewa', 'それでは'), token('o', 'お'), token('sakini', '先（さき）に', '先に', 'さきに'), token('shitsurei', '失礼（しつれい）', '失礼', 'しつれい'), token('shimasu', 'します'), token('kochira_distractor', 'こちらこそ'), token('mata_distractor', 'また')],
     answerSlots: [
-      { id: 's1', expectedTokenId: 'watashi' },
-      { id: 's2', expectedTokenId: 'mo', afterText: '、' },
+      { id: 's1', expectedTokenId: 'tanakasan', afterText: '、' },
+      { id: 's2', expectedTokenId: 'soredewa' },
       { id: 's3', expectedTokenId: 'o' },
       { id: 's4', expectedTokenId: 'sakini' },
       { id: 's5', expectedTokenId: 'shitsurei' },
       { id: 's6', expectedTokenId: 'shimasu', afterText: '。' },
     ],
     unusedTokenIds: ['kochira_distractor', 'mata_distractor'],
-    feedback: { correctAnswer: '私（わたし）も、お先（さき）に失礼（しつれい）します。', canonicalAnswer: '私も、お先に失礼します。', audioText: 'わたしも、おさきにしつれいします。', explanation: 'Câu đầy đủ: お先に失礼します。 こちらこそ và また không dùng ở đây.' },
+    feedback: { correctAnswer: '田中（たなか）さん、それではお先（さき）に失礼（しつれい）します。', canonicalAnswer: '田中さん、それではお先に失礼します。', audioText: 'たなかさん、それではおさきにしつれいします。', explanation: '田中さん + それでは + お先に + 失礼します → 田中さん、それではお先に失礼します。 私も、こちらこそ và また không dùng ở đây.' },
   },
   {
     // Lesson Format 3.0 — non-graded advanced Real-World Practice dialogue.
@@ -191,7 +191,7 @@ const PRACTICE_EXERCISES = [
       dialogueLine('tanaka', 'はい。また明日。', 'はい。またあした。', 'Vâng. Hẹn mai gặp.', 'はい。またあした'),
       dialogueLine('sato', 'また明日。お元気で。', 'またあした。おげんきで。', 'Hẹn mai gặp. Giữ sức khỏe nhé.', 'またあした。おげんきで'),
       dialogueLine('tanaka', 'お元気で。', 'おげんきで。', 'Giữ sức khỏe nhé.', 'おげんきで'),
-      dialogueLine('ito', '佐藤さん、私もお先に失礼します。', 'さとうさん、わたしもおさきにしつれいします。', 'Satō, tôi cũng xin phép về trước.', 'さとうさん、わたしもおさきにしつれいします'),
+      dialogueLine('ito', '佐藤さん、お先に失礼します。', 'さとうさん、おさきにしつれいします。', 'Satō, tôi xin phép về trước.', 'さとうさん、おさきにしつれいします'),
       dialogueLine('sato', 'はい、じゃあ、また来週。', 'はい、じゃあ、またらいしゅう。', 'Vâng, thôi, hẹn tuần sau.', 'はい、じゃあ、またらいしゅう'),
       dialogueLine('ito', 'また来週。失礼します。', 'またらいしゅう。しつれいします。', 'Hẹn tuần sau. Tôi xin phép.', 'またらいしゅう。しつれいします'),
       dialogueLine('tanaka', 'じゃあ、また。', 'じゃあ、また。', 'Thôi, hẹn gặp lại.', 'じゃあ、また'),
@@ -251,30 +251,28 @@ const JA_UNIT1_LESSON3_SOURCE = {
       },
       vocabularyDetails: [
         { id: 'kochira-koso', overview: 'Tôi cũng vậy / Chính tôi mới phải nói thế.', examples: [example('こちらこそ、よろしくお願いします。', 'こちらこそ、よろしくおねがいします。', 'Tôi cũng rất mong được làm quen.')] },
-        { id: 'douzo-yoroshiku', overview: 'Rất mong được làm quen (thân thiện hơn một chút).', examples: [example('はじめまして。田中です。どうぞよろしく。', 'はじめまして。たなかです。どうぞよろしく。', 'Rất vui được gặp. Tôi là Tanaka. Rất mong được làm quen.')] },
         { id: 'sou-desu-ka', overview: 'Vậy à. / Ra vậy.', examples: [example('そうですか。田中さんですね。', 'そうですか。たなかさんですね。', 'Ra vậy. Bạn là Tanaka nhỉ.')] },
-        { id: 'watashi-mo', overview: 'Tôi cũng vậy.', examples: [example('私もよろしくお願いします。', 'わたしもよろしくおねがいします。', 'Tôi cũng mong được làm quen.')] },
+        { id: 'watashi-mo', overview: 'Tôi cũng vậy.', examples: [example('私（わたし）も。', 'わたしも。', 'Tôi cũng vậy.')] },
         { id: 'shitsurei-shimasu', overview: 'Tôi xin phép. / Xin lỗi (khi rời đi).', examples: [example('では、失礼します。', 'では、しつれいします。', 'Vậy, tôi xin phép.')] },
         { id: 'osaki-ni-shitsurei', overview: 'Tôi xin phép về trước.', examples: [example('お先に失礼します。', 'おさきにしつれいします。', 'Tôi xin phép về trước.')] },
         { id: 'ogenki-de', overview: 'Giữ sức khỏe nhé (khi lâu mới gặp lại).', examples: [example('では、お元気で。', 'では、おげんきで。', 'Vậy, giữ sức khỏe nhé.')] },
         { id: 'jaa-mata', overview: 'Thôi, hẹn gặp lại (thân mật).', examples: [example('じゃあ、また明日。', 'じゃあ、またあした。', 'Thôi, hẹn mai gặp.')], notes: ['Trong tình huống thân mật, thường bỏ chủ ngữ và nói ngắn.'] },
+        { id: 'raishuu', overview: 'Tuần sau.', examples: [example('また来週。', 'またらいしゅう。', 'Hẹn tuần sau.')] },
       ],
       // "Tham khảo thêm" (§B2b) — biến thể của お別れ (じゃあ、また / お元気で). FREE,
       // không tính ngân sách từ mới, không dùng ở Q1–Q13. Mỗi mục đủ trường.
       vocabularyReferences: [
-        { term: 'またね', reading: 'またね', speechText: 'またね', meaning: 'Hẹn gặp lại nhé (rất thân mật).', forWord: 'じゃあ、また', forWho: 'Bạn bè thân, người ngang hàng.', whenToUse: 'Chia tay bạn bè trong sinh hoạt hằng ngày, không trang trọng.', difference: 'Ngắn và thân mật hơn じゃあ、また; không dùng với thầy cô hay người trên.' },
-        { term: 'じゃあね', reading: 'じゃあね', speechText: 'じゃあね', meaning: 'Thôi nhé (chào tạm biệt thân mật).', forWord: 'じゃあ、また', forWho: 'Bạn bè thân.', whenToUse: 'Kết thúc cuộc trò chuyện thân mật rồi rời đi.', difference: 'Cũng thân mật như またね; nhấn "じゃあ" khi kết thúc, không trang trọng.' },
+        { term: 'じゃあね', reading: 'じゃあね', speechText: 'じゃあね', meaning: 'Thôi nhé (chào tạm biệt thân mật).', forWord: 'じゃあ、また', forWho: 'Bạn bè thân.', whenToUse: 'Kết thúc cuộc trò chuyện thân mật rồi rời đi.', difference: 'Ngắn gọn hơn じゃあ、また, nhấn ở "じゃあ" khi kết thúc; không trang trọng.' },
         { term: '気（き）をつけて', reading: 'きをつけて', speechText: 'きをつけて', meaning: 'Đi cẩn thận nhé / Giữ gìn nhé.', forWord: 'お元気で', forWho: 'Bạn bè, người thân, đồng nghiệp.', whenToUse: 'Khi ai đó sắp lên đường (về nhà, đi xa).', difference: 'お元気で dặn giữ sức khỏe khi lâu mới gặp; 気をつけて dặn an toàn ngay trên đường đi.' },
-        { term: 'では、また', reading: 'では、また', speechText: 'では、また', meaning: 'Vậy, hẹn gặp lại (lịch sự hơn じゃあ、また).', forWord: 'じゃあ、また', forWho: 'Người trên, đồng nghiệp, hoàn cảnh cần lịch sự vừa phải.', whenToUse: 'Chia tay khi cần lịch sự hơn mức nói với bạn bè.', difference: 'では trang trọng hơn じゃあ; dùng được với người trên, còn じゃあ、また chỉ hợp bạn bè.' },
       ],
       dialogueGroups: [
         {
           id: 'respond-intro', title: 'Đáp lại khi được làm quen', situation: 'Hai người vừa giới thiệu tên, một người đáp lại thiện chí.',
           lines: [
             dialogueLine('sato', 'はじめまして。佐藤です。よろしくお願いします。', 'はじめまして。さとうです。よろしくおねがいします。', 'Rất vui được gặp. Tôi là Satō. Rất mong được làm quen.', 'はじめまして。さとうです。よろしくおねがいします'),
-            dialogueLine('tanaka', 'こちらこそ。田中です。どうぞよろしく。', 'こちらこそ。たなかです。どうぞよろしく。', 'Tôi cũng vậy. Tôi là Tanaka. Rất mong được làm quen.', 'こちらこそ。たなかです。どうぞよろしく'),
+            dialogueLine('tanaka', 'こちらこそ。田中です。よろしくお願いします。', 'こちらこそ。たなかです。よろしくおねがいします。', 'Tôi cũng vậy. Tôi là Tanaka. Rất mong được làm quen.', 'こちらこそ。たなかです。よろしくおねがいします'),
             dialogueLine('sato', 'そうですか。田中さんですね。', 'そうですか。たなかさんですね。', 'Ra vậy. Bạn là Tanaka nhỉ.', 'そうですか。たなかさんですね'),
-            dialogueLine('tanaka', 'はい。私もよろしくお願いします。', 'はい。わたしもよろしくおねがいします。', 'Vâng. Tôi cũng mong được làm quen.', 'はい。わたしもよろしくおねがいします'),
+            dialogueLine('tanaka', 'はい。よろしくお願いします。', 'はい。よろしくおねがいします。', 'Vâng. Rất mong được làm quen.', 'はい。よろしくおねがいします'),
           ],
           explanation: ['こちらこそ đáp lại lời chúc よろしくお願いします.', 'そうですか thể hiện mình đã nghe và tiếp nhận thông tin.'],
         },
@@ -312,7 +310,7 @@ const JA_UNIT1_LESSON3_SOURCE = {
         },
         {
           title: '～も (…cũng…)', formula: '[名詞] ＋ も', formulaReading: '[めいし] ＋ も', meaning: 'Thêm も sau danh từ để nói "…cũng vậy".',
-          examples: [example('私（わたし）も。', 'わたしも。', 'Tôi cũng vậy.'), example('私も失礼します。', 'わたしもしつれいします。', 'Tôi cũng xin phép.')],
+          examples: [example('私（わたし）も。', 'わたしも。', 'Tôi cũng vậy.')],
           explanation: ['Thêm も sau danh từ để nói "…cũng vậy". Ví dụ: 私も = tôi cũng vậy.'],
         },
       ],
@@ -332,13 +330,13 @@ const JA_UNIT1_LESSON3_SOURCE = {
   },
   vocabulary: [
     { id: 'kochira-koso', displayText: 'こちらこそ', reading: 'こちらこそ', romanization: 'kochira koso', speechText: 'こちらこそ', meaningVi: 'Tôi cũng vậy / Chính tôi mới phải nói thế.', translationByNative: vi('Tôi cũng vậy / Chính tôi mới phải nói thế.'), translations: vi('Tôi cũng vậy / Chính tôi mới phải nói thế.'), audioLocale: 'ja-JP' },
-    { id: 'douzo-yoroshiku', displayText: 'どうぞよろしく', reading: 'どうぞよろしく', romanization: 'dōzo yoroshiku', speechText: 'どうぞよろしく', meaningVi: 'Rất mong được làm quen (thân thiện hơn một chút).', translationByNative: vi('Rất mong được làm quen (thân thiện hơn một chút).'), translations: vi('Rất mong được làm quen (thân thiện hơn một chút).'), audioLocale: 'ja-JP' },
     { id: 'sou-desu-ka', displayText: 'そうですか', reading: 'そうですか', romanization: 'sō desu ka', speechText: 'そうですか', meaningVi: 'Vậy à. / Ra vậy.', translationByNative: vi('Vậy à. / Ra vậy.'), translations: vi('Vậy à. / Ra vậy.'), audioLocale: 'ja-JP' },
     { id: 'watashi-mo', displayText: '私（わたし）も', reading: 'わたしも', romanization: 'watashi mo', speechText: 'わたしも', meaningVi: 'Tôi cũng vậy.', translationByNative: vi('Tôi cũng vậy.'), translations: vi('Tôi cũng vậy.'), audioLocale: 'ja-JP' },
     { id: 'shitsurei-shimasu', displayText: '失礼（しつれい）します', reading: 'しつれいします', romanization: 'shitsurei shimasu', speechText: 'しつれいします', meaningVi: 'Tôi xin phép. / Xin lỗi (khi rời đi).', translationByNative: vi('Tôi xin phép. / Xin lỗi (khi rời đi).'), translations: vi('Tôi xin phép. / Xin lỗi (khi rời đi).'), audioLocale: 'ja-JP' },
     { id: 'osaki-ni-shitsurei', displayText: 'お先（さき）に失礼（しつれい）します', reading: 'おさきにしつれいします', romanization: 'osaki ni shitsurei shimasu', speechText: 'おさきにしつれいします', meaningVi: 'Tôi xin phép về trước.', translationByNative: vi('Tôi xin phép về trước.'), translations: vi('Tôi xin phép về trước.'), audioLocale: 'ja-JP' },
     { id: 'ogenki-de', displayText: 'お元気（げんき）で', reading: 'おげんきで', romanization: 'o-genki de', speechText: 'おげんきで', meaningVi: 'Giữ sức khỏe nhé (khi lâu mới gặp lại).', translationByNative: vi('Giữ sức khỏe nhé (khi lâu mới gặp lại).'), translations: vi('Giữ sức khỏe nhé (khi lâu mới gặp lại).'), audioLocale: 'ja-JP' },
     { id: 'jaa-mata', displayText: 'じゃあ、また', reading: 'じゃあ、また', romanization: 'jā, mata', speechText: 'じゃあ、また', meaningVi: 'Thôi, hẹn gặp lại (thân mật).', translationByNative: vi('Thôi, hẹn gặp lại (thân mật).'), translations: vi('Thôi, hẹn gặp lại (thân mật).'), audioLocale: 'ja-JP' },
+    { id: 'raishuu', displayText: '来週（らいしゅう）', reading: 'らいしゅう', romanization: 'raishū', speechText: 'らいしゅう', meaningVi: 'Tuần sau.', translationByNative: vi('Tuần sau.'), translations: vi('Tuần sau.'), audioLocale: 'ja-JP' },
   ],
 };
 

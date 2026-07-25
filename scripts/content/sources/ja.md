@@ -94,9 +94,9 @@ Cấu trúc thư mục (quy ước `local-sources/<mã ISO>/<loại-nguồn>/`, 
 
 | File | Bộ / cấp độ | Chủ đề · phạm vi | Chữ thật hay ảnh scan |
 |---|---|---|---|
-| `irodori/Z_all.pdf` | Irodori — **Starter + Elementary 1 + Elementary 2** (A1–A2, JF Standard) | 3 phần, mỗi phần 9 chủ đề / 18 lesson — hội thoại + ngữ pháp đời sống hàng ngày | **Chữ thật** — trích được nội dung/ToC thật |
-| `irodori/ZZ_all.pdf` | Irodori — **Pre-Intermediate** (A2/B1, JF Standard) | 9 chủ đề / 18 lesson, 4 dạng hoạt động (nói/nghe/đọc/viết) | **Chữ thật** |
-| `irodori/Irodori.pdf` | Irodori — bản gộp lớn nhất (158MB); ToC xác nhận có Starter (A1) trở lên | **CHƯA XÁC MINH chắc chắn phạm vi đầy đủ** (dung lượng không khớp phép cộng Z_all+ZZ_all — có thể là bản merge khác/edition khác) — **cần owner xác nhận nên dùng bản nào làm chính** để tránh 2 bài khác nhau vô tình đối chiếu 2 bản Irodori khác nhau | **Chữ thật** |
+| `irodori/Z_all.pdf` | Irodori — **Starter + Elementary 1 + Elementary 2** (A1–A2, JF Standard) | 3 phần, mỗi phần 9 chủ đề / 18 lesson — hội thoại + ngữ pháp đời sống hàng ngày | **ẢNH — KHÔNG tra chữ tự động được** (sửa lại 2026-07-25: đã kiểm object PDF thật — 1283 ảnh nhúng, 0 font. Đánh giá "Chữ thật" trước đây chỉ dựa trên mẫu lời tựa tiếng Anh ở đầu sách, CHƯA xác minh đúng phần nội dung bài học tiếng Nhật — phần đó là ảnh. Chỉ đọc được bằng cách owner tự mở file xem trực quan hoặc OCR, KHÔNG grep/pdftotext được.) |
+| `irodori/ZZ_all.pdf` | Irodori — **Pre-Intermediate** (A2/B1, JF Standard) | 9 chủ đề / 18 lesson, 4 dạng hoạt động (nói/nghe/đọc/viết) | **ẢNH — KHÔNG tra chữ tự động được** (1326 ảnh nhúng, 0 font — cùng lý do trên) |
+| `irodori/Irodori.pdf` | Irodori — bản gộp lớn nhất (158MB); ToC xác nhận có Starter (A1) trở lên | **CHƯA XÁC MINH chắc chắn phạm vi đầy đủ** (dung lượng không khớp phép cộng Z_all+ZZ_all — có thể là bản merge khác/edition khác) — **cần owner xác nhận nên dùng bản nào làm chính** để tránh 2 bài khác nhau vô tình đối chiếu 2 bản Irodori khác nhau | **ẢNH — KHÔNG tra chữ tự động được** (4098 ảnh nhúng, 0 font — cùng lý do trên) |
 | `grammar-books/Nihongo_Sou_Matome_N1_Bunpou.pdf` | Nihongo Sou Matome — 文法 (Ngữ pháp) | **JLPT N1** — toàn bộ ngữ pháp N1 | **ẢNH SCAN — CẦN OCR** (không trích được văn bản; ~1079 ảnh nhúng, 0 font) |
 | `grammar-books/Nihongo Sou Matome N2 - Bumpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N2** — toàn bộ ngữ pháp N2 | **ẢNH SCAN — CẦN OCR** (~1050 ảnh nhúng) |
 | `grammar-books/Nihongo_Sou_Matome_N3_Bunpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N3** — toàn bộ ngữ pháp N3 | **ẢNH SCAN — CẦN OCR** (~118 ảnh nhúng) |
@@ -156,11 +156,20 @@ Hàn/Thái/Trung (`markdown_grammar_korean/`, `grammar_kr_KOREAN_*.json`,
   quét lại xác nhận 5 file này **chưa thực sự bị xóa** — khác với báo cáo ban
   đầu; đã báo lại owner). Cho tới khi OCR hoặc xóa xong, các file này CHỈ xác
   nhận "có tồn tại, đúng cấp JLPT nào" qua tên file — **CHƯA thể mở đối chiếu
-  mẫu ngữ pháp cụ thể theo §G8** từ chúng. §F-b vẫn ưu tiên Irodori/JF
-  Standard làm V1 chính, còn ngữ pháp trung/cao cấp (N3–N1, nơi Irodori
-  không phủ vì chỉ tới A2/B1) hiện dựa vào **hanabira** (chữ thật, đọc được
-  ngay — xem mục GitHub bổ sung ở trên), KHÔNG còn phụ thuộc các sách scan
-  này.
+  mẫu ngữ pháp cụ thể theo §G8** từ chúng.
+- **SỬA LẠI 2026-07-25 — cả 3 file Irodori cũng là ẢNH, không phải "Chữ thật"
+  như ghi trước đây.** Đã kiểm object PDF thật (không đoán): `Z_all.pdf`
+  1283 ảnh/0 font, `ZZ_all.pdf` 1326 ảnh/0 font, `Irodori.pdf` 4098 ảnh/0
+  font. Đánh giá "Chữ thật" ban đầu chỉ dựa trên mẫu lời tựa tiếng Anh đầu
+  sách (đúng là chữ thật), CHƯA xác minh phần nội dung bài học tiếng Nhật
+  thật (phần đó là ảnh) — không thể `grep`/`pdftotext` để đối chiếu cụm cố
+  định/mẫu câu từ Irodori được nữa; chỉ owner tự mở file xem trực quan hoặc
+  OCR mới đối chiếu được. §F-b vẫn coi Irodori/JF Standard là V1 chính về
+  MẶT NGUỒN (uy tín, miễn phí, đúng đối tượng), nhưng **về mặt kỹ thuật đối
+  chiếu tự động, ngữ pháp/cụm cố định sơ cấp hiện dựa vào hanabira** (chữ
+  thật, đọc được ngay — xem mục GitHub bổ sung ở trên) và JMdict/Collins,
+  không phải Irodori. Ngữ pháp trung/cao cấp (N3–N1, ngoài phạm vi A2/B1 của
+  Irodori) cũng dựa vào hanabira, không đổi.
 - **`N5 Grammar Master (japanvitta.com).pdf` là CHỮ THẬT, đọc được ngay** —
   80 điểm ngữ pháp N5 đầy đủ (JLPTsensei.com). Đây là nguồn **thương mại**
   (giống vai trò V3 trong §F-b: đối chiếu cách trình bày/thứ tự, KHÔNG thay

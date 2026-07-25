@@ -212,6 +212,16 @@ add('Người trên, đồng nghiệp, hoàn cảnh cần lịch sự vừa ph�
 add('Chia tay khi cần lịch sự hơn mức nói với bạn bè.', 'Parting when you need to be more polite than with friends.', '友達より丁寧にすべき場面での別れ。');
 add('では trang trọng hơn じゃあ; dùng được với người trên, còn じゃあ、また chỉ hợp bạn bè.', 'では is more formal than じゃあ; usable with superiors, while じゃあ、また suits friends only.', '「では」は「じゃあ」より改まった言い方で目上にも使えます。「じゃあ、また」は友達向けです。');
 
+// ── Source-verification pass 2026-07-25: replaced unverified 私も+phrase
+// combos with source-confirmed forms (hanabira/JMdict); new strings below. ──
+add('Sắp xếp thành câu đáp lại lời làm quen.', 'Arrange the cards into a response to an introduction.', 'カードを並べて、自己紹介への返事の文を作ってください。');
+add('こちらこそ + よろしく + お願いします → こちらこそよろしくお願いします。 私、も、さん không dùng ở đây.', 'こちらこそ + よろしく + お願いします → こちらこそよろしくお願いします。 私, も, and さん aren’t used here.', '「こちらこそ」＋「よろしく」＋「お願いします」→「こちらこそよろしくお願いします。」「私」「も」「さん」は使いません。');
+add('田中さん + それでは + お先に + 失礼します → 田中さん、それではお先に失礼します。 私も、こちらこそ và また không dùng ở đây.', '田中さん + それでは + お先に + 失礼します → 田中さん、それではお先に失礼します。 私も, こちらこそ, and また aren’t used here.', '「田中さん」＋「それでは」＋「お先に」＋「失礼します」→「田中さん、それではお先に失礼します。」「私も」「こちらこそ」「また」は使いません。');
+add('Satō, tôi xin phép về trước.', 'Satō, I’ll be leaving first.', '佐藤さん、お先に失礼します。');
+add('Vâng. Rất mong được làm quen.', 'Sure. Pleased to meet you.', 'はい。よろしくお願いします。');
+add('Ngắn gọn hơn じゃあ、また, nhấn ở "じゃあ" khi kết thúc; không trang trọng.', 'Shorter than じゃあ、また, emphasizing “じゃあ” at the end; not formal.', '「じゃあ、また」より短く、最後の「じゃあ」を強調。改まりません。');
+add('Tuần sau.', 'Next week.', '来週。');
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];
