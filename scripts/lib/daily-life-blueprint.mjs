@@ -5,6 +5,12 @@
 import { resolveApprovedFiveCardsLesson } from '../content/daily-life/module-1/helpers.mjs';
 import { resolveLanguageDisplayName } from './language-names.mjs';
 import { NATIVE_CODES } from './native-localization.mjs';
+import { resolveUnitComprehensiveTest } from './unit-comprehensive-test.mjs';
+
+// Locale đích của từng ngôn ngữ học trong domain daily_life. Cùng khuôn với
+// map `AUDIO` trong content/daily-life/module-1/helpers.mjs — chỉ khai những
+// ngôn ngữ domain này thật sự sinh ra (hôm nay: en + ja).
+const DAILY_LIFE_TARGET_LOCALES = { en: 'en-US', ja: 'ja-JP' };
 
 function t(map) {
   for (const code of NATIVE_CODES) {
@@ -1797,6 +1803,17 @@ export function buildDailyLifeCourses(languageCode, { makeCourse, makeLesson }) 
         displayOrder: unitOrder,
         order: unitOrder,
         lessonIds,
+        // Bài tổng hợp cuối unit (ADR-022). `resolveUnitComprehensiveTest`
+        // trả null khi unit chưa có bài đã duyệt — unit KHÔNG có bài tổng
+        // hợp là trạng thái hợp lệ, nên trường này chỉ xuất hiện khi thật sự
+        // có nội dung (không sinh vỏ rỗng).
+        ...(() => {
+          const comprehensiveTest = resolveUnitComprehensiveTest(languageCode, unitId, {
+            lessonIds,
+            targetLocale: DAILY_LIFE_TARGET_LOCALES[languageCode] ?? `${languageCode}-${languageCode.toUpperCase()}`,
+          });
+          return comprehensiveTest ? { comprehensiveTest } : {};
+        })(),
       });
     }
 

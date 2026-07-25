@@ -457,6 +457,54 @@ bằng **so khớp cố định, KHÔNG dùng AI** (tiết kiệm chi phí API);
 3. **Ví dụ/nhân vật TRUNG TÍNH:** không gắn quốc tịch người học vào bài
    (không dùng "người Việt"); dùng bối cảnh Nhật Bản hoặc các nước châu Âu,
    tên trung tính.
+4. **CHẤT LIỆU — làm mới câu, KHÔNG bê nguyên:** rút từ/mẫu ĐÃ DUYỆT trong
+   các lesson của unit nhưng **viết câu MỚI**. Bài Plus phải khác bài free:
+   câu **dài hơn**, chỗ điền **dài hơn** (điền cả cụm/vế, không chỉ một từ),
+   **gộp nhiều mẫu**, **ít gợi ý hơn** lesson thường.
+5. **§G8 — mở nguồn thật:** mọi cụm cố định / cặp từ–trợ từ dùng trong bài
+   phải đối chiếu nguồn thật trong `local-sources/` (hanabira, JMdict, file
+   N-level). **Cấm dựa trí nhớ mô hình.** Không tra được → **không dùng**
+   (§G4). Báo cáo phải ghi rõ đã mở nguồn nào.
+
+**E4-gen. CƠ CHẾ SINH BÀI (generator) — `scripts/lib/unit-comprehensive-test.mjs`**
+
+Bài tổng hợp đi đúng dây chuyền **Source → Generate → Validate → Sync** như
+lesson thường, theo cùng mô hình `helpers.mjs` + `FIVE_CARDS_REGISTRY`:
+
+- **File generator là CƠ CHẾ LẮP RÁP, KHÔNG sinh tiếng Nhật.** Nó không tự
+  đặt câu, không tự nghĩ phương án sai, không tự chọn từ — đúng `AGENTS.md`
+  ("không tự sáng tạo") và §G8. Câu chữ thật, **kể cả 3 phương án sai**, nằm
+  trong file nguồn ĐÃ DUYỆT của unit.
+- **Thêm một bài** = viết file nguồn đã duyệt (theo G1–G9, có đối chiếu nguồn
+  thật) → thêm **đúng một dòng** vào `UNIT_COMPREHENSIVE_REGISTRY`, khoá theo
+  `languageCode` rồi `unitId` THẬT. Vòng lặp sinh curriculum không phải sửa.
+- **Unit chưa có bài tổng hợp là trạng thái HỢP LỆ** — generator trả `null`,
+  không sinh vỏ rỗng.
+- Chạy: `npm run generate:curriculum` → `npm run sync:flutter-assets` →
+  `npm run validate:curriculum` + `npm run smoke:curriculum` (y hệt lesson
+  thường).
+
+**Số câu SUY RA từ số lesson thật của unit** (generator tự tính, file nguồn
+KHÔNG được tự khai):
+
+| Số lesson của unit | Tổng câu | Chia 3 mức | Dải order |
+|---|---|---|---|
+| 3 lesson | **25** | 8 / 10 / 7 | 1–8 · 9–18 · 19–25 |
+| 2 lesson | **18** | 6 / 7 / 5 | 1–6 · 7–13 · 14–18 |
+
+Số lesson khác → generator **fail loud**, KHÔNG tự chế tỉ lệ mới; thêm kế
+hoạch mới cần owner duyệt.
+
+**Generator ép sẵn (throw ngay khi nguồn sai):** đủ/đúng số câu · `order` là
+1..N đủ và không trùng · `kind` khớp dải order · số ô đúng theo kind (2 / 3 /
+≥1) · `blankId` khớp 1-1 giữa thân câu và `blanks` · `acceptedAnswers` chứa
+`canonicalAnswer` · đúng 4 phương án, mỗi phương án phủ **đúng và đủ** mọi ô ·
+`correctOptionId` trỏ tới phương án có thật và khớp `acceptedAnswers` · mọi
+`reviews[].lessonId` thuộc unit (§G7) · hội thoại 2–3 lượt · tỉ lệ câu kết
+thúc bằng ô trống ≤ 50% · không quá 3 câu liên tiếp chỉ ôn một lesson.
+
+Hai ngưỡng cuối là **số vận hành** (§F-h) — owner chỉnh được, không phải hằng
+số bất biến.
 
 *Đã có:* **schema** trong `shared/types.ts` (`UnitComprehensiveTest` và các
 type con) + gắn optional vào `Unit.comprehensiveTest` + cơ chế chấm ghi ở
@@ -502,7 +550,17 @@ thật — **KHÔNG tự chế cơ chế so khớp mới**:
    `toLowerCase()`.
 2. **Đúng** khi bản chuẩn hoá của đáp án người học **trùng khớp với BẤT KỲ**
    mục nào trong `acceptedAnswers` đã chuẩn hoá.
-3. Không có so khớp mờ, không chấm điểm từng phần, không gọi AI.
+3. Không có so khớp mờ, không gọi AI.
+
+**Câu tự gõ có NHIỀU ô — chấm thế nào (đã chốt):** so khớp **TỪNG Ô RIÊNG**
+(mỗi ô đối chiếu `acceptedAnswers` của chính nó), nhưng **CÂU chỉ tính đúng
+khi MỌI ô đều đúng** — không có điểm từng phần ở cấp câu.
+
+- Chấm từng ô là để **phản hồi**: người học thấy đúng ô nào, sai ô nào. Đây
+  đúng cách Q10 `chat_text_fill` đang chạy (`incorrectChatSlotIds` đánh dấu
+  riêng từng slot sai), nên không phát sinh cơ chế mới.
+- Cấp câu không chia điểm lẻ, để **nhất quán với 2 kind chọn phương án**
+  (chọn đúng phương án = mọi ô đúng; chọn sai = cả câu sai).
 
 **Hệ quả cho người viết bài (áp cho câu TỰ GÕ):**
 - `acceptedAnswers` phải liệt kê **mọi dạng viết hợp lệ**: dạng có hỗ trợ đọc,
