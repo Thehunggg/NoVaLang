@@ -163,17 +163,46 @@ export type FiveCardContent = Record<string, unknown> &
 /* ─────────────────────────────────────────────────────────────────────────
  * BÀI TỔNG HỢP CUỐI UNIT — Unit Comprehensive Test (ADR-022, §E4)
  *
- * Dạng CLOZE (điền từ vào chỗ trống), chấm bằng SO KHỚP ĐÁP ÁN CỐ ĐỊNH —
- * KHÔNG dùng AI. Đây là activity RIÊNG ở cấp Unit, KHÔNG phải một `Lesson`
+ * Dạng CLOZE (điền vào chỗ trống) với BA loại câu, chấm bằng SO KHỚP CỐ ĐỊNH
+ * — KHÔNG dùng AI. Đây là activity RIÊNG ở cấp Unit, KHÔNG phải một `Lesson`
  * và KHÔNG dùng schema `five_cards` (§E4: "schema mới cho activity tổng hợp
  * (khác 5-card lesson)").
+ *
+ * "Cloze" ở đây gồm cả CHỌN phương án lẫn TỰ GÕ — điểm chung là người học
+ * điền vào chỗ trống, khác nhau ở cách nhập.
  *
  * Cơ chế chấm TÁI DÙNG nguyên cơ chế cloze đã chạy thật của Q10
  * `chat_text_fill` (`FiveCardChatSlot.acceptedAnswers` +
  * `normalizePracticeTextAnswer` trong
  * `mobile/novalang_flutter/lib/models/five_card_practice.dart`) — KHÔNG tự
  * chế cơ chế mới. Xem §D-Cloze trong LESSON_AUTHORING_STANDARD.md.
+ *
+ * ── RÀNG BUỘC NỘI DUNG (owner chốt 2026-07-25; generator/validator phải theo)
+ *
+ * 1. PHẠM VI TỪ (§G7, phương án B): phần BỊ CHẤM — tức nội dung điền vào
+ *    `blanks` — CHỈ được dùng từ/mẫu ĐÃ DẠY trong unit; mọi blank phải truy
+ *    được về một mục trong `reviews[]`. Ngữ cảnh xung quanh KHÔNG bị chấm
+ *    (tên riêng, quốc gia, câu dẫn) được phép lấy từ nguồn local đã ghi cấp
+ *    độ.
+ * 2. KHÔNG HARD-CODE MỘT NGÔN NGỮ: file nguồn local có sẵn nghĩa tiếng
+ *    Việt/Anh — KHÔNG bê nguyên vào bài. Mọi nghĩa/dịch đi qua hệ đa ngôn ngữ
+ *    (`*ByNative`, `targetLocale`) theo TRANSLATION_STANDARD.md; nguồn chỉ
+ *    dùng để HIỂU.
+ * 3. VÍ DỤ/NHÂN VẬT TRUNG TÍNH: không gắn quốc tịch người học vào bài; dùng
+ *    bối cảnh Nhật Bản hoặc các nước châu Âu, tên trung tính.
  * ───────────────────────────────────────────────────────────────────────── */
+
+/**
+ * Ba loại câu của bài tổng hợp (owner chốt 2026-07-25). Ánh xạ cố định theo
+ * `order` trong bài 25 câu:
+ * - `sentence_multi_blank_choice`  — câu 1–8   (câu/2 câu ngắn, 2 ô, chọn 1/4)
+ * - `dialogue_multi_blank_choice`  — câu 9–18  (hội thoại 2–3 lượt, 3 ô, chọn 1/4)
+ * - `typed_blank`                  — câu 19–25 (tự gõ vào ô trống)
+ */
+export type UnitComprehensiveQuestionKind =
+  | 'sentence_multi_blank_choice'
+  | 'dialogue_multi_blank_choice'
+  | 'typed_blank';
 
 /**
  * Một Ô TRỐNG trong câu cloze. `acceptedAnswers` là TẤT CẢ dạng viết được
@@ -214,6 +243,41 @@ export interface UnitComprehensiveClozeSegment {
 }
 
 /**
+ * MỘT PHƯƠNG ÁN của câu chọn (2 kind `*_multi_blank_choice`). Điểm khác cốt
+ * lõi so với trắc nghiệm thường: mỗi phương án chứa đáp án cho **TẤT CẢ** ô
+ * trống của câu, nên người học chọn MỘT lần là điền xong cả câu.
+ *
+ * Kế thừa `FiveCardPracticeOption` của lesson thường (id/text/canonicalText/
+ * audioText) — KHÔNG chế lại; chỉ thêm phần ánh xạ theo ô trống.
+ */
+export interface UnitComprehensiveChoiceOption extends FiveCardPracticeOption {
+  /**
+   * Đáp án phương án này điền vào TỪNG ô, khoá theo
+   * `UnitComprehensiveClozeBlank.id`. Phải phủ ĐÚNG và ĐỦ mọi `blankId` của
+   * câu — không thiếu, không dư.
+   *
+   * `text` (kế thừa) là nhãn hiển thị gộp cho người học đọc nhanh, ví dụ
+   * dạng đánh số theo thứ tự ô: "①… ②…".
+   */
+  answersByBlankId: Record<string, string>;
+}
+
+/**
+ * MỘT LƯỢT NÓI trong câu hội thoại (kind `dialogue_multi_blank_choice`).
+ * Cùng khuôn với `FiveCardChatMessage` của lesson thường.
+ *
+ * Owner nhấn mạnh: hội thoại phải NGẮN (2–3 lượt) — đọc dài làm mất thời gian
+ * và biến bài kiểm tra thành bài đọc hiểu.
+ */
+export interface UnitComprehensiveDialogueTurn {
+  id: string;
+  /** Trỏ tới nhân vật trong pool nhân vật đã duyệt của unit. */
+  speakerId: string;
+  /** Đoạn có `blankId` là ô điền; đoạn không có là văn bản hiển thị. */
+  segments: UnitComprehensiveClozeSegment[];
+}
+
+/**
  * Mục kiến thức mà một câu đang ÔN. Bắt buộc để chứng minh §G7 (chỉ dùng
  * kiến thức ĐÃ DẠY trong unit) và để validator sau này kiểm độ phủ.
  */
@@ -225,19 +289,60 @@ export interface UnitComprehensiveReviewRef {
   ref: string;
 }
 
-/** Một câu hỏi cloze (có thể có nhiều ô trống). */
+/**
+ * Một câu hỏi của bài tổng hợp. `kind` quyết định trường nào bắt buộc và
+ * chấm theo cách nào — xem §D-Cloze trong LESSON_AUTHORING_STANDARD.md.
+ *
+ * VỊ TRÍ Ô TRỐNG (luật viết bài, owner chốt): ô trống phải RẢI khắp câu
+ * (đầu / giữa / cuối) và THỨ TỰ MỖI CÂU MỘT KHÁC. **CẤM luôn khoét cuối
+ * câu** — người học sẽ đoán được theo thói quen thay vì thật sự hiểu.
+ */
 export interface UnitComprehensiveClozeQuestion {
   id: string;
   order: number;
+  /** Loại câu — quyết định trường bắt buộc + cách chấm. */
+  kind: UnitComprehensiveQuestionKind;
   /** Tình huống/ngữ cảnh (native language) — nêu khi câu cần bối cảnh. */
   context?: string;
   /** Chỉ dẫn cho người học (native language). */
   prompt: string;
-  /** Câu chứa chỗ trống, tách đoạn; đoạn có `blankId` là ô điền. */
-  segments: UnitComprehensiveClozeSegment[];
-  /** Các ô trống của câu này (>=1); mọi `blankId` trong segments phải có ở đây. */
+  /**
+   * Câu chứa chỗ trống, tách đoạn; đoạn có `blankId` là ô điền.
+   * BẮT BUỘC với `sentence_multi_blank_choice` và `typed_blank`.
+   * KHÔNG dùng với `dialogue_multi_blank_choice` (dùng `dialogue` thay).
+   */
+  segments?: UnitComprehensiveClozeSegment[];
+  /**
+   * Hội thoại 2–3 lượt nói. BẮT BUỘC và CHỈ dùng với
+   * `dialogue_multi_blank_choice`. Giữ NGẮN (§E4).
+   */
+  dialogue?: UnitComprehensiveDialogueTurn[];
+  /**
+   * ĐÚNG 4 phương án. BẮT BUỘC với 2 kind `*_multi_blank_choice`;
+   * KHÔNG dùng với `typed_blank`. Mỗi phương án điền cả câu.
+   */
+  options?: UnitComprehensiveChoiceOption[];
+  /**
+   * Phương án đúng. BẮT BUỘC với 2 kind `*_multi_blank_choice`; phải trỏ tới
+   * một `options[].id` có thật.
+   */
+  correctOptionId?: string;
+  /**
+   * Các ô trống của câu (mọi `blankId` xuất hiện trong `segments`/`dialogue`
+   * phải có ở đây, và ngược lại).
+   * Số ô theo kind: `sentence_multi_blank_choice` = 2 ·
+   * `dialogue_multi_blank_choice` = 3 · `typed_blank` >= 1.
+   *
+   * Với 2 kind chọn phương án, `acceptedAnswers` của blank KHÔNG dùng để
+   * chấm (chấm bằng `correctOptionId`) nhưng vẫn phải điền đúng đáp án để
+   * hiển thị khi chữa bài và cho TTS.
+   */
   blanks: UnitComprehensiveClozeBlank[];
-  /** Mục đang ôn (>=1) — feed §G7. */
+  /**
+   * Mục đang ôn (>=1) — feed §G7. MỌI ô trống phải truy được về một mục ở
+   * đây; đây là bằng chứng bằng DỮ LIỆU rằng phần bị chấm chỉ dùng kiến thức
+   * đã dạy.
+   */
   reviews: UnitComprehensiveReviewRef[];
   /** Độ khó tương đối trong bài; dùng để xếp dễ→khó (§E4). */
   difficulty: 1 | 2 | 3;
@@ -266,14 +371,24 @@ export interface UnitComprehensiveTest {
   description?: string;
   descriptionByNative?: Partial<Record<SupportedUILanguage, string>>;
   estimatedMinutes: string;
-  /** Số câu thật; owner chốt khoảng 15–20. Phải bằng `questions.length`. */
+  /**
+   * Số câu thật — owner chốt **25** (8 + 10 + 7 theo 3 kind). Phải bằng
+   * `questions.length`.
+   */
   totalQuestions: number;
   /**
    * Các lesson được gộp, ĐÚNG THỨ TỰ dạy. Mọi `reviews[].lessonId` phải nằm
    * trong danh sách này (§G7).
    */
   sourceLessonIds: string[];
-  /** Xếp theo `order` tăng dần, độ khó dễ→khó dần (§E4). */
+  /**
+   * Xếp theo `order` tăng dần: câu 1–8 `sentence_multi_blank_choice`,
+   * 9–18 `dialogue_multi_blank_choice`, 19–25 `typed_blank`.
+   *
+   * Độ khó tăng dần trong toàn bài (§E4). Kiến thức các lesson phải **TRỘN
+   * XEN KẼ** (L1/L2/L3 đan nhau), KHÔNG gom từng lesson thành từng khối —
+   * bài tổng hợp phải buộc người học chuyển ngữ cảnh liên tục.
+   */
   questions: UnitComprehensiveClozeQuestion[];
   /** Ngưỡng đạt tính theo % số ô trống đúng. Chưa chốt → để trống. */
   passThresholdPercent?: number;

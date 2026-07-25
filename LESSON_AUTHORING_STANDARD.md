@@ -419,13 +419,44 @@ chung. Reading = trường riêng, validator ép (§D9).
 **E4. 🔨 Bài tổng hợp cuối Unit — ĐÃ CHỐT THIẾT KẾ + CÓ SCHEMA (2026-07-25);
 generator/validator/UI CHƯA làm.**
 
-*Owner đã chốt (2026-07-25):* dạng bài = **CLOZE — điền từ vào chỗ trống**,
-chấm bằng **so khớp đáp án cố định, KHÔNG dùng AI** (tiết kiệm chi phí API);
-mỗi ô trống nhận **NHIỀU đáp án đúng** (vd viết kanji hay kana đều tính đúng);
-nội dung **chỉ gộp từ vựng + mẫu ngữ pháp ĐÃ DẠY trong unit** (không thêm mới
-— §G7); **~15–20 câu**; **khó hơn lesson thường** (câu dài hơn, gộp nhiều mẫu,
-ĐIỀN chứ không chọn) nhưng vẫn **dễ→khó dần**; **CÓ chấm điểm**; **gate PLUS
-toàn bài** (nhất quán ranh giới Q10–Q14 của lesson thường).
+*Owner đã chốt (2026-07-25):* dạng bài = **CLOZE — điền vào chỗ trống**, chấm
+bằng **so khớp cố định, KHÔNG dùng AI** (tiết kiệm chi phí API); nội dung
+**chỉ gộp từ vựng + mẫu ngữ pháp ĐÃ DẠY trong unit** (§G7); **CÓ chấm điểm**;
+**gate PLUS toàn bài** (nhất quán ranh giới Q10–Q14 của lesson thường).
+
+**ĐÚNG 25 CÂU, chia 3 mức (mở rộng 2026-07-25):**
+
+| Câu | Loại (`kind`) | Hình thức | Số ô | Cách nhập |
+|---|---|---|---|---|
+| 1–8 | `sentence_multi_blank_choice` | 1 câu hoặc 2 câu ngắn | **2** | Chọn 1 trong **4 phương án** |
+| 9–18 | `dialogue_multi_blank_choice` | **Hội thoại 2–3 lượt** | **3** | Chọn 1 trong **4 phương án** |
+| 19–25 | `typed_blank` | Câu | ≥1 | **Tự gõ** vào ô trống |
+
+- **Mỗi phương án chứa đáp án cho TẤT CẢ ô** của câu (vd `A. ①です
+  ②よろしくお願いします`) → chọn một lần là điền xong cả câu; đúng khi chọn
+  đúng phương án (tức mọi ô đều đúng).
+- Câu tự gõ: **chỉ gõ phần trong ô**, KHÔNG gõ lại cả câu. Có thể kèm `hint`.
+- **Hội thoại phải NGẮN (2–3 lượt).** Đọc dài làm mất thời gian và biến bài
+  kiểm tra thành bài đọc hiểu — owner nhấn mạnh.
+- **VỊ TRÍ Ô TRỐNG:** rải khắp câu (đầu/giữa/cuối), **thứ tự mỗi câu một
+  khác**. **CẤM luôn khoét cuối câu** — người học sẽ đoán theo thói quen thay
+  vì thật sự hiểu.
+- **TRỘN XEN KẼ kiến thức L1/L2/L3**, không gom từng lesson thành từng khối.
+  Độ khó tăng dần suốt bài.
+
+**RÀNG BUỘC NỘI DUNG (generator/validator phải theo):**
+
+1. **Phạm vi từ — §G7, phương án B (owner chốt):** phần **BỊ CHẤM** (nội dung
+   điền vào ô trống) **CHỈ** dùng từ/mẫu ĐÃ DẠY trong unit; mọi ô phải truy
+   được về một mục trong `reviews[]`. **Ngữ cảnh xung quanh KHÔNG bị chấm**
+   (tên riêng, quốc gia, câu dẫn) được phép lấy từ nguồn local đã ghi cấp độ.
+2. **KHÔNG hard-code một ngôn ngữ:** file nguồn local có sẵn nghĩa tiếng
+   Việt/Anh — **KHÔNG bê nguyên vào bài**. Mọi nghĩa/dịch đi qua hệ đa ngôn
+   ngữ (`*ByNative`, `targetLocale`) theo `TRANSLATION_STANDARD.md`; nguồn
+   chỉ dùng để **HIỂU**.
+3. **Ví dụ/nhân vật TRUNG TÍNH:** không gắn quốc tịch người học vào bài
+   (không dùng "người Việt"); dùng bối cảnh Nhật Bản hoặc các nước châu Âu,
+   tên trung tính.
 
 *Đã có:* **schema** trong `shared/types.ts` (`UnitComprehensiveTest` và các
 type con) + gắn optional vào `Unit.comprehensiveTest` + cơ chế chấm ghi ở
@@ -447,10 +478,21 @@ chuẩn bị"/"nâng cấp". File:
 
 ---
 
-**§D-Cloze. CƠ CHẾ CHẤM CLOZE (bài tổng hợp) — TÁI DÙNG cơ chế đã chạy thật.**
+**§D-Cloze. CƠ CHẾ CHẤM (bài tổng hợp) — TÁI DÙNG cơ chế đã chạy thật.**
 
-**KHÔNG tự chế cơ chế so khớp mới.** Bài tổng hợp dùng đúng cơ chế cloze mà
-Q10 `chat_text_fill` của lesson thường đã chạy thật:
+Bài tổng hợp có **hai cách chấm**, tuỳ `kind` của câu:
+
+**(A) Câu CHỌN PHƯƠNG ÁN** (`sentence_multi_blank_choice`,
+`dialogue_multi_blank_choice`): chấm bằng **so id phương án** — đúng khi
+người học chọn `options[].id` trùng `correctOptionId`. Vì mỗi phương án đã
+chứa đáp án cho **mọi** ô (`answersByBlankId`), chọn đúng phương án nghĩa là
+tất cả ô đều đúng — **không có điểm từng phần**. `acceptedAnswers` của các ô
+vẫn phải điền đúng (để hiển thị khi chữa bài + TTS) nhưng KHÔNG tham gia
+chấm.
+
+**(B) Câu TỰ GÕ** (`typed_blank`): chấm bằng **so khớp `acceptedAnswers`**,
+dùng nguyên cơ chế cloze mà Q10 `chat_text_fill` của lesson thường đã chạy
+thật — **KHÔNG tự chế cơ chế so khớp mới**:
 
 1. Chuẩn hoá **cả hai vế** (đáp án người học gõ và từng mục trong
    `acceptedAnswers`) bằng `normalizePracticeTextAnswer`
@@ -462,7 +504,7 @@ Q10 `chat_text_fill` của lesson thường đã chạy thật:
    mục nào trong `acceptedAnswers` đã chuẩn hoá.
 3. Không có so khớp mờ, không chấm điểm từng phần, không gọi AI.
 
-**Hệ quả cho người viết bài:**
+**Hệ quả cho người viết bài (áp cho câu TỰ GÕ):**
 - `acceptedAnswers` phải liệt kê **mọi dạng viết hợp lệ**: dạng có hỗ trợ đọc,
   dạng thuần chữ đích, dạng kana thuần… Thiếu một dạng = người học gõ đúng
   vẫn bị chấm sai.
@@ -472,6 +514,16 @@ Q10 `chat_text_fill` của lesson thường đã chạy thật:
 - Khoảng trắng thừa giữa từ **không** ảnh hưởng (bước 2), nhưng **có/không có
   khoảng trắng** thì vẫn khác nhau — nếu cả hai cách viết đều đúng, phải liệt
   kê cả hai.
+
+**Hệ quả cho người viết bài (áp cho câu CHỌN PHƯƠNG ÁN):**
+- Đúng **4 phương án**; `answersByBlankId` của MỖI phương án phải phủ **đúng
+  và đủ** mọi `blankId` của câu — không thiếu ô, không dư ô.
+- 3 phương án sai phải **sai hợp lý** (§B9): sai trợ từ, sai register, đúng
+  ngữ pháp nhưng sai ngữ cảnh… KHÔNG để phương án sai vô nghĩa khiến đáp án
+  đúng lộ ra.
+- Vì không có điểm từng phần, tránh kiểu phương án "đúng 1 ô sai 1 ô" gây ức
+  chế — mỗi phương án nên sai vì MỘT lý do nhất quán, giải thích được trong
+  `explanation`.
 
 ---
 

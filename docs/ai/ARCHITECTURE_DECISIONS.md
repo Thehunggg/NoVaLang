@@ -1466,3 +1466,82 @@ Design approved by Project Owner, 2026-07-25 (format, grading mechanism,
 multiple accepted answers, taught-material-only constraint, question count,
 graded, Plus gate). This ADR authorizes the **schema and documentation only**;
 it does not authorize generating or authoring any comprehensive-test content.
+
+### Amendment — 2026-07-25: 25 questions, three question kinds
+
+**Status:** `APPROVED — SCHEMA ONLY (generator / validator / content / UI still NOT built)`
+
+**Context:** the original ADR-022 body above fixed the format as pure typed
+cloze at "~15–20 questions". Reviewing that against how the test is actually
+meant to play, the Project Owner expanded the design the same day: a test made
+only of typed blanks is slow to take and punishes typing skill rather than
+comprehension, so the bulk of the test became option-choice while typing is
+reserved for the final, hardest section.
+
+**Decision — exactly 25 questions in three fixed sections:**
+
+- **Q1–8 `sentence_multi_blank_choice`** — one sentence (or two short
+  sentences) with **2 blanks**; learner picks 1 of **4 options**.
+- **Q9–18 `dialogue_multi_blank_choice`** — a **short dialogue of 2–3 turns**
+  with **3 blanks**; learner picks 1 of **4 options**.
+- **Q19–25 `typed_blank`** — learner **types** into the blank (the blank only,
+  never the whole sentence); optional `hint`.
+
+Each option in the two choice kinds carries the answers for **every** blank in
+that question (`answersByBlankId`), e.g. `A. ①です ②よろしくお願いします`, so one
+selection fills the whole question. Grading therefore has two paths, both
+fixed-answer and both AI-free:
+
+- choice kinds → compare selected `options[].id` against `correctOptionId`;
+  no partial credit (a correct option means every blank is correct);
+- typed kind → the existing `acceptedAnswers` + `normalizePracticeTextAnswer`
+  path from ADR-022's body, unchanged.
+
+**Additional binding authoring rules recorded with this amendment:**
+
+- **Blank placement:** blanks must be spread across the sentence (start /
+  middle / end) and their order must differ between questions. **Never place
+  the blank at the end of every sentence** — learners answer by positional
+  habit instead of understanding.
+- **Interleaving:** knowledge from L1/L2/L3 must be mixed throughout, not
+  grouped into per-lesson blocks; difficulty still rises across the test.
+- **Dialogues stay short (2–3 turns).** A long dialogue turns a comprehension
+  test into a reading test and wastes the learner's time.
+- **§G7 scope, option B (Owner's choice):** only the **graded** content — what
+  goes into the blanks — is restricted to material already taught in the unit,
+  and every blank must trace to a `reviews[]` entry. Surrounding **ungraded**
+  context (proper nouns, countries, framing sentences) may draw on the
+  level-tagged local sources.
+- **No hard-coded single language:** the local source files ship Vietnamese/
+  English glosses; those must not be copied into lesson data. All meanings and
+  translations go through the multilingual fields (`*ByNative`,
+  `targetLocale`) per `TRANSLATION_STANDARD.md`. Sources are for
+  understanding, not for pasting.
+- **Neutral examples and characters:** never attach the learner's own
+  nationality to the content; use Japanese or European settings with neutral
+  names.
+
+**Schema changes (`shared/types.ts`), all additive:** new
+`UnitComprehensiveQuestionKind` union; new `UnitComprehensiveChoiceOption`
+which **extends the existing `FiveCardPracticeOption`** rather than redefining
+id/text/canonicalText/audioText; new `UnitComprehensiveDialogueTurn` mirroring
+`FiveCardChatMessage`. `UnitComprehensiveClozeQuestion` gained `kind`,
+`dialogue?`, `options?`, `correctOptionId?`, and `segments` became optional
+(it is required for the two non-dialogue kinds and unused for the dialogue
+kind). `totalQuestions` is documented as 25 (8 + 10 + 7).
+
+The type name `UnitComprehensiveClozeQuestion` and the value
+`format: 'unit_comprehensive_cloze'` are deliberately **kept**: all three
+kinds are cloze in the real sense — the learner fills blanks — they differ
+only in input method (choose vs. type). Renaming would churn the contract for
+no semantic gain.
+
+`Unit.comprehensiveTest` remains **optional**, so nothing that exists today
+changes.
+
+**Verification:** `tsc --noEmit` on `shared/types.ts` exit 0;
+`validate:curriculum` PASS (35 courses, 172 lessons, same 4 pre-existing soft
+warnings, 0 new); `smoke:curriculum` PASS (0 fail in every section).
+
+**Approval:** design expanded and approved by Project Owner, 2026-07-25. Still
+schema + documentation only — no generator, no validator, no content, no UI.
