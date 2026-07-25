@@ -34,20 +34,31 @@
  * Tỉ lệ 3 mức giữ tương đương giữa hai kế hoạch.
  */
 export const SECTION_PLANS = {
-  3: { totalQuestions: 25, split: [8, 10, 7] },
-  2: { totalQuestions: 18, split: [6, 7, 5] },
+  3: { totalQuestions: 25, split: [8, 17] },
+  2: { totalQuestions: 18, split: [6, 12] },
 };
 
-/** Thứ tự 3 mức, khó tăng dần. Chỉ số ở đây khớp chỉ số trong `split`. */
+/**
+ * Thứ tự các mức, khó tăng dần. Chỉ số ở đây khớp chỉ số trong `split`.
+ *
+ * `typed_blank` ĐÃ BỎ KHỎI MỌI KẾ HOẠCH (owner chốt 2026-07-25). Lý do: câu tự
+ * gõ không nêu đủ tình huống thì NHIỀU đáp án khác đáp án chuẩn vẫn đúng, nên
+ * bộ chấm cố định sẽ chấm sai người trả lời đúng. Câu chọn phương án không có
+ * vấn đề đó vì mọi khả năng đều bày sẵn.
+ *
+ * Kiểu `typed_blank` vẫn GIỮ trong schema, generator và runtime (xem
+ * `BLANKS_BY_KIND`, `UnitComprehensiveQuestionKind`) để dùng lại được sau này —
+ * chỉ là hiện KHÔNG kế hoạch nào ánh xạ tới nó, nên không unit nào sinh ra câu
+ * tự gõ.
+ */
 export const SECTION_KINDS = [
   'sentence_multi_blank_choice',
   'dialogue_multi_blank_choice',
-  'typed_blank',
 ];
 
 /**
- * Số ô trống bắt buộc theo loại câu. `typed_blank` chỉ có sàn (>=1) vì câu tự
- * gõ được phép nhiều ô tuỳ nội dung.
+ * Số ô trống bắt buộc theo loại câu. `typed_blank` giữ lại cho tương lai —
+ * hiện KHÔNG kế hoạch nào ánh xạ tới nó (xem [SECTION_KINDS]).
  */
 export const BLANKS_BY_KIND = {
   sentence_multi_blank_choice: { exactly: 2 },
