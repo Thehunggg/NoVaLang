@@ -127,6 +127,7 @@ export const VOCABULARY_DETAIL_FIELDS = [
   "appropriateFor",
   "avoid",
   "register",
+  "formal",
   "casual",
 ];
 

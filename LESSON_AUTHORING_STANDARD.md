@@ -155,6 +155,7 @@ DỮ LIỆU. Đây là luật chặn việc đó lặp lại.
 | `appropriateFor` | array | Dùng được với ai (đối tượng) |
 | `avoid` | array | KHÔNG dùng khi nào |
 | `register` | string | Mức lịch sự của CHÍNH cụm này |
+| `formal` | array | Cách nói TRANG TRỌNG tương đương + dùng với ai |
 | `casual` | array | Cách nói THÂN MẬT tương đương + dùng với ai |
 
 Mỗi trường native phải đi qua `localizeSupport` → sinh `*ByNative` đủ locale.
@@ -165,13 +166,15 @@ thân mật**. **Không bắt buộc từ nào cũng đủ ba mức**, NHƯNG **
 BẮT BUỘC ghi vào — cấm bỏ trống**. Ánh xạ vào khuôn hiện tại:
 
 - mức của chính cụm → `register`
+- mức **trang trọng** tương đương → `formal`
 - mức **thân mật** tương đương → `casual`
-- mức **trang trọng** tương đương → **CHƯA CÓ TRƯỜNG.** Golden L1 không có
-  `formal`, nên hiện không chỗ nào ghi được. **ĐỀ XUẤT (chờ owner chốt):** thêm
-  `formal` (array, cùng khuôn `casual`). Trước khi owner chốt, mức trang trọng
-  ghi tạm trong `otherExpressions` hoặc `notes` và nêu rõ ở bản đọc.
 
-**PHÂN BIỆT "ĐÃ KIỂM, KHÔNG CÓ" vs "CHƯA ĐIỀN" (ĐỀ XUẤT — chờ owner chốt).**
+`formal` là trường **mới, owner chốt 2026-07-25**: khuôn Golden L1 chỉ có
+`register` + `casual`, nên mức trang trọng trước đó không có chỗ ghi. Đã thêm
+vào `shared/types.ts` (`FiveCardVocabularyDetail`) và vào cảnh báo mềm của
+validator. **Golden L1 KHÔNG bị sửa** (đang frozen) — chỉ mở chỗ chứa.
+
+**PHÂN BIỆT "ĐÃ KIỂM, KHÔNG CÓ" vs "CHƯA ĐIỀN" (owner chốt 2026-07-25).**
 Nếu cả hai đều để trống thì lần sau không ai biết cái nào đã làm. Hiện trạng đã
 kiểm: 5 trường này ở L2/L3 **vắng mặt hẳn** (`hasOwnProperty === false`), không
 phải mảng rỗng — nên quy ước dưới đây **không cần migrate dữ liệu cũ**:

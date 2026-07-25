@@ -42,6 +42,33 @@
 - Xóa 9 file thừa trong `local-sources/`.
 - Xác minh điều khoản bản quyền Irodori + loại giấy phép CC của hanabira.
 
+## NỢ NỘI DUNG — 「お元気で」 thẻ từ vựng ĐÁ NHAU với hội thoại cùng bài — 2026-07-25
+
+Cần **NGƯỜI BẢN NGỮ** quyết. **CHƯA sửa gì** — không sửa thẻ, không sửa hội thoại.
+
+`ja-daily_life-m01-u1-l3` · `vocabularyDetails[ogenki-de].overview`:
+
+> "Giữ sức khỏe nhé (KHI LÂU MỚI GẶP LẠI)."
+
+Nhưng `dialogueGroups` **đã duyệt của chính L3** ghép nó với mốc NGẮN HẠN:
+
+- [Rời lớp một cách lịch sự] 「また明日。お元気で。」 · 「お元気で。失礼します。」
+- [Bạn bè chào tạm biệt] 「また来週。お元気で。」 · 「うん、お元気で。」
+
+Nguồn local không phân xử được: hanabira/n5 gần như chỉ có 「お元気ですか」 (câu
+HỎI "có khoẻ không"); duy nhất một chỗ có 「それじゃ、お元気で。」 (lời chia tay).
+
+**Owner quyết 2026-07-25 — phương án (c):** coi như mâu thuẫn CHƯA GIẢI ĐƯỢC.
+Không sửa thẻ, không sửa hội thoại L3 đã duyệt. Hệ quả đang áp dụng:
+
+- 「お元気で」 **KHÔNG được dùng làm trục đúng/sai** ở bài tổng hợp cuối Unit.
+  5 chỗ từng dựa vào nó đã viết lại (đợt 1 Q3-D, Q8 · đợt 2 Q12-C, Q15-A, Q16).
+- `vocabularyDetails[ogenki-de]`: `timingAndContext` và `avoid` để `[]` kèm ghi
+  chú "mâu thuẫn dữ liệu, chờ người bản ngữ" — KHÔNG đoán.
+
+Gỡ nợ này = một người bản ngữ xác nhận お元気で thật sự dùng được ở mốc nào, rồi
+sửa MỘT trong hai phía cho khớp.
+
 ## NỢ KỸ THUẬT — `MAX_TRAILING_BLANK_RATIO` đếm KHÔNG SÁT ý định §E4 — 2026-07-25
 
 Phát hiện khi soạn nội dung ĐỢT 2 (câu 9–18, `dialogue_multi_blank_choice`) của

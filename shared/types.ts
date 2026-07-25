@@ -90,6 +90,43 @@ export interface FiveCardCharacterContext {
   cultureContext: string;
   approvedCharacterNamePool: FiveCardCharacterName[];
 }
+/**
+ * Card 2 — chi tiết một mục từ vựng (§B2c).
+ *
+ * BA MỨC lịch sự (owner chốt 2026-07-25): trang trọng · lịch sự · thân mật.
+ * Không bắt buộc mục nào cũng đủ ba, nhưng mức nào CÓ thì bắt buộc ghi.
+ *  - `register` — mức của CHÍNH cụm này
+ *  - `formal`   — cách nói TRANG TRỌNG tương đương
+ *  - `casual`   — cách nói THÂN MẬT tương đương
+ *
+ * Mỗi trường native có một bản `*ByNative` sinh lúc generate; đừng viết tay.
+ *
+ * PHÂN BIỆT hai trạng thái rỗng (owner chốt 2026-07-25) — quan trọng, vì nếu
+ * cả hai cùng để trống thì lần sau không ai biết mục nào đã tra:
+ *  - **thiếu key hẳn** = CHƯA ĐIỀN → validator cảnh báo mềm
+ *  - **`[]` / `''`**   = ĐÃ KIỂM, cụm này thật sự không có thông tin ở trường
+ *    đó → validator im lặng. Chỉ được đánh sau khi đã mở nguồn thật (G8);
+ *    đánh cho nhanh mà chưa tra là vi phạm G4.
+ */
+export interface FiveCardVocabularyDetail {
+  id: string;
+  overview?: string;
+  /** Dùng lúc nào / hoàn cảnh nào. */
+  timingAndContext?: string[];
+  /** Dùng được với ai. */
+  appropriateFor?: string[];
+  /** KHÔNG dùng khi nào. */
+  avoid?: string[];
+  /** Mức lịch sự của chính cụm này. */
+  register?: string;
+  /** Cách nói TRANG TRỌNG tương đương + dùng với ai. */
+  formal?: string[];
+  /** Cách nói THÂN MẬT tương đương + dùng với ai. */
+  casual?: string[];
+  notes?: string[];
+  examples?: unknown[];
+}
+
 export interface FiveCardPracticeAnswerSlot {
   id: string;
   expectedTokenId: string;
