@@ -77684,6 +77684,60 @@
         "vocabularyDetails": [
           {
             "id": "namae",
+            "timingAndContext": [
+              "Nói về tên nói chung.",
+              "Nói tên của chính mình."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nói về tên nói chung.",
+                "Nói tên của chính mình."
+              ],
+              "en": [
+                "Talking about names in general.",
+                "Giving your own name."
+              ],
+              "ja": [
+                "名前について一般的に話すとき。",
+                "自分の名前を言うとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "相手を選びません"
+              ]
+            },
+            "avoid": [
+              "Không thêm お cho tên của chính mình."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không thêm お cho tên của chính mình."
+              ],
+              "en": [
+                "Do not add お to your own name."
+              ],
+              "ja": [
+                "自分の名前に「お」を付けません。"
+              ]
+            },
+            "register": "Trung tính.",
+            "registerByNative": {
+              "vi": "Trung tính.",
+              "en": "Neutral.",
+              "ja": "中立的。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Tên.",
             "overviewByNative": {
               "vi": "Tên.",
@@ -77720,6 +77774,68 @@
           },
           {
             "id": "onamae",
+            "timingAndContext": [
+              "Hỏi tên người đối diện.",
+              "Nhắc tới tên người khác một cách lịch sự."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Hỏi tên người đối diện.",
+                "Nhắc tới tên người khác một cách lịch sự."
+              ],
+              "en": [
+                "Asking the other person’s name.",
+                "Referring politely to someone else’s name."
+              ],
+              "ja": [
+                "相手の名前を尋ねるとき。",
+                "相手の名前に丁寧に触れるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Người mới gặp",
+              "Khách",
+              "Người trên"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Người mới gặp",
+                "Khách",
+                "Người trên"
+              ],
+              "en": [
+                "Someone you have just met",
+                "Customers",
+                "People senior to you"
+              ],
+              "ja": [
+                "初対面の人",
+                "お客様",
+                "目上の人"
+              ]
+            },
+            "avoid": [
+              "Không thêm お cho tên của chính mình."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không thêm お cho tên của chính mình."
+              ],
+              "en": [
+                "Do not add お to your own name."
+              ],
+              "ja": [
+                "自分の名前に「お」を付けません。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Tên — cách nói lịch sự hơn.",
             "overviewByNative": {
               "vi": "Tên — cách nói lịch sự hơn.",
@@ -77742,6 +77858,56 @@
           },
           {
             "id": "nan-desu-ka",
+            "timingAndContext": [
+              "Hỏi một vật hoặc một khái niệm là gì."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Hỏi một vật hoặc một khái niệm là gì."
+              ],
+              "en": [
+                "Asking what an object or an idea is."
+              ],
+              "ja": [
+                "物事が何かを尋ねるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "相手を選びません"
+              ]
+            },
+            "avoid": [
+              "Không dùng một mình để hỏi tên người."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng một mình để hỏi tên người."
+              ],
+              "en": [
+                "Do not use it on its own to ask a person’s name."
+              ],
+              "ja": [
+                "人の名前を尋ねるのに単独では使いません。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Là gì?",
             "overviewByNative": {
               "vi": "Là gì?",
@@ -77778,6 +77944,85 @@
           },
           {
             "id": "onamae-wa-nan-desu-ka",
+            "timingAndContext": [
+              "Hỏi tên đầy đủ khi mới gặp."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Hỏi tên đầy đủ khi mới gặp."
+              ],
+              "en": [
+                "Asking for a name in full at a first meeting."
+              ],
+              "ja": [
+                "初対面で名前をきちんと尋ねるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Người mới gặp",
+              "Khách"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Người mới gặp",
+                "Khách"
+              ],
+              "en": [
+                "Someone you have just met",
+                "Customers"
+              ],
+              "ja": [
+                "初対面の人",
+                "お客様"
+              ]
+            },
+            "avoid": [
+              "Trong hội thoại thân mật thì dài hơn cần thiết."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Trong hội thoại thân mật thì dài hơn cần thiết."
+              ],
+              "en": [
+                "Longer than needed in casual conversation."
+              ],
+              "ja": [
+                "カジュアルな会話では長すぎます。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [
+              "Cách thân mật chuẩn:",
+              "お名前は？",
+              "Dùng với:",
+              "Người ngang hàng"
+            ],
+            "casualByNative": {
+              "vi": [
+                "Cách thân mật chuẩn:",
+                "お名前は？",
+                "Dùng với:",
+                "Người ngang hàng"
+              ],
+              "en": [
+                "Standard casual form:",
+                "お名前は？",
+                "Use with:",
+                "Peers"
+              ],
+              "ja": [
+                "標準的なカジュアル形：",
+                "お名前は？",
+                "使う相手：",
+                "同等の相手"
+              ]
+            },
             "overview": "Tên bạn là gì?",
             "overviewByNative": {
               "vi": "Tên bạn là gì?",
@@ -77800,6 +78045,89 @@
           },
           {
             "id": "onamae-wa",
+            "timingAndContext": [
+              "Hỏi tên ngắn gọn khi đã rõ là đang hỏi người đối diện."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Hỏi tên ngắn gọn khi đã rõ là đang hỏi người đối diện."
+              ],
+              "en": [
+                "Asking a name briefly when it is clear you mean the listener."
+              ],
+              "ja": [
+                "相手のことだと明らかなとき、短く名前を尋ねるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Người mới gặp",
+              "Người ngang hàng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Người mới gặp",
+                "Người ngang hàng"
+              ],
+              "en": [
+                "Someone you have just met",
+                "Peers"
+              ],
+              "ja": [
+                "初対面の人",
+                "同等の相手"
+              ]
+            },
+            "avoid": [
+              "Không cần thêm あなた."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không cần thêm あなた."
+              ],
+              "en": [
+                "There is no need to add あなた."
+              ],
+              "ja": [
+                "「あなた」を足す必要はありません。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [
+              "Cách trang trọng hơn:",
+              "お名前は何ですか",
+              "Dùng với:",
+              "Khách",
+              "Người trên"
+            ],
+            "formalByNative": {
+              "vi": [
+                "Cách trang trọng hơn:",
+                "お名前は何ですか",
+                "Dùng với:",
+                "Khách",
+                "Người trên"
+              ],
+              "en": [
+                "More formal form:",
+                "お名前は何ですか",
+                "Use with:",
+                "Customers",
+                "People senior to you"
+              ],
+              "ja": [
+                "より改まった言い方：",
+                "お名前は何ですか",
+                "使う相手：",
+                "お客様",
+                "目上の人"
+              ]
+            },
+            "casual": [],
             "overview": "Còn tên bạn là...? / Tên bạn là gì?",
             "overviewByNative": {
               "vi": "Còn tên bạn là...? / Tên bạn là gì?",
@@ -77809,6 +78137,93 @@
           },
           {
             "id": "shitsurei-desu-ga",
+            "timingAndContext": [
+              "Mở đầu một câu hỏi có thể hơi riêng tư."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Mở đầu một câu hỏi có thể hơi riêng tư."
+              ],
+              "en": [
+                "Opening a question that may be a little personal."
+              ],
+              "ja": [
+                "少し立ち入った質問を切り出すとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Người mới gặp",
+              "Khách",
+              "Người trên"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Người mới gặp",
+                "Khách",
+                "Người trên"
+              ],
+              "en": [
+                "Someone you have just met",
+                "Customers",
+                "People senior to you"
+              ],
+              "ja": [
+                "初対面の人",
+                "お客様",
+                "目上の人"
+              ]
+            },
+            "avoid": [
+              "Không dùng để xin lỗi.",
+              "Không dùng để đáp lại lời chúc."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng để xin lỗi.",
+                "Không dùng để đáp lại lời chúc."
+              ],
+              "en": [
+                "Do not use it to apologise.",
+                "Do not use it to answer a good wish."
+              ],
+              "ja": [
+                "あやまるときには使いません。",
+                "好意の言葉に返すときには使いません。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [
+              "Cách thân mật chuẩn:",
+              "すみません",
+              "Dùng với:",
+              "Người ngang hàng"
+            ],
+            "casualByNative": {
+              "vi": [
+                "Cách thân mật chuẩn:",
+                "すみません",
+                "Dùng với:",
+                "Người ngang hàng"
+              ],
+              "en": [
+                "Standard casual form:",
+                "すみません",
+                "Use with:",
+                "Peers"
+              ],
+              "ja": [
+                "標準的なカジュアル形：",
+                "すみません",
+                "使う相手：",
+                "同等の相手"
+              ]
+            },
             "overview": "Xin phép cho tôi hỏi...",
             "overviewByNative": {
               "vi": "Xin phép cho tôi hỏi...",
@@ -77818,6 +78233,47 @@
           },
           {
             "id": "sumimasen",
+            "timingAndContext": [
+              "Gọi sự chú ý trước khi hỏi hoặc nhờ.",
+              "Xin lỗi nhẹ."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Gọi sự chú ý trước khi hỏi hoặc nhờ.",
+                "Xin lỗi nhẹ."
+              ],
+              "en": [
+                "Getting attention before asking or making a request.",
+                "A light apology."
+              ],
+              "ja": [
+                "尋ねる前・頼む前に呼びかけるとき。",
+                "軽くあやまるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "相手を選びません"
+              ]
+            },
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Xin lỗi / Cho hỏi...",
             "overviewByNative": {
               "vi": "Xin lỗi / Cho hỏi...",
@@ -77827,6 +78283,56 @@
           },
           {
             "id": "mou-ichido",
+            "timingAndContext": [
+              "Nhờ nhắc lại điều vừa nói."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nhờ nhắc lại điều vừa nói."
+              ],
+              "en": [
+                "Asking for something just said to be repeated."
+              ],
+              "ja": [
+                "今言われたことをもう一度頼むとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "相手を選びません"
+              ]
+            },
+            "avoid": [
+              "Không dùng khi chưa nghe gì."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng khi chưa nghe gì."
+              ],
+              "en": [
+                "Do not use it before you have heard anything."
+              ],
+              "ja": [
+                "まだ何も聞いていないときには使いません。"
+              ]
+            },
+            "register": "Trung tính.",
+            "registerByNative": {
+              "vi": "Trung tính.",
+              "en": "Neutral.",
+              "ja": "中立的。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Một lần nữa.",
             "overviewByNative": {
               "vi": "Một lần nữa.",
@@ -77849,6 +78355,97 @@
           },
           {
             "id": "san",
+            "timingAndContext": [
+              "Đặt sau tên người khác khi gọi hoặc nhắc tới."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Đặt sau tên người khác khi gọi hoặc nhắc tới."
+              ],
+              "en": [
+                "Placed after another person’s name when addressing or mentioning them."
+              ],
+              "ja": [
+                "相手の名前の後に付けて呼ぶとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Người ngang hàng",
+              "Người mới gặp",
+              "Đồng nghiệp"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Người ngang hàng",
+                "Người mới gặp",
+                "Đồng nghiệp"
+              ],
+              "en": [
+                "Peers",
+                "Someone you have just met",
+                "Colleagues"
+              ],
+              "ja": [
+                "同等の相手",
+                "初対面の人",
+                "同僚"
+              ]
+            },
+            "avoid": [
+              "Không gắn さん vào tên của chính mình.",
+              "Không dùng さん với thầy cô — gọi bằng 先生."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không gắn さん vào tên của chính mình.",
+                "Không dùng さん với thầy cô — gọi bằng 先生."
+              ],
+              "en": [
+                "Do not attach さん to your own name.",
+                "Do not use さん for a teacher — use 先生."
+              ],
+              "ja": [
+                "自分の名前に「さん」を付けません。",
+                "先生には「さん」ではなく「先生」を使います。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [
+              "Cách thân mật chuẩn:",
+              "Gọi trống tên, bỏ さん",
+              "Dùng với:",
+              "Bạn bè",
+              "Chỉ sau khi hai bên đồng ý."
+            ],
+            "casualByNative": {
+              "vi": [
+                "Cách thân mật chuẩn:",
+                "Gọi trống tên, bỏ さん",
+                "Dùng với:",
+                "Bạn bè",
+                "Chỉ sau khi hai bên đồng ý."
+              ],
+              "en": [
+                "Standard casual form:",
+                "Use the bare name, dropping さん",
+                "Use with:",
+                "Friends",
+                "Only after both sides have agreed to it."
+              ],
+              "ja": [
+                "標準的なカジュアル形：",
+                "「さん」を外して名前だけで呼ぶ",
+                "使う相手：",
+                "友達",
+                "お互いに了解したあとだけ。"
+              ]
+            },
             "overview": "Cách gọi lịch sự đặt sau tên người khác.",
             "overviewByNative": {
               "vi": "Cách gọi lịch sự đặt sau tên người khác.",
@@ -77872,6 +78469,56 @@
           },
           {
             "id": "desu-ne",
+            "timingAndContext": [
+              "Xác nhận lại thông tin vừa nghe."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Xác nhận lại thông tin vừa nghe."
+              ],
+              "en": [
+                "Confirming information you have just heard."
+              ],
+              "ja": [
+                "今聞いた情報を確認するとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "相手を選びません"
+              ]
+            },
+            "avoid": [
+              "Không dùng ～です trống để xác nhận với chính người đó."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng ～です trống để xác nhận với chính người đó."
+              ],
+              "en": [
+                "Do not use a bare ～です to confirm with the person themselves."
+              ],
+              "ja": [
+                "本人に確認するのに「です」だけは使いません。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Dùng để xác nhận thông tin vừa nghe.",
             "overviewByNative": {
               "vi": "Dùng để xác nhận thông tin vừa nghe.",
@@ -81108,6 +81755,64 @@
         "vocabularyDetails": [
           {
             "id": "kochira-koso",
+            "timingAndContext": [
+              "Đáp lại khi người kia vừa bày tỏ thiện chí."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Đáp lại khi người kia vừa bày tỏ thiện chí."
+              ],
+              "en": [
+                "Answering when the other person has just expressed goodwill."
+              ],
+              "ja": [
+                "相手が好意を示した直後に返すとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Người mới gặp",
+              "Bạn cùng lớp",
+              "Thầy cô"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Người mới gặp",
+                "Bạn cùng lớp",
+                "Thầy cô"
+              ],
+              "en": [
+                "Someone you have just met",
+                "Classmates",
+                "Teachers"
+              ],
+              "ja": [
+                "初対面の人",
+                "クラスメート",
+                "先生"
+              ]
+            },
+            "avoid": [
+              "Không dùng để mở đầu — đây là câu đáp."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng để mở đầu — đây là câu đáp."
+              ],
+              "en": [
+                "Do not use it to open a conversation — it is a reply."
+              ],
+              "ja": [
+                "切り出しには使いません。返す言葉です。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Tôi cũng vậy / Chính tôi mới phải nói thế.",
             "overviewByNative": {
               "vi": "Tôi cũng vậy / Chính tôi mới phải nói thế.",
@@ -81130,6 +81835,60 @@
           },
           {
             "id": "sou-desu-ka",
+            "timingAndContext": [
+              "Tiếp nhận một thông tin vừa nghe."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Tiếp nhận một thông tin vừa nghe."
+              ],
+              "en": [
+                "Taking in information you have just heard."
+              ],
+              "ja": [
+                "今聞いた情報を受け止めるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "相手を選びません"
+              ]
+            },
+            "avoid": [
+              "Không dùng khi chưa ai nói gì.",
+              "Không dùng để tự giới thiệu."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng khi chưa ai nói gì.",
+                "Không dùng để tự giới thiệu."
+              ],
+              "en": [
+                "Do not use it before anyone has said anything.",
+                "Do not use it to introduce yourself."
+              ],
+              "ja": [
+                "まだ誰も何も言っていないときには使いません。",
+                "自己紹介には使いません。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Vậy à. / Ra vậy.",
             "overviewByNative": {
               "vi": "Vậy à. / Ra vậy.",
@@ -81152,6 +81911,56 @@
           },
           {
             "id": "watashi-mo",
+            "timingAndContext": [
+              "Nói mình cũng như người vừa nói."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nói mình cũng như người vừa nói."
+              ],
+              "en": [
+                "Saying you are the same as the person who just spoke."
+              ],
+              "ja": [
+                "前の人と同じだと言うとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "相手を選びません"
+              ]
+            },
+            "avoid": [
+              "Không thay bằng 私は — は không diễn đạt \"cũng vậy\"."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không thay bằng 私は — は không diễn đạt \"cũng vậy\"."
+              ],
+              "en": [
+                "Do not swap in 私は — は does not carry the meaning “too”."
+              ],
+              "ja": [
+                "「私は」には替えられません。「は」は「も」の意味になりません。"
+              ]
+            },
+            "register": "Trung tính.",
+            "registerByNative": {
+              "vi": "Trung tính.",
+              "en": "Neutral.",
+              "ja": "中立的。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Tôi cũng vậy.",
             "overviewByNative": {
               "vi": "Tôi cũng vậy.",
@@ -81174,6 +81983,97 @@
           },
           {
             "id": "shitsurei-shimasu",
+            "timingAndContext": [
+              "Xin phép rời đi.",
+              "Rời khỏi phòng hoặc kết thúc cuộc gặp."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Xin phép rời đi.",
+                "Rời khỏi phòng hoặc kết thúc cuộc gặp."
+              ],
+              "en": [
+                "Excusing yourself in order to leave.",
+                "Leaving a room or ending a meeting."
+              ],
+              "ja": [
+                "立ち去る許しを言うとき。",
+                "部屋を出るとき・面会を終えるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Thầy cô",
+              "Người trên",
+              "Người mới quen trong hoàn cảnh trang trọng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Thầy cô",
+                "Người trên",
+                "Người mới quen trong hoàn cảnh trang trọng"
+              ],
+              "en": [
+                "Teachers",
+                "People senior to you",
+                "Someone you have just met in a formal setting"
+              ],
+              "ja": [
+                "先生",
+                "目上の人",
+                "改まった場面で知り合ったばかりの人"
+              ]
+            },
+            "avoid": [
+              "Quá trang trọng khi chỉ chia tay bạn bè ngang hàng."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Quá trang trọng khi chỉ chia tay bạn bè ngang hàng."
+              ],
+              "en": [
+                "Too formal for simply parting from a friend of equal standing."
+              ],
+              "ja": [
+                "同等の友達と別れるだけなら硬すぎます。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [
+              "Cách thân mật chuẩn:",
+              "じゃあ、また",
+              "Dùng với:",
+              "Bạn bè",
+              "Không dùng với thầy cô."
+            ],
+            "casualByNative": {
+              "vi": [
+                "Cách thân mật chuẩn:",
+                "じゃあ、また",
+                "Dùng với:",
+                "Bạn bè",
+                "Không dùng với thầy cô."
+              ],
+              "en": [
+                "Standard casual form:",
+                "じゃあ、また",
+                "Use with:",
+                "Friends",
+                "Do not use it with teachers."
+              ],
+              "ja": [
+                "標準的なカジュアル形：",
+                "じゃあ、また",
+                "使う相手：",
+                "友達",
+                "先生には使いません。"
+              ]
+            },
             "overview": "Tôi xin phép. / Xin lỗi (khi rời đi).",
             "overviewByNative": {
               "vi": "Tôi xin phép. / Xin lỗi (khi rời đi).",
@@ -81196,6 +82096,64 @@
           },
           {
             "id": "osaki-ni-shitsurei",
+            "timingAndContext": [
+              "Rời đi trước người khác ở một nơi chung."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Rời đi trước người khác ở một nơi chung."
+              ],
+              "en": [
+                "Leaving a shared place before the others do."
+              ],
+              "ja": [
+                "共有の場を人より先に出るとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Bạn cùng lớp",
+              "Đồng nghiệp",
+              "Thầy cô"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Bạn cùng lớp",
+                "Đồng nghiệp",
+                "Thầy cô"
+              ],
+              "en": [
+                "Classmates",
+                "Colleagues",
+                "Teachers"
+              ],
+              "ja": [
+                "クラスメート",
+                "同僚",
+                "先生"
+              ]
+            },
+            "avoid": [
+              "Không dùng khi không có ai ở lại."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng khi không có ai ở lại."
+              ],
+              "en": [
+                "Do not use it when nobody is staying behind."
+              ],
+              "ja": [
+                "残る人がいないときには使いません。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Tôi xin phép về trước.",
             "overviewByNative": {
               "vi": "Tôi xin phép về trước.",
@@ -81218,6 +82176,64 @@
           },
           {
             "id": "ogenki-de",
+            "timingAndContext": [
+              "Chia tay khi lần gặp lại cách nhau từ một tuần trở lên."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Chia tay khi lần gặp lại cách nhau từ một tuần trở lên."
+              ],
+              "en": [
+                "Parting when the next meeting is a week or more away."
+              ],
+              "ja": [
+                "次に会うのが一週間以上先のとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Bạn cùng lớp",
+              "Đồng nghiệp",
+              "Người quen"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Bạn cùng lớp",
+                "Đồng nghiệp",
+                "Người quen"
+              ],
+              "en": [
+                "Classmates",
+                "Colleagues",
+                "Acquaintances"
+              ],
+              "ja": [
+                "クラスメート",
+                "同僚",
+                "知り合い"
+              ]
+            },
+            "avoid": [
+              "Không dùng khi mai hoặc vài ngày nữa đã gặp lại."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng khi mai hoặc vài ngày nữa đã gặp lại."
+              ],
+              "en": [
+                "Do not use it when you meet again tomorrow or within a few days."
+              ],
+              "ja": [
+                "明日や数日以内にまた会うときには使いません。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Giữ sức khỏe nhé (khi chia tay từ một tuần trở lên).",
             "overviewByNative": {
               "vi": "Giữ sức khỏe nhé (khi chia tay từ một tuần trở lên).",
@@ -81240,6 +82256,93 @@
           },
           {
             "id": "jaa-mata",
+            "timingAndContext": [
+              "Chia tay bạn bè, hẹn gặp lại trong thời gian gần."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Chia tay bạn bè, hẹn gặp lại trong thời gian gần."
+              ],
+              "en": [
+                "Parting from friends with the next meeting soon."
+              ],
+              "ja": [
+                "近いうちにまた会う友達と別れるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Bạn bè",
+              "Người ngang hàng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Bạn bè",
+                "Người ngang hàng"
+              ],
+              "en": [
+                "Friends",
+                "Peers"
+              ],
+              "ja": [
+                "友達",
+                "同等の相手"
+              ]
+            },
+            "avoid": [
+              "Không dùng với thầy cô.",
+              "Không dùng với người mới quen trong hoàn cảnh trang trọng."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng với thầy cô.",
+                "Không dùng với người mới quen trong hoàn cảnh trang trọng."
+              ],
+              "en": [
+                "Do not use it with teachers.",
+                "Do not use it with someone you have just met in a formal setting."
+              ],
+              "ja": [
+                "先生には使いません。",
+                "改まった場面で知り合ったばかりの人には使いません。"
+              ]
+            },
+            "register": "Thân mật.",
+            "registerByNative": {
+              "vi": "Thân mật.",
+              "en": "Casual.",
+              "ja": "カジュアル。"
+            },
+            "formal": [
+              "Cách trang trọng hơn:",
+              "失礼します",
+              "Dùng với:",
+              "Thầy cô",
+              "Người trên"
+            ],
+            "formalByNative": {
+              "vi": [
+                "Cách trang trọng hơn:",
+                "失礼します",
+                "Dùng với:",
+                "Thầy cô",
+                "Người trên"
+              ],
+              "en": [
+                "More formal form:",
+                "失礼します",
+                "Use with:",
+                "Teachers",
+                "People senior to you"
+              ],
+              "ja": [
+                "より改まった言い方：",
+                "失礼します",
+                "使う相手：",
+                "先生",
+                "目上の人"
+              ]
+            },
+            "casual": [],
             "overview": "Thôi, hẹn gặp lại (thân mật).",
             "overviewByNative": {
               "vi": "Thôi, hẹn gặp lại (thân mật).",
@@ -81276,6 +82379,56 @@
           },
           {
             "id": "raishuu",
+            "timingAndContext": [
+              "Chỉ mốc thời gian tuần sau, thường đi với また."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Chỉ mốc thời gian tuần sau, thường đi với また."
+              ],
+              "en": [
+                "The time point “next week”, usually paired with また."
+              ],
+              "ja": [
+                "「次の週」を指し、多くは「また」と一緒に使います。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "相手を選びません"
+              ]
+            },
+            "avoid": [
+              "Không dùng khi mốc gặp lại không phải tuần sau."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng khi mốc gặp lại không phải tuần sau."
+              ],
+              "en": [
+                "Do not use it when the next meeting is not next week."
+              ],
+              "ja": [
+                "次に会うのが来週でないときには使いません。"
+              ]
+            },
+            "register": "Trung tính.",
+            "registerByNative": {
+              "vi": "Trung tính.",
+              "en": "Neutral.",
+              "ja": "中立的。"
+            },
+            "formal": [],
+            "casual": [],
             "overview": "Tuần sau.",
             "overviewByNative": {
               "vi": "Tuần sau.",
