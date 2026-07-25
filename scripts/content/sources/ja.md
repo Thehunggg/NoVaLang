@@ -273,6 +273,36 @@ Hàn/Thái/Trung (`markdown_grammar_korean/`, `grammar_kr_KOREAN_*.json`,
   là cố định → **xử như LOẠI A + hỏi owner** (§G1). Nguồn để rút cụm cố định:
   V1 (Irodori) — các mẫu chào hỏi/lịch sự dạy nguyên khối.
 
+## QUYẾT ĐỊNH OWNER về cách dùng cụm (không suy ra từ nguồn)
+
+> Mục này ghi các quyết định **owner tự chốt** khi nguồn không phân xử được. Đây
+> **KHÔNG phải** kết luận rút từ V1–V5 hay Tầng X — ghi riêng để lần sau không
+> ai đi tìm nguồn cho chúng, và để biết cái gì cần người bản ngữ soi lại.
+
+### 「お元気で」 — mốc chia tay TỪ MỘT TUẦN TRỞ LÊN (owner chốt 2026-07-25)
+
+| Mốc gặp lại | 「お元気で」 |
+|---|---|
+| `また来週` / lâu hơn / không hẹn ngày | **ĐÚNG** |
+| `また明日` / trong vài ngày | **SAI** — mốc quá gần |
+
+**Vì sao phải chốt:** mô tả cũ trong bài là "khi lâu mới gặp lại" — mập mờ, và
+nó làm dữ liệu L3 tự đá nhau (thẻ từ vựng nói "lâu mới gặp lại", nhưng hội thoại
+đã duyệt của chính L3 lại ghép với `また明日`). Nguồn local **không phân xử
+được**: hanabira/n5 gần như chỉ có `お元気ですか` (câu HỎI "có khoẻ không"), chỉ
+một chỗ có `それじゃ、お元気で。` (lời chia tay) — không đủ để suy ra mốc.
+
+**Đã áp dụng:** thẻ `ogenki-de` của L3 đổi sang "khi chia tay từ một tuần trở
+lên"; cụm này được dùng làm trục đúng/sai trong bài tổng hợp cuối Unit theo đúng
+bảng trên.
+
+**Còn nợ:** hai lượt thoại trong L3 vẫn ghép `お元気で` với `また明日` — vị trí
+chính xác + hai hướng sửa ghi ở `docs/ai/ACTIVE_TASK.md` (mục nợ nội dung).
+Chưa sửa, chờ owner quyết.
+
+**Cần soi lại khi có người bản ngữ:** mốc "một tuần" là ranh giới owner đặt cho
+nhất quán nội bộ, không phải con số rút từ tài liệu ngôn ngữ.
+
 ## PHẦN CỐT LÕI KHÔNG ĐƯỢC THAY khi thay thế theo mẫu (feed §G3)
 
 - Với mẫu ngữ pháp (LOẠI B) tiếng Nhật: **trợ từ + đuôi động từ/tính từ + trật tự

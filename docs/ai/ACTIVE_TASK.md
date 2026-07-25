@@ -58,16 +58,51 @@ Nhưng `dialogueGroups` **đã duyệt của chính L3** ghép nó với mốc N
 Nguồn local không phân xử được: hanabira/n5 gần như chỉ có 「お元気ですか」 (câu
 HỎI "có khoẻ không"); duy nhất một chỗ có 「それじゃ、お元気で。」 (lời chia tay).
 
-**Owner quyết 2026-07-25 — phương án (c):** coi như mâu thuẫn CHƯA GIẢI ĐƯỢC.
-Không sửa thẻ, không sửa hội thoại L3 đã duyệt. Hệ quả đang áp dụng:
+**GIẢI QUYẾT — Owner chốt quy tắc 2026-07-25 (thay phương án (c) tạm thời trước đó):**
 
-- 「お元気で」 **KHÔNG được dùng làm trục đúng/sai** ở bài tổng hợp cuối Unit.
-  5 chỗ từng dựa vào nó đã viết lại (đợt 1 Q3-D, Q8 · đợt 2 Q12-C, Q15-A, Q16).
-- `vocabularyDetails[ogenki-de]`: `timingAndContext` và `avoid` để `[]` kèm ghi
-  chú "mâu thuẫn dữ liệu, chờ người bản ngữ" — KHÔNG đoán.
+> 「お元気で」 dùng khi mốc chia tay **từ MỘT TUẦN TRỞ LÊN**.
+> · また来週 / lâu hơn / không hẹn ngày gặp lại → **ĐÚNG**
+> · また明日 / trong vài ngày → **SAI**
 
-Gỡ nợ này = một người bản ngữ xác nhận お元気で thật sự dùng được ở mốc nào, rồi
-sửa MỘT trong hai phía cho khớp.
+Đây là **quyết định của owner**, không suy ra từ nguồn. Nó thay mô tả mập mờ
+"khi lâu mới gặp lại" và giải luôn mâu thuẫn trên: hội thoại 「また来週。
+お元気で。」 ĐÚNG, hội thoại 「また明日。お元気で。」 SAI.
+
+Đã áp dụng: thẻ `ogenki-de` đổi sang "khi chia tay từ một tuần trở lên"
+(`ja-unit1-lesson3.mjs` 4 chỗ + 1 dòng dịch vi/en/ja); 「お元気で」 khôi phục
+làm trục đúng/sai ở bài tổng hợp cuối Unit. Quy tắc ghi ở
+`scripts/content/sources/ja.md`.
+
+### NỢ CÒN LẠI — 2 chỗ trong L3 dùng 「お元気で」 SAI MỐC (chưa sửa, owner quyết)
+
+Quét toàn bộ L1/L2/L3: **L1 và L2 không dùng 「お元気で」 chỗ nào**. Chỉ L3, và
+sai mốc đúng **một câu** 「また明日。お元気で。」 — nhưng câu đó được viết ở
+**HAI nơi nguồn khác nhau**, phải sửa cả hai nếu owner đồng ý:
+
+1. `scripts/content/daily-life/module-1/ja-unit1-lesson3.mjs`
+   → Card 3, `dialogueGroups[1]` ("Rời lớp một cách lịch sự"), `lines[2]`
+2. cùng file → **Q14** `practice.exercises[13]` (`real_world_practice_dialogue`),
+   `dialogueLines[4]`
+
+Câu đáp ngay sau đó — `dialogueGroups[1].lines[3]` / `dialogueLines[5]`
+「お元気で。失礼します。」 — không tự nó chứa mốc gần, nhưng nằm trong cùng lượt
+trao đổi, nên sửa thì phải xét cùng.
+
+**Mâu thuẫn nội bộ sắc hơn:** chính `dialogueGroups[1].explanation[1]` của nhóm
+đó ghi "お元気で dùng khi sẽ lâu mới gặp lại" — tức lời giải thích của nhóm đá
+lại chính lời thoại của nhóm.
+
+**Hai hướng sửa, owner chọn:**
+- (A) đổi 「また明日」 → 「また来週」 trong lượt đó (giữ お元気で), hoặc
+- (B) bỏ 「お元気で」 khỏi lượt đó, thay bằng cụm hợp mốc gần.
+
+L3 không frozen nhưng là nội dung ĐÃ DUYỆT → không tự sửa.
+
+**Chưa cập nhật theo quy tắc mới (cùng một mô tả mập mờ, 3 chỗ):** vẫn ghi "lâu
+mới gặp lại" ở `dialogueGroups[1].explanation[1]`, `practice.exercises[9]`
+`slotFeedback.chat_farewell_slot.explanation`, và `vocabularyReferences[1]
+.difference`. Để nguyên vì nằm ngoài phạm vi owner giao (chỉ giao thẻ
+`ogenki-de`); nên sửa cùng lượt với quyết định ở trên để L3 nhất quán.
 
 ## NỢ KỸ THUẬT — `MAX_TRAILING_BLANK_RATIO` đếm KHÔNG SÁT ý định §E4 — 2026-07-25
 
