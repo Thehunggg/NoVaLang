@@ -50,23 +50,27 @@ class FixedPlanAccessPolicy implements PlanAccessPolicy {
 /// it only swaps which [PlanAccessPolicy] the provider hands out, reusing the
 /// existing seam rather than adding a branch inside any widget.
 ///
-/// Turn it on:
+/// **On by default in debug builds** — a plain `flutter run` already opens
+/// Plus-gated content, no flag to remember. This mirrors
+/// `MockAuthService.enabled => kDebugMode`, the pattern already used for the
+/// debug auth stand-in.
+///
+/// To test the real Free-locked behaviour without making a release build:
 ///
 /// ```
-/// flutter run --dart-define=NOVALANG_DEBUG_UNLOCK_PLUS=true
+/// flutter run --dart-define=NOVALANG_DEBUG_UNLOCK_PLUS=false
 /// ```
 ///
-/// Turn it off: drop the flag (that is the default).
+/// [kDebugMode] is the safety: a release build can never unlock, whatever the
+/// define says, and the whole branch is const-folded away at compile time.
 ///
-/// Two independent safeties, both resolved at compile time:
-///  - [kDebugMode] means a release build can never unlock, even if someone
-///    passes the define;
-///  - the define defaults to `false`, so `flutter test` and a plain
-///    `flutter run` keep the real Free-locked behaviour. Tests that need Plus
-///    still override the provider explicitly with [FixedPlanAccessPolicy].
+/// Tests inherit the unlocked default (they run in debug). A test that needs
+/// the locked state overrides the provider with
+/// `FixedPlanAccessPolicy(PlanTier.free)` or `ProductionSafePlanAccessPolicy`.
 abstract final class DebugPlanUnlock {
   static const bool _requested = bool.fromEnvironment(
     'NOVALANG_DEBUG_UNLOCK_PLUS',
+    defaultValue: true,
   );
 
   static bool get enabled => kDebugMode && _requested;

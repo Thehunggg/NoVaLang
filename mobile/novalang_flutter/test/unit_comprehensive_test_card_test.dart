@@ -3,6 +3,7 @@
 // immediately after the third child Lesson, must respect the
 // PlanAccessPolicy locked/available contract, and must never open invented
 // content.
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -117,15 +118,18 @@ void main() {
   });
 
   group('access-policy locked/available shell', () {
-    testWidgets('Free tier (production-safe default) shows locked hint', (
-      tester,
-    ) async {
+    // The policy is passed explicitly: debug builds (which include
+    // `flutter test`) now default to the DebugPlanUnlock Plus tier, so relying
+    // on the provider default here would test the debug unlock, not Free.
+    testWidgets('Free tier shows locked hint', (tester) async {
       final module = _module([
         _unit('u1', 'Unit 1'),
         _unit('u2', 'Unit 2'),
         _unit('u3', 'Unit 3'),
       ]);
-      await tester.pumpWidget(_wrapCard(module));
+      await tester.pumpWidget(
+        _wrapCard(module, policy: const ProductionSafePlanAccessPolicy()),
+      );
       await tester.pumpAndSettle();
 
       expect(
@@ -204,6 +208,23 @@ void main() {
       const policy = ProductionSafePlanAccessPolicy();
       expect(policy.tierFor('any-user'), PlanTier.free);
       expect(policy.tierFor('mock_guest_user'), PlanTier.free);
+    });
+
+    // Pins the debug-unlock default so it cannot be turned off by accident:
+    // `flutter run` must open Plus content with no extra flag, while release
+    // stays locked because kDebugMode gates the whole branch.
+    test('debug builds unlock Plus by default; release can never unlock', () {
+      expect(kDebugMode, isTrue, reason: 'flutter test runs in debug mode');
+      expect(DebugPlanUnlock.enabled, isTrue);
+      expect(DebugPlanUnlock.tier, PlanTier.plus);
+      expect(DebugPlanUnlock.tier.hasPlusAccess, isTrue);
+
+      final container = ProviderContainer();
+      addTearDown(container.dispose);
+      expect(
+        container.read(planAccessPolicyProvider).tierFor('any-user'),
+        PlanTier.plus,
+      );
     });
   });
 
