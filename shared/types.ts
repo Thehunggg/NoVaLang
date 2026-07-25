@@ -160,6 +160,125 @@ export type FiveCardContent = Record<string, unknown> &
   practice?: FiveCardPractice;
 };
 
+/* ─────────────────────────────────────────────────────────────────────────
+ * BÀI TỔNG HỢP CUỐI UNIT — Unit Comprehensive Test (ADR-022, §E4)
+ *
+ * Dạng CLOZE (điền từ vào chỗ trống), chấm bằng SO KHỚP ĐÁP ÁN CỐ ĐỊNH —
+ * KHÔNG dùng AI. Đây là activity RIÊNG ở cấp Unit, KHÔNG phải một `Lesson`
+ * và KHÔNG dùng schema `five_cards` (§E4: "schema mới cho activity tổng hợp
+ * (khác 5-card lesson)").
+ *
+ * Cơ chế chấm TÁI DÙNG nguyên cơ chế cloze đã chạy thật của Q10
+ * `chat_text_fill` (`FiveCardChatSlot.acceptedAnswers` +
+ * `normalizePracticeTextAnswer` trong
+ * `mobile/novalang_flutter/lib/models/five_card_practice.dart`) — KHÔNG tự
+ * chế cơ chế mới. Xem §D-Cloze trong LESSON_AUTHORING_STANDARD.md.
+ * ───────────────────────────────────────────────────────────────────────── */
+
+/**
+ * Một Ô TRỐNG trong câu cloze. `acceptedAnswers` là TẤT CẢ dạng viết được
+ * chấp nhận cho cùng một đáp án (vd viết kanji hay kana đều đúng); người học
+ * gõ đúng BẤT KỲ dạng nào trong danh sách là được tính đúng.
+ */
+export interface UnitComprehensiveClozeBlank {
+  id: string;
+  /** Đáp án chuẩn để HIỂN THỊ khi chữa bài (kèm hỗ trợ đọc nếu hệ chữ cần). */
+  displayAnswer: string;
+  /** Dạng chuẩn KHÔNG hỗ trợ đọc — dùng đối chiếu/hiển thị gọn. */
+  canonicalAnswer: string;
+  /** Text đưa cho TTS khi đọc đáp án. */
+  audioText: string;
+  /**
+   * MỌI dạng viết chấp nhận được (>=1). So khớp SAU khi chuẩn hoá hai vế
+   * bằng `normalizePracticeTextAnswer` (§D-Cloze). Phải chứa cả
+   * `canonicalAnswer`.
+   */
+  acceptedAnswers: string[];
+  /** Gợi ý ngắn khi người học sai (native language, đi qua localizeSupport). */
+  hint?: string;
+}
+
+/**
+ * Một đoạn của câu cloze. Đoạn CÓ `blankId` là ô điền; đoạn KHÔNG có là văn
+ * bản hiển thị nguyên văn. Cùng khuôn với `FiveCardChatMessageSegment`.
+ */
+export interface UnitComprehensiveClozeSegment {
+  /** Văn bản hiển thị (target language; kèm hỗ trợ đọc nếu hệ chữ cần). */
+  displayText?: string;
+  /** Dạng chuẩn không hỗ trợ đọc. */
+  canonicalText?: string;
+  /** Text TTS cho đoạn này. */
+  audioText?: string;
+  /** Nếu có: đoạn này là Ô TRỐNG, trỏ tới `UnitComprehensiveClozeBlank.id`. */
+  blankId?: string;
+}
+
+/**
+ * Mục kiến thức mà một câu đang ÔN. Bắt buộc để chứng minh §G7 (chỉ dùng
+ * kiến thức ĐÃ DẠY trong unit) và để validator sau này kiểm độ phủ.
+ */
+export interface UnitComprehensiveReviewRef {
+  /** Lesson đã dạy mục này (id đầy đủ, phải nằm trong `sourceLessonIds`). */
+  lessonId: string;
+  kind: 'vocabulary' | 'grammar';
+  /** id của vocabulary card, hoặc `title` của grammar pattern trong lesson đó. */
+  ref: string;
+}
+
+/** Một câu hỏi cloze (có thể có nhiều ô trống). */
+export interface UnitComprehensiveClozeQuestion {
+  id: string;
+  order: number;
+  /** Tình huống/ngữ cảnh (native language) — nêu khi câu cần bối cảnh. */
+  context?: string;
+  /** Chỉ dẫn cho người học (native language). */
+  prompt: string;
+  /** Câu chứa chỗ trống, tách đoạn; đoạn có `blankId` là ô điền. */
+  segments: UnitComprehensiveClozeSegment[];
+  /** Các ô trống của câu này (>=1); mọi `blankId` trong segments phải có ở đây. */
+  blanks: UnitComprehensiveClozeBlank[];
+  /** Mục đang ôn (>=1) — feed §G7. */
+  reviews: UnitComprehensiveReviewRef[];
+  /** Độ khó tương đối trong bài; dùng để xếp dễ→khó (§E4). */
+  difficulty: 1 | 2 | 3;
+  /** Giải thích khi sai (native language). */
+  explanation: string;
+}
+
+/**
+ * BÀI TỔNG HỢP của MỘT Unit. Toàn bài là Plus (nhất quán ranh giới Q10–Q14
+ * của lesson thường) và CÓ chấm điểm.
+ */
+export interface UnitComprehensiveTest {
+  id: string;
+  /** Unit sở hữu bài này. */
+  unitId: string;
+  /** Nhãn phân biệt với `lessonFormat: 'five_cards'` của lesson thường. */
+  format: 'unit_comprehensive_cloze';
+  languageCode: LearningLanguageCode;
+  targetLocale: string;
+  /** Toàn bài Plus — không có phần free (owner chốt). */
+  plan: 'plus';
+  /** Bài này CÓ chấm điểm. */
+  graded: true;
+  title: string;
+  titleByNative?: Partial<Record<SupportedUILanguage, string>>;
+  description?: string;
+  descriptionByNative?: Partial<Record<SupportedUILanguage, string>>;
+  estimatedMinutes: string;
+  /** Số câu thật; owner chốt khoảng 15–20. Phải bằng `questions.length`. */
+  totalQuestions: number;
+  /**
+   * Các lesson được gộp, ĐÚNG THỨ TỰ dạy. Mọi `reviews[].lessonId` phải nằm
+   * trong danh sách này (§G7).
+   */
+  sourceLessonIds: string[];
+  /** Xếp theo `order` tăng dần, độ khó dễ→khó dần (§E4). */
+  questions: UnitComprehensiveClozeQuestion[];
+  /** Ngưỡng đạt tính theo % số ô trống đúng. Chưa chốt → để trống. */
+  passThresholdPercent?: number;
+}
+
 export interface LearnCard {
   id: string;
   character: string;
@@ -412,6 +531,12 @@ export interface Unit {
   skill?: TrackSkill;
   reviewedStatus?: ReviewedStatus;
   comingSoon?: boolean;
+  /**
+   * Bài tổng hợp cuối Unit (ADR-022). OPTIONAL — unit chưa có bài tổng hợp
+   * vẫn hợp lệ y như trước, nên trường này KHÔNG phá dữ liệu/validator đang
+   * chạy. Chỉ dựng khi unit đã đủ lesson thường (§E4).
+   */
+  comprehensiveTest?: UnitComprehensiveTest;
 }
 
 export interface CourseLevel { id: LevelId; title: string; description: string; cefr?: string; jlpt?: string; units: Unit[]; trackType?: TrackType; examTrack?: ExamTrack; examLevel?: ExamLevel; reviewedStatus?: ReviewedStatus; comingSoon?: boolean; comingSoonLabel?: string; }

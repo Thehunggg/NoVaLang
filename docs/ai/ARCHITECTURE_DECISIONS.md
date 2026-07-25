@@ -1367,3 +1367,102 @@ discrepancy above was reported and resolved by explicit confirmation. Golden
 Lesson byte-identity, registry ID-based resolution, and Trung cấp/Cao cấp as
 a valid empty shell were all explicit, binding requirements of that
 instruction and are verified in `docs/ai/ACTIVE_TASK.md`.
+
+## ADR-022 — Unit Comprehensive Test: cloze format, fixed-answer grading, no AI
+
+Status: `APPROVED — SCHEMA ONLY (generator / validator / content / UI NOT built)`
+
+### Context
+
+`§E4` of `LESSON_AUTHORING_STANDARD.md` has carried a placeholder spec for an
+end-of-Unit comprehensive test since 2026-07-19 ("20 câu, gộp lesson đầu→cuối
+unit, khó hơn lesson thường, vẫn dễ→khó dần"), deliberately left unbuilt until
+normal lessons existed. ADR-013/ADR-014 shipped only a **UI shell**
+(`unit_comprehensive_conversation_card.dart`: renders after the third child
+Lesson, gated through `PlanAccessPolicy`, taps to a localized "being prepared"
+notice) with **no content schema, no generation, no validator** — confirmed by
+scanning `scripts/` and `shared/`, which reference the feature only through a
+handful of i18n keys.
+
+Japanese Module 1 / Unit 1 now has all three of its normal lessons complete
+(L1 Golden, L2, L3), so the precondition recorded in §E4 is met.
+
+### Decision
+
+The Project Owner has fixed the design (2026-07-25):
+
+- **Format: cloze** (fill in the blank), not conversation.
+- **Grading: fixed-answer matching, no AI** — explicitly to avoid per-attempt
+  API cost.
+- **Each blank accepts MULTIPLE correct answers** (e.g. writing the answer in
+  kanji or in kana both count as correct).
+- **Content: only vocabulary and grammar patterns already taught inside that
+  Unit** — no new material (§G7).
+- **~15–20 questions**, harder than a normal lesson (longer sentences,
+  combining several patterns, typing rather than choosing), still ordered
+  easy → hard.
+- **Graded: yes. Gate: Plus for the whole activity**, consistent with the
+  Q10–Q14 Plus boundary of normal lessons.
+
+**Grading reuses the mechanism that already ships**, rather than inventing a
+new one: Q10 `chat_text_fill` already implements cloze with
+`FiveCardChatSlot.acceptedAnswers`, matched through
+`normalizePracticeTextAnswer`
+(`mobile/novalang_flutter/lib/models/five_card_practice.dart:26`) — trim →
+collapse whitespace runs to a single space → strip trailing sentence
+punctuation (`。` `.` `!` `！`) → trim → lowercase, then compare the
+normalized learner answer against each normalized accepted answer. Documented
+as **§D-Cloze** in `LESSON_AUTHORING_STANDARD.md`.
+
+**Schema** lives in `shared/types.ts` alongside the existing lesson types,
+following the same conventions (`UnitComprehensiveTest`,
+`UnitComprehensiveClozeQuestion`, `UnitComprehensiveClozeSegment`,
+`UnitComprehensiveClozeBlank`, `UnitComprehensiveReviewRef`). The segment
+shape deliberately mirrors `FiveCardChatMessageSegment` (a segment carrying
+`blankId` is the blank; the rest is literal display text) so authors and
+renderers meet the same pattern they already know.
+
+The test is a **Unit-level activity, not a `Lesson`** — it does not use
+`lessonFormat: 'five_cards'` and is not added to `Unit.lessonIds`. It attaches
+as `Unit.comprehensiveTest?: UnitComprehensiveTest`, an **optional** field, so
+every existing unit, generated file, validator and test stays valid unchanged.
+
+`UnitComprehensiveReviewRef` (per question: which `lessonId`, whether
+`vocabulary` or `grammar`, and which `ref`) is mandatory so that §G7
+compliance is provable from the data and a future validator can check
+coverage, rather than being asserted in prose.
+
+### Naming conflict, flagged and deliberately not resolved here
+
+ADR-014 named the technical contract
+`unit_comprehensive_**conversation**`. The approved design is a **cloze
+test**, not a conversation, so that name is now actively misleading. The new
+schema therefore uses `format: 'unit_comprehensive_cloze'`. Renaming the
+Flutter shell widget and the `unitComprehensiveConversation*` i18n keys is a
+**separate task** — ADR-014 itself set the precedent that renaming is safe
+here ("no persisted user activity exists for this shell") — and was
+deliberately left out of this schema-only step.
+
+### Consequences
+
+- `shared/types.ts` gains the types above plus one optional `Unit` field.
+  Nothing else changed: no generator, no validator, no content, no `.dart`.
+  `validate:curriculum` and `smoke:curriculum` were re-run and PASS with the
+  same pre-existing soft warnings and identical counts (35 courses, 172
+  lessons), confirming the addition is non-breaking by measurement, not by
+  assumption.
+- Authors must list **every** acceptable spelling in `acceptedAnswers`;
+  a missing variant silently marks a correct learner answer wrong. §D-Cloze
+  spells out which differences the normalizer already absorbs (trailing
+  punctuation, letter case, repeated whitespace) and which it does not
+  (presence vs. absence of a space).
+- Still required before this feature can ship, in order: generator →
+  validator → real content (owner-approved, per `AGENTS.md`) → real UI
+  replacing the shell → the ADR-014 rename decision above.
+
+### Approval
+
+Design approved by Project Owner, 2026-07-25 (format, grading mechanism,
+multiple accepted answers, taught-material-only constraint, question count,
+graded, Plus gate). This ADR authorizes the **schema and documentation only**;
+it does not authorize generating or authoring any comprehensive-test content.

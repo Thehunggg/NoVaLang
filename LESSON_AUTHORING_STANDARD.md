@@ -416,19 +416,62 @@ toggle; hoặc hỗ trợ đọc NHÚNG SẴN trong `displayText`. KHÔNG có b�
 dạng chú âm, ví dụ) nằm ở **file nguồn riêng của ngôn ngữ đó**, không ở file
 chung. Reading = trường riêng, validator ép (§D9).
 
-**E4. ⏳ Bài tổng hợp cuối Unit (20 câu) — CHỜ TRIỂN KHAI (chưa build).**
-*Đặc tả (ghi để nhớ):* bài tổng hợp cuối mỗi Unit = **20 câu**, tổng hợp kiến
-thức từ lesson ĐẦU → CUỐI unit, **khó hơn lesson thường** nhưng vẫn **dễ→khó
-dần**. **Hiện trạng code:** chỉ có **SHELL** — `unit_comprehensive_conversation`
-(ADR-014): card render sau Lesson thứ 3 trong Unit, gate Plus/Pro/Ultimate qua
-`PlanAccessPolicy`, tap ra thông báo "đang chuẩn bị"/"nâng cấp" — **KHÔNG câu
-hỏi, KHÔNG bộ 20 câu, KHÔNG schema/generation nội dung**. File:
+**E4. 🔨 Bài tổng hợp cuối Unit — ĐÃ CHỐT THIẾT KẾ + CÓ SCHEMA (2026-07-25);
+generator/validator/UI CHƯA làm.**
+
+*Owner đã chốt (2026-07-25):* dạng bài = **CLOZE — điền từ vào chỗ trống**,
+chấm bằng **so khớp đáp án cố định, KHÔNG dùng AI** (tiết kiệm chi phí API);
+mỗi ô trống nhận **NHIỀU đáp án đúng** (vd viết kanji hay kana đều tính đúng);
+nội dung **chỉ gộp từ vựng + mẫu ngữ pháp ĐÃ DẠY trong unit** (không thêm mới
+— §G7); **~15–20 câu**; **khó hơn lesson thường** (câu dài hơn, gộp nhiều mẫu,
+ĐIỀN chứ không chọn) nhưng vẫn **dễ→khó dần**; **CÓ chấm điểm**; **gate PLUS
+toàn bài** (nhất quán ranh giới Q10–Q14 của lesson thường).
+
+*Đã có:* **schema** trong `shared/types.ts` (`UnitComprehensiveTest` và các
+type con) + gắn optional vào `Unit.comprehensiveTest` + cơ chế chấm ghi ở
+**§D-Cloze** dưới đây. Quyết định kiến trúc: **ADR-022**.
+
+*CHƯA có:* generator, validator, nội dung bài, UI thật. **Hiện trạng UI vẫn
+chỉ là SHELL** — `unit_comprehensive_conversation` (ADR-014): card render sau
+Lesson thứ 3 trong Unit, gate qua `PlanAccessPolicy`, tap ra thông báo "đang
+chuẩn bị"/"nâng cấp". File:
 `mobile/novalang_flutter/lib/widgets/learn/unit_comprehensive_conversation_card
 .dart` + `services/plan_access_policy.dart` + i18n `unitComprehensiveConversation*`.
-**Chưa build** (Owner: chỉ ghi đặc tả, "chờ triển khai sau khi có lesson
-thường", không build shell mới). Khi làm cần: Owner duyệt nội dung + cách chấm
-(graded? Free/Plus?), schema mới cho activity tổng hợp (khác 5-card lesson),
-generation + validator + UI thật thay shell.
+
+> ⚠️ **Lệch tên cần Owner quyết (chưa xử lý):** ADR-014 đặt tên kỹ thuật là
+> `unit_comprehensive_**conversation**`, nhưng thiết kế đã chốt là bài
+> **cloze**, không phải hội thoại — tên hiện tại gây hiểu nhầm. Schema mới
+> dùng `format: 'unit_comprehensive_cloze'`. Việc đổi tên shell Flutter +
+> khoá i18n là **task riêng** (ADR-014 đã có tiền lệ đổi tên: "no persisted
+> user activity exists for this shell"), KHÔNG làm trong bước schema này.
+
+---
+
+**§D-Cloze. CƠ CHẾ CHẤM CLOZE (bài tổng hợp) — TÁI DÙNG cơ chế đã chạy thật.**
+
+**KHÔNG tự chế cơ chế so khớp mới.** Bài tổng hợp dùng đúng cơ chế cloze mà
+Q10 `chat_text_fill` của lesson thường đã chạy thật:
+
+1. Chuẩn hoá **cả hai vế** (đáp án người học gõ và từng mục trong
+   `acceptedAnswers`) bằng `normalizePracticeTextAnswer`
+   (`mobile/novalang_flutter/lib/models/five_card_practice.dart:26`), gồm 5
+   bước theo đúng thứ tự: `trim()` → gộp mọi chuỗi khoảng trắng thành MỘT dấu
+   cách → **bỏ dấu câu cuối câu** (`。` `.` `!` `！`, lặp lại) → `trim()` →
+   `toLowerCase()`.
+2. **Đúng** khi bản chuẩn hoá của đáp án người học **trùng khớp với BẤT KỲ**
+   mục nào trong `acceptedAnswers` đã chuẩn hoá.
+3. Không có so khớp mờ, không chấm điểm từng phần, không gọi AI.
+
+**Hệ quả cho người viết bài:**
+- `acceptedAnswers` phải liệt kê **mọi dạng viết hợp lệ**: dạng có hỗ trợ đọc,
+  dạng thuần chữ đích, dạng kana thuần… Thiếu một dạng = người học gõ đúng
+  vẫn bị chấm sai.
+- Phải chứa cả `canonicalAnswer`.
+- Vì bước 3 tự bỏ dấu câu cuối, **không cần** thêm biến thể chỉ khác dấu chấm.
+- Vì bước 5 hạ chữ thường, khác biệt hoa/thường **không** ảnh hưởng.
+- Khoảng trắng thừa giữa từ **không** ảnh hưởng (bước 2), nhưng **có/không có
+  khoảng trắng** thì vẫn khác nhau — nếu cả hai cách viết đều đúng, phải liệt
+  kê cả hai.
 
 ---
 
