@@ -16,7 +16,7 @@
 // (khác đường lesson), nên mọi chuỗi hỗ trợ ở đây phải tự mang `*ByNative` đủ
 // vi/en/ja. Không hard-code một ngôn ngữ vào chuỗi trần.
 
-import { blank, blankSeg, choiceOption, dialogueTurn, review, seg } from '../../../lib/unit-comprehensive-test.mjs';
+import { blank, blankSeg, choiceOption, dialogueTurn, review, seg } from '../../../lib/unit-comprehensive-helpers.mjs';
 
 const L1 = 'ja-daily_life-m01-u1-l1';
 const L2 = 'ja-daily_life-m01-u1-l2';
@@ -925,6 +925,287 @@ const DIALOGUE_QUESTIONS = [
   }),
 ];
 
+
+const PROMPT_TYPED = n(
+  'Gõ cụm còn thiếu vào ô trống.',
+  'Type the missing phrase into the blank.',
+  '空欄に入る言葉を入力してください。',
+);
+
+/**
+ * Ô TỰ GÕ. `acceptedAnswers` phải liệt kê MỌI dạng viết hợp lệ — bộ chấm chỉ tự
+ * lo: cắt khoảng trắng, bỏ dấu câu cuối, thường hoá chữ hoa (và với tiếng Nhật
+ * còn xoá sạch dấu cách). Nó KHÔNG tự quy đổi kanji ↔ kana.
+ *
+ * Quy tắc 2^N: cụm có N nhóm kanji độc lập thì có 2^N dạng viết hợp lệ; thiếu
+ * một dạng là chấm SAI người trả lời ĐÚNG.
+ */
+const typedBlank = (id, { answer, audio, accepted, hint }) =>
+  blank(id, {
+    displayAnswer: answer,
+    canonicalAnswer: answer,
+    audioText: audio,
+    acceptedAnswers: accepted,
+    ...(hint === undefined ? {} : { hint: hint.vi }),
+  });
+
+/* ══ MỨC 3 — Q19–Q25 · typed_blank · người học TỰ GÕ ═══════════════════ */
+
+const TYPED_QUESTIONS = [
+  question({
+    order: 19,
+    kind: 'typed_blank',
+    prompt: PROMPT_TYPED,
+    context: n(
+      'Buổi sáng ở trường tiếng Nhật. Bạn gặp thầy giáo và chào.',
+      'Morning at the Japanese school. You meet your teacher and greet them.',
+      '日本語学校の朝。先生に会ってあいさつします。',
+    ),
+    segments: [blankSeg('q19b1'), seg('、先生。')],
+    blanks: [
+      typedBlank('q19b1', {
+        answer: 'おはようございます',
+        audio: 'おはようございます',
+        // Kana thuần — L1 ghi displayText = reading = speechText, không có
+        // dạng kanji nào được dạy, nên chỉ một dạng hợp lệ.
+        accepted: ['おはようございます'],
+      }),
+    ],
+    reviews: [review(L1, 'vocabulary', 'ohayo-gozaimasu')],
+    explanation: n(
+      'Chào thầy vào buổi sáng dùng おはようございます — L1 dạy nguyên văn 「先生、おはようございます。」.',
+      'A morning greeting to a teacher is おはようございます — L1 teaches the line 「先生、おはようございます。」 verbatim.',
+      '朝、先生にあいさつするときは「おはようございます」です。L1で「先生、おはようございます。」をそのまま学びました。',
+    ),
+  }),
+
+  question({
+    order: 20,
+    kind: 'typed_blank',
+    prompt: PROMPT_TYPED,
+    context: n(
+      'Bàn đăng ký buổi giao lưu. Nhân viên hỏi tên người đến dự.',
+      'The registration desk at a meet-up. A staff member asks a guest’s name.',
+      '交流会の受付。係の人が参加者の名前を尋ねます。',
+    ),
+    segments: [seg('失礼ですが、'), blankSeg('q20b1'), seg('は何ですか。')],
+    blanks: [
+      typedBlank('q20b1', {
+        answer: 'お名前',
+        audio: 'おなまえ',
+        // Một nhóm kanji (名前) → 2 dạng.
+        accepted: ['お名前', 'おなまえ'],
+        hint: n('Dạng lịch sự của 名前.', 'The polite form of 名前.', '「名前」の丁寧な言い方。'),
+      }),
+    ],
+    reviews: [review(L2, 'vocabulary', 'onamae')],
+    explanation: n(
+      'Hỏi tên người đối diện một cách lịch sự thì dùng お名前, không dùng 名前 trống.',
+      'Asking someone’s name politely takes お名前, not a bare 名前.',
+      '相手の名前を丁寧に尋ねるときは「お名前」を使い、「名前」だけにはしません。',
+    ),
+  }),
+
+  question({
+    order: 21,
+    kind: 'typed_blank',
+    prompt: PROMPT_TYPED,
+    context: n(
+      'Tanaka vừa tự giới thiệu và nói よろしくお願いします. Bạn đáp lại cùng thiện chí.',
+      'Tanaka has just introduced himself and said よろしくお願いします. You answer with the same goodwill.',
+      '田中さんが自己紹介して「よろしくお願いします」と言いました。同じ気持ちで返します。',
+    ),
+    segments: [blankSeg('q21b1'), seg('、'), blankSeg('q21b2'), seg('。')],
+    blanks: [
+      typedBlank('q21b1', {
+        answer: 'こちらこそ',
+        audio: 'こちらこそ',
+        accepted: ['こちらこそ'],
+      }),
+      typedBlank('q21b2', {
+        answer: 'よろしくお願いします',
+        audio: 'よろしくおねがいします',
+        // HAI nhóm kanji độc lập (宜 · 願) → 2^2 = 4 dạng. Thiếu một dạng là
+        // chấm sai người trả lời đúng (rà 2^N, ACTIVE_TASK 2026-07-25).
+        accepted: [
+          'よろしくお願いします',
+          'よろしくおねがいします',
+          '宜しくお願いします',
+          '宜しくおねがいします',
+        ],
+        hint: n('Lời chúc khi làm quen.', 'The set phrase said when meeting someone.', '知り合うときの決まった言い方。'),
+      }),
+    ],
+    reviews: [
+      review(L3, 'vocabulary', 'kochira-koso'),
+      review(L1, 'vocabulary', 'yoroshiku-onegaishimasu'),
+    ],
+    explanation: n(
+      'こちらこそ đáp lại thiện chí người kia vừa bày tỏ, rồi nói tiếp よろしくお願いします.',
+      'こちらこそ returns the goodwill just expressed, then よろしくお願いします follows.',
+      '「こちらこそ」で相手が示した好意に返し、続けて「よろしくお願いします」と言います。',
+    ),
+  }),
+
+  question({
+    order: 22,
+    kind: 'typed_blank',
+    prompt: PROMPT_TYPED,
+    context: n(
+      'Bạn nghe chưa rõ tên người kia vừa nói, nhờ nhắc lại.',
+      'You did not catch the name just given and ask for it again.',
+      '相手が言った名前が聞き取れなかったので、もう一度お願いします。',
+    ),
+    segments: [blankSeg('q22b1'), seg('、'), blankSeg('q22b2'), seg('お願いします。')],
+    blanks: [
+      typedBlank('q22b1', {
+        answer: 'すみません',
+        audio: 'すみません',
+        accepted: ['すみません'],
+      }),
+      typedBlank('q22b2', {
+        answer: 'もう一度',
+        audio: 'もういちど',
+        // Một nhóm kanji (一度) → 2 dạng.
+        accepted: ['もう一度', 'もういちど'],
+        hint: n('"Một lần nữa."', '"One more time."', '「もう一回」という意味。'),
+      }),
+    ],
+    reviews: [
+      review(L2, 'vocabulary', 'sumimasen'),
+      review(L2, 'vocabulary', 'mou-ichido'),
+    ],
+    explanation: n(
+      'すみません mở lời, もう一度お願いします là cách nhờ nhắc lại — L2 dạy nguyên văn câu này.',
+      'すみません opens the request and もう一度お願いします asks for a repeat — L2 teaches this line verbatim.',
+      '「すみません」で切り出し、「もう一度お願いします」で繰り返しを頼みます。L2でこの言い方をそのまま学びました。',
+    ),
+  }),
+
+  question({
+    order: 23,
+    kind: 'typed_blank',
+    prompt: PROMPT_TYPED,
+    context: n(
+      'Hết buổi học. Bạn về trước Tanaka; tuần sau lại có buổi học.',
+      'Class is over. You are leaving before Tanaka; there is another class next week.',
+      '授業が終わりました。田中さんより先に帰ります。来週も授業があります。',
+    ),
+    segments: [seg('田中さん、'), blankSeg('q23b1'), seg('。また'), blankSeg('q23b2'), seg('。')],
+    blanks: [
+      typedBlank('q23b1', {
+        answer: 'お先に失礼します',
+        audio: 'おさきにしつれいします',
+        // HAI nhóm kanji độc lập (先 · 失礼) → 2^2 = 4 dạng.
+        accepted: [
+          'お先に失礼します',
+          'おさきにしつれいします',
+          'お先にしつれいします',
+          'おさきに失礼します',
+        ],
+        hint: n('Xin phép về trước.', 'Excusing yourself for leaving first.', '人より先に帰るときの言い方。'),
+      }),
+      typedBlank('q23b2', {
+        answer: '来週',
+        audio: 'らいしゅう',
+        // Một nhóm kanji (来週) → 2 dạng.
+        accepted: ['来週', 'らいしゅう'],
+      }),
+    ],
+    reviews: [
+      review(L3, 'vocabulary', 'osaki-ni-shitsurei'),
+      review(L3, 'vocabulary', 'raishuu'),
+    ],
+    explanation: n(
+      'Rời đi trước người khác thì nói お先に失礼します; mốc gặp lại là tuần sau nên また来週.',
+      'Leaving before someone else takes お先に失礼します, and the next meeting is next week, so また来週.',
+      '人より先に帰るときは「お先に失礼します」、次に会うのは来週なので「また来週」です。',
+    ),
+  }),
+
+  question({
+    order: 24,
+    kind: 'typed_blank',
+    prompt: PROMPT_TYPED,
+    context: n(
+      'Người đối diện vừa xưng 「伊藤です」. Bạn xác nhận lại rồi tự giới thiệu.',
+      'The other person has just said 「伊藤です」. You confirm the name, then introduce yourself.',
+      '相手が「伊藤です」と名乗りました。名前を確認してから自己紹介します。',
+    ),
+    segments: [
+      seg('あ、伊藤'), blankSeg('q24b1'), seg('。'), blankSeg('q24b2'), seg('、田中です。'),
+    ],
+    blanks: [
+      typedBlank('q24b1', {
+        answer: 'さんですね',
+        audio: 'さんですね',
+        // ～さん và ～ですね đều là kana thuần trong L2 → một dạng.
+        accepted: ['さんですね'],
+        hint: n(
+          'Đuôi xác nhận tên vừa nghe, kèm cách gọi lịch sự.',
+          'The confirming ending, together with the polite name suffix.',
+          '丁寧な呼び方と、聞いた名前を確認する語尾。',
+        ),
+      }),
+      typedBlank('q24b2', {
+        answer: 'はじめまして',
+        audio: 'はじめまして',
+        // L1 dạy dạng kana; 初めまして là cách viết kanji của CÙNG cụm, gặp
+        // thường xuyên trong văn viết → phải chấp nhận.
+        accepted: ['はじめまして', '初めまして'],
+      }),
+    ],
+    reviews: [
+      review(L2, 'grammar', '～ですね'),
+      review(L1, 'vocabulary', 'hajimemashite'),
+    ],
+    explanation: n(
+      '～さんですね xác nhận tên vừa nghe với chính người đó; sau đó はじめまして mở lời làm quen.',
+      '～さんですね confirms the name with the person themselves; はじめまして then opens the introduction.',
+      '「～さんですね」で本人に名前を確認し、続けて「はじめまして」で自己紹介を始めます。',
+    ),
+  }),
+
+  question({
+    order: 25,
+    kind: 'typed_blank',
+    prompt: PROMPT_TYPED,
+    context: n(
+      'Bạn cùng lớp báo sắp chuyển đi xa, lâu mới gặp lại. Bạn tiếp nhận tin rồi chào tạm biệt.',
+      'A classmate says they are moving far away and you will not meet for a long while. You take the news in, then say goodbye.',
+      'クラスメートが遠くへ引っ越すと言いました。しばらく会えません。その知らせを受け止めて、別れのあいさつをします。',
+    ),
+    segments: [blankSeg('q25b1'), seg('。じゃあ、'), blankSeg('q25b2'), seg('、田中さん。')],
+    blanks: [
+      typedBlank('q25b1', {
+        answer: 'そうですか',
+        audio: 'そうですか',
+        accepted: ['そうですか'],
+      }),
+      typedBlank('q25b2', {
+        answer: 'お元気で',
+        audio: 'おげんきで',
+        // Một nhóm kanji (元気) → 2 dạng.
+        accepted: ['お元気で', 'おげんきで'],
+        hint: n(
+          'Lời dặn khi chia tay từ một tuần trở lên.',
+          'The parting wish used when the next meeting is a week or more away.',
+          '次に会うのが一週間以上先のときの別れの言葉。',
+        ),
+      }),
+    ],
+    reviews: [
+      review(L3, 'vocabulary', 'sou-desu-ka'),
+      review(L3, 'vocabulary', 'ogenki-de'),
+    ],
+    explanation: n(
+      'そうですか tiếp nhận tin vừa nghe; mốc gặp lại từ một tuần trở lên nên dùng お元気で.',
+      'そうですか takes in the news, and the next meeting is a week or more away, so お元気で fits.',
+      '「そうですか」で知らせを受け止めます。次に会うのが一週間以上先なので「お元気で」を使います。',
+    ),
+  }),
+];
+
 /* ══ Bài tổng hợp ══════════════════════════════════════════════════════ */
 
 export const JA_M01_U1_COMPREHENSIVE = {
@@ -937,5 +1218,5 @@ export const JA_M01_U1_COMPREHENSIVE = {
     '第1ユニット全体の復習：あいさつ、名前の尋ね方、返し方、別れのあいさつ。',
   ),
   estimatedMinutes: '15',
-  questions: [...SENTENCE_QUESTIONS, ...DIALOGUE_QUESTIONS],
+  questions: [...SENTENCE_QUESTIONS, ...DIALOGUE_QUESTIONS, ...TYPED_QUESTIONS],
 };

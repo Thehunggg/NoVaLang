@@ -2107,7 +2107,2849 @@
             "ja-daily_life-m01-u1-l1",
             "ja-daily_life-m01-u1-l2",
             "ja-daily_life-m01-u1-l3"
-          ]
+          ],
+          "comprehensiveTest": {
+            "id": "ja-daily_life-m01-u1-comprehensive",
+            "unitId": "ja-daily_life-m01-u1",
+            "format": "unit_comprehensive_cloze",
+            "languageCode": "ja",
+            "targetLocale": "ja-JP",
+            "plan": "plus",
+            "graded": true,
+            "title": "Bài tổng hợp Unit 1",
+            "titleByNative": {
+              "vi": "Bài tổng hợp Unit 1",
+              "en": "Unit 1 Comprehensive Test",
+              "ja": "第1ユニット総合テスト"
+            },
+            "description": "Ôn lại toàn bộ Unit 1: chào hỏi, hỏi tên, đáp lại và chào tạm biệt.",
+            "descriptionByNative": {
+              "vi": "Ôn lại toàn bộ Unit 1: chào hỏi, hỏi tên, đáp lại và chào tạm biệt.",
+              "en": "Reviews all of Unit 1: greetings, asking names, replying, and saying goodbye.",
+              "ja": "第1ユニット全体の復習：あいさつ、名前の尋ね方、返し方、別れのあいさつ。"
+            },
+            "estimatedMinutes": "15",
+            "totalQuestions": 25,
+            "sourceLessonIds": [
+              "ja-daily_life-m01-u1-l1",
+              "ja-daily_life-m01-u1-l2",
+              "ja-daily_life-m01-u1-l3"
+            ],
+            "questions": [
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q1",
+                "order": 1,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Buổi sáng ở trường tiếng Nhật. Anna gặp Tanaka lần đầu và tự giới thiệu.",
+                "contextByNative": {
+                  "vi": "Buổi sáng ở trường tiếng Nhật. Anna gặp Tanaka lần đầu và tự giới thiệu.",
+                  "en": "Morning at the Japanese school. Anna meets Tanaka for the first time and introduces herself.",
+                  "ja": "日本語学校の朝。アンナさんは田中さんと初めて会い、自己紹介します。"
+                },
+                "segments": [
+                  {
+                    "displayText": "おはようございます。"
+                  },
+                  {
+                    "blankId": "q1b1"
+                  },
+                  {
+                    "displayText": "、アンナです。"
+                  },
+                  {
+                    "blankId": "q1b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q1b1",
+                    "displayAnswer": "はじめまして",
+                    "canonicalAnswer": "はじめまして",
+                    "audioText": "はじめまして",
+                    "acceptedAnswers": [
+                      "はじめまして"
+                    ]
+                  },
+                  {
+                    "id": "q1b2",
+                    "displayAnswer": "よろしくお願いします",
+                    "canonicalAnswer": "よろしくお願いします",
+                    "audioText": "よろしくおねがいします",
+                    "acceptedAnswers": [
+                      "よろしくお願いします"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q1a",
+                    "text": "そうですか / よろしくお願いします",
+                    "answersByBlankId": {
+                      "q1b1": "そうですか",
+                      "q1b2": "よろしくお願いします"
+                    }
+                  },
+                  {
+                    "id": "q1b",
+                    "text": "はじめまして / よろしくお願いします",
+                    "answersByBlankId": {
+                      "q1b1": "はじめまして",
+                      "q1b2": "よろしくお願いします"
+                    }
+                  },
+                  {
+                    "id": "q1c",
+                    "text": "はじめまして / さようなら",
+                    "answersByBlankId": {
+                      "q1b1": "はじめまして",
+                      "q1b2": "さようなら"
+                    }
+                  },
+                  {
+                    "id": "q1d",
+                    "text": "はじめまして / 失礼します",
+                    "answersByBlankId": {
+                      "q1b1": "はじめまして",
+                      "q1b2": "失礼します"
+                    }
+                  }
+                ],
+                "correctOptionId": "q1b",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "hajimemashite"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "yoroshiku-onegaishimasu"
+                  }
+                ],
+                "explanation": "そうですか dùng để tiếp nhận thông tin vừa nghe — đây là câu mở lời, chưa ai nói gì. さようなら là lời tạm biệt, vừa gặp mà chào tạm biệt là ngược giai đoạn. 失礼します là lời xin phép rời đi, vừa xưng tên xong đã xin đi là mâu thuẫn.",
+                "explanationByNative": {
+                  "vi": "そうですか dùng để tiếp nhận thông tin vừa nghe — đây là câu mở lời, chưa ai nói gì. さようなら là lời tạm biệt, vừa gặp mà chào tạm biệt là ngược giai đoạn. 失礼します là lời xin phép rời đi, vừa xưng tên xong đã xin đi là mâu thuẫn.",
+                  "en": "そうですか takes in information you have just heard, but this is the opening line — nothing has been said yet. さようなら is a goodbye, so using it at a first meeting is out of order. 失礼します excuses you to leave, which contradicts having just given your name.",
+                  "ja": "「そうですか」は聞いた情報を受け止める言葉ですが、ここは最初の一言でまだ何も聞いていません。「さようなら」は別れのあいさつなので初対面の場面には合いません。「失礼します」は立ち去る言葉で、名乗った直後に言うのは矛盾します。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q2",
+                "order": 2,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Bàn đăng ký buổi giao lưu. Nhân viên hỏi tên người đến dự.",
+                "contextByNative": {
+                  "vi": "Bàn đăng ký buổi giao lưu. Nhân viên hỏi tên người đến dự.",
+                  "en": "The registration desk at a meet-up. A staff member asks a guest’s name.",
+                  "ja": "交流会の受付。係の人が参加者の名前を尋ねます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q2b1"
+                  },
+                  {
+                    "displayText": "、"
+                  },
+                  {
+                    "blankId": "q2b2"
+                  },
+                  {
+                    "displayText": "は何ですか。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q2b1",
+                    "displayAnswer": "失礼ですが",
+                    "canonicalAnswer": "失礼ですが",
+                    "audioText": "しつれいですが",
+                    "acceptedAnswers": [
+                      "失礼ですが"
+                    ]
+                  },
+                  {
+                    "id": "q2b2",
+                    "displayAnswer": "お名前",
+                    "canonicalAnswer": "お名前",
+                    "audioText": "おなまえ",
+                    "acceptedAnswers": [
+                      "お名前"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q2a",
+                    "text": "もう一度 / お名前",
+                    "answersByBlankId": {
+                      "q2b1": "もう一度",
+                      "q2b2": "お名前"
+                    }
+                  },
+                  {
+                    "id": "q2b",
+                    "text": "お先に失礼します / お名前",
+                    "answersByBlankId": {
+                      "q2b1": "お先に失礼します",
+                      "q2b2": "お名前"
+                    }
+                  },
+                  {
+                    "id": "q2c",
+                    "text": "失礼ですが / お名前",
+                    "answersByBlankId": {
+                      "q2b1": "失礼ですが",
+                      "q2b2": "お名前"
+                    }
+                  },
+                  {
+                    "id": "q2d",
+                    "text": "失礼ですが / お名前は",
+                    "answersByBlankId": {
+                      "q2b1": "失礼ですが",
+                      "q2b2": "お名前は"
+                    }
+                  }
+                ],
+                "correctOptionId": "q2c",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "shitsurei-desu-ga"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "onamae"
+                  }
+                ],
+                "explanation": "もう一度 dùng khi nhờ nhắc lại điều đã nói, mà ở đây chưa nghe gì. お先に失礼します là xin phép rời đi, xin đi rồi lại hỏi tên là mâu thuẫn. Ô thứ hai đã có sẵn は phía sau, điền お名前は thành 「お名前はは何ですか」, lặp trợ từ.",
+                "explanationByNative": {
+                  "vi": "もう一度 dùng khi nhờ nhắc lại điều đã nói, mà ở đây chưa nghe gì. お先に失礼します là xin phép rời đi, xin đi rồi lại hỏi tên là mâu thuẫn. Ô thứ hai đã có sẵn は phía sau, điền お名前は thành 「お名前はは何ですか」, lặp trợ từ.",
+                  "en": "もう一度 asks for something to be repeated, but nothing has been said yet. お先に失礼します excuses you to leave, which contradicts then asking for a name. The second blank is already followed by は, so お名前は would produce 「お名前はは何ですか」 with the particle twice.",
+                  "ja": "「もう一度」は言われたことを繰り返してもらうときの言葉ですが、まだ何も聞いていません。「お先に失礼します」は先に帰る言葉で、その後に名前を尋ねるのは矛盾します。二つ目の空欄の後にはすでに「は」があるため、「お名前は」を入れると「お名前はは何ですか」となり助詞が重なります。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q3",
+                "order": 3,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Tanaka vừa tự giới thiệu và nói よろしくお願いします. Smith đáp lại.",
+                "contextByNative": {
+                  "vi": "Tanaka vừa tự giới thiệu và nói よろしくお願いします. Smith đáp lại.",
+                  "en": "Tanaka has just introduced himself and said よろしくお願いします. Smith replies.",
+                  "ja": "田中さんが自己紹介して「よろしくお願いします」と言いました。スミスさんが返します。"
+                },
+                "segments": [
+                  {
+                    "displayText": "スミスです。"
+                  },
+                  {
+                    "blankId": "q3b1"
+                  },
+                  {
+                    "displayText": "、"
+                  },
+                  {
+                    "blankId": "q3b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q3b1",
+                    "displayAnswer": "こちらこそ",
+                    "canonicalAnswer": "こちらこそ",
+                    "audioText": "こちらこそ",
+                    "acceptedAnswers": [
+                      "こちらこそ"
+                    ]
+                  },
+                  {
+                    "id": "q3b2",
+                    "displayAnswer": "よろしくお願いします",
+                    "canonicalAnswer": "よろしくお願いします",
+                    "audioText": "よろしくおねがいします",
+                    "acceptedAnswers": [
+                      "よろしくお願いします"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q3a",
+                    "text": "こちらこそ / よろしくお願いします",
+                    "answersByBlankId": {
+                      "q3b1": "こちらこそ",
+                      "q3b2": "よろしくお願いします"
+                    }
+                  },
+                  {
+                    "id": "q3b",
+                    "text": "失礼ですが / よろしくお願いします",
+                    "answersByBlankId": {
+                      "q3b1": "失礼ですが",
+                      "q3b2": "よろしくお願いします"
+                    }
+                  },
+                  {
+                    "id": "q3c",
+                    "text": "お先に失礼します / よろしくお願いします",
+                    "answersByBlankId": {
+                      "q3b1": "お先に失礼します",
+                      "q3b2": "よろしくお願いします"
+                    }
+                  },
+                  {
+                    "id": "q3d",
+                    "text": "こちらこそ / また来週",
+                    "answersByBlankId": {
+                      "q3b1": "こちらこそ",
+                      "q3b2": "また来週"
+                    }
+                  }
+                ],
+                "correctOptionId": "q3a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "kochira-koso"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "yoroshiku-onegaishimasu"
+                  }
+                ],
+                "explanation": "失礼ですが mở đầu một câu hỏi lịch sự, không dùng để đáp lại lời chúc. お先に失礼します là xin phép rời đi, vừa được làm quen đã xin đi là mâu thuẫn. また来週 kết thúc cuộc gặp, trong khi hai người vừa mới làm quen.",
+                "explanationByNative": {
+                  "vi": "失礼ですが mở đầu một câu hỏi lịch sự, không dùng để đáp lại lời chúc. お先に失礼します là xin phép rời đi, vừa được làm quen đã xin đi là mâu thuẫn. また来週 kết thúc cuộc gặp, trong khi hai người vừa mới làm quen.",
+                  "en": "失礼ですが opens a polite question; it does not answer a good wish. お先に失礼します excuses you to leave, which contradicts having just been introduced. また来週 closes the encounter just as it begins.",
+                  "ja": "「失礼ですが」は丁寧に質問を切り出す言葉で、好意の言葉に返すものではありません。「お先に失礼します」は先に帰る言葉で、紹介された直後には合いません。「また来週」は出会ったばかりの場面を終わらせてしまいます。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q4",
+                "order": 4,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Người đối diện vừa xưng 「伊藤です」. Tanaka xác nhận lại rồi tự giới thiệu.",
+                "contextByNative": {
+                  "vi": "Người đối diện vừa xưng 「伊藤です」. Tanaka xác nhận lại rồi tự giới thiệu.",
+                  "en": "The other person has just said 「伊藤です」. Tanaka confirms the name, then introduces himself.",
+                  "ja": "相手が「伊藤です」と名乗りました。田中さんは名前を確認してから自己紹介します。"
+                },
+                "segments": [
+                  {
+                    "displayText": "あ、伊藤"
+                  },
+                  {
+                    "blankId": "q4b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q4b2"
+                  },
+                  {
+                    "displayText": "、田中です。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q4b1",
+                    "displayAnswer": "さんですね",
+                    "canonicalAnswer": "さんですね",
+                    "audioText": "さんですね",
+                    "acceptedAnswers": [
+                      "さんですね"
+                    ]
+                  },
+                  {
+                    "id": "q4b2",
+                    "displayAnswer": "はじめまして",
+                    "canonicalAnswer": "はじめまして",
+                    "audioText": "はじめまして",
+                    "acceptedAnswers": [
+                      "はじめまして"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q4a",
+                    "text": "ですね / はじめまして",
+                    "answersByBlankId": {
+                      "q4b1": "ですね",
+                      "q4b2": "はじめまして"
+                    }
+                  },
+                  {
+                    "id": "q4b",
+                    "text": "さんですね / そうですか",
+                    "answersByBlankId": {
+                      "q4b1": "さんですね",
+                      "q4b2": "そうですか"
+                    }
+                  },
+                  {
+                    "id": "q4c",
+                    "text": "さんですね / さようなら",
+                    "answersByBlankId": {
+                      "q4b1": "さんですね",
+                      "q4b2": "さようなら"
+                    }
+                  },
+                  {
+                    "id": "q4d",
+                    "text": "さんですね / はじめまして",
+                    "answersByBlankId": {
+                      "q4b1": "さんですね",
+                      "q4b2": "はじめまして"
+                    }
+                  }
+                ],
+                "correctOptionId": "q4d",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "grammar",
+                    "ref": "～ですね"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "hajimemashite"
+                  }
+                ],
+                "explanation": "Thiếu さん sau tên người khác là bất lịch sự — L2 dạy ～さん đặt sau tên người khác. そうですか là câu tiếp nhận thông tin, không dùng để tự giới thiệu tên mình. さようなら là lời tạm biệt, chào tạm biệt rồi mới tự giới thiệu là ngược hẳn trình tự.",
+                "explanationByNative": {
+                  "vi": "Thiếu さん sau tên người khác là bất lịch sự — L2 dạy ～さん đặt sau tên người khác. そうですか là câu tiếp nhận thông tin, không dùng để tự giới thiệu tên mình. さようなら là lời tạm biệt, chào tạm biệt rồi mới tự giới thiệu là ngược hẳn trình tự.",
+                  "en": "Dropping さん after someone else’s name is impolite — L2 teaches ～さん for other people’s names. そうですか takes in information; it does not introduce yourself. さようなら is a goodbye, so saying it before introducing yourself reverses the order.",
+                  "ja": "相手の名前に「さん」を付けないのは失礼です。L2で「～さん」は相手の名前に付けると学びました。「そうですか」は情報を受け止める言葉で、自分の名前を名乗るものではありません。「さようなら」は別れの言葉なので、その後に名乗るのは順序が逆です。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q5",
+                "order": 5,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Lần đầu gặp ở buổi giao lưu. Bạn xưng tên mình rồi hỏi lại tên của họ một cách lịch sự.",
+                "contextByNative": {
+                  "vi": "Lần đầu gặp ở buổi giao lưu. Bạn xưng tên mình rồi hỏi lại tên của họ một cách lịch sự.",
+                  "en": "A first meeting at a meet-up. You give your own name, then politely ask for theirs.",
+                  "ja": "交流会での初対面。自分の名前を言ってから、相手の名前を丁寧に尋ねます。"
+                },
+                "segments": [
+                  {
+                    "displayText": "私の"
+                  },
+                  {
+                    "blankId": "q5b1"
+                  },
+                  {
+                    "displayText": "は田中です。"
+                  },
+                  {
+                    "blankId": "q5b2"
+                  },
+                  {
+                    "displayText": "は？"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q5b1",
+                    "displayAnswer": "名前",
+                    "canonicalAnswer": "名前",
+                    "audioText": "なまえ",
+                    "acceptedAnswers": [
+                      "名前"
+                    ]
+                  },
+                  {
+                    "id": "q5b2",
+                    "displayAnswer": "お名前",
+                    "canonicalAnswer": "お名前",
+                    "audioText": "おなまえ",
+                    "acceptedAnswers": [
+                      "お名前"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q5a",
+                    "text": "お名前 / お名前",
+                    "answersByBlankId": {
+                      "q5b1": "お名前",
+                      "q5b2": "お名前"
+                    }
+                  },
+                  {
+                    "id": "q5b",
+                    "text": "名前 / お名前",
+                    "answersByBlankId": {
+                      "q5b1": "名前",
+                      "q5b2": "お名前"
+                    }
+                  },
+                  {
+                    "id": "q5c",
+                    "text": "名前 / お名前は",
+                    "answersByBlankId": {
+                      "q5b1": "名前",
+                      "q5b2": "お名前は"
+                    }
+                  },
+                  {
+                    "id": "q5d",
+                    "text": "名前 / 名前",
+                    "answersByBlankId": {
+                      "q5b1": "名前",
+                      "q5b2": "名前"
+                    }
+                  }
+                ],
+                "correctOptionId": "q5b",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "namae"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "onamae-wa"
+                  }
+                ],
+                "explanation": "Thêm お cho tên của chính mình là tự nâng mình lên — L2 ghi rõ trong phần lưu ý: không nói 私のお名前は田中です. Ô thứ hai đã có sẵn は phía sau nên お名前は thành 「お名前はは？」, lặp trợ từ. Hỏi tên người mới gặp bằng 名前 trống thì cộc lốc.",
+                "explanationByNative": {
+                  "vi": "Thêm お cho tên của chính mình là tự nâng mình lên — L2 ghi rõ trong phần lưu ý: không nói 私のお名前は田中です. Ô thứ hai đã có sẵn は phía sau nên お名前は thành 「お名前はは？」, lặp trợ từ. Hỏi tên người mới gặp bằng 名前 trống thì cộc lốc.",
+                  "en": "Adding お to your own name raises yourself — L2 states outright that you do not say 私のお名前は田中です. The second blank is already followed by は, so お名前は gives 「お名前はは？」 with the particle twice. Asking a stranger with a bare 名前 is blunt.",
+                  "ja": "自分の名前に「お」を付けるのは自分を高めることになります。L2でも「私のお名前は田中です」とは言わないと明記しています。二つ目の空欄の後にはすでに「は」があるため、「お名前は」だと「お名前はは？」となり助詞が重なります。初対面の相手に「名前」だけで尋ねるのはぶっきらぼうです。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q6",
+                "order": 6,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Cuối giờ làm ở công ty. Satō về trước Tanaka; tuần sau hai người vẫn gặp nhau.",
+                "contextByNative": {
+                  "vi": "Cuối giờ làm ở công ty. Satō về trước Tanaka; tuần sau hai người vẫn gặp nhau.",
+                  "en": "End of the working day. Satō is leaving before Tanaka; they will see each other again next week.",
+                  "ja": "会社の終業時。佐藤さんは田中さんより先に帰ります。来週また会います。"
+                },
+                "segments": [
+                  {
+                    "displayText": "田中さん、"
+                  },
+                  {
+                    "blankId": "q6b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q6b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q6b1",
+                    "displayAnswer": "お先に失礼します",
+                    "canonicalAnswer": "お先に失礼します",
+                    "audioText": "おさきにしつれいします",
+                    "acceptedAnswers": [
+                      "お先に失礼します"
+                    ]
+                  },
+                  {
+                    "id": "q6b2",
+                    "displayAnswer": "また来週",
+                    "canonicalAnswer": "また来週",
+                    "audioText": "またらいしゅう",
+                    "acceptedAnswers": [
+                      "また来週"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q6a",
+                    "text": "お先に失礼します / また来週",
+                    "answersByBlankId": {
+                      "q6b1": "お先に失礼します",
+                      "q6b2": "また来週"
+                    }
+                  },
+                  {
+                    "id": "q6b",
+                    "text": "よろしくお願いします / また来週",
+                    "answersByBlankId": {
+                      "q6b1": "よろしくお願いします",
+                      "q6b2": "また来週"
+                    }
+                  },
+                  {
+                    "id": "q6c",
+                    "text": "お先に失礼します / はじめまして",
+                    "answersByBlankId": {
+                      "q6b1": "お先に失礼します",
+                      "q6b2": "はじめまして"
+                    }
+                  },
+                  {
+                    "id": "q6d",
+                    "text": "お先に失礼します / お名前は？",
+                    "answersByBlankId": {
+                      "q6b1": "お先に失礼します",
+                      "q6b2": "お名前は？"
+                    }
+                  }
+                ],
+                "correctOptionId": "q6a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "osaki-ni-shitsurei"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "grammar",
+                    "ref": "また＋[mốc thời gian]"
+                  }
+                ],
+                "explanation": "よろしくお願いします là lời chúc lúc làm quen, không phải lời xin phép rời đi. はじめまして dùng khi gặp lần đầu, còn đây là lúc chia tay giữa hai đồng nghiệp đã quen. Hỏi tên đồng nghiệp đã quen ngay lúc chia tay là lạc mạch.",
+                "explanationByNative": {
+                  "vi": "よろしくお願いします là lời chúc lúc làm quen, không phải lời xin phép rời đi. はじめまして dùng khi gặp lần đầu, còn đây là lúc chia tay giữa hai đồng nghiệp đã quen. Hỏi tên đồng nghiệp đã quen ngay lúc chia tay là lạc mạch.",
+                  "en": "よろしくお願いします is said when meeting someone, not when excusing yourself to leave. はじめまして is for a first meeting, but this is two colleagues parting. Asking a familiar colleague’s name as you leave is off-topic.",
+                  "ja": "「よろしくお願いします」は知り合うときの言葉で、先に帰る許しを言うものではありません。「はじめまして」は初対面のときですが、ここは知り合いの同僚どうしの別れ際です。よく知っている同僚に別れ際に名前を尋ねるのは話の流れに合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q7",
+                "order": 7,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Buổi tối, Anna về tới sảnh chung cư thì gặp bà Tanaka — hàng xóm đã quen. Anna chào rồi xin phép đi tiếp.",
+                "contextByNative": {
+                  "vi": "Buổi tối, Anna về tới sảnh chung cư thì gặp bà Tanaka — hàng xóm đã quen. Anna chào rồi xin phép đi tiếp.",
+                  "en": "In the evening Anna reaches her apartment lobby and meets Mrs Tanaka, a neighbour she knows. Anna greets her, then excuses herself.",
+                  "ja": "夜、アンナさんがマンションのロビーで顔なじみの田中さんに会います。あいさつをして、その場を離れます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q7b1"
+                  },
+                  {
+                    "displayText": "、田中さん。"
+                  },
+                  {
+                    "blankId": "q7b2"
+                  },
+                  {
+                    "displayText": "。また明日。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q7b1",
+                    "displayAnswer": "こんばんは",
+                    "canonicalAnswer": "こんばんは",
+                    "audioText": "こんばんは",
+                    "acceptedAnswers": [
+                      "こんばんは"
+                    ]
+                  },
+                  {
+                    "id": "q7b2",
+                    "displayAnswer": "失礼します",
+                    "canonicalAnswer": "失礼します",
+                    "audioText": "しつれいします",
+                    "acceptedAnswers": [
+                      "失礼します"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q7a",
+                    "text": "おはようございます / 失礼します",
+                    "answersByBlankId": {
+                      "q7b1": "おはようございます",
+                      "q7b2": "失礼します"
+                    }
+                  },
+                  {
+                    "id": "q7b",
+                    "text": "こんばんは / はじめまして",
+                    "answersByBlankId": {
+                      "q7b1": "こんばんは",
+                      "q7b2": "はじめまして"
+                    }
+                  },
+                  {
+                    "id": "q7c",
+                    "text": "こんばんは / お名前は何ですか",
+                    "answersByBlankId": {
+                      "q7b1": "こんばんは",
+                      "q7b2": "お名前は何ですか"
+                    }
+                  },
+                  {
+                    "id": "q7d",
+                    "text": "こんばんは / 失礼します",
+                    "answersByBlankId": {
+                      "q7b1": "こんばんは",
+                      "q7b2": "失礼します"
+                    }
+                  }
+                ],
+                "correctOptionId": "q7d",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "konbanwa"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "shitsurei-shimasu"
+                  }
+                ],
+                "explanation": "おはようございます là chào buổi sáng, mà bối cảnh ghi rõ buổi tối — chính L1 liệt kê \"không dùng vào buổi sáng\" cho こんばんは. はじめまして dùng khi gặp lần đầu, đây là hàng xóm đã quen. Hỏi tên hàng xóm đã quen là lạc mạch.",
+                "explanationByNative": {
+                  "vi": "おはようございます là chào buổi sáng, mà bối cảnh ghi rõ buổi tối — chính L1 liệt kê \"không dùng vào buổi sáng\" cho こんばんは. はじめまして dùng khi gặp lần đầu, đây là hàng xóm đã quen. Hỏi tên hàng xóm đã quen là lạc mạch.",
+                  "en": "おはようございます is a morning greeting, but the setting is evening — L1 itself lists “not in the morning” for こんばんは. はじめまして is for a first meeting, yet this neighbour is already known. Asking a familiar neighbour’s name is off-topic.",
+                  "ja": "「おはようございます」は朝のあいさつですが、場面は夜です。L1でも「こんばんは」について「朝には使わない」と示しています。「はじめまして」は初対面のときですが、相手は顔なじみの隣人です。よく知っている隣人に名前を尋ねるのは話の流れに合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q8",
+                "order": 8,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Đồng nghiệp báo tuần sau chuyển đến Tokyo, lâu mới gặp lại. Bạn tiếp nhận tin rồi chào tạm biệt.",
+                "contextByNative": {
+                  "vi": "Đồng nghiệp báo tuần sau chuyển đến Tokyo, lâu mới gặp lại. Bạn tiếp nhận tin rồi chào tạm biệt.",
+                  "en": "A colleague says they are moving to Tokyo next week and you will not meet again for a long while. You take the news in, then say goodbye.",
+                  "ja": "同僚が来週から東京に引っ越すと言いました。しばらく会えません。その知らせを受け止めて、別れのあいさつをします。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q8b1"
+                  },
+                  {
+                    "displayText": "。じゃあ、"
+                  },
+                  {
+                    "blankId": "q8b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q8b1",
+                    "displayAnswer": "そうですか",
+                    "canonicalAnswer": "そうですか",
+                    "audioText": "そうですか",
+                    "acceptedAnswers": [
+                      "そうですか"
+                    ]
+                  },
+                  {
+                    "id": "q8b2",
+                    "displayAnswer": "お元気で",
+                    "canonicalAnswer": "お元気で",
+                    "audioText": "おげんきで",
+                    "acceptedAnswers": [
+                      "お元気で"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q8a",
+                    "text": "こちらこそ / お元気で",
+                    "answersByBlankId": {
+                      "q8b1": "こちらこそ",
+                      "q8b2": "お元気で"
+                    }
+                  },
+                  {
+                    "id": "q8b",
+                    "text": "そうですか / よろしくお願いします",
+                    "answersByBlankId": {
+                      "q8b1": "そうですか",
+                      "q8b2": "よろしくお願いします"
+                    }
+                  },
+                  {
+                    "id": "q8c",
+                    "text": "そうですか / お元気で",
+                    "answersByBlankId": {
+                      "q8b1": "そうですか",
+                      "q8b2": "お元気で"
+                    }
+                  },
+                  {
+                    "id": "q8d",
+                    "text": "そうですか / また来週",
+                    "answersByBlankId": {
+                      "q8b1": "そうですか",
+                      "q8b2": "また来週"
+                    }
+                  }
+                ],
+                "correctOptionId": "q8c",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "sou-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "ogenki-de"
+                  }
+                ],
+                "explanation": "こちらこそ chỉ dùng để đáp lại thiện chí ai đó vừa bày tỏ, còn ở đây đối phương đang báo tin. よろしくお願いします là lời chúc lúc làm quen, không phải lời dặn khi chia tay xa. Đối phương chuyển đi từ tuần sau nên hẹn また来週 là tự mâu thuẫn. お元気で đúng vì mốc gặp lại từ một tuần trở lên.",
+                "explanationByNative": {
+                  "vi": "こちらこそ chỉ dùng để đáp lại thiện chí ai đó vừa bày tỏ, còn ở đây đối phương đang báo tin. よろしくお願いします là lời chúc lúc làm quen, không phải lời dặn khi chia tay xa. Đối phương chuyển đi từ tuần sau nên hẹn また来週 là tự mâu thuẫn. お元気で đúng vì mốc gặp lại từ một tuần trở lên.",
+                  "en": "こちらこそ only answers goodwill someone has just expressed, but here they are delivering news. よろしくお願いします belongs to a first meeting, not to a long goodbye. They are moving away next week, so また来週 contradicts the news. お元気で fits because the next meeting is a week or more away.",
+                  "ja": "「こちらこそ」は相手が示した好意に返す言葉ですが、ここでは相手が知らせを伝えています。「よろしくお願いします」は知り合うときの言葉で、長い別れの言葉ではありません。相手は来週から引っ越すので「また来週」は矛盾します。次に会うのが一週間以上先なので「お元気で」が合います。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q9",
+                "order": 9,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Buổi giao lưu. Satō và Smith gặp nhau lần đầu.",
+                "contextByNative": {
+                  "vi": "Buổi giao lưu. Satō và Smith gặp nhau lần đầu.",
+                  "en": "A meet-up. Satō and Smith meet for the first time.",
+                  "ja": "交流会。佐藤さんとスミスさんが初めて会います。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q9t1",
+                    "speakerId": "佐藤",
+                    "segments": [
+                      {
+                        "blankId": "q9b1"
+                      },
+                      {
+                        "displayText": "。佐藤です。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q9t2",
+                    "speakerId": "スミス",
+                    "segments": [
+                      {
+                        "displayText": "私"
+                      },
+                      {
+                        "blankId": "q9b2"
+                      },
+                      {
+                        "displayText": "スミスです。よろしくお願いします。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q9t3",
+                    "speakerId": "佐藤",
+                    "segments": [
+                      {
+                        "displayText": "スミス"
+                      },
+                      {
+                        "blankId": "q9b3"
+                      },
+                      {
+                        "displayText": "。こちらこそ、よろしくお願いします。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q9b1",
+                    "displayAnswer": "はじめまして",
+                    "canonicalAnswer": "はじめまして",
+                    "audioText": "はじめまして",
+                    "acceptedAnswers": [
+                      "はじめまして"
+                    ]
+                  },
+                  {
+                    "id": "q9b2",
+                    "displayAnswer": "は",
+                    "canonicalAnswer": "は",
+                    "audioText": "は",
+                    "acceptedAnswers": [
+                      "は"
+                    ]
+                  },
+                  {
+                    "id": "q9b3",
+                    "displayAnswer": "さんですね",
+                    "canonicalAnswer": "さんですね",
+                    "audioText": "さんですね",
+                    "acceptedAnswers": [
+                      "さんですね"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q9a",
+                    "text": "はじめまして / も / さんですね",
+                    "answersByBlankId": {
+                      "q9b1": "はじめまして",
+                      "q9b2": "も",
+                      "q9b3": "さんですね"
+                    }
+                  },
+                  {
+                    "id": "q9b",
+                    "text": "はじめまして / は / ですね",
+                    "answersByBlankId": {
+                      "q9b1": "はじめまして",
+                      "q9b2": "は",
+                      "q9b3": "ですね"
+                    }
+                  },
+                  {
+                    "id": "q9c",
+                    "text": "はじめまして / は / さんですね",
+                    "answersByBlankId": {
+                      "q9b1": "はじめまして",
+                      "q9b2": "は",
+                      "q9b3": "さんですね"
+                    }
+                  },
+                  {
+                    "id": "q9d",
+                    "text": "そうですか / は / さんですね",
+                    "answersByBlankId": {
+                      "q9b1": "そうですか",
+                      "q9b2": "は",
+                      "q9b3": "さんですね"
+                    }
+                  }
+                ],
+                "correctOptionId": "q9c",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "hajimemashite"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "grammar",
+                    "ref": "私は[名前]です"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "grammar",
+                    "ref": "～ですね"
+                  }
+                ],
+                "explanation": "「私もスミスです」 nghĩa là \"tôi CŨNG là Smith\", nhưng chưa ai tên Smith trước đó — nêu tên mình phải dùng は. Thiếu さん sau tên người khác là bất lịch sự. そうですか để tiếp nhận thông tin, mà đây là câu mở lời đầu tiên.",
+                "explanationByNative": {
+                  "vi": "「私もスミスです」 nghĩa là \"tôi CŨNG là Smith\", nhưng chưa ai tên Smith trước đó — nêu tên mình phải dùng は. Thiếu さん sau tên người khác là bất lịch sự. そうですか để tiếp nhận thông tin, mà đây là câu mở lời đầu tiên.",
+                  "en": "「私もスミスです」 means \"I am Smith TOO\", but nobody before was called Smith — giving your own name takes は. Dropping さん after another person’s name is impolite. そうですか takes in information, yet this is the opening line.",
+                  "ja": "「私もスミスです」は「私もスミス」という意味になりますが、前にスミスという人はいません。自分の名前を言うときは「は」を使います。相手の名前に「さん」を付けないのは失礼です。「そうですか」は情報を受け止める言葉ですが、ここは最初の一言です。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q10",
+                "order": 10,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Bàn đăng ký buổi giao lưu. Nhân viên hỏi tên nhưng nghe không rõ.",
+                "contextByNative": {
+                  "vi": "Bàn đăng ký buổi giao lưu. Nhân viên hỏi tên nhưng nghe không rõ.",
+                  "en": "The registration desk at a meet-up. The staff member asks a name but does not catch it.",
+                  "ja": "交流会の受付。係の人が名前を尋ねますが、聞き取れませんでした。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q10t1",
+                    "speakerId": "受付",
+                    "segments": [
+                      {
+                        "blankId": "q10b1"
+                      },
+                      {
+                        "displayText": "、"
+                      },
+                      {
+                        "blankId": "q10b2"
+                      },
+                      {
+                        "displayText": "は何ですか。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q10t2",
+                    "speakerId": "スミス",
+                    "segments": [
+                      {
+                        "displayText": "スミスです。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q10t3",
+                    "speakerId": "受付",
+                    "segments": [
+                      {
+                        "displayText": "すみません、"
+                      },
+                      {
+                        "blankId": "q10b3"
+                      },
+                      {
+                        "displayText": "お願いします。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q10b1",
+                    "displayAnswer": "失礼ですが",
+                    "canonicalAnswer": "失礼ですが",
+                    "audioText": "しつれいですが",
+                    "acceptedAnswers": [
+                      "失礼ですが"
+                    ]
+                  },
+                  {
+                    "id": "q10b2",
+                    "displayAnswer": "お名前",
+                    "canonicalAnswer": "お名前",
+                    "audioText": "おなまえ",
+                    "acceptedAnswers": [
+                      "お名前"
+                    ]
+                  },
+                  {
+                    "id": "q10b3",
+                    "displayAnswer": "もう一度",
+                    "canonicalAnswer": "もう一度",
+                    "audioText": "もういちど",
+                    "acceptedAnswers": [
+                      "もう一度"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q10a",
+                    "text": "失礼ですが / お名前 / もう一度",
+                    "answersByBlankId": {
+                      "q10b1": "失礼ですが",
+                      "q10b2": "お名前",
+                      "q10b3": "もう一度"
+                    }
+                  },
+                  {
+                    "id": "q10b",
+                    "text": "失礼ですが / 私のお名前 / もう一度",
+                    "answersByBlankId": {
+                      "q10b1": "失礼ですが",
+                      "q10b2": "私のお名前",
+                      "q10b3": "もう一度"
+                    }
+                  },
+                  {
+                    "id": "q10c",
+                    "text": "お先に失礼します / お名前 / もう一度",
+                    "answersByBlankId": {
+                      "q10b1": "お先に失礼します",
+                      "q10b2": "お名前",
+                      "q10b3": "もう一度"
+                    }
+                  },
+                  {
+                    "id": "q10d",
+                    "text": "失礼ですが / お名前 / さようなら",
+                    "answersByBlankId": {
+                      "q10b1": "失礼ですが",
+                      "q10b2": "お名前",
+                      "q10b3": "さようなら"
+                    }
+                  }
+                ],
+                "correctOptionId": "q10a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "shitsurei-desu-ga"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "onamae"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "mou-ichido"
+                  }
+                ],
+                "explanation": "私のお名前 là dạng L2 cấm rõ, và ở đây còn thành ra nhân viên hỏi tên của chính mình. お先に失礼します là xin phép rời đi, xin đi rồi lại hỏi tên là mâu thuẫn. さようなら là lời tạm biệt, không thành một lời nhờ.",
+                "explanationByNative": {
+                  "vi": "私のお名前 là dạng L2 cấm rõ, và ở đây còn thành ra nhân viên hỏi tên của chính mình. お先に失礼します là xin phép rời đi, xin đi rồi lại hỏi tên là mâu thuẫn. さようなら là lời tạm biệt, không thành một lời nhờ.",
+                  "en": "私のお名前 is the form L2 explicitly forbids, and here it would have the staff asking their own name. お先に失礼します excuses you to leave, contradicting then asking a name. さようなら is a goodbye and cannot form a request.",
+                  "ja": "「私のお名前」はL2が明確に禁じている形で、ここでは係の人が自分の名前を尋ねることになります。「お先に失礼します」は先に帰る言葉で、その後に名前を尋ねるのは矛盾します。「さようなら」は別れの言葉で、依頼の言葉にはなりません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q11",
+                "order": 11,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Cổng trường sau buổi học. Anna và bạn cùng lớp Itō chia tay; tuần sau mới có buổi học tiếp.",
+                "contextByNative": {
+                  "vi": "Cổng trường sau buổi học. Anna và bạn cùng lớp Itō chia tay; tuần sau mới có buổi học tiếp.",
+                  "en": "At the school gate after class. Anna and her classmate Itō part; the next class is next week.",
+                  "ja": "授業のあとの校門。アンナさんとクラスメートの伊藤さんが別れます。次の授業は来週です。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q11t1",
+                    "speakerId": "アンナ",
+                    "segments": [
+                      {
+                        "displayText": "伊藤"
+                      },
+                      {
+                        "blankId": "q11b1"
+                      },
+                      {
+                        "displayText": "、"
+                      },
+                      {
+                        "blankId": "q11b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q11t2",
+                    "speakerId": "伊藤",
+                    "segments": [
+                      {
+                        "displayText": "また"
+                      },
+                      {
+                        "blankId": "q11b3"
+                      },
+                      {
+                        "displayText": "。さようなら。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q11b1",
+                    "displayAnswer": "さん",
+                    "canonicalAnswer": "さん",
+                    "audioText": "さん",
+                    "acceptedAnswers": [
+                      "さん"
+                    ]
+                  },
+                  {
+                    "id": "q11b2",
+                    "displayAnswer": "じゃあ、また",
+                    "canonicalAnswer": "じゃあ、また",
+                    "audioText": "じゃあ、また",
+                    "acceptedAnswers": [
+                      "じゃあ、また"
+                    ]
+                  },
+                  {
+                    "id": "q11b3",
+                    "displayAnswer": "来週",
+                    "canonicalAnswer": "来週",
+                    "audioText": "らいしゅう",
+                    "acceptedAnswers": [
+                      "来週"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q11a",
+                    "text": "さん / じゃあ、また / 明日",
+                    "answersByBlankId": {
+                      "q11b1": "さん",
+                      "q11b2": "じゃあ、また",
+                      "q11b3": "明日"
+                    }
+                  },
+                  {
+                    "id": "q11b",
+                    "text": "さんですね / じゃあ、また / 来週",
+                    "answersByBlankId": {
+                      "q11b1": "さんですね",
+                      "q11b2": "じゃあ、また",
+                      "q11b3": "来週"
+                    }
+                  },
+                  {
+                    "id": "q11c",
+                    "text": "さん / はじめまして / 来週",
+                    "answersByBlankId": {
+                      "q11b1": "さん",
+                      "q11b2": "はじめまして",
+                      "q11b3": "来週"
+                    }
+                  },
+                  {
+                    "id": "q11d",
+                    "text": "さん / じゃあ、また / 来週",
+                    "answersByBlankId": {
+                      "q11b1": "さん",
+                      "q11b2": "じゃあ、また",
+                      "q11b3": "来週"
+                    }
+                  }
+                ],
+                "correctOptionId": "q11d",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "san"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "jaa-mata"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "raishuu"
+                  }
+                ],
+                "explanation": "Bối cảnh ghi rõ tuần sau mới có buổi học tiếp, nên また明日 mâu thuẫn với chính thông tin đã cho. 「伊藤さんですね」 là câu xác nhận tên người mới biết, còn đây là bạn cùng lớp đã quen. はじめまして dùng khi gặp lần đầu, không phải lúc chia tay.",
+                "explanationByNative": {
+                  "vi": "Bối cảnh ghi rõ tuần sau mới có buổi học tiếp, nên また明日 mâu thuẫn với chính thông tin đã cho. 「伊藤さんですね」 là câu xác nhận tên người mới biết, còn đây là bạn cùng lớp đã quen. はじめまして dùng khi gặp lần đầu, không phải lúc chia tay.",
+                  "en": "The setting says the next class is next week, so また明日 contradicts the given information. 「伊藤さんですね」 confirms the name of someone newly met, but this is a familiar classmate. はじめまして is for a first meeting, not a parting.",
+                  "ja": "次の授業は来週だと場面に書かれているので、「また明日」は与えられた情報と矛盾します。「伊藤さんですね」は知り合ったばかりの人の名前を確認する言葉ですが、相手はよく知っているクラスメートです。「はじめまして」は初対面のときで、別れ際には使いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q12",
+                "order": 12,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Buổi giao lưu. Smith tự giới thiệu với cả nhóm; Anna đáp lại; Itō cũng đáp theo.",
+                "contextByNative": {
+                  "vi": "Buổi giao lưu. Smith tự giới thiệu với cả nhóm; Anna đáp lại; Itō cũng đáp theo.",
+                  "en": "A meet-up. Smith introduces himself to the group; Anna replies; Itō follows.",
+                  "ja": "交流会。スミスさんがみんなに自己紹介し、アンナさんが返し、伊藤さんも続きます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q12t1",
+                    "speakerId": "スミス",
+                    "segments": [
+                      {
+                        "displayText": "はじめまして。スミスです。"
+                      },
+                      {
+                        "blankId": "q12b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q12t2",
+                    "speakerId": "アンナ",
+                    "segments": [
+                      {
+                        "blankId": "q12b2"
+                      },
+                      {
+                        "displayText": "、よろしくお願いします。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q12t3",
+                    "speakerId": "伊藤",
+                    "segments": [
+                      {
+                        "blankId": "q12b3"
+                      },
+                      {
+                        "displayText": "、よろしくお願いします。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q12b1",
+                    "displayAnswer": "よろしくお願いします",
+                    "canonicalAnswer": "よろしくお願いします",
+                    "audioText": "よろしくおねがいします",
+                    "acceptedAnswers": [
+                      "よろしくお願いします"
+                    ]
+                  },
+                  {
+                    "id": "q12b2",
+                    "displayAnswer": "こちらこそ",
+                    "canonicalAnswer": "こちらこそ",
+                    "audioText": "こちらこそ",
+                    "acceptedAnswers": [
+                      "こちらこそ"
+                    ]
+                  },
+                  {
+                    "id": "q12b3",
+                    "displayAnswer": "私も",
+                    "canonicalAnswer": "私も",
+                    "audioText": "わたしも",
+                    "acceptedAnswers": [
+                      "私も"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q12a",
+                    "text": "よろしくお願いします / こちらこそ / 私は",
+                    "answersByBlankId": {
+                      "q12b1": "よろしくお願いします",
+                      "q12b2": "こちらこそ",
+                      "q12b3": "私は"
+                    }
+                  },
+                  {
+                    "id": "q12b",
+                    "text": "よろしくお願いします / こちらこそ / 私も",
+                    "answersByBlankId": {
+                      "q12b1": "よろしくお願いします",
+                      "q12b2": "こちらこそ",
+                      "q12b3": "私も"
+                    }
+                  },
+                  {
+                    "id": "q12c",
+                    "text": "よろしくお願いします / お元気で / 私も",
+                    "answersByBlankId": {
+                      "q12b1": "よろしくお願いします",
+                      "q12b2": "お元気で",
+                      "q12b3": "私も"
+                    }
+                  },
+                  {
+                    "id": "q12d",
+                    "text": "お先に失礼します / こちらこそ / 私も",
+                    "answersByBlankId": {
+                      "q12b1": "お先に失礼します",
+                      "q12b2": "こちらこそ",
+                      "q12b3": "私も"
+                    }
+                  }
+                ],
+                "correctOptionId": "q12b",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "yoroshiku-onegaishimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "kochira-koso"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "grammar",
+                    "ref": "～も"
+                  }
+                ],
+                "explanation": "私は nêu chủ đề, không diễn đạt \"tôi cũng vậy\" — L3 dạy ～も cho nghĩa đó. お元気で là lời chia tay khi lâu mới gặp lại, còn đây là lúc vừa làm quen và cả nhóm còn đang ở đó. お先に失礼します là xin phép về trước, vừa xưng tên đã xin về là mâu thuẫn.",
+                "explanationByNative": {
+                  "vi": "私は nêu chủ đề, không diễn đạt \"tôi cũng vậy\" — L3 dạy ～も cho nghĩa đó. お元気で là lời chia tay khi lâu mới gặp lại, còn đây là lúc vừa làm quen và cả nhóm còn đang ở đó. お先に失礼します là xin phép về trước, vừa xưng tên đã xin về là mâu thuẫn.",
+                  "en": "私は marks a topic; it does not mean \"me too\" — L3 teaches ～も for that. お元気で is a goodbye for a long parting, but everyone has just met and is still there. お先に失礼します excuses you to leave, contradicting having just given your name.",
+                  "ja": "「私は」は主題を示す言い方で、「私も」の意味にはなりません。L3で「～も」を学びました。「お元気で」はしばらく会わないときの別れの言葉ですが、ここは知り合ったばかりで皆その場にいます。「お先に失礼します」は先に帰る言葉で、名乗った直後には矛盾します。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q13",
+                "order": 13,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Buổi sáng ở lớp. Anna chào bạn cùng lớp Tanaka, đi cùng bạn học mới là Smith.",
+                "contextByNative": {
+                  "vi": "Buổi sáng ở lớp. Anna chào bạn cùng lớp Tanaka, đi cùng bạn học mới là Smith.",
+                  "en": "Morning in class. Anna greets her classmate Tanaka, with the new student Smith beside her.",
+                  "ja": "朝の教室。アンナさんがクラスメートの田中さんにあいさつします。新しい学習者のスミスさんも一緒です。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q13t1",
+                    "speakerId": "アンナ",
+                    "segments": [
+                      {
+                        "blankId": "q13b1"
+                      },
+                      {
+                        "displayText": "、田中"
+                      },
+                      {
+                        "blankId": "q13b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q13t2",
+                    "speakerId": "田中",
+                    "segments": [
+                      {
+                        "displayText": "おはようございます。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q13t3",
+                    "speakerId": "スミス",
+                    "segments": [
+                      {
+                        "blankId": "q13b3"
+                      },
+                      {
+                        "displayText": "。スミスです。よろしくお願いします。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q13b1",
+                    "displayAnswer": "おはようございます",
+                    "canonicalAnswer": "おはようございます",
+                    "audioText": "おはようございます",
+                    "acceptedAnswers": [
+                      "おはようございます"
+                    ]
+                  },
+                  {
+                    "id": "q13b2",
+                    "displayAnswer": "さん",
+                    "canonicalAnswer": "さん",
+                    "audioText": "さん",
+                    "acceptedAnswers": [
+                      "さん"
+                    ]
+                  },
+                  {
+                    "id": "q13b3",
+                    "displayAnswer": "はじめまして",
+                    "canonicalAnswer": "はじめまして",
+                    "audioText": "はじめまして",
+                    "acceptedAnswers": [
+                      "はじめまして"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q13a",
+                    "text": "おはようございます / さん / はじめまして",
+                    "answersByBlankId": {
+                      "q13b1": "おはようございます",
+                      "q13b2": "さん",
+                      "q13b3": "はじめまして"
+                    }
+                  },
+                  {
+                    "id": "q13b",
+                    "text": "こんばんは / さん / はじめまして",
+                    "answersByBlankId": {
+                      "q13b1": "こんばんは",
+                      "q13b2": "さん",
+                      "q13b3": "はじめまして"
+                    }
+                  },
+                  {
+                    "id": "q13c",
+                    "text": "おはようございます / さん / そうですか",
+                    "answersByBlankId": {
+                      "q13b1": "おはようございます",
+                      "q13b2": "さん",
+                      "q13b3": "そうですか"
+                    }
+                  },
+                  {
+                    "id": "q13d",
+                    "text": "おはようございます / も / はじめまして",
+                    "answersByBlankId": {
+                      "q13b1": "おはようございます",
+                      "q13b2": "も",
+                      "q13b3": "はじめまして"
+                    }
+                  }
+                ],
+                "correctOptionId": "q13a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "ohayo-gozaimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "san"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "hajimemashite"
+                  }
+                ],
+                "explanation": "Bối cảnh ghi rõ buổi sáng, mà chính L1 liệt kê \"không dùng vào buổi sáng\" cho こんばんは. そうですか để tiếp nhận thông tin, nhưng đây là câu đầu tiên Smith nói. 「田中も」 nghĩa là \"Tanaka cũng vậy\", mà không có ai khác được chào trước đó.",
+                "explanationByNative": {
+                  "vi": "Bối cảnh ghi rõ buổi sáng, mà chính L1 liệt kê \"không dùng vào buổi sáng\" cho こんばんは. そうですか để tiếp nhận thông tin, nhưng đây là câu đầu tiên Smith nói. 「田中も」 nghĩa là \"Tanaka cũng vậy\", mà không có ai khác được chào trước đó.",
+                  "en": "The setting is morning, and L1 itself lists \"not in the morning\" for こんばんは. そうですか takes in information, but this is Smith’s first line. 「田中も」 means \"Tanaka too\", yet nobody else was greeted before.",
+                  "ja": "場面は朝で、L1でも「こんばんは」について「朝には使わない」と示しています。「そうですか」は情報を受け止める言葉ですが、ここはスミスさんの最初の一言です。「田中も」は「田中さんも」という意味になりますが、前に他の人にあいさつしていません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q14",
+                "order": 14,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Phòng chờ trước giờ học. Hai học viên chưa quen nhau hỏi tên nhau.",
+                "contextByNative": {
+                  "vi": "Phòng chờ trước giờ học. Hai học viên chưa quen nhau hỏi tên nhau.",
+                  "en": "The waiting room before class. Two learners who have not met ask each other’s names.",
+                  "ja": "授業前の待合室。初対面の学習者どうしが名前を尋ね合います。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q14t1",
+                    "speakerId": "田中",
+                    "segments": [
+                      {
+                        "displayText": "失礼ですが、"
+                      },
+                      {
+                        "blankId": "q14b1"
+                      },
+                      {
+                        "displayText": "は何ですか。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q14t2",
+                    "speakerId": "スミス",
+                    "segments": [
+                      {
+                        "displayText": "私の"
+                      },
+                      {
+                        "blankId": "q14b2"
+                      },
+                      {
+                        "displayText": "はスミスです。"
+                      },
+                      {
+                        "blankId": "q14b3"
+                      },
+                      {
+                        "displayText": "は？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q14t3",
+                    "speakerId": "田中",
+                    "segments": [
+                      {
+                        "displayText": "田中です。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q14b1",
+                    "displayAnswer": "お名前",
+                    "canonicalAnswer": "お名前",
+                    "audioText": "おなまえ",
+                    "acceptedAnswers": [
+                      "お名前"
+                    ]
+                  },
+                  {
+                    "id": "q14b2",
+                    "displayAnswer": "名前",
+                    "canonicalAnswer": "名前",
+                    "audioText": "なまえ",
+                    "acceptedAnswers": [
+                      "名前"
+                    ]
+                  },
+                  {
+                    "id": "q14b3",
+                    "displayAnswer": "お名前",
+                    "canonicalAnswer": "お名前",
+                    "audioText": "おなまえ",
+                    "acceptedAnswers": [
+                      "お名前"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q14a",
+                    "text": "お名前 / お名前 / お名前",
+                    "answersByBlankId": {
+                      "q14b1": "お名前",
+                      "q14b2": "お名前",
+                      "q14b3": "お名前"
+                    }
+                  },
+                  {
+                    "id": "q14b",
+                    "text": "お名前 / 名前 / 何ですか",
+                    "answersByBlankId": {
+                      "q14b1": "お名前",
+                      "q14b2": "名前",
+                      "q14b3": "何ですか"
+                    }
+                  },
+                  {
+                    "id": "q14c",
+                    "text": "お名前 / 名前 / お名前",
+                    "answersByBlankId": {
+                      "q14b1": "お名前",
+                      "q14b2": "名前",
+                      "q14b3": "お名前"
+                    }
+                  },
+                  {
+                    "id": "q14d",
+                    "text": "私のお名前 / 名前 / お名前",
+                    "answersByBlankId": {
+                      "q14b1": "私のお名前",
+                      "q14b2": "名前",
+                      "q14b3": "お名前"
+                    }
+                  }
+                ],
+                "correctOptionId": "q14c",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "onamae"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "namae"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "onamae-wa"
+                  }
+                ],
+                "explanation": "「私のお名前はスミスです」 chính là câu L2 cấm rõ — thêm お cho tên của chính mình là tự nâng mình lên. 「何ですか」 đứng một mình dùng để hỏi VẬT là gì, hỏi tên người phải là 「お名前は？」. Ô đầu điền 私のお名前 thì thành ra người hỏi đang hỏi tên chính mình.",
+                "explanationByNative": {
+                  "vi": "「私のお名前はスミスです」 chính là câu L2 cấm rõ — thêm お cho tên của chính mình là tự nâng mình lên. 「何ですか」 đứng một mình dùng để hỏi VẬT là gì, hỏi tên người phải là 「お名前は？」. Ô đầu điền 私のお名前 thì thành ra người hỏi đang hỏi tên chính mình.",
+                  "en": "「私のお名前はスミスです」 is exactly what L2 forbids — adding お to your own name raises yourself. A bare 「何ですか」 asks what an object is; a person’s name takes 「お名前は？」. Putting 私のお名前 in the first blank has the asker asking their own name.",
+                  "ja": "「私のお名前はスミスです」はL2が明確に禁じている形で、自分の名前に「お」を付けるのは自分を高めることになります。「何ですか」だけでは物が何かを尋ねる言い方で、人の名前は「お名前は？」で尋ねます。最初の空欄に「私のお名前」を入れると、尋ねる側が自分の名前を尋ねることになります。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q15",
+                "order": 15,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Cuối giờ làm ở công ty. Satō về trước Tanaka; mai hai người vẫn gặp nhau.",
+                "contextByNative": {
+                  "vi": "Cuối giờ làm ở công ty. Satō về trước Tanaka; mai hai người vẫn gặp nhau.",
+                  "en": "End of the working day. Satō leaves before Tanaka; they will see each other tomorrow.",
+                  "ja": "会社の終業時。佐藤さんは田中さんより先に帰ります。明日また会います。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q15t1",
+                    "speakerId": "佐藤",
+                    "segments": [
+                      {
+                        "displayText": "田中"
+                      },
+                      {
+                        "blankId": "q15b1"
+                      },
+                      {
+                        "displayText": "、"
+                      },
+                      {
+                        "blankId": "q15b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q15t2",
+                    "speakerId": "田中",
+                    "segments": [
+                      {
+                        "blankId": "q15b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q15b1",
+                    "displayAnswer": "さん",
+                    "canonicalAnswer": "さん",
+                    "audioText": "さん",
+                    "acceptedAnswers": [
+                      "さん"
+                    ]
+                  },
+                  {
+                    "id": "q15b2",
+                    "displayAnswer": "お先に失礼します",
+                    "canonicalAnswer": "お先に失礼します",
+                    "audioText": "おさきにしつれいします",
+                    "acceptedAnswers": [
+                      "お先に失礼します"
+                    ]
+                  },
+                  {
+                    "id": "q15b3",
+                    "displayAnswer": "また明日",
+                    "canonicalAnswer": "また明日",
+                    "audioText": "またあした",
+                    "acceptedAnswers": [
+                      "また明日"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q15a",
+                    "text": "さん / お先に失礼します / お元気で",
+                    "answersByBlankId": {
+                      "q15b1": "さん",
+                      "q15b2": "お先に失礼します",
+                      "q15b3": "お元気で"
+                    }
+                  },
+                  {
+                    "id": "q15b",
+                    "text": "さん / お先に失礼します / また明日",
+                    "answersByBlankId": {
+                      "q15b1": "さん",
+                      "q15b2": "お先に失礼します",
+                      "q15b3": "また明日"
+                    }
+                  },
+                  {
+                    "id": "q15c",
+                    "text": "さん / はじめまして / また明日",
+                    "answersByBlankId": {
+                      "q15b1": "さん",
+                      "q15b2": "はじめまして",
+                      "q15b3": "また明日"
+                    }
+                  },
+                  {
+                    "id": "q15d",
+                    "text": "ですね / お先に失礼します / また明日",
+                    "answersByBlankId": {
+                      "q15b1": "ですね",
+                      "q15b2": "お先に失礼します",
+                      "q15b3": "また明日"
+                    }
+                  }
+                ],
+                "correctOptionId": "q15b",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "san"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "osaki-ni-shitsurei"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "grammar",
+                    "ref": "また＋[mốc thời gian]"
+                  }
+                ],
+                "explanation": "お元気で dùng khi chia tay từ một tuần trở lên, mà bối cảnh ghi rõ mai hai người vẫn gặp — mốc quá gần. はじめまして dùng khi gặp lần đầu, đây là lúc chia tay cuối ngày giữa hai đồng nghiệp đã quen. 「田中ですね」 thiếu さん sau tên người khác.",
+                "explanationByNative": {
+                  "vi": "お元気で dùng khi chia tay từ một tuần trở lên, mà bối cảnh ghi rõ mai hai người vẫn gặp — mốc quá gần. はじめまして dùng khi gặp lần đầu, đây là lúc chia tay cuối ngày giữa hai đồng nghiệp đã quen. 「田中ですね」 thiếu さん sau tên người khác.",
+                  "en": "お元気で is for a parting of a week or more, but the setting says they meet again tomorrow — far too near. はじめまして is for a first meeting, yet this is two familiar colleagues parting. 「田中ですね」 drops the さん after another person’s name.",
+                  "ja": "「お元気で」は一週間以上会わないときの言葉ですが、場面では明日また会うと書かれていて近すぎます。「はじめまして」は初対面のときですが、ここは知り合いの同僚どうしの終業時の別れです。「田中ですね」は相手の名前に「さん」が抜けています。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q16",
+                "order": 16,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Satō sắp chuyển đi xa, lâu mới gặp lại. Chia tay bạn cùng lớp Itō ở cổng trường.",
+                "contextByNative": {
+                  "vi": "Satō sắp chuyển đi xa, lâu mới gặp lại. Chia tay bạn cùng lớp Itō ở cổng trường.",
+                  "en": "Satō is moving away and they will not meet again for a long while. Parting from classmate Itō at the school gate.",
+                  "ja": "佐藤さんは遠くへ引っ越し、しばらく会えません。校門でクラスメートの伊藤さんと別れます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q16t1",
+                    "speakerId": "佐藤",
+                    "segments": [
+                      {
+                        "displayText": "伊藤"
+                      },
+                      {
+                        "blankId": "q16b1"
+                      },
+                      {
+                        "displayText": "、"
+                      },
+                      {
+                        "blankId": "q16b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q16t2",
+                    "speakerId": "伊藤",
+                    "segments": [
+                      {
+                        "displayText": "さようなら。"
+                      },
+                      {
+                        "blankId": "q16b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q16b1",
+                    "displayAnswer": "さん",
+                    "canonicalAnswer": "さん",
+                    "audioText": "さん",
+                    "acceptedAnswers": [
+                      "さん"
+                    ]
+                  },
+                  {
+                    "id": "q16b2",
+                    "displayAnswer": "さようなら",
+                    "canonicalAnswer": "さようなら",
+                    "audioText": "さようなら",
+                    "acceptedAnswers": [
+                      "さようなら"
+                    ]
+                  },
+                  {
+                    "id": "q16b3",
+                    "displayAnswer": "お元気で",
+                    "canonicalAnswer": "お元気で",
+                    "audioText": "おげんきで",
+                    "acceptedAnswers": [
+                      "お元気で"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q16a",
+                    "text": "さん / さようなら / また来週",
+                    "answersByBlankId": {
+                      "q16b1": "さん",
+                      "q16b2": "さようなら",
+                      "q16b3": "また来週"
+                    }
+                  },
+                  {
+                    "id": "q16b",
+                    "text": "さん / じゃあ、また / お元気で",
+                    "answersByBlankId": {
+                      "q16b1": "さん",
+                      "q16b2": "じゃあ、また",
+                      "q16b3": "お元気で"
+                    }
+                  },
+                  {
+                    "id": "q16c",
+                    "text": "さんですね / さようなら / お元気で",
+                    "answersByBlankId": {
+                      "q16b1": "さんですね",
+                      "q16b2": "さようなら",
+                      "q16b3": "お元気で"
+                    }
+                  },
+                  {
+                    "id": "q16d",
+                    "text": "さん / さようなら / お元気で",
+                    "answersByBlankId": {
+                      "q16b1": "さん",
+                      "q16b2": "さようなら",
+                      "q16b3": "お元気で"
+                    }
+                  }
+                ],
+                "correctOptionId": "q16d",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "san"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "sayounara"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "ogenki-de"
+                  }
+                ],
+                "explanation": "Bối cảnh ghi rõ Satō chuyển đi xa, nên hẹn また来週 là mâu thuẫn với chính thông tin đã cho. じゃあ、また là lời chia tay ngắn hạn, không hợp mốc từ một tuần trở lên. 「伊藤さんですね」 là câu xác nhận tên người mới biết, còn đây là bạn đã quen.",
+                "explanationByNative": {
+                  "vi": "Bối cảnh ghi rõ Satō chuyển đi xa, nên hẹn また来週 là mâu thuẫn với chính thông tin đã cho. じゃあ、また là lời chia tay ngắn hạn, không hợp mốc từ một tuần trở lên. 「伊藤さんですね」 là câu xác nhận tên người mới biết, còn đây là bạn đã quen.",
+                  "en": "The setting says Satō is moving away, so また来週 contradicts the given information. じゃあ、また is a short-term goodbye and does not fit a parting of a week or more. 「伊藤さんですね」 confirms the name of someone newly met, but this friend is already known.",
+                  "ja": "佐藤さんが遠くへ引っ越すと場面に書かれているので、「また来週」は与えられた情報と矛盾します。「じゃあ、また」は近いうちに会うときの別れの言葉で、一週間以上先には合いません。「伊藤さんですね」は知り合ったばかりの人の名前を確認する言葉ですが、相手はよく知っている友達です。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q17",
+                "order": 17,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Buổi giao lưu. Satō nhớ nhầm tên Smith thành Itō; Smith sửa lại.",
+                "contextByNative": {
+                  "vi": "Buổi giao lưu. Satō nhớ nhầm tên Smith thành Itō; Smith sửa lại.",
+                  "en": "A meet-up. Satō misremembers Smith’s name as Itō; Smith corrects it.",
+                  "ja": "交流会。佐藤さんがスミスさんの名前を伊藤さんと勘違いし、スミスさんが訂正します。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q17t1",
+                    "speakerId": "佐藤",
+                    "segments": [
+                      {
+                        "displayText": "伊藤"
+                      },
+                      {
+                        "blankId": "q17b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q17t2",
+                    "speakerId": "スミス",
+                    "segments": [
+                      {
+                        "displayText": "すみません、私"
+                      },
+                      {
+                        "blankId": "q17b2"
+                      },
+                      {
+                        "displayText": "スミスです。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q17t3",
+                    "speakerId": "佐藤",
+                    "segments": [
+                      {
+                        "blankId": "q17b3"
+                      },
+                      {
+                        "displayText": "。スミスさんですね。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q17b1",
+                    "displayAnswer": "さんですね",
+                    "canonicalAnswer": "さんですね",
+                    "audioText": "さんですね",
+                    "acceptedAnswers": [
+                      "さんですね"
+                    ]
+                  },
+                  {
+                    "id": "q17b2",
+                    "displayAnswer": "は",
+                    "canonicalAnswer": "は",
+                    "audioText": "は",
+                    "acceptedAnswers": [
+                      "は"
+                    ]
+                  },
+                  {
+                    "id": "q17b3",
+                    "displayAnswer": "そうですか",
+                    "canonicalAnswer": "そうですか",
+                    "audioText": "そうですか",
+                    "acceptedAnswers": [
+                      "そうですか"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q17a",
+                    "text": "さんですね / は / そうですか",
+                    "answersByBlankId": {
+                      "q17b1": "さんですね",
+                      "q17b2": "は",
+                      "q17b3": "そうですか"
+                    }
+                  },
+                  {
+                    "id": "q17b",
+                    "text": "さんです / は / そうですか",
+                    "answersByBlankId": {
+                      "q17b1": "さんです",
+                      "q17b2": "は",
+                      "q17b3": "そうですか"
+                    }
+                  },
+                  {
+                    "id": "q17c",
+                    "text": "さんですね / は / さようなら",
+                    "answersByBlankId": {
+                      "q17b1": "さんですね",
+                      "q17b2": "は",
+                      "q17b3": "さようなら"
+                    }
+                  },
+                  {
+                    "id": "q17d",
+                    "text": "さんですね / の / そうですか",
+                    "answersByBlankId": {
+                      "q17b1": "さんですね",
+                      "q17b2": "の",
+                      "q17b3": "そうですか"
+                    }
+                  }
+                ],
+                "correctOptionId": "q17a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "grammar",
+                    "ref": "～ですね"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "grammar",
+                    "ref": "私は[名前]です"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "sou-desu-ka"
+                  }
+                ],
+                "explanation": "「伊藤さんです」 là câu giới thiệu hoặc kể về người thứ ba; nói thẳng với chính người đó để xác nhận thì phải dùng ですね. さようなら là lời tạm biệt, đang giữa lúc xác minh lại tên mà chào tạm biệt là ngược trình tự. の là trợ từ sở hữu, không nêu chủ đề — nêu tên mình phải dùng は.",
+                "explanationByNative": {
+                  "vi": "「伊藤さんです」 là câu giới thiệu hoặc kể về người thứ ba; nói thẳng với chính người đó để xác nhận thì phải dùng ですね. さようなら là lời tạm biệt, đang giữa lúc xác minh lại tên mà chào tạm biệt là ngược trình tự. の là trợ từ sở hữu, không nêu chủ đề — nêu tên mình phải dùng は.",
+                  "en": "「伊藤さんです」 introduces or describes a third person; confirming with the person themselves takes ですね. さようなら is a goodbye, so saying it mid-clarification reverses the order. の marks possession, not topic — giving your own name takes は.",
+                  "ja": "「伊藤さんです」は第三者を紹介したり説明したりする言い方で、本人に確認するときは「ですね」を使います。「さようなら」は別れの言葉で、名前を確かめている途中に言うのは順序が逆です。「の」は所有を示す助詞で主題は示しません。自分の名前を言うときは「は」を使います。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q18",
+                "order": 18,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Đọc hội thoại rồi chọn phương án điền đúng cả ba ô.",
+                  "en": "Read the dialogue, then choose the option that fills all three blanks correctly.",
+                  "ja": "会話を読んで、三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Cuối buổi học. Smith và Anna chào thầy rồi ra về; tuần sau lại có buổi học.",
+                "contextByNative": {
+                  "vi": "Cuối buổi học. Smith và Anna chào thầy rồi ra về; tuần sau lại có buổi học.",
+                  "en": "End of class. Smith and Anna say goodbye to the teacher and leave; there is another class next week.",
+                  "ja": "授業の終わり。スミスさんとアンナさんが先生にあいさつして帰ります。来週も授業があります。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q18t1",
+                    "speakerId": "スミス",
+                    "segments": [
+                      {
+                        "displayText": "先生、"
+                      },
+                      {
+                        "blankId": "q18b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q18t2",
+                    "speakerId": "先生",
+                    "segments": [
+                      {
+                        "blankId": "q18b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q18t3",
+                    "speakerId": "アンナ",
+                    "segments": [
+                      {
+                        "displayText": "私"
+                      },
+                      {
+                        "blankId": "q18b3"
+                      },
+                      {
+                        "displayText": "。また来週。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q18b1",
+                    "displayAnswer": "失礼します",
+                    "canonicalAnswer": "失礼します",
+                    "audioText": "しつれいします",
+                    "acceptedAnswers": [
+                      "失礼します"
+                    ]
+                  },
+                  {
+                    "id": "q18b2",
+                    "displayAnswer": "さようなら",
+                    "canonicalAnswer": "さようなら",
+                    "audioText": "さようなら",
+                    "acceptedAnswers": [
+                      "さようなら"
+                    ]
+                  },
+                  {
+                    "id": "q18b3",
+                    "displayAnswer": "も",
+                    "canonicalAnswer": "も",
+                    "audioText": "も",
+                    "acceptedAnswers": [
+                      "も"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q18a",
+                    "text": "失礼します / さようなら / は",
+                    "answersByBlankId": {
+                      "q18b1": "失礼します",
+                      "q18b2": "さようなら",
+                      "q18b3": "は"
+                    }
+                  },
+                  {
+                    "id": "q18b",
+                    "text": "じゃあ、また / さようなら / も",
+                    "answersByBlankId": {
+                      "q18b1": "じゃあ、また",
+                      "q18b2": "さようなら",
+                      "q18b3": "も"
+                    }
+                  },
+                  {
+                    "id": "q18c",
+                    "text": "失礼します / さようなら / も",
+                    "answersByBlankId": {
+                      "q18b1": "失礼します",
+                      "q18b2": "さようなら",
+                      "q18b3": "も"
+                    }
+                  },
+                  {
+                    "id": "q18d",
+                    "text": "失礼します / こちらこそ / も",
+                    "answersByBlankId": {
+                      "q18b1": "失礼します",
+                      "q18b2": "こちらこそ",
+                      "q18b3": "も"
+                    }
+                  }
+                ],
+                "correctOptionId": "q18c",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "shitsurei-shimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "sayounara"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "grammar",
+                    "ref": "～も"
+                  }
+                ],
+                "explanation": "L3 ghi rõ: không dùng じゃあ、また với thầy cô — đó là cách nói thân mật dành cho bạn bè, còn 失礼します mới dùng được với người trên. 「私は」 nêu chủ đề rồi bỏ lửng, không diễn đạt \"tôi cũng vậy\". こちらこそ dùng để đáp lại thiện chí, mà học viên chỉ đang chào ra về.",
+                "explanationByNative": {
+                  "vi": "L3 ghi rõ: không dùng じゃあ、また với thầy cô — đó là cách nói thân mật dành cho bạn bè, còn 失礼します mới dùng được với người trên. 「私は」 nêu chủ đề rồi bỏ lửng, không diễn đạt \"tôi cũng vậy\". こちらこそ dùng để đáp lại thiện chí, mà học viên chỉ đang chào ra về.",
+                  "en": "L3 states outright that じゃあ、また is not used with teachers — it is the casual form for friends, while 失礼します is the one that works upward. 「私は」 opens a topic and leaves it hanging; it does not mean \"me too\". こちらこそ answers goodwill, but the learners are simply saying goodbye.",
+                  "ja": "L3では「じゃあ、また」を先生には使わないと明記しています。友達に使うカジュアルな言い方で、目上の人には「失礼します」を使います。「私は」は主題を示したまま途中で終わり、「私も」の意味にはなりません。「こちらこそ」は好意に返す言葉ですが、学習者は帰りのあいさつをしているだけです。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q19",
+                "order": 19,
+                "kind": "typed_blank",
+                "prompt": "Gõ cụm còn thiếu vào ô trống.",
+                "promptByNative": {
+                  "vi": "Gõ cụm còn thiếu vào ô trống.",
+                  "en": "Type the missing phrase into the blank.",
+                  "ja": "空欄に入る言葉を入力してください。"
+                },
+                "context": "Buổi sáng ở trường tiếng Nhật. Bạn gặp thầy giáo và chào.",
+                "contextByNative": {
+                  "vi": "Buổi sáng ở trường tiếng Nhật. Bạn gặp thầy giáo và chào.",
+                  "en": "Morning at the Japanese school. You meet your teacher and greet them.",
+                  "ja": "日本語学校の朝。先生に会ってあいさつします。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q19b1"
+                  },
+                  {
+                    "displayText": "、先生。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q19b1",
+                    "displayAnswer": "おはようございます",
+                    "canonicalAnswer": "おはようございます",
+                    "audioText": "おはようございます",
+                    "acceptedAnswers": [
+                      "おはようございます"
+                    ]
+                  }
+                ],
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "ohayo-gozaimasu"
+                  }
+                ],
+                "explanation": "Chào thầy vào buổi sáng dùng おはようございます — L1 dạy nguyên văn 「先生、おはようございます。」.",
+                "explanationByNative": {
+                  "vi": "Chào thầy vào buổi sáng dùng おはようございます — L1 dạy nguyên văn 「先生、おはようございます。」.",
+                  "en": "A morning greeting to a teacher is おはようございます — L1 teaches the line 「先生、おはようございます。」 verbatim.",
+                  "ja": "朝、先生にあいさつするときは「おはようございます」です。L1で「先生、おはようございます。」をそのまま学びました。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q20",
+                "order": 20,
+                "kind": "typed_blank",
+                "prompt": "Gõ cụm còn thiếu vào ô trống.",
+                "promptByNative": {
+                  "vi": "Gõ cụm còn thiếu vào ô trống.",
+                  "en": "Type the missing phrase into the blank.",
+                  "ja": "空欄に入る言葉を入力してください。"
+                },
+                "context": "Bàn đăng ký buổi giao lưu. Nhân viên hỏi tên người đến dự.",
+                "contextByNative": {
+                  "vi": "Bàn đăng ký buổi giao lưu. Nhân viên hỏi tên người đến dự.",
+                  "en": "The registration desk at a meet-up. A staff member asks a guest’s name.",
+                  "ja": "交流会の受付。係の人が参加者の名前を尋ねます。"
+                },
+                "segments": [
+                  {
+                    "displayText": "失礼ですが、"
+                  },
+                  {
+                    "blankId": "q20b1"
+                  },
+                  {
+                    "displayText": "は何ですか。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q20b1",
+                    "displayAnswer": "お名前",
+                    "canonicalAnswer": "お名前",
+                    "audioText": "おなまえ",
+                    "acceptedAnswers": [
+                      "お名前",
+                      "おなまえ"
+                    ],
+                    "hint": "Dạng lịch sự của 名前."
+                  }
+                ],
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "onamae"
+                  }
+                ],
+                "explanation": "Hỏi tên người đối diện một cách lịch sự thì dùng お名前, không dùng 名前 trống.",
+                "explanationByNative": {
+                  "vi": "Hỏi tên người đối diện một cách lịch sự thì dùng お名前, không dùng 名前 trống.",
+                  "en": "Asking someone’s name politely takes お名前, not a bare 名前.",
+                  "ja": "相手の名前を丁寧に尋ねるときは「お名前」を使い、「名前」だけにはしません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q21",
+                "order": 21,
+                "kind": "typed_blank",
+                "prompt": "Gõ cụm còn thiếu vào ô trống.",
+                "promptByNative": {
+                  "vi": "Gõ cụm còn thiếu vào ô trống.",
+                  "en": "Type the missing phrase into the blank.",
+                  "ja": "空欄に入る言葉を入力してください。"
+                },
+                "context": "Tanaka vừa tự giới thiệu và nói よろしくお願いします. Bạn đáp lại cùng thiện chí.",
+                "contextByNative": {
+                  "vi": "Tanaka vừa tự giới thiệu và nói よろしくお願いします. Bạn đáp lại cùng thiện chí.",
+                  "en": "Tanaka has just introduced himself and said よろしくお願いします. You answer with the same goodwill.",
+                  "ja": "田中さんが自己紹介して「よろしくお願いします」と言いました。同じ気持ちで返します。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q21b1"
+                  },
+                  {
+                    "displayText": "、"
+                  },
+                  {
+                    "blankId": "q21b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q21b1",
+                    "displayAnswer": "こちらこそ",
+                    "canonicalAnswer": "こちらこそ",
+                    "audioText": "こちらこそ",
+                    "acceptedAnswers": [
+                      "こちらこそ"
+                    ]
+                  },
+                  {
+                    "id": "q21b2",
+                    "displayAnswer": "よろしくお願いします",
+                    "canonicalAnswer": "よろしくお願いします",
+                    "audioText": "よろしくおねがいします",
+                    "acceptedAnswers": [
+                      "よろしくお願いします",
+                      "よろしくおねがいします",
+                      "宜しくお願いします",
+                      "宜しくおねがいします"
+                    ],
+                    "hint": "Lời chúc khi làm quen."
+                  }
+                ],
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "kochira-koso"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "yoroshiku-onegaishimasu"
+                  }
+                ],
+                "explanation": "こちらこそ đáp lại thiện chí người kia vừa bày tỏ, rồi nói tiếp よろしくお願いします.",
+                "explanationByNative": {
+                  "vi": "こちらこそ đáp lại thiện chí người kia vừa bày tỏ, rồi nói tiếp よろしくお願いします.",
+                  "en": "こちらこそ returns the goodwill just expressed, then よろしくお願いします follows.",
+                  "ja": "「こちらこそ」で相手が示した好意に返し、続けて「よろしくお願いします」と言います。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q22",
+                "order": 22,
+                "kind": "typed_blank",
+                "prompt": "Gõ cụm còn thiếu vào ô trống.",
+                "promptByNative": {
+                  "vi": "Gõ cụm còn thiếu vào ô trống.",
+                  "en": "Type the missing phrase into the blank.",
+                  "ja": "空欄に入る言葉を入力してください。"
+                },
+                "context": "Bạn nghe chưa rõ tên người kia vừa nói, nhờ nhắc lại.",
+                "contextByNative": {
+                  "vi": "Bạn nghe chưa rõ tên người kia vừa nói, nhờ nhắc lại.",
+                  "en": "You did not catch the name just given and ask for it again.",
+                  "ja": "相手が言った名前が聞き取れなかったので、もう一度お願いします。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q22b1"
+                  },
+                  {
+                    "displayText": "、"
+                  },
+                  {
+                    "blankId": "q22b2"
+                  },
+                  {
+                    "displayText": "お願いします。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q22b1",
+                    "displayAnswer": "すみません",
+                    "canonicalAnswer": "すみません",
+                    "audioText": "すみません",
+                    "acceptedAnswers": [
+                      "すみません"
+                    ]
+                  },
+                  {
+                    "id": "q22b2",
+                    "displayAnswer": "もう一度",
+                    "canonicalAnswer": "もう一度",
+                    "audioText": "もういちど",
+                    "acceptedAnswers": [
+                      "もう一度",
+                      "もういちど"
+                    ],
+                    "hint": "\"Một lần nữa.\""
+                  }
+                ],
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "sumimasen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "mou-ichido"
+                  }
+                ],
+                "explanation": "すみません mở lời, もう一度お願いします là cách nhờ nhắc lại — L2 dạy nguyên văn câu này.",
+                "explanationByNative": {
+                  "vi": "すみません mở lời, もう一度お願いします là cách nhờ nhắc lại — L2 dạy nguyên văn câu này.",
+                  "en": "すみません opens the request and もう一度お願いします asks for a repeat — L2 teaches this line verbatim.",
+                  "ja": "「すみません」で切り出し、「もう一度お願いします」で繰り返しを頼みます。L2でこの言い方をそのまま学びました。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q23",
+                "order": 23,
+                "kind": "typed_blank",
+                "prompt": "Gõ cụm còn thiếu vào ô trống.",
+                "promptByNative": {
+                  "vi": "Gõ cụm còn thiếu vào ô trống.",
+                  "en": "Type the missing phrase into the blank.",
+                  "ja": "空欄に入る言葉を入力してください。"
+                },
+                "context": "Hết buổi học. Bạn về trước Tanaka; tuần sau lại có buổi học.",
+                "contextByNative": {
+                  "vi": "Hết buổi học. Bạn về trước Tanaka; tuần sau lại có buổi học.",
+                  "en": "Class is over. You are leaving before Tanaka; there is another class next week.",
+                  "ja": "授業が終わりました。田中さんより先に帰ります。来週も授業があります。"
+                },
+                "segments": [
+                  {
+                    "displayText": "田中さん、"
+                  },
+                  {
+                    "blankId": "q23b1"
+                  },
+                  {
+                    "displayText": "。また"
+                  },
+                  {
+                    "blankId": "q23b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q23b1",
+                    "displayAnswer": "お先に失礼します",
+                    "canonicalAnswer": "お先に失礼します",
+                    "audioText": "おさきにしつれいします",
+                    "acceptedAnswers": [
+                      "お先に失礼します",
+                      "おさきにしつれいします",
+                      "お先にしつれいします",
+                      "おさきに失礼します"
+                    ],
+                    "hint": "Xin phép về trước."
+                  },
+                  {
+                    "id": "q23b2",
+                    "displayAnswer": "来週",
+                    "canonicalAnswer": "来週",
+                    "audioText": "らいしゅう",
+                    "acceptedAnswers": [
+                      "来週",
+                      "らいしゅう"
+                    ]
+                  }
+                ],
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "osaki-ni-shitsurei"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "raishuu"
+                  }
+                ],
+                "explanation": "Rời đi trước người khác thì nói お先に失礼します; mốc gặp lại là tuần sau nên また来週.",
+                "explanationByNative": {
+                  "vi": "Rời đi trước người khác thì nói お先に失礼します; mốc gặp lại là tuần sau nên また来週.",
+                  "en": "Leaving before someone else takes お先に失礼します, and the next meeting is next week, so また来週.",
+                  "ja": "人より先に帰るときは「お先に失礼します」、次に会うのは来週なので「また来週」です。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q24",
+                "order": 24,
+                "kind": "typed_blank",
+                "prompt": "Gõ cụm còn thiếu vào ô trống.",
+                "promptByNative": {
+                  "vi": "Gõ cụm còn thiếu vào ô trống.",
+                  "en": "Type the missing phrase into the blank.",
+                  "ja": "空欄に入る言葉を入力してください。"
+                },
+                "context": "Người đối diện vừa xưng 「伊藤です」. Bạn xác nhận lại rồi tự giới thiệu.",
+                "contextByNative": {
+                  "vi": "Người đối diện vừa xưng 「伊藤です」. Bạn xác nhận lại rồi tự giới thiệu.",
+                  "en": "The other person has just said 「伊藤です」. You confirm the name, then introduce yourself.",
+                  "ja": "相手が「伊藤です」と名乗りました。名前を確認してから自己紹介します。"
+                },
+                "segments": [
+                  {
+                    "displayText": "あ、伊藤"
+                  },
+                  {
+                    "blankId": "q24b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q24b2"
+                  },
+                  {
+                    "displayText": "、田中です。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q24b1",
+                    "displayAnswer": "さんですね",
+                    "canonicalAnswer": "さんですね",
+                    "audioText": "さんですね",
+                    "acceptedAnswers": [
+                      "さんですね"
+                    ],
+                    "hint": "Đuôi xác nhận tên vừa nghe, kèm cách gọi lịch sự."
+                  },
+                  {
+                    "id": "q24b2",
+                    "displayAnswer": "はじめまして",
+                    "canonicalAnswer": "はじめまして",
+                    "audioText": "はじめまして",
+                    "acceptedAnswers": [
+                      "はじめまして",
+                      "初めまして"
+                    ]
+                  }
+                ],
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l2",
+                    "kind": "grammar",
+                    "ref": "～ですね"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "hajimemashite"
+                  }
+                ],
+                "explanation": "～さんですね xác nhận tên vừa nghe với chính người đó; sau đó はじめまして mở lời làm quen.",
+                "explanationByNative": {
+                  "vi": "～さんですね xác nhận tên vừa nghe với chính người đó; sau đó はじめまして mở lời làm quen.",
+                  "en": "～さんですね confirms the name with the person themselves; はじめまして then opens the introduction.",
+                  "ja": "「～さんですね」で本人に名前を確認し、続けて「はじめまして」で自己紹介を始めます。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u1-comprehensive-q25",
+                "order": 25,
+                "kind": "typed_blank",
+                "prompt": "Gõ cụm còn thiếu vào ô trống.",
+                "promptByNative": {
+                  "vi": "Gõ cụm còn thiếu vào ô trống.",
+                  "en": "Type the missing phrase into the blank.",
+                  "ja": "空欄に入る言葉を入力してください。"
+                },
+                "context": "Bạn cùng lớp báo sắp chuyển đi xa, lâu mới gặp lại. Bạn tiếp nhận tin rồi chào tạm biệt.",
+                "contextByNative": {
+                  "vi": "Bạn cùng lớp báo sắp chuyển đi xa, lâu mới gặp lại. Bạn tiếp nhận tin rồi chào tạm biệt.",
+                  "en": "A classmate says they are moving far away and you will not meet for a long while. You take the news in, then say goodbye.",
+                  "ja": "クラスメートが遠くへ引っ越すと言いました。しばらく会えません。その知らせを受け止めて、別れのあいさつをします。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q25b1"
+                  },
+                  {
+                    "displayText": "。じゃあ、"
+                  },
+                  {
+                    "blankId": "q25b2"
+                  },
+                  {
+                    "displayText": "、田中さん。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q25b1",
+                    "displayAnswer": "そうですか",
+                    "canonicalAnswer": "そうですか",
+                    "audioText": "そうですか",
+                    "acceptedAnswers": [
+                      "そうですか"
+                    ]
+                  },
+                  {
+                    "id": "q25b2",
+                    "displayAnswer": "お元気で",
+                    "canonicalAnswer": "お元気で",
+                    "audioText": "おげんきで",
+                    "acceptedAnswers": [
+                      "お元気で",
+                      "おげんきで"
+                    ],
+                    "hint": "Lời dặn khi chia tay từ một tuần trở lên."
+                  }
+                ],
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "sou-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u1-l3",
+                    "kind": "vocabulary",
+                    "ref": "ogenki-de"
+                  }
+                ],
+                "explanation": "そうですか tiếp nhận tin vừa nghe; mốc gặp lại từ một tuần trở lên nên dùng お元気で.",
+                "explanationByNative": {
+                  "vi": "そうですか tiếp nhận tin vừa nghe; mốc gặp lại từ một tuần trở lên nên dùng お元気で.",
+                  "en": "そうですか takes in the news, and the next meeting is a week or more away, so お元気で fits.",
+                  "ja": "「そうですか」で知らせを受け止めます。次に会うのが一週間以上先なので「お元気で」を使います。"
+                }
+              }
+            ]
+          }
         },
         {
           "id": "ja-daily_life-m01-u2",
