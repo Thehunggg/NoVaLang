@@ -53,10 +53,13 @@ class UnitComprehensiveBlank {
   final String? hint;
 
   /// So khớp một đáp án người học gõ với ô này (§D-Cloze).
-  bool matches(String submitted) {
-    final normalized = normalizePracticeTextAnswer(submitted);
+  bool matches(String submitted, {String? languageCode}) {
+    final normalized = normalizePracticeTextAnswer(
+      submitted,
+      languageCode: languageCode,
+    );
     return acceptedAnswers
-        .map(normalizePracticeTextAnswer)
+        .map((a) => normalizePracticeTextAnswer(a, languageCode: languageCode))
         .contains(normalized);
   }
 
@@ -194,15 +197,18 @@ class UnitComprehensiveQuestion {
       selectedOptionId == correctOptionId;
 
   /// Chấm TỪNG Ô của câu tự gõ — dùng để phản hồi đúng/sai từng ô.
-  Set<String> incorrectTypedBlankIds(Map<String, String> typed) => {
+  Set<String> incorrectTypedBlankIds(
+    Map<String, String> typed, {
+    String? languageCode,
+  }) => {
         for (final b in blanks)
-          if (!b.matches(typed[b.id] ?? '')) b.id,
+          if (!b.matches(typed[b.id] ?? '', languageCode: languageCode)) b.id,
       };
 
   /// Chấm CÂU tự gõ: chỉ đúng khi MỌI ô đều đúng (§D-Cloze — không có điểm
   /// từng phần ở cấp câu, nhất quán với câu chọn phương án).
-  bool checksTyped(Map<String, String> typed) =>
-      incorrectTypedBlankIds(typed).isEmpty;
+  bool checksTyped(Map<String, String> typed, {String? languageCode}) =>
+      incorrectTypedBlankIds(typed, languageCode: languageCode).isEmpty;
 
   factory UnitComprehensiveQuestion.fromMap(Map<String, dynamic> value) =>
       UnitComprehensiveQuestion(
@@ -248,6 +254,7 @@ class UnitComprehensiveTest {
     this.estimatedMinutes,
     this.plan = 'plus',
     this.graded = true,
+    this.languageCode,
   });
 
   final String id;
@@ -259,6 +266,11 @@ class UnitComprehensiveTest {
   final List<UnitComprehensiveQuestion> questions;
 
   /// Đọc từ dữ liệu — KHÔNG hard-code. Paywall dựa vào field này.
+  /// Ngôn ngữ ĐANG HỌC của bài — quyết định cách chuẩn hoá đáp án tự gõ:
+  /// ngôn ngữ không dùng dấu cách giữa từ thì xoá sạch khoảng trắng khi so
+  /// khớp (xem kNoWordSpacingLanguages).
+  final String? languageCode;
+
   final String plan;
   final bool graded;
 
@@ -282,6 +294,7 @@ class UnitComprehensiveTest {
       totalQuestions:
           (value['totalQuestions'] as num?)?.toInt() ?? questions.length,
       questions: questions,
+      languageCode: value['languageCode'] as String?,
       plan: value['plan'] as String? ?? 'plus',
       graded: value['graded'] as bool? ?? true,
     );

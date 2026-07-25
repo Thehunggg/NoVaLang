@@ -812,16 +812,27 @@ class _FiveCardExerciseSessionPageState
     } else if (exercise.type == 'dialogue_fill') {
       value = exercise.checksSlots(slots);
     } else if (exercise.type == 'chat_text_fill') {
-      value = exercise.checksChatSlots(chatAnswers);
+      value = exercise.checksChatSlots(
+        chatAnswers,
+        languageCode: widget.learningLanguageCode,
+      );
       incorrectChatSlotIds
         ..clear()
         ..addAll(
           exercise.slots
               .where(
                 (slot) => !slot.acceptedAnswers
-                    .map(normalizePracticeTextAnswer)
+                    .map(
+                      (a) => normalizePracticeTextAnswer(
+                        a,
+                        languageCode: widget.learningLanguageCode,
+                      ),
+                    )
                     .contains(
-                      normalizePracticeTextAnswer(chatAnswers[slot.id] ?? ''),
+                      normalizePracticeTextAnswer(
+                        chatAnswers[slot.id] ?? '',
+                        languageCode: widget.learningLanguageCode,
+                      ),
                     ),
               )
               .map((slot) => slot.id),

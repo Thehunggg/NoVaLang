@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import '../core/constants/app_constants.dart';
 import 'lesson.dart';
 
 Map<String, dynamic> _map(dynamic value) => value is Map
@@ -23,12 +24,21 @@ String? _optionalString(Map<String, dynamic> value, String key) {
 
 /// Keeps answer comparison local to the approved trial data. It accepts
 /// Japanese scripts and romaji without exposing reading aids to the checker.
-String normalizePracticeTextAnswer(String value) => value
-    .trim()
-    .replaceAll(RegExp(r'\s+'), ' ')
-    .replaceFirst(RegExp(r'[。.!！]+$'), '')
-    .trim()
-    .toLowerCase();
+///
+/// [languageCode] is the language the answer is written in (the LEARNING
+/// language, not the UI one). For a language that writes without spaces
+/// between words — see [kNoWordSpacingLanguages] — every space is dropped
+/// rather than collapsed, so a stray space from a Japanese/Chinese IME cannot
+/// mark a correct answer wrong. Omitting it keeps the original behaviour.
+String normalizePracticeTextAnswer(String value, {String? languageCode}) {
+  final collapsed = languageOmitsWordSpacing(languageCode)
+      ? value.replaceAll(RegExp(r'\s+'), '')
+      : value.trim().replaceAll(RegExp(r'\s+'), ' ');
+  return collapsed
+      .replaceFirst(RegExp(r'[。.!！]+$'), '')
+      .trim()
+      .toLowerCase();
+}
 
 class PracticeCharacter {
   const PracticeCharacter({
@@ -492,12 +502,19 @@ class PracticeExercise {
       answers.length == slots.length &&
       slots.every((slot) => answers[slot.id] == slot.answerId);
 
-  bool checksChatSlots(Map<String, String> answers) =>
+  /// [languageCode] = ngôn ngữ ĐANG HỌC; quyết định có xoá sạch dấu cách
+  /// khi so khớp hay không (§normalizePracticeTextAnswer).
+  bool checksChatSlots(Map<String, String> answers, {String? languageCode}) =>
       answers.length == slots.length &&
       slots.every(
         (slot) => slot.acceptedAnswers
-            .map(normalizePracticeTextAnswer)
-            .contains(normalizePracticeTextAnswer(answers[slot.id] ?? '')),
+            .map((a) => normalizePracticeTextAnswer(a, languageCode: languageCode))
+            .contains(
+              normalizePracticeTextAnswer(
+                answers[slot.id] ?? '',
+                languageCode: languageCode,
+              ),
+            ),
       );
 
   bool _sameIds(List<String> actual, List<String> expected) =>

@@ -74,7 +74,7 @@ class _UnitComprehensiveTestScreenState
 
   bool get _isCurrentCorrect => _question.kind.isChoice
       ? _question.checksChoice(_selectedOptionId)
-      : _question.checksTyped(_typedAnswers);
+      : _question.checksTyped(_typedAnswers, languageCode: widget.test.languageCode);
 
   void _check() {
     setState(() {
@@ -310,7 +310,7 @@ class _UnitComprehensiveTestScreenState
     UnitComprehensiveQuestion q,
     String locale,
   ) {
-    final wrong = _checked ? q.incorrectTypedBlankIds(_typedAnswers) : const <String>{};
+    final wrong = _checked ? q.incorrectTypedBlankIds(_typedAnswers, languageCode: widget.test.languageCode) : const <String>{};
     return q.blanks.map((b) {
       final isWrong = wrong.contains(b.id);
       return Padding(
