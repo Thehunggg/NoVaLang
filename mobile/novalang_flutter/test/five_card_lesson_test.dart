@@ -90,8 +90,19 @@ void main() {
       final groups = (practice['groups'] as List<dynamic>)
           .cast<Map<String, dynamic>>();
       expect(groups, hasLength(2));
-      expect(groups[0]['range'], 'Câu 1–10');
-      expect(groups[1]['range'], 'Câu 11–14');
+      // Free/Plus = Q1–9 / Q10–14 (ADR-008 Amendment 2026-07-19). Ranh giới
+      // này khớp `plan` của từng exercise, được khẳng định lại ngay bên dưới
+      // để nhãn hiển thị không thể lệch khỏi dữ liệu chấm thật.
+      expect(groups[0]['range'], 'Câu 1–9');
+      expect(groups[1]['range'], 'Câu 10–14');
+      expect(groups[0]['start'], 1);
+      expect(groups[0]['end'], 9);
+      expect(groups[1]['start'], 10);
+      expect(groups[1]['end'], 14);
+      expect(
+        exercises.map((e) => e['plan']).toList(),
+        List<String>.generate(14, (i) => i < 9 ? 'free' : 'plus'),
+      );
       // Lesson Format 3.0 (ADR-012): the "plus" group's old AI-trial badge
       // wording is gone now that exercise 14 is the non-graded Real-World
       // Practice dialogue, not `controlled_ai_text`.

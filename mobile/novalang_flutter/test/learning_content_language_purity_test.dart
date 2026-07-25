@@ -7,9 +7,12 @@ import 'package:novalang_flutter/models/lesson.dart';
 import 'package:novalang_flutter/screens/learn/lesson_five_card_pages.dart';
 
 const _lessonId = 'ja-daily_life-m01-u1-l1';
+// Bản dịch tiếng Anh dùng dạng RÚT GỌN ("I’m", dấu nháy cong U+2019) —
+// commit fceae1b làm bản dịch tự nhiên/nhất quán hơn. Chuỗi ở đây phải khớp
+// nội dung bài thật, không phải bản trước khi rút gọn.
 const _expectedTitle = {
   'vi': 'Xin chào, tôi là…',
-  'en': 'Hello, I am…',
+  'en': 'Hello, I’m…',
   'ja': 'こんにちは、〜です',
 };
 const _expectedObjective = {
@@ -24,7 +27,7 @@ const _expectedDialogueTitle = {
 };
 const _expectedGrammarMeaning = {
   'vi': 'Tôi là [tên].',
-  'en': 'I am [name].',
+  'en': 'I’m [name].',
   'ja': '私は［名前］です。',
 };
 

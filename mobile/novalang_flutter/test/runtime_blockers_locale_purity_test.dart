@@ -20,19 +20,22 @@ const _groupTitles = {
   'en': ['Core Practice', 'Advanced Practice'],
   'ja': ['基本練習', '発展練習'],
 };
+// Free/Plus = Q1–9 / Q10–14 (ADR-008 Amendment 2026-07-19, commit 62083af).
+// Nhãn dải câu ở cả 3 locale phải khớp ranh giới đó.
 const _groupRanges = {
-  'vi': ['Câu 1–10', 'Câu 11–14'],
-  'en': ['Questions 1–10', 'Questions 11–14'],
-  'ja': ['第1問～第10問', '第11問～第14問'],
+  'vi': ['Câu 1–9', 'Câu 10–14'],
+  'en': ['Questions 1–9', 'Questions 10–14'],
+  'ja': ['第1問～第9問', '第10問～第14問'],
 };
 const _vocabularyMeaning = {
   'vi': 'Chào buổi sáng.',
   'en': 'Good morning.',
   'ja': 'おはようございます。',
 };
+// Tiếng Anh dùng dạng rút gọn "I’m" (dấu nháy cong U+2019) — commit fceae1b.
 const _grammarMeaning = {
   'vi': 'Tôi là [tên].',
-  'en': 'I am [name].',
+  'en': 'I’m [name].',
   'ja': '私は［名前］です。',
 };
 const _reviewQuestion = {'vi': 'Câu 1', 'en': 'Question 1', 'ja': '問題1'};
