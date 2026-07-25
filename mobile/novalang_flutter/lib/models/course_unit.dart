@@ -1,4 +1,5 @@
 import 'lesson.dart';
+import 'unit_comprehensive_test.dart';
 import '../core/utils/native_content.dart';
 
 /// A unit groups related lessons at the same level.
@@ -21,6 +22,7 @@ class CourseUnit {
     this.moduleTitleByNative = const {},
     this.levelRange,
     this.moduleOrder = 0,
+    this.comprehensiveTest,
   });
 
   final String id;
@@ -39,6 +41,10 @@ class CourseUnit {
   final Map<String, String> moduleTitleByNative;
   final String? levelRange;
   final int moduleOrder;
+
+  /// Bài tổng hợp cuối unit (ADR-022). `null` khi unit chưa có bài — trạng
+  /// thái HỢP LỆ; UI không hiện lối vào thay vì vỡ màn hình.
+  final UnitComprehensiveTest? comprehensiveTest;
 
   String localizedTitle(String languageCode) => strictNativeText(
     titleByNative,

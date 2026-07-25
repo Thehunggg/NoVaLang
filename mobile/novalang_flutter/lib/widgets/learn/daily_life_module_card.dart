@@ -312,6 +312,7 @@ class _UnitAccordion extends StatelessWidget {
                           unitId: unit.id,
                           locale: locale,
                           nativeLanguageCode: nativeLanguageCode,
+                          test: unit.comprehensiveTest,
                         ),
                       ],
                     ],

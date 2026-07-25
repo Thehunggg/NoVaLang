@@ -118,6 +118,7 @@ class CurriculumRepository {
             levelRange: course.levelRange,
             moduleOrder: course.order,
             lessons: lessons,
+            comprehensiveTest: unit.comprehensiveTest,
           ),
         );
       }

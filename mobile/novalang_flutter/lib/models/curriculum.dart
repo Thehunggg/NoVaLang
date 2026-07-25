@@ -1,5 +1,6 @@
 import 'exercise.dart';
 import 'lesson.dart';
+import 'unit_comprehensive_test.dart';
 import '../core/utils/native_content.dart';
 
 Map<String, String> _stringMap(dynamic raw) {
@@ -795,6 +796,7 @@ class CurriculumUnit {
     this.goalByNative = const {},
     required this.order,
     required this.lessonIds,
+    this.comprehensiveTest,
   });
 
   final String id;
@@ -809,6 +811,10 @@ class CurriculumUnit {
   final int order;
   final List<String> lessonIds;
 
+  /// Bài tổng hợp cuối unit (ADR-022). `null` khi unit chưa có bài — đây là
+  /// trạng thái HỢP LỆ, không phải thiếu dữ liệu.
+  final UnitComprehensiveTest? comprehensiveTest;
+
   factory CurriculumUnit.fromJson(Map<String, dynamic> json) => CurriculumUnit(
     id: json['id'] as String,
     title: json['title'] as String? ?? '',
@@ -821,6 +827,11 @@ class CurriculumUnit {
     goalByNative: _stringMap(json['goalByNative']),
     order: (json['displayOrder'] as int?) ?? (json['order'] as int? ?? 0),
     lessonIds: (json['lessonIds'] as List<dynamic>? ?? const []).cast<String>(),
+    comprehensiveTest: UnitComprehensiveTest.tryFromMap(
+      json['comprehensiveTest'] is Map
+          ? Map<String, dynamic>.from(json['comprehensiveTest'] as Map)
+          : null,
+    ),
   );
 }
 

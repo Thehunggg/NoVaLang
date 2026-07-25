@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/utils/localization.dart';
+import '../../models/unit_comprehensive_test.dart';
+import '../../screens/learn/unit_comprehensive_test_screen.dart';
 import '../../services/plan_access_policy.dart';
 import '../../state/profile_provider.dart';
 import '../common/app_card.dart';
@@ -23,7 +25,13 @@ class UnitComprehensiveConversationCard extends ConsumerWidget {
     required this.unitId,
     required this.locale,
     required this.nativeLanguageCode,
+    this.test,
   });
+
+  /// Bài tổng hợp ĐÃ DUYỆT của unit này (ADR-022). `null` = unit chưa có bài
+  /// — card vẫn hiện nhưng tap ra thông báo "đang chuẩn bị" thay vì mở màn
+  /// hình rỗng. Trạng thái hợp lệ, không phải lỗi dữ liệu.
+  final UnitComprehensiveTest? test;
 
   /// Stable id of the Unit this comprehensive-conversation activity
   /// belongs to. Not yet used to look up content (none exists), but kept on
@@ -124,17 +132,37 @@ class UnitComprehensiveConversationCard extends ConsumerWidget {
   }
 
   void _handleTap(BuildContext context, bool unlocked) {
-    final message = unlocked
-        ? L10n.text(
-            'unitComprehensiveConversationPreparing',
-            nativeLanguageCode,
-          )
-        : L10n.text(
-            'unitComprehensiveConversationLockedHint',
-            nativeLanguageCode,
-          );
+    // Khoá: chỉ báo nâng cấp, không mở bài.
+    if (!unlocked) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            L10n.text('unitComprehensiveConversationLockedHint', nativeLanguageCode),
+          ),
+        ),
+      );
+      return;
+    }
+    // Đã mở khoá + unit ĐÃ CÓ bài tổng hợp -> mở bài thật.
+    if (test != null) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) => UnitComprehensiveTestScreen(
+            test: test!,
+            locale: locale,
+            nativeLanguageCode: nativeLanguageCode,
+          ),
+        ),
+      );
+      return;
+    }
+    // Đã mở khoá nhưng unit CHƯA có bài -> giữ thông báo "đang chuẩn bị".
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
+      SnackBar(
+        content: Text(
+          L10n.text('unitComprehensiveConversationPreparing', nativeLanguageCode),
+        ),
+      ),
     );
   }
 }

@@ -706,6 +706,76 @@
     "ko": "설명",
     "zh": "说明"
   },
+  "unitComprehensiveTestStart": {
+    "en": "Start test",
+    "vi": "Bắt đầu bài tổng hợp",
+    "ja": "テストを始める",
+    "ko": "테스트 시작",
+    "zh": "开始测验"
+  },
+  "unitComprehensiveTestProgress": {
+    "en": "Question {current}/{total}",
+    "vi": "Câu {current}/{total}",
+    "ja": "問題 {current}/{total}",
+    "ko": "문제 {current}/{total}",
+    "zh": "第 {current}/{total} 题"
+  },
+  "unitComprehensiveTestTypeHere": {
+    "en": "Type your answer",
+    "vi": "Nhập đáp án",
+    "ja": "答えを入力",
+    "ko": "정답 입력",
+    "zh": "输入答案"
+  },
+  "unitComprehensiveTestHint": {
+    "en": "Hint",
+    "vi": "Gợi ý",
+    "ja": "ヒント",
+    "ko": "힌트",
+    "zh": "提示"
+  },
+  "unitComprehensiveTestCorrectAnswer": {
+    "en": "Correct answer",
+    "vi": "Đáp án đúng",
+    "ja": "正しい答え",
+    "ko": "정답",
+    "zh": "正确答案"
+  },
+  "unitComprehensiveTestNext": {
+    "en": "Next question",
+    "vi": "Câu tiếp theo",
+    "ja": "次の問題",
+    "ko": "다음 문제",
+    "zh": "下一题"
+  },
+  "unitComprehensiveTestSeeResult": {
+    "en": "See result",
+    "vi": "Xem kết quả",
+    "ja": "結果を見る",
+    "ko": "결과 보기",
+    "zh": "查看结果"
+  },
+  "unitComprehensiveTestResultTitle": {
+    "en": "Test complete",
+    "vi": "Hoàn thành bài tổng hợp",
+    "ja": "テスト終了",
+    "ko": "테스트 완료",
+    "zh": "测验完成"
+  },
+  "unitComprehensiveTestScore": {
+    "en": "{correct}/{total} correct",
+    "vi": "Đúng {correct}/{total}",
+    "ja": "{total}問中{correct}問正解",
+    "ko": "{total}문제 중 {correct}문제 정답",
+    "zh": "答对 {correct}/{total}"
+  },
+  "unitComprehensiveTestClose": {
+    "en": "Close",
+    "vi": "Đóng",
+    "ja": "閉じる",
+    "ko": "닫기",
+    "zh": "关闭"
+  },
   "formula": {
     "en": "Formula",
     "vi": "Công thức",
