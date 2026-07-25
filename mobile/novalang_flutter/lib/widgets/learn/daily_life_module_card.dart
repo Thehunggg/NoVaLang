@@ -4,7 +4,7 @@ import '../../core/utils/localization.dart';
 import '../../models/course_unit.dart';
 import '../../models/lesson.dart';
 import '../common/app_card.dart';
-import 'unit_comprehensive_conversation_card.dart';
+import 'unit_comprehensive_test_card.dart';
 
 /// Expandable Daily Life module card with nested unit accordion + lesson timeline.
 class DailyLifeModuleCard extends StatefulWidget {
@@ -308,7 +308,7 @@ class _UnitAccordion extends StatelessWidget {
                       ),
                       if (i == 2) ...[
                         const SizedBox(height: 8),
-                        UnitComprehensiveConversationCard(
+                        UnitComprehensiveTestCard(
                           unitId: unit.id,
                           locale: locale,
                           nativeLanguageCode: nativeLanguageCode,

@@ -1545,3 +1545,63 @@ warnings, 0 new); `smoke:curriculum` PASS (0 fail in every section).
 
 **Approval:** design expanded and approved by Project Owner, 2026-07-25. Still
 schema + documentation only — no generator, no validator, no content, no UI.
+
+### Amendment — 2026-07-25 (later): rename executed, generator/validator/UI built
+
+**Status:** `APPROVED / IMPLEMENTED (mechanism complete; NO lesson content yet)`
+
+The naming conflict this ADR flagged but deliberately left open is now
+resolved, and the remaining machinery is built. Three separately committed
+steps:
+
+1. **Validator** — `validateUnitComprehensiveTest` in
+   `scripts/validate-curriculum.mjs` re-checks every rule on the GENERATED
+   output (the generator already threw at assembly time), plus a new "Unit
+   comprehensive tests" section in `scripts/smoke-curriculum-flow.mjs`. The
+   operational thresholds are **imported** from the generator module rather
+   than duplicated, so §F-h numbers live in exactly one place. A unit with no
+   `comprehensiveTest` produces no error and no warning.
+2. **Real UI** — `lib/screens/learn/unit_comprehensive_test_screen.dart`
+   renders all three question kinds and grades them; grading lives on the
+   model (`lib/models/unit_comprehensive_test.dart`) so it is unit-testable,
+   and blank matching reuses `normalizePracticeTextAnswer` from
+   `five_card_practice.dart` — the same Q10 `chat_text_fill` mechanism, not a
+   new one. `CurriculumUnit`/`CourseUnit` gained an optional
+   `comprehensiveTest` parsed from generated JSON. The entry card opens the
+   real screen when content exists, shows the upgrade hint when locked, and
+   keeps the "being prepared" notice when a unit has no test yet.
+3. **Rename executed** — `unit_comprehensive_conversation` →
+   `unit_comprehensive_test` / `unit_comprehensive_cloze` across the Flutter
+   widget (file + class, moved with `git mv` to keep history), the
+   `unitComprehensiveTest*` i18n keys in both the shared source and the
+   Flutter fallback, the card test, `plan_access_policy.dart`'s contract
+   comment, `AGENTS.md`, `.cursor/rules/04_novalang_lesson_format_3_0.mdc`
+   and `LESSON_AUTHORING_STANDARD.md`. The user-visible strings changed too:
+   the activity is a fill-in-the-blank test, so "Comprehensive Conversation" /
+   "Hội thoại tổng hợp" / "総合会話練習" became "Comprehensive Test" / "Bài tổng
+   hợp" / "総合テスト". ADR-014's own precedent authorised this ("no persisted
+   user activity exists for this shell").
+
+**Still not built, deliberately:** no lesson content.
+`UNIT_COMPREHENSIVE_REGISTRY` remains empty, so no unit has a runnable
+comprehensive test in the app. Authoring content is a separate task requiring
+owner approval per `AGENTS.md` and full §G1–G9 source verification.
+
+**Verification** (on a machine WITH the Flutter SDK, unlike the cloud sessions
+earlier in this lineage): `flutter analyze` 0 issues from the new/renamed
+files; `unit_comprehensive_test_test.dart` 15/15 and
+`unit_comprehensive_test_card_test.dart` 12/12 pass after the rename;
+validator proof script 23/23 (2 confirming it does not report valid data, 21
+confirming each corruption is caught); generator proof script 24/24;
+`validate:curriculum` and `smoke:curriculum` PASS; `generate:curriculum`
+remains byte-identical over `shared/generated`.
+
+**Pre-existing failures found, not caused by this work and not fixed here:**
+the full Flutter suite reports 18 failures — 15 assert the retired Free/Plus
+label "Questions 1–10" / "Câu 1–10" / "第1問～第10問" (ADR-008 Amendment
+2026-07-19 moved Free to Q1–Q9) and the rest assert pre-contraction English
+("Hello, I am…" vs the shipped "Hello, I'm…", commit `fceae1b`). Both are debt
+from cloud-session changes that could never be verified without a Flutter SDK.
+Proven pre-existing by stashing this work, clearing the stale
+`build/unit_test_assets` cache, and reproducing an identical failure on a
+clean tree. Fixing those expectations needs its own task.

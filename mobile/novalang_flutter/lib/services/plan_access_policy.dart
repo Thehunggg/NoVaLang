@@ -14,7 +14,7 @@ extension PlanTierAccess on PlanTier {
 /// eventually determines a user's plan tier.
 ///
 /// There is no production billing/subscription integration yet (see
-/// `unit_comprehensive_conversation` product contract). Do not hard-code a
+/// `unit_comprehensive_cloze` product contract (ADR-022)). Do not hard-code a
 /// user as Plus/Pro/Ultimate outside of a test fixture.
 abstract interface class PlanAccessPolicy {
   PlanTier tierFor(String userId);

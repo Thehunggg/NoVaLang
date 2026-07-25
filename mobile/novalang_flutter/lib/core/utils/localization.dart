@@ -179,22 +179,22 @@ class L10n {
       'vi': 'Câu {number}',
       'ja': '問題{number}',
     },
-    'unitComprehensiveConversationTitle': {
-      'en': 'Comprehensive Conversation',
-      'vi': 'Hội thoại tổng hợp',
-      'ja': '総合会話練習',
+    'unitComprehensiveTestTitle': {
+      'en': 'Comprehensive Test',
+      'vi': 'Bài tổng hợp',
+      'ja': '総合テスト',
     },
-    'unitComprehensiveConversationDescription': {
-      'en': 'A comprehensive conversation activity for this unit.',
-      'vi': 'Bài hội thoại tổng hợp cho Unit này.',
-      'ja': 'このユニットの総合会話活動です。',
+    'unitComprehensiveTestDescription': {
+      'en': 'A comprehensive test covering everything in this unit.',
+      'vi': 'Bài kiểm tra tổng hợp kiến thức của Unit này.',
+      'ja': 'このユニットの学習内容をまとめた総合テストです。',
     },
-    'unitComprehensiveConversationLockedHint': {
+    'unitComprehensiveTestLockedHint': {
       'en': 'Upgrade to Plus, Pro, or Ultimate to unlock.',
       'vi': 'Nâng cấp lên Plus, Pro hoặc Ultimate để mở khóa.',
       'ja': 'Plus、Pro、Ultimateへアップグレードすると利用できます。',
     },
-    'unitComprehensiveConversationPreparing': {
+    'unitComprehensiveTestPreparing': {
       'en': 'This content is being prepared and is not available yet.',
       'vi': 'Nội dung này đang được chuẩn bị và chưa mở.',
       'ja': 'このコンテンツは準備中で、まだご利用いただけません。',

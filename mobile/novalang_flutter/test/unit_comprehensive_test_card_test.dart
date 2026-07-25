@@ -1,5 +1,5 @@
 // Phase F tests (NOVALANG-LESSON-RUNTIME-REMEDIATION-01): the
-// unit_comprehensive_conversation card must render inside each expanded Unit,
+// unit comprehensive test card must render inside each expanded Unit,
 // immediately after the third child Lesson, must respect the
 // PlanAccessPolicy locked/available contract, and must never open invented
 // content.
@@ -82,14 +82,14 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(
-          find.text(L10n.text('unitComprehensiveConversationTitle', 'vi')),
+          find.text(L10n.text('unitComprehensiveTestTitle', 'vi')),
           findsOneWidget,
         );
 
         final lesson3Y = tester.getCenter(find.text('u1-l3')).dy;
         final cardY = tester
             .getCenter(
-              find.text(L10n.text('unitComprehensiveConversationTitle', 'vi')),
+              find.text(L10n.text('unitComprehensiveTestTitle', 'vi')),
             )
             .dy;
         final unit2Y = tester.getCenter(find.text('Unit 2')).dy;
@@ -110,7 +110,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(
-        find.text(L10n.text('unitComprehensiveConversationTitle', 'vi')),
+        find.text(L10n.text('unitComprehensiveTestTitle', 'vi')),
         findsNothing,
       );
     });
@@ -130,24 +130,24 @@ void main() {
 
       expect(
         find.text(
-          L10n.text('unitComprehensiveConversationLockedHint', 'vi'),
+          L10n.text('unitComprehensiveTestLockedHint', 'vi'),
         ),
         findsOneWidget,
       );
 
       await tester.tap(
-        find.text(L10n.text('unitComprehensiveConversationTitle', 'vi')),
+        find.text(L10n.text('unitComprehensiveTestTitle', 'vi')),
       );
       await tester.pumpAndSettle();
       expect(
         find.text(
-          L10n.text('unitComprehensiveConversationLockedHint', 'vi'),
+          L10n.text('unitComprehensiveTestLockedHint', 'vi'),
         ),
         findsWidgets,
       );
       expect(
         find.text(
-          L10n.text('unitComprehensiveConversationPreparing', 'vi'),
+          L10n.text('unitComprehensiveTestPreparing', 'vi'),
         ),
         findsNothing,
       );
@@ -169,13 +169,13 @@ void main() {
 
           expect(
             find.text(
-              L10n.text('unitComprehensiveConversationLockedHint', 'vi'),
+              L10n.text('unitComprehensiveTestLockedHint', 'vi'),
             ),
             findsNothing,
           );
 
           await tester.tap(
-            find.text(L10n.text('unitComprehensiveConversationTitle', 'vi')),
+            find.text(L10n.text('unitComprehensiveTestTitle', 'vi')),
           );
           await tester.pumpAndSettle();
 
@@ -183,7 +183,7 @@ void main() {
           // fake conversation screen — only a "preparing" notice.
           expect(
             find.text(
-              L10n.text('unitComprehensiveConversationPreparing', 'vi'),
+              L10n.text('unitComprehensiveTestPreparing', 'vi'),
             ),
             findsOneWidget,
           );
@@ -211,10 +211,10 @@ void main() {
     for (final locale in ['vi', 'en', 'ja']) {
       test('$locale has non-empty, non-sentinel text for all card keys', () {
         for (final key in [
-          'unitComprehensiveConversationTitle',
-          'unitComprehensiveConversationDescription',
-          'unitComprehensiveConversationLockedHint',
-          'unitComprehensiveConversationPreparing',
+          'unitComprehensiveTestTitle',
+          'unitComprehensiveTestDescription',
+          'unitComprehensiveTestLockedHint',
+          'unitComprehensiveTestPreparing',
         ]) {
           final text = L10n.text(key, locale);
           expect(text, isNotEmpty, reason: '$key/$locale');
@@ -224,9 +224,9 @@ void main() {
     }
 
     test('vi/en/ja title wording is distinct per locale (no cross-language leak)', () {
-      final vi = L10n.text('unitComprehensiveConversationTitle', 'vi');
-      final en = L10n.text('unitComprehensiveConversationTitle', 'en');
-      final ja = L10n.text('unitComprehensiveConversationTitle', 'ja');
+      final vi = L10n.text('unitComprehensiveTestTitle', 'vi');
+      final en = L10n.text('unitComprehensiveTestTitle', 'en');
+      final ja = L10n.text('unitComprehensiveTestTitle', 'ja');
       expect({vi, en, ja}, hasLength(3));
     });
   });

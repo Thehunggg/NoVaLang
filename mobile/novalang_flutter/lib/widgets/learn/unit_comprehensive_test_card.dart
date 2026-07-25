@@ -8,7 +8,7 @@ import '../../services/plan_access_policy.dart';
 import '../../state/profile_provider.dart';
 import '../common/app_card.dart';
 
-/// UI shell for the `unit_comprehensive_conversation` product contract.
+/// Lối vào BÀI TỔNG HỢP CUỐI UNIT (`unit_comprehensive_cloze`, ADR-022).
 ///
 /// Scope: one standard Unit. It follows that Unit's third child Lesson and
 /// never summarizes neighbouring Units. It is distinct from the per-Lesson,
@@ -19,8 +19,8 @@ import '../common/app_card.dart';
 /// tapping an unlocked card surfaces a "content is being prepared" message
 /// rather than opening any invented content. Real content is subject to a
 /// separate owner-approved task.
-class UnitComprehensiveConversationCard extends ConsumerWidget {
-  const UnitComprehensiveConversationCard({
+class UnitComprehensiveTestCard extends ConsumerWidget {
+  const UnitComprehensiveTestCard({
     super.key,
     required this.unitId,
     required this.locale,
@@ -84,7 +84,7 @@ class UnitComprehensiveConversationCard extends ConsumerWidget {
                     Expanded(
                       child: Text(
                         L10n.text(
-                          'unitComprehensiveConversationTitle',
+                          'unitComprehensiveTestTitle',
                           locale,
                         ),
                         style: Theme.of(context).textTheme.titleMedium
@@ -98,7 +98,7 @@ class UnitComprehensiveConversationCard extends ConsumerWidget {
                 const SizedBox(height: 6),
                 Text(
                   L10n.text(
-                    'unitComprehensiveConversationDescription',
+                    'unitComprehensiveTestDescription',
                     nativeLanguageCode,
                   ),
                   maxLines: 2,
@@ -114,7 +114,7 @@ class UnitComprehensiveConversationCard extends ConsumerWidget {
                   const SizedBox(height: 8),
                   Text(
                     L10n.text(
-                      'unitComprehensiveConversationLockedHint',
+                      'unitComprehensiveTestLockedHint',
                       nativeLanguageCode,
                     ),
                     style: Theme.of(context).textTheme.labelSmall?.copyWith(
@@ -137,7 +137,7 @@ class UnitComprehensiveConversationCard extends ConsumerWidget {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            L10n.text('unitComprehensiveConversationLockedHint', nativeLanguageCode),
+            L10n.text('unitComprehensiveTestLockedHint', nativeLanguageCode),
           ),
         ),
       );
@@ -160,7 +160,7 @@ class UnitComprehensiveConversationCard extends ConsumerWidget {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          L10n.text('unitComprehensiveConversationPreparing', nativeLanguageCode),
+          L10n.text('unitComprehensiveTestPreparing', nativeLanguageCode),
         ),
       ),
     );

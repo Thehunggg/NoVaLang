@@ -78,8 +78,9 @@ production exercise.
 
 `real_world_practice_dialogue`. Do not use `controlled_ai_text` for Q14 in
 any lesson using Format 3.0. This type is intentionally distinct from
-`unit_comprehensive_conversation` (a separate Unit-level shell activity
-defined in ADR-014) — never conflate the two.
+`unit_comprehensive_cloze` (bài tổng hợp cuối Unit — a separate Unit-level
+activity; placement in ADR-014, format/grading/schema in ADR-022, which
+renamed it from `unit_comprehensive_conversation`) — never conflate the two.
 
 ### Required contract
 

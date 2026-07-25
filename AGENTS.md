@@ -214,10 +214,13 @@ non-graded `real_world_practice_dialogue`, not `controlled_ai_text`. Format
 2.0 remains authoritative for Q1–Q13, the five cards, access plans, and every
 other part of the format.
 
-`unit_comprehensive_conversation` is a separate, Unit-level shell activity.
-It renders immediately after the third child Lesson inside each standard Unit,
-is gated to Plus/Pro/Ultimate, and must never be conflated with per-Lesson
-Q14. See ADR-014 in `docs/ai/ARCHITECTURE_DECISIONS.md`.
+`unit_comprehensive_cloze` (bài tổng hợp cuối Unit) is a separate, Unit-level
+activity. It renders immediately after the third child Lesson inside each
+standard Unit, is gated to Plus/Pro/Ultimate, and must never be conflated with
+per-Lesson Q14. Placement comes from ADR-014; the format, cloze grading and
+schema come from **ADR-022**, which renamed the contract from the earlier
+`unit_comprehensive_conversation` — the activity is a fill-in-the-blank test,
+not a conversation. See `docs/ai/ARCHITECTURE_DECISIONS.md`.
 
 Do not migrate legacy lessons automatically, and do not create or alter lesson
 content, plans, exercise flows, or UI decisions without an approved owner

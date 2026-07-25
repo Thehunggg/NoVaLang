@@ -506,23 +506,27 @@ thúc bằng ô trống ≤ 50% · không quá 3 câu liên tiếp chỉ ôn m�
 Hai ngưỡng cuối là **số vận hành** (§F-h) — owner chỉnh được, không phải hằng
 số bất biến.
 
-*Đã có:* **schema** trong `shared/types.ts` (`UnitComprehensiveTest` và các
-type con) + gắn optional vào `Unit.comprehensiveTest` + cơ chế chấm ghi ở
-**§D-Cloze** dưới đây. Quyết định kiến trúc: **ADR-022**.
+*Đã có (2026-07-25):*
+- **Schema** — `shared/types.ts` (`UnitComprehensiveTest` + type con), gắn
+  optional vào `Unit.comprehensiveTest`. Quyết định kiến trúc: **ADR-022**.
+- **Generator** — `scripts/lib/unit-comprehensive-test.mjs` (xem §E4-gen).
+- **Validator** — `validateUnitComprehensiveTest` trong
+  `scripts/validate-curriculum.mjs` + section "Unit comprehensive tests"
+  trong `scripts/smoke-curriculum-flow.mjs`, kiểm trên OUTPUT đã sinh.
+- **UI thật** — `lib/screens/learn/unit_comprehensive_test_screen.dart`
+  (render 3 loại câu + chấm), model
+  `lib/models/unit_comprehensive_test.dart`, lối vào
+  `lib/widgets/learn/unit_comprehensive_test_card.dart`. Card đọc gate qua
+  `PlanAccessPolicy` và `plan` trong dữ liệu (KHÔNG hard-code); unit chưa có
+  bài thì tap ra thông báo "đang chuẩn bị" thay vì mở màn hình rỗng.
+- **Đã đổi tên** `unit_comprehensive_conversation` → `unit_comprehensive_test`
+  / `unit_comprehensive_cloze` (widget, khoá i18n `unitComprehensiveTest*`,
+  mọi tham chiếu) — thiết kế là bài cloze, không phải hội thoại; ADR-014 có
+  tiền lệ cho phép ("no persisted user activity exists for this shell").
 
-*CHƯA có:* generator, validator, nội dung bài, UI thật. **Hiện trạng UI vẫn
-chỉ là SHELL** — `unit_comprehensive_conversation` (ADR-014): card render sau
-Lesson thứ 3 trong Unit, gate qua `PlanAccessPolicy`, tap ra thông báo "đang
-chuẩn bị"/"nâng cấp". File:
-`mobile/novalang_flutter/lib/widgets/learn/unit_comprehensive_conversation_card
-.dart` + `services/plan_access_policy.dart` + i18n `unitComprehensiveConversation*`.
-
-> ⚠️ **Lệch tên cần Owner quyết (chưa xử lý):** ADR-014 đặt tên kỹ thuật là
-> `unit_comprehensive_**conversation**`, nhưng thiết kế đã chốt là bài
-> **cloze**, không phải hội thoại — tên hiện tại gây hiểu nhầm. Schema mới
-> dùng `format: 'unit_comprehensive_cloze'`. Việc đổi tên shell Flutter +
-> khoá i18n là **task riêng** (ADR-014 đã có tiền lệ đổi tên: "no persisted
-> user activity exists for this shell"), KHÔNG làm trong bước schema này.
+*CHƯA có:* **nội dung bài thật.** `UNIT_COMPREHENSIVE_REGISTRY` vẫn RỖNG, nên
+chưa unit nào có bài tổng hợp chạy được trong app. Viết nội dung là task
+riêng, cần Owner duyệt theo `AGENTS.md`.
 
 ---
 
