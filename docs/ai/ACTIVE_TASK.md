@@ -42,6 +42,60 @@
 - Xóa 9 file thừa trong `local-sources/`.
 - Xác minh điều khoản bản quyền Irodori + loại giấy phép CC của hanabira.
 
+## CÒN LẠI — GHI NGUỒN 25 CÂU BÀI TỔNG HỢP + REGISTRY — 2026-07-25
+
+**CHƯA LÀM.** Hạ tầng xong hết, chỉ còn bước ghi nội dung. Owner đã duyệt cả 3
+đợt; nội dung nằm ở 2 bản đọc trên Desktop:
+`ban-doc-18-cau-KHOI-PHUC-OGENKIDE.txt` (câu 1–18) và
+`ban-doc-dot3-cau-19-25.txt` (câu 19–25).
+
+### ĐÃ RÀ XONG — quy tắc 2^N cho `acceptedAnswers` của 12 ô đợt 3
+
+N = số **nhóm kanji độc lập** trong cụm → 2^N dạng viết hợp lệ. Kết quả rà:
+
+| ô | cụm | nhóm kanji | cần | bản đọc có | |
+|---|---|---|---|---|---|
+| 19-① | おはようございます | – | 1 | 1 | ok |
+| 20-① | お名前 | 名前 | 2 | 2 | ok |
+| 21-① | こちらこそ | – | 1 | 1 | ok |
+| 21-② | よろしくお願いします | 宜·願 | **4** | **3** | **THIẾU `宜しくおねがいします`** |
+| 22-① | すみません | – | 1 | 1 | ok |
+| 22-② | もう一度 | 一度 | 2 | 2 | ok |
+| 23-① | お先に失礼します | 先·失礼 | 4 | 4 | ok |
+| 23-② | 来週 | 来週 | 2 | 2 | ok |
+| 24-① | さんですね | – | 1 | 1 | ok |
+| 24-② | はじめまして | 初 | 2 | 2 | ok |
+| 25-① | そうですか | – | 1 | 1 | ok |
+| 25-② | お元気で | 元気 | 2 | 2 | ok |
+
+→ Đúng **một** chỗ thiếu, owner đã chỉ ra chính xác. Tổng biến thể sau khi bổ
+sung: **23** chuỗi cho 12 ô (bản đọc ghi 22).
+
+### Việc còn phải làm
+
+1. Viết file nguồn 25 câu (dùng helper `seg` · `blankSeg` · `blank` ·
+   `choiceOption` · `dialogueTurn` · `review` của
+   `scripts/lib/unit-comprehensive-test.mjs`).
+2. Bổ sung `宜しくおねがいします` vào ô 21-②.
+3. Thêm dòng dịch vi/en/ja cho MỌI chuỗi tiếng Việt (prompt · context ·
+   explanation · hint) — thiếu một dòng là `localizeSupport` throw, không lọt
+   âm thầm.
+4. Đăng ký một dòng vào `UNIT_COMPREHENSIVE_REGISTRY`
+   (`scripts/lib/unit-comprehensive-test.mjs:357`).
+5. `generate → sync → validate → smoke`. Generator tự ép: số câu theo mức, số ô
+   theo loại, 4 phương án phủ đủ ô, reviews nằm trong unit (§G7), 2–3 lượt hội
+   thoại, tỉ lệ ô cuối câu, trộn xen kẽ lesson. Throw thì **sửa nội dung**,
+   không nới ngưỡng.
+6. `flutter run` → bấm bài tổng hợp phải ra 25 câu thật (hết snackbar "đang
+   chuẩn bị"). Paywall đã mở sẵn ở debug, không cần cờ.
+
+### Hạ tầng đã sẵn sàng (không còn vướng gì)
+
+- generator + validator + màn hình UI thật: xong (ADR-022).
+- Mở khoá Plus khi debug: mặc định BẬT, chỉ cần `flutter run`.
+- Normalizer đã xoá sạch dấu cách cho ja/zh → ô tự gõ chấm đúng.
+- `UnitComprehensiveTest.languageCode` đã parse từ dữ liệu.
+
 ## NỢ NỘI DUNG — 「お元気で」 thẻ từ vựng ĐÁ NHAU với hội thoại cùng bài — 2026-07-25
 
 Cần **NGƯỜI BẢN NGỮ** quyết. **CHƯA sửa gì** — không sửa thẻ, không sửa hội thoại.
