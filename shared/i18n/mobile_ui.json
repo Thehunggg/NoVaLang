@@ -1,6 +1,14 @@
 {
-  "back": {"en": "Back", "vi": "Quay lại", "ja": "戻る"},
-  "continue": {"en": "Continue", "vi": "Tiếp tục", "ja": "続ける"},
+  "back": {
+    "en": "Back",
+    "vi": "Quay lại",
+    "ja": "戻る"
+  },
+  "continue": {
+    "en": "Continue",
+    "vi": "Tiếp tục",
+    "ja": "続ける"
+  },
   "next": {
     "en": "Next",
     "vi": "Tiếp tục",
@@ -8,43 +16,111 @@
     "ko": "다음",
     "zh": "下一步"
   },
-  "nativeLanguage": {"en": "Native/UI language", "vi": "Ngôn ngữ mẹ đẻ / giao diện", "ja": "母国語 / UI言語"},
-  "learningLanguage": {"en": "Learning language", "vi": "Ngôn ngữ muốn học", "ja": "学習言語"},
+  "nativeLanguage": {
+    "en": "Native/UI language",
+    "vi": "Ngôn ngữ mẹ đẻ / giao diện",
+    "ja": "母国語 / UI言語"
+  },
+  "learningLanguage": {
+    "en": "Learning language",
+    "vi": "Ngôn ngữ muốn học",
+    "ja": "学習言語"
+  },
   "learningLanguageSubtitle": {
     "en": "Pick the language you want to learn with NovaLang.",
     "vi": "Chọn ngôn ngữ bạn muốn học với NovaLang.",
     "ja": "NovaLangで学びたい言語を選んでください。"
   },
-  "goalTrack": {"en": "Goal and exam track", "vi": "Mục tiêu và lộ trình thi", "ja": "目標と試験コース"},
-  "dailyGoal": {"en": "Daily goal", "vi": "Mục tiêu hằng ngày", "ja": "毎日の目標"},
+  "goalTrack": {
+    "en": "Goal and exam track",
+    "vi": "Mục tiêu và lộ trình thi",
+    "ja": "目標と試験コース"
+  },
+  "dailyGoal": {
+    "en": "Daily goal",
+    "vi": "Mục tiêu hằng ngày",
+    "ja": "毎日の目標"
+  },
   "dailyGoalSubtitle": {
     "en": "How many minutes do you want to study each day?",
     "vi": "Bạn muốn học bao nhiêu phút mỗi ngày?",
     "ja": "1日に何分勉強しますか？"
   },
-  "dailyGoalGentle": {"en": "Gentle", "vi": "Nhẹ nhàng", "ja": "気軽に"},
-  "dailyGoalSteady": {"en": "Steady", "vi": "Đều đặn", "ja": "コツコツ"},
-  "dailyGoalFocused": {"en": "Focused", "vi": "Tập trung", "ja": "集中"},
-  "dailyGoalSerious": {"en": "Serious", "vi": "Nghiêm túc", "ja": "本気"},
-  "dailyGoalAccelerated": {"en": "Accelerated", "vi": "Tăng tốc", "ja": "集中強化"},
-  "dailyGoalDedicated": {"en": "Dedicated", "vi": "Chuyên tâm", "ja": "徹底"},
-  "niche": {"en": "Learning focus", "vi": "Trọng tâm học", "ja": "学習フォーカス"},
+  "dailyGoalGentle": {
+    "en": "Gentle",
+    "vi": "Nhẹ nhàng",
+    "ja": "気軽に"
+  },
+  "dailyGoalSteady": {
+    "en": "Steady",
+    "vi": "Đều đặn",
+    "ja": "コツコツ"
+  },
+  "dailyGoalFocused": {
+    "en": "Focused",
+    "vi": "Tập trung",
+    "ja": "集中"
+  },
+  "dailyGoalSerious": {
+    "en": "Serious",
+    "vi": "Nghiêm túc",
+    "ja": "本気"
+  },
+  "dailyGoalAccelerated": {
+    "en": "Accelerated",
+    "vi": "Tăng tốc",
+    "ja": "集中強化"
+  },
+  "dailyGoalDedicated": {
+    "en": "Dedicated",
+    "vi": "Chuyên tâm",
+    "ja": "徹底"
+  },
+  "niche": {
+    "en": "Learning focus",
+    "vi": "Trọng tâm học",
+    "ja": "学習フォーカス"
+  },
   "nicheInstruction": {
     "en": "Choose multiple focuses, then tap a selected item again to make it primary.",
     "vi": "Chọn nhiều mục tiêu, rồi chạm lại để đặt trọng tâm chính.",
     "ja": "複数選択し、もう一度タップしてメインに設定してください。"
   },
-  "level": {"en": "Starting level", "vi": "Trình độ bắt đầu", "ja": "開始レベル"},
+  "level": {
+    "en": "Starting level",
+    "vi": "Trình độ bắt đầu",
+    "ja": "開始レベル"
+  },
   "placementChoice": {
     "en": "Do you want to take a placement test?",
     "vi": "Bạn có muốn làm bài kiểm tra trình độ không?",
     "ja": "レベル判定テストを受けますか？"
   },
-  "takePlacement": {"en": "Take placement test", "vi": "Làm bài kiểm tra trình độ", "ja": "レベル判定を受ける"},
-  "manualLevel": {"en": "Choose level manually", "vi": "Chọn trình độ thủ công", "ja": "レベルを手動で選ぶ"},
-  "startBeginning": {"en": "Start from the beginning", "vi": "Bắt đầu từ đầu", "ja": "最初から始める"},
-  "placementTitle": {"en": "Placement test", "vi": "Kiểm tra trình độ", "ja": "レベル判定"},
-  "placementResult": {"en": "Your result", "vi": "Kết quả của bạn", "ja": "あなたの結果"},
+  "takePlacement": {
+    "en": "Take placement test",
+    "vi": "Làm bài kiểm tra trình độ",
+    "ja": "レベル判定を受ける"
+  },
+  "manualLevel": {
+    "en": "Choose level manually",
+    "vi": "Chọn trình độ thủ công",
+    "ja": "レベルを手動で選ぶ"
+  },
+  "startBeginning": {
+    "en": "Start from the beginning",
+    "vi": "Bắt đầu từ đầu",
+    "ja": "最初から始める"
+  },
+  "placementTitle": {
+    "en": "Placement test",
+    "vi": "Kiểm tra trình độ",
+    "ja": "レベル判定"
+  },
+  "placementResult": {
+    "en": "Your result",
+    "vi": "Kết quả của bạn",
+    "ja": "あなたの結果"
+  },
   "recommended": {
     "en": "NovaLang recommends starting from",
     "vi": "NovaLang khuyến nghị bạn bắt đầu từ",
@@ -55,27 +131,51 @@
     "vi": "Bắt đầu lộ trình được đề xuất",
     "ja": "おすすめコースを始める"
   },
-  "basicInfo": {"en": "Basic information", "vi": "Thông tin cơ bản", "ja": "基本情報"},
+  "basicInfo": {
+    "en": "Basic information",
+    "vi": "Thông tin cơ bản",
+    "ja": "基本情報"
+  },
   "basicInfoSubtitle": {
     "en": "Tell NovaLang a little about you. Only your display name is required.",
     "vi": "Cho NovaLang biết một chút về bạn. Chỉ cần điền tên hiển thị.",
     "ja": "あなたについて教えてください。表示名のみ必須です。"
   },
-  "displayName": {"en": "Display name", "vi": "Tên hiển thị", "ja": "表示名"},
+  "displayName": {
+    "en": "Display name",
+    "vi": "Tên hiển thị",
+    "ja": "表示名"
+  },
   "displayNameHint": {
     "en": "What should NovaLang call you?",
     "vi": "Bạn muốn NovaLang gọi bạn là gì?",
     "ja": "NovaLangは何と呼びますか？"
   },
-  "age": {"en": "Age range", "vi": "Độ tuổi", "ja": "年齢層"},
-  "optional": {"en": "Optional", "vi": "Không bắt buộc", "ja": "任意"},
-  "country": {"en": "Country/region", "vi": "Quốc gia/khu vực", "ja": "国・地域"},
+  "age": {
+    "en": "Age range",
+    "vi": "Độ tuổi",
+    "ja": "年齢層"
+  },
+  "optional": {
+    "en": "Optional",
+    "vi": "Không bắt buộc",
+    "ja": "任意"
+  },
+  "country": {
+    "en": "Country/region",
+    "vi": "Quốc gia/khu vực",
+    "ja": "国・地域"
+  },
   "countryHint": {
     "en": "For example: Japan, Vietnam...",
     "vi": "Ví dụ: Nhật Bản, Việt Nam...",
     "ja": "例：日本、ベトナム..."
   },
-  "region": {"en": "City/prefecture", "vi": "Thành phố/tỉnh", "ja": "市区町村"},
+  "region": {
+    "en": "City/prefecture",
+    "vi": "Thành phố/tỉnh",
+    "ja": "市区町村"
+  },
   "occupation": {
     "en": "Occupation or student status",
     "vi": "Nghề nghiệp hoặc tình trạng học tập",
@@ -111,12 +211,36 @@
     "vi": "Bạn đã đổi mục tiêu học. Bạn muốn bắt đầu như thế nào?",
     "ja": "学習フォーカスを変更しました。どう始めますか？"
   },
-  "home": {"en": "Home", "vi": "Trang chủ", "ja": "ホーム"},
-  "learn": {"en": "Learn", "vi": "Học", "ja": "学習"},
-  "practice": {"en": "Practice", "vi": "Luyện tập", "ja": "練習"},
-  "review": {"en": "Review", "vi": "Ôn tập", "ja": "復習"},
-  "flashcards": {"en": "Flashcards", "vi": "Thẻ ghi nhớ", "ja": "フラッシュカード"},
-  "profile": {"en": "Profile", "vi": "Hồ sơ", "ja": "プロフィール"},
+  "home": {
+    "en": "Home",
+    "vi": "Trang chủ",
+    "ja": "ホーム"
+  },
+  "learn": {
+    "en": "Learn",
+    "vi": "Học",
+    "ja": "学習"
+  },
+  "practice": {
+    "en": "Practice",
+    "vi": "Luyện tập",
+    "ja": "練習"
+  },
+  "review": {
+    "en": "Review",
+    "vi": "Ôn tập",
+    "ja": "復習"
+  },
+  "flashcards": {
+    "en": "Flashcards",
+    "vi": "Thẻ ghi nhớ",
+    "ja": "フラッシュカード"
+  },
+  "profile": {
+    "en": "Profile",
+    "vi": "Hồ sơ",
+    "ja": "プロフィール"
+  },
   "searchLanguage": {
     "en": "Search by name, native name, alias, or script",
     "vi": "Tìm theo tên, tên bản địa, bí danh hoặc chữ viết",
@@ -150,12 +274,36 @@
     "ko": "다시 시도",
     "zh": "再试一次"
   },
-  "answerHint": {"en": "Type your answer", "vi": "Nhập câu trả lời", "ja": "答えを入力"},
-  "match": {"en": "Match", "vi": "Ghép cặp", "ja": "組み合わせ"},
-  "courseBack": {"en": "Back to course", "vi": "Quay lại lộ trình", "ja": "コースに戻る"},
-  "previousStep": {"en": "Review previous step", "vi": "Xem lại bước trước", "ja": "前のステップを見る"},
-  "reviewLesson": {"en": "Review lesson", "vi": "Xem lại bài học", "ja": "レッスンを復習"},
-  "lessonNotFound": {"en": "Lesson not found", "vi": "Không tìm thấy bài học", "ja": "レッスンが見つかりません"},
+  "answerHint": {
+    "en": "Type your answer",
+    "vi": "Nhập câu trả lời",
+    "ja": "答えを入力"
+  },
+  "match": {
+    "en": "Match",
+    "vi": "Ghép cặp",
+    "ja": "組み合わせ"
+  },
+  "courseBack": {
+    "en": "Back to course",
+    "vi": "Quay lại lộ trình",
+    "ja": "コースに戻る"
+  },
+  "previousStep": {
+    "en": "Review previous step",
+    "vi": "Xem lại bước trước",
+    "ja": "前のステップを見る"
+  },
+  "reviewLesson": {
+    "en": "Review lesson",
+    "vi": "Xem lại bài học",
+    "ja": "レッスンを復習"
+  },
+  "lessonNotFound": {
+    "en": "Lesson not found",
+    "vi": "Không tìm thấy bài học",
+    "ja": "レッスンが見つかりません"
+  },
   "comingSoon": {
     "en": "Coming soon",
     "vi": "Sắp ra mắt",
@@ -336,15 +484,31 @@
     "vi": "Lộ trình đang được lên kế hoạch. Bạn có thể đổi ngôn ngữ học trong cài đặt.",
     "ja": "ロードマップは予定されています。設定で学習言語を変更できます。"
   },
-  "availableNow": {"en": "Available", "vi": "Có sẵn", "ja": "利用可能"},
-  "minutesDay": {"en": "minutes/day", "vi": "phút/ngày", "ja": "分/日"},
+  "availableNow": {
+    "en": "Available",
+    "vi": "Có sẵn",
+    "ja": "利用可能"
+  },
+  "minutesDay": {
+    "en": "minutes/day",
+    "vi": "phút/ngày",
+    "ja": "分/日"
+  },
   "homeReady": {
     "en": "Your mobile learning space is ready.",
     "vi": "Không gian học trên điện thoại đã sẵn sàng.",
     "ja": "モバイル学習の準備ができました。"
   },
-  "goLearn": {"en": "Go to Learn", "vi": "Đi đến bài học", "ja": "学習へ進む"},
-  "practiceTitle": {"en": "Template practice", "vi": "Luyện tập theo mẫu", "ja": "テンプレート練習"},
+  "goLearn": {
+    "en": "Go to Learn",
+    "vi": "Đi đến bài học",
+    "ja": "学習へ進む"
+  },
+  "practiceTitle": {
+    "en": "Template practice",
+    "vi": "Luyện tập theo mẫu",
+    "ja": "テンプレート練習"
+  },
   "mistakeHelp": {
     "en": "Your saved mistakes will appear here for focused review.",
     "vi": "Các lỗi đã lưu sẽ xuất hiện tại đây để bạn ôn tập tập trung.",
@@ -355,46 +519,126 @@
     "vi": "Ngôn ngữ mẹ đẻ / giao diện",
     "ja": "母国語 / UI言語"
   },
-  "novaLearner": {"en": "Nova learner", "vi": "Người học Nova", "ja": "Nova学習者"},
-  "userInfo": {"en": "User Information", "vi": "Thông tin người dùng", "ja": "ユーザー情報"},
+  "novaLearner": {
+    "en": "Nova learner",
+    "vi": "Người học Nova",
+    "ja": "Nova学習者"
+  },
+  "userInfo": {
+    "en": "User Information",
+    "vi": "Thông tin người dùng",
+    "ja": "ユーザー情報"
+  },
   "profileOccupation": {
     "en": "Occupation/student status",
     "vi": "Nghề nghiệp/học tập",
     "ja": "職業・学生状況"
   },
-  "languageSettings": {"en": "Language Settings", "vi": "Cài đặt ngôn ngữ", "ja": "言語設定"},
-  "learningLanguageShort": {"en": "Learning", "vi": "Ngôn ngữ học", "ja": "学習言語"},
+  "languageSettings": {
+    "en": "Language Settings",
+    "vi": "Cài đặt ngôn ngữ",
+    "ja": "言語設定"
+  },
+  "learningLanguageShort": {
+    "en": "Learning",
+    "vi": "Ngôn ngữ học",
+    "ja": "学習言語"
+  },
   "learningPreferences": {
     "en": "Learning preferences",
     "vi": "Tùy chọn học",
     "ja": "学習設定"
   },
-  "primaryFocus": {"en": "Primary focus", "vi": "Trọng tâm chính", "ja": "メインフォーカス"},
-  "selectedNiches": {"en": "Selected niches", "vi": "Các niche đã chọn", "ja": "選択したニッチ"},
-  "changeNiche": {"en": "Change niche", "vi": "Đổi mục tiêu học", "ja": "学習目標を変更"},
-  "progress": {"en": "Progress", "vi": "Tiến độ", "ja": "進捗"},
-  "xp": {"en": "XP", "vi": "XP", "ja": "XP"},
-  "completedLessons": {"en": "Completed lessons", "vi": "Bài đã hoàn thành", "ja": "完了レッスン"},
-  "mistakesSummary": {"en": "Mistakes summary", "vi": "Tóm tắt lỗi sai", "ja": "間違いの概要"},
-  "comingSoonConnected": {"en": "Coming soon", "vi": "Sắp kết nối", "ja": "近日接続"},
-  "appSettings": {"en": "App Settings", "vi": "Cài đặt ứng dụng", "ja": "アプリ設定"},
+  "primaryFocus": {
+    "en": "Primary focus",
+    "vi": "Trọng tâm chính",
+    "ja": "メインフォーカス"
+  },
+  "selectedNiches": {
+    "en": "Selected niches",
+    "vi": "Các niche đã chọn",
+    "ja": "選択したニッチ"
+  },
+  "changeNiche": {
+    "en": "Change niche",
+    "vi": "Đổi mục tiêu học",
+    "ja": "学習目標を変更"
+  },
+  "progress": {
+    "en": "Progress",
+    "vi": "Tiến độ",
+    "ja": "進捗"
+  },
+  "xp": {
+    "en": "XP",
+    "vi": "XP",
+    "ja": "XP"
+  },
+  "completedLessons": {
+    "en": "Completed lessons",
+    "vi": "Bài đã hoàn thành",
+    "ja": "完了レッスン"
+  },
+  "mistakesSummary": {
+    "en": "Mistakes summary",
+    "vi": "Tóm tắt lỗi sai",
+    "ja": "間違いの概要"
+  },
+  "comingSoonConnected": {
+    "en": "Coming soon",
+    "vi": "Sắp kết nối",
+    "ja": "近日接続"
+  },
+  "appSettings": {
+    "en": "App Settings",
+    "vi": "Cài đặt ứng dụng",
+    "ja": "アプリ設定"
+  },
   "soundPronunciation": {
     "en": "Sound / pronunciation",
     "vi": "Âm thanh / phát âm",
     "ja": "音声 / 発音"
   },
-  "enabled": {"en": "Enabled", "vi": "Đang bật", "ja": "有効"},
-  "legal": {"en": "Legal", "vi": "Pháp lý", "ja": "法的情報"},
-  "termsOfService": {"en": "Terms of Service", "vi": "Điều khoản dịch vụ", "ja": "利用規約"},
+  "enabled": {
+    "en": "Enabled",
+    "vi": "Đang bật",
+    "ja": "有効"
+  },
+  "legal": {
+    "en": "Legal",
+    "vi": "Pháp lý",
+    "ja": "法的情報"
+  },
+  "termsOfService": {
+    "en": "Terms of Service",
+    "vi": "Điều khoản dịch vụ",
+    "ja": "利用規約"
+  },
   "willBeAddedLater": {
     "en": "Will be added later",
     "vi": "Sẽ được thêm sau",
     "ja": "後日追加予定"
   },
-  "privacyPolicy": {"en": "Privacy Policy", "vi": "Chính sách quyền riêng tư", "ja": "プライバシーポリシー"},
-  "account": {"en": "Account", "vi": "Tài khoản", "ja": "アカウント"},
-  "logout": {"en": "Logout", "vi": "Đăng xuất", "ja": "ログアウト"},
-  "comingSoonLinked": {"en": "Coming soon", "vi": "Sẽ nối sau", "ja": "近日接続"},
+  "privacyPolicy": {
+    "en": "Privacy Policy",
+    "vi": "Chính sách quyền riêng tư",
+    "ja": "プライバシーポリシー"
+  },
+  "account": {
+    "en": "Account",
+    "vi": "Tài khoản",
+    "ja": "アカウント"
+  },
+  "logout": {
+    "en": "Logout",
+    "vi": "Đăng xuất",
+    "ja": "ログアウト"
+  },
+  "comingSoonLinked": {
+    "en": "Coming soon",
+    "vi": "Sẽ nối sau",
+    "ja": "近日接続"
+  },
   "deleteResetLocalData": {
     "en": "Delete/reset local data",
     "vi": "Xóa/đặt lại dữ liệu local",
@@ -420,9 +664,21 @@
     "vi": "Thao tác này xóa toàn bộ hồ sơ, tiến độ bài học và dữ liệu đăng nhập mock trên thiết bị. Dữ liệu bài học dùng chung không bị ảnh hưởng.",
     "ja": "この端末の保存済みプロフィール、レッスン進捗、モック認証データをすべて削除します。共有レッスンアセットは影響を受けません。"
   },
-  "cancel": {"en": "Cancel", "vi": "Hủy", "ja": "キャンセル"},
-  "confirm": {"en": "Reset", "vi": "Xóa", "ja": "リセット"},
-  "saveChanges": {"en": "Save changes", "vi": "Lưu thay đổi", "ja": "変更を保存"},
+  "cancel": {
+    "en": "Cancel",
+    "vi": "Hủy",
+    "ja": "キャンセル"
+  },
+  "confirm": {
+    "en": "Reset",
+    "vi": "Xóa",
+    "ja": "リセット"
+  },
+  "saveChanges": {
+    "en": "Save changes",
+    "vi": "Lưu thay đổi",
+    "ja": "変更を保存"
+  },
   "changeFocusPlacement": {
     "en": "Take a placement test",
     "vi": "Làm bài kiểm tra trình độ",
@@ -488,7 +744,11 @@
     "vi": "Không tải được nhà cung cấp đăng nhập.",
     "ja": "ログインプロバイダーを読み込めませんでした。"
   },
-  "mistakeReview": {"en": "Mistake review", "vi": "Ôn lỗi sai", "ja": "間違い復習"},
+  "mistakeReview": {
+    "en": "Mistake review",
+    "vi": "Ôn lỗi sai",
+    "ja": "間違い復習"
+  },
   "noLessonsForLanguage": {
     "en": "No lessons available for this language yet",
     "vi": "Chưa có bài học cho ngôn ngữ này",
@@ -916,112 +1176,491 @@
     "ko": "배운 내용 연습하기",
     "zh": "练习所学内容"
   },
-  "exerciseYourAnswer": {"en": "Your answer", "vi": "Câu trả lời của bạn", "ja": "あなたの答え"},
-  "exerciseOptions": {"en": "Options", "vi": "Các lựa chọn", "ja": "選択肢"},
-  "exerciseJapanese": {"en": "Japanese", "vi": "Tiếng Nhật", "ja": "日本語"},
-  "exerciseMeaning": {"en": "Meaning", "vi": "Nghĩa", "ja": "意味"},
-  "exerciseAnswerHint": {"en": "Tap the cards below to make a sentence.", "vi": "Chạm vào các thẻ bên dưới để tạo câu.", "ja": "下のカードをタップして文を作りましょう。"},
-  "exerciseInputHint": {"en": "Enter your answer", "vi": "Nhập câu trả lời", "ja": "答えを入力"},
-  "exerciseResultsTitle": {"en": "Exercises complete", "vi": "Hoàn thành bài tập", "ja": "練習完了"},
-  "exerciseInputIncorrect": {"en": "Not correct yet", "vi": "Chưa đúng", "ja": "まだ正しくありません"},
-  "exerciseTypeChoice": {"en": "Choose an answer", "vi": "Chọn đáp án", "ja": "答えを選ぶ"},
-  "exerciseTypeMatching": {"en": "Match words", "vi": "Nối từ", "ja": "ことばを結ぶ"},
-  "exerciseTypeOrdering": {"en": "Arrange the sentence", "vi": "Sắp xếp câu", "ja": "文を並べ替える"},
-  "exerciseTypeDialogueFill": {"en": "Complete the dialogue", "vi": "Hoàn thành hội thoại", "ja": "会話を完成させる"},
-  "exerciseTypeChatFill": {"en": "Complete the chat", "vi": "Hoàn thành đoạn chat", "ja": "チャットを完成させる"},
-  "exerciseTypeListening": {"en": "Listen and choose", "vi": "Nghe và chọn", "ja": "聞いて選ぶ"},
-  "exerciseTypeCheckpoint": {"en": "Quick check", "vi": "Kiểm tra nhanh", "ja": "クイックチェック"},
-  "exerciseTypeAiPractice": {"en": "Real-World Practice", "vi": "Thực hành thực tế", "ja": "実践練習"},
-  "exerciseTrialOpen": {"en": "Trial open", "vi": "Mở thử nghiệm", "ja": "トライアル公開中"},
-  "exerciseCorrectAnswer": {"en": "Correct answer", "vi": "Đáp án đúng", "ja": "正解"},
-  "exerciseExplanation": {"en": "Explanation", "vi": "Giải thích", "ja": "説明"},
-  "exerciseExampleAnswer": {"en": "Example answer", "vi": "Câu trả lời mẫu", "ja": "回答例"},
-  "exerciseInputRequired": {"en": "Enter a complete answer before submitting.", "vi": "Hãy nhập một câu trả lời đầy đủ trước khi gửi.", "ja": "送信前に答えを最後まで入力してください。"},
-  "exerciseAiOffline": {"en": "AI could not connect. No AI set was used.", "vi": "Không thể kết nối AI. Bạn chưa dùng AI set nào.", "ja": "AIに接続できません。AIセットは使用されていません。"},
-  "dialogueReadingToggle": {"en": "Show hiragana reading", "vi": "Hiện cách đọc hiragana", "ja": "ひらがな読みを表示"},
-  "dialogueRomanizationToggle": {"en": "Show romanization", "vi": "Hiện phiên âm Latin", "ja": "ローマ字を表示"},
-  "dialogueTranslationToggle": {"en": "Show translation", "vi": "Hiện bản dịch", "ja": "翻訳を表示"},
-  "dialogueCompleteAction": {"en": "Complete", "vi": "Hoàn thành", "ja": "完了"},
-  "aiExplanationLocaleMismatchNotice": {"en": "This explanation was generated in a different language. Redo this question to get an explanation in your current language.", "vi": "Giải thích này được tạo theo một ngôn ngữ khác. Hãy làm lại câu này để nhận giải thích theo ngôn ngữ hiện tại.", "ja": "この説明は別の言語で生成されました。現在の言語で説明を得るには、もう一度回答してください。"},
-  "unitComprehensiveTestTitle": {"en": "Comprehensive Test", "vi": "Bài tổng hợp", "ja": "総合テスト"},
-  "unitComprehensiveTestDescription": {"en": "A comprehensive test covering everything in this unit.", "vi": "Bài kiểm tra tổng hợp kiến thức của Unit này.", "ja": "このユニットの学習内容をまとめた総合テストです。"},
-  "unitComprehensiveTestLockedHint": {"en": "Upgrade to Plus, Pro, or Ultimate to unlock.", "vi": "Nâng cấp lên Plus, Pro hoặc Ultimate để mở khóa.", "ja": "Plus、Pro、Ultimateへアップグレードすると利用できます。"},
-  "unitComprehensiveTestPreparing": {"en": "This content is being prepared and is not available yet.", "vi": "Nội dung này đang được chuẩn bị và chưa mở.", "ja": "このコンテンツは準備中で、まだご利用いただけません。"},
-  "reviewWrongAnswers": {"en": "Review wrong answers", "vi": "Ôn lại câu sai", "ja": "間違えた問題を復習"},
-  "reviewQuestionNumber": {"en": "Question {number}", "vi": "Câu {number}", "ja": "問題{number}"},
-  "backToLesson": {"en": "Back to lesson", "vi": "Về bài học", "ja": "レッスンに戻る"},
-  "yourAnswer": {"en": "Your answer", "vi": "Câu trả lời của bạn", "ja": "あなたの答え"},
-  "correctAnswer": {"en": "Correct answer", "vi": "Đáp án đúng", "ja": "正解"},
-  "correctStatus": {"en": "Correct", "vi": "Chính xác", "ja": "正解"},
-  "incorrectStatus": {"en": "Incorrect", "vi": "Chưa đúng", "ja": "不正解"},
-  "noWrongAnswers": {"en": "You do not have any wrong answers to review yet.", "vi": "Bạn chưa có câu sai nào để ôn lại.", "ja": "復習する間違いはまだありません。"},
-  "wrongAnswersAvailable": {"en": "You have {count} questions to review.", "vi": "Bạn có {count} câu cần ôn lại.", "ja": "復習が必要な問題が{count}問あります。"},
-  "reviewWrongAnswersCount": {"en": "Review {count} questions", "vi": "Ôn lại {count} câu", "ja": "{count}問を復習"},
-  "continueFromQuestion": {"en": "Continue from question {number}", "vi": "Tiếp tục từ Câu {number}", "ja": "問題{number}から続ける"},
-  "finishExercises": {"en": "Finish exercises", "vi": "Hoàn thành bài tập", "ja": "練習を完了"},
-  "questionsCorrect": {"en": "{correct}/{total} correct", "vi": "{correct}/{total} câu đúng", "ja": "{correct}/{total}問正解"},
-  "inProgress": {"en": "In progress", "vi": "Đang học", "ja": "学習中"},
+  "exerciseYourAnswer": {
+    "en": "Your answer",
+    "vi": "Câu trả lời của bạn",
+    "ja": "あなたの答え"
+  },
+  "exerciseOptions": {
+    "en": "Options",
+    "vi": "Các lựa chọn",
+    "ja": "選択肢"
+  },
+  "exerciseJapanese": {
+    "en": "Japanese",
+    "vi": "Tiếng Nhật",
+    "ja": "日本語"
+  },
+  "exerciseMeaning": {
+    "en": "Meaning",
+    "vi": "Nghĩa",
+    "ja": "意味"
+  },
+  "exerciseAnswerHint": {
+    "en": "Tap the cards below to make a sentence.",
+    "vi": "Chạm vào các thẻ bên dưới để tạo câu.",
+    "ja": "下のカードをタップして文を作りましょう。"
+  },
+  "exerciseInputHint": {
+    "en": "Enter your answer",
+    "vi": "Nhập câu trả lời",
+    "ja": "答えを入力"
+  },
+  "exerciseResultsTitle": {
+    "en": "Exercises complete",
+    "vi": "Hoàn thành bài tập",
+    "ja": "練習完了"
+  },
+  "exerciseInputIncorrect": {
+    "en": "Not correct yet",
+    "vi": "Chưa đúng",
+    "ja": "まだ正しくありません"
+  },
+  "exerciseTypeChoice": {
+    "en": "Choose an answer",
+    "vi": "Chọn đáp án",
+    "ja": "答えを選ぶ"
+  },
+  "exerciseTypeMatching": {
+    "en": "Match words",
+    "vi": "Nối từ",
+    "ja": "ことばを結ぶ"
+  },
+  "exerciseTypeOrdering": {
+    "en": "Arrange the sentence",
+    "vi": "Sắp xếp câu",
+    "ja": "文を並べ替える"
+  },
+  "exerciseTypeDialogueFill": {
+    "en": "Complete the dialogue",
+    "vi": "Hoàn thành hội thoại",
+    "ja": "会話を完成させる"
+  },
+  "exerciseTypeChatFill": {
+    "en": "Complete the chat",
+    "vi": "Hoàn thành đoạn chat",
+    "ja": "チャットを完成させる"
+  },
+  "exerciseTypeListening": {
+    "en": "Listen and choose",
+    "vi": "Nghe và chọn",
+    "ja": "聞いて選ぶ"
+  },
+  "exerciseTypeCheckpoint": {
+    "en": "Quick check",
+    "vi": "Kiểm tra nhanh",
+    "ja": "クイックチェック"
+  },
+  "exerciseTypeAiPractice": {
+    "en": "Real-World Practice",
+    "vi": "Thực hành thực tế",
+    "ja": "実践練習"
+  },
+  "exerciseTrialOpen": {
+    "en": "Trial open",
+    "vi": "Mở thử nghiệm",
+    "ja": "トライアル公開中"
+  },
+  "exerciseCorrectAnswer": {
+    "en": "Correct answer",
+    "vi": "Đáp án đúng",
+    "ja": "正解"
+  },
+  "exerciseExplanation": {
+    "en": "Explanation",
+    "vi": "Giải thích",
+    "ja": "説明"
+  },
+  "exerciseExampleAnswer": {
+    "en": "Example answer",
+    "vi": "Câu trả lời mẫu",
+    "ja": "回答例"
+  },
+  "exerciseInputRequired": {
+    "en": "Enter a complete answer before submitting.",
+    "vi": "Hãy nhập một câu trả lời đầy đủ trước khi gửi.",
+    "ja": "送信前に答えを最後まで入力してください。"
+  },
+  "exerciseAiOffline": {
+    "en": "AI could not connect. No AI set was used.",
+    "vi": "Không thể kết nối AI. Bạn chưa dùng AI set nào.",
+    "ja": "AIに接続できません。AIセットは使用されていません。"
+  },
+  "dialogueReadingToggle": {
+    "en": "Show hiragana reading",
+    "vi": "Hiện cách đọc hiragana",
+    "ja": "ひらがな読みを表示"
+  },
+  "dialogueRomanizationToggle": {
+    "en": "Show romanization",
+    "vi": "Hiện phiên âm Latin",
+    "ja": "ローマ字を表示"
+  },
+  "dialogueTranslationToggle": {
+    "en": "Show translation",
+    "vi": "Hiện bản dịch",
+    "ja": "翻訳を表示"
+  },
+  "dialogueCompleteAction": {
+    "en": "Complete",
+    "vi": "Hoàn thành",
+    "ja": "完了"
+  },
+  "aiExplanationLocaleMismatchNotice": {
+    "en": "This explanation was generated in a different language. Redo this question to get an explanation in your current language.",
+    "vi": "Giải thích này được tạo theo một ngôn ngữ khác. Hãy làm lại câu này để nhận giải thích theo ngôn ngữ hiện tại.",
+    "ja": "この説明は別の言語で生成されました。現在の言語で説明を得るには、もう一度回答してください。"
+  },
+  "unitComprehensiveTestTitle": {
+    "en": "Comprehensive Test",
+    "vi": "Bài tổng hợp",
+    "ja": "総合テスト"
+  },
+  "unitComprehensiveTestDescription": {
+    "en": "A comprehensive test covering everything in this unit.",
+    "vi": "Bài kiểm tra tổng hợp kiến thức của Unit này.",
+    "ja": "このユニットの学習内容をまとめた総合テストです。"
+  },
+  "unitComprehensiveTestLockedHint": {
+    "en": "Upgrade to Plus, Pro, or Ultimate to unlock.",
+    "vi": "Nâng cấp lên Plus, Pro hoặc Ultimate để mở khóa.",
+    "ja": "Plus、Pro、Ultimateへアップグレードすると利用できます。"
+  },
+  "unitComprehensiveTestPreparing": {
+    "en": "This content is being prepared and is not available yet.",
+    "vi": "Nội dung này đang được chuẩn bị và chưa mở.",
+    "ja": "このコンテンツは準備中で、まだご利用いただけません。"
+  },
+  "reviewWrongAnswers": {
+    "en": "Review wrong answers",
+    "vi": "Ôn lại câu sai",
+    "ja": "間違えた問題を復習"
+  },
+  "reviewQuestionNumber": {
+    "en": "Question {number}",
+    "vi": "Câu {number}",
+    "ja": "問題{number}"
+  },
+  "backToLesson": {
+    "en": "Back to lesson",
+    "vi": "Về bài học",
+    "ja": "レッスンに戻る"
+  },
+  "yourAnswer": {
+    "en": "Your answer",
+    "vi": "Câu trả lời của bạn",
+    "ja": "あなたの答え"
+  },
+  "correctAnswer": {
+    "en": "Correct answer",
+    "vi": "Đáp án đúng",
+    "ja": "正解"
+  },
+  "correctStatus": {
+    "en": "Correct",
+    "vi": "Chính xác",
+    "ja": "正解"
+  },
+  "incorrectStatus": {
+    "en": "Incorrect",
+    "vi": "Chưa đúng",
+    "ja": "不正解"
+  },
+  "noWrongAnswers": {
+    "en": "You do not have any wrong answers to review yet.",
+    "vi": "Bạn chưa có câu sai nào để ôn lại.",
+    "ja": "復習する間違いはまだありません。"
+  },
+  "wrongAnswersAvailable": {
+    "en": "You have {count} questions to review.",
+    "vi": "Bạn có {count} câu cần ôn lại.",
+    "ja": "復習が必要な問題が{count}問あります。"
+  },
+  "reviewWrongAnswersCount": {
+    "en": "Review {count} questions",
+    "vi": "Ôn lại {count} câu",
+    "ja": "{count}問を復習"
+  },
+  "continueFromQuestion": {
+    "en": "Continue from question {number}",
+    "vi": "Tiếp tục từ Câu {number}",
+    "ja": "問題{number}から続ける"
+  },
+  "finishExercises": {
+    "en": "Finish exercises",
+    "vi": "Hoàn thành bài tập",
+    "ja": "練習を完了"
+  },
+  "questionsCorrect": {
+    "en": "{correct}/{total} correct",
+    "vi": "{correct}/{total} câu đúng",
+    "ja": "{correct}/{total}問正解"
+  },
+  "inProgress": {
+    "en": "In progress",
+    "vi": "Đang học",
+    "ja": "学習中"
+  },
   "trackProgress": {
     "en": "Track progress: {done}/{total}",
     "vi": "Tiến độ lộ trình: {done}/{total}",
     "ja": "トラック進捗: {done}/{total}"
   },
-
-  "domainNavTitle": {"en": "Explore learning tracks", "vi": "Khám phá lộ trình học", "ja": "学習トラックを探す"},
-  "professionalCategoriesTitle": {"en": "Choose a professional category", "vi": "Chọn một nhóm ngành nghề", "ja": "職種カテゴリーを選択"},
-  "contentInPreparation": {"en": "Content in preparation", "vi": "Đang chuẩn bị nội dung", "ja": "コンテンツ準備中"},
-  "selectAction": {"en": "Select", "vi": "Chọn", "ja": "選択"},
-  "selectedState": {"en": "Selected", "vi": "Đã chọn", "ja": "選択済み"},
-  "domainCount": {"en": "{n} domains", "vi": "{n} lĩnh vực", "ja": "{n}分野"},
-  "selectedDomainCount": {"en": "Selected {count}", "vi": "Đã chọn {count}", "ja": "{count}件選択"},
-  "legacyProfessionalFocusReselect": {"en": "Your previous Environment, Energy & Agriculture focus was split into separate domains. Please choose Agriculture & AgriTech or Green Energy & Building Operations.", "vi": "Lĩnh vực Môi trường, Năng lượng & Nông nghiệp trước đây đã được tách nhỏ. Vui lòng chọn lại Nông nghiệp & Công nghệ nông nghiệp hoặc Năng lượng xanh & Vận hành tòa nhà.", "ja": "以前の「環境・エネルギー・農業」は複数の分野に分割されました。「農業・アグリテック」または「グリーンエネルギー・ビル運用」を選び直してください。"},
-  "trackShellPlaceholder": {"en": "This track's catalog is not part of this task yet.", "vi": "Danh mục cho lộ trình này chưa nằm trong phạm vi task này.", "ja": "このトラックのカタログは、このタスクの範囲にはまだ含まれていません。"},
-
-  "trackBasicCommunication": {"en": "Basic Communication", "vi": "Giao tiếp cơ bản", "ja": "基礎コミュニケーション"},
-  "trackProfessionalCareer": {"en": "Professional & Career", "vi": "Nghề nghiệp", "ja": "キャリア・専門職"},
-  "trackExamPreparation": {"en": "Exam Preparation", "vi": "Kỳ thi", "ja": "試験対策"},
-
-  "categoryDigitalTechnology": {"en": "Digital & Tech", "vi": "Công nghệ & Số hóa", "ja": "デジタル・テクノロジー"},
-  "categoryDigitalTechnologyDescription": {"en": "Logical thinking, technology, data, and flexible teamwork.", "vi": "Tư duy logic, công nghệ, dữ liệu và làm việc nhóm linh hoạt.", "ja": "論理的思考、テクノロジー、データ、柔軟なチームワーク。"},
-  "categoryCorporateBusiness": {"en": "Corporate & Business", "vi": "Quản trị & Doanh nghiệp", "ja": "経営・ビジネス"},
-  "categoryCorporateBusinessDescription": {"en": "Office work, business email, meetings, reports, and negotiation.", "vi": "Văn phòng, email thương mại, họp hành, báo cáo và đàm phán.", "ja": "オフィスワーク、ビジネスメール、会議、報告、交渉。"},
-  "categoryHospitalityCustomerService": {"en": "Hospitality & Customer Service", "vi": "Dịch vụ & Khách sạn", "ja": "接客・カスタマーサービス"},
-  "categoryHospitalityCustomerServiceDescription": {"en": "Polite communication, empathy, and handling customer needs.", "vi": "Giao tiếp lịch thiệp, đồng cảm và xử lý nhu cầu khách hàng.", "ja": "丁寧なコミュニケーション、共感、顧客対応。"},
-  "categoryEngineeringProduction": {"en": "Engineering & Production", "vi": "Kỹ thuật & Sản xuất", "ja": "エンジニアリング・生産"},
-  "categoryEngineeringProductionDescription": {"en": "Safety, specifications, operations, and incident reporting.", "vi": "An toàn, thông số kỹ thuật, vận hành và báo cáo sự cố.", "ja": "安全、仕様、運用、インシデント報告。"},
-  "categoryCareHealthEducation": {"en": "Healthcare & Education", "vi": "An sinh & Y tế", "ja": "医療・教育"},
-  "categoryCareHealthEducationDescription": {"en": "Care, support, patient communication, and education.", "vi": "Chăm sóc, hỗ trợ, giao tiếp kiên nhẫn và giáo dục.", "ja": "ケア、サポート、思いやりのあるコミュニケーション、教育。"},
-  "categoryGreenAgricultureSupplyChain": {"en": "Green & Supply Chain", "vi": "Logistics, Nông nghiệp & Môi trường", "ja": "物流・農業・環境"},
-  "categoryGreenAgricultureSupplyChainDescription": {"en": "Supply chain, fieldwork, ecology, weather, and maintenance.", "vi": "Chuỗi cung ứng, thực địa, sinh thái, thời tiết và bảo trì.", "ja": "サプライチェーン、現場作業、生態系、天候、メンテナンス。"},
-
-  "domainItSoftware": {"en": "IT & Software", "vi": "CNTT & Lập trình", "ja": "IT・ソフトウェア"},
-  "domainAiDataAnalytics": {"en": "AI, Data & Analytics", "vi": "AI, Dữ liệu & Phân tích", "ja": "AI・データ分析"},
-  "domainRoboticsIotAutomation": {"en": "Robotics, IoT & Automation", "vi": "Robotics, IoT & Tự động hóa", "ja": "ロボティクス・IoT・自動化"},
-  "domainDigitalDesignUiUx": {"en": "Digital Design & UI/UX", "vi": "Mỹ thuật số & Thiết kế giao diện (UI/UX)", "ja": "デジタルデザイン・UI/UX"},
-  "domainEcommerceOnlineOperations": {"en": "E-commerce & Online Operations", "vi": "Thương mại điện tử & Vận hành Online", "ja": "Eコマース・オンライン運営"},
-  "domainOfficeAdministration": {"en": "Office Administration", "vi": "Quản trị văn phòng & Hành chính", "ja": "オフィス管理・事務"},
-  "domainFinanceAccountingAudit": {"en": "Finance, Accounting & Audit", "vi": "Tài chính, Kế toán & Kiểm toán", "ja": "財務・会計・監査"},
-  "domainHumanResourcesRecruitment": {"en": "Human Resources & Recruitment", "vi": "Nhân sự & Tuyển dụng", "ja": "人事・採用"},
-  "domainLegalCompliance": {"en": "Legal & Compliance", "vi": "Pháp lý & Tuân thủ", "ja": "法務・コンプライアンス"},
-  "domainSalesCustomerService": {"en": "Sales & Customer Service", "vi": "Bán hàng & Chăm sóc khách hàng", "ja": "営業・カスタマーサービス"},
-  "domainTravelHospitality": {"en": "Travel & Hospitality", "vi": "Du lịch & Dịch vụ khách sạn", "ja": "旅行・ホスピタリティ"},
-  "domainFoodBeverage": {"en": "Food & Beverage (F&B)", "vi": "Nhà hàng & Ẩm thực (F&B)", "ja": "飲食（F&B）"},
-  "domainBeautyAestheticsSpa": {"en": "Beauty, Aesthetics & Spa", "vi": "Làm đẹp, Thẩm mỹ & Spa", "ja": "美容・エステ・スパ"},
-  "domainManufacturingEngineering": {"en": "Manufacturing & Engineering", "vi": "Sản xuất & Kỹ thuật chế tạo", "ja": "製造・エンジニアリング"},
-  "domainConstructionRealEstate": {"en": "Construction & Real Estate", "vi": "Xây dựng & Bất động sản", "ja": "建設・不動産"},
-  "domainAutomotiveMobility": {"en": "Automotive & Mobility", "vi": "Công nghiệp Ô tô & Di chuyển", "ja": "自動車・モビリティ"},
-  "domainFoodProcessingBeverageProduction": {"en": "Food Processing & Beverage Production", "vi": "Chế biến thực phẩm & Đồ uống", "ja": "食品加工・飲料製造"},
-  "domainClinicalHealthcare": {"en": "Clinical Healthcare", "vi": "Y tế & Chăm sóc sức khỏe lâm sàng", "ja": "臨床医療"},
-  "domainNursingElderlyCare": {"en": "Nursing & Elderly Care", "vi": "Điều dưỡng & Chăm sóc người cao tuổi", "ja": "看護・高齢者ケア"},
-  "domainEducationSchool": {"en": "Education & School", "vi": "Giáo dục & Trường học", "ja": "教育・学校"},
-  "domainSocialPublicServices": {"en": "Social & Public Services", "vi": "Dịch vụ xã hội & Đời sống công cộng", "ja": "社会福祉・公共サービス"},
-  "domainLogisticsSupplyChain": {"en": "Logistics & Supply Chain", "vi": "Logistics & Chuỗi cung ứng", "ja": "物流・サプライチェーン"},
-  "domainAgricultureAgritech": {"en": "Agriculture & AgriTech", "vi": "Nông nghiệp & Trồng trọt công nghệ cao", "ja": "農業・アグリテック"},
-  "domainFisheriesAquaculture": {"en": "Fisheries & Aquaculture", "vi": "Ngư nghiệp & Nuôi trồng thủy sản", "ja": "漁業・養殖業"},
-  "domainGreenEnergyBuildingOperations": {"en": "Green Energy & Building Operations", "vi": "Năng lượng xanh & Vận hành tòa nhà", "ja": "グリーンエネルギー・ビル運用"},
-
-  "professionalFocusSectionTitle": {"en": "Career / Specialized Fields", "vi": "Nghề nghiệp / Lĩnh vực chuyên môn", "ja": "仕事・専門分野"},
-  "professionalNoticeTitle": {"en": "Note", "vi": "Chú ý", "ja": "注意"},
+  "domainNavTitle": {
+    "en": "Explore learning tracks",
+    "vi": "Khám phá lộ trình học",
+    "ja": "学習トラックを探す"
+  },
+  "professionalCategoriesTitle": {
+    "en": "Choose a professional category",
+    "vi": "Chọn một nhóm ngành nghề",
+    "ja": "職種カテゴリーを選択"
+  },
+  "contentInPreparation": {
+    "en": "Content in preparation",
+    "vi": "Đang chuẩn bị nội dung",
+    "ja": "コンテンツ準備中"
+  },
+  "selectAction": {
+    "en": "Select",
+    "vi": "Chọn",
+    "ja": "選択"
+  },
+  "selectedState": {
+    "en": "Selected",
+    "vi": "Đã chọn",
+    "ja": "選択済み"
+  },
+  "domainCount": {
+    "en": "{n} domains",
+    "vi": "{n} lĩnh vực",
+    "ja": "{n}分野"
+  },
+  "selectedDomainCount": {
+    "en": "Selected {count}",
+    "vi": "Đã chọn {count}",
+    "ja": "{count}件選択"
+  },
+  "legacyProfessionalFocusReselect": {
+    "en": "Your previous Environment, Energy & Agriculture focus was split into separate domains. Please choose Agriculture & AgriTech or Green Energy & Building Operations.",
+    "vi": "Lĩnh vực Môi trường, Năng lượng & Nông nghiệp trước đây đã được tách nhỏ. Vui lòng chọn lại Nông nghiệp & Công nghệ nông nghiệp hoặc Năng lượng xanh & Vận hành tòa nhà.",
+    "ja": "以前の「環境・エネルギー・農業」は複数の分野に分割されました。「農業・アグリテック」または「グリーンエネルギー・ビル運用」を選び直してください。"
+  },
+  "trackShellPlaceholder": {
+    "en": "This track's catalog is not part of this task yet.",
+    "vi": "Danh mục cho lộ trình này chưa nằm trong phạm vi task này.",
+    "ja": "このトラックのカタログは、このタスクの範囲にはまだ含まれていません。"
+  },
+  "trackBasicCommunication": {
+    "en": "Basic Communication",
+    "vi": "Giao tiếp cơ bản",
+    "ja": "基礎コミュニケーション"
+  },
+  "trackProfessionalCareer": {
+    "en": "Professional & Career",
+    "vi": "Nghề nghiệp",
+    "ja": "キャリア・専門職"
+  },
+  "trackExamPreparation": {
+    "en": "Exam Preparation",
+    "vi": "Kỳ thi",
+    "ja": "試験対策"
+  },
+  "categoryDigitalTechnology": {
+    "en": "Digital & Tech",
+    "vi": "Công nghệ & Số hóa",
+    "ja": "デジタル・テクノロジー"
+  },
+  "categoryDigitalTechnologyDescription": {
+    "en": "Logical thinking, technology, data, and flexible teamwork.",
+    "vi": "Tư duy logic, công nghệ, dữ liệu và làm việc nhóm linh hoạt.",
+    "ja": "論理的思考、テクノロジー、データ、柔軟なチームワーク。"
+  },
+  "categoryCorporateBusiness": {
+    "en": "Corporate & Business",
+    "vi": "Quản trị & Doanh nghiệp",
+    "ja": "経営・ビジネス"
+  },
+  "categoryCorporateBusinessDescription": {
+    "en": "Office work, business email, meetings, reports, and negotiation.",
+    "vi": "Văn phòng, email thương mại, họp hành, báo cáo và đàm phán.",
+    "ja": "オフィスワーク、ビジネスメール、会議、報告、交渉。"
+  },
+  "categoryHospitalityCustomerService": {
+    "en": "Hospitality & Customer Service",
+    "vi": "Dịch vụ & Khách sạn",
+    "ja": "接客・カスタマーサービス"
+  },
+  "categoryHospitalityCustomerServiceDescription": {
+    "en": "Polite communication, empathy, and handling customer needs.",
+    "vi": "Giao tiếp lịch thiệp, đồng cảm và xử lý nhu cầu khách hàng.",
+    "ja": "丁寧なコミュニケーション、共感、顧客対応。"
+  },
+  "categoryEngineeringProduction": {
+    "en": "Engineering & Production",
+    "vi": "Kỹ thuật & Sản xuất",
+    "ja": "エンジニアリング・生産"
+  },
+  "categoryEngineeringProductionDescription": {
+    "en": "Safety, specifications, operations, and incident reporting.",
+    "vi": "An toàn, thông số kỹ thuật, vận hành và báo cáo sự cố.",
+    "ja": "安全、仕様、運用、インシデント報告。"
+  },
+  "categoryCareHealthEducation": {
+    "en": "Healthcare & Education",
+    "vi": "An sinh & Y tế",
+    "ja": "医療・教育"
+  },
+  "categoryCareHealthEducationDescription": {
+    "en": "Care, support, patient communication, and education.",
+    "vi": "Chăm sóc, hỗ trợ, giao tiếp kiên nhẫn và giáo dục.",
+    "ja": "ケア、サポート、思いやりのあるコミュニケーション、教育。"
+  },
+  "categoryGreenAgricultureSupplyChain": {
+    "en": "Green & Supply Chain",
+    "vi": "Logistics, Nông nghiệp & Môi trường",
+    "ja": "物流・農業・環境"
+  },
+  "categoryGreenAgricultureSupplyChainDescription": {
+    "en": "Supply chain, fieldwork, ecology, weather, and maintenance.",
+    "vi": "Chuỗi cung ứng, thực địa, sinh thái, thời tiết và bảo trì.",
+    "ja": "サプライチェーン、現場作業、生態系、天候、メンテナンス。"
+  },
+  "domainItSoftware": {
+    "en": "IT & Software",
+    "vi": "CNTT & Lập trình",
+    "ja": "IT・ソフトウェア"
+  },
+  "domainAiDataAnalytics": {
+    "en": "AI, Data & Analytics",
+    "vi": "AI, Dữ liệu & Phân tích",
+    "ja": "AI・データ分析"
+  },
+  "domainRoboticsIotAutomation": {
+    "en": "Robotics, IoT & Automation",
+    "vi": "Robotics, IoT & Tự động hóa",
+    "ja": "ロボティクス・IoT・自動化"
+  },
+  "domainDigitalDesignUiUx": {
+    "en": "Digital Design & UI/UX",
+    "vi": "Mỹ thuật số & Thiết kế giao diện (UI/UX)",
+    "ja": "デジタルデザイン・UI/UX"
+  },
+  "domainEcommerceOnlineOperations": {
+    "en": "E-commerce & Online Operations",
+    "vi": "Thương mại điện tử & Vận hành Online",
+    "ja": "Eコマース・オンライン運営"
+  },
+  "domainOfficeAdministration": {
+    "en": "Office Administration",
+    "vi": "Quản trị văn phòng & Hành chính",
+    "ja": "オフィス管理・事務"
+  },
+  "domainFinanceAccountingAudit": {
+    "en": "Finance, Accounting & Audit",
+    "vi": "Tài chính, Kế toán & Kiểm toán",
+    "ja": "財務・会計・監査"
+  },
+  "domainHumanResourcesRecruitment": {
+    "en": "Human Resources & Recruitment",
+    "vi": "Nhân sự & Tuyển dụng",
+    "ja": "人事・採用"
+  },
+  "domainLegalCompliance": {
+    "en": "Legal & Compliance",
+    "vi": "Pháp lý & Tuân thủ",
+    "ja": "法務・コンプライアンス"
+  },
+  "domainSalesCustomerService": {
+    "en": "Sales & Customer Service",
+    "vi": "Bán hàng & Chăm sóc khách hàng",
+    "ja": "営業・カスタマーサービス"
+  },
+  "domainTravelHospitality": {
+    "en": "Travel & Hospitality",
+    "vi": "Du lịch & Dịch vụ khách sạn",
+    "ja": "旅行・ホスピタリティ"
+  },
+  "domainFoodBeverage": {
+    "en": "Food & Beverage (F&B)",
+    "vi": "Nhà hàng & Ẩm thực (F&B)",
+    "ja": "飲食（F&B）"
+  },
+  "domainBeautyAestheticsSpa": {
+    "en": "Beauty, Aesthetics & Spa",
+    "vi": "Làm đẹp, Thẩm mỹ & Spa",
+    "ja": "美容・エステ・スパ"
+  },
+  "domainManufacturingEngineering": {
+    "en": "Manufacturing & Engineering",
+    "vi": "Sản xuất & Kỹ thuật chế tạo",
+    "ja": "製造・エンジニアリング"
+  },
+  "domainConstructionRealEstate": {
+    "en": "Construction & Real Estate",
+    "vi": "Xây dựng & Bất động sản",
+    "ja": "建設・不動産"
+  },
+  "domainAutomotiveMobility": {
+    "en": "Automotive & Mobility",
+    "vi": "Công nghiệp Ô tô & Di chuyển",
+    "ja": "自動車・モビリティ"
+  },
+  "domainFoodProcessingBeverageProduction": {
+    "en": "Food Processing & Beverage Production",
+    "vi": "Chế biến thực phẩm & Đồ uống",
+    "ja": "食品加工・飲料製造"
+  },
+  "domainClinicalHealthcare": {
+    "en": "Clinical Healthcare",
+    "vi": "Y tế & Chăm sóc sức khỏe lâm sàng",
+    "ja": "臨床医療"
+  },
+  "domainNursingElderlyCare": {
+    "en": "Nursing & Elderly Care",
+    "vi": "Điều dưỡng & Chăm sóc người cao tuổi",
+    "ja": "看護・高齢者ケア"
+  },
+  "domainEducationSchool": {
+    "en": "Education & School",
+    "vi": "Giáo dục & Trường học",
+    "ja": "教育・学校"
+  },
+  "domainSocialPublicServices": {
+    "en": "Social & Public Services",
+    "vi": "Dịch vụ xã hội & Đời sống công cộng",
+    "ja": "社会福祉・公共サービス"
+  },
+  "domainLogisticsSupplyChain": {
+    "en": "Logistics & Supply Chain",
+    "vi": "Logistics & Chuỗi cung ứng",
+    "ja": "物流・サプライチェーン"
+  },
+  "domainAgricultureAgritech": {
+    "en": "Agriculture & AgriTech",
+    "vi": "Nông nghiệp & Trồng trọt công nghệ cao",
+    "ja": "農業・アグリテック"
+  },
+  "domainFisheriesAquaculture": {
+    "en": "Fisheries & Aquaculture",
+    "vi": "Ngư nghiệp & Nuôi trồng thủy sản",
+    "ja": "漁業・養殖業"
+  },
+  "domainGreenEnergyBuildingOperations": {
+    "en": "Green Energy & Building Operations",
+    "vi": "Năng lượng xanh & Vận hành tòa nhà",
+    "ja": "グリーンエネルギー・ビル運用"
+  },
+  "professionalFocusSectionTitle": {
+    "en": "Career / Specialized Fields",
+    "vi": "Nghề nghiệp / Lĩnh vực chuyên môn",
+    "ja": "仕事・専門分野"
+  },
+  "professionalNoticeTitle": {
+    "en": "Note",
+    "vi": "Chú ý",
+    "ja": "注意"
+  },
   "professionalNoticePreview": {
     "en": "NovaLang's professional courses focus on practical language used in common workplace situations...",
     "vi": "Các khóa học nghề nghiệp của NovaLang tập trung vào ngôn ngữ thực tế dùng trong những tình huống phổ biến tại nơi làm việc...",
@@ -1032,17 +1671,61 @@
     "vi": "Các khóa học nghề nghiệp của NovaLang tập trung vào ngôn ngữ thực tế dùng trong những tình huống phổ biến tại nơi làm việc.\n\nNội dung giúp người học luyện tập cách giao tiếp với đồng nghiệp, khách hàng và quản lý; hỏi và xác nhận thông tin; trao đổi công việc; báo cáo vấn đề; tiếp nhận hướng dẫn và sử dụng các từ vựng nghề nghiệp thường gặp.\n\nCác khóa học này không nhằm cung cấp kiến thức chuyên môn chuyên sâu, đào tạo để hành nghề, cấp chứng chỉ nghề nghiệp hoặc thay thế chương trình đào tạo chuyên ngành.",
     "ja": "NovaLangの職業別コースは、職場でよく使われる実用的な言語と一般的なコミュニケーション場面を中心に学習します。\n\n同僚、顧客、上司との会話、情報の確認、業務上のやり取り、問題の報告、指示の理解、職場でよく使われる語彙などを練習します。\n\n専門的な職業訓練、資格取得、または専門教育の代替を目的としたものではありません。"
   },
-  "professionalNoticeTapMore": {"en": "Tap to read more", "vi": "Bấm để xem thêm", "ja": "タップして詳細を見る"},
-  "exerciseExitTitle": {"en": "Leave the exercises?", "vi": "Bạn muốn rời bài tập?", "ja": "練習を終了しますか？"},
-  "exerciseExitMessage": {"en": "Your unfinished progress will be saved on this device.", "vi": "Tiến độ chưa hoàn thành sẽ được lưu trên thiết bị.", "ja": "未完了の進捗はこの端末に保存されます。"},
-  "continueLearning": {"en": "Keep learning", "vi": "Tiếp tục học", "ja": "学習を続ける"},
-  "leaveExercises": {"en": "Leave exercises", "vi": "Rời bài tập", "ja": "練習を終了"},
-  "basicPracticeCompleted": {"en": "You completed the core practice", "vi": "Bạn đã hoàn thành phần luyện tập cơ bản", "ja": "基本練習を完了しました"},
-  "continuePlusPractice": {"en": "Continue to Plus practice", "vi": "Tiếp tục phần Plus", "ja": "Plus練習へ進む"},
-  "completeLesson": {"en": "Complete lesson", "vi": "Hoàn thành bài học", "ja": "レッスンを完了"},
-  "deviceLanguageSuggestion": {"en": "It looks like your device language is {language}.\nDo you want to use {language} as your native/UI language?", "vi": "Có vẻ ngôn ngữ thiết bị của bạn là {language}.\nBạn có muốn dùng {language} làm ngôn ngữ mẹ đẻ/giao diện không?", "ja": "端末の言語は{language}のようです。\n{language}を母語・UI言語として使用しますか？"},
-  "useDeviceLanguage": {"en": "Use {language}", "vi": "Dùng {language}", "ja": "{language}を使う"},
-  "searchAnotherLanguage": {"en": "Search another language", "vi": "Tìm ngôn ngữ khác", "ja": "別の言語を探す"},
+  "professionalNoticeTapMore": {
+    "en": "Tap to read more",
+    "vi": "Bấm để xem thêm",
+    "ja": "タップして詳細を見る"
+  },
+  "exerciseExitTitle": {
+    "en": "Leave the exercises?",
+    "vi": "Bạn muốn rời bài tập?",
+    "ja": "練習を終了しますか？"
+  },
+  "exerciseExitMessage": {
+    "en": "Your unfinished progress will be saved on this device.",
+    "vi": "Tiến độ chưa hoàn thành sẽ được lưu trên thiết bị.",
+    "ja": "未完了の進捗はこの端末に保存されます。"
+  },
+  "continueLearning": {
+    "en": "Keep learning",
+    "vi": "Tiếp tục học",
+    "ja": "学習を続ける"
+  },
+  "leaveExercises": {
+    "en": "Leave exercises",
+    "vi": "Rời bài tập",
+    "ja": "練習を終了"
+  },
+  "basicPracticeCompleted": {
+    "en": "You completed the core practice",
+    "vi": "Bạn đã hoàn thành phần luyện tập cơ bản",
+    "ja": "基本練習を完了しました"
+  },
+  "continuePlusPractice": {
+    "en": "Continue to Plus practice",
+    "vi": "Tiếp tục phần Plus",
+    "ja": "Plus練習へ進む"
+  },
+  "completeLesson": {
+    "en": "Complete lesson",
+    "vi": "Hoàn thành bài học",
+    "ja": "レッスンを完了"
+  },
+  "deviceLanguageSuggestion": {
+    "en": "It looks like your device language is {language}.\nDo you want to use {language} as your native/UI language?",
+    "vi": "Có vẻ ngôn ngữ thiết bị của bạn là {language}.\nBạn có muốn dùng {language} làm ngôn ngữ mẹ đẻ/giao diện không?",
+    "ja": "端末の言語は{language}のようです。\n{language}を母語・UI言語として使用しますか？"
+  },
+  "useDeviceLanguage": {
+    "en": "Use {language}",
+    "vi": "Dùng {language}",
+    "ja": "{language}を使う"
+  },
+  "searchAnotherLanguage": {
+    "en": "Search another language",
+    "vi": "Tìm ngôn ngữ khác",
+    "ja": "別の言語を探す"
+  },
   "vocabularyReferencesTitle": {
     "en": "Further references",
     "vi": "Tham khảo thêm",
@@ -1067,5 +1750,19 @@
     "en": "How it differs",
     "vi": "Khác gì",
     "ja": "主な語との違い"
+  },
+  "vocabFormalExpression": {
+    "en": "More formal form",
+    "vi": "Cách nói trang trọng hơn",
+    "ja": "より改まった言い方",
+    "ko": "더 격식 있는 표현",
+    "zh": "更正式的说法"
+  },
+  "checkedNoVariant": {
+    "en": "This term has no separate form.",
+    "vi": "Cụm này không có dạng riêng.",
+    "ja": "この言い方には別の形はありません。",
+    "ko": "이 표현에는 별도의 형태가 없습니다.",
+    "zh": "这个说法没有另外的形式。"
   }
 }

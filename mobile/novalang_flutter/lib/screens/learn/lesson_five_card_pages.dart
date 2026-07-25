@@ -620,24 +620,35 @@ class _VocabularyDetails extends StatelessWidget {
             values: _list(details['timingAndContext']),
             uiLanguageCode: uiLanguageCode,
             optional: true,
+            checkedEmpty: details['timingAndContext'] is List,
           ),
           _DetailList(
             title: L10n.text('appropriateFor', uiLanguageCode),
             values: _list(details['appropriateFor']),
             uiLanguageCode: uiLanguageCode,
             optional: true,
+            checkedEmpty: details['appropriateFor'] is List,
           ),
           _DetailList(
             title: L10n.text('avoidUse', uiLanguageCode),
             values: _list(details['avoid']),
             uiLanguageCode: uiLanguageCode,
             optional: true,
+            checkedEmpty: details['avoid'] is List,
           ),
           _DetailList(
             title: L10n.text('register', uiLanguageCode),
             values: [_text(details['register'])],
             uiLanguageCode: uiLanguageCode,
             optional: true,
+            checkedEmpty: details['register'] is String,
+          ),
+          _DetailList(
+            title: L10n.text('vocabFormalExpression', uiLanguageCode),
+            values: _list(details['formal']),
+            uiLanguageCode: uiLanguageCode,
+            optional: true,
+            checkedEmpty: details['formal'] is List,
           ),
           if (_text(details['casualIntro']).isNotEmpty) ...[
             _DetailList(
@@ -656,6 +667,7 @@ class _VocabularyDetails extends StatelessWidget {
             showTitle: _text(details['casualIntro']).isEmpty,
             uiLanguageCode: uiLanguageCode,
             optional: _text(details['casualIntro']).isEmpty,
+            checkedEmpty: details['casual'] is List,
           ),
           _DetailList(
             title: L10n.text('importantNote', uiLanguageCode),
@@ -1363,11 +1375,17 @@ class _DetailList extends StatelessWidget {
     this.showTitle = true,
     this.uiLanguageCode,
     this.optional = false,
+    this.checkedEmpty = false,
   });
 
   final String title;
   final List<dynamic> values;
   final bool showTitle;
+
+  /// §B2c: `true` khi nguồn ghi `[]` — ĐÃ KIỂM, cụm này thật sự không có dạng
+  /// đó. `false` khi thiếu hẳn key — CHƯA ai điền. Hai trạng thái hiện hai
+  /// dòng chữ khác nhau; gộp lại thì dữ liệu đã tra xong trông như lỗi.
+  final bool checkedEmpty;
 
   /// Required when [optional] is true so the empty-content placeholder can be
   /// resolved strictly from the current UI language.
@@ -1404,7 +1422,10 @@ class _DetailList extends StatelessWidget {
           ],
           if (nonEmpty.isEmpty && optional)
             Text(
-              L10n.text('emptyContentPlaceholder', uiLanguageCode ?? 'en'),
+              L10n.text(
+                checkedEmpty ? 'checkedNoVariant' : 'emptyContentPlaceholder',
+                uiLanguageCode ?? 'en',
+              ),
               style: const TextStyle(
                 color: AppTheme.contentSecondaryForeground,
                 height: 1.4,

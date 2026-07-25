@@ -608,6 +608,22 @@ class L10n {
     'avoidUse': {'en': 'Avoid', 'vi': 'Không nên dùng'},
     'register': {'en': 'Register', 'vi': 'Mức độ lịch sự'},
     'otherExpressions': {'en': 'Other expressions', 'vi': 'Cách diễn đạt khác'},
+    'vocabFormalExpression': {
+      'en': 'More formal form',
+      'vi': 'Cách nói trang trọng hơn',
+      'ja': 'より改まった言い方',
+      'ko': '더 격식 있는 표현',
+      'zh': '更正式的说法',
+    },
+    // §B2c: trường đánh `[]` = ĐÃ KIỂM, cụm này thật sự không có dạng đó.
+    // Khác hẳn `emptyContentPlaceholder` (thiếu key = CHƯA ai điền).
+    'checkedNoVariant': {
+      'en': 'This term has no separate form.',
+      'vi': 'Cụm này không có dạng riêng.',
+      'ja': 'この言い方には別の形はありません。',
+      'ko': '이 표현에는 별도의 형태가 없습니다.',
+      'zh': '这个说法没有另外的形式。',
+    },
     'emptyContentPlaceholder': {
       'en': 'No content',
       'vi': 'Không có nội dung',

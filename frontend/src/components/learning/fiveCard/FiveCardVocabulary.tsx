@@ -129,6 +129,7 @@ function VocabCard({
           <DetailRow label={t("appropriateFor")} value={displayNativeText(detail.appropriateFor)} />
           <DetailRow label={t("avoidUse")} value={displayNativeText(detail.avoid)} />
           <DetailRow label={t("register")} value={displayNativeText(detail.register)} />
+          <DetailRow label={t("vocabFormalExpression")} value={displayNativeText(detail.formal)} />
           <DetailRow label={t("otherExpressions")} value={displayNativeText(detail.casual)} />
           <DetailRow label={t("importantNote")} value={displayNativeText(detail.notes) || displayNativeText(detail.casualNotes)} />
 
