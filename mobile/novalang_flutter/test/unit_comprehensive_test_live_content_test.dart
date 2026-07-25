@@ -46,44 +46,76 @@ void main() {
       expect(test.languageCode, 'ja');
     });
 
-    test_('chia đúng ba mức 8 / 10 / 7 theo dải order', () {
+    test_('chia đúng hai mức 8 / 17 theo dải order', () {
       int countOf(UnitComprehensiveQuestionKind kind) =>
           test.questions.where((q) => q.kind == kind).length;
       expect(countOf(UnitComprehensiveQuestionKind.sentenceMultiBlankChoice), 8);
-      expect(countOf(UnitComprehensiveQuestionKind.dialogueMultiBlankChoice), 10);
-      expect(countOf(UnitComprehensiveQuestionKind.typedBlank), 7);
+      expect(countOf(UnitComprehensiveQuestionKind.dialogueMultiBlankChoice), 17);
+      // Dạng tự gõ đã bỏ khỏi MỌI kế hoạch (owner chốt 2026-07-25): câu tự gõ
+      // không nêu đủ tình huống thì nhiều đáp án khác đáp án chuẩn VẪN đúng,
+      // nên bộ chấm cố định chấm sai người trả lời đúng.
+      expect(countOf(UnitComprehensiveQuestionKind.typedBlank), 0);
       for (final q in test.questions) {
         final expected = q.order <= 8
             ? UnitComprehensiveQuestionKind.sentenceMultiBlankChoice
-            : q.order <= 18
-                ? UnitComprehensiveQuestionKind.dialogueMultiBlankChoice
-                : UnitComprehensiveQuestionKind.typedBlank;
+            : UnitComprehensiveQuestionKind.dialogueMultiBlankChoice;
         expect(q.kind, expected, reason: 'câu ${q.order}');
       }
     });
 
-    test_('ô tự gõ chấm được đúng cả dạng kanji lẫn kana, kể cả gõ thừa dấu cách', () {
-      final typed = test.questions
-          .where((q) => q.kind == UnitComprehensiveQuestionKind.typedBlank);
-      for (final q in typed) {
-        for (final b in q.blanks) {
-          for (final accepted in b.acceptedAnswers) {
-            expect(
-              b.matches(accepted, languageCode: test.languageCode),
-              isTrue,
-              reason: 'câu ${q.order} ô ${b.id}: "$accepted" phải đúng',
-            );
-          }
-          // Dấu cách người học lỡ chèn không được làm sai đáp án đúng.
+    test_('mọi câu chấm bằng correctOptionId, 4 phương án phủ đủ mọi ô', () {
+      for (final q in test.questions) {
+        expect(q.options, hasLength(4), reason: 'câu ${q.order}');
+        final ids = q.blanks.map((b) => b.id).toSet();
+        for (final o in q.options) {
           expect(
-            b.matches(
-              ' ${b.canonicalAnswer} ',
-              languageCode: test.languageCode,
-            ),
-            isTrue,
-            reason: 'câu ${q.order} ô ${b.id}: gõ thừa dấu cách vẫn phải đúng',
+            o.answersByBlankId.keys.toSet(),
+            ids,
+            reason: 'câu ${q.order} phương án ${o.id} phải phủ đúng đủ ô',
           );
         }
+        expect(
+          q.checksChoice(q.correctOptionId),
+          isTrue,
+          reason: 'câu ${q.order}: chọn đúng phải được chấm đúng',
+        );
+        for (final o in q.options.where((o) => o.id != q.correctOptionId)) {
+          expect(
+            q.checksChoice(o.id),
+            isFalse,
+            reason: 'câu ${q.order}: phương án ${o.id} phải bị chấm sai',
+          );
+        }
+      }
+    });
+
+    test_('mỗi câu nêu RÕ tình huống trong context', () {
+      // Thiếu đúng chỗ này là lý do dạng tự gõ bị bỏ: không đủ tình huống thì
+      // đáp án khác cũng đúng. Câu chọn phương án vẫn cần context để loại trừ.
+      for (final q in test.questions) {
+        expect(q.context, isNotNull, reason: 'câu ${q.order}');
+        expect(
+          q.context!.trim().length,
+          greaterThan(20),
+          reason: 'câu ${q.order}: context quá ngắn để loại trừ phương án khác',
+        );
+      }
+    });
+
+    test_('đáp án đúng rải đều A/B/C/D — UI không xáo trộn nên dữ liệu phải tự rải', () {
+      final counts = <int, int>{};
+      for (final q in test.questions) {
+        final index = q.options.indexWhere((o) => o.id == q.correctOptionId);
+        expect(index, isNonNegative, reason: 'câu ${q.order}');
+        counts[index] = (counts[index] ?? 0) + 1;
+      }
+      expect(counts.keys.toSet(), {0, 1, 2, 3});
+      for (final entry in counts.entries) {
+        expect(
+          entry.value,
+          inInclusiveRange(5, 8),
+          reason: 'vị trí ${entry.key} có ${entry.value} câu — lệch quá',
+        );
       }
     });
   });

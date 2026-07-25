@@ -7,10 +7,11 @@
 // Luật viết: LESSON_AUTHORING_STANDARD §E4 (cấu trúc bài) · §D-Cloze (cách
 // chấm) · §B16 (danh sách kiểm) · §G1–G9 (độ tin cậy ngôn ngữ).
 //
-// 25 câu, ba mức — generator tự ép dải order và số ô:
+// 25 câu, hai mức — generator tự ép dải order và số ô:
 //   Q1–8   sentence_multi_blank_choice · 2 ô · chọn 1/4
-//   Q9–18  dialogue_multi_blank_choice · hội thoại 2–3 lượt · 3 ô · chọn 1/4
-//   Q19–25 typed_blank · người học TỰ GÕ
+//   Q9–25  dialogue_multi_blank_choice · hội thoại 2–3 lượt · 3 ô · chọn 1/4
+//
+// Dạng typed_blank (tự gõ) đã BỎ 2026-07-25 — xem SECTION_KINDS trong generator.
 //
 // LOCALIZE: `resolveUnitComprehensiveTest` KHÔNG chạy qua `localizeSupport`
 // (khác đường lesson), nên mọi chuỗi hỗ trợ ở đây phải tự mang `*ByNative` đủ
@@ -926,282 +927,355 @@ const DIALOGUE_QUESTIONS = [
 ];
 
 
-const PROMPT_TYPED = n(
-  'Gõ cụm còn thiếu vào ô trống.',
-  'Type the missing phrase into the blank.',
-  '空欄に入る言葉を入力してください。',
-);
-
-/**
- * Ô TỰ GÕ. `acceptedAnswers` phải liệt kê MỌI dạng viết hợp lệ — bộ chấm chỉ tự
- * lo: cắt khoảng trắng, bỏ dấu câu cuối, thường hoá chữ hoa (và với tiếng Nhật
- * còn xoá sạch dấu cách). Nó KHÔNG tự quy đổi kanji ↔ kana.
+/* ══ MỨC 2 (tiếp) — Q19–Q25 · dialogue_multi_blank_choice · 3 ô ═════════
  *
- * Quy tắc 2^N: cụm có N nhóm kanji độc lập thì có 2^N dạng viết hợp lệ; thiếu
- * một dạng là chấm SAI người trả lời ĐÚNG.
+ * Bảy câu này TRƯỚC ĐÂY là `typed_blank`. Owner bỏ dạng tự gõ 2026-07-25: câu
+ * tự gõ không nêu đủ tình huống thì nhiều đáp án khác đáp án chuẩn VẪN ĐÚNG,
+ * nên bộ chấm cố định chấm sai người trả lời đúng. Chất liệu (cụm, nguồn đã
+ * đối chiếu) giữ nguyên; chỉ dựng lại thành hội thoại 3 ô + 4 phương án, và
+ * mỗi `context` nay nêu RÕ tình huống đủ để loại trừ các phương án kia.
  */
-const typedBlank = (id, { answer, audio, accepted, hint }) =>
-  blank(id, {
-    displayAnswer: answer,
-    canonicalAnswer: answer,
-    audioText: audio,
-    acceptedAnswers: accepted,
-    ...(hint === undefined ? {} : { hint: hint.vi }),
-  });
 
-/* ══ MỨC 3 — Q19–Q25 · typed_blank · người học TỰ GÕ ═══════════════════ */
-
-const TYPED_QUESTIONS = [
+const CLOSING_QUESTIONS = [
   question({
     order: 19,
-    kind: 'typed_blank',
-    prompt: PROMPT_TYPED,
+    kind: 'dialogue_multi_blank_choice',
+    prompt: PROMPT_DIALOGUE,
     context: n(
-      'Buổi sáng ở trường tiếng Nhật. Bạn gặp thầy giáo và chào.',
-      'Morning at the Japanese school. You meet your teacher and greet them.',
-      '日本語学校の朝。先生に会ってあいさつします。',
+      'Buổi sáng, hành lang trường tiếng Nhật. Anna chào thầy, rồi giới thiệu Smith — hôm nay là buổi học đầu tiên của Smith, thầy chưa từng gặp.',
+      'Morning in the corridor of the Japanese school. Anna greets the teacher, then introduces Smith — today is Smith’s first class and the teacher has never met him.',
+      '朝、日本語学校の廊下。アンナさんが先生にあいさつし、スミスさんを紹介します。今日がスミスさんの初日で、先生は初対面です。',
     ),
-    segments: [blankSeg('q19b1'), seg('、先生。')],
+    dialogue: [
+      dialogueTurn('q19t1', 'アンナ', [seg('先生、'), blankSeg('q19b1'), seg('。')]),
+      dialogueTurn('q19t2', '先生', [seg('おはようございます。')]),
+      dialogueTurn('q19t3', 'スミス', [
+        blankSeg('q19b2'), seg('。スミスです。'), blankSeg('q19b3'), seg('。'),
+      ]),
+    ],
     blanks: [
-      typedBlank('q19b1', {
-        answer: 'おはようございます',
-        audio: 'おはようございます',
-        // Kana thuần — L1 ghi displayText = reading = speechText, không có
-        // dạng kanji nào được dạy, nên chỉ một dạng hợp lệ.
-        accepted: ['おはようございます'],
+      choiceBlank('q19b1', 'おはようございます', 'おはようございます'),
+      choiceBlank('q19b2', 'はじめまして', 'はじめまして'),
+      choiceBlank('q19b3', 'よろしくお願いします', 'よろしくおねがいします'),
+    ],
+    options: [
+      choiceOption('q19a', 'こんばんは / はじめまして / よろしくお願いします', {
+        q19b1: 'こんばんは', q19b2: 'はじめまして', q19b3: 'よろしくお願いします',
+      }),
+      choiceOption('q19b', 'おはようございます / そうですか / よろしくお願いします', {
+        q19b1: 'おはようございます', q19b2: 'そうですか', q19b3: 'よろしくお願いします',
+      }),
+      choiceOption('q19c', 'おはようございます / はじめまして / じゃあ、また', {
+        q19b1: 'おはようございます', q19b2: 'はじめまして', q19b3: 'じゃあ、また',
+      }),
+      choiceOption('q19d', 'おはようございます / はじめまして / よろしくお願いします', {
+        q19b1: 'おはようございます', q19b2: 'はじめまして', q19b3: 'よろしくお願いします',
       }),
     ],
-    reviews: [review(L1, 'vocabulary', 'ohayo-gozaimasu')],
+    correctOptionId: 'q19d',
+    reviews: [
+      review(L1, 'vocabulary', 'ohayo-gozaimasu'),
+      review(L1, 'vocabulary', 'hajimemashite'),
+      review(L1, 'vocabulary', 'yoroshiku-onegaishimasu'),
+    ],
     explanation: n(
-      'Chào thầy vào buổi sáng dùng おはようございます — L1 dạy nguyên văn 「先生、おはようございます。」.',
-      'A morning greeting to a teacher is おはようございます — L1 teaches the line 「先生、おはようございます。」 verbatim.',
-      '朝、先生にあいさつするときは「おはようございます」です。L1で「先生、おはようございます。」をそのまま学びました。',
+      'Bối cảnh ghi rõ buổi sáng, mà chính L1 liệt kê "không dùng vào buổi sáng" cho こんばんは. そうですか để tiếp nhận thông tin, nhưng đây là câu đầu tiên Smith nói với thầy. L3 ghi rõ không dùng じゃあ、また với thầy cô — đó là cách nói thân mật dành cho bạn bè.',
+      'The setting is morning, and L1 itself lists "not in the morning" for こんばんは. そうですか takes in information, but this is Smith’s first line to the teacher. L3 states outright that じゃあ、また is not used with teachers — it is the casual form for friends.',
+      '場面は朝で、L1でも「こんばんは」について「朝には使わない」と示しています。「そうですか」は情報を受け止める言葉ですが、ここはスミスさんが先生に言う最初の一言です。L3では「じゃあ、また」を先生には使わないと明記しています。友達に使うカジュアルな言い方です。',
     ),
   }),
 
   question({
     order: 20,
-    kind: 'typed_blank',
-    prompt: PROMPT_TYPED,
+    kind: 'dialogue_multi_blank_choice',
+    prompt: PROMPT_DIALOGUE,
     context: n(
-      'Bàn đăng ký buổi giao lưu. Nhân viên hỏi tên người đến dự.',
-      'The registration desk at a meet-up. A staff member asks a guest’s name.',
-      '交流会の受付。係の人が参加者の名前を尋ねます。',
+      'Bàn đăng ký lớp học. Nhân viên hỏi tên học viên rồi nhắc lại để xác nhận trước khi ghi vào danh sách.',
+      'The class registration desk. A staff member asks a learner’s name, then repeats it back to confirm before writing it on the list.',
+      'クラスの受付。係の人が学習者の名前を尋ね、名簿に書く前に復唱して確認します。',
     ),
-    segments: [seg('失礼ですが、'), blankSeg('q20b1'), seg('は何ですか。')],
+    dialogue: [
+      dialogueTurn('q20t1', '受付', [
+        blankSeg('q20b1'), seg('、'), blankSeg('q20b2'), seg('は？'),
+      ]),
+      dialogueTurn('q20t2', '伊藤', [seg('伊藤です。')]),
+      dialogueTurn('q20t3', '受付', [seg('伊藤'), blankSeg('q20b3'), seg('。')]),
+    ],
     blanks: [
-      typedBlank('q20b1', {
-        answer: 'お名前',
-        audio: 'おなまえ',
-        // Một nhóm kanji (名前) → 2 dạng.
-        accepted: ['お名前', 'おなまえ'],
-        hint: n('Dạng lịch sự của 名前.', 'The polite form of 名前.', '「名前」の丁寧な言い方。'),
+      choiceBlank('q20b1', '失礼ですが', 'しつれいですが'),
+      choiceBlank('q20b2', 'お名前', 'おなまえ'),
+      choiceBlank('q20b3', 'さんですね', 'さんですね'),
+    ],
+    options: [
+      choiceOption('q20a', '失礼ですが / お名前 / さんですね', {
+        q20b1: '失礼ですが', q20b2: 'お名前', q20b3: 'さんですね',
+      }),
+      choiceOption('q20b', '失礼ですが / 私のお名前 / さんですね', {
+        q20b1: '失礼ですが', q20b2: '私のお名前', q20b3: 'さんですね',
+      }),
+      choiceOption('q20c', '失礼ですが / お名前 / さんです', {
+        q20b1: '失礼ですが', q20b2: 'お名前', q20b3: 'さんです',
+      }),
+      choiceOption('q20d', 'もう一度 / お名前 / さんですね', {
+        q20b1: 'もう一度', q20b2: 'お名前', q20b3: 'さんですね',
       }),
     ],
-    reviews: [review(L2, 'vocabulary', 'onamae')],
+    correctOptionId: 'q20a',
+    reviews: [
+      review(L2, 'vocabulary', 'shitsurei-desu-ga'),
+      review(L2, 'vocabulary', 'onamae'),
+      review(L2, 'grammar', '～ですね'),
+    ],
     explanation: n(
-      'Hỏi tên người đối diện một cách lịch sự thì dùng お名前, không dùng 名前 trống.',
-      'Asking someone’s name politely takes お名前, not a bare 名前.',
-      '相手の名前を丁寧に尋ねるときは「お名前」を使い、「名前」だけにはしません。',
+      '私のお名前 là dạng L2 cấm rõ, và ở đây còn thành ra nhân viên hỏi tên của chính mình. 「伊藤さんです」 là câu giới thiệu người thứ ba; nhắc lại để xác nhận với chính người đó thì phải dùng ですね. もう一度 dùng khi nhờ nhắc lại điều đã nghe, mà đây là câu hỏi đầu tiên.',
+      '私のお名前 is the form L2 explicitly forbids, and here it would have the staff asking their own name. 「伊藤さんです」 introduces a third person; repeating a name back to confirm with the person themselves takes ですね. もう一度 asks for a repeat of something already heard, but this is the opening question.',
+      '「私のお名前」はL2が明確に禁じている形で、ここでは係の人が自分の名前を尋ねることになります。「伊藤さんです」は第三者を紹介する言い方で、本人に復唱して確認するときは「ですね」を使います。「もう一度」は聞いたことをもう一度頼む言葉ですが、ここは最初の質問です。',
     ),
   }),
 
   question({
     order: 21,
-    kind: 'typed_blank',
-    prompt: PROMPT_TYPED,
+    kind: 'dialogue_multi_blank_choice',
+    prompt: PROMPT_DIALOGUE,
     context: n(
-      'Tanaka vừa tự giới thiệu và nói よろしくお願いします. Bạn đáp lại cùng thiện chí.',
-      'Tanaka has just introduced himself and said よろしくお願いします. You answer with the same goodwill.',
-      '田中さんが自己紹介して「よろしくお願いします」と言いました。同じ気持ちで返します。',
+      'Đầu giờ chiều ở trung tâm tiếng Nhật. Anna gặp Itō — học viên vừa chuyển vào lớp, hai người chưa từng gặp nhau.',
+      'Early afternoon at the Japanese centre. Anna meets Itō, a learner who has just transferred into the class; they have never met.',
+      '午後の初め、日本語センター。アンナさんが、クラスに移ってきたばかりで初対面の伊藤さんに会います。',
     ),
-    segments: [blankSeg('q21b1'), seg('、'), blankSeg('q21b2'), seg('。')],
+    dialogue: [
+      dialogueTurn('q21t1', 'アンナ', [blankSeg('q21b1'), seg('。アンナです。')]),
+      dialogueTurn('q21t2', '伊藤', [
+        blankSeg('q21b2'), seg('。伊藤です。よろしくお願いします。'),
+      ]),
+      dialogueTurn('q21t3', 'アンナ', [
+        blankSeg('q21b3'), seg('、よろしくお願いします。'),
+      ]),
+    ],
     blanks: [
-      typedBlank('q21b1', {
-        answer: 'こちらこそ',
-        audio: 'こちらこそ',
-        accepted: ['こちらこそ'],
+      choiceBlank('q21b1', 'こんにちは', 'こんにちは'),
+      choiceBlank('q21b2', 'はじめまして', 'はじめまして'),
+      choiceBlank('q21b3', 'こちらこそ', 'こちらこそ'),
+    ],
+    options: [
+      choiceOption('q21a', 'おはようございます / はじめまして / こちらこそ', {
+        q21b1: 'おはようございます', q21b2: 'はじめまして', q21b3: 'こちらこそ',
       }),
-      typedBlank('q21b2', {
-        answer: 'よろしくお願いします',
-        audio: 'よろしくおねがいします',
-        // HAI nhóm kanji độc lập (宜 · 願) → 2^2 = 4 dạng. Thiếu một dạng là
-        // chấm sai người trả lời đúng (rà 2^N, ACTIVE_TASK 2026-07-25).
-        accepted: [
-          'よろしくお願いします',
-          'よろしくおねがいします',
-          '宜しくお願いします',
-          '宜しくおねがいします',
-        ],
-        hint: n('Lời chúc khi làm quen.', 'The set phrase said when meeting someone.', '知り合うときの決まった言い方。'),
+      choiceOption('q21b', 'こんにちは / はじめまして / こちらこそ', {
+        q21b1: 'こんにちは', q21b2: 'はじめまして', q21b3: 'こちらこそ',
+      }),
+      choiceOption('q21c', 'こんにちは / そうですか / こちらこそ', {
+        q21b1: 'こんにちは', q21b2: 'そうですか', q21b3: 'こちらこそ',
+      }),
+      choiceOption('q21d', 'こんにちは / はじめまして / 失礼します', {
+        q21b1: 'こんにちは', q21b2: 'はじめまして', q21b3: '失礼します',
       }),
     ],
+    correctOptionId: 'q21b',
     reviews: [
+      review(L1, 'vocabulary', 'konnichiwa'),
+      review(L1, 'vocabulary', 'hajimemashite'),
       review(L3, 'vocabulary', 'kochira-koso'),
-      review(L1, 'vocabulary', 'yoroshiku-onegaishimasu'),
     ],
     explanation: n(
-      'こちらこそ đáp lại thiện chí người kia vừa bày tỏ, rồi nói tiếp よろしくお願いします.',
-      'こちらこそ returns the goodwill just expressed, then よろしくお願いします follows.',
-      '「こちらこそ」で相手が示した好意に返し、続けて「よろしくお願いします」と言います。',
+      'Bối cảnh ghi rõ đầu giờ chiều, mà おはようございます là chào buổi sáng. そうですか để tiếp nhận thông tin vừa nghe, nhưng Itō đang mở lời làm quen chứ chưa nghe thông tin gì. 失礼します là lời xin phép rời đi, vừa được làm quen đã xin đi là mâu thuẫn.',
+      'The setting is early afternoon, and おはようございます is a morning greeting. そうですか takes in information just heard, but Itō is opening an introduction, not responding to news. 失礼します excuses you to leave, which contradicts having just been introduced.',
+      '場面は午後の初めで、「おはようございます」は朝のあいさつです。「そうですか」は聞いた情報を受け止める言葉ですが、伊藤さんは自己紹介を切り出しているところで、まだ何も聞いていません。「失礼します」は立ち去る言葉で、紹介された直後には矛盾します。',
     ),
   }),
 
   question({
     order: 22,
-    kind: 'typed_blank',
-    prompt: PROMPT_TYPED,
+    kind: 'dialogue_multi_blank_choice',
+    prompt: PROMPT_DIALOGUE,
     context: n(
-      'Bạn nghe chưa rõ tên người kia vừa nói, nhờ nhắc lại.',
-      'You did not catch the name just given and ask for it again.',
-      '相手が言った名前が聞き取れなかったので、もう一度お願いします。',
+      'Buổi học cuối của khoá. Satō về nước tuần sau và chưa hẹn ngày quay lại. Itō chào tạm biệt.',
+      'The last class of the course. Satō flies home next week with no date set for returning. Itō says goodbye.',
+      'コースの最終日。佐藤さんは来週帰国し、いつ戻るかは決まっていません。伊藤さんが別れのあいさつをします。',
     ),
-    segments: [blankSeg('q22b1'), seg('、'), blankSeg('q22b2'), seg('お願いします。')],
+    dialogue: [
+      dialogueTurn('q22t1', '伊藤', [
+        seg('佐藤'), blankSeg('q22b1'), seg('、'), blankSeg('q22b2'), seg('。'),
+      ]),
+      dialogueTurn('q22t2', '佐藤', [blankSeg('q22b3'), seg('。さようなら。')]),
+    ],
     blanks: [
-      typedBlank('q22b1', {
-        answer: 'すみません',
-        audio: 'すみません',
-        accepted: ['すみません'],
+      choiceBlank('q22b1', 'さん', 'さん'),
+      choiceBlank('q22b2', 'お元気で', 'おげんきで'),
+      choiceBlank('q22b3', 'こちらこそ', 'こちらこそ'),
+    ],
+    options: [
+      choiceOption('q22a', 'さん / また来週 / こちらこそ', {
+        q22b1: 'さん', q22b2: 'また来週', q22b3: 'こちらこそ',
       }),
-      typedBlank('q22b2', {
-        answer: 'もう一度',
-        audio: 'もういちど',
-        // Một nhóm kanji (一度) → 2 dạng.
-        accepted: ['もう一度', 'もういちど'],
-        hint: n('"Một lần nữa."', '"One more time."', '「もう一回」という意味。'),
+      choiceOption('q22b', 'さん / じゃあ、また / こちらこそ', {
+        q22b1: 'さん', q22b2: 'じゃあ、また', q22b3: 'こちらこそ',
+      }),
+      choiceOption('q22c', 'さんですね / お元気で / こちらこそ', {
+        q22b1: 'さんですね', q22b2: 'お元気で', q22b3: 'こちらこそ',
+      }),
+      choiceOption('q22d', 'さん / お元気で / こちらこそ', {
+        q22b1: 'さん', q22b2: 'お元気で', q22b3: 'こちらこそ',
       }),
     ],
+    correctOptionId: 'q22d',
     reviews: [
-      review(L2, 'vocabulary', 'sumimasen'),
-      review(L2, 'vocabulary', 'mou-ichido'),
+      review(L2, 'vocabulary', 'san'),
+      review(L3, 'vocabulary', 'ogenki-de'),
+      review(L3, 'vocabulary', 'kochira-koso'),
     ],
     explanation: n(
-      'すみません mở lời, もう一度お願いします là cách nhờ nhắc lại — L2 dạy nguyên văn câu này.',
-      'すみません opens the request and もう一度お願いします asks for a repeat — L2 teaches this line verbatim.',
-      '「すみません」で切り出し、「もう一度お願いします」で繰り返しを頼みます。L2でこの言い方をそのまま学びました。',
+      'Bối cảnh ghi rõ Satō về nước và chưa hẹn ngày quay lại, nên また来週 mâu thuẫn với chính thông tin đã cho. じゃあ、また là lời chia tay ngắn hạn, không hợp mốc từ một tuần trở lên. 「佐藤さんですね」 là câu xác nhận tên người mới biết, còn đây là bạn học cả khoá.',
+      'The setting says Satō is flying home with no return date, so また来週 contradicts the given information. じゃあ、また is a short-term goodbye and does not fit a parting of a week or more. 「佐藤さんですね」 confirms the name of someone newly met, but they have studied together all course.',
+      '佐藤さんは帰国し、戻る日も決まっていないと場面に書かれているので、「また来週」は与えられた情報と矛盾します。「じゃあ、また」は近いうちに会うときの別れの言葉で、一週間以上先には合いません。「佐藤さんですね」は知り合ったばかりの人の名前を確認する言葉ですが、二人はコースの間ずっと一緒に学んできました。',
     ),
   }),
 
   question({
     order: 23,
-    kind: 'typed_blank',
-    prompt: PROMPT_TYPED,
+    kind: 'dialogue_multi_blank_choice',
+    prompt: PROMPT_DIALOGUE,
     context: n(
-      'Hết buổi học. Bạn về trước Tanaka; tuần sau lại có buổi học.',
-      'Class is over. You are leaving before Tanaka; there is another class next week.',
-      '授業が終わりました。田中さんより先に帰ります。来週も授業があります。',
+      'Buổi giao lưu đông và ồn. Tanaka nghe không rõ tên Smith vừa nói, nhờ nhắc lại, rồi tiếp nhận và xác nhận lại.',
+      'A crowded, noisy meet-up. Tanaka did not catch the name Smith just said, asks for it again, then takes it in and confirms.',
+      '人が多くてうるさい交流会。田中さんはスミスさんが言った名前が聞き取れず、もう一度頼んでから受け止めて確認します。',
     ),
-    segments: [seg('田中さん、'), blankSeg('q23b1'), seg('。また'), blankSeg('q23b2'), seg('。')],
+    dialogue: [
+      dialogueTurn('q23t1', '田中', [
+        blankSeg('q23b1'), seg('、もう一度お願いします。'),
+      ]),
+      dialogueTurn('q23t2', 'スミス', [seg('スミスです。')]),
+      dialogueTurn('q23t3', '田中', [
+        blankSeg('q23b2'), seg('。スミス'), blankSeg('q23b3'), seg('。'),
+      ]),
+    ],
     blanks: [
-      typedBlank('q23b1', {
-        answer: 'お先に失礼します',
-        audio: 'おさきにしつれいします',
-        // HAI nhóm kanji độc lập (先 · 失礼) → 2^2 = 4 dạng.
-        accepted: [
-          'お先に失礼します',
-          'おさきにしつれいします',
-          'お先にしつれいします',
-          'おさきに失礼します',
-        ],
-        hint: n('Xin phép về trước.', 'Excusing yourself for leaving first.', '人より先に帰るときの言い方。'),
+      choiceBlank('q23b1', 'すみません', 'すみません'),
+      choiceBlank('q23b2', 'そうですか', 'そうですか'),
+      choiceBlank('q23b3', 'さんですね', 'さんですね'),
+    ],
+    options: [
+      choiceOption('q23a', '失礼ですが / そうですか / さんですね', {
+        q23b1: '失礼ですが', q23b2: 'そうですか', q23b3: 'さんですね',
       }),
-      typedBlank('q23b2', {
-        answer: '来週',
-        audio: 'らいしゅう',
-        // Một nhóm kanji (来週) → 2 dạng.
-        accepted: ['来週', 'らいしゅう'],
+      choiceOption('q23b', 'すみません / こちらこそ / さんですね', {
+        q23b1: 'すみません', q23b2: 'こちらこそ', q23b3: 'さんですね',
+      }),
+      choiceOption('q23c', 'すみません / そうですか / さんですね', {
+        q23b1: 'すみません', q23b2: 'そうですか', q23b3: 'さんですね',
+      }),
+      choiceOption('q23d', 'すみません / そうですか / ですね', {
+        q23b1: 'すみません', q23b2: 'そうですか', q23b3: 'ですね',
       }),
     ],
+    correctOptionId: 'q23c',
     reviews: [
-      review(L3, 'vocabulary', 'osaki-ni-shitsurei'),
-      review(L3, 'vocabulary', 'raishuu'),
+      review(L2, 'vocabulary', 'sumimasen'),
+      review(L3, 'vocabulary', 'sou-desu-ka'),
+      review(L2, 'grammar', '～ですね'),
     ],
     explanation: n(
-      'Rời đi trước người khác thì nói お先に失礼します; mốc gặp lại là tuần sau nên また来週.',
-      'Leaving before someone else takes お先に失礼します, and the next meeting is next week, so また来週.',
-      '人より先に帰るときは「お先に失礼します」、次に会うのは来週なので「また来週」です。',
+      '失礼ですが mở đầu một câu HỎI lịch sự, còn đây là lời NHỜ nhắc lại. こちらこそ chỉ dùng để đáp lại thiện chí ai đó vừa bày tỏ, mà Smith chỉ đang nói tên. Thiếu さん sau tên người khác là bất lịch sự.',
+      '失礼ですが opens a polite QUESTION, but this is a REQUEST for a repeat. こちらこそ only answers goodwill someone has just expressed, yet Smith is simply stating a name. Dropping さん after another person’s name is impolite.',
+      '「失礼ですが」は丁寧に質問を切り出す言葉ですが、ここは繰り返しを頼む言葉です。「こちらこそ」は相手が示した好意に返す言葉ですが、スミスさんは名前を言っているだけです。相手の名前に「さん」を付けないのは失礼です。',
     ),
   }),
 
   question({
     order: 24,
-    kind: 'typed_blank',
-    prompt: PROMPT_TYPED,
+    kind: 'dialogue_multi_blank_choice',
+    prompt: PROMPT_DIALOGUE,
     context: n(
-      'Người đối diện vừa xưng 「伊藤です」. Bạn xác nhận lại rồi tự giới thiệu.',
-      'The other person has just said 「伊藤です」. You confirm the name, then introduce yourself.',
-      '相手が「伊藤です」と名乗りました。名前を確認してから自己紹介します。',
+      'Buổi giao lưu, ba người ngồi cùng bàn. Tanaka xưng tên trước, Anna đáp lại, rồi Itō nói mình cũng muốn nói điều tương tự.',
+      'A meet-up, three people at one table. Tanaka gives his name first, Anna answers, then Itō says the same goes for him.',
+      '交流会、同じテーブルの三人。田中さんが先に名乗り、アンナさんが返し、伊藤さんも同じ気持ちだと言います。',
     ),
-    segments: [
-      seg('あ、伊藤'), blankSeg('q24b1'), seg('。'), blankSeg('q24b2'), seg('、田中です。'),
+    dialogue: [
+      dialogueTurn('q24t1', '田中', [
+        seg('私'), blankSeg('q24b1'), seg('田中です。よろしくお願いします。'),
+      ]),
+      dialogueTurn('q24t2', 'アンナ', [
+        blankSeg('q24b2'), seg('、アンナです。'),
+      ]),
+      dialogueTurn('q24t3', '伊藤', [
+        blankSeg('q24b3'), seg('、よろしくお願いします。'),
+      ]),
     ],
     blanks: [
-      typedBlank('q24b1', {
-        answer: 'さんですね',
-        audio: 'さんですね',
-        // ～さん và ～ですね đều là kana thuần trong L2 → một dạng.
-        accepted: ['さんですね'],
-        hint: n(
-          'Đuôi xác nhận tên vừa nghe, kèm cách gọi lịch sự.',
-          'The confirming ending, together with the polite name suffix.',
-          '丁寧な呼び方と、聞いた名前を確認する語尾。',
-        ),
+      choiceBlank('q24b1', 'は', 'は'),
+      choiceBlank('q24b2', 'こちらこそ', 'こちらこそ'),
+      choiceBlank('q24b3', '私も', 'わたしも'),
+    ],
+    options: [
+      choiceOption('q24a', 'も / こちらこそ / 私も', {
+        q24b1: 'も', q24b2: 'こちらこそ', q24b3: '私も',
       }),
-      typedBlank('q24b2', {
-        answer: 'はじめまして',
-        audio: 'はじめまして',
-        // L1 dạy dạng kana; 初めまして là cách viết kanji của CÙNG cụm, gặp
-        // thường xuyên trong văn viết → phải chấp nhận.
-        accepted: ['はじめまして', '初めまして'],
+      choiceOption('q24b', 'は / こちらこそ / 私も', {
+        q24b1: 'は', q24b2: 'こちらこそ', q24b3: '私も',
+      }),
+      choiceOption('q24c', 'は / そうですか / 私も', {
+        q24b1: 'は', q24b2: 'そうですか', q24b3: '私も',
+      }),
+      choiceOption('q24d', 'は / こちらこそ / 私は', {
+        q24b1: 'は', q24b2: 'こちらこそ', q24b3: '私は',
       }),
     ],
+    correctOptionId: 'q24b',
     reviews: [
-      review(L2, 'grammar', '～ですね'),
-      review(L1, 'vocabulary', 'hajimemashite'),
+      review(L1, 'grammar', '私は[名前]です'),
+      review(L3, 'vocabulary', 'kochira-koso'),
+      review(L3, 'grammar', '～も'),
     ],
     explanation: n(
-      '～さんですね xác nhận tên vừa nghe với chính người đó; sau đó はじめまして mở lời làm quen.',
-      '～さんですね confirms the name with the person themselves; はじめまして then opens the introduction.',
-      '「～さんですね」で本人に名前を確認し、続けて「はじめまして」で自己紹介を始めます。',
+      '「私も田中です」 nghĩa là "tôi CŨNG là Tanaka", nhưng Tanaka là người nói đầu tiên, chưa ai tên đó — nêu tên mình phải dùng は. そうですか để tiếp nhận thông tin, không dùng để đáp lại lời chúc làm quen. 「私は」 nêu chủ đề rồi bỏ lửng, không diễn đạt "tôi cũng vậy" — L3 dạy ～も cho nghĩa đó.',
+      '「私も田中です」 means "I am Tanaka TOO", but Tanaka speaks first and nobody bears that name yet — giving your own name takes は. そうですか takes in information; it does not answer a greeting of goodwill. 「私は」 opens a topic and leaves it hanging; it does not mean "me too" — L3 teaches ～も for that.',
+      '「私も田中です」は「私も田中」という意味になりますが、田中さんは最初に話す人で、まだその名前の人はいません。自分の名前を言うときは「は」を使います。「そうですか」は情報を受け止める言葉で、好意のあいさつに返すものではありません。「私は」は主題を示したまま途中で終わり、「私も」の意味にはなりません。L3で「～も」を学びました。',
     ),
   }),
 
   question({
     order: 25,
-    kind: 'typed_blank',
-    prompt: PROMPT_TYPED,
+    kind: 'dialogue_multi_blank_choice',
+    prompt: PROMPT_DIALOGUE,
     context: n(
-      'Bạn cùng lớp báo sắp chuyển đi xa, lâu mới gặp lại. Bạn tiếp nhận tin rồi chào tạm biệt.',
-      'A classmate says they are moving far away and you will not meet for a long while. You take the news in, then say goodbye.',
-      'クラスメートが遠くへ引っ越すと言いました。しばらく会えません。その知らせを受け止めて、別れのあいさつをします。',
+      'Cuối buổi học tối thứ Sáu. Anna phải về trước vì có hẹn; lớp chỉ học tiếp vào tuần sau.',
+      'The end of Friday evening class. Anna has to leave before the others because of an appointment; the class next meets next week.',
+      '金曜の夜の授業の終わり。アンナさんは約束があって先に帰ります。次の授業は来週です。',
     ),
-    segments: [blankSeg('q25b1'), seg('。じゃあ、'), blankSeg('q25b2'), seg('、田中さん。')],
+    dialogue: [
+      dialogueTurn('q25t1', 'アンナ', [
+        seg('伊藤'), blankSeg('q25b1'), seg('、'), blankSeg('q25b2'), seg('。'),
+      ]),
+      dialogueTurn('q25t2', '伊藤', [blankSeg('q25b3'), seg('。')]),
+    ],
     blanks: [
-      typedBlank('q25b1', {
-        answer: 'そうですか',
-        audio: 'そうですか',
-        accepted: ['そうですか'],
+      choiceBlank('q25b1', 'さん', 'さん'),
+      choiceBlank('q25b2', 'お先に失礼します', 'おさきにしつれいします'),
+      choiceBlank('q25b3', 'また来週', 'またらいしゅう'),
+    ],
+    options: [
+      choiceOption('q25a', 'さん / お先に失礼します / また明日', {
+        q25b1: 'さん', q25b2: 'お先に失礼します', q25b3: 'また明日',
       }),
-      typedBlank('q25b2', {
-        answer: 'お元気で',
-        audio: 'おげんきで',
-        // Một nhóm kanji (元気) → 2 dạng.
-        accepted: ['お元気で', 'おげんきで'],
-        hint: n(
-          'Lời dặn khi chia tay từ một tuần trở lên.',
-          'The parting wish used when the next meeting is a week or more away.',
-          '次に会うのが一週間以上先のときの別れの言葉。',
-        ),
+      choiceOption('q25b', 'さん / こんばんは / また来週', {
+        q25b1: 'さん', q25b2: 'こんばんは', q25b3: 'また来週',
+      }),
+      choiceOption('q25c', 'さんですね / お先に失礼します / また来週', {
+        q25b1: 'さんですね', q25b2: 'お先に失礼します', q25b3: 'また来週',
+      }),
+      choiceOption('q25d', 'さん / お先に失礼します / また来週', {
+        q25b1: 'さん', q25b2: 'お先に失礼します', q25b3: 'また来週',
       }),
     ],
+    correctOptionId: 'q25d',
     reviews: [
-      review(L3, 'vocabulary', 'sou-desu-ka'),
-      review(L3, 'vocabulary', 'ogenki-de'),
+      review(L2, 'vocabulary', 'san'),
+      review(L3, 'vocabulary', 'osaki-ni-shitsurei'),
+      review(L3, 'grammar', 'また＋[mốc thời gian]'),
     ],
     explanation: n(
-      'そうですか tiếp nhận tin vừa nghe; mốc gặp lại từ một tuần trở lên nên dùng お元気で.',
-      'そうですか takes in the news, and the next meeting is a week or more away, so お元気で fits.',
-      '「そうですか」で知らせを受け止めます。次に会うのが一週間以上先なので「お元気で」を使います。',
+      'Bối cảnh ghi rõ lớp chỉ học tiếp vào tuần sau, nên また明日 mâu thuẫn với chính thông tin đã cho. こんばんは là lời CHÀO KHI GẶP — chính L1 liệt kê "không dùng khi chia tay". 「伊藤さんですね」 là câu xác nhận tên người mới biết, còn đây là bạn cùng lớp đã quen.',
+      'The setting says the class next meets next week, so また明日 contradicts the given information. こんばんは is a greeting on ARRIVAL — L1 itself lists "not when parting". 「伊藤さんですね」 confirms the name of someone newly met, but this is a familiar classmate.',
+      '次の授業は来週だと場面に書かれているので、「また明日」は与えられた情報と矛盾します。「こんばんは」は会ったときのあいさつで、L1でも「別れるときには使わない」と示しています。「伊藤さんですね」は知り合ったばかりの人の名前を確認する言葉ですが、相手はよく知っているクラスメートです。',
     ),
   }),
 ];
@@ -1218,5 +1292,5 @@ export const JA_M01_U1_COMPREHENSIVE = {
     '第1ユニット全体の復習：あいさつ、名前の尋ね方、返し方、別れのあいさつ。',
   ),
   estimatedMinutes: '15',
-  questions: [...SENTENCE_QUESTIONS, ...DIALOGUE_QUESTIONS, ...TYPED_QUESTIONS],
+  questions: [...SENTENCE_QUESTIONS, ...DIALOGUE_QUESTIONS, ...CLOSING_QUESTIONS],
 };
