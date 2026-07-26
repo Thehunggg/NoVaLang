@@ -273,6 +273,35 @@ Hàn/Thái/Trung (`markdown_grammar_korean/`, `grammar_kr_KOREAN_*.json`,
   là cố định → **xử như LOẠI A + hỏi owner** (§G1). Nguồn để rút cụm cố định:
   V1 (Irodori) — các mẫu chào hỏi/lịch sự dạy nguyên khối.
 
+### Bổ sung 2026-07-25 — tài liệu KEIGO / VAI VẾ (owner tự thêm)
+
+| File | Dạng | Nội dung | Dùng cho |
+|---|---|---|---|
+| `local-sources/ja/New Tài liệu văn bản.txt` | text thuần UTF-8, 288 KB · 4 041 dòng · 123 592 ký tự, **chữ thật, đọc được 100%** | Tuyển tập nhiều bài rời về **kính ngữ và vai vế**: 5 bậc trang trọng (尊敬語 · 丁寧語 · 普通体 · 友達言葉 · 若者言葉), chào hỏi theo **thời điểm + quan hệ**, lời chia tay, thang cảm ơn/xin lỗi từ trang trọng đến suồng sã, cụm công sở (`お世話になります` · `お疲れ様です` · `お時間よろしいでしょうか` · `〜ていただけますか`), senpai/kōhai, uchi/soto. ~50% ký tự là tiếng Nhật (gồm cả tài liệu hướng dẫn kính ngữ bằng tiếng Nhật), phần còn lại là giải thích tiếng Anh. | **Tầng đối chiếu VAI VẾ + BỐI CẢNH** — xem đánh giá bên dưới |
+
+**Đánh giá dùng được tới đâu (đọc kỹ trước khi trích):**
+
+- **DÙNG ĐƯỢC** làm cơ sở đối chiếu cho luật "kiểm chuẩn xã hội + vai vế" của
+  §B16. Đây đúng tầng mà G1–G9 **không** bắt được và đã để lọt 5 lần: dữ liệu
+  bài hợp lệ, tra nguồn ra, validator im lặng, nhưng sai chuẩn xã hội.
+- **Phủ được** phần lớn bẫy đã dính: mốc giờ của `こんばんは` (nêu rõ bắt đầu
+  17–18h, không phải "khi trời tối"), `お疲れ様です` (34 lượt — chính cụm mà
+  [SOI-5] ghi là thiếu trong vốn đã dạy), `失礼します`, `さようなら`, hậu tố xưng
+  hô (118 lượt), `先生` (168 lượt).
+- **KHÔNG phủ trực tiếp** đúng một bẫy: không có chỗ nào nói thẳng "không chào
+  `こんばんは` với đồng nghiệp **bên trong** công sở". Suy được từ mục
+  `お疲れ様です` nhưng không phải câu khẳng định — vẫn cần người xác nhận.
+- **HẠNG NGUỒN: tầng đối chiếu (như Tầng X), KHÔNG phải nguồn chính V1–V5.**
+  Đây là tuyển tập bài web do owner ghép, **không rõ xuất xứ từng đoạn và không
+  rõ giấy phép**. Vì vậy: dùng để **kiểm chéo** một cách dùng, **KHÔNG chép
+  nguyên văn** vào lesson, và khi báo cáo phải ghi rõ đã đối chiếu ở đây chứ
+  không ghi là V1/V2.
+- **Ghi chú kỹ thuật:** tên file vẫn là tên mặc định của Windows
+  (`New Tài liệu văn bản.txt`). Owner nên đổi thành tên nói rõ nội dung, ví dụ
+  `keigo-and-social-register.txt`, và cân nhắc chuyển vào thư mục con
+  `local-sources/ja/keigo/` cho khớp quy ước `<loại-nguồn>/`. **Chưa đụng** —
+  `local-sources/` là vùng chỉ đọc với agent.
+
 ## QUYẾT ĐỊNH OWNER về cách dùng cụm (không suy ra từ nguồn)
 
 > Mục này ghi các quyết định **owner tự chốt** khi nguồn không phân xử được. Đây
