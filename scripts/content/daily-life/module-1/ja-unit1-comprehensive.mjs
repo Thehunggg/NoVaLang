@@ -962,8 +962,8 @@ const CLOSING_QUESTIONS = [
       choiceOption('q19a', 'こんばんは / はじめまして / よろしくお願いします', {
         q19b1: 'こんばんは', q19b2: 'はじめまして', q19b3: 'よろしくお願いします',
       }),
-      choiceOption('q19b', 'おはようございます / そうですか / よろしくお願いします', {
-        q19b1: 'おはようございます', q19b2: 'そうですか', q19b3: 'よろしくお願いします',
+      choiceOption('q19b', 'おはようございます / 失礼します / よろしくお願いします', {
+        q19b1: 'おはようございます', q19b2: '失礼します', q19b3: 'よろしくお願いします',
       }),
       choiceOption('q19c', 'おはようございます / はじめまして / じゃあ、また', {
         q19b1: 'おはようございます', q19b2: 'はじめまして', q19b3: 'じゃあ、また',
@@ -979,9 +979,9 @@ const CLOSING_QUESTIONS = [
       review(L1, 'vocabulary', 'yoroshiku-onegaishimasu'),
     ],
     explanation: n(
-      'Bối cảnh ghi rõ buổi sáng, mà chính L1 liệt kê "không dùng vào buổi sáng" cho こんばんは. そうですか để tiếp nhận thông tin, nhưng đây là câu đầu tiên Smith nói với thầy. L3 ghi rõ không dùng じゃあ、また với thầy cô — đó là cách nói thân mật dành cho bạn bè.',
-      'The setting is morning, and L1 itself lists "not in the morning" for こんばんは. そうですか takes in information, but this is Smith’s first line to the teacher. L3 states outright that じゃあ、また is not used with teachers — it is the casual form for friends.',
-      '場面は朝で、L1でも「こんばんは」について「朝には使わない」と示しています。「そうですか」は情報を受け止める言葉ですが、ここはスミスさんが先生に言う最初の一言です。L3では「じゃあ、また」を先生には使わないと明記しています。友達に使うカジュアルな言い方です。',
+      'Bối cảnh ghi rõ buổi sáng, mà chính L1 liệt kê "không dùng vào buổi sáng" cho こんばんは. 失礼します là lời xin phép RỜI ĐI, mà Smith vừa mới mở lời chào thầy. L3 ghi rõ không dùng じゃあ、また với thầy cô — đó là cách nói thân mật dành cho bạn bè.',
+      'The setting is morning, and L1 itself lists "not in the morning" for こんばんは. 失礼します excuses you to LEAVE, yet Smith has only just opened his greeting to the teacher. L3 states outright that じゃあ、また is not used with teachers — it is the casual form for friends.',
+      '場面は朝で、L1でも「こんばんは」について「朝には使わない」と示しています。「失礼します」は立ち去るときの言葉ですが、スミスさんは先生にあいさつを始めたところです。L3では「じゃあ、また」を先生には使わないと明記しています。友達に使うカジュアルな言い方です。',
     ),
   }),
 
@@ -1063,8 +1063,8 @@ const CLOSING_QUESTIONS = [
       choiceOption('q21b', 'こんにちは / はじめまして / こちらこそ', {
         q21b1: 'こんにちは', q21b2: 'はじめまして', q21b3: 'こちらこそ',
       }),
-      choiceOption('q21c', 'こんにちは / そうですか / こちらこそ', {
-        q21b1: 'こんにちは', q21b2: 'そうですか', q21b3: 'こちらこそ',
+      choiceOption('q21c', 'こんにちは / お元気で / こちらこそ', {
+        q21b1: 'こんにちは', q21b2: 'お元気で', q21b3: 'こちらこそ',
       }),
       choiceOption('q21d', 'こんにちは / はじめまして / 失礼します', {
         q21b1: 'こんにちは', q21b2: 'はじめまして', q21b3: '失礼します',
@@ -1077,9 +1077,9 @@ const CLOSING_QUESTIONS = [
       review(L3, 'vocabulary', 'kochira-koso'),
     ],
     explanation: n(
-      'Bối cảnh ghi rõ đầu giờ chiều, mà おはようございます là chào buổi sáng. そうですか để tiếp nhận thông tin vừa nghe, nhưng Itō đang mở lời làm quen chứ chưa nghe thông tin gì. 失礼します là lời xin phép rời đi, vừa được làm quen đã xin đi là mâu thuẫn.',
-      'The setting is early afternoon, and おはようございます is a morning greeting. そうですか takes in information just heard, but Itō is opening an introduction, not responding to news. 失礼します excuses you to leave, which contradicts having just been introduced.',
-      '場面は午後の初めで、「おはようございます」は朝のあいさつです。「そうですか」は聞いた情報を受け止める言葉ですが、伊藤さんは自己紹介を切り出しているところで、まだ何も聞いていません。「失礼します」は立ち去る言葉で、紹介された直後には矛盾します。',
+      'Bối cảnh ghi rõ đầu giờ chiều, mà おはようございます là chào buổi sáng. お元気で là lời chia tay khi lâu mới gặp lại, mà Itō đang MỞ LỜI làm quen. 失礼します là lời xin phép rời đi, vừa được làm quen đã xin đi là mâu thuẫn.',
+      'The setting is early afternoon, and おはようございます is a morning greeting. お元気で is a goodbye for a long parting, yet Itō is OPENING an introduction. 失礼します excuses you to leave, which contradicts having just been introduced.',
+      '場面は午後の初めで、「おはようございます」は朝のあいさつです。「お元気で」はしばらく会わないときの別れの言葉ですが、伊藤さんは自己紹介を切り出しているところです。「失礼します」は立ち去る言葉で、紹介された直後には矛盾します。',
     ),
   }),
 
@@ -1212,8 +1212,8 @@ const CLOSING_QUESTIONS = [
       choiceOption('q24b', 'は / こちらこそ / 私も', {
         q24b1: 'は', q24b2: 'こちらこそ', q24b3: '私も',
       }),
-      choiceOption('q24c', 'は / そうですか / 私も', {
-        q24b1: 'は', q24b2: 'そうですか', q24b3: '私も',
+      choiceOption('q24c', 'は / 失礼します / 私も', {
+        q24b1: 'は', q24b2: '失礼します', q24b3: '私も',
       }),
       choiceOption('q24d', 'は / こちらこそ / 私は', {
         q24b1: 'は', q24b2: 'こちらこそ', q24b3: '私は',
@@ -1226,9 +1226,9 @@ const CLOSING_QUESTIONS = [
       review(L3, 'grammar', '～も'),
     ],
     explanation: n(
-      '「私も田中です」 nghĩa là "tôi CŨNG là Tanaka", nhưng Tanaka là người nói đầu tiên, chưa ai tên đó — nêu tên mình phải dùng は. そうですか để tiếp nhận thông tin, không dùng để đáp lại lời chúc làm quen. 「私は」 nêu chủ đề rồi bỏ lửng, không diễn đạt "tôi cũng vậy" — L3 dạy ～も cho nghĩa đó.',
-      '「私も田中です」 means "I am Tanaka TOO", but Tanaka speaks first and nobody bears that name yet — giving your own name takes は. そうですか takes in information; it does not answer a greeting of goodwill. 「私は」 opens a topic and leaves it hanging; it does not mean "me too" — L3 teaches ～も for that.',
-      '「私も田中です」は「私も田中」という意味になりますが、田中さんは最初に話す人で、まだその名前の人はいません。自分の名前を言うときは「は」を使います。「そうですか」は情報を受け止める言葉で、好意のあいさつに返すものではありません。「私は」は主題を示したまま途中で終わり、「私も」の意味にはなりません。L3で「～も」を学びました。',
+      '「私も田中です」 nghĩa là "tôi CŨNG là Tanaka", nhưng Tanaka là người nói đầu tiên, chưa ai tên đó — nêu tên mình phải dùng は. 失礼します là lời xin phép rời đi, nói xong lại xưng tên là ngược trình tự. 「私は」 nêu chủ đề rồi bỏ lửng, không diễn đạt "tôi cũng vậy" — L3 dạy ～も cho nghĩa đó.',
+      '「私も田中です」 means "I am Tanaka TOO", but Tanaka speaks first and nobody bears that name yet — giving your own name takes は. 失礼します excuses you to leave; giving your name straight after reverses the order. 「私は」 opens a topic and leaves it hanging; it does not mean "me too" — L3 teaches ～も for that.',
+      '「私も田中です」は「私も田中」という意味になりますが、田中さんは最初に話す人で、まだその名前の人はいません。自分の名前を言うときは「は」を使います。「失礼します」は立ち去る言葉で、その直後に名乗るのは順序が逆です。「私は」は主題を示したまま途中で終わり、「私も」の意味にはなりません。L3で「～も」を学びました。',
     ),
   }),
 

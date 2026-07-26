@@ -285,9 +285,39 @@ nộp — kể cả khi thấy chắc.
 - **Đáp án đúng rải đều A/B/C/D.** UI **KHÔNG xáo trộn phương án** lúc chạy
   (render đúng thứ tự dữ liệu) → **dữ liệu phải tự rải**. Đã dính: cả 8 câu đáp
   án đều là A.
-- **Mỗi cụm làm phương án sai tối đa 2 câu/đợt.** Đếm theo **cụm GÂY SAI** (cụm
-  ở ô khiến phương án đó sai), không đếm cụm đi kèm vô can. Quá 2 → sinh mẫu
-  "thấy X thì loại". Đã dính: 1 cụm dùng ở 5/8 câu.
+- **Trần lặp cụm làm phương án sai — CO GIÃN theo cỡ bài, không phải số cứng.**
+  Đếm theo **cụm GÂY SAI** (cụm ở ô khiến phương án đó sai), không đếm cụm đi
+  kèm vô can.
+
+  ```text
+  trần = ceil( số_ô_phương_án_sai / số_cụm_phân_biệt_dùng_làm_sai ) + 1
+  ```
+
+  Số cụm phân biệt bị chặn trên bởi vốn từ unit đã dạy, nên **số cứng là bất
+  khả thi ở bài lớn**. Ví dụ thật: bài 25 câu có 75 ô sai / 30 cụm ⇒ trung bình
+  2,5 ⇒ **trần 4**. Bài 18 câu có 54 ô / ~28 cụm ⇒ trung bình 1,9 ⇒ **trần 3**.
+  Trần cũ "tối đa 2" viết cho đợt 8–10 câu; giữ nguyên nó ở bài 25 câu là bắt
+  làm chuyện số học không làm được (2 × 30 = 60 < 75).
+
+- **ĐIỀU KIỆN THẬT SỰ QUAN TRỌNG — cụm không được "LUÔN SAI".** Trần ở trên chỉ
+  là *proxy*; thứ cần chặn là mẫu "thấy X thì loại". Luật:
+
+  > Một cụm là **biểu thức hợp lệ đã dạy** mà làm phương án sai ở **≥ 3 câu**
+  > thì phải là **ĐÁP ÁN ĐÚNG ở ít nhất 1 câu**.
+
+  Hai điều kiện thu hẹp, đều cần thiết:
+  - **≥ 3, không phải ≥ 2.** Xuất hiện 2 lần chưa đủ để người học rút ra quy
+    luật; siết xuống 2 chỉ tạo báo động giả.
+  - **Chỉ áp cho biểu thức HỢP LỆ.** **Dạng méo cố ý được MIỄN**: cụm thiếu
+    thành phần bắt buộc (「伊藤ですね」 thiếu さん), dạng bài học CẤM RÕ
+    (「私のお名前」), trợ từ nhân đôi (「お名前はは？」). Chúng tồn tại *chỉ để*
+    làm phương án sai — bắt chúng phải đúng ở đâu đó tức là đi dạy cái sai. Đây
+    cũng chính là loại phương án sai mà mục "lỗi TỰ NÓ SAI" bên dưới xếp hạng
+    cao nhất.
+
+  Đo thật trên bài 25 câu Unit 1 ja: 0 vi phạm. Hai cụm chạm ngưỡng —
+  `ですね` (4 lần sai) và `私のお名前` (3 lần sai) — đều là dạng méo cố ý nên
+  được miễn. Cụm hợp lệ lặp nhiều nhất là `そうですか` 4 lần sai / 3 lần đúng.
 - **Mỗi ô trống phải được ÍT NHẤT một phương án sai kiểm.** Nếu cả 4 phương án
   cùng giá trị ở một ô thì ô đó không kiểm gì.
 

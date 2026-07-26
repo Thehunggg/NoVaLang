@@ -962,9 +962,61 @@ function validateHiraganaLessonOneSpec(lesson) {
  *
  * Exported ở module scope để script độc lập import chạy thử trực tiếp.
  */
+/** Gom CẢNH BÁO MỀM §B16 "cụm LUÔN SAI" — không bao giờ chặn build. */
+const alwaysWrongWarnings = [];
+
+/**
+ * §B16 — CẢNH BÁO MỀM: cụm làm phương án sai ở >= 3 câu mà KHÔNG lần nào là
+ * đáp án đúng. Đó là mẫu "thấy X thì loại" — người học đoán được mà không cần
+ * hiểu.
+ *
+ * MỨC MỀM là bắt buộc, không phải nhân nhượng: §B16 MIỄN TRỪ các **dạng méo cố
+ * ý** (thiếu thành phần bắt buộc, dạng bài học cấm rõ, trợ từ nhân đôi) — chúng
+ * tồn tại chỉ để làm phương án sai, và máy KHÔNG phân biệt được chúng với một
+ * biểu thức hợp lệ. Nên đây là việc người phải xét; máy chỉ chỉ chỗ để soi.
+ */
+function collectAlwaysWrongWarnings(unit) {
+  const questions = unit?.comprehensiveTest?.questions ?? [];
+  const wrongIn = new Map();
+  const rightIn = new Map();
+  const add = (map, key, order) => {
+    if (!map.has(key)) map.set(key, new Set());
+    map.get(key).add(order);
+  };
+
+  for (const q of questions) {
+    const correct = (q.options ?? []).find((o) => o.id === q.correctOptionId);
+    if (!correct) continue;
+    for (const b of q.blanks ?? []) {
+      add(rightIn, correct.answersByBlankId?.[b.id], q.order);
+    }
+    for (const opt of q.options ?? []) {
+      if (opt.id === q.correctOptionId) continue;
+      for (const b of q.blanks ?? []) {
+        const value = opt.answersByBlankId?.[b.id];
+        // Chỉ tính cụm KHÁC đáp án đúng ở CÙNG ô — cụm trùng đáp án không phải
+        // thứ khiến phương án đó sai.
+        if (value !== correct.answersByBlankId?.[b.id]) add(wrongIn, value, q.order);
+      }
+    }
+  }
+
+  for (const [phrase, orders] of wrongIn) {
+    if (orders.size < 3) continue;
+    if ((rightIn.get(phrase)?.size ?? 0) > 0) continue;
+    alwaysWrongWarnings.push(
+      `${unit.id}: '${phrase}' làm phương án sai ở ${orders.size} câu ` +
+        `(${[...orders].sort((a, b) => a - b).join(', ')}) mà KHÔNG lần nào là đáp án ` +
+        `đúng — kiểm xem có phải dạng méo cố ý (§B16 miễn trừ) hay không.`,
+    );
+  }
+}
+
 export function validateUnitComprehensiveTest(unit) {
   const test = unit?.comprehensiveTest;
   if (!test) return; // unit chưa có bài tổng hợp — trạng thái hợp lệ.
+
+  collectAlwaysWrongWarnings(unit);
 
   const lessonIds = unit.lessonIds ?? [];
   const at = `${unit.id} comprehensiveTest`;
@@ -2450,6 +2502,15 @@ async function main() {
 
   // --- Lớp CẢNH BÁO MỀM §B2c: trường chi tiết từ vựng chưa điền (2026-07-25) ---
   // KHÔNG chặn build (L2/L3 đang trống toàn bộ; fail cứng sẽ chặn mọi thứ).
+  // --- Lớp CẢNH BÁO MỀM §B16: cụm "LUÔN SAI" trong bài tổng hợp (2026-07-25) ---
+  if (alwaysWrongWarnings.length) {
+    console.warn(
+      `\n[§B16] ${alwaysWrongWarnings.length} cảnh báo mềm — cụm làm phương án sai nhiều lần ` +
+        `mà không lần nào là đáp án đúng (không chặn build; dạng méo cố ý được §B16 miễn trừ):`,
+    );
+    for (const warning of alwaysWrongWarnings) console.warn(`  ! ${warning}`);
+  }
+
   if (vocabularyDetailWarnings.length) {
     console.warn(
       `\n[§B2c] ${vocabularyDetailWarnings.length} cảnh báo mềm — trường chi tiết từ vựng CHƯA ĐIỀN ` +
