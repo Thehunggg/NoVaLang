@@ -784,20 +784,24 @@ class LessonGrammarPage extends StatelessWidget {
           children: [
             for (final pattern in patterns)
               _GrammarPanel(pattern: pattern, uiLanguageCode: uiLanguageCode),
-            _ContentPanel(
-              title: L10n.text('distinctions', uiLanguageCode),
-              icon: Icons.compare_arrows_outlined,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  for (final raw in _list(content['distinctions']))
-                    _DetailList(
-                      title: _text(_map(raw)['term']),
-                      values: _list(_map(raw)['points']),
-                    ),
-                ],
+            // Chỉ dựng panel khi THẬT SỰ có mục để so sánh. `distinctions` là
+            // trường tuỳ chọn — chỉ Golden L1 có; L2/L3 không có. Dựng vô điều
+            // kiện thì người học bấm vào một panel rỗng.
+            if (_list(content['distinctions']).isNotEmpty)
+              _ContentPanel(
+                title: L10n.text('distinctions', uiLanguageCode),
+                icon: Icons.compare_arrows_outlined,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (final raw in _list(content['distinctions']))
+                      _DetailList(
+                        title: _text(_map(raw)['term']),
+                        values: _list(_map(raw)['points']),
+                      ),
+                  ],
+                ),
               ),
-            ),
           ],
         ),
       ),

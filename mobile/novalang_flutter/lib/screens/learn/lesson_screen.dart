@@ -792,12 +792,15 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
             ],
           ),
         ),
-      _fiveLabel(L10n.text('distinctions', locale)),
-      for (final raw in _contentList(content['distinctions']))
-        _fiveList(
-          _contentText(_contentMap(raw)['term']),
-          _contentList(_contentMap(raw)['points']),
-        ),
+      // Nhãn chỉ hiện khi có mục — `distinctions` là trường tuỳ chọn.
+      if (_contentList(content['distinctions']).isNotEmpty) ...[
+        _fiveLabel(L10n.text('distinctions', locale)),
+        for (final raw in _contentList(content['distinctions']))
+          _fiveList(
+            _contentText(_contentMap(raw)['term']),
+            _contentList(_contentMap(raw)['points']),
+          ),
+      ],
     ],
   );
 
