@@ -1259,10 +1259,12 @@ class _VocabularyReferenceItem extends StatelessWidget {
     final reading = _text(item['reading']);
     final speechText = _text(item['speechText']);
     final meaning = _text(item['meaning']);
-    final forWord = _text(item['forWord']);
-    final forWho = _text(item['forWho']);
-    final whenToUse = _text(item['whenToUse']);
-    final difference = _text(item['difference']);
+    // §B2b — mục tham khảo chỉ còn 4 phần (owner chốt 2026-07-25): từ vựng ·
+    // nghĩa · mức độ lịch sự · ví dụ. Nhãn dùng CHUNG key với thẻ từ vựng
+    // ('register', 'vocabExample') để cùng một loại thông tin không có hai
+    // cách gọi khác nhau ở hai chỗ.
+    final register = _text(item['register']);
+    final example = _map(item['example']);
 
     return DecoratedBox(
       key: ValueKey('vocabulary-reference-item-$index'),
@@ -1317,25 +1319,19 @@ class _VocabularyReferenceItem extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 8),
                 child: Text(meaning, style: const TextStyle(height: 1.4)),
               ),
-            if (forWord.isNotEmpty)
+            if (register.isNotEmpty)
               _ReferenceLabeledLine(
-                label: L10n.text('referenceForWord', uiLanguageCode),
-                value: forWord,
+                label: L10n.text('register', uiLanguageCode),
+                value: register,
               ),
-            if (forWho.isNotEmpty)
-              _ReferenceLabeledLine(
-                label: L10n.text('referenceForWho', uiLanguageCode),
-                value: forWho,
-              ),
-            if (whenToUse.isNotEmpty)
-              _ReferenceLabeledLine(
-                label: L10n.text('referenceWhenToUse', uiLanguageCode),
-                value: whenToUse,
-              ),
-            if (difference.isNotEmpty)
-              _ReferenceLabeledLine(
-                label: L10n.text('referenceDifference', uiLanguageCode),
-                value: difference,
+            if (example.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: _ExampleRow(
+                  value: example,
+                  uiLanguageCode: uiLanguageCode,
+                  learningLanguageCode: learningLanguageCode,
+                ),
               ),
           ],
         ),

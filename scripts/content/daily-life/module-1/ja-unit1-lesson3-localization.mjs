@@ -89,6 +89,8 @@ add('また＋[mốc thời gian]', 'また＋[time]', 'また＋[時]');
 add('Hẹn gặp lại vào thời điểm nào đó.', 'Arrange to meet again at some time.', 'いつまた会うかを言います。');
 add('Hẹn mai gặp.', 'See you tomorrow.', 'また明日。');
 add('Hẹn tuần sau.', 'See you next week.', 'また来週。');
+add('Thôi nhé. Hẹn mai gặp.', 'Well then. See you tomorrow.', 'じゃあね。また明日。');
+add('Đi cẩn thận nhé.', 'Take care on your way.', '気をつけて。');
 add('Vâng. Hẹn tuần sau.', 'Sure. See you next week.', 'はい。また来週。');
 add('Vâng, hẹn tuần sau.', 'Sure, see you next week.', 'はい、また来週。');
 add('Hẹn tuần sau. Giữ sức khỏe nhé.', 'See you next week. Take care.', 'また来週。お元気で。');

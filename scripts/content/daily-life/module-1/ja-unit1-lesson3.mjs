@@ -262,8 +262,8 @@ const JA_UNIT1_LESSON3_SOURCE = {
       // "Tham khảo thêm" (§B2b) — biến thể của お別れ (じゃあ、また / お元気で). FREE,
       // không tính ngân sách từ mới, không dùng ở Q1–Q13. Mỗi mục đủ trường.
       vocabularyReferences: [
-        { term: 'じゃあね', reading: 'じゃあね', speechText: 'じゃあね', meaning: 'Thôi nhé (chào tạm biệt thân mật).', forWord: 'じゃあ、また', forWho: 'Bạn bè thân.', whenToUse: 'Kết thúc cuộc trò chuyện thân mật rồi rời đi.', difference: 'Ngắn gọn hơn じゃあ、また, nhấn ở "じゃあ" khi kết thúc; không trang trọng.' },
-        { term: '気（き）をつけて', reading: 'きをつけて', speechText: 'きをつけて', meaning: 'Đi cẩn thận nhé / Giữ gìn nhé.', forWord: 'お元気で', forWho: 'Bạn bè, người thân, đồng nghiệp.', whenToUse: 'Khi ai đó sắp lên đường (về nhà, đi xa).', difference: 'お元気で dặn giữ sức khỏe khi lâu mới gặp; 気をつけて dặn an toàn ngay trên đường đi.' },
+        { term: 'じゃあね', reading: 'じゃあね', speechText: 'じゃあね', meaning: 'Thôi nhé (chào tạm biệt thân mật).', register: 'Thân mật.', example: example('じゃあね。また明日。', 'じゃあね。またあした。', 'Thôi nhé. Hẹn mai gặp.') },
+        { term: '気（き）をつけて', reading: 'きをつけて', speechText: 'きをつけて', meaning: 'Đi cẩn thận nhé / Giữ gìn nhé.', register: 'Trung tính.', example: example('気（き）をつけて。', 'きをつけて。', 'Đi cẩn thận nhé.') },
       ],
       dialogueGroups: [
         {

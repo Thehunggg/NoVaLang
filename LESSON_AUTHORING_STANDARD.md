@@ -111,17 +111,22 @@ THÍCH thì đọc, **KHÔNG bắt buộc nhớ**.
 
   ```js
   {
-    term: '‹cách-nói-khác›',        // target-language; kèm hỗ trợ đọc nếu hệ chữ cần
-    reading: '‹cách-đọc-thuần›',    // cách đọc thuần (như từ chính)
-    speechText: '‹text-audio›',     // audio — BẮT BUỘC mỗi mục
-    meaning: '…',                   // NGHĨA đầy đủ (native, localize đủ locale)
-    forWord: '‹từ-chính-trong-bài›',// THAM KHẢO CHO TỪ CHÍNH NÀO (target-language)
-    forWho: '…',                    // DÙNG CHO AI (bạn bè/thầy cô/người trên… — native)
-    whenToUse: '…',                 // DÙNG KHI NÀO (tình huống, thời điểm — native)
-    difference: '…',                // KHÁC GÌ so với từ chính (vì sao tồn tại — native)
+    term: '‹cách-nói-khác›',        // 1. TỪ VỰNG — target-language; kèm hỗ trợ đọc
+    reading: '‹cách-đọc-thuần›',    //    cách đọc thuần (như từ chính)
+    speechText: '‹text-audio›',     //    audio — BẮT BUỘC mỗi mục
+    meaning: '…',                   // 2. NGHĨA (native, localize đủ locale)
+    register: '…',                  // 3. MỨC ĐỘ LỊCH SỰ — trang trọng/lịch sự/thân mật
+    example: example(…),            // 4. VÍ DỤ — cùng khuôn `examples` của thẻ từ vựng
   }
   ```
-  → Chất lượng giải thích **NGANG từ chính**, chỉ khác ở chỗ không bắt buộc nhớ.
+  → **ĐÚNG 4 phần, owner chốt 2026-07-25** — không thêm mục nào khác. Bốn nhãn
+  này dùng CHUNG key i18n với thẻ từ vựng (`register`, `vocabExample`): cùng một
+  loại thông tin thì không được có hai cách gọi ở hai chỗ.
+
+  **ĐÃ BỎ** `forWord` · `forWho` · `whenToUse` · `difference`. Không cần mục
+  "không nên dùng" — mức độ lịch sự đã nói đủ. Trường cũ bỏ HẲN khỏi nguồn và
+  UI (mobile + web): giữ ẩn thì dữ liệu chết vẫn nằm đó và lần sau lại có người
+  điền vào.
   Ví dụ cụ thể bằng một ngôn ngữ: xem file nguồn riêng của ngôn ngữ đó (vd
   `scripts/content/sources/<mã>.md`).
 - **KHÔNG tính vào ngân sách từ mới** (§F-d).

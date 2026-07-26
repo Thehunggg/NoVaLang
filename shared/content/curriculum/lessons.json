@@ -82461,24 +82461,22 @@
               "en": "Bye then (casual goodbye).",
               "ja": "じゃあね。（カジュアルなお別れ。）"
             },
-            "forWord": "じゃあ、また",
-            "forWho": "Bạn bè thân.",
-            "forWhoByNative": {
-              "vi": "Bạn bè thân.",
-              "en": "Close friends.",
-              "ja": "親しい友達。"
+            "register": "Thân mật.",
+            "registerByNative": {
+              "vi": "Thân mật.",
+              "en": "Casual.",
+              "ja": "カジュアル。"
             },
-            "whenToUse": "Kết thúc cuộc trò chuyện thân mật rồi rời đi.",
-            "whenToUseByNative": {
-              "vi": "Kết thúc cuộc trò chuyện thân mật rồi rời đi.",
-              "en": "Ending a casual conversation before leaving.",
-              "ja": "カジュアルな会話を終えて立ち去るとき。"
-            },
-            "difference": "Ngắn gọn hơn じゃあ、また, nhấn ở \"じゃあ\" khi kết thúc; không trang trọng.",
-            "differenceByNative": {
-              "vi": "Ngắn gọn hơn じゃあ、また, nhấn ở \"じゃあ\" khi kết thúc; không trang trọng.",
-              "en": "Shorter than じゃあ、また, emphasizing “じゃあ” at the end; not formal.",
-              "ja": "「じゃあ、また」より短く、最後の「じゃあ」を強調。改まりません。"
+            "example": {
+              "text": "じゃあね。また明日。",
+              "reading": "じゃあね。またあした。",
+              "translation": "Thôi nhé. Hẹn mai gặp.",
+              "translationByNative": {
+                "vi": "Thôi nhé. Hẹn mai gặp.",
+                "en": "Well then. See you tomorrow.",
+                "ja": "じゃあね。また明日。"
+              },
+              "speechText": "じゃあね。またあした。"
             }
           },
           {
@@ -82491,24 +82489,22 @@
               "en": "Take care (on your way).",
               "ja": "気をつけて。"
             },
-            "forWord": "お元気で",
-            "forWho": "Bạn bè, người thân, đồng nghiệp.",
-            "forWhoByNative": {
-              "vi": "Bạn bè, người thân, đồng nghiệp.",
-              "en": "Friends, family, coworkers.",
-              "ja": "友達、家族、同僚。"
+            "register": "Trung tính.",
+            "registerByNative": {
+              "vi": "Trung tính.",
+              "en": "Neutral.",
+              "ja": "中立的。"
             },
-            "whenToUse": "Khi ai đó sắp lên đường (về nhà, đi xa).",
-            "whenToUseByNative": {
-              "vi": "Khi ai đó sắp lên đường (về nhà, đi xa).",
-              "en": "When someone is about to set off (heading home, traveling).",
-              "ja": "相手が出かける・帰るとき。"
-            },
-            "difference": "お元気で dặn giữ sức khỏe khi lâu mới gặp; 気をつけて dặn an toàn ngay trên đường đi.",
-            "differenceByNative": {
-              "vi": "お元気で dặn giữ sức khỏe khi lâu mới gặp; 気をつけて dặn an toàn ngay trên đường đi.",
-              "en": "お元気で wishes lasting good health when you won’t meet for a while; 気をつけて is about being safe right now on the way.",
-              "ja": "「お元気で」はしばらく会わないときの健康を願う言葉。「気をつけて」は今この道中の安全を願う言葉。"
+            "example": {
+              "text": "気（き）をつけて。",
+              "reading": "きをつけて。",
+              "translation": "Đi cẩn thận nhé.",
+              "translationByNative": {
+                "vi": "Đi cẩn thận nhé.",
+                "en": "Take care on your way.",
+                "ja": "気をつけて。"
+              },
+              "speechText": "きをつけて。"
             }
           }
         ],

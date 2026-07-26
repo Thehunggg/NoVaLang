@@ -87,20 +87,24 @@ void main() {
           'reading': 'またね',
           'speechText': 'またね',
           'meaning': 'See you (very casual).',
-          'forWord': 'じゃあ、また',
-          'forWho': 'Close friends.',
-          'whenToUse': 'Everyday parting.',
-          'difference': 'More casual than じゃあ、また.',
+          'register': 'Casual.',
+          'example': {
+            'text': 'またね。',
+            'reading': 'またね。',
+            'translation': 'See you.',
+          },
         },
         {
           'term': 'じゃあね',
           'reading': 'じゃあね',
           'speechText': 'じゃあね',
           'meaning': 'See ya.',
-          'forWord': 'じゃあ、また',
-          'forWho': 'Friends.',
-          'whenToUse': 'Casual goodbye.',
-          'difference': 'Shorter.',
+          'register': 'Casual.',
+          'example': {
+            'text': 'じゃあね。',
+            'reading': 'じゃあね。',
+            'translation': 'See ya.',
+          },
         },
       ],
     );
@@ -126,7 +130,20 @@ void main() {
     expect(find.text('またね'), findsNWidgets(2)); // term + reading
     expect(find.text('じゃあね'), findsNWidgets(2));
     expect(find.text('See you (very casual).'), findsOneWidget);
-    expect(find.text('Reference for'), findsWidgets);
+    // §B2b — mục tham khảo còn 4 phần: từ vựng · nghĩa · mức độ lịch sự · ví dụ.
+    // Nhãn "Register" là key DÙNG CHUNG với thẻ từ vựng, không phải nhãn riêng
+    // của phần tham khảo — đó chính là điểm thống nhất owner yêu cầu.
+    expect(find.text('Register'), findsWidgets);
+    expect(find.text('Casual.'), findsWidgets);
+    // Các nhãn cũ đã bỏ hẳn.
+    for (final gone in const [
+      'Reference for',
+      'For whom',
+      'When to use',
+      'Difference',
+    ]) {
+      expect(find.text(gone), findsNothing, reason: gone);
+    }
     expect(
       find.byKey(const ValueKey('vocabulary-reference-audio-0')),
       findsOneWidget,

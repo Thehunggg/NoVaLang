@@ -10,13 +10,14 @@ export type VocabularyReferenceItem = {
   speechText?: string;
   meaning?: string;
   meaningByNative?: Partial<Record<string, string>>;
-  forWord?: string;
-  forWho?: string;
-  forWhoByNative?: Partial<Record<string, string>>;
-  whenToUse?: string;
-  whenToUseByNative?: Partial<Record<string, string>>;
-  difference?: string;
-  differenceByNative?: Partial<Record<string, string>>;
+  register?: string;
+  registerByNative?: Partial<Record<string, string>>;
+  example?: {
+    text?: string;
+    reading?: string;
+    translation?: string;
+    translationByNative?: Partial<Record<string, string>>;
+  };
 };
 
 type Props = {
@@ -91,22 +92,19 @@ export function VocabularyReferencesBlock({
               item.meaningByNative,
               nativeLanguageCode,
             );
-            const forWho = resolveReferenceField(
-              item.forWho,
-              item.forWhoByNative,
+            // §B2b — mục tham khảo chỉ còn 4 phần: từ vựng · nghĩa · mức độ
+            // lịch sự · ví dụ. Nhãn dùng chung key với thẻ từ vựng.
+            const register = resolveReferenceField(
+              item.register,
+              item.registerByNative,
               nativeLanguageCode,
             );
-            const whenToUse = resolveReferenceField(
-              item.whenToUse,
-              item.whenToUseByNative,
+            const exampleText = displayNativeText(item.example?.text);
+            const exampleTranslation = resolveReferenceField(
+              item.example?.translation,
+              item.example?.translationByNative,
               nativeLanguageCode,
             );
-            const difference = resolveReferenceField(
-              item.difference,
-              item.differenceByNative,
-              nativeLanguageCode,
-            );
-            const forWord = displayNativeText(item.forWord);
 
             return (
               <article
@@ -138,18 +136,17 @@ export function VocabularyReferencesBlock({
                   <p className="mt-3 text-sm leading-6 text-slate-200">{meaning}</p>
                 ) : null}
 
-                {forWord ? (
-                  <LabeledValue label={t("referenceForWord")} value={forWord} />
+                <LabeledValue label={t("register")} value={register} />
+                {exampleText ? (
+                  <LabeledValue
+                    label={t("vocabExample")}
+                    value={
+                      exampleTranslation
+                        ? `${exampleText} — ${exampleTranslation}`
+                        : exampleText
+                    }
+                  />
                 ) : null}
-                <LabeledValue label={t("referenceForWho")} value={forWho} />
-                <LabeledValue
-                  label={t("referenceWhenToUse")}
-                  value={whenToUse}
-                />
-                <LabeledValue
-                  label={t("referenceDifference")}
-                  value={difference}
-                />
               </article>
             );
           })}
