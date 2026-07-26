@@ -78,10 +78,29 @@ phần ĐÃ BÓC furigana ở cả validator, smoke và 2 test Flutter — vẫn
 Luật ghi ở §B2d. Validator kiểm MỨC CỨNG, chỉ ngôn ngữ ja (tiếng Trung cũng
 dùng chữ Hán nhưng không có furigana). Sau khi sửa: 0 lỗi.
 
-### VIỆC 1 — UI bài tổng hợp giống UI bài tập — CHƯA LÀM
+### VIỆC 1 — UI bài tổng hợp giống UI bài tập — XONG 2026-07-25
 
-Kết quả đo giữ nguyên (5 chỗ khác ở bảng trên). Chưa sửa vì hết ngân sách phiên
-sau khi làm xong việc 2. Hướng sửa đã ghi, phiên sau làm tiếp không phải đo lại.
+Tái dùng 4/5. Chỗ thứ 5 phải TÁCH ra mới dùng chung được: panel phản hồi vốn là
+`_Feedback` private trong `five_card_exercise_flow.dart` và bám kiểu
+`PracticeExercise`, nên đã tách phần hình thức thành
+`widgets/learn/exercise_feedback_panel.dart` (chỉ nhận chuỗi) — cả hai màn cùng
+dùng, không copy code.
+
+| Thành phần | Cách xử |
+|---|---|
+| Khung trang | `Scaffold` + `AppBar` tiêu đề `n/N` + `Responsive.pagePadding` — đúng khung mà màn bài tập dùng cho MÀN CÂU HỎI (`ResponsivePage` là của màn landing, không phải màn làm bài) |
+| Hệ chip phương án | `ExerciseActionOptionChip` + bảng `ExerciseOptionVisualState` |
+| Thanh tiến độ | `LinearProgressIndicator` ở `AppBar.bottom` |
+| Nút nghe | `SpeakerButton`, CHỈ hiện sau khi chấm (đọc trước là lộ đáp án) |
+| Panel phản hồi | `ExerciseFeedbackPanel` mới tách, dùng chung |
+
+Khác bắt buộc còn giữ: mỗi phương án điền 2–3 ô, nên chip có thêm dòng
+`①… ②…` bên dưới nhãn — vẫn trong cùng một chip, một vùng bấm, một bảng màu.
+
+**Chưa kiểm được bằng test — owner tự xem khi chạy app:** chip nhiều dòng có bị
+tràn/xuống dòng xấu ở màn hẹp không, và khoảng cách giữa các khối đọc có thoáng
+như màn bài tập không. Test chỉ khẳng định ĐÚNG widget được dùng, không khẳng
+định bố cục nhìn đẹp.
 ## CÒN LẠI — GHI NGUỒN 25 CÂU BÀI TỔNG HỢP + REGISTRY — 2026-07-25
 
 **CHƯA LÀM.** Hạ tầng xong hết, chỉ còn bước ghi nội dung. Owner đã duyệt cả 3

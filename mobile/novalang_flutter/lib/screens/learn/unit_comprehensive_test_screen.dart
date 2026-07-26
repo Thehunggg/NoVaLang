@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../core/utils/localization.dart';
+import '../../core/utils/responsive.dart';
 import '../../models/unit_comprehensive_test.dart';
 import '../../widgets/common/app_card.dart';
-import '../../widgets/common/app_scaffold.dart';
+import '../../widgets/lesson/speaker_button.dart';
+import '../../widgets/learn/exercise_feedback_panel.dart';
+import '../../widgets/learn/exercise_option_style.dart';
 
 /// Màn hình làm BÀI TỔNG HỢP CUỐI UNIT (ADR-022).
 ///
@@ -99,11 +102,28 @@ class _UnitComprehensiveTestScreenState
   @override
   Widget build(BuildContext context) {
     final locale = widget.locale;
-    return AppScaffold(
-      title: widget.test.title,
-      showBack: true,
-      languageCode: locale,
-      child: _finished ? _buildResult(locale) : _buildQuestion(locale),
+    final total = widget.test.questions.length;
+    // Cùng khung với màn bài tập trong lesson (`five_card_exercise_flow`):
+    // Scaffold + AppBar mang số câu "n/N" + thanh tiến độ ở `bottom`, thân bài
+    // trong CustomScrollView với `Responsive.pagePadding`. Người học đang làm
+    // bài tập lesson rồi sang bài tổng hợp thì thấy đúng một kiểu màn.
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text(_finished ? widget.test.title : '${_index + 1}/$total'),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4),
+          child: LinearProgressIndicator(
+            value: _finished ? 1 : (_index + 1) / total,
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: _finished ? _buildResult(locale) : _buildQuestion(locale),
+      ),
     );
   }
 
@@ -144,15 +164,8 @@ class _UnitComprehensiveTestScreenState
     final isLast = _index >= total - 1;
 
     return ListView(
-      padding: const EdgeInsets.all(16),
+      padding: Responsive.pagePadding(context),
       children: [
-        Text(
-          L10n.text('unitComprehensiveTestProgress', locale)
-              .replaceAll('{current}', '${_index + 1}')
-              .replaceAll('{total}', '$total'),
-          style: Theme.of(context).textTheme.labelLarge,
-        ),
-        const SizedBox(height: 12),
         if ((q.context ?? '').isNotEmpty) ...[
           Text(q.context!, style: Theme.of(context).textTheme.bodyMedium),
           const SizedBox(height: 8),
@@ -165,6 +178,21 @@ class _UnitComprehensiveTestScreenState
           ...q.dialogue.map((turn) => _buildDialogueTurn(turn, q))
         else
           AppCard(child: _buildSentence(q.segments, q)),
+
+        // Nghe câu — cùng nút với màn bài tập lesson. CHỈ hiện sau khi chấm:
+        // đọc câu đã điền trước khi chấm là đọc luôn đáp án cho người học.
+        if (_checked) ...[
+          const SizedBox(height: 8),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: SpeakerButton(
+              key: const ValueKey('comprehensive-speak'),
+              speechText: _speechTextFor(q),
+              languageCode: widget.test.languageCode ?? 'ja',
+              uiLanguageCode: locale,
+            ),
+          ),
+        ],
 
         const SizedBox(height: 16),
 
@@ -260,47 +288,45 @@ class _UnitComprehensiveTestScreenState
     return RichText(text: TextSpan(children: spans));
   }
 
+  /// Trạng thái hình thức của một phương án — cùng bảng trạng thái mà màn bài
+  /// tập lesson dùng, nên màu sắc/viền khớp nhau ở cả bốn tình huống.
+  ExerciseOptionVisualState _optionState(String optionId, String? correctId) {
+    final selected = _selectedOptionId == optionId;
+    if (!_checked) {
+      return selected
+          ? ExerciseOptionVisualState.selected
+          : ExerciseOptionVisualState.available;
+    }
+    if (optionId == correctId) return ExerciseOptionVisualState.correct;
+    if (selected) return ExerciseOptionVisualState.incorrect;
+    return ExerciseOptionVisualState.disabled;
+  }
+
+  /// Phương án dùng ĐÚNG hệ chip chung [ExerciseActionOptionChip].
+  ///
+  /// Khác bắt buộc so với bài tập lesson: một phương án ở đây điền cho 2–3 ô,
+  /// nên dưới nhãn chip có thêm dòng "①… ②…" chỉ rõ ô nào nhận gì. Dòng đó nằm
+  /// TRONG cùng một chip nên vẫn là một vùng bấm, một kiểu màu — chỉ thêm thông
+  /// tin, không đổi phong cách.
   List<Widget> _buildOptions(UnitComprehensiveQuestion q, String locale) =>
       q.options.map((opt) {
-        final selected = _selectedOptionId == opt.id;
-        final isCorrectOption = opt.id == q.correctOptionId;
-        Color? border;
-        if (_checked) {
-          if (isCorrectOption) {
-            border = Colors.green;
-          } else if (selected) {
-            border = Colors.red;
-          }
-        } else if (selected) {
-          border = Theme.of(context).colorScheme.primary;
-        }
+        final state = _optionState(opt.id, q.correctOptionId);
+        final perBlank = q.blanks
+            .asMap()
+            .entries
+            .map((e) => '${_blankMark(e.key)}${opt.answersByBlankId[e.value.id] ?? ''}')
+            .join('   ');
         return Padding(
           padding: const EdgeInsets.only(bottom: 8),
-          child: InkWell(
-            onTap: _checked
-                ? null
-                : () => setState(() => _selectedOptionId = opt.id),
-            child: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: border ?? Theme.of(context).dividerColor,
-                  width: border == null ? 1 : 2,
-                ),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      opt.text,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                  ),
-                  if (_checked && isCorrectOption)
-                    const Icon(Icons.check, color: Colors.green, size: 20),
-                ],
-              ),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: ExerciseActionOptionChip(
+              key: ValueKey('comprehensive-option-${opt.id}'),
+              label: q.blanks.length > 1 ? '${opt.text}\n$perBlank' : opt.text,
+              state: state,
+              onPressed: _checked
+                  ? null
+                  : () => setState(() => _selectedOptionId = opt.id),
             ),
           ),
         );
@@ -348,43 +374,41 @@ class _UnitComprehensiveTestScreenState
     }).toList(growable: false);
   }
 
-  Widget _buildFeedback(UnitComprehensiveQuestion q, String locale) {
-    final correct = _isCurrentCorrect;
-    return AppCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(
-                correct ? Icons.check_circle : Icons.cancel,
-                color: correct ? Colors.green : Colors.red,
-                size: 20,
-              ),
-              const SizedBox(width: 8),
-              Text(
-                L10n.text(correct ? 'correct' : 'notQuite', locale),
-                style: Theme.of(context).textTheme.titleSmall,
-              ),
-            ],
-          ),
-          if (!correct) ...[
-            const SizedBox(height: 8),
-            Text(
-              '${L10n.text('unitComprehensiveTestCorrectAnswer', locale)}: '
-              '${q.correctAnswersByBlankId.values.join(' / ')}',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ],
-          if (q.explanation.isNotEmpty) ...[
-            const SizedBox(height: 8),
-            Text(
-              '${L10n.text('explanation', locale)}: ${q.explanation}',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ],
-        ],
-      ),
-    );
+  /// Phản hồi dùng CHUNG panel với màn bài tập lesson
+  /// ([ExerciseFeedbackPanel]) — trước đây tự dựng bằng AppCard nên hai bài
+  /// báo đúng/sai bằng hai kiểu khác nhau.
+  Widget _buildFeedback(UnitComprehensiveQuestion q, String locale) =>
+      ExerciseFeedbackPanel(
+        correct: _isCurrentCorrect,
+        uiLanguageCode: locale,
+        correctAnswer: q.correctAnswersByBlankId.values.join(' / '),
+        explanation: q.explanation,
+      );
+
+  /// Chuỗi đưa cho TTS: câu đã điền đáp án đúng, đã BÓC furigana.
+  ///
+  /// Furigana là lớp hiển thị; đọc cả ngoặc thì TTS phát ra cả phần chú âm.
+  /// Ưu tiên `audioText` của từng đoạn nếu nguồn có ghi, vì đó mới là thứ tác
+  /// giả chỉ định cho audio.
+  String _speechTextFor(UnitComprehensiveQuestion q) {
+    final segments = q.dialogue.isNotEmpty
+        ? q.dialogue.expand((turn) => turn.segments)
+        : q.segments;
+    return segments
+        .map((s) {
+          if (s.blankId != null) {
+            final blank = q.blankById(s.blankId!);
+            return blank?.audioText ?? blank?.canonicalAnswer ?? '';
+          }
+          return s.audioText ?? _stripFurigana(s.displayText ?? '');
+        })
+        .join();
   }
+
+  static String _stripFurigana(String text) =>
+      text.replaceAll(RegExp(r'（[぀-ゟー]+）'), '');
+
+  /// Ký hiệu ô trống ①②③ — dùng chung giữa thân câu và dòng chi tiết phương án.
+  static String _blankMark(int index) =>
+      const ['①', '②', '③', '④', '⑤'].elementAtOrNull(index) ?? '?';
 }

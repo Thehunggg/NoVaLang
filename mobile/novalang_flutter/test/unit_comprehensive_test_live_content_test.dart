@@ -12,6 +12,9 @@ import 'package:novalang_flutter/data/curriculum_repository.dart';
 import 'package:novalang_flutter/models/course_unit.dart';
 import 'package:novalang_flutter/models/unit_comprehensive_test.dart';
 import 'package:novalang_flutter/screens/learn/unit_comprehensive_test_screen.dart';
+import 'package:novalang_flutter/widgets/learn/exercise_feedback_panel.dart';
+import 'package:novalang_flutter/widgets/learn/exercise_option_style.dart';
+import 'package:novalang_flutter/widgets/lesson/speaker_button.dart';
 import 'package:novalang_flutter/widgets/learn/daily_life_module_card.dart';
 
 const _unitId = 'ja-daily_life-m01-u1';
@@ -155,6 +158,34 @@ void main() {
 
     // Bài thật mở ra…
     expect(find.byType(UnitComprehensiveTestScreen), findsOneWidget);
+
+    // …và dùng ĐÚNG các thành phần của màn bài tập lesson, không tự dựng riêng.
+    // Ghim lại để việc thống nhất giao diện không trôi ngược khi sửa sau này.
+    expect(
+      find.byType(ExerciseActionOptionChip),
+      findsNWidgets(4),
+      reason: '4 phương án phải dùng hệ chip chung',
+    );
+    expect(
+      find.byType(LinearProgressIndicator),
+      findsOneWidget,
+      reason: 'thanh tiến độ như màn bài tập',
+    );
+    // Chấm một câu rồi kiểm panel phản hồi dùng chung + nút nghe.
+    await tester.tap(find.byType(ExerciseActionOptionChip).first);
+    await tester.pumpAndSettle();
+    await tester.tap(find.byType(FilledButton).last);
+    await tester.pumpAndSettle();
+    expect(
+      find.byType(ExerciseFeedbackPanel),
+      findsOneWidget,
+      reason: 'phản hồi phải dùng panel chung',
+    );
+    expect(
+      find.byType(SpeakerButton),
+      findsOneWidget,
+      reason: 'nút nghe chỉ hiện SAU khi chấm',
+    );
     // …và KHÔNG còn thông báo tạm.
     expect(
       find.text(L10n.text('unitComprehensiveTestPreparing', 'vi')),
