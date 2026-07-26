@@ -624,9 +624,9 @@ const DIALOGUE_QUESTIONS = [
       review(L3, 'grammar', '～も'),
     ],
     explanation: n(
-      '私は nêu chủ đề, không diễn đạt "tôi cũng vậy" — L3 dạy ～も cho nghĩa đó. お元気で là lời chia tay khi lâu mới gặp lại, còn đây là lúc vừa làm quen và cả nhóm còn đang ở đó. お先に失礼します là xin phép về trước, vừa xưng tên đã xin về là mâu thuẫn.',
-      '私は marks a topic; it does not mean "me too" — L3 teaches ～も for that. お元気で is a goodbye for a long parting, but everyone has just met and is still there. お先に失礼します excuses you to leave, contradicting having just given your name.',
-      '「私は」は主題を示す言い方で、「私も」の意味にはなりません。L3で「～も」を学びました。「お元気で」はしばらく会わないときの別れの言葉ですが、ここは知り合ったばかりで皆その場にいます。「お先に失礼します」は先に帰る言葉で、名乗った直後には矛盾します。',
+      '私は nêu chủ đề, không diễn đạt "tôi cũng vậy" — L3 dạy ～も cho nghĩa đó. お元気で là lời chia tay khi mốc gặp lại từ MỘT TUẦN TRỞ LÊN, còn đây là lúc vừa làm quen và cả nhóm còn đang ở đó. お先に失礼します là xin phép về trước, vừa xưng tên đã xin về là mâu thuẫn.',
+      '私は marks a topic; it does not mean "me too" — L3 teaches ～も for that. お元気で is a goodbye for a parting of a week or more, but everyone has just met and is still there. お先に失礼します excuses you to leave, contradicting having just given your name.',
+      '「私は」は主題を示す言い方で、「私も」の意味にはなりません。L3で「～も」を学びました。「お元気で」は一週間以上会わないときの別れの言葉ですが、ここは知り合ったばかりで皆その場にいます。「お先に失礼します」は先に帰る言葉で、名乗った直後には矛盾します。',
     ),
   }),
 
@@ -1077,9 +1077,9 @@ const CLOSING_QUESTIONS = [
       review(L3, 'vocabulary', 'kochira-koso'),
     ],
     explanation: n(
-      'Bối cảnh ghi rõ đầu giờ chiều, mà おはようございます là chào buổi sáng. お元気で là lời chia tay khi lâu mới gặp lại, mà Itō đang MỞ LỜI làm quen. 失礼します là lời xin phép rời đi, vừa được làm quen đã xin đi là mâu thuẫn.',
-      'The setting is early afternoon, and おはようございます is a morning greeting. お元気で is a goodbye for a long parting, yet Itō is OPENING an introduction. 失礼します excuses you to leave, which contradicts having just been introduced.',
-      '場面は午後の初めで、「おはようございます」は朝のあいさつです。「お元気で」はしばらく会わないときの別れの言葉ですが、伊藤さんは自己紹介を切り出しているところです。「失礼します」は立ち去る言葉で、紹介された直後には矛盾します。',
+      'Bối cảnh ghi rõ đầu giờ chiều, mà おはようございます là chào buổi sáng. お元気で là lời chia tay khi mốc gặp lại từ MỘT TUẦN TRỞ LÊN, mà Itō đang MỞ LỜI làm quen. 失礼します là lời xin phép rời đi, vừa được làm quen đã xin đi là mâu thuẫn.',
+      'The setting is early afternoon, and おはようございます is a morning greeting. お元気で is a goodbye for a parting of a week or more, yet Itō is OPENING an introduction. 失礼します excuses you to leave, which contradicts having just been introduced.',
+      '場面は午後の初めで、「おはようございます」は朝のあいさつです。「お元気で」は一週間以上会わないときの別れの言葉ですが、伊藤さんは自己紹介を切り出しているところです。「失礼します」は立ち去る言葉で、紹介された直後には矛盾します。',
     ),
   }),
 

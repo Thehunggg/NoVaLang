@@ -211,7 +211,6 @@ add('Cũng thân mật như またね; nhấn "じゃあ" khi kết thúc, khôn
 add('Đi cẩn thận nhé / Giữ gìn nhé.', 'Take care (on your way).', '気をつけて。');
 add('Bạn bè, người thân, đồng nghiệp.', 'Friends, family, coworkers.', '友達、家族、同僚。');
 add('Khi ai đó sắp lên đường (về nhà, đi xa).', 'When someone is about to set off (heading home, traveling).', '相手が出かける・帰るとき。');
-add('お元気で dặn giữ sức khỏe khi lâu mới gặp; 気をつけて dặn an toàn ngay trên đường đi.', 'お元気で wishes lasting good health when you won’t meet for a while; 気をつけて is about being safe right now on the way.', '「お元気で」はしばらく会わないときの健康を願う言葉。「気をつけて」は今この道中の安全を願う言葉。');
 add('Vậy, hẹn gặp lại (lịch sự hơn じゃあ、また).', 'Well then, see you (more polite than じゃあ、また).', 'では、また。（「じゃあ、また」より丁寧。）');
 add('Người trên, đồng nghiệp, hoàn cảnh cần lịch sự vừa phải.', 'Superiors, coworkers, situations needing moderate politeness.', '目上、同僚、適度な丁寧さが必要な場面。');
 add('Chia tay khi cần lịch sự hơn mức nói với bạn bè.', 'Parting when you need to be more polite than with friends.', '友達より丁寧にすべき場面での別れ。');
