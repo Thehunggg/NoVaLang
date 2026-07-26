@@ -114,6 +114,15 @@ const EXPECTED_KATAKANA_ROWS = [
   "ハヒフヘホ", "マミムメモ", "ヤユヨ", "ラリルレロ", "ワヲン",
 ];
 
+/**
+ * Bóc furigana 「漢字（かな）」 → 「漢字」.
+ *
+ * Khoá nội dung Golden (ADR-008) đóng băng CÂU CHỮ, không đóng băng lớp hỗ trợ
+ * đọc. Từ 2026-07-25 mọi kanji hiển thị đều kèm hiragana, nên khoá phải so
+ * phần nội dung sau khi bóc — vẫn bắt được mọi thay đổi câu chữ thật, mà không
+ * báo động vì một chú âm.
+ */
+const stripFurigana = (text) => String(text ?? '').replace(/（[぀-ゟー]+）/g, '');
 export const errors = [];
 const fail = (msg) => errors.push(msg);
 
@@ -962,6 +971,53 @@ function validateHiraganaLessonOneSpec(lesson) {
  *
  * Exported ở module scope để script độc lập import chạy thử trực tiếp.
  */
+/**
+ * §B2d — mọi kanji HIỂN THỊ cho người học phải kèm hiragana (owner chốt
+ * 2026-07-25), ở MỌI cấp độ.
+ *
+ * MỨC CỨNG, có lý do: generator đã gắn furigana ở một chỗ duy nhất ngay trước
+ * khi ghi, nên output luôn đạt. Một lỗi ở đây nghĩa là cơ chế đó bị gỡ hoặc bị
+ * đi vòng — đúng loại hỏng phải chặn build, không phải nhắc nhở. Giới hạn ở
+ * ngôn ngữ ja: tiếng Trung cũng dùng chữ Hán nhưng không có furigana, ép chung
+ * là sai.
+ */
+const FURIGANA_DISPLAY_FIELDS = new Set([
+  "displayText",
+  "text",
+  "targetText",
+  "displayAnswer",
+  "term",
+  "pattern",
+]);
+const KANJI_PATTERN = /[一-龯]/;
+const FURIGANA_PATTERN = /（[぀-ゟー]+）/;
+
+function validateFuriganaCoverage(node, lessonId, path = "") {
+  if (node == null) return;
+  if (typeof node === "string") {
+    const field = path.split(".").pop().replace(/\[\d+\]$/, "");
+    if (!FURIGANA_DISPLAY_FIELDS.has(field)) return;
+    if (KANJI_PATTERN.test(node) && !FURIGANA_PATTERN.test(node)) {
+      fail(
+        `${lessonId}: kanji hiển thị KHÔNG kèm hiragana tại ${path} — ` +
+          `${JSON.stringify(node)} (§B2d)`,
+      );
+    }
+    return;
+  }
+  if (Array.isArray(node)) {
+    node.forEach((item, index) =>
+      validateFuriganaCoverage(item, lessonId, `${path}[${index}]`),
+    );
+    return;
+  }
+  if (typeof node === "object") {
+    for (const [key, value] of Object.entries(node)) {
+      validateFuriganaCoverage(value, lessonId, path ? `${path}.${key}` : key);
+    }
+  }
+}
+
 /** Gom CẢNH BÁO MỀM §B16 "cụm LUÔN SAI" — không bao giờ chặn build. */
 const alwaysWrongWarnings = [];
 
@@ -1642,11 +1698,11 @@ async function main() {
       "なんでもないです。",
       "田中さん、勉強を頑張ってくださいね。さようなら。",
     ];
-    if (dialogueLines.map((entry) => entry.targetText).join("|") !== approvedQ14Targets.join("|")) {
+    if (dialogueLines.map((entry) => stripFurigana(entry.targetText)).join("|") !== approvedQ14Targets.join("|")) {
       fail(`${lesson.id}: exercise 14 must match the owner-approved Tanaka–Sato dialogue exactly`);
     }
     const divider = sceneDividers[0];
-    if (divider?.afterDialogueLine !== 10 || divider?.targetText !== "着いた時") {
+    if (divider?.afterDialogueLine !== 10 || stripFurigana(divider?.targetText) !== "着いた時") {
       fail(`${lesson.id}: exercise 14 scene divider must match the approved afterDialogueLine/targetText`);
     }
     const konnichiwa = (content.vocabularyDetails ?? []).find((item) => item.id === "konnichiwa");
@@ -1756,7 +1812,10 @@ async function main() {
     if (!allowedNiches.has(lesson.nicheId)) {
       fail(`${lesson.id}: unexpected nicheId ${lesson.nicheId}`);
     }
-    if (lesson.languageCode === "ja") validateNoRawKanaInRomanization(lesson);
+    if (lesson.languageCode === "ja") {
+      validateNoRawKanaInRomanization(lesson);
+      validateFuriganaCoverage(lesson.fiveCardContent, lesson.id, "fiveCardContent");
+    }
     if (lesson.lessonFormat === "five_cards") {
       validateFiveCardsStructure(lesson);
       collectVocabularyDetailWarnings(lesson);

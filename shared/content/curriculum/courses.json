@@ -2181,7 +2181,7 @@
                   },
                   {
                     "id": "q1b2",
-                    "displayAnswer": "よろしくお願いします",
+                    "displayAnswer": "よろしくお願（ねが）いします",
                     "canonicalAnswer": "よろしくお願いします",
                     "audioText": "よろしくおねがいします",
                     "acceptedAnswers": [
@@ -2192,7 +2192,7 @@
                 "options": [
                   {
                     "id": "q1a",
-                    "text": "そうですか / よろしくお願いします",
+                    "text": "そうですか / よろしくお願（ねが）いします",
                     "answersByBlankId": {
                       "q1b1": "そうですか",
                       "q1b2": "よろしくお願いします"
@@ -2200,7 +2200,7 @@
                   },
                   {
                     "id": "q1b",
-                    "text": "はじめまして / よろしくお願いします",
+                    "text": "はじめまして / よろしくお願（ねが）いします",
                     "answersByBlankId": {
                       "q1b1": "はじめまして",
                       "q1b2": "よろしくお願いします"
@@ -2216,7 +2216,7 @@
                   },
                   {
                     "id": "q1d",
-                    "text": "はじめまして / 失礼します",
+                    "text": "はじめまして / 失礼（しつれい）します",
                     "answersByBlankId": {
                       "q1b1": "はじめまして",
                       "q1b2": "失礼します"
@@ -2270,13 +2270,13 @@
                     "blankId": "q2b2"
                   },
                   {
-                    "displayText": "は何ですか。"
+                    "displayText": "は何（なん）ですか。"
                   }
                 ],
                 "blanks": [
                   {
                     "id": "q2b1",
-                    "displayAnswer": "失礼ですが",
+                    "displayAnswer": "失礼（しつれい）ですが",
                     "canonicalAnswer": "失礼ですが",
                     "audioText": "しつれいですが",
                     "acceptedAnswers": [
@@ -2285,7 +2285,7 @@
                   },
                   {
                     "id": "q2b2",
-                    "displayAnswer": "お名前",
+                    "displayAnswer": "お名前（なまえ）",
                     "canonicalAnswer": "お名前",
                     "audioText": "おなまえ",
                     "acceptedAnswers": [
@@ -2296,7 +2296,7 @@
                 "options": [
                   {
                     "id": "q2a",
-                    "text": "もう一度 / お名前",
+                    "text": "もう一度（いちど） / お名前（なまえ）",
                     "answersByBlankId": {
                       "q2b1": "もう一度",
                       "q2b2": "お名前"
@@ -2304,7 +2304,7 @@
                   },
                   {
                     "id": "q2b",
-                    "text": "お先に失礼します / お名前",
+                    "text": "お先（さき）に失礼（しつれい）します / お名前（なまえ）",
                     "answersByBlankId": {
                       "q2b1": "お先に失礼します",
                       "q2b2": "お名前"
@@ -2312,7 +2312,7 @@
                   },
                   {
                     "id": "q2c",
-                    "text": "失礼ですが / お名前",
+                    "text": "失礼（しつれい）ですが / お名前（なまえ）",
                     "answersByBlankId": {
                       "q2b1": "失礼ですが",
                       "q2b2": "お名前"
@@ -2320,7 +2320,7 @@
                   },
                   {
                     "id": "q2d",
-                    "text": "失礼ですが / お名前は",
+                    "text": "失礼（しつれい）ですが / お名前（なまえ）は",
                     "answersByBlankId": {
                       "q2b1": "失礼ですが",
                       "q2b2": "お名前は"
@@ -2392,7 +2392,7 @@
                   },
                   {
                     "id": "q3b2",
-                    "displayAnswer": "よろしくお願いします",
+                    "displayAnswer": "よろしくお願（ねが）いします",
                     "canonicalAnswer": "よろしくお願いします",
                     "audioText": "よろしくおねがいします",
                     "acceptedAnswers": [
@@ -2403,7 +2403,7 @@
                 "options": [
                   {
                     "id": "q3a",
-                    "text": "こちらこそ / よろしくお願いします",
+                    "text": "こちらこそ / よろしくお願（ねが）いします",
                     "answersByBlankId": {
                       "q3b1": "こちらこそ",
                       "q3b2": "よろしくお願いします"
@@ -2411,7 +2411,7 @@
                   },
                   {
                     "id": "q3b",
-                    "text": "失礼ですが / よろしくお願いします",
+                    "text": "失礼（しつれい）ですが / よろしくお願（ねが）いします",
                     "answersByBlankId": {
                       "q3b1": "失礼ですが",
                       "q3b2": "よろしくお願いします"
@@ -2419,7 +2419,7 @@
                   },
                   {
                     "id": "q3c",
-                    "text": "お先に失礼します / よろしくお願いします",
+                    "text": "お先（さき）に失礼（しつれい）します / よろしくお願（ねが）いします",
                     "answersByBlankId": {
                       "q3b1": "お先に失礼します",
                       "q3b2": "よろしくお願いします"
@@ -2427,7 +2427,7 @@
                   },
                   {
                     "id": "q3d",
-                    "text": "こちらこそ / また来週",
+                    "text": "こちらこそ / また来週（らいしゅう）",
                     "answersByBlankId": {
                       "q3b1": "こちらこそ",
                       "q3b2": "また来週"
@@ -2472,7 +2472,7 @@
                 },
                 "segments": [
                   {
-                    "displayText": "あ、伊藤"
+                    "displayText": "あ、伊藤（いとう）"
                   },
                   {
                     "blankId": "q4b1"
@@ -2484,7 +2484,7 @@
                     "blankId": "q4b2"
                   },
                   {
-                    "displayText": "、田中です。"
+                    "displayText": "、田中（たなか）です。"
                   }
                 ],
                 "blanks": [
@@ -2579,13 +2579,13 @@
                 },
                 "segments": [
                   {
-                    "displayText": "私の"
+                    "displayText": "私（わたし）の"
                   },
                   {
                     "blankId": "q5b1"
                   },
                   {
-                    "displayText": "は田中です。"
+                    "displayText": "は田中（たなか）です。"
                   },
                   {
                     "blankId": "q5b2"
@@ -2597,7 +2597,7 @@
                 "blanks": [
                   {
                     "id": "q5b1",
-                    "displayAnswer": "名前",
+                    "displayAnswer": "名前（なまえ）",
                     "canonicalAnswer": "名前",
                     "audioText": "なまえ",
                     "acceptedAnswers": [
@@ -2606,7 +2606,7 @@
                   },
                   {
                     "id": "q5b2",
-                    "displayAnswer": "お名前",
+                    "displayAnswer": "お名前（なまえ）",
                     "canonicalAnswer": "お名前",
                     "audioText": "おなまえ",
                     "acceptedAnswers": [
@@ -2617,7 +2617,7 @@
                 "options": [
                   {
                     "id": "q5a",
-                    "text": "お名前 / お名前",
+                    "text": "お名前（なまえ） / お名前（なまえ）",
                     "answersByBlankId": {
                       "q5b1": "お名前",
                       "q5b2": "お名前"
@@ -2625,7 +2625,7 @@
                   },
                   {
                     "id": "q5b",
-                    "text": "名前 / お名前",
+                    "text": "名前（なまえ） / お名前（なまえ）",
                     "answersByBlankId": {
                       "q5b1": "名前",
                       "q5b2": "お名前"
@@ -2633,7 +2633,7 @@
                   },
                   {
                     "id": "q5c",
-                    "text": "名前 / お名前は",
+                    "text": "名前（なまえ） / お名前（なまえ）は",
                     "answersByBlankId": {
                       "q5b1": "名前",
                       "q5b2": "お名前は"
@@ -2641,7 +2641,7 @@
                   },
                   {
                     "id": "q5d",
-                    "text": "名前 / 名前",
+                    "text": "名前（なまえ） / 名前（なまえ）",
                     "answersByBlankId": {
                       "q5b1": "名前",
                       "q5b2": "名前"
@@ -2686,7 +2686,7 @@
                 },
                 "segments": [
                   {
-                    "displayText": "田中さん、"
+                    "displayText": "田中（たなか）さん、"
                   },
                   {
                     "blankId": "q6b1"
@@ -2704,7 +2704,7 @@
                 "blanks": [
                   {
                     "id": "q6b1",
-                    "displayAnswer": "お先に失礼します",
+                    "displayAnswer": "お先（さき）に失礼（しつれい）します",
                     "canonicalAnswer": "お先に失礼します",
                     "audioText": "おさきにしつれいします",
                     "acceptedAnswers": [
@@ -2713,7 +2713,7 @@
                   },
                   {
                     "id": "q6b2",
-                    "displayAnswer": "また来週",
+                    "displayAnswer": "また来週（らいしゅう）",
                     "canonicalAnswer": "また来週",
                     "audioText": "またらいしゅう",
                     "acceptedAnswers": [
@@ -2724,7 +2724,7 @@
                 "options": [
                   {
                     "id": "q6a",
-                    "text": "お先に失礼します / また来週",
+                    "text": "お先（さき）に失礼（しつれい）します / また来週（らいしゅう）",
                     "answersByBlankId": {
                       "q6b1": "お先に失礼します",
                       "q6b2": "また来週"
@@ -2732,7 +2732,7 @@
                   },
                   {
                     "id": "q6b",
-                    "text": "よろしくお願いします / また来週",
+                    "text": "よろしくお願（ねが）いします / また来週（らいしゅう）",
                     "answersByBlankId": {
                       "q6b1": "よろしくお願いします",
                       "q6b2": "また来週"
@@ -2740,7 +2740,7 @@
                   },
                   {
                     "id": "q6c",
-                    "text": "お先に失礼します / はじめまして",
+                    "text": "お先（さき）に失礼（しつれい）します / はじめまして",
                     "answersByBlankId": {
                       "q6b1": "お先に失礼します",
                       "q6b2": "はじめまして"
@@ -2748,7 +2748,7 @@
                   },
                   {
                     "id": "q6d",
-                    "text": "お先に失礼します / お名前は？",
+                    "text": "お先（さき）に失礼（しつれい）します / お名前（なまえ）は？",
                     "answersByBlankId": {
                       "q6b1": "お先に失礼します",
                       "q6b2": "お名前は？"
@@ -2796,13 +2796,13 @@
                     "blankId": "q7b1"
                   },
                   {
-                    "displayText": "、田中さん。"
+                    "displayText": "、田中（たなか）さん。"
                   },
                   {
                     "blankId": "q7b2"
                   },
                   {
-                    "displayText": "。また明日。"
+                    "displayText": "。また明日（あした）。"
                   }
                 ],
                 "blanks": [
@@ -2817,7 +2817,7 @@
                   },
                   {
                     "id": "q7b2",
-                    "displayAnswer": "失礼します",
+                    "displayAnswer": "失礼（しつれい）します",
                     "canonicalAnswer": "失礼します",
                     "audioText": "しつれいします",
                     "acceptedAnswers": [
@@ -2828,7 +2828,7 @@
                 "options": [
                   {
                     "id": "q7a",
-                    "text": "おはようございます / 失礼します",
+                    "text": "おはようございます / 失礼（しつれい）します",
                     "answersByBlankId": {
                       "q7b1": "おはようございます",
                       "q7b2": "失礼します"
@@ -2844,7 +2844,7 @@
                   },
                   {
                     "id": "q7c",
-                    "text": "こんばんは / お名前は何ですか",
+                    "text": "こんばんは / お名前（なまえ）は何（なん）ですか",
                     "answersByBlankId": {
                       "q7b1": "こんばんは",
                       "q7b2": "お名前は何ですか"
@@ -2852,7 +2852,7 @@
                   },
                   {
                     "id": "q7d",
-                    "text": "こんばんは / 失礼します",
+                    "text": "こんばんは / 失礼（しつれい）します",
                     "answersByBlankId": {
                       "q7b1": "こんばんは",
                       "q7b2": "失礼します"
@@ -2921,7 +2921,7 @@
                   },
                   {
                     "id": "q8b2",
-                    "displayAnswer": "お元気で",
+                    "displayAnswer": "お元気（げんき）で",
                     "canonicalAnswer": "お元気で",
                     "audioText": "おげんきで",
                     "acceptedAnswers": [
@@ -2932,7 +2932,7 @@
                 "options": [
                   {
                     "id": "q8a",
-                    "text": "こちらこそ / お元気で",
+                    "text": "こちらこそ / お元気（げんき）で",
                     "answersByBlankId": {
                       "q8b1": "こちらこそ",
                       "q8b2": "お元気で"
@@ -2940,7 +2940,7 @@
                   },
                   {
                     "id": "q8b",
-                    "text": "そうですか / よろしくお願いします",
+                    "text": "そうですか / よろしくお願（ねが）いします",
                     "answersByBlankId": {
                       "q8b1": "そうですか",
                       "q8b2": "よろしくお願いします"
@@ -2948,7 +2948,7 @@
                   },
                   {
                     "id": "q8c",
-                    "text": "そうですか / お元気で",
+                    "text": "そうですか / お元気（げんき）で",
                     "answersByBlankId": {
                       "q8b1": "そうですか",
                       "q8b2": "お元気で"
@@ -2956,7 +2956,7 @@
                   },
                   {
                     "id": "q8d",
-                    "text": "そうですか / また来週",
+                    "text": "そうですか / また来週（らいしゅう）",
                     "answersByBlankId": {
                       "q8b1": "そうですか",
                       "q8b2": "また来週"
@@ -3008,7 +3008,7 @@
                         "blankId": "q9b1"
                       },
                       {
-                        "displayText": "。佐藤です。"
+                        "displayText": "。佐藤（さとう）です。"
                       }
                     ]
                   },
@@ -3017,13 +3017,13 @@
                     "speakerId": "スミス",
                     "segments": [
                       {
-                        "displayText": "私"
+                        "displayText": "私（わたし）"
                       },
                       {
                         "blankId": "q9b2"
                       },
                       {
-                        "displayText": "スミスです。よろしくお願いします。"
+                        "displayText": "スミスです。よろしくお願（ねが）いします。"
                       }
                     ]
                   },
@@ -3038,7 +3038,7 @@
                         "blankId": "q9b3"
                       },
                       {
-                        "displayText": "。こちらこそ、よろしくお願いします。"
+                        "displayText": "。こちらこそ、よろしくお願（ねが）いします。"
                       }
                     ]
                   }
@@ -3166,7 +3166,7 @@
                         "blankId": "q10b2"
                       },
                       {
-                        "displayText": "は何ですか。"
+                        "displayText": "は何（なん）ですか。"
                       }
                     ]
                   },
@@ -3190,7 +3190,7 @@
                         "blankId": "q10b3"
                       },
                       {
-                        "displayText": "お願いします。"
+                        "displayText": "お願（ねが）いします。"
                       }
                     ]
                   }
@@ -3198,7 +3198,7 @@
                 "blanks": [
                   {
                     "id": "q10b1",
-                    "displayAnswer": "失礼ですが",
+                    "displayAnswer": "失礼（しつれい）ですが",
                     "canonicalAnswer": "失礼ですが",
                     "audioText": "しつれいですが",
                     "acceptedAnswers": [
@@ -3207,7 +3207,7 @@
                   },
                   {
                     "id": "q10b2",
-                    "displayAnswer": "お名前",
+                    "displayAnswer": "お名前（なまえ）",
                     "canonicalAnswer": "お名前",
                     "audioText": "おなまえ",
                     "acceptedAnswers": [
@@ -3216,7 +3216,7 @@
                   },
                   {
                     "id": "q10b3",
-                    "displayAnswer": "もう一度",
+                    "displayAnswer": "もう一度（いちど）",
                     "canonicalAnswer": "もう一度",
                     "audioText": "もういちど",
                     "acceptedAnswers": [
@@ -3227,7 +3227,7 @@
                 "options": [
                   {
                     "id": "q10a",
-                    "text": "失礼ですが / お名前 / もう一度",
+                    "text": "失礼（しつれい）ですが / お名前（なまえ） / もう一度（いちど）",
                     "answersByBlankId": {
                       "q10b1": "失礼ですが",
                       "q10b2": "お名前",
@@ -3236,7 +3236,7 @@
                   },
                   {
                     "id": "q10b",
-                    "text": "失礼ですが / 私のお名前 / もう一度",
+                    "text": "失礼（しつれい）ですが / 私（わたし）のお名前（なまえ） / もう一度（いちど）",
                     "answersByBlankId": {
                       "q10b1": "失礼ですが",
                       "q10b2": "私のお名前",
@@ -3245,7 +3245,7 @@
                   },
                   {
                     "id": "q10c",
-                    "text": "お先に失礼します / お名前 / もう一度",
+                    "text": "お先（さき）に失礼（しつれい）します / お名前（なまえ） / もう一度（いちど）",
                     "answersByBlankId": {
                       "q10b1": "お先に失礼します",
                       "q10b2": "お名前",
@@ -3254,7 +3254,7 @@
                   },
                   {
                     "id": "q10d",
-                    "text": "失礼ですが / お名前 / さようなら",
+                    "text": "失礼（しつれい）ですが / お名前（なまえ） / さようなら",
                     "answersByBlankId": {
                       "q10b1": "失礼ですが",
                       "q10b2": "お名前",
@@ -3309,7 +3309,7 @@
                     "speakerId": "アンナ",
                     "segments": [
                       {
-                        "displayText": "伊藤"
+                        "displayText": "伊藤（いとう）"
                       },
                       {
                         "blankId": "q11b1"
@@ -3362,7 +3362,7 @@
                   },
                   {
                     "id": "q11b3",
-                    "displayAnswer": "来週",
+                    "displayAnswer": "来週（らいしゅう）",
                     "canonicalAnswer": "来週",
                     "audioText": "らいしゅう",
                     "acceptedAnswers": [
@@ -3373,7 +3373,7 @@
                 "options": [
                   {
                     "id": "q11a",
-                    "text": "さん / じゃあ、また / 明日",
+                    "text": "さん / じゃあ、また / 明日（あした）",
                     "answersByBlankId": {
                       "q11b1": "さん",
                       "q11b2": "じゃあ、また",
@@ -3382,7 +3382,7 @@
                   },
                   {
                     "id": "q11b",
-                    "text": "さんですね / じゃあ、また / 来週",
+                    "text": "さんですね / じゃあ、また / 来週（らいしゅう）",
                     "answersByBlankId": {
                       "q11b1": "さんですね",
                       "q11b2": "じゃあ、また",
@@ -3391,7 +3391,7 @@
                   },
                   {
                     "id": "q11c",
-                    "text": "さん / はじめまして / 来週",
+                    "text": "さん / はじめまして / 来週（らいしゅう）",
                     "answersByBlankId": {
                       "q11b1": "さん",
                       "q11b2": "はじめまして",
@@ -3400,7 +3400,7 @@
                   },
                   {
                     "id": "q11d",
-                    "text": "さん / じゃあ、また / 来週",
+                    "text": "さん / じゃあ、また / 来週（らいしゅう）",
                     "answersByBlankId": {
                       "q11b1": "さん",
                       "q11b2": "じゃあ、また",
@@ -3473,7 +3473,7 @@
                         "blankId": "q12b2"
                       },
                       {
-                        "displayText": "、よろしくお願いします。"
+                        "displayText": "、よろしくお願（ねが）いします。"
                       }
                     ]
                   },
@@ -3485,7 +3485,7 @@
                         "blankId": "q12b3"
                       },
                       {
-                        "displayText": "、よろしくお願いします。"
+                        "displayText": "、よろしくお願（ねが）いします。"
                       }
                     ]
                   }
@@ -3493,7 +3493,7 @@
                 "blanks": [
                   {
                     "id": "q12b1",
-                    "displayAnswer": "よろしくお願いします",
+                    "displayAnswer": "よろしくお願（ねが）いします",
                     "canonicalAnswer": "よろしくお願いします",
                     "audioText": "よろしくおねがいします",
                     "acceptedAnswers": [
@@ -3511,7 +3511,7 @@
                   },
                   {
                     "id": "q12b3",
-                    "displayAnswer": "私も",
+                    "displayAnswer": "私（わたし）も",
                     "canonicalAnswer": "私も",
                     "audioText": "わたしも",
                     "acceptedAnswers": [
@@ -3522,7 +3522,7 @@
                 "options": [
                   {
                     "id": "q12a",
-                    "text": "よろしくお願いします / こちらこそ / 私は",
+                    "text": "よろしくお願（ねが）いします / こちらこそ / 私（わたし）は",
                     "answersByBlankId": {
                       "q12b1": "よろしくお願いします",
                       "q12b2": "こちらこそ",
@@ -3531,7 +3531,7 @@
                   },
                   {
                     "id": "q12b",
-                    "text": "よろしくお願いします / こちらこそ / 私も",
+                    "text": "よろしくお願（ねが）いします / こちらこそ / 私（わたし）も",
                     "answersByBlankId": {
                       "q12b1": "よろしくお願いします",
                       "q12b2": "こちらこそ",
@@ -3540,7 +3540,7 @@
                   },
                   {
                     "id": "q12c",
-                    "text": "よろしくお願いします / お元気で / 私も",
+                    "text": "よろしくお願（ねが）いします / お元気（げんき）で / 私（わたし）も",
                     "answersByBlankId": {
                       "q12b1": "よろしくお願いします",
                       "q12b2": "お元気で",
@@ -3549,7 +3549,7 @@
                   },
                   {
                     "id": "q12d",
-                    "text": "お先に失礼します / こちらこそ / 私も",
+                    "text": "お先（さき）に失礼（しつれい）します / こちらこそ / 私（わたし）も",
                     "answersByBlankId": {
                       "q12b1": "お先に失礼します",
                       "q12b2": "こちらこそ",
@@ -3607,7 +3607,7 @@
                         "blankId": "q13b1"
                       },
                       {
-                        "displayText": "、田中"
+                        "displayText": "、田中（たなか）"
                       },
                       {
                         "blankId": "q13b2"
@@ -3634,7 +3634,7 @@
                         "blankId": "q13b3"
                       },
                       {
-                        "displayText": "。スミスです。よろしくお願いします。"
+                        "displayText": "。スミスです。よろしくお願（ねが）いします。"
                       }
                     ]
                   }
@@ -3753,13 +3753,13 @@
                     "speakerId": "田中",
                     "segments": [
                       {
-                        "displayText": "失礼ですが、"
+                        "displayText": "失礼（しつれい）ですが、"
                       },
                       {
                         "blankId": "q14b1"
                       },
                       {
-                        "displayText": "は何ですか。"
+                        "displayText": "は何（なん）ですか。"
                       }
                     ]
                   },
@@ -3768,7 +3768,7 @@
                     "speakerId": "スミス",
                     "segments": [
                       {
-                        "displayText": "私の"
+                        "displayText": "私（わたし）の"
                       },
                       {
                         "blankId": "q14b2"
@@ -3789,7 +3789,7 @@
                     "speakerId": "田中",
                     "segments": [
                       {
-                        "displayText": "田中です。"
+                        "displayText": "田中（たなか）です。"
                       }
                     ]
                   }
@@ -3797,7 +3797,7 @@
                 "blanks": [
                   {
                     "id": "q14b1",
-                    "displayAnswer": "お名前",
+                    "displayAnswer": "お名前（なまえ）",
                     "canonicalAnswer": "お名前",
                     "audioText": "おなまえ",
                     "acceptedAnswers": [
@@ -3806,7 +3806,7 @@
                   },
                   {
                     "id": "q14b2",
-                    "displayAnswer": "名前",
+                    "displayAnswer": "名前（なまえ）",
                     "canonicalAnswer": "名前",
                     "audioText": "なまえ",
                     "acceptedAnswers": [
@@ -3815,7 +3815,7 @@
                   },
                   {
                     "id": "q14b3",
-                    "displayAnswer": "お名前",
+                    "displayAnswer": "お名前（なまえ）",
                     "canonicalAnswer": "お名前",
                     "audioText": "おなまえ",
                     "acceptedAnswers": [
@@ -3826,7 +3826,7 @@
                 "options": [
                   {
                     "id": "q14a",
-                    "text": "お名前 / お名前 / お名前",
+                    "text": "お名前（なまえ） / お名前（なまえ） / お名前（なまえ）",
                     "answersByBlankId": {
                       "q14b1": "お名前",
                       "q14b2": "お名前",
@@ -3835,7 +3835,7 @@
                   },
                   {
                     "id": "q14b",
-                    "text": "お名前 / 名前 / 何ですか",
+                    "text": "お名前（なまえ） / 名前（なまえ） / 何（なん）ですか",
                     "answersByBlankId": {
                       "q14b1": "お名前",
                       "q14b2": "名前",
@@ -3844,7 +3844,7 @@
                   },
                   {
                     "id": "q14c",
-                    "text": "お名前 / 名前 / お名前",
+                    "text": "お名前（なまえ） / 名前（なまえ） / お名前（なまえ）",
                     "answersByBlankId": {
                       "q14b1": "お名前",
                       "q14b2": "名前",
@@ -3853,7 +3853,7 @@
                   },
                   {
                     "id": "q14d",
-                    "text": "私のお名前 / 名前 / お名前",
+                    "text": "私（わたし）のお名前（なまえ） / 名前（なまえ） / お名前（なまえ）",
                     "answersByBlankId": {
                       "q14b1": "私のお名前",
                       "q14b2": "名前",
@@ -3908,7 +3908,7 @@
                     "speakerId": "佐藤",
                     "segments": [
                       {
-                        "displayText": "田中"
+                        "displayText": "田中（たなか）"
                       },
                       {
                         "blankId": "q15b1"
@@ -3949,7 +3949,7 @@
                   },
                   {
                     "id": "q15b2",
-                    "displayAnswer": "お先に失礼します",
+                    "displayAnswer": "お先（さき）に失礼（しつれい）します",
                     "canonicalAnswer": "お先に失礼します",
                     "audioText": "おさきにしつれいします",
                     "acceptedAnswers": [
@@ -3958,7 +3958,7 @@
                   },
                   {
                     "id": "q15b3",
-                    "displayAnswer": "また明日",
+                    "displayAnswer": "また明日（あした）",
                     "canonicalAnswer": "また明日",
                     "audioText": "またあした",
                     "acceptedAnswers": [
@@ -3969,7 +3969,7 @@
                 "options": [
                   {
                     "id": "q15a",
-                    "text": "さん / お先に失礼します / お元気で",
+                    "text": "さん / お先（さき）に失礼（しつれい）します / お元気（げんき）で",
                     "answersByBlankId": {
                       "q15b1": "さん",
                       "q15b2": "お先に失礼します",
@@ -3978,7 +3978,7 @@
                   },
                   {
                     "id": "q15b",
-                    "text": "さん / お先に失礼します / また明日",
+                    "text": "さん / お先（さき）に失礼（しつれい）します / また明日（あした）",
                     "answersByBlankId": {
                       "q15b1": "さん",
                       "q15b2": "お先に失礼します",
@@ -3987,7 +3987,7 @@
                   },
                   {
                     "id": "q15c",
-                    "text": "さん / はじめまして / また明日",
+                    "text": "さん / はじめまして / また明日（あした）",
                     "answersByBlankId": {
                       "q15b1": "さん",
                       "q15b2": "はじめまして",
@@ -3996,7 +3996,7 @@
                   },
                   {
                     "id": "q15d",
-                    "text": "ですね / お先に失礼します / また明日",
+                    "text": "ですね / お先（さき）に失礼（しつれい）します / また明日（あした）",
                     "answersByBlankId": {
                       "q15b1": "ですね",
                       "q15b2": "お先に失礼します",
@@ -4051,7 +4051,7 @@
                     "speakerId": "佐藤",
                     "segments": [
                       {
-                        "displayText": "伊藤"
+                        "displayText": "伊藤（いとう）"
                       },
                       {
                         "blankId": "q16b1"
@@ -4104,7 +4104,7 @@
                   },
                   {
                     "id": "q16b3",
-                    "displayAnswer": "お元気で",
+                    "displayAnswer": "お元気（げんき）で",
                     "canonicalAnswer": "お元気で",
                     "audioText": "おげんきで",
                     "acceptedAnswers": [
@@ -4115,7 +4115,7 @@
                 "options": [
                   {
                     "id": "q16a",
-                    "text": "さん / さようなら / また来週",
+                    "text": "さん / さようなら / また来週（らいしゅう）",
                     "answersByBlankId": {
                       "q16b1": "さん",
                       "q16b2": "さようなら",
@@ -4124,7 +4124,7 @@
                   },
                   {
                     "id": "q16b",
-                    "text": "さん / じゃあ、また / お元気で",
+                    "text": "さん / じゃあ、また / お元気（げんき）で",
                     "answersByBlankId": {
                       "q16b1": "さん",
                       "q16b2": "じゃあ、また",
@@ -4133,7 +4133,7 @@
                   },
                   {
                     "id": "q16c",
-                    "text": "さんですね / さようなら / お元気で",
+                    "text": "さんですね / さようなら / お元気（げんき）で",
                     "answersByBlankId": {
                       "q16b1": "さんですね",
                       "q16b2": "さようなら",
@@ -4142,7 +4142,7 @@
                   },
                   {
                     "id": "q16d",
-                    "text": "さん / さようなら / お元気で",
+                    "text": "さん / さようなら / お元気（げんき）で",
                     "answersByBlankId": {
                       "q16b1": "さん",
                       "q16b2": "さようなら",
@@ -4197,7 +4197,7 @@
                     "speakerId": "佐藤",
                     "segments": [
                       {
-                        "displayText": "伊藤"
+                        "displayText": "伊藤（いとう）"
                       },
                       {
                         "blankId": "q17b1"
@@ -4212,7 +4212,7 @@
                     "speakerId": "スミス",
                     "segments": [
                       {
-                        "displayText": "すみません、私"
+                        "displayText": "すみません、私（わたし）"
                       },
                       {
                         "blankId": "q17b2"
@@ -4349,7 +4349,7 @@
                     "speakerId": "スミス",
                     "segments": [
                       {
-                        "displayText": "先生、"
+                        "displayText": "先生（せんせい）、"
                       },
                       {
                         "blankId": "q18b1"
@@ -4376,13 +4376,13 @@
                     "speakerId": "アンナ",
                     "segments": [
                       {
-                        "displayText": "私"
+                        "displayText": "私（わたし）"
                       },
                       {
                         "blankId": "q18b3"
                       },
                       {
-                        "displayText": "。また来週。"
+                        "displayText": "。また来週（らいしゅう）。"
                       }
                     ]
                   }
@@ -4390,7 +4390,7 @@
                 "blanks": [
                   {
                     "id": "q18b1",
-                    "displayAnswer": "失礼します",
+                    "displayAnswer": "失礼（しつれい）します",
                     "canonicalAnswer": "失礼します",
                     "audioText": "しつれいします",
                     "acceptedAnswers": [
@@ -4419,7 +4419,7 @@
                 "options": [
                   {
                     "id": "q18a",
-                    "text": "失礼します / さようなら / は",
+                    "text": "失礼（しつれい）します / さようなら / は",
                     "answersByBlankId": {
                       "q18b1": "失礼します",
                       "q18b2": "さようなら",
@@ -4437,7 +4437,7 @@
                   },
                   {
                     "id": "q18c",
-                    "text": "失礼します / さようなら / も",
+                    "text": "失礼（しつれい）します / さようなら / も",
                     "answersByBlankId": {
                       "q18b1": "失礼します",
                       "q18b2": "さようなら",
@@ -4446,7 +4446,7 @@
                   },
                   {
                     "id": "q18d",
-                    "text": "失礼します / こちらこそ / も",
+                    "text": "失礼（しつれい）します / こちらこそ / も",
                     "answersByBlankId": {
                       "q18b1": "失礼します",
                       "q18b2": "こちらこそ",
@@ -4501,7 +4501,7 @@
                     "speakerId": "アンナ",
                     "segments": [
                       {
-                        "displayText": "先生、"
+                        "displayText": "先生（せんせい）、"
                       },
                       {
                         "blankId": "q19b1"
@@ -4560,7 +4560,7 @@
                   },
                   {
                     "id": "q19b3",
-                    "displayAnswer": "よろしくお願いします",
+                    "displayAnswer": "よろしくお願（ねが）いします",
                     "canonicalAnswer": "よろしくお願いします",
                     "audioText": "よろしくおねがいします",
                     "acceptedAnswers": [
@@ -4571,7 +4571,7 @@
                 "options": [
                   {
                     "id": "q19a",
-                    "text": "こんばんは / はじめまして / よろしくお願いします",
+                    "text": "こんばんは / はじめまして / よろしくお願（ねが）いします",
                     "answersByBlankId": {
                       "q19b1": "こんばんは",
                       "q19b2": "はじめまして",
@@ -4580,7 +4580,7 @@
                   },
                   {
                     "id": "q19b",
-                    "text": "おはようございます / 失礼します / よろしくお願いします",
+                    "text": "おはようございます / 失礼（しつれい）します / よろしくお願（ねが）いします",
                     "answersByBlankId": {
                       "q19b1": "おはようございます",
                       "q19b2": "失礼します",
@@ -4598,7 +4598,7 @@
                   },
                   {
                     "id": "q19d",
-                    "text": "おはようございます / はじめまして / よろしくお願いします",
+                    "text": "おはようございます / はじめまして / よろしくお願（ねが）いします",
                     "answersByBlankId": {
                       "q19b1": "おはようございます",
                       "q19b2": "はじめまして",
@@ -4671,7 +4671,7 @@
                     "speakerId": "伊藤",
                     "segments": [
                       {
-                        "displayText": "伊藤です。"
+                        "displayText": "伊藤（いとう）です。"
                       }
                     ]
                   },
@@ -4680,7 +4680,7 @@
                     "speakerId": "受付",
                     "segments": [
                       {
-                        "displayText": "伊藤"
+                        "displayText": "伊藤（いとう）"
                       },
                       {
                         "blankId": "q20b3"
@@ -4694,7 +4694,7 @@
                 "blanks": [
                   {
                     "id": "q20b1",
-                    "displayAnswer": "失礼ですが",
+                    "displayAnswer": "失礼（しつれい）ですが",
                     "canonicalAnswer": "失礼ですが",
                     "audioText": "しつれいですが",
                     "acceptedAnswers": [
@@ -4703,7 +4703,7 @@
                   },
                   {
                     "id": "q20b2",
-                    "displayAnswer": "お名前",
+                    "displayAnswer": "お名前（なまえ）",
                     "canonicalAnswer": "お名前",
                     "audioText": "おなまえ",
                     "acceptedAnswers": [
@@ -4723,7 +4723,7 @@
                 "options": [
                   {
                     "id": "q20a",
-                    "text": "失礼ですが / お名前 / さんですね",
+                    "text": "失礼（しつれい）ですが / お名前（なまえ） / さんですね",
                     "answersByBlankId": {
                       "q20b1": "失礼ですが",
                       "q20b2": "お名前",
@@ -4732,7 +4732,7 @@
                   },
                   {
                     "id": "q20b",
-                    "text": "失礼ですが / 私のお名前 / さんですね",
+                    "text": "失礼（しつれい）ですが / 私（わたし）のお名前（なまえ） / さんですね",
                     "answersByBlankId": {
                       "q20b1": "失礼ですが",
                       "q20b2": "私のお名前",
@@ -4741,7 +4741,7 @@
                   },
                   {
                     "id": "q20c",
-                    "text": "失礼ですが / お名前 / さんです",
+                    "text": "失礼（しつれい）ですが / お名前（なまえ） / さんです",
                     "answersByBlankId": {
                       "q20b1": "失礼ですが",
                       "q20b2": "お名前",
@@ -4750,7 +4750,7 @@
                   },
                   {
                     "id": "q20d",
-                    "text": "もう一度 / お名前 / さんですね",
+                    "text": "もう一度（いちど） / お名前（なまえ） / さんですね",
                     "answersByBlankId": {
                       "q20b1": "もう一度",
                       "q20b2": "お名前",
@@ -4820,7 +4820,7 @@
                         "blankId": "q21b2"
                       },
                       {
-                        "displayText": "。伊藤です。よろしくお願いします。"
+                        "displayText": "。伊藤（いとう）です。よろしくお願（ねが）いします。"
                       }
                     ]
                   },
@@ -4832,7 +4832,7 @@
                         "blankId": "q21b3"
                       },
                       {
-                        "displayText": "、よろしくお願いします。"
+                        "displayText": "、よろしくお願（ねが）いします。"
                       }
                     ]
                   }
@@ -4887,7 +4887,7 @@
                   },
                   {
                     "id": "q21c",
-                    "text": "こんにちは / お元気で / こちらこそ",
+                    "text": "こんにちは / お元気（げんき）で / こちらこそ",
                     "answersByBlankId": {
                       "q21b1": "こんにちは",
                       "q21b2": "お元気で",
@@ -4896,7 +4896,7 @@
                   },
                   {
                     "id": "q21d",
-                    "text": "こんにちは / はじめまして / 失礼します",
+                    "text": "こんにちは / はじめまして / 失礼（しつれい）します",
                     "answersByBlankId": {
                       "q21b1": "こんにちは",
                       "q21b2": "はじめまして",
@@ -4951,7 +4951,7 @@
                     "speakerId": "伊藤",
                     "segments": [
                       {
-                        "displayText": "佐藤"
+                        "displayText": "佐藤（さとう）"
                       },
                       {
                         "blankId": "q22b1"
@@ -4992,7 +4992,7 @@
                   },
                   {
                     "id": "q22b2",
-                    "displayAnswer": "お元気で",
+                    "displayAnswer": "お元気（げんき）で",
                     "canonicalAnswer": "お元気で",
                     "audioText": "おげんきで",
                     "acceptedAnswers": [
@@ -5012,7 +5012,7 @@
                 "options": [
                   {
                     "id": "q22a",
-                    "text": "さん / また来週 / こちらこそ",
+                    "text": "さん / また来週（らいしゅう） / こちらこそ",
                     "answersByBlankId": {
                       "q22b1": "さん",
                       "q22b2": "また来週",
@@ -5030,7 +5030,7 @@
                   },
                   {
                     "id": "q22c",
-                    "text": "さんですね / お元気で / こちらこそ",
+                    "text": "さんですね / お元気（げんき）で / こちらこそ",
                     "answersByBlankId": {
                       "q22b1": "さんですね",
                       "q22b2": "お元気で",
@@ -5039,7 +5039,7 @@
                   },
                   {
                     "id": "q22d",
-                    "text": "さん / お元気で / こちらこそ",
+                    "text": "さん / お元気（げんき）で / こちらこそ",
                     "answersByBlankId": {
                       "q22b1": "さん",
                       "q22b2": "お元気で",
@@ -5097,7 +5097,7 @@
                         "blankId": "q23b1"
                       },
                       {
-                        "displayText": "、もう一度お願いします。"
+                        "displayText": "、もう一度（いちど）お願（ねが）いします。"
                       }
                     ]
                   },
@@ -5161,7 +5161,7 @@
                 "options": [
                   {
                     "id": "q23a",
-                    "text": "失礼ですが / そうですか / さんですね",
+                    "text": "失礼（しつれい）ですが / そうですか / さんですね",
                     "answersByBlankId": {
                       "q23b1": "失礼ですが",
                       "q23b2": "そうですか",
@@ -5243,13 +5243,13 @@
                     "speakerId": "田中",
                     "segments": [
                       {
-                        "displayText": "私"
+                        "displayText": "私（わたし）"
                       },
                       {
                         "blankId": "q24b1"
                       },
                       {
-                        "displayText": "田中です。よろしくお願いします。"
+                        "displayText": "田中（たなか）です。よろしくお願（ねが）いします。"
                       }
                     ]
                   },
@@ -5273,7 +5273,7 @@
                         "blankId": "q24b3"
                       },
                       {
-                        "displayText": "、よろしくお願いします。"
+                        "displayText": "、よろしくお願（ねが）いします。"
                       }
                     ]
                   }
@@ -5299,7 +5299,7 @@
                   },
                   {
                     "id": "q24b3",
-                    "displayAnswer": "私も",
+                    "displayAnswer": "私（わたし）も",
                     "canonicalAnswer": "私も",
                     "audioText": "わたしも",
                     "acceptedAnswers": [
@@ -5310,7 +5310,7 @@
                 "options": [
                   {
                     "id": "q24a",
-                    "text": "も / こちらこそ / 私も",
+                    "text": "も / こちらこそ / 私（わたし）も",
                     "answersByBlankId": {
                       "q24b1": "も",
                       "q24b2": "こちらこそ",
@@ -5319,7 +5319,7 @@
                   },
                   {
                     "id": "q24b",
-                    "text": "は / こちらこそ / 私も",
+                    "text": "は / こちらこそ / 私（わたし）も",
                     "answersByBlankId": {
                       "q24b1": "は",
                       "q24b2": "こちらこそ",
@@ -5328,7 +5328,7 @@
                   },
                   {
                     "id": "q24c",
-                    "text": "は / 失礼します / 私も",
+                    "text": "は / 失礼（しつれい）します / 私（わたし）も",
                     "answersByBlankId": {
                       "q24b1": "は",
                       "q24b2": "失礼します",
@@ -5337,7 +5337,7 @@
                   },
                   {
                     "id": "q24d",
-                    "text": "は / こちらこそ / 私は",
+                    "text": "は / こちらこそ / 私（わたし）は",
                     "answersByBlankId": {
                       "q24b1": "は",
                       "q24b2": "こちらこそ",
@@ -5392,7 +5392,7 @@
                     "speakerId": "アンナ",
                     "segments": [
                       {
-                        "displayText": "伊藤"
+                        "displayText": "伊藤（いとう）"
                       },
                       {
                         "blankId": "q25b1"
@@ -5433,7 +5433,7 @@
                   },
                   {
                     "id": "q25b2",
-                    "displayAnswer": "お先に失礼します",
+                    "displayAnswer": "お先（さき）に失礼（しつれい）します",
                     "canonicalAnswer": "お先に失礼します",
                     "audioText": "おさきにしつれいします",
                     "acceptedAnswers": [
@@ -5442,7 +5442,7 @@
                   },
                   {
                     "id": "q25b3",
-                    "displayAnswer": "また来週",
+                    "displayAnswer": "また来週（らいしゅう）",
                     "canonicalAnswer": "また来週",
                     "audioText": "またらいしゅう",
                     "acceptedAnswers": [
@@ -5453,7 +5453,7 @@
                 "options": [
                   {
                     "id": "q25a",
-                    "text": "さん / お先に失礼します / また明日",
+                    "text": "さん / お先（さき）に失礼（しつれい）します / また明日（あした）",
                     "answersByBlankId": {
                       "q25b1": "さん",
                       "q25b2": "お先に失礼します",
@@ -5462,7 +5462,7 @@
                   },
                   {
                     "id": "q25b",
-                    "text": "さん / こんばんは / また来週",
+                    "text": "さん / こんばんは / また来週（らいしゅう）",
                     "answersByBlankId": {
                       "q25b1": "さん",
                       "q25b2": "こんばんは",
@@ -5471,7 +5471,7 @@
                   },
                   {
                     "id": "q25c",
-                    "text": "さんですね / お先に失礼します / また来週",
+                    "text": "さんですね / お先（さき）に失礼（しつれい）します / また来週（らいしゅう）",
                     "answersByBlankId": {
                       "q25b1": "さんですね",
                       "q25b2": "お先に失礼します",
@@ -5480,7 +5480,7 @@
                   },
                   {
                     "id": "q25d",
-                    "text": "さん / お先に失礼します / また来週",
+                    "text": "さん / お先（さき）に失礼（しつれい）します / また来週（らいしゅう）",
                     "answersByBlankId": {
                       "q25b1": "さん",
                       "q25b2": "お先に失礼します",

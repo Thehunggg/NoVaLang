@@ -22,6 +22,14 @@ import 'package:novalang_flutter/widgets/common/app_button.dart';
 const _lessonId = 'ja-daily_life-m01-u1-l1';
 const _trackId = 'daily_life';
 
+/// Bóc furigana 「漢字（かな）」 → 「漢字」.
+///
+/// Từ 2026-07-25 mọi kanji hiển thị đều kèm hiragana (luật owner). Khoá nội
+/// dung Golden đóng băng CÂU CHỮ, không đóng băng lớp hỗ trợ đọc — nên so
+/// phần đã bóc: vẫn bắt mọi thay đổi câu chữ thật, không báo động vì chú âm.
+String _stripFurigana(String? text) =>
+    (text ?? '').replaceAll(RegExp(r'（[぀-ゟー]+）'), '');
+
 const _approvedLines = <String>[
   'こんばんは。すみません、ちょっとよろしいですか。',
   'こんばんは。はい、どうしましたか。',
@@ -353,7 +361,9 @@ void main() {
           'さようなら。',
         ]) {
           expect(
-            targetTexts.any((text) => text.data?.contains(fragment) == true),
+            targetTexts.any(
+              (text) => _stripFurigana(text.data).contains(fragment),
+            ),
             isTrue,
             reason: fragment,
           );
@@ -419,7 +429,7 @@ void main() {
         expect(exercise.type, 'real_world_practice_dialogue');
         expect(exercise.dialogueLines, hasLength(14));
         for (var i = 0; i < 14; i++) {
-          expect(exercise.dialogueLines[i].targetText, _approvedLines[i]);
+          expect(_stripFurigana(exercise.dialogueLines[i].targetText), _approvedLines[i]);
           expect(exercise.dialogueLines[i].speakerId, _approvedSpeakers[i]);
         }
       },
@@ -437,7 +447,7 @@ void main() {
         final exercise = practiceVi.exercises.last;
         expect(exercise.sceneDividers, hasLength(1));
         expect(exercise.sceneDividers.single.afterDialogueLine, 10);
-        expect(exercise.sceneDividers.single.targetText, '着いた時');
+        expect(_stripFurigana(exercise.sceneDividers.single.targetText), '着いた時');
         expect(
           find.byKey(const ValueKey('dialogue-scene-divider-10')),
           findsOneWidget,

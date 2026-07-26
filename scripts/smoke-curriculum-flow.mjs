@@ -89,6 +89,16 @@ const isApprovedJaUnitOneLesson = (lesson) => lesson.id === APPROVED_JA_UNIT1_LE
 const results = new Map();
 const failures = [];
 
+/**
+ * Bóc furigana 「漢字（かな）」 → 「漢字」.
+ *
+ * Khoá nội dung Golden (ADR-008) đóng băng CÂU CHỮ, không đóng băng lớp hỗ trợ
+ * đọc. Từ 2026-07-25 mọi kanji hiển thị đều kèm hiragana, nên khoá phải so
+ * phần nội dung sau khi bóc — vẫn bắt được mọi thay đổi câu chữ thật, mà không
+ * báo động vì một chú âm.
+ */
+const stripFurigana = (text) => String(text ?? '').replace(/（[぀-ゟー]+）/g, '');
+
 function pass(section, message) {
   if (!results.has(section)) results.set(section, { passed: 0, failed: 0 });
   results.get(section).passed += 1;
@@ -190,7 +200,7 @@ function checkApprovedJaUnitOneLesson(lesson) {
   if (
     sceneDividers.length !== 1 ||
     sceneDividers[0]?.afterDialogueLine !== 10 ||
-    sceneDividers[0]?.targetText !== "着いた時" ||
+    stripFurigana(sceneDividers[0]?.targetText) !== "着いた時" ||
     !(sceneDividers[0]?.translationByNative?.vi && sceneDividers[0]?.translationByNative?.en && sceneDividers[0]?.translationByNative?.ja)
   ) {
     fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must keep its non-spoken localized scene divider after turn 10");

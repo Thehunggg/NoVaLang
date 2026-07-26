@@ -19,6 +19,17 @@ import { fileURLToPath } from "node:url";
 import { KATAKANA_E8_SPECS } from "./katakana-e8-specs.mjs";
 import { ENGLISH_E8_SPECS } from "./english-e8-specs.mjs";
 import { NATIVE_CODES } from "./lib/native-localization.mjs";
+import { addFurigana, hasFurigana, hasKanji, initFurigana } from "./lib/japanese-furigana.mjs";
+
+/** Trường HIỂN THỊ cho người học — đúng bộ đã dùng khi rà 217 chỗ thiếu. */
+const FURIGANA_DISPLAY_FIELDS = new Set([
+  "displayText",
+  "text",
+  "targetText",
+  "displayAnswer",
+  "term",
+  "pattern",
+]);
 import {
   DAILY_LIFE_COURSE_META,
   DAILY_LIFE_MODULES,
@@ -4100,6 +4111,31 @@ npm run sync:flutter-assets
 \`\`\`
 `;
 
+  // FURIGANA (owner chốt 2026-07-25): mọi kanji HIỂN THỊ cho người học phải kèm
+  // hiragana ở mọi cấp độ. Gắn ở một chỗ duy nhất, ngay trước khi ghi, thay vì
+  // rải tay qua từng chuỗi nguồn — nội dung mới tự có furigana, không phải nhớ.
+  //
+  // CHỈ đụng trường HIỂN THỊ. Các trường máy dùng (reading · speechText ·
+  // canonicalText · audioText · romanization) phải giữ nguyên: chúng feed TTS và
+  // bộ chấm, thêm ngoặc vào là hỏng cả hai.
+  await initFurigana();
+  const furiganaCount = { annotated: 0, skipped: 0 };
+  const applyFurigana = (node) => {
+    if (!node || typeof node !== "object") return;
+    if (Array.isArray(node)) return node.forEach(applyFurigana);
+    for (const [key, value] of Object.entries(node)) {
+      if (typeof value === "string") {
+        if (!FURIGANA_DISPLAY_FIELDS.has(key) || !hasKanji(value)) continue;
+        if (hasFurigana(value)) { furiganaCount.skipped += 1; continue; }
+        node[key] = addFurigana(value);
+        furiganaCount.annotated += 1;
+      } else applyFurigana(value);
+    }
+  };
+  for (const payload of [coursesPayload, lessonsPayload]) applyFurigana(payload);
+  console.log(
+    `furigana: gắn ${furiganaCount.annotated} chuỗi, bỏ qua ${furiganaCount.skipped} chuỗi đã có`,
+  );
   for (const dir of OUT_DIRS) {
     await mkdir(dir, { recursive: true });
     await writeFile(path.join(dir, "courses.json"), JSON.stringify(coursesPayload, null, 2), "utf8");

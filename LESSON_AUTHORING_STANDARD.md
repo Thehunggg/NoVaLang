@@ -191,6 +191,34 @@ phải mảng rỗng — nên quy ước dưới đây **không cần migrate d�
 Người viết phải **mở nguồn thật đối chiếu (G8)** trước khi đánh dấu `[]`; đánh
 `[]` cho nhanh mà chưa tra là vi phạm G4.
 
+**B2d. FURIGANA — mọi kanji hiển thị BẮT BUỘC kèm hiragana.** (Owner chốt
+2026-07-25) Áp cho **mọi cấp độ**: sơ cấp, trung cấp, và cao cấp — ở cao cấp thì
+kanji CHƯA HỌC vẫn phải có. **Không ngoại lệ.**
+
+Quy ước hiển thị (giữ nguyên khuôn Golden, KHÔNG chế kiểu mới):
+
+```text
+お名前（なまえ）        お先（さき）に失礼（しつれい）します
+```
+
+ngoặc tròn **full-width** ngay sau đúng cụm kanji; kana đi kèm nằm NGOÀI ngoặc.
+
+- **CHỈ trường HIỂN THỊ**: `displayText` · `text` · `targetText` ·
+  `displayAnswer` · `term` · `pattern`. Trường máy dùng — `reading` ·
+  `speechText` · `canonicalText` · `audioText` · `romanization` — **giữ
+  nguyên**: chúng feed TTS và bộ chấm, thêm ngoặc vào là hỏng cả hai.
+- **Người viết KHÔNG phải gõ tay.** Generator gắn furigana ở một chỗ duy nhất
+  ngay trước khi ghi (`scripts/lib/japanese-furigana.mjs`), nên nội dung mới tự
+  có. Chuỗi đã có furigana thì giữ nguyên, không gắn chồng.
+- **Cách đọc KHÔNG đoán**: tách hình vị bằng `kuromoji`, lấy đúng reading của
+  từng token — cùng bộ phân tích với đường La-tinh hoá, nên hai bên không lệch.
+  Token không có reading thì **throw**, để người tra chứ máy không chế (G4/G8).
+- **Khoá nội dung Golden so phần ĐÃ BÓC furigana.** ADR-008 đóng băng câu chữ,
+  không đóng băng lớp hỗ trợ đọc; validator/smoke/test Q14 đều bóc trước khi so.
+- **Validator: MỨC CỨNG, chỉ ngôn ngữ ja.** Generator đã bảo đảm, nên một lỗi ở
+  đây nghĩa là cơ chế bị gỡ hoặc bị đi vòng — đúng loại hỏng phải chặn build.
+  Giới hạn ở ja vì tiếng Trung cũng dùng chữ Hán nhưng không có furigana.
+
 **B3. Card 3 — Dialogue.** (Owner §6; ràng buộc §D3)
 - **Đúng 3 nhóm, mỗi nhóm 4–6 dòng** (code ép). Tự nhiên, mục đích giao tiếp
   rõ, lượt sau phản ứng hợp lý với lượt trước, phù hợp tình huống. Trọng tâm là

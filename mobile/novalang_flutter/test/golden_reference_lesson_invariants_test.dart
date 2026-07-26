@@ -42,6 +42,11 @@ bool _hasText(Map<String, dynamic> value, String key) =>
 Future<Map<String, dynamic>> _loadAsset(String path) async =>
     _map(jsonDecode(await rootBundle.loadString(path)));
 
+/// Bóc furigana 「漢字（かな）」 → 「漢字」. Mọi kanji hiển thị nay đều kèm hiragana
+/// (luật owner 2026-07-25); bất biến Golden khoá CÂU CHỮ, không khoá chú âm.
+String _stripFurigana(String? text) =>
+    (text ?? '').replaceAll(RegExp(r'（[぀-ゟー]+）'), '');
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -154,7 +159,10 @@ void main() {
       final q14SceneDividers = _maps(realWorldPractice['sceneDividers']);
       expect(q14SceneDividers, hasLength(1));
       expect(q14SceneDividers.single['afterDialogueLine'], 10);
-      expect(q14SceneDividers.single['targetText'], '着いた時');
+      expect(
+        _stripFurigana(q14SceneDividers.single['targetText'] as String?),
+        '着いた時',
+      );
       final dividerTranslations = Map<String, dynamic>.from(
         q14SceneDividers.single['translationByNative'] as Map,
       );

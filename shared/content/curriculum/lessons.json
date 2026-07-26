@@ -1896,7 +1896,7 @@
             "ko": "이전 단계의 AI 피드백을 확인하세요.",
             "zh": "查看上一步的 AI 反馈。"
           },
-          "displayText": "あ い う え お\nあ → い → う → え → お\nあめ（雨）— rain\nいぬ（犬）— dog\nうみ（海）— sea\nえき（駅）— station\nおに（鬼）— demon / ogre",
+          "displayText": "あ い う え お\nあ → い → う → え → お\nあめ（雨（あめ））— rain\nいぬ（犬（いぬ））— dog\nうみ（海（うみ））— sea\nえき（駅（えき））— station\nおに（鬼（おに））— demon / ogre",
           "triggerExtraAiCallByDefault": false,
           "skill": "review",
           "displayTextByNative": {
@@ -72038,7 +72038,7 @@
         },
         {
           "id": "yoroshiku-onegaishimasu",
-          "displayText": "よろしくお願いします",
+          "displayText": "よろしくお願（ねが）いします",
           "reading": "よろしくおねがいします",
           "romanization": "yoroshiku onegaishimasu",
           "speechText": "よろしくお願いします",
@@ -72057,7 +72057,7 @@
         },
         {
           "id": "kochira-koso",
-          "displayText": "こちらこそ、よろしくお願いします",
+          "displayText": "こちらこそ、よろしくお願（ねが）いします",
           "reading": "こちらこそ、よろしくおねがいします",
           "speechText": "こちらこそ、よろしくお願いします",
           "meaningVi": "Chính tôi cũng rất mong được làm quen.",
@@ -72135,8 +72135,8 @@
           "id": "ja-daily_life-m01-u1-l1-morning-classroom-2"
         },
         {
-          "targetText": "田中さん、今日もよろしくお願いします。",
-          "displayText": "田中さん、今日もよろしくお願いします。",
+          "targetText": "田中（たなか）さん、今日（きょう）もよろしくお願（ねが）いします。",
+          "displayText": "田中（たなか）さん、今日（きょう）もよろしくお願（ねが）いします。",
           "reading": "たなかさん、きょうもよろしくおねがいします。",
           "speechText": "田中さん、今日もよろしくお願いします。",
           "translationByNative": {
@@ -72155,8 +72155,8 @@
           "id": "ja-daily_life-m01-u1-l1-morning-classroom-3"
         },
         {
-          "targetText": "はい、よろしくお願いします。",
-          "displayText": "はい、よろしくお願いします。",
+          "targetText": "はい、よろしくお願（ねが）いします。",
+          "displayText": "はい、よろしくお願（ねが）いします。",
           "reading": "はい、よろしくおねがいします。",
           "speechText": "はい、よろしくお願いします。",
           "translationByNative": {
@@ -72175,8 +72175,8 @@
           "id": "ja-daily_life-m01-u1-l1-morning-classroom-4"
         },
         {
-          "targetText": "こんにちは。はじめまして。田中です。",
-          "displayText": "こんにちは。はじめまして。田中です。",
+          "targetText": "こんにちは。はじめまして。田中（たなか）です。",
+          "displayText": "こんにちは。はじめまして。田中（たなか）です。",
           "reading": "こんにちは。はじめまして。たなかです。",
           "speechText": "こんにちは。はじめまして。田中です。",
           "translationByNative": {
@@ -72195,8 +72195,8 @@
           "id": "ja-daily_life-m01-u1-l1-same-age-first-meeting-1"
         },
         {
-          "targetText": "はじめまして。佐藤です。",
-          "displayText": "はじめまして。佐藤です。",
+          "targetText": "はじめまして。佐藤（さとう）です。",
+          "displayText": "はじめまして。佐藤（さとう）です。",
           "reading": "はじめまして。さとうです。",
           "speechText": "はじめまして。佐藤です。",
           "translationByNative": {
@@ -72215,8 +72215,8 @@
           "id": "ja-daily_life-m01-u1-l1-same-age-first-meeting-2"
         },
         {
-          "targetText": "よろしくお願いします。",
-          "displayText": "よろしくお願いします。",
+          "targetText": "よろしくお願（ねが）いします。",
+          "displayText": "よろしくお願（ねが）いします。",
           "reading": "よろしくおねがいします。",
           "speechText": "よろしくお願いします。",
           "translationByNative": {
@@ -72235,8 +72235,8 @@
           "id": "ja-daily_life-m01-u1-l1-same-age-first-meeting-3"
         },
         {
-          "targetText": "こちらこそ、よろしくお願いします。",
-          "displayText": "こちらこそ、よろしくお願いします。",
+          "targetText": "こちらこそ、よろしくお願（ねが）いします。",
+          "displayText": "こちらこそ、よろしくお願（ねが）いします。",
           "reading": "こちらこそ、よろしくおねがいします。",
           "speechText": "こちらこそ、よろしくお願いします。",
           "translationByNative": {
@@ -72255,8 +72255,8 @@
           "id": "ja-daily_life-m01-u1-l1-same-age-first-meeting-4"
         },
         {
-          "targetText": "あらためて、田中。よろしく！",
-          "displayText": "あらためて、田中。よろしく！",
+          "targetText": "あらためて、田中（たなか）。よろしく！",
+          "displayText": "あらためて、田中（たなか）。よろしく！",
           "reading": "あらためて、たなか。よろしく！",
           "speechText": "あらためて、田中。よろしく！",
           "translationByNative": {
@@ -72275,8 +72275,8 @@
           "id": "ja-daily_life-m01-u1-l1-move-to-casual-1"
         },
         {
-          "targetText": "佐藤。よろしく！",
-          "displayText": "佐藤。よろしく！",
+          "targetText": "佐藤（さとう）。よろしく！",
+          "displayText": "佐藤（さとう）。よろしく！",
           "reading": "さとう。よろしく！",
           "speechText": "佐藤。よろしく！",
           "translationByNative": {
@@ -72295,8 +72295,8 @@
           "id": "ja-daily_life-m01-u1-l1-move-to-casual-2"
         },
         {
-          "targetText": "佐藤さんじゃなくて、佐藤でいい？",
-          "displayText": "佐藤さんじゃなくて、佐藤でいい？",
+          "targetText": "佐藤（さとう）さんじゃなくて、佐藤（さとう）でいい？",
+          "displayText": "佐藤（さとう）さんじゃなくて、佐藤（さとう）でいい？",
           "reading": "さとうさんじゃなくて、さとうでいい？",
           "speechText": "佐藤さんじゃなくて、佐藤でいい？",
           "translationByNative": {
@@ -72315,8 +72315,8 @@
           "id": "ja-daily_life-m01-u1-l1-move-to-casual-3"
         },
         {
-          "targetText": "うん、いいよ。田中もよろしく！",
-          "displayText": "うん、いいよ。田中もよろしく！",
+          "targetText": "うん、いいよ。田中（たなか）もよろしく！",
+          "displayText": "うん、いいよ。田中（たなか）もよろしく！",
           "reading": "うん、いいよ。たなかもよろしく！",
           "speechText": "うん、いいよ。田中もよろしく！",
           "translationByNative": {
@@ -72335,8 +72335,8 @@
           "id": "ja-daily_life-m01-u1-l1-move-to-casual-4"
         },
         {
-          "targetText": "じゃあ、また明日！",
-          "displayText": "じゃあ、また明日！",
+          "targetText": "じゃあ、また明日（あした）！",
+          "displayText": "じゃあ、また明日（あした）！",
           "reading": "じゃあ、またあした！",
           "speechText": "じゃあ、また明日！",
           "translationByNative": {
@@ -72435,8 +72435,8 @@
               "id": "ja-daily_life-m01-u1-l1-morning-classroom-2"
             },
             {
-              "targetText": "田中さん、今日もよろしくお願いします。",
-              "displayText": "田中さん、今日もよろしくお願いします。",
+              "targetText": "田中（たなか）さん、今日（きょう）もよろしくお願（ねが）いします。",
+              "displayText": "田中（たなか）さん、今日（きょう）もよろしくお願（ねが）いします。",
               "reading": "たなかさん、きょうもよろしくおねがいします。",
               "speechText": "田中さん、今日もよろしくお願いします。",
               "translationByNative": {
@@ -72455,8 +72455,8 @@
               "id": "ja-daily_life-m01-u1-l1-morning-classroom-3"
             },
             {
-              "targetText": "はい、よろしくお願いします。",
-              "displayText": "はい、よろしくお願いします。",
+              "targetText": "はい、よろしくお願（ねが）いします。",
+              "displayText": "はい、よろしくお願（ねが）いします。",
               "reading": "はい、よろしくおねがいします。",
               "speechText": "はい、よろしくお願いします。",
               "translationByNative": {
@@ -72495,8 +72495,8 @@
           },
           "lines": [
             {
-              "targetText": "こんにちは。はじめまして。田中です。",
-              "displayText": "こんにちは。はじめまして。田中です。",
+              "targetText": "こんにちは。はじめまして。田中（たなか）です。",
+              "displayText": "こんにちは。はじめまして。田中（たなか）です。",
               "reading": "こんにちは。はじめまして。たなかです。",
               "speechText": "こんにちは。はじめまして。田中です。",
               "translationByNative": {
@@ -72515,8 +72515,8 @@
               "id": "ja-daily_life-m01-u1-l1-same-age-first-meeting-1"
             },
             {
-              "targetText": "はじめまして。佐藤です。",
-              "displayText": "はじめまして。佐藤です。",
+              "targetText": "はじめまして。佐藤（さとう）です。",
+              "displayText": "はじめまして。佐藤（さとう）です。",
               "reading": "はじめまして。さとうです。",
               "speechText": "はじめまして。佐藤です。",
               "translationByNative": {
@@ -72535,8 +72535,8 @@
               "id": "ja-daily_life-m01-u1-l1-same-age-first-meeting-2"
             },
             {
-              "targetText": "よろしくお願いします。",
-              "displayText": "よろしくお願いします。",
+              "targetText": "よろしくお願（ねが）いします。",
+              "displayText": "よろしくお願（ねが）いします。",
               "reading": "よろしくおねがいします。",
               "speechText": "よろしくお願いします。",
               "translationByNative": {
@@ -72555,8 +72555,8 @@
               "id": "ja-daily_life-m01-u1-l1-same-age-first-meeting-3"
             },
             {
-              "targetText": "こちらこそ、よろしくお願いします。",
-              "displayText": "こちらこそ、よろしくお願いします。",
+              "targetText": "こちらこそ、よろしくお願（ねが）いします。",
+              "displayText": "こちらこそ、よろしくお願（ねが）いします。",
               "reading": "こちらこそ、よろしくおねがいします。",
               "speechText": "こちらこそ、よろしくお願いします。",
               "translationByNative": {
@@ -72595,8 +72595,8 @@
           },
           "lines": [
             {
-              "targetText": "あらためて、田中。よろしく！",
-              "displayText": "あらためて、田中。よろしく！",
+              "targetText": "あらためて、田中（たなか）。よろしく！",
+              "displayText": "あらためて、田中（たなか）。よろしく！",
               "reading": "あらためて、たなか。よろしく！",
               "speechText": "あらためて、田中。よろしく！",
               "translationByNative": {
@@ -72615,8 +72615,8 @@
               "id": "ja-daily_life-m01-u1-l1-move-to-casual-1"
             },
             {
-              "targetText": "佐藤。よろしく！",
-              "displayText": "佐藤。よろしく！",
+              "targetText": "佐藤（さとう）。よろしく！",
+              "displayText": "佐藤（さとう）。よろしく！",
               "reading": "さとう。よろしく！",
               "speechText": "佐藤。よろしく！",
               "translationByNative": {
@@ -72635,8 +72635,8 @@
               "id": "ja-daily_life-m01-u1-l1-move-to-casual-2"
             },
             {
-              "targetText": "佐藤さんじゃなくて、佐藤でいい？",
-              "displayText": "佐藤さんじゃなくて、佐藤でいい？",
+              "targetText": "佐藤（さとう）さんじゃなくて、佐藤（さとう）でいい？",
+              "displayText": "佐藤（さとう）さんじゃなくて、佐藤（さとう）でいい？",
               "reading": "さとうさんじゃなくて、さとうでいい？",
               "speechText": "佐藤さんじゃなくて、佐藤でいい？",
               "translationByNative": {
@@ -72655,8 +72655,8 @@
               "id": "ja-daily_life-m01-u1-l1-move-to-casual-3"
             },
             {
-              "targetText": "うん、いいよ。田中もよろしく！",
-              "displayText": "うん、いいよ。田中もよろしく！",
+              "targetText": "うん、いいよ。田中（たなか）もよろしく！",
+              "displayText": "うん、いいよ。田中（たなか）もよろしく！",
               "reading": "うん、いいよ。たなかもよろしく！",
               "speechText": "うん、いいよ。田中もよろしく！",
               "translationByNative": {
@@ -72675,8 +72675,8 @@
               "id": "ja-daily_life-m01-u1-l1-move-to-casual-4"
             },
             {
-              "targetText": "じゃあ、また明日！",
-              "displayText": "じゃあ、また明日！",
+              "targetText": "じゃあ、また明日（あした）！",
+              "displayText": "じゃあ、また明日（あした）！",
               "reading": "じゃあ、またあした！",
               "speechText": "じゃあ、また明日！",
               "translationByNative": {
@@ -72865,8 +72865,8 @@
                 "ja": "初対面の人には、次のように言えます。"
               },
               "speaker": "",
-              "targetText": "はじめまして。田中です。よろしくお願いします。",
-              "displayText": "はじめまして。田中です。よろしくお願いします。",
+              "targetText": "はじめまして。田中（たなか）です。よろしくお願（ねが）いします。",
+              "displayText": "はじめまして。田中（たなか）です。よろしくお願（ねが）いします。",
               "reading": "はじめまして。たなかです。よろしくおねがいします。",
               "speechText": "はじめまして。田中です。よろしくお願いします。",
               "translationByNative": {
@@ -73053,7 +73053,7 @@
             },
             "examples": [
               {
-                "text": "先生、おはようございます。",
+                "text": "先生（せんせい）、おはようございます。",
                 "reading": "せんせい、おはようございます。",
                 "translation": "Chào buổi sáng, thầy/cô.",
                 "translationByNative": {
@@ -73064,7 +73064,7 @@
                 "speechText": "せんせい、おはようございます。"
               },
               {
-                "text": "佐藤さん、おはよう！",
+                "text": "佐藤（さとう）さん、おはよう！",
                 "reading": "さとうさん、おはよう！",
                 "translation": "Sato, chào buổi sáng!",
                 "translationByNative": {
@@ -73258,7 +73258,7 @@
             },
             "examples": [
               {
-                "text": "こんにちは、田中さん。",
+                "text": "こんにちは、田中（たなか）さん。",
                 "reading": "こんにちは、たなかさん。",
                 "translation": "Xin chào, anh/chị Tanaka.",
                 "translationByNative": {
@@ -73392,7 +73392,7 @@
             },
             "examples": [
               {
-                "text": "こんばんは。今日は寒いですね。",
+                "text": "こんばんは。今日（きょう）は寒（さむ）いですね。",
                 "reading": "こんばんは。きょうはさむいですね。",
                 "translation": "Chào buổi tối. Hôm nay lạnh nhỉ.",
                 "translationByNative": {
@@ -73500,7 +73500,7 @@
             },
             "examples": [
               {
-                "text": "はじめまして。田中です。",
+                "text": "はじめまして。田中（たなか）です。",
                 "reading": "はじめまして。たなかです。",
                 "translation": "Rất vui được gặp bạn lần đầu. Tôi là Tanaka.",
                 "translationByNative": {
@@ -73604,7 +73604,7 @@
             },
             "examples": [
               {
-                "text": "田中です。",
+                "text": "田中（たなか）です。",
                 "reading": "たなかです。",
                 "translation": "Tôi là Tanaka.",
                 "translationByNative": {
@@ -73615,7 +73615,7 @@
                 "speechText": "たなかです。"
               },
               {
-                "text": "佐藤です。",
+                "text": "佐藤（さとう）です。",
                 "reading": "さとうです。",
                 "translation": "Tôi là Sato.",
                 "translationByNative": {
@@ -73719,7 +73719,7 @@
             },
             "examples": [
               {
-                "text": "はじめまして。田中です。よろしくお願いします。",
+                "text": "はじめまして。田中（たなか）です。よろしくお願（ねが）いします。",
                 "reading": "はじめまして。たなかです。よろしくおねがいします。",
                 "translation": "Rất vui được gặp bạn lần đầu. Tôi là Tanaka. Rất mong được làm quen.",
                 "translationByNative": {
@@ -73730,7 +73730,7 @@
                 "speechText": "はじめまして。たなかです。よろしくおねがいします。"
               },
               {
-                "text": "田中。よろしく！",
+                "text": "田中（たなか）。よろしく！",
                 "reading": "たなか。よろしく！",
                 "translation": "Tớ là Tanaka. Làm quen nhé!",
                 "translationByNative": {
@@ -73796,7 +73796,7 @@
             },
             "examples": [
               {
-                "text": "A:\nよろしくお願いします。\n\nB:\nこちらこそ、よろしくお願いします。",
+                "text": "A:\nよろしくお願（ねが）いします。\n\nB:\nこちらこそ、よろしくお願（ねが）いします。",
                 "reading": "よろしくおねがいします。\n\nこちらこそ、よろしくおねがいします。",
                 "translation": "",
                 "speechText": "よろしくおねがいします。\n\nこちらこそ、よろしくおねがいします。"
@@ -73938,8 +73938,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "田中さん、今日もよろしくお願いします。",
-                "displayText": "田中さん、今日もよろしくお願いします。",
+                "targetText": "田中（たなか）さん、今日（きょう）もよろしくお願（ねが）いします。",
+                "displayText": "田中（たなか）さん、今日（きょう）もよろしくお願（ねが）いします。",
                 "reading": "たなかさん、きょうもよろしくおねがいします。",
                 "speechText": "田中さん、今日もよろしくお願いします。",
                 "translationByNative": {
@@ -73957,8 +73957,8 @@
                 "speakerId": "teacher"
               },
               {
-                "targetText": "はい、よろしくお願いします。",
-                "displayText": "はい、よろしくお願いします。",
+                "targetText": "はい、よろしくお願（ねが）いします。",
+                "displayText": "はい、よろしくお願（ねが）いします。",
                 "reading": "はい、よろしくおねがいします。",
                 "speechText": "はい、よろしくお願いします。",
                 "translationByNative": {
@@ -74015,8 +74015,8 @@
             },
             "lines": [
               {
-                "targetText": "こんにちは。はじめまして。田中です。",
-                "displayText": "こんにちは。はじめまして。田中です。",
+                "targetText": "こんにちは。はじめまして。田中（たなか）です。",
+                "displayText": "こんにちは。はじめまして。田中（たなか）です。",
                 "reading": "こんにちは。はじめまして。たなかです。",
                 "speechText": "こんにちは。はじめまして。田中です。",
                 "translationByNative": {
@@ -74034,8 +74034,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "はじめまして。佐藤です。",
-                "displayText": "はじめまして。佐藤です。",
+                "targetText": "はじめまして。佐藤（さとう）です。",
+                "displayText": "はじめまして。佐藤（さとう）です。",
                 "reading": "はじめまして。さとうです。",
                 "speechText": "はじめまして。佐藤です。",
                 "translationByNative": {
@@ -74053,8 +74053,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "よろしくお願いします。",
-                "displayText": "よろしくお願いします。",
+                "targetText": "よろしくお願（ねが）いします。",
+                "displayText": "よろしくお願（ねが）いします。",
                 "reading": "よろしくおねがいします。",
                 "speechText": "よろしくお願いします。",
                 "translationByNative": {
@@ -74072,8 +74072,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "こちらこそ、よろしくお願いします。",
-                "displayText": "こちらこそ、よろしくお願いします。",
+                "targetText": "こちらこそ、よろしくお願（ねが）いします。",
+                "displayText": "こちらこそ、よろしくお願（ねが）いします。",
                 "reading": "こちらこそ、よろしくおねがいします。",
                 "speechText": "こちらこそ、よろしくお願いします。",
                 "translationByNative": {
@@ -74130,8 +74130,8 @@
             },
             "lines": [
               {
-                "targetText": "あらためて、田中。よろしく！",
-                "displayText": "あらためて、田中。よろしく！",
+                "targetText": "あらためて、田中（たなか）。よろしく！",
+                "displayText": "あらためて、田中（たなか）。よろしく！",
                 "reading": "あらためて、たなか。よろしく！",
                 "speechText": "あらためて、田中。よろしく！",
                 "translationByNative": {
@@ -74149,8 +74149,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "佐藤。よろしく！",
-                "displayText": "佐藤。よろしく！",
+                "targetText": "佐藤（さとう）。よろしく！",
+                "displayText": "佐藤（さとう）。よろしく！",
                 "reading": "さとう。よろしく！",
                 "speechText": "佐藤。よろしく！",
                 "translationByNative": {
@@ -74168,8 +74168,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "佐藤さんじゃなくて、佐藤でいい？",
-                "displayText": "佐藤さんじゃなくて、佐藤でいい？",
+                "targetText": "佐藤（さとう）さんじゃなくて、佐藤（さとう）でいい？",
+                "displayText": "佐藤（さとう）さんじゃなくて、佐藤（さとう）でいい？",
                 "reading": "さとうさんじゃなくて、さとうでいい？",
                 "speechText": "佐藤さんじゃなくて、佐藤でいい？",
                 "translationByNative": {
@@ -74187,8 +74187,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "うん、いいよ。田中もよろしく！",
-                "displayText": "うん、いいよ。田中もよろしく！",
+                "targetText": "うん、いいよ。田中（たなか）もよろしく！",
+                "displayText": "うん、いいよ。田中（たなか）もよろしく！",
                 "reading": "うん、いいよ。たなかもよろしく！",
                 "speechText": "うん、いいよ。田中もよろしく！",
                 "translationByNative": {
@@ -74206,8 +74206,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "じゃあ、また明日！",
-                "displayText": "じゃあ、また明日！",
+                "targetText": "じゃあ、また明日（あした）！",
+                "displayText": "じゃあ、また明日（あした）！",
                 "reading": "じゃあ、またあした！",
                 "speechText": "じゃあ、また明日！",
                 "translationByNative": {
@@ -74286,7 +74286,7 @@
             },
             "examples": [
               {
-                "text": "田中です。",
+                "text": "田中（たなか）です。",
                 "reading": "たなかです。",
                 "translation": "Tôi là Tanaka.",
                 "translationByNative": {
@@ -74297,7 +74297,7 @@
                 "speechText": "たなかです。"
               },
               {
-                "text": "私は田中です。",
+                "text": "私（わたし）は田中（たなか）です。",
                 "reading": "わたしはたなかです。",
                 "translation": "",
                 "speechText": "わたしはたなかです。"
@@ -74377,7 +74377,7 @@
             "formulaReading": "はじめまして。[なまえ]です。",
             "examples": [
               {
-                "text": "はじめまして。佐藤です。",
+                "text": "はじめまして。佐藤（さとう）です。",
                 "reading": "はじめまして。さとうです。",
                 "translation": "Rất vui được gặp bạn lần đầu. Tôi là Sato.",
                 "translationByNative": {
@@ -74437,13 +74437,13 @@
             },
             "examples": [
               {
-                "text": "はじめまして。田中です。よろしくお願いします。",
+                "text": "はじめまして。田中（たなか）です。よろしくお願（ねが）いします。",
                 "reading": "はじめまして。たなかです。よろしくおねがいします。",
                 "translation": "",
                 "speechText": "はじめまして。たなかです。よろしくおねがいします。"
               },
               {
-                "text": "田中。よろしく！",
+                "text": "田中（たなか）。よろしく！",
                 "reading": "たなか。よろしく！",
                 "translation": "",
                 "speechText": "たなか。よろしく！"
@@ -75978,7 +75978,7 @@
                 },
                 {
                   "id": "unnatural_order",
-                  "text": "よろしくお願いします。私はです田中。",
+                  "text": "よろしくお願（ねが）いします。私（わたし）はです田中（たなか）。",
                   "canonicalText": "よろしくお願いします。私はです田中。",
                   "audioText": "よろしくお願いします。私はです田中。"
                 },
@@ -76171,8 +76171,8 @@
                   "romanization": "konbanwa. hai, dō shimashita ka."
                 },
                 {
-                  "targetText": "はじめまして。留学生の田中です。すみませんが、実は、スマホが使えなくて、道がわからないんです。",
-                  "displayText": "はじめまして。留学生の田中です。すみませんが、実は、スマホが使えなくて、道がわからないんです。",
+                  "targetText": "はじめまして。留学生（りゅうがくせい）の田中（たなか）です。すみませんが、実（じつ）は、スマホが使（つか）えなくて、道（みち）がわからないんです。",
+                  "displayText": "はじめまして。留学生（りゅうがくせい）の田中（たなか）です。すみませんが、実（じつ）は、スマホが使（つか）えなくて、道（みち）がわからないんです。",
                   "reading": "はじめまして。りゅうがくせいのたなかです。すみませんが、じつは、スマホがつかえなくて、みちがわからないんです。",
                   "speechText": "はじめまして。りゅうがくせいのたなかです。すみませんが、じつは、スマホがつかえなくて、みちがわからないんです。",
                   "translationByNative": {
@@ -76191,8 +76191,8 @@
                   "romanization": "hajimemashite. ryūgakusei no Tanaka desu. sumimasen ga, jitsu wa, sumaho ga tsukaenakute, michi ga wakaranai n desu."
                 },
                 {
-                  "targetText": "あ、留学生なんですね。はじめまして。佐藤です。",
-                  "displayText": "あ、留学生なんですね。はじめまして。佐藤です。",
+                  "targetText": "あ、留学生（りゅうがくせい）なんですね。はじめまして。佐藤（さとう）です。",
+                  "displayText": "あ、留学生（りゅうがくせい）なんですね。はじめまして。佐藤（さとう）です。",
                   "reading": "あ、りゅうがくせいなんですね。はじめまして。さとうです。",
                   "speechText": "あ、りゅうがくせいなんですね。はじめまして。さとうです。",
                   "translationByNative": {
@@ -76211,8 +76211,8 @@
                   "romanization": "a, ryūgakusei nan desu ne. hajimemashite. Satō desu."
                 },
                 {
-                  "targetText": "それは大変ですね。どこへ行きたいんですか。",
-                  "displayText": "それは大変ですね。どこへ行きたいんですか。",
+                  "targetText": "それは大変（たいへん）ですね。どこへ行（い）きたいんですか。",
+                  "displayText": "それは大変（たいへん）ですね。どこへ行（い）きたいんですか。",
                   "reading": "それはたいへんですね。どこへいきたいんですか。",
                   "speechText": "それはたいへんですね。どこへいきたいんですか。",
                   "translationByNative": {
@@ -76231,8 +76231,8 @@
                   "romanization": "sore wa taihen desu ne. doko e ikitai n desu ka."
                 },
                 {
-                  "targetText": "さくら寮です。場所、わかりますか。",
-                  "displayText": "さくら寮です。場所、わかりますか。",
+                  "targetText": "さくら寮（りょう）です。場所（ばしょ）、わかりますか。",
+                  "displayText": "さくら寮（りょう）です。場所（ばしょ）、わかりますか。",
                   "reading": "さくらりょうです。ばしょ、わかりますか。",
                   "speechText": "さくらりょうです。ばしょ、わかりますか。",
                   "translationByNative": {
@@ -76251,8 +76251,8 @@
                   "romanization": "sakura ryō desu. basho, wakarimasu ka."
                 },
                 {
-                  "targetText": "はい、わかりますよ。ここから近いですよ。",
-                  "displayText": "はい、わかりますよ。ここから近いですよ。",
+                  "targetText": "はい、わかりますよ。ここから近（ちか）いですよ。",
+                  "displayText": "はい、わかりますよ。ここから近（ちか）いですよ。",
                   "reading": "はい、わかりますよ。ここからちかいですよ。",
                   "speechText": "はい、わかりますよ。ここからちかいですよ。",
                   "translationByNative": {
@@ -76271,8 +76271,8 @@
                   "romanization": "hai, wakarimasu yo. koko kara chikai desu yo."
                 },
                 {
-                  "targetText": "一緒に行きましょうか。",
-                  "displayText": "一緒に行きましょうか。",
+                  "targetText": "一緒（いっしょ）に行（い）きましょうか。",
+                  "displayText": "一緒（いっしょ）に行（い）きましょうか。",
                   "reading": "いっしょにいきましょうか。",
                   "speechText": "いっしょにいきましょうか。",
                   "translationByNative": {
@@ -76291,8 +76291,8 @@
                   "romanization": "issho ni ikimashō ka."
                 },
                 {
-                  "targetText": "え、いいんですか。本当にありがとうございます。",
-                  "displayText": "え、いいんですか。本当にありがとうございます。",
+                  "targetText": "え、いいんですか。本当（ほんとう）にありがとうございます。",
+                  "displayText": "え、いいんですか。本当（ほんとう）にありがとうございます。",
                   "reading": "え、いいんですか。ほんとうにありがとうございます。",
                   "speechText": "え、いいんですか。ほんとうにありがとうございます。",
                   "translationByNative": {
@@ -76331,8 +76331,8 @@
                   "romanization": "ieie. nan de mo nai desu."
                 },
                 {
-                  "targetText": "着きましたよ。ここです。",
-                  "displayText": "着きましたよ。ここです。",
+                  "targetText": "着（つ）きましたよ。ここです。",
+                  "displayText": "着（つ）きましたよ。ここです。",
                   "reading": "つきましたよ。ここです。",
                   "speechText": "つきましたよ。ここです。",
                   "translationByNative": {
@@ -76351,8 +76351,8 @@
                   "romanization": "tsukimashita yo. koko desu."
                 },
                 {
-                  "targetText": "助かりました。佐藤さん、ありがとうございました。",
-                  "displayText": "助かりました。佐藤さん、ありがとうございました。",
+                  "targetText": "助（たす）かりました。佐藤（さとう）さん、ありがとうございました。",
+                  "displayText": "助（たす）かりました。佐藤（さとう）さん、ありがとうございました。",
                   "reading": "たすかりました。さとうさん、ありがとうございました。",
                   "speechText": "たすかりました。さとうさん、ありがとうございました。",
                   "translationByNative": {
@@ -76391,8 +76391,8 @@
                   "romanization": "nan de mo nai desu."
                 },
                 {
-                  "targetText": "田中さん、勉強を頑張ってくださいね。さようなら。",
-                  "displayText": "田中さん、勉強を頑張ってくださいね。さようなら。",
+                  "targetText": "田中（たなか）さん、勉強（べんきょう）を頑張（がんば）ってくださいね。さようなら。",
+                  "displayText": "田中（たなか）さん、勉強（べんきょう）を頑張（がんば）ってくださいね。さようなら。",
                   "reading": "たなかさん、べんきょうをがんばってくださいね。さようなら。",
                   "speechText": "たなかさん、べんきょうをがんばってくださいね。さようなら。",
                   "translationByNative": {
@@ -76414,7 +76414,7 @@
               "sceneDividers": [
                 {
                   "afterDialogueLine": 10,
-                  "targetText": "着いた時",
+                  "targetText": "着（つ）いた時（とき）",
                   "translationByNative": {
                     "vi": "Khi đến nơi",
                     "en": "Upon arrival",
@@ -76859,8 +76859,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-short-2"
         },
         {
-          "targetText": "すみません、お名前は？",
-          "displayText": "すみません、お名前は？",
+          "targetText": "すみません、お名前（なまえ）は？",
+          "displayText": "すみません、お名前（なまえ）は？",
           "reading": "すみません、おなまえは？",
           "speechText": "すみません、おなまえは",
           "translationByNative": {
@@ -76879,8 +76879,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-short-3"
         },
         {
-          "targetText": "伊藤です。",
-          "displayText": "伊藤です。",
+          "targetText": "伊藤（いとう）です。",
+          "displayText": "伊藤（いとう）です。",
           "reading": "いとうです。",
           "speechText": "いとうです",
           "translationByNative": {
@@ -76899,8 +76899,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-short-4"
         },
         {
-          "targetText": "伊藤さんですね。私は田中です。",
-          "displayText": "伊藤さんですね。私は田中です。",
+          "targetText": "伊藤（いとう）さんですね。私（わたし）は田中（たなか）です。",
+          "displayText": "伊藤（いとう）さんですね。私（わたし）は田中（たなか）です。",
           "reading": "いとうさんですね。わたしはたなかです。",
           "speechText": "いとうさんですね。わたしはたなかです",
           "translationByNative": {
@@ -76919,8 +76919,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-short-5"
         },
         {
-          "targetText": "はじめまして。佐藤です。",
-          "displayText": "はじめまして。佐藤です。",
+          "targetText": "はじめまして。佐藤（さとう）です。",
+          "displayText": "はじめまして。佐藤（さとう）です。",
           "reading": "はじめまして。さとうです。",
           "speechText": "はじめまして。さとうです",
           "translationByNative": {
@@ -76959,8 +76959,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-polite-2"
         },
         {
-          "targetText": "失礼ですが、お名前は何ですか。",
-          "displayText": "失礼ですが、お名前は何ですか。",
+          "targetText": "失礼（しつれい）ですが、お名前（なまえ）は何（なん）ですか。",
+          "displayText": "失礼（しつれい）ですが、お名前（なまえ）は何（なん）ですか。",
           "reading": "しつれいですが、おなまえはなんですか。",
           "speechText": "しつれいですが、おなまえはなんですか",
           "translationByNative": {
@@ -76979,8 +76979,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-polite-3"
         },
         {
-          "targetText": "田中です。",
-          "displayText": "田中です。",
+          "targetText": "田中（たなか）です。",
+          "displayText": "田中（たなか）です。",
           "reading": "たなかです。",
           "speechText": "たなかです",
           "translationByNative": {
@@ -76999,8 +76999,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-polite-4"
         },
         {
-          "targetText": "田中さんですね。よろしくお願いします。",
-          "displayText": "田中さんですね。よろしくお願いします。",
+          "targetText": "田中（たなか）さんですね。よろしくお願（ねが）いします。",
+          "displayText": "田中（たなか）さんですね。よろしくお願（ねが）いします。",
           "reading": "たなかさんですね。よろしくおねがいします。",
           "speechText": "たなかさんですね。よろしくおねがいします",
           "translationByNative": {
@@ -77019,8 +77019,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-polite-5"
         },
         {
-          "targetText": "すみません、お名前は？",
-          "displayText": "すみません、お名前は？",
+          "targetText": "すみません、お名前（なまえ）は？",
+          "displayText": "すみません、お名前（なまえ）は？",
           "reading": "すみません、おなまえは？",
           "speechText": "すみません、おなまえは",
           "translationByNative": {
@@ -77039,8 +77039,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-1"
         },
         {
-          "targetText": "伊藤です。",
-          "displayText": "伊藤です。",
+          "targetText": "伊藤（いとう）です。",
+          "displayText": "伊藤（いとう）です。",
           "reading": "いとうです。",
           "speechText": "いとうです",
           "translationByNative": {
@@ -77059,8 +77059,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-2"
         },
         {
-          "targetText": "すみません、もう一度お願いします。",
-          "displayText": "すみません、もう一度お願いします。",
+          "targetText": "すみません、もう一度（いちど）お願（ねが）いします。",
+          "displayText": "すみません、もう一度（いちど）お願（ねが）いします。",
           "reading": "すみません、もういちどおねがいします。",
           "speechText": "すみません、もういちどおねがいします",
           "translationByNative": {
@@ -77079,8 +77079,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-3"
         },
         {
-          "targetText": "伊藤です。い・と・う、です。",
-          "displayText": "伊藤です。い・と・う、です。",
+          "targetText": "伊藤（いとう）です。い・と・う、です。",
+          "displayText": "伊藤（いとう）です。い・と・う、です。",
           "reading": "いとうです。い・と・う、です。",
           "speechText": "いとうです。い、と、う、です",
           "translationByNative": {
@@ -77099,8 +77099,8 @@
           "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-4"
         },
         {
-          "targetText": "伊藤さんですね。",
-          "displayText": "伊藤さんですね。",
+          "targetText": "伊藤（いとう）さんですね。",
+          "displayText": "伊藤（いとう）さんですね。",
           "reading": "いとうさんですね。",
           "speechText": "いとうさんですね",
           "translationByNative": {
@@ -77179,8 +77179,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-short-2"
             },
             {
-              "targetText": "すみません、お名前は？",
-              "displayText": "すみません、お名前は？",
+              "targetText": "すみません、お名前（なまえ）は？",
+              "displayText": "すみません、お名前（なまえ）は？",
               "reading": "すみません、おなまえは？",
               "speechText": "すみません、おなまえは",
               "translationByNative": {
@@ -77199,8 +77199,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-short-3"
             },
             {
-              "targetText": "伊藤です。",
-              "displayText": "伊藤です。",
+              "targetText": "伊藤（いとう）です。",
+              "displayText": "伊藤（いとう）です。",
               "reading": "いとうです。",
               "speechText": "いとうです",
               "translationByNative": {
@@ -77219,8 +77219,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-short-4"
             },
             {
-              "targetText": "伊藤さんですね。私は田中です。",
-              "displayText": "伊藤さんですね。私は田中です。",
+              "targetText": "伊藤（いとう）さんですね。私（わたし）は田中（たなか）です。",
+              "displayText": "伊藤（いとう）さんですね。私（わたし）は田中（たなか）です。",
               "reading": "いとうさんですね。わたしはたなかです。",
               "speechText": "いとうさんですね。わたしはたなかです",
               "translationByNative": {
@@ -77259,8 +77259,8 @@
           },
           "lines": [
             {
-              "targetText": "はじめまして。佐藤です。",
-              "displayText": "はじめまして。佐藤です。",
+              "targetText": "はじめまして。佐藤（さとう）です。",
+              "displayText": "はじめまして。佐藤（さとう）です。",
               "reading": "はじめまして。さとうです。",
               "speechText": "はじめまして。さとうです",
               "translationByNative": {
@@ -77299,8 +77299,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-polite-2"
             },
             {
-              "targetText": "失礼ですが、お名前は何ですか。",
-              "displayText": "失礼ですが、お名前は何ですか。",
+              "targetText": "失礼（しつれい）ですが、お名前（なまえ）は何（なん）ですか。",
+              "displayText": "失礼（しつれい）ですが、お名前（なまえ）は何（なん）ですか。",
               "reading": "しつれいですが、おなまえはなんですか。",
               "speechText": "しつれいですが、おなまえはなんですか",
               "translationByNative": {
@@ -77319,8 +77319,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-polite-3"
             },
             {
-              "targetText": "田中です。",
-              "displayText": "田中です。",
+              "targetText": "田中（たなか）です。",
+              "displayText": "田中（たなか）です。",
               "reading": "たなかです。",
               "speechText": "たなかです",
               "translationByNative": {
@@ -77339,8 +77339,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-polite-4"
             },
             {
-              "targetText": "田中さんですね。よろしくお願いします。",
-              "displayText": "田中さんですね。よろしくお願いします。",
+              "targetText": "田中（たなか）さんですね。よろしくお願（ねが）いします。",
+              "displayText": "田中（たなか）さんですね。よろしくお願（ねが）いします。",
               "reading": "たなかさんですね。よろしくおねがいします。",
               "speechText": "たなかさんですね。よろしくおねがいします",
               "translationByNative": {
@@ -77379,8 +77379,8 @@
           },
           "lines": [
             {
-              "targetText": "すみません、お名前は？",
-              "displayText": "すみません、お名前は？",
+              "targetText": "すみません、お名前（なまえ）は？",
+              "displayText": "すみません、お名前（なまえ）は？",
               "reading": "すみません、おなまえは？",
               "speechText": "すみません、おなまえは",
               "translationByNative": {
@@ -77399,8 +77399,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-1"
             },
             {
-              "targetText": "伊藤です。",
-              "displayText": "伊藤です。",
+              "targetText": "伊藤（いとう）です。",
+              "displayText": "伊藤（いとう）です。",
               "reading": "いとうです。",
               "speechText": "いとうです",
               "translationByNative": {
@@ -77419,8 +77419,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-2"
             },
             {
-              "targetText": "すみません、もう一度お願いします。",
-              "displayText": "すみません、もう一度お願いします。",
+              "targetText": "すみません、もう一度（いちど）お願（ねが）いします。",
+              "displayText": "すみません、もう一度（いちど）お願（ねが）いします。",
               "reading": "すみません、もういちどおねがいします。",
               "speechText": "すみません、もういちどおねがいします",
               "translationByNative": {
@@ -77439,8 +77439,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-3"
             },
             {
-              "targetText": "伊藤です。い・と・う、です。",
-              "displayText": "伊藤です。い・と・う、です。",
+              "targetText": "伊藤（いとう）です。い・と・う、です。",
+              "displayText": "伊藤（いとう）です。い・と・う、です。",
               "reading": "いとうです。い・と・う、です。",
               "speechText": "いとうです。い、と、う、です",
               "translationByNative": {
@@ -77459,8 +77459,8 @@
               "id": "ja-daily_life-m01-u1-l2-ask-name-repeat-4"
             },
             {
-              "targetText": "伊藤さんですね。",
-              "displayText": "伊藤さんですね。",
+              "targetText": "伊藤（いとう）さんですね。",
+              "displayText": "伊藤（いとう）さんですね。",
               "reading": "いとうさんですね。",
               "speechText": "いとうさんですね",
               "translationByNative": {
@@ -77590,8 +77590,8 @@
                 "ja": "次のように聞けます。"
               },
               "speaker": "",
-              "targetText": "お名前は？",
-              "displayText": "お名前は？",
+              "targetText": "お名前（なまえ）は？",
+              "displayText": "お名前（なまえ）は？",
               "reading": "おなまえは？",
               "speechText": "おなまえは",
               "translationByNative": {
@@ -77615,8 +77615,8 @@
                 "ja": "名前を聞いた後、確認します。"
               },
               "speaker": "",
-              "targetText": "伊藤さんですね。",
-              "displayText": "伊藤さんですね。",
+              "targetText": "伊藤（いとう）さんですね。",
+              "displayText": "伊藤（いとう）さんですね。",
               "reading": "いとうさんですね。",
               "speechText": "いとうさんですね",
               "translationByNative": {
@@ -77640,8 +77640,8 @@
                 "ja": "聞き取れなかったときは、次のように言います。"
               },
               "speaker": "",
-              "targetText": "すみません、もう一度お願いします。",
-              "displayText": "すみません、もう一度お願いします。",
+              "targetText": "すみません、もう一度（いちど）お願（ねが）いします。",
+              "displayText": "すみません、もう一度（いちど）お願（ねが）いします。",
               "reading": "すみません、もういちどおねがいします。",
               "speechText": "すみません、もういちどおねがいします",
               "translationByNative": {
@@ -77746,7 +77746,7 @@
             },
             "examples": [
               {
-                "text": "私の名前は田中です。",
+                "text": "私（わたし）の名前（なまえ）は田中（たなか）です。",
                 "reading": "わたしのなまえはたなかです。",
                 "translation": "Tên tôi là Tanaka.",
                 "translationByNative": {
@@ -77844,7 +77844,7 @@
             },
             "examples": [
               {
-                "text": "お名前は？",
+                "text": "お名前（なまえ）は？",
                 "reading": "おなまえは？",
                 "translation": "Tên bạn là gì?",
                 "translationByNative": {
@@ -77916,7 +77916,7 @@
             },
             "examples": [
               {
-                "text": "これは何ですか。",
+                "text": "これは何（なん）ですか。",
                 "reading": "これはなんですか。",
                 "translation": "Cái này là gì?",
                 "translationByNative": {
@@ -78031,7 +78031,7 @@
             },
             "examples": [
               {
-                "text": "失礼ですが、お名前は何ですか。",
+                "text": "失礼（しつれい）ですが、お名前（なまえ）は何（なん）ですか。",
                 "reading": "しつれいですが、おなまえはなんですか。",
                 "translation": "Xin lỗi, tên bạn là gì?",
                 "translationByNative": {
@@ -78341,7 +78341,7 @@
             },
             "examples": [
               {
-                "text": "すみません、もう一度お願いします。",
+                "text": "すみません、もう一度（いちど）お願（ねが）いします。",
                 "reading": "すみません、もういちどおねがいします。",
                 "translation": "Xin lỗi, làm ơn nói lại một lần nữa.",
                 "translationByNative": {
@@ -78596,8 +78596,8 @@
                 "speakerId": "ito"
               },
               {
-                "targetText": "すみません、お名前は？",
-                "displayText": "すみません、お名前は？",
+                "targetText": "すみません、お名前（なまえ）は？",
+                "displayText": "すみません、お名前（なまえ）は？",
                 "reading": "すみません、おなまえは？",
                 "speechText": "すみません、おなまえは",
                 "translationByNative": {
@@ -78615,8 +78615,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "伊藤です。",
-                "displayText": "伊藤です。",
+                "targetText": "伊藤（いとう）です。",
+                "displayText": "伊藤（いとう）です。",
                 "reading": "いとうです。",
                 "speechText": "いとうです",
                 "translationByNative": {
@@ -78634,8 +78634,8 @@
                 "speakerId": "ito"
               },
               {
-                "targetText": "伊藤さんですね。私は田中です。",
-                "displayText": "伊藤さんですね。私は田中です。",
+                "targetText": "伊藤（いとう）さんですね。私（わたし）は田中（たなか）です。",
+                "displayText": "伊藤（いとう）さんですね。私（わたし）は田中（たなか）です。",
                 "reading": "いとうさんですね。わたしはたなかです。",
                 "speechText": "いとうさんですね。わたしはたなかです",
                 "translationByNative": {
@@ -78688,8 +78688,8 @@
             },
             "lines": [
               {
-                "targetText": "はじめまして。佐藤です。",
-                "displayText": "はじめまして。佐藤です。",
+                "targetText": "はじめまして。佐藤（さとう）です。",
+                "displayText": "はじめまして。佐藤（さとう）です。",
                 "reading": "はじめまして。さとうです。",
                 "speechText": "はじめまして。さとうです",
                 "translationByNative": {
@@ -78726,8 +78726,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "失礼ですが、お名前は何ですか。",
-                "displayText": "失礼ですが、お名前は何ですか。",
+                "targetText": "失礼（しつれい）ですが、お名前（なまえ）は何（なん）ですか。",
+                "displayText": "失礼（しつれい）ですが、お名前（なまえ）は何（なん）ですか。",
                 "reading": "しつれいですが、おなまえはなんですか。",
                 "speechText": "しつれいですが、おなまえはなんですか",
                 "translationByNative": {
@@ -78745,8 +78745,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "田中です。",
-                "displayText": "田中です。",
+                "targetText": "田中（たなか）です。",
+                "displayText": "田中（たなか）です。",
                 "reading": "たなかです。",
                 "speechText": "たなかです",
                 "translationByNative": {
@@ -78764,8 +78764,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "田中さんですね。よろしくお願いします。",
-                "displayText": "田中さんですね。よろしくお願いします。",
+                "targetText": "田中（たなか）さんですね。よろしくお願（ねが）いします。",
+                "displayText": "田中（たなか）さんですね。よろしくお願（ねが）いします。",
                 "reading": "たなかさんですね。よろしくおねがいします。",
                 "speechText": "たなかさんですね。よろしくおねがいします",
                 "translationByNative": {
@@ -78818,8 +78818,8 @@
             },
             "lines": [
               {
-                "targetText": "すみません、お名前は？",
-                "displayText": "すみません、お名前は？",
+                "targetText": "すみません、お名前（なまえ）は？",
+                "displayText": "すみません、お名前（なまえ）は？",
                 "reading": "すみません、おなまえは？",
                 "speechText": "すみません、おなまえは",
                 "translationByNative": {
@@ -78837,8 +78837,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "伊藤です。",
-                "displayText": "伊藤です。",
+                "targetText": "伊藤（いとう）です。",
+                "displayText": "伊藤（いとう）です。",
                 "reading": "いとうです。",
                 "speechText": "いとうです",
                 "translationByNative": {
@@ -78856,8 +78856,8 @@
                 "speakerId": "ito"
               },
               {
-                "targetText": "すみません、もう一度お願いします。",
-                "displayText": "すみません、もう一度お願いします。",
+                "targetText": "すみません、もう一度（いちど）お願（ねが）いします。",
+                "displayText": "すみません、もう一度（いちど）お願（ねが）いします。",
                 "reading": "すみません、もういちどおねがいします。",
                 "speechText": "すみません、もういちどおねがいします",
                 "translationByNative": {
@@ -78875,8 +78875,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "伊藤です。い・と・う、です。",
-                "displayText": "伊藤です。い・と・う、です。",
+                "targetText": "伊藤（いとう）です。い・と・う、です。",
+                "displayText": "伊藤（いとう）です。い・と・う、です。",
                 "reading": "いとうです。い・と・う、です。",
                 "speechText": "いとうです。い、と、う、です",
                 "translationByNative": {
@@ -78894,8 +78894,8 @@
                 "speakerId": "ito"
               },
               {
-                "targetText": "伊藤さんですね。",
-                "displayText": "伊藤さんですね。",
+                "targetText": "伊藤（いとう）さんですね。",
+                "displayText": "伊藤（いとう）さんですね。",
                 "reading": "いとうさんですね。",
                 "speechText": "いとうさんですね",
                 "translationByNative": {
@@ -78951,7 +78951,7 @@
             },
             "examples": [
               {
-                "text": "お名前は？",
+                "text": "お名前（なまえ）は？",
                 "reading": "おなまえは？",
                 "translation": "Tên bạn là gì? (hỏi người khác)",
                 "translationByNative": {
@@ -78962,7 +78962,7 @@
                 "speechText": "おなまえは？"
               },
               {
-                "text": "私は田中です。",
+                "text": "私（わたし）は田中（たなか）です。",
                 "reading": "わたしはたなかです。",
                 "translation": "Tôi là Tanaka. (nói tên mình)",
                 "translationByNative": {
@@ -79005,7 +79005,7 @@
             },
             "examples": [
               {
-                "text": "お名前は何ですか。",
+                "text": "お名前（なまえ）は何（なん）ですか。",
                 "reading": "おなまえはなんですか。",
                 "translation": "Tên bạn là gì?",
                 "translationByNative": {
@@ -79048,7 +79048,7 @@
             },
             "examples": [
               {
-                "text": "伊藤さんですね。",
+                "text": "伊藤（いとう）さんですね。",
                 "reading": "いとうさんですね。",
                 "translation": "Bạn là Itō phải không.",
                 "translationByNative": {
@@ -79276,25 +79276,25 @@
               "options": [
                 {
                   "id": "ask_full",
-                  "text": "お名前は何ですか。",
+                  "text": "お名前（なまえ）は何（なん）ですか。",
                   "canonicalText": "お名前は何ですか。",
                   "audioText": "お名前は何ですか。"
                 },
                 {
                   "id": "self_intro",
-                  "text": "私は田中です。",
+                  "text": "私（わたし）は田中（たなか）です。",
                   "canonicalText": "私は田中です。",
                   "audioText": "私は田中です。"
                 },
                 {
                   "id": "confirm",
-                  "text": "伊藤さんですね。",
+                  "text": "伊藤（いとう）さんですね。",
                   "canonicalText": "伊藤さんですね。",
                   "audioText": "伊藤さんですね。"
                 },
                 {
                   "id": "closing",
-                  "text": "よろしくお願いします。",
+                  "text": "よろしくお願（ねが）いします。",
                   "canonicalText": "よろしくお願いします。",
                   "audioText": "よろしくお願いします。"
                 }
@@ -79326,7 +79326,7 @@
                   "id": "namae",
                   "left": {
                     "id": "namae_l",
-                    "text": "名前"
+                    "text": "名前（なまえ）"
                   },
                   "right": {
                     "id": "namae_r",
@@ -79342,7 +79342,7 @@
                   "id": "onamae_wa",
                   "left": {
                     "id": "onamae_wa_l",
-                    "text": "お名前は？"
+                    "text": "お名前（なまえ）は？"
                   },
                   "right": {
                     "id": "onamae_wa_r",
@@ -79358,7 +79358,7 @@
                   "id": "mou_ichido",
                   "left": {
                     "id": "mou_l",
-                    "text": "もう一度お願いします"
+                    "text": "もう一度（いちど）お願（ねが）いします"
                   },
                   "right": {
                     "id": "mou_r",
@@ -79652,19 +79652,19 @@
                 },
                 {
                   "id": "nan_desu_ka",
-                  "text": "何ですか",
+                  "text": "何（なん）ですか",
                   "canonicalText": "何ですか",
                   "audioText": "何ですか"
                 },
                 {
                   "id": "mou_ichido",
-                  "text": "もう一度",
+                  "text": "もう一度（いちど）",
                   "canonicalText": "もう一度",
                   "audioText": "もう一度"
                 },
                 {
                   "id": "onamae_wa",
-                  "text": "お名前は",
+                  "text": "お名前（なまえ）は",
                   "canonicalText": "お名前は",
                   "audioText": "お名前は"
                 }
@@ -79700,13 +79700,13 @@
               "options": [
                 {
                   "id": "ask_repeat",
-                  "text": "すみません、もう一度お願いします。",
+                  "text": "すみません、もう一度（いちど）お願（ねが）いします。",
                   "canonicalText": "すみません、もう一度お願いします。",
                   "audioText": "すみません、もう一度お願いします。"
                 },
                 {
                   "id": "wrong_self",
-                  "text": "お名前は田中です。",
+                  "text": "お名前（なまえ）は田中（たなか）です。",
                   "canonicalText": "お名前は田中です。",
                   "audioText": "お名前は田中です。"
                 },
@@ -79867,19 +79867,19 @@
                   "options": [
                     {
                       "id": "self_tanaka",
-                      "text": "私は田中です。",
+                      "text": "私（わたし）は田中（たなか）です。",
                       "canonicalText": "私は田中です。",
                       "audioText": "私は田中です。"
                     },
                     {
                       "id": "ask_name",
-                      "text": "お名前は？",
+                      "text": "お名前（なまえ）は？",
                       "canonicalText": "お名前は？",
                       "audioText": "お名前は？"
                     },
                     {
                       "id": "ito",
-                      "text": "伊藤です。",
+                      "text": "伊藤（いとう）です。",
                       "canonicalText": "伊藤です。",
                       "audioText": "伊藤です。"
                     },
@@ -79912,25 +79912,25 @@
                   "options": [
                     {
                       "id": "confirm_sato",
-                      "text": "佐藤さんですね。",
+                      "text": "佐藤（さとう）さんですね。",
                       "canonicalText": "佐藤さんですね。",
                       "audioText": "佐藤さんですね。"
                     },
                     {
                       "id": "self_sato",
-                      "text": "佐藤です。",
+                      "text": "佐藤（さとう）です。",
                       "canonicalText": "佐藤です。",
                       "audioText": "佐藤です。"
                     },
                     {
                       "id": "ask",
-                      "text": "お名前は？",
+                      "text": "お名前（なまえ）は？",
                       "canonicalText": "お名前は？",
                       "audioText": "お名前は？"
                     },
                     {
                       "id": "repeat",
-                      "text": "もう一度お願いします。",
+                      "text": "もう一度（いちど）お願（ねが）いします。",
                       "canonicalText": "もう一度お願いします。",
                       "audioText": "もう一度お願いします。"
                     }
@@ -80002,13 +80002,13 @@
                   "options": [
                     {
                       "id": "repeat",
-                      "text": "もう一度お願いします。",
+                      "text": "もう一度（いちど）お願（ねが）いします。",
                       "canonicalText": "もう一度お願いします。",
                       "audioText": "もう一度お願いします。"
                     },
                     {
                       "id": "closing",
-                      "text": "よろしくお願いします。",
+                      "text": "よろしくお願（ねが）いします。",
                       "canonicalText": "よろしくお願いします。",
                       "audioText": "よろしくお願いします。"
                     },
@@ -80228,25 +80228,25 @@
               "options": [
                 {
                   "id": "full_polite",
-                  "text": "失礼ですが、お名前は何ですか。",
+                  "text": "失礼（しつれい）ですが、お名前（なまえ）は何（なん）ですか。",
                   "canonicalText": "失礼ですが、お名前は何ですか。",
                   "audioText": "失礼ですが、お名前は何ですか。"
                 },
                 {
                   "id": "short",
-                  "text": "お名前は？",
+                  "text": "お名前（なまえ）は？",
                   "canonicalText": "お名前は？",
                   "audioText": "お名前は？"
                 },
                 {
                   "id": "self",
-                  "text": "私は田中です。",
+                  "text": "私（わたし）は田中（たなか）です。",
                   "canonicalText": "私は田中です。",
                   "audioText": "私は田中です。"
                 },
                 {
                   "id": "repeat",
-                  "text": "もう一度お願いします。",
+                  "text": "もう一度（いちど）お願（ねが）いします。",
                   "canonicalText": "もう一度お願いします。",
                   "audioText": "もう一度お願いします。"
                 }
@@ -80276,25 +80276,25 @@
               "options": [
                 {
                   "id": "natural",
-                  "text": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 伊藤さんですね。私は田中です。",
+                  "text": "田中（たなか）: すみません、お名前（なまえ）は？\n伊藤（いとう）: 伊藤（いとう）です。\n田中（たなか）: 伊藤（いとう）さんですね。私（わたし）は田中（たなか）です。",
                   "canonicalText": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 伊藤さんですね。私は田中です。",
                   "audioText": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 伊藤さんですね。私は田中です。"
                 },
                 {
                   "id": "wrong_ono",
-                  "text": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 私のお名前は田中です。",
+                  "text": "田中（たなか）: すみません、お名前（なまえ）は？\n伊藤（いとう）: 伊藤（いとう）です。\n田中（たなか）: 私（わたし）のお名前（なまえ）は田中（たなか）です。",
                   "canonicalText": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 私のお名前は田中です。",
                   "audioText": "田中: すみません、お名前は？\n伊藤: 伊藤です。\n田中: 私のお名前は田中です。"
                 },
                 {
                   "id": "wrong_self_san",
-                  "text": "田中: お名前は？\n伊藤: 伊藤です。\n田中: 私は田中さんです。",
+                  "text": "田中（たなか）: お名前（なまえ）は？\n伊藤（いとう）: 伊藤（いとう）です。\n田中（たなか）: 私（わたし）は田中（たなか）さんです。",
                   "canonicalText": "田中: お名前は？\n伊藤: 伊藤です。\n田中: 私は田中さんです。",
                   "audioText": "田中: お名前は？\n伊藤: 伊藤です。\n田中: 私は田中さんです。"
                 },
                 {
                   "id": "wrong_loop",
-                  "text": "田中: すみません、もう一度お願いします。\n伊藤: 伊藤です。\n田中: お名前は何ですか。\n伊藤: 伊藤です。",
+                  "text": "田中（たなか）: すみません、もう一度（いちど）お願（ねが）いします。\n伊藤（いとう）: 伊藤（いとう）です。\n田中（たなか）: お名前（なまえ）は何（なん）ですか。\n伊藤（いとう）: 伊藤（いとう）です。",
                   "canonicalText": "田中: すみません、もう一度お願いします。\n伊藤: 伊藤です。\n田中: お名前は何ですか。\n伊藤: 伊藤です。",
                   "audioText": "田中: すみません、もう一度お願いします。\n伊藤: 伊藤です。\n田中: お名前は何ですか。\n伊藤: 伊藤です。"
                 }
@@ -80440,8 +80440,8 @@
               ],
               "dialogueLines": [
                 {
-                  "targetText": "こんにちは。はじめまして。佐藤です。",
-                  "displayText": "こんにちは。はじめまして。佐藤です。",
+                  "targetText": "こんにちは。はじめまして。佐藤（さとう）です。",
+                  "displayText": "こんにちは。はじめまして。佐藤（さとう）です。",
                   "reading": "こんにちは。はじめまして。さとうです。",
                   "speechText": "こんにちは。はじめまして。さとうです",
                   "translationByNative": {
@@ -80460,8 +80460,8 @@
                   "romanization": "konnichiwa. hajimemashite. Satō desu."
                 },
                 {
-                  "targetText": "こんにちは。田中です。よろしくお願いします。",
-                  "displayText": "こんにちは。田中です。よろしくお願いします。",
+                  "targetText": "こんにちは。田中（たなか）です。よろしくお願（ねが）いします。",
+                  "displayText": "こんにちは。田中（たなか）です。よろしくお願（ねが）いします。",
                   "reading": "こんにちは。たなかです。よろしくおねがいします。",
                   "speechText": "こんにちは。たなかです。よろしくおねがいします",
                   "translationByNative": {
@@ -80480,8 +80480,8 @@
                   "romanization": "konnichiwa. Tanaka desu. yoroshiku onegai shimasu."
                 },
                 {
-                  "targetText": "よろしくお願いします。",
-                  "displayText": "よろしくお願いします。",
+                  "targetText": "よろしくお願（ねが）いします。",
+                  "displayText": "よろしくお願（ねが）いします。",
                   "reading": "よろしくおねがいします。",
                   "speechText": "よろしくおねがいします",
                   "translationByNative": {
@@ -80520,8 +80520,8 @@
                   "romanization": "konnichiwa."
                 },
                 {
-                  "targetText": "こんにちは。すみません、お名前は？",
-                  "displayText": "こんにちは。すみません、お名前は？",
+                  "targetText": "こんにちは。すみません、お名前（なまえ）は？",
+                  "displayText": "こんにちは。すみません、お名前（なまえ）は？",
                   "reading": "こんにちは。すみません、おなまえは？",
                   "speechText": "こんにちは。すみません、おなまえは",
                   "translationByNative": {
@@ -80540,8 +80540,8 @@
                   "romanization": "konnichiwa. sumimasen, onamae wa?"
                 },
                 {
-                  "targetText": "伊藤です。",
-                  "displayText": "伊藤です。",
+                  "targetText": "伊藤（いとう）です。",
+                  "displayText": "伊藤（いとう）です。",
                   "reading": "いとうです。",
                   "speechText": "いとうです",
                   "translationByNative": {
@@ -80560,8 +80560,8 @@
                   "romanization": "Itō desu."
                 },
                 {
-                  "targetText": "すみません、もう一度お願いします。",
-                  "displayText": "すみません、もう一度お願いします。",
+                  "targetText": "すみません、もう一度（いちど）お願（ねが）いします。",
+                  "displayText": "すみません、もう一度（いちど）お願（ねが）いします。",
                   "reading": "すみません、もういちどおねがいします。",
                   "speechText": "すみません、もういちどおねがいします",
                   "translationByNative": {
@@ -80580,8 +80580,8 @@
                   "romanization": "sumimasen, mōichido onegai shimasu."
                 },
                 {
-                  "targetText": "伊藤です。い・と・う、です。",
-                  "displayText": "伊藤です。い・と・う、です。",
+                  "targetText": "伊藤（いとう）です。い・と・う、です。",
+                  "displayText": "伊藤（いとう）です。い・と・う、です。",
                   "reading": "いとうです。い・と・う、です。",
                   "speechText": "いとうです。い、と、う、です",
                   "translationByNative": {
@@ -80600,8 +80600,8 @@
                   "romanization": "Itō desu. i- to- u, desu."
                 },
                 {
-                  "targetText": "あ、伊藤さんですね。",
-                  "displayText": "あ、伊藤さんですね。",
+                  "targetText": "あ、伊藤（いとう）さんですね。",
+                  "displayText": "あ、伊藤（いとう）さんですね。",
                   "reading": "あ、いとうさんですね。",
                   "speechText": "あ、いとうさんですね",
                   "translationByNative": {
@@ -80620,8 +80620,8 @@
                   "romanization": "a, Itō-san desu ne."
                 },
                 {
-                  "targetText": "はい。お名前は？",
-                  "displayText": "はい。お名前は？",
+                  "targetText": "はい。お名前（なまえ）は？",
+                  "displayText": "はい。お名前（なまえ）は？",
                   "reading": "はい。おなまえは？",
                   "speechText": "はい。おなまえは",
                   "translationByNative": {
@@ -80640,8 +80640,8 @@
                   "romanization": "hai. onamae wa?"
                 },
                 {
-                  "targetText": "田中です。",
-                  "displayText": "田中です。",
+                  "targetText": "田中（たなか）です。",
+                  "displayText": "田中（たなか）です。",
                   "reading": "たなかです。",
                   "speechText": "たなかです",
                   "translationByNative": {
@@ -80660,8 +80660,8 @@
                   "romanization": "Tanaka desu."
                 },
                 {
-                  "targetText": "田中さんですね。よろしくお願いします。",
-                  "displayText": "田中さんですね。よろしくお願いします。",
+                  "targetText": "田中（たなか）さんですね。よろしくお願（ねが）いします。",
+                  "displayText": "田中（たなか）さんですね。よろしくお願（ねが）いします。",
                   "reading": "たなかさんですね。よろしくおねがいします。",
                   "speechText": "たなかさんですね。よろしくおねがいします",
                   "translationByNative": {
@@ -80680,8 +80680,8 @@
                   "romanization": "Tanaka-san desu ne. yoroshiku onegai shimasu."
                 },
                 {
-                  "targetText": "はい。よろしくお願いします。",
-                  "displayText": "はい。よろしくお願いします。",
+                  "targetText": "はい。よろしくお願（ねが）いします。",
+                  "displayText": "はい。よろしくお願（ねが）いします。",
                   "reading": "はい。よろしくおねがいします。",
                   "speechText": "はい。よろしくおねがいします",
                   "translationByNative": {
@@ -80703,7 +80703,7 @@
               "sceneDividers": [
                 {
                   "afterDialogueLine": 3,
-                  "targetText": "別の人が来たとき",
+                  "targetText": "別（べつ）の人（ひと）が来（き）たとき",
                   "translationByNative": {
                     "vi": "Khi có người khác đến",
                     "en": "When another person arrives",
@@ -81062,8 +81062,8 @@
       "keyPhrases": [],
       "dialogue": [
         {
-          "targetText": "はじめまして。佐藤です。よろしくお願いします。",
-          "displayText": "はじめまして。佐藤です。よろしくお願いします。",
+          "targetText": "はじめまして。佐藤（さとう）です。よろしくお願（ねが）いします。",
+          "displayText": "はじめまして。佐藤（さとう）です。よろしくお願（ねが）いします。",
           "reading": "はじめまして。さとうです。よろしくおねがいします。",
           "speechText": "はじめまして。さとうです。よろしくおねがいします",
           "translationByNative": {
@@ -81078,8 +81078,8 @@
           "id": "ja-daily_life-m01-u1-l3-respond-intro-1"
         },
         {
-          "targetText": "こちらこそ。田中です。よろしくお願いします。",
-          "displayText": "こちらこそ。田中です。よろしくお願いします。",
+          "targetText": "こちらこそ。田中（たなか）です。よろしくお願（ねが）いします。",
+          "displayText": "こちらこそ。田中（たなか）です。よろしくお願（ねが）いします。",
           "reading": "こちらこそ。たなかです。よろしくおねがいします。",
           "speechText": "こちらこそ。たなかです。よろしくおねがいします",
           "translationByNative": {
@@ -81094,8 +81094,8 @@
           "id": "ja-daily_life-m01-u1-l3-respond-intro-2"
         },
         {
-          "targetText": "そうですか。田中さんですね。",
-          "displayText": "そうですか。田中さんですね。",
+          "targetText": "そうですか。田中（たなか）さんですね。",
+          "displayText": "そうですか。田中（たなか）さんですね。",
           "reading": "そうですか。たなかさんですね。",
           "speechText": "そうですか。たなかさんですね",
           "translationByNative": {
@@ -81114,8 +81114,8 @@
           "id": "ja-daily_life-m01-u1-l3-respond-intro-3"
         },
         {
-          "targetText": "はい。よろしくお願いします。",
-          "displayText": "はい。よろしくお願いします。",
+          "targetText": "はい。よろしくお願（ねが）いします。",
+          "displayText": "はい。よろしくお願（ねが）いします。",
           "reading": "はい。よろしくおねがいします。",
           "speechText": "はい。よろしくおねがいします",
           "translationByNative": {
@@ -81134,8 +81134,8 @@
           "id": "ja-daily_life-m01-u1-l3-respond-intro-4"
         },
         {
-          "targetText": "じゃあ、お先に失礼します。",
-          "displayText": "じゃあ、お先に失礼します。",
+          "targetText": "じゃあ、お先（さき）に失礼（しつれい）します。",
+          "displayText": "じゃあ、お先（さき）に失礼（しつれい）します。",
           "reading": "じゃあ、おさきにしつれいします。",
           "speechText": "じゃあ、おさきにしつれいします",
           "translationByNative": {
@@ -81150,8 +81150,8 @@
           "id": "ja-daily_life-m01-u1-l3-leave-polite-1"
         },
         {
-          "targetText": "はい、また来週。",
-          "displayText": "はい、また来週。",
+          "targetText": "はい、また来週（らいしゅう）。",
+          "displayText": "はい、また来週（らいしゅう）。",
           "reading": "はい、またらいしゅう。",
           "speechText": "はい、またらいしゅう",
           "translationByNative": {
@@ -81170,8 +81170,8 @@
           "id": "ja-daily_life-m01-u1-l3-leave-polite-2"
         },
         {
-          "targetText": "また来週。お元気で。",
-          "displayText": "また来週。お元気で。",
+          "targetText": "また来週（らいしゅう）。お元気（げんき）で。",
+          "displayText": "また来週（らいしゅう）。お元気（げんき）で。",
           "reading": "またらいしゅう。おげんきで。",
           "speechText": "またらいしゅう。おげんきで",
           "translationByNative": {
@@ -81190,8 +81190,8 @@
           "id": "ja-daily_life-m01-u1-l3-leave-polite-3"
         },
         {
-          "targetText": "お元気で。失礼します。",
-          "displayText": "お元気で。失礼します。",
+          "targetText": "お元気（げんき）で。失礼（しつれい）します。",
+          "displayText": "お元気（げんき）で。失礼（しつれい）します。",
           "reading": "おげんきで。しつれいします。",
           "speechText": "おげんきで。しつれいします",
           "translationByNative": {
@@ -81206,8 +81206,8 @@
           "id": "ja-daily_life-m01-u1-l3-leave-polite-4"
         },
         {
-          "targetText": "じゃあ、また来週。",
-          "displayText": "じゃあ、また来週。",
+          "targetText": "じゃあ、また来週（らいしゅう）。",
+          "displayText": "じゃあ、また来週（らいしゅう）。",
           "reading": "じゃあ、またらいしゅう。",
           "speechText": "じゃあ、またらいしゅう",
           "translationByNative": {
@@ -81222,8 +81222,8 @@
           "id": "ja-daily_life-m01-u1-l3-casual-bye-1"
         },
         {
-          "targetText": "また来週。お元気で。",
-          "displayText": "また来週。お元気で。",
+          "targetText": "また来週（らいしゅう）。お元気（げんき）で。",
+          "displayText": "また来週（らいしゅう）。お元気（げんき）で。",
           "reading": "またらいしゅう。おげんきで。",
           "speechText": "またらいしゅう。おげんきで",
           "translationByNative": {
@@ -81242,8 +81242,8 @@
           "id": "ja-daily_life-m01-u1-l3-casual-bye-2"
         },
         {
-          "targetText": "うん、お元気で。",
-          "displayText": "うん、お元気で。",
+          "targetText": "うん、お元気（げんき）で。",
+          "displayText": "うん、お元気（げんき）で。",
           "reading": "うん、おげんきで。",
           "speechText": "うん、おげんきで",
           "translationByNative": {
@@ -81298,8 +81298,8 @@
           },
           "lines": [
             {
-              "targetText": "はじめまして。佐藤です。よろしくお願いします。",
-              "displayText": "はじめまして。佐藤です。よろしくお願いします。",
+              "targetText": "はじめまして。佐藤（さとう）です。よろしくお願（ねが）いします。",
+              "displayText": "はじめまして。佐藤（さとう）です。よろしくお願（ねが）いします。",
               "reading": "はじめまして。さとうです。よろしくおねがいします。",
               "speechText": "はじめまして。さとうです。よろしくおねがいします",
               "translationByNative": {
@@ -81314,8 +81314,8 @@
               "id": "ja-daily_life-m01-u1-l3-respond-intro-1"
             },
             {
-              "targetText": "こちらこそ。田中です。よろしくお願いします。",
-              "displayText": "こちらこそ。田中です。よろしくお願いします。",
+              "targetText": "こちらこそ。田中（たなか）です。よろしくお願（ねが）いします。",
+              "displayText": "こちらこそ。田中（たなか）です。よろしくお願（ねが）いします。",
               "reading": "こちらこそ。たなかです。よろしくおねがいします。",
               "speechText": "こちらこそ。たなかです。よろしくおねがいします",
               "translationByNative": {
@@ -81330,8 +81330,8 @@
               "id": "ja-daily_life-m01-u1-l3-respond-intro-2"
             },
             {
-              "targetText": "そうですか。田中さんですね。",
-              "displayText": "そうですか。田中さんですね。",
+              "targetText": "そうですか。田中（たなか）さんですね。",
+              "displayText": "そうですか。田中（たなか）さんですね。",
               "reading": "そうですか。たなかさんですね。",
               "speechText": "そうですか。たなかさんですね",
               "translationByNative": {
@@ -81350,8 +81350,8 @@
               "id": "ja-daily_life-m01-u1-l3-respond-intro-3"
             },
             {
-              "targetText": "はい。よろしくお願いします。",
-              "displayText": "はい。よろしくお願いします。",
+              "targetText": "はい。よろしくお願（ねが）いします。",
+              "displayText": "はい。よろしくお願（ねが）いします。",
               "reading": "はい。よろしくおねがいします。",
               "speechText": "はい。よろしくおねがいします",
               "translationByNative": {
@@ -81390,8 +81390,8 @@
           },
           "lines": [
             {
-              "targetText": "じゃあ、お先に失礼します。",
-              "displayText": "じゃあ、お先に失礼します。",
+              "targetText": "じゃあ、お先（さき）に失礼（しつれい）します。",
+              "displayText": "じゃあ、お先（さき）に失礼（しつれい）します。",
               "reading": "じゃあ、おさきにしつれいします。",
               "speechText": "じゃあ、おさきにしつれいします",
               "translationByNative": {
@@ -81406,8 +81406,8 @@
               "id": "ja-daily_life-m01-u1-l3-leave-polite-1"
             },
             {
-              "targetText": "はい、また来週。",
-              "displayText": "はい、また来週。",
+              "targetText": "はい、また来週（らいしゅう）。",
+              "displayText": "はい、また来週（らいしゅう）。",
               "reading": "はい、またらいしゅう。",
               "speechText": "はい、またらいしゅう",
               "translationByNative": {
@@ -81426,8 +81426,8 @@
               "id": "ja-daily_life-m01-u1-l3-leave-polite-2"
             },
             {
-              "targetText": "また来週。お元気で。",
-              "displayText": "また来週。お元気で。",
+              "targetText": "また来週（らいしゅう）。お元気（げんき）で。",
+              "displayText": "また来週（らいしゅう）。お元気（げんき）で。",
               "reading": "またらいしゅう。おげんきで。",
               "speechText": "またらいしゅう。おげんきで",
               "translationByNative": {
@@ -81446,8 +81446,8 @@
               "id": "ja-daily_life-m01-u1-l3-leave-polite-3"
             },
             {
-              "targetText": "お元気で。失礼します。",
-              "displayText": "お元気で。失礼します。",
+              "targetText": "お元気（げんき）で。失礼（しつれい）します。",
+              "displayText": "お元気（げんき）で。失礼（しつれい）します。",
               "reading": "おげんきで。しつれいします。",
               "speechText": "おげんきで。しつれいします",
               "translationByNative": {
@@ -81482,8 +81482,8 @@
           },
           "lines": [
             {
-              "targetText": "じゃあ、また来週。",
-              "displayText": "じゃあ、また来週。",
+              "targetText": "じゃあ、また来週（らいしゅう）。",
+              "displayText": "じゃあ、また来週（らいしゅう）。",
               "reading": "じゃあ、またらいしゅう。",
               "speechText": "じゃあ、またらいしゅう",
               "translationByNative": {
@@ -81498,8 +81498,8 @@
               "id": "ja-daily_life-m01-u1-l3-casual-bye-1"
             },
             {
-              "targetText": "また来週。お元気で。",
-              "displayText": "また来週。お元気で。",
+              "targetText": "また来週（らいしゅう）。お元気（げんき）で。",
+              "displayText": "また来週（らいしゅう）。お元気（げんき）で。",
               "reading": "またらいしゅう。おげんきで。",
               "speechText": "またらいしゅう。おげんきで",
               "translationByNative": {
@@ -81518,8 +81518,8 @@
               "id": "ja-daily_life-m01-u1-l3-casual-bye-2"
             },
             {
-              "targetText": "うん、お元気で。",
-              "displayText": "うん、お元気で。",
+              "targetText": "うん、お元気（げんき）で。",
+              "displayText": "うん、お元気（げんき）で。",
               "reading": "うん、おげんきで。",
               "speechText": "うん、おげんきで",
               "translationByNative": {
@@ -81665,8 +81665,8 @@
                 "ja": "自己紹介をされたら、こう返します。"
               },
               "speaker": "",
-              "targetText": "こちらこそ、よろしくお願いします。",
-              "displayText": "こちらこそ、よろしくお願いします。",
+              "targetText": "こちらこそ、よろしくお願（ねが）いします。",
+              "displayText": "こちらこそ、よろしくお願（ねが）いします。",
               "reading": "こちらこそ、よろしくおねがいします。",
               "speechText": "こちらこそ、よろしくおねがいします",
               "translationByNative": {
@@ -81690,8 +81690,8 @@
                 "ja": "その場を離れるとき、こう言います。"
               },
               "speaker": "",
-              "targetText": "お先に失礼します。",
-              "displayText": "お先に失礼します。",
+              "targetText": "お先（さき）に失礼（しつれい）します。",
+              "displayText": "お先（さき）に失礼（しつれい）します。",
               "reading": "おさきにしつれいします。",
               "speechText": "おさきにしつれいします",
               "translationByNative": {
@@ -81715,8 +81715,8 @@
                 "ja": "友達には、こう言います。"
               },
               "speaker": "",
-              "targetText": "じゃあ、また来週。",
-              "displayText": "じゃあ、また来週。",
+              "targetText": "じゃあ、また来週（らいしゅう）。",
+              "displayText": "じゃあ、また来週（らいしゅう）。",
               "reading": "じゃあ、またらいしゅう。",
               "speechText": "じゃあ、またらいしゅう",
               "translationByNative": {
@@ -81821,7 +81821,7 @@
             },
             "examples": [
               {
-                "text": "こちらこそ、よろしくお願いします。",
+                "text": "こちらこそ、よろしくお願（ねが）いします。",
                 "reading": "こちらこそ、よろしくおねがいします。",
                 "translation": "Tôi cũng rất mong được làm quen.",
                 "translationByNative": {
@@ -81897,7 +81897,7 @@
             },
             "examples": [
               {
-                "text": "そうですか。田中さんですね。",
+                "text": "そうですか。田中（たなか）さんですね。",
                 "reading": "そうですか。たなかさんですね。",
                 "translation": "Ra vậy. Bạn là Tanaka nhỉ.",
                 "translationByNative": {
@@ -82082,7 +82082,7 @@
             },
             "examples": [
               {
-                "text": "では、失礼します。",
+                "text": "では、失礼（しつれい）します。",
                 "reading": "では、しつれいします。",
                 "translation": "Vậy, tôi xin phép.",
                 "translationByNative": {
@@ -82162,7 +82162,7 @@
             },
             "examples": [
               {
-                "text": "お先に失礼します。",
+                "text": "お先（さき）に失礼（しつれい）します。",
                 "reading": "おさきにしつれいします。",
                 "translation": "Tôi xin phép về trước.",
                 "translationByNative": {
@@ -82242,7 +82242,7 @@
             },
             "examples": [
               {
-                "text": "では、お元気で。",
+                "text": "では、お元気（げんき）で。",
                 "reading": "では、おげんきで。",
                 "translation": "Vậy, giữ sức khỏe nhé.",
                 "translationByNative": {
@@ -82351,7 +82351,7 @@
             },
             "examples": [
               {
-                "text": "じゃあ、また明日。",
+                "text": "じゃあ、また明日（あした）。",
                 "reading": "じゃあ、またあした。",
                 "translation": "Thôi, hẹn mai gặp.",
                 "translationByNative": {
@@ -82437,7 +82437,7 @@
             },
             "examples": [
               {
-                "text": "また来週。",
+                "text": "また来週（らいしゅう）。",
                 "reading": "またらいしゅう。",
                 "translation": "Hẹn tuần sau.",
                 "translationByNative": {
@@ -82468,7 +82468,7 @@
               "ja": "カジュアル。"
             },
             "example": {
-              "text": "じゃあね。また明日。",
+              "text": "じゃあね。また明日（あした）。",
               "reading": "じゃあね。またあした。",
               "translation": "Thôi nhé. Hẹn mai gặp.",
               "translationByNative": {
@@ -82525,8 +82525,8 @@
             },
             "lines": [
               {
-                "targetText": "はじめまして。佐藤です。よろしくお願いします。",
-                "displayText": "はじめまして。佐藤です。よろしくお願いします。",
+                "targetText": "はじめまして。佐藤（さとう）です。よろしくお願（ねが）いします。",
+                "displayText": "はじめまして。佐藤（さとう）です。よろしくお願（ねが）いします。",
                 "reading": "はじめまして。さとうです。よろしくおねがいします。",
                 "speechText": "はじめまして。さとうです。よろしくおねがいします",
                 "translationByNative": {
@@ -82540,8 +82540,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "こちらこそ。田中です。よろしくお願いします。",
-                "displayText": "こちらこそ。田中です。よろしくお願いします。",
+                "targetText": "こちらこそ。田中（たなか）です。よろしくお願（ねが）いします。",
+                "displayText": "こちらこそ。田中（たなか）です。よろしくお願（ねが）いします。",
                 "reading": "こちらこそ。たなかです。よろしくおねがいします。",
                 "speechText": "こちらこそ。たなかです。よろしくおねがいします",
                 "translationByNative": {
@@ -82555,8 +82555,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "そうですか。田中さんですね。",
-                "displayText": "そうですか。田中さんですね。",
+                "targetText": "そうですか。田中（たなか）さんですね。",
+                "displayText": "そうですか。田中（たなか）さんですね。",
                 "reading": "そうですか。たなかさんですね。",
                 "speechText": "そうですか。たなかさんですね",
                 "translationByNative": {
@@ -82574,8 +82574,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "はい。よろしくお願いします。",
-                "displayText": "はい。よろしくお願いします。",
+                "targetText": "はい。よろしくお願（ねが）いします。",
+                "displayText": "はい。よろしくお願（ねが）いします。",
                 "reading": "はい。よろしくおねがいします。",
                 "speechText": "はい。よろしくおねがいします",
                 "translationByNative": {
@@ -82628,8 +82628,8 @@
             },
             "lines": [
               {
-                "targetText": "じゃあ、お先に失礼します。",
-                "displayText": "じゃあ、お先に失礼します。",
+                "targetText": "じゃあ、お先（さき）に失礼（しつれい）します。",
+                "displayText": "じゃあ、お先（さき）に失礼（しつれい）します。",
                 "reading": "じゃあ、おさきにしつれいします。",
                 "speechText": "じゃあ、おさきにしつれいします",
                 "translationByNative": {
@@ -82643,8 +82643,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "はい、また来週。",
-                "displayText": "はい、また来週。",
+                "targetText": "はい、また来週（らいしゅう）。",
+                "displayText": "はい、また来週（らいしゅう）。",
                 "reading": "はい、またらいしゅう。",
                 "speechText": "はい、またらいしゅう",
                 "translationByNative": {
@@ -82662,8 +82662,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "また来週。お元気で。",
-                "displayText": "また来週。お元気で。",
+                "targetText": "また来週（らいしゅう）。お元気（げんき）で。",
+                "displayText": "また来週（らいしゅう）。お元気（げんき）で。",
                 "reading": "またらいしゅう。おげんきで。",
                 "speechText": "またらいしゅう。おげんきで",
                 "translationByNative": {
@@ -82681,8 +82681,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "お元気で。失礼します。",
-                "displayText": "お元気で。失礼します。",
+                "targetText": "お元気（げんき）で。失礼（しつれい）します。",
+                "displayText": "お元気（げんき）で。失礼（しつれい）します。",
                 "reading": "おげんきで。しつれいします。",
                 "speechText": "おげんきで。しつれいします",
                 "translationByNative": {
@@ -82731,8 +82731,8 @@
             },
             "lines": [
               {
-                "targetText": "じゃあ、また来週。",
-                "displayText": "じゃあ、また来週。",
+                "targetText": "じゃあ、また来週（らいしゅう）。",
+                "displayText": "じゃあ、また来週（らいしゅう）。",
                 "reading": "じゃあ、またらいしゅう。",
                 "speechText": "じゃあ、またらいしゅう",
                 "translationByNative": {
@@ -82746,8 +82746,8 @@
                 "speakerId": "ito"
               },
               {
-                "targetText": "また来週。お元気で。",
-                "displayText": "また来週。お元気で。",
+                "targetText": "また来週（らいしゅう）。お元気（げんき）で。",
+                "displayText": "また来週（らいしゅう）。お元気（げんき）で。",
                 "reading": "またらいしゅう。おげんきで。",
                 "speechText": "またらいしゅう。おげんきで",
                 "translationByNative": {
@@ -82765,8 +82765,8 @@
                 "speakerId": "tanaka"
               },
               {
-                "targetText": "うん、お元気で。",
-                "displayText": "うん、お元気で。",
+                "targetText": "うん、お元気（げんき）で。",
+                "displayText": "うん、お元気（げんき）で。",
                 "reading": "うん、おげんきで。",
                 "speechText": "うん、おげんきで",
                 "translationByNative": {
@@ -82837,7 +82837,7 @@
             },
             "examples": [
               {
-                "text": "こちらこそ、よろしくお願いします。",
+                "text": "こちらこそ、よろしくお願（ねが）いします。",
                 "reading": "こちらこそ、よろしくおねがいします。",
                 "translation": "Tôi cũng rất mong được làm quen.",
                 "translationByNative": {
@@ -82880,7 +82880,7 @@
             },
             "examples": [
               {
-                "text": "また明日。",
+                "text": "また明日（あした）。",
                 "reading": "またあした。",
                 "translation": "Hẹn mai gặp.",
                 "translationByNative": {
@@ -82891,7 +82891,7 @@
                 "speechText": "またあした。"
               },
               {
-                "text": "また来週。",
+                "text": "また来週（らいしゅう）。",
                 "reading": "またらいしゅう。",
                 "translation": "Hẹn tuần sau.",
                 "translationByNative": {
@@ -82902,7 +82902,7 @@
                 "speechText": "またらいしゅう。"
               },
               {
-                "text": "また後で。",
+                "text": "また後（あと）で。",
                 "reading": "またあとで。",
                 "translation": "Hẹn lát nữa.",
                 "translationByNative": {
@@ -83151,7 +83151,7 @@
               "options": [
                 {
                   "id": "osaki",
-                  "text": "お先に失礼します。",
+                  "text": "お先（さき）に失礼（しつれい）します。",
                   "canonicalText": "お先に失礼します。",
                   "audioText": "お先に失礼します。"
                 },
@@ -83163,7 +83163,7 @@
                 },
                 {
                   "id": "onamae",
-                  "text": "お名前は？",
+                  "text": "お名前（なまえ）は？",
                   "canonicalText": "お名前は？",
                   "audioText": "お名前は？"
                 },
@@ -83217,7 +83217,7 @@
                   "id": "osaki",
                   "left": {
                     "id": "osaki_l",
-                    "text": "お先に失礼します"
+                    "text": "お先（さき）に失礼（しつれい）します"
                   },
                   "right": {
                     "id": "osaki_r",
@@ -83249,7 +83249,7 @@
                   "id": "genki",
                   "left": {
                     "id": "genki_l",
-                    "text": "お元気で"
+                    "text": "お元気（げんき）で"
                   },
                   "right": {
                     "id": "genki_r",
@@ -83531,7 +83531,7 @@
                 },
                 {
                   "id": "shitsurei",
-                  "text": "失礼",
+                  "text": "失礼（しつれい）",
                   "canonicalText": "失礼",
                   "audioText": "失礼"
                 },
@@ -83573,7 +83573,7 @@
               "options": [
                 {
                   "id": "shitsurei",
-                  "text": "失礼します。",
+                  "text": "失礼（しつれい）します。",
                   "canonicalText": "失礼します。",
                   "audioText": "失礼します。"
                 },
@@ -83585,7 +83585,7 @@
                 },
                 {
                   "id": "onamae",
-                  "text": "お名前は？",
+                  "text": "お名前（なまえ）は？",
                   "canonicalText": "お名前は？",
                   "audioText": "お名前は？"
                 },
@@ -83740,19 +83740,19 @@
                   "options": [
                     {
                       "id": "raishuu",
-                      "text": "また来週。",
+                      "text": "また来週（らいしゅう）。",
                       "canonicalText": "また来週。",
                       "audioText": "また来週。"
                     },
                     {
                       "id": "ashita",
-                      "text": "また明日。",
+                      "text": "また明日（あした）。",
                       "canonicalText": "また明日。",
                       "audioText": "また明日。"
                     },
                     {
                       "id": "shitsurei",
-                      "text": "失礼します。",
+                      "text": "失礼（しつれい）します。",
                       "canonicalText": "失礼します。",
                       "audioText": "失礼します。"
                     },
@@ -83785,7 +83785,7 @@
                   "options": [
                     {
                       "id": "osaki",
-                      "text": "お先に失礼します。",
+                      "text": "お先（さき）に失礼（しつれい）します。",
                       "canonicalText": "お先に失礼します。",
                       "audioText": "お先に失礼します。"
                     },
@@ -83797,7 +83797,7 @@
                     },
                     {
                       "id": "onamae",
-                      "text": "お名前は？",
+                      "text": "お名前（なまえ）は？",
                       "canonicalText": "お名前は？",
                       "audioText": "お名前は？"
                     },
@@ -83946,13 +83946,13 @@
                     },
                     {
                       "id": "shitsurei",
-                      "text": "失礼します。",
+                      "text": "失礼（しつれい）します。",
                       "canonicalText": "失礼します。",
                       "audioText": "失礼します。"
                     },
                     {
                       "id": "osaki",
-                      "text": "お先に失礼します。",
+                      "text": "お先（さき）に失礼（しつれい）します。",
                       "canonicalText": "お先に失礼します。",
                       "audioText": "お先に失礼します。"
                     },
@@ -84168,7 +84168,7 @@
               "options": [
                 {
                   "id": "osaki",
-                  "text": "お先に失礼します。",
+                  "text": "お先（さき）に失礼（しつれい）します。",
                   "canonicalText": "お先に失礼します。",
                   "audioText": "お先に失礼します。"
                 },
@@ -84186,7 +84186,7 @@
                 },
                 {
                   "id": "onamae",
-                  "text": "お名前は？",
+                  "text": "お名前（なまえ）は？",
                   "canonicalText": "お名前は？",
                   "audioText": "お名前は？"
                 }
@@ -84216,25 +84216,25 @@
               "options": [
                 {
                   "id": "natural",
-                  "text": "佐藤: よろしくお願いします。\n田中: こちらこそ、よろしくお願いします。",
+                  "text": "佐藤（さとう）: よろしくお願（ねが）いします。\n田中（たなか）: こちらこそ、よろしくお願（ねが）いします。",
                   "canonicalText": "佐藤: よろしくお願いします。\n田中: こちらこそ、よろしくお願いします。",
                   "audioText": "佐藤: よろしくお願いします。\n田中: こちらこそ、よろしくお願いします。"
                 },
                 {
                   "id": "repeat",
-                  "text": "佐藤: よろしくお願いします。\n田中: よろしくお願いします、よろしくお願いします。",
+                  "text": "佐藤（さとう）: よろしくお願（ねが）いします。\n田中（たなか）: よろしくお願（ねが）いします、よろしくお願（ねが）いします。",
                   "canonicalText": "佐藤: よろしくお願いします。\n田中: よろしくお願いします、よろしくお願いします。",
                   "audioText": "佐藤: よろしくお願いします。\n田中: よろしくお願いします、よろしくお願いします。"
                 },
                 {
                   "id": "teacher_casual",
-                  "text": "先生: さようなら。\n田中: じゃあ、また！",
+                  "text": "先生（せんせい）: さようなら。\n田中（たなか）: じゃあ、また！",
                   "canonicalText": "先生: さようなら。\n田中: じゃあ、また！",
                   "audioText": "先生: さようなら。\n田中: じゃあ、また！"
                 },
                 {
                   "id": "leave_then_ask",
-                  "text": "佐藤: お先に失礼します。\n田中: お名前は？",
+                  "text": "佐藤（さとう）: お先（さき）に失礼（しつれい）します。\n田中（たなか）: お名前（なまえ）は？",
                   "canonicalText": "佐藤: お先に失礼します。\n田中: お名前は？",
                   "audioText": "佐藤: お先に失礼します。\n田中: お名前は？"
                 }
@@ -84380,8 +84380,8 @@
               ],
               "dialogueLines": [
                 {
-                  "targetText": "田中さん、そろそろ失礼します。",
-                  "displayText": "田中さん、そろそろ失礼します。",
+                  "targetText": "田中（たなか）さん、そろそろ失礼（しつれい）します。",
+                  "displayText": "田中（たなか）さん、そろそろ失礼（しつれい）します。",
                   "reading": "たなかさん、そろそろしつれいします。",
                   "speechText": "たなかさん、そろそろしつれいします",
                   "translationByNative": {
@@ -84420,8 +84420,8 @@
                   "romanization": "a, sō desu ka."
                 },
                 {
-                  "targetText": "今日はここで失礼します。",
-                  "displayText": "今日はここで失礼します。",
+                  "targetText": "今日（きょう）はここで失礼（しつれい）します。",
+                  "displayText": "今日（きょう）はここで失礼（しつれい）します。",
                   "reading": "きょうはここでしつれいします。",
                   "speechText": "きょうはここでしつれいします",
                   "translationByNative": {
@@ -84440,8 +84440,8 @@
                   "romanization": "kyō wa koko de shitsurei shimasu."
                 },
                 {
-                  "targetText": "はい。また来週。",
-                  "displayText": "はい。また来週。",
+                  "targetText": "はい。また来週（らいしゅう）。",
+                  "displayText": "はい。また来週（らいしゅう）。",
                   "reading": "はい。またらいしゅう。",
                   "speechText": "はい。またらいしゅう",
                   "translationByNative": {
@@ -84460,8 +84460,8 @@
                   "romanization": "hai. mata raishū."
                 },
                 {
-                  "targetText": "また来週。お元気で。",
-                  "displayText": "また来週。お元気で。",
+                  "targetText": "また来週（らいしゅう）。お元気（げんき）で。",
+                  "displayText": "また来週（らいしゅう）。お元気（げんき）で。",
                   "reading": "またらいしゅう。おげんきで。",
                   "speechText": "またらいしゅう。おげんきで",
                   "translationByNative": {
@@ -84480,8 +84480,8 @@
                   "romanization": "mata raishū. ogenkide."
                 },
                 {
-                  "targetText": "お元気で。",
-                  "displayText": "お元気で。",
+                  "targetText": "お元気（げんき）で。",
+                  "displayText": "お元気（げんき）で。",
                   "reading": "おげんきで。",
                   "speechText": "おげんきで",
                   "translationByNative": {
@@ -84500,8 +84500,8 @@
                   "romanization": "ogenkide."
                 },
                 {
-                  "targetText": "佐藤さん、お先に失礼します。",
-                  "displayText": "佐藤さん、お先に失礼します。",
+                  "targetText": "佐藤（さとう）さん、お先（さき）に失礼（しつれい）します。",
+                  "displayText": "佐藤（さとう）さん、お先（さき）に失礼（しつれい）します。",
                   "reading": "さとうさん、おさきにしつれいします。",
                   "speechText": "さとうさん、おさきにしつれいします",
                   "translationByNative": {
@@ -84520,8 +84520,8 @@
                   "romanization": "Satō-san, osakini shitsurei shimasu."
                 },
                 {
-                  "targetText": "はい、じゃあ、また来週。",
-                  "displayText": "はい、じゃあ、また来週。",
+                  "targetText": "はい、じゃあ、また来週（らいしゅう）。",
+                  "displayText": "はい、じゃあ、また来週（らいしゅう）。",
                   "reading": "はい、じゃあ、またらいしゅう。",
                   "speechText": "はい、じゃあ、またらいしゅう",
                   "translationByNative": {
@@ -84540,8 +84540,8 @@
                   "romanization": "hai, jā, mata raishū."
                 },
                 {
-                  "targetText": "また来週。失礼します。",
-                  "displayText": "また来週。失礼します。",
+                  "targetText": "また来週（らいしゅう）。失礼（しつれい）します。",
+                  "displayText": "また来週（らいしゅう）。失礼（しつれい）します。",
                   "reading": "またらいしゅう。しつれいします。",
                   "speechText": "またらいしゅう。しつれいします",
                   "translationByNative": {

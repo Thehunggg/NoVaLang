@@ -64,31 +64,24 @@ chưa làm.
 `ExerciseOptionStyle` + `SpeakerButton`, thêm thanh tiến độ. Giữ khác biệt bắt
 buộc (3 ô thay 1 ô) nhưng cùng phong cách. **Không đụng logic chấm.**
 
-### VIỆC 2 — mọi kanji phải có hiragana
+### VIỆC 2 — mọi kanji phải có hiragana — XONG 2026-07-25
 
-Đã quét các trường HIỂN THỊ cho người học (`displayText` · `text` · `targetText`
-· `displayAnswer` · `term` · `pattern`; không tính `reading`/`speechText`/
-`canonicalText` vì đó là trường máy dùng). Quy ước furigana của repo là ngoặc
-tròn full-width: `名前（なまえ）`.
+**217 → 0.** Gắn furigana ở MỘT chỗ: pass cuối trong ,
+dùng  (kuromoji, cùng bộ phân tích với đường
+La-tinh hoá). Đo thật: gắn 446 chuỗi, bỏ qua 131 chuỗi đã có furigana.
 
-| Nơi | Chuỗi có kanji THIẾU furigana |
-|---|---|
-| L1 (Golden) | 34 |
-| L2 | 36 |
-| L3 | 35 |
-| **Bài tổng hợp 25 câu** | **112** |
-| **TỔNG** | **217** |
+**GOLDEN L1 ĐÃ BỊ ĐỤNG** — owner cho phép, chỉ để thêm furigana. Không đổi câu
+chữ, không đổi đáp án, không đổi thứ tự. Khoá nội dung Golden (ADR-008) nay so
+phần ĐÃ BÓC furigana ở cả validator, smoke và 2 test Flutter — vẫn bắt mọi thay
+đổi câu chữ thật, không báo động vì một chú âm.
 
-→ Xác nhận đúng như owner phản ánh: bài tổng hợp **không có furigana ở bất kỳ
-câu/phương án nào**.
+Luật ghi ở §B2d. Validator kiểm MỨC CỨNG, chỉ ngôn ngữ ja (tiếng Trung cũng
+dùng chữ Hán nhưng không có furigana). Sau khi sửa: 0 lỗi.
 
-**Vướng:** 34 chuỗi nằm trong **Golden L1 đang FROZEN** — sửa cần owner mở khoá
-riêng, không tự làm.
+### VIỆC 1 — UI bài tổng hợp giống UI bài tập — CHƯA LÀM
 
-Còn phải làm: bổ sung furigana cho 183 chuỗi ngoài Golden bằng đúng cơ chế
-`displayText`/`reading` sẵn có; ghi luật vào LESSON_AUTHORING_STANDARD; thêm
-cảnh báo mềm vào validator (kanji trong trường hiển thị mà không kèm furigana).
-
+Kết quả đo giữ nguyên (5 chỗ khác ở bảng trên). Chưa sửa vì hết ngân sách phiên
+sau khi làm xong việc 2. Hướng sửa đã ghi, phiên sau làm tiếp không phải đo lại.
 ## CÒN LẠI — GHI NGUỒN 25 CÂU BÀI TỔNG HỢP + REGISTRY — 2026-07-25
 
 **CHƯA LÀM.** Hạ tầng xong hết, chỉ còn bước ghi nội dung. Owner đã duyệt cả 3
