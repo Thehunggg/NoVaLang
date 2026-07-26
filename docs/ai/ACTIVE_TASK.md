@@ -42,6 +42,53 @@
 - Xóa 9 file thừa trong `local-sources/`.
 - Xác minh điều khoản bản quyền Irodori + loại giấy phép CC của hanabira.
 
+## CÒN LẠI — 2 VIỆC UI/NỘI DUNG LỚN, ĐÃ RÀ XONG CHƯA SỬA — 2026-07-25
+
+Owner giao 5 việc sau khi test app. **Việc 3, 4, 5 đã xong và push.** Hai việc
+dưới đây mới chạy xong bước RÀ (chính là bước owner yêu cầu làm trước); phần sửa
+chưa làm.
+
+### VIỆC 1 — UI bài tổng hợp phải giống UI bài tập lesson
+
+Đã đo bằng cách đếm widget dùng ở hai màn. **Khác nhau ở 5 chỗ cụ thể:**
+
+| | bài tập lesson (`five_card_exercise_flow.dart`) | bài tổng hợp (`unit_comprehensive_test_screen.dart`) |
+|---|---|---|
+| Khung trang | `ResponsivePage` | **không có** — bố cục/bề ngang khác hẳn |
+| Phương án | `ExerciseActionOptionChip` + `ExerciseOptionStyle` (hệ token dùng chung) | **không có** — tự dựng bằng `AppCard` |
+| Thanh tiến độ | `LinearProgressIndicator` | **không có** |
+| Nghe câu | `SpeakerButton` | **không có** |
+| Phản hồi đúng/sai | panel dùng `correctMessage` + `ExerciseOptionColors` | tự dựng riêng |
+
+→ Hướng sửa: **tái dùng** `ResponsivePage` + `ExerciseActionOptionChip` +
+`ExerciseOptionStyle` + `SpeakerButton`, thêm thanh tiến độ. Giữ khác biệt bắt
+buộc (3 ô thay 1 ô) nhưng cùng phong cách. **Không đụng logic chấm.**
+
+### VIỆC 2 — mọi kanji phải có hiragana
+
+Đã quét các trường HIỂN THỊ cho người học (`displayText` · `text` · `targetText`
+· `displayAnswer` · `term` · `pattern`; không tính `reading`/`speechText`/
+`canonicalText` vì đó là trường máy dùng). Quy ước furigana của repo là ngoặc
+tròn full-width: `名前（なまえ）`.
+
+| Nơi | Chuỗi có kanji THIẾU furigana |
+|---|---|
+| L1 (Golden) | 34 |
+| L2 | 36 |
+| L3 | 35 |
+| **Bài tổng hợp 25 câu** | **112** |
+| **TỔNG** | **217** |
+
+→ Xác nhận đúng như owner phản ánh: bài tổng hợp **không có furigana ở bất kỳ
+câu/phương án nào**.
+
+**Vướng:** 34 chuỗi nằm trong **Golden L1 đang FROZEN** — sửa cần owner mở khoá
+riêng, không tự làm.
+
+Còn phải làm: bổ sung furigana cho 183 chuỗi ngoài Golden bằng đúng cơ chế
+`displayText`/`reading` sẵn có; ghi luật vào LESSON_AUTHORING_STANDARD; thêm
+cảnh báo mềm vào validator (kanji trong trường hiển thị mà không kèm furigana).
+
 ## CÒN LẠI — GHI NGUỒN 25 CÂU BÀI TỔNG HỢP + REGISTRY — 2026-07-25
 
 **CHƯA LÀM.** Hạ tầng xong hết, chỉ còn bước ghi nội dung. Owner đã duyệt cả 3
