@@ -200,7 +200,6 @@ add('Nói về tên nói chung.', 'Talking about names in general.', '名前に�
 add('Nói tên của chính mình.', 'Giving your own name.', '自分の名前を言うとき。');
 add('Mọi đối tượng', 'Anyone', '相手を選びません');
 add('Không thêm お cho tên của chính mình.', 'Do not add お to your own name.', '自分の名前に「お」を付けません。');
-add('Trung tính.', 'Neutral.', '中立的。');
 add('Hỏi tên người đối diện.', 'Asking the other person’s name.', '相手の名前を尋ねるとき。');
 add('Nhắc tới tên người khác một cách lịch sự.', 'Referring politely to someone else’s name.', '相手の名前に丁寧に触れるとき。');
 add('Người mới gặp', 'Someone you have just met', '初対面の人');

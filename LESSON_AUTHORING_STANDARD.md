@@ -159,7 +159,7 @@ DỮ LIỆU. Đây là luật chặn việc đó lặp lại.
 | `timingAndContext` | array | Dùng vào lúc nào / hoàn cảnh nào |
 | `appropriateFor` | array | Dùng được với ai (đối tượng) |
 | `avoid` | array | KHÔNG dùng khi nào |
-| `register` | string | Mức lịch sự của CHÍNH cụm này |
+| `register` | string | Mức lịch sự của CHÍNH cụm này — chỉ 3 giá trị, xem §B2e |
 | `formal` | array | Cách nói TRANG TRỌNG tương đương + dùng với ai |
 | `casual` | array | Cách nói THÂN MẬT tương đương + dùng với ai |
 
@@ -218,6 +218,30 @@ ngoặc tròn **full-width** ngay sau đúng cụm kanji; kana đi kèm nằm NG
 - **Validator: MỨC CỨNG, chỉ ngôn ngữ ja.** Generator đã bảo đảm, nên một lỗi ở
   đây nghĩa là cơ chế bị gỡ hoặc bị đi vòng — đúng loại hỏng phải chặn build.
   Giới hạn ở ja vì tiếng Trung cũng dùng chữ Hán nhưng không có furigana.
+
+**B2e. MỨC ĐỘ LỊCH SỰ — ĐÚNG BA MỨC, không hơn.** (Owner chốt 2026-07-25)
+
+| Mức | vi | en | ja |
+|---|---|---|---|
+| trang trọng | `Trang trọng.` | `Formal.` | `改まった言い方。` |
+| lịch sự | `Lịch sự.` | `Polite.` | `丁寧。` |
+| thân mật | `Thân mật.` | `Casual.` | `カジュアル。` |
+
+Đây là **từ vựng ĐÓNG**, không phải văn xuôi tự do. **CẤM** mọi nhãn khác —
+"trung tính", "thông thường", "bình thường", "phổ thông", và cả các mô tả dài
+kiểu "trung tính, lịch sự an toàn" hay "lịch sự cơ bản". Muốn nói thêm sắc thái
+thì viết ở `notes`, không nhét vào `register`.
+
+- **Không bắt buộc đủ ba mức.** Một unit chỉ dùng hai mức là bình thường — luật
+  khoá TỪ VỰNG NHÃN, không ép phải có đủ.
+- **Cụm không mang mức lịch sự nào** (danh từ, trạng từ như `名前` · `来週` ·
+  `もう一度`): owner chốt gán **lịch sự**, không để trống và không đặt mức thứ tư.
+- **`''` và thiếu key vẫn hợp lệ** theo §B2c ("đã kiểm, không có" / "chưa
+  điền") — luật này chỉ chặn nhãn LẠ, không ép phải điền.
+- **Validator: MỨC CỨNG.** Từ vựng đóng do owner ấn định thì một giá trị ngoài
+  danh sách nghĩa là ai đó vừa đặt ra mức thứ tư — đúng loại trôi owner đã phải
+  nhắc nhiều lần, nên chặn build chứ không nhắc nhở. Áp cho cả `register` và
+  `registerByNative`, kiểm từng locale riêng (lệch một locale cũng bắt).
 
 **B3. Card 3 — Dialogue.** (Owner §6; ràng buộc §D3)
 - **Đúng 3 nhóm, mỗi nhóm 4–6 dòng** (code ép). Tự nhiên, mục đích giao tiếp

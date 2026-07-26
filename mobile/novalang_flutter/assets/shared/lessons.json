@@ -73194,11 +73194,11 @@
                 "別れのあいさつとしては使いません。"
               ]
             },
-            "register": "Trung tính, lịch sự an toàn.",
+            "register": "Lịch sự.",
             "registerByNative": {
-              "vi": "Trung tính, lịch sự an toàn.",
-              "en": "Neutral and safely polite.",
-              "ja": "中立的で、無難な丁寧さ。"
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
             },
             "casualTitle": "Cách mở đầu thân mật theo ngữ cảnh",
             "casualTitleByNative": {
@@ -73346,11 +73346,11 @@
                 "日中には使いません。"
               ]
             },
-            "register": "Trung tính, lịch sự an toàn.",
+            "register": "Lịch sự.",
             "registerByNative": {
-              "vi": "Trung tính, lịch sự an toàn.",
-              "en": "Neutral and safely polite.",
-              "ja": "中立的で、無難な丁寧さ。"
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
             },
             "casual": [
               "Cách thân mật:",
@@ -73462,11 +73462,11 @@
                 "朝・昼・夜のあいさつの代わりには使いません。"
               ]
             },
-            "register": "Trung tính và lịch sự trong lần đầu gặp.",
+            "register": "Lịch sự.",
             "registerByNative": {
-              "vi": "Trung tính và lịch sự trong lần đầu gặp.",
-              "en": "Neutral and polite for a first meeting.",
-              "ja": "初対面で使える中立的で丁寧な表現。"
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
             },
             "casual": [
               "Cách thân mật:",
@@ -73536,11 +73536,11 @@
                 "簡単に自己紹介をします。"
               ]
             },
-            "register": "Lịch sự cơ bản.",
+            "register": "Lịch sự.",
             "registerByNative": {
-              "vi": "Lịch sự cơ bản.",
-              "en": "Standard polite form.",
-              "ja": "基本的な丁寧表現。"
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
             },
             "casual": [
               "Cách thân mật có thể gặp:",
@@ -77730,11 +77730,11 @@
                 "自分の名前に「お」を付けません。"
               ]
             },
-            "register": "Trung tính.",
+            "register": "Lịch sự.",
             "registerByNative": {
-              "vi": "Trung tính.",
-              "en": "Neutral.",
-              "ja": "中立的。"
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
             },
             "formal": [],
             "casual": [],
@@ -78325,11 +78325,11 @@
                 "まだ何も聞いていないときには使いません。"
               ]
             },
-            "register": "Trung tính.",
+            "register": "Lịch sự.",
             "registerByNative": {
-              "vi": "Trung tính.",
-              "en": "Neutral.",
-              "ja": "中立的。"
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
             },
             "formal": [],
             "casual": [],
@@ -81953,11 +81953,11 @@
                 "「私は」には替えられません。「は」は「も」の意味になりません。"
               ]
             },
-            "register": "Trung tính.",
+            "register": "Lịch sự.",
             "registerByNative": {
-              "vi": "Trung tính.",
-              "en": "Neutral.",
-              "ja": "中立的。"
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
             },
             "formal": [],
             "casual": [],
@@ -82421,11 +82421,11 @@
                 "次に会うのが来週でないときには使いません。"
               ]
             },
-            "register": "Trung tính.",
+            "register": "Lịch sự.",
             "registerByNative": {
-              "vi": "Trung tính.",
-              "en": "Neutral.",
-              "ja": "中立的。"
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
             },
             "formal": [],
             "casual": [],
@@ -82489,11 +82489,11 @@
               "en": "Take care (on your way).",
               "ja": "気をつけて。"
             },
-            "register": "Trung tính.",
+            "register": "Lịch sự.",
             "registerByNative": {
-              "vi": "Trung tính.",
-              "en": "Neutral.",
-              "ja": "中立的。"
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
             },
             "example": {
               "text": "気（き）をつけて。",

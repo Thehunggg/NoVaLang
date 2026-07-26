@@ -972,6 +972,65 @@ function validateHiraganaLessonOneSpec(lesson) {
  * Exported ở module scope để script độc lập import chạy thử trực tiếp.
  */
 /**
+ * §B2e — MỨC ĐỘ LỊCH SỰ chỉ có ĐÚNG BA (owner chốt 2026-07-25):
+ * **trang trọng · lịch sự · thân mật**. Không "trung tính", không "thông
+ * thường", không biến thể mô tả dài kiểu "trung tính, lịch sự an toàn".
+ *
+ * MỨC CỨNG, có lý do: đây là từ vựng ĐÓNG do owner ấn định, không phải văn
+ * xuôi tự do. Một giá trị ngoài danh sách nghĩa là có người vừa đặt ra một mức
+ * thứ tư — đúng loại trôi mà owner đã phải nhắc nhiều lần, nên phải chặn ngay
+ * chứ không nhắc nhở.
+ *
+ * `''` và thiếu key vẫn hợp lệ: §B2c đã quy định chúng mang nghĩa "đã kiểm,
+ * không có" và "chưa điền". Luật này chỉ khoá TỪ VỰNG NHÃN, không ép phải điền.
+ */
+const ALLOWED_REGISTERS = new Set([
+  // vi
+  "Trang trọng.",
+  "Lịch sự.",
+  "Thân mật.",
+  // en
+  "Formal.",
+  "Polite.",
+  "Casual.",
+  // ja
+  "改まった言い方。",
+  "丁寧。",
+  "カジュアル。",
+]);
+
+function validateRegisterVocabulary(node, lessonId, path = "") {
+  if (node == null) return;
+  if (Array.isArray(node)) {
+    node.forEach((item, index) =>
+      validateRegisterVocabulary(item, lessonId, `${path}[${index}]`),
+    );
+    return;
+  }
+  if (typeof node !== "object") return;
+
+  for (const [key, value] of Object.entries(node)) {
+    const here = path ? `${path}.${key}` : key;
+    if (key === "register" || key === "registerByNative") {
+      const candidates =
+        typeof value === "string" ? [value] : Object.values(value ?? {});
+      for (const candidate of candidates) {
+        if (typeof candidate !== "string" || candidate === "") continue;
+        if (!ALLOWED_REGISTERS.has(candidate)) {
+          fail(
+            `${lessonId}: mức độ lịch sự KHÔNG hợp lệ tại ${here} — ` +
+              `${JSON.stringify(candidate)}. Chỉ nhận trang trọng / lịch sự / ` +
+              `thân mật (§B2e).`,
+          );
+        }
+      }
+      continue;
+    }
+    validateRegisterVocabulary(value, lessonId, here);
+  }
+}
+
+/**
  * §B2d — mọi kanji HIỂN THỊ cho người học phải kèm hiragana (owner chốt
  * 2026-07-25), ở MỌI cấp độ.
  *
@@ -1815,6 +1874,7 @@ async function main() {
     if (lesson.languageCode === "ja") {
       validateNoRawKanaInRomanization(lesson);
       validateFuriganaCoverage(lesson.fiveCardContent, lesson.id, "fiveCardContent");
+      validateRegisterVocabulary(lesson.fiveCardContent, lesson.id, "fiveCardContent");
     }
     if (lesson.lessonFormat === "five_cards") {
       validateFiveCardsStructure(lesson);

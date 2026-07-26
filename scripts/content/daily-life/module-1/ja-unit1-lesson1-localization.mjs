@@ -69,7 +69,6 @@ add('Bạn bè trong một số tình huống', 'Friends in some situations', '�
 add('Không dùng thay lời chào buổi sáng khi おはようございます tự nhiên hơn.', 'Don’t use it instead of a morning greeting when おはようございます is more natural.', '「おはようございます」の方が自然な朝の場面では、代わりに使いません。');
 add('Không dùng sau khi chuyển sang buổi tối khi こんばんは tự nhiên hơn.', 'Don’t use it once evening has begun and こんばんは is more natural.', '夜になり「こんばんは」の方が自然な場面では使いません。');
 add('Không dùng như lời tạm biệt.', 'Don’t use it as a farewell.', '別れのあいさつとしては使いません。');
-add('Trung tính, lịch sự an toàn.', 'Neutral and safely polite.', '中立的で、無難な丁寧さ。');
 add('Cách mở đầu thân mật theo ngữ cảnh', 'Context-dependent casual openings', '状況に応じたカジュアルな話し始め方');
 add('こんにちは không có một cách nói thân mật cố định tương đương.\n\nKhi nói với bạn bè hoặc người quen thân, tùy người và tình huống, người nói có thể:', 'こんにちは has no single fixed casual equivalent.\n\nWith friends or close acquaintances, depending on the person and situation, a speaker may:', '「こんにちは」には、決まった一つのカジュアル形はありません。\n\n友達や親しい知人には、相手や状況に応じて次のように話し始めることがあります。');
 add('gọi tên người kia;', 'call the other person by name;', '相手の名前を呼ぶ。');
@@ -103,7 +102,6 @@ add('Không dùng mỗi ngày với cùng một người.', 'Don’t use it ever
 add('Không dùng từ lần gặp thứ hai trở đi.', 'Don’t use it from the second meeting onward.', '二回目以降に会うときは使いません。');
 add('Không dùng chỉ vì nhìn thấy một người lạ nhưng không làm quen.', 'Don’t use it merely because you see a stranger without introducing yourself.', '知らない人を見かけただけで、自己紹介をしない場合には使いません。');
 add('Không dùng thay lời chào buổi sáng, ban ngày hoặc buổi tối.', 'Don’t use it instead of a morning, daytime, or evening greeting.', '朝・昼・夜のあいさつの代わりには使いません。');
-add('Trung tính và lịch sự trong lần đầu gặp.', 'Neutral and polite for a first meeting.', '初対面で使える中立的で丁寧な表現。');
 add('Không có dạng thân mật chuẩn bắt buộc.', 'There’s no mandatory standard casual form.', '必ず使う標準的なカジュアル形はありません。');
 add('Ngay cả hai người cùng tuổi gặp lần đầu vẫn có thể dùng:', 'Even two people of the same age can use:', '同年代同士の初対面でも使えます。');
 add('Trong tình huống rất thoải mái có thể bỏ qua cụm này và nói tên trực tiếp, nhưng không được dạy đó là cách thay thế mặc định.', 'In a very relaxed situation, people may omit it and say their name directly, but this isn’t the default replacement.', 'とてもくだけた場面では省略して名前から言うこともありますが、標準的な代わりとして教えてはいけません。');
@@ -140,7 +138,6 @@ add('Trong bài này: Tôi là Tanaka.', 'In this lesson: I’m Tanaka.', 'こ�
 add('Rất mong được làm quen.\nMong được giúp đỡ.\nMong chúng ta sẽ hợp tác tốt.', 'I look forward to getting to know you.\nI appreciate your support.\nI hope we will work well together.', 'これからよろしくお願いします。\nご支援をお願いします。\n今後ともよろしくお願いします。');
 add('Chính tôi cũng rất mong được làm quen.', 'Likewise, I look forward to getting to know you.', 'こちらこそ、よろしくお願いします。');
 add('Tạm biệt.', 'Goodbye.', 'さようなら。');
-add('Lịch sự cơ bản.', 'Standard polite form.', '基本的な丁寧表現。');
 add('Cách thân mật có thể gặp:', 'Possible casual forms:', 'カジュアルな言い方：');
 add('Nghĩa:\nTanaka.', 'Meaning:\nTanaka.', '意味：\n田中。');
 add('Hoặc:', 'Or:', 'または：');
