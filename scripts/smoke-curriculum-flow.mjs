@@ -15,6 +15,8 @@ import {
   validateByNativeMap,
   validateTranslationsMap,
 } from "./lib/native-localization.mjs";
+// Cùng nguồn khoảng với validator (§D6c) — hai file không được lệch nhau.
+import { FIVE_CARDS_RANGES as RANGE, inRange, rangeText } from "./lib/five-cards-ranges.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -241,10 +243,9 @@ function checkFiveCardsLessonStructure(lesson, section) {
   // amendment, owner decision 2026-07-19). `vocabulary` and `vocabularyDetails`
   // must still have the same count. Mirrors validateFiveCardsStructure.
   const vocabCount = (lesson.vocabulary ?? []).length;
-  if (vocabCount < 6 || vocabCount > 15 || (content.vocabularyDetails ?? []).length !== vocabCount) fail(section, { lessonId: lesson.id }, "Card 2 must contain 6–15 vocabulary cards with matching vocabularyDetails");
+  if (!inRange(vocabCount, RANGE.vocabularyCards) || (content.vocabularyDetails ?? []).length !== vocabCount) fail(section, { lessonId: lesson.id }, `Card 2 must contain ${rangeText(RANGE.vocabularyCards)} vocabulary cards with matching vocabularyDetails`);
   const groups = content.dialogueGroups ?? [];
-  // §D3 (owner 2026-07-27) — 2–8 lượt, đi theo đoạn nguồn. Mirrors validateFiveCardsStructure.
-  if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 2 || (group.lines ?? []).length > 8)) fail(section, { lessonId: lesson.id }, "Card 3 must contain exactly 3 dialogues of 2–8 lines");
+  if (!inRange(groups.length, RANGE.dialogueGroups) || groups.some((group) => !inRange((group.lines ?? []).length, RANGE.dialogueLinesPerGroup))) fail(section, { lessonId: lesson.id }, `Card 3 must contain ${rangeText(RANGE.dialogueGroups)} dialogues of ${rangeText(RANGE.dialogueLinesPerGroup)} lines each`);
   const approvedCharacters = content.approvedCharacterNamePool ?? [];
   const approvedCharacterIds = new Set(approvedCharacters.map((item) => item?.id));
   if (
@@ -253,7 +254,7 @@ function checkFiveCardsLessonStructure(lesson, section) {
     approvedCharacters.some((item) => !item?.id || !item?.displayName || !item?.canonicalName || !item?.audioName) ||
     groups.some((group) => (group.lines ?? []).some((line) => !line.speakerId || !approvedCharacterIds.has(line.speakerId)))
   ) fail(section, { lessonId: lesson.id }, "Card 3 character metadata or approved speaker IDs are incomplete");
-  if ((content.grammarPatterns ?? []).length !== 3) fail(section, { lessonId: lesson.id }, "Card 4 must contain exactly 3 grammar patterns");
+  if (!inRange((content.grammarPatterns ?? []).length, RANGE.grammarPatterns)) fail(section, { lessonId: lesson.id }, `Card 4 must contain ${rangeText(RANGE.grammarPatterns)} grammar patterns`);
   const practice = content.practice ?? {};
   const exercises = practice.exercises ?? [];
   if ((lesson.exercises ?? []).length !== 0 || lesson.exerciseStatus !== "ready") {
@@ -266,16 +267,16 @@ function checkFiveCardsLessonStructure(lesson, section) {
     fail(section, { lessonId: lesson.id }, "Card 5 practice plan boundary must be Free 1–9 and Plus 10–14");
   }
   const checkpoint = exercises[8];
-  if (checkpoint?.type !== "checkpoint" || (checkpoint.subQuestions ?? []).length !== 5 || (checkpoint.subQuestions ?? []).some((item) => (item.options ?? []).length !== 4 || !item.options.some((option) => option.id === item.correctOptionId))) {
-    fail(section, { lessonId: lesson.id, exerciseIndex: 9 }, "checkpoint must have five four-option stable-id questions");
+  if (checkpoint?.type !== "checkpoint" || !inRange((checkpoint.subQuestions ?? []).length, RANGE.checkpointSubQuestions) || (checkpoint.subQuestions ?? []).some((item) => !inRange((item.options ?? []).length, RANGE.optionsPerQuestion) || !item.options.some((option) => option.id === item.correctOptionId))) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 9 }, `checkpoint must have ${rangeText(RANGE.checkpointSubQuestions)} stable-id questions of ${rangeText(RANGE.optionsPerQuestion)} options each`);
   }
   const advancedOrdering = exercises[12];
-  if (advancedOrdering?.type !== "slot_ordering" || (advancedOrdering?.answerSlots ?? []).length !== 6 || !(advancedOrdering?.unusedTokenIds ?? []).length) {
-    fail(section, { lessonId: lesson.id, exerciseIndex: 13 }, "exercise 13 must use six answer slots and include an unused distractor token");
+  if (advancedOrdering?.type !== "slot_ordering" || !inRange((advancedOrdering?.answerSlots ?? []).length, RANGE.advancedOrderingSlots) || !(advancedOrdering?.unusedTokenIds ?? []).length) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 13 }, `exercise 13 must use ${rangeText(RANGE.advancedOrderingSlots)} answer slots and include an unused distractor token`);
   }
   const chatFill = exercises[9];
-  if (chatFill?.type !== "chat_text_fill" || (chatFill.chat?.messages ?? []).length !== 6 || (chatFill.slots ?? []).length !== 2 || !chatFill.slots?.every((slot) => slot.displayText && slot.canonicalText && slot.audioText && (slot.acceptedAnswers ?? []).length)) {
-    fail(section, { lessonId: lesson.id, exerciseIndex: 10 }, "exercise 10 must be a six-message, two-slot chat text fill with complete slot fields");
+  if (chatFill?.type !== "chat_text_fill" || !inRange((chatFill.chat?.messages ?? []).length, RANGE.chatMessages) || !inRange((chatFill.slots ?? []).length, RANGE.chatSlots) || !chatFill.slots?.every((slot) => slot.displayText && slot.canonicalText && slot.audioText && (slot.acceptedAnswers ?? []).length)) {
+    fail(section, { lessonId: lesson.id, exerciseIndex: 10 }, `exercise 10 must be a chat text fill of ${rangeText(RANGE.chatMessages)} messages and ${rangeText(RANGE.chatSlots)} slots, with complete slot fields`);
   }
   const realWorldPractice = exercises[13];
   const sceneDividers = realWorldPractice?.sceneDividers ?? [];
@@ -293,10 +294,10 @@ function checkFiveCardsLessonStructure(lesson, section) {
     fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must be a non-graded dialogue (≥4 lines) without AI controls");
   }
   if (
-    sceneDividers.length !== 1 ||
-    !(sceneDividers[0]?.translationByNative?.vi && sceneDividers[0]?.translationByNative?.en && sceneDividers[0]?.translationByNative?.ja)
+    !inRange(sceneDividers.length, RANGE.sceneDividers) ||
+    sceneDividers.some((d) => !(d?.translationByNative?.vi && d?.translationByNative?.en && d?.translationByNative?.ja))
   ) {
-    fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must keep exactly one localized non-spoken scene divider");
+    fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, `Real-World Practice must keep ${rangeText(RANGE.sceneDividers)} localized non-spoken scene dividers`);
   }
   if (/(ミン|Minh|Hưng|Linh)/u.test(JSON.stringify(content))) fail(section, { lessonId: lesson.id }, "five_cards lesson must not contain a leftover draft Vietnamese character name");
   const entries = [

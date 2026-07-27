@@ -15,6 +15,10 @@ import {
 } from "./lib/native-localization.mjs";
 import { containsKana } from "./lib/japanese-pronunciation.mjs";
 import { requireGeneratedQ14Romanization } from "./lib/q14-romanization-validation.mjs";
+// Ràng buộc định lượng của five_cards: KHOẢNG + lý do, giữ ở MỘT nơi
+// (scripts/lib/five-cards-ranges.mjs) để validator và smoke không lệch nhau,
+// và để người sửa sau đọc được căn cứ ngay tại chỗ. §D6c.
+import { FIVE_CARDS_RANGES as RANGE, inRange, rangeText } from "./lib/five-cards-ranges.mjs";
 // Bài tổng hợp cuối unit (ADR-022): dùng CHUNG hằng số với generator để ngưỡng
 // vận hành (§F-h) chỉ nằm MỘT nơi — owner chỉnh một chỗ là cả generator lẫn
 // validator cùng đổi, không lệch nhau.
@@ -1374,8 +1378,8 @@ export function validateFiveCardsStructure(lesson) {
   // người viết tự kéo dài, tức tự xếp (§G10). Trần 8 = 99% đoạn thật (95% ≤ 6,
   // dài nhất 12); quá 8 thì hết là hội thoại mẫu nghe-nhắc-lại và thành bài đọc
   // hiểu, vốn là việc của Q14 chứ không phải card 3.
-  if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 2 || (group.lines ?? []).length > 8)) {
-    fail(`${lesson.id}: Card 3 must contain exactly 3 dialogue groups with 2–8 lines`);
+  if (!inRange(groups.length, RANGE.dialogueGroups) || groups.some((group) => !inRange((group.lines ?? []).length, RANGE.dialogueLinesPerGroup))) {
+    fail(`${lesson.id}: Card 3 must contain ${rangeText(RANGE.dialogueGroups)} dialogue groups of ${rangeText(RANGE.dialogueLinesPerGroup)} lines each`);
   }
   const approvedCharacters = content.approvedCharacterNamePool ?? [];
   const approvedCharacterIds = new Set(approvedCharacters.map((item) => item?.id));
@@ -1396,8 +1400,8 @@ export function validateFiveCardsStructure(lesson) {
       }
     }
   }
-  if ((content.grammarPatterns ?? []).length !== 3) {
-    fail(`${lesson.id}: Card 4 must contain exactly 3 grammar patterns`);
+  if (!inRange((content.grammarPatterns ?? []).length, RANGE.grammarPatterns)) {
+    fail(`${lesson.id}: Card 4 must contain ${rangeText(RANGE.grammarPatterns)} grammar patterns`);
   }
   const practice = content.practice ?? {};
   const practiceExercises = practice.exercises ?? [];
@@ -1416,39 +1420,39 @@ export function validateFiveCardsStructure(lesson) {
   const checkpoint = practiceExercises[8];
   if (
     checkpoint?.type !== "checkpoint" ||
-    (checkpoint.subQuestions ?? []).length !== 5 ||
+    !inRange((checkpoint.subQuestions ?? []).length, RANGE.checkpointSubQuestions) ||
     (checkpoint.subQuestions ?? []).some((question) =>
-      (question.options ?? []).length !== 4 ||
+      !inRange((question.options ?? []).length, RANGE.optionsPerQuestion) ||
       !question.correctOptionId ||
       !(question.options ?? []).some((option) => option.id === question.correctOptionId),
     )
   ) {
-    fail(`${lesson.id}: exercise 9 must contain five four-option checkpoint questions with stable correct ids`);
+    fail(`${lesson.id}: exercise 9 must contain ${rangeText(RANGE.checkpointSubQuestions)} checkpoint questions of ${rangeText(RANGE.optionsPerQuestion)} options each, with stable correct ids`);
   }
   const matching = practiceExercises[2];
   if (
     matching?.type !== "matching" ||
-    (matching.pairs ?? []).length !== 4 ||
+    !inRange((matching.pairs ?? []).length, RANGE.matchingPairs) ||
     (matching.pairs ?? []).some((pair) => !pair.id || !pair.left?.id || !pair.right?.id)
   ) {
-    fail(`${lesson.id}: exercise 3 must define four stable matching pairs`);
+    fail(`${lesson.id}: exercise 3 must define ${rangeText(RANGE.matchingPairs)} stable matching pairs`);
   }
   const chatFill = practiceExercises[9];
   if (
     chatFill?.type !== "chat_text_fill" ||
-    (chatFill.chat?.messages ?? []).length !== 6 ||
-    (chatFill.slots ?? []).length !== 2 ||
+    !inRange((chatFill.chat?.messages ?? []).length, RANGE.chatMessages) ||
+    !inRange((chatFill.slots ?? []).length, RANGE.chatSlots) ||
     !chatFill.slots?.every((slot) => slot.displayText && slot.canonicalText && slot.audioText && (slot.acceptedAnswers ?? []).length)
   ) {
-    fail(`${lesson.id}: exercise 10 must be a six-message, two-slot chat text fill with complete slot fields`);
+    fail(`${lesson.id}: exercise 10 must be a chat text fill of ${rangeText(RANGE.chatMessages)} messages and ${rangeText(RANGE.chatSlots)} slots, with complete slot fields`);
   }
   const advancedOrdering = practiceExercises[12];
   if (
     advancedOrdering?.type !== "slot_ordering" ||
-    (advancedOrdering?.answerSlots ?? []).length !== 6 ||
+    !inRange((advancedOrdering?.answerSlots ?? []).length, RANGE.advancedOrderingSlots) ||
     !(advancedOrdering?.unusedTokenIds ?? []).length
   ) {
-    fail(`${lesson.id}: exercise 13 must use six answer slots and include at least one unused distractor token`);
+    fail(`${lesson.id}: exercise 13 must use ${rangeText(RANGE.advancedOrderingSlots)} answer slots and include at least one unused distractor token`);
   }
   // Lesson Format 3.0 (Owner-approved breaking change, 2026-07-15):
   // exercise 14 is a non-graded Real-World Practice dialogue, not
@@ -1499,14 +1503,15 @@ export function validateFiveCardsStructure(lesson) {
       fail(error.message);
     }
   }
-  const divider = sceneDividers[0];
   if (
-    sceneDividers.length !== 1 ||
-    !divider?.translationByNative?.vi ||
-    !divider?.translationByNative?.en ||
-    !divider?.translationByNative?.ja
+    !inRange(sceneDividers.length, RANGE.sceneDividers) ||
+    sceneDividers.some((divider) =>
+      !divider?.translationByNative?.vi ||
+      !divider?.translationByNative?.en ||
+      !divider?.translationByNative?.ja,
+    )
   ) {
-    fail(`${lesson.id}: exercise 14 must have exactly one localized non-spoken scene divider`);
+    fail(`${lesson.id}: exercise 14 must have ${rangeText(RANGE.sceneDividers)} localized non-spoken scene dividers`);
   }
   if (/(ミン|Minh|Hưng|Linh)/u.test(JSON.stringify(content))) {
     fail(`${lesson.id}: five_cards lesson must not contain leftover draft Vietnamese character names`);

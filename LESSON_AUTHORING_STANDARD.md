@@ -580,8 +580,38 @@ Golden Q10 đã đổi `free → plus`).
 - **Q1, Q2, Q4, Q5, Q6, Q7, Q8, Q11, Q12: loại KHÔNG bị ép** — chọn theo khung
   gợi ý §B7.
 
+**D6c. LUẬT CHUNG — MỌI RÀNG BUỘC ĐỊNH LƯỢNG PHẢI LÀ KHOẢNG.**
+(Owner chốt 2026-07-27. **Đây là luật đứng trên §D6b** — §D6b nay chỉ còn giá
+trị lịch sử, ghi lại lớp lỗi đã phát hiện; §D6c là luật áp cho về sau.)
+
+1. **Mọi ràng buộc định lượng trong validator PHẢI là KHOẢNG `[min, max]`**,
+   KHÔNG phải số cố định — trừ khi có **lý do sản phẩm ghi rõ ngay tại chỗ**
+   (hiện chỉ còn `totalQuestions = 14`: độ dài bài là quyết định sản phẩm).
+2. **Mỗi khoảng phải kèm LÝ DO + CĂN CỨ ngay tại chỗ định nghĩa**, không phải
+   ở tài liệu khác. Tất cả nằm trong **`scripts/lib/five-cards-ranges.mjs`**,
+   dùng chung cho validator và smoke để hai bên không lệch nhau.
+3. **Thứ tự ưu tiên khi đặt khoảng:**
+   - **(a) ĐO nguồn thật.** Đo được thì đo; ghi rõ đo cái gì, bao nhiêu mẫu.
+   - **(b) Không đo được → khoảng RỘNG**, chỉ chặn cái *thật sự* hỏng (rỗng,
+     hoặc nhiều tới mức vỡ màn). Ghi rõ **"chưa có căn cứ đo"**.
+   - **(c) TUYỆT ĐỐI KHÔNG** chép số từ Golden rồi gọi đó là khoảng.
+4. **DẤU HIỆU NHẬN BIẾT số chép từ Golden:** khi viết bài mới phải **THÊM/BỚT
+   nội dung cho vừa con số**, thay vì nội dung tự nhiên rơi vào khoảng đó.
+   Ba ca đã lộ đúng dấu hiệu này: Q10 phải độn 4→6 tin nhắn; Q13 phải ghép hai
+   câu rời cho đủ 6 ô; Q14 phải **vứt bỏ một trong ba đoạn nguyên văn** của
+   nguồn vì luật chỉ cho đúng 1 dải phân cảnh.
+5. **Gặp số ép chưa có lý do → NỚI thành khoảng rộng và ghi chú. KHÔNG bẻ nội
+   dung cho vừa.** Bẻ nội dung là làm hỏng bài để chiều một con số chưa ai kiểm.
+6. **Số ép còn sót phát hiện sau này: SỬA LUÔN theo luật này, KHÔNG cần hỏi
+   owner từng cái.** Chỉ báo lại trong báo cáo.
+7. **Ngoại lệ duy nhất — khoá nội dung Golden** (`validateApprovedGoldenLesson\
+Content`, `checkApprovedJaUnitOneLesson`): ở đó số cố định là ĐÚNG, vì nhiệm vụ
+   của nó là khoá đúng hình dạng thật của Golden, không phải ra luật chung.
+
 **D6b. RÀ CÁC CON SỐ ĐANG BỊ ÉP — cái nào có lý do thật, cái nào chép từ Golden.**
-(Rà 2026-07-27 theo yêu cầu owner. **Chưa sửa cái nào ngoài §D3** — chờ owner.)
+(Rà 2026-07-27. **ĐÃ XỬ LÝ XONG 2026-07-27 theo §D6c** — mọi mục "NGỜ" bên dưới
+nay đã thành khoảng trong `scripts/lib/five-cards-ranges.mjs`. Giữ bảng lại làm
+hồ sơ lớp lỗi, không còn là việc tồn.)
 
 **Bằng chứng nền:** ADR-019 ghi rõ `validateFiveCardsStructure` được **tách ra
 từ** `validateApprovedJaUnitOneLesson` (bộ kiểm CHỈ dành cho Golden), và chỉ nêu
@@ -1114,6 +1144,20 @@ ngôn ngữ đó.** Ngôn ngữ **chưa có người duyệt** → độ tin c�
 
 ## Changelog file này
 
+- **2026-07-27 (bản 11 — BỎ HẾT SỐ ÉP CỨNG, mọi ràng buộc thành KHOẢNG)** —
+  Thêm **§D6c**, luật chung đứng trên §D6b: mọi ràng buộc định lượng phải là
+  khoảng kèm lý do + căn cứ ngay tại chỗ định nghĩa; đo được thì đo, không đo
+  được thì khoảng rộng và ghi rõ "chưa có căn cứ đo"; cấm chép số từ Golden;
+  gặp số ép còn sót thì **sửa luôn, không cần hỏi owner từng cái**. Toàn bộ
+  khoảng gom về **`scripts/lib/five-cards-ranges.mjs`** dùng chung cho validator
+  và smoke. Đã đổi 11 ràng buộc: `dialogueGroups` 3→**1–8** và
+  `grammarPatterns` 3→**1–8** (đo thật: 264 khối kịch bản và 71 bài Irodori);
+  `matchingPairs` 4→**3–8**, `checkpointSubQuestions` 5→**3–10**,
+  `optionsPerQuestion` 4→**2–6**, `chatMessages` 6→**2–12**, `chatSlots`
+  2→**1–4**, `advancedOrderingSlots` 6→**2–10**, `sceneDividers` 1→**0–5**
+  (nhóm này chưa đo được — khoảng rộng, đã ghi chú; renderer Flutter xác minh
+  là generic, không khoá số nào). Giữ nguyên `totalQuestions = 14` (quyết định
+  sản phẩm) và toàn bộ khoá nội dung Golden.
 - **2026-07-27 (bản 10 — hạ sàn hội thoại theo độ dài NGUỒN)** — **D3** bỏ sàn
   cứng 4–6 lượt, thay bằng **2–8** và nguyên tắc "độ dài đi theo đoạn nguồn".
   Cả hai con số lấy từ phép đo thật, không chép Golden: đo **634 đoạn hội thoại**
