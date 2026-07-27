@@ -86,6 +86,34 @@
 > ghi rõ đã mở file nào trong bảng dưới đây, phần/chủ đề nào của file đó**,
 > không ghi chung chung "đã tra Irodori".
 
+### IRODORI BẢN MARKDOWN — owner bổ sung 2026-07-27, LẤP ĐÚNG LỖ HỔNG 初級1
+
+Owner bỏ vào `IRODORI_4_PDF_to_MD.zip`; đã giải nén sang
+`local-sources/ja/irodori/markdown/` (4 file, byte khớp bảng kê zip), **zip đã
+xoá**. Đây là bản chuyển PDF → Markdown, **có mốc `## Trang PDF <n>` từng trang**
+và **kèm bản dịch tiếng Việt**, nên tra bằng `grep` thẳng, không cần `pdftotext`.
+
+| File | PDF gốc ghi trong đầu file | Cấp | Đo thật | Trạng thái |
+|---|---|---|---|---|
+| `IRODORI_Nhap_mon_A1.md` | `x_all_20230109.pdf` | **入門 (A1)** | 34.420 dòng · 572 trang · 62% chữ Nhật · 15.658 dòng tiếng Việt · 11 trang rỗng · **0 ký tự hỏng** | Chữ thật |
+| `IRODORI_So_cap_1_A2.md` | `sc1_full_20221219.pdf` | **初級1 (A2a)** | 28.491 dòng · **464 trang** · 62% chữ Nhật · 13.151 dòng tiếng Việt · 14 trang rỗng · **0 ký tự hỏng** | Chữ thật — **NGUỒN MỚI HOÀN TOÀN** |
+| `IRODORI_So_cap_2_A2.md` | `SC2_full-done-checked.pdf` | **初級2 (A2b)** | 35.686 dòng · 559 trang · 64% chữ Nhật · 17.672 dòng tiếng Việt · 8 trang rỗng · **0 ký tự hỏng** | Chữ thật |
+| `IRODORI_So_trung_cap_A2-B1.md` | `ZZ_all.pdf` | **初中級 (A2/B1)** | 44.654 dòng · 635 trang · 56% chữ Nhật · 17.615 dòng tiếng Việt · 1 trang rỗng · **0 ký tự hỏng** | Chữ thật |
+
+**LỖ HỔNG 初級1 ĐÃ ĐÓNG.** Trước: 24 nhãn trang mảnh rải trong 3 PDF. Nay:
+**464 trang trọn vẹn**. Đây là cấp chứa bài 「お久しぶりです」.
+
+**Đối chiếu trùng lặp (kiểm bằng chuỗi đặc trưng, không đoán theo tên file):**
+`MD_So_trung_cap` ≡ `ZZ_all.pdf` · `MD_So_cap_2` ≡ `Z_all.pdf` ·
+`MD_Nhap_mon` ≡ phần 入門 của `Irodori.pdf` · **`MD_So_cap_1` không có bản PDF
+tương ứng**. Ba cặp đầu là **trùng THẬT** (cùng sách, khác định dạng).
+→ **ĐỀ XUẤT, chưa làm:** dùng bản `.md` làm đường tra mặc định (đã là text, có
+mốc trang, có bản dịch); giữ hay bỏ 3 PDF là **quyết định của owner** — PDF vẫn
+là bản gốc có hình minh hoạ mà `.md` không nhúng. **Không tự xoá file nội dung.**
+
+**Trích dẫn phải ghi rõ file + số trang PDF** (ví dụ: `IRODORI_So_cap_1_A2.md`,
+Trang PDF 43) — mốc trang có sẵn nên không được ghi chung chung.
+
 ### PHẠM VI THẬT của 3 file Irodori — đo 2026-07-27, KHÁC bản ghi cũ
 
 Đếm nhãn trang bóc được (`<cấp>　L<n> - <trang>`) trong từng file:
