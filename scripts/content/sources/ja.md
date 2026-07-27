@@ -15,7 +15,7 @@
 | `languageCode` | `ja` |
 | Tên ngôn ngữ | Tiếng Nhật (日本語) |
 | Cấp độ đang nhắm | A1–A2 (JF Standard) ≈ JLPT N5 |
-| Cập nhật lần cuối | 2026-07-23 |
+| Cập nhật lần cuối | 2026-07-28 (thêm **BẢNG TẦNG VIỆC → NGUỒN**, feed §G11) |
 | Trạng thái | `READY_FOR_AUTHORING` (Irodori + `N5 Grammar Master (japanvitta.com).pdf` + vocab JLPT/kanji/ngữ pháp hanabira đều chữ thật, dùng được ngay — **ngữ pháp N3–N1 ngoài phạm vi Irodori nay dựa vào hanabira, đọc được, không cần sách scan**; sách "まるごとマスター" N5 scan đã owner xóa 2026-07-23. **Còn tồn đọng, chưa xóa:** 5 file Nihongo Sou Matome N1–N5 (ẢNH SCAN, không đọc được) — **`irodori/Irodori.pdf` ĐÃ RÚT khỏi danh sách đề xuất xoá (2026-07-27): nó chứa phần 入門/Starter A1 mà Z_all và ZZ_all KHÔNG có, không hề trùng** —, 3 file kanji subset (`kanji-jouyou`/`kanji-kyouiku`/`kanji-wanikani.json`, trùng `kanji.json`) — đã đề xuất xóa, owner chưa thao tác xong; giấy phép nội dung hanabira grammar CHƯA XÁC ĐỊNH biến thể CC cụ thể — cần owner xác nhận trước khi dùng chính thức) |
 
 ---
@@ -415,6 +415,67 @@ nhất quán nội bộ, không phải con số rút từ tài liệu ngôn ng�
   đầu-cuối câu là CỐT LÕI, không đụng**; chỉ thay **danh từ/động từ nội dung** ở ô
   trống bằng từ ĐÃ DẠY. Quy tắc chia/biến đổi dạng: theo `rules/languages/ja/`
   (FROZEN) — file nguồn này không định nghĩa lại.
+
+## BẢNG TẦNG VIỆC → NGUỒN của tiếng Nhật (feed §G11 — owner chốt 2026-07-28)
+
+**Vì sao có bảng này:** bài `u2-l1` dồn gần **100%** nội dung vào Irodori và bỏ
+không hanabira (805 file ngữ pháp), Collins 3000 từ, JMdict, 8 file N5, 3 file
+Minna. Owner yêu cầu dùng **hết** nguồn đang có. Cách chia là **theo tầng việc** —
+mỗi nguồn dùng cho đúng việc nó mạnh nhất — **KHÔNG chia theo phần trăm** (§G11.1).
+
+| Tầng việc | Nguồn dùng | Ghi chú |
+|---|---|---|
+| **Hội thoại nguyên đoạn** | **Irodori** | **NGUỒN DUY NHẤT** có đoạn nhiều lượt → §G10 (lấy nguyên đoạn) chỉ có một kênh, không có nguồn thay thế |
+| **Ngữ pháp** | **hanabira** + **`n5_tong-hop-ngu-phap-60-mau`** | **≥2 nguồn → ĐỐI CHIẾU BẮT BUỘC** (§G11.2) |
+| **Nghĩa / cách đọc / loại từ** | **JMdict** + **`n5_tong-hop-tu-vung-1021`** | **≥2 nguồn → ĐỐI CHIẾU BẮT BUỘC**. JMdict cũng là nguồn §X3/§X1 (xem Tầng X) |
+| **Từ vựng làm giàu** | **Collins 3000** + **n5** (`kanji-master`, `160-kanji`) | Kho từ để thay từ nội dung theo §G11.3 |
+| **Kanji** | **kanji-data** (`kanji.json`) + **`n5_kanji-master`** | **≥2 nguồn → ĐỐI CHIẾU BẮT BUỘC** |
+| **Mức lịch sự / vai vế** | **敬語の指針** + **bảng chuyển kính ngữ** | Hai file đã ghi ở mục "Bổ sung 2026-07-27 — KÍNH NGỮ" bên trên |
+| **Bài tập (chất liệu)** | **3 file Minna** | **NGUỒN DUY NHẤT** có bài tập thật → không có nguồn thay thế |
+
+**Đối chiếu đã bắt được lỗi thật:** chữ 何 đọc **なに** hay **なん** tuỳ ngữ cảnh —
+lỗi này lộ ra đúng vì mở **hai** nguồn thay vì một. Đây là bằng chứng nền của
+§G11.2, không phải ví dụ giả định.
+
+**Đường dẫn / trạng thái đọc được của từng file:** xem mục **"Danh mục FILE NGUỒN
+CỤC BỘ"** bên trên. Nguồn nào ghi **ẢNH SCAN — CẦN OCR** thì **CHƯA dùng được**
+cho tầng của nó; gặp ca đó → §G9 (dừng, hỏi owner), không thay bằng trí nhớ.
+
+> **CHƯA VÀO DANH MỤC:** các file owner nêu tên trong bảng này mà mục "Danh mục
+> FILE NGUỒN CỤC BỘ" chưa có dòng riêng — `n5_tong-hop-ngu-phap-60-mau`,
+> `n5_tong-hop-tu-vung-1021`, `n5_kanji-master`, `160-kanji`, **3 file Minna** —
+> cần **đo + ghi danh mục ở phiên LOCAL** (cloud không mở được `local-sources/`).
+> Trước khi một bài dùng tới file nào trong nhóm này, **phải mở file thật + ghi
+> dòng danh mục cho nó** (§G8 đòi ghi rõ đã mở nguồn nào, mục nào).
+
+### LÀM GIÀU TỪ VỰNG — ví dụ bằng tiếng Nhật (feed §G11.3)
+
+**ĐƯỢC thay** — từ nội dung, không phải cốt lõi ngữ pháp:
+
+| Nguồn viết | Được viết thành | Đã thay gì |
+|---|---|---|
+| 「イギリスから来ました」 | 「アメリカから来ました」 | quốc gia (danh từ nội dung) |
+
+Cấu trúc giữ y nguyên: trợ từ `から`, thể `〜ました`, trật tự đầu-cuối câu —
+**không đụng** (đúng mục "PHẦN CỐT LÕI KHÔNG ĐƯỢC THAY" bên trên).
+
+**KHÔNG được thay** — từ đó bắt buộc cho nghĩa của câu:
+
+| Câu nguồn | Vì sao giữ nguyên văn |
+|---|---|
+| 「医者が診察しています」 | Chính **医者** làm nên hành động 診察 trong câu; thay nghề khác là câu hỏng nghĩa |
+
+Từ thay vào phải: **có trong nguồn** (Collins 3000 / n5 / JMdict…), **hợp trình độ
+bài**, **hợp nghĩa với vị trí** (tra tầng X). Báo cáo phải khai: đoạn nào **nguyên
+văn**, đoạn nào **đã thay từ** (thay chữ gì, lấy từ nguồn nào).
+
+### MỐC ÁP DỤNG của tiếng Nhật (feed §G11.5)
+
+- **Áp từ `u2-l2` trở đi.**
+- **`u2-l1` đã chốt 100% nguyên văn Irodori → GIỮ NGUYÊN, KHÔNG viết lại.** Nguyên
+  văn từ một nguồn uy tín không phải lỗi; chỉ là chưa khai thác hết nguồn.
+- Các bài trước `u2-l1` (Golden L1, L2, L3) cũng **không** thuộc phạm vi viết lại
+  của luật này.
 
 ## Cơ chế HỖ TRỢ ĐỌC của tiếng Nhật (feed §C2/§E3 — chi tiết cụ thể ở đây, không ở file chung)
 

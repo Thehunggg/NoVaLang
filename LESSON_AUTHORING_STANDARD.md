@@ -1133,6 +1133,64 @@ tra NGUỒN DỮ LIỆU (KHÔNG dựa trí nhớ mô hình):**
 → cả ba không có → **DỪNG, hỏi owner. KHÔNG tự soạn.** (Bản gắn-nhãn-tin-cậy của
 luật chốt §F-b.)
 
+**G11 — CHIA VIỆC THEO TẦNG, KHÔNG DỒN MỘT NGUỒN.** (Owner chốt 2026-07-28, sau
+khi một bài dồn gần **100%** nội dung vào **một** nguồn duy nhất và bỏ không mọi
+nguồn khác của cùng ngôn ngữ.)
+
+**Vấn đề đã lộ:** có nhiều nguồn hợp lệ trong tay nhưng chỉ dùng một, vì nguồn
+đó "đủ để viết xong bài". Bài vẫn đúng, nhưng **nghèo hơn mức nguồn cho phép** và
+**bỏ mất lớp đối chiếu** — không nguồn nào kiểm chéo nguồn nào.
+
+**G11.1 — CHIA THEO TẦNG VIỆC, KHÔNG CHIA THEO PHẦN TRĂM.**
+- Mỗi **tầng việc** (loại vật liệu bài cần: đoạn hội thoại, mẫu ngữ pháp, nghĩa /
+  cách đọc / loại từ, từ vựng làm giàu, chữ viết, mức lịch sự / vai vế, chất liệu
+  bài tập…) được gán cho **nguồn MẠNH NHẤT ở đúng tầng đó**.
+- **CẤM chia đều theo lượng** ("mỗi nguồn góp x%"). Ép chia theo lượng buộc người
+  viết lấy cả **thứ mà nguồn đó không mạnh** — đúng cái luật này muốn tránh.
+- **Bảng tầng → nguồn của từng ngôn ngữ nằm ở file nguồn riêng**
+  (`scripts/content/sources/<mã>.md`), **KHÔNG ở file chung này** — cùng nguyên
+  tắc như §G8. Ngôn ngữ chưa có bảng đó → **DỪNG, hỏi owner**, không tự gán.
+- Tầng nào **chỉ một nguồn có** thì nguồn đó là **DUY NHẤT** cho tầng ấy: không
+  có nguồn thay thế nghĩa là **không được tự chế thay** (§G10 cho hội thoại là ca
+  cụ thể của luật này).
+
+**G11.2 — ĐỐI CHIẾU BẮT BUỘC khi tầng có ≥2 nguồn.**
+- Tầng nào bảng ghi **≥2 nguồn** thì phải **MỞ CẢ HAI** — không được mở một cái
+  rồi coi là xong vì "đã khớp trí nhớ" (§G8 đã cấm dùng trí nhớ mô hình).
+- **Hai nguồn lệch nhau → BÁO OWNER. TUYỆT ĐỐI KHÔNG tự chọn bên nào**, kể cả
+  khi một bên trông đáng tin hơn.
+- **Lý do có luật này:** đối chiếu 2 nguồn đã **bắt được lỗi thật** — một chữ có
+  hai cách đọc và bài đang dùng sai cách trong ngữ cảnh đó. Một nguồn không bao
+  giờ tự tố được chính nó.
+
+**G11.3 — LÀM GIÀU TỪ VỰNG (mở rộng §G3 cho đúng việc này).**
+Lấy **MẪU CÂU** từ nguồn mạnh về hội thoại/mẫu câu, nhưng **ĐƯỢC thay từ nội
+dung** (tên riêng, địa danh/quốc gia, danh từ, nghề nghiệp…) bằng từ lấy ở
+**nguồn từ vựng khác** — dự án có hàng nghìn từ đã có nguồn, không có lý do gì
+chỉ dùng đúng những từ nằm trong đoạn của một tài liệu.
+- **GIỮ NGUYÊN cấu trúc:** không đổi thành phần chức năng ngữ pháp (trợ từ / giới
+  từ / biến tố…), không đổi thể/dạng, không đổi trật tự. Phần "cốt lõi không được
+  đụng" do **file nguồn riêng từng ngôn ngữ** định nghĩa (đã có ở §G3).
+- **KHÔNG thay khi từ đó BẮT BUỘC cho nghĩa của câu** — thay vào là câu hỏng
+  nghĩa (ví dụ câu mà chính nghề nghiệp của người nói làm nên hành động trong
+  câu). Gặp ca này **giữ nguyên văn**.
+- Từ thay vào phải: **có trong nguồn** (§G8), **hợp trình độ bài**, và **hợp
+  nghĩa với vị trí đó** (kiểm bằng tầng X — §G8).
+- **Khai rõ theo §G10:** đoạn nào **nguyên văn**, đoạn nào **đã thay từ** — thay
+  chữ gì, lấy từ nguồn nào. Không khai = coi như khai man nguồn.
+
+**G11.4 — BÁO CÁO BẮT BUỘC: BẢNG "PHẦN NÀO LẤY TỪ NGUỒN NÀO".**
+Mỗi bài, báo cáo cho owner **phải kèm một bảng** liệt kê **từng phần của bài →
+nguồn đã mở cho phần đó** (kèm mục/chương cụ thể trong nguồn, theo §G8). Mục đích
+là để owner **thấy ngay bài có bị dồn một nguồn hay không** — thiếu bảng này thì
+báo cáo **chưa đủ điều kiện duyệt**.
+
+**G11.5 — MỐC ÁP DỤNG.** Luật G11 áp cho **bài viết từ thời điểm chốt trở đi**.
+Bài đã chốt trước đó theo hướng "một nguồn, 100% nguyên văn" **GIỮ NGUYÊN, không
+viết lại** — nguyên văn từ một nguồn uy tín không phải lỗi, chỉ là chưa khai thác
+hết nguồn. Mốc cụ thể của từng ngôn ngữ ghi ở **file nguồn riêng** của ngôn ngữ
+đó.
+
 **G — GIỚI HẠN THẬT (ghi rõ, không giấu).** Hệ luật G + tầng X chỉ chặn được **lỗi
 TRA CỨU ĐƯỢC**: cấu trúc bắt buộc (X1), kết hợp từ phổ biến (X2), loại từ / biến
 đổi dạng (X3), từ chưa dạy (§G7). Chúng **KHÔNG chặn được sắc thái tinh tế**
@@ -1143,6 +1201,19 @@ ngôn ngữ đó.** Ngôn ngữ **chưa có người duyệt** → độ tin c�
 ---
 
 ## Changelog file này
+
+- **2026-07-28 (bản 12 — CHIA VIỆC THEO TẦNG NGUỒN, không dồn một nguồn)** —
+  Thêm **§G11**: mỗi **tầng việc** gán cho nguồn **mạnh nhất ở tầng đó**, **cấm
+  chia đều theo phần trăm** (§G11.1); tầng có **≥2 nguồn** thì phải **mở cả hai**,
+  **lệch nhau → báo owner, không tự chọn** (§G11.2 — cách này đã bắt được một lỗi
+  đọc sai thật); **làm giàu từ vựng** — được thay từ nội dung trong mẫu câu bằng
+  từ ở nguồn khác, giữ nguyên cấu trúc, không thay khi từ đó bắt buộc cho nghĩa,
+  phải khai rõ đoạn nào nguyên văn / đoạn nào đã thay (§G11.3, mở rộng §G3); mỗi
+  bài **bắt buộc kèm bảng "phần nào lấy từ nguồn nào"** trong báo cáo, thiếu bảng
+  là chưa đủ điều kiện duyệt (§G11.4); bài chốt trước mốc theo hướng một-nguồn
+  **giữ nguyên, không viết lại** (§G11.5). Bảng tầng → nguồn **cụ thể** và **mốc
+  áp dụng** của từng ngôn ngữ nằm ở `scripts/content/sources/<mã>.md`, không ở
+  file chung này (cùng nguyên tắc §G8).
 
 - **2026-07-27 (bản 11 — BỎ HẾT SỐ ÉP CỨNG, mọi ràng buộc thành KHOẢNG)** —
   Thêm **§D6c**, luật chung đứng trên §D6b: mọi ràng buộc định lượng phải là
