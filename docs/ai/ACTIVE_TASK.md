@@ -155,6 +155,44 @@ sung: **23** chuỗi cho 12 ô (bản đọc ghi 22).
 - Normalizer đã xoá sạch dấu cách cho ja/zh → ô tự gõ chấm đúng.
 - `UnitComprehensiveTest.languageCode` đã parse từ dữ liệu.
 
+## UNIT 2 — BƯỚC 1 XONG (u2-l1), BƯỚC 2 CHƯA LÀM — 2026-07-27
+
+`ja-daily_life-m01-u2-l1` 「知り合いにあいさつする」 đã ghi data và push
+(`b5daa49`). 6 thẻ · 3 hội thoại · 3 mẫu · 14 bài tập. Golden L1/L2/L3 trong
+bản sinh: byte-identical (kiểm bằng so chuỗi JSON, không phải đếm).
+
+### Bài học rút ra — quy tắc NGUYÊN VĂN bắt được lỗi mà G1–G9 không bắt
+
+Owner nhắc: "bí thì lấy nguyên văn trong nguồn, không tự ghép từ mảnh". Rà
+lại bản đọc theo luật đó thì ngoài 3 chỗ owner chỉ, **tôi tự bắt được chỗ
+thứ 4 của chính mình**: 「また会いましょう」 — 0 lượt trong local-sources, do
+tôi ghép また (L3) + 会いましょう (nguồn). Kéo theo cả mẫu ngữ pháp
+「また＋động từ ましょう」 cũng phải bỏ vì đó là quy tắc sinh tôi tự suy ra.
+
+→ **Cách kiểm đáng tin:** grep NGUYÊN CỤM trong `local-sources/`, không grep
+từng mảnh rồi tự nối. Mảnh nào cũng có nguồn không có nghĩa là cụm ghép có
+nguồn.
+
+Đã bỏ vì 0 lượt: `どうも` (chào đứng một mình) · `また会いましょう` ·
+`お久しぶりです`. Thay bằng `また会おう。` và `ではまた。` (đều nguyên văn
+hanabira, phủ đúng hai mức thân mật/lịch sự).
+
+### Hai ràng buộc validator ép khuôn (không phải ý tôi)
+
+`validateFiveCardsStructure` bắt Q10 phải **đúng 6 tin nhắn / 2 ô** và Q13
+phải **đúng 6 ô**. Chưa rà xem đây là luật thật của Format 2.0 hay là con số
+lấy từ Golden rồi hoá cứng (giống ca "đúng 8 thẻ từ vựng" đã sửa thành khoảng
+6–15 ở ADR-019 amendment). **Nếu bài sau lại vướng thì rà trước khi chiều
+theo** — đừng bẻ nội dung cho vừa một con số chưa ai kiểm.
+
+### CÒN LẠI
+
+- **BƯỚC 2: u2-l2 「Hỏi thăm và đáp」** (お元気ですか + cách đáp) — xuất bản
+  đọc cho owner duyệt TRƯỚC, chưa ghi data. Đã biết trước: 「お元気ですか」 có
+  nguyên văn ở cả n5 và hanabira; **câu ĐÁP lại thì CHƯA quét nguồn** — phải
+  quét trước khi viết, không có nguyên văn thì báo chứ không tự chế.
+- **Bài tổng hợp Unit 2 (18 câu)** — việc riêng, sau khi cả hai lesson duyệt.
+
 ## NỢ NỘI DUNG — 「お元気で」 thẻ từ vựng ĐÁ NHAU với hội thoại cùng bài — 2026-07-25
 
 Cần **NGƯỜI BẢN NGỮ** quyết. **CHƯA sửa gì** — không sửa thẻ, không sửa hội thoại.
