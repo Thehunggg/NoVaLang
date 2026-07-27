@@ -15,8 +15,8 @@ import {
 //   · Trang PDF 38 — 文法ノート➊ 丁寧体・普通体: cặp đối chiếu của CHÍNH giáo trình
 //   · Trang PDF 44 — hoạt động nói, liệt kê đối tượng: 友だち・先輩や先生・知り合い
 //
-// CẢ 3 ĐOẠN LẤY NGUYÊN VĂN — không cắt, không nối, không đổi một chữ. Card 3
-// dùng cả ba; Q14 chỉ dùng được hai (lý do ghi ở chỗ Q14).
+// CẢ 3 ĐOẠN LẤY NGUYÊN VĂN — không cắt, không nối, không đổi một chữ.
+// Card 3 dùng cả ba; Q14 cũng dùng cả ba (2 dải phân cảnh).
 // Đây là bài ĐẦU TIÊN của dự án có card 3 hoàn toàn nguyên văn từ nguồn V1,
 // thay cho bản tự xếp trước đó (3 vòng sửa mạch đều là lỗi XẾP, §G10).
 //
@@ -197,23 +197,27 @@ const PRACTICE_EXERCISES = [
   },
   {
     // Lesson Format 3.0 — non-graded advanced Real-World Practice dialogue.
-    // HAI đoạn NGUYÊN VĂN Irodori 初級1 L1 (Trang PDF 43): mã băng 01-01
-    // (lịch sự ↔ lịch sự) và 01-03 (lệch thể). Không thêm chữ nào ngoài nguồn.
-    // Vì sao chỉ 2 trong 3: validator ép Q14 có ĐÚNG MỘT dải phân cảnh
-    // (`sceneDividers.length !== 1`) — cùng lớp "số chép từ Golden" đã ghi ở
-    // §D6b, chưa được owner cho sửa. Ba đoạn cần 2 dải. Chọn giữ 01-01 và
-    // 01-03 vì đó là hai ca khó nhất và tương phản nhau rõ nhất; đoạn 01-02
-    // (thường ↔ thường) đã có đủ ở card 3, Q5, Q11 và Q12.
+    // ĐỦ BA đoạn NGUYÊN VĂN Irodori 初級1 L1 (Trang PDF 43), mã băng
+    // 01-01 (lịch sự ↔ lịch sự) · 01-02 (thường ↔ thường) · 01-03 (lệch thể).
+    // Không thêm chữ nào ngoài nguồn.
+    //
+    // Bản trước chỉ đưa được 2/3 vì validator ép Q14 có ĐÚNG MỘT dải phân
+    // cảnh — đúng loại "số chép từ Golden" mà §D6c nay đã bỏ (sceneDividers
+    // thành khoảng 0–5). Nội dung không còn phải bẻ cho vừa con số nữa.
     id: 'ja-daily_life-m01-u2-l1-practice-14', order: 14, plan: 'plus', type: 'real_world_practice_dialogue',
     nonGraded: true,
-    scenarioTitle: 'Hai lần gặp lại sau lâu ngày',
-    scenarioDescription: 'Hai cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.',
-    characterIds: ['sato', 'ito', 'sensei'],
+    scenarioTitle: 'Ba lần gặp lại sau lâu ngày',
+    scenarioDescription: 'Ba cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.',
+    characterIds: ['sato', 'ito', 'tanaka', 'sensei'],
     dialogueLines: [
       dialogueLine('sato', 'あ、お久しぶりです。', 'あ、おひさしぶりです。', 'À, lâu rồi không gặp ạ.', 'あ、おひさしぶりです'),
       dialogueLine('ito', 'お久しぶりです。', 'おひさしぶりです。', 'Lâu rồi không gặp ạ.', 'おひさしぶりです'),
       dialogueLine('sato', 'お元気ですか？', 'おげんきですか？', 'Anh/chị vẫn khoẻ chứ ạ?', 'おげんきですか'),
       dialogueLine('ito', 'はい。おかげさまで。', 'はい。おかげさまで。', 'Vâng, nhờ ơn anh/chị, tôi vẫn khoẻ.', 'はい。おかげさまで'),
+      dialogueLine('tanaka', 'あ、久しぶり。', 'あ、ひさしぶり。', 'À, lâu rồi không gặp!', 'あ、ひさしぶり'),
+      dialogueLine('sato', '久しぶり。', 'ひさしぶり。', 'Lâu rồi không gặp!', 'ひさしぶり'),
+      dialogueLine('tanaka', '元気？', 'げんき？', 'Khoẻ không?', 'げんき'),
+      dialogueLine('sato', 'うん。元気。', 'うん。げんき。', 'Ừ, khoẻ.', 'うん。げんき'),
       dialogueLine('sensei', 'あ、久しぶり。', 'あ、ひさしぶり。', 'À, lâu rồi không gặp.', 'あ、ひさしぶり'),
       dialogueLine('sato', 'お久しぶりです。', 'おひさしぶりです。', 'Lâu rồi không gặp ạ.', 'おひさしぶりです'),
       dialogueLine('sensei', '元気？', 'げんき？', 'Khoẻ không?', 'げんき'),
@@ -221,6 +225,7 @@ const PRACTICE_EXERCISES = [
     ],
     sceneDividers: [
       { afterDialogueLine: 4, targetText: 'べつの日', translationByNative: vi('Một ngày khác') },
+      { afterDialogueLine: 8, targetText: 'べつの日', translationByNative: vi('Một ngày khác') },
     ],
   },
 ];

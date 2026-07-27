@@ -88291,21 +88291,22 @@
               "plan": "plus",
               "type": "real_world_practice_dialogue",
               "nonGraded": true,
-              "scenarioTitle": "Hai lần gặp lại sau lâu ngày",
+              "scenarioTitle": "Ba lần gặp lại sau lâu ngày",
               "scenarioTitleByNative": {
-                "vi": "Hai lần gặp lại sau lâu ngày",
-                "en": "Two reunions after a long time",
-                "ja": "久しぶりの再会、二つの場面"
+                "vi": "Ba lần gặp lại sau lâu ngày",
+                "en": "Three reunions after a long time",
+                "ja": "久しぶりの再会、三つの場面"
               },
-              "scenarioDescription": "Hai cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.",
+              "scenarioDescription": "Ba cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.",
               "scenarioDescriptionByNative": {
-                "vi": "Hai cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.",
-                "en": "Two greetings between people who have not met for a long time. The same act, but the polite and plain forms are chosen differently each time.",
-                "ja": "久しぶりに会った二人のあいさつが二つ。同じことをしていますが、丁寧体と普通体の選び方が場面ごとに違います。"
+                "vi": "Ba cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.",
+                "en": "Three greetings between people who have not met for a long time. The same act, but the polite and plain forms are chosen differently each time.",
+                "ja": "久しぶりに会った二人のあいさつが三つ。同じことをしていますが、丁寧体と普通体の選び方が場面ごとに違います。"
               },
               "characterIds": [
                 "sato",
                 "ito",
+                "tanaka",
                 "sensei"
               ],
               "dialogueLines": [
@@ -88395,6 +88396,86 @@
                   "reading": "あ、ひさしぶり。",
                   "speechText": "あ、ひさしぶり",
                   "translationByNative": {
+                    "vi": "À, lâu rồi không gặp!",
+                    "en": "Ah, long time no see!",
+                    "ja": "あ、久しぶり。"
+                  },
+                  "translations": {
+                    "vi": "À, lâu rồi không gặp!",
+                    "en": "Ah, long time no see!",
+                    "ja": "あ、久しぶり。"
+                  },
+                  "meaningVi": "À, lâu rồi không gặp!",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "a, hisashiburi."
+                },
+                {
+                  "targetText": "久（ひさ）しぶり。",
+                  "displayText": "久（ひさ）しぶり。",
+                  "reading": "ひさしぶり。",
+                  "speechText": "ひさしぶり",
+                  "translationByNative": {
+                    "vi": "Lâu rồi không gặp!",
+                    "en": "Long time no see!",
+                    "ja": "久しぶり。"
+                  },
+                  "translations": {
+                    "vi": "Lâu rồi không gặp!",
+                    "en": "Long time no see!",
+                    "ja": "久しぶり。"
+                  },
+                  "meaningVi": "Lâu rồi không gặp!",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "hisashiburi."
+                },
+                {
+                  "targetText": "元気（げんき）？",
+                  "displayText": "元気（げんき）？",
+                  "reading": "げんき？",
+                  "speechText": "げんき",
+                  "translationByNative": {
+                    "vi": "Khoẻ không?",
+                    "en": "How are you?",
+                    "ja": "元気？"
+                  },
+                  "translations": {
+                    "vi": "Khoẻ không?",
+                    "en": "How are you?",
+                    "ja": "元気？"
+                  },
+                  "meaningVi": "Khoẻ không?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "genki?"
+                },
+                {
+                  "targetText": "うん。元気（げんき）。",
+                  "displayText": "うん。元気（げんき）。",
+                  "reading": "うん。げんき。",
+                  "speechText": "うん。げんき",
+                  "translationByNative": {
+                    "vi": "Ừ, khoẻ.",
+                    "en": "Yeah, I am fine.",
+                    "ja": "うん。元気。"
+                  },
+                  "translations": {
+                    "vi": "Ừ, khoẻ.",
+                    "en": "Yeah, I am fine.",
+                    "ja": "うん。元気。"
+                  },
+                  "meaningVi": "Ừ, khoẻ.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "un. genki."
+                },
+                {
+                  "targetText": "あ、久（ひさ）しぶり。",
+                  "displayText": "あ、久（ひさ）しぶり。",
+                  "reading": "あ、ひさしぶり。",
+                  "speechText": "あ、ひさしぶり",
+                  "translationByNative": {
                     "vi": "À, lâu rồi không gặp.",
                     "en": "Ah, long time no see.",
                     "ja": "あ、久しぶり。"
@@ -88473,6 +88554,15 @@
               "sceneDividers": [
                 {
                   "afterDialogueLine": 4,
+                  "targetText": "べつの日（ひ）",
+                  "translationByNative": {
+                    "vi": "Một ngày khác",
+                    "en": "Another day",
+                    "ja": "べつの日"
+                  }
+                },
+                {
+                  "afterDialogueLine": 8,
                   "targetText": "べつの日（ひ）",
                   "translationByNative": {
                     "vi": "Một ngày khác",

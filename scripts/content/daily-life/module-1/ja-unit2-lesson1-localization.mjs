@@ -178,8 +178,8 @@ add('Sắp xếp thành lời chào và hỏi thăm lịch sự. Có thẻ khôn
 add('あ + お久しぶり + です + お元気 + です + か → あ、お久しぶりです。お元気ですか？ うん và 元気 là thể thường, không đi với thể lịch sự.', 'あ + お久しぶり + です + お元気 + です + か → あ、お久しぶりです。お元気ですか？ うん and 元気 are plain forms and do not go with the polite form.', '「あ」＋「お久しぶり」＋「です」＋「お元気」＋「です」＋「か」→「あ、お久しぶりです。お元気ですか？」「うん」と「元気」は普通体なので丁寧体には合いません。');
 
 // ── Q14 scenario + dialogue line translations ───────────────────────────
-add('Hai lần gặp lại sau lâu ngày', 'Two reunions after a long time', '久しぶりの再会、二つの場面');
-add('Hai cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.', 'Two greetings between people who have not met for a long time. The same act, but the polite and plain forms are chosen differently each time.', '久しぶりに会った二人のあいさつが二つ。同じことをしていますが、丁寧体と普通体の選び方が場面ごとに違います。');
+add('Ba lần gặp lại sau lâu ngày', 'Three reunions after a long time', '久しぶりの再会、三つの場面');
+add('Ba cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.', 'Three greetings between people who have not met for a long time. The same act, but the polite and plain forms are chosen differently each time.', '久しぶりに会った二人のあいさつが三つ。同じことをしていますが、丁寧体と普通体の選び方が場面ごとに違います。');
 add('Một ngày khác', 'Another day', 'べつの日');
 add('À, lâu rồi không gặp ạ.', 'Ah, it has been a long time.', 'あ、お久しぶりです。');
 add('Lâu rồi không gặp ạ.', 'It has been a long time.', 'お久しぶりです。');
