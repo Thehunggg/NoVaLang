@@ -86,6 +86,31 @@
 > ghi rõ đã mở file nào trong bảng dưới đây, phần/chủ đề nào của file đó**,
 > không ghi chung chung "đã tra Irodori".
 
+### PHẠM VI THẬT của 3 file Irodori — đo 2026-07-27, KHÁC bản ghi cũ
+
+Đếm nhãn trang bóc được (`<cấp>　L<n> - <trang>`) trong từng file:
+
+| File | 入門 (A1) | 初級1 (A2a) | 初級2 (A2b) | 初中級 (A2/B1) |
+|---|---|---|---|---|
+| `Irodori.pdf` | **462 trang — TRỌN, L1 đủ 18/18** | 12 (mảnh) | 14 (mảnh) | 0 |
+| `Z_all.pdf` | 0 | 12 (mảnh) | **467 — TRỌN** | 0 |
+| `ZZ_all.pdf` | 0 | 0 | 0 | **616 — TRỌN** |
+
+**Ba file KHÔNG trùng nhau — mỗi file giữ một cấp khác nhau.** Bản ghi cũ mô tả
+`Z_all` là "Starter + Elementary 1 + Elementary 2" là **sai**: nó là 初級2.
+Bản ghi cũ coi `Irodori.pdf` là "trùng Z_all+ZZ_all" cũng **sai**: nó là file
+DUY NHẤT có 入門 (A1) — cấp đúng của những bài đầu tiên. **Không được xoá file
+nào trong ba.**
+
+**LỖ HỔNG NGUỒN: 初級1 (Elementary 1) gần như KHÔNG có** — chỉ 12 trang mảnh
+trên tổng 462+467+616. Đây đúng là cấp chứa bài 「お久しぶりです」 (can-do
+「久しぶりに会った人とあいさつをすることができる」). Vì vậy:
+- Cụm 「お久しぶりです」 **CÓ** trong nguồn, nhưng chỉ ở **mục lục can-do** —
+  có tên bài + mô tả chức năng, **KHÔNG có hội thoại, KHÔNG có câu ví dụ**.
+- Đủ căn cứ làm **thẻ từ vựng** (cụm + nghĩa + tình huống dùng, dẫn nguồn
+  can-do). **KHÔNG đủ** làm hội thoại — không có đoạn nào để lấy nguyên văn.
+- Muốn dạy sâu chủ đề gặp lại thì **owner cần bổ sung bản 初級1**.
+
 ### Cách kiểm một PDF có tra chữ được hay không (2026-07-27)
 
 Bài học từ một lần đánh giá sai làm khoá nhầm nguồn tốt nhất suốt hai ngày:
