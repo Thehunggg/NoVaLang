@@ -409,6 +409,9 @@ nộp — kể cả khi thấy chắc.
   cùng giá trị ở một ô thì ô đó không kiểm gì.
 
 **Phương án sai phải SAI THẬT**
+> **Luật chọn loại nhiễu đứng TRƯỚC danh sách kiểm này: §G13** — mặc định dùng
+> **nhiễu cơ học**; nhiễu cả cụm / cả câu là **hạn chế**, không chắc thì đổi sang
+> cơ học. Các mục dưới đây là bước kiểm sau khi đã chọn loại.
 - Trước khi chốt, tự hỏi: **"câu này có phải là câu hợp lệ trong ĐÚNG bối cảnh
   đó không?"** Nếu có → không dùng làm phương án sai.
 - Bẫy đã dính, **cấm dùng lại làm lý do sai**:
@@ -1163,21 +1166,42 @@ nguồn khác của cùng ngôn ngữ.)
   hai cách đọc và bài đang dùng sai cách trong ngữ cảnh đó. Một nguồn không bao
   giờ tự tố được chính nó.
 
-**G11.3 — LÀM GIÀU TỪ VỰNG (mở rộng §G3 cho đúng việc này).**
-Lấy **MẪU CÂU** từ nguồn mạnh về hội thoại/mẫu câu, nhưng **ĐƯỢC thay từ nội
-dung** (tên riêng, địa danh/quốc gia, danh từ, nghề nghiệp…) bằng từ lấy ở
-**nguồn từ vựng khác** — dự án có hàng nghìn từ đã có nguồn, không có lý do gì
-chỉ dùng đúng những từ nằm trong đoạn của một tài liệu.
-- **GIỮ NGUYÊN cấu trúc:** không đổi thành phần chức năng ngữ pháp (trợ từ / giới
-  từ / biến tố…), không đổi thể/dạng, không đổi trật tự. Phần "cốt lõi không được
-  đụng" do **file nguồn riêng từng ngôn ngữ** định nghĩa (đã có ở §G3).
-- **KHÔNG thay khi từ đó BẮT BUỘC cho nghĩa của câu** — thay vào là câu hỏng
-  nghĩa (ví dụ câu mà chính nghề nghiệp của người nói làm nên hành động trong
-  câu). Gặp ca này **giữ nguyên văn**.
-- Từ thay vào phải: **có trong nguồn** (§G8), **hợp trình độ bài**, và **hợp
-  nghĩa với vị trí đó** (kiểm bằng tầng X — §G8).
-- **Khai rõ theo §G10:** đoạn nào **nguyên văn**, đoạn nào **đã thay từ** — thay
-  chữ gì, lấy từ nguồn nào. Không khai = coi như khai man nguồn.
+**G11.3 — RANH GIỚI CHỐNG LỖI KẾT HỢP TỪ (collocation). AN TOÀN ĐỨNG TRÊN
+"DÙNG HẾT NGUỒN".** (Owner chốt 2026-07-28. **Thay bản "làm giàu từ vựng — được
+thay bằng từ ở nguồn khác" viết cùng ngày** — bản đó nới quá tay, mở đúng chỗ
+sinh lỗi mà máy không kiểm được.)
+
+**Chỗ hổng không bịt được bằng nguồn hiện có:** dự án **KHÔNG có nguồn
+collocation** (từ nào thật sự đi với từ nào) cho ngôn ngữ đang làm — đã tra,
+không có bản mở dùng được. Tầng X (§G8) trả lời được **loại từ / biến đổi dạng /
+cấu trúc bắt buộc**, nhưng **KHÔNG** trả lời được *"người bản ngữ có thật sự ghép
+hai từ này không"*. Hai tổ hợp **cùng đúng ngữ pháp** mà một cái tự nhiên, một
+cái không — từ điển im lặng về khác biệt đó. Vì vậy **chỗ duy nhất sinh lỗi này
+là lúc GHÉP một từ vào một mẫu câu**, và luật dưới đây bịt đúng chỗ đó.
+
+**TRONG MẪU CÂU** (từ được ghép vào cấu trúc):
+- **CHỈ được thay bằng từ CÙNG NGUỒN, CÙNG BÀI** — tức từ mà **chính tài liệu đó
+  đã liệt kê cho chính mẫu đó**. Tài liệu liệt kê nghĩa là tài liệu **đã xác nhận
+  ghép được**; đó là bằng chứng collocation duy nhất đang có trong tay.
+- **CẤM lấy từ ở nguồn khác ghép vào mẫu của nguồn này.** Cả hai nguồn đều uy
+  tín cũng không đủ: không nguồn nào trong hai xác nhận **tổ hợp** vừa tạo ra.
+- Vẫn giữ mọi điều kiện cũ: **không đụng phần cốt lõi** (thành phần chức năng
+  ngữ pháp / thể-dạng / trật tự — định nghĩa ở file nguồn riêng, §G3), và **không
+  thay khi từ đó BẮT BUỘC cho nghĩa của câu** (thay vào là câu hỏng nghĩa) →
+  gặp ca đó **giữ nguyên văn**.
+
+**NGOÀI MẪU CÂU** (không ghép vào cấu trúc nào): **dùng thoải mái nguồn khác** —
+thẻ từ vựng riêng, mục tham khảo, ví dụ rời, ngữ pháp đối chiếu, nghĩa / cách
+đọc, chữ viết, mức lịch sự.
+- **Mỗi ví dụ lấy NGUYÊN từ MỘT nguồn, không ghép hai nguồn trong một câu.**
+- Đây là nơi bài trở nên phong phú **mà không tạo tổ hợp mới nào**.
+
+**Vì sao ranh giới này đủ:** bài vẫn có mặt nhiều nguồn (đúng mục tiêu §G11.1),
+nhưng **không nguồn nào bị ghép vào mẫu của nguồn khác** — tức không sinh ra tổ
+hợp nào chưa nguồn nào xác nhận.
+
+**Khai rõ theo §G10:** đoạn nào **nguyên văn**, đoạn nào **đã thay từ** (thay chữ
+gì, lấy từ **cùng bài của nguồn nào**). Không khai = coi như khai man nguồn.
 
 **G11.4 — BÁO CÁO BẮT BUỘC: BẢNG "PHẦN NÀO LẤY TỪ NGUỒN NÀO".**
 Mỗi bài, báo cáo cho owner **phải kèm một bảng** liệt kê **từng phần của bài →
@@ -1191,6 +1215,52 @@ viết lại** — nguyên văn từ một nguồn uy tín không phải lỗi, 
 hết nguồn. Mốc cụ thể của từng ngôn ngữ ghi ở **file nguồn riêng** của ngôn ngữ
 đó.
 
+**G12 — VẬT LIỆU BÀI TẬP LẤY TỪ NGUỒN, CHỈ ĐỔI VỎ.** (Owner chốt 2026-07-28.)
+
+**Đảo thứ tự việc:** KHÔNG bắt đầu bằng câu hỏi *"nên kiểm điểm gì?"* (đó là tự
+thiết kế chương trình — việc của người soạn giáo trình, không phải của người viết
+bài ở đây). Bắt đầu bằng **bài tập đã có trong nguồn**, rồi **đổi vỏ** sang dạng
+bài tập mà app hỗ trợ.
+
+- **NỘI DUNG KIỂM TRA GIỮ NGUYÊN** — vẫn kiểm đúng điểm ngữ pháp / đúng chỗ trống
+  mà nguồn đã chọn kiểm. **Chỉ đổi CÁCH NGƯỜI HỌC TRẢ LỜI** (tự gõ → chọn phương
+  án → sắp mảnh → nối cặp…).
+- **Cái được:** giáo trình đã **chọn sẵn điểm đáng kiểm** và điểm đó đã qua tay
+  người soạn chuyên môn — đỡ phải tự nghĩ **và** đỡ phải tự kiểm lại phán đoán
+  của chính mình. Đây là cùng logic §G10 (lấy nguyên đoạn hội thoại thay vì tự
+  xếp), áp cho bài tập.
+- **Tầng nào có bài tập thật** và **file nào cấp** → ghi ở **bảng tầng của file
+  nguồn riêng** (§G11.1). Tầng bài tập thường chỉ **một** nguồn có → theo §G11.1
+  đó là nguồn **DUY NHẤT**, không có nguồn thay thế.
+- **Nguồn không có bài phù hợp → mới tự soạn, và BẮT BUỘC ghi rõ "tự soạn"** trong
+  báo cáo (cùng cơ chế khai báo của §G10). Không ghi = khai man nguồn.
+- Bài tập tự soạn vẫn chịu **toàn bộ** §G7 vùng A (chỉ vốn đã dạy) và §G13 dưới.
+
+**G13 — PHƯƠNG ÁN NHIỄU: MẶC ĐỊNH LOẠI CƠ HỌC.** (Owner chốt 2026-07-28. Siết
+chặt mục "Phương án sai phải SAI THẬT" của §B16 thành **luật mặc định**, sau **3
+lần dính thật** cùng một lớp lỗi.)
+
+**Lớp lỗi đã dính 3 lần:** nghĩ ra một phương án nhiễu, tin là nó sai, **hoá ra
+nó CŨNG ĐÚNG** trong bối cảnh đó → câu hỏi có **2 đáp án đúng** → **chấm sai
+người trả lời đúng**. Đây là lỗi của người viết, không phải của người học.
+
+- **LOẠI CƠ HỌC — ĐƯỢC DÙNG, ưu tiên mặc định.** Là lỗi **tự nó sai bất kể bối
+  cảnh**, không thể vô tình đúng: sai **thành phần chức năng ngữ pháp** (trợ từ /
+  giới từ / biến tố), sai **thể / mức lịch sự**, sai **biến đổi dạng của động
+  từ**, **thiếu hoặc thừa thành phần bắt buộc** của một cụm, **gắn dấu hiệu tôn
+  kính cho thứ thuộc về chính mình**, **lặp thành phần chức năng**. Danh sách
+  **cụ thể theo từng ngôn ngữ** nằm ở **file nguồn riêng** (`scripts/content/\
+sources/<mã>.md`) — không ở file chung này.
+- **LOẠI CẢ CỤM / CẢ CÂU — HẠN CHẾ.** Nhiễu là một cụm hoặc một câu hoàn chỉnh
+  thì **BẮT BUỘC kiểm xem nó có vô tình đúng trong đúng bối cảnh đó không** (đúng
+  câu hỏi §B16 đã có: *"đây có phải câu hợp lệ trong ĐÚNG bối cảnh đó không?"*).
+- **KHÔNG CHẮC → ĐỔI SANG NHIỄU CƠ HỌC.** Không có đường thứ ba: không được giữ
+  nhiễu "chắc là sai" rồi chờ ai đó phát hiện sau.
+- Ba ca đã dính (kèm lý do vì sao chúng **đúng**, không sai) ghi ở **file nguồn
+  riêng của ngôn ngữ đó** — chúng là ví dụ bằng một thứ tiếng cụ thể nên không
+  thuộc file chung. §B16 giữ nguyên vai trò **danh sách kiểm trước khi nộp**;
+  §G13 là **luật chọn loại nhiễu** đứng trước bước kiểm đó.
+
 **G — GIỚI HẠN THẬT (ghi rõ, không giấu).** Hệ luật G + tầng X chỉ chặn được **lỗi
 TRA CỨU ĐƯỢC**: cấu trúc bắt buộc (X1), kết hợp từ phổ biến (X2), loại từ / biến
 đổi dạng (X3), từ chưa dạy (§G7). Chúng **KHÔNG chặn được sắc thái tinh tế**
@@ -1201,6 +1271,22 @@ ngôn ngữ đó.** Ngôn ngữ **chưa có người duyệt** → độ tin c�
 ---
 
 ## Changelog file này
+
+- **2026-07-28 (bản 13 — AN TOÀN ĐỨNG TRÊN "dùng hết nguồn": chống lỗi kết hợp
+  từ, bài tập lấy từ nguồn, nhiễu cơ học)** —
+  **§G11.3 VIẾT LẠI HẲN** (thay bản "làm giàu từ vựng" của bản 12 cùng ngày — bản
+  đó nới quá tay): dự án **không có nguồn collocation**, nên **trong mẫu câu chỉ
+  được thay bằng từ CÙNG NGUỒN CÙNG BÀI** (tài liệu liệt kê = tài liệu đã xác
+  nhận ghép được); **cấm** lấy từ nguồn khác ghép vào mẫu của nguồn này; **ngoài
+  mẫu câu** thì dùng thoải mái nguồn khác, mỗi ví dụ lấy nguyên từ **một** nguồn.
+  Thêm **§G12**: bài tập **lấy nội dung từ nguồn rồi đổi vỏ** sang dạng app hỗ
+  trợ — giữ nguyên điểm kiểm, chỉ đổi cách trả lời; nguồn không có bài phù hợp
+  mới tự soạn và **phải ghi "tự soạn"**. Thêm **§G13**: phương án nhiễu **mặc
+  định dùng loại CƠ HỌC** (lỗi tự nó sai bất kể bối cảnh); nhiễu cả cụm / cả câu
+  là **hạn chế**, phải kiểm có vô tình đúng không; **không chắc → đổi sang cơ
+  học** — sau **3 lần dính** nhiễu "hoá ra cũng đúng" làm câu hỏi có 2 đáp án
+  đúng. §B16 thêm con trỏ sang §G13. Danh sách loại nhiễu cơ học **cụ thể** và 3
+  ca đã dính nằm ở `scripts/content/sources/<mã>.md`.
 
 - **2026-07-28 (bản 12 — CHIA VIỆC THEO TẦNG NGUỒN, không dồn một nguồn)** —
   Thêm **§G11**: mỗi **tầng việc** gán cho nguồn **mạnh nhất ở tầng đó**, **cấm

@@ -15,7 +15,7 @@
 | `languageCode` | `ja` |
 | Tên ngôn ngữ | Tiếng Nhật (日本語) |
 | Cấp độ đang nhắm | A1–A2 (JF Standard) ≈ JLPT N5 |
-| Cập nhật lần cuối | 2026-07-28 (thêm **BẢNG TẦNG VIỆC → NGUỒN**, feed §G11) |
+| Cập nhật lần cuối | 2026-07-28 (BẢNG TẦNG VIỆC → NGUỒN + ranh giới chống lỗi kết hợp từ, bài tập từ Minna, nhiễu cơ học — feed §G11–§G13) |
 | Trạng thái | `READY_FOR_AUTHORING` (Irodori + `N5 Grammar Master (japanvitta.com).pdf` + vocab JLPT/kanji/ngữ pháp hanabira đều chữ thật, dùng được ngay — **ngữ pháp N3–N1 ngoài phạm vi Irodori nay dựa vào hanabira, đọc được, không cần sách scan**; sách "まるごとマスター" N5 scan đã owner xóa 2026-07-23. **Còn tồn đọng, chưa xóa:** 5 file Nihongo Sou Matome N1–N5 (ẢNH SCAN, không đọc được) — **`irodori/Irodori.pdf` ĐÃ RÚT khỏi danh sách đề xuất xoá (2026-07-27): nó chứa phần 入門/Starter A1 mà Z_all và ZZ_all KHÔNG có, không hề trùng** —, 3 file kanji subset (`kanji-jouyou`/`kanji-kyouiku`/`kanji-wanikani.json`, trùng `kanji.json`) — đã đề xuất xóa, owner chưa thao tác xong; giấy phép nội dung hanabira grammar CHƯA XÁC ĐỊNH biến thể CC cụ thể — cần owner xác nhận trước khi dùng chính thức) |
 
 ---
@@ -332,6 +332,18 @@ Hàn/Thái/Trung (`markdown_grammar_korean/`, `grammar_kr_KOREAN_*.json`,
 > **CHƯA XÁC MINH**, owner (hoặc phiên có mạng) cần mở 2 trang gốc còn lại,
 > xác nhận đường dẫn + điều khoản, đổi trạng thái sang "ĐÃ XÁC MINH".
 
+> **X2 KHÔNG DÙNG ĐƯỢC → phải bù bằng luật, không bằng tra cứu (owner chốt
+> 2026-07-28).** X2 là tầng duy nhất trả lời *"người bản ngữ có thật sự ghép hai
+> từ này không"*, mà nó chỉ có công cụ tra **online** (NLB/NLT), **không có bản
+> cục bộ** và môi trường build **chặn outbound**. Nên khi viết bài **không có
+> cách nào tra collocation**. Chỗ hổng này **KHÔNG bịt được bằng X1/X3**: X1/X3
+> chỉ nói loại từ + trợ từ bắt buộc, nên 「薬を飲む」 (đúng) và 「薬を食べる」
+> (sai) **qua được cả hai như nhau**. Cơ chế bù là **ranh giới nguồn ở §G11.3** —
+> trong mẫu câu chỉ thay bằng từ **cùng nguồn cùng bài** (giáo trình liệt kê =
+> giáo trình đã xác nhận ghép được), ngoài mẫu câu thì tự do. Xem mục "RANH GIỚI
+> CHỐNG LỖI KẾT HỢP TỪ" bên dưới. Nếu sau này có bản X2 cục bộ dùng được thì
+> **rà lại ranh giới đó** — nó là biện pháp thay thế, không phải mục tiêu.
+
 ## Danh sách CỤM CỐ ĐỊNH (feed §G1 / §G2)
 
 - **Đường dẫn file danh sách:** *(chưa khởi tạo)*.
@@ -428,7 +440,7 @@ mỗi nguồn dùng cho đúng việc nó mạnh nhất — **KHÔNG chia theo p
 | **Hội thoại nguyên đoạn** | **Irodori** | **NGUỒN DUY NHẤT** có đoạn nhiều lượt → §G10 (lấy nguyên đoạn) chỉ có một kênh, không có nguồn thay thế |
 | **Ngữ pháp** | **hanabira** + **`n5_tong-hop-ngu-phap-60-mau`** | **≥2 nguồn → ĐỐI CHIẾU BẮT BUỘC** (§G11.2) |
 | **Nghĩa / cách đọc / loại từ** | **JMdict** + **`n5_tong-hop-tu-vung-1021`** | **≥2 nguồn → ĐỐI CHIẾU BẮT BUỘC**. JMdict cũng là nguồn §X3/§X1 (xem Tầng X) |
-| **Từ vựng làm giàu** | **Collins 3000** + **n5** (`kanji-master`, `160-kanji`) | Kho từ để thay từ nội dung theo §G11.3 |
+| **Từ vựng bổ sung** | **Collins 3000** + **n5** | **CHỈ dùng ở chỗ KHÔNG ghép vào mẫu câu** — thẻ từ vựng riêng, tham khảo, ví dụ rời. **CẤM ghép vào mẫu của Irodori** (§G11.3) |
 | **Kanji** | **kanji-data** (`kanji.json`) + **`n5_kanji-master`** | **≥2 nguồn → ĐỐI CHIẾU BẮT BUỘC** |
 | **Mức lịch sự / vai vế** | **敬語の指針** + **bảng chuyển kính ngữ** | Hai file đã ghi ở mục "Bổ sung 2026-07-27 — KÍNH NGỮ" bên trên |
 | **Bài tập (chất liệu)** | **3 file Minna** | **NGUỒN DUY NHẤT** có bài tập thật → không có nguồn thay thế |
@@ -448,26 +460,86 @@ cho tầng của nó; gặp ca đó → §G9 (dừng, hỏi owner), không thay 
 > Trước khi một bài dùng tới file nào trong nhóm này, **phải mở file thật + ghi
 > dòng danh mục cho nó** (§G8 đòi ghi rõ đã mở nguồn nào, mục nào).
 
-### LÀM GIÀU TỪ VỰNG — ví dụ bằng tiếng Nhật (feed §G11.3)
+### RANH GIỚI CHỐNG LỖI KẾT HỢP TỪ — ví dụ tiếng Nhật (feed §G11.3)
 
-**ĐƯỢC thay** — từ nội dung, không phải cốt lõi ngữ pháp:
+**Tiếng Nhật KHÔNG có nguồn collocation dùng được trong dự án** (đã tra: không có
+bản mở). Hệ quả cụ thể — máy **không** phân biệt được hai câu này:
 
-| Nguồn viết | Được viết thành | Đã thay gì |
+| Câu | Thực tế | Máy thấy gì |
 |---|---|---|
-| 「イギリスから来ました」 | 「アメリカから来ました」 | quốc gia (danh từ nội dung) |
+| 「薬を飲む」 | **ĐÚNG** — cách nói thật của người Nhật | đúng ngữ pháp |
+| 「薬を食べる」 | **SAI** — người Nhật không nói thế | **cũng** đúng ngữ pháp |
 
-Cấu trúc giữ y nguyên: trợ từ `から`, thể `〜ました`, trật tự đầu-cuối câu —
-**không đụng** (đúng mục "PHẦN CỐT LÕI KHÔNG ĐƯỢC THAY" bên trên).
+JMdict cho biết 飲む/食べる đều là **tha động từ** đi với `を` (feed §X1/§X3) →
+**cả hai câu đều qua được tầng X**. Từ điển **không** nói cái nào tự nhiên. Vì vậy
+phải chặn bằng **ranh giới nguồn**, không phải bằng tra cứu.
 
-**KHÔNG được thay** — từ đó bắt buộc cho nghĩa của câu:
+**TRONG MẪU CÂU — chỉ từ CÙNG NGUỒN CÙNG BÀI:**
+
+| Mẫu lấy từ | Được thay bằng | Lý do được |
+|---|---|---|
+| Mẫu 「〜から来ました」 của Irodori bài đó | Tên quốc gia **mà chính bài Irodori đó liệt kê** (vd danh sách nước trong phần ことば của bài) | Giáo trình đã **xác nhận** những từ đó ghép được vào mẫu này |
+
+**CẤM** lấy một tên nước từ Collins 3000 / n5 rồi ghép vào mẫu của Irodori — kể cả
+khi trông hiển nhiên đúng: **không nguồn nào trong hai** xác nhận đúng **tổ hợp**
+đó. Cấu trúc thì vẫn giữ y nguyên như cũ (trợ từ `から`, thể `〜ました`, trật tự
+đầu-cuối câu — mục "PHẦN CỐT LÕI KHÔNG ĐƯỢC THAY" bên trên).
+
+**KHÔNG được thay dù cùng nguồn** — từ đó bắt buộc cho nghĩa của câu:
 
 | Câu nguồn | Vì sao giữ nguyên văn |
 |---|---|
-| 「医者が診察しています」 | Chính **医者** làm nên hành động 診察 trong câu; thay nghề khác là câu hỏng nghĩa |
+| 「医者が診察しています」 | Chính **医者** làm nên hành động 診察; thay nghề khác là câu hỏng nghĩa |
 
-Từ thay vào phải: **có trong nguồn** (Collins 3000 / n5 / JMdict…), **hợp trình độ
-bài**, **hợp nghĩa với vị trí** (tra tầng X). Báo cáo phải khai: đoạn nào **nguyên
-văn**, đoạn nào **đã thay từ** (thay chữ gì, lấy từ nguồn nào).
+**NGOÀI MẪU CÂU — dùng thoải mái Collins 3000 / n5 / JMdict / kanji-data:** thẻ từ
+vựng riêng, mục tham khảo (§B2b), ví dụ rời, ngữ pháp đối chiếu, nghĩa / cách đọc,
+kanji, mức lịch sự. **Mỗi ví dụ lấy NGUYÊN từ MỘT nguồn** — không ghép hai nguồn
+trong cùng một câu.
+
+Báo cáo phải khai: đoạn nào **nguyên văn**, đoạn nào **đã thay từ** (thay chữ gì,
+lấy từ **cùng bài của nguồn nào**).
+
+### BÀI TẬP — LẤY TỪ MINNA, ĐỔI VỎ (feed §G12)
+
+Nguồn cấp: **3 file Minna** (tầng "Bài tập" trong bảng trên — **nguồn DUY NHẤT** có
+bài tập thật). Giữ nguyên **điểm kiểm**, chỉ đổi **cách trả lời**:
+
+| Bài trong nguồn | Điểm kiểm (GIỮ NGUYÊN) | Đổi vỏ sang dạng NovaLang |
+|---|---|---|
+| Điền chỗ trống 「わたし＿田中です。」 → đáp án `は` | chọn đúng trợ từ chủ đề `は` | `multiple_choice` (4 phương án trợ từ) · `slot_ordering` (sắp mảnh) · `matching` |
+
+Không đổi câu, không đổi đáp án, không đổi điểm ngữ pháp đang kiểm — **chỉ đổi
+cách người học trả lời**. Nguồn không có bài phù hợp → mới tự soạn và **ghi rõ
+"tự soạn"** trong báo cáo (§G12).
+
+### PHƯƠNG ÁN NHIỄU của tiếng Nhật (feed §G13)
+
+**BA CA ĐÃ DÍNH THẬT** — nhiễu tưởng sai, hoá ra **cũng đúng** → câu có 2 đáp án
+đúng. Ghi lại để **cấm dùng lại làm lý do sai**:
+
+| Nhiễu đã dùng | Vì sao nó **ĐÚNG**, không sai |
+|---|---|
+| 「お名前お願いします」 | Lược trợ từ trước `お願いします` là **chuẩn đời thường** (`コーヒーお願いします`) — không sai ngữ pháp |
+| 「お名前は？」 sau khi đã tự giới thiệu | Hỏi lại tên đối phương sau khi tự giới thiệu là **tự nhiên** |
+| 「伊藤さんですか」 | Là câu hỏi xác nhận **hợp lệ** trong nhiều bối cảnh |
+
+**ĐƯỢC DÙNG — loại cơ học (sai chắc chắn, không thể vô tình đúng):**
+
+| Loại | Ví dụ dạng sai |
+|---|---|
+| Sai trợ từ | は ↔ が ↔ を ↔ も ↔ の |
+| Sai thể / mức lịch sự | lịch sự ↔ thường (`です` ↔ `だ`) |
+| Sai chia động từ | dạng chia không tồn tại / lệch thời |
+| Thiếu hoặc thừa `さん` | 「伊藤ですね」 (thiếu) · gắn `さん` vào chính mình (thừa) |
+| Thêm `お` cho cái của mình | 「私のお名前」 |
+| Lặp trợ từ | 「お名前はは？」 |
+
+**HẠN CHẾ — nhiễu là CẢ CỤM / CẢ CÂU:** phải kiểm nó có vô tình đúng trong đúng
+bối cảnh đó không (đúng ba ca trên là ví dụ thất bại). **Không chắc → đổi sang
+nhiễu cơ học** (§G13).
+
+Các dạng méo cố ý ở bảng trên **được miễn** luật "cụm không được LUÔN SAI" của
+§B16 — chúng tồn tại *chỉ để* làm phương án sai.
 
 ### MỐC ÁP DỤNG của tiếng Nhật (feed §G11.5)
 
