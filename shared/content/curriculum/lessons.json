@@ -84912,21 +84912,21 @@
           "id": "ja-daily_life-m01-u2-l1-greet-teacher-1"
         },
         {
-          "targetText": "おはようございます。",
-          "displayText": "おはようございます。",
-          "reading": "おはようございます。",
-          "speechText": "おはようございます",
+          "targetText": "おはようございます、佐藤（さとう）さん。",
+          "displayText": "おはようございます、佐藤（さとう）さん。",
+          "reading": "おはようございます、さとうさん。",
+          "speechText": "おはようございます、さとうさん",
           "translationByNative": {
-            "vi": "Chào em.",
-            "en": "Good morning.",
-            "ja": "おはようございます。"
+            "vi": "Chào em, Satō.",
+            "en": "Good morning, Satō.",
+            "ja": "おはようございます、佐藤さん。"
           },
           "translations": {
-            "vi": "Chào em.",
-            "en": "Good morning.",
-            "ja": "おはようございます。"
+            "vi": "Chào em, Satō.",
+            "en": "Good morning, Satō.",
+            "ja": "おはようございます、佐藤さん。"
           },
-          "meaningVi": "Chào em.",
+          "meaningVi": "Chào em, Satō.",
           "audioLocale": "ja-JP",
           "speakerId": "sensei",
           "id": "ja-daily_life-m01-u2-l1-greet-teacher-2"
@@ -84952,21 +84952,21 @@
           "id": "ja-daily_life-m01-u2-l1-greet-teacher-3"
         },
         {
-          "targetText": "ひさしぶりですね。ではまた。",
-          "displayText": "ひさしぶりですね。ではまた。",
-          "reading": "ひさしぶりですね。ではまた。",
-          "speechText": "ひさしぶりですね。ではまた",
+          "targetText": "ひさしぶりですね。",
+          "displayText": "ひさしぶりですね。",
+          "reading": "ひさしぶりですね。",
+          "speechText": "ひさしぶりですね",
           "translationByNative": {
-            "vi": "Lâu rồi không gặp nhỉ. Hẹn gặp lại.",
-            "en": "Long time no see. See you again.",
-            "ja": "ひさしぶりですね。ではまた。"
+            "vi": "Lâu rồi không gặp nhỉ.",
+            "en": "It has been a long time, hasn’t it.",
+            "ja": "ひさしぶりですね。"
           },
           "translations": {
-            "vi": "Lâu rồi không gặp nhỉ. Hẹn gặp lại.",
-            "en": "Long time no see. See you again.",
-            "ja": "ひさしぶりですね。ではまた。"
+            "vi": "Lâu rồi không gặp nhỉ.",
+            "en": "It has been a long time, hasn’t it.",
+            "ja": "ひさしぶりですね。"
           },
-          "meaningVi": "Lâu rồi không gặp nhỉ. Hẹn gặp lại.",
+          "meaningVi": "Lâu rồi không gặp nhỉ.",
           "audioLocale": "ja-JP",
           "speakerId": "sensei",
           "id": "ja-daily_life-m01-u2-l1-greet-teacher-4"
@@ -84990,6 +84990,26 @@
           "audioLocale": "ja-JP",
           "speakerId": "sato",
           "id": "ja-daily_life-m01-u2-l1-greet-teacher-5"
+        },
+        {
+          "targetText": "ではまた。",
+          "displayText": "ではまた。",
+          "reading": "ではまた。",
+          "speechText": "ではまた",
+          "translationByNative": {
+            "vi": "Thôi, hẹn gặp lại.",
+            "en": "Well then, see you again.",
+            "ja": "ではまた。"
+          },
+          "translations": {
+            "vi": "Thôi, hẹn gặp lại.",
+            "en": "Well then, see you again.",
+            "ja": "ではまた。"
+          },
+          "meaningVi": "Thôi, hẹn gặp lại.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sensei",
+          "id": "ja-daily_life-m01-u2-l1-greet-teacher-6"
         },
         {
           "targetText": "佐藤（さとう）さん、おはよう！",
@@ -85166,9 +85186,9 @@
             "ja": "長い休みのあと、二人は廊下で少し会い、それぞれの教室へ向かいます。"
           },
           "explanationByNative": {
-            "vi": "Với thầy cô dùng おはようございます, không dùng おはよう.\nGọi thầy là 先生, không gắn さん.\nひさしぶりですね dùng được cả hai chiều vì đã ở mức lịch sự.",
-            "en": "With a teacher use おはようございます, not おはよう.\nAddress the teacher as 先生, without adding さん.\nひさしぶりですね works in both directions because it is already polite.",
-            "ja": "先生には「おはようございます」を使い、「おはよう」は使いません。\n先生は「先生」と呼び、「さん」は付けません。\n「ひさしぶりですね」は丁寧なので、どちらからでも使えます。"
+            "vi": "Với thầy cô dùng おはようございます, không dùng おはよう.\nGọi thầy là 先生, không gắn さん.\nMỗi lượt chỉ làm một việc: chào trước, chia tay sau — không gộp cả hai vào một hơi.",
+            "en": "With a teacher use おはようございます, not おはよう.\nAddress the teacher as 先生, without adding さん.\nOne thing per turn: greet first, part afterwards — never both in one breath.",
+            "ja": "先生には「おはようございます」を使い、「おはよう」は使いません。\n先生は「先生」と呼び、「さん」は付けません。\n一回の発話で一つのことだけ言います。先にあいさつ、あとで別れの言葉。一息にまとめません。"
           },
           "lines": [
             {
@@ -85192,21 +85212,21 @@
               "id": "ja-daily_life-m01-u2-l1-greet-teacher-1"
             },
             {
-              "targetText": "おはようございます。",
-              "displayText": "おはようございます。",
-              "reading": "おはようございます。",
-              "speechText": "おはようございます",
+              "targetText": "おはようございます、佐藤（さとう）さん。",
+              "displayText": "おはようございます、佐藤（さとう）さん。",
+              "reading": "おはようございます、さとうさん。",
+              "speechText": "おはようございます、さとうさん",
               "translationByNative": {
-                "vi": "Chào em.",
-                "en": "Good morning.",
-                "ja": "おはようございます。"
+                "vi": "Chào em, Satō.",
+                "en": "Good morning, Satō.",
+                "ja": "おはようございます、佐藤さん。"
               },
               "translations": {
-                "vi": "Chào em.",
-                "en": "Good morning.",
-                "ja": "おはようございます。"
+                "vi": "Chào em, Satō.",
+                "en": "Good morning, Satō.",
+                "ja": "おはようございます、佐藤さん。"
               },
-              "meaningVi": "Chào em.",
+              "meaningVi": "Chào em, Satō.",
               "audioLocale": "ja-JP",
               "speakerId": "sensei",
               "id": "ja-daily_life-m01-u2-l1-greet-teacher-2"
@@ -85232,21 +85252,21 @@
               "id": "ja-daily_life-m01-u2-l1-greet-teacher-3"
             },
             {
-              "targetText": "ひさしぶりですね。ではまた。",
-              "displayText": "ひさしぶりですね。ではまた。",
-              "reading": "ひさしぶりですね。ではまた。",
-              "speechText": "ひさしぶりですね。ではまた",
+              "targetText": "ひさしぶりですね。",
+              "displayText": "ひさしぶりですね。",
+              "reading": "ひさしぶりですね。",
+              "speechText": "ひさしぶりですね",
               "translationByNative": {
-                "vi": "Lâu rồi không gặp nhỉ. Hẹn gặp lại.",
-                "en": "Long time no see. See you again.",
-                "ja": "ひさしぶりですね。ではまた。"
+                "vi": "Lâu rồi không gặp nhỉ.",
+                "en": "It has been a long time, hasn’t it.",
+                "ja": "ひさしぶりですね。"
               },
               "translations": {
-                "vi": "Lâu rồi không gặp nhỉ. Hẹn gặp lại.",
-                "en": "Long time no see. See you again.",
-                "ja": "ひさしぶりですね。ではまた。"
+                "vi": "Lâu rồi không gặp nhỉ.",
+                "en": "It has been a long time, hasn’t it.",
+                "ja": "ひさしぶりですね。"
               },
-              "meaningVi": "Lâu rồi không gặp nhỉ. Hẹn gặp lại.",
+              "meaningVi": "Lâu rồi không gặp nhỉ.",
               "audioLocale": "ja-JP",
               "speakerId": "sensei",
               "id": "ja-daily_life-m01-u2-l1-greet-teacher-4"
@@ -85270,6 +85290,26 @@
               "audioLocale": "ja-JP",
               "speakerId": "sato",
               "id": "ja-daily_life-m01-u2-l1-greet-teacher-5"
+            },
+            {
+              "targetText": "ではまた。",
+              "displayText": "ではまた。",
+              "reading": "ではまた。",
+              "speechText": "ではまた",
+              "translationByNative": {
+                "vi": "Thôi, hẹn gặp lại.",
+                "en": "Well then, see you again.",
+                "ja": "ではまた。"
+              },
+              "translations": {
+                "vi": "Thôi, hẹn gặp lại.",
+                "en": "Well then, see you again.",
+                "ja": "ではまた。"
+              },
+              "meaningVi": "Thôi, hẹn gặp lại.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sensei",
+              "id": "ja-daily_life-m01-u2-l1-greet-teacher-6"
             }
           ]
         },
@@ -86386,21 +86426,21 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "おはようございます。",
-                "displayText": "おはようございます。",
-                "reading": "おはようございます。",
-                "speechText": "おはようございます",
+                "targetText": "おはようございます、佐藤（さとう）さん。",
+                "displayText": "おはようございます、佐藤（さとう）さん。",
+                "reading": "おはようございます、さとうさん。",
+                "speechText": "おはようございます、さとうさん",
                 "translationByNative": {
-                  "vi": "Chào em.",
-                  "en": "Good morning.",
-                  "ja": "おはようございます。"
+                  "vi": "Chào em, Satō.",
+                  "en": "Good morning, Satō.",
+                  "ja": "おはようございます、佐藤さん。"
                 },
                 "translations": {
-                  "vi": "Chào em.",
-                  "en": "Good morning.",
-                  "ja": "おはようございます。"
+                  "vi": "Chào em, Satō.",
+                  "en": "Good morning, Satō.",
+                  "ja": "おはようございます、佐藤さん。"
                 },
-                "meaningVi": "Chào em.",
+                "meaningVi": "Chào em, Satō.",
                 "audioLocale": "ja-JP",
                 "speakerId": "sensei"
               },
@@ -86424,21 +86464,21 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "ひさしぶりですね。ではまた。",
-                "displayText": "ひさしぶりですね。ではまた。",
-                "reading": "ひさしぶりですね。ではまた。",
-                "speechText": "ひさしぶりですね。ではまた",
+                "targetText": "ひさしぶりですね。",
+                "displayText": "ひさしぶりですね。",
+                "reading": "ひさしぶりですね。",
+                "speechText": "ひさしぶりですね",
                 "translationByNative": {
-                  "vi": "Lâu rồi không gặp nhỉ. Hẹn gặp lại.",
-                  "en": "Long time no see. See you again.",
-                  "ja": "ひさしぶりですね。ではまた。"
+                  "vi": "Lâu rồi không gặp nhỉ.",
+                  "en": "It has been a long time, hasn’t it.",
+                  "ja": "ひさしぶりですね。"
                 },
                 "translations": {
-                  "vi": "Lâu rồi không gặp nhỉ. Hẹn gặp lại.",
-                  "en": "Long time no see. See you again.",
-                  "ja": "ひさしぶりですね。ではまた。"
+                  "vi": "Lâu rồi không gặp nhỉ.",
+                  "en": "It has been a long time, hasn’t it.",
+                  "ja": "ひさしぶりですね。"
                 },
-                "meaningVi": "Lâu rồi không gặp nhỉ. Hẹn gặp lại.",
+                "meaningVi": "Lâu rồi không gặp nhỉ.",
                 "audioLocale": "ja-JP",
                 "speakerId": "sensei"
               },
@@ -86460,28 +86500,47 @@
                 "meaningVi": "Vậy hẹn gặp lại thầy ạ.",
                 "audioLocale": "ja-JP",
                 "speakerId": "sato"
+              },
+              {
+                "targetText": "ではまた。",
+                "displayText": "ではまた。",
+                "reading": "ではまた。",
+                "speechText": "ではまた",
+                "translationByNative": {
+                  "vi": "Thôi, hẹn gặp lại.",
+                  "en": "Well then, see you again.",
+                  "ja": "ではまた。"
+                },
+                "translations": {
+                  "vi": "Thôi, hẹn gặp lại.",
+                  "en": "Well then, see you again.",
+                  "ja": "ではまた。"
+                },
+                "meaningVi": "Thôi, hẹn gặp lại.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sensei"
               }
             ],
             "explanation": [
               "Với thầy cô dùng おはようございます, không dùng おはよう.",
               "Gọi thầy là 先生, không gắn さん.",
-              "ひさしぶりですね dùng được cả hai chiều vì đã ở mức lịch sự."
+              "Mỗi lượt chỉ làm một việc: chào trước, chia tay sau — không gộp cả hai vào một hơi."
             ],
             "explanationByNative": {
               "vi": [
                 "Với thầy cô dùng おはようございます, không dùng おはよう.",
                 "Gọi thầy là 先生, không gắn さん.",
-                "ひさしぶりですね dùng được cả hai chiều vì đã ở mức lịch sự."
+                "Mỗi lượt chỉ làm một việc: chào trước, chia tay sau — không gộp cả hai vào một hơi."
               ],
               "en": [
                 "With a teacher use おはようございます, not おはよう.",
                 "Address the teacher as 先生, without adding さん.",
-                "ひさしぶりですね works in both directions because it is already polite."
+                "One thing per turn: greet first, part afterwards — never both in one breath."
               ],
               "ja": [
                 "先生には「おはようございます」を使い、「おはよう」は使いません。",
                 "先生は「先生」と呼び、「さん」は付けません。",
-                "「ひさしぶりですね」は丁寧なので、どちらからでも使えます。"
+                "一回の発話で一つのことだけ言います。先にあいさつ、あとで別れの言葉。一息にまとめません。"
               ]
             }
           },
@@ -88244,17 +88303,16 @@
                 "en": "The first day back at school after the break",
                 "ja": "休み明け、学校に戻る初日"
               },
-              "scenarioDescription": "Sau kỳ nghỉ dài, Satō gặp lại thầy ở hành lang rồi gặp lại hai bạn cùng lớp ở sân trường. Cùng một ý chào, hai mức lịch sự khác nhau.",
+              "scenarioDescription": "Sau kỳ nghỉ dài, Satō gặp lại thầy ở hành lang rồi gặp lại bạn cùng lớp ở sân trường. Cùng một ý chào, hai mức lịch sự khác nhau.",
               "scenarioDescriptionByNative": {
-                "vi": "Sau kỳ nghỉ dài, Satō gặp lại thầy ở hành lang rồi gặp lại hai bạn cùng lớp ở sân trường. Cùng một ý chào, hai mức lịch sự khác nhau.",
-                "en": "After a long break, Satō meets the teacher again in the hallway and then two classmates in the schoolyard. The same greeting, at two different politeness levels.",
-                "ja": "長い休みのあと、佐藤さんは廊下で先生に、そのあと校庭でクラスメイト二人に再会します。同じあいさつを、二つの丁寧さで使います。"
+                "vi": "Sau kỳ nghỉ dài, Satō gặp lại thầy ở hành lang rồi gặp lại bạn cùng lớp ở sân trường. Cùng một ý chào, hai mức lịch sự khác nhau.",
+                "en": "After a long break, Satō meets the teacher again in the hallway and then a classmate in the schoolyard. The same greeting, at two different politeness levels.",
+                "ja": "長い休みのあと、佐藤さんは廊下で先生に、そのあと校庭でクラスメイトに再会します。同じあいさつを、二つの丁寧さで使います。"
               },
               "characterIds": [
                 "sato",
                 "sensei",
-                "tanaka",
-                "ito"
+                "tanaka"
               ],
               "dialogueLines": [
                 {
@@ -88398,6 +88456,26 @@
                   "romanization": "deha mata."
                 },
                 {
+                  "targetText": "ではまた。",
+                  "displayText": "ではまた。",
+                  "reading": "ではまた。",
+                  "speechText": "ではまた",
+                  "translationByNative": {
+                    "vi": "Thôi, hẹn gặp lại.",
+                    "en": "Well then, see you again.",
+                    "ja": "ではまた。"
+                  },
+                  "translations": {
+                    "vi": "Thôi, hẹn gặp lại.",
+                    "en": "Well then, see you again.",
+                    "ja": "ではまた。"
+                  },
+                  "meaningVi": "Thôi, hẹn gặp lại.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sensei",
+                  "romanization": "deha mata."
+                },
+                {
                   "targetText": "佐藤（さとう）さん、おはよう！",
                   "displayText": "佐藤（さとう）さん、おはよう！",
                   "reading": "さとうさん、おはよう！",
@@ -88478,26 +88556,6 @@
                   "romanization": "ē, hisashiburi."
                 },
                 {
-                  "targetText": "佐藤（さとう）さん、久（ひさ）しぶり！",
-                  "displayText": "佐藤（さとう）さん、久（ひさ）しぶり！",
-                  "reading": "さとうさん、ひさしぶり！",
-                  "speechText": "さとうさん、ひさしぶり",
-                  "translationByNative": {
-                    "vi": "Satō ơi, lâu rồi không gặp!",
-                    "en": "Satō, long time no see!",
-                    "ja": "佐藤さん、久しぶり！"
-                  },
-                  "translations": {
-                    "vi": "Satō ơi, lâu rồi không gặp!",
-                    "en": "Satō, long time no see!",
-                    "ja": "佐藤さん、久しぶり！"
-                  },
-                  "meaningVi": "Satō ơi, lâu rồi không gặp!",
-                  "audioLocale": "ja-JP",
-                  "speakerId": "ito",
-                  "romanization": "Satō-san, hisashiburi!"
-                },
-                {
                   "targetText": "じゃあね。",
                   "displayText": "じゃあね。",
                   "reading": "じゃあね。",
@@ -88540,7 +88598,7 @@
               ],
               "sceneDividers": [
                 {
-                  "afterDialogueLine": 7,
+                  "afterDialogueLine": 8,
                   "targetText": "そのあと",
                   "translationByNative": {
                     "vi": "Sau đó",

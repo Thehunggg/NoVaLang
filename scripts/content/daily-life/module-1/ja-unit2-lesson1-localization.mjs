@@ -180,13 +180,12 @@ add('佐藤さん + また + 会おう → 佐藤さん、また会おう。 で
 
 // ── Q14 scenario + dialogue line translations ───────────────────────────
 add('Ngày đầu đi học lại sau kỳ nghỉ', 'The first day back at school after the break', '休み明け、学校に戻る初日');
-add('Sau kỳ nghỉ dài, Satō gặp lại thầy ở hành lang rồi gặp lại hai bạn cùng lớp ở sân trường. Cùng một ý chào, hai mức lịch sự khác nhau.', 'After a long break, Satō meets the teacher again in the hallway and then two classmates in the schoolyard. The same greeting, at two different politeness levels.', '長い休みのあと、佐藤さんは廊下で先生に、そのあと校庭でクラスメイト二人に再会します。同じあいさつを、二つの丁寧さで使います。');
+add('Sau kỳ nghỉ dài, Satō gặp lại thầy ở hành lang rồi gặp lại bạn cùng lớp ở sân trường. Cùng một ý chào, hai mức lịch sự khác nhau.', 'After a long break, Satō meets the teacher again in the hallway and then a classmate in the schoolyard. The same greeting, at two different politeness levels.', '長い休みのあと、佐藤さんは廊下で先生に、そのあと校庭でクラスメイトに再会します。同じあいさつを、二つの丁寧さで使います。');
 add('Sau đó', 'After that', 'そのあと');
 add('Thưa thầy, em chào thầy ạ.', 'Good morning, sensei.', '先生、おはようございます。');
-add('Chào em.', 'Good morning.', 'おはようございます。');
 add('Chào em, Satō.', 'Good morning, Satō.', 'おはようございます、佐藤さん。');
-add('Lâu rồi không gặp nhỉ. Hẹn gặp lại.', 'Long time no see. See you again.', 'ひさしぶりですね。ではまた。');
 add('Vậy hẹn gặp lại thầy ạ.', 'See you again, sensei.', 'ではまた。');
+add('Mỗi lượt chỉ làm một việc: chào trước, chia tay sau — không gộp cả hai vào một hơi.', 'One thing per turn: greet first, part afterwards — never both in one breath.', '一回の発話で一つのことだけ言います。先にあいさつ、あとで別れの言葉。一息にまとめません。');
 add('Mong thầy giúp đỡ ạ.', 'I look forward to your guidance.', 'よろしくお願いします。');
 add('Thầy cũng vậy, mong em cố gắng.', 'Likewise — I look forward to working with you.', 'こちらこそ、よろしくお願いします。');
 add('Satō ơi, chào buổi sáng!', 'Good morning, Satō!', '佐藤さん、おはよう！');
