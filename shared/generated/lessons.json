@@ -82489,11 +82489,11 @@
               "en": "Take care (on your way).",
               "ja": "気をつけて。"
             },
-            "register": "Lịch sự.",
+            "register": "Thân mật.",
             "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
+              "vi": "Thân mật.",
+              "en": "Casual.",
+              "ja": "カジュアル。"
             },
             "example": {
               "text": "気（き）をつけて。",

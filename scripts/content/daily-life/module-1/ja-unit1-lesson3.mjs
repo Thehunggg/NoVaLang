@@ -263,7 +263,7 @@ const JA_UNIT1_LESSON3_SOURCE = {
       // không tính ngân sách từ mới, không dùng ở Q1–Q13. Mỗi mục đủ trường.
       vocabularyReferences: [
         { term: 'じゃあね', reading: 'じゃあね', speechText: 'じゃあね', meaning: 'Thôi nhé (chào tạm biệt thân mật).', register: 'Thân mật.', example: example('じゃあね。また明日。', 'じゃあね。またあした。', 'Thôi nhé. Hẹn mai gặp.') },
-        { term: '気（き）をつけて', reading: 'きをつけて', speechText: 'きをつけて', meaning: 'Đi cẩn thận nhé / Giữ gìn nhé.', register: 'Lịch sự.', example: example('気（き）をつけて。', 'きをつけて。', 'Đi cẩn thận nhé.') },
+        { term: '気（き）をつけて', reading: 'きをつけて', speechText: 'きをつけて', meaning: 'Đi cẩn thận nhé / Giữ gìn nhé.', register: 'Thân mật.', example: example('気（き）をつけて。', 'きをつけて。', 'Đi cẩn thận nhé.') },
       ],
       dialogueGroups: [
         {
