@@ -187,10 +187,17 @@ theo** — đừng bẻ nội dung cho vừa một con số chưa ai kiểm.
 
 ### CÒN LẠI
 
-- **BƯỚC 2: u2-l2 「Hỏi thăm và đáp」** (お元気ですか + cách đáp) — xuất bản
-  đọc cho owner duyệt TRƯỚC, chưa ghi data. Đã biết trước: 「お元気ですか」 có
-  nguyên văn ở cả n5 và hanabira; **câu ĐÁP lại thì CHƯA quét nguồn** — phải
-  quét trước khi viết, không có nguyên văn thì báo chứ không tự chế.
+- **BƯỚC 2: u2-l2 「Đáp lời hỏi thăm」** (お元気ですか + cách đáp) — tên bài do
+  **owner chốt 2026-07-28** (đã đổi trong blueprint + data; **KHÔNG lấy tên bài
+  của Irodori** 「日本に来てどのぐらいですか？」 — chép tên bài là chép cách họ
+  chia chương trình). Xuất bản đọc cho owner duyệt TRƯỚC, chưa ghi data. Đã biết
+  trước: 「お元気ですか」 có nguyên văn ở cả n5 và hanabira; **câu ĐÁP lại thì
+  CHƯA quét nguồn** — phải quét trước khi viết, không có nguyên văn thì báo chứ
+  không tự chế.
+  **Bài này là bài ĐẦU TIÊN áp §G11** (chia việc theo tầng nguồn, không dồn một
+  nguồn) — phải mở đủ nguồn theo bảng tầng trong `scripts/content/sources/ja.md`
+  và báo cáo kèm **bảng "phần nào lấy từ nguồn nào"** (§G11.4). Phải chạy ở
+  **LOCAL** vì cần mở `local-sources/` (cloud không có).
 - **Bài tổng hợp Unit 2 (18 câu)** — việc riêng, sau khi cả hai lesson duyệt.
 
 ## NỢ NỘI DUNG — 「お元気で」 thẻ từ vựng ĐÁ NHAU với hội thoại cùng bài — 2026-07-25

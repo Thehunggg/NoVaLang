@@ -399,12 +399,15 @@ export const DAILY_LIFE_MODULES = [
               '아는 사람에게 인사하기',
               '向认识的人问候',
             )),
+          // Title is the OWNER's own wording (chốt 2026-07-28), deliberately
+          // NOT the source textbook's lesson title — copying a textbook's
+          // lesson title copies its authors' framing of the syllabus.
           lessonSlot(2, L(
-              'Ask How Someone Is Doing & Reply',
-              'Hỏi thăm và đáp',
-              '様子を尋ねて答える',
-              '안부를 묻고 답하기',
-              '问候近况并回应',
+              'Replying When Asked How You Are',
+              'Đáp lời hỏi thăm',
+              '様子を尋ねられて答える',
+              '안부 인사에 답하기',
+              '回应他人的问候',
             )),
         ],
         { order: 2, tier: 'basic' },

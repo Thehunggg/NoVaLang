@@ -42576,88 +42576,88 @@
       "levelRange": "A0–A1",
       "placementTag": "daily_life_basic",
       "template": "vocabularyLesson",
-      "title": "Ask How Someone Is Doing & Reply",
-      "titleVi": "Hỏi thăm và đáp",
+      "title": "Replying When Asked How You Are",
+      "titleVi": "Đáp lời hỏi thăm",
       "titleByNative": {
-        "en": "Ask How Someone Is Doing & Reply",
-        "vi": "Hỏi thăm và đáp",
-        "ja": "様子を尋ねて答える",
-        "ko": "안부를 묻고 답하기",
-        "zh": "问候近况并回应"
+        "en": "Replying When Asked How You Are",
+        "vi": "Đáp lời hỏi thăm",
+        "ja": "様子を尋ねられて答える",
+        "ko": "안부 인사에 답하기",
+        "zh": "回应他人的问候"
       },
-      "description": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-      "descriptionVi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "description": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+      "descriptionVi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
       "descriptionByNative": {
-        "en": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「様子を尋ねて答える」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"안부를 묻고 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“问候近况并回应”。"
+        "en": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+        "vi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
+        "ja": "日常会話で「様子を尋ねられて答える」を自然に使えるようになります。",
+        "ko": "일상 대화에서 \"안부 인사에 답하기\"를 자연스럽게 사용합니다.",
+        "zh": "在日常交流中自然使用“回应他人的问候”。"
       },
-      "canDoObjective": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-      "canDoObjectiveVi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "canDoObjective": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+      "canDoObjectiveVi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
       "canDoObjectiveByNative": {
-        "en": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「様子を尋ねて答える」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"안부를 묻고 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“问候近况并回应”。"
+        "en": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+        "vi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
+        "ja": "日常会話で「様子を尋ねられて答える」を自然に使えるようになります。",
+        "ko": "일상 대화에서 \"안부 인사에 답하기\"를 자연스럽게 사용합니다.",
+        "zh": "在日常交流中自然使用“回应他人的问候”。"
       },
       "goalByNative": {
-        "en": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「様子を尋ねて答える」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"안부를 묻고 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“问候近况并回应”。"
+        "en": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+        "vi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
+        "ja": "日常会話で「様子を尋ねられて答える」を自然に使えるようになります。",
+        "ko": "일상 대화에서 \"안부 인사에 답하기\"를 자연스럽게 사용합니다.",
+        "zh": "在日常交流中自然使用“回应他人的问候”。"
       },
       "situationByNative": {
-        "en": "A real-life moment where you need \"Ask How Someone Is Doing & Reply\".",
-        "vi": "Tình huống thật khi bạn cần dùng \"Hỏi thăm và đáp\".",
-        "ja": "「様子を尋ねて答える」が必要な実生活の場面。",
-        "ko": "\"안부를 묻고 답하기\"가 필요한 실제 상황.",
-        "zh": "需要用到“问候近况并回应”的真实场景。"
+        "en": "A real-life moment where you need \"Replying When Asked How You Are\".",
+        "vi": "Tình huống thật khi bạn cần dùng \"Đáp lời hỏi thăm\".",
+        "ja": "「様子を尋ねられて答える」が必要な実生活の場面。",
+        "ko": "\"안부 인사에 답하기\"가 필요한 실제 상황.",
+        "zh": "需要用到“回应他人的问候”的真实场景。"
       },
       "canSayByNative": {
-        "en": "After this lesson, you can handle \"Ask How Someone Is Doing & Reply\" in simple conversations.",
-        "vi": "Sau bài này, bạn có thể dùng \"Hỏi thăm và đáp\" trong hội thoại đơn giản.",
-        "ja": "このレッスンの後、「様子を尋ねて答える」を簡単な会話で使えます。",
-        "ko": "이 레슨 후 간단한 대화에서 \"안부를 묻고 답하기\"를 사용할 수 있습니다.",
-        "zh": "学完本课后，你可以在简单对话中使用“问候近况并回应”。"
+        "en": "After this lesson, you can handle \"Replying When Asked How You Are\" in simple conversations.",
+        "vi": "Sau bài này, bạn có thể dùng \"Đáp lời hỏi thăm\" trong hội thoại đơn giản.",
+        "ja": "このレッスンの後、「様子を尋ねられて答える」を簡単な会話で使えます。",
+        "ko": "이 레슨 후 간단한 대화에서 \"안부 인사에 답하기\"를 사용할 수 있습니다.",
+        "zh": "学完本课后，你可以在简单对话中使用“回应他人的问候”。"
       },
       "objectives": [
-        "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation."
+        "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation."
       ],
       "objectivesVi": [
-        "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày."
+        "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày."
       ],
       "introPoints": [
-        "A real-life moment where you need \"Ask How Someone Is Doing & Reply\".",
-        "After this lesson, you can handle \"Ask How Someone Is Doing & Reply\" in simple conversations."
+        "A real-life moment where you need \"Replying When Asked How You Are\".",
+        "After this lesson, you can handle \"Replying When Asked How You Are\" in simple conversations."
       ],
       "introPointsVi": [
-        "Tình huống thật khi bạn cần dùng \"Hỏi thăm và đáp\".",
-        "Sau bài này, bạn có thể dùng \"Hỏi thăm và đáp\" trong hội thoại đơn giản."
+        "Tình huống thật khi bạn cần dùng \"Đáp lời hỏi thăm\".",
+        "Sau bài này, bạn có thể dùng \"Đáp lời hỏi thăm\" trong hội thoại đơn giản."
       ],
       "introPointsByNative": {
         "vi": [
-          "Tình huống thật khi bạn cần dùng \"Hỏi thăm và đáp\".",
-          "Sau bài này, bạn có thể dùng \"Hỏi thăm và đáp\" trong hội thoại đơn giản."
+          "Tình huống thật khi bạn cần dùng \"Đáp lời hỏi thăm\".",
+          "Sau bài này, bạn có thể dùng \"Đáp lời hỏi thăm\" trong hội thoại đơn giản."
         ],
         "en": [
-          "A real-life moment where you need \"Ask How Someone Is Doing & Reply\".",
-          "After this lesson, you can handle \"Ask How Someone Is Doing & Reply\" in simple conversations."
+          "A real-life moment where you need \"Replying When Asked How You Are\".",
+          "After this lesson, you can handle \"Replying When Asked How You Are\" in simple conversations."
         ],
         "ja": [
-          "「様子を尋ねて答える」が必要な実生活の場面。",
-          "このレッスンの後、「様子を尋ねて答える」を簡単な会話で使えます。"
+          "「様子を尋ねられて答える」が必要な実生活の場面。",
+          "このレッスンの後、「様子を尋ねられて答える」を簡単な会話で使えます。"
         ],
         "ko": [
-          "\"안부를 묻고 답하기\"가 필요한 실제 상황.",
-          "이 레슨 후 간단한 대화에서 \"안부를 묻고 답하기\"를 사용할 수 있습니다."
+          "\"안부 인사에 답하기\"가 필요한 실제 상황.",
+          "이 레슨 후 간단한 대화에서 \"안부 인사에 답하기\"를 사용할 수 있습니다."
         ],
         "zh": [
-          "需要用到“问候近况并回应”的真实场景。",
-          "学完本课后，你可以在简单对话中使用“问候近况并回应”。"
+          "需要用到“回应他人的问候”的真实场景。",
+          "学完本课后，你可以在简单对话中使用“回应他人的问候”。"
         ]
       },
       "estimatedMinutes": 8,
@@ -88625,88 +88625,88 @@
       "levelRange": "A0–A1",
       "placementTag": "daily_life_basic",
       "template": "vocabularyLesson",
-      "title": "Ask How Someone Is Doing & Reply",
-      "titleVi": "Hỏi thăm và đáp",
+      "title": "Replying When Asked How You Are",
+      "titleVi": "Đáp lời hỏi thăm",
       "titleByNative": {
-        "en": "Ask How Someone Is Doing & Reply",
-        "vi": "Hỏi thăm và đáp",
-        "ja": "様子を尋ねて答える",
-        "ko": "안부를 묻고 답하기",
-        "zh": "问候近况并回应"
+        "en": "Replying When Asked How You Are",
+        "vi": "Đáp lời hỏi thăm",
+        "ja": "様子を尋ねられて答える",
+        "ko": "안부 인사에 답하기",
+        "zh": "回应他人的问候"
       },
-      "description": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-      "descriptionVi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "description": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+      "descriptionVi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
       "descriptionByNative": {
-        "en": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「様子を尋ねて答える」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"안부를 묻고 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“问候近况并回应”。"
+        "en": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+        "vi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
+        "ja": "日常会話で「様子を尋ねられて答える」を自然に使えるようになります。",
+        "ko": "일상 대화에서 \"안부 인사에 답하기\"를 자연스럽게 사용합니다.",
+        "zh": "在日常交流中自然使用“回应他人的问候”。"
       },
-      "canDoObjective": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-      "canDoObjectiveVi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "canDoObjective": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+      "canDoObjectiveVi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
       "canDoObjectiveByNative": {
-        "en": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「様子を尋ねて答える」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"안부를 묻고 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“问候近况并回应”。"
+        "en": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+        "vi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
+        "ja": "日常会話で「様子を尋ねられて答える」を自然に使えるようになります。",
+        "ko": "일상 대화에서 \"안부 인사에 답하기\"를 자연스럽게 사용합니다.",
+        "zh": "在日常交流中自然使用“回应他人的问候”。"
       },
       "goalByNative": {
-        "en": "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「様子を尋ねて答える」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"안부를 묻고 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“问候近况并回应”。"
+        "en": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
+        "vi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
+        "ja": "日常会話で「様子を尋ねられて答える」を自然に使えるようになります。",
+        "ko": "일상 대화에서 \"안부 인사에 답하기\"를 자연스럽게 사용합니다.",
+        "zh": "在日常交流中自然使用“回应他人的问候”。"
       },
       "situationByNative": {
-        "en": "A real-life moment where you need \"Ask How Someone Is Doing & Reply\".",
-        "vi": "Tình huống thật khi bạn cần dùng \"Hỏi thăm và đáp\".",
-        "ja": "「様子を尋ねて答える」が必要な実生活の場面。",
-        "ko": "\"안부를 묻고 답하기\"가 필요한 실제 상황.",
-        "zh": "需要用到“问候近况并回应”的真实场景。"
+        "en": "A real-life moment where you need \"Replying When Asked How You Are\".",
+        "vi": "Tình huống thật khi bạn cần dùng \"Đáp lời hỏi thăm\".",
+        "ja": "「様子を尋ねられて答える」が必要な実生活の場面。",
+        "ko": "\"안부 인사에 답하기\"가 필요한 실제 상황.",
+        "zh": "需要用到“回应他人的问候”的真实场景。"
       },
       "canSayByNative": {
-        "en": "After this lesson, you can handle \"Ask How Someone Is Doing & Reply\" in simple conversations.",
-        "vi": "Sau bài này, bạn có thể dùng \"Hỏi thăm và đáp\" trong hội thoại đơn giản.",
-        "ja": "このレッスンの後、「様子を尋ねて答える」を簡単な会話で使えます。",
-        "ko": "이 레슨 후 간단한 대화에서 \"안부를 묻고 답하기\"를 사용할 수 있습니다.",
-        "zh": "学完本课后，你可以在简单对话中使用“问候近况并回应”。"
+        "en": "After this lesson, you can handle \"Replying When Asked How You Are\" in simple conversations.",
+        "vi": "Sau bài này, bạn có thể dùng \"Đáp lời hỏi thăm\" trong hội thoại đơn giản.",
+        "ja": "このレッスンの後、「様子を尋ねられて答える」を簡単な会話で使えます。",
+        "ko": "이 레슨 후 간단한 대화에서 \"안부 인사에 답하기\"를 사용할 수 있습니다.",
+        "zh": "学完本课后，你可以在简单对话中使用“回应他人的问候”。"
       },
       "objectives": [
-        "Learn to use \"Ask How Someone Is Doing & Reply\" naturally in daily conversation."
+        "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation."
       ],
       "objectivesVi": [
-        "Học cách dùng \"Hỏi thăm và đáp\" một cách tự nhiên trong giao tiếp hằng ngày."
+        "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày."
       ],
       "introPoints": [
-        "A real-life moment where you need \"Ask How Someone Is Doing & Reply\".",
-        "After this lesson, you can handle \"Ask How Someone Is Doing & Reply\" in simple conversations."
+        "A real-life moment where you need \"Replying When Asked How You Are\".",
+        "After this lesson, you can handle \"Replying When Asked How You Are\" in simple conversations."
       ],
       "introPointsVi": [
-        "Tình huống thật khi bạn cần dùng \"Hỏi thăm và đáp\".",
-        "Sau bài này, bạn có thể dùng \"Hỏi thăm và đáp\" trong hội thoại đơn giản."
+        "Tình huống thật khi bạn cần dùng \"Đáp lời hỏi thăm\".",
+        "Sau bài này, bạn có thể dùng \"Đáp lời hỏi thăm\" trong hội thoại đơn giản."
       ],
       "introPointsByNative": {
         "vi": [
-          "Tình huống thật khi bạn cần dùng \"Hỏi thăm và đáp\".",
-          "Sau bài này, bạn có thể dùng \"Hỏi thăm và đáp\" trong hội thoại đơn giản."
+          "Tình huống thật khi bạn cần dùng \"Đáp lời hỏi thăm\".",
+          "Sau bài này, bạn có thể dùng \"Đáp lời hỏi thăm\" trong hội thoại đơn giản."
         ],
         "en": [
-          "A real-life moment where you need \"Ask How Someone Is Doing & Reply\".",
-          "After this lesson, you can handle \"Ask How Someone Is Doing & Reply\" in simple conversations."
+          "A real-life moment where you need \"Replying When Asked How You Are\".",
+          "After this lesson, you can handle \"Replying When Asked How You Are\" in simple conversations."
         ],
         "ja": [
-          "「様子を尋ねて答える」が必要な実生活の場面。",
-          "このレッスンの後、「様子を尋ねて答える」を簡単な会話で使えます。"
+          "「様子を尋ねられて答える」が必要な実生活の場面。",
+          "このレッスンの後、「様子を尋ねられて答える」を簡単な会話で使えます。"
         ],
         "ko": [
-          "\"안부를 묻고 답하기\"가 필요한 실제 상황.",
-          "이 레슨 후 간단한 대화에서 \"안부를 묻고 답하기\"를 사용할 수 있습니다."
+          "\"안부 인사에 답하기\"가 필요한 실제 상황.",
+          "이 레슨 후 간단한 대화에서 \"안부 인사에 답하기\"를 사용할 수 있습니다."
         ],
         "zh": [
-          "需要用到“问候近况并回应”的真实场景。",
-          "学完本课后，你可以在简单对话中使用“问候近况并回应”。"
+          "需要用到“回应他人的问候”的真实场景。",
+          "学完本课后，你可以在简单对话中使用“回应他人的问候”。"
         ]
       },
       "estimatedMinutes": 8,
