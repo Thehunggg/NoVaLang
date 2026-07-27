@@ -243,6 +243,36 @@ thì viết ở `notes`, không nhét vào `register`.
   nhắc nhiều lần, nên chặn build chứ không nhắc nhở. Áp cho cả `register` và
   `registerByNative`, kiểm từng locale riêng (lệch một locale cũng bắt).
 
+**B2f. NGHĨA CỦA TỪ CHƯA DẠY TRONG HỘI THOẠI — CƠ CHẾ CHƯA CÓ.**
+(Kiểm 2026-07-27. §G7 vùng B điều kiện 3 phụ thuộc mục này.)
+
+**Trạng thái: CHƯA CÓ.** Đã soi cả schema lẫn UI, không phải suy đoán:
+- `shared/types.ts` — không có trường `gloss` / `annotation` / `newWords` /
+  `note` nào ở cấp dòng hội thoại hay cấp nhóm hội thoại.
+- Model Flutter `PracticeDialogueLine` chỉ có `speakerId` · `targetText` ·
+  `reading` · `speechText` · `translation` · `audioLocale` · `romanization`.
+- `_DialoguePanel` (màn card 3) chỉ render `title` · `situation` · `lines` ·
+  `explanation`. `explanation` là mảng chuỗi giải thích cho CẢ NHÓM, không gắn
+  được vào một từ.
+- `vocabularyReferences` (§B2b) có đủ trường nghĩa, nhưng nó nằm ở **card 2** và
+  mang nghĩa "biến thể của cụm đã dạy" — không phải "từ lạ vừa gặp trong đoạn
+  hội thoại này". Dùng nó cho việc này là bẻ cong ý nghĩa của trường.
+
+→ **Hệ quả bắt buộc:** cho tới khi có cơ chế, **§G7 vùng B chưa dùng được**.
+Bài viết trong thời gian này vẫn theo mức nghiêm của vùng A cho toàn bài.
+Không được lấy cớ "luật đã nới" để đưa từ chưa dạy vào hội thoại khi người học
+không có chỗ nào tra nghĩa.
+
+**Đề xuất (CHƯA làm, chờ owner duyệt):** thêm trường TUỲ CHỌN
+`newWords[]` ở cấp NHÓM hội thoại và ở Q14, mỗi mục gồm `term` ·
+`reading` · `meaning` (qua `*ByNative`), đúng hình dạng đã dùng ở
+`vocabularyReferences` để không đẻ ra kiểu dữ liệu thứ hai. Render bằng
+`_ContentPanel` + `_DetailList` sẵn có, ngay dưới `explanation`. Đụng: schema
+(`shared/types.ts`), validator (kiểm hình dạng + kiểm mọi từ chưa dạy trong
+đoạn đều được khai), 2 chỗ render (`lesson_five_card_pages.dart`,
+`five_card_exercise_flow.dart`), 1 khoá i18n, và test. Trường TUỲ CHỌN nên
+mọi bài đang có vẫn hợp lệ nguyên trạng.
+
 **B3. Card 3 — Dialogue.** (Owner §6; ràng buộc §D3)
 - **Đúng 3 nhóm, mỗi nhóm 4–6 dòng** (code ép). Tự nhiên, mục đích giao tiếp
   rõ, lượt sau phản ứng hợp lý với lượt trước, phù hợp tình huống. Trọng tâm là
@@ -944,10 +974,65 @@ xác minh. **Thà câu đơn giản chắc đúng.**
   nguồn → **KHÔNG dùng**. Mọi yếu tố mượn trước phải **ĐÁNH DẤU trong báo cáo**
   (thuộc CẦN SOI KỸ).
 
-**G7 — PHẠM VI TỪ VỰNG.** Card nội dung + bài tập **chấm điểm** chỉ dùng **TỪ ĐÃ
-DẠY** (tra sổ kiến thức). **Ngoại lệ duy nhất:** hội thoại nâng cao (§G6) và mục
-tham khảo (§B2b). Cần từ mới để tự nhiên → **dạy nó**, hoặc **đổi cách viết**,
-hoặc **đưa vào tham khảo**. (Bản provenance của §A3 / §B8.)
+**G7 — PHẠM VI TỪ VỰNG — TÁCH LÀM HAI VÙNG.** (Owner chốt 2026-07-27, thay bản
+"cấm mọi từ chưa dạy" trước đó.)
+
+Bản cũ cấm từ chưa dạy ở **mọi** chỗ. Luật đó **có giá trị thật** — nó đã bắt
+được lỗi ở nhiều bài (từ chỉ mốc thời gian chưa dạy, tiểu từ chưa dạy, trợ từ
+cuối câu chưa dạy) — nên **KHÔNG bỏ**. Nhưng áp một mức nghiêm cho cả bài làm
+hội thoại nghèo đi một cách vô lý: người học ĐỌC được nhiều hơn nhiều so với
+những gì họ SẢN XUẤT được, và ép hội thoại chỉ chứa vốn đã dạy thì buộc người
+viết phải **tự chế câu** thay vì lấy câu thật. Vì vậy tách vùng áp dụng:
+
+**VÙNG A — BỊ CHẤM ĐIỂM. G7 NGHIÊM NGẶT, không ngoại lệ.**
+Gồm: toàn bộ bài tập có chấm (ở lesson thường là Q1–Q13), đáp án, ô điền,
+phương án chọn, token sắp xếp, và mọi chuỗi mà câu trả lời của người học được
+so với nó.
+→ **Chỉ dùng vốn ĐÃ DẠY** (tra sổ kiến thức).
+→ **Lý do:** chấm điểm bằng từ chưa học là chấm sai người trả lời đúng. Người
+  học sai không phải vì không hiểu bài, mà vì bài dùng thứ chưa dạy họ. Đây là
+  lỗi của người viết, không phải của người học.
+
+**VÙNG B — CHỈ ĐỌC HIỂU. ĐƯỢC dùng từ chưa dạy, kèm 4 điều kiện BẮT BUỘC.**
+Gồm: hội thoại (card 3), ví dụ của thẻ từ vựng và mẫu ngữ pháp, mục tham khảo
+(§B2b), và hội thoại thực tế không chấm (Q14 / §G6).
+→ Được dùng từ chưa dạy **khi và chỉ khi đủ CẢ BỐN**:
+  1. **Đoạn lấy NGUYÊN VĂN từ nguồn** (§G10). Cấm tự chế câu chứa từ chưa dạy —
+     từ chưa dạy chỉ được đi vào bài **bám theo một câu thật**, không bao giờ
+     do người viết ghép ra.
+  2. **Mọi kanji có furigana** (§B2d, vốn đã bắt buộc — nhắc lại vì vùng này là
+     nơi kanji lạ hay xuất hiện nhất).
+  3. **Từ chưa dạy phải có NGHĨA hiển thị cho người học** — không để họ đoán
+     mò. Cơ chế hiển thị xem §B2f.
+  4. **Không lạm dụng.** Từ chưa dạy là **ngữ cảnh**, không phải trọng tâm. Nếu
+     người học phải hiểu từ chưa dạy mới nắm được điểm dạy của bài thì đó là
+     lỗi thiết kế — hoặc dạy từ đó hẳn, hoặc chọn đoạn khác.
+
+**Ranh giới khi một chuỗi nằm ở cả hai vùng:** áp VÙNG A. Ví dụ một câu hội
+thoại được bê nguyên làm đáp án của một bài tập → câu đó chịu luật vùng A.
+
+**G10 — HỘI THOẠI LẤY NGUYÊN ĐOẠN, KHÔNG TỰ XẾP CỤM.** (Owner chốt 2026-07-27,
+sau ba vòng sửa mạch hội thoại ở một bài — cả ba đều là lỗi XẾP, không phải lỗi
+CỤM.)
+
+Cách làm sai đã lộ: lấy đúng **từng cụm** từ nguồn rồi **tự xếp** thành hội
+thoại. Cụm thì đúng, nhưng thứ tự và ai-đáp-ai là do người viết nghĩ ra — nên
+mạch hỏng (một lượt gộp hai việc trái nhau; có người chào mà không ai đáp; chào
+xong tạm biệt ngay). **Cụm có nguồn KHÔNG làm cho đoạn ghép có nguồn.**
+
+- **Hội thoại trong bài phải LẤY NGUYÊN ĐOẠN có sẵn trong nguồn.** Nguồn đã có
+  hội thoại thật thì mạch đã đúng sẵn — không phải tự nghĩ, không phải sửa lại.
+- **Ưu tiên đoạn PHONG PHÚ**: nhiều lượt, nhiều vai, tự nhiên. Giữa hai đoạn
+  cùng đúng, chọn đoạn dài và giàu hơn.
+- **Chỉ được tự sắp xếp khi thật sự không có đoạn nào dùng được.** Khi đó
+  **BẮT BUỘC ghi rõ "đoạn này do tự xếp"** trong báo cáo cho owner, kèm lý do
+  đã tìm mà không có. Không ghi = coi như khai man nguồn.
+- **Ghi chú vận hành (đo thật, 2026-07-27):** ở trình độ nhập môn, hội thoại
+  chào hỏi trong giáo trình chính thống thường chỉ **2–3 lượt** rồi rẽ sang nội
+  dung khác — vì ngoài đời lời chào vốn ngắn. Sàn "4–6 lượt mỗi nhóm hội thoại"
+  ở §D vì thế **cao hơn cái nguồn cấp** cho riêng loại chủ đề này. Gặp mâu
+  thuẫn giữa §D và §G10 thì **DỪNG, hỏi owner** — không tự nới sàn, cũng không
+  tự kéo dài đoạn nguồn cho đủ số lượt.
 
 **G8 — LUẬT TẦNG X (XÁC MINH NGÔN NGỮ) — MỌI ngôn ngữ.** Ba câu hỏi **bắt buộc
 tra NGUỒN DỮ LIỆU (KHÔNG dựa trí nhớ mô hình):**
@@ -982,6 +1067,22 @@ ngôn ngữ đó.** Ngôn ngữ **chưa có người duyệt** → độ tin c�
 
 ## Changelog file này
 
+- **2026-07-27 (bản 9 — tách vùng G7 + luật lấy nguyên đoạn hội thoại)** —
+  **G7** viết lại thành **hai vùng**: vùng A (bị chấm — Q1–Q13, đáp án, ô điền,
+  phương án, token) giữ nguyên mức nghiêm "chỉ vốn đã dạy", lý do ghi rõ là
+  chấm bằng từ chưa học thì chấm sai người trả lời đúng; vùng B (chỉ đọc hiểu —
+  hội thoại, ví dụ, tham khảo, Q14) được dùng từ chưa dạy nhưng phải đủ **cả
+  bốn** điều kiện (nguyên văn từ nguồn · furigana · có hiển thị nghĩa · không
+  lạm dụng). Chuỗi nằm ở cả hai vùng thì áp vùng A. Thêm **G10 — hội thoại lấy
+  NGUYÊN ĐOẠN, không tự xếp cụm**, sinh ra sau ba vòng sửa mạch hội thoại ở một
+  bài mà cả ba đều là lỗi XẾP chứ không phải lỗi CỤM: **cụm có nguồn không làm
+  cho đoạn ghép có nguồn**; buộc phải tự xếp thì phải khai "đoạn này do tự xếp".
+  Thêm **B2f** ghi trạng thái cơ chế hiển thị nghĩa từ chưa dạy: **CHƯA CÓ**
+  (soi cả schema lẫn UI), kèm hệ quả là **vùng B chưa dùng được** cho tới khi
+  có cơ chế, và một đề xuất chưa thực hiện. Ghi thêm một số đo thật vào G10:
+  hội thoại chào hỏi ở trình độ nhập môn trong giáo trình chính thống chỉ 2–3
+  lượt, tức **thấp hơn sàn 4–6 lượt của §D3** — mâu thuẫn này phải hỏi owner,
+  không tự nới sàn cũng không tự kéo dài đoạn nguồn.
 - **2026-07-19 (bản 1)** — Tạo mới. Gom 24 nguyên tắc Owner + đối chiếu code.
   Nới Q14 số dòng (bỏ ép đúng 14 cho lesson thường, sàn ≥4; Golden khoá 14
   riêng). Free/Plus + audio-example + hỗ-trợ-đọc + bài-20-câu: DỪNG chờ Owner.

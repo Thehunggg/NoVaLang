@@ -16,7 +16,7 @@
 | Tên ngôn ngữ | Tiếng Nhật (日本語) |
 | Cấp độ đang nhắm | A1–A2 (JF Standard) ≈ JLPT N5 |
 | Cập nhật lần cuối | 2026-07-23 |
-| Trạng thái | `READY_FOR_AUTHORING` (Irodori + `N5 Grammar Master (japanvitta.com).pdf` + vocab JLPT/kanji/ngữ pháp hanabira đều chữ thật, dùng được ngay — **ngữ pháp N3–N1 ngoài phạm vi Irodori nay dựa vào hanabira, đọc được, không cần sách scan**; sách "まるごとマスター" N5 scan đã owner xóa 2026-07-23. **Còn tồn đọng, chưa xóa:** 5 file Nihongo Sou Matome N1–N5 (ẢNH SCAN, không đọc được), `irodori/Irodori.pdf` (trùng Z_all+ZZ_all), 3 file kanji subset (`kanji-jouyou`/`kanji-kyouiku`/`kanji-wanikani.json`, trùng `kanji.json`) — đã đề xuất xóa, owner chưa thao tác xong; giấy phép nội dung hanabira grammar CHƯA XÁC ĐỊNH biến thể CC cụ thể — cần owner xác nhận trước khi dùng chính thức) |
+| Trạng thái | `READY_FOR_AUTHORING` (Irodori + `N5 Grammar Master (japanvitta.com).pdf` + vocab JLPT/kanji/ngữ pháp hanabira đều chữ thật, dùng được ngay — **ngữ pháp N3–N1 ngoài phạm vi Irodori nay dựa vào hanabira, đọc được, không cần sách scan**; sách "まるごとマスター" N5 scan đã owner xóa 2026-07-23. **Còn tồn đọng, chưa xóa:** 5 file Nihongo Sou Matome N1–N5 (ẢNH SCAN, không đọc được) — **`irodori/Irodori.pdf` ĐÃ RÚT khỏi danh sách đề xuất xoá (2026-07-27): nó chứa phần 入門/Starter A1 mà Z_all và ZZ_all KHÔNG có, không hề trùng** —, 3 file kanji subset (`kanji-jouyou`/`kanji-kyouiku`/`kanji-wanikani.json`, trùng `kanji.json`) — đã đề xuất xóa, owner chưa thao tác xong; giấy phép nội dung hanabira grammar CHƯA XÁC ĐỊNH biến thể CC cụ thể — cần owner xác nhận trước khi dùng chính thức) |
 
 ---
 
@@ -86,6 +86,19 @@
 > ghi rõ đã mở file nào trong bảng dưới đây, phần/chủ đề nào của file đó**,
 > không ghi chung chung "đã tra Irodori".
 
+### Cách kiểm một PDF có tra chữ được hay không (2026-07-27)
+
+Bài học từ một lần đánh giá sai làm khoá nhầm nguồn tốt nhất suốt hai ngày:
+
+- **ĐÚNG:** chạy `pdftotext -enc UTF-8 <file>.pdf -` rồi **đếm dòng có chữ
+  Nhật** (`grep -cE "[぀-ヿ一-鿿]"`). Có chữ ra thì tra được, hết.
+- **SAI:** đếm object ảnh nhúng rồi suy ra "toàn ảnh". Sách giáo trình nhiều
+  minh hoạ thì **ảnh và font cùng nằm trên một trang** — nhiều ảnh không hề
+  có nghĩa là không có chữ.
+- **Cũng SAI:** lấy mẫu ở lời tựa/bìa rồi suy ra cả sách. Lấy mẫu phải rơi
+  đúng phần **thân bài tiếng Nhật**.
+- Kết luận "không đọc được" chỉ ghi khi `pdftotext` ra **0 dòng chữ Nhật**.
+
 Cấu trúc thư mục (quy ước `local-sources/<mã ISO>/<loại-nguồn>/`, xem
 `_TEMPLATE.md` mục "ĐƯỜNG DẪN FILE NGUỒN CỤC BỘ"): `local-sources/ja/irodori/`,
 `grammar-books/`, `vocab-3000/`, `jmdict/` (trống — xem ghi chú cuối bảng).
@@ -94,9 +107,9 @@ Cấu trúc thư mục (quy ước `local-sources/<mã ISO>/<loại-nguồn>/`, 
 
 | File | Bộ / cấp độ | Chủ đề · phạm vi | Chữ thật hay ảnh scan |
 |---|---|---|---|
-| `irodori/Z_all.pdf` | Irodori — **Starter + Elementary 1 + Elementary 2** (A1–A2, JF Standard) | 3 phần, mỗi phần 9 chủ đề / 18 lesson — hội thoại + ngữ pháp đời sống hàng ngày | **ẢNH — KHÔNG tra chữ tự động được** (sửa lại 2026-07-25: đã kiểm object PDF thật — 1283 ảnh nhúng, 0 font. Đánh giá "Chữ thật" trước đây chỉ dựa trên mẫu lời tựa tiếng Anh ở đầu sách, CHƯA xác minh đúng phần nội dung bài học tiếng Nhật — phần đó là ảnh. Chỉ đọc được bằng cách owner tự mở file xem trực quan hoặc OCR, KHÔNG grep/pdftotext được.) |
-| `irodori/ZZ_all.pdf` | Irodori — **Pre-Intermediate** (A2/B1, JF Standard) | 9 chủ đề / 18 lesson, 4 dạng hoạt động (nói/nghe/đọc/viết) | **ẢNH — KHÔNG tra chữ tự động được** (1326 ảnh nhúng, 0 font — cùng lý do trên) |
-| `irodori/Irodori.pdf` | Irodori — bản gộp lớn nhất (158MB); ToC xác nhận có Starter (A1) trở lên | **CHƯA XÁC MINH chắc chắn phạm vi đầy đủ** (dung lượng không khớp phép cộng Z_all+ZZ_all — có thể là bản merge khác/edition khác) — **cần owner xác nhận nên dùng bản nào làm chính** để tránh 2 bài khác nhau vô tình đối chiếu 2 bản Irodori khác nhau | **ẢNH — KHÔNG tra chữ tự động được** (4098 ảnh nhúng, 0 font — cùng lý do trên) |
+| `irodori/Z_all.pdf` | Irodori — **Starter + Elementary 1 + Elementary 2** (A1–A2, JF Standard) | 3 phần, mỗi phần 9 chủ đề / 18 lesson — hội thoại + ngữ pháp đời sống hàng ngày | **CHỮ THẬT — tra tự động ĐƯỢC** (sửa lại **2026-07-27**, lật đánh giá 2026-07-25). Đo thật bằng `pdftotext -enc UTF-8`: **55.331 dòng / 506 trang, trong đó 26.729 dòng có chữ Nhật (48%)**; `会話` 213 lượt, `ことば` 309 lượt, `聴解スクリプト` 70 lượt. Bóc ra được **kịch bản hội thoại nguyên văn** dạng `Ａ：… Ｂ：…`. Đánh giá "ẢNH" trước đây đếm object ảnh nhúng (đúng — sách nhiều minh hoạ) rồi suy ra là không có chữ — **suy sai**: ảnh và font cùng tồn tại trên một trang. Cách kiểm đáng tin là **chạy `pdftotext` rồi grep chuỗi tiếng Nhật**, không phải đếm object. |
+| `irodori/ZZ_all.pdf` | Irodori — **Pre-Intermediate** (A2/B1, JF Standard) | 9 chủ đề / 18 lesson, 4 dạng hoạt động (nói/nghe/đọc/viết) | **CHỮ THẬT — tra tự động ĐƯỢC** (sửa 2026-07-27, cùng lý do dòng trên). Đo: **74.938 dòng / 635 trang, 36.838 dòng có chữ Nhật (49%)**; `会話` 210 lượt, `聴解スクリプト` 58 lượt. Có hội thoại nhiều lượt trình độ A2/B1 thật. |
+| `irodori/Irodori.pdf` | Irodori — bản gộp lớn nhất (158MB); ToC xác nhận có Starter (A1) trở lên | **CHƯA XÁC MINH chắc chắn phạm vi đầy đủ** (dung lượng không khớp phép cộng Z_all+ZZ_all — có thể là bản merge khác/edition khác) — **cần owner xác nhận nên dùng bản nào làm chính** để tránh 2 bài khác nhau vô tình đối chiếu 2 bản Irodori khác nhau | **CHỮ THẬT — tra tự động ĐƯỢC** (sửa 2026-07-27, cùng lý do dòng trên). Đo: **49.664 dòng / 515 trang, 22.387 dòng có chữ Nhật (45%)**. Đây là bản chứa phần **入門 (Starter, A1)** — nơi có khối kịch bản chào hỏi 「1.こんにちは」/「2.お先に失礼します」 mà Z_all/ZZ_all không có. Vì vậy **KHÔNG trùng hoàn toàn** với Z_all+ZZ_all như ghi trước đây; **đừng xoá**. |
 | `grammar-books/Nihongo_Sou_Matome_N1_Bunpou.pdf` | Nihongo Sou Matome — 文法 (Ngữ pháp) | **JLPT N1** — toàn bộ ngữ pháp N1 | **ẢNH SCAN — CẦN OCR** (không trích được văn bản; ~1079 ảnh nhúng, 0 font) |
 | `grammar-books/Nihongo Sou Matome N2 - Bumpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N2** — toàn bộ ngữ pháp N2 | **ẢNH SCAN — CẦN OCR** (~1050 ảnh nhúng) |
 | `grammar-books/Nihongo_Sou_Matome_N3_Bunpou.pdf` | Nihongo Sou Matome — 文法 | **JLPT N3** — toàn bộ ngữ pháp N3 | **ẢNH SCAN — CẦN OCR** (~118 ảnh nhúng) |
