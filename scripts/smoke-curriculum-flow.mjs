@@ -243,7 +243,8 @@ function checkFiveCardsLessonStructure(lesson, section) {
   const vocabCount = (lesson.vocabulary ?? []).length;
   if (vocabCount < 6 || vocabCount > 15 || (content.vocabularyDetails ?? []).length !== vocabCount) fail(section, { lessonId: lesson.id }, "Card 2 must contain 6–15 vocabulary cards with matching vocabularyDetails");
   const groups = content.dialogueGroups ?? [];
-  if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 4 || (group.lines ?? []).length > 6)) fail(section, { lessonId: lesson.id }, "Card 3 must contain exactly 3 dialogues of 4–6 lines");
+  // §D3 (owner 2026-07-27) — 2–8 lượt, đi theo đoạn nguồn. Mirrors validateFiveCardsStructure.
+  if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 2 || (group.lines ?? []).length > 8)) fail(section, { lessonId: lesson.id }, "Card 3 must contain exactly 3 dialogues of 2–8 lines");
   const approvedCharacters = content.approvedCharacterNamePool ?? [];
   const approvedCharacterIds = new Set(approvedCharacters.map((item) => item?.id));
   if (

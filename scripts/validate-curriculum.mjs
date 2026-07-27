@@ -1367,8 +1367,15 @@ export function validateFiveCardsStructure(lesson) {
     fail(`${lesson.id}: Card 2 vocabulary and vocabularyDetails must match ids 1-1 in the same order`);
   }
   const groups = content.dialogueGroups ?? [];
-  if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 4 || (group.lines ?? []).length > 6)) {
-    fail(`${lesson.id}: Card 3 must contain exactly 3 dialogue groups with 4–6 lines`);
+  // §D3 (owner 2026-07-27): độ dài đi theo ĐOẠN NGUỒN, không theo con số ép.
+  // Sàn 2 = ngưỡng thật của một trao đổi (một người nói, một người đáp). Sàn 4 cũ
+  // CAO HƠN cái nguồn cấp — đo 634 đoạn hội thoại giáo trình A1→B1: trung vị 2
+  // lượt, riêng mảng chào hỏi nhập môn không có đoạn nào quá 3 — nên nó buộc
+  // người viết tự kéo dài, tức tự xếp (§G10). Trần 8 = 99% đoạn thật (95% ≤ 6,
+  // dài nhất 12); quá 8 thì hết là hội thoại mẫu nghe-nhắc-lại và thành bài đọc
+  // hiểu, vốn là việc của Q14 chứ không phải card 3.
+  if (groups.length !== 3 || groups.some((group) => (group.lines ?? []).length < 2 || (group.lines ?? []).length > 8)) {
+    fail(`${lesson.id}: Card 3 must contain exactly 3 dialogue groups with 2–8 lines`);
   }
   const approvedCharacters = content.approvedCharacterNamePool ?? [];
   const approvedCharacterIds = new Set(approvedCharacters.map((item) => item?.id));

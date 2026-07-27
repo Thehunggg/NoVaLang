@@ -535,7 +535,26 @@ grammar,practice`. (`validate-curriculum.mjs:919`)
 **cùng số lượng**; ids khớp **1-1 đúng thứ tự**. (`:934–948`; ADR-019 amendment
 2026-07-19 — số 6–15 là range, không phải fixed 8)
 
-**D3. Card 3 dialogue.** **Đúng 3 nhóm, mỗi nhóm 4–6 dòng** (`:950`). Bắt buộc:
+**D3. Card 3 dialogue.** **Đúng 3 nhóm, mỗi nhóm 2–8 lượt** (`:950`).
+(Owner chốt 2026-07-27 — hạ sàn từ 4, đặt trần 8. Cùng loại tiền lệ với
+"đúng 8 thẻ từ vựng" → khoảng 6–15, ADR-019 amendment.)
+
+- **Sàn 2, không phải 4.** Sàn 4 cũ **cao hơn cái nguồn cấp**: đo 634 đoạn hội
+  thoại thật trong giáo trình chính thống (A1→B1) thì **trung vị 2 lượt**, và
+  riêng mảng chào hỏi trình độ nhập môn thì **không có đoạn nào quá 3 lượt** —
+  vì ngoài đời lời chào vốn ngắn: chào một hai câu rồi rẽ sang việc chính.
+  Sàn 4 vì thế **buộc người viết phải tự kéo dài**, tức tự xếp — chính là gốc
+  của ba vòng sửa mạch hội thoại ở một bài. Sàn 2 là ngưỡng thật của một cuộc
+  trao đổi: một người nói, một người đáp. Dưới 2 thì không còn là hội thoại.
+- **Độ dài đi theo ĐOẠN NGUỒN, không theo con số.** Nguồn cho 2 lượt thì viết
+  2 lượt. Cấm kéo dài cho "đủ đẹp". Tự xếp thì phải khai theo **§G10**.
+- **Trần 8.** Cùng phép đo trên: **95% đoạn ≤ 6 lượt, 99% ≤ 8**, dài nhất 12.
+  Chọn 8 vì nó phủ gần trọn cái thật mà vẫn chặn được thứ đã hết là hội thoại
+  mẫu: quá 8 lượt thì người học không còn NGHE-NHẮC-LẠI được nữa, nó thành bài
+  ĐỌC HIỂU — mà đọc hiểu là việc của Q14 và của bài tổng hợp, không phải của
+  card 3. Trần này lấy từ số đo nguồn, **không chép từ Golden**.
+
+Bắt buộc:
 `targetLanguage === lesson.languageCode`, `targetLocale`, `cultureContext`,
 `approvedCharacterNamePool` (mỗi nhân vật có `id/displayName/canonicalName/
 audioName`); mọi `speakerId` phải nằm trong pool. (`:953–971`)
@@ -560,6 +579,34 @@ Golden Q10 đã đổi `free → plus`).
 - Q14 (index 13) = `real_world_practice_dialogue` (§D7).
 - **Q1, Q2, Q4, Q5, Q6, Q7, Q8, Q11, Q12: loại KHÔNG bị ép** — chọn theo khung
   gợi ý §B7.
+
+**D6b. RÀ CÁC CON SỐ ĐANG BỊ ÉP — cái nào có lý do thật, cái nào chép từ Golden.**
+(Rà 2026-07-27 theo yêu cầu owner. **Chưa sửa cái nào ngoài §D3** — chờ owner.)
+
+**Bằng chứng nền:** ADR-019 ghi rõ `validateFiveCardsStructure` được **tách ra
+từ** `validateApprovedJaUnitOneLesson` (bộ kiểm CHỈ dành cho Golden), và chỉ nêu
+đích danh **2** phép kiểm được tổng quát hoá (`targetLanguage`,
+`unusedTokenIds`). Mọi con số còn lại **theo cấu tạo là hình dạng của Golden**,
+không phải luật sản phẩm. Ca "đúng 8 thẻ từ vựng → khoảng 6–15" (ADR-019
+amendment) là **một** thành viên của lớp lỗi này; dưới đây là các thành viên còn
+lại. Đo trên cả 4 bài five_cards hiện có thì mọi ô đều bằng nhau — **không phải
+bằng chứng con số đúng, mà vì validator ép chúng bằng nhau**; nên phải xét lý do
+chứ không xét dữ liệu.
+
+| Con số bị ép | Giá | Xếp loại |
+|---|---|---|
+| `dialogueGroups` = **3** | 3 | **Có ý định thật** — owner §6: ba tình huống = ba biến thể vai vế/ngữ cảnh. Vẫn nên cân nhắc thành khoảng. |
+| `grammarPatterns` = **3** | 3 | **Có ý định thật** (§B4) nhưng ngờ: một bài có 2 mẫu là chuyện bình thường. |
+| Q3 `matching.pairs` = **4** | 4 | **Có thể do UI** — 4 cặp vừa một màn không cuộn. Chưa ai kiểm 3 hay 5 có vỡ không. |
+| Q9 `subQuestions` = **5** | 5 | **NGỜ** — số tròn, không thấy ràng buộc nào. |
+| Q10 `chat.messages` = **6** | 6 | **NGỜ NẶNG — nhiều khả năng chép Golden.** Bằng chứng thực nghiệm: khi viết u2-l1 tôi đã phải **độn từ 4 lên 6 tin nhắn** cho vừa con số, không phải vì nội dung cần. |
+| Q10 `slots` = **2** | 2 | Đi kèm dòng trên; 2 ô là hợp lý nhưng cũng chưa ai kiểm. |
+| Q13 `answerSlots` = **6** | 6 | **NGỜ NẶNG — nhiều khả năng chép Golden.** Bằng chứng thực nghiệm: u2-l1 phải **ghép hai câu rời** 「先生、おはようございます。ひさしぶりですね。」 chỉ để đủ 6 ô. Đúng triệu chứng bẻ nội dung cho vừa con số. |
+| `totalQuestions` = **14** | 14 | **Quyết định sản phẩm** (độ dài bài), không cùng lớp — để nguyên. |
+
+**Dấu hiệu nhận biết chung:** con số nào mà khi viết bài mới ta phải **thêm/bớt
+nội dung cho vừa nó** thay vì nội dung tự nhiên rơi vào khoảng đó → gần như chắc
+là số chép từ Golden. Hai ca Q10 và Q13 ở trên đều đã lộ đúng dấu hiệu này.
 
 **D7. Q14 real_world_practice_dialogue.** `type === real_world_practice_dialogue`,
 `nonGraded === true`, có `scenarioTitleByNative.vi` + `scenarioDescriptionByNative
@@ -1067,6 +1114,19 @@ ngôn ngữ đó.** Ngôn ngữ **chưa có người duyệt** → độ tin c�
 
 ## Changelog file này
 
+- **2026-07-27 (bản 10 — hạ sàn hội thoại theo độ dài NGUỒN)** — **D3** bỏ sàn
+  cứng 4–6 lượt, thay bằng **2–8** và nguyên tắc "độ dài đi theo đoạn nguồn".
+  Cả hai con số lấy từ phép đo thật, không chép Golden: đo **634 đoạn hội thoại**
+  trong giáo trình chính thống A1→B1 — trung vị **2** lượt, p95 **6**, **99% ≤ 8**,
+  dài nhất 12; riêng mảng chào hỏi nhập môn **không có đoạn nào quá 3 lượt**. Sàn
+  4 cũ vì thế cao hơn cái nguồn cấp và **buộc người viết tự kéo dài** — đúng gốc
+  của ba vòng sửa mạch hội thoại. Sửa validator ở **hai** chỗ (`validateFiveCards\
+Structure` + guard trong smoke); chỗ 4–6 còn lại trong `validateReadyDailyModule\
+OneLesson` **để nguyên** vì đã xác minh không bao giờ chạy cho five_cards (`continue`
+ở nhánh trên), và chỗ trong `checkApprovedJaUnitOneLesson` cũng để nguyên vì đó
+là **khoá nội dung Golden**, không phải luật chung. Thêm **D6b** — bảng rà mọi
+con số đang bị ép, phân loại có-lý-do vs. chép-Golden, kèm dấu hiệu nhận biết.
+  Cùng lớp tiền lệ với "đúng 8 thẻ từ vựng → 6–15" (ADR-019 amendment).
 - **2026-07-27 (bản 9 — tách vùng G7 + luật lấy nguyên đoạn hội thoại)** —
   **G7** viết lại thành **hai vùng**: vùng A (bị chấm — Q1–Q13, đáp án, ô điền,
   phương án, token) giữ nguyên mức nghiêm "chỉ vốn đã dạy", lý do ghi rõ là
