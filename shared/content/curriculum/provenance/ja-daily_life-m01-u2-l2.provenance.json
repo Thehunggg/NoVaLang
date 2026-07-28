@@ -1,0 +1,67 @@
+{
+  "lessonId": "ja-daily_life-m01-u2-l2",
+  "_pha": "A — SỔ CHẤT LIỆU. Mọi item ở đây là VERBATIM đã qua cổng. Pha B lắp bài rồi bổ sung authored + mutation.",
+  "_nguon": {
+    "irodori": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md — 初級1 第1課 can-do 02 「日本に来てどのぐらいですか？」, mã băng 01-06/01-07/01-08/01-09",
+    "n5vi": "local-sources/ja/n5/n5_ngu-phap-vi.txt — ngữ pháp N5 tiếng Việt, dịch gắn từng câu"
+  },
+  "_chonKichBan": "Card 3 dùng 01-06 · 01-08 · 01-09 (3 kịch bản khác nhau, thoả G14-R3b ≥2). Q14 dùng 01-07 (chưa dùng ở card 3) + 01-09. Kịch bản 01-18/19/20 KHÔNG dùng — thuộc can-do 03 (日本では何をしていますか), khác chủ đề.",
+  "_traHoiThoaiN5Viet": "ĐÃ TRA, KHÔNG KHỚP. 4 khối hội thoại của n5_ngu-phap-vi (d514-518 nghề nghiệp tương lai · d541-553 quà sinh nhật · d684-689 đếm số lượng) — không khối nào về chủ đề hỏi thăm tình hình dạo này. Giữ nguyên 3 nhóm Irodori.",
+  "items": [
+    { "path": "fiveCardContent.dialogueGroups[0].lines[0].targetText", "targetText": "日本に来て、どのぐらいになりますか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4980, "verbatim": true },
+    { "path": "fiveCardContent.dialogueGroups[0].lines[1].targetText", "targetText": "1年になります。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4982, "verbatim": true },
+    { "path": "fiveCardContent.dialogueGroups[0].lines[2].targetText", "targetText": "そうですか。日本の生活に、もう慣れましたか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4984, "verbatim": true },
+    { "path": "fiveCardContent.dialogueGroups[0].lines[3].targetText", "targetText": "はい。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4986, "verbatim": true },
+
+    { "path": "fiveCardContent.dialogueGroups[1].lines[0].targetText", "targetText": "日本に来て、どのぐらいですか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5000, "verbatim": true },
+    { "path": "fiveCardContent.dialogueGroups[1].lines[1].targetText", "targetText": "去年の9月に来ました。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5002, "verbatim": true },
+    { "path": "fiveCardContent.dialogueGroups[1].lines[2].targetText", "targetText": "そうですか。もう慣れましたか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5004, "verbatim": true },
+    { "path": "fiveCardContent.dialogueGroups[1].lines[3].targetText", "targetText": "はい、おかげさまで。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5006, "verbatim": true },
+
+    { "path": "fiveCardContent.dialogueGroups[2].lines[0].targetText", "targetText": "日本に来て、どのぐらいになりますか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5010, "verbatim": true },
+    { "path": "fiveCardContent.dialogueGroups[2].lines[1].targetText", "targetText": "私は、先月、来ました。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5012, "verbatim": true },
+    { "path": "fiveCardContent.dialogueGroups[2].lines[2].targetText", "targetText": "そうですか。少し慣れましたか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5014, "verbatim": true },
+    { "path": "fiveCardContent.dialogueGroups[2].lines[3].targetText", "targetText": "まだ、ちょっと……。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5016, "verbatim": true },
+
+    { "path": "fiveCardContent.practice.exercises[13].dialogueLines[0].targetText", "targetText": "日本に来て、どのぐらいですか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4990, "verbatim": true },
+    { "path": "fiveCardContent.practice.exercises[13].dialogueLines[1].targetText", "targetText": "ちょうど半年です。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4992, "verbatim": true },
+    { "path": "fiveCardContent.practice.exercises[13].dialogueLines[2].targetText", "targetText": "そうですか。日本に慣れましたか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4994, "verbatim": true },
+    { "path": "fiveCardContent.practice.exercises[13].dialogueLines[3].targetText", "targetText": "はい、なんとか。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4996, "verbatim": true },
+    { "path": "fiveCardContent.practice.exercises[13].dialogueLines[4].targetText", "targetText": "日本に来て、どのぐらいになりますか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5010, "verbatim": true },
+    { "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].targetText", "targetText": "私は、先月、来ました。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5012, "verbatim": true },
+    { "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText", "targetText": "そうですか。少し慣れましたか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5014, "verbatim": true },
+    { "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText", "targetText": "まだ、ちょっと……。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5016, "verbatim": true },
+
+    { "path": "fiveCardContent.intro.examples[0].targetText", "targetText": "日本に来て、どのぐらいになりますか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4980, "verbatim": true },
+    { "path": "fiveCardContent.intro.examples[1].targetText", "targetText": "1年になります。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4982, "verbatim": true },
+    { "path": "fiveCardContent.intro.examples[2].targetText", "targetText": "はい、おかげさまで。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5006, "verbatim": true },
+
+    { "path": "fiveCardContent.grammarPatterns[0].examples[0].text", "targetText": "日本に来て、どのぐらいになりますか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4980, "verbatim": true },
+    { "path": "fiveCardContent.grammarPatterns[0].examples[1].text", "targetText": "日本に来て、どのぐらいですか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5000, "verbatim": true },
+
+    { "path": "fiveCardContent.grammarPatterns[1].examples[0].text", "targetText": "1年になります。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4982, "verbatim": true },
+    { "path": "fiveCardContent.grammarPatterns[1].examples[1].text", "targetText": "あのひとは ゆうめいになりました。", "source": "local-sources/ja/n5/n5_ngu-phap-vi.txt", "line": 480, "verbatim": true },
+
+    { "path": "fiveCardContent.grammarPatterns[2].examples[0].text", "targetText": "そうですか。もう慣れましたか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5004, "verbatim": true },
+    { "path": "fiveCardContent.grammarPatterns[2].examples[1].text", "targetText": "くすりを のみましたから、もうだいじょうぶです。", "source": "local-sources/ja/n5/n5_ngu-phap-vi.txt", "line": 927, "verbatim": true },
+
+    { "path": "fiveCardContent.grammarPatterns[3].examples[0].text", "targetText": "まだ、ちょっと……。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5016, "verbatim": true },
+    { "path": "fiveCardContent.grammarPatterns[3].examples[1].text", "targetText": "あさごはんを まだたべていません。", "source": "local-sources/ja/n5/n5_ngu-phap-vi.txt", "line": 179, "verbatim": true },
+
+    { "path": "fiveCardContent.grammarPatterns[4].examples[0].text", "targetText": "去年の9月に来ました。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5002, "verbatim": true },
+    { "path": "fiveCardContent.grammarPatterns[4].examples[1].text", "targetText": "わたしは ケーキを たべました。", "source": "local-sources/ja/n5/n5_ngu-phap-vi.txt", "line": 128, "verbatim": true },
+
+    { "path": "fiveCardContent.vocabularyDetails[0].examples[0].text", "targetText": "日本に来て、どのぐらいになりますか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4980, "verbatim": true },
+    { "path": "fiveCardContent.vocabularyDetails[1].examples[0].text", "targetText": "そうですか。もう慣れましたか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5004, "verbatim": true },
+    { "path": "fiveCardContent.vocabularyDetails[2].examples[0].text", "targetText": "日本に来て、どのぐらいですか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5000, "verbatim": true },
+    { "path": "fiveCardContent.vocabularyDetails[3].examples[0].text", "targetText": "そうですか。日本の生活に、もう慣れましたか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4984, "verbatim": true },
+    { "path": "fiveCardContent.vocabularyDetails[4].examples[0].text", "targetText": "1年になります。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4982, "verbatim": true },
+    { "path": "fiveCardContent.vocabularyDetails[5].examples[0].text", "targetText": "そうですか。もう慣れましたか？", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5004, "verbatim": true },
+    { "path": "fiveCardContent.vocabularyDetails[6].examples[0].text", "targetText": "まだ、ちょっと……。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5016, "verbatim": true },
+    { "path": "fiveCardContent.vocabularyDetails[7].examples[0].text", "targetText": "去年の9月に来ました。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5002, "verbatim": true },
+    { "path": "fiveCardContent.vocabularyDetails[8].examples[0].text", "targetText": "私は、先月、来ました。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 5012, "verbatim": true },
+
+    { "path": "fiveCardContent.vocabularyReferences[0].example.text", "targetText": "ちょうど半年です。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4992, "verbatim": true },
+    { "path": "fiveCardContent.vocabularyReferences[1].example.text", "targetText": "はい、なんとか。", "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md", "line": 4996, "verbatim": true }
+  ]
+}
