@@ -88625,416 +88625,4173 @@
       "levelRange": "A0–A1",
       "placementTag": "daily_life_basic",
       "template": "vocabularyLesson",
-      "title": "Replying When Asked How You Are",
+      "title": "Đáp lời hỏi thăm",
       "titleVi": "Đáp lời hỏi thăm",
       "titleByNative": {
-        "en": "Replying When Asked How You Are",
         "vi": "Đáp lời hỏi thăm",
-        "ja": "様子を尋ねられて答える",
-        "ko": "안부 인사에 답하기",
-        "zh": "回应他人的问候"
+        "en": "Reply When Asked How You Are",
+        "ja": "近況を聞かれて答える"
       },
-      "description": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
-      "descriptionVi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "description": "Sau bài học này, người học có thể:",
+      "descriptionVi": "Sau bài học này, người học có thể:",
       "descriptionByNative": {
-        "en": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「様子を尋ねられて答える」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"안부 인사에 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“回应他人的问候”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
-      "canDoObjective": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
-      "canDoObjectiveVi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "canDoObjective": "Sau bài học này, người học có thể:",
+      "canDoObjectiveVi": "Sau bài học này, người học có thể:",
       "canDoObjectiveByNative": {
-        "en": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「様子を尋ねられて答える」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"안부 인사에 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“回应他人的问候”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
       "goalByNative": {
-        "en": "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「様子を尋ねられて答える」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"안부 인사에 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“回应他人的问候”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
       "situationByNative": {
-        "en": "A real-life moment where you need \"Replying When Asked How You Are\".",
-        "vi": "Tình huống thật khi bạn cần dùng \"Đáp lời hỏi thăm\".",
-        "ja": "「様子を尋ねられて答える」が必要な実生活の場面。",
-        "ko": "\"안부 인사에 답하기\"가 필요한 실제 상황.",
-        "zh": "需要用到“回应他人的问候”的真实场景。"
-      },
-      "canSayByNative": {
-        "en": "After this lesson, you can handle \"Replying When Asked How You Are\" in simple conversations.",
-        "vi": "Sau bài này, bạn có thể dùng \"Đáp lời hỏi thăm\" trong hội thoại đơn giản.",
-        "ja": "このレッスンの後、「様子を尋ねられて答える」を簡単な会話で使えます。",
-        "ko": "이 레슨 후 간단한 대화에서 \"안부 인사에 답하기\"를 사용할 수 있습니다.",
-        "zh": "学完本课后，你可以在简单对话中使用“回应他人的问候”。"
+        "vi": "Bạn gặp lại người quen và được hỏi thăm về cuộc sống dạo này.\nBạn kể mình đến Nhật bao lâu rồi và đã quen hay chưa.",
+        "en": "You meet an acquaintance again and are asked how life has been.\nYou say how long you have been in Japan and whether you have settled in.",
+        "ja": "知り合いに再会し、近況をたずねられます。\n日本に来てどのぐらいか、慣れたかどうかを話します。"
       },
       "objectives": [
-        "Learn to use \"Replying When Asked How You Are\" naturally in daily conversation."
+        "Hỏi người khác đã ở Nhật bao lâu bằng どのぐらい.",
+        "Trả lời bằng mốc thời gian + になります.",
+        "Hỏi đã quen chưa bằng もう慣れましたか.",
+        "Đáp khẳng định bằng はい、おかげさまで.",
+        "Đáp phủ định nhẹ nhàng bằng まだ、ちょっと.",
+        "Kể mốc thời gian đã đến bằng 去年 và 先月."
       ],
       "objectivesVi": [
-        "Học cách dùng \"Đáp lời hỏi thăm\" một cách tự nhiên trong giao tiếp hằng ngày."
+        "Hỏi người khác đã ở Nhật bao lâu bằng どのぐらい.",
+        "Trả lời bằng mốc thời gian + になります.",
+        "Hỏi đã quen chưa bằng もう慣れましたか.",
+        "Đáp khẳng định bằng はい、おかげさまで.",
+        "Đáp phủ định nhẹ nhàng bằng まだ、ちょっと.",
+        "Kể mốc thời gian đã đến bằng 去年 và 先月."
       ],
+      "objectivesByNative": {
+        "vi": [
+          "Hỏi người khác đã ở Nhật bao lâu bằng どのぐらい.",
+          "Trả lời bằng mốc thời gian + になります.",
+          "Hỏi đã quen chưa bằng もう慣れましたか.",
+          "Đáp khẳng định bằng はい、おかげさまで.",
+          "Đáp phủ định nhẹ nhàng bằng まだ、ちょっと.",
+          "Kể mốc thời gian đã đến bằng 去年 và 先月."
+        ],
+        "en": [
+          "Ask how long someone has been in Japan with どのぐらい.",
+          "Answer with a time span + になります.",
+          "Ask whether someone has settled in with もう慣れましたか.",
+          "Answer yes politely with はい、おかげさまで.",
+          "Decline gently with まだ、ちょっと.",
+          "Say when you arrived using 去年 and 先月."
+        ],
+        "ja": [
+          "「どのぐらい」で日本に来てからの期間をたずねられます。",
+          "「期間＋になります」で答えられます。",
+          "「もう慣れましたか」で慣れたかどうかをたずねられます。",
+          "「はい、おかげさまで」で丁寧に肯定できます。",
+          "「まだ、ちょっと」でやわらかく否定できます。",
+          "「去年」「先月」で来た時期を言えます。"
+        ]
+      },
       "introPoints": [
-        "A real-life moment where you need \"Replying When Asked How You Are\".",
-        "After this lesson, you can handle \"Replying When Asked How You Are\" in simple conversations."
+        "Hỏi người khác đã ở Nhật bao lâu bằng どのぐらい.",
+        "Trả lời bằng mốc thời gian + になります.",
+        "Hỏi đã quen chưa bằng もう慣れましたか.",
+        "Đáp khẳng định bằng はい、おかげさまで.",
+        "Đáp phủ định nhẹ nhàng bằng まだ、ちょっと.",
+        "Kể mốc thời gian đã đến bằng 去年 và 先月."
       ],
       "introPointsVi": [
-        "Tình huống thật khi bạn cần dùng \"Đáp lời hỏi thăm\".",
-        "Sau bài này, bạn có thể dùng \"Đáp lời hỏi thăm\" trong hội thoại đơn giản."
+        "Hỏi người khác đã ở Nhật bao lâu bằng どのぐらい.",
+        "Trả lời bằng mốc thời gian + になります.",
+        "Hỏi đã quen chưa bằng もう慣れましたか.",
+        "Đáp khẳng định bằng はい、おかげさまで.",
+        "Đáp phủ định nhẹ nhàng bằng まだ、ちょっと.",
+        "Kể mốc thời gian đã đến bằng 去年 và 先月."
       ],
       "introPointsByNative": {
         "vi": [
-          "Tình huống thật khi bạn cần dùng \"Đáp lời hỏi thăm\".",
-          "Sau bài này, bạn có thể dùng \"Đáp lời hỏi thăm\" trong hội thoại đơn giản."
+          "Hỏi người khác đã ở Nhật bao lâu bằng どのぐらい.",
+          "Trả lời bằng mốc thời gian + になります.",
+          "Hỏi đã quen chưa bằng もう慣れましたか.",
+          "Đáp khẳng định bằng はい、おかげさまで.",
+          "Đáp phủ định nhẹ nhàng bằng まだ、ちょっと.",
+          "Kể mốc thời gian đã đến bằng 去年 và 先月."
         ],
         "en": [
-          "A real-life moment where you need \"Replying When Asked How You Are\".",
-          "After this lesson, you can handle \"Replying When Asked How You Are\" in simple conversations."
+          "Ask how long someone has been in Japan with どのぐらい.",
+          "Answer with a time span + になります.",
+          "Ask whether someone has settled in with もう慣れましたか.",
+          "Answer yes politely with はい、おかげさまで.",
+          "Decline gently with まだ、ちょっと.",
+          "Say when you arrived using 去年 and 先月."
         ],
         "ja": [
-          "「様子を尋ねられて答える」が必要な実生活の場面。",
-          "このレッスンの後、「様子を尋ねられて答える」を簡単な会話で使えます。"
-        ],
-        "ko": [
-          "\"안부 인사에 답하기\"가 필요한 실제 상황.",
-          "이 레슨 후 간단한 대화에서 \"안부 인사에 답하기\"를 사용할 수 있습니다."
-        ],
-        "zh": [
-          "需要用到“回应他人的问候”的真实场景。",
-          "学完本课后，你可以在简单对话中使用“回应他人的问候”。"
+          "「どのぐらい」で日本に来てからの期間をたずねられます。",
+          "「期間＋になります」で答えられます。",
+          "「もう慣れましたか」で慣れたかどうかをたずねられます。",
+          "「はい、おかげさまで」で丁寧に肯定できます。",
+          "「まだ、ちょっと」でやわらかく否定できます。",
+          "「去年」「先月」で来た時期を言えます。"
         ]
       },
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 12,
       "track": "ja-daily_life",
-      "vocabulary": [],
+      "vocabulary": [
+        {
+          "id": "dono-gurai",
+          "displayText": "どのぐらい",
+          "reading": "どのぐらい",
+          "romanization": "dono gurai",
+          "speechText": "どのぐらい",
+          "meaningVi": "Bao lâu.",
+          "translationByNative": {
+            "vi": "Bao lâu.",
+            "en": "How long.",
+            "ja": "どのぐらい。"
+          },
+          "translations": {
+            "vi": "Bao lâu.",
+            "en": "How long.",
+            "ja": "どのぐらい。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "nareru",
+          "displayText": "慣（な）れる",
+          "reading": "なれる",
+          "romanization": "nareru",
+          "speechText": "なれる",
+          "meaningVi": "Quen với.",
+          "translationByNative": {
+            "vi": "Quen với.",
+            "en": "To get used to.",
+            "ja": "慣れる。"
+          },
+          "translations": {
+            "vi": "Quen với.",
+            "en": "To get used to.",
+            "ja": "慣れる。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "nihon",
+          "displayText": "日本（にほん）",
+          "reading": "にほん",
+          "romanization": "Nihon",
+          "speechText": "にほん",
+          "meaningVi": "Nhật Bản.",
+          "translationByNative": {
+            "vi": "Nhật Bản.",
+            "en": "Japan.",
+            "ja": "日本。"
+          },
+          "translations": {
+            "vi": "Nhật Bản.",
+            "en": "Japan.",
+            "ja": "日本。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "seikatsu",
+          "displayText": "生活（せいかつ）",
+          "reading": "せいかつ",
+          "romanization": "seikatsu",
+          "speechText": "せいかつ",
+          "meaningVi": "Cuộc sống, sinh hoạt.",
+          "translationByNative": {
+            "vi": "Cuộc sống, sinh hoạt.",
+            "en": "Life, daily living.",
+            "ja": "生活。"
+          },
+          "translations": {
+            "vi": "Cuộc sống, sinh hoạt.",
+            "en": "Life, daily living.",
+            "ja": "生活。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "ni-narimasu",
+          "displayText": "～になります",
+          "reading": "になります",
+          "romanization": "ni narimasu",
+          "speechText": "になります",
+          "meaningVi": "Tròn / được (bao lâu).",
+          "translationByNative": {
+            "vi": "Tròn / được (bao lâu).",
+            "en": "It has been (a period).",
+            "ja": "〜になります。"
+          },
+          "translations": {
+            "vi": "Tròn / được (bao lâu).",
+            "en": "It has been (a period).",
+            "ja": "〜になります。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "mou",
+          "displayText": "もう",
+          "reading": "もう",
+          "romanization": "mō",
+          "speechText": "もう",
+          "meaningVi": "Đã… rồi.",
+          "translationByNative": {
+            "vi": "Đã… rồi.",
+            "en": "Already.",
+            "ja": "もう。"
+          },
+          "translations": {
+            "vi": "Đã… rồi.",
+            "en": "Already.",
+            "ja": "もう。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "mada",
+          "displayText": "まだ",
+          "reading": "まだ",
+          "romanization": "mada",
+          "speechText": "まだ",
+          "meaningVi": "Vẫn chưa.",
+          "translationByNative": {
+            "vi": "Vẫn chưa.",
+            "en": "Not yet.",
+            "ja": "まだ。"
+          },
+          "translations": {
+            "vi": "Vẫn chưa.",
+            "en": "Not yet.",
+            "ja": "まだ。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "kyonen",
+          "displayText": "去年（きょねん）",
+          "reading": "きょねん",
+          "romanization": "kyonen",
+          "speechText": "きょねん",
+          "meaningVi": "Năm ngoái.",
+          "translationByNative": {
+            "vi": "Năm ngoái.",
+            "en": "Last year.",
+            "ja": "去年。"
+          },
+          "translations": {
+            "vi": "Năm ngoái.",
+            "en": "Last year.",
+            "ja": "去年。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "sengetsu",
+          "displayText": "先月（せんげつ）",
+          "reading": "せんげつ",
+          "romanization": "sengetsu",
+          "speechText": "せんげつ",
+          "meaningVi": "Tháng trước.",
+          "translationByNative": {
+            "vi": "Tháng trước.",
+            "en": "Last month.",
+            "ja": "先月。"
+          },
+          "translations": {
+            "vi": "Tháng trước.",
+            "en": "Last month.",
+            "ja": "先月。"
+          },
+          "audioLocale": "ja-JP"
+        }
+      ],
       "keyPhrases": [],
-      "dialogue": [],
+      "dialogue": [
+        {
+          "targetText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+          "displayText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+          "reading": "にほんにきて、どのぐらいになりますか？",
+          "speechText": "にほんにきて、どのぐらいになりますか",
+          "translationByNative": {
+            "vi": "Bạn đến Nhật được bao lâu rồi?",
+            "en": "How long have you been in Japan?",
+            "ja": "日本に来て、どのぐらいですか。"
+          },
+          "translations": {
+            "vi": "Bạn đến Nhật được bao lâu rồi?",
+            "en": "How long have you been in Japan?",
+            "ja": "日本に来て、どのぐらいですか。"
+          },
+          "meaningVi": "Bạn đến Nhật được bao lâu rồi?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u2-l2-one-year-1"
+        },
+        {
+          "targetText": "1年（ねん）になります。",
+          "displayText": "1年（ねん）になります。",
+          "reading": "いちねんになります。",
+          "speechText": "いちねんになります",
+          "translationByNative": {
+            "vi": "Được tròn một năm rồi ạ.",
+            "en": "It has been one year.",
+            "ja": "一年になります。"
+          },
+          "translations": {
+            "vi": "Được tròn một năm rồi ạ.",
+            "en": "It has been one year.",
+            "ja": "一年になります。"
+          },
+          "meaningVi": "Được tròn một năm rồi ạ.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m01-u2-l2-one-year-2"
+        },
+        {
+          "targetText": "そうですか。日本（にっぽん）の生活（せいかつ）に、もう慣（な）れましたか？",
+          "displayText": "そうですか。日本（にっぽん）の生活（せいかつ）に、もう慣（な）れましたか？",
+          "reading": "そうですか。にほんのせいかつに、もうなれましたか？",
+          "speechText": "そうですか。にほんのせいかつに、もうなれましたか",
+          "translationByNative": {
+            "vi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+            "en": "I see. Have you got used to life in Japan?",
+            "ja": "そうですか。日本の生活に、もう慣れましたか。"
+          },
+          "translations": {
+            "vi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+            "en": "I see. Have you got used to life in Japan?",
+            "ja": "そうですか。日本の生活に、もう慣れましたか。"
+          },
+          "meaningVi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u2-l2-one-year-3"
+        },
+        {
+          "targetText": "はい。",
+          "displayText": "はい。",
+          "reading": "はい。",
+          "speechText": "はい",
+          "translationByNative": {
+            "vi": "Vâng, quen rồi ạ.",
+            "en": "Yes, I have.",
+            "ja": "はい。"
+          },
+          "translations": {
+            "vi": "Vâng, quen rồi ạ.",
+            "en": "Yes, I have.",
+            "ja": "はい。"
+          },
+          "meaningVi": "Vâng, quen rồi ạ.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m01-u2-l2-one-year-4"
+        },
+        {
+          "targetText": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+          "displayText": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+          "reading": "にほんにきて、どのぐらいですか？",
+          "speechText": "にほんにきて、どのぐらいですか",
+          "translationByNative": {
+            "vi": "Bạn đến Nhật được bao lâu rồi?",
+            "en": "How long have you been in Japan?",
+            "ja": "日本に来て、どのぐらいですか。"
+          },
+          "translations": {
+            "vi": "Bạn đến Nhật được bao lâu rồi?",
+            "en": "How long have you been in Japan?",
+            "ja": "日本に来て、どのぐらいですか。"
+          },
+          "meaningVi": "Bạn đến Nhật được bao lâu rồi?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u2-l2-last-september-1"
+        },
+        {
+          "targetText": "去年（きょねん）の9月（つき）に来（き）ました。",
+          "displayText": "去年（きょねん）の9月（つき）に来（き）ました。",
+          "reading": "きょねんのくがつにきました。",
+          "speechText": "きょねんのくがつにきました",
+          "translationByNative": {
+            "vi": "Tôi đến vào tháng 9 năm ngoái.",
+            "en": "I came last September.",
+            "ja": "去年の9月に来ました。"
+          },
+          "translations": {
+            "vi": "Tôi đến vào tháng 9 năm ngoái.",
+            "en": "I came last September.",
+            "ja": "去年の9月に来ました。"
+          },
+          "meaningVi": "Tôi đến vào tháng 9 năm ngoái.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m01-u2-l2-last-september-2"
+        },
+        {
+          "targetText": "そうですか。もう慣（な）れましたか？",
+          "displayText": "そうですか。もう慣（な）れましたか？",
+          "reading": "そうですか。もうなれましたか？",
+          "speechText": "そうですか。もうなれましたか",
+          "translationByNative": {
+            "vi": "Vậy à. Bạn quen chưa?",
+            "en": "I see. Have you settled in?",
+            "ja": "そうですか。もう慣れましたか。"
+          },
+          "translations": {
+            "vi": "Vậy à. Bạn quen chưa?",
+            "en": "I see. Have you settled in?",
+            "ja": "そうですか。もう慣れましたか。"
+          },
+          "meaningVi": "Vậy à. Bạn quen chưa?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u2-l2-last-september-3"
+        },
+        {
+          "targetText": "はい、おかげさまで。",
+          "displayText": "はい、おかげさまで。",
+          "reading": "はい、おかげさまで。",
+          "speechText": "はい、おかげさまで",
+          "translationByNative": {
+            "vi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+            "en": "Yes, thanks to you, I have.",
+            "ja": "はい、おかげさまで。"
+          },
+          "translations": {
+            "vi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+            "en": "Yes, thanks to you, I have.",
+            "ja": "はい、おかげさまで。"
+          },
+          "meaningVi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m01-u2-l2-last-september-4"
+        },
+        {
+          "targetText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+          "displayText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+          "reading": "にほんにきて、どのぐらいになりますか？",
+          "speechText": "にほんにきて、どのぐらいになりますか",
+          "translationByNative": {
+            "vi": "Em đến Nhật được bao lâu rồi?",
+            "en": "How long have you been in Japan?",
+            "ja": "日本に来て、どのぐらいになりますか。"
+          },
+          "translations": {
+            "vi": "Em đến Nhật được bao lâu rồi?",
+            "en": "How long have you been in Japan?",
+            "ja": "日本に来て、どのぐらいになりますか。"
+          },
+          "meaningVi": "Em đến Nhật được bao lâu rồi?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sensei",
+          "id": "ja-daily_life-m01-u2-l2-not-yet-1"
+        },
+        {
+          "targetText": "私（わたし）は、先月（せんげつ）、来（き）ました。",
+          "displayText": "私（わたし）は、先月（せんげつ）、来（き）ました。",
+          "reading": "わたしは、せんげつ、きました。",
+          "speechText": "わたしは、せんげつ、きました",
+          "translationByNative": {
+            "vi": "Em mới đến tháng trước ạ.",
+            "en": "I came last month.",
+            "ja": "私は、先月、来ました。"
+          },
+          "translations": {
+            "vi": "Em mới đến tháng trước ạ.",
+            "en": "I came last month.",
+            "ja": "私は、先月、来ました。"
+          },
+          "meaningVi": "Em mới đến tháng trước ạ.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u2-l2-not-yet-2"
+        },
+        {
+          "targetText": "そうですか。少（すこ）し慣（な）れましたか？",
+          "displayText": "そうですか。少（すこ）し慣（な）れましたか？",
+          "reading": "そうですか。すこしなれましたか？",
+          "speechText": "そうですか。すこしなれましたか",
+          "translationByNative": {
+            "vi": "Vậy à. Em quen được một chút chưa?",
+            "en": "I see. Have you got used to it a little?",
+            "ja": "そうですか。少し慣れましたか。"
+          },
+          "translations": {
+            "vi": "Vậy à. Em quen được một chút chưa?",
+            "en": "I see. Have you got used to it a little?",
+            "ja": "そうですか。少し慣れましたか。"
+          },
+          "meaningVi": "Vậy à. Em quen được một chút chưa?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sensei",
+          "id": "ja-daily_life-m01-u2-l2-not-yet-3"
+        },
+        {
+          "targetText": "まだ、ちょっと……。",
+          "displayText": "まだ、ちょっと……。",
+          "reading": "まだ、ちょっと……。",
+          "speechText": "まだ、ちょっと",
+          "translationByNative": {
+            "vi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+            "en": "Not yet, it is still a bit hard.",
+            "ja": "まだ、ちょっと……。"
+          },
+          "translations": {
+            "vi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+            "en": "Not yet, it is still a bit hard.",
+            "ja": "まだ、ちょっと……。"
+          },
+          "meaningVi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m01-u2-l2-not-yet-4"
+        }
+      ],
+      "dialogueGroups": [
+        {
+          "id": "ja-daily_life-m01-u2-l2-one-year",
+          "titleByNative": {
+            "vi": "Đã ở một năm, đã quen",
+            "en": "One year in, already settled",
+            "ja": "一年たって、もう慣れた"
+          },
+          "situationByNative": {
+            "vi": "Hai người quen gặp nhau. Một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.",
+            "en": "Two acquaintances meet. One asks how long the other has been in Japan and whether they have settled in.",
+            "ja": "知り合い二人が会います。一方が、日本に来てどのぐらいか、慣れたかをたずねます。"
+          },
+          "explanationByNative": {
+            "vi": "どのぐらいになりますか hỏi đã được bao lâu; đáp bằng mốc thời gian + になります.\nもう慣れましたか hỏi đã quen chưa; đáp はい là đã quen.",
+            "en": "どのぐらいになりますか asks how long it has been; answer with a time span + になります.\nもう慣れましたか asks whether you have settled in; はい means you have.",
+            "ja": "「どのぐらいになりますか」は期間をたずねます。「期間＋になります」で答えます。\n「もう慣れましたか」は慣れたかをたずねます。「はい」なら慣れたという意味です。"
+          },
+          "lines": [
+            {
+              "targetText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+              "displayText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+              "reading": "にほんにきて、どのぐらいになりますか？",
+              "speechText": "にほんにきて、どのぐらいになりますか",
+              "translationByNative": {
+                "vi": "Bạn đến Nhật được bao lâu rồi?",
+                "en": "How long have you been in Japan?",
+                "ja": "日本に来て、どのぐらいですか。"
+              },
+              "translations": {
+                "vi": "Bạn đến Nhật được bao lâu rồi?",
+                "en": "How long have you been in Japan?",
+                "ja": "日本に来て、どのぐらいですか。"
+              },
+              "meaningVi": "Bạn đến Nhật được bao lâu rồi?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u2-l2-one-year-1"
+            },
+            {
+              "targetText": "1年（ねん）になります。",
+              "displayText": "1年（ねん）になります。",
+              "reading": "いちねんになります。",
+              "speechText": "いちねんになります",
+              "translationByNative": {
+                "vi": "Được tròn một năm rồi ạ.",
+                "en": "It has been one year.",
+                "ja": "一年になります。"
+              },
+              "translations": {
+                "vi": "Được tròn một năm rồi ạ.",
+                "en": "It has been one year.",
+                "ja": "一年になります。"
+              },
+              "meaningVi": "Được tròn một năm rồi ạ.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m01-u2-l2-one-year-2"
+            },
+            {
+              "targetText": "そうですか。日本（にっぽん）の生活（せいかつ）に、もう慣（な）れましたか？",
+              "displayText": "そうですか。日本（にっぽん）の生活（せいかつ）に、もう慣（な）れましたか？",
+              "reading": "そうですか。にほんのせいかつに、もうなれましたか？",
+              "speechText": "そうですか。にほんのせいかつに、もうなれましたか",
+              "translationByNative": {
+                "vi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+                "en": "I see. Have you got used to life in Japan?",
+                "ja": "そうですか。日本の生活に、もう慣れましたか。"
+              },
+              "translations": {
+                "vi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+                "en": "I see. Have you got used to life in Japan?",
+                "ja": "そうですか。日本の生活に、もう慣れましたか。"
+              },
+              "meaningVi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u2-l2-one-year-3"
+            },
+            {
+              "targetText": "はい。",
+              "displayText": "はい。",
+              "reading": "はい。",
+              "speechText": "はい",
+              "translationByNative": {
+                "vi": "Vâng, quen rồi ạ.",
+                "en": "Yes, I have.",
+                "ja": "はい。"
+              },
+              "translations": {
+                "vi": "Vâng, quen rồi ạ.",
+                "en": "Yes, I have.",
+                "ja": "はい。"
+              },
+              "meaningVi": "Vâng, quen rồi ạ.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m01-u2-l2-one-year-4"
+            }
+          ]
+        },
+        {
+          "id": "ja-daily_life-m01-u2-l2-last-september",
+          "titleByNative": {
+            "vi": "Đến từ tháng 9 năm ngoái",
+            "en": "Arrived last September",
+            "ja": "去年の9月に来た"
+          },
+          "situationByNative": {
+            "vi": "Cùng câu hỏi, nhưng người này trả lời bằng thời điểm đã đến thay vì độ dài thời gian.",
+            "en": "The same question, but this person answers with the arrival date instead of a length of time.",
+            "ja": "同じ質問ですが、この人は期間ではなく来た時期で答えます。"
+          },
+          "explanationByNative": {
+            "vi": "Câu hỏi どのぐらい có thể đáp bằng ĐỘ DÀI (1年) hoặc bằng THỜI ĐIỂM đã đến (去年の9月).\nはい、おかげさまで lịch sự hơn はい trần — cụm này đã học ở bài trước.",
+            "en": "A どのぐらい question can be answered with a LENGTH (1年) or with the ARRIVAL time (去年の9月).\nはい、おかげさまで is more polite than plain はい — learned in the previous lesson.",
+            "ja": "「どのぐらい」の質問には、期間（1年）でも、来た時期（去年の9月）でも答えられます。\n「はい、おかげさまで」は「はい」より丁寧です。前のレッスンで学びました。"
+          },
+          "lines": [
+            {
+              "targetText": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+              "displayText": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+              "reading": "にほんにきて、どのぐらいですか？",
+              "speechText": "にほんにきて、どのぐらいですか",
+              "translationByNative": {
+                "vi": "Bạn đến Nhật được bao lâu rồi?",
+                "en": "How long have you been in Japan?",
+                "ja": "日本に来て、どのぐらいですか。"
+              },
+              "translations": {
+                "vi": "Bạn đến Nhật được bao lâu rồi?",
+                "en": "How long have you been in Japan?",
+                "ja": "日本に来て、どのぐらいですか。"
+              },
+              "meaningVi": "Bạn đến Nhật được bao lâu rồi?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u2-l2-last-september-1"
+            },
+            {
+              "targetText": "去年（きょねん）の9月（つき）に来（き）ました。",
+              "displayText": "去年（きょねん）の9月（つき）に来（き）ました。",
+              "reading": "きょねんのくがつにきました。",
+              "speechText": "きょねんのくがつにきました",
+              "translationByNative": {
+                "vi": "Tôi đến vào tháng 9 năm ngoái.",
+                "en": "I came last September.",
+                "ja": "去年の9月に来ました。"
+              },
+              "translations": {
+                "vi": "Tôi đến vào tháng 9 năm ngoái.",
+                "en": "I came last September.",
+                "ja": "去年の9月に来ました。"
+              },
+              "meaningVi": "Tôi đến vào tháng 9 năm ngoái.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m01-u2-l2-last-september-2"
+            },
+            {
+              "targetText": "そうですか。もう慣（な）れましたか？",
+              "displayText": "そうですか。もう慣（な）れましたか？",
+              "reading": "そうですか。もうなれましたか？",
+              "speechText": "そうですか。もうなれましたか",
+              "translationByNative": {
+                "vi": "Vậy à. Bạn quen chưa?",
+                "en": "I see. Have you settled in?",
+                "ja": "そうですか。もう慣れましたか。"
+              },
+              "translations": {
+                "vi": "Vậy à. Bạn quen chưa?",
+                "en": "I see. Have you settled in?",
+                "ja": "そうですか。もう慣れましたか。"
+              },
+              "meaningVi": "Vậy à. Bạn quen chưa?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u2-l2-last-september-3"
+            },
+            {
+              "targetText": "はい、おかげさまで。",
+              "displayText": "はい、おかげさまで。",
+              "reading": "はい、おかげさまで。",
+              "speechText": "はい、おかげさまで",
+              "translationByNative": {
+                "vi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+                "en": "Yes, thanks to you, I have.",
+                "ja": "はい、おかげさまで。"
+              },
+              "translations": {
+                "vi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+                "en": "Yes, thanks to you, I have.",
+                "ja": "はい、おかげさまで。"
+              },
+              "meaningVi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m01-u2-l2-last-september-4"
+            }
+          ]
+        },
+        {
+          "id": "ja-daily_life-m01-u2-l2-not-yet",
+          "titleByNative": {
+            "vi": "Mới đến, chưa quen",
+            "en": "Just arrived, not settled yet",
+            "ja": "来たばかりで、まだ慣れない"
+          },
+          "situationByNative": {
+            "vi": "Người vừa đến tháng trước, được hỏi đã quen chưa và đáp là vẫn chưa.",
+            "en": "Someone who arrived last month is asked whether they have settled in, and says not yet.",
+            "ja": "先月来たばかりの人が、慣れたかたずねられて「まだ」と答えます。"
+          },
+          "explanationByNative": {
+            "vi": "まだ、ちょっと…… bỏ lửng cuối câu là cách đáp phủ định nhẹ nhàng, không nói thẳng \"chưa quen\".\n少し慣れましたか hỏi đã quen được một chút chưa — nhẹ hơn もう慣れましたか.",
+            "en": "Trailing off with まだ、ちょっと…… is a gentle way to say no without stating “not used to it yet”.\n少し慣れましたか asks whether you have settled in a little — softer than もう慣れましたか.",
+            "ja": "「まだ、ちょっと……」と言いさすのは、「慣れていない」と直接言わないやわらかい否定です。\n「少し慣れましたか」は少し慣れたかをたずねます。「もう慣れましたか」よりやわらかいです。"
+          },
+          "lines": [
+            {
+              "targetText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+              "displayText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+              "reading": "にほんにきて、どのぐらいになりますか？",
+              "speechText": "にほんにきて、どのぐらいになりますか",
+              "translationByNative": {
+                "vi": "Em đến Nhật được bao lâu rồi?",
+                "en": "How long have you been in Japan?",
+                "ja": "日本に来て、どのぐらいになりますか。"
+              },
+              "translations": {
+                "vi": "Em đến Nhật được bao lâu rồi?",
+                "en": "How long have you been in Japan?",
+                "ja": "日本に来て、どのぐらいになりますか。"
+              },
+              "meaningVi": "Em đến Nhật được bao lâu rồi?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sensei",
+              "id": "ja-daily_life-m01-u2-l2-not-yet-1"
+            },
+            {
+              "targetText": "私（わたし）は、先月（せんげつ）、来（き）ました。",
+              "displayText": "私（わたし）は、先月（せんげつ）、来（き）ました。",
+              "reading": "わたしは、せんげつ、きました。",
+              "speechText": "わたしは、せんげつ、きました",
+              "translationByNative": {
+                "vi": "Em mới đến tháng trước ạ.",
+                "en": "I came last month.",
+                "ja": "私は、先月、来ました。"
+              },
+              "translations": {
+                "vi": "Em mới đến tháng trước ạ.",
+                "en": "I came last month.",
+                "ja": "私は、先月、来ました。"
+              },
+              "meaningVi": "Em mới đến tháng trước ạ.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u2-l2-not-yet-2"
+            },
+            {
+              "targetText": "そうですか。少（すこ）し慣（な）れましたか？",
+              "displayText": "そうですか。少（すこ）し慣（な）れましたか？",
+              "reading": "そうですか。すこしなれましたか？",
+              "speechText": "そうですか。すこしなれましたか",
+              "translationByNative": {
+                "vi": "Vậy à. Em quen được một chút chưa?",
+                "en": "I see. Have you got used to it a little?",
+                "ja": "そうですか。少し慣れましたか。"
+              },
+              "translations": {
+                "vi": "Vậy à. Em quen được một chút chưa?",
+                "en": "I see. Have you got used to it a little?",
+                "ja": "そうですか。少し慣れましたか。"
+              },
+              "meaningVi": "Vậy à. Em quen được một chút chưa?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sensei",
+              "id": "ja-daily_life-m01-u2-l2-not-yet-3"
+            },
+            {
+              "targetText": "まだ、ちょっと……。",
+              "displayText": "まだ、ちょっと……。",
+              "reading": "まだ、ちょっと……。",
+              "speechText": "まだ、ちょっと",
+              "translationByNative": {
+                "vi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+                "en": "Not yet, it is still a bit hard.",
+                "ja": "まだ、ちょっと……。"
+              },
+              "translations": {
+                "vi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+                "en": "Not yet, it is still a bit hard.",
+                "ja": "まだ、ちょっと……。"
+              },
+              "meaningVi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m01-u2-l2-not-yet-4"
+            }
+          ]
+        }
+      ],
       "reviewItems": [],
       "grammarFocus": null,
       "grammarFocusVi": null,
       "cultureNote": null,
       "cultureNoteVi": null,
-      "contentStatus": "blueprint",
-      "playable": false,
-      "comingSoon": true,
-      "canSkip": true,
-      "exerciseStatus": "placeholder",
-      "learnSection": {
-        "vocabularyPhraseCards": {
-          "status": "placeholder"
+      "contextualVariations": [],
+      "communicationStrategyByNative": {},
+      "lessonFormat": "five_cards",
+      "fiveCardContent": {
+        "mainCards": [
+          "intro",
+          "vocabulary",
+          "dialogue",
+          "grammar",
+          "practice"
+        ],
+        "targetLanguage": "ja",
+        "targetLocale": "ja-JP",
+        "cultureContext": "Japan",
+        "approvedCharacterNamePool": [
+          {
+            "id": "tanaka",
+            "displayName": "田中（たなか）",
+            "canonicalName": "田中",
+            "audioName": "たなか"
+          },
+          {
+            "id": "ito",
+            "displayName": "伊藤（いとう）",
+            "canonicalName": "伊藤",
+            "audioName": "いとう"
+          },
+          {
+            "id": "sato",
+            "displayName": "佐藤（さとう）",
+            "canonicalName": "佐藤",
+            "audioName": "さとう"
+          },
+          {
+            "id": "sensei",
+            "displayName": "先生（せんせい）",
+            "canonicalName": "先生",
+            "audioName": "せんせい"
+          }
+        ],
+        "intro": {
+          "objectives": [
+            "Hỏi người khác đã ở Nhật bao lâu bằng どのぐらい.",
+            "Trả lời bằng mốc thời gian + になります.",
+            "Hỏi đã quen chưa bằng もう慣れましたか.",
+            "Đáp khẳng định bằng はい、おかげさまで.",
+            "Đáp phủ định nhẹ nhàng bằng まだ、ちょっと.",
+            "Kể mốc thời gian đã đến bằng 去年 và 先月."
+          ],
+          "objectivesByNative": {
+            "vi": [
+              "Hỏi người khác đã ở Nhật bao lâu bằng どのぐらい.",
+              "Trả lời bằng mốc thời gian + になります.",
+              "Hỏi đã quen chưa bằng もう慣れましたか.",
+              "Đáp khẳng định bằng はい、おかげさまで.",
+              "Đáp phủ định nhẹ nhàng bằng まだ、ちょっと.",
+              "Kể mốc thời gian đã đến bằng 去年 và 先月."
+            ],
+            "en": [
+              "Ask how long someone has been in Japan with どのぐらい.",
+              "Answer with a time span + になります.",
+              "Ask whether someone has settled in with もう慣れましたか.",
+              "Answer yes politely with はい、おかげさまで.",
+              "Decline gently with まだ、ちょっと.",
+              "Say when you arrived using 去年 and 先月."
+            ],
+            "ja": [
+              "「どのぐらい」で日本に来てからの期間をたずねられます。",
+              "「期間＋になります」で答えられます。",
+              "「もう慣れましたか」で慣れたかどうかをたずねられます。",
+              "「はい、おかげさまで」で丁寧に肯定できます。",
+              "「まだ、ちょっと」でやわらかく否定できます。",
+              "「去年」「先月」で来た時期を言えます。"
+            ]
+          },
+          "situation": [
+            "Bạn gặp lại người quen và được hỏi thăm về cuộc sống dạo này.",
+            "Bạn kể mình đến Nhật bao lâu rồi và đã quen hay chưa."
+          ],
+          "situationByNative": {
+            "vi": [
+              "Bạn gặp lại người quen và được hỏi thăm về cuộc sống dạo này.",
+              "Bạn kể mình đến Nhật bao lâu rồi và đã quen hay chưa."
+            ],
+            "en": [
+              "You meet an acquaintance again and are asked how life has been.",
+              "You say how long you have been in Japan and whether you have settled in."
+            ],
+            "ja": [
+              "知り合いに再会し、近況をたずねられます。",
+              "日本に来てどのぐらいか、慣れたかどうかを話します。"
+            ]
+          },
+          "examples": [
+            {
+              "label": "Người ta hỏi bạn:",
+              "labelByNative": {
+                "vi": "Người ta hỏi bạn:",
+                "en": "You are asked:",
+                "ja": "こうたずねられます。"
+              },
+              "speaker": "",
+              "targetText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+              "displayText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+              "reading": "にほんにきて、どのぐらいになりますか？",
+              "speechText": "にほんにきて、どのぐらいになりますか",
+              "translationByNative": {
+                "vi": "Bạn đến Nhật được bao lâu rồi?",
+                "en": "How long have you been in Japan?",
+                "ja": "日本に来て、どのぐらいですか。"
+              },
+              "translations": {
+                "vi": "Bạn đến Nhật được bao lâu rồi?",
+                "en": "How long have you been in Japan?",
+                "ja": "日本に来て、どのぐらいですか。"
+              },
+              "meaningVi": "Bạn đến Nhật được bao lâu rồi?",
+              "audioLocale": "ja-JP"
+            },
+            {
+              "label": "Bạn đáp bằng mốc thời gian:",
+              "labelByNative": {
+                "vi": "Bạn đáp bằng mốc thời gian:",
+                "en": "You answer with a time span:",
+                "ja": "期間で答えます。"
+              },
+              "speaker": "",
+              "targetText": "1年（ねん）になります。",
+              "displayText": "1年（ねん）になります。",
+              "reading": "いちねんになります。",
+              "speechText": "いちねんになります",
+              "translationByNative": {
+                "vi": "Được tròn một năm rồi ạ.",
+                "en": "It has been one year.",
+                "ja": "一年になります。"
+              },
+              "translations": {
+                "vi": "Được tròn một năm rồi ạ.",
+                "en": "It has been one year.",
+                "ja": "一年になります。"
+              },
+              "meaningVi": "Được tròn một năm rồi ạ.",
+              "audioLocale": "ja-JP"
+            },
+            {
+              "label": "Được hỏi đã quen chưa, bạn đáp:",
+              "labelByNative": {
+                "vi": "Được hỏi đã quen chưa, bạn đáp:",
+                "en": "Asked whether you have settled in, you answer:",
+                "ja": "慣れたかたずねられたら、こう答えます。"
+              },
+              "speaker": "",
+              "targetText": "はい、おかげさまで。",
+              "displayText": "はい、おかげさまで。",
+              "reading": "はい、おかげさまで。",
+              "speechText": "はい、おかげさまで",
+              "translationByNative": {
+                "vi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+                "en": "Yes, thanks to you, I have.",
+                "ja": "はい、おかげさまで。"
+              },
+              "translations": {
+                "vi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+                "en": "Yes, thanks to you, I have.",
+                "ja": "はい、おかげさまで。"
+              },
+              "meaningVi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+              "audioLocale": "ja-JP"
+            }
+          ],
+          "importantNote": [
+            "どのぐらい hỏi ĐỘ DÀI thời gian, khác với いつ hỏi thời điểm.",
+            "もう đi với câu hỏi nghĩa \"đã… chưa\"; まだ là câu đáp \"vẫn chưa\".",
+            "まだ、ちょっと…… bỏ lửng cuối câu là cách từ chối/phủ định nhẹ nhàng, rất thường gặp."
+          ],
+          "importantNoteByNative": {
+            "vi": [
+              "どのぐらい hỏi ĐỘ DÀI thời gian, khác với いつ hỏi thời điểm.",
+              "もう đi với câu hỏi nghĩa \"đã… chưa\"; まだ là câu đáp \"vẫn chưa\".",
+              "まだ、ちょっと…… bỏ lửng cuối câu là cách từ chối/phủ định nhẹ nhàng, rất thường gặp."
+            ],
+            "en": [
+              "どのぐらい asks about a LENGTH of time; いつ asks about a point in time.",
+              "もう makes the question “已 already…?”; まだ is the answer “not yet”.",
+              "Trailing off after まだ、ちょっと…… is a very common, gentle way to say no."
+            ],
+            "ja": [
+              "「どのぐらい」は期間の長さ、「いつ」は時点をたずねます。",
+              "「もう」は「もう〜しましたか」の質問、「まだ」はその否定の答えです。",
+              "「まだ、ちょっと……」と言いさすのは、やわらかい否定のよくある言い方です。"
+            ]
+          }
         },
-        "grammarSentencePatterns": {
-          "status": "placeholder"
+        "vocabularyDetails": [
+          {
+            "id": "dono-gurai",
+            "timingAndContext": [
+              "Hỏi độ dài thời gian."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Hỏi độ dài thời gian."
+              ],
+              "en": [
+                "Asking about a length of time."
+              ],
+              "ja": [
+                "期間の長さをたずねるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [
+              "Không dùng để hỏi thời điểm — đó là いつ."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng để hỏi thời điểm — đó là いつ."
+              ],
+              "en": [
+                "Do not use it to ask a point in time — that is いつ."
+              ],
+              "ja": [
+                "時点をたずねるときには使いません。それは「いつ」です。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Bao lâu.",
+            "overviewByNative": {
+              "vi": "Bao lâu.",
+              "en": "How long.",
+              "ja": "どのぐらい。"
+            },
+            "examples": [
+              {
+                "text": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+                "reading": "にほんにきて、どのぐらいになりますか？",
+                "translation": "Bạn đến Nhật được bao lâu rồi?",
+                "translationByNative": {
+                  "vi": "Bạn đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいですか。"
+                },
+                "speechText": "にほんにきて、どのぐらいになりますか"
+              }
+            ]
+          },
+          {
+            "id": "nareru",
+            "timingAndContext": [
+              "Nói về việc đã quen với nơi ở hoặc công việc mới."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nói về việc đã quen với nơi ở hoặc công việc mới."
+              ],
+              "en": [
+                "Talking about getting used to a new place or job."
+              ],
+              "ja": [
+                "新しい場所や仕事に慣れることについて話すとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "Thân mật.",
+            "registerByNative": {
+              "vi": "Thân mật.",
+              "en": "Casual.",
+              "ja": "カジュアル。"
+            },
+            "formal": [
+              "Cách lịch sự:",
+              "慣れました",
+              "Dùng với:",
+              "Mọi đối tượng"
+            ],
+            "formalByNative": {
+              "vi": [
+                "Cách lịch sự:",
+                "慣れました",
+                "Dùng với:",
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Polite form:",
+                "慣れました",
+                "Use with:",
+                "Anyone"
+              ],
+              "ja": [
+                "丁寧な言い方：",
+                "慣れました",
+                "使う相手：",
+                "誰にでも"
+              ]
+            },
+            "casual": [],
+            "overview": "Quen với.",
+            "overviewByNative": {
+              "vi": "Quen với.",
+              "en": "To get used to.",
+              "ja": "慣れる。"
+            },
+            "examples": [
+              {
+                "text": "そうですか。もう慣（な）れましたか？",
+                "reading": "そうですか。もうなれましたか？",
+                "translation": "Vậy à. Bạn quen chưa?",
+                "translationByNative": {
+                  "vi": "Vậy à. Bạn quen chưa?",
+                  "en": "I see. Have you settled in?",
+                  "ja": "そうですか。もう慣れましたか。"
+                },
+                "speechText": "そうですか。もうなれましたか"
+              }
+            ],
+            "notes": [
+              "Dạng từ điển; trong hội thoại thường gặp ở dạng 慣れました."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Dạng từ điển; trong hội thoại thường gặp ở dạng 慣れました."
+              ],
+              "en": [
+                "Dictionary form; in conversation it usually appears as 慣れました."
+              ],
+              "ja": [
+                "辞書形です。会話では「慣れました」の形でよく出ます。"
+              ]
+            }
+          },
+          {
+            "id": "nihon",
+            "timingAndContext": [
+              "Tên nước Nhật Bản."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Tên nước Nhật Bản."
+              ],
+              "en": [
+                "The name of the country Japan."
+              ],
+              "ja": [
+                "国の名前「日本」。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Nhật Bản.",
+            "overviewByNative": {
+              "vi": "Nhật Bản.",
+              "en": "Japan.",
+              "ja": "日本。"
+            },
+            "examples": [
+              {
+                "text": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+                "reading": "にほんにきて、どのぐらいですか？",
+                "translation": "Bạn đến Nhật được bao lâu rồi?",
+                "translationByNative": {
+                  "vi": "Bạn đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいですか。"
+                },
+                "speechText": "にほんにきて、どのぐらいですか"
+              }
+            ]
+          },
+          {
+            "id": "seikatsu",
+            "timingAndContext": [
+              "Nói về cuộc sống, sinh hoạt hằng ngày."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nói về cuộc sống, sinh hoạt hằng ngày."
+              ],
+              "en": [
+                "Talking about daily life."
+              ],
+              "ja": [
+                "日々の生活について話すとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Cuộc sống, sinh hoạt.",
+            "overviewByNative": {
+              "vi": "Cuộc sống, sinh hoạt.",
+              "en": "Life, daily living.",
+              "ja": "生活。"
+            },
+            "examples": [
+              {
+                "text": "そうですか。日本（にっぽん）の生活（せいかつ）に、もう慣（な）れましたか？",
+                "reading": "そうですか。にほんのせいかつに、もうなれましたか？",
+                "translation": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+                "translationByNative": {
+                  "vi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+                  "en": "I see. Have you got used to life in Japan?",
+                  "ja": "そうですか。日本の生活に、もう慣れましたか。"
+                },
+                "speechText": "そうですか。にほんのせいかつに、もうなれましたか"
+              }
+            ]
+          },
+          {
+            "id": "ni-narimasu",
+            "timingAndContext": [
+              "Nói mốc thời gian đã tròn bao lâu."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nói mốc thời gian đã tròn bao lâu."
+              ],
+              "en": [
+                "Saying how long a period has become."
+              ],
+              "ja": [
+                "期間がどのぐらいになったかを言うとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [
+              "Không đổi trợ từ に thành が hay を."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không đổi trợ từ に thành が hay を."
+              ],
+              "en": [
+                "Do not change the particle に to が or を."
+              ],
+              "ja": [
+                "助詞「に」を「が」や「を」に変えません。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Tròn / được (bao lâu).",
+            "overviewByNative": {
+              "vi": "Tròn / được (bao lâu).",
+              "en": "It has been (a period).",
+              "ja": "〜になります。"
+            },
+            "examples": [
+              {
+                "text": "1年（ねん）になります。",
+                "reading": "いちねんになります。",
+                "translation": "Được tròn một năm rồi ạ.",
+                "translationByNative": {
+                  "vi": "Được tròn một năm rồi ạ.",
+                  "en": "It has been one year.",
+                  "ja": "一年になります。"
+                },
+                "speechText": "いちねんになります"
+              }
+            ]
+          },
+          {
+            "id": "mou",
+            "timingAndContext": [
+              "Hỏi hoặc nói việc gì đó đã xong."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Hỏi hoặc nói việc gì đó đã xong."
+              ],
+              "en": [
+                "Asking or saying that something is already done."
+              ],
+              "ja": [
+                "すでに終わったことをたずねる・言うとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Đã… rồi.",
+            "overviewByNative": {
+              "vi": "Đã… rồi.",
+              "en": "Already.",
+              "ja": "もう。"
+            },
+            "examples": [
+              {
+                "text": "そうですか。もう慣（な）れましたか？",
+                "reading": "そうですか。もうなれましたか？",
+                "translation": "Vậy à. Bạn quen chưa?",
+                "translationByNative": {
+                  "vi": "Vậy à. Bạn quen chưa?",
+                  "en": "I see. Have you settled in?",
+                  "ja": "そうですか。もう慣れましたか。"
+                },
+                "speechText": "そうですか。もうなれましたか"
+              }
+            ]
+          },
+          {
+            "id": "mada",
+            "timingAndContext": [
+              "Đáp rằng việc gì đó vẫn chưa xong."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Đáp rằng việc gì đó vẫn chưa xong."
+              ],
+              "en": [
+                "Answering that something is not done yet."
+              ],
+              "ja": [
+                "まだ終わっていないと答えるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Vẫn chưa.",
+            "overviewByNative": {
+              "vi": "Vẫn chưa.",
+              "en": "Not yet.",
+              "ja": "まだ。"
+            },
+            "examples": [
+              {
+                "text": "まだ、ちょっと……。",
+                "reading": "まだ、ちょっと……。",
+                "translation": "Vẫn chưa, hơi khó một chút.",
+                "translationByNative": {
+                  "vi": "Vẫn chưa, hơi khó một chút.",
+                  "en": "Not yet, it is still a bit hard.",
+                  "ja": "まだ、ちょっと……。"
+                },
+                "speechText": "まだ、ちょっと"
+              }
+            ]
+          },
+          {
+            "id": "kyonen",
+            "timingAndContext": [
+              "Chỉ mốc thời gian năm ngoái."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Chỉ mốc thời gian năm ngoái."
+              ],
+              "en": [
+                "The time point “last year”."
+              ],
+              "ja": [
+                "「去年」という時点。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Năm ngoái.",
+            "overviewByNative": {
+              "vi": "Năm ngoái.",
+              "en": "Last year.",
+              "ja": "去年。"
+            },
+            "examples": [
+              {
+                "text": "去年（きょねん）の9月（つき）に来（き）ました。",
+                "reading": "きょねんのくがつにきました。",
+                "translation": "Tôi đến vào tháng 9 năm ngoái.",
+                "translationByNative": {
+                  "vi": "Tôi đến vào tháng 9 năm ngoái.",
+                  "en": "I came last September.",
+                  "ja": "去年の9月に来ました。"
+                },
+                "speechText": "きょねんのくがつにきました"
+              }
+            ]
+          },
+          {
+            "id": "sengetsu",
+            "timingAndContext": [
+              "Chỉ mốc thời gian tháng trước."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Chỉ mốc thời gian tháng trước."
+              ],
+              "en": [
+                "The time point “last month”."
+              ],
+              "ja": [
+                "「先月」という時点。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Tháng trước.",
+            "overviewByNative": {
+              "vi": "Tháng trước.",
+              "en": "Last month.",
+              "ja": "先月。"
+            },
+            "examples": [
+              {
+                "text": "私（わたし）は、先月（せんげつ）、来（き）ました。",
+                "reading": "わたしは、せんげつ、きました。",
+                "translation": "Tôi mới đến tháng trước.",
+                "translationByNative": {
+                  "vi": "Tôi mới đến tháng trước.",
+                  "en": "I came last month.",
+                  "ja": "私は、先月、来ました。"
+                },
+                "speechText": "わたしは、せんげつ、きました"
+              }
+            ]
+          }
+        ],
+        "vocabularyReferences": [
+          {
+            "term": "半年（はんとし）",
+            "reading": "はんとし",
+            "speechText": "はんとし",
+            "meaning": "Nửa năm.",
+            "meaningByNative": {
+              "vi": "Nửa năm.",
+              "en": "Half a year.",
+              "ja": "半年。"
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "example": {
+              "text": "ちょうど半年（はんとし）です。",
+              "reading": "ちょうどはんとしです。",
+              "translation": "Đúng tròn nửa năm.",
+              "translationByNative": {
+                "vi": "Đúng tròn nửa năm.",
+                "en": "Exactly half a year.",
+                "ja": "ちょうど半年です。"
+              },
+              "speechText": "ちょうどはんとしです。"
+            }
+          },
+          {
+            "term": "なんとか",
+            "reading": "なんとか",
+            "speechText": "なんとか",
+            "meaning": "Cũng tạm, xoay xở được.",
+            "meaningByNative": {
+              "vi": "Cũng tạm, xoay xở được.",
+              "en": "Somehow, managing.",
+              "ja": "なんとか。"
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "example": {
+              "text": "はい、なんとか。",
+              "reading": "はい、なんとか。",
+              "translation": "Vâng, cũng tạm ạ.",
+              "translationByNative": {
+                "vi": "Vâng, cũng tạm ạ.",
+                "en": "Yes, more or less.",
+                "ja": "はい、なんとか。"
+              },
+              "speechText": "はい、なんとか。"
+            }
+          }
+        ],
+        "dialogueGroups": [
+          {
+            "id": "one-year",
+            "title": "Đã ở một năm, đã quen",
+            "titleByNative": {
+              "vi": "Đã ở một năm, đã quen",
+              "en": "One year in, already settled",
+              "ja": "一年たって、もう慣れた"
+            },
+            "situation": "Hai người quen gặp nhau. Một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.",
+            "situationByNative": {
+              "vi": "Hai người quen gặp nhau. Một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.",
+              "en": "Two acquaintances meet. One asks how long the other has been in Japan and whether they have settled in.",
+              "ja": "知り合い二人が会います。一方が、日本に来てどのぐらいか、慣れたかをたずねます。"
+            },
+            "lines": [
+              {
+                "targetText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+                "displayText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+                "reading": "にほんにきて、どのぐらいになりますか？",
+                "speechText": "にほんにきて、どのぐらいになりますか",
+                "translationByNative": {
+                  "vi": "Bạn đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいですか。"
+                },
+                "translations": {
+                  "vi": "Bạn đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいですか。"
+                },
+                "meaningVi": "Bạn đến Nhật được bao lâu rồi?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "1年（ねん）になります。",
+                "displayText": "1年（ねん）になります。",
+                "reading": "いちねんになります。",
+                "speechText": "いちねんになります",
+                "translationByNative": {
+                  "vi": "Được tròn một năm rồi ạ.",
+                  "en": "It has been one year.",
+                  "ja": "一年になります。"
+                },
+                "translations": {
+                  "vi": "Được tròn một năm rồi ạ.",
+                  "en": "It has been one year.",
+                  "ja": "一年になります。"
+                },
+                "meaningVi": "Được tròn một năm rồi ạ.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "そうですか。日本（にっぽん）の生活（せいかつ）に、もう慣（な）れましたか？",
+                "displayText": "そうですか。日本（にっぽん）の生活（せいかつ）に、もう慣（な）れましたか？",
+                "reading": "そうですか。にほんのせいかつに、もうなれましたか？",
+                "speechText": "そうですか。にほんのせいかつに、もうなれましたか",
+                "translationByNative": {
+                  "vi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+                  "en": "I see. Have you got used to life in Japan?",
+                  "ja": "そうですか。日本の生活に、もう慣れましたか。"
+                },
+                "translations": {
+                  "vi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+                  "en": "I see. Have you got used to life in Japan?",
+                  "ja": "そうですか。日本の生活に、もう慣れましたか。"
+                },
+                "meaningVi": "Vậy à. Bạn quen với cuộc sống ở Nhật chưa?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "はい。",
+                "displayText": "はい。",
+                "reading": "はい。",
+                "speechText": "はい",
+                "translationByNative": {
+                  "vi": "Vâng, quen rồi ạ.",
+                  "en": "Yes, I have.",
+                  "ja": "はい。"
+                },
+                "translations": {
+                  "vi": "Vâng, quen rồi ạ.",
+                  "en": "Yes, I have.",
+                  "ja": "はい。"
+                },
+                "meaningVi": "Vâng, quen rồi ạ.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              }
+            ],
+            "explanation": [
+              "どのぐらいになりますか hỏi đã được bao lâu; đáp bằng mốc thời gian + になります.",
+              "もう慣れましたか hỏi đã quen chưa; đáp はい là đã quen."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "どのぐらいになりますか hỏi đã được bao lâu; đáp bằng mốc thời gian + になります.",
+                "もう慣れましたか hỏi đã quen chưa; đáp はい là đã quen."
+              ],
+              "en": [
+                "どのぐらいになりますか asks how long it has been; answer with a time span + になります.",
+                "もう慣れましたか asks whether you have settled in; はい means you have."
+              ],
+              "ja": [
+                "「どのぐらいになりますか」は期間をたずねます。「期間＋になります」で答えます。",
+                "「もう慣れましたか」は慣れたかをたずねます。「はい」なら慣れたという意味です。"
+              ]
+            }
+          },
+          {
+            "id": "last-september",
+            "title": "Đến từ tháng 9 năm ngoái",
+            "titleByNative": {
+              "vi": "Đến từ tháng 9 năm ngoái",
+              "en": "Arrived last September",
+              "ja": "去年の9月に来た"
+            },
+            "situation": "Cùng câu hỏi, nhưng người này trả lời bằng thời điểm đã đến thay vì độ dài thời gian.",
+            "situationByNative": {
+              "vi": "Cùng câu hỏi, nhưng người này trả lời bằng thời điểm đã đến thay vì độ dài thời gian.",
+              "en": "The same question, but this person answers with the arrival date instead of a length of time.",
+              "ja": "同じ質問ですが、この人は期間ではなく来た時期で答えます。"
+            },
+            "lines": [
+              {
+                "targetText": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+                "displayText": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+                "reading": "にほんにきて、どのぐらいですか？",
+                "speechText": "にほんにきて、どのぐらいですか",
+                "translationByNative": {
+                  "vi": "Bạn đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいですか。"
+                },
+                "translations": {
+                  "vi": "Bạn đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいですか。"
+                },
+                "meaningVi": "Bạn đến Nhật được bao lâu rồi?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "去年（きょねん）の9月（つき）に来（き）ました。",
+                "displayText": "去年（きょねん）の9月（つき）に来（き）ました。",
+                "reading": "きょねんのくがつにきました。",
+                "speechText": "きょねんのくがつにきました",
+                "translationByNative": {
+                  "vi": "Tôi đến vào tháng 9 năm ngoái.",
+                  "en": "I came last September.",
+                  "ja": "去年の9月に来ました。"
+                },
+                "translations": {
+                  "vi": "Tôi đến vào tháng 9 năm ngoái.",
+                  "en": "I came last September.",
+                  "ja": "去年の9月に来ました。"
+                },
+                "meaningVi": "Tôi đến vào tháng 9 năm ngoái.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
+              {
+                "targetText": "そうですか。もう慣（な）れましたか？",
+                "displayText": "そうですか。もう慣（な）れましたか？",
+                "reading": "そうですか。もうなれましたか？",
+                "speechText": "そうですか。もうなれましたか",
+                "translationByNative": {
+                  "vi": "Vậy à. Bạn quen chưa?",
+                  "en": "I see. Have you settled in?",
+                  "ja": "そうですか。もう慣れましたか。"
+                },
+                "translations": {
+                  "vi": "Vậy à. Bạn quen chưa?",
+                  "en": "I see. Have you settled in?",
+                  "ja": "そうですか。もう慣れましたか。"
+                },
+                "meaningVi": "Vậy à. Bạn quen chưa?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "はい、おかげさまで。",
+                "displayText": "はい、おかげさまで。",
+                "reading": "はい、おかげさまで。",
+                "speechText": "はい、おかげさまで",
+                "translationByNative": {
+                  "vi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+                  "en": "Yes, thanks to you, I have.",
+                  "ja": "はい、おかげさまで。"
+                },
+                "translations": {
+                  "vi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+                  "en": "Yes, thanks to you, I have.",
+                  "ja": "はい、おかげさまで。"
+                },
+                "meaningVi": "Vâng, nhờ ơn anh/chị, tôi quen rồi.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              }
+            ],
+            "explanation": [
+              "Câu hỏi どのぐらい có thể đáp bằng ĐỘ DÀI (1年) hoặc bằng THỜI ĐIỂM đã đến (去年の9月).",
+              "はい、おかげさまで lịch sự hơn はい trần — cụm này đã học ở bài trước."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Câu hỏi どのぐらい có thể đáp bằng ĐỘ DÀI (1年) hoặc bằng THỜI ĐIỂM đã đến (去年の9月).",
+                "はい、おかげさまで lịch sự hơn はい trần — cụm này đã học ở bài trước."
+              ],
+              "en": [
+                "A どのぐらい question can be answered with a LENGTH (1年) or with the ARRIVAL time (去年の9月).",
+                "はい、おかげさまで is more polite than plain はい — learned in the previous lesson."
+              ],
+              "ja": [
+                "「どのぐらい」の質問には、期間（1年）でも、来た時期（去年の9月）でも答えられます。",
+                "「はい、おかげさまで」は「はい」より丁寧です。前のレッスンで学びました。"
+              ]
+            }
+          },
+          {
+            "id": "not-yet",
+            "title": "Mới đến, chưa quen",
+            "titleByNative": {
+              "vi": "Mới đến, chưa quen",
+              "en": "Just arrived, not settled yet",
+              "ja": "来たばかりで、まだ慣れない"
+            },
+            "situation": "Người vừa đến tháng trước, được hỏi đã quen chưa và đáp là vẫn chưa.",
+            "situationByNative": {
+              "vi": "Người vừa đến tháng trước, được hỏi đã quen chưa và đáp là vẫn chưa.",
+              "en": "Someone who arrived last month is asked whether they have settled in, and says not yet.",
+              "ja": "先月来たばかりの人が、慣れたかたずねられて「まだ」と答えます。"
+            },
+            "lines": [
+              {
+                "targetText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+                "displayText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+                "reading": "にほんにきて、どのぐらいになりますか？",
+                "speechText": "にほんにきて、どのぐらいになりますか",
+                "translationByNative": {
+                  "vi": "Em đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいになりますか。"
+                },
+                "translations": {
+                  "vi": "Em đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいになりますか。"
+                },
+                "meaningVi": "Em đến Nhật được bao lâu rồi?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sensei"
+              },
+              {
+                "targetText": "私（わたし）は、先月（せんげつ）、来（き）ました。",
+                "displayText": "私（わたし）は、先月（せんげつ）、来（き）ました。",
+                "reading": "わたしは、せんげつ、きました。",
+                "speechText": "わたしは、せんげつ、きました",
+                "translationByNative": {
+                  "vi": "Em mới đến tháng trước ạ.",
+                  "en": "I came last month.",
+                  "ja": "私は、先月、来ました。"
+                },
+                "translations": {
+                  "vi": "Em mới đến tháng trước ạ.",
+                  "en": "I came last month.",
+                  "ja": "私は、先月、来ました。"
+                },
+                "meaningVi": "Em mới đến tháng trước ạ.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "そうですか。少（すこ）し慣（な）れましたか？",
+                "displayText": "そうですか。少（すこ）し慣（な）れましたか？",
+                "reading": "そうですか。すこしなれましたか？",
+                "speechText": "そうですか。すこしなれましたか",
+                "translationByNative": {
+                  "vi": "Vậy à. Em quen được một chút chưa?",
+                  "en": "I see. Have you got used to it a little?",
+                  "ja": "そうですか。少し慣れましたか。"
+                },
+                "translations": {
+                  "vi": "Vậy à. Em quen được một chút chưa?",
+                  "en": "I see. Have you got used to it a little?",
+                  "ja": "そうですか。少し慣れましたか。"
+                },
+                "meaningVi": "Vậy à. Em quen được một chút chưa?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sensei"
+              },
+              {
+                "targetText": "まだ、ちょっと……。",
+                "displayText": "まだ、ちょっと……。",
+                "reading": "まだ、ちょっと……。",
+                "speechText": "まだ、ちょっと",
+                "translationByNative": {
+                  "vi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+                  "en": "Not yet, it is still a bit hard.",
+                  "ja": "まだ、ちょっと……。"
+                },
+                "translations": {
+                  "vi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+                  "en": "Not yet, it is still a bit hard.",
+                  "ja": "まだ、ちょっと……。"
+                },
+                "meaningVi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              }
+            ],
+            "explanation": [
+              "まだ、ちょっと…… bỏ lửng cuối câu là cách đáp phủ định nhẹ nhàng, không nói thẳng \"chưa quen\".",
+              "少し慣れましたか hỏi đã quen được một chút chưa — nhẹ hơn もう慣れましたか."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "まだ、ちょっと…… bỏ lửng cuối câu là cách đáp phủ định nhẹ nhàng, không nói thẳng \"chưa quen\".",
+                "少し慣れましたか hỏi đã quen được một chút chưa — nhẹ hơn もう慣れましたか."
+              ],
+              "en": [
+                "Trailing off with まだ、ちょっと…… is a gentle way to say no without stating “not used to it yet”.",
+                "少し慣れましたか asks whether you have settled in a little — softer than もう慣れましたか."
+              ],
+              "ja": [
+                "「まだ、ちょっと……」と言いさすのは、「慣れていない」と直接言わないやわらかい否定です。",
+                "「少し慣れましたか」は少し慣れたかをたずねます。「もう慣れましたか」よりやわらかいです。"
+              ]
+            }
+          }
+        ],
+        "grammarPatterns": [
+          {
+            "title": "〜に来（き）て、どのぐらいですか",
+            "formula": "[nơi] ＋ に来（き）て、どのぐらいですか",
+            "formulaByNative": {
+              "vi": "[nơi] ＋ に来（き）て、どのぐらいですか",
+              "en": "[place] ＋ に来て、どのぐらいですか",
+              "ja": "［場所］＋に来て、どのぐらいですか"
+            },
+            "formulaReading": "[ばしょ] ＋ にきて、どのぐらいですか",
+            "meaning": "Hỏi đã đến nơi đó được bao lâu.",
+            "meaningByNative": {
+              "vi": "Hỏi đã đến nơi đó được bao lâu.",
+              "en": "Asking how long since you came to that place.",
+              "ja": "その場所に来てからどのぐらいかをたずねます。"
+            },
+            "examples": [
+              {
+                "text": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+                "reading": "にほんにきて、どのぐらいになりますか？",
+                "translation": "Bạn đến Nhật được bao lâu rồi?",
+                "translationByNative": {
+                  "vi": "Bạn đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいですか。"
+                },
+                "speechText": "にほんにきて、どのぐらいになりますか"
+              },
+              {
+                "text": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+                "reading": "にほんにきて、どのぐらいですか？",
+                "translation": "Bạn đến Nhật được bao lâu rồi?",
+                "translationByNative": {
+                  "vi": "Bạn đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいですか。"
+                },
+                "speechText": "にほんにきて、どのぐらいですか"
+              }
+            ],
+            "explanation": [
+              "来る đi với trợ từ に chỉ nơi đến, không dùng で.",
+              "Có thể nói どのぐらいですか hoặc どのぐらいになりますか, nghĩa như nhau."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "来る đi với trợ từ に chỉ nơi đến, không dùng で.",
+                "Có thể nói どのぐらいですか hoặc どのぐらいになりますか, nghĩa như nhau."
+              ],
+              "en": [
+                "来る takes the particle に for the destination, never で.",
+                "You may say どのぐらいですか or どのぐらいになりますか — same meaning."
+              ],
+              "ja": [
+                "「来る」は行き先に助詞「に」を使い、「で」は使いません。",
+                "「どのぐらいですか」でも「どのぐらいになりますか」でも、意味は同じです。"
+              ]
+            }
+          },
+          {
+            "title": "[mốc thời gian] ＋ になります",
+            "titleByNative": {
+              "vi": "[mốc thời gian] ＋ になります",
+              "en": "[time span] ＋ になります",
+              "ja": "［期間］＋になります"
+            },
+            "formula": "[時（とき）] ＋ に ＋ なります",
+            "formulaReading": "[とき] ＋ に ＋ なります",
+            "meaning": "Tròn / được bao lâu.",
+            "meaningByNative": {
+              "vi": "Tròn / được bao lâu.",
+              "en": "It has been (a period).",
+              "ja": "〜になります。"
+            },
+            "examples": [
+              {
+                "text": "1年（ねん）になります。",
+                "reading": "いちねんになります。",
+                "translation": "Được tròn một năm rồi ạ.",
+                "translationByNative": {
+                  "vi": "Được tròn một năm rồi ạ.",
+                  "en": "It has been one year.",
+                  "ja": "一年になります。"
+                },
+                "speechText": "いちねんになります"
+              },
+              {
+                "text": "あのひとは ゆうめいになりました。",
+                "reading": "あのひとはゆうめいになりました。",
+                "translation": "Người kia đã trở nên nổi tiếng rồi.",
+                "translationByNative": {
+                  "vi": "Người kia đã trở nên nổi tiếng rồi.",
+                  "en": "That person has become famous.",
+                  "ja": "あの人は有名になりました。"
+                },
+                "speechText": "あのひとはゆうめいになりました"
+              }
+            ],
+            "explanation": [
+              "になります dùng cho cả mốc thời gian lẫn sự thay đổi trạng thái.",
+              "Trợ từ luôn là に — đổi sang が hay を là sai."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "になります dùng cho cả mốc thời gian lẫn sự thay đổi trạng thái.",
+                "Trợ từ luôn là に — đổi sang が hay を là sai."
+              ],
+              "en": [
+                "になります works for both a time span and a change of state.",
+                "The particle is always に — changing it to が or を is wrong."
+              ],
+              "ja": [
+                "「になります」は期間にも、状態の変化にも使えます。",
+                "助詞は必ず「に」です。「が」や「を」に変えると誤りです。"
+              ]
+            }
+          },
+          {
+            "title": "もう ＋ [động từ] ＋ ましたか",
+            "titleByNative": {
+              "vi": "もう ＋ [động từ] ＋ ましたか",
+              "en": "もう ＋ [verb] ＋ ましたか",
+              "ja": "もう＋［動詞］＋ましたか"
+            },
+            "formula": "もう ＋ [動詞（どうし）] ＋ ましたか",
+            "formulaReading": "もう ＋ [どうし] ＋ ましたか",
+            "meaning": "Đã… chưa?",
+            "meaningByNative": {
+              "vi": "Đã… chưa?",
+              "en": "Already…?",
+              "ja": "もう〜しましたか。"
+            },
+            "examples": [
+              {
+                "text": "そうですか。もう慣（な）れましたか？",
+                "reading": "そうですか。もうなれましたか？",
+                "translation": "Vậy à. Bạn quen chưa?",
+                "translationByNative": {
+                  "vi": "Vậy à. Bạn quen chưa?",
+                  "en": "I see. Have you settled in?",
+                  "ja": "そうですか。もう慣れましたか。"
+                },
+                "speechText": "そうですか。もうなれましたか"
+              },
+              {
+                "text": "くすりを のみましたから、もうだいじょうぶです。",
+                "reading": "くすりをのみましたから、もうだいじょうぶです。",
+                "translation": "Tôi uống thuốc rồi nên giờ ổn rồi.",
+                "translationByNative": {
+                  "vi": "Tôi uống thuốc rồi nên giờ ổn rồi.",
+                  "en": "I took the medicine, so I am fine now.",
+                  "ja": "薬を飲んだので、もう大丈夫です。"
+                },
+                "speechText": "くすりをのみましたから、もうだいじょうぶです"
+              }
+            ],
+            "explanation": [
+              "もう đặt trước động từ, mang nghĩa \"đã… rồi\".",
+              "Câu đáp khẳng định là はい; đáp phủ định dùng まだ."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "もう đặt trước động từ, mang nghĩa \"đã… rồi\".",
+                "Câu đáp khẳng định là はい; đáp phủ định dùng まだ."
+              ],
+              "en": [
+                "もう goes before the verb and means “already”.",
+                "The affirmative answer is はい; the negative uses まだ."
+              ],
+              "ja": [
+                "「もう」は動詞の前に置き、「すでに」の意味です。",
+                "肯定の答えは「はい」、否定は「まだ」を使います。"
+              ]
+            }
+          },
+          {
+            "title": "まだ — đáp \"vẫn chưa\"",
+            "titleByNative": {
+              "vi": "まだ — đáp \"vẫn chưa\"",
+              "en": "まだ — answering “not yet”",
+              "ja": "まだ — 「まだ」で答える"
+            },
+            "formula": "まだ ＋ [phần bỏ lửng hoặc ていません]",
+            "formulaByNative": {
+              "vi": "まだ ＋ [phần bỏ lửng hoặc ていません]",
+              "en": "まだ ＋ [trailing off or ていません]",
+              "ja": "まだ＋［言いさし または ていません］"
+            },
+            "formulaReading": "まだ ＋ […]",
+            "meaning": "Vẫn chưa.",
+            "meaningByNative": {
+              "vi": "Vẫn chưa.",
+              "en": "Not yet.",
+              "ja": "まだ。"
+            },
+            "examples": [
+              {
+                "text": "まだ、ちょっと……。",
+                "reading": "まだ、ちょっと……。",
+                "translation": "Vẫn chưa, hơi khó một chút.",
+                "translationByNative": {
+                  "vi": "Vẫn chưa, hơi khó một chút.",
+                  "en": "Not yet, it is still a bit hard.",
+                  "ja": "まだ、ちょっと……。"
+                },
+                "speechText": "まだ、ちょっと"
+              },
+              {
+                "text": "あさごはんを まだたべていません。",
+                "reading": "あさごはんをまだたべていません。",
+                "translation": "Tôi vẫn chưa ăn sáng.",
+                "translationByNative": {
+                  "vi": "Tôi vẫn chưa ăn sáng.",
+                  "en": "I have not eaten breakfast yet.",
+                  "ja": "まだ朝ごはんを食べていません。"
+                },
+                "speechText": "あさごはんをまだたべていません"
+              }
+            ],
+            "explanation": [
+              "まだ là câu đáp đối lại もう.",
+              "Bỏ lửng sau ちょっと là cách nói giảm nhẹ, lịch sự hơn nói thẳng."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "まだ là câu đáp đối lại もう.",
+                "Bỏ lửng sau ちょっと là cách nói giảm nhẹ, lịch sự hơn nói thẳng."
+              ],
+              "en": [
+                "まだ is the answer that opposes もう.",
+                "Trailing off after ちょっと softens the reply and is politer than saying it outright."
+              ],
+              "ja": [
+                "「まだ」は「もう」に対する答えです。",
+                "「ちょっと」のあとを言いさすと、直接言うよりやわらかく丁寧になります。"
+              ]
+            }
+          },
+          {
+            "title": "[động từ] ＋ ました — quá khứ lịch sự",
+            "titleByNative": {
+              "vi": "[động từ] ＋ ました — quá khứ lịch sự",
+              "en": "[verb] ＋ ました — polite past",
+              "ja": "［動詞］＋ました — 丁寧な過去"
+            },
+            "formula": "[動詞（どうし）] ＋ ました",
+            "formulaReading": "[どうし] ＋ ました",
+            "meaning": "Đã làm gì đó (lịch sự).",
+            "meaningByNative": {
+              "vi": "Đã làm gì đó (lịch sự).",
+              "en": "Did something (polite).",
+              "ja": "〜しました（丁寧）。"
+            },
+            "examples": [
+              {
+                "text": "去年（きょねん）の9月（つき）に来（き）ました。",
+                "reading": "きょねんのくがつにきました。",
+                "translation": "Tôi đến vào tháng 9 năm ngoái.",
+                "translationByNative": {
+                  "vi": "Tôi đến vào tháng 9 năm ngoái.",
+                  "en": "I came last September.",
+                  "ja": "去年の9月に来ました。"
+                },
+                "speechText": "きょねんのくがつにきました"
+              },
+              {
+                "text": "わたしは ケーキを たべました。",
+                "reading": "わたしはケーキをたべました。",
+                "translation": "Tôi đã ăn bánh ngọt.",
+                "translationByNative": {
+                  "vi": "Tôi đã ăn bánh ngọt.",
+                  "en": "I ate cake.",
+                  "ja": "わたしはケーキを食べました。"
+                },
+                "speechText": "わたしはケーキをたべました"
+              }
+            ],
+            "explanation": [
+              "ました là dạng quá khứ của ます.",
+              "Dùng để kể mốc thời gian đã đến hoặc việc đã làm."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "ました là dạng quá khứ của ます.",
+                "Dùng để kể mốc thời gian đã đến hoặc việc đã làm."
+              ],
+              "en": [
+                "ました is the past form of ます.",
+                "Used to say when you arrived or what you did."
+              ],
+              "ja": [
+                "「ました」は「ます」の過去形です。",
+                "来た時期や、したことを言うのに使います。"
+              ]
+            }
+          }
+        ],
+        "practice": {
+          "title": "Bài tập",
+          "titleByNative": {
+            "vi": "Bài tập",
+            "en": "Practice",
+            "ja": "練習"
+          },
+          "japaneseTitle": "練習（れんしゅう）",
+          "totalQuestions": 14,
+          "estimatedMinutes": "Khoảng 8–10 phút",
+          "estimatedMinutesByNative": {
+            "vi": "Khoảng 8–10 phút",
+            "en": "About 8–10 minutes",
+            "ja": "約8〜10分"
+          },
+          "reviewTopics": "Từ vựng · Hội thoại · Ngữ pháp",
+          "reviewTopicsByNative": {
+            "vi": "Từ vựng · Hội thoại · Ngữ pháp",
+            "en": "Vocabulary · Dialogue · Grammar",
+            "ja": "語彙・会話・文法"
+          },
+          "groups": [
+            {
+              "id": "free",
+              "number": "01",
+              "title": "Luyện tập cơ bản",
+              "titleByNative": {
+                "vi": "Luyện tập cơ bản",
+                "en": "Basic practice",
+                "ja": "基本練習"
+              },
+              "range": "Câu 1–9",
+              "rangeByNative": {
+                "vi": "Câu 1–9",
+                "en": "Questions 1–9",
+                "ja": "第1問〜第9問"
+              },
+              "details": "Từ vựng · Nghe · Ngữ pháp\nHội thoại",
+              "detailsByNative": {
+                "vi": "Từ vựng · Nghe · Ngữ pháp\nHội thoại",
+                "en": "Vocabulary · Listening · Grammar\nDialogue",
+                "ja": "語彙・聴解・文法\n会話"
+              },
+              "start": 1,
+              "end": 9,
+              "plan": "free"
+            },
+            {
+              "id": "plus",
+              "number": "02",
+              "title": "Luyện tập nâng cao",
+              "titleByNative": {
+                "vi": "Luyện tập nâng cao",
+                "en": "Advanced practice",
+                "ja": "応用練習"
+              },
+              "range": "Câu 10–14",
+              "rangeByNative": {
+                "vi": "Câu 10–14",
+                "en": "Questions 10–14",
+                "ja": "第10問〜第14問"
+              },
+              "details": "Tình huống thực tế\nHội thoại thực hành nâng cao",
+              "detailsByNative": {
+                "vi": "Tình huống thực tế\nHội thoại thực hành nâng cao",
+                "en": "Real situations\nAdvanced practice dialogue",
+                "ja": "実際の場面\n応用会話練習"
+              },
+              "start": 10,
+              "end": 14,
+              "plan": "plus"
+            }
+          ],
+          "exercises": [
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-1",
+              "order": 1,
+              "plan": "free",
+              "type": "multiple_choice",
+              "prompt": "「日本（にほん）に来（き）て、どのぐらいですか？」 hỏi điều gì?",
+              "promptByNative": {
+                "vi": "「日本（にほん）に来（き）て、どのぐらいですか？」 hỏi điều gì?",
+                "en": "What does 「日本に来て、どのぐらいですか？」 ask?",
+                "ja": "「日本に来て、どのぐらいですか？」は何をたずねていますか。"
+              },
+              "options": [
+                {
+                  "id": "how_long",
+                  "text": "Bạn đến Nhật được bao lâu rồi?",
+                  "textByNative": {
+                    "vi": "Bạn đến Nhật được bao lâu rồi?",
+                    "en": "How long have you been in Japan?",
+                    "ja": "日本に来て、どのぐらいですか。"
+                  },
+                  "canonicalText": "Bạn đến Nhật được bao lâu rồi?",
+                  "canonicalTextByNative": {
+                    "vi": "Bạn đến Nhật được bao lâu rồi?",
+                    "en": "How long have you been in Japan?",
+                    "ja": "日本に来て、どのぐらいですか。"
+                  },
+                  "audioText": "Bạn đến Nhật được bao lâu rồi?",
+                  "audioTextByNative": {
+                    "vi": "Bạn đến Nhật được bao lâu rồi?",
+                    "en": "How long have you been in Japan?",
+                    "ja": "日本に来て、どのぐらいですか。"
+                  }
+                },
+                {
+                  "id": "where_from",
+                  "text": "Bạn đến từ đâu?",
+                  "textByNative": {
+                    "vi": "Bạn đến từ đâu?",
+                    "en": "Where are you from?",
+                    "ja": "どこから来ましたか。"
+                  },
+                  "canonicalText": "Bạn đến từ đâu?",
+                  "canonicalTextByNative": {
+                    "vi": "Bạn đến từ đâu?",
+                    "en": "Where are you from?",
+                    "ja": "どこから来ましたか。"
+                  },
+                  "audioText": "Bạn đến từ đâu?",
+                  "audioTextByNative": {
+                    "vi": "Bạn đến từ đâu?",
+                    "en": "Where are you from?",
+                    "ja": "どこから来ましたか。"
+                  }
+                },
+                {
+                  "id": "what_job",
+                  "text": "Bạn làm nghề gì?",
+                  "textByNative": {
+                    "vi": "Bạn làm nghề gì?",
+                    "en": "What is your job?",
+                    "ja": "どんな仕事をしていますか。"
+                  },
+                  "canonicalText": "Bạn làm nghề gì?",
+                  "canonicalTextByNative": {
+                    "vi": "Bạn làm nghề gì?",
+                    "en": "What is your job?",
+                    "ja": "どんな仕事をしていますか。"
+                  },
+                  "audioText": "Bạn làm nghề gì?",
+                  "audioTextByNative": {
+                    "vi": "Bạn làm nghề gì?",
+                    "en": "What is your job?",
+                    "ja": "どんな仕事をしていますか。"
+                  }
+                },
+                {
+                  "id": "how_old",
+                  "text": "Bạn bao nhiêu tuổi?",
+                  "textByNative": {
+                    "vi": "Bạn bao nhiêu tuổi?",
+                    "en": "How old are you?",
+                    "ja": "何歳ですか。"
+                  },
+                  "canonicalText": "Bạn bao nhiêu tuổi?",
+                  "canonicalTextByNative": {
+                    "vi": "Bạn bao nhiêu tuổi?",
+                    "en": "How old are you?",
+                    "ja": "何歳ですか。"
+                  },
+                  "audioText": "Bạn bao nhiêu tuổi?",
+                  "audioTextByNative": {
+                    "vi": "Bạn bao nhiêu tuổi?",
+                    "en": "How old are you?",
+                    "ja": "何歳ですか。"
+                  }
+                }
+              ],
+              "correctOptionId": "how_long",
+              "feedback": {
+                "correctAnswer": "Bạn đến Nhật được bao lâu rồi?",
+                "correctAnswerByNative": {
+                  "vi": "Bạn đến Nhật được bao lâu rồi?",
+                  "en": "How long have you been in Japan?",
+                  "ja": "日本に来て、どのぐらいですか。"
+                },
+                "explanation": "どのぐらい hỏi độ dài thời gian; ghép với 来て thành câu hỏi đã ở Nhật bao lâu.",
+                "explanationByNative": {
+                  "vi": "どのぐらい hỏi độ dài thời gian; ghép với 来て thành câu hỏi đã ở Nhật bao lâu.",
+                  "en": "どのぐらい asks a length of time; with 来て it asks how long you have been in Japan.",
+                  "ja": "「どのぐらい」は期間をたずねます。「来て」と合わせて、日本に来てからの期間をたずねます。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-2",
+              "order": 2,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Bạn đã ở Nhật tròn một năm.",
+              "contextByNative": {
+                "vi": "Bạn đã ở Nhật tròn một năm.",
+                "en": "You have been in Japan for exactly one year.",
+                "ja": "日本に来てちょうど一年です。"
+              },
+              "prompt": "Bạn đã ở Nhật tròn một năm. Đáp thế nào?",
+              "promptByNative": {
+                "vi": "Bạn đã ở Nhật tròn một năm. Đáp thế nào?",
+                "en": "You have been in Japan for exactly one year. How do you answer?",
+                "ja": "日本に来てちょうど一年です。どう答えますか。"
+              },
+              "options": [
+                {
+                  "id": "correct",
+                  "text": "1年（ねん）になります。",
+                  "canonicalText": "1年になります。",
+                  "audioText": "いちねんになります"
+                },
+                {
+                  "id": "ga",
+                  "text": "1年（ねん）がなります。",
+                  "canonicalText": "1年がなります。",
+                  "audioText": "いちねんがなります"
+                },
+                {
+                  "id": "wo",
+                  "text": "1年（ねん）をなります。",
+                  "canonicalText": "1年をなります。",
+                  "audioText": "いちねんをなります"
+                },
+                {
+                  "id": "dup",
+                  "text": "1年（ねん）にになります。",
+                  "canonicalText": "1年にになります。",
+                  "audioText": "いちねんにになります"
+                }
+              ],
+              "correctOptionId": "correct",
+              "feedback": {
+                "correctAnswer": "1年（ねん）になります。",
+                "canonicalAnswer": "1年になります。",
+                "audioText": "いちねんになります",
+                "explanation": "Mốc thời gian đi với trợ từ に: 1年になります。 Các phương án khác sai trợ từ hoặc lặp trợ từ.",
+                "explanationByNative": {
+                  "vi": "Mốc thời gian đi với trợ từ に: 1年になります。 Các phương án khác sai trợ từ hoặc lặp trợ từ.",
+                  "en": "A time span takes the particle に: 1年になります。 The others use the wrong particle or repeat it.",
+                  "ja": "期間には助詞「に」を使います。ほかの選択肢は助詞が違うか、助詞が重なっています。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-3",
+              "order": 3,
+              "plan": "free",
+              "type": "matching",
+              "prompt": "Nối mỗi từ với nghĩa của nó.",
+              "promptByNative": {
+                "vi": "Nối mỗi từ với nghĩa của nó.",
+                "en": "Match each word with its meaning.",
+                "ja": "それぞれの言葉と意味を結んでください。"
+              },
+              "pairs": [
+                {
+                  "id": "dono",
+                  "left": {
+                    "id": "dono_l",
+                    "text": "どのぐらい"
+                  },
+                  "right": {
+                    "id": "dono_r",
+                    "text": "Bao lâu",
+                    "textByNative": {
+                      "vi": "Bao lâu",
+                      "en": "How long",
+                      "ja": "どのぐらい"
+                    }
+                  }
+                },
+                {
+                  "id": "nareru",
+                  "left": {
+                    "id": "nareru_l",
+                    "text": "慣（な）れる"
+                  },
+                  "right": {
+                    "id": "nareru_r",
+                    "text": "Quen với",
+                    "textByNative": {
+                      "vi": "Quen với",
+                      "en": "Get used to",
+                      "ja": "慣れる"
+                    }
+                  }
+                },
+                {
+                  "id": "mou",
+                  "left": {
+                    "id": "mou_l",
+                    "text": "もう"
+                  },
+                  "right": {
+                    "id": "mou_r",
+                    "text": "Đã… rồi",
+                    "textByNative": {
+                      "vi": "Đã… rồi",
+                      "en": "Already",
+                      "ja": "もう"
+                    }
+                  }
+                },
+                {
+                  "id": "mada",
+                  "left": {
+                    "id": "mada_l",
+                    "text": "まだ"
+                  },
+                  "right": {
+                    "id": "mada_r",
+                    "text": "Vẫn chưa",
+                    "textByNative": {
+                      "vi": "Vẫn chưa",
+                      "en": "Not yet",
+                      "ja": "まだ"
+                    }
+                  }
+                }
+              ],
+              "feedback": {
+                "explanation": "もう và まだ là cặp đối nhau: đã rồi ↔ vẫn chưa.",
+                "explanationByNative": {
+                  "vi": "もう và まだ là cặp đối nhau: đã rồi ↔ vẫn chưa.",
+                  "en": "もう and まだ are an opposing pair: already ↔ not yet.",
+                  "ja": "「もう」と「まだ」は対になります。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-4",
+              "order": 4,
+              "plan": "free",
+              "type": "sentence_ordering",
+              "prompt": "Sắp xếp thành câu trả lời \"tròn một năm\".",
+              "promptByNative": {
+                "vi": "Sắp xếp thành câu trả lời \"tròn một năm\".",
+                "en": "Arrange the answer meaning “exactly one year”.",
+                "ja": "「ちょうど一年」という答えに並べかえてください。"
+              },
+              "tokens": [
+                {
+                  "id": "ichinen",
+                  "text": "1年（ねん）",
+                  "canonicalText": "1年",
+                  "audioText": "いちねん"
+                },
+                {
+                  "id": "ni",
+                  "text": "に",
+                  "canonicalText": "に",
+                  "audioText": "に"
+                },
+                {
+                  "id": "narimasu",
+                  "text": "なります",
+                  "canonicalText": "なります",
+                  "audioText": "なります"
+                },
+                {
+                  "id": "mou",
+                  "text": "もう",
+                  "canonicalText": "もう",
+                  "audioText": "もう"
+                },
+                {
+                  "id": "mada",
+                  "text": "まだ",
+                  "canonicalText": "まだ",
+                  "audioText": "まだ"
+                }
+              ],
+              "correctTokenIds": [
+                "ichinen",
+                "ni",
+                "narimasu"
+              ],
+              "feedback": {
+                "correctAnswer": "1年（ねん）になります。",
+                "canonicalAnswer": "1年になります。",
+                "audioText": "いちねんになります",
+                "explanation": "1年 + に + なります → 1年になります。 もう và まだ không dùng ở đây.",
+                "explanationByNative": {
+                  "vi": "1年 + に + なります → 1年になります。 もう và まだ không dùng ở đây.",
+                  "en": "1年 + に + なります → 1年になります。 もう and まだ are not used here.",
+                  "ja": "「1年」＋「に」＋「なります」→「1年になります。」「もう」と「まだ」はここでは使いません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-5",
+              "order": 5,
+              "plan": "free",
+              "type": "dialogue_fill",
+              "prompt": "Điền chỗ trống để hoàn thành hội thoại.",
+              "promptByNative": {
+                "vi": "Điền chỗ trống để hoàn thành hội thoại.",
+                "en": "Fill in the blank to complete the dialogue.",
+                "ja": "空欄をうめて会話を完成させてください。"
+              },
+              "dialogue": [
+                "佐藤: 日本（にほん）に来（き）て、どのぐらいですか？",
+                "伊藤: {{slot_1}}。"
+              ],
+              "slots": [
+                {
+                  "id": "slot_1",
+                  "answerId": "ichinen",
+                  "placeholder": "________"
+                }
+              ],
+              "wordBank": [
+                {
+                  "id": "ichinen",
+                  "text": "1年（ねん）になります",
+                  "canonicalText": "1年になります",
+                  "audioText": "いちねんになります"
+                },
+                {
+                  "id": "mada",
+                  "text": "まだ、ちょっと",
+                  "canonicalText": "まだ、ちょっと",
+                  "audioText": "まだ、ちょっと"
+                },
+                {
+                  "id": "mou",
+                  "text": "もう慣（な）れました",
+                  "canonicalText": "もう慣れました",
+                  "audioText": "もうなれました"
+                }
+              ],
+              "feedback": {
+                "correctAnswer": "1年（ねん）になります。",
+                "canonicalAnswer": "1年になります。",
+                "audioText": "いちねんになります",
+                "explanation": "Được hỏi đã ở bao lâu thì đáp bằng mốc thời gian + になります.",
+                "explanationByNative": {
+                  "vi": "Được hỏi đã ở bao lâu thì đáp bằng mốc thời gian + になります.",
+                  "en": "When asked how long, answer with a time span + になります.",
+                  "ja": "期間をたずねられたら「期間＋になります」で答えます。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-6",
+              "order": 6,
+              "plan": "free",
+              "type": "listening_multiple_choice",
+              "prompt": "Bạn vừa nghe câu nào?",
+              "promptByNative": {
+                "vi": "Bạn vừa nghe câu nào?",
+                "en": "Which sentence did you just hear?",
+                "ja": "今、どの文を聞きましたか。"
+              },
+              "audioText": "そうですか。もうなれましたか",
+              "options": [
+                {
+                  "id": "used_to",
+                  "text": "Vậy à. Bạn quen chưa?",
+                  "textByNative": {
+                    "vi": "Vậy à. Bạn quen chưa?",
+                    "en": "I see. Have you settled in?",
+                    "ja": "そうですか。もう慣れましたか。"
+                  },
+                  "canonicalText": "Vậy à. Bạn quen chưa?",
+                  "canonicalTextByNative": {
+                    "vi": "Vậy à. Bạn quen chưa?",
+                    "en": "I see. Have you settled in?",
+                    "ja": "そうですか。もう慣れましたか。"
+                  },
+                  "audioText": "Vậy à. Bạn quen chưa?",
+                  "audioTextByNative": {
+                    "vi": "Vậy à. Bạn quen chưa?",
+                    "en": "I see. Have you settled in?",
+                    "ja": "そうですか。もう慣れましたか。"
+                  }
+                },
+                {
+                  "id": "how_long",
+                  "text": "Vậy à. Bạn đến bao lâu rồi?",
+                  "textByNative": {
+                    "vi": "Vậy à. Bạn đến bao lâu rồi?",
+                    "en": "I see. How long have you been here?",
+                    "ja": "そうですか。どのぐらいですか。"
+                  },
+                  "canonicalText": "Vậy à. Bạn đến bao lâu rồi?",
+                  "canonicalTextByNative": {
+                    "vi": "Vậy à. Bạn đến bao lâu rồi?",
+                    "en": "I see. How long have you been here?",
+                    "ja": "そうですか。どのぐらいですか。"
+                  },
+                  "audioText": "Vậy à. Bạn đến bao lâu rồi?",
+                  "audioTextByNative": {
+                    "vi": "Vậy à. Bạn đến bao lâu rồi?",
+                    "en": "I see. How long have you been here?",
+                    "ja": "そうですか。どのぐらいですか。"
+                  }
+                },
+                {
+                  "id": "where",
+                  "text": "Vậy à. Bạn ở đâu?",
+                  "textByNative": {
+                    "vi": "Vậy à. Bạn ở đâu?",
+                    "en": "I see. Where do you live?",
+                    "ja": "そうですか。どこに住んでいますか。"
+                  },
+                  "canonicalText": "Vậy à. Bạn ở đâu?",
+                  "canonicalTextByNative": {
+                    "vi": "Vậy à. Bạn ở đâu?",
+                    "en": "I see. Where do you live?",
+                    "ja": "そうですか。どこに住んでいますか。"
+                  },
+                  "audioText": "Vậy à. Bạn ở đâu?",
+                  "audioTextByNative": {
+                    "vi": "Vậy à. Bạn ở đâu?",
+                    "en": "I see. Where do you live?",
+                    "ja": "そうですか。どこに住んでいますか。"
+                  }
+                },
+                {
+                  "id": "fine",
+                  "text": "Vậy à. Bạn khoẻ không?",
+                  "textByNative": {
+                    "vi": "Vậy à. Bạn khoẻ không?",
+                    "en": "I see. How are you?",
+                    "ja": "そうですか。お元気ですか。"
+                  },
+                  "canonicalText": "Vậy à. Bạn khoẻ không?",
+                  "canonicalTextByNative": {
+                    "vi": "Vậy à. Bạn khoẻ không?",
+                    "en": "I see. How are you?",
+                    "ja": "そうですか。お元気ですか。"
+                  },
+                  "audioText": "Vậy à. Bạn khoẻ không?",
+                  "audioTextByNative": {
+                    "vi": "Vậy à. Bạn khoẻ không?",
+                    "en": "I see. How are you?",
+                    "ja": "そうですか。お元気ですか。"
+                  }
+                }
+              ],
+              "correctOptionId": "used_to",
+              "feedback": {
+                "correctAnswer": "Vậy à. Bạn quen chưa?",
+                "correctAnswerByNative": {
+                  "vi": "Vậy à. Bạn quen chưa?",
+                  "en": "I see. Have you settled in?",
+                  "ja": "そうですか。もう慣れましたか。"
+                },
+                "explanation": "もう慣れましたか？ hỏi đã quen với cuộc sống ở đây chưa.",
+                "explanationByNative": {
+                  "vi": "もう慣れましたか？ hỏi đã quen với cuộc sống ở đây chưa.",
+                  "en": "もう慣れましたか？ asks whether you have settled into life here.",
+                  "ja": "「もう慣れましたか？」は、ここでの生活に慣れたかをたずねます。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-7",
+              "order": 7,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Được hỏi 「もう慣（な）れましたか？」 nhưng bạn vẫn CHƯA quen.",
+              "contextByNative": {
+                "vi": "Được hỏi 「もう慣（な）れましたか？」 nhưng bạn vẫn CHƯA quen.",
+                "en": "You are asked 「もう慣れましたか？」 but you have NOT settled in yet.",
+                "ja": "「もう慣れましたか？」とたずねられましたが、まだ慣れていません。"
+              },
+              "prompt": "Được hỏi 「もう慣（な）れましたか？」 nhưng bạn vẫn CHƯA quen. Đáp thế nào?",
+              "promptByNative": {
+                "vi": "Được hỏi 「もう慣（な）れましたか？」 nhưng bạn vẫn CHƯA quen. Đáp thế nào?",
+                "en": "You are asked 「もう慣れましたか？」 but have NOT settled in yet. How do you answer?",
+                "ja": "「もう慣れましたか？」とたずねられましたが、まだ慣れていません。どう答えますか。"
+              },
+              "options": [
+                {
+                  "id": "mada",
+                  "text": "まだ、ちょっと……。",
+                  "canonicalText": "まだ、ちょっと……。",
+                  "audioText": "まだ、ちょっと……。"
+                },
+                {
+                  "id": "hai_okage",
+                  "text": "はい、おかげさまで。",
+                  "canonicalText": "はい、おかげさまで。",
+                  "audioText": "はい、おかげさまで。"
+                },
+                {
+                  "id": "hai",
+                  "text": "はい。",
+                  "canonicalText": "はい。",
+                  "audioText": "はい。"
+                },
+                {
+                  "id": "ichinen",
+                  "text": "1年（ねん）になります。",
+                  "canonicalText": "1年になります。",
+                  "audioText": "いちねんになります"
+                }
+              ],
+              "correctOptionId": "mada",
+              "feedback": {
+                "correctAnswer": "まだ、ちょっと……。",
+                "explanation": "まだ、ちょっと…… là cách đáp \"vẫn chưa\" một cách nhẹ nhàng. はい nghĩa là ĐÃ quen; 1年になります trả lời câu hỏi khác.",
+                "explanationByNative": {
+                  "vi": "まだ、ちょっと…… là cách đáp \"vẫn chưa\" một cách nhẹ nhàng. はい nghĩa là ĐÃ quen; 1年になります trả lời câu hỏi khác.",
+                  "en": "まだ、ちょっと…… is the gentle “not yet”. はい means you HAVE settled in; 1年になります answers a different question.",
+                  "ja": "「まだ、ちょっと……」はやわらかい「まだ」です。「はい」は慣れたという意味、「1年になります」は別の質問への答えです。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-8",
+              "order": 8,
+              "plan": "free",
+              "type": "multiple_choice",
+              "prompt": "「はい、おかげさまで。」 dùng khi nào?",
+              "promptByNative": {
+                "vi": "「はい、おかげさまで。」 dùng khi nào?",
+                "en": "When do you use 「はい、おかげさまで。」?",
+                "ja": "「はい、おかげさまで。」はどんなときに使いますか。"
+              },
+              "options": [
+                {
+                  "id": "yes_thanks",
+                  "text": "Đáp khẳng định một cách lịch sự và biết ơn",
+                  "textByNative": {
+                    "vi": "Đáp khẳng định một cách lịch sự và biết ơn",
+                    "en": "Answering yes politely and with gratitude",
+                    "ja": "丁寧に、感謝をこめて肯定するとき"
+                  },
+                  "canonicalText": "Đáp khẳng định một cách lịch sự và biết ơn",
+                  "canonicalTextByNative": {
+                    "vi": "Đáp khẳng định một cách lịch sự và biết ơn",
+                    "en": "Answering yes politely and with gratitude",
+                    "ja": "丁寧に、感謝をこめて肯定するとき"
+                  },
+                  "audioText": "Đáp khẳng định một cách lịch sự và biết ơn",
+                  "audioTextByNative": {
+                    "vi": "Đáp khẳng định một cách lịch sự và biết ơn",
+                    "en": "Answering yes politely and with gratitude",
+                    "ja": "丁寧に、感謝をこめて肯定するとき"
+                  }
+                },
+                {
+                  "id": "refuse",
+                  "text": "Từ chối lời mời",
+                  "textByNative": {
+                    "vi": "Từ chối lời mời",
+                    "en": "Turning down an invitation",
+                    "ja": "さそいを断るとき"
+                  },
+                  "canonicalText": "Từ chối lời mời",
+                  "canonicalTextByNative": {
+                    "vi": "Từ chối lời mời",
+                    "en": "Turning down an invitation",
+                    "ja": "さそいを断るとき"
+                  },
+                  "audioText": "Từ chối lời mời",
+                  "audioTextByNative": {
+                    "vi": "Từ chối lời mời",
+                    "en": "Turning down an invitation",
+                    "ja": "さそいを断るとき"
+                  }
+                },
+                {
+                  "id": "apologize",
+                  "text": "Xin lỗi vì đến muộn",
+                  "textByNative": {
+                    "vi": "Xin lỗi vì đến muộn",
+                    "en": "Apologising for being late",
+                    "ja": "遅れたことをあやまるとき"
+                  },
+                  "canonicalText": "Xin lỗi vì đến muộn",
+                  "canonicalTextByNative": {
+                    "vi": "Xin lỗi vì đến muộn",
+                    "en": "Apologising for being late",
+                    "ja": "遅れたことをあやまるとき"
+                  },
+                  "audioText": "Xin lỗi vì đến muộn",
+                  "audioTextByNative": {
+                    "vi": "Xin lỗi vì đến muộn",
+                    "en": "Apologising for being late",
+                    "ja": "遅れたことをあやまるとき"
+                  }
+                },
+                {
+                  "id": "ask_again",
+                  "text": "Hỏi lại vì chưa nghe rõ",
+                  "textByNative": {
+                    "vi": "Hỏi lại vì chưa nghe rõ",
+                    "en": "Asking again because you did not hear",
+                    "ja": "聞こえなかったので聞き返すとき"
+                  },
+                  "canonicalText": "Hỏi lại vì chưa nghe rõ",
+                  "canonicalTextByNative": {
+                    "vi": "Hỏi lại vì chưa nghe rõ",
+                    "en": "Asking again because you did not hear",
+                    "ja": "聞こえなかったので聞き返すとき"
+                  },
+                  "audioText": "Hỏi lại vì chưa nghe rõ",
+                  "audioTextByNative": {
+                    "vi": "Hỏi lại vì chưa nghe rõ",
+                    "en": "Asking again because you did not hear",
+                    "ja": "聞こえなかったので聞き返すとき"
+                  }
+                }
+              ],
+              "correctOptionId": "yes_thanks",
+              "feedback": {
+                "correctAnswer": "Đáp khẳng định một cách lịch sự và biết ơn",
+                "correctAnswerByNative": {
+                  "vi": "Đáp khẳng định một cách lịch sự và biết ơn",
+                  "en": "Answering yes politely and with gratitude",
+                  "ja": "丁寧に、感謝をこめて肯定するとき"
+                },
+                "explanation": "おかげさまで đã học ở bài trước — đáp có, kèm ý nhờ ơn người hỏi.",
+                "explanationByNative": {
+                  "vi": "おかげさまで đã học ở bài trước — đáp có, kèm ý nhờ ơn người hỏi.",
+                  "en": "おかげさまで was learned last lesson — yes, thanks to you.",
+                  "ja": "「おかげさまで」は前のレッスンで学びました。相手のおかげという気持ちをこめた肯定です。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-9",
+              "order": 9,
+              "plan": "free",
+              "type": "checkpoint",
+              "prompt": "Checkpoint 5 câu nhỏ",
+              "promptByNative": {
+                "vi": "Checkpoint 5 câu nhỏ",
+                "en": "Checkpoint: 5 short questions",
+                "ja": "チェックポイント：小問5つ"
+              },
+              "subQuestions": [
+                {
+                  "id": "q9_1",
+                  "prompt": "どのぐらい hỏi về điều gì?",
+                  "promptByNative": {
+                    "vi": "どのぐらい hỏi về điều gì?",
+                    "en": "What does どのぐらい ask about?",
+                    "ja": "「どのぐらい」は何をたずねますか。"
+                  },
+                  "options": [
+                    {
+                      "id": "duration",
+                      "text": "Độ dài thời gian",
+                      "textByNative": {
+                        "vi": "Độ dài thời gian",
+                        "en": "A length of time",
+                        "ja": "期間の長さ"
+                      },
+                      "canonicalText": "Độ dài thời gian",
+                      "canonicalTextByNative": {
+                        "vi": "Độ dài thời gian",
+                        "en": "A length of time",
+                        "ja": "期間の長さ"
+                      },
+                      "audioText": "Độ dài thời gian",
+                      "audioTextByNative": {
+                        "vi": "Độ dài thời gian",
+                        "en": "A length of time",
+                        "ja": "期間の長さ"
+                      }
+                    },
+                    {
+                      "id": "place",
+                      "text": "Nơi chốn",
+                      "textByNative": {
+                        "vi": "Nơi chốn",
+                        "en": "A place",
+                        "ja": "場所"
+                      },
+                      "canonicalText": "Nơi chốn",
+                      "canonicalTextByNative": {
+                        "vi": "Nơi chốn",
+                        "en": "A place",
+                        "ja": "場所"
+                      },
+                      "audioText": "Nơi chốn",
+                      "audioTextByNative": {
+                        "vi": "Nơi chốn",
+                        "en": "A place",
+                        "ja": "場所"
+                      }
+                    },
+                    {
+                      "id": "reason",
+                      "text": "Lý do",
+                      "textByNative": {
+                        "vi": "Lý do",
+                        "en": "A reason",
+                        "ja": "理由"
+                      },
+                      "canonicalText": "Lý do",
+                      "canonicalTextByNative": {
+                        "vi": "Lý do",
+                        "en": "A reason",
+                        "ja": "理由"
+                      },
+                      "audioText": "Lý do",
+                      "audioTextByNative": {
+                        "vi": "Lý do",
+                        "en": "A reason",
+                        "ja": "理由"
+                      }
+                    },
+                    {
+                      "id": "person",
+                      "text": "Người",
+                      "textByNative": {
+                        "vi": "Người",
+                        "en": "A person",
+                        "ja": "人"
+                      },
+                      "canonicalText": "Người",
+                      "canonicalTextByNative": {
+                        "vi": "Người",
+                        "en": "A person",
+                        "ja": "人"
+                      },
+                      "audioText": "Người",
+                      "audioTextByNative": {
+                        "vi": "Người",
+                        "en": "A person",
+                        "ja": "人"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "duration",
+                  "feedback": {
+                    "correctAnswer": "Độ dài thời gian",
+                    "correctAnswerByNative": {
+                      "vi": "Độ dài thời gian",
+                      "en": "A length of time",
+                      "ja": "期間の長さ"
+                    },
+                    "explanation": "どのぐらい = bao lâu / bao nhiêu.",
+                    "explanationByNative": {
+                      "vi": "どのぐらい = bao lâu / bao nhiêu.",
+                      "en": "どのぐらい = how long / how much.",
+                      "ja": "「どのぐらい」＝どれくらいの長さ・量。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_2",
+                  "prompt": "もう đi với câu hỏi mang nghĩa gì?",
+                  "promptByNative": {
+                    "vi": "もう đi với câu hỏi mang nghĩa gì?",
+                    "en": "What does もう mean in a question?",
+                    "ja": "質問の中の「もう」はどんな意味ですか。"
+                  },
+                  "options": [
+                    {
+                      "id": "already",
+                      "text": "Đã… chưa?",
+                      "textByNative": {
+                        "vi": "Đã… chưa?",
+                        "en": "Already…?",
+                        "ja": "もう〜しましたか。"
+                      },
+                      "canonicalText": "Đã… chưa?",
+                      "canonicalTextByNative": {
+                        "vi": "Đã… chưa?",
+                        "en": "Already…?",
+                        "ja": "もう〜しましたか。"
+                      },
+                      "audioText": "Đã… chưa?",
+                      "audioTextByNative": {
+                        "vi": "Đã… chưa?",
+                        "en": "Already…?",
+                        "ja": "もう〜しましたか。"
+                      }
+                    },
+                    {
+                      "id": "not_yet",
+                      "text": "Vẫn chưa",
+                      "textByNative": {
+                        "vi": "Vẫn chưa",
+                        "en": "Not yet",
+                        "ja": "まだ"
+                      },
+                      "canonicalText": "Vẫn chưa",
+                      "canonicalTextByNative": {
+                        "vi": "Vẫn chưa",
+                        "en": "Not yet",
+                        "ja": "まだ"
+                      },
+                      "audioText": "Vẫn chưa",
+                      "audioTextByNative": {
+                        "vi": "Vẫn chưa",
+                        "en": "Not yet",
+                        "ja": "まだ"
+                      }
+                    },
+                    {
+                      "id": "never",
+                      "text": "Chưa bao giờ",
+                      "textByNative": {
+                        "vi": "Chưa bao giờ",
+                        "en": "Never",
+                        "ja": "一度も〜ない"
+                      },
+                      "canonicalText": "Chưa bao giờ",
+                      "canonicalTextByNative": {
+                        "vi": "Chưa bao giờ",
+                        "en": "Never",
+                        "ja": "一度も〜ない"
+                      },
+                      "audioText": "Chưa bao giờ",
+                      "audioTextByNative": {
+                        "vi": "Chưa bao giờ",
+                        "en": "Never",
+                        "ja": "一度も〜ない"
+                      }
+                    },
+                    {
+                      "id": "again",
+                      "text": "Lại lần nữa",
+                      "textByNative": {
+                        "vi": "Lại lần nữa",
+                        "en": "Once more",
+                        "ja": "もう一度"
+                      },
+                      "canonicalText": "Lại lần nữa",
+                      "canonicalTextByNative": {
+                        "vi": "Lại lần nữa",
+                        "en": "Once more",
+                        "ja": "もう一度"
+                      },
+                      "audioText": "Lại lần nữa",
+                      "audioTextByNative": {
+                        "vi": "Lại lần nữa",
+                        "en": "Once more",
+                        "ja": "もう一度"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "already",
+                  "feedback": {
+                    "correctAnswer": "Đã… chưa?",
+                    "correctAnswerByNative": {
+                      "vi": "Đã… chưa?",
+                      "en": "Already…?",
+                      "ja": "もう〜しましたか。"
+                    },
+                    "explanation": "もう慣れましたか？ = đã quen chưa?",
+                    "explanationByNative": {
+                      "vi": "もう慣れましたか？ = đã quen chưa?",
+                      "en": "もう慣れましたか？ = have you settled in yet?",
+                      "ja": "「もう慣れましたか？」＝もう慣れましたか。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_3",
+                  "prompt": "まだ nghĩa là gì?",
+                  "promptByNative": {
+                    "vi": "まだ nghĩa là gì?",
+                    "en": "What does まだ mean?",
+                    "ja": "「まだ」はどんな意味ですか。"
+                  },
+                  "options": [
+                    {
+                      "id": "not_yet",
+                      "text": "Vẫn chưa",
+                      "textByNative": {
+                        "vi": "Vẫn chưa",
+                        "en": "Not yet",
+                        "ja": "まだ"
+                      },
+                      "canonicalText": "Vẫn chưa",
+                      "canonicalTextByNative": {
+                        "vi": "Vẫn chưa",
+                        "en": "Not yet",
+                        "ja": "まだ"
+                      },
+                      "audioText": "Vẫn chưa",
+                      "audioTextByNative": {
+                        "vi": "Vẫn chưa",
+                        "en": "Not yet",
+                        "ja": "まだ"
+                      }
+                    },
+                    {
+                      "id": "already",
+                      "text": "Đã rồi",
+                      "textByNative": {
+                        "vi": "Đã rồi",
+                        "en": "Already",
+                        "ja": "もう"
+                      },
+                      "canonicalText": "Đã rồi",
+                      "canonicalTextByNative": {
+                        "vi": "Đã rồi",
+                        "en": "Already",
+                        "ja": "もう"
+                      },
+                      "audioText": "Đã rồi",
+                      "audioTextByNative": {
+                        "vi": "Đã rồi",
+                        "en": "Already",
+                        "ja": "もう"
+                      }
+                    },
+                    {
+                      "id": "very",
+                      "text": "Rất",
+                      "textByNative": {
+                        "vi": "Rất",
+                        "en": "Very",
+                        "ja": "とても"
+                      },
+                      "canonicalText": "Rất",
+                      "canonicalTextByNative": {
+                        "vi": "Rất",
+                        "en": "Very",
+                        "ja": "とても"
+                      },
+                      "audioText": "Rất",
+                      "audioTextByNative": {
+                        "vi": "Rất",
+                        "en": "Very",
+                        "ja": "とても"
+                      }
+                    },
+                    {
+                      "id": "maybe",
+                      "text": "Có lẽ",
+                      "textByNative": {
+                        "vi": "Có lẽ",
+                        "en": "Maybe",
+                        "ja": "たぶん"
+                      },
+                      "canonicalText": "Có lẽ",
+                      "canonicalTextByNative": {
+                        "vi": "Có lẽ",
+                        "en": "Maybe",
+                        "ja": "たぶん"
+                      },
+                      "audioText": "Có lẽ",
+                      "audioTextByNative": {
+                        "vi": "Có lẽ",
+                        "en": "Maybe",
+                        "ja": "たぶん"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "not_yet",
+                  "feedback": {
+                    "correctAnswer": "Vẫn chưa",
+                    "correctAnswerByNative": {
+                      "vi": "Vẫn chưa",
+                      "en": "Not yet",
+                      "ja": "まだ"
+                    },
+                    "explanation": "まだ、ちょっと…… = vẫn chưa, hơi khó một chút.",
+                    "explanationByNative": {
+                      "vi": "まだ、ちょっと…… = vẫn chưa, hơi khó một chút.",
+                      "en": "まだ、ちょっと…… = not yet, it is still a bit hard.",
+                      "ja": "「まだ、ちょっと……」＝まだ慣れていない、少し難しい。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_4",
+                  "prompt": "Mốc thời gian đi với trợ từ nào trong 「1年＿なります」?",
+                  "promptByNative": {
+                    "vi": "Mốc thời gian đi với trợ từ nào trong 「1年＿なります」?",
+                    "en": "Which particle goes in 「1年＿なります」?",
+                    "ja": "「1年＿なります」にはどの助詞が入りますか。"
+                  },
+                  "options": [
+                    {
+                      "id": "ni",
+                      "text": "に",
+                      "canonicalText": "に",
+                      "audioText": "に"
+                    },
+                    {
+                      "id": "ga",
+                      "text": "が",
+                      "canonicalText": "が",
+                      "audioText": "が"
+                    },
+                    {
+                      "id": "wo",
+                      "text": "を",
+                      "canonicalText": "を",
+                      "audioText": "を"
+                    },
+                    {
+                      "id": "mo",
+                      "text": "も",
+                      "canonicalText": "も",
+                      "audioText": "も"
+                    }
+                  ],
+                  "correctOptionId": "ni",
+                  "feedback": {
+                    "correctAnswer": "に",
+                    "explanation": "1年になります — mốc thời gian đi với に.",
+                    "explanationByNative": {
+                      "vi": "1年になります — mốc thời gian đi với に.",
+                      "en": "1年になります — a time span takes に.",
+                      "ja": "「1年になります」— 期間には「に」を使います。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_5",
+                  "prompt": "「去年（きょねん）」 nghĩa là gì?",
+                  "promptByNative": {
+                    "vi": "「去年（きょねん）」 nghĩa là gì?",
+                    "en": "What does 「去年」 mean?",
+                    "ja": "「去年」はどんな意味ですか。"
+                  },
+                  "options": [
+                    {
+                      "id": "last_year",
+                      "text": "Năm ngoái",
+                      "textByNative": {
+                        "vi": "Năm ngoái",
+                        "en": "Last year",
+                        "ja": "去年"
+                      },
+                      "canonicalText": "Năm ngoái",
+                      "canonicalTextByNative": {
+                        "vi": "Năm ngoái",
+                        "en": "Last year",
+                        "ja": "去年"
+                      },
+                      "audioText": "Năm ngoái",
+                      "audioTextByNative": {
+                        "vi": "Năm ngoái",
+                        "en": "Last year",
+                        "ja": "去年"
+                      }
+                    },
+                    {
+                      "id": "last_month",
+                      "text": "Tháng trước",
+                      "textByNative": {
+                        "vi": "Tháng trước",
+                        "en": "Last month",
+                        "ja": "先月"
+                      },
+                      "canonicalText": "Tháng trước",
+                      "canonicalTextByNative": {
+                        "vi": "Tháng trước",
+                        "en": "Last month",
+                        "ja": "先月"
+                      },
+                      "audioText": "Tháng trước",
+                      "audioTextByNative": {
+                        "vi": "Tháng trước",
+                        "en": "Last month",
+                        "ja": "先月"
+                      }
+                    },
+                    {
+                      "id": "this_year",
+                      "text": "Năm nay",
+                      "textByNative": {
+                        "vi": "Năm nay",
+                        "en": "This year",
+                        "ja": "今年"
+                      },
+                      "canonicalText": "Năm nay",
+                      "canonicalTextByNative": {
+                        "vi": "Năm nay",
+                        "en": "This year",
+                        "ja": "今年"
+                      },
+                      "audioText": "Năm nay",
+                      "audioTextByNative": {
+                        "vi": "Năm nay",
+                        "en": "This year",
+                        "ja": "今年"
+                      }
+                    },
+                    {
+                      "id": "next_year",
+                      "text": "Năm sau",
+                      "textByNative": {
+                        "vi": "Năm sau",
+                        "en": "Next year",
+                        "ja": "来年"
+                      },
+                      "canonicalText": "Năm sau",
+                      "canonicalTextByNative": {
+                        "vi": "Năm sau",
+                        "en": "Next year",
+                        "ja": "来年"
+                      },
+                      "audioText": "Năm sau",
+                      "audioTextByNative": {
+                        "vi": "Năm sau",
+                        "en": "Next year",
+                        "ja": "来年"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "last_year",
+                  "feedback": {
+                    "correctAnswer": "Năm ngoái",
+                    "correctAnswerByNative": {
+                      "vi": "Năm ngoái",
+                      "en": "Last year",
+                      "ja": "去年"
+                    },
+                    "explanation": "去年 = năm ngoái; 先月 = tháng trước.",
+                    "explanationByNative": {
+                      "vi": "去年 = năm ngoái; 先月 = tháng trước.",
+                      "en": "去年 = last year; 先月 = last month.",
+                      "ja": "「去年」＝去年、「先月」＝先月。"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-10",
+              "order": 10,
+              "plan": "plus",
+              "type": "chat_text_fill",
+              "prompt": "Hoàn thành đoạn chat",
+              "promptByNative": {
+                "vi": "Hoàn thành đoạn chat",
+                "en": "Complete the chat",
+                "ja": "チャットを完成させてください"
+              },
+              "chat": {
+                "timestamp": "19:30",
+                "context": "Hai người quen nhắn tin hỏi thăm nhau. Nhập từ phù hợp vào hai ô trống.",
+                "contextByNative": {
+                  "vi": "Hai người quen nhắn tin hỏi thăm nhau. Nhập từ phù hợp vào hai ô trống.",
+                  "en": "Two acquaintances message each other. Type the right words in the two blanks.",
+                  "ja": "知り合い二人がメッセージで近況をたずね合います。二つの空欄に合う言葉を入力してください。"
+                },
+                "speakers": [
+                  {
+                    "id": "a",
+                    "label": "A",
+                    "alignment": "right"
+                  },
+                  {
+                    "id": "b",
+                    "label": "B",
+                    "alignment": "left"
+                  }
+                ],
+                "messages": [
+                  {
+                    "id": "message_1",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "displayText": "日本（にほん）に来（き）て、どのぐらいですか？",
+                        "canonicalText": "日本に来て、どのぐらいですか？",
+                        "audioText": "にほんにきて、どのぐらいですか"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_2",
+                    "speakerId": "b",
+                    "segments": [
+                      {
+                        "slotId": "chat_kikan_slot"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_3",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "displayText": "そうですか。もう慣（な）れましたか？",
+                        "canonicalText": "そうですか。もう慣れましたか？",
+                        "audioText": "そうですか。もうなれましたか"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_4",
+                    "speakerId": "b",
+                    "segments": [
+                      {
+                        "displayText": "はい、"
+                      },
+                      {
+                        "slotId": "chat_okage_slot"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_5",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "displayText": "そうですか。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_6",
+                    "speakerId": "b",
+                    "segments": [
+                      {
+                        "displayText": "はい。"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "slots": [
+                {
+                  "id": "chat_kikan_slot",
+                  "displayText": "1年（ねん）になります",
+                  "canonicalText": "1年になります",
+                  "audioText": "いちねんになります",
+                  "acceptedAnswers": [
+                    "1年になります",
+                    "いちねんになります",
+                    "一年になります"
+                  ]
+                },
+                {
+                  "id": "chat_okage_slot",
+                  "displayText": "おかげさまで",
+                  "canonicalText": "おかげさまで",
+                  "audioText": "おかげさまで",
+                  "acceptedAnswers": [
+                    "おかげさまで"
+                  ]
+                }
+              ],
+              "feedback": {
+                "correctAnswer": "1年（ねん）になります\nおかげさまで",
+                "canonicalAnswer": "1年になります／おかげさまで",
+                "audioText": "いちねんになります／おかげさまで",
+                "correctMessage": "Bạn làm tốt lắm!",
+                "correctMessageByNative": {
+                  "vi": "Bạn làm tốt lắm!",
+                  "en": "Well done!",
+                  "ja": "よくできました！"
+                },
+                "slotFeedback": {
+                  "chat_kikan_slot": {
+                    "incorrectMessage": "Ô này trả lời câu hỏi đã ở bao lâu.",
+                    "incorrectMessageByNative": {
+                      "vi": "Ô này trả lời câu hỏi đã ở bao lâu.",
+                      "en": "This blank answers how long you have been here.",
+                      "ja": "この空欄は、どのぐらいかという質問への答えです。"
+                    },
+                    "correctAnswer": "1年になります",
+                    "explanation": "Mốc thời gian + になります.",
+                    "explanationByNative": {
+                      "vi": "Mốc thời gian + になります.",
+                      "en": "A time span + になります.",
+                      "ja": "期間＋になります。"
+                    }
+                  },
+                  "chat_okage_slot": {
+                    "incorrectMessage": "Ô này là phần sau của câu đáp lịch sự はい、___。",
+                    "incorrectMessageByNative": {
+                      "vi": "Ô này là phần sau của câu đáp lịch sự はい、___。",
+                      "en": "This blank is the second half of the polite reply はい、___。",
+                      "ja": "この空欄は、丁寧な答え「はい、___。」の後半です。"
+                    },
+                    "correctAnswer": "おかげさまで",
+                    "explanation": "はい、おかげさまで。 là câu đáp khẳng định lịch sự đã học ở bài trước.",
+                    "explanationByNative": {
+                      "vi": "はい、おかげさまで。 là câu đáp khẳng định lịch sự đã học ở bài trước.",
+                      "en": "はい、おかげさまで。 is the polite yes learned in the previous lesson.",
+                      "ja": "「はい、おかげさまで。」は前のレッスンで学んだ丁寧な肯定です。"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-11",
+              "order": 11,
+              "plan": "plus",
+              "type": "slot_ordering",
+              "prompt": "Sắp xếp thành câu đáp \"vẫn chưa quen lắm\". Có thẻ không cần dùng.",
+              "promptByNative": {
+                "vi": "Sắp xếp thành câu đáp \"vẫn chưa quen lắm\". Có thẻ không cần dùng.",
+                "en": "Arrange the answer “not quite settled in yet”. Some cards are not needed.",
+                "ja": "「まだあまり慣れていない」という答えに並べかえてください。使わないカードがあります。"
+              },
+              "tokens": [
+                {
+                  "id": "mada",
+                  "text": "まだ",
+                  "canonicalText": "まだ",
+                  "audioText": "まだ"
+                },
+                {
+                  "id": "chotto",
+                  "text": "ちょっと",
+                  "canonicalText": "ちょっと",
+                  "audioText": "ちょっと"
+                },
+                {
+                  "id": "mou_d",
+                  "text": "もう",
+                  "canonicalText": "もう",
+                  "audioText": "もう"
+                },
+                {
+                  "id": "hai_d",
+                  "text": "はい",
+                  "canonicalText": "はい",
+                  "audioText": "はい"
+                }
+              ],
+              "answerSlots": [
+                {
+                  "id": "s1",
+                  "expectedTokenId": "mada",
+                  "afterText": "、"
+                },
+                {
+                  "id": "s2",
+                  "expectedTokenId": "chotto",
+                  "afterText": "……。"
+                }
+              ],
+              "unusedTokenIds": [
+                "mou_d",
+                "hai_d"
+              ],
+              "feedback": {
+                "correctAnswer": "まだ、ちょっと……。",
+                "canonicalAnswer": "まだ、ちょっと……。",
+                "audioText": "まだ、ちょっと",
+                "explanation": "まだ + ちょっと → まだ、ちょっと……。 もう và はい mang nghĩa ngược lại.",
+                "explanationByNative": {
+                  "vi": "まだ + ちょっと → まだ、ちょっと……。 もう và はい mang nghĩa ngược lại.",
+                  "en": "まだ + ちょっと → まだ、ちょっと……。 もう and はい mean the opposite.",
+                  "ja": "「まだ」＋「ちょっと」→「まだ、ちょっと……。」「もう」と「はい」は反対の意味です。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-12",
+              "order": 12,
+              "plan": "plus",
+              "type": "multiple_choice",
+              "prompt": "Chọn đoạn hội thoại tự nhiên nhất.",
+              "promptByNative": {
+                "vi": "Chọn đoạn hội thoại tự nhiên nhất.",
+                "en": "Choose the most natural dialogue.",
+                "ja": "一番自然な会話を選んでください。"
+              },
+              "options": [
+                {
+                  "id": "natural",
+                  "text": "A: 日本（にほん）に来（き）て、どのぐらいですか？\nB: 去年（きょねん）の9月（くがつ）に来（き）ました。",
+                  "canonicalText": "A: 日本に来て、どのぐらいですか？\nB: 去年の9月に来ました。",
+                  "audioText": "A: 日本に来て、どのぐらいですか？\nB: 去年の9月に来ました。"
+                },
+                {
+                  "id": "wrong_particle",
+                  "text": "A: 日本（にほん）で来（き）て、どのぐらいですか？\nB: 去年（きょねん）の9月（くがつ）に来（き）ました。",
+                  "canonicalText": "A: 日本で来て、どのぐらいですか？\nB: 去年の9月に来ました。",
+                  "audioText": "A: 日本で来て、どのぐらいですか？\nB: 去年の9月に来ました。"
+                },
+                {
+                  "id": "mismatch",
+                  "text": "A: 日本（にほん）に来（き）て、どのぐらいですか？\nB: はい、おかげさまで。",
+                  "canonicalText": "A: 日本に来て、どのぐらいですか？\nB: はい、おかげさまで。",
+                  "audioText": "A: 日本に来て、どのぐらいですか？\nB: はい、おかげさまで。"
+                },
+                {
+                  "id": "dup_particle",
+                  "text": "A: 日本（にほん）に来（き）て、どのぐらいですか？\nB: 1年（ねん）にになります。",
+                  "canonicalText": "A: 日本に来て、どのぐらいですか？\nB: 1年にになります。",
+                  "audioText": "A: 日本に来て、どのぐらいですか？\nB: 1年にになります。"
+                }
+              ],
+              "correctOptionId": "natural",
+              "feedback": {
+                "correctAnswer": "A: 日本に来て、どのぐらいですか？\nB: 去年の9月に来ました。",
+                "explanation": "A đúng: hỏi bao lâu, đáp bằng mốc thời gian. B sai trợ từ 来る đi với に không phải で. C đáp có/không cho câu hỏi bao lâu. D lặp trợ từ に.",
+                "explanationByNative": {
+                  "vi": "A đúng: hỏi bao lâu, đáp bằng mốc thời gian. B sai trợ từ 来る đi với に không phải で. C đáp có/không cho câu hỏi bao lâu. D lặp trợ từ に.",
+                  "en": "A is right: asks how long, answers with a time. B uses the wrong particle — 来る takes に, not で. C answers yes/no to a how-long question. D repeats the particle に.",
+                  "ja": "Aが正しいです。期間をたずね、時期で答えています。Bは助詞が誤りで、「来る」は「に」を使います。Cは期間の質問に「はい」で答えています。Dは助詞「に」が重なっています。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-13",
+              "order": 13,
+              "plan": "plus",
+              "type": "slot_ordering",
+              "prompt": "Sắp xếp thành câu hỏi đã ở Nhật bao lâu. Có thẻ không cần dùng.",
+              "promptByNative": {
+                "vi": "Sắp xếp thành câu hỏi đã ở Nhật bao lâu. Có thẻ không cần dùng.",
+                "en": "Arrange the question asking how long someone has been in Japan. Some cards are not needed.",
+                "ja": "日本に来てどのぐらいかをたずねる文に並べかえてください。使わないカードがあります。"
+              },
+              "tokens": [
+                {
+                  "id": "nihon",
+                  "text": "日本（にほん）",
+                  "canonicalText": "日本",
+                  "audioText": "にほん"
+                },
+                {
+                  "id": "ni",
+                  "text": "に",
+                  "canonicalText": "に",
+                  "audioText": "に"
+                },
+                {
+                  "id": "kite",
+                  "text": "来（き）て",
+                  "canonicalText": "来て",
+                  "audioText": "きて"
+                },
+                {
+                  "id": "dono",
+                  "text": "どのぐらい",
+                  "canonicalText": "どのぐらい",
+                  "audioText": "どのぐらい"
+                },
+                {
+                  "id": "desu",
+                  "text": "です",
+                  "canonicalText": "です",
+                  "audioText": "です"
+                },
+                {
+                  "id": "ka",
+                  "text": "か",
+                  "canonicalText": "か",
+                  "audioText": "か"
+                },
+                {
+                  "id": "de_d",
+                  "text": "で",
+                  "canonicalText": "で",
+                  "audioText": "で"
+                },
+                {
+                  "id": "mada_d",
+                  "text": "まだ",
+                  "canonicalText": "まだ",
+                  "audioText": "まだ"
+                }
+              ],
+              "answerSlots": [
+                {
+                  "id": "s1",
+                  "expectedTokenId": "nihon"
+                },
+                {
+                  "id": "s2",
+                  "expectedTokenId": "ni"
+                },
+                {
+                  "id": "s3",
+                  "expectedTokenId": "kite",
+                  "afterText": "、"
+                },
+                {
+                  "id": "s4",
+                  "expectedTokenId": "dono"
+                },
+                {
+                  "id": "s5",
+                  "expectedTokenId": "desu"
+                },
+                {
+                  "id": "s6",
+                  "expectedTokenId": "ka",
+                  "afterText": "？"
+                }
+              ],
+              "unusedTokenIds": [
+                "de_d",
+                "mada_d"
+              ],
+              "feedback": {
+                "correctAnswer": "日本（にほん）に来（き）て、どのぐらいですか？",
+                "canonicalAnswer": "日本に来て、どのぐらいですか？",
+                "audioText": "にほんにきて、どのぐらいですか",
+                "explanation": "日本 + に + 来て + どのぐらい + です + か → 日本に来て、どのぐらいですか？ 来る đi với に, không phải で.",
+                "explanationByNative": {
+                  "vi": "日本 + に + 来て + どのぐらい + です + か → 日本に来て、どのぐらいですか？ 来る đi với に, không phải で.",
+                  "en": "日本 + に + 来て + どのぐらい + です + か → 日本に来て、どのぐらいですか？ 来る takes に, not で.",
+                  "ja": "「日本」＋「に」＋「来て」＋「どのぐらい」＋「です」＋「か」→「日本に来て、どのぐらいですか？」「来る」は「に」を使い、「で」は使いません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m01-u2-l2-practice-14",
+              "order": 14,
+              "plan": "plus",
+              "type": "real_world_practice_dialogue",
+              "nonGraded": true,
+              "scenarioTitle": "Hai lần được hỏi thăm",
+              "scenarioTitleByNative": {
+                "vi": "Hai lần được hỏi thăm",
+                "en": "Asked twice about how you have been",
+                "ja": "近況を二度たずねられる"
+              },
+              "scenarioDescription": "Hai cuộc hỏi thăm khác nhau. Cùng một câu hỏi, hai người trả lời theo hai cách: một người đã quen, một người thì chưa.",
+              "scenarioDescriptionByNative": {
+                "vi": "Hai cuộc hỏi thăm khác nhau. Cùng một câu hỏi, hai người trả lời theo hai cách: một người đã quen, một người thì chưa.",
+                "en": "Two different exchanges. The same question, two answers: one person has settled in, the other has not.",
+                "ja": "二つの場面。同じ質問に、一人は慣れたと答え、もう一人はまだと答えます。"
+              },
+              "characterIds": [
+                "sato",
+                "ito",
+                "sensei"
+              ],
+              "dialogueLines": [
+                {
+                  "targetText": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+                  "displayText": "日本（にっぽん）に来（き）て、どのぐらいですか？",
+                  "reading": "にほんにきて、どのぐらいですか？",
+                  "speechText": "にほんにきて、どのぐらいですか",
+                  "translationByNative": {
+                    "vi": "Bạn đến Nhật được bao lâu rồi?",
+                    "en": "How long have you been in Japan?",
+                    "ja": "日本に来て、どのぐらいですか。"
+                  },
+                  "translations": {
+                    "vi": "Bạn đến Nhật được bao lâu rồi?",
+                    "en": "How long have you been in Japan?",
+                    "ja": "日本に来て、どのぐらいですか。"
+                  },
+                  "meaningVi": "Bạn đến Nhật được bao lâu rồi?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "Nihon ni kite, dono gurai desu ka?"
+                },
+                {
+                  "targetText": "ちょうど半年（はんとし）です。",
+                  "displayText": "ちょうど半年（はんとし）です。",
+                  "reading": "ちょうどはんとしです。",
+                  "speechText": "ちょうどはんとしです",
+                  "translationByNative": {
+                    "vi": "Đúng tròn nửa năm.",
+                    "en": "Exactly half a year.",
+                    "ja": "ちょうど半年です。"
+                  },
+                  "translations": {
+                    "vi": "Đúng tròn nửa năm.",
+                    "en": "Exactly half a year.",
+                    "ja": "ちょうど半年です。"
+                  },
+                  "meaningVi": "Đúng tròn nửa năm.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "chōdo hantoshi desu."
+                },
+                {
+                  "targetText": "そうですか。日本（にっぽん）に慣（な）れましたか？",
+                  "displayText": "そうですか。日本（にっぽん）に慣（な）れましたか？",
+                  "reading": "そうですか。にほんになれましたか？",
+                  "speechText": "そうですか。にほんになれましたか",
+                  "translationByNative": {
+                    "vi": "Vậy à. Bạn quen với Nhật chưa?",
+                    "en": "I see. Have you got used to Japan?",
+                    "ja": "そうですか。日本に慣れましたか。"
+                  },
+                  "translations": {
+                    "vi": "Vậy à. Bạn quen với Nhật chưa?",
+                    "en": "I see. Have you got used to Japan?",
+                    "ja": "そうですか。日本に慣れましたか。"
+                  },
+                  "meaningVi": "Vậy à. Bạn quen với Nhật chưa?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "sō desu ka. Nihon ni naremashita ka?"
+                },
+                {
+                  "targetText": "はい、なんとか。",
+                  "displayText": "はい、なんとか。",
+                  "reading": "はい、なんとか。",
+                  "speechText": "はい、なんとか",
+                  "translationByNative": {
+                    "vi": "Vâng, cũng tạm ạ.",
+                    "en": "Yes, more or less.",
+                    "ja": "はい、なんとか。"
+                  },
+                  "translations": {
+                    "vi": "Vâng, cũng tạm ạ.",
+                    "en": "Yes, more or less.",
+                    "ja": "はい、なんとか。"
+                  },
+                  "meaningVi": "Vâng, cũng tạm ạ.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "hai, nanto ka."
+                },
+                {
+                  "targetText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+                  "displayText": "日本（にっぽん）に来（き）て、どのぐらいになりますか？",
+                  "reading": "にほんにきて、どのぐらいになりますか？",
+                  "speechText": "にほんにきて、どのぐらいになりますか",
+                  "translationByNative": {
+                    "vi": "Em đến Nhật được bao lâu rồi?",
+                    "en": "How long have you been in Japan?",
+                    "ja": "日本に来て、どのぐらいになりますか。"
+                  },
+                  "translations": {
+                    "vi": "Em đến Nhật được bao lâu rồi?",
+                    "en": "How long have you been in Japan?",
+                    "ja": "日本に来て、どのぐらいになりますか。"
+                  },
+                  "meaningVi": "Em đến Nhật được bao lâu rồi?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sensei",
+                  "romanization": "Nihon ni kite, dono gurai ni narimasu ka?"
+                },
+                {
+                  "targetText": "私（わたし）は、先月（せんげつ）、来（き）ました。",
+                  "displayText": "私（わたし）は、先月（せんげつ）、来（き）ました。",
+                  "reading": "わたしは、せんげつ、きました。",
+                  "speechText": "わたしは、せんげつ、きました",
+                  "translationByNative": {
+                    "vi": "Em mới đến tháng trước ạ.",
+                    "en": "I came last month.",
+                    "ja": "私は、先月、来ました。"
+                  },
+                  "translations": {
+                    "vi": "Em mới đến tháng trước ạ.",
+                    "en": "I came last month.",
+                    "ja": "私は、先月、来ました。"
+                  },
+                  "meaningVi": "Em mới đến tháng trước ạ.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "watashi wa, sengetsu, kimashita."
+                },
+                {
+                  "targetText": "そうですか。少（すこ）し慣（な）れましたか？",
+                  "displayText": "そうですか。少（すこ）し慣（な）れましたか？",
+                  "reading": "そうですか。すこしなれましたか？",
+                  "speechText": "そうですか。すこしなれましたか",
+                  "translationByNative": {
+                    "vi": "Vậy à. Em quen được một chút chưa?",
+                    "en": "I see. Have you got used to it a little?",
+                    "ja": "そうですか。少し慣れましたか。"
+                  },
+                  "translations": {
+                    "vi": "Vậy à. Em quen được một chút chưa?",
+                    "en": "I see. Have you got used to it a little?",
+                    "ja": "そうですか。少し慣れましたか。"
+                  },
+                  "meaningVi": "Vậy à. Em quen được một chút chưa?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sensei",
+                  "romanization": "sō desu ka. sukoshi naremashita ka?"
+                },
+                {
+                  "targetText": "まだ、ちょっと……。",
+                  "displayText": "まだ、ちょっと……。",
+                  "reading": "まだ、ちょっと……。",
+                  "speechText": "まだ、ちょっと",
+                  "translationByNative": {
+                    "vi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+                    "en": "Not yet, it is still a bit hard.",
+                    "ja": "まだ、ちょっと……。"
+                  },
+                  "translations": {
+                    "vi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+                    "en": "Not yet, it is still a bit hard.",
+                    "ja": "まだ、ちょっと……。"
+                  },
+                  "meaningVi": "Dạ vẫn chưa, hơi khó một chút ạ.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "mada, chotto……."
+                }
+              ],
+              "sceneDividers": [
+                {
+                  "afterDialogueLine": 4,
+                  "targetText": "べつの日（ひ）",
+                  "translationByNative": {
+                    "vi": "Một ngày khác",
+                    "en": "Another day",
+                    "ja": "べつの日"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "contentStatus": "ready",
+      "playable": true,
+      "comingSoon": false,
+      "canSkip": false,
+      "exerciseStatus": "ready",
+      "learnSection": {
+        "lessonIntro": {
+          "status": "ready"
+        },
+        "vocabularyPhraseCards": {
+          "status": "ready"
         },
         "miniDialogue": {
-          "status": "placeholder"
+          "status": "ready",
+          "dialogueGroupCount": 3
         },
-        "cultureNuanceNote": {
-          "status": "placeholder"
+        "grammarSentencePatterns": {
+          "status": "ready"
         },
-        "contextualVariations": {
-          "status": "placeholder"
-        },
-        "communicationStrategy": {
-          "status": "placeholder"
+        "practiceExercises": {
+          "status": "ready"
         }
       },
-      "practiceStages": [
-        {
-          "key": "warmup",
-          "labelByNative": {
-            "en": "Warm-up",
-            "vi": "Khởi động",
-            "ja": "ウォームアップ",
-            "ko": "워밍업",
-            "zh": "热身"
-          },
-          "goalByNative": {
-            "en": "Recognize phrases, listen basically, understand meaning, and use simple patterns.",
-            "vi": "Nhận diện từ/cụm câu, nghe cơ bản, hiểu nghĩa, dùng mẫu câu đơn giản.",
-            "ja": "フレーズを認識し、基本の聞き取りと意味理解、簡単な文型を使います。",
-            "ko": "표현을 인식하고 기본 듣기·의미 이해·간단한 문형을 사용합니다.",
-            "zh": "识别短语，进行基础听力与意义理解，并使用简单句型。"
-          },
-          "exerciseOrders": [
-            1,
-            2,
-            3,
-            4,
-            5
-          ],
-          "exercises": [
-            {
-              "order": 1,
-              "type": "matchPairs",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 2,
-              "type": "listenAndChoose",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 3,
-              "type": "multipleChoiceMeaning",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 4,
-              "type": "fillBlank",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 5,
-              "type": "arrangeWords",
-              "plan": "free",
-              "status": "placeholder"
-            }
-          ]
-        },
-        {
-          "key": "real_world",
-          "labelByNative": {
-            "en": "Real-world Practice",
-            "vi": "Thực chiến",
-            "ja": "実践練習",
-            "ko": "실전 연습",
-            "zh": "实战练习"
-          },
-          "goalByNative": {
-            "en": "Use sentences in dialogue, choose natural responses, advanced listening, AI Q&A, and checkpoint.",
-            "vi": "Dùng câu trong hội thoại, chọn phản hồi tự nhiên, nghe nâng cao, AI Q&A và checkpoint.",
-            "ja": "会話で文を使い、自然な返事を選び、高度な聞き取り・AI質問・チェックを行います。",
-            "ko": "대화에서 문장을 쓰고 자연스러운 대답을 고르며 심화 듣기·AI Q&A·체크포인트를 합니다.",
-            "zh": "在对话中用句，选择自然回应，完成进阶听力、AI问答与检查点。"
-          },
-          "exerciseOrders": [
-            6,
-            7,
-            8,
-            9,
-            10
-          ],
-          "exercises": [
-            {
-              "order": 6,
-              "type": "dialogueCompletion",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 7,
-              "type": "naturalResponseChoice",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 8,
-              "type": "plusListeningVocabularyChallenge",
-              "plan": "plus",
-              "status": "placeholder"
-            },
-            {
-              "order": 9,
-              "type": "controlledAiQa",
-              "plan": "plus",
-              "status": "placeholder"
-            },
-            {
-              "order": 10,
-              "type": "reviewCheckpoint",
-              "plan": "plus",
-              "status": "placeholder"
-            }
-          ]
-        }
-      ],
       "saveToReview": {
-        "status": "placeholder"
+        "status": "ready",
+        "itemIds": [
+          "dono-gurai",
+          "nareru",
+          "nihon",
+          "seikatsu",
+          "ni-narimasu",
+          "mou",
+          "mada",
+          "kyonen",
+          "sengetsu"
+        ]
       },
-      "unlockRequirement": "core_foundation_completed",
-      "courseType": "communication",
-      "exercises": [
-        {
-          "id": "ja-daily_life-m01-u2-l2-e1",
-          "order": 1,
-          "type": "matchPairs",
-          "titleByNative": {
-            "en": "Match phrase and meaning",
-            "vi": "Nối cụm câu với nghĩa",
-            "ja": "フレーズと意味をつなげる",
-            "ko": "표현과 뜻 연결하기",
-            "zh": "匹配短语和意思"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u2-l2-e2",
-          "order": 2,
-          "type": "listenAndChoose",
-          "titleByNative": {
-            "en": "Listen and choose",
-            "vi": "Nghe và chọn",
-            "ja": "聞いて選ぶ",
-            "ko": "듣고 고르기",
-            "zh": "听音选择"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u2-l2-e3",
-          "order": 3,
-          "type": "multipleChoiceMeaning",
-          "titleByNative": {
-            "en": "Choose the correct meaning",
-            "vi": "Chọn nghĩa đúng",
-            "ja": "正しい意味を選ぶ",
-            "ko": "맞는 뜻 고르기",
-            "zh": "选择正确意思"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u2-l2-e4",
-          "order": 4,
-          "type": "fillBlank",
-          "titleByNative": {
-            "en": "Fill the missing word",
-            "vi": "Điền từ còn thiếu",
-            "ja": "空欄を埋める",
-            "ko": "빈칸 채우기",
-            "zh": "填空"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u2-l2-e5",
-          "order": 5,
-          "type": "arrangeWords",
-          "titleByNative": {
-            "en": "Arrange the sentence",
-            "vi": "Sắp xếp câu",
-            "ja": "文を並べる",
-            "ko": "문장 배열하기",
-            "zh": "排列句子"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u2-l2-e6",
-          "order": 6,
-          "type": "dialogueCompletion",
-          "titleByNative": {
-            "en": "Complete the dialogue",
-            "vi": "Hoàn thành hội thoại",
-            "ja": "会話を完成させる",
-            "ko": "대화 완성하기",
-            "zh": "完成对话"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u2-l2-e7",
-          "order": 7,
-          "type": "naturalResponseChoice",
-          "titleByNative": {
-            "en": "Choose a natural response",
-            "vi": "Chọn phản hồi tự nhiên",
-            "ja": "自然な返事を選ぶ",
-            "ko": "자연스러운 대답 고르기",
-            "zh": "选择自然回应"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u2-l2-e8",
-          "order": 8,
-          "type": "plusListeningVocabularyChallenge",
-          "titleByNative": {
-            "en": "Plus · Listening challenge",
-            "vi": "Plus · Thử thách nghe",
-            "ja": "Plus・リスニングチャレンジ",
-            "ko": "Plus · 듣기 챌린지",
-            "zh": "Plus · 听力挑战"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u2-l2-e9",
-          "order": 9,
-          "type": "controlledAiQa",
-          "titleByNative": {
-            "en": "Plus · AI Q&A practice",
-            "vi": "Plus · Luyện hỏi đáp AI",
-            "ja": "Plus・AI質問練習",
-            "ko": "Plus · AI 질의응답 연습",
-            "zh": "Plus · AI问答练习"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m01-u2-l2-e10",
-          "order": 10,
-          "type": "reviewCheckpoint",
-          "titleByNative": {
-            "en": "Plus · Review checkpoint",
-            "vi": "Plus · Kiểm tra tổng hợp",
-            "ja": "Plus・復習チェック",
-            "ko": "Plus · 복습 체크",
-            "zh": "Plus · 复习检查"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        }
-      ],
+      "exercises": [],
       "displayOrder": 2
     },
     {
