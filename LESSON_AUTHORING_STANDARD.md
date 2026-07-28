@@ -1136,130 +1136,189 @@ tra NGUỒN DỮ LIỆU (KHÔNG dựa trí nhớ mô hình):**
 → cả ba không có → **DỪNG, hỏi owner. KHÔNG tự soạn.** (Bản gắn-nhãn-tin-cậy của
 luật chốt §F-b.)
 
-**G11 — CHIA VIỆC THEO TẦNG, KHÔNG DỒN MỘT NGUỒN.** (Owner chốt 2026-07-28, sau
-khi một bài dồn gần **100%** nội dung vào **một** nguồn duy nhất và bỏ không mọi
-nguồn khác của cùng ngôn ngữ.)
+**G11 — THAY BẰNG G14, 2026-07-29, theo số liệu đo INVENTORY.** (Nội dung cũ xoá; còn trong git.)
 
-**Vấn đề đã lộ:** có nhiều nguồn hợp lệ trong tay nhưng chỉ dùng một, vì nguồn
-đó "đủ để viết xong bài". Bài vẫn đúng, nhưng **nghèo hơn mức nguồn cho phép** và
-**bỏ mất lớp đối chiếu** — không nguồn nào kiểm chéo nguồn nào.
+**G11.1 — THAY BẰNG G14, 2026-07-29, theo số liệu đo INVENTORY.**
 
-**G11.1 — CHIA THEO TẦNG VIỆC, KHÔNG CHIA THEO PHẦN TRĂM.**
-- Mỗi **tầng việc** (loại vật liệu bài cần: đoạn hội thoại, mẫu ngữ pháp, nghĩa /
-  cách đọc / loại từ, từ vựng làm giàu, chữ viết, mức lịch sự / vai vế, chất liệu
-  bài tập…) được gán cho **nguồn MẠNH NHẤT ở đúng tầng đó**.
-- **CẤM chia đều theo lượng** ("mỗi nguồn góp x%"). Ép chia theo lượng buộc người
-  viết lấy cả **thứ mà nguồn đó không mạnh** — đúng cái luật này muốn tránh.
-- **Bảng tầng → nguồn của từng ngôn ngữ nằm ở file nguồn riêng**
-  (`scripts/content/sources/<mã>.md`), **KHÔNG ở file chung này** — cùng nguyên
-  tắc như §G8. Ngôn ngữ chưa có bảng đó → **DỪNG, hỏi owner**, không tự gán.
-- Tầng nào **chỉ một nguồn có** thì nguồn đó là **DUY NHẤT** cho tầng ấy: không
-  có nguồn thay thế nghĩa là **không được tự chế thay** (§G10 cho hội thoại là ca
-  cụ thể của luật này).
+**G11.2 — THAY BẰNG G14, 2026-07-29, theo số liệu đo INVENTORY.**
 
-**G11.2 — ĐỐI CHIẾU BẮT BUỘC khi tầng có ≥2 nguồn.**
-- Tầng nào bảng ghi **≥2 nguồn** thì phải **MỞ CẢ HAI** — không được mở một cái
-  rồi coi là xong vì "đã khớp trí nhớ" (§G8 đã cấm dùng trí nhớ mô hình).
-- **Hai nguồn lệch nhau → BÁO OWNER. TUYỆT ĐỐI KHÔNG tự chọn bên nào**, kể cả
-  khi một bên trông đáng tin hơn.
-- **Lý do có luật này:** đối chiếu 2 nguồn đã **bắt được lỗi thật** — một chữ có
-  hai cách đọc và bài đang dùng sai cách trong ngữ cảnh đó. Một nguồn không bao
-  giờ tự tố được chính nó.
+**G11.3 — THAY BẰNG G14, 2026-07-29, theo số liệu đo INVENTORY.**
 
-**G11.3 — RANH GIỚI CHỐNG LỖI KẾT HỢP TỪ (collocation). AN TOÀN ĐỨNG TRÊN
-"DÙNG HẾT NGUỒN".** (Owner chốt 2026-07-28. **Thay bản "làm giàu từ vựng — được
-thay bằng từ ở nguồn khác" viết cùng ngày** — bản đó nới quá tay, mở đúng chỗ
-sinh lỗi mà máy không kiểm được.)
+**G11.4 — THAY BẰNG G14, 2026-07-29, theo số liệu đo INVENTORY.**
 
-**Chỗ hổng không bịt được bằng nguồn hiện có:** dự án **KHÔNG có nguồn
-collocation** (từ nào thật sự đi với từ nào) cho ngôn ngữ đang làm — đã tra,
-không có bản mở dùng được. Tầng X (§G8) trả lời được **loại từ / biến đổi dạng /
-cấu trúc bắt buộc**, nhưng **KHÔNG** trả lời được *"người bản ngữ có thật sự ghép
-hai từ này không"*. Hai tổ hợp **cùng đúng ngữ pháp** mà một cái tự nhiên, một
-cái không — từ điển im lặng về khác biệt đó. Vì vậy **chỗ duy nhất sinh lỗi này
-là lúc GHÉP một từ vào một mẫu câu**, và luật dưới đây bịt đúng chỗ đó.
+**G11.5 — THAY BẰNG G14, 2026-07-29, theo số liệu đo INVENTORY.**
 
-**TRONG MẪU CÂU** (từ được ghép vào cấu trúc):
-- **CHỈ được thay bằng từ CÙNG NGUỒN, CÙNG BÀI** — tức từ mà **chính tài liệu đó
-  đã liệt kê cho chính mẫu đó**. Tài liệu liệt kê nghĩa là tài liệu **đã xác nhận
-  ghép được**; đó là bằng chứng collocation duy nhất đang có trong tay.
-- **CẤM lấy từ ở nguồn khác ghép vào mẫu của nguồn này.** Cả hai nguồn đều uy
-  tín cũng không đủ: không nguồn nào trong hai xác nhận **tổ hợp** vừa tạo ra.
-- Vẫn giữ mọi điều kiện cũ: **không đụng phần cốt lõi** (thành phần chức năng
-  ngữ pháp / thể-dạng / trật tự — định nghĩa ở file nguồn riêng, §G3), và **không
-  thay khi từ đó BẮT BUỘC cho nghĩa của câu** (thay vào là câu hỏng nghĩa) →
-  gặp ca đó **giữ nguyên văn**.
+**G12 — THAY BẰNG G14, 2026-07-29, theo số liệu đo INVENTORY.**
 
-**NGOÀI MẪU CÂU** (không ghép vào cấu trúc nào): **dùng thoải mái nguồn khác** —
-thẻ từ vựng riêng, mục tham khảo, ví dụ rời, ngữ pháp đối chiếu, nghĩa / cách
-đọc, chữ viết, mức lịch sự.
-- **Mỗi ví dụ lấy NGUYÊN từ MỘT nguồn, không ghép hai nguồn trong một câu.**
-- Đây là nơi bài trở nên phong phú **mà không tạo tổ hợp mới nào**.
+**G13 — THAY BẰNG G14, 2026-07-29, theo số liệu đo INVENTORY.**
 
-**Vì sao ranh giới này đủ:** bài vẫn có mặt nhiều nguồn (đúng mục tiêu §G11.1),
-nhưng **không nguồn nào bị ghép vào mẫu của nguồn khác** — tức không sinh ra tổ
-hợp nào chưa nguồn nào xác nhận.
+---
 
-**Khai rõ theo §G10:** đoạn nào **nguyên văn**, đoạn nào **đã thay từ** (thay chữ
-gì, lấy từ **cùng bài của nguồn nào**). Không khai = coi như khai man nguồn.
+**G14 — QUY TẮC BUILD BÀI, bản v2.** (Owner chốt **2026-07-29**. Thay trọn
+G11 · G11.1–G11.5 · G12 · G13. Mọi luật dưới đây có **số liệu đo 2026-07-27/28/29**
+trong `scripts/content/sources/INVENTORY.md`. **Luật mất cơ sở đo → đo lại, không
+suy diễn.**)
 
-**G11.4 — BÁO CÁO BẮT BUỘC: BẢNG "PHẦN NÀO LẤY TỪ NGUỒN NÀO".**
-Mỗi bài, báo cáo cho owner **phải kèm một bảng** liệt kê **từng phần của bài →
-nguồn đã mở cho phần đó** (kèm mục/chương cụ thể trong nguồn, theo §G8). Mục đích
-là để owner **thấy ngay bài có bị dồn một nguồn hay không** — thiếu bảng này thì
-báo cáo **chưa đủ điều kiện duyệt**.
+> **NẾU VỀ SAU PULL VỀ bất kỳ mục G11.3/G12/G13 nào** (từ nhánh/commit khác phía
+> cloud — ca đã gặp: `bf15c2b`): **BẢN NÀY THẮNG.** Diff và báo owner, **không giữ
+> hai luật đá nhau**. Nội dung cũ đã rút còn một dòng ở trên; lịch sử nằm trong git.
 
-**G11.5 — MỐC ÁP DỤNG.** Luật G11 áp cho **bài viết từ thời điểm chốt trở đi**.
-Bài đã chốt trước đó theo hướng "một nguồn, 100% nguyên văn" **GIỮ NGUYÊN, không
-viết lại** — nguyên văn từ một nguồn uy tín không phải lỗi, chỉ là chưa khai thác
-hết nguồn. Mốc cụ thể của từng ngôn ngữ ghi ở **file nguồn riêng** của ngôn ngữ
-đó.
+**G14-R0. PHẠM VI.** `languageCode=ja` · `nicheId=daily_life` · level A0–A1 ·
+`template=vocabularyLesson` (five_cards). **Cấu hình A (R3b) là mặc định TOÀN KHOÁ
+daily_life.** Ngoài phạm vi → **DỪNG, BÁO**: bài kanji/review/checkpoint, niche
+khác (Irodori là 生活の日本語 nên mất vai nguồn hội thoại), ngôn ngữ khác. Mục
+**[JA]** là riêng tiếng Nhật.
+**NGOẠI LỆ CÓ CHỦ ĐÍCH:** `ja-daily_life-m01-u2-l1` viết **100% nguyên văn Irodori**
+và **chốt TRƯỚC** rule này (2026-07-27) → **GIỮ NGUYÊN, không viết lại.** Cùng tinh
+thần với G11.5 cũ: nguyên văn từ một nguồn uy tín không phải lỗi.
 
-**G12 — VẬT LIỆU BÀI TẬP LẤY TỪ NGUỒN, CHỈ ĐỔI VỎ.** (Owner chốt 2026-07-28.)
+**G14-R1. HAI LOẠI CÂU — không có loại thứ ba.** Mọi chuỗi tiếng Nhật người học
+nhìn thấy là **VERBATIM** (bê nguyên từ đúng MỘT nguồn, không sửa một ký tự, không
+ghép) hoặc **AUTHORED** (tự soạn, khai lý do). **CẤM** "phỏng theo / diễn đạt lại /
+chỉnh nhẹ". MUTATION là AUTHORED đặc biệt dành cho nhiễu (R6). Dịch lấy từ nguồn
+n5-Việt rồi sửa lỗi dính chữ = **AUTHORED**, reason `hiệu đính từ <file>:<dòng>` —
+có sửa tay thì không còn là verbatim.
 
-**Đảo thứ tự việc:** KHÔNG bắt đầu bằng câu hỏi *"nên kiểm điểm gì?"* (đó là tự
-thiết kế chương trình — việc của người soạn giáo trình, không phải của người viết
-bài ở đây). Bắt đầu bằng **bài tập đã có trong nguồn**, rồi **đổi vỏ** sang dạng
-bài tập mà app hỗ trợ.
+**G14-R2. PROVENANCE — file song song, cổng máy kiểm.**
+`shared/content/curriculum/provenance/<lessonId>.provenance.json`. Mỗi item:
+`{path, targetText}` + một trong ba: `{source, line, verbatim:true}` ·
+`{authored:true, reason}` · `{mutation:{from, op}}`.
+**Khai:** mọi trường chứa câu/cụm tiếng Nhật **hiển thị**.
+**Không khai:** `reading` / `speechText` (dẫn xuất — R12a kiểm riêng), `formula`,
+bản dịch. `scripts/verify-provenance.mjs` **exit 0** = điều kiện bài xong. Nguồn
+nằm trong `blocked-sources.json` (R9) → **FAIL**. §G5 giữ nguyên: **không** ghi
+nguồn vào `lessons.json`.
 
-- **NỘI DUNG KIỂM TRA GIỮ NGUYÊN** — vẫn kiểm đúng điểm ngữ pháp / đúng chỗ trống
-  mà nguồn đã chọn kiểm. **Chỉ đổi CÁCH NGƯỜI HỌC TRẢ LỜI** (tự gõ → chọn phương
-  án → sắp mảnh → nối cặp…).
-- **Cái được:** giáo trình đã **chọn sẵn điểm đáng kiểm** và điểm đó đã qua tay
-  người soạn chuyên môn — đỡ phải tự nghĩ **và** đỡ phải tự kiểm lại phán đoán
-  của chính mình. Đây là cùng logic §G10 (lấy nguyên đoạn hội thoại thay vì tự
-  xếp), áp cho bài tập.
-- **Tầng nào có bài tập thật** và **file nào cấp** → ghi ở **bảng tầng của file
-  nguồn riêng** (§G11.1). Tầng bài tập thường chỉ **một** nguồn có → theo §G11.1
-  đó là nguồn **DUY NHẤT**, không có nguồn thay thế.
-- **Nguồn không có bài phù hợp → mới tự soạn, và BẮT BUỘC ghi rõ "tự soạn"** trong
-  báo cáo (cùng cơ chế khai báo của §G10). Không ghi = khai man nguồn.
-- Bài tập tự soạn vẫn chịu **toàn bộ** §G7 vùng A (chỉ vốn đã dạy) và §G13 dưới.
+**G14-R3. NGUỒN THEO Ô** (đo 2026-07-27/29 — đổi kho hoặc đổi niche thì **đo lại**):
 
-**G13 — PHƯƠNG ÁN NHIỄU: MẶC ĐỊNH LOẠI CƠ HỌC.** (Owner chốt 2026-07-28. Siết
-chặt mục "Phương án sai phải SAI THẬT" của §B16 thành **luật mặc định**, sau **3
-lần dính thật** cùng một lớp lỗi.)
+| Ô | Nguồn | Cơ sở đo |
+|---|---|---|
+| `dialogueGroups`, Q14, `intro.examples` | **Irodori**; hội thoại `n5_ngu-phap-vi` (4 khối, có dịch) khi khớp chủ đề | Irodori duy nhất đủ kịch bản A0–A1 |
+| `grammarPatterns` | **`n5_ngu-phap-vi` + hanabira md + N5GM** — 3 nguồn độc lập | trùng câu ví dụ 0/278 và 3% |
+| `vocabularyDetails[].examples` | **`n5_ngu-phap-vi`** (278 câu A0–A1, lọc R5: 0 câu rớt) → tái dùng câu trong bài → Irodori | `sentences_*.json` **KHÔNG dùng ở A0–A1** (toàn N3+) — mở lại từ N4 |
+| `vocabularyReferences` | Tanos + JMdict | |
+| Cách đọc từ | **JMdict quyết** | R12a |
+| Dịch vi | **`n5_ngu-phap-vi` (hiệu đính)** khi câu lấy từ đó; còn lại viết tay | nguồn ĐẦU TIÊN có dịch Việt gắn câu |
+| Bài tập — điểm kiểm | **Irodori 練習 + 解答** (OCR 0 lỗi) | R7 |
+| Nhiễu có nguồn | hanabira Common Mistakes (280 cặp) khi mẫu đó có | u2-l2: 0/4 mẫu → dùng mutation |
+| `speechText`, `register`, ô Q10 | **AUTHORED** | đo: không nguồn nào có |
 
-**Lớp lỗi đã dính 3 lần:** nghĩ ra một phương án nhiễu, tin là nó sai, **hoá ra
-nó CŨNG ĐÚNG** trong bối cảnh đó → câu hỏi có **2 đáp án đúng** → **chấm sai
-người trả lời đúng**. Đây là lỗi của người viết, không phải của người học.
+**Path chính thức:** `local-sources/ja/n5/n5_ngu-phap-vi.txt`
+(sha256 `778414d2…848c9e79`, 63.054 byte, 1.056 dòng / 41 mục / 278 câu).
 
-- **LOẠI CƠ HỌC — ĐƯỢC DÙNG, ưu tiên mặc định.** Là lỗi **tự nó sai bất kể bối
-  cảnh**, không thể vô tình đúng: sai **thành phần chức năng ngữ pháp** (trợ từ /
-  giới từ / biến tố), sai **thể / mức lịch sự**, sai **biến đổi dạng của động
-  từ**, **thiếu hoặc thừa thành phần bắt buộc** của một cụm, **gắn dấu hiệu tôn
-  kính cho thứ thuộc về chính mình**, **lặp thành phần chức năng**. Danh sách
-  **cụ thể theo từng ngôn ngữ** nằm ở **file nguồn riêng** (`scripts/content/\
-sources/<mã>.md`) — không ở file chung này.
-- **LOẠI CẢ CỤM / CẢ CÂU — HẠN CHẾ.** Nhiễu là một cụm hoặc một câu hoàn chỉnh
-  thì **BẮT BUỘC kiểm xem nó có vô tình đúng trong đúng bối cảnh đó không** (đúng
-  câu hỏi §B16 đã có: *"đây có phải câu hợp lệ trong ĐÚNG bối cảnh đó không?"*).
-- **KHÔNG CHẮC → ĐỔI SANG NHIỄU CƠ HỌC.** Không có đường thứ ba: không được giữ
-  nhiễu "chắc là sai" rồi chờ ai đó phát hiện sau.
-- Ba ca đã dính (kèm lý do vì sao chúng **đúng**, không sai) ghi ở **file nguồn
-  riêng của ngôn ngữ đó** — chúng là ví dụ bằng một thứ tiếng cụ thể nên không
-  thuộc file chung. §B16 giữ nguyên vai trò **danh sách kiểm trước khi nộp**;
-  §G13 là **luật chọn loại nhiễu** đứng trước bước kiểm đó.
+**G14-R3b. CẤU HÌNH A — cỡ bài mặc định toàn khoá daily_life.**
+Mục tiêu kép: an toàn ngang tối đa + **owner check ít nhất**.
+- `grammarPatterns` **4–5** (trần 8) · `vocabulary` **8–10** (trần 15)
+- `dialogueGroups` **3 nhóm × 3–4 lượt**, lấy từ **≥2 kịch bản khác nhau**
+- Q14 **6–8 lượt** (validator ≥4)
+- **Thứ tự lấy ví dụ cho MỌI câu:** (1) tái dùng câu đã có trong bài → (2)
+  `n5_ngu-phap-vi` → (3) Irodori. `sentences_*.json`: không dùng ở A0–A1.
+- **Không có cổng tỉ lệ %.** Tỉ lệ Irodori giảm dần bằng **thêm nguồn** và vốn từ
+  tích luỹ, **không** bằng phình bài. Báo cáo in tỉ lệ thật theo **câu duy nhất**
+  (tái dùng không đếm trùng) **và** theo trường.
+
+**G14-R4. HỘI THOẠI — điều khoản lùi + danh sách pattern tập trung.**
+Dò hội thoại đã trượt **3 lần, 3 quy ước**: `Ａ：` · `- **A:**` · `A ` (không dấu
+hai chấm — `n5_ngu-phap-vi`).
+1. Danh sách pattern nhãn người nói đặt **Ở MỘT CHỖ** (hằng số trong script dò),
+   hiện gồm cả ba; gặp quy ước mới → **NỐI vào**, không dò tay lẻ.
+2. Mọi kết luận **"0 hội thoại" phải kèm danh sách pattern đã dò**.
+3. Tra hanabira + n1–n5 + `n5_ngu-phap-vi` theo mẫu bài dạy; khối ≥2 lượt qua lọc
+   R5 → verbatim.
+4. Rỗng → Irodori, đa dạng **trong** Irodori (≥2 kịch bản); báo cáo ghi đã tra gì.
+
+**G14-R5. LỌC VỐN TỪ cho câu nhập ngoài.**
+- Mọi token ∈ (Tanos N5 ∪ `taught-vocabulary.json` tới bài này). So khớp **bỏ dấu
+  câu** (「元気？」 khớp 「元気」).
+- Nguồn **có phân từ sẵn** (`n5_ngu-phap-vi`: 「わたしは ケーキを たべました」 — cố
+  ý, không phải lỗi) → tách token **theo phân từ của nguồn**, chính xác hơn bộ thô.
+- Dư **1–2** từ mới → nhận + chú nghĩa + đưa vào `vocabularyReferences`.
+  Dư **>2** → loại. **Dạng chia của từ đã biết** (たべました←たべる) không tính là từ mới.
+- **[JA]** Câu có **kính ngữ cấp cao** (される・いらっしゃいます・でございます…) →
+  **loại khỏi A0–A1** bất kể vốn từ.
+- `sentences_*.json` (khi dùng lại từ N4): khoá bỏ `_` cuối + **bắt buộc** kiểm
+  từ-khoá có thật trong `sentence_original` (đo được mục gán sai khoá).
+- Biến thể chính tả (どのくらい↔どのぐらい) **không** phải cùng mẫu khi verbatim.
+
+**G14-R6. NHIỄU — không bao giờ phán độ tự nhiên.**
+(3 lần dính: 「お名前お願いします」・「お名前は？」・「伊藤さんですか」 — máy phán
+"thiếu tự nhiên" và trượt.) Ba đường, **khai trong provenance**:
+1. **MUTATION** — `op` ∈ {`particle_swap` (は↔が↔を↔も↔の) · `form_swap`
+   (lịch sự↔thường) · `conj_error` · `san_drop` / `san_add` · `o_prefix_self` ·
+   `particle_dup`}. `from` = câu **có thật trong bài**. Máy kiểm theo R12b.
+2. **SOURCE_MARKED** — vế Mistake **nguyên văn** từ Common Mistakes hanabira
+   (`source` + `line`), **chỉ khi** thuộc mẫu đang dạy; lý do của nguồn đổ vào
+   `feedback.explanation`. Parser xử **≥3 format**, **bỏ** khối không có câu Nhật.
+3. **CLOSED_FACT** — nhiễu đọc / nghĩa / kanji lấy từ **mục khác** trong JMdict.
+
+**CẤM nhiễu máy tự nghĩ.** **RÀ ĐỐI KHÁNG theo bối cảnh đề bài** với **từng**
+phương án: *"trong bối cảnh này, nó có thể đúng không?"* — **mutation cũng rà**.
+
+**G14-R7. BÀI TẬP — dẫn xuất, không tự nghĩ.**
+- Dạng: validator khoá (Q3 matching · Q9 checkpoint · Q10 chat_text_fill ·
+  Q13 slot_ordering · Q14 real_world; free 1–9 / plus 10–14).
+- Điểm kiểm: **Irodori 練習+解答**, khai `derived_from {source, line}` ở mức
+  exercise. Không có → `authored` + ghi **"đã tra gì"**.
+- Chất liệu: **câu của chính bài**. Không nhập câu lạ vào bài tập.
+- Q10: nền **verbatim từng dòng**; vị trí ô + `acceptedAnswers` = **authored**
+  (đo toàn kho: không nguồn nào có).
+- Q14: kịch bản Irodori verbatim, **6–8 lượt** (R3b); `sceneDividers` authored.
+
+**G14-R8. [JA] REGISTER — ba tầng, KHÔNG tra từ điển.**
+9 chuỗi đóng (§B2e ≡ validator dòng 991–1004, khớp từng ký tự).
+1. **Đuôi câu** của `displayText`: です/ます (kể cả 〜か) → `Lịch sự.` ·
+   でございます/おります/いたします/申します/伺います/存じます → `Trang trọng.` ·
+   thể thường (kể cả câu hỏi trống 「元気？」) → `Thân mật.`
+2. **Vị trí trong cấu trúc nguồn**: từ rời (はい・うん) — nằm trong kịch bản **thể
+   nào** của nguồn thì mang nhãn đó (**đọc dữ liệu**, không phán đoán).
+3. Không áp được → `''` (§B2c) + **ghi báo cáo**.
+
+**CẤM:** JMdict `pol/hon/hum` (phủ **1,63%**, **sai trục** — xung đột thật ở
+「お願いします」: JMdict `hum` vs NovaLang `Lịch sự.`) · ánh xạ **敬語の指針** (5 hệ
+kính ngữ ≠ 3 mức trang trọng) · lấy お/ご làm căn cứ.
+**敬語の指針 CHỈ để viết giải thích**, không để gán nhãn.
+
+**G14-R9. BLOCKLIST — máy đọc.** `scripts/content/sources/blocked-sources.json`.
+Cổng **FAIL** mọi verbatim trỏ vào. Mục `{path, reason, mức}`, `mức` ∈
+`cấm-trích` | `cấm-hẳn`. Khởi tạo theo INVENTORY: **5 file n5** OCR 9–23%
+(gồm cả 3 file Minna — hai tập **chồng nhau 2 file**) → `cấm-trích` ·
+**5 PDF Sou Matome** (0 dòng chữ Nhật) → `cấm-hẳn` · **Collins** (dấu cách chen
+giữa từ) → `cấm-trích`.
+
+**G14-R10. BÁO CÁO — máy in, không viết tay.** `verify-provenance.mjs` in cuối lượt:
+đếm câu theo nguồn (**hai số**: theo câu duy nhất **+** theo trường) · authored theo
+`reason` · mutation theo `op` · **PASS-yếu** (qua mức-2 chuẩn hoá / nối dòng ±3 —
+rủi ro cột bên, đo 4 dòng) · ô **"đã tra mà rỗng"** ·
+**mục CẦN MẮT NGƯỜI** — danh sách **đúng từng chuỗi** owner cần soi, xếp theo rủi
+ro: (1) cờ furigana đa-âm R12a · (2) dịch hiệu đính · (3) authored ngoài danh mục
+thường lệ · (4) PASS-yếu. Owner duyệt danh sách này thay vì bơi trong JSON.
+
+**G14-R11. SỔ VỐN TỪ.** `shared/content/curriculum/taught-vocabulary.json` — sau
+mỗi bài, **nối** `displayText` (bỏ furigana trong ngoặc, **giữ dạng thật** kể cả
+「？」; R5 tự bỏ dấu câu khi so). **Máy đọc** từ `lessons.json`, không gõ tay.
+
+**G14-R12. MÁY KIỂM BỔ SUNG** (trong `verify-provenance.mjs`):
+- **a. Furigana đối chiếu JMdict** — validator cũ chỉ bắt **THIẾU**, không bắt
+  **SAI**. Mọi reading đối chiếu danh sách kana của từ trong JMdict: không nằm
+  trong → **FAIL**; từ thuộc danh sách đa-âm đã biết (何・人・日・中・方・行 — mở
+  rộng dần) → **FLAG** vào CẦN MẮT NGƯỜI.
+- **b. Kiểm mutation** — `from` phải xuất hiện trong bài; `text ≠ from`; `op` ∈
+  whitelist. Riêng `particle_swap`/`particle_dup`: diff giữa `from` và `text` phải
+  đúng **MỘT** vị trí thuộc bộ trợ từ — máy diff được, **kiểm chặt**. Op khác:
+  kiểm mềm.
+- **c. Ví dụ đúng mẫu** — câu ví dụ của `grammarPattern` X phải **chứa chuỗi bề
+  mặt** của X (hoặc biến thể đã khai trong pattern). So chuỗi, **FAIL** nếu không.
+
+**G14-R13. LOCAL-SOURCES — quyền đọc/ghi.** (Sửa luật cũ "không đụng
+local-sources".)
+- **ĐỌC: tự do.** Mở, grep, bóc PDF, đo — không cần xin.
+- **GHI NỘI DUNG: CẤM.** Không sửa, không thêm, không xoá nội dung file nguồn.
+- **ĐỔI TÊN / DI CHUYỂN: cần owner cấp phép từng lần**, và **bắt buộc sha256
+  trước–sau phải giống hệt**; lệch → hoàn tác, DỪNG, báo. (Đã dùng một lần
+  2026-07-29 cho `n5_ngu-phap-vi.txt`.)
+- Giải nén archive owner bỏ vào + xoá archive sau khi xác minh: theo cùng cơ chế
+  cấp phép từng lần.
+
 
 **G — GIỚI HẠN THẬT (ghi rõ, không giấu).** Hệ luật G + tầng X chỉ chặn được **lỗi
 TRA CỨU ĐƯỢC**: cấu trúc bắt buộc (X1), kết hợp từ phổ biến (X2), loại từ / biến
@@ -1271,6 +1330,17 @@ ngôn ngữ đó.** Ngôn ngữ **chưa có người duyệt** → độ tin c�
 ---
 
 ## Changelog file này
+
+- **2026-07-29 (bản 12 — G14 QUY TẮC BUILD BÀI v2, thay trọn G11–G13)** —
+  G11 · G11.1–G11.5 · G12 · G13 rút mỗi mục còn MỘT DÒNG "thay bằng G14";
+  nội dung cũ xoá, lịch sử còn trong git. **G14** vào ở số kế tiếp còn trống,
+  giữ nguyên cấu trúc R0–R13 bên trong. Kèm ghi chú: pull về bất kỳ mục
+  G11.3/G12/G13 nào (ca đã gặp: commit `bf15c2b`) thì **G14 THẮNG** — diff và
+  báo owner, không giữ hai luật đá nhau. Ghi **ngoại lệ có chủ đích**
+  `ja-daily_life-m01-u2-l1` (100% nguyên văn Irodori, chốt TRƯỚC rule) và
+  **ngày hiệu lực 2026-07-29**. **G14-R13** sửa luật local-sources thành
+  ĐỌC tự do / CẤM GHI nội dung / đổi tên cần owner cấp phép từng lần + sha256
+  trước-sau phải khớp.
 
 - **2026-07-28 (bản 13 — AN TOÀN ĐỨNG TRÊN "dùng hết nguồn": chống lỗi kết hợp
   từ, bài tập lấy từ nguồn, nhiễu cơ học)** —
