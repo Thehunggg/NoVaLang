@@ -351,45 +351,23 @@ Hàn/Thái/Trung (`markdown_grammar_korean/`, `grammar_kr_KOREAN_*.json`,
   là cố định → **xử như LOẠI A + hỏi owner** (§G1). Nguồn để rút cụm cố định:
   V1 (Irodori) — các mẫu chào hỏi/lịch sự dạy nguyên khối.
 
-### Bổ sung 2026-07-27 — KÍNH NGỮ: hai file, owner ĐÃ THAY nội dung
+### KÍNH NGỮ — xem §G14-R8
 
-> **Đổi so với bản ghi 2026-07-25:** file lớn TRƯỚC đây là tuyển tập bài web,
-> nay owner đã **thay hẳn** bằng văn bản chính thức. Đã kiểm bằng cách quét dấu
-> vết cũ: 0 lượt cho mọi tiêu đề của bản tuyển tập. Vì vậy **hạng nguồn của nó
-> nâng từ tầng đối chiếu lên NGUỒN CHÍNH** — xem dưới.
+Hai file kính ngữ (`New Tài liệu văn bản.txt` = 敬語の指針 · `New Tài liệu văn
+bản (2).txt` = bảng chuyển kính ngữ) **CHỈ dùng để VIẾT GIẢI THÍCH**.
 
-| File | Dạng | Nội dung | Hạng |
-|---|---|---|---|
-| `local-sources/ja/New Tài liệu văn bản.txt` | text thuần UTF-8 · 248,6 KB · 3 575 dòng · 92 862 ký tự · 65% ký tự Nhật · **chữ thật, đọc được 100%** | **敬語の指針** — *Phương châm Kính ngữ*, 文化審議会答申 (Hội đồng Thẩm định Văn hoá), 平成19年2月2日. Toàn văn có mục lục. Trình bày phân loại **5 LOẠI CHÍNH THỨC**: 尊敬語 (104) · 謙譲語Ⅰ (107) · 謙譲語Ⅱ／丁重語 (64／13) · 丁寧語 (27) · 美化語 (22). Phủ dày vai vế và tình huống: 相手 156 · 先生 168 · 立てる 91 · 場面 50 · 上司 23 · 部下 9 · 取引先 5. | **NGUỒN CHÍNH cho kính ngữ / mức lịch sự / vai vế** |
-| `local-sources/ja/New Tài liệu văn bản (2).txt` | text thuần UTF-8 · 3,2 KB · 108 dòng · 1 293 ký tự · 64% ký tự Nhật · **chữ thật, bảng phân tách bằng TAB** | **Bảng chuyển kính ngữ 3 cột**: 基本 → 尊敬語 → 謙譲語・丁重語, khoảng **24 động từ gốc** (会う · 集まる · 言う · 来る · 売る · 教える · 思う · 買う · 帰る · 借りる · 聞く · 決める …), mỗi ô liệt kê nhiều biến thể. | **Tra cứu nhanh**, đi kèm file trên |
+> **CẤM ánh xạ sang nhãn `register`** — §G14-R8. Lý do đo được: văn bản phân
+> theo **5 hệ kính ngữ** (尊敬語 · 謙譲語Ⅰ · 謙譲語Ⅱ/丁重語 · 丁寧語 · 美化語),
+> còn §B2e phân theo **3 mức trang trọng**. Hai trục khác nhau, không quy đổi.
+> JMdict `pol/hon/hum` cũng bị cấm cùng lý do: phủ **1,63%** và sai trục —
+> xung đột thật ở 「お願いします」 (JMdict `hum` vs NovaLang `Lịch sự.`).
 
-**Vì sao xếp NGUỒN CHÍNH, khác với lần trước:**
+Cách gán `register` thay thế: **ba tầng §G14-R8** — đuôi câu → vị trí trong
+kịch bản nguồn → `''` kèm ghi báo cáo.
 
-- Đây là **văn bản chính thức của cơ quan nhà nước Nhật** (答申 của 文化審議会),
-  không phải bài viết trên mạng — có xuất xứ, có ngày ban hành, có thẩm quyền.
-- Nó phủ đúng **tầng đang mỏng nhất** của dự án: kính ngữ, mức độ lịch sự, và
-  quan hệ vai vế. Đây là tầng mà G1–G9 không kiểm được và đã để lọt 5 lần
-  (こんばんは trong công sở · gọi thầy bằng さん · 失礼します giữa bạn bè · kính
-  ngữ khách sạn · こんばんは lúc chia tay).
-- Vẫn giữ luật chung: **KHÔNG chép nguyên văn** vào lesson. Dùng để tra và kiểm
-  chéo; báo cáo phải ghi rõ đã mở mục nào.
-
-**Một điểm phải nói rõ — 5 loại của văn bản KHÁC 3 mức của §B2e:**
-
-Văn bản phân theo **hệ kính ngữ** (tôn kính / khiêm nhường / lịch sự / mĩ hoá) —
-tức *loại* kính ngữ mà một từ thuộc về. §B2e phân theo **mức trang trọng** cho
-người học (trang trọng · lịch sự · thân mật). Hai trục **không mâu thuẫn nhưng
-cũng không trùng**: văn bản này KHÔNG phải bằng chứng cho cách chia 3 mức —
-3 mức là lựa chọn sản phẩm của owner. Dùng file để tra một từ thuộc hệ nào và
-dùng với ai, ĐỪNG dùng nó để biện minh cho việc gán mức 1/2/3.
-
-**Trùng lặp:** hai file KHÔNG trùng nhau — file lớn là văn bản luận giải, file
-nhỏ là bảng tra động từ. Giữ cả hai.
-
-**Ghi chú kỹ thuật (owner tự làm, agent không đụng `local-sources/`):** cả hai
-vẫn mang tên mặc định của Windows. Đề xuất đổi thành
-`keigo-shishin-2007.txt` và `keigo-conversion-table.txt`, và chuyển vào
-`local-sources/ja/keigo/` cho khớp quy ước `<loại-nguồn>/`.
+**Ghi chú kỹ thuật (owner tự làm):** hai file vẫn mang tên mặc định của Windows.
+Đề xuất `keigo-shishin-2007.txt` và `keigo-conversion-table.txt`, chuyển vào
+`local-sources/ja/keigo/`.
 
 ## QUYẾT ĐỊNH OWNER về cách dùng cụm (không suy ra từ nguồn)
 
@@ -428,37 +406,21 @@ nhất quán nội bộ, không phải con số rút từ tài liệu ngôn ng�
   trống bằng từ ĐÃ DẠY. Quy tắc chia/biến đổi dạng: theo `rules/languages/ja/`
   (FROZEN) — file nguồn này không định nghĩa lại.
 
-## BẢNG TẦNG VIỆC → NGUỒN của tiếng Nhật (feed §G11 — owner chốt 2026-07-28)
+## ĐỊNH TUYẾN Ô → NGUỒN — xem §G14-R3
 
-**Vì sao có bảng này:** bài `u2-l1` dồn gần **100%** nội dung vào Irodori và bỏ
-không hanabira (805 file ngữ pháp), Collins 3000 từ, JMdict, 8 file N5, 3 file
-Minna. Owner yêu cầu dùng **hết** nguồn đang có. Cách chia là **theo tầng việc** —
-mỗi nguồn dùng cho đúng việc nó mạnh nhất — **KHÔNG chia theo phần trăm** (§G11.1).
+**Định tuyến ô → nguồn: xem §G14-R3** trong `LESSON_AUTHORING_STANDARD.md`.
 
-| Tầng việc | Nguồn dùng | Ghi chú |
-|---|---|---|
-| **Hội thoại nguyên đoạn** | **Irodori** | **NGUỒN DUY NHẤT** có đoạn nhiều lượt → §G10 (lấy nguyên đoạn) chỉ có một kênh, không có nguồn thay thế |
-| **Ngữ pháp** | **hanabira** + **`n5_tong-hop-ngu-phap-60-mau`** | **≥2 nguồn → ĐỐI CHIẾU BẮT BUỘC** (§G11.2) |
-| **Nghĩa / cách đọc / loại từ** | **JMdict** + **`n5_tong-hop-tu-vung-1021`** | **≥2 nguồn → ĐỐI CHIẾU BẮT BUỘC**. JMdict cũng là nguồn §X3/§X1 (xem Tầng X) |
-| **Từ vựng bổ sung** | **Collins 3000** + **n5** | **CHỈ dùng ở chỗ KHÔNG ghép vào mẫu câu** — thẻ từ vựng riêng, tham khảo, ví dụ rời. **CẤM ghép vào mẫu của Irodori** (§G11.3) |
-| **Kanji** | **kanji-data** (`kanji.json`) + **`n5_kanji-master`** | **≥2 nguồn → ĐỐI CHIẾU BẮT BUỘC** |
-| **Mức lịch sự / vai vế** | **敬語の指針** + **bảng chuyển kính ngữ** | Hai file đã ghi ở mục "Bổ sung 2026-07-27 — KÍNH NGỮ" bên trên |
-| **Bài tập (chất liệu)** | **3 file Minna** | **NGUỒN DUY NHẤT** có bài tập thật → không có nguồn thay thế |
+> **Bảng tầng cũ tại đây ĐÃ LỖI THỜI** sau số đo 2026-07-27/29: **4/7 dòng của
+> nó trỏ vào nguồn nay đã bị chặn** trong
+> `scripts/content/sources/blocked-sources.json` — 3 file Minna cho tầng bài
+> tập · `n5_tong-hop-tu-vung-1021` cho tầng nghĩa/cách đọc · `n5_kanji-master`
+> cho tầng kanji · Collins cho tầng từ vựng bổ sung. Nội dung cũ đã xoá để
+> **không có hai bảng định tuyến đá nhau**; lịch sử còn trong git (commit
+> `bf15c2b` trở về trước).
 
-**Đối chiếu đã bắt được lỗi thật:** chữ 何 đọc **なに** hay **なん** tuỳ ngữ cảnh —
-lỗi này lộ ra đúng vì mở **hai** nguồn thay vì một. Đây là bằng chứng nền của
-§G11.2, không phải ví dụ giả định.
-
-**Đường dẫn / trạng thái đọc được của từng file:** xem mục **"Danh mục FILE NGUỒN
-CỤC BỘ"** bên trên. Nguồn nào ghi **ẢNH SCAN — CẦN OCR** thì **CHƯA dùng được**
-cho tầng của nó; gặp ca đó → §G9 (dừng, hỏi owner), không thay bằng trí nhớ.
-
-> **CHƯA VÀO DANH MỤC:** các file owner nêu tên trong bảng này mà mục "Danh mục
-> FILE NGUỒN CỤC BỘ" chưa có dòng riêng — `n5_tong-hop-ngu-phap-60-mau`,
-> `n5_tong-hop-tu-vung-1021`, `n5_kanji-master`, `160-kanji`, **3 file Minna** —
-> cần **đo + ghi danh mục ở phiên LOCAL** (cloud không mở được `local-sources/`).
-> Trước khi một bài dùng tới file nào trong nhóm này, **phải mở file thật + ghi
-> dòng danh mục cho nó** (§G8 đòi ghi rõ đã mở nguồn nào, mục nào).
+**Bằng chứng nền vẫn giữ:** chữ 何 đọc **なに** hay **なん** tuỳ ngữ cảnh — lỗi
+này lộ ra đúng vì mở **hai** nguồn thay vì một. Nay được máy hoá thành **§G14-R12a**
+(đối chiếu mọi reading với JMdict; chữ đa-âm → FLAG cho người soi).
 
 ### RANH GIỚI CHỐNG LỖI KẾT HỢP TỪ — ví dụ tiếng Nhật (feed §G11.3)
 
@@ -611,3 +573,32 @@ Chính sách romaji/romanization theo trình độ + TTS locale: theo
 - Register/kính ngữ, chính sách romaji theo trình độ: đã có rule riêng ở
   `rules/languages/ja/`; nội dung bài bám V1 (Irodori) về mức lịch sự đời thường
   (teineiei です/ます) cho A1–A2.
+
+---
+
+## CATALOG — nguồn ngữ pháp N5 tiếng Việt (thêm 2026-07-29)
+
+| | |
+|---|---|
+| **Path chốt** | `local-sources/ja/n5/n5_ngu-phap-vi.txt` |
+| sha256 | `778414d20f38b2a289152e8d70acb9446641b8716d6e9826933e0dd7848c9e79` |
+| Dạng | text thuần UTF-8, CRLF · 63.054 byte |
+| Quy mô | **1.056 dòng · 41 mục ngữ pháp (7 chương / 34 mục con) · 278 câu ví dụ** |
+| Chất lượng | **nhiễu OCR 0%** · 0 ký tự Kangxi · 59% dòng có chữ Nhật |
+| **Dịch** | **TIẾNG VIỆT gắn liền TỪNG CÂU**, trong ngoặc ngay sau câu Nhật — nguồn **ĐẦU TIÊN** trong kho làm được việc này |
+| Furigana | kiểu ngoặc, **19/278 câu** — rất thưa, vẫn phải tự sinh bằng kuromoji |
+| Romaji | **0** |
+| Hội thoại | **15 lượt · 4 khối** (nhãn `A`/`B` **không dấu hai chấm** — quy ước thứ ba, xem §G14-R4) |
+| Mục lỗi có cấu trúc | **0 cặp** `正誤` — chỉ `Lưu ý` văn xuôi 11 dòng |
+| **Độc lập** | trùng câu ví dụ với hanabira N5 **0/278**, với N5 Grammar Master **9/278 (3%)** → **soạn độc lập**, không phải bản định dạng lại |
+| Trình độ | lọc vốn từ 10 câu: **0 câu có >2 từ lạ** — khác hẳn `sentences_*.json` (toàn N3+) |
+
+**Phục vụ ô nào:** theo **§G14-R3** — `grammarPatterns` (nguồn ngữ pháp thứ ba
+độc lập) · `vocabularyDetails[].examples` · **dịch vi** (hiệu đính lỗi dính chữ,
+khai `authored` reason `hiệu đính từ <file>:<dòng>`).
+
+⚠ **Lỗi bóc cần biết:** bản dịch mất dấu cách ở một số chỗ — `(Đưatặng cho)` =
+"Đưa/tặng cho" · `Giỏikém` · `ĐừngKhông được`. Dùng lại **phải sửa tay**, và
+vì có sửa tay nên **không còn là verbatim** (§G14-R1).
+
+**Đo đầy đủ:** `scripts/content/sources/INVENTORY.md`, phụ lục 3.
