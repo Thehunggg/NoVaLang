@@ -101,7 +101,11 @@ export const blockedEntry = (src) => BLOCKED.get(String(src ?? "").replace(/\\/g
 // Validator cũ chỉ bắt THIẾU reading, không bắt SAI. Ở đây đối chiếu mọi
 // reading với danh sách kana của chính từ đó trong JMdict.
 // Từ đa-âm đã biết → FLAG (vào mục CẦN MẮT NGƯỜI, R10), không FAIL.
-export const POLYPHONIC = new Set(["何", "人", "日", "中", "方", "行"]);
+// 日本 nằm đây vì lý do KHÁC các chữ còn lại: cả にほん lẫn にっぽん đều hợp lệ
+// trong JMdict nên R12a KHÔNG FAIL được cách đọc sai. Quy ước của khoá học là
+// にほん (đo 2026-07-29: generator từng tự gắn にっぽん cho option Q12 của
+// u2-l2). Đưa vào đây để mọi lần xuất hiện đều lên mục CẦN MẮT NGƯỜI.
+export const POLYPHONIC = new Set(["何", "人", "日", "中", "方", "行", "日本"]);
 
 let JMDICT_INDEX = null;
 export function loadJmdictIndex(file = "local-sources/ja/jmdict/jmdict-eng-3.6.2.json") {
@@ -247,13 +251,37 @@ function main() {
   let pass = 0;
   let fail = 0;
   let authored = 0;
+  let mutations = 0;
+  const bySource = new Map();
+  const uniqBySource = new Map();
+  const weak = [];
+  const needEyes = [];
 
   console.log(`CỔNG NGUYÊN VĂN — ${doc.lessonId ?? "(không có lessonId)"} · ${items.length} mục`);
   console.log("");
 
+  // Corpus để R12b kiểm `mutation.from` có thật trong bài không.
+  const corpus = new Set(items.map((i) => normalize(i.targetText)));
+  const mutationByOp = new Map();
+  const authoredByReason = new Map();
+
   for (const item of items) {
+    if (item.mutation) {
+      const r = checkMutation(item.mutation, item.targetText, corpus);
+      if (r.ok) {
+        mutations += 1;
+        mutationByOp.set(item.mutation.op, (mutationByOp.get(item.mutation.op) ?? 0) + 1);
+        console.log(`  MUTATION ${item.path} — ${item.mutation.op}`);
+      } else {
+        fail += 1;
+        console.log(`  FAIL     ${item.path} — mutation không hợp lệ: ${r.why}`);
+      }
+      continue;
+    }
     if (item.authored) {
       authored += 1;
+      const key = String(item.reason ?? "(không ghi lý do)").replace(/[:：].*$/, "").trim();
+      authoredByReason.set(key, (authoredByReason.get(key) ?? 0) + 1);
       console.log(`  TỰ SOẠN  ${item.path} — ${item.reason ?? "(không ghi lý do)"}`);
       continue;
     }
@@ -265,6 +293,10 @@ function main() {
     const r = checkItem(item);
     if (r.ok) {
       pass += 1;
+      bySource.set(item.source, (bySource.get(item.source) ?? 0) + 1);
+      if (!uniqBySource.has(item.source)) uniqBySource.set(item.source, new Set());
+      uniqBySource.get(item.source).add(normalize(item.targetText));
+      if (r.level === 2) { weak.push(item.path + " (mức 2)"); needEyes.push([4, item.path, item.targetText, "PASS qua chuẩn hoá MỨC 2"]); }
       const lv = r.level === 2 ? " [chuẩn hoá MỨC 2]" : "";
       console.log(`  PASS     ${item.path}  ←  ${item.source}:${item.line}${lv}`);
     } else {

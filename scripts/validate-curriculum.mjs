@@ -2010,6 +2010,7 @@ async function main() {
       "ja-daily_life-m01-u1-l2",
       "ja-daily_life-m01-u1-l3",
       "ja-daily_life-m01-u2-l1",
+      "ja-daily_life-m01-u2-l2",
     ]);
     const unexpectedReady = dailyLessons.filter(
       (l) =>
