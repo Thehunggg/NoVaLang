@@ -1,0 +1,65 @@
+{
+  "_note": "Danh sách nguồn BỊ CHẶN, máy đọc. scripts/verify-provenance.mjs FAIL mọi item verbatim trỏ vào path ở đây. Khởi tạo theo R9 (rule v2, 2026-07-29), số liệu lấy từ scripts/content/sources/INVENTORY.md.",
+  "_levels": {
+    "cấm-trích": "KHÔNG được trích câu làm verbatim. Vẫn được đọc để tham khảo/đối chiếu.",
+    "cấm-hẳn": "KHÔNG dùng vào việc gì — không trích, không đối chiếu."
+  },
+  "_lưu_ý_khởi_tạo": "R9 ghi '4 file n5 OCR + 3 file Minna'. Hai tập này CHỒNG NHAU 2 file (shokyuu-topikku-25 và bai-tap-so-cap-1 vừa là Minna vừa nằm trong nhóm OCR 17-23%), nên hợp lại còn 5 file rời chứ không phải 7. Đã kiểm 11/11 path tồn tại trước khi ghi.",
+  "blocked": [
+    {
+      "path": "local-sources/ja/n5/n5_bai-tap-tieng-Nhat-so-cap-1.md",
+      "reason": "OCR hỏng 23% (dòng có chữ Nhật lẫn cụm LATIN HOA ≥3). Cũng là 1 trong 3 file Minna. Chuỗi trong file không phải chuỗi thật.",
+      "mức": "cấm-trích"
+    },
+    {
+      "path": "local-sources/ja/n5/n5_minna-no-nihongo-I-shokyuu-topikku-25.md",
+      "reason": "OCR hỏng 22%. Cũng là 1 trong 3 file Minna. Mẫu hỏng đo được: 'QRM 捨てました。' · 'ORR いつも CE 買わなければ ならない。'",
+      "mức": "cấm-trích"
+    },
+    {
+      "path": "local-sources/ja/n5/n5_kanji-master.md",
+      "reason": "OCR hỏng 18%.",
+      "mức": "cấm-trích"
+    },
+    {
+      "path": "local-sources/ja/n5/n5_tong-hop-tu-vung-1021.md",
+      "reason": "OCR hỏng 17% — đúng ngưỡng chặn.",
+      "mức": "cấm-trích"
+    },
+    {
+      "path": "local-sources/ja/n5/n5_minna-no-nihongo-I-sach-dich-tieng-Viet.md",
+      "reason": "OCR hỏng 9% (hỏng một phần). Là file Minna thứ ba. Dưới ngưỡng 17% nhưng R9 chặn cả 3 file Minna.",
+      "mức": "cấm-trích"
+    },
+    {
+      "path": "local-sources/ja/grammar-books/Nihongo_Sou_Matome_N1_Bunpou.pdf",
+      "reason": "PDF ảnh scan — pdftotext -l 60 ra 0 dòng chữ Nhật.",
+      "mức": "cấm-hẳn"
+    },
+    {
+      "path": "local-sources/ja/grammar-books/Nihongo Sou Matome N2 - Bumpou.pdf",
+      "reason": "PDF ảnh scan — pdftotext -l 60 ra 0 dòng chữ Nhật.",
+      "mức": "cấm-hẳn"
+    },
+    {
+      "path": "local-sources/ja/grammar-books/Nihongo_Sou_Matome_N3_Bunpou.pdf",
+      "reason": "PDF ảnh scan — pdftotext -l 60 ra 0 dòng chữ Nhật.",
+      "mức": "cấm-hẳn"
+    },
+    {
+      "path": "local-sources/ja/grammar-books/Nihongo Sou Matome N4- Bumpou.pdf",
+      "reason": "PDF ảnh scan — pdftotext -l 60 ra 203 dòng nhưng chỉ 1 dòng có chữ Nhật.",
+      "mức": "cấm-hẳn"
+    },
+    {
+      "path": "local-sources/ja/grammar-books/Nihongo_Sou_Matome_N5.pdf",
+      "reason": "PDF ảnh scan — pdftotext -l 60 ra 0 dòng chữ Nhật.",
+      "mức": "cấm-hẳn"
+    },
+    {
+      "path": "local-sources/ja/vocab-3000/Collins_Japanese_3000_words_and_phrases.pdf",
+      "reason": "Bóc PDF chen dấu cách vào giữa từ ('私は…から来まし た。') — trích thẳng sẽ sai chính tả. Vẫn đọc tham khảo được.",
+      "mức": "cấm-trích"
+    }
+  ]
+}

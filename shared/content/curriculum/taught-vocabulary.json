@@ -1,0 +1,49 @@
+{
+  "_note": "Sổ vốn từ ĐÃ DẠY, theo ngôn ngữ → lessonId → danh sách cụm. Dùng cho §G7 vùng A (bài tập chấm điểm chỉ dùng vốn đã dạy) và cho lọc vốn từ R5. Giá trị MÁY ĐỌC từ shared/generated/lessons.json, trường vocabulary[].displayText, đã bỏ furigana trong ngoặc — KHÔNG gõ tay.",
+  "_source": "shared/generated/lessons.json · vocabulary[].displayText",
+  "_quyTac": "Giữ dạng THẬT kể cả dấu câu (「元気？」 giữ dấu ？). R5 tự bỏ dấu câu khi so khớp.",
+  "_generatedFrom": "commit bc735bf · nhập 2026-07-29 (rule v2 bước 3)",
+  "ja": {
+    "ja-daily_life-m01-u1-l1": [
+      "おはようございます",
+      "こんにちは",
+      "こんばんは",
+      "はじめまして",
+      "～です",
+      "よろしくお願いします",
+      "こちらこそ、よろしくお願いします",
+      "さようなら"
+    ],
+    "ja-daily_life-m01-u1-l2": [
+      "名前",
+      "お名前",
+      "何ですか",
+      "お名前は何ですか",
+      "お名前は？",
+      "失礼ですが",
+      "すみません",
+      "もう一度",
+      "～さん",
+      "～ですね"
+    ],
+    "ja-daily_life-m01-u1-l3": [
+      "こちらこそ",
+      "そうですか",
+      "私も",
+      "失礼します",
+      "お先に失礼します",
+      "お元気で",
+      "じゃあ、また",
+      "来週"
+    ],
+    "ja-daily_life-m01-u2-l1": [
+      "お久しぶりです",
+      "久しぶり",
+      "お元気ですか",
+      "元気？",
+      "はい",
+      "おかげさまで",
+      "うん"
+    ]
+  }
+}
