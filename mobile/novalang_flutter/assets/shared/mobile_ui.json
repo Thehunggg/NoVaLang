@@ -1092,6 +1092,27 @@
     "ko": "오늘의 표현",
     "zh": "今天学习的表达"
   },
+  "exampleSentences": {
+    "en": "Example sentences",
+    "vi": "Câu minh hoạ",
+    "ja": "例文",
+    "ko": "예문",
+    "zh": "例句"
+  },
+  "readingAidFurigana": {
+    "en": "Kana reading",
+    "vi": "Dòng đọc kana",
+    "ja": "かなよみ",
+    "ko": "가나 읽기",
+    "zh": "假名读音"
+  },
+  "readingAidRomaji": {
+    "en": "Romaji",
+    "vi": "Romaji",
+    "ja": "ローマ字",
+    "ko": "로마자",
+    "zh": "罗马字"
+  },
   "shortNote": {
     "en": "Short note",
     "vi": "Lưu ý ngắn",

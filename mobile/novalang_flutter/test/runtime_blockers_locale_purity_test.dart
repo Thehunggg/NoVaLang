@@ -259,6 +259,7 @@ void main() {
               lesson: lesson,
               uiLanguageCode: locale,
               nativeLanguageCode: locale,
+              learningLanguageCode: 'ja',
             ),
           ),
         );

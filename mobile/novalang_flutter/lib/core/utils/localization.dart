@@ -644,6 +644,17 @@ class L10n {
       'vi': 'Sau bài học làm được gì',
     },
     'todayLearn': {'en': 'Today’s expressions', 'vi': 'Hôm nay học gì'},
+    'exampleSentences': {
+      'en': 'Example sentences',
+      'vi': 'Câu minh hoạ',
+      'ja': '例文',
+    },
+    'readingAidFurigana': {
+      'en': 'Kana reading',
+      'vi': 'Dòng đọc kana',
+      'ja': 'かなよみ',
+    },
+    'readingAidRomaji': {'en': 'Romaji', 'vi': 'Romaji', 'ja': 'ローマ字'},
     'shortNote': {'en': 'Short note', 'vi': 'Lưu ý ngắn'},
     'romanization': {'en': 'Romanization', 'vi': 'Phiên âm'},
     'lessonSectionIntroJapanese': {'en': 'レッスン紹介', 'vi': 'レッスン紹介'},

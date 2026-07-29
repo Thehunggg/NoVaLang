@@ -5,6 +5,7 @@ import '../../core/utils/localization.dart';
 import '../../models/lesson.dart';
 import '../../widgets/common/app_scaffold.dart';
 import '../../widgets/common/responsive_page.dart';
+import '../../widgets/lesson/ja_sentence.dart';
 import '../../widgets/lesson/speaker_button.dart';
 import 'exercises/five_card_exercise_flow.dart';
 
@@ -128,6 +129,7 @@ class LessonFiveCardMenu extends StatelessWidget {
             lesson: lesson,
             uiLanguageCode: uiLanguageCode,
             nativeLanguageCode: nativeLanguageCode,
+            learningLanguageCode: learningLanguageCode,
           ),
           LessonFiveCardSection.vocabulary => LessonVocabularyPage(
             lesson: lesson,
@@ -147,6 +149,7 @@ class LessonFiveCardMenu extends StatelessWidget {
             lesson: lesson,
             uiLanguageCode: uiLanguageCode,
             nativeLanguageCode: nativeLanguageCode,
+            learningLanguageCode: learningLanguageCode,
           ),
           LessonFiveCardSection.exercise => FiveCardExerciseLandingPage(
             lesson: lesson,
@@ -264,60 +267,97 @@ class LessonIntroductionPage extends StatelessWidget {
     required this.lesson,
     required this.uiLanguageCode,
     required this.nativeLanguageCode,
+    required this.learningLanguageCode,
   });
 
   final Lesson lesson;
   final String uiLanguageCode;
   final String nativeLanguageCode;
+  final String learningLanguageCode;
 
   @override
   Widget build(BuildContext context) {
     final content = lesson.localizedFiveCardContent(nativeLanguageCode);
     final intro = _map(content['intro']);
-    return AppScaffold(
-      title: L10n.text('lessonIntro', uiLanguageCode),
-      showBack: true,
-      languageCode: uiLanguageCode,
-      selectedNavIndex: 0,
-      child: ResponsivePage(
-        pageStorageKey: PageStorageKey('five-card-intro-${lesson.id}'),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _ContentPanel(
-              title: L10n.text('goalLabel', uiLanguageCode),
-              icon: Icons.flag_outlined,
-              child: _BulletList(_list(intro['objectives'])),
-            ),
-            _ContentPanel(
-              title: L10n.text('situationLabel', uiLanguageCode),
-              icon: Icons.place_outlined,
-              child: Text(
-                _list(intro['situation']).join('\n'),
-                style: const TextStyle(height: 1.45),
+    // Bối cảnh trợ đọc đặt MỘT lần ở gốc trang; mọi JaSentence bên dưới tự
+    // lấy, không phải truyền tay qua từng widget trung gian.
+    return ReadingAidScopeBuilder(
+      lessonSessionKey: lesson.id,
+      lessonLevel: lesson.level,
+      learningLanguageCode: learningLanguageCode,
+      uiLanguageCode: uiLanguageCode,
+      child: AppScaffold(
+        title: L10n.text('lessonIntro', uiLanguageCode),
+        showBack: true,
+        languageCode: uiLanguageCode,
+        selectedNavIndex: 0,
+        child: ResponsivePage(
+          pageStorageKey: PageStorageKey('five-card-intro-${lesson.id}'),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ReadingAidToggles(
+                lessonSessionKey: lesson.id,
+                lessonLevel: lesson.level,
+                learningLanguageCode: learningLanguageCode,
+                furiganaLabel: L10n.text('readingAidFurigana', uiLanguageCode),
+                romajiLabel: L10n.text('readingAidRomaji', uiLanguageCode),
               ),
-            ),
-            _ContentPanel(
-              title: L10n.text('afterLessonCanDo', uiLanguageCode),
-              icon: Icons.check_circle_outline,
-              child: Text(
-                lesson.localizedDescription(nativeLanguageCode),
-                style: const TextStyle(height: 1.45),
+              _ContentPanel(
+                title: L10n.text('goalLabel', uiLanguageCode),
+                icon: Icons.flag_outlined,
+                child: _BulletList(_list(intro['objectives'])),
               ),
-            ),
-            _ContentPanel(
-              title: L10n.text('todayLearn', uiLanguageCode),
-              icon: Icons.auto_stories_outlined,
-              child: _BulletList(
-                lesson.vocabulary.map((item) => item.displayText).toList(),
+              _ContentPanel(
+                title: L10n.text('situationLabel', uiLanguageCode),
+                icon: Icons.place_outlined,
+                child: Text(
+                  _list(intro['situation']).join('\n'),
+                  style: const TextStyle(height: 1.45),
+                ),
               ),
-            ),
-            _ContentPanel(
-              title: L10n.text('shortNote', uiLanguageCode),
-              icon: Icons.info_outline,
-              child: _BulletList(_list(intro['importantNote'])),
-            ),
-          ],
+              _ContentPanel(
+                title: L10n.text('afterLessonCanDo', uiLanguageCode),
+                icon: Icons.check_circle_outline,
+                child: Text(
+                  lesson.localizedDescription(nativeLanguageCode),
+                  style: const TextStyle(height: 1.45),
+                ),
+              ),
+              // Câu minh hoạ — trước 2026-07-29 KHÔNG được vẽ ở đâu cả, dù mỗi
+              // câu đã có sẵn displayText + reading + dịch + speechText (15 câu
+              // trên 5 bài). Vẽ qua JaSentence để có luôn nút nghe + trợ đọc.
+              if (_list(intro['examples']).isNotEmpty)
+                _ContentPanel(
+                  title: L10n.text('exampleSentences', uiLanguageCode),
+                  icon: Icons.record_voice_over_outlined,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      for (final raw in _list(intro['examples']))
+                        _IntroExample(
+                          value: _map(raw),
+                          lesson: lesson,
+                          uiLanguageCode: uiLanguageCode,
+                          learningLanguageCode: learningLanguageCode,
+                        ),
+                    ],
+                  ),
+                ),
+              _ContentPanel(
+                title: L10n.text('todayLearn', uiLanguageCode),
+                icon: Icons.auto_stories_outlined,
+                child: _BulletList(
+                  lesson.vocabulary.map((item) => item.displayText).toList(),
+                ),
+              ),
+              _ContentPanel(
+                title: L10n.text('shortNote', uiLanguageCode),
+                icon: Icons.info_outline,
+                child: _BulletList(_list(intro['importantNote'])),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -361,72 +401,129 @@ class _LessonVocabularyPageState extends State<LessonVocabularyPage> {
       widget.nativeLanguageCode,
     );
     final details = _list(content['vocabularyDetails']).map(_map).toList();
-    return AppScaffold(
-      title: L10n.text('lessonVocabCardsSection', widget.uiLanguageCode),
-      showBack: true,
-      languageCode: widget.uiLanguageCode,
-      selectedNavIndex: 0,
-      child: ResponsivePage(
-        scrollable: false,
-        bottomPadding: 0,
-        child: CustomScrollView(
-          key: PageStorageKey('five-card-vocabulary-${widget.lesson.id}'),
-          controller: _scrollController,
-          primary: false,
-          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-          slivers: [
-            for (
-              var index = 0;
-              index < widget.lesson.vocabulary.length;
-              index++
-            )
-              SliverMainAxisGroup(
-                slivers: [
-                  SliverPersistentHeader(
-                    pinned: true,
-                    delegate: _VocabularyStickyHeaderDelegate(
-                      child: _VocabularyCardHeader(
-                        item: widget.lesson.vocabulary[index],
-                        uiLanguageCode: widget.uiLanguageCode,
-                        learningLanguageCode: widget.learningLanguageCode,
-                        expanded: widget.expandedCardIds.contains(
-                          widget.lesson.vocabulary[index].displayText,
-                        ),
-                        onToggle: () {
-                          widget.onExpansionChanged(
+    return ReadingAidScopeBuilder(
+      lessonSessionKey: widget.lesson.id,
+      lessonLevel: widget.lesson.level,
+      learningLanguageCode: widget.learningLanguageCode,
+      uiLanguageCode: widget.uiLanguageCode,
+      child: AppScaffold(
+        title: L10n.text('lessonVocabCardsSection', widget.uiLanguageCode),
+        showBack: true,
+        languageCode: widget.uiLanguageCode,
+        selectedNavIndex: 0,
+        child: ResponsivePage(
+          scrollable: false,
+          bottomPadding: 0,
+          child: CustomScrollView(
+            key: PageStorageKey('five-card-vocabulary-${widget.lesson.id}'),
+            controller: _scrollController,
+            primary: false,
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            slivers: [
+              for (
+                var index = 0;
+                index < widget.lesson.vocabulary.length;
+                index++
+              )
+                SliverMainAxisGroup(
+                  slivers: [
+                    SliverPersistentHeader(
+                      pinned: true,
+                      delegate: _VocabularyStickyHeaderDelegate(
+                        child: _VocabularyCardHeader(
+                          item: widget.lesson.vocabulary[index],
+                          uiLanguageCode: widget.uiLanguageCode,
+                          learningLanguageCode: widget.learningLanguageCode,
+                          expanded: widget.expandedCardIds.contains(
                             widget.lesson.vocabulary[index].displayText,
-                          );
-                          setState(() {});
-                        },
+                          ),
+                          onToggle: () {
+                            widget.onExpansionChanged(
+                              widget.lesson.vocabulary[index].displayText,
+                            );
+                            setState(() {});
+                          },
+                        ),
                       ),
                     ),
-                  ),
-                  if (widget.expandedCardIds.contains(
-                    widget.lesson.vocabulary[index].displayText,
-                  ))
-                    SliverToBoxAdapter(
-                      child: _VocabularyDetails(
-                        item: widget.lesson.vocabulary[index],
-                        details: details.length > index
-                            ? details[index]
-                            : const {},
-                        uiLanguageCode: widget.uiLanguageCode,
-                        learningLanguageCode: widget.learningLanguageCode,
+                    if (widget.expandedCardIds.contains(
+                      widget.lesson.vocabulary[index].displayText,
+                    ))
+                      SliverToBoxAdapter(
+                        child: _VocabularyDetails(
+                          item: widget.lesson.vocabulary[index],
+                          details: details.length > index
+                              ? details[index]
+                              : const {},
+                          uiLanguageCode: widget.uiLanguageCode,
+                          learningLanguageCode: widget.learningLanguageCode,
+                        ),
                       ),
-                    ),
-                  const SliverToBoxAdapter(child: SizedBox(height: 12)),
-                ],
+                    const SliverToBoxAdapter(child: SizedBox(height: 12)),
+                  ],
+                ),
+              SliverToBoxAdapter(
+                child: _VocabularyReferencesSection(
+                  references: _list(content['vocabularyReferences']),
+                  uiLanguageCode: widget.uiLanguageCode,
+                  learningLanguageCode: widget.learningLanguageCode,
+                ),
               ),
-            SliverToBoxAdapter(
-              child: _VocabularyReferencesSection(
-                references: _list(content['vocabularyReferences']),
-                uiLanguageCode: widget.uiLanguageCode,
-                learningLanguageCode: widget.learningLanguageCode,
+              const SliverToBoxAdapter(child: SizedBox(height: 24)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Một câu minh hoạ ở thẻ ① Intro: nhãn dẫn + câu qua [JaSentence].
+class _IntroExample extends StatelessWidget {
+  const _IntroExample({
+    required this.value,
+    required this.lesson,
+    required this.uiLanguageCode,
+    required this.learningLanguageCode,
+  });
+
+  final Map<String, dynamic> value;
+  final Lesson lesson;
+  final String uiLanguageCode;
+  final String learningLanguageCode;
+
+  @override
+  Widget build(BuildContext context) {
+    final label = _text(value['label']);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (label.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 3),
+              child: Text(
+                label,
+                style: const TextStyle(
+                  color: AppTheme.contentSecondaryForeground,
+                  fontSize: 12,
+                ),
               ),
             ),
-            const SliverToBoxAdapter(child: SizedBox(height: 24)),
-          ],
-        ),
+          JaSentence(
+            displayText: _text(value['displayText']).isNotEmpty
+                ? _text(value['displayText'])
+                : _text(value['targetText']),
+            reading: _text(value['reading']),
+            speechText: _text(value['speechText']),
+            translation: _text(value['translation']),
+            lessonSessionKey: lesson.id,
+            lessonLevel: lesson.level,
+            learningLanguageCode: learningLanguageCode,
+            uiLanguageCode: uiLanguageCode,
+          ),
+        ],
       ),
     );
   }
@@ -734,23 +831,29 @@ class LessonDialoguePage extends StatelessWidget {
         nativeLanguageCode,
       )['approvedCharacterNamePool'],
     ).map(_map).toList();
-    return AppScaffold(
-      title: L10n.text('learnMiniDialogue', uiLanguageCode),
-      showBack: true,
-      languageCode: uiLanguageCode,
-      selectedNavIndex: 0,
-      child: ResponsivePage(
-        pageStorageKey: PageStorageKey('five-card-dialogue-${lesson.id}'),
-        child: Column(
-          children: [
-            for (final group in groups)
-              _DialoguePanel(
-                group: group,
-                characters: characters,
-                uiLanguageCode: uiLanguageCode,
-                learningLanguageCode: learningLanguageCode,
-              ),
-          ],
+    return ReadingAidScopeBuilder(
+      lessonSessionKey: lesson.id,
+      lessonLevel: lesson.level,
+      learningLanguageCode: learningLanguageCode,
+      uiLanguageCode: uiLanguageCode,
+      child: AppScaffold(
+        title: L10n.text('learnMiniDialogue', uiLanguageCode),
+        showBack: true,
+        languageCode: uiLanguageCode,
+        selectedNavIndex: 0,
+        child: ResponsivePage(
+          pageStorageKey: PageStorageKey('five-card-dialogue-${lesson.id}'),
+          child: Column(
+            children: [
+              for (final group in groups)
+                _DialoguePanel(
+                  group: group,
+                  characters: characters,
+                  uiLanguageCode: uiLanguageCode,
+                  learningLanguageCode: learningLanguageCode,
+                ),
+            ],
+          ),
         ),
       ),
     );
@@ -763,46 +866,54 @@ class LessonGrammarPage extends StatelessWidget {
     required this.lesson,
     required this.uiLanguageCode,
     required this.nativeLanguageCode,
+    required this.learningLanguageCode,
   });
 
   final Lesson lesson;
   final String uiLanguageCode;
   final String nativeLanguageCode;
+  final String learningLanguageCode;
 
   @override
   Widget build(BuildContext context) {
     final content = lesson.localizedFiveCardContent(nativeLanguageCode);
     final patterns = _list(content['grammarPatterns']).map(_map).toList();
-    return AppScaffold(
-      title: L10n.text('learnGrammarPatterns', uiLanguageCode),
-      showBack: true,
-      languageCode: uiLanguageCode,
-      selectedNavIndex: 0,
-      child: ResponsivePage(
-        pageStorageKey: PageStorageKey('five-card-grammar-${lesson.id}'),
-        child: Column(
-          children: [
-            for (final pattern in patterns)
-              _GrammarPanel(pattern: pattern, uiLanguageCode: uiLanguageCode),
-            // Chỉ dựng panel khi THẬT SỰ có mục để so sánh. `distinctions` là
-            // trường tuỳ chọn — chỉ Golden L1 có; L2/L3 không có. Dựng vô điều
-            // kiện thì người học bấm vào một panel rỗng.
-            if (_list(content['distinctions']).isNotEmpty)
-              _ContentPanel(
-                title: L10n.text('distinctions', uiLanguageCode),
-                icon: Icons.compare_arrows_outlined,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    for (final raw in _list(content['distinctions']))
-                      _DetailList(
-                        title: _text(_map(raw)['term']),
-                        values: _list(_map(raw)['points']),
-                      ),
-                  ],
+    return ReadingAidScopeBuilder(
+      lessonSessionKey: lesson.id,
+      lessonLevel: lesson.level,
+      learningLanguageCode: learningLanguageCode,
+      uiLanguageCode: uiLanguageCode,
+      child: AppScaffold(
+        title: L10n.text('learnGrammarPatterns', uiLanguageCode),
+        showBack: true,
+        languageCode: uiLanguageCode,
+        selectedNavIndex: 0,
+        child: ResponsivePage(
+          pageStorageKey: PageStorageKey('five-card-grammar-${lesson.id}'),
+          child: Column(
+            children: [
+              for (final pattern in patterns)
+                _GrammarPanel(pattern: pattern, uiLanguageCode: uiLanguageCode),
+              // Chỉ dựng panel khi THẬT SỰ có mục để so sánh. `distinctions` là
+              // trường tuỳ chọn — chỉ Golden L1 có; L2/L3 không có. Dựng vô điều
+              // kiện thì người học bấm vào một panel rỗng.
+              if (_list(content['distinctions']).isNotEmpty)
+                _ContentPanel(
+                  title: L10n.text('distinctions', uiLanguageCode),
+                  icon: Icons.compare_arrows_outlined,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      for (final raw in _list(content['distinctions']))
+                        _DetailList(
+                          title: _text(_map(raw)['term']),
+                          values: _list(_map(raw)['points']),
+                        ),
+                    ],
+                  ),
                 ),
-              ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -1084,6 +1195,12 @@ class _GrammarPanel extends StatelessWidget {
   );
 }
 
+/// Một câu ví dụ (thẻ từ vựng · mục tham khảo · mẫu ngữ pháp).
+///
+/// G14-R14: chuyển sang vẽ bằng [JaSentence] để dòng chính SẠCH ngoặc, có
+/// dòng trợ đọc bật/tắt, và nút nghe lấy đúng `speechText`.
+/// Bản cũ đưa `value['text']` — chuỗi CÒN NGOẶC — thẳng cho TTS, tức máy đọc
+/// luôn cả phần chú âm.
 class _ExampleRow extends StatelessWidget {
   const _ExampleRow({
     required this.value,
@@ -1098,47 +1215,14 @@ class _ExampleRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.only(top: 10),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                _text(value['text']),
-                style: const TextStyle(fontWeight: FontWeight.w800),
-              ),
-              if (_text(value['reading']).isNotEmpty)
-                Padding(
-                  padding: const EdgeInsets.only(top: 3),
-                  child: Text(
-                    _text(value['reading']),
-                    style: const TextStyle(
-                      color: AppTheme.contentAccentForeground,
-                      fontSize: 12,
-                    ),
-                  ),
-                ),
-              if (_text(value['translation']).isNotEmpty)
-                Padding(
-                  padding: const EdgeInsets.only(top: 4),
-                  child: Text(
-                    _text(value['translation']),
-                    style: const TextStyle(
-                      color: AppTheme.contentSecondaryForeground,
-                    ),
-                  ),
-                ),
-            ],
-          ),
-        ),
-        SpeakerButton(
-          speechText: _text(value['text']),
-          languageCode: learningLanguageCode,
-          uiLanguageCode: uiLanguageCode,
-        ),
-      ],
+    // lessonSessionKey / lessonLevel lấy từ ReadingAidScope của trang.
+    child: JaSentence(
+      displayText: _text(value['text']),
+      reading: _text(value['reading']),
+      speechText: _text(value['speechText']),
+      translation: _text(value['translation']),
+      learningLanguageCode: learningLanguageCode,
+      uiLanguageCode: uiLanguageCode,
     ),
   );
 }
