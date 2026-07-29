@@ -1896,7 +1896,7 @@
             "ko": "이전 단계의 AI 피드백을 확인하세요.",
             "zh": "查看上一步的 AI 反馈。"
           },
-          "displayText": "あ い う え お\nあ → い → う → え → お\nあめ（雨（あめ））— rain\nいぬ（犬（いぬ））— dog\nうみ（海（うみ））— sea\nえき（駅（えき））— station\nおに（鬼（おに））— demon / ogre",
+          "displayText": "あ い う え お\nあ → い → う → え → お\nあめ（雨）— rain\nいぬ（犬）— dog\nうみ（海）— sea\nえき（駅）— station\nおに（鬼）— demon / ogre",
           "triggerExtraAiCallByDefault": false,
           "skill": "review",
           "displayTextByNative": {
@@ -88938,8 +88938,8 @@
           "id": "ja-daily_life-m01-u2-l2-one-year-1"
         },
         {
-          "targetText": "1年（ねん）になります。",
-          "displayText": "1年（ねん）になります。",
+          "targetText": "1年（いちねん）になります。",
+          "displayText": "1年（いちねん）になります。",
           "reading": "いちねんになります。",
           "speechText": "いちねんになります",
           "translationByNative": {
@@ -89018,8 +89018,8 @@
           "id": "ja-daily_life-m01-u2-l2-last-september-1"
         },
         {
-          "targetText": "去年（きょねん）の9月（つき）に来（き）ました。",
-          "displayText": "去年（きょねん）の9月（つき）に来（き）ました。",
+          "targetText": "去年（きょねん）の9月（くがつ）に来（き）ました。",
+          "displayText": "去年（きょねん）の9月（くがつ）に来（き）ました。",
           "reading": "きょねんのくがつにきました。",
           "speechText": "きょねんのくがつにきました",
           "translationByNative": {
@@ -89198,8 +89198,8 @@
               "id": "ja-daily_life-m01-u2-l2-one-year-1"
             },
             {
-              "targetText": "1年（ねん）になります。",
-              "displayText": "1年（ねん）になります。",
+              "targetText": "1年（いちねん）になります。",
+              "displayText": "1年（いちねん）になります。",
               "reading": "いちねんになります。",
               "speechText": "いちねんになります",
               "translationByNative": {
@@ -89298,8 +89298,8 @@
               "id": "ja-daily_life-m01-u2-l2-last-september-1"
             },
             {
-              "targetText": "去年（きょねん）の9月（つき）に来（き）ました。",
-              "displayText": "去年（きょねん）の9月（つき）に来（き）ました。",
+              "targetText": "去年（きょねん）の9月（くがつ）に来（き）ました。",
+              "displayText": "去年（きょねん）の9月（くがつ）に来（き）ました。",
               "reading": "きょねんのくがつにきました。",
               "speechText": "きょねんのくがつにきました",
               "translationByNative": {
@@ -89592,8 +89592,8 @@
                 "ja": "期間で答えます。"
               },
               "speaker": "",
-              "targetText": "1年（ねん）になります。",
-              "displayText": "1年（ねん）になります。",
+              "targetText": "1年（いちねん）になります。",
+              "displayText": "1年（いちねん）になります。",
               "reading": "いちねんになります。",
               "speechText": "いちねんになります",
               "translationByNative": {
@@ -89971,7 +89971,7 @@
             },
             "examples": [
               {
-                "text": "1年（ねん）になります。",
+                "text": "1年（いちねん）になります。",
                 "reading": "いちねんになります。",
                 "translation": "Được tròn một năm rồi ạ.",
                 "translationByNative": {
@@ -90133,7 +90133,7 @@
             },
             "examples": [
               {
-                "text": "去年（きょねん）の9月（つき）に来（き）ました。",
+                "text": "去年（きょねん）の9月（くがつ）に来（き）ました。",
                 "reading": "きょねんのくがつにきました。",
                 "translation": "Tôi đến vào tháng 9 năm ngoái.",
                 "translationByNative": {
@@ -90284,8 +90284,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "1年（ねん）になります。",
-                "displayText": "1年（ねん）になります。",
+                "targetText": "1年（いちねん）になります。",
+                "displayText": "1年（いちねん）になります。",
                 "reading": "いちねんになります。",
                 "speechText": "いちねんになります",
                 "translationByNative": {
@@ -90395,8 +90395,8 @@
                 "speakerId": "sato"
               },
               {
-                "targetText": "去年（きょねん）の9月（つき）に来（き）ました。",
-                "displayText": "去年（きょねん）の9月（つき）に来（き）ました。",
+                "targetText": "去年（きょねん）の9月（くがつ）に来（き）ました。",
+                "displayText": "去年（きょねん）の9月（くがつ）に来（き）ました。",
                 "reading": "きょねんのくがつにきました。",
                 "speechText": "きょねんのくがつにきました",
                 "translationByNative": {
@@ -90659,7 +90659,7 @@
             },
             "examples": [
               {
-                "text": "1年（ねん）になります。",
+                "text": "1年（いちねん）になります。",
                 "reading": "いちねんになります。",
                 "translation": "Được tròn một năm rồi ạ.",
                 "translationByNative": {
@@ -90838,7 +90838,7 @@
             },
             "examples": [
               {
-                "text": "去年（きょねん）の9月（つき）に来（き）ました。",
+                "text": "去年（きょねん）の9月（くがつ）に来（き）ました。",
                 "reading": "きょねんのくがつにきました。",
                 "translation": "Tôi đến vào tháng 9 năm ngoái.",
                 "translationByNative": {
@@ -91087,32 +91087,32 @@
               "options": [
                 {
                   "id": "correct",
-                  "text": "1年（ねん）になります。",
+                  "text": "1年（いちねん）になります。",
                   "canonicalText": "1年になります。",
                   "audioText": "いちねんになります"
                 },
                 {
                   "id": "ga",
-                  "text": "1年（ねん）がなります。",
+                  "text": "1年（いちねん）がなります。",
                   "canonicalText": "1年がなります。",
                   "audioText": "いちねんがなります"
                 },
                 {
                   "id": "wo",
-                  "text": "1年（ねん）をなります。",
+                  "text": "1年（いちねん）をなります。",
                   "canonicalText": "1年をなります。",
                   "audioText": "いちねんをなります"
                 },
                 {
                   "id": "dup",
-                  "text": "1年（ねん）にになります。",
+                  "text": "1年（いちねん）にになります。",
                   "canonicalText": "1年にになります。",
                   "audioText": "いちねんにになります"
                 }
               ],
               "correctOptionId": "correct",
               "feedback": {
-                "correctAnswer": "1年（ねん）になります。",
+                "correctAnswer": "1年（いちねん）になります。",
                 "canonicalAnswer": "1年になります。",
                 "audioText": "いちねんになります",
                 "explanation": "Mốc thời gian đi với trợ từ に: 1年になります。 Các phương án khác sai trợ từ hoặc lặp trợ từ.",
@@ -91223,7 +91223,7 @@
               "tokens": [
                 {
                   "id": "ichinen",
-                  "text": "1年（ねん）",
+                  "text": "1年（いちねん）",
                   "canonicalText": "1年",
                   "audioText": "いちねん"
                 },
@@ -91258,7 +91258,7 @@
                 "narimasu"
               ],
               "feedback": {
-                "correctAnswer": "1年（ねん）になります。",
+                "correctAnswer": "1年（いちねん）になります。",
                 "canonicalAnswer": "1年になります。",
                 "audioText": "いちねんになります",
                 "explanation": "1年 + に + なります → 1年になります。 もう và まだ không dùng ở đây.",
@@ -91294,7 +91294,7 @@
               "wordBank": [
                 {
                   "id": "ichinen",
-                  "text": "1年（ねん）になります",
+                  "text": "1年（いちねん）になります",
                   "canonicalText": "1年になります",
                   "audioText": "いちねんになります"
                 },
@@ -91312,7 +91312,7 @@
                 }
               ],
               "feedback": {
-                "correctAnswer": "1年（ねん）になります。",
+                "correctAnswer": "1年（いちねん）になります。",
                 "canonicalAnswer": "1年になります。",
                 "audioText": "いちねんになります",
                 "explanation": "Được hỏi đã ở bao lâu thì đáp bằng mốc thời gian + になります.",
@@ -91475,7 +91475,7 @@
                 },
                 {
                   "id": "ichinen",
-                  "text": "1年（ねん）になります。",
+                  "text": "1年（いちねん）になります。",
                   "canonicalText": "1年になります。",
                   "audioText": "いちねんになります"
                 }
@@ -92207,7 +92207,7 @@
               "slots": [
                 {
                   "id": "chat_kikan_slot",
-                  "displayText": "1年（ねん）になります",
+                  "displayText": "1年（いちねん）になります",
                   "canonicalText": "1年になります",
                   "audioText": "いちねんになります",
                   "acceptedAnswers": [
@@ -92227,7 +92227,7 @@
                 }
               ],
               "feedback": {
-                "correctAnswer": "1年（ねん）になります\nおかげさまで",
+                "correctAnswer": "1年（いちねん）になります\nおかげさまで",
                 "canonicalAnswer": "1年になります／おかげさまで",
                 "audioText": "いちねんになります／おかげさまで",
                 "correctMessage": "Bạn làm tốt lắm!",
@@ -92367,7 +92367,7 @@
                 },
                 {
                   "id": "dup_particle",
-                  "text": "A: 日本（にほん）に来（き）て、どのぐらいですか？\nB: 1年（ねん）にになります。",
+                  "text": "A: 日本（にほん）に来（き）て、どのぐらいですか？\nB: 1年（いちねん）にになります。",
                   "canonicalText": "A: 日本に来て、どのぐらいですか？\nB: 1年にになります。",
                   "audioText": "A: 日本に来て、どのぐらいですか？\nB: 1年にになります。"
                 }

@@ -62,9 +62,9 @@ const PRACTICE_EXERCISES = [
     id: 'ja-daily_life-m01-u2-l2-practice-2', order: 2, plan: 'free', type: 'multiple_choice',
     context: 'Bạn đã ở Nhật tròn một năm.',
     prompt: 'Bạn đã ở Nhật tròn một năm. Đáp thế nào?',
-    options: [option('correct', '1年（ねん）になります。', '1年になります。', 'いちねんになります'), option('ga', '1年（ねん）がなります。', '1年がなります。', 'いちねんがなります'), option('wo', '1年（ねん）をなります。', '1年をなります。', 'いちねんをなります'), option('dup', '1年（ねん）にになります。', '1年にになります。', 'いちねんにになります')],
+    options: [option('correct', '1年（いちねん）になります。', '1年になります。', 'いちねんになります'), option('ga', '1年（いちねん）がなります。', '1年がなります。', 'いちねんがなります'), option('wo', '1年（いちねん）をなります。', '1年をなります。', 'いちねんをなります'), option('dup', '1年（いちねん）にになります。', '1年にになります。', 'いちねんにになります')],
     correctOptionId: 'correct',
-    feedback: { correctAnswer: '1年（ねん）になります。', canonicalAnswer: '1年になります。', audioText: 'いちねんになります', explanation: 'Mốc thời gian đi với trợ từ に: 1年になります。 Các phương án khác sai trợ từ hoặc lặp trợ từ.' },
+    feedback: { correctAnswer: '1年（いちねん）になります。', canonicalAnswer: '1年になります。', audioText: 'いちねんになります', explanation: 'Mốc thời gian đi với trợ từ に: 1年になります。 Các phương án khác sai trợ từ hoặc lặp trợ từ.' },
   },
   {
     id: 'ja-daily_life-m01-u2-l2-practice-3', order: 3, plan: 'free', type: 'matching',
@@ -80,17 +80,17 @@ const PRACTICE_EXERCISES = [
   {
     id: 'ja-daily_life-m01-u2-l2-practice-4', order: 4, plan: 'free', type: 'sentence_ordering',
     prompt: 'Sắp xếp thành câu trả lời "tròn một năm".',
-    tokens: [token('ichinen', '1年（ねん）', '1年', 'いちねん'), token('ni', 'に'), token('narimasu', 'なります'), token('mou', 'もう'), token('mada', 'まだ')],
+    tokens: [token('ichinen', '1年（いちねん）', '1年', 'いちねん'), token('ni', 'に'), token('narimasu', 'なります'), token('mou', 'もう'), token('mada', 'まだ')],
     correctTokenIds: ['ichinen', 'ni', 'narimasu'],
-    feedback: { correctAnswer: '1年（ねん）になります。', canonicalAnswer: '1年になります。', audioText: 'いちねんになります', explanation: '1年 + に + なります → 1年になります。 もう và まだ không dùng ở đây.' },
+    feedback: { correctAnswer: '1年（いちねん）になります。', canonicalAnswer: '1年になります。', audioText: 'いちねんになります', explanation: '1年 + に + なります → 1年になります。 もう và まだ không dùng ở đây.' },
   },
   {
     id: 'ja-daily_life-m01-u2-l2-practice-5', order: 5, plan: 'free', type: 'dialogue_fill',
     prompt: 'Điền chỗ trống để hoàn thành hội thoại.',
     dialogue: ['佐藤: 日本（にほん）に来（き）て、どのぐらいですか？', '伊藤: {{slot_1}}。'],
     slots: [{ id: 'slot_1', answerId: 'ichinen', placeholder: '________' }],
-    wordBank: [option('ichinen', '1年（ねん）になります', '1年になります', 'いちねんになります'), option('mada', 'まだ、ちょっと'), option('mou', 'もう慣（な）れました', 'もう慣れました', 'もうなれました')],
-    feedback: { correctAnswer: '1年（ねん）になります。', canonicalAnswer: '1年になります。', audioText: 'いちねんになります', explanation: 'Được hỏi đã ở bao lâu thì đáp bằng mốc thời gian + になります.' },
+    wordBank: [option('ichinen', '1年（いちねん）になります', '1年になります', 'いちねんになります'), option('mada', 'まだ、ちょっと'), option('mou', 'もう慣（な）れました', 'もう慣れました', 'もうなれました')],
+    feedback: { correctAnswer: '1年（いちねん）になります。', canonicalAnswer: '1年になります。', audioText: 'いちねんになります', explanation: 'Được hỏi đã ở bao lâu thì đáp bằng mốc thời gian + になります.' },
   },
   {
     id: 'ja-daily_life-m01-u2-l2-practice-6', order: 6, plan: 'free', type: 'listening_multiple_choice',
@@ -103,7 +103,7 @@ const PRACTICE_EXERCISES = [
     id: 'ja-daily_life-m01-u2-l2-practice-7', order: 7, plan: 'free', type: 'multiple_choice',
     context: 'Được hỏi 「もう慣（な）れましたか？」 nhưng bạn vẫn CHƯA quen.',
     prompt: 'Được hỏi 「もう慣（な）れましたか？」 nhưng bạn vẫn CHƯA quen. Đáp thế nào?',
-    options: [option('mada', 'まだ、ちょっと……。'), option('hai_okage', 'はい、おかげさまで。'), option('hai', 'はい。'), option('ichinen', '1年（ねん）になります。', '1年になります。', 'いちねんになります')],
+    options: [option('mada', 'まだ、ちょっと……。'), option('hai_okage', 'はい、おかげさまで。'), option('hai', 'はい。'), option('ichinen', '1年（いちねん）になります。', '1年になります。', 'いちねんになります')],
     correctOptionId: 'mada',
     feedback: { correctAnswer: 'まだ、ちょっと……。', explanation: 'まだ、ちょっと…… là cách đáp "vẫn chưa" một cách nhẹ nhàng. はい nghĩa là ĐÃ quen; 1年になります trả lời câu hỏi khác.' },
   },
@@ -142,10 +142,10 @@ const PRACTICE_EXERCISES = [
       ],
     },
     slots: [
-      { id: 'chat_kikan_slot', displayText: '1年（ねん）になります', canonicalText: '1年になります', audioText: 'いちねんになります', acceptedAnswers: ['1年になります', 'いちねんになります', '一年になります'] },
+      { id: 'chat_kikan_slot', displayText: '1年（いちねん）になります', canonicalText: '1年になります', audioText: 'いちねんになります', acceptedAnswers: ['1年になります', 'いちねんになります', '一年になります'] },
       { id: 'chat_okage_slot', displayText: 'おかげさまで', canonicalText: 'おかげさまで', audioText: 'おかげさまで', acceptedAnswers: ['おかげさまで'] },
     ],
-    feedback: { correctAnswer: '1年（ねん）になります\nおかげさまで', canonicalAnswer: '1年になります／おかげさまで', audioText: 'いちねんになります／おかげさまで', correctMessage: 'Bạn làm tốt lắm!', slotFeedback: { chat_kikan_slot: { incorrectMessage: 'Ô này trả lời câu hỏi đã ở bao lâu.', correctAnswer: '1年になります', explanation: 'Mốc thời gian + になります.' }, chat_okage_slot: { incorrectMessage: 'Ô này là phần sau của câu đáp lịch sự はい、___。', correctAnswer: 'おかげさまで', explanation: 'はい、おかげさまで。 là câu đáp khẳng định lịch sự đã học ở bài trước.' } } },
+    feedback: { correctAnswer: '1年（いちねん）になります\nおかげさまで', canonicalAnswer: '1年になります／おかげさまで', audioText: 'いちねんになります／おかげさまで', correctMessage: 'Bạn làm tốt lắm!', slotFeedback: { chat_kikan_slot: { incorrectMessage: 'Ô này trả lời câu hỏi đã ở bao lâu.', correctAnswer: '1年になります', explanation: 'Mốc thời gian + になります.' }, chat_okage_slot: { incorrectMessage: 'Ô này là phần sau của câu đáp lịch sự はい、___。', correctAnswer: 'おかげさまで', explanation: 'はい、おかげさまで。 là câu đáp khẳng định lịch sự đã học ở bài trước.' } } },
   },
   {
     id: 'ja-daily_life-m01-u2-l2-practice-11', order: 11, plan: 'plus', type: 'slot_ordering',
@@ -168,7 +168,7 @@ const PRACTICE_EXERCISES = [
       option('natural', 'A: 日本（にほん）に来（き）て、どのぐらいですか？\nB: 去年（きょねん）の9月（くがつ）に来（き）ました。', 'A: 日本に来て、どのぐらいですか？\nB: 去年の9月に来ました。'),
       option('wrong_particle', 'A: 日本（にほん）で来（き）て、どのぐらいですか？\nB: 去年（きょねん）の9月（くがつ）に来（き）ました。', 'A: 日本で来て、どのぐらいですか？\nB: 去年の9月に来ました。'),
       option('mismatch', 'A: 日本（にほん）に来（き）て、どのぐらいですか？\nB: はい、おかげさまで。', 'A: 日本に来て、どのぐらいですか？\nB: はい、おかげさまで。'),
-      option('dup_particle', 'A: 日本（にほん）に来（き）て、どのぐらいですか？\nB: 1年（ねん）にになります。', 'A: 日本に来て、どのぐらいですか？\nB: 1年にになります。'),
+      option('dup_particle', 'A: 日本（にほん）に来（き）て、どのぐらいですか？\nB: 1年（いちねん）にになります。', 'A: 日本に来て、どのぐらいですか？\nB: 1年にになります。'),
     ],
     correctOptionId: 'natural',
     feedback: { correctAnswer: 'A: 日本に来て、どのぐらいですか？\nB: 去年の9月に来ました。', explanation: 'A đúng: hỏi bao lâu, đáp bằng mốc thời gian. B sai trợ từ 来る đi với に không phải で. C đáp có/không cho câu hỏi bao lâu. D lặp trợ từ に.' },
@@ -206,7 +206,7 @@ const PRACTICE_EXERCISES = [
       dialogueLine('sato', 'まだ、ちょっと……。', 'まだ、ちょっと……。', 'Dạ vẫn chưa, hơi khó một chút ạ.', 'まだ、ちょっと'),
     ],
     sceneDividers: [
-      { afterDialogueLine: 4, targetText: 'べつの日', translationByNative: vi('Một ngày khác') },
+      { afterDialogueLine: 4, targetText: 'べつの日（ひ）', translationByNative: vi('Một ngày khác') },
     ],
   },
 ];

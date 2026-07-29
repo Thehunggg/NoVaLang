@@ -232,7 +232,7 @@ const PRACTICE_EXERCISES = [
     sceneDividers: [
       {
         afterDialogueLine: 10,
-        targetText: '着いた時',
+        targetText: '着（つ）いた時（とき）',
         translationByNative: vi('Khi đến nơi'),
       },
     ],
@@ -344,7 +344,11 @@ const JA_UNIT1_LESSON1_SOURCE = {
           timingAndContext: ['Đáp lại:', 'よろしくお願いします。'],
           register: 'Lịch sự.',
           casual: ['Biến thể thân mật:', 'こちらこそ、よろしく！', 'Trong một số hoàn cảnh rất thoải mái có thể đáp ngắn:', 'よろしく！'],
-          examples: [example('A:\nよろしくお願いします。\n\nB:\nこちらこそ、よろしくお願いします。', 'よろしくおねがいします。\n\nこちらこそ、よろしくおねがいします。', '')],
+          // Furigana viết tay: mặt chữ có nhãn người nói 「A:」「B:」 mà dòng đọc
+          // không có, nên ráp tự động không khớp được. Sửa dòng đọc thì hỏng TTS
+          // (nó sẽ đọc cả chữ "A"), nên gõ thẳng chú âm vào mặt chữ. 願＝ねが,
+          // khớp đúng dòng đọc おねがいします của chính ví dụ này.
+          examples: [example('A:\nよろしくお願（ねが）いします。\n\nB:\nこちらこそ、よろしくお願（ねが）いします。', 'よろしくおねがいします。\n\nこちらこそ、よろしくおねがいします。', '')],
         },
         {
           id: 'sayounara',

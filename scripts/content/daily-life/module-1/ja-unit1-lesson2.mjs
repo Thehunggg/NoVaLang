@@ -209,7 +209,7 @@ const PRACTICE_EXERCISES = [
     sceneDividers: [
       {
         afterDialogueLine: 3,
-        targetText: '別の人が来たとき',
+        targetText: '別（べつ）の人（ひと）が来（き）たとき',
         translationByNative: vi('Khi có người khác đến'),
       },
     ],

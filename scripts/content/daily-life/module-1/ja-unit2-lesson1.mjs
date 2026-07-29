@@ -224,8 +224,8 @@ const PRACTICE_EXERCISES = [
       dialogueLine('sato', 'はい。おかげさまで。', 'はい。おかげさまで。', 'Vâng, nhờ thầy, em vẫn khoẻ.', 'はい。おかげさまで'),
     ],
     sceneDividers: [
-      { afterDialogueLine: 4, targetText: 'べつの日', translationByNative: vi('Một ngày khác') },
-      { afterDialogueLine: 8, targetText: 'べつの日', translationByNative: vi('Một ngày khác') },
+      { afterDialogueLine: 4, targetText: 'べつの日（ひ）', translationByNative: vi('Một ngày khác') },
+      { afterDialogueLine: 8, targetText: 'べつの日（ひ）', translationByNative: vi('Một ngày khác') },
     ],
   },
 ];
