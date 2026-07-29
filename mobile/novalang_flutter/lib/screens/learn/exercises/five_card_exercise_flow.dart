@@ -11,6 +11,7 @@ import '../../../core/utils/responsive.dart';
 import '../../../data/curriculum_repository.dart';
 import '../../../models/five_card_practice.dart';
 import '../../../models/lesson.dart';
+import '../../../state/lesson_reading_aid.dart';
 import '../../../services/ai_exercise_grader.dart';
 import '../../../services/ai_exercise_quota_service.dart';
 import '../../../services/exercise_review_repository.dart';
@@ -42,89 +43,6 @@ final wrongAnswerRepositoryProvider = Provider<WrongAnswerRepository>(
 );
 final exerciseAttemptRepositoryProvider = Provider<ExerciseAttemptRepository>(
   (_) => SharedPreferencesExerciseAttemptRepository(),
-);
-
-@immutable
-class Q14ReadingAidSessionState {
-  const Q14ReadingAidSessionState({
-    required this.showReading,
-    required this.showRomanization,
-    required this.lessonSessionKey,
-    required this.currentLevel,
-    required this.romanizationToggleAllowed,
-  });
-
-  final bool showReading;
-  final bool showRomanization;
-  final String lessonSessionKey;
-  final String currentLevel;
-  final bool romanizationToggleAllowed;
-
-  Q14ReadingAidSessionState copyWith({
-    bool? showReading,
-    bool? showRomanization,
-  }) => Q14ReadingAidSessionState(
-    showReading: showReading ?? this.showReading,
-    showRomanization: showRomanization ?? this.showRomanization,
-    lessonSessionKey: lessonSessionKey,
-    currentLevel: currentLevel,
-    romanizationToggleAllowed: romanizationToggleAllowed,
-  );
-}
-
-bool q14RomanizationToggleAllowed(String level) =>
-    const {'A0', 'A1', 'A2', 'B1'}.contains(level.trim().toUpperCase());
-
-const _q14KnownLevels = {'A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'};
-
-class Q14ReadingAidSessionStore extends ChangeNotifier {
-  final Map<String, Q14ReadingAidSessionState> _states = {};
-
-  Q14ReadingAidSessionState stateFor({
-    required String lessonSessionKey,
-    required String currentLevel,
-  }) {
-    final normalizedLevel = currentLevel.trim().toUpperCase();
-    return _states.putIfAbsent(lessonSessionKey, () {
-      if (kDebugMode && !_q14KnownLevels.contains(normalizedLevel)) {
-        debugPrint(
-          'Q14 romanization toggle hidden for unknown lesson level: '
-          '$currentLevel',
-        );
-      }
-      return Q14ReadingAidSessionState(
-        showReading: true,
-        showRomanization: false,
-        lessonSessionKey: lessonSessionKey,
-        currentLevel: normalizedLevel,
-        romanizationToggleAllowed: q14RomanizationToggleAllowed(
-          normalizedLevel,
-        ),
-      );
-    });
-  }
-
-  void setShowReading(String lessonSessionKey, bool value) {
-    final current = _states[lessonSessionKey];
-    if (current == null || current.showReading == value) return;
-    _states[lessonSessionKey] = current.copyWith(showReading: value);
-    notifyListeners();
-  }
-
-  void setShowRomanization(String lessonSessionKey, bool value) {
-    final current = _states[lessonSessionKey];
-    if (current == null ||
-        !current.romanizationToggleAllowed ||
-        current.showRomanization == value) {
-      return;
-    }
-    _states[lessonSessionKey] = current.copyWith(showRomanization: value);
-    notifyListeners();
-  }
-}
-
-final q14ReadingAidSessionStoreProvider = Provider<Q14ReadingAidSessionStore>(
-  (_) => Q14ReadingAidSessionStore(),
 );
 
 // Temporary trial unlock for Exercise Format review.
@@ -997,7 +915,7 @@ class _FiveCardExerciseSessionPageState
     // below — no Check Answer button, no AI UI, no correct/incorrect state.
     if (exercise.type == 'real_world_practice_dialogue') {
       final lessonSessionKey = '${widget.lessonId}:$reviewAttemptId';
-      final readingAidStore = ref.read(q14ReadingAidSessionStoreProvider);
+      final readingAidStore = ref.read(lessonReadingAidStoreProvider);
       return ListenableBuilder(
         listenable: readingAidStore,
         builder: (context, child) {
@@ -1013,9 +931,9 @@ class _FiveCardExerciseSessionPageState
             nativeLanguageCode: widget.nativeLanguageCode,
             readingAidState: readingAidState,
             onShowReadingChanged: (value) =>
-                readingAidStore.setShowReading(lessonSessionKey, value),
+                readingAidStore.setShowFurigana(lessonSessionKey, value),
             onShowRomanizationChanged: (value) =>
-                readingAidStore.setShowRomanization(lessonSessionKey, value),
+                readingAidStore.setShowRomaji(lessonSessionKey, value),
             onExit: _exit,
             onComplete: () => unawaited(_next()),
           );
@@ -2031,7 +1949,7 @@ class _RealWorldPracticeDialoguePage extends StatefulWidget {
   final String uiLanguageCode;
   final String learningLanguageCode;
   final String nativeLanguageCode;
-  final Q14ReadingAidSessionState readingAidState;
+  final LessonReadingAidState readingAidState;
   final ValueChanged<bool> onShowReadingChanged;
   final ValueChanged<bool> onShowRomanizationChanged;
   final Future<void> Function() onExit;
@@ -2091,7 +2009,7 @@ class _RealWorldPracticeDialoguePageState
     final hasCompleteRomanization =
         lines.isNotEmpty && lines.every((line) => line.hasRomanization);
     final showRomanizationToggle =
-        widget.readingAidState.romanizationToggleAllowed &&
+        widget.readingAidState.romajiToggleAllowed &&
         hasCompleteRomanization;
     return PopScope(
       canPop: false,
@@ -2166,7 +2084,7 @@ class _RealWorldPracticeDialoguePageState
                                     'dialogueReadingToggle',
                                     widget.uiLanguageCode,
                                   ),
-                                  value: widget.readingAidState.showReading,
+                                  value: widget.readingAidState.showFurigana,
                                   onChanged: widget.onShowReadingChanged,
                                 ),
                                 if (showRomanizationToggle) ...[
@@ -2180,7 +2098,7 @@ class _RealWorldPracticeDialoguePageState
                                       widget.uiLanguageCode,
                                     ),
                                     value:
-                                        widget.readingAidState.showRomanization,
+                                        widget.readingAidState.showRomaji,
                                     onChanged: widget.onShowRomanizationChanged,
                                   ),
                                 ],
@@ -2212,9 +2130,9 @@ class _RealWorldPracticeDialoguePageState
                                         .characterById(lines[i].speakerId)
                                         ?.displayName ??
                                     lines[i].speakerId,
-                                showReading: widget.readingAidState.showReading,
+                                showReading: widget.readingAidState.showFurigana,
                                 showRomanization:
-                                    widget.readingAidState.showRomanization,
+                                    widget.readingAidState.showRomaji,
                                 showTranslation: _showTranslation,
                                 isPlaying: _playingIndex == i,
                                 alignRight:

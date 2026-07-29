@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:novalang_flutter/state/lesson_reading_aid.dart';
 import 'package:novalang_flutter/core/theme/app_theme.dart';
 import 'package:novalang_flutter/models/curriculum.dart';
 import 'package:novalang_flutter/models/five_card_practice.dart';
@@ -273,28 +274,28 @@ void main() {
 
     test('level policy is explicit and unknown levels fail safely', () {
       for (final level in const ['A0', 'A1', 'A2', 'B1']) {
-        expect(q14RomanizationToggleAllowed(level), isTrue, reason: level);
+        expect(romajiToggleAllowed(level), isTrue, reason: level);
       }
       for (final level in const ['B2', 'C1', 'C2', 'UNKNOWN', '']) {
-        expect(q14RomanizationToggleAllowed(level), isFalse, reason: level);
+        expect(romajiToggleAllowed(level), isFalse, reason: level);
       }
     });
 
     test('session state restores only within the same lesson session', () {
-      final store = Q14ReadingAidSessionStore();
+      final store = LessonReadingAidStore();
       final first = store.stateFor(
         lessonSessionKey: 'lesson-a:attempt-1',
         currentLevel: 'A0',
       );
-      expect(first.showRomanization, isFalse);
-      store.setShowRomanization('lesson-a:attempt-1', true);
+      expect(first.showRomaji, isFalse);
+      store.setShowRomaji('lesson-a:attempt-1', true);
       expect(
         store
             .stateFor(
               lessonSessionKey: 'lesson-a:attempt-1',
               currentLevel: 'A0',
             )
-            .showRomanization,
+            .showRomaji,
         isTrue,
       );
       expect(
@@ -303,16 +304,16 @@ void main() {
               lessonSessionKey: 'lesson-b:attempt-1',
               currentLevel: 'A0',
             )
-            .showRomanization,
+            .showRomaji,
         isFalse,
       );
       expect(
-        Q14ReadingAidSessionStore()
+        LessonReadingAidStore()
             .stateFor(
               lessonSessionKey: 'lesson-a:attempt-1',
               currentLevel: 'A0',
             )
-            .showRomanization,
+            .showRomaji,
         isFalse,
       );
     });

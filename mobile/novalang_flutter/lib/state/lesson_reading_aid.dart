@@ -57,9 +57,14 @@ class LessonReadingAidStore extends ChangeNotifier {
         debugPrint('Reading-aid romaji toggle hidden for unknown level: $currentLevel');
       }
       return LessonReadingAidState(
-        // Mặc định: cả hai TẮT. Dòng chính luôn sạch (R14 [JA] a), người học
-        // chủ động bật trợ đọc khi cần.
-        showFurigana: false,
+        // Mặc định GIỮ NGUYÊN hành vi Q14 đã chạy từ trước: dòng kana BẬT,
+        // romaji TẮT. Đây là store gộp của Q14 nên đổi mặc định là đổi hành vi
+        // một màn owner đã duyệt.
+        //
+        // Không nghịch R14 [JA] (a): "dòng chính luôn sạch" nói về việc bỏ
+        // ngoặc chú âm KHI VẼ — luôn đúng, bất kể công tắc. Công tắc chỉ quyết
+        // định có THÊM dòng kana bên dưới hay không.
+        showFurigana: true,
         showRomaji: false,
         lessonSessionKey: lessonSessionKey,
         romajiToggleAllowed: romajiToggleAllowed(normalized),

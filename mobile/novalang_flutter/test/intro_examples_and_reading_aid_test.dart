@@ -104,26 +104,28 @@ void main() {
         )
         .length;
 
-    final before = textCount();
+    // Mặc định BẬT (giữ nguyên hành vi Q14 vốn có), nên lượt bấm đầu là TẮT.
+    final withKana = textCount();
     await tester.tap(toggle);
     await tester.pump();
-    final afterOn = textCount();
-    expect(afterOn, greaterThan(before), reason: 'bật furigana phải THÊM dòng kana');
+    final withoutKana = textCount();
+    expect(withoutKana, lessThan(withKana), reason: 'tắt furigana phải BỚT dòng kana');
 
     await tester.tap(toggle);
     await tester.pump();
-    expect(textCount(), before, reason: 'tắt phải trở lại như cũ');
+    expect(textCount(), withKana, reason: 'bật lại phải trở về như cũ');
   });
 
   test('store nhớ theo phiên và tôn trọng mức được phép', () {
     final store = LessonReadingAidStore();
     final s = store.stateFor(lessonSessionKey: 'k', currentLevel: 'A0');
-    expect(s.showFurigana, isFalse, reason: 'mặc định TẮT — dòng chính sạch');
+    // Mặc định giữ y hệt Q14 cũ: dòng kana BẬT, romaji TẮT.
+    expect(s.showFurigana, isTrue, reason: 'giữ nguyên mặc định Q14');
     expect(s.showRomaji, isFalse);
     expect(s.romajiToggleAllowed, isTrue);
 
-    store.setShowFurigana('k', true);
-    expect(store.stateFor(lessonSessionKey: 'k', currentLevel: 'A0').showFurigana, isTrue);
+    store.setShowFurigana('k', false);
+    expect(store.stateFor(lessonSessionKey: 'k', currentLevel: 'A0').showFurigana, isFalse);
 
     // Trên B1 thì công tắc romaji đóng — giữ nguyên luật cũ của Q14.
     final high = LessonReadingAidStore();
