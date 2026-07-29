@@ -134,15 +134,22 @@ class ExerciseActionOptionChip extends StatelessWidget {
     required this.label,
     required this.state,
     required this.onPressed,
+    this.labelWidget,
   });
 
   final String label;
+
+  /// G14-R14: cho phép đưa nguyên một [JaSentence] vào làm nhãn, để phương án
+  /// tiếng Nhật có dòng chính sạch + dòng trợ đọc. Không truyền thì vẫn vẽ
+  /// [Text] như cũ — mọi chỗ gọi cũ không phải sửa.
+  final Widget? labelWidget;
+
   final ExerciseOptionVisualState state;
   final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) => ActionChip(
-    label: Text(label),
+    label: labelWidget ?? Text(label),
     labelStyle: ExerciseOptionStyle.labelStyle(state),
     color: ExerciseOptionStyle.background(state),
     disabledColor: ExerciseOptionColors.disabledBackground,

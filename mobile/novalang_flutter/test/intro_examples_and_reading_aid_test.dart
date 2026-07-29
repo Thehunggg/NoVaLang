@@ -116,6 +116,40 @@ void main() {
     expect(textCount(), withKana, reason: 'bật lại phải trở về như cũ');
   });
 
+  testWidgets('PHƯƠNG ÁN bài tập: bật/tắt dòng kana ăn vào chip', (tester) async {
+    // G14-R14 — thẻ ⑤. Dựng thẳng chip phương án trong một ReadingAidScope
+    // để kiểm đúng mặt hiển thị đó, không phải cả màn bài tập.
+    Widget host({required bool showFurigana}) => ProviderScope(
+      child: MaterialApp(
+        home: Scaffold(
+          body: ReadingAidScope(
+            lessonSessionKey: 'k',
+            lessonLevel: 'A0',
+            learningLanguageCode: 'ja',
+            uiLanguageCode: 'vi',
+            showFurigana: showFurigana,
+            child: const JaSentence(
+              displayText: '日本（にほん）に来（き）ました。',
+              showSpeaker: false,
+            ),
+          ),
+        ),
+      ),
+    );
+
+    await tester.pumpWidget(host(showFurigana: false));
+    await tester.pump();
+    // Dòng chính luôn SẠCH — không ngoặc, bất kể công tắc.
+    expect(find.text('日本に来ました。'), findsOneWidget);
+    expect(find.text('にほん に きました。'), findsNothing);
+
+    await tester.pumpWidget(host(showFurigana: true));
+    await tester.pump();
+    expect(find.text('日本に来ました。'), findsOneWidget);
+    // Bật → thêm dòng kana wakachigaki (trợ từ に đứng riêng, okurigana dính).
+    expect(find.text('にほん に きました。'), findsOneWidget);
+  });
+
   test('store nhớ theo phiên và tôn trọng mức được phép', () {
     final store = LessonReadingAidStore();
     final s = store.stateFor(lessonSessionKey: 'k', currentLevel: 'A0');

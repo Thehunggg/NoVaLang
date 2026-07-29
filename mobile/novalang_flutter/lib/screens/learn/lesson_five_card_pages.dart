@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/japanese_text.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/localization.dart';
 import '../../models/lesson.dart';
@@ -590,8 +591,13 @@ class _VocabularyCardHeader extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
+                  // G14-R14 (a): dòng chính sạch ngoặc. GIỮ Text một dòng +
+                  // ellipsis chứ không dùng JaSentence: đây là ĐẦU THẺ THU GỌN
+                  // — thêm dòng trợ đọc vào đây làm đổi chiều cao thẻ, kéo theo
+                  // header dính và phép cuộn (đo được: gãy 4 test cuộn). Trợ
+                  // đọc của từ này nằm ở phần MỞ RỘNG ngay bên dưới.
                   child: Text(
-                    item.displayText,
+                    stripFurigana(item.displayText),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -1100,8 +1106,9 @@ class _DialogueLine extends StatelessWidget {
                         ),
                       ),
                     const SizedBox(height: 4),
+                    // G14-R14 (a): dòng chính sạch ngoặc chú âm.
                     Text(
-                      _text(line['targetText']),
+                      stripFurigana(_text(line['targetText'])),
                       style: const TextStyle(fontWeight: FontWeight.w800),
                     ),
                     if (_text(line['reading']).isNotEmpty)
@@ -1369,23 +1376,17 @@ class _VocabularyReferenceItem extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        term,
-                        style: Theme.of(context).textTheme.titleMedium
+                      // G14-R14: từ tham khảo cũng qua widget câu dùng chung.
+                      // Nút nghe nằm ngoài nên showSpeaker=false.
+                      JaSentence(
+                        displayText: term,
+                        reading: reading,
+                        speechText: speechText,
+                        showSpeaker: false,
+                        dense: true,
+                        textStyle: Theme.of(context).textTheme.titleMedium
                             ?.copyWith(fontWeight: FontWeight.w900),
                       ),
-                      if (reading.isNotEmpty)
-                        Padding(
-                          padding: const EdgeInsets.only(top: 2),
-                          child: Text(
-                            reading,
-                            style: const TextStyle(
-                              color: AppTheme.contentAccentForeground,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 13,
-                            ),
-                          ),
-                        ),
                     ],
                   ),
                 ),

@@ -127,8 +127,10 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('vocabulary-references-toggle')));
     await tester.pumpAndSettle();
 
-    expect(find.text('またね'), findsNWidgets(2)); // term + reading
-    expect(find.text('じゃあね'), findsNWidgets(2));
+    // Từ TOÀN KANA thì chú âm trùng chính nó — JaSentence bỏ dòng lặp đó
+    // (G14-R14), nên chỉ còn MỘT. Trước đây vẽ hai lần y hệt nhau.
+    expect(find.text('またね'), findsOneWidget);
+    expect(find.text('じゃあね'), findsOneWidget);
     expect(find.text('See you (very casual).'), findsOneWidget);
     // §B2b — mục tham khảo còn 4 phần: từ vựng · nghĩa · mức độ lịch sự · ví dụ.
     // Nhãn "Register" là key DÙNG CHUNG với thẻ từ vựng, không phải nhãn riêng

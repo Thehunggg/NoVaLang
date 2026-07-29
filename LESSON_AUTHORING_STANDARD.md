@@ -1395,6 +1395,10 @@ owner bỏ lối đó 2026-07-29.
 - **[Romaji]** → thêm dòng romaji. Có `romanization` viết tay (Q14) thì dùng;
   chỗ khác **phiên máy kana→romaji**.
 
+**Mặc định:** ở **A0–A1** dòng kana **BẬT** sẵn, romaji **TẮT** — người mới
+chưa đọc nổi kanji trần. Cấp cao hơn **xét lại khi tới cấp đó**, đừng đoán
+trước. (Đây cũng là mặc định Q14 đã chạy từ trước và owner đã duyệt.)
+
 > **Phiên kana→romaji là CHUYỂN TỰ CƠ HỌC 1-1, KHÔNG thuộc lệnh cấm đoán âm
 > kanji.** Lệnh cấm ở R14/generator là cấm **tra từ điển để đoán cách đọc của
 > KANJI**. Kana thì mỗi ký tự có đúng một âm; chuyển tự không cần biết nghĩa,

@@ -10,8 +10,10 @@ import '../../../core/utils/native_content.dart';
 import '../../../core/utils/responsive.dart';
 import '../../../data/curriculum_repository.dart';
 import '../../../models/five_card_practice.dart';
+import '../../../core/japanese_text.dart';
 import '../../../models/lesson.dart';
 import '../../../state/lesson_reading_aid.dart';
+import '../../../widgets/lesson/ja_sentence.dart';
 import '../../../services/ai_exercise_grader.dart';
 import '../../../services/ai_exercise_quota_service.dart';
 import '../../../services/exercise_review_repository.dart';
@@ -1002,15 +1004,23 @@ class _FiveCardExerciseSessionPageState
                                     ),
                                   ),
                                 if (exercise.context.isNotEmpty) ...[
-                                  Text(
-                                    exercise.context,
-                                    style: const TextStyle(height: 1.45),
+                                  // G14-R14: câu dẫn qua widget câu dùng chung.
+                                  JaSentence(
+                                    displayText: exercise.context,
+                                    showSpeaker: false,
+                                    textStyle: const TextStyle(height: 1.45),
                                   ),
                                   const SizedBox(height: 12),
                                 ],
-                                Text(
-                                  exercise.prompt,
-                                  style: Theme.of(context).textTheme.titleMedium
+                                // G14-R14: đề bài qua widget câu dùng chung.
+                                // showSpeaker=false — đề không có speechText
+                                // riêng; nút nghe của câu nằm ở audioText.
+                                JaSentence(
+                                  displayText: exercise.prompt,
+                                  showSpeaker: false,
+                                  textStyle: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
                                       ?.copyWith(
                                         fontWeight: FontWeight.w900,
                                         color: AppTheme.questionForeground,
@@ -1179,6 +1189,14 @@ class _FiveCardExerciseSessionPageState
     ExerciseOptionVisualState state = ExerciseOptionVisualState.available,
   }) => ExerciseActionOptionChip(
     label: label,
+    // G14-R14: nhãn phương án đi qua widget câu dùng chung → dòng chính sạch
+    // ngoặc + dòng trợ đọc. showSpeaker=false: không lồng nút nghe trong chip.
+    labelWidget: JaSentence(
+      displayText: label,
+      showSpeaker: false,
+      dense: true,
+      textStyle: ExerciseOptionStyle.labelStyle(state),
+    ),
     state: state,
     onPressed: onPressed,
   );
@@ -2286,8 +2304,11 @@ class _RealWorldDialogueLineTile extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 4),
+                    // G14-R14 [JA] (a): dòng chính LUÔN SẠCH — bỏ ngoặc chú âm
+                    // khi vẽ. Trước đây Q14 in thẳng targetText nên ngoặc chú
+                    // âm hiện ra giữa câu.
                     Text(
-                      line.targetText,
+                      stripFurigana(line.targetText),
                       key: const ValueKey('dialogue-line-target-text'),
                       locale: AppTheme.japaneseLocale,
                       style: AppTheme.japaneseTextStyle.copyWith(
@@ -2298,6 +2319,10 @@ class _RealWorldDialogueLineTile extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 3),
                         child: Text(
+                          // Q14 GIỮ dòng đọc LIỀN (không wakachigaki): trình
+                          // bày này owner đã duyệt cùng màn Q14, và 5 test đang
+                          // khoá đúng chuỗi liền đó. Khác các mặt khác một
+                          // chút — ghi lại làm nợ, không tự đổi.
                           line.reading,
                           key: const ValueKey('dialogue-line-reading'),
                           locale: AppTheme.japaneseLocale,
@@ -2373,7 +2398,8 @@ class _DialogueSceneDivider extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              divider.targetText,
+              // G14-R14 (a): dải phân cảnh cũng là chuỗi đích — sạch ngoặc.
+              stripFurigana(divider.targetText),
               locale: AppTheme.japaneseLocale,
               style: AppTheme.japaneseTextStyle.copyWith(
                 color: AppTheme.contentAccentForeground,
