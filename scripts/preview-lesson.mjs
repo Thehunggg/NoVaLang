@@ -15,6 +15,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { normalize } from "./verify-provenance.mjs";
+import { hasKanji, readingFromFurigana, splitFurigana } from "./lib/japanese-furigana.mjs";
 
 const LESSONS_FILE = "shared/generated/lessons.json";
 const PROV_DIR = "shared/content/curriculum/provenance";
@@ -41,6 +42,44 @@ const nat = (obj, base) => {
 const asList = (v) => (v === undefined || v === null ? [] : Array.isArray(v) ? v : [v]);
 
 const nl2br = (s) => esc(s).replace(/\n/g, "<br>");
+
+/* ───────────────── câu Nhật — 3 dòng (owner chốt 2026-07-29) ─────────────────
+ * (1) câu SẠCH, bỏ ngoặc furigana. Bật [Furigana từng chữ] thì kana hiện
+ *     dạng ruby TRÊN ĐẦU kanji — cùng một DOM, CSS bật/tắt <rt>.
+ * (2) dòng kana WAKACHIGAKI — chèn khoảng cách theo RANH GIỚI KHỐI lấy thẳng
+ *     từ dữ liệu ngoặc (mỗi cụm kanji（kana） một khối, chữ giữa các khối một
+ *     khối). KHÔNG đoán ranh giới từ, KHÔNG đụng trường reading của bài.
+ * (3) dịch.
+ * Câu không có kanji thì không có ngoặc → không có dòng (2), giữ nguyên.
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+const rubyHtml = (text) =>
+  splitFurigana(text)
+    .map((p) => (p.kana ? `<ruby>${esc(p.text)}<rt>${esc(p.kana)}</rt></ruby>` : esc(p.text)))
+    .join("");
+
+const wakachigaki = (text) => readingFromFurigana(text).blocks.join(" ");
+
+/**
+ * Một câu Nhật đầy đủ 3 dòng. `text` là chuỗi HIỂN THỊ (đã có furigana ngoặc).
+ * `badge` là nhãn provenance đã dựng sẵn.
+ */
+function jaSentence(text, translation, badge = "", extra = "") {
+  const t = String(text ?? "");
+  if (!t) return "";
+  const out = [`<div class="s">`];
+  out.push(`<div class="s1 ja">${rubyHtml(t)}${badge}</div>`);
+  if (hasKanji(t) && /（[぀-ゟー]+）/.test(t)) {
+    out.push(`<div class="s2">${esc(wakachigaki(t))}</div>`);
+  }
+  if (extra) out.push(`<div class="s2x">${esc(extra)}</div>`);
+  if (translation) out.push(`<div class="s3">${esc(translation)}</div>`);
+  out.push(`</div>`);
+  return out.join("\n");
+}
+
+/** Câu Nhật gọn một dòng (ô bảng, nhãn phương án): sạch ngoặc + ruby được. */
+const jaInline = (text) => `<span class="ja s1">${rubyHtml(String(text ?? ""))}</span>`;
 
 /* ─────────────────────── tra provenance ─────────────────────── */
 
@@ -103,10 +142,8 @@ function renderIntro(lesson, idx) {
       const label = nat(ex, "label");
       out.push(`<div class="ex">`);
       if (label) out.push(`<div class="exlabel">${esc(label)}</div>`);
-      out.push(`<div class="ja">${esc(ex.displayText ?? ex.targetText)} ${provBadge(idx, ex.targetText ?? ex.displayText)}</div>`);
-      if (ex.reading) out.push(`<div class="rd">${esc(ex.reading)}</div>`);
       const tr = ex.translationByNative?.[NAT] ?? ex.translations?.[NAT] ?? ex.meaningVi;
-      if (tr) out.push(`<div class="tr">${esc(tr)}</div>`);
+      out.push(jaSentence(ex.displayText ?? ex.targetText, tr, provBadge(idx, ex.targetText ?? ex.displayText)));
       out.push(`</div>`);
     }
   }
@@ -148,7 +185,7 @@ function renderVocabulary(lesson, idx) {
     out.push(`<tr>
       <td>${i + 1}</td>
       <td><span class="tag card">thẻ</span></td>
-      <td class="ja">${esc(v.displayText)}</td>
+      <td>${jaInline(v.displayText)}</td>
       <td class="rd">${esc(v.reading ?? "")}</td>
       <td>${esc(meaning ?? "")}</td>
       <td class="reg">${registerCell(d.register)}</td>
@@ -158,7 +195,7 @@ function renderVocabulary(lesson, idx) {
       const tr = ex.translationByNative?.[NAT] ?? ex.translation;
       out.push(`<tr class="sub">
         <td></td><td></td>
-        <td colspan="2" class="ja">${esc(ex.text)} ${provBadge(idx, ex.text)}<br><span class="rd">${esc(ex.reading ?? "")}</span></td>
+        <td colspan="2">${jaSentence(ex.text, "", provBadge(idx, ex.text))}</td>
         <td colspan="3">${esc(tr ?? "")}</td>
       </tr>`);
     }
@@ -168,7 +205,7 @@ function renderVocabulary(lesson, idx) {
     out.push(`<tr>
       <td>${cards.length + i + 1}</td>
       <td><span class="tag ref">tham khảo</span></td>
-      <td class="ja">${esc(r.term)}</td>
+      <td>${jaInline(r.term)}</td>
       <td class="rd">${esc(r.reading ?? "")}</td>
       <td>${esc(nat(r, "meaning") ?? "")}</td>
       <td class="reg">${registerCell(r.register)}</td>
@@ -178,7 +215,7 @@ function renderVocabulary(lesson, idx) {
       const tr = r.example.translationByNative?.[NAT] ?? r.example.translation;
       out.push(`<tr class="sub">
         <td></td><td></td>
-        <td colspan="2" class="ja">${esc(r.example.text)} ${provBadge(idx, r.example.text)}<br><span class="rd">${esc(r.example.reading ?? "")}</span></td>
+        <td colspan="2">${jaSentence(r.example.text, "", provBadge(idx, r.example.text))}</td>
         <td colspan="3">${esc(tr ?? "")}</td>
       </tr>`);
     }
@@ -204,11 +241,7 @@ function renderDialogue(lesson, idx) {
       const tr = ln.translationByNative?.[NAT] ?? ln.translations?.[NAT] ?? ln.meaningVi;
       out.push(`<tr>
         <td class="spk">${esc(ln.speakerId ?? "")}</td>
-        <td>
-          <div class="ja">${esc(ln.displayText ?? ln.targetText)} ${provBadge(idx, ln.targetText ?? ln.displayText)}</div>
-          <div class="rd">${esc(ln.reading ?? "")}</div>
-          <div class="tr">${esc(tr ?? "")}</div>
-        </td>
+        <td>${jaSentence(ln.displayText ?? ln.targetText, tr, provBadge(idx, ln.targetText ?? ln.displayText))}</td>
       </tr>`);
     }
     out.push(`</tbody></table>`);
@@ -227,18 +260,14 @@ function renderGrammar(lesson, idx) {
 
   pats.forEach((p, i) => {
     out.push(`<div class="gpat">`);
-    out.push(`<h3>Mẫu ${i + 1}. <span class="ja">${esc(p.title)}</span></h3>`);
+    out.push(`<h3>Mẫu ${i + 1}. ${jaInline(p.title)}</h3>`);
     out.push(`<div class="formula ja">${esc(nat(p, "formula") ?? p.formula)}</div>`);
     if (p.formulaReading) out.push(`<div class="rd">${esc(p.formulaReading)}</div>`);
     const meaning = nat(p, "meaning");
     if (meaning) out.push(`<p class="mean">${esc(meaning)}</p>`);
     for (const ex of asList(p.examples)) {
       const tr = ex.translationByNative?.[NAT] ?? ex.translation;
-      out.push(`<div class="ex">
-        <div class="ja">${esc(ex.text)} ${provBadge(idx, ex.text)}</div>
-        <div class="rd">${esc(ex.reading ?? "")}</div>
-        <div class="tr">${esc(tr ?? "")}</div>
-      </div>`);
+      out.push(jaSentence(ex.text, tr, provBadge(idx, ex.text)));
     }
     for (const e of asList(nat(p, "explanation"))) out.push(`<p class="note">${esc(e)}</p>`);
     out.push(`</div>`);
@@ -258,7 +287,7 @@ function optionRow(idx, opt, isCorrect) {
   const badge = provBadge(idx, opt.canonicalText ?? text) || provBadge(idx, text);
   return `<li class="${isCorrect ? "ok" : "no"}">
     ${isCorrect ? MARK_OK : MARK_NO}
-    <span class="opt">${esc(text)}</span>
+    <span class="opt">${jaInline(text)}</span>
     <span class="oid">${esc(opt.id ?? "")}</span>
     ${badge}
   </li>`;
@@ -301,7 +330,7 @@ function renderExercise(idx, e, n) {
     case "matching": {
       out.push(`<table class="pairs"><tbody>`);
       for (const p of e.pairs ?? []) {
-        out.push(`<tr><td class="ja">${esc(p.left?.text ?? "")}</td>
+        out.push(`<tr><td>${jaInline(p.left?.text ?? "")}</td>
           <td>→</td>
           <td>${esc(nat(p.right, "text") ?? p.right?.text ?? "")}</td>
           <td>${MARK_OK}</td></tr>`);
@@ -315,12 +344,12 @@ function renderExercise(idx, e, n) {
       const correct = e.correctTokenIds ?? [];
       const byId = new Map((e.tokens ?? []).map((t) => [t.id, t]));
       const built = correct.map((id) => byId.get(id)?.text ?? `?${id}`).join("");
-      out.push(`<div class="built"><b>Thứ tự đúng:</b> <span class="ja">${esc(built)}</span> ${provBadge(idx, built)}</div>`);
+      out.push(`<div class="built"><b>Thứ tự đúng:</b> ${jaInline(built)} ${provBadge(idx, built)}</div>`);
       out.push(`<ul class="opts">`);
       for (const t of e.tokens ?? []) {
         const used = correct.includes(t.id);
         out.push(`<li class="${used ? "ok" : "no"}">${used ? MARK_OK : MARK_NO}
-          <span class="opt ja">${esc(t.text)}</span>
+          <span class="opt">${jaInline(t.text)}</span>
           <span class="oid">${esc(t.id)}</span>
           ${used ? `<span class="hint">vị trí ${correct.indexOf(t.id) + 1}</span>` : `<span class="hint">thẻ nhiễu</span>`}
           ${provBadge(idx, t.canonicalText ?? t.text)}</li>`);
@@ -334,14 +363,14 @@ function renderExercise(idx, e, n) {
       const slots = e.answerSlots ?? [];
       const byId = new Map((e.tokens ?? []).map((t) => [t.id, t]));
       const built = slots.map((s) => (byId.get(s.expectedTokenId)?.text ?? "?") + (s.afterText ?? "")).join("");
-      out.push(`<div class="built"><b>Thứ tự đúng:</b> <span class="ja">${esc(built)}</span> ${provBadge(idx, built)}</div>`);
+      out.push(`<div class="built"><b>Thứ tự đúng:</b> ${jaInline(built)} ${provBadge(idx, built)}</div>`);
       const unused = new Set(e.unusedTokenIds ?? []);
       out.push(`<ul class="opts">`);
       for (const t of e.tokens ?? []) {
         const isUnused = unused.has(t.id);
         const pos = slots.findIndex((s) => s.expectedTokenId === t.id);
         out.push(`<li class="${isUnused ? "no" : "ok"}">${isUnused ? MARK_NO : MARK_OK}
-          <span class="opt ja">${esc(t.text)}</span>
+          <span class="opt">${jaInline(t.text)}</span>
           <span class="oid">${esc(t.id)}</span>
           <span class="hint">${isUnused ? "thẻ nhiễu (không dùng)" : `ô ${pos + 1}`}</span>
           ${provBadge(idx, t.canonicalText ?? t.text)}</li>`);
@@ -368,7 +397,7 @@ function renderExercise(idx, e, n) {
       for (const w of e.wordBank ?? []) {
         const ok = used.has(w.id);
         out.push(`<li class="${ok ? "ok" : "no"}">${ok ? MARK_OK : MARK_NO}
-          <span class="opt ja">${esc(w.text)}</span>
+          <span class="opt">${jaInline(w.text)}</span>
           <span class="oid">${esc(w.id)}</span>
           ${ok ? "" : `<span class="hint">thẻ nhiễu</span>`}
           ${provBadge(idx, w.canonicalText ?? w.text)}</li>`);
@@ -399,7 +428,7 @@ function renderExercise(idx, e, n) {
       out.push(`<table class="pairs"><thead><tr><th>ô</th><th>đáp án hiện</th><th>chấp nhận</th></tr></thead><tbody>`);
       for (const s of e.slots ?? []) {
         out.push(`<tr><td>${esc(s.id)}</td>
-          <td class="ja">${esc(s.displayText)} ${provBadge(idx, s.canonicalText ?? s.displayText)}</td>
+          <td>${jaInline(s.displayText)} ${provBadge(idx, s.canonicalText ?? s.displayText)}</td>
           <td class="ja">${(s.acceptedAnswers ?? []).map((a) => esc(a)).join(" · ")}</td></tr>`);
       }
       out.push(`</tbody></table>`);
@@ -432,11 +461,7 @@ function renderExercise(idx, e, n) {
         const tr = ln.translationByNative?.[NAT] ?? ln.translations?.[NAT] ?? ln.meaningVi;
         out.push(`<tr>
           <td class="spk">${i + 1}. ${esc(ln.speakerId ?? "")}</td>
-          <td>
-            <div class="ja">${esc(ln.displayText ?? ln.targetText)} ${provBadge(idx, ln.targetText ?? ln.displayText)}</div>
-            <div class="rd">${esc(ln.reading ?? "")}${ln.romanization ? ` · ${esc(ln.romanization)}` : ""}</div>
-            <div class="tr">${esc(tr ?? "")}</div>
-          </td></tr>`);
+          <td>${jaSentence(ln.displayText ?? ln.targetText, tr, provBadge(idx, ln.targetText ?? ln.displayText), ln.romanization ?? "")}</td></tr>`);
         const d = dividers.get(i);
         if (d) {
           const dt = d.displayText ?? d.targetText ?? d.text ?? "";
@@ -559,6 +584,26 @@ nav a{margin-right:1rem;color:var(--vb);text-decoration:none;font-size:.9rem}
 .ja{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif;font-size:1.06rem}
 .rd{color:var(--mut);font-size:.88rem}
 .tr{font-size:.93rem}
+
+/* ── CÂU NHẬT 3 DÒNG ──
+   Ruby luôn nằm trong DOM; CSS quyết định hiện hay không, nên bật/tắt không
+   phải dựng lại trang và không đụng dữ liệu. */
+.s{margin:.35rem 0}
+.s1{line-height:1.9}
+ruby rt{display:none;font-size:.5em;color:var(--vb);font-weight:400}
+:root[data-furi="1"] ruby rt{display:revert}
+:root[data-furi="1"] .s1{line-height:2.5}
+.s2{display:none;color:var(--mut);font-size:.9rem;letter-spacing:.01em;
+font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif}
+:root[data-kana="1"] .s2{display:block}
+.s2x{color:var(--mut);font-size:.82rem;font-style:italic}
+.s3{font-size:.93rem}
+#aids{position:sticky;top:0;z-index:10;background:var(--bg);
+border-bottom:1px solid var(--line);padding:.5rem 0;margin-bottom:.4rem;
+display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center}
+#aids label{font-size:.86rem;cursor:pointer;user-select:none;
+display:inline-flex;align-items:center;gap:.35rem}
+#aids .hint2{color:var(--mut);font-size:.78rem}
 .sit,.mean{color:var(--mut);font-style:italic;margin:.3rem 0}
 .prompt{font-weight:600;margin:.4rem 0}
 table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.93rem}
@@ -634,6 +679,12 @@ export function buildPreview(lessonId) {
     `<h1>${esc(title)}</h1>`,
     `<div class="meta">${esc(lessonId)} · ${esc(lesson.level ?? "")} · ${esc(lesson.lessonFormat ?? "")} · ngôn ngữ mẹ đẻ hiển thị: <b>${NAT}</b> · provenance ${items.length} mục${provNote}<br>Sinh lúc ${new Date().toISOString()} bằng <code>scripts/preview-lesson.mjs</code></div>`,
     `<nav><a href="#c1">① Intro</a><a href="#c2">② Từ vựng</a><a href="#c3">③ Hội thoại</a><a href="#c4">④ Ngữ pháp</a><a href="#c5">⑤ Bài tập</a><a href="#prov">⑥ Provenance</a></nav>`,
+    // Hai công tắc trợ đọc, theo đúng lối Q14 (Q14ReadingAidSessionStore):
+    // nhớ trong PHIÊN, không ghi đĩa, mỗi công tắc một trạng thái độc lập.
+    `<div id="aids">
+      <label><input type="checkbox" id="tFuri"> Furigana từng chữ <span class="hint2">(kana trên đầu kanji)</span></label>
+      <label><input type="checkbox" id="tKana" checked> Dòng đọc kana <span class="hint2">(tách theo ranh giới khối)</span></label>
+    </div>`,
     renderIntro(lesson, idx),
     renderVocabulary(lesson, idx),
     renderDialogue(lesson, idx),
@@ -649,6 +700,27 @@ export function buildPreview(lessonId) {
 <title>DUYỆT — ${esc(title)} (${esc(lessonId)})</title>
 <style>${CSS}</style></head><body>
 ${body}
+<script>
+// Trợ đọc — nhớ theo PHIÊN (sessionStorage), giống Q14ReadingAidSessionStore
+// bên app: đóng tab là quên, không ghi đĩa.
+(function () {
+  var root = document.documentElement;
+  function bind(id, key, def) {
+    var box = document.getElementById(id);
+    if (!box) return;
+    var saved = sessionStorage.getItem(key);
+    var on = saved === null ? def : saved === "1";
+    box.checked = on;
+    root.setAttribute(key, on ? "1" : "0");
+    box.addEventListener("change", function () {
+      root.setAttribute(key, box.checked ? "1" : "0");
+      sessionStorage.setItem(key, box.checked ? "1" : "0");
+    });
+  }
+  bind("tFuri", "data-furi", false);
+  bind("tKana", "data-kana", true);
+})();
+</script>
 </body></html>`;
 
   fs.mkdirSync(OUT_DIR, { recursive: true });

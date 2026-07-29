@@ -26,6 +26,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readingFromFurigana } from "./lib/japanese-furigana.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -250,6 +251,72 @@ export function checkCoverage(lessonId, items, lessonsFile = "shared/generated/l
   return { total: found.size, exempt, missing };
 }
 
+// ───────────────────────────────────────────────────────────────────────────
+// R12d — FURIGANA phải khớp DÒNG ĐỌC của chính câu đó.
+//
+// Vì sao cần: cổng nguyên văn CHUẨN HOÁ BỎ furigana trước khi so, nên một chú
+// âm sai vẫn PASS. Đo được hai ca lọt hết mọi cổng: 日本（にっぽん） và
+// 9月（つき）. Kiểm này ráp ngược chú âm trong ngoặc + phần chữ thường thành
+// một dòng kana, rồi so với dòng đọc người viết. Lệch là FAIL.
+//
+// So phần KANA thôi (bỏ dấu câu, khoảng trắng, chữ Latin): dấu câu giữa mặt
+// chữ và dòng đọc hay lệch nhau vô hại, còn trợ từ thì đều là kana nên vẫn
+// bị bắt đầy đủ.
+// ───────────────────────────────────────────────────────────────────────────
+const kanaOnly = (s) =>
+  String(s ?? "")
+    .replace(/[ァ-ヶ]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0x60))
+    .replace(/[^぀-ゟー]/g, "");
+
+export function checkFuriganaAgainstReading(displayText, reading) {
+  const text = String(displayText ?? "");
+  if (!/（[぀-ゟー]+）/.test(text)) return { ok: true, skipped: "không có furigana" };
+  if (typeof reading !== "string" || !reading.trim()) {
+    return { ok: true, skipped: "không có dòng đọc để so" };
+  }
+  const { kana } = readingFromFurigana(text);
+  const got = kanaOnly(kana);
+  const want = kanaOnly(reading);
+  if (got === want) return { ok: true, kana: got };
+  return { ok: false, got, want };
+}
+
+/**
+ * Chạy R12d cho CẢ BÀI: mọi node vừa có trường hiển thị đã gắn furigana, vừa
+ * có dòng đọc kana (reading / audioText).
+ */
+export function checkLessonFurigana(lessonId, lessonsFile = "shared/generated/lessons.json") {
+  const abs = path.join(ROOT, lessonsFile);
+  if (!existsSync(abs)) return null;
+  const all = JSON.parse(readFileSync(abs, "utf8"));
+  const lesson = (all.lessons ?? all).find((l) => l.id === lessonId);
+  if (!lesson) return null;
+
+  const KANA_LINE = /^[぀-ゟ゠-ヿー、。！？\s]+$/;
+  const checked = [];
+  const failed = [];
+  const walk = (n, p) => {
+    if (Array.isArray(n)) return n.forEach((v, i) => walk(v, `${p}[${i}]`));
+    if (!n || typeof n !== "object") return;
+    const line =
+      (typeof n.reading === "string" && n.reading.trim() && n.reading) ||
+      (typeof n.audioText === "string" && KANA_LINE.test(n.audioText) && n.audioText) ||
+      null;
+    for (const [k, v] of Object.entries(n)) {
+      const here = p ? `${p}.${k}` : k;
+      if (typeof v === "string") {
+        if (!COVERAGE_FIELDS.includes(k) || !line) continue;
+        const r = checkFuriganaAgainstReading(v, line);
+        if (r.skipped) continue;
+        checked.push(here);
+        if (!r.ok) failed.push([here, v, line, r.got, r.want]);
+      } else walk(v, here);
+    }
+  };
+  walk(lesson, "");
+  return { checked: checked.length, failed };
+}
+
 export function checkExampleMatchesPattern(example, surfaces) {
   const e = normalize(example);
   const list = (Array.isArray(surfaces) ? surfaces : [surfaces]).filter(Boolean).map(normalize);
@@ -388,6 +455,21 @@ function main() {
     fail += cov.missing.length;
   } else {
     console.log("── KIỂM PHỦ ── BỎ QUA (chưa có bài trong lessons.json)");
+  }
+
+  const furi = checkLessonFurigana(doc.lessonId);
+  if (furi) {
+    console.log("── R12d FURIGANA ↔ DÒNG ĐỌC ──");
+    console.log(`  kiểm ${furi.checked} chuỗi · LỆCH ${furi.failed.length}`);
+    for (const [p, text, line, got, want] of furi.failed) {
+      console.log(`  FAIL  ${p}`);
+      console.log(`          mặt chữ  : ${text}`);
+      console.log(`          ráp ngược: ${got}`);
+      console.log(`          dòng đọc : ${want}   (${line})`);
+    }
+    fail += furi.failed.length;
+  } else {
+    console.log("── R12d FURIGANA ↔ DÒNG ĐỌC ── BỎ QUA (chưa có bài trong lessons.json)");
   }
 
   if (needEyes.length) {

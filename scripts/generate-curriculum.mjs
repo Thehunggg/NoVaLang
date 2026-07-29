@@ -19,7 +19,7 @@ import { fileURLToPath } from "node:url";
 import { KATAKANA_E8_SPECS } from "./katakana-e8-specs.mjs";
 import { ENGLISH_E8_SPECS } from "./english-e8-specs.mjs";
 import { NATIVE_CODES } from "./lib/native-localization.mjs";
-import { addFurigana, hasFurigana, hasKanji, initFurigana } from "./lib/japanese-furigana.mjs";
+import { annotateFromIndex, deriveFurigana, furiganaPairs, hasFurigana, hasKanji } from "./lib/japanese-furigana.mjs";
 
 /** Trường HIỂN THỊ cho người học — đúng bộ đã dùng khi rà 217 chỗ thiếu. */
 const FURIGANA_DISPLAY_FIELDS = new Set([
@@ -4111,30 +4111,113 @@ npm run sync:flutter-assets
 \`\`\`
 `;
 
-  // FURIGANA (owner chốt 2026-07-25): mọi kanji HIỂN THỊ cho người học phải kèm
-  // hiragana ở mọi cấp độ. Gắn ở một chỗ duy nhất, ngay trước khi ghi, thay vì
-  // rải tay qua từng chuỗi nguồn — nội dung mới tự có furigana, không phải nhớ.
+  // ─── FURIGANA ───────────────────────────────────────────────────────────
+  // Luật owner (2026-07-25): mọi kanji HIỂN THỊ cho người học phải kèm
+  // hiragana ở mọi cấp độ. Gắn ở MỘT chỗ duy nhất, ngay trước khi ghi.
   //
-  // CHỈ đụng trường HIỂN THỊ. Các trường máy dùng (reading · speechText ·
-  // canonicalText · audioText · romanization) phải giữ nguyên: chúng feed TTS và
+  // 2026-07-29 — BỎ HẲN TỪ ĐIỂN KHỎI ĐƯỜNG FURIGANA (owner chốt).
+  //
+  // Bản cũ hỏi kuromoji/IPADIC lấy cách đọc. Từ điển ĐOÁN, và đoán sai lặng
+  // lẽ: đo được 日本 → にっぽん (phải にほん) và 9月 → つき (phải くがつ).
+  // Cả hai lọt mọi cổng vì furigana bị chuẩn hoá bỏ đi trước khi so nguyên văn.
+  //
+  // Giờ mọi kana đều truy được về một dòng đọc NGƯỜI VIẾT tự tra và đã duyệt.
+  // Hai lượt, phạm vi TỪNG BÀI:
+  //
+  //   Lượt 1 — câu có dòng đọc riêng (reading, hoặc audioText khi audioText
+  //            thật sự là kana): RÁP mặt chữ với dòng đọc đó để biết cụm kana
+  //            nào thuộc cụm kanji nào. Ráp ra ≠1 cách → THROW.
+  //            Mỗi cặp (cụm kanji → kana) ráp được ghi vào SỔ TRA CỦA BÀI.
+  //
+  //   Lượt 2 — mảnh câu KHÔNG có dòng đọc riêng (chat segment, nhãn phương
+  //            án): tra SỔ của chính bài đó. Cụm chưa có trong sổ, hoặc bài
+  //            ghi cụm đó bằng hai cách đọc khác nhau → THROW.
+  //
+  // Máy không còn "biết" âm đọc của chữ nào; nó chỉ cắt và dùng lại chuỗi
+  // người viết đã cung cấp trong CÙNG BÀI.
+  //
+  // CHỈ đụng trường HIỂN THỊ. Trường máy dùng (reading · speechText ·
+  // canonicalText · audioText · romanization) giữ nguyên: chúng feed TTS và
   // bộ chấm, thêm ngoặc vào là hỏng cả hai.
-  await initFurigana();
-  const furiganaCount = { annotated: 0, skipped: 0 };
-  const applyFurigana = (node) => {
+  const furiganaCount = { derived: 0, fromIndex: 0, kept: 0 };
+  const furiganaErrors = [];
+
+  // Dòng đọc của CHÍNH node đó. audioText chỉ nhận khi thật sự là kana — với
+  // phương án tiếng Việt thì audioText là tiếng Việt, không phải dòng đọc.
+  const KANA_ONLY = /^[぀-ゟ゠-ヿー、。！？\s]+$/;
+  const kanaLineOf = (node) => {
+    if (typeof node.reading === "string" && node.reading.trim()) return node.reading;
+    if (typeof node.audioText === "string" && KANA_ONLY.test(node.audioText)) return node.audioText;
+    return null;
+  };
+
+  const furiganaPass = (node, where, index, phase) => {
     if (!node || typeof node !== "object") return;
-    if (Array.isArray(node)) return node.forEach(applyFurigana);
+    if (Array.isArray(node)) {
+      node.forEach((v, i) => furiganaPass(v, where + "[" + i + "]", index, phase));
+      return;
+    }
+    const here = typeof node.id === "string" && node.id.includes("-") ? node.id : where;
     for (const [key, value] of Object.entries(node)) {
       if (typeof value === "string") {
         if (!FURIGANA_DISPLAY_FIELDS.has(key) || !hasKanji(value)) continue;
-        if (hasFurigana(value)) { furiganaCount.skipped += 1; continue; }
-        node[key] = addFurigana(value);
-        furiganaCount.annotated += 1;
-      } else applyFurigana(value);
+        if (hasFurigana(value)) {
+          if (phase === 1) {
+            furiganaCount.kept += 1;
+            for (const [run, kana] of furiganaPairs(value)) {
+              if (!index.has(run)) index.set(run, new Set());
+              index.get(run).add(kana);
+            }
+          }
+          continue;
+        }
+        const kanaLine = kanaLineOf(node);
+        if (phase === 1) {
+          if (!kanaLine) continue; // để lượt 2 xử
+          try {
+            const annotated = deriveFurigana(value, kanaLine, here + "." + key);
+            node[key] = annotated;
+            furiganaCount.derived += 1;
+            for (const [run, kana] of furiganaPairs(annotated)) {
+              if (!index.has(run)) index.set(run, new Set());
+              index.get(run).add(kana);
+            }
+          } catch (err) {
+            furiganaErrors.push(err.message);
+          }
+        } else {
+          try {
+            node[key] = annotateFromIndex(value, index, here + "." + key);
+            furiganaCount.fromIndex += 1;
+          } catch (err) {
+            furiganaErrors.push(err.message);
+          }
+        }
+      } else furiganaPass(value, here + "." + key, index, phase);
     }
   };
-  for (const payload of [coursesPayload, lessonsPayload]) applyFurigana(payload);
+
+  // Sổ tra dùng CHUNG cho cả kho, không cắt theo từng bài: bài tổng hợp cuối
+  // Unit nằm ở payload course chứ không nằm trong danh sách lesson, mà chất
+  // liệu của nó lại lấy từ 3 bài con (§G7) — cắt theo bài thì nó không tra
+  // được 田中 / 何 mà chính 3 bài kia đã ghi rõ cách đọc.
+  //
+  // Dùng chung sổ KHÔNG nới lỏng an toàn: chốt chặn là luật "một cụm chỉ
+  // được có ĐÚNG MỘT cách đọc trong sổ" — hai bài ghi 何 thành なに và なん
+  // thì annotateFromIndex THROW chứ không chọn hộ.
+  const furiganaIndex = new Map();
+  for (const payload of [lessonsPayload, coursesPayload]) furiganaPass(payload, "", furiganaIndex, 1);
+  for (const payload of [lessonsPayload, coursesPayload]) furiganaPass(payload, "", furiganaIndex, 2);
+  if (furiganaErrors.length) {
+    throw new Error(
+      "[furigana] " + furiganaErrors.length + " chuỗi hiển thị không gắn được furigana.\n\n" +
+        furiganaErrors.join("\n\n"),
+    );
+  }
   console.log(
-    `furigana: gắn ${furiganaCount.annotated} chuỗi, bỏ qua ${furiganaCount.skipped} chuỗi đã có`,
+    "furigana: ráp " + furiganaCount.derived + " chuỗi từ dòng đọc người viết · " +
+      furiganaCount.fromIndex + " mảnh tra sổ của chính bài · giữ nguyên " +
+      furiganaCount.kept + " chuỗi có sẵn · 0 chuỗi tra từ điển",
   );
   for (const dir of OUT_DIRS) {
     await mkdir(dir, { recursive: true });

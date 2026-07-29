@@ -867,3 +867,45 @@ Owner cấp phép ngoại lệ một lần để đổi tên (không sửa nội
 
 Thư mục `n5/` có sẵn nên chuyển vào đó, không tạo thư mục mới.
 Mọi tham chiếu tới nguồn này trong provenance dùng path CHÍNH THỨC ở trên.
+
+---
+
+# LÀM SAU — chưa làm, ghi để không quên
+
+## LS-1. Đem lối hiển thị 3 DÒNG lên APP THẬT (web + Flutter)
+
+**Trạng thái: CHƯA LÀM.** Ghi ngày 2026-07-29, ngay sau khi dựng xong ở
+trang duyệt tĩnh (`scripts/preview-lesson.mjs`).
+
+Trang duyệt hiện vẽ mỗi câu Nhật thành **3 dòng**, owner đã xem và chốt lối
+này. App thật thì **chưa** — vẫn vẽ mặt chữ kèm ngoặc furigana thẳng trong
+dòng.
+
+| dòng | nội dung | nguồn dữ liệu |
+|---|---|---|
+| (1) | câu Nhật **sạch**, bỏ ngoặc furigana | `displayText` bóc ngoặc |
+| (2) | dòng kana **wakachigaki** (có khoảng cách) | ráp từ chính dữ liệu ngoặc |
+| (3) | dịch theo `nativeLanguageCode` | `translationByNative` |
+
+Kèm **2 công tắc** theo đúng lối Q14 đã có
+(`Q14ReadingAidSessionStore`, `five_card_exercise_flow.dart`): *Furigana từng
+chữ* (kana ruby trên đầu kanji ở dòng 1) và *Dòng đọc kana* (bật/tắt dòng 2).
+Nhớ theo **phiên**, không ghi đĩa.
+
+**Điều kiện bắt buộc: PARSE Ở MỘT CHỖ.** Phép cắt `displayText` thành
+[cụm kanji → kana] hiện nằm ở `scripts/lib/japanese-furigana.mjs`
+(`splitFurigana` · `readingFromFurigana`). Đem lên app thì port đúng phép đó
+sang **một** chỗ dùng chung (một hàm Dart + một hàm TS), rồi cả web lẫn
+Flutter gọi vào. **Không** để mỗi nền tảng tự bóc ngoặc — làm thế là ba bản
+cắt khác nhau, đúng vết xe của ca `japanese-furigana` vs
+`japanese-pronunciation` lệch nhau ở 日本 (đã phải vá 2026-07-29).
+
+Làm một lần thì **mọi bài đều ăn**, không phải sửa nội dung bài nào.
+
+**Vướng còn treo:** ranh giới khối ở dòng (2) cắt theo dữ liệu ngoặc nên
+okurigana tách khỏi kanji — `来（き）て` ra `き て`, `慣（な）れました` ra
+`な れました`. Muốn dính liền thành `きて` / `なれました` thì phải biết ranh
+giới TỪ THẬT, tức cần bộ tách từ — thứ vừa bị cấm khỏi đường furigana vì nó
+đoán sai âm đọc. Nếu đem lên app thì owner chốt trước: chịu cắt theo khối,
+hay cho dùng bộ tách từ **chỉ để chia khoảng cách hiển thị**, tuyệt đối không
+cho nó đụng vào âm đọc.

@@ -7,6 +7,7 @@ import {
   normalize, blockedEntry,
   loadJmdictIndex, checkReadingAgainstJmdict,
   checkMutation, checkExampleMatchesPattern,
+  checkFuriganaAgainstReading,
 } from "./verify-provenance.mjs";
 
 let pass = 0;
@@ -65,6 +66,28 @@ t("FAIL: ví dụ KHÔNG chứa mẫu nào",
   checkExampleMatchesPattern("わたしはがくせいです。", ["てから"]).ok, false);
 t("PASS: khớp qua biến thể thứ hai đã khai",
   checkExampleMatchesPattern("あのひとはゆうめいになりました。", ["になる", "になりまし"]).ok, true);
+
+console.log("");
+console.log("=== R12d · FURIGANA ↔ DÒNG ĐỌC ===");
+// Ca THẬT: chính hai lỗi đã lọt mọi cổng và bị owner bắt trên trang duyệt.
+t("FAIL: 9月（つき） trong khi dòng đọc là くがつ",
+  checkFuriganaAgainstReading("去年（きょねん）の9月（つき）に来（き）ました。", "きょねんのくがつにきました。").ok, false);
+t("PASS: 9月（くがつ） khớp dòng đọc",
+  checkFuriganaAgainstReading("去年（きょねん）の9月（くがつ）に来（き）ました。", "きょねんのくがつにきました。").ok, true);
+t("FAIL: 日本（にっぽん） trong khi dòng đọc là にほん",
+  checkFuriganaAgainstReading("日本（にっぽん）に来（き）て、どのぐらいですか？", "にほんにきて、どのぐらいですか？").ok, false);
+t("PASS: 日本（にほん） khớp dòng đọc",
+  checkFuriganaAgainstReading("日本（にほん）に来（き）て、どのぐらいですか？", "にほんにきて、どのぐらいですか？").ok, true);
+t("FAIL: 1年（ねん） bỏ sót cách đọc của chữ số",
+  checkFuriganaAgainstReading("1年（ねん）になります。", "いちねんになります。").ok, false);
+t("PASS: 1年（いちねん） khai đủ cả chữ số",
+  checkFuriganaAgainstReading("1年（いちねん）になります。", "いちねんになります。").ok, true);
+t("PASS: khác nhau ở DẤU CÂU thì không tính lệch",
+  checkFuriganaAgainstReading("私（わたし）です", "わたしです。").ok, true);
+t("BỎ QUA: chuỗi không có furigana thì không kiểm",
+  Boolean(checkFuriganaAgainstReading("こんにちは。", "こんにちは。").skipped), true);
+t("BỎ QUA: không có dòng đọc thì không kiểm",
+  Boolean(checkFuriganaAgainstReading("私（わたし）です。", "").skipped), true);
 
 console.log("");
 console.log(`TỔNG — OK ${pass} · SAI ${fail}`);
