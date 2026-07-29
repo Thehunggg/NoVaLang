@@ -15,7 +15,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { normalize } from "./verify-provenance.mjs";
-import { hasKanji, readingFromFurigana, splitFurigana } from "./lib/japanese-furigana.mjs";
+import { hasKanji, readingFromFurigana, stripFurigana } from "./lib/japanese-furigana.mjs";
 
 const LESSONS_FILE = "shared/generated/lessons.json";
 const PROV_DIR = "shared/content/curriculum/provenance";
@@ -44,8 +44,8 @@ const asList = (v) => (v === undefined || v === null ? [] : Array.isArray(v) ? v
 const nl2br = (s) => esc(s).replace(/\n/g, "<br>");
 
 /* ───────────────── câu Nhật — 3 dòng (owner chốt 2026-07-29) ─────────────────
- * (1) câu SẠCH, bỏ ngoặc furigana. Bật [Furigana từng chữ] thì kana hiện
- *     dạng ruby TRÊN ĐẦU kanji — cùng một DOM, CSS bật/tắt <rt>.
+ * (1) câu SẠCH, bỏ ngoặc furigana. Owner BỎ lối ruby — không kana trên đầu
+ *     kanji, dòng chính luôn sạch, đúng như app thật.
  * (2) dòng kana WAKACHIGAKI — chèn khoảng cách theo RANH GIỚI KHỐI lấy thẳng
  *     từ dữ liệu ngoặc (mỗi cụm kanji（kana） một khối, chữ giữa các khối một
  *     khối). KHÔNG đoán ranh giới từ, KHÔNG đụng trường reading của bài.
@@ -53,10 +53,9 @@ const nl2br = (s) => esc(s).replace(/\n/g, "<br>");
  * Câu không có kanji thì không có ngoặc → không có dòng (2), giữ nguyên.
  * ─────────────────────────────────────────────────────────────────────────── */
 
-const rubyHtml = (text) =>
-  splitFurigana(text)
-    .map((p) => (p.kana ? `<ruby>${esc(p.text)}<rt>${esc(p.kana)}</rt></ruby>` : esc(p.text)))
-    .join("");
+// Owner BỎ lối ruby (2026-07-29): dòng chính luôn SẠCH, không kana trên đầu
+// kanji. Trợ đọc chỉ còn dòng kana wakachigaki bên dưới — đúng như app thật.
+const cleanJa = (text) => esc(stripFurigana(text));
 
 const wakachigaki = (text) => readingFromFurigana(text).blocks.join(" ");
 
@@ -68,7 +67,7 @@ function jaSentence(text, translation, badge = "", extra = "") {
   const t = String(text ?? "");
   if (!t) return "";
   const out = [`<div class="s">`];
-  out.push(`<div class="s1 ja">${rubyHtml(t)}${badge}</div>`);
+  out.push(`<div class="s1 ja">${cleanJa(t)}${badge}</div>`);
   if (hasKanji(t) && /（[぀-ゟー]+）/.test(t)) {
     out.push(`<div class="s2">${esc(wakachigaki(t))}</div>`);
   }
@@ -78,8 +77,8 @@ function jaSentence(text, translation, badge = "", extra = "") {
   return out.join("\n");
 }
 
-/** Câu Nhật gọn một dòng (ô bảng, nhãn phương án): sạch ngoặc + ruby được. */
-const jaInline = (text) => `<span class="ja s1">${rubyHtml(String(text ?? ""))}</span>`;
+/** Câu Nhật gọn một dòng (ô bảng, nhãn phương án): sạch ngoặc. */
+const jaInline = (text) => `<span class="ja s1">${cleanJa(String(text ?? ""))}</span>`;
 
 /* ─────────────────────── tra provenance ─────────────────────── */
 
@@ -590,9 +589,6 @@ nav a{margin-right:1rem;color:var(--vb);text-decoration:none;font-size:.9rem}
    phải dựng lại trang và không đụng dữ liệu. */
 .s{margin:.35rem 0}
 .s1{line-height:1.9}
-ruby rt{display:none;font-size:.5em;color:var(--vb);font-weight:400}
-:root[data-furi="1"] ruby rt{display:revert}
-:root[data-furi="1"] .s1{line-height:2.5}
 .s2{display:none;color:var(--mut);font-size:.9rem;letter-spacing:.01em;
 font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif}
 :root[data-kana="1"] .s2{display:block}
@@ -682,7 +678,6 @@ export function buildPreview(lessonId) {
     // Hai công tắc trợ đọc, theo đúng lối Q14 (Q14ReadingAidSessionStore):
     // nhớ trong PHIÊN, không ghi đĩa, mỗi công tắc một trạng thái độc lập.
     `<div id="aids">
-      <label><input type="checkbox" id="tFuri"> Furigana từng chữ <span class="hint2">(kana trên đầu kanji)</span></label>
       <label><input type="checkbox" id="tKana" checked> Dòng đọc kana <span class="hint2">(tách theo ranh giới khối)</span></label>
     </div>`,
     renderIntro(lesson, idx),
@@ -717,7 +712,6 @@ ${body}
       sessionStorage.setItem(key, box.checked ? "1" : "0");
     });
   }
-  bind("tFuri", "data-furi", false);
   bind("tKana", "data-kana", true);
 })();
 </script>
