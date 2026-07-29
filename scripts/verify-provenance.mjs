@@ -208,6 +208,48 @@ export function checkMutation(mutation, text, corpus) {
 
 // ── R12c: VÍ DỤ ĐÚNG MẪU ─────────────────────────────────────────────────
 /** Câu ví dụ của grammarPattern phải CHỨA chuỗi bề mặt của mẫu (hoặc biến thể đã khai). */
+// ── KIỂM PHỦ — mọi trường tiếng Nhật HIỂN THỊ phải có item khai ──────────
+// Nhập thẳng vào cổng: nó đã bắt 2 lỗi mà cổng không thấy (câu ngoài sổ, và
+// furigana generator đoán sai) — để rời thành script thì sang batch sau sẽ quên.
+const COVERAGE_FIELDS = ["targetText", "displayText", "text", "canonicalText", "term"];
+const COVERAGE_EXEMPT = /\.formula$/; // G14-R2: formula không khai
+
+/** Gom mọi chuỗi tiếng Nhật hiển thị trong một lesson đã sinh. */
+export function collectDisplayedJapanese(lesson) {
+  const out = new Map();
+  const JP = /[぀-ヿ一-鿿]/;
+  const walk = (n, p) => {
+    if (Array.isArray(n)) return n.forEach((v, i) => walk(v, `${p}[${i}]`));
+    if (!n || typeof n !== "object") return;
+    for (const [k, v] of Object.entries(n)) {
+      const here = p ? `${p}.${k}` : k;
+      if (typeof v === "string" && JP.test(v) && COVERAGE_FIELDS.includes(k)) out.set(here, v);
+      else walk(v, here);
+    }
+  };
+  walk(lesson.fiveCardContent, "fiveCardContent");
+  walk({ vocabulary: lesson.vocabulary }, "");
+  return out;
+}
+
+/** @returns {{total:number, exempt:number, missing:Array<[string,string]>}} */
+export function checkCoverage(lessonId, items, lessonsFile = "shared/generated/lessons.json") {
+  const abs = path.join(ROOT, lessonsFile);
+  if (!existsSync(abs)) return null;
+  const all = JSON.parse(readFileSync(abs, "utf8"));
+  const lesson = (all.lessons ?? all).find((l) => l.id === lessonId);
+  if (!lesson) return null;
+  const declared = new Set(items.map((i) => normalize(i.targetText)));
+  const found = collectDisplayedJapanese(lesson);
+  let exempt = 0;
+  const missing = [];
+  for (const [p, v] of found) {
+    if (COVERAGE_EXEMPT.test(p)) { exempt += 1; continue; }
+    if (!declared.has(normalize(v))) missing.push([p, v]);
+  }
+  return { total: found.size, exempt, missing };
+}
+
 export function checkExampleMatchesPattern(example, surfaces) {
   const e = normalize(example);
   const list = (Array.isArray(surfaces) ? surfaces : [surfaces]).filter(Boolean).map(normalize);
@@ -295,7 +337,9 @@ function main() {
       pass += 1;
       bySource.set(item.source, (bySource.get(item.source) ?? 0) + 1);
       if (!uniqBySource.has(item.source)) uniqBySource.set(item.source, new Set());
-      uniqBySource.get(item.source).add(normalize(item.targetText));
+      // Dedupe theo CÂU MẸ (source+line): mảnh token/canonicalText trỏ cùng
+      // câu nên không đếm riêng — nếu không, tỉ lệ bị mảnh làm lệch.
+      uniqBySource.get(item.source).add(`${item.source}:${item.line}`);
       if (r.level === 2) { weak.push(item.path + " (mức 2)"); needEyes.push([4, item.path, item.targetText, "PASS qua chuẩn hoá MỨC 2"]); }
       const lv = r.level === 2 ? " [chuẩn hoá MỨC 2]" : "";
       console.log(`  PASS     ${item.path}  ←  ${item.source}:${item.line}${lv}`);
@@ -310,7 +354,51 @@ function main() {
   }
 
   console.log("");
-  console.log(`TỔNG — nguyên văn PASS ${pass} · FAIL ${fail} · tự soạn ${authored}`);
+  console.log("── TỈ LỆ NGUỒN (G14-R10) ──");
+  const totU = [...uniqBySource.values()].reduce((a, s) => a + s.size, 0);
+  const totF = [...bySource.values()].reduce((a, n) => a + n, 0);
+  for (const [src, n] of bySource) {
+    const u = uniqBySource.get(src).size;
+    console.log(
+      `  ${src.split("/").pop().padEnd(28)} câu mẹ ${String(u).padStart(3)} (${Math.round((u * 100) / totU)}%)` +
+        ` · trường ${String(n).padStart(3)} (${Math.round((n * 100) / totF)}%)`,
+    );
+  }
+  console.log("── AUTHORED theo reason ──");
+  for (const [r, n] of [...authoredByReason].sort((a, b) => b[1] - a[1])) {
+    console.log(`  ${String(n).padStart(3)}  ${r}`);
+  }
+  console.log("── MUTATION theo op ──");
+  for (const [op, n] of mutationByOp) console.log(`  ${String(n).padStart(3)}  ${op}`);
+  console.log(`── PASS-YẾU ── ${weak.length ? weak.join(", ") : "0"}`);
+
+  const cov = checkCoverage(doc.lessonId, items);
+  if (cov) {
+    const need = cov.total - cov.exempt;
+    console.log("── KIỂM PHỦ ──");
+    console.log(
+      `  trường hiển thị ${cov.total} · miễn khai ${cov.exempt} · phải khai ${need}` +
+        ` · item ${items.length} · THIẾU ${cov.missing.length}`,
+    );
+    for (const [p, v] of cov.missing.slice(0, 20)) {
+      console.log(`  THIẾU  ${p} = ${JSON.stringify(v)}`);
+    }
+    fail += cov.missing.length;
+  } else {
+    console.log("── KIỂM PHỦ ── BỎ QUA (chưa có bài trong lessons.json)");
+  }
+
+  if (needEyes.length) {
+    console.log("── CẦN MẮT NGƯỜI ──");
+    needEyes
+      .sort((a, b) => a[0] - b[0])
+      .forEach(([, p, t, why], i) => console.log(`  ${i + 1}. [${why}] ${p} = ${JSON.stringify(t)}`));
+  }
+
+  console.log("");
+  console.log(
+    `TỔNG — nguyên văn PASS ${pass} · FAIL ${fail} · tự soạn ${authored} · mutation ${mutations}`,
+  );
   if (fail > 0) process.exit(1);
 }
 
