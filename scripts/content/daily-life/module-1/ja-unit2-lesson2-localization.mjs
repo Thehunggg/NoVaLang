@@ -97,7 +97,9 @@ add('になります dùng cho cả mốc thời gian lẫn sự thay đổi tr�
 add('Trợ từ luôn là に — đổi sang が hay を là sai.', 'The particle is always に — changing it to が or を is wrong.', '助詞は必ず「に」です。「が」や「を」に変えると誤りです。');
 add('もう ＋ [động từ] ＋ ましたか', 'もう ＋ [verb] ＋ ましたか', 'もう＋［動詞］＋ましたか');
 add('Đã… chưa?', 'Have you already…?', 'もう〜しましたか。');
-add('Tôi uống thuốc rồi nên giờ ổn rồi.', 'I took the medicine, so I am fine now.', '薬を飲んだので、もう大丈夫です。');
+// Bản dịch LẤY TỪ NGUỒN n5_ngu-phap-vi.txt:927-928, nối lại hai dòng bị ngắt
+// khi bóc PDF → authored, reason "hiệu đính từ <file>:<dòng>" (§G14-R1).
+add('Tôi đã uống thuốc rồi nên bây giờ không sao.', 'I took the medicine, so I am fine now.', '薬を飲んだので、もう大丈夫です。');
 add('もう đặt trước động từ, mang nghĩa "đã… rồi".', 'もう goes before the verb and means “already”.', '「もう」は動詞の前に置き、「すでに」の意味です。');
 add('Câu đáp khẳng định là はい; đáp phủ định dùng まだ.', 'The affirmative answer is はい; the negative uses まだ.', '肯定の答えは「はい」、否定は「まだ」を使います。');
 add('まだ — đáp "vẫn chưa"', 'まだ — answering “not yet”', 'まだ — 「まだ」で答える');

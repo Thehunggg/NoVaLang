@@ -253,21 +253,21 @@ const JA_UNIT2_LESSON2_SOURCE = {
         ],
       },
       vocabularyDetails: [
-        { id: 'dono-gurai', timingAndContext: ['Hỏi độ dài thời gian.'], appropriateFor: ['Mọi đối tượng'], avoid: ['Không dùng để hỏi thời điểm — đó là いつ.'], register: 'Lịch sự.', formal: [], casual: [], overview: 'Bao lâu.', examples: [example('日本に来て、どのぐらいになりますか？', 'にほんにきて、どのぐらいになりますか？', 'Bạn đến Nhật được bao lâu rồi?', 'にほんにきて、どのぐらいになりますか')] },
-        { id: 'nareru', timingAndContext: ['Nói về việc đã quen với nơi ở hoặc công việc mới.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: 'Thân mật.', formal: ['Cách lịch sự:', '慣れました', 'Dùng với:', 'Mọi đối tượng'], casual: [], overview: 'Quen với.', examples: [example('そうですか。もう慣れましたか？', 'そうですか。もうなれましたか？', 'Vậy à. Bạn quen chưa?', 'そうですか。もうなれましたか')], notes: ['Dạng từ điển; trong hội thoại thường gặp ở dạng 慣れました.'] },
-        { id: 'nihon', timingAndContext: ['Tên nước Nhật Bản.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: 'Lịch sự.', formal: [], casual: [], overview: 'Nhật Bản.', examples: [example('日本に来て、どのぐらいですか？', 'にほんにきて、どのぐらいですか？', 'Bạn đến Nhật được bao lâu rồi?', 'にほんにきて、どのぐらいですか')] },
-        { id: 'seikatsu', timingAndContext: ['Nói về cuộc sống, sinh hoạt hằng ngày.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: 'Lịch sự.', formal: [], casual: [], overview: 'Cuộc sống, sinh hoạt.', examples: [example('そうですか。日本の生活に、もう慣れましたか？', 'そうですか。にほんのせいかつに、もうなれましたか？', 'Vậy à. Bạn quen với cuộc sống ở Nhật chưa?', 'そうですか。にほんのせいかつに、もうなれましたか')] },
-        { id: 'ni-narimasu', timingAndContext: ['Nói mốc thời gian đã tròn bao lâu.'], appropriateFor: ['Mọi đối tượng'], avoid: ['Không đổi trợ từ に thành が hay を.'], register: 'Lịch sự.', formal: [], casual: [], overview: 'Tròn / được (bao lâu).', examples: [example('1年になります。', 'いちねんになります。', 'Được tròn một năm rồi ạ.', 'いちねんになります')] },
-        { id: 'mou', timingAndContext: ['Hỏi hoặc nói việc gì đó đã xong.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: 'Lịch sự.', formal: [], casual: [], overview: 'Đã… rồi.', examples: [example('そうですか。もう慣れましたか？', 'そうですか。もうなれましたか？', 'Vậy à. Bạn quen chưa?', 'そうですか。もうなれましたか')] },
-        { id: 'mada', timingAndContext: ['Đáp rằng việc gì đó vẫn chưa xong.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: 'Lịch sự.', formal: [], casual: [], overview: 'Vẫn chưa.', examples: [example('まだ、ちょっと……。', 'まだ、ちょっと……。', 'Vẫn chưa, hơi khó một chút.', 'まだ、ちょっと')] },
-        { id: 'kyonen', timingAndContext: ['Chỉ mốc thời gian năm ngoái.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: 'Lịch sự.', formal: [], casual: [], overview: 'Năm ngoái.', examples: [example('去年の9月に来ました。', 'きょねんのくがつにきました。', 'Tôi đến vào tháng 9 năm ngoái.', 'きょねんのくがつにきました')] },
-        { id: 'sengetsu', timingAndContext: ['Chỉ mốc thời gian tháng trước.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: 'Lịch sự.', formal: [], casual: [], overview: 'Tháng trước.', examples: [example('私は、先月、来ました。', 'わたしは、せんげつ、きました。', 'Tôi mới đến tháng trước.', 'わたしは、せんげつ、きました')] },
+        { id: 'dono-gurai', timingAndContext: ['Hỏi độ dài thời gian.'], appropriateFor: ['Mọi đối tượng'], avoid: ['Không dùng để hỏi thời điểm — đó là いつ.'], register: '', formal: [], casual: [], overview: 'Bao lâu.', examples: [example('日本に来て、どのぐらいになりますか？', 'にほんにきて、どのぐらいになりますか？', 'Bạn đến Nhật được bao lâu rồi?', 'にほんにきて、どのぐらいになりますか')] },
+        { id: 'nareru', timingAndContext: ['Nói về việc đã quen với nơi ở hoặc công việc mới.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: ['Cách lịch sự:', '慣れました', 'Dùng với:', 'Mọi đối tượng'], casual: [], overview: 'Quen với.', examples: [example('そうですか。もう慣れましたか？', 'そうですか。もうなれましたか？', 'Vậy à. Bạn quen chưa?', 'そうですか。もうなれましたか')], notes: ['Dạng từ điển — mức lịch sự nằm ở cách chia: 慣れます (lịch sự) ・ 慣れる／慣れた (thân mật).'] },
+        { id: 'nihon', timingAndContext: ['Tên nước Nhật Bản.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Nhật Bản.', examples: [example('日本に来て、どのぐらいですか？', 'にほんにきて、どのぐらいですか？', 'Bạn đến Nhật được bao lâu rồi?', 'にほんにきて、どのぐらいですか')] },
+        { id: 'seikatsu', timingAndContext: ['Nói về cuộc sống, sinh hoạt hằng ngày.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Cuộc sống, sinh hoạt.', examples: [example('そうですか。日本の生活に、もう慣れましたか？', 'そうですか。にほんのせいかつに、もうなれましたか？', 'Vậy à. Bạn quen với cuộc sống ở Nhật chưa?', 'そうですか。にほんのせいかつに、もうなれましたか')] },
+        { id: 'ni-narimasu', timingAndContext: ['Nói mốc thời gian đã tròn bao lâu.'], appropriateFor: ['Mọi đối tượng'], avoid: ['Không đổi trợ từ に thành が hay を.'], register: '', formal: [], casual: [], overview: 'Tròn / được (bao lâu).', examples: [example('1年になります。', 'いちねんになります。', 'Được tròn một năm rồi ạ.', 'いちねんになります')] },
+        { id: 'mou', timingAndContext: ['Hỏi hoặc nói việc gì đó đã xong.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Đã… rồi.', examples: [example('そうですか。もう慣れましたか？', 'そうですか。もうなれましたか？', 'Vậy à. Bạn quen chưa?', 'そうですか。もうなれましたか')] },
+        { id: 'mada', timingAndContext: ['Đáp rằng việc gì đó vẫn chưa xong.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Vẫn chưa.', examples: [example('まだ、ちょっと……。', 'まだ、ちょっと……。', 'Vẫn chưa, hơi khó một chút.', 'まだ、ちょっと')] },
+        { id: 'kyonen', timingAndContext: ['Chỉ mốc thời gian năm ngoái.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Năm ngoái.', examples: [example('去年の9月に来ました。', 'きょねんのくがつにきました。', 'Tôi đến vào tháng 9 năm ngoái.', 'きょねんのくがつにきました')] },
+        { id: 'sengetsu', timingAndContext: ['Chỉ mốc thời gian tháng trước.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Tháng trước.', examples: [example('私は、先月、来ました。', 'わたしは、せんげつ、きました。', 'Tôi mới đến tháng trước.', 'わたしは、せんげつ、きました')] },
       ],
       // "Tham khảo thêm" (§B2b) — hai từ xuất hiện ở Q14, đúng mức "dư 1–2 từ
       // mới" mà §G14-R5 cho phép. FREE, không dùng ở Q1–Q13.
       vocabularyReferences: [
-        { term: '半年（はんとし）', reading: 'はんとし', speechText: 'はんとし', meaning: 'Nửa năm.', register: 'Lịch sự.', example: example('ちょうど半年です。', 'ちょうどはんとしです。', 'Đúng tròn nửa năm.') },
-        { term: 'なんとか', reading: 'なんとか', speechText: 'なんとか', meaning: 'Cũng tạm, xoay xở được.', register: 'Lịch sự.', example: example('はい、なんとか。', 'はい、なんとか。', 'Vâng, cũng tạm ạ.') },
+        { term: '半年（はんとし）', reading: 'はんとし', speechText: 'はんとし', meaning: 'Nửa năm.', register: '', example: example('ちょうど半年です。', 'ちょうどはんとしです。', 'Đúng tròn nửa năm.') },
+        { term: 'なんとか', reading: 'なんとか', speechText: 'なんとか', meaning: 'Cũng tạm, xoay xở được.', register: '', example: example('はい、なんとか。', 'はい、なんとか。', 'Vâng, cũng tạm ạ.') },
       ],
       dialogueGroups: [
         {
@@ -314,7 +314,7 @@ const JA_UNIT2_LESSON2_SOURCE = {
         },
         {
           title: 'もう ＋ [động từ] ＋ ましたか', formula: 'もう ＋ [動詞（どうし）] ＋ ましたか', formulaReading: 'もう ＋ [どうし] ＋ ましたか', meaning: 'Đã… chưa?',
-          examples: [example('そうですか。もう慣れましたか？', 'そうですか。もうなれましたか？', 'Vậy à. Bạn quen chưa?', 'そうですか。もうなれましたか'), example('くすりを のみましたから、もうだいじょうぶです。', 'くすりをのみましたから、もうだいじょうぶです。', 'Tôi uống thuốc rồi nên giờ ổn rồi.', 'くすりをのみましたから、もうだいじょうぶです')],
+          examples: [example('そうですか。もう慣れましたか？', 'そうですか。もうなれましたか？', 'Vậy à. Bạn quen chưa?', 'そうですか。もうなれましたか'), example('くすりを のみましたから、もうだいじょうぶです。', 'くすりをのみましたから、もうだいじょうぶです。', 'Tôi đã uống thuốc rồi nên bây giờ không sao.', 'くすりをのみましたから、もうだいじょうぶです')],
           explanation: ['もう đặt trước động từ, mang nghĩa "đã… rồi".', 'Câu đáp khẳng định là はい; đáp phủ định dùng まだ.'],
         },
         {

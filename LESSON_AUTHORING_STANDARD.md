@@ -1273,6 +1273,19 @@ phương án: *"trong bối cảnh này, nó có thể đúng không?"* — **mu
    nào** của nguồn thì mang nhãn đó (**đọc dữ liệu**, không phán đoán).
 3. Không áp được → `''` (§B2c) + **ghi báo cáo**.
 
+**Thẻ LEMMA vs thẻ LỜI NÓI** (owner chốt 2026-07-29, sau khi u2-l2 lộ ca này):
+- **Thẻ dạng TỪ ĐIỂN / danh từ / trạng từ** (慣れる · 半年 · 生活 · 日本 ·
+  どのぐらい…): **`register: ''`**. Chúng là **lemma**, không phải một lời nói,
+  nên không mang mức lịch sự nào. **CẤM bịa nhãn thứ tư** ("trung tính"…) —
+  §B2e là từ vựng đóng.
+- **Từ CHIA ĐƯỢC** (động từ, tính từ) thêm **một dòng `notes`** giải thích vì
+  sao trống, để người học không tưởng là thiếu dữ liệu: nêu mức lịch sự nằm ở
+  **cách chia** và liệt kê dạng lịch sự ↔ dạng thân mật. `notes` là trường
+  **render thật** ở màn từ vựng (mục "Giải thích").
+- **Danh từ / trạng từ**: `''` trơn, **không** ghi chú — chúng không chia.
+- **Thẻ dạng LỜI NÓI** (`そうですか。` · `はい、おかげさまで。`…): giữ nhãn theo
+  **đuôi câu**, đúng tầng 1 ở trên.
+
 **CẤM:** JMdict `pol/hon/hum` (phủ **1,63%**, **sai trục** — xung đột thật ở
 「お願いします」: JMdict `hum` vs NovaLang `Lịch sự.`) · ánh xạ **敬語の指針** (5 hệ
 kính ngữ ≠ 3 mức trang trọng) · lấy お/ご làm căn cứ.

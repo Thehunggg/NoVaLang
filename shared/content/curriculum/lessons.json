@@ -89703,12 +89703,7 @@
                 "時点をたずねるときには使いません。それは「いつ」です。"
               ]
             },
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "formal": [],
             "casual": [],
             "overview": "Bao lâu.",
@@ -89762,12 +89757,7 @@
               ]
             },
             "avoid": [],
-            "register": "Thân mật.",
-            "registerByNative": {
-              "vi": "Thân mật.",
-              "en": "Casual.",
-              "ja": "カジュアル。"
-            },
+            "register": "",
             "formal": [
               "Cách lịch sự:",
               "慣れました",
@@ -89815,19 +89805,8 @@
               }
             ],
             "notes": [
-              "Dạng từ điển; trong hội thoại thường gặp ở dạng 慣れました."
-            ],
-            "notesByNative": {
-              "vi": [
-                "Dạng từ điển; trong hội thoại thường gặp ở dạng 慣れました."
-              ],
-              "en": [
-                "Dictionary form; in conversation it usually appears as 慣れました."
-              ],
-              "ja": [
-                "辞書形です。会話では「慣れました」の形でよく出ます。"
-              ]
-            }
+              "Dạng từ điển — mức lịch sự nằm ở cách chia: 慣れます (lịch sự) ・ 慣れる／慣れた (thân mật)."
+            ]
           },
           {
             "id": "nihon",
@@ -89860,12 +89839,7 @@
               ]
             },
             "avoid": [],
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "formal": [],
             "casual": [],
             "overview": "Nhật Bản.",
@@ -89919,12 +89893,7 @@
               ]
             },
             "avoid": [],
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "formal": [],
             "casual": [],
             "overview": "Cuộc sống, sinh hoạt.",
@@ -89991,12 +89960,7 @@
                 "助詞「に」を「が」や「を」に変えません。"
               ]
             },
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "formal": [],
             "casual": [],
             "overview": "Tròn / được (bao lâu).",
@@ -90050,12 +90014,7 @@
               ]
             },
             "avoid": [],
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "formal": [],
             "casual": [],
             "overview": "Đã… rồi.",
@@ -90109,12 +90068,7 @@
               ]
             },
             "avoid": [],
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "formal": [],
             "casual": [],
             "overview": "Vẫn chưa.",
@@ -90168,12 +90122,7 @@
               ]
             },
             "avoid": [],
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "formal": [],
             "casual": [],
             "overview": "Năm ngoái.",
@@ -90227,12 +90176,7 @@
               ]
             },
             "avoid": [],
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "formal": [],
             "casual": [],
             "overview": "Tháng trước.",
@@ -90267,12 +90211,7 @@
               "en": "Half a year.",
               "ja": "半年。"
             },
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "example": {
               "text": "ちょうど半年（はんとし）です。",
               "reading": "ちょうどはんとしです。",
@@ -90295,12 +90234,7 @@
               "en": "Somehow, managing.",
               "ja": "なんとか。"
             },
-            "register": "Lịch sự.",
-            "registerByNative": {
-              "vi": "Lịch sự.",
-              "en": "Polite.",
-              "ja": "丁寧。"
-            },
+            "register": "",
             "example": {
               "text": "はい、なんとか。",
               "reading": "はい、なんとか。",
@@ -90796,9 +90730,9 @@
               {
                 "text": "くすりを のみましたから、もうだいじょうぶです。",
                 "reading": "くすりをのみましたから、もうだいじょうぶです。",
-                "translation": "Tôi uống thuốc rồi nên giờ ổn rồi.",
+                "translation": "Tôi đã uống thuốc rồi nên bây giờ không sao.",
                 "translationByNative": {
-                  "vi": "Tôi uống thuốc rồi nên giờ ổn rồi.",
+                  "vi": "Tôi đã uống thuốc rồi nên bây giờ không sao.",
                   "en": "I took the medicine, so I am fine now.",
                   "ja": "薬を飲んだので、もう大丈夫です。"
                 },
