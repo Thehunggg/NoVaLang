@@ -276,7 +276,12 @@ function contextualReadingOverride(token, nextToken) {
 // quoting the country's formal name) would need an explicit content
 // override, not a change to this default.
 // ---------------------------------------------------------------------------
-function normalizeKnownReadingAmbiguity(katakanaReading) {
+// Exported so the furigana pass (`japanese-furigana.mjs`) applies the SAME
+// rule instead of keeping its own copy — the two paths read the same tokens
+// from the same analyzer and must never disagree about a reading. They did
+// disagree before 2026-07-29: romanization said "nihon" while the displayed
+// furigana said にっぽん, in 37 fields of one lesson.
+export function normalizeKnownReadingAmbiguity(katakanaReading) {
   if (katakanaReading && katakanaReading.startsWith('ニッポン')) {
     return 'ニホン' + katakanaReading.slice('ニッポン'.length);
   }

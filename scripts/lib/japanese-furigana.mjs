@@ -21,6 +21,7 @@
 import kuromoji from 'kuromoji';
 import path from 'node:path';
 import { createRequire } from 'node:module';
+import { normalizeKnownReadingAmbiguity } from './japanese-pronunciation.mjs';
 
 const require = createRequire(import.meta.url);
 
@@ -124,9 +125,13 @@ export function addFurigana(text) {
     .map((token, index, tokens) => {
       const surface = token.surface_form;
       if (!KANJI.test(surface)) return surface;
+      // Chuẩn hoá cách đọc nhập nhằng (日本 → にほん, không phải にっぽん)
+      // bằng ĐÚNG hàm mà đường La-tinh hoá dùng. Trước 2026-07-29 chỉ
+      // đường La-tinh hoá gọi, nên chú âm hiển thị nói にっぽん trong khi
+      // reading/romanization của cùng câu nói にほん.
       const reading =
         contextualReading(token, tokens[index + 1]) ??
-        (token.reading ? toHiragana(token.reading) : null);
+        (token.reading ? toHiragana(normalizeKnownReadingAmbiguity(token.reading)) : null);
       const annotated = annotateToken(surface, reading);
       if (annotated === null) {
         throw new Error(
