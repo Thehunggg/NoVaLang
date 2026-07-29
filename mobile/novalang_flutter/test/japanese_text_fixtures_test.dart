@@ -65,10 +65,13 @@ void main() {
   test('wakachigaki bỏ qua câu không có chú âm', () {
     expect(wakachigaki('こんにちは。'), '');
     expect(wakachigaki('はい。'), '');
+    // Okurigana dính vào khối kanji; trợ từ の・に đứng riêng (bảng đóng).
     expect(
       wakachigaki('去年（きょねん）の9月（くがつ）に来（き）ました。'),
-      'きょねん の くがつ に き ました。',
+      'きょねん の くがつ に きました。',
     );
+    // Khối chữ thường KHÔNG khớp bảng thì giữ nguyên, không cắt trong lòng.
+    expect(wakachigaki('とても元気（げんき）です'), 'とても げんきです');
   });
 
   test('ngoặc chứa KANJI là chú giải, không phải chú âm — giữ nguyên', () {

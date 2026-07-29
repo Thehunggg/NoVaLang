@@ -33,11 +33,25 @@ String toHiragana(String s) => s.replaceAllMapped(
 /// Ranh giới khối để vẽ wakachigaki. Mỗi cụm mang-âm-đọc + kana trong ngoặc
 /// của nó là một khối; chữ thường giữa các khối là khối riêng.
 /// KHÔNG đoán ranh giới từ — chỉ đọc lại dữ liệu ngoặc đã có.
+/// BẢNG TRỢ TỪ ĐÓNG — owner chốt 2026-07-29 (phương án A).
+///
+/// Chỉ chuỗi trong bảng này mới đứng RIÊNG thành một khối. Khối chữ thường ngay
+/// sau khối ngoặc mà KHÔNG có trong bảng thì là okurigana, dính vào khối trước:
+/// 来（き）ました → きました.
+///
+/// Bảng ĐÓNG, không suy đoán: không có bộ tách từ ở đây. Chuỗi không khớp bảng
+/// thì giữ nguyên khối, KHÔNG bao giờ cắt trong lòng nó (とても không thành
+/// とて も).
+const Set<String> particleBlocks = {
+  'は', 'が', 'を', 'に', 'で', 'と', 'も', 'の', 'へ', 'や', 'か', 'ね', 'よ',
+  'から', 'まで',
+  'には', 'では', 'とは', 'にも', 'でも',
+};
+
 List<String> furiganaBlocks(String? source) {
   final s = source ?? '';
   if (s.isEmpty) return const [];
-  final blocks = <String>[];
-  var buf = StringBuffer();
+  final raw = <({String kana, bool fromBracket})>[];
   var last = 0;
   for (final m in _furigana.allMatches(s)) {
     final before = s.substring(last, m.start);
@@ -46,18 +60,30 @@ List<String> furiganaBlocks(String? source) {
       cut -= 1;
     }
     final plain = before.substring(0, cut);
-    if (plain.isNotEmpty) buf.write(toHiragana(plain));
-    if (buf.isNotEmpty) {
-      blocks.add(buf.toString());
-      buf = StringBuffer();
+    if (plain.isNotEmpty) {
+      raw.add((kana: toHiragana(plain), fromBracket: false));
     }
-    blocks.add(m.group(1)!);
+    raw.add((kana: m.group(1)!, fromBracket: true));
     last = m.end;
   }
   final tail = s.substring(last);
-  if (tail.isNotEmpty) buf.write(toHiragana(tail));
-  if (buf.isNotEmpty) blocks.add(buf.toString());
-  return blocks.where((b) => b.isNotEmpty).toList();
+  if (tail.isNotEmpty) raw.add((kana: toHiragana(tail), fromBracket: false));
+
+  // Gộp okurigana: khối THƯỜNG ngay sau khối NGOẶC, không phải trợ từ → dính.
+  final blocks = <({String kana, bool fromBracket})>[];
+  for (final b in raw) {
+    if (b.kana.isEmpty) continue;
+    if (!b.fromBracket &&
+        blocks.isNotEmpty &&
+        blocks.last.fromBracket &&
+        !particleBlocks.contains(b.kana)) {
+      final prev = blocks.removeLast();
+      blocks.add((kana: prev.kana + b.kana, fromBracket: prev.fromBracket));
+      continue;
+    }
+    blocks.add(b);
+  }
+  return blocks.map((b) => b.kana).toList();
 }
 
 /// Dòng kana wakachigaki. Câu không có chú âm → trả rỗng (không chèn gì).

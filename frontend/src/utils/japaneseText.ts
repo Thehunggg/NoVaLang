@@ -33,11 +33,27 @@ export const toHiragana = (s: string): string =>
  * nó là một khối; chữ thường giữa các khối là khối riêng.
  * KHÔNG đoán ranh giới từ — chỉ đọc lại dữ liệu ngoặc đã có.
  */
+/**
+ * BẢNG TRỢ TỪ ĐÓNG — owner chốt 2026-07-29 (phương án A).
+ *
+ * Chỉ chuỗi trong bảng này mới đứng RIÊNG thành một khối. Khối chữ thường ngay
+ * sau khối ngoặc mà KHÔNG có trong bảng thì là okurigana, dính vào khối trước:
+ * 来（き）ました → きました.
+ *
+ * Bảng ĐÓNG, không suy đoán: không có bộ tách từ ở đây. Chuỗi không khớp bảng
+ * thì giữ nguyên khối, KHÔNG bao giờ cắt trong lòng nó (とても không thành
+ * とて も).
+ */
+export const PARTICLE_BLOCKS = new Set([
+  "は", "が", "を", "に", "で", "と", "も", "の", "へ", "や", "か", "ね", "よ",
+  "から", "まで",
+  "には", "では", "とは", "にも", "でも",
+]);
+
 export function furiganaBlocks(source?: string | null): string[] {
   const s = String(source ?? "");
   if (!s) return [];
-  const blocks: string[] = [];
-  let buf = "";
+  const raw: { kana: string; fromBracket: boolean }[] = [];
   let last = 0;
   const re = new RegExp(FURIGANA.source, "g");
   let m: RegExpExecArray | null;
@@ -46,18 +62,25 @@ export function furiganaBlocks(source?: string | null): string[] {
     let cut = before.length;
     while (cut > 0 && BEARING.test(before[cut - 1])) cut -= 1;
     const plain = before.slice(0, cut);
-    if (plain) buf += toHiragana(plain);
-    if (buf) {
-      blocks.push(buf);
-      buf = "";
-    }
-    blocks.push(m[1]);
+    if (plain) raw.push({ kana: toHiragana(plain), fromBracket: false });
+    raw.push({ kana: m[1], fromBracket: true });
     last = m.index + m[0].length;
   }
   const tail = s.slice(last);
-  if (tail) buf += toHiragana(tail);
-  if (buf) blocks.push(buf);
-  return blocks.filter(Boolean);
+  if (tail) raw.push({ kana: toHiragana(tail), fromBracket: false });
+
+  // Gộp okurigana: khối THƯỜNG ngay sau khối NGOẶC, không phải trợ từ → dính.
+  const blocks: { kana: string; fromBracket: boolean }[] = [];
+  for (const b of raw) {
+    if (!b.kana) continue;
+    const prev = blocks[blocks.length - 1];
+    if (!b.fromBracket && prev && prev.fromBracket && !PARTICLE_BLOCKS.has(b.kana)) {
+      prev.kana += b.kana;
+      continue;
+    }
+    blocks.push({ ...b });
+  }
+  return blocks.map((b) => b.kana);
 }
 
 /** Dòng kana wakachigaki. Câu không có chú âm → chuỗi rỗng (không chèn gì). */
