@@ -1399,6 +1399,34 @@ owner bỏ lối đó 2026-07-29.
 chưa đọc nổi kanji trần. Cấp cao hơn **xét lại khi tới cấp đó**, đừng đoán
 trước. (Đây cũng là mặc định Q14 đã chạy từ trước và owner đã duyệt.)
 
+### RENDER ĐỒNG NHẤT — owner chốt 2026-07-29
+
+> **Dữ liệu là CHUNG nên render phải ĐỒNG NHẤT.** Một mặt hiển thị không được
+> có trình bày riêng. Khác biệt chỉ tồn tại được khi có **LÝ DO SẢN PHẨM** nằm
+> trong **danh sách miễn đóng** dưới đây. **"Test đang khoá" KHÔNG BAO GIỜ là
+> lý do** — test khoá trình bày cũ thì **sửa TEST theo chuẩn mới**, không bẻ
+> chuẩn theo test.
+
+### DANH SÁCH MIỄN — ĐÓNG, chỉ 3 mục
+
+Miễn **dòng trợ đọc** (vẫn phải sạch ngoặc + vẫn phải có đường nghe ở chỗ
+khác). Thêm mục mới vào danh sách này cần owner duyệt riêng.
+
+| Mặt | Lý do sản phẩm |
+|---|---|
+| Thẻ token `sentence_ordering` | Mảnh chữ 1–3 ký tự xếp thành lưới; thêm dòng kana dưới mỗi ô làm vỡ lưới và mất nghĩa "mảnh để ghép" |
+| Thẻ token `slot_ordering` | Như trên |
+| Ô ghép `matching` | Như trên |
+
+**KHÔNG nằm trong danh sách miễn** (và vì thế đã sửa): dòng đọc Q14 — nay là
+kana wakachigaki như mọi mặt khác, 6 chỗ assert trong test Q14 đã đổi sang
+tính theo cách vẽ chuẩn thay vì khoá chuỗi liền cũ.
+
+**Đầu thẻ từ vựng thu gọn** giữ một dòng (`maxLines: 1` + ellipsis, chỉ bỏ
+ngoặc) — **không phải ngoại lệ**: dòng đọc của chính từ đó **đã hiện trong
+thân thẻ** khi mở ra (hàng "Đọc"), nên không mặt nào mất trợ đọc. Đo được:
+`_DetailList(title: vocabReading, values: [item.reading])`.
+
 > **Phiên kana→romaji là CHUYỂN TỰ CƠ HỌC 1-1, KHÔNG thuộc lệnh cấm đoán âm
 > kanji.** Lệnh cấm ở R14/generator là cấm **tra từ điển để đoán cách đọc của
 > KANJI**. Kana thì mỗi ký tự có đúng một âm; chuyển tự không cần biết nghĩa,

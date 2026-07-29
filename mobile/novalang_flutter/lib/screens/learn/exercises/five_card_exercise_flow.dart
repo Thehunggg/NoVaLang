@@ -2319,11 +2319,13 @@ class _RealWorldDialogueLineTile extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 3),
                         child: Text(
-                          // Q14 GIỮ dòng đọc LIỀN (không wakachigaki): trình
-                          // bày này owner đã duyệt cùng màn Q14, và 5 test đang
-                          // khoá đúng chuỗi liền đó. Khác các mặt khác một
-                          // chút — ghi lại làm nợ, không tự đổi.
-                          line.reading,
+                          // G14-R14: dòng kana WAKACHIGAKI như mọi mặt khác.
+                          // Dữ liệu là chung nên render phải đồng nhất; Q14
+                          // không được có trình bày riêng. Câu không có chú âm
+                          // thì lùi về dòng đọc liền của chính câu đó.
+                          wakachigaki(line.targetText).isNotEmpty
+                              ? wakachigaki(line.targetText)
+                              : line.reading,
                           key: const ValueKey('dialogue-line-reading'),
                           locale: AppTheme.japaneseLocale,
                           style: AppTheme.japaneseTextStyle.copyWith(

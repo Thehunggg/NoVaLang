@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:novalang_flutter/core/japanese_text.dart';
 import 'package:novalang_flutter/state/lesson_reading_aid.dart';
 import 'package:novalang_flutter/core/theme/app_theme.dart';
 import 'package:novalang_flutter/models/curriculum.dart';
@@ -222,6 +223,16 @@ Future<void> _pumpQ14(
   // never fully quiesces, so pumpAndSettle() can hang indefinitely here.
   await tester.pump();
   await tester.pump(const Duration(milliseconds: 400));
+}
+
+/// Dòng kana mà màn hình THẬT SỰ vẽ cho một lượt nói.
+///
+/// G14-R14: dòng trợ đọc là kana WAKACHIGAKI ráp từ dữ liệu ngoặc, không phải
+/// chuỗi `reading` liền. Test khoá theo cách vẽ CHUẨN, không khoá trình bày cũ
+/// — dữ liệu là chung nên render phải đồng nhất mọi mặt.
+String expectedKanaLine(dynamic line) {
+  final w = wakachigaki(line.targetText as String);
+  return w.isNotEmpty ? w : line.reading as String;
 }
 
 void main() {
@@ -473,7 +484,7 @@ void main() {
       }
       await _pumpQ14(tester, practice: practiceVi, attempts: _MemoryAttempts());
       for (final line in exercise.dialogueLines.where((l) => l.hasReading)) {
-        expect(find.text(line.reading), findsWidgets);
+        expect(find.text(expectedKanaLine(line)), findsWidgets);
       }
       for (final romanization in _approvedRomanizations) {
         expect(find.text(romanization), findsNothing);
@@ -540,9 +551,11 @@ void main() {
       tester,
     ) async {
       await _pumpQ14(tester, practice: practiceVi, attempts: _MemoryAttempts());
-      final reading = practiceVi.exercises.last.dialogueLines
-          .firstWhere((line) => line.hasReading)
-          .reading;
+      final reading = expectedKanaLine(
+        practiceVi.exercises.last.dialogueLines.firstWhere(
+          (line) => line.hasReading,
+        ),
+      );
 
       await tester.tap(
         find.byKey(const ValueKey('dialogue-romanization-toggle')),
@@ -630,7 +643,7 @@ void main() {
 
         final firstReadingLine = practice.exercises.last.dialogueLines
             .firstWhere((l) => l.hasReading);
-        expect(find.text(firstReadingLine.reading), findsWidgets);
+        expect(find.text(expectedKanaLine(firstReadingLine)), findsWidgets);
         expect(
           find.byKey(const ValueKey('dialogue-line-translation')),
           findsWidgets,
@@ -640,7 +653,7 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 400));
 
-        expect(find.text(firstReadingLine.reading), findsNothing);
+        expect(find.text(expectedKanaLine(firstReadingLine)), findsNothing);
         expect(
           find.byKey(const ValueKey('dialogue-line-translation')),
           findsWidgets,
@@ -667,7 +680,7 @@ void main() {
           find.byKey(const ValueKey('dialogue-line-translation')),
           findsNothing,
         );
-        expect(find.text(firstReadingLine.reading), findsWidgets);
+        expect(find.text(expectedKanaLine(firstReadingLine)), findsWidgets);
       },
     );
 
@@ -686,7 +699,7 @@ void main() {
       );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 400));
-      expect(find.text(firstReadingLine.reading), findsNothing);
+      expect(find.text(expectedKanaLine(firstReadingLine)), findsNothing);
       expect(
         find.byKey(const ValueKey('dialogue-line-translation')),
         findsNothing,
@@ -698,7 +711,7 @@ void main() {
       );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 400));
-      expect(find.text(firstReadingLine.reading), findsWidgets);
+      expect(find.text(expectedKanaLine(firstReadingLine)), findsWidgets);
       expect(
         find.byKey(const ValueKey('dialogue-line-translation')),
         findsWidgets,
