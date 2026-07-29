@@ -8,6 +8,7 @@ import { ProgressBar } from "../../ui/ProgressBar";
 import { SpeakerButton } from "../../ui/SpeakerButton";
 import { JaSentence } from "../JaSentence";
 import { stripFurigana } from "../../../utils/japaneseText";
+import { DEV_BYPASS } from "../../../utils/devBypass";
 import { useApp } from "../../../context/AppContext";
 import type { TranslationKey } from "../../../i18n/translations";
 import { useTranslation } from "../../../i18n/useTranslation";
@@ -54,7 +55,9 @@ export function FiveCardPractice({ lesson, onBack }: Props) {
   const [index, setIndex] = useState(0);
   const [orders, setOrders] = useState<Record<string, string[]>>({});
   const [results, setResults] = useState<Record<string, boolean>>({});
-  const [plusUnlocked, setPlusUnlocked] = useState(false);
+  // DEV_BYPASS là hằng `false` ở bản production → nhánh này bị loại khỏi bundle,
+  // người dùng thật vẫn phải bấm nút mở khoá như cũ.
+  const [plusUnlocked, setPlusUnlocked] = useState(DEV_BYPASS);
   const [checkpointSubIndex, setCheckpointSubIndex] = useState(0);
   const [checkpointResults, setCheckpointResults] = useState<Record<string, boolean>>({});
 

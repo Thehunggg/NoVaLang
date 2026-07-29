@@ -1,5 +1,6 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 import { authService } from "../services/auth";
+import { DEV_BYPASS, devBypassUser } from "../utils/devBypass";
 
 export interface AuthUser {
   name: string;
@@ -30,7 +31,11 @@ const loadUser = (): AuthUser | null => {
 };
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<AuthUser | null>(loadUser);
+  // DEV_BYPASS là hằng `false` ở bản production nên nhánh này bị loại khỏi
+  // bundle. Luồng đăng nhập thật bên dưới không đổi một dòng nào.
+  const [user, setUser] = useState<AuthUser | null>(() =>
+    DEV_BYPASS ? devBypassUser() : loadUser(),
+  );
 
   const saveUser = (nextUser: AuthUser | null) => {
     setUser(nextUser);

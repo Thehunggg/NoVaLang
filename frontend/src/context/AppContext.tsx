@@ -4,6 +4,7 @@ import type { AppProgress, ContentItem, DailyGoal, Exercise, ExperienceLevel, La
 import { firstIncompleteMicroLesson, isLessonCompletedFromMicroLessons, unlockNextLesson, unlockNextMicroLesson, unlockStartingPointFromPlacement } from "../utils/lessonEngine";
 import { addXP as addXpPure, checkAchievements, getDueReviewItems, loseHeart as loseHeartPure, restoreHeart as restoreHeartPure, scheduleReviewItem, updateReviewAfterAnswer } from "../utils/progress";
 import { getNativeLanguage, getProgress, resetProgress as resetStoredProgress, saveAppProgress, setNativeLanguage as saveNativeLanguage, setLearningLanguage } from "../utils/storage";
+import { DEV_BYPASS, devBypassProgress } from "../utils/devBypass";
 import { updateStreak } from "../utils/streak";
 
 interface AppContextValue {
@@ -53,7 +54,11 @@ const withActivity = (progress: AppProgress): AppProgress => {
 };
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [progress, setProgress] = useState<AppProgress>(getProgress);
+  // DEV_BYPASS là hằng `false` ở bản production nên nhánh này bị loại khỏi
+  // bundle. Onboarding thật bên dưới không đổi một dòng nào.
+  const [progress, setProgress] = useState<AppProgress>(() =>
+    DEV_BYPASS ? devBypassProgress(getProgress()) : getProgress(),
+  );
   useEffect(() => { saveAppProgress(progress); document.documentElement.lang = progress.effectiveUILanguage; document.documentElement.dir = "ltr"; }, [progress]);
 
   const value = useMemo<AppContextValue>(() => {
@@ -247,7 +252,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
       answerReviewItem: (reviewId, correct) => setProgress((current) => ({ ...current, reviewItems: current.reviewItems.map((item) => item.id === reviewId ? updateReviewAfterAnswer(item, correct) : item) })),
       dueReviewItems: getDueReviewItems(progress.reviewItems),
       resetProgress: () => setProgress(resetStoredProgress()),
-      isLessonUnlocked: (lesson) => progress.unlockedLessonIds.includes(lesson.id) || progress.completedLessonIds.includes(lesson.id) || progress.placedLessonIds.includes(lesson.id),
+      // DEV_BYPASS mở luôn khoá tiến độ: deep link tới bài bất kỳ phải vào
+      // được ngay, không phải học hết bài trước mới duyệt được bài sau.
+      // Hằng `false` ở production → điều kiện gập mất, khoá thật giữ nguyên.
+      isLessonUnlocked: (lesson) => DEV_BYPASS || progress.unlockedLessonIds.includes(lesson.id) || progress.completedLessonIds.includes(lesson.id) || progress.placedLessonIds.includes(lesson.id),
       isMicroLessonUnlocked: (lesson, micro) => micro.order === 1 || progress.completedMicroLessonIds.includes(micro.id) || lesson.microLessons.slice(0, micro.order - 1).every((item) => progress.completedMicroLessonIds.includes(item.id))
     };
   }, [progress]);
