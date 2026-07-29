@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { useTranslation } from "../../i18n/useTranslation";
 import { displayNativeText } from "../../utils/nativeContent";
 import { SpeakerButton } from "../ui/SpeakerButton";
+import { JaSentence } from "./JaSentence";
 
 export type VocabularyReferenceItem = {
   term?: string;
@@ -15,6 +16,7 @@ export type VocabularyReferenceItem = {
   example?: {
     text?: string;
     reading?: string;
+    speechText?: string;
     translation?: string;
     translationByNative?: Partial<Record<string, string>>;
   };
@@ -138,14 +140,20 @@ export function VocabularyReferencesBlock({
 
                 <LabeledValue label={t("register")} value={register} />
                 {exampleText ? (
-                  <LabeledValue
-                    label={t("vocabExample")}
-                    value={
-                      exampleTranslation
-                        ? `${exampleText} — ${exampleTranslation}`
-                        : exampleText
-                    }
-                  />
+                  <div className="mt-3">
+                    <p className="mb-1 text-xs font-black uppercase tracking-wider text-cyan-300">
+                      {t("vocabExample")}
+                    </p>
+                    {/* G14-R14: câu ví dụ đi qua widget câu dùng chung — trước
+                        đây nối chuỗi "câu — dịch" nên không có nút nghe. */}
+                    <JaSentence
+                      displayText={exampleText}
+                      reading={displayNativeText(item.example?.reading)}
+                      speechText={displayNativeText(item.example?.speechText)}
+                      translation={exampleTranslation}
+                      languageCode={learningLanguageCode}
+                    />
+                  </div>
                 ) : null}
               </article>
             );

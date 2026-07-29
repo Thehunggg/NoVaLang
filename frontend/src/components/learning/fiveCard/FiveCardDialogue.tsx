@@ -3,6 +3,7 @@ import { PageContainer } from "../../layout/PageContainer";
 import { Button } from "../../ui/Button";
 import { Card } from "../../ui/Card";
 import { SpeakerButton } from "../../ui/SpeakerButton";
+import { JaSentence } from "../JaSentence";
 import { useTranslation } from "../../../i18n/useTranslation";
 import type { Lesson } from "../../../types/index";
 import { characterById, readingLineForDisplay, type PracticeCharacter } from "../../../utils/fiveCardPractice";
@@ -58,29 +59,22 @@ export function FiveCardDialogue({ lesson, content, onBack }: Props) {
                       key={`${String(line.speakerId)}-${lineIndex}`}
                       className="rounded-xl border border-white/[.08] bg-black/20 p-3"
                     >
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="min-w-0">
-                          {speaker && (
-                            <p className="text-xs font-black text-fuchsia-300">
-                              {speaker.displayName}
-                              {speaker.audioName ? ` · ${speaker.audioName}` : ""}
-                            </p>
-                          )}
-                          <strong className="mt-1 block text-lg text-white">{targetText}</strong>
-                          {reading && (
-                            <p className="mt-1 text-xs font-bold text-cyan-300">{reading}</p>
-                          )}
-                          {translation && (
-                            <p className="mt-2 text-sm text-slate-400">{translation}</p>
-                          )}
-                        </div>
-                        {speech && (
-                          <SpeakerButton
-                            text={speech}
-                            languageCode={lesson.language}
-                            size="sm"
-                          />
+                      <div>
+                        {speaker && (
+                          <p className="mb-1 text-xs font-black text-fuchsia-300">
+                            {speaker.displayName}
+                            {speaker.audioName ? ` · ${speaker.audioName}` : ""}
+                          </p>
                         )}
+                        {/* G14-R14: lượt nói đi qua widget câu dùng chung. */}
+                        <JaSentence
+                          displayText={targetText}
+                          reading={displayNativeText(line.reading)}
+                          speechText={speech}
+                          translation={translation}
+                          languageCode={lesson.language}
+                          mainClassName="block text-lg font-bold text-white"
+                        />
                       </div>
                     </div>
                   );

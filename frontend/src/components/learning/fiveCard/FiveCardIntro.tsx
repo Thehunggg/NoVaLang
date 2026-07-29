@@ -7,7 +7,8 @@ import { useApp } from "../../../context/AppContext";
 import { useTranslation } from "../../../i18n/useTranslation";
 import type { Lesson } from "../../../types/index";
 import { getLocalizedText } from "../../../utils/localizedText";
-import { asRecord, asStringList, displayNativeText } from "../../../utils/nativeContent";
+import { asRecord, asRecordList, asStringList, displayNativeText } from "../../../utils/nativeContent";
+import { JaSentence } from "../JaSentence";
 
 type Props = {
   lesson: Lesson;
@@ -24,6 +25,7 @@ export function FiveCardIntro({ lesson, content, onBack }: Props) {
   const objectives = asStringList(intro.objectives);
   const situation = asStringList(intro.situation);
   const importantNote = asStringList(intro.importantNote);
+  const examples = asRecordList(intro.examples);
   const canDo = getLocalizedText(lesson.descriptionTranslations ?? lesson.description, native);
   const todayWords = (lesson.vocabulary ?? [])
     .map((item) => item.displayText ?? item.word)
@@ -64,6 +66,35 @@ export function FiveCardIntro({ lesson, content, onBack }: Props) {
             <span>{displayNativeText(canDo) || t("emptyContentPlaceholder")}</span>
           </p>
         </IntroPanel>
+
+        {/* Câu minh hoạ — trước 2026-07-29 KHÔNG được vẽ ở đâu cả, dù mỗi câu
+            đã có sẵn displayText + reading + dịch + speechText (15 câu trên 5
+            bài). Vẽ qua JaSentence để có luôn nút nghe + trợ đọc. */}
+        {examples.length > 0 && (
+          <IntroPanel title={t("exampleSentences")}>
+            <div className="space-y-3">
+              {examples.map((example, index) => {
+                const label = displayNativeText(example.label);
+                const text =
+                  displayNativeText(example.displayText) ||
+                  displayNativeText(example.targetText);
+                if (!text) return null;
+                return (
+                  <div key={`${text}-${index}`} className="rounded-xl bg-black/20 p-3">
+                    {label && <p className="mb-1 text-xs text-slate-500">{label}</p>}
+                    <JaSentence
+                      displayText={text}
+                      reading={displayNativeText(example.reading)}
+                      speechText={displayNativeText(example.speechText)}
+                      translation={displayNativeText(example.translation)}
+                      languageCode={lesson.language}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </IntroPanel>
+        )}
 
         <IntroPanel title={t("todayLearn")}>
           {todayWords.length ? (

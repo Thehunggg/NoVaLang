@@ -3,6 +3,7 @@ import { PageContainer } from "../../layout/PageContainer";
 import { Button } from "../../ui/Button";
 import { Card } from "../../ui/Card";
 import { SpeakerButton } from "../../ui/SpeakerButton";
+import { JaSentence } from "../JaSentence";
 import { useTranslation } from "../../../i18n/useTranslation";
 import type { Lesson } from "../../../types/index";
 import { readingLineForDisplay } from "../../../utils/fiveCardPractice";
@@ -73,35 +74,20 @@ export function FiveCardGrammar({ lesson, content, onBack }: Props) {
                 <div className="mt-4 space-y-2">
                   {examples.map((example, exampleIndex) => {
                     const text = displayNativeText(example.text || example.displayText);
-                    const reading = readingLineForDisplay(
-                      text,
-                      displayNativeText(example.reading),
-                    );
-                    const translation = displayNativeText(example.translation);
-                    const speech =
-                      displayNativeText(example.speechText) || text;
                     if (!text) return null;
                     return (
                       <div
                         key={`${text}-${exampleIndex}`}
                         className="rounded-xl bg-black/20 p-3"
                       >
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <strong className="text-white">{text}</strong>
-                            {reading && (
-                              <p className="mt-1 text-xs font-bold text-cyan-300">{reading}</p>
-                            )}
-                            {translation && (
-                              <p className="mt-1 text-sm text-slate-400">{translation}</p>
-                            )}
-                          </div>
-                          <SpeakerButton
-                            text={speech}
-                            languageCode={lesson.language}
-                            size="sm"
-                          />
-                        </div>
+                        {/* G14-R14: câu ví dụ đi qua widget câu dùng chung. */}
+                        <JaSentence
+                          displayText={text}
+                          reading={displayNativeText(example.reading)}
+                          speechText={displayNativeText(example.speechText)}
+                          translation={displayNativeText(example.translation)}
+                          languageCode={lesson.language}
+                        />
                       </div>
                     );
                   })}

@@ -13,6 +13,7 @@ import {
   resolveLessonFiveCardContent,
   shouldUseFiveCardFlow,
 } from "../../../utils/fiveCardPractice";
+import { ReadingAidProvider, ReadingAidToggles } from "../JaSentence";
 import { FiveCardDialogue } from "./FiveCardDialogue";
 import { FiveCardGrammar } from "./FiveCardGrammar";
 import { FiveCardIntro } from "./FiveCardIntro";
@@ -96,49 +97,36 @@ export function FiveCardLessonShell({ lesson }: Props) {
 
   if (!shouldUseFiveCardFlow(lesson)) return null;
 
-  if (section === "introduction") {
+  // G14-R14 [JA] (b) — hai công tắc trợ đọc đặt MỘT chỗ ở đây, bao cả 5 thẻ,
+  // nên bật ở thẻ nào là cả bài theo. Thanh dính trên đầu để cuộn xa vẫn với
+  // tới được. Store nhớ theo PHIÊN.
+  const sectionBody =
+    section === "introduction" ? (
+      <FiveCardIntro lesson={lesson} content={content} onBack={() => setSection("menu")} />
+    ) : section === "vocabulary" ? (
+      <FiveCardVocabulary lesson={lesson} content={content} onBack={() => setSection("menu")} />
+    ) : section === "dialogue" ? (
+      <FiveCardDialogue lesson={lesson} content={content} onBack={() => setSection("menu")} />
+    ) : section === "grammar" ? (
+      <FiveCardGrammar lesson={lesson} content={content} onBack={() => setSection("menu")} />
+    ) : section === "exercise" ? (
+      <FiveCardPractice lesson={lesson} content={content} onBack={() => setSection("menu")} />
+    ) : null;
+
+  if (sectionBody) {
     return (
-      <FiveCardIntro
-        lesson={lesson}
-        content={content}
-        onBack={() => setSection("menu")}
-      />
-    );
-  }
-  if (section === "vocabulary") {
-    return (
-      <FiveCardVocabulary
-        lesson={lesson}
-        content={content}
-        onBack={() => setSection("menu")}
-      />
-    );
-  }
-  if (section === "dialogue") {
-    return (
-      <FiveCardDialogue
-        lesson={lesson}
-        content={content}
-        onBack={() => setSection("menu")}
-      />
-    );
-  }
-  if (section === "grammar") {
-    return (
-      <FiveCardGrammar
-        lesson={lesson}
-        content={content}
-        onBack={() => setSection("menu")}
-      />
-    );
-  }
-  if (section === "exercise") {
-    return (
-      <FiveCardPractice
-        lesson={lesson}
-        content={content}
-        onBack={() => setSection("menu")}
-      />
+      <ReadingAidProvider
+        lessonSessionKey={lesson.id}
+        lessonLevel={lesson.level ?? "A0"}
+        learningLanguageCode={lesson.language}
+      >
+        <div className="sticky top-0 z-20 border-b border-white/10 bg-[#0b0714]/90 backdrop-blur">
+          <PageContainer className="py-2">
+            <ReadingAidToggles />
+          </PageContainer>
+        </div>
+        {sectionBody}
+      </ReadingAidProvider>
     );
   }
 

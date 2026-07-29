@@ -4,6 +4,7 @@ import { PageContainer } from "../../layout/PageContainer";
 import { Button } from "../../ui/Button";
 import { Card } from "../../ui/Card";
 import { SpeakerButton } from "../../ui/SpeakerButton";
+import { JaSentence } from "../JaSentence";
 import { VocabularyReferencesBlock, type VocabularyReferenceItem } from "../VocabularyReferencesBlock";
 import { useApp } from "../../../context/AppContext";
 import { useTranslation } from "../../../i18n/useTranslation";
@@ -135,25 +136,23 @@ function VocabCard({
 
           {examples.map((example, index) => {
             const text = displayNativeText(example.text);
-            const exampleReading = readingLineForDisplay(text, displayNativeText(example.reading));
             const translation = displayNativeText(example.translation);
             const exampleSpeech = displayNativeText(example.speechText) || text;
             if (!text) return null;
             return (
               <div key={`${text}-${index}`} className="rounded-xl bg-black/20 p-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <p className="text-xs font-black uppercase tracking-wider text-cyan-300">
-                      {t("vocabExample")}
-                    </p>
-                    <strong className="mt-1 block text-white">{text}</strong>
-                    {exampleReading && (
-                      <p className="mt-1 text-xs font-bold text-cyan-300">{exampleReading}</p>
-                    )}
-                    {translation && <p className="mt-1 text-sm text-slate-400">{translation}</p>}
-                  </div>
-                  <SpeakerButton text={exampleSpeech} languageCode={learningLanguage} size="sm" />
-                </div>
+                <p className="mb-1 text-xs font-black uppercase tracking-wider text-cyan-300">
+                  {t("vocabExample")}
+                </p>
+                {/* G14-R14: câu ví dụ đi qua widget câu dùng chung. */}
+                <JaSentence
+                  displayText={text}
+                  reading={displayNativeText(example.reading)}
+                  speechText={exampleSpeech}
+                  translation={translation}
+                  languageCode={learningLanguage}
+                  mainClassName="block font-bold text-white"
+                />
               </div>
             );
           })}
