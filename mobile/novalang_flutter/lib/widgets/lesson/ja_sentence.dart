@@ -91,7 +91,7 @@ class ReadingAidScopeBuilder extends ConsumerWidget {
       builder: (context, _) {
         final aid = store.stateFor(
           lessonSessionKey: lessonSessionKey,
-          currentLevel: lessonLevel,
+          learningLanguageCode: learningLanguageCode,
         );
         return ReadingAidScope(
           lessonSessionKey: lessonSessionKey,
@@ -265,7 +265,7 @@ class ReadingAidToggles extends ConsumerWidget {
       builder: (context, _) {
         final aid = store.stateFor(
           lessonSessionKey: lessonSessionKey,
-          currentLevel: lessonLevel,
+          learningLanguageCode: learningLanguageCode,
         );
         return Padding(
           padding: const EdgeInsets.only(bottom: 8),
@@ -279,7 +279,7 @@ class ReadingAidToggles extends ConsumerWidget {
                 selected: aid.showFurigana,
                 onSelected: (v) => store.setShowFurigana(lessonSessionKey, v),
               ),
-              if (aid.romajiToggleAllowed)
+              if (aid.readingAidOn)
                 FilterChip(
                   key: const ValueKey('reading-aid-romaji'),
                   label: Text(romajiLabel),

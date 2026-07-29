@@ -283,12 +283,28 @@ void main() {
       );
     });
 
-    test('level policy is explicit and unknown levels fail safely', () {
-      for (final level in const ['A0', 'A1', 'A2', 'B1']) {
-        expect(romajiToggleAllowed(level), isTrue, reason: level);
+    test('trợ đọc gate theo NGÔN NGỮ, không theo cấp (G14-R14 [JA])', () {
+      // Luật cũ chặn romaji từ B2 trở lên. Bỏ: bài tiếng Nhật thì có cả hai
+      // nút, MỌI cấp. Gate theo cấp đã làm nút [Romaji] biến mất bên web vì
+      // đọc nhầm `level` (dải hiển thị) thay vì `levelId` (mã CEFR).
+      for (final level in const ['A0', 'A1', 'B1', 'B2', 'C1', 'C2', 'UNKNOWN', '']) {
+        final store = LessonReadingAidStore();
+        final state = store.stateFor(
+          lessonSessionKey: 'k-$level',
+          learningLanguageCode: 'ja',
+        );
+        expect(state.readingAidOn, isTrue, reason: 'cấp $level vẫn phải mở');
       }
-      for (final level in const ['B2', 'C1', 'C2', 'UNKNOWN', '']) {
-        expect(romajiToggleAllowed(level), isFalse, reason: level);
+      // Ngôn ngữ khác thì không có trợ đọc — không có chú âm để trợ.
+      for (final code in const ['en', 'vi', 'EN', '']) {
+        final store = LessonReadingAidStore();
+        expect(
+          store
+              .stateFor(lessonSessionKey: 'k', learningLanguageCode: code)
+              .readingAidOn,
+          isFalse,
+          reason: code,
+        );
       }
     });
 
@@ -296,7 +312,7 @@ void main() {
       final store = LessonReadingAidStore();
       final first = store.stateFor(
         lessonSessionKey: 'lesson-a:attempt-1',
-        currentLevel: 'A0',
+        learningLanguageCode: 'ja',
       );
       expect(first.showRomaji, isFalse);
       store.setShowRomaji('lesson-a:attempt-1', true);
@@ -304,7 +320,7 @@ void main() {
         store
             .stateFor(
               lessonSessionKey: 'lesson-a:attempt-1',
-              currentLevel: 'A0',
+              learningLanguageCode: 'ja',
             )
             .showRomaji,
         isTrue,
@@ -313,7 +329,7 @@ void main() {
         store
             .stateFor(
               lessonSessionKey: 'lesson-b:attempt-1',
-              currentLevel: 'A0',
+              learningLanguageCode: 'ja',
             )
             .showRomaji,
         isFalse,
@@ -322,7 +338,7 @@ void main() {
         LessonReadingAidStore()
             .stateFor(
               lessonSessionKey: 'lesson-a:attempt-1',
-              currentLevel: 'A0',
+              learningLanguageCode: 'ja',
             )
             .showRomaji,
         isFalse,
@@ -589,7 +605,11 @@ void main() {
       semanticsHandle.dispose();
     });
 
-    testWidgets('romanization toggle is hidden from B2 onward', (tester) async {
+    testWidgets('công tắc romaji hiện ở MỌI cấp, kể cả B2 trở lên', (
+      tester,
+    ) async {
+      // Luật cũ ẩn công tắc từ B2. Bỏ theo G14-R14 [JA]: gate chỉ theo NGÔN
+      // NGỮ. Test nay khoá chuẩn mới thay vì trình bày cũ.
       await _pumpQ14(
         tester,
         practice: practiceVi,
@@ -598,7 +618,7 @@ void main() {
       );
       expect(
         find.byKey(const ValueKey('dialogue-romanization-toggle')),
-        findsNothing,
+        findsOneWidget,
       );
     });
 

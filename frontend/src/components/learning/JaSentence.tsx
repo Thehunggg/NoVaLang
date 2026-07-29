@@ -22,7 +22,7 @@ import {
 type ReadingAid = {
   showFurigana: boolean;
   showRomaji: boolean;
-  romajiToggleAllowed: boolean;
+  readingAidOn: boolean;
   learningLanguageCode: string;
   setShowFurigana: (value: boolean) => void;
   setShowRomaji: (value: boolean) => void;
@@ -32,7 +32,7 @@ const DEFAULT_AID: ReadingAid = {
   // Mặc định GIỮ NGUYÊN hành vi Q14 bên mobile: dòng kana BẬT, romaji TẮT.
   showFurigana: true,
   showRomaji: false,
-  romajiToggleAllowed: false,
+  readingAidOn: false,
   learningLanguageCode: "",
   setShowFurigana: () => {},
   setShowRomaji: () => {},
@@ -40,9 +40,17 @@ const DEFAULT_AID: ReadingAid = {
 
 const ReadingAidContext = createContext<ReadingAid>(DEFAULT_AID);
 
-/** Giữ nguyên luật cũ của Q14: romaji chỉ mở tới B1. */
-export const romajiToggleAllowed = (level: string): boolean =>
-  ["A0", "A1", "A2", "B1"].includes(String(level ?? "").trim().toUpperCase());
+/**
+ * G14-R14 [JA] — bài tiếng Nhật thì có CẢ HAI nút, MỌI bài, MỌI cấp.
+ *
+ * Trước 2026-07-29 romaji bị chặn theo cấp (chỉ tới B1) — luật cũ của riêng
+ * Q14. Bỏ: điều kiện hiện thanh trợ đọc chỉ được phụ thuộc NGÔN NGỮ, không
+ * phụ thuộc cấp. Cấp đi qua nhiều trường khác nhau (`levelId` là mã CEFR,
+ * `level` là dải hiển thị "Beginner"…) nên gate theo cấp vừa sai chuẩn vừa dễ
+ * đọc nhầm trường — chính chỗ đã làm nút [Romaji] biến mất.
+ */
+export const readingAidAvailable = (learningLanguageCode: string): boolean =>
+  String(learningLanguageCode ?? "").trim().toLowerCase() === "ja";
 
 /**
  * Store trợ đọc phạm vi CẢ BÀI, nhớ trong PHIÊN.
@@ -52,12 +60,11 @@ export const romajiToggleAllowed = (level: string): boolean =>
  */
 export function ReadingAidProvider({
   lessonSessionKey,
-  lessonLevel,
   learningLanguageCode,
   children,
 }: {
   lessonSessionKey: string;
-  lessonLevel: string;
+  /** KHÔNG nhận cấp bài: gate chỉ theo ngôn ngữ (xem readingAidAvailable). */
   learningLanguageCode: string;
   children: ReactNode;
 }) {
@@ -71,7 +78,8 @@ export function ReadingAidProvider({
   };
   const [showFurigana, setFurigana] = useState(() => read("furigana", true));
   const [showRomaji, setRomaji] = useState(() => read("romaji", false));
-  const allowed = romajiToggleAllowed(lessonLevel);
+  // Gate DUY NHẤT: ngôn ngữ. Không đụng tới cấp.
+  const allowed = readingAidAvailable(learningLanguageCode);
 
   const persist = useCallback(
     (name: string, value: boolean) => {
@@ -88,7 +96,7 @@ export function ReadingAidProvider({
     () => ({
       showFurigana,
       showRomaji: allowed && showRomaji,
-      romajiToggleAllowed: allowed,
+      readingAidOn: allowed,
       learningLanguageCode,
       setShowFurigana: (v) => {
         setFurigana(v);
@@ -133,7 +141,7 @@ export function ReadingAidToggles({ className = "" }: { className?: string }) {
       >
         {t("readingAidFurigana")}
       </button>
-      {aid.romajiToggleAllowed && (
+      {aid.readingAidOn && (
         <button
           type="button"
           data-testid="reading-aid-romaji"

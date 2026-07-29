@@ -16,7 +16,7 @@ class LessonReadingAidState {
     required this.showFurigana,
     required this.showRomaji,
     required this.lessonSessionKey,
-    required this.romajiToggleAllowed,
+    required this.readingAidOn,
   });
 
   /// Bật → thêm DÒNG KANA wakachigaki dưới câu.
@@ -27,35 +27,35 @@ class LessonReadingAidState {
   final bool showRomaji;
 
   final String lessonSessionKey;
-  final bool romajiToggleAllowed;
+  final bool readingAidOn;
 
   LessonReadingAidState copyWith({bool? showFurigana, bool? showRomaji}) =>
       LessonReadingAidState(
         showFurigana: showFurigana ?? this.showFurigana,
         showRomaji: showRomaji ?? this.showRomaji,
         lessonSessionKey: lessonSessionKey,
-        romajiToggleAllowed: romajiToggleAllowed,
+        readingAidOn: readingAidOn,
       );
 }
 
-/// Giữ nguyên luật cũ của Q14: romaji chỉ mở tới B1, trên nữa thì ẩn công tắc.
-bool romajiToggleAllowed(String level) =>
-    const {'A0', 'A1', 'A2', 'B1'}.contains(level.trim().toUpperCase());
-
-const _knownLevels = {'A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'};
+/// G14-R14 [JA] — bài tiếng Nhật thì có CẢ HAI nút, MỌI bài, MỌI cấp.
+///
+/// Trước 2026-07-29 romaji bị chặn theo cấp (chỉ tới B1) — luật cũ của riêng
+/// Q14. Bỏ: điều kiện hiện thanh trợ đọc chỉ được phụ thuộc NGÔN NGỮ, không
+/// phụ thuộc cấp. Bên web, gate theo cấp đã làm nút [Romaji] biến mất vì đọc
+/// nhầm `level` (dải hiển thị "Beginner") thay vì `levelId` (mã CEFR) — hai
+/// nền nay dùng chung một điều kiện để không lặp lại ca đó.
+bool readingAidAvailable(String learningLanguageCode) =>
+    learningLanguageCode.trim().toLowerCase() == 'ja';
 
 class LessonReadingAidStore extends ChangeNotifier {
   final Map<String, LessonReadingAidState> _states = {};
 
   LessonReadingAidState stateFor({
     required String lessonSessionKey,
-    required String currentLevel,
+    required String learningLanguageCode,
   }) {
-    final normalized = currentLevel.trim().toUpperCase();
     return _states.putIfAbsent(lessonSessionKey, () {
-      if (kDebugMode && !_knownLevels.contains(normalized)) {
-        debugPrint('Reading-aid romaji toggle hidden for unknown level: $currentLevel');
-      }
       return LessonReadingAidState(
         // Mặc định GIỮ NGUYÊN hành vi Q14 đã chạy từ trước: dòng kana BẬT,
         // romaji TẮT. Đây là store gộp của Q14 nên đổi mặc định là đổi hành vi
@@ -67,7 +67,7 @@ class LessonReadingAidStore extends ChangeNotifier {
         showFurigana: true,
         showRomaji: false,
         lessonSessionKey: lessonSessionKey,
-        romajiToggleAllowed: romajiToggleAllowed(normalized),
+        readingAidOn: readingAidAvailable(learningLanguageCode),
       );
     });
   }
@@ -81,7 +81,7 @@ class LessonReadingAidStore extends ChangeNotifier {
 
   void setShowRomaji(String lessonSessionKey, bool value) {
     final current = _states[lessonSessionKey];
-    if (current == null || !current.romajiToggleAllowed || current.showRomaji == value) {
+    if (current == null || !current.readingAidOn || current.showRomaji == value) {
       return;
     }
     _states[lessonSessionKey] = current.copyWith(showRomaji: value);

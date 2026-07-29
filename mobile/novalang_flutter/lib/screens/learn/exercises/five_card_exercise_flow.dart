@@ -923,7 +923,7 @@ class _FiveCardExerciseSessionPageState
         builder: (context, child) {
           final readingAidState = readingAidStore.stateFor(
             lessonSessionKey: lessonSessionKey,
-            currentLevel: widget.lessonLevel,
+            learningLanguageCode: widget.learningLanguageCode,
           );
           return _RealWorldPracticeDialoguePage(
             exercise: exercise,
@@ -2027,7 +2027,7 @@ class _RealWorldPracticeDialoguePageState
     final hasCompleteRomanization =
         lines.isNotEmpty && lines.every((line) => line.hasRomanization);
     final showRomanizationToggle =
-        widget.readingAidState.romajiToggleAllowed &&
+        widget.readingAidState.readingAidOn &&
         hasCompleteRomanization;
     return PopScope(
       canPop: false,

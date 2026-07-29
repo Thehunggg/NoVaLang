@@ -150,21 +150,27 @@ void main() {
     expect(find.text('にほん に きました。'), findsOneWidget);
   });
 
-  test('store nhớ theo phiên và tôn trọng mức được phép', () {
+  test('store nhớ theo phiên, gate theo NGÔN NGỮ', () {
     final store = LessonReadingAidStore();
-    final s = store.stateFor(lessonSessionKey: 'k', currentLevel: 'A0');
+    final s = store.stateFor(lessonSessionKey: 'k', learningLanguageCode: 'ja');
     // Mặc định giữ y hệt Q14 cũ: dòng kana BẬT, romaji TẮT.
     expect(s.showFurigana, isTrue, reason: 'giữ nguyên mặc định Q14');
     expect(s.showRomaji, isFalse);
-    expect(s.romajiToggleAllowed, isTrue);
+    expect(s.readingAidOn, isTrue);
 
     store.setShowFurigana('k', false);
-    expect(store.stateFor(lessonSessionKey: 'k', currentLevel: 'A0').showFurigana, isFalse);
+    expect(
+      store.stateFor(lessonSessionKey: 'k', learningLanguageCode: 'ja').showFurigana,
+      isFalse,
+    );
 
-    // Trên B1 thì công tắc romaji đóng — giữ nguyên luật cũ của Q14.
-    final high = LessonReadingAidStore();
-    high.stateFor(lessonSessionKey: 'x', currentLevel: 'C1');
-    high.setShowRomaji('x', true);
-    expect(high.stateFor(lessonSessionKey: 'x', currentLevel: 'C1').showRomaji, isFalse);
+    // Ngôn ngữ không dùng chú âm → không có trợ đọc, bật cũng không ăn.
+    final en = LessonReadingAidStore();
+    en.stateFor(lessonSessionKey: 'x', learningLanguageCode: 'en');
+    en.setShowRomaji('x', true);
+    expect(
+      en.stateFor(lessonSessionKey: 'x', learningLanguageCode: 'en').showRomaji,
+      isFalse,
+    );
   });
 }

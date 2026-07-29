@@ -117,7 +117,6 @@ export function FiveCardLessonShell({ lesson }: Props) {
     return (
       <ReadingAidProvider
         lessonSessionKey={lesson.id}
-        lessonLevel={lesson.level ?? "A0"}
         learningLanguageCode={lesson.language}
       >
         <div className="sticky top-0 z-20 border-b border-white/10 bg-[#0b0714]/90 backdrop-blur">
