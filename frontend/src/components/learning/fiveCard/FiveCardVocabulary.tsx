@@ -113,7 +113,16 @@ function VocabCard({
         className="flex w-full items-center gap-3 px-4 py-4 text-left transition hover:bg-white/[.03]"
       >
         <div className="min-w-0 flex-1">
-          <strong className="font-display text-xl font-black text-white">{display}</strong>
+          {/* G14-R14: từ đầu thẻ cũng đi qua widget câu dùng chung. Nút nghe
+              nằm ngoài (cạnh chevron) nên ở đây showSpeaker=false. */}
+          <JaSentence
+            displayText={display}
+            reading={item.reading}
+            speechText={speech}
+            languageCode={learningLanguage}
+            showSpeaker={false}
+            mainClassName="font-display text-xl font-black text-white"
+          />
         </div>
         <SpeakerButton text={speech} languageCode={learningLanguage} size="sm" />
         {expanded ? <ChevronUp size={18} className="text-slate-400" /> : <ChevronDown size={18} className="text-slate-400" />}

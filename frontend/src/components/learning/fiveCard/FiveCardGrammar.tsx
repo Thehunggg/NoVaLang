@@ -47,16 +47,27 @@ export function FiveCardGrammar({ lesson, content, onBack }: Props) {
 
           return (
             <Card key={`${title}-${index}`} className="p-5">
-              {title && <h2 className="font-display text-xl font-black text-white">{title}</h2>}
+              {title && (
+                <JaSentence
+                  displayText={title}
+                  languageCode={lesson.language}
+                  showSpeaker={false}
+                  mainClassName="font-display text-xl font-black text-white"
+                />
+              )}
               {formula && (
                 <div className="mt-3">
                   <p className="text-xs font-black uppercase tracking-wider text-cyan-300">
                     {t("formula")}
                   </p>
-                  <p className="mt-1 text-lg font-black text-white">{formula}</p>
-                  {formulaReading && (
-                    <p className="mt-1 text-xs font-bold text-cyan-300">{formulaReading}</p>
-                  )}
+                  {/* G14-R14: công thức cũng qua widget câu dùng chung. */}
+                  <JaSentence
+                    displayText={formula}
+                    reading={formulaReading}
+                    languageCode={lesson.language}
+                    showSpeaker={false}
+                    mainClassName="mt-1 text-lg font-black text-white"
+                  />
                 </div>
               )}
               {meaning && (
@@ -106,7 +117,15 @@ export function FiveCardGrammar({ lesson, content, onBack }: Props) {
                 const points = asStringList(item.points);
                 return (
                   <div key={`${term}-${index}`} className="rounded-xl bg-black/20 p-3">
-                    {term && <strong className="text-white">{term}</strong>}
+                    {/* G14-R14: từ trong bảng phân biệt cũng qua widget chung. */}
+                    {term && (
+                      <JaSentence
+                        displayText={term}
+                        languageCode={lesson.language}
+                        showSpeaker={false}
+                        mainClassName="font-bold text-white"
+                      />
+                    )}
                     {points.length > 0 && (
                       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-300">
                         {points.map((point) => (

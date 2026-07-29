@@ -116,14 +116,15 @@ export function VocabularyReferencesBlock({
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
-                    <h3 className="font-display text-xl font-black text-white">
-                      {term}
-                    </h3>
-                    {reading ? (
-                      <p className="mt-1 text-sm font-bold text-cyan-300">
-                        {reading}
-                      </p>
-                    ) : null}
+                    {/* G14-R14: từ tham khảo cũng qua widget câu dùng chung. */}
+                    <JaSentence
+                      displayText={term}
+                      reading={reading}
+                      speechText={speechText}
+                      languageCode={learningLanguageCode}
+                      showSpeaker={false}
+                      mainClassName="font-display text-xl font-black text-white"
+                    />
                   </div>
                   {speechText ? (
                     <SpeakerButton

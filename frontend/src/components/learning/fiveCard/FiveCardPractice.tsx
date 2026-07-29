@@ -6,6 +6,8 @@ import { Button } from "../../ui/Button";
 import { Card } from "../../ui/Card";
 import { ProgressBar } from "../../ui/ProgressBar";
 import { SpeakerButton } from "../../ui/SpeakerButton";
+import { JaSentence } from "../JaSentence";
+import { stripFurigana } from "../../../utils/japaneseText";
 import { useApp } from "../../../context/AppContext";
 import type { TranslationKey } from "../../../i18n/translations";
 import { useTranslation } from "../../../i18n/useTranslation";
@@ -396,8 +398,23 @@ function GradedExercise({
       {label && (
         <p className="mb-2 text-xs font-black uppercase tracking-wider text-cyan-300">{label}</p>
       )}
-      <h2 className="font-display text-xl font-black text-white">{exercise.prompt}</h2>
-      {exercise.context && <p className="mt-2 text-sm text-slate-400">{exercise.context}</p>}
+      {/* G14-R14: đề bài đi qua widget câu dùng chung. showSpeaker=false vì đề
+          không có speechText riêng — nút nghe của câu nằm ở audioText bên dưới. */}
+      <JaSentence
+        displayText={exercise.prompt}
+        languageCode={lesson.language}
+        showSpeaker={false}
+        mainClassName="font-display text-xl font-black text-white"
+      />
+      {exercise.context && (
+        <JaSentence
+          displayText={exercise.context}
+          languageCode={lesson.language}
+          showSpeaker={false}
+          className="mt-2"
+          mainClassName="text-sm text-slate-400"
+        />
+      )}
 
       {listening && exercise.audioText && (
         <div className="mt-4">
@@ -427,7 +444,14 @@ function GradedExercise({
                   : "border-white/10 bg-white/[.04] text-slate-200 hover:border-violet-300/40"
               }`}
             >
-              {option.text}
+              {/* G14-R14: phương án đi qua widget câu dùng chung.
+                  showSpeaker=false — không lồng nút nghe trong nút chọn. */}
+              <JaSentence
+                displayText={option.text}
+                languageCode={lesson.language}
+                showSpeaker={false}
+                mainClassName="text-sm font-bold"
+              />
             </button>
           ))}
         </div>
@@ -667,8 +691,13 @@ function GradedExercise({
                         />
                       );
                     }
+                    // G14-R14: mảnh câu trong khung chat cũng là chuỗi đích.
+                    // Vẽ gọn trong dòng (không nút nghe, không tách dòng) vì
+                    // nó là MẢNH nằm giữa các ô điền, không phải câu đứng riêng.
                     return (
-                      <span key={`${message.id}-${segmentIndex}`}>{segment.displayText}</span>
+                      <span key={`${message.id}-${segmentIndex}`}>
+                        {stripFurigana(segment.displayText)}
+                      </span>
                     );
                   })}
                 </div>
@@ -695,10 +724,19 @@ function GradedExercise({
             {feedback.correct ? t("correctSignal") : t("notQuite")}
           </p>
           {!feedback.correct && exercise.feedback.correctAnswer && (
-            <p className="mt-2 text-sm text-slate-300">
-              <span className="font-bold text-slate-500">{t("exerciseCorrectAnswer")}: </span>
-              {exercise.feedback.correctAnswer}
-            </p>
+            <div className="mt-2">
+              <span className="text-sm font-bold text-slate-500">
+                {t("exerciseCorrectAnswer")}:{" "}
+              </span>
+              {/* G14-R14: đáp án đúng là câu đích — qua widget câu dùng chung,
+                  và CÓ nút nghe (người học vừa sai, cần nghe lại bản đúng). */}
+              <JaSentence
+                displayText={exercise.feedback.correctAnswer}
+                speechText={exercise.feedback.audioText}
+                languageCode={lesson.language}
+                mainClassName="text-sm text-slate-300"
+              />
+            </div>
           )}
           {!feedback.correct && exercise.feedback.explanation && (
             <p className="mt-2 text-sm text-slate-400">
@@ -733,14 +771,9 @@ function Q14Dialogue({
   onComplete: () => void;
 }) {
   const { t } = useTranslation();
-  const [showReading, setShowReading] = useState(true);
-  const [showRomanization, setShowRomanization] = useState(false);
+  // Chỉ còn công tắc DỊCH cục bộ; kana/romaji dùng công tắc CHUNG của cả bài
+  // trên thanh đầu shell (G14-R14 [JA] b).
   const [showTranslation, setShowTranslation] = useState(true);
-
-  const romanizationAllowed =
-    q14RomanizationToggleAllowed(lesson.levelId) &&
-    exercise.dialogueLines.length > 0 &&
-    exercise.dialogueLines.every(lineHasRomanization);
 
   return (
     <Card className="p-5 sm:p-6">
@@ -754,19 +787,10 @@ function Q14Dialogue({
         <p className="mt-2 text-sm leading-6 text-slate-400">{exercise.scenarioDescription}</p>
       )}
 
+      {/* Hai công tắc kana/romaji đã lên thanh đầu shell, dùng chung CẢ BÀI —
+          Q14 không giữ bộ riêng nữa (G14-R14 [JA] b). Chỉ còn công tắc DỊCH,
+          vốn không thuộc trợ đọc. */}
       <div className="mt-4 flex flex-wrap gap-2">
-        <ToggleChip
-          active={showReading}
-          label={t("q14ShowReading")}
-          onClick={() => setShowReading((value) => !value)}
-        />
-        {romanizationAllowed && (
-          <ToggleChip
-            active={showRomanization}
-            label={t("q14ShowRomanization")}
-            onClick={() => setShowRomanization((value) => !value)}
-          />
-        )}
         <ToggleChip
           active={showTranslation}
           label={t("q14ShowTranslation")}
@@ -777,9 +801,6 @@ function Q14Dialogue({
       <div className="mt-5 space-y-3">
         {exercise.dialogueLines.map((line, lineIndex) => {
           const speaker = characterById(practice.characterNamePool, line.speakerId);
-          const reading = lineHasReading(line)
-            ? readingLineForDisplay(line.targetText, line.reading)
-            : "";
           const divider = exercise.sceneDividers.find(
             (item) => item.afterDialogueLine === lineIndex + 1,
           );
@@ -787,20 +808,24 @@ function Q14Dialogue({
             <div key={`${line.speakerId}-${lineIndex}`}>
               <div className="rounded-xl border border-white/[.08] bg-black/20 p-3">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     {speaker && (
                       <p className="text-xs font-black text-fuchsia-300">{speaker.displayName}</p>
                     )}
-                    <strong className="mt-1 block text-lg text-white">{line.targetText}</strong>
-                    {showReading && reading && (
-                      <p className="mt-1 text-xs font-bold text-cyan-300">{reading}</p>
-                    )}
-                    {showRomanization && line.romanization && (
-                      <p className="mt-1 text-xs text-slate-400">{line.romanization}</p>
-                    )}
-                    {showTranslation && line.translation && (
-                      <p className="mt-2 text-sm text-slate-400">{line.translation}</p>
-                    )}
+                    {/* G14-R14: lượt Q14 đi qua widget câu dùng chung. Hai công
+                        tắc kana/romaji giờ là công tắc CHUNG của cả bài trên
+                        thanh đầu shell, không còn bộ riêng của Q14. Công tắc
+                        DỊCH vẫn cục bộ — nó không thuộc trợ đọc. */}
+                    <JaSentence
+                      displayText={line.targetText}
+                      reading={line.reading}
+                      speechText={line.speechText}
+                      romanization={line.romanization}
+                      translation={showTranslation ? line.translation : undefined}
+                      languageCode={lesson.language}
+                      showSpeaker={false}
+                      mainClassName="mt-1 block text-lg font-bold text-white"
+                    />
                   </div>
                   {line.speechText && (
                     <SpeakerButton
