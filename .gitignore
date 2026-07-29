@@ -15,3 +15,9 @@ rules/**/corpus/
 
 # Local-only source materials (KHÔNG commit)
 local-sources/
+
+# Cấu hình chạy dev server tại máy — mỗi máy một kiểu, không commit
+.claude/launch.json
+
+# Trang duyệt tĩnh sinh ra từ scripts/preview-lesson.mjs — sinh lại được
+scripts/preview/

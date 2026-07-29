@@ -322,7 +322,9 @@ function main() {
     }
     if (item.authored) {
       authored += 1;
-      const key = String(item.reason ?? "(không ghi lý do)").replace(/[:：].*$/, "").trim();
+      // Gom theo CHUỖI reason ĐẦY ĐỦ. Bản cũ cắt ở dấu ':' nên
+      // "ghép hai câu verbatim ...md:5000" bị xé thành 2 nhóm.
+      const key = String(item.reason ?? "(không ghi lý do)").trim();
       authoredByReason.set(key, (authoredByReason.get(key) ?? 0) + 1);
       console.log(`  TỰ SOẠN  ${item.path} — ${item.reason ?? "(không ghi lý do)"}`);
       continue;
@@ -402,8 +404,10 @@ function main() {
   if (fail > 0) process.exit(1);
 }
 
-if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1].replace(/\\/g, "/")}`).href) {
-  main();
-} else if (process.argv[2]) {
+// Chỉ chạy khi ĐÚNG file này là entry point. Bản cũ có nhánh
+// `else if (process.argv[2]) main()` → module khác import vào mà có sẵn
+// tham số dòng lệnh là main() tự chạy. So sánh đường dẫn đã resolve cho
+// khỏi lệch vì Windows dùng '\' còn import.meta.url dùng '/'.
+if (process.argv[1] && path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1])) {
   main();
 }
