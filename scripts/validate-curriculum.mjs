@@ -1331,7 +1331,45 @@ export function validateUnitComprehensiveTest(unit) {
  * Exported at module scope (moved out of main()) so a standalone script can
  * import and exercise it directly against a minimal placeholder lesson.
  */
+// G14-R14 [JA] (c) — CHẶN CỨNG: câu HIỂN THỊ có kanji thì phải có nguyên liệu
+// trợ đọc, tức `reading` bên cạnh hoặc chú âm gõ thẳng vào mặt chữ. Thiếu là
+// người học gặp kanji trần, và công tắc [Furigana] không có gì để dựng.
+//
+// Chỉ soi TRƯỜNG CÂU ĐÍCH, không soi mọi chuỗi có ký tự Nhật: `prompt`,
+// `explanation`… trong giao diện tiếng Nhật đương nhiên có kanji mà không cần
+// chú âm — chúng là lời dẫn, không phải câu để học đọc.
+//
+// Câu TOÀN KANA không cần `reading` (nó chính là dòng đọc), nên không tính.
+const R14_SENTENCE_FIELDS = new Set(["displayText", "targetText", "text", "term"]);
+const R14_KANJI = /[一-龯㐀-䶿々]/;
+const R14_FURIGANA = /（[぀-ゟー]+）/;
+
+function validateJapaneseReadingMaterial(lesson) {
+  if (lesson.languageCode !== "ja") return; // tầng [JA] — ngôn ngữ khác tự miễn
+  const missing = [];
+  const walk = (node, where) => {
+    if (Array.isArray(node)) return node.forEach((v, i) => walk(v, `${where}[${i}]`));
+    if (!node || typeof node !== "object") return;
+    for (const [key, value] of Object.entries(node)) {
+      const here = where ? `${where}.${key}` : key;
+      if (typeof value === "string") {
+        if (!R14_SENTENCE_FIELDS.has(key)) continue;
+        if (!R14_KANJI.test(value)) continue;
+        if (R14_FURIGANA.test(value)) continue;
+        if (typeof node.reading === "string" && node.reading.trim()) continue;
+        missing.push(`${here} = ${value.slice(0, 40)}`);
+      } else walk(value, here);
+    }
+  };
+  walk(lesson.fiveCardContent ?? {}, "fiveCardContent");
+  walk({ vocabulary: lesson.vocabulary ?? [] }, "");
+  for (const m of missing) {
+    fail(`${lesson.id}: G14-R14 [JA] — câu hiển thị có kanji mà thiếu chú âm/reading: ${m}`);
+  }
+}
+
 export function validateFiveCardsStructure(lesson) {
+  validateJapaneseReadingMaterial(lesson);
   if (lesson.contentStatus !== "ready" || lesson.playable !== true || lesson.comingSoon === true) {
     fail(`${lesson.id}: five_cards lesson must remain ready and playable`);
   }

@@ -1342,6 +1342,76 @@ ngôn ngữ đó.** Ngôn ngữ **chưa có người duyệt** → độ tin c�
 
 ---
 
+**G14-R14. PHỦ HIỂN THỊ + NÚT NGHE + TRỢ ĐỌC.** (Hiệu lực 2026-07-29.)
+
+Luật này sinh ra từ một ca thật: `intro.examples` có đủ `displayText` ·
+`reading` · dịch · `speechText` trên **cả 5 bài** (15 câu), viết tay và đã
+duyệt, mà **không nền nào vẽ**. **Hai lượt rà bằng mắt đều lọt**, vì không có
+chỗ nào ghi "trường này phải hiện ở đâu". Rà tay không phải cơ chế.
+
+### Tầng chung — MỌI ngôn ngữ
+
+**(a) Trường hiển thị phải render trên CẢ HAI nền.** Mọi trường mang chuỗi
+ngôn ngữ đích trong `lessons.json` phải có một dòng khai trong
+`shared/config/render-coverage.json`, ghi **class** và **nền đã vẽ**.
+Trường cố ý không render (ví dụ dữ liệu chỉ dùng cho SRS) khai `waived` **kèm
+lý do** — không được để trống.
+
+**(b) Mọi mặt hiển thị chuỗi ngôn ngữ đích phải có NÚT NGHE lấy từ
+`speechText`, và phải đi qua WIDGET CÂU DÙNG CHUNG.** **Cấm vẽ chuỗi ngôn ngữ
+đích trần** bằng `Text(...)` / `<span>` rời. Widget dùng chung:
+`mobile/.../widgets/lesson/ja_sentence.dart` · `frontend/src/components/learning/JaSentence.tsx`.
+Nút nghe nhận `speechText`, **không** nhận mặt chữ — mặt chữ còn ngoặc chú âm
+thì máy đọc luôn cả phần chú âm.
+
+**(c) Phân loại trường** — bốn lớp, khai trong bản đồ:
+
+| lớp | nghĩa | hiện ra? |
+|---|---|---|
+| `display` | chuỗi người học đọc | **có**, cả 2 nền |
+| `aid` | trợ đọc: chú âm, dạng chuẩn hoá | nguyên liệu cho `display` |
+| `tts` | chuỗi đưa cho máy đọc | **không** |
+| `internal` | dữ liệu máy dùng (chấm, SRS, khoá tra) | **không** |
+
+**Cổng:** `node scripts/check-render-coverage.mjs` — bóc mọi trường mang
+ngôn ngữ đích ra khỏi `lessons.json`, đối chiếu bản đồ. Trường lạ chưa khai,
+hoặc `display` mà thiếu nền, hoặc `waived` không lý do → **FAIL**.
+
+### Tầng [JA] — CỨNG cho mọi bài tiếng Nhật, nay và sau này
+
+Ghi kiểu **[JA]** như R8: sang ngôn ngữ khác thì tầng này **tự miễn**.
+
+**(a) Dòng chính LUÔN SẠCH.** Bỏ ngoặc chú âm **khi vẽ**, ở **mọi** mặt hiển
+thị. Dữ liệu ngoặc **giữ nguyên** — nó là nguyên liệu dựng dòng wakachigaki và
+là thứ **R12d** dùng để đối chiếu. **Không** vẽ ruby (kana trên đầu kanji) —
+owner bỏ lối đó 2026-07-29.
+
+**(b) Hai công tắc, phạm vi CẢ BÀI**, qua `LessonReadingAidStore` dùng chung
+(không phải store riêng của một câu hỏi):
+
+- **[Furigana]** → thêm **dòng kana wakachigaki** dưới câu. Ranh giới khối ráp
+  từ **chính dữ liệu ngoặc** (cùng phép R12d dùng), **không đoán ranh giới từ**.
+  Câu không có chú âm → không thêm gì.
+- **[Romaji]** → thêm dòng romaji. Có `romanization` viết tay (Q14) thì dùng;
+  chỗ khác **phiên máy kana→romaji**.
+
+> **Phiên kana→romaji là CHUYỂN TỰ CƠ HỌC 1-1, KHÔNG thuộc lệnh cấm đoán âm
+> kanji.** Lệnh cấm ở R14/generator là cấm **tra từ điển để đoán cách đọc của
+> KANJI**. Kana thì mỗi ký tự có đúng một âm; chuyển tự không cần biết nghĩa,
+> không cần tách từ, không có chỗ để đoán sai. Ba bản (Node · Dart · TS) phải
+> cho ra **đúng cùng kết quả**, chứng bằng bộ fixtures dùng chung
+> `shared/config/japanese_text_fixtures.json`
+> (`scripts/test-japanese-text-parity.mjs` + `test/japanese_text_fixtures_test.dart`).
+
+**(c) CỔNG:** chuỗi Nhật **hiển thị** mà thiếu `reading` hoặc `speechText` →
+**FAIL** `validate:curriculum`. Chặn cứng, không phải cảnh báo.
+
+**(d) Bài mới KHÔNG phải làm gì thêm.** Công tắc sống ở renderer dùng chung;
+rule chỉ chặn **DỮ LIỆU thiếu nguyên liệu**. Viết đủ `reading` + `speechText`
+là bài tự có trợ đọc.
+
+---
+
 ## Changelog file này
 
 - **2026-07-29 (bản 12 — G14 QUY TẮC BUILD BÀI v2, thay trọn G11–G13)** —

@@ -1,0 +1,168 @@
+{
+  "_": "BẢN ĐỒ PHỦ HIỂN THỊ — G14-R14. Mọi trường mang chuỗi tiếng Nhật trong lessons.json phải có MỘT dòng ở đây. Trường mới chưa khai → scripts/check-render-coverage.mjs FAIL. Đây là thứ đáng lẽ đã bắt được intro.examples (15 câu có đủ dữ liệu mà không nền nào vẽ, hai lượt audit tay đều lọt).",
+  "_phanLoai": {
+    "display": "Chuỗi NGƯỜI HỌC ĐỌC. Phải render trên CẢ web lẫn Flutter, và phải đi qua widget câu dùng chung (JaSentence / JaSentence.tsx) để có dòng chính sạch + trợ đọc + nút nghe.",
+    "aid": "Trợ đọc: chú âm, dạng chuẩn hoá. Không bắt buộc hiện thẳng; nó là NGUYÊN LIỆU cho lớp display.",
+    "tts": "Chuỗi đưa cho máy đọc. KHÔNG hiện ra màn hình.",
+    "internal": "Dữ liệu máy dùng (chấm điểm, SRS, khoá tra). Không hiện, không đọc."
+  },
+  "_coTruong": {
+    "renderedOn": "Nền đã vẽ trường này. Đủ hai nền thì là ['web','flutter'].",
+    "waived": "Cố ý KHÔNG render. Bắt buộc kèm lý do.",
+    "note": "Ghi chú tự do."
+  },
+
+  "fields": {
+    "displayText": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Mặt chữ chính. Vẽ qua widget câu dùng chung, luôn bỏ ngoặc chú âm."
+    },
+    "targetText": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Lượt hội thoại + dải phân cảnh Q14."
+    },
+    "text": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Câu ví dụ, nhãn phương án, thẻ token."
+    },
+    "term": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Từ ở mục tham khảo."
+    },
+    "title": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Tiêu đề mẫu ngữ pháp / nhóm hội thoại."
+    },
+    "formula": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Công thức mẫu ngữ pháp. Miễn khai provenance (R12), vẫn phải render."
+    },
+    "prompt": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Đề bài."
+    },
+    "context": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Câu dẫn tình huống của bài tập."
+    },
+    "correctAnswer": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Hiện ở panel phản hồi sau khi chấm."
+    },
+    "explanation": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Giải thích sau khi chấm."
+    },
+    "incorrectMessage": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"]
+    },
+    "japaneseTitle": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Nhãn tiếng Nhật của mục, hiện cạnh tiêu đề bản ngữ."
+    },
+    "displayName": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Tên nhân vật hội thoại."
+    },
+    "speaker": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"]
+    },
+    "casualIntro": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"]
+    },
+    "meaning": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"],
+      "note": "Chỉ mang chuỗi Nhật khi ngôn ngữ mẹ đẻ là ja."
+    },
+    "exampleText": {
+      "class": "display",
+      "renderedOn": ["web", "flutter"]
+    },
+
+    "reading": {
+      "class": "aid",
+      "renderedOn": ["web", "flutter"],
+      "note": "Chú âm kana. Là nguyên liệu dựng dòng wakachigaki khi bật công tắc Furigana."
+    },
+    "formulaReading": {
+      "class": "aid",
+      "renderedOn": ["web", "flutter"]
+    },
+    "speakerReading": {
+      "class": "aid",
+      "renderedOn": ["web", "flutter"]
+    },
+    "exampleReading": {
+      "class": "aid",
+      "renderedOn": ["web", "flutter"]
+    },
+    "canonicalText": {
+      "class": "aid",
+      "waived": "Dạng chuẩn hoá dùng để CHẤM (bỏ ngoặc chú âm). Không hiện — hiện ra là người học thấy hai bản gần giống nhau của cùng một câu.",
+      "renderedOn": []
+    },
+    "canonicalAnswer": {
+      "class": "aid",
+      "waived": "Như canonicalText, cho panel phản hồi.",
+      "renderedOn": []
+    },
+    "canonicalName": {
+      "class": "aid",
+      "waived": "Dạng chuẩn hoá của tên nhân vật, dùng để so khớp.",
+      "renderedOn": []
+    },
+
+    "speechText": {
+      "class": "tts",
+      "waived": "Chuỗi đưa cho máy đọc. Không hiện — nó là kana trần, không phải mặt chữ.",
+      "renderedOn": []
+    },
+    "audioText": {
+      "class": "tts",
+      "waived": "Như speechText, cho thẻ token và phương án.",
+      "renderedOn": []
+    },
+    "audioName": {
+      "class": "tts",
+      "waived": "Cách đọc tên nhân vật cho TTS.",
+      "renderedOn": []
+    },
+    "exampleSpeechText": {
+      "class": "tts",
+      "waived": "Như speechText, cho câu ví dụ của thẻ từ vựng.",
+      "renderedOn": []
+    },
+
+    "ja": {
+      "class": "internal",
+      "waived": "Khoá ngôn ngữ trong map *ByNative. Không phải một trường hiển thị riêng — nội dung của nó nổi lên trường gốc sau khi giải theo nativeLanguageCode.",
+      "renderedOn": []
+    },
+    "vi": {
+      "class": "internal",
+      "waived": "Như 'ja'.",
+      "renderedOn": []
+    },
+    "en": {
+      "class": "internal",
+      "waived": "Như 'ja'.",
+      "renderedOn": []
+    }
+  }
+}

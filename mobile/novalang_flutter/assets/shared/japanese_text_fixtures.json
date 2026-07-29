@@ -1,0 +1,61 @@
+{
+  "_": "NGUỒN SỰ THẬT DÙNG CHUNG cho phép hiển thị tiếng Nhật. Dart (mobile) và TypeScript (web) phải cho ra ĐÚNG các giá trị dưới đây. Node (scripts/lib/japanese-furigana.mjs) là bản gốc của stripFurigana + blocks. Sinh bởi tay, sửa thì phải sửa cả 3 nơi và chạy lại test hai nền.",
+  "_luat": {
+    "stripFurigana": "Bỏ ngoặc tròn full-width chứa TOÀN kana — đó là chú âm. Ngoặc chứa kanji là chú giải trích dẫn, GIỮ NGUYÊN.",
+    "blocks": "Ranh giới khối cho wakachigaki: mỗi cụm mang-âm-đọc + kana trong ngoặc của nó = một khối; chữ thường giữa các khối = khối riêng. Không đoán ranh giới từ.",
+    "romaji": "Modified Hepburn, CHỈ chuyển tự từ KANA. Đây là phép chuyển tự cơ học 1-1, KHÔNG phải đoán âm đọc kanji (G14-R14 [JA]). Trường âm: お-row+う và お-row+お gộp macron (ō); え-row+い và い-row+い KHÔNG gộp (sensei, ii) — theo ADR-015."
+  },
+
+  "stripFurigana": [
+    ["日本（にほん）に来（き）て、どのぐらいですか？", "日本に来て、どのぐらいですか？"],
+    ["去年（きょねん）の9月（くがつ）に来（き）ました。", "去年の9月に来ました。"],
+    ["こんにちは。", "こんにちは。"],
+    ["あめ（雨）— mưa", "あめ（雨）— mưa"],
+    ["1年（いちねん）になります。", "1年になります。"],
+    ["", ""]
+  ],
+
+  "blocks": [
+    ["去年（きょねん）の9月（くがつ）に来（き）ました。", ["きょねん", "の", "くがつ", "に", "き", "ました。"]],
+    ["日本（にほん）に来（き）て、どのぐらいですか？", ["にほん", "に", "き", "て、どのぐらいですか？"]],
+    ["1年（いちねん）になります。", ["いちねん", "になります。"]],
+    ["こんにちは。", ["こんにちは。"]],
+    ["", []]
+  ],
+
+  "_romajiHaiTang": "kanaToRomaji là CHUYỂN TỰ THUẦN: kana→latin 1-1, dấu câu Nhật đổi sang dấu câu Latin, KHÔNG tự chèn dấu cách giữa từ (chèn được thì đã là đoán ranh giới từ). Dấu cách chỉ đến từ romajiLine — nó ghép theo ĐÚNG khối của dòng wakachigaki, cùng một ranh giới, nên hai dòng luôn thẳng hàng nhau.",
+
+  "romaji": [
+    ["にほんにきて、どのぐらいですか", "nihonnikite, donoguraidesuka"],
+    ["きょねんのくがつにきました", "kyonennokugatsunikimashita"],
+    ["いちねんになります", "ichinenninarimasu"],
+    ["おはようございます", "ohayōgozaimasu"],
+    ["せんせい", "sensei"],
+    ["おおきい", "ōkii"],
+    ["がっこう", "gakkō"],
+    ["きっぷ", "kippu"],
+    ["まって", "matte"],
+    ["きゃく", "kyaku"],
+    ["しゃしん", "shashin"],
+    ["じゅう", "jū"],
+    ["ちょっと", "chotto"],
+    ["こんにちは", "konnichiha"],
+    ["しんぶん", "shinbun"],
+    ["きんようび", "kin'yōbi"],
+    ["はんい", "han'i"],
+    ["すまほ", "sumaho"],
+    ["ふじさん", "fujisan"],
+    ["おねがいします", "onegaishimasu"],
+    ["こんにちは。", "konnichiha."],
+    ["", ""]
+  ],
+
+  "romajiLine": [
+    ["去年（きょねん）の9月（くがつ）に来（き）ました。", "きょねんのくがつにきました。", "kyonen no kugatsu ni ki mashita."],
+    ["日本（にほん）に来（き）て、どのぐらいですか？", "にほんにきて、どのぐらいですか？", "nihon ni ki te, donoguraidesuka?"],
+    ["1年（いちねん）になります。", "いちねんになります。", "ichinen ninarimasu."],
+    ["こんにちは。", "こんにちは。", "konnichiha."],
+    ["はい。", "はい。", "hai."],
+    ["", "", ""]
+  ]
+}
