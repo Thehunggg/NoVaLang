@@ -20,7 +20,17 @@
 
 ---
 
-## V1 — Tài liệu chuẩn của viện ngôn ngữ chính thức (NGUỒN CHÍNH + chốt chặn cuối)
+## IRODORI — Japan Foundation, KHÔNG xếp theo thang V1–V5
+
+> **Bỏ nhãn V1 — owner chốt 2026-07-30.** Irodori từng gắn nhãn "V1 — nguồn
+> chính + chốt chặn cuối" theo thang tin-cậy-theo-nhà-xuất-bản của §F-b. Owner
+> xác nhận: Irodori là nội dung **owner tự soạn hoặc thuê soạn** (G14-R3),
+> không phải xuất bản phẩm độc lập của Japan Foundation theo nghĩa thang V1–V5
+> giả định — thang đó xếp hạng GIỮA NHIỀU NHÀ XUẤT BẢN KHÁC NHAU, không áp
+> được khi chỉ có một tác giả. Xem lý do đầy đủ ở §F-b (LESSON_AUTHORING_
+> STANDARD.md). **Vị trí ưu tiên thật của Irodori trong kho ja hiện tại nằm ở
+> G14-R3** (bảng nguồn theo ô + thang ưu tiên hội thoại/Q14/intro.examples),
+> **không phải ở đây.**
 
 - **Viện ngôn ngữ chính thức:** The Japan Foundation (国際交流基金) — cơ quan
   chính thức của Nhật phụ trách phổ biến/giáo dục tiếng Nhật ra nước ngoài.
@@ -36,8 +46,6 @@
   Irodori tải miễn phí **NHƯNG chưa xác minh điều khoản cho phép NHÚNG vào sản
   phẩm** → xem "Ghi chú giấy phép" bên dưới. Phải đọc điều khoản gốc trên trang
   Japan Foundation trước khi dùng.
-- **Vì sao chọn làm V1:** miễn phí, tải được thật, đúng đối tượng người sống/làm
-  việc ở Nhật, theo chuẩn JF Standard.
 
 ## V2 — Giáo trình lớn thứ hai (dùng khi V1 không phủ chủ đề)
 
