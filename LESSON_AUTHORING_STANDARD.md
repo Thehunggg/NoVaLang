@@ -279,7 +279,9 @@ không có chỗ nào tra nghĩa.
 mọi bài đang có vẫn hợp lệ nguyên trạng.
 
 **B3. Card 3 — Dialogue.** (Owner §6; ràng buộc §D3)
-- **Đúng 3 nhóm, mỗi nhóm 4–6 dòng** (code ép). Tự nhiên, mục đích giao tiếp
+- Số nhóm và số dòng mỗi nhóm là **KHOẢNG**, định nghĩa ở
+  `scripts/lib/five-cards-ranges.mjs` (`dialogueGroups` · `dialogueLinesPerGroup`)
+  — xem §D3. Tự nhiên, mục đích giao tiếp
   rõ, lượt sau phản ứng hợp lý với lượt trước, phù hợp tình huống. Trọng tâm là
   kiến thức mới; tái dùng cũ cho phong phú.
 - Không ghép vocab+grammar thành câu rời rạc. Câu đúng ngữ pháp vẫn loại nếu
@@ -289,8 +291,9 @@ mọi bài đang có vẫn hợp lệ nguyên trạng.
   thống yêu cầu nhân vật cụ thể (mọi `speakerId` phải nằm trong
   `approvedCharacterNamePool` — code ép, §D3).
 
-**B4. Card 4 — Grammar.** (Owner §7; ràng buộc §D4) **Đúng 3 patterns** (code
-ép), là kiến thức mới hoặc mở rộng hợp lý cái đã học. Không lấy nguyên grammar
+**B4. Card 4 — Grammar.** (Owner §7; ràng buộc §D4) Số mẫu ngữ pháp là
+**KHOẢNG**, định nghĩa ở `scripts/lib/five-cards-ranges.mjs` (`grammarPatterns`)
+— xem §D4, là kiến thức mới hoặc mở rộng hợp lý cái đã học. Không lấy nguyên grammar
 trọng tâm lesson trước coi lại là mới. Giải thích dễ hiểu, đúng trình độ, không
 khô cứng, không quy tắc tuyệt đối nếu có ngoại lệ. Chỉ dạy một phần cấu trúc lớn
 thì giới hạn rõ phạm vi; không dạy toàn hệ thống trong một lesson.
@@ -331,13 +334,14 @@ thiểu `[A][B][C][D][X][Y]`. Distractor hợp lý.
 
 **B11. Slot ordering.** (Owner §14) Khó hơn sentence ordering (token nhỏ hơn /
 nhiều slot hơn / cấu trúc dài hơn / distractor khó hơn), không dùng kiến thức
-chưa dạy, vẫn **ÍT NHẤT 2 distractor**. (Q13 code ép: 6 answerSlots + ≥1
-unusedToken — §D6.)
+chưa dạy, vẫn **ÍT NHẤT 2 distractor**. (Q13 code ép: số `answerSlots` là
+KHOẢNG — `advancedOrderingSlots` trong `scripts/lib/five-cards-ranges.mjs` —
++ ≥1 unusedToken — §D6.)
 
 **B12. Matching.** (Owner §15) 2 cột **shuffle độc lập**, không để thứ tự tự
 tương ứng, mỗi item mapping rõ, tránh nhiều đáp án cùng đúng nếu không hỗ trợ.
-Kiểm tra hiểu thật. (Q3 code ép: 4 pairs, mỗi pair có id/left.id/right.id —
-§D6.)
+Kiểm tra hiểu thật. (Q3 code ép: số pairs là KHOẢNG — `matchingPairs` trong
+`scripts/lib/five-cards-ranges.mjs` — mỗi pair có id/left.id/right.id — §D6.)
 
 **B13. Listening.** (Owner §16) Dùng audio target language. Kiểm: nghe nội dung
 / hiểu nghĩa / hiểu ý định / chọn phản hồi. **Không hiện nguyên văn audio trước
@@ -363,7 +367,9 @@ cấp).** (Owner §18)
   hardcode một native language vào logic lesson.
 - Ràng buộc code mỗi dòng Q14 (§D7): `speakerId` trong pool · `targetText` +
   `speechText` · `translationByNative` đủ locale native · `reading` không chứa
-  chữ Latin · `romanization` theo pipeline của ngôn ngữ (nếu có) · đúng 1 scene divider có dịch đủ locale.
+  chữ Latin · `romanization` theo pipeline của ngôn ngữ (nếu có) · số scene
+  divider là KHOẢNG (`sceneDividers` trong `scripts/lib/five-cards-ranges.mjs`),
+  mỗi dải có dịch đủ locale.
 
 **B15. Dịch nghĩa review.** (Owner §20, A7) Native language giả định để owner
 kiểm; chất lượng cao, tự nhiên, đúng sắc thái — không word-by-word.
@@ -733,26 +739,35 @@ toggle; hoặc hỗ trợ đọc NHÚNG SẴN trong `displayText`. KHÔNG có b�
 dạng chú âm, ví dụ) nằm ở **file nguồn riêng của ngôn ngữ đó**, không ở file
 chung. Reading = trường riêng, validator ép (§D9).
 
-**E4. 🔨 Bài tổng hợp cuối Unit — ĐÃ CHỐT THIẾT KẾ + CÓ SCHEMA (2026-07-25);
-generator/validator/UI CHƯA làm.**
+**E4. Bài tổng hợp cuối Unit — ĐÃ CHỐT THIẾT KẾ + generator/validator/UI ĐÃ
+LÀM (2026-07-25, xem "Đã có" cuối mục này); CHƯA có nội dung bài thật ngoài
+`ja-daily_life-m01-u1`.**
 
 *Owner đã chốt (2026-07-25):* dạng bài = **CLOZE — điền vào chỗ trống**, chấm
 bằng **so khớp cố định, KHÔNG dùng AI** (tiết kiệm chi phí API); nội dung
 **chỉ gộp từ vựng + mẫu ngữ pháp ĐÃ DẠY trong unit** (§G7); **CÓ chấm điểm**;
 **gate PLUS toàn bài** (nhất quán ranh giới Q10–Q14 của lesson thường).
 
-**ĐÚNG 25 CÂU, chia 3 mức (mở rộng 2026-07-25):**
+**SỐ CÂU = KHOẢNG 18–25, quy đổi theo lượng nội dung unit** (owner chốt
+2026-07-30 — đây là con trỏ hiện tượng, không phải một khoảng liên tục để nội
+suy; số THẬT nằm ở `SECTION_PLANS`, `scripts/lib/unit-comprehensive-test.mjs`,
+đo lại ở bảng "Số câu SUY RA" bên dưới. **CHỈ 2 mức** (không phải 3 — mức thứ
+ba `typed_blank` đã bỏ, xem dưới):
 
-| Câu | Loại (`kind`) | Hình thức | Số ô | Cách nhập |
+| Câu (unit 3 lesson) | Loại (`kind`) | Hình thức | Số ô | Cách nhập |
 |---|---|---|---|---|
 | 1–8 | `sentence_multi_blank_choice` | 1 câu hoặc 2 câu ngắn | **2** | Chọn 1 trong **4 phương án** |
-| 9–18 | `dialogue_multi_blank_choice` | **Hội thoại 2–3 lượt** | **3** | Chọn 1 trong **4 phương án** |
-| 19–25 | `typed_blank` | Câu | ≥1 | **Tự gõ** vào ô trống |
+| 9–25 | `dialogue_multi_blank_choice` | **Hội thoại 2–3 lượt** | **3** | Chọn 1 trong **4 phương án** |
 
+- **`typed_blank` (tự gõ) ĐÃ BỎ KHỎI MỌI KẾ HOẠCH — owner chốt 2026-07-25,
+  commit `1b470ac`.** Lý do (nguyên văn code): "câu tự gõ không nêu đủ tình
+  huống thì NHIỀU đáp án khác đáp án chuẩn vẫn đúng, nên bộ chấm cố định sẽ
+  chấm sai người trả lời đúng." Kiểu này vẫn còn trong schema/generator/
+  Flutter enum để dùng lại sau, nhưng **hiện KHÔNG kế hoạch nào ánh xạ tới
+  nó** — không viết câu `typed_blank` cho bài mới.
 - **Mỗi phương án chứa đáp án cho TẤT CẢ ô** của câu (vd `A. ①です
   ②よろしくお願いします`) → chọn một lần là điền xong cả câu; đúng khi chọn
   đúng phương án (tức mọi ô đều đúng).
-- Câu tự gõ: **chỉ gõ phần trong ô**, KHÔNG gõ lại cả câu. Có thể kèm `hint`.
 - **Hội thoại phải NGẮN (2–3 lượt).** Đọc dài làm mất thời gian và biến bài
   kiểm tra thành bài đọc hiểu — owner nhấn mạnh.
 - **VỊ TRÍ Ô TRỐNG:** rải khắp câu (đầu/giữa/cuối), **thứ tự mỗi câu một
@@ -802,15 +817,19 @@ lesson thường, theo cùng mô hình `helpers.mjs` + `FIVE_CARDS_REGISTRY`:
   thường).
 
 **Số câu SUY RA từ số lesson thật của unit** (generator tự tính, file nguồn
-KHÔNG được tự khai):
+KHÔNG được tự khai) — đo trực tiếp từ `SECTION_PLANS`/`SECTION_KINDS`
+(`scripts/lib/unit-comprehensive-test.mjs`, cập nhật lần cuối commit
+`1b470ac`, 2026-07-25):
 
-| Số lesson của unit | Tổng câu | Chia 3 mức | Dải order |
+| Số lesson của unit | Tổng câu | Chia 2 mức | Dải order |
 |---|---|---|---|
-| 3 lesson | **25** | 8 / 10 / 7 | 1–8 · 9–18 · 19–25 |
-| 2 lesson | **18** | 6 / 7 / 5 | 1–6 · 7–13 · 14–18 |
+| 3 lesson | **25** | 8 / 17 | 1–8 · 9–25 |
+| 2 lesson | **18** | 6 / 12 | 1–6 · 7–18 |
 
 Số lesson khác → generator **fail loud**, KHÔNG tự chế tỉ lệ mới; thêm kế
-hoạch mới cần owner duyệt.
+hoạch mới cần owner duyệt. (Bản trước ghi "chia 3 mức" và dải order 3-lesson
+sai — 9–18 thay vì 9–25 — sót lại từ thiết kế gốc trước khi `typed_blank` bị
+bỏ cùng ngày; số ở bảng này giờ khớp trực tiếp code, không chép tay.)
 
 **Generator ép sẵn (throw ngay khi nguồn sai):** đủ/đúng số câu · `order` là
 1..N đủ và không trùng · `kind` khớp dải order · số ô đúng theo kind (2 / 3 /
@@ -841,13 +860,19 @@ số bất biến.
   mọi tham chiếu) — thiết kế là bài cloze, không phải hội thoại; ADR-014 có
   tiền lệ cho phép ("no persisted user activity exists for this shell").
 
-*CHƯA có:* **nội dung bài thật.** `UNIT_COMPREHENSIVE_REGISTRY` vẫn RỖNG, nên
-chưa unit nào có bài tổng hợp chạy được trong app. Viết nội dung là task
-riêng, cần Owner duyệt theo `AGENTS.md`.
+*Nội dung bài thật:* `UNIT_COMPREHENSIVE_REGISTRY` có **một** mục
+(`ja-daily_life-m01-u1`, 25 câu, 2026-07-25) — không còn rỗng. Mọi unit khác
+chưa có bài tổng hợp chạy được trong app. Viết nội dung là task riêng, cần
+Owner duyệt theo `AGENTS.md`.
 
 ---
 
 **§D-Cloze. CƠ CHẾ CHẤM (bài tổng hợp) — TÁI DÙNG cơ chế đã chạy thật.**
+
+> **(B) dưới đây KHÔNG DÙNG HIỆN TẠI.** `typed_blank` đã bỏ khỏi mọi kế hoạch
+> 2026-07-25 (xem §E4). Giữ mục (B) lại làm tài liệu cơ chế — schema/generator/
+> Flutter vẫn còn nguyên để dùng lại sau — nhưng **không viết câu `typed_blank`
+> cho bài mới**; mọi bài hiện tại chỉ dùng (A).
 
 Bài tổng hợp có **hai cách chấm**, tuỳ `kind` của câu:
 
@@ -930,6 +955,25 @@ nguồn; áp cho MỌI ngôn ngữ).**
 > file chung = sai tầng — mai build ngôn ngữ khác thì tên của ngôn ngữ trước vô
 > nghĩa). Tên cụ thể nằm ở **file nguồn riêng** `scripts/content/sources/<mã>.md`.
 > File chung này chỉ định nghĩa 5 vòng theo LOẠI nguồn.
+
+**PHẠM VI — TÁCH VAI với G14-R3 (owner chốt 2026-07-30).** §F-b và G14-R3
+từng đọc như hai luật trái nhau về cùng một câu hỏi "Irodori xếp ưu tiên mấy".
+Owner tách rõ: §F-b trả lời **"nhiều nguồn nói khác nhau về MỘT SỰ THẬT NGÔN
+NGỮ (từ này có nghĩa gì, mẫu này dùng khi nào) thì tin ai"** — vẫn dùng nguyên
+khi build một ngôn ngữ MỚI, nơi có thật nhiều nhà xuất bản độc lập cần xếp
+hạng độ tin cậy. G14-R3 trả lời một câu khác — **"trong kho nguồn ĐÃ MỞ của
+`ja`, ô dữ liệu này lấy CÂU/CỤM từ file nào trước"** — G14-R3 **GIỮ NGUYÊN**,
+không sửa gì ở đây.
+
+**Vì sao thang V1–V5 KHÔNG áp được cho kho nguồn owner tự soạn** (owner xác
+nhận 2026-07-30): thang V1–V5 xếp hạng theo ĐỘ TIN CẬY CỦA NHÀ XUẤT BẢN — viện
+ngôn ngữ chính thức tin hơn app học tiếng, giáo trình lớn tin hơn giáo trình
+nhỏ. Khi TOÀN BỘ kho (Irodori, `topic1-5.json`, `ban1.txt`, `ban2.txt`) đều là
+**owner tự soạn hoặc thuê soạn** (G14-R3, xác nhận 2026-07-30), không còn
+nhiều "nhà xuất bản" để so — thang tin-cậy-theo-nhà-xuất-bản mất nghĩa. Xếp
+Irodori là "V1" trong hoàn cảnh đó không sai lý thuyết, nhưng vô nghĩa: không
+có V2/V3 độc lập nào để Irodori "thắng". Vì vậy nhãn V1 đã **bỏ khỏi các file
+IRODORI** trong `scripts/content/sources/ja.md` — xem file đó.
 
 **Năm vòng (định nghĩa theo LOẠI, không theo tên):**
 - **V1 — TÀI LIỆU CHUẨN CỦA VIỆN NGÔN NGỮ CHÍNH THỨC** nước đó. Ưu tiên bộ **MIỄN
@@ -1360,24 +1404,36 @@ phương án: *"trong bối cảnh này, nó có thể đúng không?"* — **mu
 kính ngữ ≠ 3 mức trang trọng) · lấy お/ご làm căn cứ.
 **敬語の指針 CHỈ để viết giải thích**, không để gán nhãn.
 
-**G14-R2b. PHẠM VI CỔNG NGUYÊN VĂN — danh sách miễn TƯỜNG MINH.**
+**G14-R2b. PHẠM VI CỔNG NGUYÊN VĂN — danh sách miễn TƯỜNG MINH + MÁY ĐỌC ĐƯỢC.**
 
 Cổng provenance (kể cả kiểm phủ trường-mới) **chỉ áp bài CÓ file provenance**,
 tức **`ja-daily_life-m01-u2-l2` trở đi**.
 
-**MIỄN — 4 bài build TRƯỚC pipeline G14:**
+**Danh sách miễn — NGUỒN DUY NHẤT:**
+`scripts/content/sources/provenance-exemptions.json` (đóng cho m01, xét lại từ
+m02 — owner chốt 2026-07-30). Bảng dưới đây phải khớp file đó; đổi một bên mà
+quên bên kia là tạo hai nguồn sự thật.
 
-| bài | lý do miễn |
-|---|---|
-| `ja-daily_life-m01-u1-l1` (Golden) | build 2026-07 trước khi có G14/provenance |
-| `ja-daily_life-m01-u1-l2` | như trên |
-| `ja-daily_life-m01-u1-l3` | như trên |
-| `ja-daily_life-m01-u2-l1` | như trên |
+**MIỄN — 4 bài build TRƯỚC pipeline G14 + 2 bài tổng hợp dẫn xuất từ chúng:**
 
-**Vì sao miễn chứ không truy hồi tố:** bốn bài đó viết khi chưa có sổ nguồn.
-Dựng provenance cho chúng bây giờ là **đoán xem câu nào lấy từ đâu** — đúng
-định nghĩa bịa (WORKING_RULES §g). Miễn tường minh, ghi lý do, hơn là có một
-sổ nguồn trông-như-thật mà không ai kiểm được.
+| bài / mục | loại | lý do miễn |
+|---|---|---|
+| `ja-daily_life-m01-u1-l1` (Golden) | lesson | build 2026-07 trước khi có G14/provenance |
+| `ja-daily_life-m01-u1-l2` | lesson | như trên |
+| `ja-daily_life-m01-u1-l3` | lesson | như trên |
+| `ja-daily_life-m01-u2-l1` | lesson | như trên |
+| `ja-daily_life-m01-u1-comprehensive` | bài tổng hợp | dẫn xuất từ u1-l1/l2/l3 — cả 3 đều miễn. Đòi provenance cho bản dẫn xuất trong khi nguồn được miễn là không nhất quán. Owner chốt 2026-07-30 |
+| `ja-daily_life-m01-u2-comprehensive` | bài tổng hợp | cùng lý do trên. LƯU Ý: nguồn thật là u2-l1 (miễn) **+ u2-l2 (KHÔNG miễn, có provenance thật)** — miễn vẫn áp theo quyết định owner, không phải vì mọi nguồn đều miễn |
+
+**Vì sao miễn chứ không truy hồi tố (4 lesson):** bốn bài đó viết khi chưa có
+sổ nguồn. Dựng provenance cho chúng bây giờ là **đoán xem câu nào lấy từ đâu**
+— đúng định nghĩa bịa (WORKING_RULES §g). Miễn tường minh, ghi lý do, hơn là
+có một sổ nguồn trông-như-thật mà không ai kiểm được.
+
+**2 bài tổng hợp là quyết định khác** — không phải "chưa có sổ nguồn" (chúng
+build sau G14) mà là "nguồn của chúng chính là các lesson đã miễn/đã có
+provenance riêng, khai provenance cho bản LẮP RÁP từ những nguồn đó là trùng
+lặp". Xét lại khi build bài tổng hợp cho m02 trở đi.
 
 **G14-R9. BLOCKLIST — máy đọc.** `scripts/content/sources/blocked-sources.json`.
 Cổng **FAIL** mọi verbatim trỏ vào. Mục `{path, reason, mức}`, `mức` ∈
@@ -1633,6 +1689,33 @@ việc khác cho tới khi các bài tổng hợp còn thiếu được viết x
 
 ## Changelog file này
 
+- **2026-07-30 (lượt gộp PHA A) — §E4, §F-b/G14-R3, §B số cứng, G14-R2b** —
+  **§E4:** số câu bài tổng hợp SỬA thành khoảng 18–25 quy đổi theo
+  `SECTION_PLANS` (đo trực tiếp từ commit `1b470ac`: 3 lesson→25 (8/17), 2
+  lesson→18 (6/12)) — bản trước ghi cố định "25 câu chia 3 mức" và dải order
+  3-lesson sai (9–18 thay vì 9–25), sót lại từ thiết kế gốc trước khi
+  `typed_blank` bị bỏ CÙNG NGÀY 2026-07-25. Xoá mọi mô tả `typed_blank` khỏi
+  §E4 (đã bỏ khỏi mọi kế hoạch, commit `1b470ac`); §D-Cloze (B) đánh dấu
+  "không dùng hiện tại", không xoá (vẫn là tài liệu cơ chế cho schema còn
+  giữ). Sửa 2 câu stale khác trong §E4 (generator/UI đã làm; registry có 1
+  mục, không còn rỗng).
+  **§F-b ↔ G14-R3:** tách vai — §F-b xử "nhiều nguồn nói khác một sự thật",
+  vẫn dùng khi build ngôn ngữ mới; G14-R3 GIỮ NGUYÊN, xử "ô dữ liệu lấy từ
+  file nào trong kho ja đã mở". Ghi rõ thang V1–V5 không áp cho kho owner tự
+  soạn (một tác giả thì không còn nhiều nhà xuất bản để so). Bỏ nhãn V1 khỏi
+  mục Irodori trong `scripts/content/sources/ja.md`.
+  **§B3/§B4/§B11/§B12/§B14:** 5 số cứng còn sót (4–6 dòng · 3 patterns · 4
+  pairs · 6 answerSlots · 1 scene divider) chuyển thành con trỏ sang
+  `scripts/lib/five-cards-ranges.mjs`, cùng tiền lệ §D3/§D4. Rà hết §B/§C/§E:
+  không còn số cứng nào khác lệch code (`4 phương án`/`2-3 ô` trong §D-Cloze
+  và §E4 là hằng số THẬT trong code — `CHOICE_OPTION_COUNT`/`BLANKS_BY_KIND
+  exactly` — không phải khoảng, giữ nguyên).
+  **G14-R2b:** thêm 2 mục miễn provenance — bài tổng hợp `m01-u1` (dẫn xuất
+  từ 3 lesson đã miễn) và `m01-u2` (dẫn xuất từ 1 lesson miễn + 1 lesson CÓ
+  provenance thật — miễn theo quyết định owner, không phải vì mọi nguồn đều
+  miễn). Danh sách miễn nay có bản MÁY ĐỌC ĐƯỢC:
+  `scripts/content/sources/provenance-exemptions.json`, đóng cho m01, xét lại
+  từ m02.
 - **2026-07-30 — G14-R16 (THỨ TỰ BUILD)** — owner chốt: bài tổng hợp của một
   unit phải xong TRƯỚC khi sang unit kế tiếp. Kiểm report-only:
   `scripts/check-build-order.mjs`. Đo lúc ghi luật: `ja-daily_life-m01-u2`
