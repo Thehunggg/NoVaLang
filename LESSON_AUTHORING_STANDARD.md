@@ -1577,8 +1577,55 @@ trước khi xuất trang.
 
 ---
 
+**G14-R16. THỨ TỰ BUILD — bài tổng hợp xong TRƯỚC khi sang unit kế tiếp.**
+(Owner chốt 2026-07-30.)
+
+> Build bài đi theo THỨ TỰ. Bài tổng hợp của một unit phải hoàn thành TRƯỚC
+> khi bắt đầu bài của unit kế tiếp. Không làm unit mới rồi quay lại bài tổng
+> hợp unit cũ.
+
+**THỨ TỰ** = `(course.order, unit.order)` trong `shared/generated/courses.json`
+— đo được, không suy diễn (vd `ja-daily_life-m02` course.order=12 đứng ngay
+sau `ja-daily_life-m01` order=11).
+
+**Áp cho unit ĐỦ ĐIỀU KIỆN** — số lesson của unit khớp một plan trong
+`SECTION_PLANS` (`scripts/lib/unit-comprehensive-test.mjs`, hiện 2 hoặc 3).
+Unit ngoài phạm vi đó (vd 10 lesson/unit ở Core Foundation hiragana/katakana,
+không phải `five_cards`) chưa áp được cơ chế `unit_comprehensive_cloze` —
+KHÔNG tính là "thiếu".
+
+**Đo 2026-07-30 (lúc ghi luật này):** `ja-daily_life-m01-u1` đã có bài tổng
+hợp (25 câu). `ja-daily_life-m01-u2` **2/2 lesson ready nhưng CHƯA có bài
+tổng hợp** — đây là việc phải xong TRƯỚC khi bắt đầu viết `ja-daily_life-m02-*`.
+Chưa unit nào sau `m01-u2` có nội dung, nên **hiện KHÔNG có vi phạm THẬT**,
+nhưng đây chính là hàng đợi kế tiếp theo luật này.
+
+**Kiểm (REPORT-ONLY, chưa nối vào validate/smoke):**
+`node scripts/check-build-order.mjs` — quét mọi course/unit, in trạng thái
+từng unit theo thứ tự thật, đánh dấu **VI PHẠM THẬT** khi một unit SAU đã có
+nội dung ready mà một unit TRƯỚC (đủ điều kiện) vẫn chưa có bài tổng hợp.
+Không throw — owner chốt giữ report-only vì bật cổng cứng ngay sẽ chặn mọi
+việc khác cho tới khi các bài tổng hợp còn thiếu được viết xong.
+
+**LÀM SAU** (ghi thêm ở `scripts/content/sources/INVENTORY.md`):
+1. Nối `check-build-order.mjs` thành cổng cứng sau khi các bài tổng hợp còn
+   thiếu (hiện: `ja-daily_life-m01-u2`) đã viết xong.
+2. `validateUnitComprehensiveTest` (`validate-curriculum.mjs:1136`) hiện
+   `if (!test) return;` — unit thiếu bài tổng hợp **im lặng cho qua tuyệt
+   đối**, kể cả khi unit đã đủ điều kiện từ lâu. Cùng họ lỗi đã vá ở
+   `check-render-coverage.mjs` (trường thiếu lọt qua vì không ai khai nó phải
+   có). Sửa: in CẢNH BÁO (không fail) khi unit đủ điều kiện mà thiếu — tách
+   biệt với việc bật cổng cứng ở mục 1.
+
+---
+
 ## Changelog file này
 
+- **2026-07-30 — G14-R16 (THỨ TỰ BUILD)** — owner chốt: bài tổng hợp của một
+  unit phải xong TRƯỚC khi sang unit kế tiếp. Kiểm report-only:
+  `scripts/check-build-order.mjs`. Đo lúc ghi luật: `ja-daily_life-m01-u2`
+  đủ điều kiện (2/2 lesson ready) nhưng chưa có bài tổng hợp — 0 vi phạm THẬT
+  vì chưa unit nào sau nó có nội dung.
 - **2026-07-29 (bản 12 — G14 QUY TẮC BUILD BÀI v2, thay trọn G11–G13)** —
   G11 · G11.1–G11.5 · G12 · G13 rút mỗi mục còn MỘT DÒNG "thay bằng G14";
   nội dung cũ xoá, lịch sử còn trong git. **G14** vào ở số kế tiếp còn trống,
