@@ -144,6 +144,11 @@ THÍCH thì đọc, **KHÔNG bắt buộc nhớ**.
 - `speechText` **BẮT BUỘC** ở mỗi mục (luật viết bài; validator hiện chỉ quét
   audio ở `vocabulary[]`/`examples`/dialogue/Q14 — người viết tự đảm bảo, và
   ledger liệt kê để owner soi).
+- **ÂM THANH PHÁT HÀNH = TTS CỦA THIẾT BỊ** (owner chốt 2026-07-30). Không thu
+  âm, không file audio đóng gói. `speechText` là **hợp đồng dữ liệu** với TTS —
+  viết đúng cách đọc, không viết mặt chữ còn ngoặc chú âm. Nếu sau này mua
+  audio thu sẵn thì **chỉ THÊM trường mới**, `speechText` giữ nguyên, không
+  đổi nghĩa, không bỏ.
 - Render UI: xem **§C-Ref** (Cursor làm; prompt DATA chỉ ghi yêu cầu, không sửa
   frontend).
 
@@ -1191,9 +1196,13 @@ nguồn vào `lessons.json`.
 
 **G14-R3. NGUỒN THEO Ô** (đo 2026-07-27/29 — đổi kho hoặc đổi niche thì **đo lại**):
 
-> **NGUỒN OWNER TỰ VIẾT** — `topic1-5.json`, `ban1.txt`, `ban2.txt` là nội dung
-> **owner tự viết**, owner xác nhận **2026-07-30**. Chủ đề nguồn gốc **ĐÓNG**,
-> không hỏi lại. (Cùng lệ với IRODORI: đã xác nhận thì thôi truy vấn.)
+> **NGUỒN OWNER — chủ đề nguồn gốc ĐÓNG cho TOÀN KHO.** Owner xác nhận
+> **2026-07-30**: các file **IRODORI**, `topic1-5.json`, `ban1.txt`, `ban2.txt`
+> đều là nội dung **owner tự soạn hoặc thuê soạn**. Không hỏi lại nguồn gốc,
+> không tự đưa vào blocklist vì lý do bản quyền.
+>
+> **Dữ liệu BÊN THỨ BA vẫn còn dùng** — JMdict/EDRDG · hanabira · Tanos — chưa
+> đóng, xem LS-11 (màn "Nguồn & Ghi công", bắt buộc trước phát hành).
 
 | Ô | Nguồn | Cơ sở đo |
 |---|---|---|
