@@ -57,6 +57,11 @@
       "mức": "cấm-hẳn"
     },
     {
+      "path": "local-sources/ja/ban2.txt",
+      "reason": "Bóc PDF hỏng 55% (furigana dính inline), cấu trúc vỡ — 80% dòng cụt, 15% dòng ≤2 ký tự, nhãn người nói tách khỏi tên. Dò đủ 5 quy ước nhãn: 0/0/1/0/0.",
+      "mức": "cấm-hẳn"
+    },
+    {
       "path": "local-sources/ja/vocab-3000/Collins_Japanese_3000_words_and_phrases.pdf",
       "reason": "Bóc PDF chen dấu cách vào giữa từ ('私は…から来まし た。') — trích thẳng sẽ sai chính tả. Vẫn đọc tham khảo được.",
       "mức": "cấm-trích"
