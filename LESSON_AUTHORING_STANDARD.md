@@ -1331,6 +1331,25 @@ phương án: *"trong bối cảnh này, nó có thể đúng không?"* — **mu
 kính ngữ ≠ 3 mức trang trọng) · lấy お/ご làm căn cứ.
 **敬語の指針 CHỈ để viết giải thích**, không để gán nhãn.
 
+**G14-R2b. PHẠM VI CỔNG NGUYÊN VĂN — danh sách miễn TƯỜNG MINH.**
+
+Cổng provenance (kể cả kiểm phủ trường-mới) **chỉ áp bài CÓ file provenance**,
+tức **`ja-daily_life-m01-u2-l2` trở đi**.
+
+**MIỄN — 4 bài build TRƯỚC pipeline G14:**
+
+| bài | lý do miễn |
+|---|---|
+| `ja-daily_life-m01-u1-l1` (Golden) | build 2026-07 trước khi có G14/provenance |
+| `ja-daily_life-m01-u1-l2` | như trên |
+| `ja-daily_life-m01-u1-l3` | như trên |
+| `ja-daily_life-m01-u2-l1` | như trên |
+
+**Vì sao miễn chứ không truy hồi tố:** bốn bài đó viết khi chưa có sổ nguồn.
+Dựng provenance cho chúng bây giờ là **đoán xem câu nào lấy từ đâu** — đúng
+định nghĩa bịa (WORKING_RULES §g). Miễn tường minh, ghi lý do, hơn là có một
+sổ nguồn trông-như-thật mà không ai kiểm được.
+
 **G14-R9. BLOCKLIST — máy đọc.** `scripts/content/sources/blocked-sources.json`.
 Cổng **FAIL** mọi verbatim trỏ vào. Mục `{path, reason, mức}`, `mức` ∈
 `cấm-trích` | `cấm-hẳn`. Khởi tạo theo INVENTORY: **5 file n5** OCR 9–23%
