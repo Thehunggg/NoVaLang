@@ -872,6 +872,25 @@ Mọi tham chiếu tới nguồn này trong provenance dùng path CHÍNH THỨC 
 
 # LÀM SAU — chưa làm, ghi để không quên
 
+> Mỗi mục: **việc** · **vì sao hoãn**. Thấy lỗi ngoài phạm vi lượt đang làm
+> thì ghi vào đây, không tự sửa (WORKING_RULES §1).
+
+## Bảng ngắn — 9 mục đang treo
+
+| # | Việc | Vì sao hoãn |
+|---|---|---|
+| LS-1 | Đem lối hiển thị 3 dòng + wakachigaki + công tắc lên app thật | Chi tiết ở mục dưới; cần chốt cách cắt okurigana trước |
+| LS-2 | **Ruby (kana trên đầu kanji) cho app** | Owner đã BỎ lối ruby ở trang duyệt 2026-07-29; nếu sau này muốn cho app thì là quyết định sản phẩm mới, không phải việc kỹ thuật còn dở |
+| LS-3 | **Dùng kuromoji cho bộ lọc R5** (lọc vốn từ chưa dạy) | Hiện lọc bằng so chuỗi; kuromoji tách từ chính xác hơn nhưng lại là bộ đoán — phải chốt ranh giới "đoán để LỌC" vs "đoán để SINH" (cái sau đã cấm ở G14-R14) |
+| LS-4 | **Cổng đổi so-substring → khớp cả dòng** | `verify-provenance` đang tìm chuỗi con trong dòng nguồn; khớp cả dòng chặt hơn nhưng sẽ FAIL hàng loạt câu đang PASS — cần một lượt riêng để rà từng ca |
+| LS-5 | **`Flashcard.tsx` còn vẽ chuỗi Nhật trần** | Màn Flashcards không thuộc 5 thẻ bài học, nằm ngoài phạm vi mọi lượt G14-R14 đã làm |
+| LS-6 | **Hàng "Đọc" trong thẻ từ vựng không theo công tắc** | Luôn hiện khi mở thẻ; không mất trợ đọc nên không phải lỗi, nhưng lệch cơ chế bật/tắt — cần owner quyết có gom vào công tắc không |
+| LS-7 | **`lessonLevel` chết trong `ReadingAidScope`** (Flutter) | Từ 2026-07-30 gate theo ngôn ngữ, không theo cấp; trường này còn trong scope nhưng không ai dùng để quyết định gì. Dọn được, chỉ là rác |
+| LS-8 | **Romaji câu dài dính** — `donoguraininarimasuka?` | Khối wakachigaki gộp `どのぐらいになりますか` thành một khối vì bảng trợ từ đóng không tách được `に` nằm giữa. Đúng luật đã chốt; muốn thoáng hơn phải mở bảng hoặc dùng bộ tách từ |
+| LS-9 | **Tên 2 file 敬語 trong `local-sources/ja/keigo/`** | Tên file không nói rõ nội dung; đổi tên cần owner cấp phép từng lần + sha256 trước/sau (G14-R13) |
+| LS-10 | **`sentences_*.json` mở lại từ N4** | Đã đo có 5.281 câu / 1.039 khoá, nhưng bài hiện tại còn ở N5; mở sớm sẽ kéo từ chưa dạy vào (§G7) |
+
+
 ## LS-1. Đem lối hiển thị 3 DÒNG lên APP THẬT (web + Flutter)
 
 **Trạng thái: CHƯA LÀM.** Ghi ngày 2026-07-29, ngay sau khi dựng xong ở

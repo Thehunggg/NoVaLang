@@ -202,29 +202,19 @@ Không được tự suy diễn.
 
 ---
 
-# Lesson Format 2.0 (five_cards)
+# Lesson Format — CON TRỎ, không phải nơi ở
 
-`03_novalang_lesson_format_2_0.mdc` is the frozen Single Source of Truth for
-the opt-in `five_cards` format. Its golden reference is
-`ja-daily_life-m01-u1-l1`.
+| Chủ đề | Nơi ở DUY NHẤT |
+|---|---|
+| Format 2.0 (`five_cards`): 5 thẻ, Q1–Q13, plan | `.cursor/rules/03_novalang_lesson_format_2_0.mdc` |
+| Format 3.0: **chỉ** hành vi Q14 | `.cursor/rules/04_novalang_lesson_format_3_0.mdc` |
+| Golden Reference Lesson — cái gì bị đóng băng | `docs/ai/ARCHITECTURE_DECISIONS.md` **ADR-008** |
+| `unit_comprehensive_cloze` (bài tổng hợp cuối Unit) | **ADR-014** (vị trí) + **ADR-022** (định dạng, chấm, schema) |
 
-`04_novalang_lesson_format_3_0.mdc` is the Single Source of Truth for Q14's
-behavior only (owner-approved breaking change, 2026-07-15): Q14 is a
-non-graded `real_world_practice_dialogue`, not `controlled_ai_text`. Format
-2.0 remains authoritative for Q1–Q13, the five cards, access plans, and every
-other part of the format.
+Đừng chép nội dung của các file trên vào đây. Chép là thành hai nguồn sự thật.
 
-`unit_comprehensive_cloze` (bài tổng hợp cuối Unit) is a separate, Unit-level
-activity. It renders immediately after the third child Lesson inside each
-standard Unit, is gated to Plus/Pro/Ultimate, and must never be conflated with
-per-Lesson Q14. Placement comes from ADR-014; the format, cloze grading and
-schema come from **ADR-022**, which renamed the contract from the earlier
-`unit_comprehensive_conversation` — the activity is a fill-in-the-blank test,
-not a conversation. See `docs/ai/ARCHITECTURE_DECISIONS.md`.
-
-Do not migrate legacy lessons automatically, and do not create or alter lesson
-content, plans, exercise flows, or UI decisions without an approved owner
-instruction.
+Không tự migrate bài cũ; không tạo/sửa nội dung bài, plan, luồng bài tập hay
+quyết định UI khi owner chưa duyệt.
 
 ---
 
@@ -317,15 +307,11 @@ standardized exam names, and approved technical acronyms. Vietnamese or
 English instructional sentences are never allowlisted in Japanese native
 mode.
 
-## Naturalness and Register
+## Naturalness and Register — CON TRỎ
 
-The canonical writing-quality and register architecture is
-`rules/content/naturalness-and-register.md` (ADR-016). It applies separately to
-target-language text, natural translation/learner support, and UI copy. The
-default base register is `NATURAL_NEUTRAL_POLITE`; language-specific rules live
-only in `rules/languages/<languageCode>/style-and-register.md`. Do not use
-heuristics or LLM scores to auto-PASS content, and do not alter approved content
-without a separately authorized content task.
+Nơi ở duy nhất: `rules/content/naturalness-and-register.md` (ADR-016), và
+`rules/languages/<languageCode>/style-and-register.md` cho từng ngôn ngữ.
+Mọi thứ về register mặc định, thang register, và điều kiện PASS đều ở đó.
 
 ---
 

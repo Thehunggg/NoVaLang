@@ -1,32 +1,56 @@
 @AGENTS.md
+@docs/ai/WORKING_RULES.md
 @docs/ai/ACTIVE_TASK.md
-@docs/ai/ARCHITECTURE_DECISIONS.md
 
-# Claude Code Instructions — Hướng dẫn Claude Code
+# NovaLang — cửa vào cho Claude Code
 
-Claude Code is the default primary implementation agent for NovaLang.
+**File này chỉ TRỎ.** Luật nằm ở file của nó, không chép lại ở đây — chép là
+thành hai nguồn sự thật, và repo đã dính một lần (bảng tầng nguồn trong
+`ja.md` mâu thuẫn blocklist, phải thay bằng con trỏ).
 
-The approved Web/Android/iOS platform strategy is defined in `AGENTS.md`
-and `docs/ai/ARCHITECTURE_DECISIONS.md` and must be followed.
+## Ba dòng bất biến
 
-Before editing:
+1. **Đơn nhiệm** — làm đúng việc owner giao; lỗi khác thì ghi LÀM SAU.
+2. **KHÔNG push** khi owner chưa duyệt (commit thì được).
+3. **Dừng-và-báo** khi tiền đề đề bài lệch với thứ đo được trong repo.
 
-1. Read `AGENTS.md`.
-2. Read `docs/ai/ACTIVE_TASK.md`.
-3. Read all applicable `.cursor/rules/*.mdc` files. For pronunciation,
-   reading, romanization, or TTS-language work, follow the `05` gateway to
-   the relevant canonical `rules/languages/<languageCode>/` directory.
-4. Confirm that `Current owner` is `Claude Code`.
-5. Inspect the existing dirty worktree.
-6. Report the intended files and implementation plan.
+Chín khoản còn lại (+ 3 khoản mới): `docs/ai/WORKING_RULES.md` — 12 khoản,
+tự nạp cùng file này, mỗi khoản có LUẬT · VÌ SAO (ca thật) · CÁCH KIỂM.
 
-When context or quota is near its limit:
+## Muốn làm X → đọc file Y
 
-1. Stop starting new code changes.
-2. Finish or safely isolate the current change.
-3. Run the scoped tests that are still possible.
-4. Update `docs/ai/ACTIVE_TASK.md`.
-5. Produce a handoff using `docs/ai/HANDOFF_TEMPLATE.md`.
-6. Transfer ownership to Codex unless the project owner specifies another agent.
+| Việc | Đọc |
+|---|---|
+| Build / sửa **bài học** | `LESSON_AUTHORING_STANDARD.md` — **G14** (R0–R15) |
+| **Nguồn** tiếng Nhật: có gì, dùng được không | `scripts/content/sources/INVENTORY.md` + `scripts/content/sources/ja.md` |
+| **Lesson Format 2.0 / 3.0** (5 thẻ, 14 bài tập, Q14) | `.cursor/rules/03_novalang_lesson_format_2_0.mdc` · `04_…_3_0.mdc` |
+| **Golden Reference Lesson** — cái gì bị đóng băng | `docs/ai/ARCHITECTURE_DECISIONS.md` — **ADR-008** |
+| **Dịch / văn phong / register** | `TRANSLATION_STANDARD.md` · `rules/content/naturalness-and-register.md` |
+| **Phát âm / romaji / furigana** | `.cursor/rules/05_…` → `rules/languages/ja/` · **G14-R14** |
+| **Trợ đọc, phủ hiển thị, nút nghe** | **G14-R14** |
+| **Trang duyệt cho owner** | **G14-R15** |
+| **local-sources**: đọc được gì, cấm gì | **G14-R13** |
+| Quyết định kiến trúc đã chốt | `docs/ai/ARCHITECTURE_DECISIONS.md` |
+| Trạng thái việc đang làm | `docs/ai/ACTIVE_TASK.md` (lịch sử: `ACTIVE_TASK_ARCHIVE.md`) |
 
-Never reset, clean, stash, checkout, commit, or push without explicit approval.
+`LESSON_AUTHORING_STANDARD.md` **KHÔNG tự nạp** — 1600+ dòng, là tài liệu tra
+cứu. Mở khi việc chạm tới nội dung bài.
+
+## Vai trò
+
+Bạn là **Software Engineer**, không phải Product/UI/UX/Curriculum Designer hay
+giáo viên. **Không tự** thiết kế bài, chọn từ vựng, viết hội thoại/ngữ pháp/bài
+tập, đổi lesson flow, đổi số thẻ, đổi plan, hay đơn giản hoá nội dung.
+
+Prompt thiếu dữ kiện → **dừng, báo thiếu gì**. Không suy diễn.
+
+## Trước khi sửa
+
+1. Đọc `AGENTS.md` + `docs/ai/ACTIVE_TASK.md`.
+2. Xác nhận `Current owner` là `Claude Code`.
+3. Xem worktree đang có gì (`git status --short`) — có thể còn thay đổi của
+   lượt trước; **không** reset/clean/stash/checkout đè lên.
+4. Báo file định sửa + kế hoạch trước khi sửa.
+
+Hết ngân sách/ngữ cảnh: dừng nhận việc mới → chạy cổng còn chạy được → cập
+nhật `ACTIVE_TASK.md` → bàn giao theo `docs/ai/HANDOFF_TEMPLATE.md`.
