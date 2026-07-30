@@ -14,8 +14,10 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { spawn } from "node:child_process";
 import { normalize } from "./verify-provenance.mjs";
 import { hasKanji, readingFromFurigana, stripFurigana } from "./lib/japanese-furigana.mjs";
+import { romajiLine } from "./lib/japanese-romaji.mjs";
 
 const LESSONS_FILE = "shared/generated/lessons.json";
 const PROV_DIR = "shared/content/curriculum/provenance";
@@ -63,13 +65,20 @@ const wakachigaki = (text) => readingFromFurigana(text).blocks.join(" ");
  * Một câu Nhật đầy đủ 3 dòng. `text` là chuỗi HIỂN THỊ (đã có furigana ngoặc).
  * `badge` là nhãn provenance đã dựng sẵn.
  */
-function jaSentence(text, translation, badge = "", extra = "") {
+function jaSentence(text, translation, badge = "", extra = "", speech = "") {
   const t = String(text ?? "");
   if (!t) return "";
+  const clean = stripFurigana(t);
+  const tts = String(speech ?? "").trim() || clean;
   const out = [`<div class="s">`];
-  out.push(`<div class="s1 ja">${cleanJa(t)}${badge}</div>`);
+  out.push(
+    `<div class="s1 ja">` +
+      `<button class="spk" type="button" data-say="${esc(tts)}" title="Nghe câu này">🔊</button>` +
+      `${cleanJa(t)}${badge}</div>`,
+  );
   if (hasKanji(t) && /（[぀-ゟー]+）/.test(t)) {
     out.push(`<div class="s2">${esc(wakachigaki(t))}</div>`);
+    out.push(`<div class="s2r">${esc(romajiLine(t))}</div>`);
   }
   if (extra) out.push(`<div class="s2x">${esc(extra)}</div>`);
   if (translation) out.push(`<div class="s3">${esc(translation)}</div>`);
@@ -87,12 +96,13 @@ const jaInline = (text) => `<span class="ja s1">${cleanJa(String(text ?? ""))}</
 function buildProvIndex(items) {
   const byText = new Map();
   const byPath = new Map();
+  // giữ nguyên mảng để derivedFrom() lọc theo path
   for (const it of items) {
     byPath.set(it.path, it);
     const k = normalize(it.targetText);
     if (!byText.has(k)) byText.set(k, it);
   }
-  return { byText, byPath };
+  return { byText, byPath, items };
 }
 
 function provBadge(idx, text) {
@@ -303,6 +313,46 @@ function feedbackBlock(fb) {
   return out.join("\n");
 }
 
+/**
+ * "Bài này lấy chất liệu từ đâu" — TÍNH từ provenance, không phải đọc một
+ * trường `derived_from` có sẵn: trường đó KHÔNG tồn tại trong dữ liệu (đã
+ * kiểm). Gom mọi mục provenance có path thuộc đúng bài tập này, rồi liệt kê
+ * nguồn:dòng của phần nguyên văn + lý do của phần tự soạn/biến thể.
+ */
+function derivedFrom(items, exerciseIndex) {
+  const prefix = `fiveCardContent.practice.exercises[${exerciseIndex}]`;
+  const mine = items.filter((it) => String(it.path).startsWith(prefix));
+  const verbatim = new Map();
+  const authored = new Map();
+  const mutations = new Map();
+  for (const it of mine) {
+    if (it.mutation) {
+      mutations.set(it.mutation.op, (mutations.get(it.mutation.op) ?? 0) + 1);
+    } else if (it.authored) {
+      const r = String(it.reason ?? "(không ghi lý do)").trim();
+      authored.set(r, (authored.get(r) ?? 0) + 1);
+    } else if (it.verbatim) {
+      const k = `${path.basename(it.source)}:${it.line}`;
+      verbatim.set(k, `${it.source}:${it.line}`);
+    }
+  }
+  if (!mine.length) return "";
+  const out = [`<div class="derived"><b>Lấy chất liệu từ:</b>`];
+  if (verbatim.size) {
+    out.push(
+      `<div>nguyên văn — ` +
+        [...verbatim]
+          .map(([label, full]) => `<span class="src" data-copy="${esc(full)}">${esc(label)}</span>`)
+          .join(" · ") +
+        `</div>`,
+    );
+  }
+  for (const [r, c] of authored) out.push(`<div>tự soạn ×${c} — ${esc(r)}</div>`);
+  for (const [op, c] of mutations) out.push(`<div>biến thể ×${c} — ${esc(op)}</div>`);
+  out.push(`</div>`);
+  return out.join("\n");
+}
+
 function renderExercise(idx, e, n) {
   const out = [];
   const plan = e.plan === "plus" ? `<span class="tag plus">PLUS</span>` : `<span class="tag free">FREE</span>`;
@@ -475,6 +525,7 @@ function renderExercise(idx, e, n) {
       out.push(`<pre class="raw">${esc(JSON.stringify(e, null, 1))}</pre>`);
   }
 
+  out.push(derivedFrom(idx.items, n - 1));
   out.push(`</div>`);
   return out.join("\n");
 }
@@ -554,7 +605,7 @@ function renderProvenance(items) {
   }
   for (const [k, g] of byParent) {
     out.push(`<tr><td class="ja">${esc(g.text)}</td>
-      <td class="src">${esc(k)}</td>
+      <td class="src" data-copy="${esc(k)}" title="Bấm để chép">${esc(k)}</td>
       <td class="paths">${g.paths.map((p) => esc(p)).join("<br>")}</td></tr>`);
   }
   out.push(`</tbody></table>`);
@@ -592,6 +643,15 @@ nav a{margin-right:1rem;color:var(--vb);text-decoration:none;font-size:.9rem}
 .s2{display:none;color:var(--mut);font-size:.9rem;letter-spacing:.01em;
 font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif}
 :root[data-kana="1"] .s2{display:block}
+.s2r{display:none;color:var(--mut);font-size:.85rem;font-style:italic}
+:root[data-romaji="1"] .s2r{display:block}
+.spk{background:none;border:1px solid var(--line);border-radius:6px;cursor:pointer;
+font-size:.8rem;padding:0 .3rem;margin-right:.4rem;color:var(--vb);vertical-align:middle}
+.spk:hover{border-color:var(--vb)}
+.spk.on{background:var(--vb);color:#fff}
+.src{cursor:pointer}
+.src:hover{text-decoration:underline}
+.copied{color:var(--ok);font-weight:700}
 .s2x{color:var(--mut);font-size:.82rem;font-style:italic}
 .s3{font-size:.93rem}
 #aids{position:sticky;top:0;z-index:10;background:var(--bg);
@@ -679,6 +739,8 @@ export function buildPreview(lessonId) {
     // nhớ trong PHIÊN, không ghi đĩa, mỗi công tắc một trạng thái độc lập.
     `<div id="aids">
       <label><input type="checkbox" id="tKana" checked> Dòng đọc kana <span class="hint2">(tách theo ranh giới khối)</span></label>
+      <label><input type="checkbox" id="tRomaji"> Romaji <span class="hint2">(Hepburn, phiên từ kana)</span></label>
+      <span class="hint2">🔊 = nghe (giọng ja-JP của trình duyệt)</span>
     </div>`,
     renderIntro(lesson, idx),
     renderVocabulary(lesson, idx),
@@ -713,6 +775,48 @@ ${body}
     });
   }
   bind("tKana", "data-kana", true);
+  bind("tRomaji", "data-romaji", false);
+
+  // Nghe từng câu bằng Web Speech của trình duyệt — không cần mạng, không cần
+  // file mp3. Giọng ja-JP có sẵn trên Windows/macOS; máy không có giọng Nhật
+  // thì nút báo ngay thay vì im lặng.
+  var speaking = null;
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest(".spk") : null;
+    if (!btn) return;
+    if (!("speechSynthesis" in window)) {
+      btn.textContent = "✖ trình duyệt không đọc được";
+      return;
+    }
+    window.speechSynthesis.cancel();
+    if (speaking) speaking.classList.remove("on");
+    var u = new SpeechSynthesisUtterance(btn.getAttribute("data-say"));
+    u.lang = "ja-JP";
+    var ja = window.speechSynthesis.getVoices().filter(function (v) {
+      return /^ja/i.test(v.lang);
+    });
+    if (ja.length) u.voice = ja[0];
+    btn.classList.add("on");
+    speaking = btn;
+    u.onend = u.onerror = function () { btn.classList.remove("on"); };
+    window.speechSynthesis.speak(u);
+  });
+
+  // source:line bấm là chép — owner dán thẳng vào trình soạn để mở đúng dòng.
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest ? e.target.closest(".src") : null;
+    if (!el) return;
+    var text = el.getAttribute("data-copy") || el.textContent;
+    navigator.clipboard.writeText(text).then(function () {
+      var old = el.textContent;
+      el.textContent = "đã chép ✓";
+      el.classList.add("copied");
+      setTimeout(function () {
+        el.textContent = old;
+        el.classList.remove("copied");
+      }, 900);
+    });
+  });
 })();
 </script>
 </body></html>`;
@@ -720,19 +824,77 @@ ${body}
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const out = path.join(OUT_DIR, `${lessonId}.html`);
   fs.writeFileSync(out, html, "utf8");
-  return { out, items: items.length, exercises: lesson.fiveCardContent.practice?.exercises?.length ?? 0 };
+  return { out, lessonId, title, items: items.length, exercises: lesson.fiveCardContent.practice?.exercises?.length ?? 0 };
+}
+
+/** Trang mục lục khi xuất nhiều bài một lượt (G14-R15 §3). */
+function buildIndex(built) {
+  const rows = built
+    .map(
+      (r) =>
+        `<li><a href="${esc(path.basename(r.out))}">${esc(r.lessonId)}</a>` +
+        ` <span class="meta2">${esc(r.title)} · ${r.exercises} bài tập · ${r.items} mục provenance</span></li>`,
+    )
+    .join("\n");
+  const html = `<!doctype html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DUYỆT — ${built.length} bài</title>
+<style>
+body{font:15px/1.7 -apple-system,"Segoe UI",system-ui,sans-serif;max-width:820px;
+margin:2rem auto;padding:0 1.2rem;background:#fff;color:#1a1a1a}
+@media(prefers-color-scheme:dark){body{background:#15161a;color:#e8e8ea}}
+a{color:#0b5aa8}@media(prefers-color-scheme:dark){a{color:#6cb0ff}}
+li{margin:.5rem 0}.meta2{color:#777;font-size:.85rem}
+</style></head><body>
+<h1>Trang duyệt — ${built.length} bài</h1>
+<p class="meta2">Sinh lúc ${new Date().toISOString()} bằng <code>scripts/preview-lesson.mjs</code></p>
+<ul>${rows}</ul>
+</body></html>`;
+  const out = path.join(OUT_DIR, "index.html");
+  fs.writeFileSync(out, html, "utf8");
+  return out;
+}
+
+/** Mở file bằng trình duyệt mặc định của hệ điều hành. */
+function openInBrowser(file) {
+  const abs = path.resolve(file);
+  try {
+    if (process.platform === "win32") {
+      spawn("cmd", ["/c", "start", "", abs], { detached: true, stdio: "ignore" }).unref();
+    } else if (process.platform === "darwin") {
+      spawn("open", [abs], { detached: true, stdio: "ignore" }).unref();
+    } else {
+      spawn("xdg-open", [abs], { detached: true, stdio: "ignore" }).unref();
+    }
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 function main() {
-  const ids = process.argv.slice(2).filter((a) => !a.startsWith("-"));
+  const args = process.argv.slice(2);
+  const noOpen = args.includes("--no-open");
+  const ids = args.filter((a) => !a.startsWith("-"));
   if (!ids.length) {
-    console.error("Dùng: node scripts/preview-lesson.mjs <lessonId> [lessonId...]");
+    console.error("Dùng: node scripts/preview-lesson.mjs <lessonId> [lessonId...] [--no-open]");
     process.exit(2);
   }
-  for (const id of ids) {
-    const r = buildPreview(id);
+  const built = ids.map((id) => buildPreview(id));
+  for (const r of built) {
     console.log(`ĐÃ XUẤT  ${r.out}  (${r.exercises} bài tập · ${r.items} mục provenance)`);
     console.log(`         mở: file:///${path.resolve(r.out).replace(/\\/g, "/")}`);
+  }
+
+  // Nhiều bài → thêm trang mục lục, và mở mục lục thay vì mở từng tab.
+  const target = built.length > 1 ? buildIndex(built) : built[0].out;
+  if (built.length > 1) {
+    console.log(`ĐÃ XUẤT  ${target}  (mục lục ${built.length} bài)`);
+    console.log(`         mở: file:///${path.resolve(target).replace(/\\/g, "/")}`);
+  }
+  if (!noOpen) {
+    console.log(openInBrowser(target) ? "ĐÃ MỞ trong trình duyệt." : "KHÔNG mở được — mở tay bằng path trên.");
   }
 }
 

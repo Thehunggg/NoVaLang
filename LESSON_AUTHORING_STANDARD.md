@@ -1444,6 +1444,39 @@ là bài tự có trợ đọc.
 
 ---
 
+**G14-R15. TRANG DUYỆT TĨNH LÀ ĐƯỜNG DUYỆT MẶC ĐỊNH.** (Owner chốt 2026-07-30.)
+
+Owner **không duyệt qua app nữa** — đăng nhập + onboarding tốn thời gian mỗi
+lượt. Đường duyệt chính thức là **trang HTML tĩnh**.
+
+**Mọi lượt build hoặc sửa NỘI DUNG bài phải KẾT THÚC bằng:**
+
+1. Xuất trang duyệt cho **mọi bài vừa đụng**:
+   `node scripts/preview-lesson.mjs <lessonId> [lessonId...]`
+2. **Tự mở** file trong trình duyệt (script tự làm; `--no-open` để tắt), và
+   **báo path dạng `file:///…`** để owner mở lại bất cứ lúc nào.
+3. Nhiều bài → mỗi bài một file **+ `index.html`** liệt kê link; mở mục lục.
+
+**Trang duyệt phải đủ để duyệt KHÔNG cần app:**
+
+| Phải có | Ghi chú |
+|---|---|
+| Hai công tắc **[Dòng đọc kana] [Romaji]** | kana **mặc định BẬT**, như app |
+| Nút **🔊 nghe từng câu** | Web Speech giọng `ja-JP` của trình duyệt; máy không có giọng Nhật thì nút tự báo, không im lặng |
+| Thẻ ⑤ đầy đủ | đề · **mọi** phương án · ✓ đúng · ✗ nhiễu kèm op · feedback |
+| **Lấy chất liệu từ** — mỗi bài tập | TÍNH từ provenance theo path, không phải trường `derived_from` (trường đó **không tồn tại** trong dữ liệu) |
+| Khối provenance cuối trang | `source:line` **bấm là chép** |
+
+**Dev server + cờ `VITE_DEV_BYPASS`: GIỮ, nhưng là đường PHỤ.** Không dựng
+server mặc định mỗi lượt nữa — chỉ dựng khi owner yêu cầu, hoặc khi cần kiểm
+thứ mà trang tĩnh không dựng được (tương tác thật, điều hướng, trạng thái).
+
+**Không thay thế cổng.** Trang duyệt là để owner NHÌN; `validate` · `smoke` ·
+`verify-provenance` · `check-render-coverage` · `flutter test` vẫn phải xanh
+trước khi xuất trang.
+
+---
+
 ## Changelog file này
 
 - **2026-07-29 (bản 12 — G14 QUY TẮC BUILD BÀI v2, thay trọn G11–G13)** —
