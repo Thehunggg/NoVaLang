@@ -80,32 +80,38 @@ function main() {
     );
   }
 
-  // 2. Khai rồi nhưng khai sai hình.
+  // 2. Khai rồi nhưng khai sai hình. HAI CỜ, mỗi cờ false phải có waivedReason.
   for (const [k, decl] of Object.entries(declared)) {
-    if (!CLASSES.includes(decl.class)) {
-      errors.push(`'${k}': class '${decl.class}' không hợp lệ (${CLASSES.join(" / ")})`);
+    if (!CLASSES.includes(decl.category)) {
+      errors.push(`'${k}': category '${decl.category}' không hợp lệ (${CLASSES.join(" / ")})`);
       continue;
+    }
+    for (const flag of ["mustRender", "mustDeclareProvenance"]) {
+      if (typeof decl[flag] !== "boolean") {
+        errors.push(`'${k}': thiếu cờ '${flag}' (phải là true/false)`);
+      }
     }
     const rendered = Array.isArray(decl.renderedOn) ? decl.renderedOn : [];
     const bad = rendered.filter((p) => !PLATFORMS.includes(p));
     if (bad.length) errors.push(`'${k}': nền lạ trong renderedOn: ${bad.join(", ")}`);
 
-    if (decl.class === "display") {
-      if (decl.waived) {
-        if (!String(decl.waived).trim()) {
-          errors.push(`'${k}': waived phải kèm LÝ DO, không được để trống.`);
-        }
-      } else {
-        const missing = PLATFORMS.filter((p) => !rendered.includes(p));
-        if (missing.length) {
-          errors.push(
-            `'${k}' là trường HIỂN THỊ nhưng chưa vẽ ở: ${missing.join(", ")}\n` +
-              `    → hoặc vẽ nó, hoặc khai waived kèm lý do.`,
-          );
-        }
+    // Bất kỳ cờ nào false → BẮT BUỘC có lý do.
+    const anyFalse = decl.mustRender === false || decl.mustDeclareProvenance === false;
+    if (anyFalse && !String(decl.waivedReason ?? "").trim()) {
+      errors.push(
+        `'${k}': có cờ false (mustRender=${decl.mustRender} · ` +
+          `mustDeclareProvenance=${decl.mustDeclareProvenance}) nhưng THIẾU waivedReason.`,
+      );
+    }
+    // mustRender=true thì phải vẽ đủ hai nền.
+    if (decl.mustRender === true) {
+      const missing = PLATFORMS.filter((p) => !rendered.includes(p));
+      if (missing.length) {
+        errors.push(
+          `'${k}' có mustRender=true nhưng chưa vẽ ở: ${missing.join(", ")}\n` +
+            `    → hoặc vẽ nó, hoặc đặt mustRender=false kèm waivedReason.`,
+        );
       }
-    } else if (rendered.length && !decl.waived && decl.class === "internal") {
-      warnings.push(`'${k}': class internal mà lại khai renderedOn — xem lại phân loại.`);
     }
   }
 
@@ -118,16 +124,18 @@ function main() {
   const byClass = {};
   for (const [k, d] of Object.entries(declared)) {
     if (!seen.has(k)) continue;
-    (byClass[d.class] ??= []).push(k);
+    (byClass[d.category] ??= []).push(k);
   }
   for (const c of CLASSES) {
     const list = (byClass[c] ?? []).sort();
     console.log(`  ${c.padEnd(9)} ${String(list.length).padStart(2)} trường  ${list.join(" · ")}`);
   }
-  const waived = Object.entries(declared).filter(([k, d]) => d.waived && seen.has(k));
+  const mustDeclare = Object.entries(declared).filter(([k, d]) => d.mustDeclareProvenance && seen.has(k));
+  const waivedDecl = Object.entries(declared).filter(([k, d]) => !d.mustDeclareProvenance && seen.has(k));
   console.log("");
-  console.log(`  MIỄN RENDER (waived): ${waived.length}`);
-  for (const [k, d] of waived) console.log(`    ${k.padEnd(20)} ${d.waived}`);
+  console.log(`  PHẢI KHAI NGUỒN: ${mustDeclare.length} trường — ${mustDeclare.map(([k]) => k).sort().join(" · ")}`);
+  console.log(`  MIỄN KHAI NGUỒN: ${waivedDecl.length} trường`);
+  for (const [k, d] of waivedDecl) console.log(`    ${k.padEnd(20)} ${d.waivedReason}`);
 
   console.log("");
   if (warnings.length) {

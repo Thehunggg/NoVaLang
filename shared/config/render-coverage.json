@@ -1,167 +1,176 @@
 {
-  "_": "BẢN ĐỒ PHỦ HIỂN THỊ — G14-R14. Mọi trường mang chuỗi tiếng Nhật trong lessons.json phải có MỘT dòng ở đây. Trường mới chưa khai → scripts/check-render-coverage.mjs FAIL. Đây là thứ đáng lẽ đã bắt được intro.examples (15 câu có đủ dữ liệu mà không nền nào vẽ, hai lượt audit tay đều lọt).",
-  "_phanLoai": {
-    "display": "Chuỗi NGƯỜI HỌC ĐỌC. Phải render trên CẢ web lẫn Flutter, và phải đi qua widget câu dùng chung (JaSentence / JaSentence.tsx) để có dòng chính sạch + trợ đọc + nút nghe.",
-    "aid": "Trợ đọc: chú âm, dạng chuẩn hoá. Không bắt buộc hiện thẳng; nó là NGUYÊN LIỆU cho lớp display.",
+  "_": "REGISTRY DUY NHẤT cho mọi trường có thể mang chuỗi ngôn ngữ đích — G14-R14. Hai cờ: mustRender (phải vẽ trên CẢ hai nền) và mustDeclareProvenance (phải khai nguồn ở file provenance). scripts/check-render-coverage.mjs và scripts/verify-provenance.mjs ĐỀU đọc file này; KHÔNG nơi nào khai tay danh sách trường nữa.",
+  "_lichSu": "Trước 2026-07-30 có HAI danh sách rời: bảng này (17 trường display) và hằng COVERAGE_FIELDS trong verify-provenance (5 trường). Chúng lệch nhau — prompt/context/correctAnswer là display mà không phải khai nguồn, nên tiếng Nhật ở đề bài chưa bao giờ bị soi. Gộp làm một.",
+
+  "_category": {
+    "display": "Chuỗi NGƯỜI HỌC ĐỌC. Vẽ qua widget câu dùng chung (JaSentence).",
+    "aid": "Trợ đọc: chú âm, dạng chuẩn hoá. Nguyên liệu cho lớp display.",
     "tts": "Chuỗi đưa cho máy đọc. KHÔNG hiện ra màn hình.",
-    "internal": "Dữ liệu máy dùng (chấm điểm, SRS, khoá tra). Không hiện, không đọc."
+    "internal": "Dữ liệu máy dùng (khoá ngôn ngữ, chấm điểm). Không hiện, không đọc."
   },
-  "_coTruong": {
-    "renderedOn": "Nền đã vẽ trường này. Đủ hai nền thì là ['web','flutter'].",
-    "waived": "Cố ý KHÔNG render. Bắt buộc kèm lý do.",
-    "note": "Ghi chú tự do."
+  "_co": {
+    "mustRender": "true → phải render trên CẢ web lẫn Flutter. false → phải có waivedReason.",
+    "mustDeclareProvenance": "true → mọi chuỗi CÓ KÝ TỰ NHẬT ở trường này phải có item trong file provenance. false → phải có waivedReason.",
+    "waivedReason": "Bắt buộc khi bất kỳ cờ nào false. Không được để trống.",
+    "renderedOn": "Nền đã vẽ thật (đối chiếu tay). Đủ hai nền thì ['web','flutter']."
   },
+  "_luuY": "Chỉ chuỗi CHỨA KÝ TỰ NHẬT mới phải khai — trường tiếng Việt/Anh thuần không tính, dù cùng tên trường.",
 
   "fields": {
     "displayText": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
-      "note": "Mặt chữ chính. Vẽ qua widget câu dùng chung, luôn bỏ ngoặc chú âm."
+      "note": "Mặt chữ chính. Luôn bỏ ngoặc chú âm khi vẽ."
     },
     "targetText": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
       "note": "Lượt hội thoại + dải phân cảnh Q14."
     },
     "text": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
       "note": "Câu ví dụ, nhãn phương án, thẻ token."
     },
     "term": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
       "note": "Từ ở mục tham khảo."
     },
     "title": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
       "note": "Tiêu đề mẫu ngữ pháp / nhóm hội thoại."
     },
-    "formula": {
-      "class": "display",
-      "renderedOn": ["web", "flutter"],
-      "note": "Công thức mẫu ngữ pháp. Miễn khai provenance (R12), vẫn phải render."
-    },
     "prompt": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
-      "note": "Đề bài."
+      "note": "Đề bài. Thường trích thẳng câu đích vào trong đề — phải khai."
     },
     "context": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
-      "note": "Câu dẫn tình huống của bài tập."
+      "note": "Câu dẫn tình huống. Chủ yếu tiếng bản ngữ; khai khi có chèn tiếng Nhật."
     },
     "correctAnswer": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
-      "note": "Hiện ở panel phản hồi sau khi chấm."
+      "note": "Đáp án đúng ở panel phản hồi."
     },
     "explanation": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
-      "note": "Giải thích sau khi chấm."
+      "note": "Giải thích sau khi chấm. Hay trích câu đích làm dẫn chứng."
     },
     "incorrectMessage": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"]
     },
     "japaneseTitle": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
-      "note": "Nhãn tiếng Nhật của mục, hiện cạnh tiêu đề bản ngữ."
-    },
-    "displayName": {
-      "class": "display",
-      "renderedOn": ["web", "flutter"],
-      "note": "Tên nhân vật hội thoại."
-    },
-    "speaker": {
-      "class": "display",
-      "renderedOn": ["web", "flutter"]
+      "note": "Nhãn tiếng Nhật của mục."
     },
     "casualIntro": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"]
     },
     "meaning": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
       "note": "Chỉ mang chuỗi Nhật khi ngôn ngữ mẹ đẻ là ja."
     },
     "exampleText": {
-      "class": "display",
+      "category": "display", "mustRender": true, "mustDeclareProvenance": true,
+      "renderedOn": ["web", "flutter"]
+    },
+
+    "formula": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "G14-R2 miễn khai: công thức là KHUÔN do người viết dựng ([nơi] ＋ に来て…), không phải câu trích từ nguồn. Vẫn phải render.",
+      "renderedOn": ["web", "flutter"]
+    },
+    "displayName": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Nhãn TÊN nhân vật lấy từ approvedCharacterNamePool, không phải câu trích nguồn.",
+      "renderedOn": ["web", "flutter"]
+    },
+    "speaker": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như displayName — nhãn tên người nói.",
       "renderedOn": ["web", "flutter"]
     },
 
     "reading": {
-      "class": "aid",
-      "renderedOn": ["web", "flutter"],
-      "note": "Chú âm kana. Là nguyên liệu dựng dòng wakachigaki khi bật công tắc Furigana."
+      "category": "aid", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Chú âm kana — lớp trợ đọc, không phải câu đích. Đúng/sai do R12a (JMdict) và R12d (ráp ngược) gác, không phải provenance.",
+      "renderedOn": ["web", "flutter"]
     },
     "formulaReading": {
-      "class": "aid",
+      "category": "aid", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như reading, cho công thức.",
       "renderedOn": ["web", "flutter"]
     },
     "speakerReading": {
-      "class": "aid",
+      "category": "aid", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như reading, cho tên người nói.",
       "renderedOn": ["web", "flutter"]
     },
     "exampleReading": {
-      "class": "aid",
+      "category": "aid", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như reading, cho câu ví dụ.",
       "renderedOn": ["web", "flutter"]
     },
     "canonicalText": {
-      "class": "aid",
-      "waived": "Dạng chuẩn hoá dùng để CHẤM (bỏ ngoặc chú âm). Không hiện — hiện ra là người học thấy hai bản gần giống nhau của cùng một câu.",
+      "category": "aid", "mustRender": false, "mustDeclareProvenance": true,
+      "waivedReason": "KHÔNG render: dạng chuẩn hoá dùng để CHẤM, hiện ra là người học thấy hai bản gần giống nhau. NHƯNG vẫn phải khai nguồn vì nó là chính câu đích đã bỏ ngoặc.",
       "renderedOn": []
     },
     "canonicalAnswer": {
-      "class": "aid",
-      "waived": "Như canonicalText, cho panel phản hồi.",
+      "category": "aid", "mustRender": false, "mustDeclareProvenance": true,
+      "waivedReason": "Như canonicalText, cho panel phản hồi.",
       "renderedOn": []
     },
     "canonicalName": {
-      "class": "aid",
-      "waived": "Dạng chuẩn hoá của tên nhân vật, dùng để so khớp.",
+      "category": "aid", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Dạng chuẩn hoá của TÊN nhân vật — không render, không phải câu trích nguồn.",
       "renderedOn": []
     },
 
     "speechText": {
-      "class": "tts",
-      "waived": "Chuỗi đưa cho máy đọc. Không hiện — nó là kana trần, không phải mặt chữ.",
+      "category": "tts", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Thuần TTS: kana trần đưa cho máy đọc, không hiện, không phải mặt chữ trích nguồn.",
       "renderedOn": []
     },
     "audioText": {
-      "class": "tts",
-      "waived": "Như speechText, cho thẻ token và phương án.",
+      "category": "tts", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Như speechText, cho thẻ token và phương án.",
       "renderedOn": []
     },
     "audioName": {
-      "class": "tts",
-      "waived": "Cách đọc tên nhân vật cho TTS.",
+      "category": "tts", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Cách đọc tên nhân vật cho TTS.",
       "renderedOn": []
     },
     "exampleSpeechText": {
-      "class": "tts",
-      "waived": "Như speechText, cho câu ví dụ của thẻ từ vựng.",
+      "category": "tts", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Như speechText, cho câu ví dụ thẻ từ vựng.",
       "renderedOn": []
     },
 
     "ja": {
-      "class": "internal",
-      "waived": "Khoá ngôn ngữ trong map *ByNative. Không phải một trường hiển thị riêng — nội dung của nó nổi lên trường gốc sau khi giải theo nativeLanguageCode.",
+      "category": "internal", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Khoá ngôn ngữ trong map *ByNative — nội dung nổi lên trường gốc sau khi giải theo nativeLanguageCode, khai ở đó.",
       "renderedOn": []
     },
     "vi": {
-      "class": "internal",
-      "waived": "Như 'ja'.",
+      "category": "internal", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Như 'ja'.",
       "renderedOn": []
     },
     "en": {
-      "class": "internal",
-      "waived": "Như 'ja'.",
+      "category": "internal", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Như 'ja'.",
       "renderedOn": []
     }
   }

@@ -212,8 +212,23 @@ export function checkMutation(mutation, text, corpus) {
 // ── KIỂM PHỦ — mọi trường tiếng Nhật HIỂN THỊ phải có item khai ──────────
 // Nhập thẳng vào cổng: nó đã bắt 2 lỗi mà cổng không thấy (câu ngoài sổ, và
 // furigana generator đoán sai) — để rời thành script thì sang batch sau sẽ quên.
-const COVERAGE_FIELDS = ["targetText", "displayText", "text", "canonicalText", "term"];
-const COVERAGE_EXEMPT = /\.formula$/; // G14-R2: formula không khai
+// SUY TỪ REGISTRY, không khai tay. Trước 2026-07-30 hằng này khai tay 5 trường
+// trong khi render-coverage.json khai 17 trường display — hai danh sách lệch
+// nhau, nên tiếng Nhật ở `prompt`/`context`/`correctAnswer` chưa bao giờ bị soi.
+// Giờ chỉ còn MỘT nguồn: shared/config/render-coverage.json.
+const REGISTRY = JSON.parse(
+  readFileSync(path.join(ROOT, "shared", "config", "render-coverage.json"), "utf8"),
+).fields;
+
+/** Trường phải khai nguồn (cờ mustDeclareProvenance trong registry). */
+export const COVERAGE_FIELDS = Object.entries(REGISTRY)
+  .filter(([, d]) => d.mustDeclareProvenance === true)
+  .map(([k]) => k);
+
+/** Trường có mặt trong registry nhưng được miễn khai — kèm lý do. */
+export const COVERAGE_WAIVED = Object.entries(REGISTRY)
+  .filter(([, d]) => d.mustDeclareProvenance !== true)
+  .map(([k, d]) => [k, d.waivedReason ?? "(THIẾU LÝ DO)"]);
 
 /** Gom mọi chuỗi tiếng Nhật hiển thị trong một lesson đã sinh. */
 export function collectDisplayedJapanese(lesson) {
@@ -245,7 +260,9 @@ export function checkCoverage(lessonId, items, lessonsFile = "shared/generated/l
   let exempt = 0;
   const missing = [];
   for (const [p, v] of found) {
-    if (COVERAGE_EXEMPT.test(p)) { exempt += 1; continue; }
+    // Miễn khai giờ do REGISTRY quyết (cờ mustDeclareProvenance=false), không
+    // còn regex path khai tay. collectDisplayedJapanese đã lọc theo registry
+    // nên tới đây không còn trường miễn — giữ biến đếm để báo cáo không đổi hình.
     if (!declared.has(normalize(v))) missing.push([p, v]);
   }
   return { total: found.size, exempt, missing };
@@ -325,6 +342,58 @@ export function checkExampleMatchesPattern(example, surfaces) {
   return hit ? { ok: true, hit } : { ok: false, why: `ví dụ không chứa mẫu nào trong [${list.join(" · ")}]` };
 }
 
+/**
+ * Tách một khối nguồn thành PHÂN ĐOẠN — đơn vị mà một câu đích được phép bằng.
+ *
+ * Ranh giới, đủ cả ba loại kho đang có:
+ *  1. dấu kết câu 。？！ (giữ dấu lại trong phân đoạn);
+ *  2. nhãn người nói — ĐỦ 5 QUY ƯỚC của G14-R4:
+ *       Ａ：/A:  ·  - **A:**  ·  A␣(không dấu hai chấm)  ·  Tên Latin:
+ *       (quy ước 5 là trường JSON, xử ở (3));
+ *  3. ranh giới trường JSON — "utterance": "…" của topic1-5.
+ *
+ * KHÔNG tách theo 、 — dấu phẩy nằm GIỮA câu, tách theo nó là tự chẻ nhỏ câu
+ * rồi cho câu cắt cụt PASS trở lại, đúng cái luật này muốn chặn.
+ */
+export function splitSegments(block) {
+  const out = [];
+  for (let line of String(block ?? "").split(/\r?\n/)) {
+    // (3) trường JSON: lấy đúng phần trong ngoặc kép của "utterance"/"text"…
+    const j = line.match(/"(?:utterance|text|displayText|targetText)"\s*:\s*"((?:[^"\\]|\\.)*)"/);
+    if (j) line = j[1].replace(/\\"/g, '"');
+
+    // NỚI 1 — có lý do: Irodori đặt TIỀN TỐ trước nhãn người nói, dạng
+    //   「①     01-06       Ａ：日本に来て、…」
+    // (số khoanh tròn = số kịch bản, 01-06 = mã track audio). Không bóc tiền
+    // tố này thì nhãn không nằm ở đầu dòng và câu thoại không bao giờ tách ra
+    // được. Chỉ bóc đúng hình đó, không bóc chữ bất kỳ.
+    line = line.replace(/^\s*[①-⑳]?\s*\d{2}-\d{2}\s+/, '');
+
+    // NỚI 1b — cùng loại: `n5_ngu-phap-vi` đánh mục trước câu Nhật, dạng
+    //   「a. あさごはんを まだたべていません。Tôi vẫn chưa ăn sáng.」
+    // Bóc đúng dấu đánh mục (một-hai ký tự + . hoặc ）), không bóc chữ bất kỳ.
+    line = line.replace(/^\s*[a-zA-Z0-9]{1,2}\s*[.)．）]\s+/, '');
+
+    // (2) bỏ nhãn người nói ở đầu dòng, giữ lại lời thoại — đủ 5 quy ước R4
+    line = line
+      .replace(/^\s*[-*]\s*\*\*[^*]{1,20}\*\*\s*[:：]?\s*/, '')
+      .replace(/^\s*[①-⑳]?\s*[Ａ-Ｚア-ヴA-Za-z一-龯]{1,12}\s*[:：]\s*/, '')
+      .replace(/^\s*[A-ZＡ-Ｚ]\s+(?=[぀-ヿ一-鿿])/, '');
+
+    const turn = line.trim();
+    if (!turn) continue;
+
+    // NỚI 2 — có lý do: MỘT LƯỢT NÓI có thể gồm NHIỀU CÂU
+    //   「そうですか。日本の生活に、もう慣れましたか？」 = 1 lượt, 2 câu.
+    // Nên phát ra CẢ HAI mức: trọn lượt, và từng câu trong lượt. Câu đích được
+    // bằng một trong hai. Vẫn chặn cắt cụt: 「日本に来て」 không bằng mức nào.
+    out.push(turn);
+    const sentences = turn.split(/(?<=[。！？])/).map((s) => s.trim()).filter(Boolean);
+    if (sentences.length > 1) out.push(...sentences);
+  }
+  return out;
+}
+
 function checkItem(item) {
   const blocked = blockedEntry(item.source);
   if (blocked) {
@@ -337,16 +406,41 @@ function checkItem(item) {
   }
   const raw = buildHaystack(lines, item.line);
 
-  // MỨC 1 trước — an toàn. Chỉ hạ xuống MỨC 2 khi mức 1 trượt.
+  // KHỚP PHÂN ĐOẠN TRỌN VẸN (LS-4, siết 2026-07-30) — thay cho so-substring cũ.
+  // targetText phải BẰNG một phân đoạn của nguồn, không phải nằm-lọt-trong.
+  // Câu cắt cụt («日本に来て» lấy từ «日本に来て、どのぐらいですか？») hết đường PASS.
+  const segs1 = splitSegments(raw).map(normalize).filter(Boolean);
   const want1 = normalize(item.targetText);
-  const got1 = normalize(raw);
-  if (got1.includes(want1)) return { ok: true, level: 1 };
+  if (segs1.includes(want1)) return { ok: true, level: 1 };
 
+  const segs2 = splitSegments(raw).map(normalizeAggressive).filter(Boolean);
   const want2 = normalizeAggressive(item.targetText);
-  const got2 = normalizeAggressive(raw);
-  if (got2.includes(want2)) return { ok: true, level: 2 };
+  if (segs2.includes(want2)) return { ok: true, level: 2 };
 
-  return { ok: false, why: "không khớp", want: want1, got: got1 };
+  // NỚI 3 — có lý do, và phải KHAI TƯỜNG MINH `token: true`.
+  // Thẻ token / ô ghép / từ ở mục tham khảo là MẢNH cắt từ một câu nguồn
+  // (1年 · に · なります cắt từ 「1年になります。」). Mảnh thì không bao giờ
+  // bằng trọn một phân đoạn — đó là bản chất, không phải lỗi khai.
+  // Vẫn CHẶT hơn bản cũ: mảnh phải nằm trong ĐÚNG một phân đoạn tại ĐÚNG dòng
+  // đã khai, không phải "ở đâu đó trong cửa sổ ±3 dòng".
+  if (item.token === true) {
+    const hit = segs1.find((s) => s.includes(want1));
+    if (hit) return { ok: true, level: 1, token: hit };
+    const hit2 = segs2.find((s) => s.includes(want2));
+    if (hit2) return { ok: true, level: 2, token: hit2 };
+    return { ok: false, why: "khai token nhưng KHÔNG nằm trong phân đoạn nào ở dòng đã khai", want: want1, got: normalize(raw) };
+  }
+
+  // Vì sao trượt: nằm-lọt-trong (cắt cụt) hay không có mặt?
+  const inside = normalize(raw).includes(want1);
+  return {
+    ok: false,
+    why: inside
+      ? "CẮT CỤT — có mặt trong nguồn nhưng KHÔNG bằng trọn một phân đoạn"
+      : "không khớp",
+    want: want1,
+    got: normalize(raw),
+  };
 }
 
 function main() {
