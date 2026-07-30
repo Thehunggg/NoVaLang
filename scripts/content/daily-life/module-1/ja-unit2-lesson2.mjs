@@ -86,6 +86,7 @@ const PRACTICE_EXERCISES = [
   },
   {
     id: 'ja-daily_life-m01-u2-l2-practice-5', order: 5, plan: 'free', type: 'dialogue_fill',
+    context: 'Sato gặp Ito — người mới sang Nhật — và hỏi thăm đã ở đây bao lâu. Đến lượt Ito trả lời.',
     prompt: 'Điền chỗ trống để hoàn thành hội thoại.',
     dialogue: ['佐藤: 日本（にほん）に来（き）て、どのぐらいですか？', '伊藤: {{slot_1}}。'],
     slots: [{ id: 'slot_1', answerId: 'ichinen', placeholder: '________' }],
@@ -130,7 +131,7 @@ const PRACTICE_EXERCISES = [
     prompt: 'Hoàn thành đoạn chat',
     chat: {
       timestamp: '19:30',
-      context: 'Hai người quen nhắn tin hỏi thăm nhau. Nhập từ phù hợp vào hai ô trống.',
+      context: 'Sato nhắn tin cho Ito lúc 19:30, hỏi thăm Ito sang Nhật được bao lâu rồi và đã quen với cuộc sống ở đây chưa. Nhập từ phù hợp vào hai ô trống.',
       speakers: [{ id: 'a', label: 'A', alignment: 'right' }, { id: 'b', label: 'B', alignment: 'left' }],
       messages: [
         { id: 'message_1', speakerId: 'a', segments: [{ displayText: '日本（にほん）に来（き）て、どのぐらいですか？', canonicalText: '日本に来て、どのぐらいですか？', audioText: 'にほんにきて、どのぐらいですか' }] },

@@ -96,6 +96,7 @@ const PRACTICE_EXERCISES = [
   },
   {
     id: 'ja-daily_life-m01-u2-l1-practice-5', order: 5, plan: 'free', type: 'dialogue_fill',
+    context: 'Hai người bạn thân tình cờ gặp lại nhau sau lâu ngày. Tanaka chào trước bằng thể thân mật; đến lượt Sato đáp lại.',
     prompt: 'Điền chỗ trống để hoàn thành hội thoại.',
     dialogue: ['田中: あ、久（ひさ）しぶり。', '佐藤: {{slot_1}}。'],
     slots: [{ id: 'slot_1', answerId: 'hisashiburi', placeholder: '________' }],
@@ -140,7 +141,7 @@ const PRACTICE_EXERCISES = [
     prompt: 'Hoàn thành đoạn chat',
     chat: {
       timestamp: '10:20',
-      context: 'Hai người quen gặp lại nhau sau lâu ngày, cả hai đều dùng thể lịch sự. Nhập từ phù hợp vào hai ô trống.',
+      context: 'Hai người quen lâu ngày không gặp nhắn tin cho nhau: chào hỏi rồi hỏi thăm sức khoẻ nhau, cả hai đều dùng thể lịch sự. Nhập từ phù hợp vào hai ô trống.',
       speakers: [{ id: 'a', label: 'A', alignment: 'right' }, { id: 'b', label: 'B', alignment: 'left' }],
       messages: [
         { id: 'message_1', speakerId: 'a', segments: [{ displayText: 'あ、お久（ひさ）しぶりです。', canonicalText: 'あ、お久しぶりです。', audioText: 'あ、おひさしぶりです' }] },

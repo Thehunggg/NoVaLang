@@ -287,6 +287,18 @@ add('Thân mật.', 'Casual.', 'カジュアル。');
 add('Chỉ mốc thời gian tuần sau, thường đi với また.', 'The time point “next week”, usually paired with また.', '「次の週」を指し、多くは「また」と一緒に使います。');
 add('Không dùng khi mốc gặp lại không phải tuần sau.', 'Do not use it when the next meeting is not next week.', '次に会うのが来週でないときには使いません。');
 
+// Ngữ cảnh bài tập (owner chốt 2026-07-30).
+add(
+  'Sato vừa chào làm quen với Tanaka. Đến lượt Tanaka đáp lại lời làm quen đó.',
+  'Sato has just greeted Tanaka to get acquainted. Now it is Tanaka’s turn to reply to that greeting.',
+  '佐藤さんが田中さんに、これからよろしくとあいさつしたところです。次は田中さんがそのあいさつに返事をします。',
+);
+add(
+  'Hai người vừa làm quen nhắn tin cho nhau: đáp lại lời làm quen, rồi hẹn tuần sau gặp lại và chào tạm biệt. Nhập từ phù hợp vào hai ô trống.',
+  'Two people who have just got acquainted are messaging: they reply to the greeting, then arrange to meet next week and say goodbye. Type the right words in the two blanks.',
+  '知り合ったばかりの二人がメッセージをやりとりします。あいさつに返事をして、来週また会う約束をし、別れのあいさつをします。二つの空欄に合う言葉を入力してください。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];

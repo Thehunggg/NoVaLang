@@ -78,6 +78,7 @@ const PRACTICE_EXERCISES = [
   },
   {
     id: 'ja-daily_life-m01-u1-l3-practice-5', order: 5, plan: 'free', type: 'dialogue_fill',
+    context: 'Sato vừa chào làm quen với Tanaka. Đến lượt Tanaka đáp lại lời làm quen đó.',
     prompt: 'Điền chỗ trống để hoàn thành hội thoại.',
     dialogue: ['佐藤: はじめまして。よろしくお願（ねが）いします。', '田中: {{slot_1}}、よろしくお願（ねが）いします。'],
     slots: [{ id: 'slot_1', answerId: 'kochira_koso', placeholder: '________' }],
@@ -122,7 +123,7 @@ const PRACTICE_EXERCISES = [
     prompt: 'Hoàn thành đoạn chat',
     chat: {
       timestamp: '17:00',
-      context: 'Hai người vừa làm quen rồi tạm biệt. Nhập từ phù hợp vào hai ô trống.',
+      context: 'Hai người vừa làm quen nhắn tin cho nhau: đáp lại lời làm quen, rồi hẹn tuần sau gặp lại và chào tạm biệt. Nhập từ phù hợp vào hai ô trống.',
       speakers: [{ id: 'a', label: 'A', alignment: 'right' }, { id: 'b', label: 'B', alignment: 'left' }],
       messages: [
         { id: 'message_1', speakerId: 'a', segments: [{ displayText: 'はじめまして。\nよろしくお願（ねが）いします。', canonicalText: 'はじめまして。よろしくお願いします。', audioText: 'はじめまして。よろしくおねがいします。' }] },

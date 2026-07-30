@@ -415,6 +415,19 @@ add(
   'はじめまして。\n＋\n名前 + です。\n＋\nよろしくおねがいします。',
 );
 
+// Ngữ cảnh bài tập (owner chốt 2026-07-30): trước phần điền phải nêu rõ ai
+// nói với ai, ở đâu, đang nói chuyện gì — người học không phải đoán bối cảnh.
+add(
+  'Tanaka và Sato gặp nhau lần đầu ở lớp học. Tanaka vừa chào làm quen và nói tên mình; đến lượt Sato đáp lại rồi cũng nói tên.',
+  'Tanaka and Sato meet for the first time in class. Tanaka has just greeted them and given his name; now it is Sato’s turn to reply and give hers.',
+  '田中さんと佐藤さんが教室で初めて会います。田中さんがあいさつして名前を言ったところです。次は佐藤さんが返事をして名前を言います。',
+);
+add(
+  'Tanaka và Sato nhắn tin cho nhau lần đầu: chào hỏi, rồi lần lượt nói tên mình và nói một câu mong được làm quen. Nhập từ phù hợp vào hai ô trống.',
+  'Tanaka and Sato message each other for the first time: they greet, then each gives a name and says a line hoping to get acquainted. Type the right words in the two blanks.',
+  '田中さんと佐藤さんが初めてメッセージをやりとりします。あいさつをして、順番に名前を言い、これからよろしくという一言を伝えます。二つの空欄に合う言葉を入力してください。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];

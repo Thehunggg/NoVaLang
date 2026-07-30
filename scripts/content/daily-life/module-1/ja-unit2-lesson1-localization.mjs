@@ -191,6 +191,18 @@ add('À, lâu rồi không gặp.', 'Ah, long time no see.', 'あ、久しぶり
 add('Ừ, khoẻ.', 'Yeah, I am fine.', 'うん。元気。');
 add('Vâng, nhờ thầy, em vẫn khoẻ.', 'Yes, thanks to you, I am well.', 'はい。おかげさまで。');
 
+// Ngữ cảnh bài tập (owner chốt 2026-07-30).
+add(
+  'Hai người bạn thân tình cờ gặp lại nhau sau lâu ngày. Tanaka chào trước bằng thể thân mật; đến lượt Sato đáp lại.',
+  'Two close friends run into each other again after a long time. Tanaka greets first in the casual form; now it is Sato’s turn to reply.',
+  '仲のいい友だち二人が久しぶりに偶然会います。田中さんがくだけた言い方で先にあいさつしました。次は佐藤さんが返事をします。',
+);
+add(
+  'Hai người quen lâu ngày không gặp nhắn tin cho nhau: chào hỏi rồi hỏi thăm sức khoẻ nhau, cả hai đều dùng thể lịch sự. Nhập từ phù hợp vào hai ô trống.',
+  'Two acquaintances who have not met for a long time are messaging: they greet, then ask after each other’s health, both using the polite form. Type the right words in the two blanks.',
+  '久しぶりの知り合い二人がメッセージをやりとりします。あいさつをして、おたがいの様子をたずね合います。二人とも丁寧な言い方を使います。二つの空欄に合う言葉を入力してください。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];

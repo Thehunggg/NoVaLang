@@ -257,6 +257,18 @@ add('Thân mật.', 'Casual.', 'カジュアル。');
 add('Chỉ mốc thời gian tuần sau, thường đi với また.', 'The time point “next week”, usually paired with また.', '「次の週」を指し、多くは「また」と一緒に使います。');
 add('Không dùng khi mốc gặp lại không phải tuần sau.', 'Do not use it when the next meeting is not next week.', '次に会うのが来週でないときには使いません。');
 
+// Ngữ cảnh bài tập (owner chốt 2026-07-30).
+add(
+  'Tanaka hỏi tên người mới gặp và được trả lời, nhưng nghe chưa rõ nên muốn nhờ nói lại.',
+  'Tanaka asks a new acquaintance for their name and gets an answer, but did not catch it clearly and wants to ask them to say it again.',
+  '田中さんが初めて会った人に名前をたずね、答えてもらいましたが、よく聞き取れなかったので、もう一度言ってもらいたいと思っています。',
+);
+add(
+  'Hai người mới gặp nhắn tin cho nhau: một người hỏi tên người kia, nghe xong thì nhắc lại tên cho chắc. Nhập từ phù hợp vào hai ô trống.',
+  'Two people who have just met are messaging: one asks for the other’s name, then repeats it back to make sure. Type the right words in the two blanks.',
+  '初めて会った二人がメッセージをやりとりします。一方が相手の名前をたずね、聞いた名前を確認のため言い直します。二つの空欄に合う言葉を入力してください。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];

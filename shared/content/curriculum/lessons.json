@@ -75017,6 +75017,12 @@
               "order": 5,
               "plan": "free",
               "type": "dialogue_fill",
+              "context": "Tanaka và Sato gặp nhau lần đầu ở lớp học. Tanaka vừa chào làm quen và nói tên mình; đến lượt Sato đáp lại rồi cũng nói tên.",
+              "contextByNative": {
+                "vi": "Tanaka và Sato gặp nhau lần đầu ở lớp học. Tanaka vừa chào làm quen và nói tên mình; đến lượt Sato đáp lại rồi cũng nói tên.",
+                "en": "Tanaka and Sato meet for the first time in class. Tanaka has just greeted them and given his name; now it is Sato’s turn to reply and give hers.",
+                "ja": "田中さんと佐藤さんが教室で初めて会います。田中さんがあいさつして名前を言ったところです。次は佐藤さんが返事をして名前を言います。"
+              },
               "prompt": "Điền hai chỗ trống để hoàn thành hội thoại.",
               "promptByNative": {
                 "vi": "Điền hai chỗ trống để hoàn thành hội thoại.",
@@ -75740,11 +75746,11 @@
               },
               "chat": {
                 "timestamp": "11:00",
-                "context": "Hai người gặp nhau lần đầu. Hãy nhập từ phù hợp vào hai ô trống để hoàn thành cuộc trò chuyện.",
+                "context": "Tanaka và Sato nhắn tin cho nhau lần đầu: chào hỏi, rồi lần lượt nói tên mình và nói một câu mong được làm quen. Nhập từ phù hợp vào hai ô trống.",
                 "contextByNative": {
-                  "vi": "Hai người gặp nhau lần đầu. Hãy nhập từ phù hợp vào hai ô trống để hoàn thành cuộc trò chuyện.",
-                  "en": "Two people are meeting for the first time. Enter the appropriate expressions in the two blanks to complete the conversation.",
-                  "ja": "二人は初対面です。二つの空欄に適切な表現を入力して会話を完成させてください。"
+                  "vi": "Tanaka và Sato nhắn tin cho nhau lần đầu: chào hỏi, rồi lần lượt nói tên mình và nói một câu mong được làm quen. Nhập từ phù hợp vào hai ô trống.",
+                  "en": "Tanaka and Sato message each other for the first time: they greet, then each gives a name and says a line hoping to get acquainted. Type the right words in the two blanks.",
+                  "ja": "田中さんと佐藤さんが初めてメッセージをやりとりします。あいさつをして、順番に名前を言い、これからよろしくという一言を伝えます。二つの空欄に合う言葉を入力してください。"
                 },
                 "speakers": [
                   {
@@ -79468,6 +79474,12 @@
               "order": 5,
               "plan": "free",
               "type": "dialogue_fill",
+              "context": "Tanaka hỏi tên người mới gặp và được trả lời, nhưng nghe chưa rõ nên muốn nhờ nói lại.",
+              "contextByNative": {
+                "vi": "Tanaka hỏi tên người mới gặp và được trả lời, nhưng nghe chưa rõ nên muốn nhờ nói lại.",
+                "en": "Tanaka asks a new acquaintance for their name and gets an answer, but did not catch it clearly and wants to ask them to say it again.",
+                "ja": "田中さんが初めて会った人に名前をたずね、答えてもらいましたが、よく聞き取れなかったので、もう一度言ってもらいたいと思っています。"
+              },
               "prompt": "Điền chỗ trống để hoàn thành hội thoại.",
               "promptByNative": {
                 "vi": "Điền chỗ trống để hoàn thành hội thoại.",
@@ -80051,11 +80063,11 @@
               },
               "chat": {
                 "timestamp": "14:00",
-                "context": "Hai người gặp nhau. Nhập từ phù hợp vào hai ô trống.",
+                "context": "Hai người mới gặp nhắn tin cho nhau: một người hỏi tên người kia, nghe xong thì nhắc lại tên cho chắc. Nhập từ phù hợp vào hai ô trống.",
                 "contextByNative": {
-                  "vi": "Hai người gặp nhau. Nhập từ phù hợp vào hai ô trống.",
-                  "en": "Two people meet. Enter the right words in the two blanks.",
-                  "ja": "二人が出会います。二つの空欄に適切な語を入力してください。"
+                  "vi": "Hai người mới gặp nhắn tin cho nhau: một người hỏi tên người kia, nghe xong thì nhắc lại tên cho chắc. Nhập từ phù hợp vào hai ô trống.",
+                  "en": "Two people who have just met are messaging: one asks for the other’s name, then repeats it back to make sure. Type the right words in the two blanks.",
+                  "ja": "初めて会った二人がメッセージをやりとりします。一方が相手の名前をたずね、聞いた名前を確認のため言い直します。二つの空欄に合う言葉を入力してください。"
                 },
                 "speakers": [
                   {
@@ -83342,6 +83354,12 @@
               "order": 5,
               "plan": "free",
               "type": "dialogue_fill",
+              "context": "Sato vừa chào làm quen với Tanaka. Đến lượt Tanaka đáp lại lời làm quen đó.",
+              "contextByNative": {
+                "vi": "Sato vừa chào làm quen với Tanaka. Đến lượt Tanaka đáp lại lời làm quen đó.",
+                "en": "Sato has just greeted Tanaka to get acquainted. Now it is Tanaka’s turn to reply to that greeting.",
+                "ja": "佐藤さんが田中さんに、これからよろしくとあいさつしたところです。次は田中さんがそのあいさつに返事をします。"
+              },
               "prompt": "Điền chỗ trống để hoàn thành hội thoại.",
               "promptByNative": {
                 "vi": "Điền chỗ trống để hoàn thành hội thoại.",
@@ -83989,11 +84007,11 @@
               },
               "chat": {
                 "timestamp": "17:00",
-                "context": "Hai người vừa làm quen rồi tạm biệt. Nhập từ phù hợp vào hai ô trống.",
+                "context": "Hai người vừa làm quen nhắn tin cho nhau: đáp lại lời làm quen, rồi hẹn tuần sau gặp lại và chào tạm biệt. Nhập từ phù hợp vào hai ô trống.",
                 "contextByNative": {
-                  "vi": "Hai người vừa làm quen rồi tạm biệt. Nhập từ phù hợp vào hai ô trống.",
-                  "en": "Two people meet and then part. Enter the right words in the two blanks.",
-                  "ja": "二人が知り合って別れます。二つの空欄に適切な語を入力してください。"
+                  "vi": "Hai người vừa làm quen nhắn tin cho nhau: đáp lại lời làm quen, rồi hẹn tuần sau gặp lại và chào tạm biệt. Nhập từ phù hợp vào hai ô trống.",
+                  "en": "Two people who have just got acquainted are messaging: they reply to the greeting, then arrange to meet next week and say goodbye. Type the right words in the two blanks.",
+                  "ja": "知り合ったばかりの二人がメッセージをやりとりします。あいさつに返事をして、来週また会う約束をし、別れのあいさつをします。二つの空欄に合う言葉を入力してください。"
                 },
                 "speakers": [
                   {
@@ -87264,6 +87282,12 @@
               "order": 5,
               "plan": "free",
               "type": "dialogue_fill",
+              "context": "Hai người bạn thân tình cờ gặp lại nhau sau lâu ngày. Tanaka chào trước bằng thể thân mật; đến lượt Sato đáp lại.",
+              "contextByNative": {
+                "vi": "Hai người bạn thân tình cờ gặp lại nhau sau lâu ngày. Tanaka chào trước bằng thể thân mật; đến lượt Sato đáp lại.",
+                "en": "Two close friends run into each other again after a long time. Tanaka greets first in the casual form; now it is Sato’s turn to reply.",
+                "ja": "仲のいい友だち二人が久しぶりに偶然会います。田中さんがくだけた言い方で先にあいさつしました。次は佐藤さんが返事をします。"
+              },
               "prompt": "Điền chỗ trống để hoàn thành hội thoại.",
               "promptByNative": {
                 "vi": "Điền chỗ trống để hoàn thành hội thoại.",
@@ -87911,11 +87935,11 @@
               },
               "chat": {
                 "timestamp": "10:20",
-                "context": "Hai người quen gặp lại nhau sau lâu ngày, cả hai đều dùng thể lịch sự. Nhập từ phù hợp vào hai ô trống.",
+                "context": "Hai người quen lâu ngày không gặp nhắn tin cho nhau: chào hỏi rồi hỏi thăm sức khoẻ nhau, cả hai đều dùng thể lịch sự. Nhập từ phù hợp vào hai ô trống.",
                 "contextByNative": {
-                  "vi": "Hai người quen gặp lại nhau sau lâu ngày, cả hai đều dùng thể lịch sự. Nhập từ phù hợp vào hai ô trống.",
-                  "en": "Two acquaintances meet again after a long time, both using the polite form. Type the right words in the two blanks.",
-                  "ja": "久しぶりに再会した知り合い二人が、どちらも丁寧体で話します。二つの空欄に合う言葉を入力してください。"
+                  "vi": "Hai người quen lâu ngày không gặp nhắn tin cho nhau: chào hỏi rồi hỏi thăm sức khoẻ nhau, cả hai đều dùng thể lịch sự. Nhập từ phù hợp vào hai ô trống.",
+                  "en": "Two acquaintances who have not met for a long time are messaging: they greet, then ask after each other’s health, both using the polite form. Type the right words in the two blanks.",
+                  "ja": "久しぶりの知り合い二人がメッセージをやりとりします。あいさつをして、おたがいの様子をたずね合います。二人とも丁寧な言い方を使います。二つの空欄に合う言葉を入力してください。"
                 },
                 "speakers": [
                   {
@@ -91274,6 +91298,12 @@
               "order": 5,
               "plan": "free",
               "type": "dialogue_fill",
+              "context": "Sato gặp Ito — người mới sang Nhật — và hỏi thăm đã ở đây bao lâu. Đến lượt Ito trả lời.",
+              "contextByNative": {
+                "vi": "Sato gặp Ito — người mới sang Nhật — và hỏi thăm đã ở đây bao lâu. Đến lượt Ito trả lời.",
+                "en": "Sato meets Ito, who recently came to Japan, and asks how long they have been here. Now it is Ito’s turn to answer.",
+                "ja": "佐藤さんが、日本に来たばかりの伊藤さんに会い、日本に来てどのぐらいかをたずねます。次は伊藤さんが答えます。"
+              },
               "prompt": "Điền chỗ trống để hoàn thành hội thoại.",
               "promptByNative": {
                 "vi": "Điền chỗ trống để hoàn thành hội thoại.",
@@ -92116,11 +92146,11 @@
               },
               "chat": {
                 "timestamp": "19:30",
-                "context": "Hai người quen nhắn tin hỏi thăm nhau. Nhập từ phù hợp vào hai ô trống.",
+                "context": "Sato nhắn tin cho Ito lúc 19:30, hỏi thăm Ito sang Nhật được bao lâu rồi và đã quen với cuộc sống ở đây chưa. Nhập từ phù hợp vào hai ô trống.",
                 "contextByNative": {
-                  "vi": "Hai người quen nhắn tin hỏi thăm nhau. Nhập từ phù hợp vào hai ô trống.",
-                  "en": "Two acquaintances message each other. Type the right words in the two blanks.",
-                  "ja": "知り合い二人がメッセージで近況をたずね合います。二つの空欄に合う言葉を入力してください。"
+                  "vi": "Sato nhắn tin cho Ito lúc 19:30, hỏi thăm Ito sang Nhật được bao lâu rồi và đã quen với cuộc sống ở đây chưa. Nhập từ phù hợp vào hai ô trống.",
+                  "en": "Sato messages Ito at 19:30, asking how long Ito has been in Japan and whether they have settled into life here. Type the right words in the two blanks.",
+                  "ja": "佐藤さんが19時30分に伊藤さんへメッセージを送り、日本に来てどのぐらいか、こちらの生活に慣れたかをたずねます。二つの空欄に合う言葉を入力してください。"
                 },
                 "speakers": [
                   {

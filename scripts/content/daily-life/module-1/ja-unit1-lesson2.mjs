@@ -85,6 +85,7 @@ const PRACTICE_EXERCISES = [
   },
   {
     id: 'ja-daily_life-m01-u1-l2-practice-5', order: 5, plan: 'free', type: 'dialogue_fill',
+    context: 'Tanaka hỏi tên người mới gặp và được trả lời, nhưng nghe chưa rõ nên muốn nhờ nói lại.',
     prompt: 'Điền chỗ trống để hoàn thành hội thoại.',
     dialogue: ['田中: すみません、お名前（なまえ）は？', '伊藤: 伊藤（いとう）です。', '田中: すみません、{{slot_1}}。'],
     slots: [{ id: 'slot_1', answerId: 'mou_ichido', placeholder: '________' }],
@@ -129,7 +130,7 @@ const PRACTICE_EXERCISES = [
     prompt: 'Hoàn thành đoạn chat',
     chat: {
       timestamp: '14:00',
-      context: 'Hai người gặp nhau. Nhập từ phù hợp vào hai ô trống.',
+      context: 'Hai người mới gặp nhắn tin cho nhau: một người hỏi tên người kia, nghe xong thì nhắc lại tên cho chắc. Nhập từ phù hợp vào hai ô trống.',
       speakers: [{ id: 'a', label: 'A', alignment: 'right' }, { id: 'b', label: 'B', alignment: 'left' }],
       messages: [
         { id: 'message_1', speakerId: 'a', segments: [{ displayText: 'こんにちは。' }] },

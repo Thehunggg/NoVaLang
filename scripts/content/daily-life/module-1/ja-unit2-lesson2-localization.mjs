@@ -217,6 +217,18 @@ add('Vâng, cũng tạm ạ.', 'Yes, more or less.', 'はい、なんとか。')
 add('Vẫn chưa, hơi khó một chút.', 'Not yet, it is still a bit hard.', 'まだ、ちょっと……。');
 add('Tôi mới đến tháng trước.', 'I came last month.', '私は、先月、来ました。');
 
+// Ngữ cảnh bài tập (owner chốt 2026-07-30).
+add(
+  'Sato gặp Ito — người mới sang Nhật — và hỏi thăm đã ở đây bao lâu. Đến lượt Ito trả lời.',
+  'Sato meets Ito, who recently came to Japan, and asks how long they have been here. Now it is Ito’s turn to answer.',
+  '佐藤さんが、日本に来たばかりの伊藤さんに会い、日本に来てどのぐらいかをたずねます。次は伊藤さんが答えます。',
+);
+add(
+  'Sato nhắn tin cho Ito lúc 19:30, hỏi thăm Ito sang Nhật được bao lâu rồi và đã quen với cuộc sống ở đây chưa. Nhập từ phù hợp vào hai ô trống.',
+  'Sato messages Ito at 19:30, asking how long Ito has been in Japan and whether they have settled into life here. Type the right words in the two blanks.',
+  '佐藤さんが19時30分に伊藤さんへメッセージを送り、日本に来てどのぐらいか、こちらの生活に慣れたかをたずねます。二つの空欄に合う言葉を入力してください。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];
