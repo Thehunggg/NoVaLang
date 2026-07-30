@@ -1117,13 +1117,13 @@ trúc JSON, luật a/b/c dựng cho trường `utterance` không áp thẳng đ�
 > Mỗi mục: **việc** · **vì sao hoãn**. Thấy lỗi ngoài phạm vi lượt đang làm
 > thì ghi vào đây, không tự sửa (WORKING_RULES §1).
 
-## Bảng ngắn — 9 mục đang treo
+## Bảng ngắn — 10 mục đang treo
 
 | # | Việc | Vì sao hoãn |
 |---|---|---|
 | LS-1 | Đem lối hiển thị 3 dòng + wakachigaki + công tắc lên app thật | Chi tiết ở mục dưới; cần chốt cách cắt okurigana trước |
 | LS-2 | **Ruby (kana trên đầu kanji) cho app** | Owner đã BỎ lối ruby ở trang duyệt 2026-07-29; nếu sau này muốn cho app thì là quyết định sản phẩm mới, không phải việc kỹ thuật còn dở |
-| LS-3 | **Dùng kuromoji cho bộ lọc R5** (lọc vốn từ chưa dạy) | Hiện lọc bằng so chuỗi; kuromoji tách từ chính xác hơn nhưng lại là bộ đoán — phải chốt ranh giới "đoán để LỌC" vs "đoán để SINH" (cái sau đã cấm ở G14-R14) |
+| LS-3 | **Dùng kuromoji cho bộ lọc R5** (lọc vốn từ chưa dạy) — **ÁP MỘT PHẦN 2026-07-30** | `scripts/estimate-source-coverage.mjs` nay dùng kuromoji thật để ƯỚC LƯỢNG phủ nguồn TRƯỚC KHI build (đoán để LỌC — không sinh nội dung gì, chỉ xếp loại câu ứng viên cho người viết chọn). Ranh giới GIỮ NGUYÊN ở chỗ owner lo: cổng THẬT lúc build bài (`verify-provenance.mjs`, G14-R5 lúc soạn) **vẫn** so chuỗi tay, không tự động chấm bằng kuromoji — việc đó vẫn treo |
 | LS-4 | **Cổng đổi so-substring → khớp cả dòng** | `verify-provenance` đang tìm chuỗi con trong dòng nguồn; khớp cả dòng chặt hơn nhưng sẽ FAIL hàng loạt câu đang PASS — cần một lượt riêng để rà từng ca |
 | LS-5 | **`Flashcard.tsx` còn vẽ chuỗi Nhật trần** | Màn Flashcards không thuộc 5 thẻ bài học, nằm ngoài phạm vi mọi lượt G14-R14 đã làm |
 | LS-6 | **Hàng "Đọc" trong thẻ từ vựng không theo công tắc** | Luôn hiện khi mở thẻ; không mất trợ đọc nên không phải lỗi, nhưng lệch cơ chế bật/tắt — cần owner quyết có gom vào công tắc không |
@@ -1133,6 +1133,8 @@ trúc JSON, luật a/b/c dựng cho trường `utterance` không áp thẳng đ�
 | LS-10 | **`sentences_*.json` mở lại từ N4** | Đã đo có 5.281 câu / 1.039 khoá, nhưng bài hiện tại còn ở N5; mở sớm sẽ kéo từ chưa dạy vào (§G7) |
 | **LS-12** | **Rà 19 khoản FROZEN còn lại của `rules/languages/ja/`** — `register_taxonomy` · `honorifics_keigo` · `forms_of_address` · `tts_audio_policy` · `answer_acceptance_ja` · `naturalness_translation` · `romanization_hepburn` · `pronunciation_contextual`… đối chiếu G14, tìm xung đột **khác kiểu** `reading_aid_policy` | `reading_aid_policy` (D-11) đã lộ ra là mâu thuẫn với G14-R14 và phải supersede bằng D-93. Nhiều khả năng còn khoản khác cùng cảnh. **CHƯA rà lượt này theo yêu cầu owner** — cần một lượt riêng, đơn nhiệm |
 | **LS-11** | **Màn "Nguồn & Ghi công"** — JMdict/EDRDG · hanabira · Tanos | **BẮT BUỘC TRƯỚC PHÁT HÀNH.** Nguồn owner đã đóng chủ đề nguồn gốc, nhưng ba bộ dữ liệu BÊN THỨ BA này vẫn còn dùng (cách đọc, vốn từ JLPT) và giấy phép của chúng đòi ghi công. Chưa làm vì chưa tới mốc phát hành — nhưng **không được quên**, thiếu là vi phạm giấy phép |
+| **LS-13** | **`check-build-order.mjs` (G14-R16) nối thành cổng cứng** | Report-only từ 2026-07-30. Đo lúc ghi: `ja-daily_life-m01-u2` đủ điều kiện (2/2 lesson ready) nhưng chưa có bài tổng hợp — bật cổng cứng ngay sẽ chặn build cho tới khi viết xong bài đó |
+| **LS-14** | **`validateUnitComprehensiveTest` im lặng cho qua unit thiếu bài tổng hợp** | `validate-curriculum.mjs:1136` — `if (!test) return;` không phân biệt "unit chưa tới lượt" với "unit ĐỦ ĐIỀU KIỆN mà vẫn thiếu". Cùng họ lỗi đã vá ở `check-render-coverage.mjs`. Sửa: in CẢNH BÁO (không fail) khi đủ điều kiện mà thiếu — tách biệt khỏi việc bật cổng cứng ở LS-13 |
 
 
 ## LS-1. Đem lối hiển thị 3 DÒNG lên APP THẬT (web + Flutter)
