@@ -1191,9 +1191,13 @@ nguồn vào `lessons.json`.
 
 **G14-R3. NGUỒN THEO Ô** (đo 2026-07-27/29 — đổi kho hoặc đổi niche thì **đo lại**):
 
+> **NGUỒN OWNER TỰ VIẾT** — `topic1-5.json`, `ban1.txt`, `ban2.txt` là nội dung
+> **owner tự viết**, owner xác nhận **2026-07-30**. Chủ đề nguồn gốc **ĐÓNG**,
+> không hỏi lại. (Cùng lệ với IRODORI: đã xác nhận thì thôi truy vấn.)
+
 | Ô | Nguồn | Cơ sở đo |
 |---|---|---|
-| `dialogueGroups`, Q14, `intro.examples` | **Irodori**; hội thoại `n5_ngu-phap-vi` (4 khối, có dịch) khi khớp chủ đề | Irodori duy nhất đủ kịch bản A0–A1 |
+| `dialogueGroups`, Q14, `intro.examples` | **thang ưu tiên mới, xem dưới bảng** | Irodori lùi cuối từ 2026-07-30 |
 | `grammarPatterns` | **`n5_ngu-phap-vi` + hanabira md + N5GM** — 3 nguồn độc lập | trùng câu ví dụ 0/278 và 3% |
 | `vocabularyDetails[].examples` | **`n5_ngu-phap-vi`** (278 câu A0–A1, lọc R5: 0 câu rớt) → tái dùng câu trong bài → Irodori | `sentences_*.json` **KHÔNG dùng ở A0–A1** (toàn N3+) — mở lại từ N4 |
 | `vocabularyReferences` | Tanos + JMdict | |
@@ -1202,6 +1206,22 @@ nguồn vào `lessons.json`.
 | Bài tập — điểm kiểm | **Irodori 練習 + 解答** (OCR 0 lỗi) | R7 |
 | Nhiễu có nguồn | hanabira Common Mistakes (280 cặp) khi mẫu đó có | u2-l2: 0/4 mẫu → dùng mutation |
 | `speechText`, `register`, ô Q10 | **AUTHORED** | đo: không nguồn nào có |
+
+**THANG ƯU TIÊN — hội thoại · Q14 · `intro.examples`** (đổi 2026-07-30):
+
+1. **TÁI DÙNG** câu đã có trong chính bài đó — không tốn gì.
+2. **NGUỒN OWNER khớp tình huống** — `topic1-5.json` (5.256 hội thoại, nhãn
+   A/B, 4–12 lượt) · `n5_ngu-phap-vi` (4 khối, có sẵn dịch Việt) · `ban1.txt`
+   (96 khối Dialogue, có romaji + dịch Anh).
+3. **Irodori — LÙI XUỐNG CUỐI.** Chỉ dùng khi 1–2 không có gì khớp.
+
+> **GIÁ của `topic1-5`:** nguồn chỉ có mặt chữ — **không furigana, không
+> romaji, không dịch**. Mỗi câu lấy ra phải **viết tay `reading`** (G14-R14
+> [JA] (c) chặn cứng, **không đổi**) **và viết tay dịch vi**. Đổi lại: kho
+> hội thoại gấp >8 lần Irodori và trải 5 chủ đề.
+>
+> Lọc vốn từ đo được: dải **N4** (50 câu mẫu → 16 sạch · 25 có 1–2 kanji lạ ·
+> 9 có >2). Dùng ở A0–A1 thì phải chọn câu, không lấy đại.
 
 **Path chính thức:** `local-sources/ja/n5/n5_ngu-phap-vi.txt`
 (sha256 `778414d2…848c9e79`, 63.054 byte, 1.056 dòng / 41 mục / 278 câu).
@@ -1220,6 +1240,12 @@ Mục tiêu kép: an toàn ngang tối đa + **owner check ít nhất**.
 **G14-R4. HỘI THOẠI — điều khoản lùi + danh sách pattern tập trung.**
 Dò hội thoại đã trượt **3 lần, 3 quy ước**: `Ａ：` · `- **A:**` · `A ` (không dấu
 hai chấm — `n5_ngu-phap-vi`).
+**Quy ước thứ TƯ, thêm 2026-07-30** — `Tên Latin + ':'` đầu dòng (`ban1.txt`:
+`Emily:` `Yamamoto:`), romaji + dịch Anh **cùng dòng**, câu Nhật ở **dòng sau**,
+furigana ở **dòng riêng phía trên**. Đây là bố cục giáo trình, không phải kịch
+bản — dò bằng pattern `Ａ：` sẽ trả 0 sai.
+**Quy ước thứ NĂM** — JSON có trường (`topic1-5.json`: `utterances[].speaker`);
+không dò bằng regex dòng, đọc thẳng trường.
 1. Danh sách pattern nhãn người nói đặt **Ở MỘT CHỖ** (hằng số trong script dò),
    hiện gồm cả ba; gặp quy ước mới → **NỐI vào**, không dò tay lẻ.
 2. Mọi kết luận **"0 hội thoại" phải kèm danh sách pattern đã dò**.
