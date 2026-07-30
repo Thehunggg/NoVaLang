@@ -755,6 +755,13 @@ void main() {
       await _pumpQ14(tester, practice: practiceVi, attempts: _MemoryAttempts());
 
       final buttons = find.byKey(const ValueKey('dialogue-line-audio-button'));
+      // Cuộn tới nút ĐẦU trước khi bấm. Trước 2026-07-30 test bấm thẳng và may
+      // là trúng, vì mô tả kịch bản còn ngắn nên nút đầu nằm sẵn trong màn. Khi
+      // G6 bắt ghi vai vế vào `scenarioDescription`, mô tả dài ra và nút đầu
+      // trôi xuống dưới đáy — tap() trượt. Nút thứ hai bên dưới vốn đã
+      // ensureVisible; nút đầu thiếu, đó là lỗ của test chứ không phải của bài.
+      await tester.ensureVisible(buttons.first);
+      await tester.pump();
       await tester.tap(buttons.first);
       await tester.pump();
       // The active line is visibly gated, while another line remains
