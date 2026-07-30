@@ -16,6 +16,9 @@ rules/**/corpus/
 # Local-only source materials (KHÔNG commit)
 local-sources/
 
+# Bản sao lưu nguồn trước mỗi ngoại lệ sửa (G14-R13) — cùng lý do, không commit
+local-sources-backup/
+
 # Cấu hình chạy dev server tại máy — mỗi máy một kiểu, không commit
 .claude/launch.json
 

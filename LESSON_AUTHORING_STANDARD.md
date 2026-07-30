@@ -1215,6 +1215,11 @@ nguồn vào `lessons.json`.
    (96 khối Dialogue, có romaji + dịch Anh).
 3. **Irodori — LÙI XUỐNG CUỐI.** Chỉ dùng khi 1–2 không có gì khớp.
 
+> **BỎ QUA HỘI THOẠI BỊ CỜ:** máy gom chất liệu **phải đọc**
+> `scripts/content/sources/ten-lech-nhan.json` và **bỏ qua** mọi hội thoại có
+> trong đó — chúng còn tên người không khớp nhãn mà luật hẹp a/b/c không xử
+> được (nhắc người thứ ba, cấu trúc lạ). Kho sạch còn lại vẫn thừa dùng.
+
 > **GIÁ của `topic1-5`:** nguồn chỉ có mặt chữ — **không furigana, không
 > romaji, không dịch**. Mỗi câu lấy ra phải **viết tay `reading`** (G14-R14
 > [JA] (c) chặn cứng, **không đổi**) **và viết tay dịch vi**. Đổi lại: kho
@@ -1355,6 +1360,18 @@ local-sources".)
 - **ĐỔI TÊN / DI CHUYỂN: cần owner cấp phép từng lần**, và **bắt buộc sha256
   trước–sau phải giống hệt**; lệch → hoàn tác, DỪNG, báo. (Đã dùng một lần
   2026-07-29 cho `n5_ngu-phap-vi.txt`.)
+- **SỬA NỘI DUNG: chỉ khi owner cấp phép NGOẠI LỆ từng lần**, và **bắt buộc
+  BACKUP TRƯỚC KHI ĐỤNG**:
+  ```
+  cp -p local-sources/ja/<file>  local-sources-backup/<YYYY-MM-DD>/<file>
+  ```
+  Xác minh sha256 bản sao == bản gốc **trước khi** sửa dòng nào. Sửa xong ghi
+  sha256 trước/sau vào `INVENTORY.md`. `local-sources-backup/` đã gitignore.
+
+  > **VÌ SAO:** lượt đổi nhãn người nói 2026-07-30 sửa 6 file mà **không có
+  > backup**. `local-sources/` gitignore nên git không revert được — nếu sai
+  > thì mất luôn bản gốc. Từ nay bắt buộc, không có ngoại lệ của ngoại lệ.
+
 - Giải nén archive owner bỏ vào + xoá archive sau khi xác minh: theo cùng cơ chế
   cấp phép từng lần.
 
