@@ -1,0 +1,62 @@
+// WALK CHUNG cho cây dữ liệu lesson — MỘT bản duy nhất.
+//
+// Trước 2026-07-30, verify-provenance.mjs và check-render-coverage.mjs mỗi
+// script tự viết một hàm walk-cây-JSON riêng để bóc chuỗi (collectDisplayedJapanese
+// và collectFields) — cùng việc, hai bản. Phá thật 2026-07-30 lộ ra một lỗ
+// khác cần vá bằng cách WALK PATH thật (xem verify-provenance.mjs), và thay vì
+// viết thêm một bộ walk thứ ba, gộp về đây — dùng chung cho cả bóc-theo-tên-
+// trường (check-render-coverage) lẫn bóc-theo-path-để-tra-cứu (verify-provenance).
+//
+// QUY ƯỚC PATH — khớp NGUYÊN VĂN với path đã ghi trong các file provenance
+// hiện có (vd "fiveCardContent.dialogueGroups[0].lines[0].targetText",
+// "vocabulary[0].displayText"): tên trường nối bằng ".", chỉ số mảng bằng
+// "[n]" ngay sau tên. Không đổi quy ước này — provenance file đang tồn tại
+// dùng đúng format này, đổi format là hỏng mọi item đã khai.
+
+/**
+ * Walk `root`, trả về mọi trường KIỂU CHUỖI dưới dạng {path, key, value}.
+ * `path` theo đúng quy ước ở trên. `prefix` là tiền tố ghép vào đầu (dùng khi
+ * gọi trên một nhánh con, vd `lesson.fiveCardContent` với prefix
+ * "fiveCardContent").
+ *
+ * @param {unknown} root
+ * @param {string} [prefix]
+ * @returns {Array<{path: string, key: string, value: string}>}
+ */
+export function walkLessonStrings(root, prefix = "") {
+  const out = [];
+  const walk = (node, p) => {
+    if (Array.isArray(node)) return node.forEach((v, i) => walk(v, `${p}[${i}]`));
+    if (!node || typeof node !== "object") return;
+    for (const [key, value] of Object.entries(node)) {
+      const here = p ? `${p}.${key}` : key;
+      if (typeof value === "string") out.push({ path: here, key, value });
+      else walk(value, here);
+    }
+  };
+  walk(root, prefix);
+  return out;
+}
+
+/**
+ * Bản đồ path → giá trị THẬT cho MỘT lesson — dùng để tra cứu `item.path`
+ * của một provenance item và so với `item.targetText`.
+ *
+ * Đi đúng HAI gốc mà provenance file đang dùng (đo được, không suy diễn):
+ * `fiveCardContent` (tiền tố "fiveCardContent") và `vocabulary` (tiền tố
+ * rỗng, ra path "vocabulary[n]..."). Path nào không thuộc hai gốc này thì
+ * bản đồ không có — tra sẽ ra `undefined`, đúng ý "path không tồn tại".
+ *
+ * @param {object} lesson
+ * @returns {Map<string, string>}
+ */
+export function buildLessonPathIndex(lesson) {
+  const map = new Map();
+  for (const { path, value } of walkLessonStrings(lesson.fiveCardContent, "fiveCardContent")) {
+    map.set(path, value);
+  }
+  for (const { path, value } of walkLessonStrings({ vocabulary: lesson.vocabulary }, "")) {
+    map.set(path, value);
+  }
+  return map;
+}

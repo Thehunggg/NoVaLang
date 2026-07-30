@@ -27,6 +27,7 @@ import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readingFromFurigana } from "./lib/japanese-furigana.mjs";
+import { walkLessonStrings, buildLessonPathIndex } from "./lib/lesson-walk.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -230,22 +231,54 @@ export const COVERAGE_WAIVED = Object.entries(REGISTRY)
   .filter(([, d]) => d.mustDeclareProvenance !== true)
   .map(([k, d]) => [k, d.waivedReason ?? "(THIẾU LÝ DO)"]);
 
-/** Gom mọi chuỗi tiếng Nhật hiển thị trong một lesson đã sinh. */
+/**
+ * Gom mọi chuỗi tiếng Nhật hiển thị trong một lesson đã sinh.
+ * Dùng walk CHUNG với check-render-coverage.mjs (scripts/lib/lesson-walk.mjs)
+ * — trước 2026-07-30 đây là một vòng walk-cây-JSON riêng, cùng việc nhưng
+ * khác bản với collectFields() bên check-render-coverage.mjs.
+ */
 export function collectDisplayedJapanese(lesson) {
   const out = new Map();
   const JP = /[぀-ヿ一-鿿]/;
-  const walk = (n, p) => {
-    if (Array.isArray(n)) return n.forEach((v, i) => walk(v, `${p}[${i}]`));
-    if (!n || typeof n !== "object") return;
-    for (const [k, v] of Object.entries(n)) {
-      const here = p ? `${p}.${k}` : k;
-      if (typeof v === "string" && JP.test(v) && COVERAGE_FIELDS.includes(k)) out.set(here, v);
-      else walk(v, here);
-    }
-  };
-  walk(lesson.fiveCardContent, "fiveCardContent");
-  walk({ vocabulary: lesson.vocabulary }, "");
+  for (const { path: p, key, value } of walkLessonStrings(lesson.fiveCardContent, "fiveCardContent")) {
+    if (JP.test(value) && COVERAGE_FIELDS.includes(key)) out.set(p, value);
+  }
+  for (const { path: p, key, value } of walkLessonStrings({ vocabulary: lesson.vocabulary }, "")) {
+    if (JP.test(value) && COVERAGE_FIELDS.includes(key)) out.set(p, value);
+  }
   return out;
+}
+
+// ───────────────────────────────────────────────────────────────────────────
+// WALK PATH — phá thật 2026-07-30 đo được: `path` trong provenance CHƯA BAO
+// GIỜ được đối chiếu với dữ liệu thật. Ba ca:
+//   CA2 — đổi path thành một chuỗi không tồn tại, giữ nguyên targetText/
+//         source/line → PASS, FAIL 0. path là nhãn thuần tuý, không tra cứu.
+//   CA1 — sửa lessons.json tại đúng path (giữ nguyên provenance) → mục TỰ NÓ
+//         vẫn "PASS ← source:line" (so với nguồn, không so với lessons.json);
+//         cổng tổng vẫn thấy FAIL nhưng qua đường KIỂM PHỦ (checkCoverage) —
+//         một tác dụng PHỤ dựa trên "giá trị mới có nằm trong tập targetText
+//         đã khai hay không", không phải xác minh ĐÚNG PATH ĐÓ. Hoán đổi hai
+//         câu đã khai giữa hai path sẽ lọt qua cả hai cơ chế cũ.
+// Vá: tra `item.path` thẳng vào lessons.json, so targetText với giá trị THẬT
+// tại đúng path đó — không qua trung gian "có nằm trong tập nào đó".
+// ───────────────────────────────────────────────────────────────────────────
+
+/**
+ * @param {Map<string,string>} pathIndex  từ buildLessonPathIndex(lesson)
+ * @param {{path:string, targetText:string}} item
+ * @returns {{ok:true}|{ok:false, why:string, want?:string, got?:string}}
+ */
+export function checkPathMatches(pathIndex, item) {
+  if (!pathIndex.has(item.path)) {
+    return { ok: false, why: "path không tồn tại trong lessons.json" };
+  }
+  const want = normalize(item.targetText);
+  const got = normalize(pathIndex.get(item.path));
+  if (want !== got) {
+    return { ok: false, why: "targetText KHÁC giá trị thật tại path", want, got };
+  }
+  return { ok: true };
 }
 
 /** @returns {{total:number, exempt:number, missing:Array<[string,string]>}} */
@@ -463,12 +496,38 @@ function main() {
   console.log(`CỔNG NGUYÊN VĂN — ${doc.lessonId ?? "(không có lessonId)"} · ${items.length} mục`);
   console.log("");
 
+  // WALK PATH (vá 2026-07-30, xem checkPathMatches) — path phải trỏ tới một
+  // giá trị THẬT trong lessons.json, đúng bằng targetText đã khai. Áp cho MỌI
+  // loại item (verbatim/authored/mutation) vì path+targetText mô tả nội dung
+  // đang hiện Ở ĐÂU, không phụ thuộc câu đó lấy từ đâu.
+  let pathIndex = null;
+  const lessonsPath = path.join(ROOT, "shared", "generated", "lessons.json");
+  if (doc.lessonId && existsSync(lessonsPath)) {
+    const allLessons = JSON.parse(readFileSync(lessonsPath, "utf8"));
+    const lesson = (allLessons.lessons ?? allLessons).find((l) => l.id === doc.lessonId);
+    if (lesson) pathIndex = buildLessonPathIndex(lesson);
+  }
+  let pathFail = 0;
+
   // Corpus để R12b kiểm `mutation.from` có thật trong bài không.
   const corpus = new Set(items.map((i) => normalize(i.targetText)));
   const mutationByOp = new Map();
   const authoredByReason = new Map();
 
   for (const item of items) {
+    if (pathIndex) {
+      const pr = checkPathMatches(pathIndex, item);
+      if (!pr.ok) {
+        fail += 1;
+        pathFail += 1;
+        console.log(`  FAIL     ${item.path} — WALK PATH: ${pr.why}`);
+        if (pr.want !== undefined) {
+          console.log(`             khai (đã chuẩn hoá): ${pr.want}`);
+          console.log(`             thật (đã chuẩn hoá): ${pr.got}`);
+        }
+        continue;
+      }
+    }
     if (item.mutation) {
       const r = checkMutation(item.mutation, item.targetText, corpus);
       if (r.ok) {
@@ -575,7 +634,8 @@ function main() {
 
   console.log("");
   console.log(
-    `TỔNG — nguyên văn PASS ${pass} · FAIL ${fail} · tự soạn ${authored} · mutation ${mutations}`,
+    `TỔNG — nguyên văn PASS ${pass} · FAIL ${fail} · tự soạn ${authored} · mutation ${mutations}` +
+      (pathIndex ? ` · WALK PATH lệch ${pathFail}` : " · WALK PATH BỎ QUA (chưa có bài trong lessons.json)"),
   );
   if (fail > 0) process.exit(1);
 }

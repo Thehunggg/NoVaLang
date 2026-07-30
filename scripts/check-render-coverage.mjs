@@ -17,6 +17,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { walkLessonStrings } from "./lib/lesson-walk.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LESSONS = path.join(ROOT, "shared", "generated", "lessons.json");
@@ -26,21 +27,17 @@ const JP = /[぀-ヿ一-鿿]/;
 const PLATFORMS = ["web", "flutter"];
 const CLASSES = ["display", "aid", "tts", "internal"];
 
+// Walk dùng CHUNG với verify-provenance.mjs (scripts/lib/lesson-walk.mjs) —
+// trước 2026-07-30 hai script tự viết hai bản walk-cây-JSON riêng, đúng loại
+// lỗi "hai nguồn sự thật" mà phá thật lộ ra khi vá path-verification.
 function collectFields(lesson) {
   const found = new Map(); // tên trường → { count, viDu }
-  const walk = (node) => {
-    if (Array.isArray(node)) return node.forEach(walk);
-    if (!node || typeof node !== "object") return;
-    for (const [key, value] of Object.entries(node)) {
-      if (typeof value === "string") {
-        if (!JP.test(value)) continue;
-        const cur = found.get(key) ?? { count: 0, viDu: value };
-        cur.count += 1;
-        found.set(key, cur);
-      } else walk(value);
-    }
-  };
-  walk(lesson);
+  for (const { key, value } of walkLessonStrings(lesson)) {
+    if (!JP.test(value)) continue;
+    const cur = found.get(key) ?? { count: 0, viDu: value };
+    cur.count += 1;
+    found.set(key, cur);
+  }
   return found;
 }
 
