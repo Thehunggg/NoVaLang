@@ -21,6 +21,12 @@
 // five_cards) không áp được cơ chế unit_comprehensive_cloze nên KHÔNG tính là
 // "thiếu" — ghi rõ "N/A" thay vì báo động nhầm.
 //
+// MIỄN TRỪ RIÊNG cho niche `core_foundation` (owner chốt 2026-07-30, G14-R16):
+// bài kana dạy CHỮ, không dạy tình huống giao tiếp, dạng cloze theo unit
+// không áp được — QUYẾT ĐỊNH SẢN PHẨM, không phải hạn chế kỹ thuật. Miễn này
+// khai RIÊNG theo `niche`, không dựa vào SECTION_PLANS không khớp: nếu sau
+// này SECTION_PLANS mở rộng hỗ trợ unit 10 lesson, Core Foundation vẫn miễn.
+//
 // Dùng: node scripts/check-build-order.mjs
 
 import fs from "node:fs";
@@ -41,7 +47,8 @@ function main() {
   for (const course of courses) {
     for (const unit of course.units ?? []) {
       const lessonIds = unit.lessonIds ?? [];
-      const eligiblePlan = Boolean(SECTION_PLANS[lessonIds.length]);
+      const isCoreFoundation = course.nicheId === "core_foundation";
+      const eligiblePlan = !isCoreFoundation && Boolean(SECTION_PLANS[lessonIds.length]);
       const allReady =
         lessonIds.length > 0 && lessonIds.every((id) => lessonById.get(id)?.contentStatus === "ready");
       const entry = {
@@ -50,6 +57,7 @@ function main() {
         courseOrder: course.order ?? 0,
         unitOrder: unit.order ?? unit.displayOrder ?? 0,
         lessonCount: lessonIds.length,
+        isCoreFoundation,
         eligiblePlan,
         allReady,
         hasCT: Boolean(unit.comprehensiveTest),
@@ -75,7 +83,9 @@ function main() {
     for (let i = 0; i < units.length; i++) {
       const u = units[i];
       let status;
-      if (!u.eligiblePlan) {
+      if (u.isCoreFoundation) {
+        status = "MIỄN — Core Foundation (dạy chữ, không dạy tình huống; quyết định sản phẩm 2026-07-30)";
+      } else if (!u.eligiblePlan) {
         status = `N/A (${u.lessonCount} lesson — không khớp plan 2/3, cơ chế chưa áp cho unit này)`;
       } else if (!u.allReady) {
         status = "chưa bắt đầu (lesson chưa ready hết)";
