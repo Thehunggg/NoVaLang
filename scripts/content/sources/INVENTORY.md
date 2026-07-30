@@ -1131,6 +1131,7 @@ trúc JSON, luật a/b/c dựng cho trường `utterance` không áp thẳng đ�
 | LS-8 | **Romaji câu dài dính** — `donoguraininarimasuka?` | Khối wakachigaki gộp `どのぐらいになりますか` thành một khối vì bảng trợ từ đóng không tách được `に` nằm giữa. Đúng luật đã chốt; muốn thoáng hơn phải mở bảng hoặc dùng bộ tách từ |
 | LS-9 | **Tên 2 file 敬語 trong `local-sources/ja/keigo/`** | Tên file không nói rõ nội dung; đổi tên cần owner cấp phép từng lần + sha256 trước/sau (G14-R13) |
 | LS-10 | **`sentences_*.json` mở lại từ N4** | Đã đo có 5.281 câu / 1.039 khoá, nhưng bài hiện tại còn ở N5; mở sớm sẽ kéo từ chưa dạy vào (§G7) |
+| **LS-12** | **Rà 19 khoản FROZEN còn lại của `rules/languages/ja/`** — `register_taxonomy` · `honorifics_keigo` · `forms_of_address` · `tts_audio_policy` · `answer_acceptance_ja` · `naturalness_translation` · `romanization_hepburn` · `pronunciation_contextual`… đối chiếu G14, tìm xung đột **khác kiểu** `reading_aid_policy` | `reading_aid_policy` (D-11) đã lộ ra là mâu thuẫn với G14-R14 và phải supersede bằng D-93. Nhiều khả năng còn khoản khác cùng cảnh. **CHƯA rà lượt này theo yêu cầu owner** — cần một lượt riêng, đơn nhiệm |
 | **LS-11** | **Màn "Nguồn & Ghi công"** — JMdict/EDRDG · hanabira · Tanos | **BẮT BUỘC TRƯỚC PHÁT HÀNH.** Nguồn owner đã đóng chủ đề nguồn gốc, nhưng ba bộ dữ liệu BÊN THỨ BA này vẫn còn dùng (cách đọc, vốn từ JLPT) và giấy phép của chúng đòi ghi công. Chưa làm vì chưa tới mốc phát hành — nhưng **không được quên**, thiếu là vi phạm giấy phép |
 
 

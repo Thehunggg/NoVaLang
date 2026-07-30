@@ -446,7 +446,7 @@
       "confidence": "none"
     },
     "machine_readable": true,
-    "notes": "D-11 ĐÃ CHỐT bản (ii): A0–B1 ẩn romaji mặc định + toggle; B2–C2 không toggle. Nhất quán D-10/D-12. [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.]",
+    "notes": "D-11 ĐÃ CHỐT bản (ii): A0–B1 ẩn romaji mặc định + toggle; B2–C2 không toggle. Nhất quán D-10/D-12. [D-49: FROZEN 2026-07-18 — rule_level. lexical_level KHÔNG tự động freeze, giữ nguyên confidence/status như đã ghi.] [SUPERSEDED 2026-07-30 bởi D-93 — xem G14-R14. Bản mặc định BẬT mọi cấp thắng, không phải bản ẩn-theo-cấp cũ.]",
     "status": "FROZEN"
   },
   "answer_acceptance_ja": {

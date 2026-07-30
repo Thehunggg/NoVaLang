@@ -87,6 +87,13 @@ không hỏi lại. Mỗi mục: **ID · ngày · quyết định · phạm vi �
   legacy có hai bản ngược nhau; Project Owner chọn (ii) ở review Bước 4.)
 - **D-12 · legacy · ALL** — Level unknown/missing → **fail safe**: không romaji,
   không toggle, ghi diagnostic, **không tự suy ra level**.
+- **✅ D-93 · 2026-07-30 · owner · ja · SUPERSEDE D-11** — Owner **SUPERSEDE
+  D-11** (`reading_aid_policy`). Quyết định mới: **TẤT CẢ cấp độ (A0–C2) mặc
+  định BẬT** hiển thị dòng đọc kana + romaji, **KHÔNG ẩn theo cấp**, **KHÔNG
+  khoá toggle ở B2+**. Lý do: sản phẩm không phân biệt trải nghiệm theo cấp cho
+  trợ đọc. Chi tiết + implementation: `LESSON_AUTHORING_STANDARD.md` **G14-R14**.
+  `rules/languages/ja/coverage.json` mục `ja.reading_aid_policy` cập nhật
+  `notes` ghi chú SUPERSEDED, **không xoá** nội dung D-11 cũ (giữ lịch sử).
 
 ## 5. Chấm đáp án
 
