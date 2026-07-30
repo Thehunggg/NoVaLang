@@ -1,5 +1,12 @@
 # NovaLang Active Task — Task hiện tại
 
+> **RÀ TOÀN BỘ 2026-07-30** — owner yêu cầu đối chiếu 7 mục nợ mở với repo
+> thật. Kết quả: **5/7 đã xong** (chỉ chưa cập nhật trạng thái), **1/7 còn
+> đúng chưa vá** (`MAX_TRAILING_BLANK_RATIO`), **1/7** hỗn hợp (mục "Cuối
+> phiên 2026-07-24" — phần lớn xong, 2 khoản "CẦN KIỂM TAY" không truy được
+> bằng máy, đánh dấu KHÔNG CHẮC thay vì đoán). Đánh dấu trực tiếp tại từng
+> mục bên dưới, giữ nguyên nội dung gốc làm lịch sử — không xoá gì.
+
 ## Cuối phiên 2026-07-24
 
 ### ĐÃ XONG
@@ -23,26 +30,54 @@
   Q10–14 khóa), Flutter bỏ hard-code `index==9`.
 
 ### CẦN KIỂM TAY (local, có Flutter SDK — cloud không test được)
-- **Paywall:** Q1–Q9 free, Q10 khóa (commit `62083af`) — chạy `flutter test` +
-  kiểm tay để chốt runtime.
-- **Màn đăng nhập / onboarding redesign** chạy đúng.
+
+**Rà lại 2026-07-30:**
+- **Paywall Q1–Q9 free / Q10 khóa** — MỨC CODE + TEST TỰ ĐỘNG: **XÁC NHẬN**.
+  §E1 đã áp (Golden Q10 `free→plus`, validator boundary `index<9`, Golden
+  invariant test); `flutter test` chạy lại 2026-07-30: **555/555 PASS**. Mức
+  BẤM TAY QUA APP THẬT: **KHÔNG CHẮC** — không có bằng chứng đã chạy tay gần
+  đây trong repo/lịch sử phiên; chưa xác nhận được, không suy diễn.
+- **Màn đăng nhập / onboarding redesign chạy đúng** — **KHÔNG CHẮC**, thuần
+  visual/UX, không có công cụ đo được từ code; chưa ai xác nhận lại từ
+  2026-07-24 tới nay.
 
 ### CÒN TREO — cần LOCAL (có nguồn thật)
-- Trích **subset JMdict** (112MB → JSON nhỏ dùng được).
-- Tạo **danh sách cụm cố định ja** (quét bài + đối chiếu nguồn, chống nhiễm độc,
-  **OWNER DUYỆT** trước khi dùng).
-- **Rà + sửa L2/L3** (câu `私もよろしくお願いします` + đối chiếu nguồn thật).
-- **Build bài tiếp theo** theo G1–G9 + nguồn.
+
+**Rà lại 2026-07-30:**
+- Trích **subset JMdict** (112MB → JSON nhỏ dùng được) — **CÒN ĐÚNG, chưa
+  làm** (không thấy file kết quả nào trong repo).
+- Tạo **danh sách cụm cố định ja** — **CÒN ĐÚNG, chưa làm** (không thấy file).
+- **Rà + sửa L2/L3** (câu `私もよろしくお願いします`) — **KHÔNG CHẮC**: cụm này
+  vẫn còn trong `ja-unit1-lesson3-localization.mjs` (dòng ~64/132/133), nhưng
+  L3 là 1 trong 4 bài MIỄN provenance (G14-R2b, build trước G14) nên không có
+  cách máy nào xác nhận nó đã được "rà + đối chiếu nguồn thật" hay chưa —
+  không suy diễn.
+- **Build bài tiếp theo theo G1–G9 + nguồn** — **XONG (lặp lại nhiều lần)**:
+  từ 2026-07-24 tới nay đã build thêm u1-l2, u1-l3, u2-l1, u2-l2. Mục này
+  mang tính chỉ dẫn chung, coi như đang được thực hiện liên tục, không phải
+  một việc đóng một lần.
 
 ### DỌN DẸP (tùy chọn)
-- Xóa 2 nhánh đã gộp trọn vào main: `fix/curriculum-quality-gates`,
-  `rescue/login-onboarding-redesign`.
+
+**Rà lại 2026-07-30: CÒN ĐÚNG, CHƯA XOÁ.** Cả hai nhánh vẫn tồn tại (local +
+`origin`): `fix/curriculum-quality-gates`, `rescue/login-onboarding-redesign`.
+Xoá nhánh là thao tác cần owner duyệt riêng (không tự làm trong lượt dọn tài
+liệu này).
 
 ### TỒN ĐỌNG owner tự làm
-- Xóa 9 file thừa trong `local-sources/`.
-- Xác minh điều khoản bản quyền Irodori + loại giấy phép CC của hanabira.
+- Xóa 9 file thừa trong `local-sources/`. — **KHÔNG CHẮC**, việc của owner,
+  không kiểm được từ phía agent (thư mục gitignore 100%, không thấy trong git).
+- Xác minh điều khoản bản quyền Irodori + loại giấy phép CC của hanabira. —
+  **CÒN ĐÚNG, còn treo**: xem LS-11 trong `scripts/content/sources/INVENTORY.md`
+  ("BẮT BUỘC TRƯỚC PHÁT HÀNH", chưa làm vì chưa tới mốc phát hành).
 
-## CÒN LẠI — 2 VIỆC UI/NỘI DUNG LỚN, ĐÃ RÀ XONG CHƯA SỬA — 2026-07-25
+## [XONG] 2 VIỆC UI/NỘI DUNG LỚN — 2026-07-25
+
+**Rà lại 2026-07-30: CẢ HAI VIỆC ĐÃ XONG** (tiêu đề gốc "CÒN LẠI" đã lỗi thời —
+phần thân bên dưới tự ghi "XONG 2026-07-25" cho cả hai, chỉ tiêu đề chưa cập
+nhật theo). Việc 1: xác nhận `mobile/novalang_flutter/lib/widgets/learn/
+exercise_feedback_panel.dart` tồn tại thật (commit `4f99a78`). Việc 2: xác nhận
+`check-render-coverage`/R12d hiện tại vẫn 0 lệch furigana.
 
 Owner giao 5 việc sau khi test app. **Việc 3, 4, 5 đã xong và push.** Hai việc
 dưới đây mới chạy xong bước RÀ (chính là bước owner yêu cầu làm trước); phần sửa
@@ -101,10 +136,35 @@ Khác bắt buộc còn giữ: mỗi phương án điền 2–3 ô, nên chip c�
 tràn/xuống dòng xấu ở màn hẹp không, và khoảng cách giữa các khối đọc có thoáng
 như màn bài tập không. Test chỉ khẳng định ĐÚNG widget được dùng, không khẳng
 định bố cục nhìn đẹp.
-## CÒN LẠI — GHI NGUỒN 25 CÂU BÀI TỔNG HỢP + REGISTRY — 2026-07-25
+## [XONG 2026-07-25] GHI NGUỒN 25 CÂU BÀI TỔNG HỢP + REGISTRY
 
-**CHƯA LÀM.** Hạ tầng xong hết, chỉ còn bước ghi nội dung. Owner đã duyệt cả 3
-đợt; nội dung nằm ở 2 bản đọc trên Desktop:
+**RÀ LẠI 2026-07-30: MỤC NÀY SAI — ĐÃ XONG TỪ 2026-07-25, CÙNG NGÀY GHI
+"CHƯA LÀM" NÀY.** `UNIT_COMPREHENSIVE_REGISTRY.ja['ja-daily_life-m01-u1']` có
+thật, 25 câu, dữ liệu thật (không phải khung rỗng). Thứ tự commit thật (cùng
+ngày 2026-07-25):
+- `4bd8985` content(ja u1): comprehensive test source, part 1 — questions 1-8
+- `b6e1038` content(ja u1): comprehensive test source, part 2 — questions 9-18
+- `d9db33d` content(ja u1): comprehensive test part 3 + register it — 25 questions now live
+- `57671a9` content(ja u1): rewrite questions 19-25 as dialogues instead of typed answers
+
+**LƯU Ý QUAN TRỌNG:** việc THẬT ĐÃ HOÀN THÀNH KHÁC với mô tả "chưa làm" bên
+dưới — câu 19–25 cuối cùng KHÔNG dùng `typed_blank` (tự gõ, quy tắc 2^N cho
+`acceptedAnswers`) như phần rà dưới đây mô tả. Commit `57671a9` (cùng ngày)
+đã THAY toàn bộ 7 câu tự gõ đó bằng `dialogue_multi_blank_choice` (chọn
+phương án) — lý do ghi trong code (`unit-comprehensive-test.mjs`): câu tự gõ
+không nêu đủ tình huống thì nhiều đáp án khác đáp án chuẩn vẫn đúng, bộ chấm
+cố định sẽ chấm sai người trả lời đúng. Phần "ĐÃ RÀ XONG quy tắc 2^N" và
+"Việc còn phải làm" bên dưới vì vậy mô tả một THIẾT KẾ ĐÃ BỊ THAY, giữ nguyên
+làm hồ sơ lịch sử — không áp dụng cho trạng thái hiện tại.
+
+Đo hiện tại (2026-07-30): 25 câu thật, 2 kind (`sentence_multi_blank_choice`
+×8, `dialogue_multi_blank_choice` ×17, khớp `SECTION_PLANS[3]`). **CHƯA có
+file provenance riêng** cho bài tổng hợp này (`verify-provenance.mjs` chưa hề
+biết tới khái niệm "comprehensive test") — lỗ hổng có thật, xem lượt
+"PROVENANCE BÀI TỔNG HỢP" 2026-07-30 (đo (a) trùng khít lesson khác = 84 >
+0 → DỪNG theo luật owner, chưa vá, chờ owner chốt cách khai mới).
+
+Nội dung nằm ở 2 bản đọc trên Desktop:
 `ban-doc-18-cau-KHOI-PHUC-OGENKIDE.txt` (câu 1–18) và
 `ban-doc-dot3-cau-19-25.txt` (câu 19–25).
 
@@ -155,7 +215,16 @@ sung: **23** chuỗi cho 12 ô (bản đọc ghi 22).
 - Normalizer đã xoá sạch dấu cách cho ja/zh → ô tự gõ chấm đúng.
 - `UnitComprehensiveTest.languageCode` đã parse từ dữ liệu.
 
-## UNIT 2 — BƯỚC 1 XONG (u2-l1), BƯỚC 2 CHƯA LÀM — 2026-07-27
+## [XONG] UNIT 2 — BƯỚC 1 (u2-l1) VÀ BƯỚC 2 (u2-l2) — 2026-07-27/28
+
+**RÀ LẠI 2026-07-30: TIÊU ĐỀ SAI — BƯỚC 2 ĐÃ XONG, KHÔNG "CHƯA LÀM".**
+`ja-daily_life-m01-u2-l2` đo hiện tại: `contentStatus=ready`, `playable=true`,
+9 vocabulary, provenance đủ. Commit hoàn thành: `8edb029`
+("content(ja u2-l2): bài hoàn chỉnh + provenance đủ 166/166", 2026-07-28).
+Riêng sub-mục "Bài tổng hợp Unit 2 (18 câu)" ở cuối phần "CÒN LẠI" bên dưới
+**VẪN CÒN ĐÚNG, CÒN MỞ** — đo 2026-07-30 (`check-build-order.mjs`):
+`ja-daily_life-m01-u2` đủ điều kiện (2/2 lesson ready) nhưng chưa có
+`comprehensiveTest` (xem G14-R16).
 
 `ja-daily_life-m01-u2-l1` 「知り合いにあいさつする」 đã ghi data và push
 (`b5daa49`). 6 thẻ · 3 hội thoại · 3 mẫu · 14 bài tập. Golden L1/L2/L3 trong
@@ -200,9 +269,28 @@ theo** — đừng bẻ nội dung cho vừa một con số chưa ai kiểm.
   **LOCAL** vì cần mở `local-sources/` (cloud không có).
 - **Bài tổng hợp Unit 2 (18 câu)** — việc riêng, sau khi cả hai lesson duyệt.
 
-## NỢ NỘI DUNG — 「お元気で」 thẻ từ vựng ĐÁ NHAU với hội thoại cùng bài — 2026-07-25
+## [XONG] 「お元気で」 thẻ từ vựng ĐÁ NHAU với hội thoại cùng bài — 2026-07-25
 
-Cần **NGƯỜI BẢN NGỮ** quyết. **CHƯA sửa gì** — không sửa thẻ, không sửa hội thoại.
+**RÀ LẠI 2026-07-30: ĐÃ SỬA XONG.** Commit `e7e4817`
+("content(ja L3): stop pairing お元気で with また明日 — fix all three places",
+2026-07-25) đã sửa cả ba chỗ nêu ở mục "NỢ CÒN LẠI" bên dưới. Đo hiện tại
+(`shared/generated/lessons.json`, `ja-daily_life-m01-u1-l3`):
+- `dialogueGroups[1].lines[2]` = 「また来週。お元気で。」 (đã đổi từ また明日)
+- Q14 `dialogueLines[4]` = 「また来週。お元気で。」 (đã đổi từ また明日)
+- `dialogueGroups[1].explanation[1]` = "お元気で dùng khi chia tay từ một tuần
+  trở lên." (đã đổi khỏi mô tả mập mờ "lâu mới gặp lại")
+- `exercises[9].feedback.slotFeedback.chat_farewell_slot.explanation` = cùng
+  câu trên (đường dẫn thật lệch một chút so với ghi chú gốc —
+  `feedback.slotFeedback...`, không phải `slotFeedback...` ở gốc exercise —
+  nhưng NỘI DUNG đã đúng)
+- `vocabularyReferences` của L3 hiện là 2 mục khác (`じゃあね`, `気をつけて`,
+  không còn field `difference` ở dạng cũ) — nội dung đã đổi hẳn, ghi chú gốc
+  không còn áp được nguyên trạng.
+
+*(Khung dưới đây là ghi chép GỐC lúc phát hiện lỗi 2026-07-25, giữ nguyên làm
+lịch sử — xem ghi chú "RÀ LẠI 2026-07-30" ở trên để biết đã sửa xong.)*
+
+Cần **NGƯỜI BẢN NGỮ** quyết. **[LÚC ĐÓ] CHƯA sửa gì** — không sửa thẻ, không sửa hội thoại.
 
 `ja-daily_life-m01-u1-l3` · `vocabularyDetails[ogenki-de].overview`:
 
@@ -231,7 +319,10 @@ HỎI "có khoẻ không"); duy nhất một chỗ có 「それじゃ、お元�
 làm trục đúng/sai ở bài tổng hợp cuối Unit. Quy tắc ghi ở
 `scripts/content/sources/ja.md`.
 
-### NỢ CÒN LẠI — 2 chỗ trong L3 dùng 「お元気で」 SAI MỐC (chưa sửa, owner quyết)
+### [XONG — commit `e7e4817`] 2 chỗ trong L3 dùng 「お元気で」 SAI MỐC
+
+*(Ghi chép GỐC bên dưới; đã sửa theo hướng (A) — đổi また明日 → また来週, giữ
+お元気で — xem ghi chú "RÀ LẠI 2026-07-30" ở đầu phần này.)*
 
 Quét toàn bộ L1/L2/L3: **L1 và L2 không dùng 「お元気で」 chỗ nào**. Chỉ L3, và
 sai mốc đúng **một câu** 「また明日。お元気で。」 — nhưng câu đó được viết ở
@@ -262,7 +353,13 @@ mới gặp lại" ở `dialogueGroups[1].explanation[1]`, `practice.exercises[9
 .difference`. Để nguyên vì nằm ngoài phạm vi owner giao (chỉ giao thẻ
 `ogenki-de`); nên sửa cùng lượt với quyết định ở trên để L3 nhất quán.
 
-## NỢ KỸ THUẬT — `MAX_TRAILING_BLANK_RATIO` đếm KHÔNG SÁT ý định §E4 — 2026-07-25
+## [CÒN ĐÚNG] `MAX_TRAILING_BLANK_RATIO` đếm KHÔNG SÁT ý định §E4 — 2026-07-25
+
+**RÀ LẠI 2026-07-30: CÒN ĐÚNG, CHƯA VÁ.** Đọc lại `endsWithBlank()` ở CẢ hai
+nơi (`scripts/lib/unit-comprehensive-test.mjs:136-143` và
+`scripts/validate-curriculum.mjs:1290-1293`) — logic y hệt mô tả gốc bên dưới,
+chưa ai bỏ qua đoạn văn bản chỉ chứa dấu câu kết trước khi xét `blankId`. Vẫn
+là task riêng, chưa làm.
 
 Phát hiện khi soạn nội dung ĐỢT 2 (câu 9–18, `dialogue_multi_blank_choice`) của
 bài tổng hợp Unit 1. **Chưa sửa code** — ghi lại để làm thành task riêng.
@@ -290,7 +387,29 @@ Hướng sửa (chưa làm): bỏ qua các đoạn văn bản chỉ chứa dấu
 (`。` `.` `!` `！` `？` `?`, có thể kèm khoảng trắng) khi tìm đoạn cuối, rồi mới
 xét `blankId`. Cần thêm test cho cả hai kind. Không đụng ngưỡng `0.5`.
 
-## NỢ WEB — chuyển cho Codex (env build được `frontend/node_modules`) — 2026-07-20
+## [XONG CẢ HAI] NỢ WEB — 2026-07-20
+
+**RÀ LẠI 2026-07-30 — MÔI TRƯỜNG NÀY CÓ `frontend/node_modules`, ĐÃ BUILD
+ĐƯỢC THẬT (khác 2026-07-20 lúc ghi mục này).** Cả hai khoản đều đã xong:
+
+1. **Web i18n chuẩn** — XONG. `node scripts/check-hardcoded-ui.mjs` hiện báo
+   **web = 0** finding (mobile còn 7, toàn chuỗi nội suy số/`$value` vô hại,
+   không phải chuỗi ngôn ngữ cứng). `STRICT_WEB = true` đã bật thật
+   (`scripts/check-hardcoded-ui.mjs:16`), từ commit `feed0e4`
+   ("i18n: de-leak 'Core Foundation', localize mobile results title, add
+   warn-mode hardcode scanner", 2026-07-20 — cùng ngày ghi nợ này, có vẻ việc
+   đã làm gần như ngay sau khi ghi).
+2. **Web đọc động danh sách ngôn ngữ học** — XONG. `LanguageCode` trong
+   `frontend/src/types/index.ts` nay import từ `shared/types` (=
+   `LearningLanguageCode`, không còn khoá cứng `"en"|"ja"`);
+   `normalizeLearningLanguage` (`frontend/src/utils/storage.ts:46`) tự ghi
+   chú "Preserve catalog codes; do not coerce unknown languages to English" —
+   ngược hẳn hành vi cũ bị nợ. Commit: `9500e4c`
+   ("feat(web): read learning languages dynamically from courseStatus
+   config", 2026-07-22).
+
+**Xác nhận build thật:** `cd frontend && npm run build` (`tsc -b && vite
+build`) chạy 2026-07-30 → **PASS**, `✓ built in 5.27s`, 1677 module.
 
 Ghi lại để không quên (ngoài reminder trong `scripts/check-hardcoded-ui.mjs`).
 Hai khoản nợ này **cần Codex** làm ở môi trường có thể cài `frontend/node_modules`
