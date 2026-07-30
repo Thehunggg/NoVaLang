@@ -1000,6 +1000,64 @@ Dò nhãn người nói đủ **4 quy ước** (`Ａ：` · `- **A:**` · `A ` t
 **Chặn hai lần:** (a) hỏng bóc 55% ≫ ngưỡng; (b) NHK WORLD JAPAN là nội dung
 phát sóng có bản quyền, không có giấy phép mở.
 
+## CẬP NHẬT 2026-07-30 — owner xác nhận nguồn tự viết + đổi tên nhân vật
+
+**Owner xác nhận:** `topic1-5.json`, `ban1.txt`, `ban2.txt` là **nội dung owner
+tự viết**. Chủ đề nguồn gốc **ĐÓNG** — mục "giấy phép chưa rõ" ở trên **hết
+hiệu lực**, không hỏi lại. `ban2` vẫn chặn nhưng **chỉ vì lý do kỹ thuật**
+(bóc PDF hỏng), không phải bản quyền.
+
+### Đổi tên nhân vật — ngoại lệ sửa nguồn MỘT LẦN
+
+Roster lấy từ `approvedCharacterNamePool` trong `lessons.json`:
+**田中 · 佐藤 · 伊藤** (+ 先生 là VAI, không phải tên → không đưa vào xoay vòng).
+
+Phạm vi: **CHỈ trường/dòng nhãn người nói.** Lời thoại không đụng.
+
+| file | nhãn đã đổi | dòng trước → sau | sha256 trước → sau |
+|---|---:|---|---|
+| `topic1.json` | 8.454 | 50.824 → 50.824 ✅ | `6cb6d250b32b` → `f16fe4ed8e8c` |
+| `topic2.json` | 8.189 | 49.403 → 49.403 ✅ | `a09e442c579c` → `5e1a81602629` |
+| `topic3.json` | 8.449 | 50.407 → 50.407 ✅ | `affbff6a7daf` → `98a05af142f4` |
+| `topic4.json` | 8.335 | 50.157 → 50.157 ✅ | `0bc67a1340a7` → `4b735e5b9835` |
+| `topic5.json` | 8.310 | 49.952 → 49.952 ✅ | `5b6c24f01c2e` → `e2010415292d` |
+| `ban1.txt` | 184 | 12.173 → 12.173 ✅ | `d5ddb2ee6184` → `381719842e68` |
+
+- `topic1-5`: `utterances[].speaker` `A`/`B` → cặp roster, **xoay vòng theo
+  hội thoại**: (田中,佐藤) → (佐藤,伊藤) → (伊藤,田中). Nhất quán trong một
+  hội thoại. Tổng **41.737 nhãn = đúng tổng số lượt nói** → không sót lượt nào.
+- `ban1`: nhãn `Tên:` đầu dòng, gán lại **trong từng khối `Dialogue N`** để hai
+  người nói trong cùng khối không trùng tên. **Bỏ qua** `Cue` · `Response` ·
+  `PROFESSIONALS` — nhãn bài luyện và chữ bìa, không phải nhân vật (454 dòng
+  khớp mẫu nhưng bị loại đúng).
+- **Chứng lời thoại không đụng:** hash tập `utterance` sau khi sửa =
+  `f8a7611627c85454`, số lượt vẫn 41.737.
+
+**Bản mới là VẬT CHUẨN của cổng** — mọi provenance từ nay trỏ vào bản đã đổi tên.
+
+### ⚠ TÊN NGƯỜI TRONG LỜI THOẠI — owner quyết, CHƯA thay
+
+Quét có hệ thống (mẫu `họ + さん/くん/君`, đã lọc từ thân tộc/nghề nghiệp):
+
+**1.171 lượt · 493 họ khác nhau.**
+
+| | |
+|---|---|
+| **trong** roster | 佐藤 (61) · 田中 (31) · 伊藤 (4) |
+| **ngoài** roster, top 12 | 加藤 (34) · 鈴木 (27) · 山田 (21) · 木村 (12) · 健太 (12) · 小林 (12) · 高橋 (10) · 花屋 (10) · 中村 (10) · 渡辺 (9) · 山本 (9) · 石井 (8) |
+
+> **SỬA LẠI SỐ CỦA CHÍNH TÔI:** lượt trước tôi báo "97 lượt chứa tên người".
+> Sai — regex đó dựng từ danh sách tên thấy ở `ban1`, không quét hệ thống.
+> Số đúng là **1.171**. Phát hiện khi thấy `加藤さん` trong hội thoại vừa được
+> gán nhãn `佐藤`.
+
+Hệ quả: có hội thoại nhãn là 田中/佐藤 nhưng trong câu lại gọi 加藤さん. Lấy
+câu ra dùng thì phải xử — nhưng đó là **sửa lời thoại**, ngoài phạm vi ngoại lệ
+lần này. Owner quyết lượt sau.
+
+`ban1.txt`: **212 dòng không-phải-nhãn** có chứa tên người (vd dòng 409
+`本田さん。`, dòng 530 `スミスです。`) — cùng tình trạng, chưa thay.
+
 ## Kết luận — một dòng mỗi nguồn
 
 | Nguồn | Kết luận |
