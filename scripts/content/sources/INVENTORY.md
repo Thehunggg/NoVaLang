@@ -870,6 +870,146 @@ Mọi tham chiếu tới nguồn này trong provenance dùng path CHÍNH THỨC 
 
 ---
 
+# ĐO 7 NGUỒN MỚI — 2026-07-30
+
+Owner thêm 7 file vào `local-sources/ja/` ngày 2026-07-30. Tìm theo mtime,
+đối chiếu INVENTORY: **đúng 7 mục, cả 7 đều chưa có trong sổ**. Task CHỈ ĐỌC.
+
+## Bảng sàng
+
+| # | Nguồn | Định dạng | Dung lượng | Loại | Kết luận sàng |
+|---|---|---|---|---|---|
+| 1 | `topic1.json` Dailylife | JSON, in đẹp | 1,38 MB | hội thoại | **QUA SÀNG** |
+| 2 | `topic2.json` School | JSON | 1,35 MB | hội thoại | **QUA SÀNG** |
+| 3 | `topic3.json` Travel | JSON | 1,38 MB | hội thoại | **QUA SÀNG** |
+| 4 | `topic4.json` Health | JSON | 1,36 MB | hội thoại | **QUA SÀNG** |
+| 5 | `topic5.json` Entertainment | JSON | 1,37 MB | hội thoại | **QUA SÀNG** |
+| 6 | `ban1.txt` | text UTF-8 | 476 KB | giáo trình | **QUA SÀNG kỹ thuật · VƯỚNG GIẤY PHÉP** |
+| 7 | `ban2.txt` | text bóc PDF | 221 KB | giáo trình | **CHẶN** — hỏng 55% + bản quyền |
+
+## 1–5. `topic1…5.json` — KHO HỘI THOẠI, ô đói nhất
+
+| topic | tên | hội thoại | lượt nói | dòng file |
+|---|---|---|---|---|
+| 1 | Dailylife | 1.069 | 8.454 | 50.824 |
+| 2 | School | 1.057 | 8.189 | 49.403 |
+| 3 | Travel | 1.020 | 8.449 | 50.407 |
+| 4 | Health | 1.060 | 8.335 | 50.157 |
+| 5 | Entertainment | 1.050 | 8.310 | 49.952 |
+| | **TỔNG** | **5.256** | **41.737** | |
+
+Cấu trúc: `topic_id · topic_name · dialogue_id · dialogue_length · utterances[]`,
+mỗi lượt `turn_num · speaker · utterance`. Người nói **A / B**. Hội thoại dài
+**4–12 lượt**.
+
+**Chạy cổng thật** (`verify-provenance`): 2 câu/topic, **PASS mức 1**, trích
+đúng `source:line` — file in đẹp nên mỗi câu nằm trọn một dòng:
+
+```
+local-sources/ja/topic1.json:11
+                "utterance": "おはようございます。今日はとても良いお天気ですね。"
+```
+
+**Lọc vốn từ khô** — 10 câu rải đều/topic, đối chiếu Tanos N5 (669 mục, 422
+kanji) ∪ vốn đã dạy (33 cụm):
+
+| topic | 0 kanji lạ | 1–2 lạ | >2 lạ | kanji/câu |
+|---|---|---|---|---|
+| 1 Dailylife | 4 | 4 | 2 | 5,4 |
+| 2 School | 3 | 3 | 4 | 6,1 |
+| 3 Travel | 2 | 7 | 1 | 5,6 |
+| 4 Health | 3 | 7 | 0 | 3,9 |
+| 5 Entertainment | 4 | 4 | 2 | 3,8 |
+| **cộng** | **16/50** | **25/50** | **9/50** | |
+
+→ **dải N4**, quá giàu cho A0–A1 nếu dùng thô.
+
+**Thiếu, phải bù bằng tay:** KHÔNG có furigana, KHÔNG romaji, KHÔNG dịch —
+chỉ mỗi mặt chữ. G14-R14 [JA] (c) chặn cứng câu hiển thị có kanji mà thiếu
+`reading` → **mỗi câu lấy ra đều phải viết tay dòng đọc**.
+
+**Trùng nguồn cũ:** `topic1 ∩ Irodori` = **1/200 câu (0,5%)** → độc lập.
+
+**KHÔNG CHẮC — giấy phép:** không có trường license, không README, không dòng
+bản quyền nào trong 5 file. Chưa xác định được nguồn gốc bộ dữ liệu. **Owner
+phải xác minh trước khi dùng.**
+
+## 6. `ban1.txt` — Beginning Japanese for Professionals (Portland State)
+
+Emiko Konomi · Portland State University · 2015, © 2018 ·
+**Creative Commons Attribution-NonCommercial 4.0 International** (dòng 10–12).
+
+Text UTF-8 sạch toàn file, 12.172 dòng, 3.424 dòng có tiếng Nhật.
+**870 câu Nhật hoàn chỉnh** (kết bằng 。！？, ≥6 ký tự).
+32 Lesson · 96 khối `Dialogue N` · **638 lượt có nhãn người nói**.
+
+**QUY ƯỚC NHÃN THỨ TƯ** — R4 mới có 3, đây là cái thứ 4:
+`Tên Latin + ':'` đầu dòng, romaji + dịch Anh cùng dòng, câu Nhật ở dòng SAU,
+furigana ở dòng RIÊNG phía trên:
+
+```
+1512 | Emily:  Anou, ima nan-ji desu ka. Um, what time is it (now)?
+1513 |  いま なんじ
+1514 | あのう、今、何時ですか。
+1515 | Yamamoto: Etto…hachi-ji desu yo. Let's see…it's eight o'clock.
+```
+
+Tên nhân vật thật: Emily · Yamamoto · Tanaka · Smith · Yamada · Honda · Oda ·
+Michael · Rise. (`Cue` / `Response` / `PROFESSIONALS` là dương tính giả — nhãn
+bài luyện và chữ ở bìa.)
+
+Hỏng bóc: cụt 73% nhưng **dính furigana chỉ 2%**, dòng ≤2 ký tự 8% — con số
+73% là do dòng tiếng Anh/romaji/tiêu đề, không phải câu Nhật vỡ. **Dưới ngưỡng
+tiền lệ 17–23%.**
+
+Trình độ: A0–A1 (です/ます, giới thiệu tên, hỏi giờ). Trùng Irodori 1/200.
+
+> **VƯỚNG: điều khoản NonCommercial.** NovaLang có gói trả phí (Plus/Pro/
+> Ultimate) → dùng nội dung CC BY-**NC** là rủi ro pháp lý. **Owner quyết**,
+> tôi không tự xếp vào bảng tầng.
+
+## 7. `ban2.txt` — NHK WORLD JAPAN «Cùng nhau học tiếng Nhật» → CHẶN
+
+48 bài, hội thoại thành một câu chuyện, **có tiếng Việt**: 3.778 dòng Nhật +
+**3.058 dòng Việt** song song — đúng trường đắt nhất.
+
+**Nhưng bản bóc PDF HỎNG NẶNG, vượt xa ngưỡng:**
+
+| chỉ số | ban2 | ngưỡng tiền lệ |
+|---|---|---|
+| furigana dính inline | **55%** | 17–23% |
+| dòng cụt | 80% | |
+| dòng ≤2 ký tự | 15% | |
+
+Mẫu nguyên văn (`local-sources/ja/ban2.txt:117–139`):
+
+```
+ 117 | 海かい          ← 海斗（かいと） bị vỡ thành 2 dòng, furigana dính
+ 118 | 斗と
+ 121 | ：              ← dấu hai chấm tách khỏi tên người nói
+ 137 | すぐ近ちか       ← 近く bị cắt ngang từ
+ 138 | くです。
+```
+
+Bố cục cột bị trộn: lời giải thích tiếng Việt chèn giữa hội thoại
+(dòng 128–133 nằm lọt giữa hai lượt nói).
+
+Dò nhãn người nói đủ **4 quy ước** (`Ａ：` · `- **A:**` · `A ` trần · `Tên:`):
+**0 / 0 / 1 / 0**. Không phải trả 0 vì dò thiếu — cấu trúc đã vỡ.
+
+**Chặn hai lần:** (a) hỏng bóc 55% ≫ ngưỡng; (b) NHK WORLD JAPAN là nội dung
+phát sóng có bản quyền, không có giấy phép mở.
+
+## Kết luận — một dòng mỗi nguồn
+
+| Nguồn | Kết luận |
+|---|---|
+| `topic1–5.json` | **LẤP Ô HỘI THOẠI N4–N3** — 5.256 hội thoại, cổng PASS mức 1, trích được `source:line`. Phải viết tay `reading` cho mọi câu lấy ra. **Giấy phép chưa rõ — owner xác minh trước.** |
+| `ban1.txt` | Giáo trình A0–A1 sạch, có quy ước nhãn thứ 4 → để dành ô hội thoại sơ cấp, **CHỜ owner quyết điều khoản NonCommercial** |
+| `ban2.txt` | **BLOCKLIST** — hỏng bóc 55% + bản quyền NHK |
+
+---
+
 # LÀM SAU — chưa làm, ghi để không quên
 
 > Mỗi mục: **việc** · **vì sao hoãn**. Thấy lỗi ngoài phạm vi lượt đang làm
