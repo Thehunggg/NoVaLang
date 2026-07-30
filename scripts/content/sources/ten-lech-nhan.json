@@ -1,0 +1,4894 @@
+{
+ "_note": "Hội thoại còn tên người KHÔNG khớp nhãn sau khi áp luật hẹp a/b/c (G14-R3). Máy gom chất liệu PHẢI BỎ QUA các hội thoại này. Sinh bởi lượt sửa tên-trong-câu 2026-07-30.",
+ "_luat": "a=hô cách · b=hỏi trực tiếp · c=tự giới thiệu. Ca không khớp 3 luật đó thì KHÔNG tự sửa — nhắc người thứ ba, cấu trúc lạ, cần người quyết.",
+ "_tong": 698,
+ "_hoiThoai": 462,
+ "items": [
+  {
+   "file": "topic1.json",
+   "dialogue_id": 40,
+   "turn": 5,
+   "name": "加藤",
+   "utterance": "加藤さんに僕の彼女を紹介したいのです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 77,
+   "turn": 1,
+   "name": "田中",
+   "utterance": "田中さんの趣味は、何ですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 103,
+   "turn": 4,
+   "name": "飼育員",
+   "utterance": "柵があるから安全ですし、ここにいる動物は飼育員さんがきちんとしつけをしていますから大丈夫ですよ。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 111,
+   "turn": 1,
+   "name": "黒田",
+   "utterance": "黒田さんは、先の休日は何をされていましたか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 112,
+   "turn": 1,
+   "name": "若林",
+   "utterance": "若林さんの趣味は、何ですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 118,
+   "turn": 2,
+   "name": "鈴木",
+   "utterance": "鈴木さんの畑のお野菜は、甘味があってとてもおいしいのに残念です。なぜ終わってしまうのですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 121,
+   "turn": 1,
+   "name": "田島",
+   "utterance": "田島さんの好きな授業は、何ですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 150,
+   "turn": 4,
+   "name": "中村",
+   "utterance": "はい。中村君のアイデアのおかげで、以前よりも信頼性が高くなったのも大きいですよ。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 157,
+   "turn": 1,
+   "name": "鈴木",
+   "utterance": "鈴木さんは、お肌がきれいですね。何か特別なことをしているのですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 158,
+   "turn": 3,
+   "name": "江藤",
+   "utterance": "江藤さんは、特にリズムにのってダンスをすることを心掛けてくださいね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 163,
+   "turn": 2,
+   "name": "岸田",
+   "utterance": "幹事は岸田君でしたか？例年通り、記念公園でいいと思いますよ。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 168,
+   "turn": 3,
+   "name": "佐藤",
+   "utterance": "佐藤君が好きな、アイドルのニュースです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 170,
+   "turn": 1,
+   "name": "松田",
+   "utterance": "松田さんの得意な科目は、何ですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 170,
+   "turn": 2,
+   "name": "阿部",
+   "utterance": "得意と言えるほどかは分かりませんが、私は理系科目が好きです。阿部君の好きな科目は何ですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 170,
+   "turn": 4,
+   "name": "阿部",
+   "utterance": "美術とは意外ですね。阿部君はてっきり体育が得意だと思っていました。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 173,
+   "turn": 1,
+   "name": "鈴木",
+   "utterance": "掃除を始めましょう。鈴木さんは、椅子を運んでください。私は机を運びます。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 183,
+   "turn": 2,
+   "name": "佐藤",
+   "utterance": "そうですね。では、まずはカバから見たいと思います。佐藤さんが見たい動物は、どれですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 185,
+   "turn": 3,
+   "name": "管理人",
+   "utterance": "それは困りましたね。管理人さんに、相談してみましょうか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 191,
+   "turn": 1,
+   "name": "鈴木",
+   "utterance": "鈴木さんの得意な陸上競技は、何ですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 196,
+   "turn": 5,
+   "name": "美香",
+   "utterance": "はい、決まっています。後日、書面でお渡ししますね。演奏場所も決まっています。美香さんは3番目、芽衣さんは5番目のエレクトーンの前に座って演奏してください。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 197,
+   "turn": 2,
+   "name": "相撲",
+   "utterance": "相撲番組を見ています。昔からずっと、お相撲さんが好きなのです。勝負事ですが、勝ち負けだけではないのです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 197,
+   "turn": 3,
+   "name": "相撲",
+   "utterance": "日本のスポーツですね。お相撲さんは、迫力がすごいです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 199,
+   "turn": 2,
+   "name": "年長",
+   "utterance": "ありがとうございます。年長さんからということですと、娘さんは今はまだ5歳ですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 205,
+   "turn": 1,
+   "name": "横山",
+   "utterance": "横山さんは、確か猫を飼っていますよね？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 205,
+   "turn": 4,
+   "name": "森田",
+   "utterance": "森田さんは、ペット禁止のアパートに住んでいませんでしたか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 205,
+   "turn": 6,
+   "name": "森田",
+   "utterance": "それは驚きました。森田さんは、本当に猫が好きなのですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 212,
+   "turn": 1,
+   "name": "山中",
+   "utterance": "今度、大阪支店に出張するのですが、山中さんは以前、大阪支店で働いていましたよね？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 212,
+   "turn": 7,
+   "name": "山中",
+   "utterance": "では北浜駅に行ってみます。山中さんのお薦めのお店はありますか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 218,
+   "turn": 3,
+   "name": "麗奈",
+   "utterance": "麗奈さんの家です。ご両親が承諾してくださったそうです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 226,
+   "turn": 5,
+   "name": "大林",
+   "utterance": "ミナト工業の大林さんです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 227,
+   "turn": 8,
+   "name": "美容師",
+   "utterance": "20センチメートル以上切りました。美容師さんにも「本当に切ってよいのですか？」と念を押されました。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 227,
+   "turn": 9,
+   "name": "美容師",
+   "utterance": "美容師さんも、緊張したかもしれませんね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 229,
+   "turn": 4,
+   "name": "作家",
+   "utterance": "若い作家さんが書いた推理小説です。先月、文学賞を受賞した作品のようです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 229,
+   "turn": 5,
+   "name": "中美佐",
+   "utterance": "もしかして、畑中美佐さんの作品ですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 229,
+   "turn": 11,
+   "name": "畑中",
+   "utterance": "ありがとうございます。畑中さんの推理小説を読んだ感想も聞かせてくださいね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 280,
+   "turn": 1,
+   "name": "美咲",
+   "utterance": "今月末、私の家で美咲さんの誕生日会をしましょう。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 280,
+   "turn": 3,
+   "name": "美咲",
+   "utterance": "そうですね。愛さんは、美咲さんの好きな食べ物を知っていますか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 280,
+   "turn": 8,
+   "name": "美咲",
+   "utterance": "美咲さんはイチゴが好きなので、ショートケーキ良いと思います。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 284,
+   "turn": 1,
+   "name": "勇斗",
+   "utterance": "今日は勇斗さんが帰国する日ですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 284,
+   "turn": 3,
+   "name": "勇斗",
+   "utterance": "勇斗さんが帰ってきたら、何をしますか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 284,
+   "turn": 5,
+   "name": "勇斗",
+   "utterance": "勇斗さんにとっては、久しぶりの日本食ですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 284,
+   "turn": 6,
+   "name": "勇斗",
+   "utterance": "はい。勇斗さんの部屋は片付いていますか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 315,
+   "turn": 1,
+   "name": "友香",
+   "utterance": "今日は、友香ちゃんの誕生日パーティーをするので、ケーキを買ってこようと思います。どのようなケーキが良いですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 363,
+   "turn": 3,
+   "name": "学生",
+   "utterance": "かしこまりました。当店では学生応援キャンペーンを行なっていますが、学生さんですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 401,
+   "turn": 2,
+   "name": "山本",
+   "utterance": "山本君の家に行く前にお菓子を買っていきましょう。小学校の宿題も持ってきていますか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 462,
+   "turn": 5,
+   "name": "大工",
+   "utterance": "前から懇意にしていた大工さんに頼んだのと、自分で安い材料を探したので、それほどかかりませんでした。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 463,
+   "turn": 1,
+   "name": "山本",
+   "utterance": "山本さんは、もう新型コロナワクチンを接種しましたか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 470,
+   "turn": 1,
+   "name": "麻耶",
+   "utterance": "リンゴのケーキを作りましょう。麻耶さんも手伝ってください。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 474,
+   "turn": 1,
+   "name": "鈴木",
+   "utterance": "鈴木さんは着こなしが上手ですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 477,
+   "turn": 10,
+   "name": "黒田",
+   "utterance": "黒田さんなら、大丈夫でしょう。何にしろ、気に入ったマンションが見つかったのは良かったですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 492,
+   "turn": 1,
+   "name": "健太",
+   "utterance": "健太さんの誕生日会のごちそうは、何にしましょうか？鶏の唐揚げはどうでしょう？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 492,
+   "turn": 2,
+   "name": "健太",
+   "utterance": "いいですね。ちょうど昨日、健太さんが揚げ物をおなかいっぱい食べたいと言っていました。私も唐揚げは大好きです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 492,
+   "turn": 4,
+   "name": "健太",
+   "utterance": "健太さんは、300グラムくらい食べると思います。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 494,
+   "turn": 2,
+   "name": "由美",
+   "utterance": "いいえ。自分で作りました。由美さんのお弁当もおいしそうですね。彩りがきれいです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 553,
+   "turn": 8,
+   "name": "業者",
+   "utterance": "業者さんに依頼しておきますね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 560,
+   "turn": 1,
+   "name": "小倉",
+   "utterance": "小倉さんは、1人暮らしですね。どのような間取りですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 581,
+   "turn": 1,
+   "name": "木下",
+   "utterance": "木下さんは、箸の上の方を持ちますね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 581,
+   "turn": 5,
+   "name": "木下",
+   "utterance": "木下さんは遠くへお嫁に行くかもしれませんね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 591,
+   "turn": 2,
+   "name": "生徒",
+   "utterance": "隣の和室で、母が生徒さんにお琴を教えているのです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 635,
+   "turn": 5,
+   "name": "木山",
+   "utterance": "木山さんにはお世話になりました。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 642,
+   "turn": 3,
+   "name": "米山",
+   "utterance": "以前、森川商事の徳島支店にいらっしゃった米山さんではありませんか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 691,
+   "turn": 1,
+   "name": "坂田",
+   "utterance": "この頃、毎日近所の喫茶店に通っていますね。坂田さんが、それほどコーヒーが好きだとは思いませんでした。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 705,
+   "turn": 4,
+   "name": "和雄",
+   "utterance": "連絡を入れて、和雄さんの都合の良い日に業者に来てもらってはいかがですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 705,
+   "turn": 5,
+   "name": "幸子",
+   "utterance": "私の予定は直前にならないと分かりません。幸子さんの都合で取り付け日を選んでほしいと思っています。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 708,
+   "turn": 3,
+   "name": "相澤",
+   "utterance": "相澤さんのお宅ではウサギを飼っていましたよね。ペットを飼う上での心構えがあれば、教えてもらえますか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 722,
+   "turn": 1,
+   "name": "石井",
+   "utterance": "石井さんのご自宅にはソースを何種類置いていますか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 761,
+   "turn": 3,
+   "name": "美玖",
+   "utterance": "美玖ちゃんはタケノコを見るのは初めてでしたか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 768,
+   "turn": 4,
+   "name": "幸子",
+   "utterance": "幸子さんは何でも似合うからいいですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 768,
+   "turn": 6,
+   "name": "幸子",
+   "utterance": "幸子さんが毎月ファッション誌を買っているのは研究のためですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 768,
+   "turn": 8,
+   "name": "幸子",
+   "utterance": "計画的で良いのではありませんか。幸子さんの努力を見習いたいです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 783,
+   "turn": 2,
+   "name": "真子",
+   "utterance": "とてもきれいでおいしそうです。これを真子さんが作ったのですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 830,
+   "turn": 2,
+   "name": "千葉",
+   "utterance": "今、千葉君がみんなの分のお弁当を買いに行ってくれていますよ。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 890,
+   "turn": 5,
+   "name": "山本",
+   "utterance": "もちろんです。山本さんの作る野菜の大ファンなので本当にうれしいです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 910,
+   "turn": 5,
+   "name": "結城",
+   "utterance": "ええ、私には少し小さかったのです。結城さんなら着られそうだと思い持ってきました。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 916,
+   "turn": 2,
+   "name": "高橋",
+   "utterance": "良いことを聞きました。高橋さんはのり弁当にしたのですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 916,
+   "turn": 5,
+   "name": "大竹",
+   "utterance": "大竹さんはちくわ派なのですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 948,
+   "turn": 1,
+   "name": "井田",
+   "utterance": "井田さんもハンバーガーセットでよいのですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 953,
+   "turn": 2,
+   "name": "友則",
+   "utterance": "ツクシが入っています。学校の帰りに、友則君と一緒に採ってきたのです。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 961,
+   "turn": 7,
+   "name": "石井",
+   "utterance": "私も冷たいお弁当だけでは食べた気がせず汁物が欲しいと思うことがよくあるので、明日から石井さんのまねをしてみてもよいですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 983,
+   "turn": 1,
+   "name": "協設備",
+   "utterance": "もしもし、三協設備さんですか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 995,
+   "turn": 7,
+   "name": "管理人",
+   "utterance": "管理人さんに相談してみてはいかがでしょう。管理人さんなら良い工務店をご存じでしょう。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1013,
+   "turn": 1,
+   "name": "太郎",
+   "utterance": "今日は大掃除ですから、太郎ちゃんも手伝ってください。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1013,
+   "turn": 2,
+   "name": "和夫",
+   "utterance": "今日はお昼ご飯の後、和夫君の所で一緒に遊ぶことになっています。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1029,
+   "turn": 2,
+   "name": "患者",
+   "utterance": "1週間ほど前から、そこの大学病院の救命救急センターにひっきりなしに患者さんが運ばれているそうです。その大学病院に勤めている看護師さんから聞きました。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1041,
+   "turn": 3,
+   "name": "恭一",
+   "utterance": "恭一君と約束しました。児童館でボードゲームをして遊ぼうと思っています。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1041,
+   "turn": 6,
+   "name": "恭一",
+   "utterance": "もちろんです。恭一君のお母さんに電話を入れましょう。遊ぶと喉が渇くでしょう。水筒を用意しておきなさい。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1050,
+   "turn": 4,
+   "name": "青木",
+   "utterance": "そうですね。まずは青木さんに声を掛けてみましょうか？"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1050,
+   "turn": 6,
+   "name": "青木",
+   "utterance": "はい。青木さんが来られるのなら、コストコで彼女の好物であるマフィンも買いましょう。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1053,
+   "turn": 3,
+   "name": "小山",
+   "utterance": "4組の小山君に渡したくて、先月から何度か試作しています。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1053,
+   "turn": 4,
+   "name": "小山",
+   "utterance": "それは相当おいしいものが渡せそうですね。小山君もきっと喜んでくれますよ。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1054,
+   "turn": 4,
+   "name": "杉山",
+   "utterance": "それはきっと、バレンタインのチョコレートですね。杉山君のことが好きな人がいるということですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1054,
+   "turn": 7,
+   "name": "小山",
+   "utterance": "チョコレートに、「小山君へ」と書かれていました。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1054,
+   "turn": 10,
+   "name": "杉山",
+   "utterance": "ありがとうございます。杉山君は優しいですね。"
+  },
+  {
+   "file": "topic1.json",
+   "dialogue_id": 1061,
+   "turn": 8,
+   "name": "幸子",
+   "utterance": "ありがとうございます。しかし、幸子さんの食べる分がありません。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 3,
+   "turn": 7,
+   "name": "佐藤",
+   "utterance": "ありがとうございます。では放課後、佐藤さんのお家で一緒にお勉強しましょう。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 5,
+   "turn": 4,
+   "name": "中村",
+   "utterance": "そうなのですね。グリーンピースは栄養が豊富ですよ。部活動を頑張っている中村さんの力になると思います。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 8,
+   "turn": 1,
+   "name": "阿久津",
+   "utterance": "阿久津さんおはようございます。この学校には、慣れましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 11,
+   "turn": 2,
+   "name": "川田",
+   "utterance": "ありがとうございます。川田さんは英語が得意ですよね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 13,
+   "turn": 5,
+   "name": "加藤",
+   "utterance": "それは長いですね。加藤さんのご年齢をお聞きしてもよいでしょうか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 14,
+   "turn": 1,
+   "name": "川田",
+   "utterance": "新入生の川田さんですよね？初めまして、佐藤です。お姉さんの一恵先輩には部活でお世話になりました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 14,
+   "turn": 3,
+   "name": "有子",
+   "utterance": "有子さんは、何の部活動に入るかもう決めましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 17,
+   "turn": 5,
+   "name": "中村",
+   "utterance": "それはすごいです。中村さんは強いのですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 21,
+   "turn": 3,
+   "name": "作家",
+   "utterance": "今日は、私の好きな作家さんの新刊を発売する日です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 21,
+   "turn": 5,
+   "name": "作家",
+   "utterance": "短編です。この作家さんの作品は本当に面白いので、あなたにもぜひ読んでほしいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 23,
+   "turn": 1,
+   "name": "大島",
+   "utterance": "加藤先生、大島君の風邪の具合はいかがですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 24,
+   "turn": 4,
+   "name": "馬頭",
+   "utterance": "それは気持ちよさそうです。そういえば馬頭さんは馬術部のエースでしたね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 33,
+   "turn": 1,
+   "name": "加藤",
+   "utterance": "加藤さんはどの部活に入るか決めましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 36,
+   "turn": 1,
+   "name": "加藤",
+   "utterance": "掃除の時間です。加藤さんは玄関の掃き掃除をお願いします。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 37,
+   "turn": 1,
+   "name": "加藤",
+   "utterance": "先生、加藤さんは具合が悪くて保健室で休むそうです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 37,
+   "turn": 2,
+   "name": "木村",
+   "utterance": "連絡をありがとうございます。最近寒くなってきたので、体調を崩してしまったのでしょうか。木村さんも体調には気を付けてくださいね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 37,
+   "turn": 4,
+   "name": "加藤",
+   "utterance": "そうしてください。では、私は加藤さんの様子を見に保健室へ寄ってから教室へ行きますね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 54,
+   "turn": 4,
+   "name": "山田",
+   "utterance": "山田さんは、吹奏楽部でしたよね？吹奏楽部は部活でいつも走っているので、得意かと思っていました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 57,
+   "turn": 3,
+   "name": "鈴木",
+   "utterance": "鈴木さんなら、きっと大丈夫です。応援しています。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 59,
+   "turn": 3,
+   "name": "時田",
+   "utterance": "私たちの班は通天閣と道頓堀へ行く予定です。時田さんの班はどこへ行きますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 68,
+   "turn": 4,
+   "name": "健委員",
+   "utterance": "それは危ないですね。保健委員さん、田中さんを保健室に連れて行ってください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 75,
+   "turn": 2,
+   "name": "中丸",
+   "utterance": "今週も大変でしたね。中丸さんは何が一番大変でしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 75,
+   "turn": 3,
+   "name": "安藤",
+   "utterance": "私はおとといの体育の授業で行った長距離走がとても大変でした。安藤さんは、いかがでしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 98,
+   "turn": 5,
+   "name": "警備員",
+   "utterance": "分かりました。少し寒くなってきたので、警備員さんも暖かくしてくださいね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 101,
+   "turn": 2,
+   "name": "田中",
+   "utterance": "田中さんがそのようなことを言うことは、珍しいですね。何かありましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 110,
+   "turn": 1,
+   "name": "加賀",
+   "utterance": "加賀さんにとって、学校生活は楽しいですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 113,
+   "turn": 1,
+   "name": "育委員",
+   "utterance": "飼育委員さん、教室の後ろの水槽の中のザリガニの様子がおかしいようです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 114,
+   "turn": 2,
+   "name": "南海",
+   "utterance": "学年トップをキープできました。南海さんはどうでしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 114,
+   "turn": 3,
+   "name": "風野",
+   "utterance": "風野さんと一緒に勉強したおかげで、赤点を免れました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 116,
+   "turn": 3,
+   "name": "須田",
+   "utterance": "私の家でしたいと思っています。須田さんもぜひいらしてください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 125,
+   "turn": 1,
+   "name": "用務員",
+   "utterance": "用務員さんは、いつも学校の美化活動をしてくださっていますね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 125,
+   "turn": 3,
+   "name": "用務員",
+   "utterance": "あの用務員さんは、私の親戚ですよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 126,
+   "turn": 5,
+   "name": "用務員",
+   "utterance": "用務員さんが直せると思うので、今日中に用務員さんにこの件を伝えましょう。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 128,
+   "turn": 1,
+   "name": "用務員",
+   "utterance": "昨日の放課後、用務員さんがひとりで校庭の掃除をしていましたよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 129,
+   "turn": 1,
+   "name": "高橋",
+   "utterance": "校庭のところにいる、あの女の人は高橋君のお母さんですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 138,
+   "turn": 6,
+   "name": "川崎",
+   "utterance": "ぜひ、見てみたいです。今週の土曜日に、川崎さんのお宅にお伺いしてもよろしいですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 139,
+   "turn": 1,
+   "name": "加藤",
+   "utterance": "合唱コンクールのピアノ演奏を、加藤さんにお願いしても良いでしょうか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 139,
+   "turn": 5,
+   "name": "加藤",
+   "utterance": "そうだったのですね。加藤さんのピアノの演奏を楽しみにしています。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 143,
+   "turn": 4,
+   "name": "金山",
+   "utterance": "それは、楽しみです。先手は、金山さんからでよいですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 145,
+   "turn": 4,
+   "name": "池田",
+   "utterance": "それは良かったです。池田さんが幸せそうで、私もうれしくなります。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 151,
+   "turn": 7,
+   "name": "番場",
+   "utterance": "ありがとうございます。番場さんは、流行のJポップに詳しいですよね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 154,
+   "turn": 1,
+   "name": "山田",
+   "utterance": "山田さんのお見舞いに行こうと思います。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 154,
+   "turn": 6,
+   "name": "遠藤",
+   "utterance": "それは良いですね。遠藤君も風邪には気を付けてください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 165,
+   "turn": 4,
+   "name": "佐藤",
+   "utterance": "お気遣いいただきありがとうございます。でも、佐藤さんに申し訳ありません。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 165,
+   "turn": 5,
+   "name": "加藤",
+   "utterance": "いえいえ。家族での付き合いも長いですし、加藤さんも1人で食べるのは味気ないでしょう。私の弟や妹も加藤さんと食事するのを、とても楽しみにしていますので、ぜひいらしてください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 168,
+   "turn": 1,
+   "name": "佐藤",
+   "utterance": "今日は佐藤さんの家に家庭訪問へ行く日なので、よろしくお願いします。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 168,
+   "turn": 3,
+   "name": "佐藤",
+   "utterance": "普段通りの佐藤さんの様子が見たいので緊張しなくて大丈夫ですよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 169,
+   "turn": 7,
+   "name": "用務員",
+   "utterance": "今度、用務員さんにお願いしてみましょう。駄目だったらそこも工事を検討します。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 169,
+   "turn": 8,
+   "name": "用務員",
+   "utterance": "分かりました。では用務員さんへの連絡は、私がしておきます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 186,
+   "turn": 3,
+   "name": "有子",
+   "utterance": "はい。この花柄のハンカチは去年の誕生日に有子さんにもらった物だったので、なくしてしまいとても落ち込んでいました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 191,
+   "turn": 1,
+   "name": "用務員",
+   "utterance": "いつも陰から支えてくださっている用務員さんに、感謝を伝えたいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 194,
+   "turn": 4,
+   "name": "川田",
+   "utterance": "分かりました。ちょうど明日、フタバスポーツの川田さんが来校する予定なので注文しておきます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 199,
+   "turn": 6,
+   "name": "渡辺",
+   "utterance": "渡辺さんが、お休みです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 199,
+   "turn": 7,
+   "name": "渡辺",
+   "utterance": "では、その余った1枚は渡辺さんの分ですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 199,
+   "turn": 8,
+   "name": "日渡辺",
+   "utterance": "僕がこのまま預かって、明日渡辺さんに渡します。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 204,
+   "turn": 1,
+   "name": "川俊介",
+   "utterance": "今日は転入生を紹介します。南山中学から、転校してきた宮川俊介君です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 204,
+   "turn": 3,
+   "name": "宮川",
+   "utterance": "では、宮川君は廊下側の列の一番後ろの席に座ってください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 204,
+   "turn": 7,
+   "name": "宮川",
+   "utterance": "それでは授業を始めます。そういえば、宮川君は、まだ教科書が届いていなかったですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 204,
+   "turn": 9,
+   "name": "磯野",
+   "utterance": "明日届く予定なので、今日は隣の席の磯野さんに教科書を見せてもらってください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 208,
+   "turn": 3,
+   "name": "野中",
+   "utterance": "野中さんならきっとすぐに慣れて、友達もたくさんできると思いますよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 208,
+   "turn": 7,
+   "name": "野中",
+   "utterance": "寂しいので時々メールしますね。野中さんも近況を教えてください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 217,
+   "turn": 1,
+   "name": "近藤",
+   "utterance": "近藤さんですか？お久しぶりです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 217,
+   "turn": 4,
+   "name": "山口",
+   "utterance": "卒業後、すぐに今の会社に就職して働いています。山口さんは、どうされていましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 221,
+   "turn": 2,
+   "name": "岡村",
+   "utterance": "私は、サッカー部でした。岡村さんは、何部でしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 224,
+   "turn": 2,
+   "name": "健太",
+   "utterance": "そうです。どうして健太君が持っているのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 224,
+   "turn": 4,
+   "name": "健太",
+   "utterance": "それでは、私は健太君のジャージを着てしまったのですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 224,
+   "turn": 8,
+   "name": "健太",
+   "utterance": "ありがとう。明日、忘れずに健太君のジャージを持ってきます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 231,
+   "turn": 6,
+   "name": "加藤",
+   "utterance": "今日、休んでいる加藤君は、乗り物酔いすると聞いたことがあります。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 231,
+   "turn": 7,
+   "name": "加藤",
+   "utterance": "そうですか。では、加藤君に前に座りたいか聞いてみましょう。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 239,
+   "turn": 5,
+   "name": "鈴木",
+   "utterance": "そうでしたね。それに、もう1人の日直の鈴木君は早退してしまったのですよね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 241,
+   "turn": 8,
+   "name": "山田",
+   "utterance": "山田さんは、「家族に車で送迎してもらう」と言っていました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 249,
+   "turn": 3,
+   "name": "久保",
+   "utterance": "私と指揮者の久保さんとともに、ピアノを使って練習したいのです。久保さんが、みんなの前で指揮をする前に、まず私に見てほしいのだそうです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 249,
+   "turn": 4,
+   "name": "久保",
+   "utterance": "それなら、担任の先生の許可は必要ありません。あなたの伴奏の練習ではなく、久保さんの練習なのですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 264,
+   "turn": 6,
+   "name": "菊池",
+   "utterance": "それから、「フォニックス」と呼ばれる英語の発音ルールを覚えるのも有効だと思います。これを覚えると、単語の発音が分かっていれば、そこからスペルを逆算できます。スピーキングが得意な菊池さんは、「フォニックス」を覚えるだけでスペルミスが一気に減りそうですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 268,
+   "turn": 3,
+   "name": "岩田",
+   "utterance": "私も運動会は、好きな行事の1つでした。岩田さんはスポーツ万能ですし、大活躍されていそうですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 268,
+   "turn": 4,
+   "name": "中川",
+   "utterance": "クラス対抗リレーは、毎年アンカーを走っていました。緊張はしますが、みんなの応援を受けて走るのは気持ち良かったです。中川さんはどの行事が一番好きでしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 269,
+   "turn": 1,
+   "name": "山田",
+   "utterance": "山田君が、大学に合格したと聞きました。おめでとうございます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 269,
+   "turn": 5,
+   "name": "山田",
+   "utterance": "山田君が、頑張った成果ですよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 275,
+   "turn": 4,
+   "name": "優香",
+   "utterance": "お待ちしています。優香さんのクラスは何をしますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 279,
+   "turn": 1,
+   "name": "多田",
+   "utterance": "多田さんの娘さんは、中学受験をしますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 279,
+   "turn": 2,
+   "name": "内田",
+   "utterance": "いいえ、公立の中学校に進学します。内田さんの息子さんはどうですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 279,
+   "turn": 7,
+   "name": "内田",
+   "utterance": "内田さんの息子さんと、同じ学校に通えると心強いです。これからも、よろしくお願いします。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 284,
+   "turn": 5,
+   "name": "由美",
+   "utterance": "今年も由美さんの演奏が聞けるとは、うれしいです。伊藤さんは、ピアノを習っているのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 287,
+   "turn": 4,
+   "name": "悠太",
+   "utterance": "悠太さんの一番好きだった科目は何ですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 291,
+   "turn": 6,
+   "name": "近藤",
+   "utterance": "近藤さんは、神社に合格祈願をしに行きましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 291,
+   "turn": 7,
+   "name": "芦田",
+   "utterance": "いえ、まだ行っていません。芦田さんは、行きましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 292,
+   "turn": 3,
+   "name": "神田",
+   "utterance": "緊張しますね。神田さんと同じクラスになりたいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 292,
+   "turn": 4,
+   "name": "加藤",
+   "utterance": "私も、加藤さんと同じクラスになりたいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 297,
+   "turn": 6,
+   "name": "丸山",
+   "utterance": "丸山さんは、泳ぎがとても速いですよね。水泳の習い事をしているのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 306,
+   "turn": 7,
+   "name": "日野",
+   "utterance": "夢があって、すてきですね。ぜひ、日野さんに髪を切ってもらいたいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 308,
+   "turn": 6,
+   "name": "絵里",
+   "utterance": "絵里さんの一番の思い出は何ですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 308,
+   "turn": 8,
+   "name": "絵里",
+   "utterance": "確か、絵里さんのクラスが優勝しましたよね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 309,
+   "turn": 6,
+   "name": "及川",
+   "utterance": "及川君が通っていた時より、落ち着いた雰囲気の中学校になったのかもしれませんね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 337,
+   "turn": 3,
+   "name": "大塩",
+   "utterance": "大塩さんが出席するなら、私も出席しようと思います。最後ですから、一緒に写真を撮りましょう。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 339,
+   "turn": 1,
+   "name": "小林",
+   "utterance": "小林さんの得意科目は国語と言っていましたね。何か理由があるのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 339,
+   "turn": 3,
+   "name": "小林",
+   "utterance": "必修ではない特別講義に参加するとは、小林さんは優等生だったのですね？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 357,
+   "turn": 4,
+   "name": "石本",
+   "utterance": "私の朝顔は4輪咲きました。石本君の朝顔はどうでしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 386,
+   "turn": 4,
+   "name": "鈴木",
+   "utterance": "分かりました。それでは、まず鈴木君の解き方を見せてください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 392,
+   "turn": 5,
+   "name": "沢村",
+   "utterance": "はい。物理が特に苦手なので、しっかり対策をしようと思います。沢村さんは物理が得意でしたよね。お勧めの勉強方法があれば教えてほしいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 401,
+   "turn": 3,
+   "name": "奥山",
+   "utterance": "一緒に行きましょう。今年も奥山さんと、同じクラスだといいのですが。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 401,
+   "turn": 4,
+   "name": "高地",
+   "utterance": "私も高地さんと同じクラスだと、うれしいです。人が多くてよく見えませんね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 404,
+   "turn": 4,
+   "name": "真梨香",
+   "utterance": "それでは、真梨香ちゃんに聞いてみます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 413,
+   "turn": 3,
+   "name": "加藤",
+   "utterance": "それは何よりです。加藤君のクラスは何をするのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 419,
+   "turn": 2,
+   "name": "高梨",
+   "utterance": "1組の高梨君はピアノがとても上手ですよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 427,
+   "turn": 5,
+   "name": "花田",
+   "utterance": "いえ、副会長は6組の花田さんです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 427,
+   "turn": 8,
+   "name": "大泉",
+   "utterance": "もちろん、投票します。友達にも、大泉君への投票を呼びかけてみますね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 431,
+   "turn": 1,
+   "name": "塩田",
+   "utterance": "塩田さんのことを、探していました。どこへ行っていたのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 431,
+   "turn": 4,
+   "name": "高橋優",
+   "utterance": "高橋優さんの『虹』です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 432,
+   "turn": 1,
+   "name": "佐藤",
+   "utterance": "図書委員の佐藤さんが、あなたのことを呼んでいましたよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 439,
+   "turn": 4,
+   "name": "由佳",
+   "utterance": "ホームルームが終わってすぐに帰らないと、間に合わないのです。そういえば、由佳さんが、「今日は部活動が休みだ」と言っていたはずです。由佳さんに頼んでみてはいかがでしょうか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 439,
+   "turn": 5,
+   "name": "由佳",
+   "utterance": "では由佳さんに頼んでみます。由佳さんが、今どこにいるか知っていますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 441,
+   "turn": 5,
+   "name": "八木",
+   "utterance": "おいしいです。遠足の時にはいつも母が、具沢山のおにぎりを作ってくれるのです。八木さんのサンドイッチもおいしそうですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 446,
+   "turn": 4,
+   "name": "井上",
+   "utterance": "分かりました。金賞は井上さんです。とても美しい字ですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 446,
+   "turn": 5,
+   "name": "村田",
+   "utterance": "本当ですね。銀賞は村田君と、平塚さんと、伊藤さん。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 453,
+   "turn": 4,
+   "name": "岡本",
+   "utterance": "では、岡本君と一緒に行ってきます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 456,
+   "turn": 1,
+   "name": "山田",
+   "utterance": "山田さんが、大学入試センター試験を受けた際の会場はどこでしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 456,
+   "turn": 4,
+   "name": "井崎",
+   "utterance": "電車で5駅くらいです。アクセスは良さそうですが、これまで行ったことのない場所なので下見をしておいた方が安心かもしれません。井崎さんはどちらで受験されましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 459,
+   "turn": 5,
+   "name": "金子",
+   "utterance": "去年までは、そうだったかもしれませんね。でも、今年は金子さんが幹事で、新しいことを実施するそうですよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 459,
+   "turn": 6,
+   "name": "金子",
+   "utterance": "ああ、そうですか。金子さんなら、何か面白いことを企画するかもしれませんね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 461,
+   "turn": 1,
+   "name": "山下",
+   "utterance": "山下君は、夏休みの宿題に何をするのか決めましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 467,
+   "turn": 1,
+   "name": "稲荷",
+   "utterance": "うちの学校の校庭の隅にはお稲荷さんがあります。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 467,
+   "turn": 2,
+   "name": "稲荷",
+   "utterance": "お稲荷さんというと、ほこらがあってその中にキツネを祭ってある、あのお稲荷さんですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 467,
+   "turn": 3,
+   "name": "稲荷",
+   "utterance": "そうです、そのお稲荷さんです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 468,
+   "turn": 1,
+   "name": "原田",
+   "utterance": "原田君は、理系の大学に進学するのでしょう？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 468,
+   "turn": 3,
+   "name": "原田",
+   "utterance": "原田君は数学が得意だから、理系の大学に行くのだと思っていました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 468,
+   "turn": 9,
+   "name": "原田",
+   "utterance": "それなら原田君の能力が発揮できますね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 471,
+   "turn": 6,
+   "name": "寺島",
+   "utterance": "そうですか。学校でも英語の授業には積極的に取り組んでいます。この前の面談で寺島君は「いつか留学してみたい」と言っていたので、そのために英語を頑張っているのかもしれませんね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 474,
+   "turn": 1,
+   "name": "真理子",
+   "utterance": "今度の授業参観、真理子さんのところは誰が来るのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 474,
+   "turn": 5,
+   "name": "真理子",
+   "utterance": "多分ないと思います。真理子さんも私の父とは面識がありませんよね？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 474,
+   "turn": 7,
+   "name": "真理子",
+   "utterance": "私も同じく楽しみです。真理子さんのお父さんはどのような人ですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 476,
+   "turn": 2,
+   "name": "川端",
+   "utterance": "楽しかったですよ。川端君が欠席したことに、みんな気落ちしていました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 476,
+   "turn": 9,
+   "name": "瀬戸",
+   "utterance": "おお、すごいですね。陸上部で長距離をやっていた瀬戸君は元気でしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 479,
+   "turn": 1,
+   "name": "安岡",
+   "utterance": "安岡君は生徒会長に立候補するそうですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 479,
+   "turn": 3,
+   "name": "安岡",
+   "utterance": "安岡君が立候補するとは、意外だったので驚きました。なぜ、立候補しようと思ったのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 480,
+   "turn": 3,
+   "name": "安岡",
+   "utterance": "立会演説会で、安岡君は素晴らしいスピーチをしました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 480,
+   "turn": 7,
+   "name": "安岡",
+   "utterance": "安岡君と一緒に、学校をもっと楽しいものにしていきたいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 482,
+   "turn": 6,
+   "name": "時田",
+   "utterance": "よいですよ。ちょうど2つボタンが取れそうなので、1つは僕が付け方を見せますね。それを見た後に、もう1つの方を時田君が付けてみてください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 486,
+   "turn": 1,
+   "name": "山口",
+   "utterance": "山口さんの出身校は、どちらですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 488,
+   "turn": 3,
+   "name": "健太",
+   "utterance": "健太さんは、図工が得意でしたね。工作はどのような作品を作ったのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 489,
+   "turn": 3,
+   "name": "大山",
+   "utterance": "つまり音楽以外ということですね。大山さんは音楽が好きなのに、意外です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 491,
+   "turn": 2,
+   "name": "由美子",
+   "utterance": "まあ、ありがとう。由美子ちゃんは何の競技に出るのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 491,
+   "turn": 6,
+   "name": "由美子",
+   "utterance": "由美子ちゃんの勇姿を、必ず見に行きますね。私も張り切って、お弁当を作ります。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 492,
+   "turn": 7,
+   "name": "里香",
+   "utterance": "そうです。里香ちゃんは何年何組ですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 495,
+   "turn": 3,
+   "name": "佐藤",
+   "utterance": "合唱部の佐藤さんが、たくさん候補を出してくださいましたよね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 498,
+   "turn": 4,
+   "name": "佐伯",
+   "utterance": "はい、とても盛り上がりました。佐伯さんの高校では、どのようなことをしましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 505,
+   "turn": 2,
+   "name": "祐樹",
+   "utterance": "祐樹君のママ、おはようございます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 505,
+   "turn": 8,
+   "name": "祐樹",
+   "utterance": "分かりました。祐樹君の様子を、気を付けて見ておきますね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 542,
+   "turn": 6,
+   "name": "綾乃",
+   "utterance": "そうですね。綾乃さんに電話して教えてもらいます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 548,
+   "turn": 2,
+   "name": "橋口",
+   "utterance": "まあ橋口さん、卒業以来ですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 548,
+   "turn": 4,
+   "name": "橋口",
+   "utterance": "橋口さんはすっかり大人になりましたね。今は何をしているのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 552,
+   "turn": 1,
+   "name": "石橋",
+   "utterance": "石橋さんは、バイリンガルなのですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 572,
+   "turn": 1,
+   "name": "賢人",
+   "utterance": "賢人さんは、どこの中学校を卒業しましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 572,
+   "turn": 5,
+   "name": "賢人",
+   "utterance": "賢人さんもバスケットボール部でしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 576,
+   "turn": 4,
+   "name": "百花",
+   "utterance": "大学に入って、今は大学3年生です。百花さんはどうしていましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 583,
+   "turn": 3,
+   "name": "清水",
+   "utterance": "清水君ですか。取りに来てください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 583,
+   "turn": 5,
+   "name": "小早川",
+   "utterance": "はい、どうぞ。小早川さんが見つけて届けてくれましたよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 583,
+   "turn": 6,
+   "name": "小早川",
+   "utterance": "後で小早川さんにお礼を言います。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 584,
+   "turn": 1,
+   "name": "三谷",
+   "utterance": "先生、三谷さんがいません。どうしたのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 584,
+   "turn": 2,
+   "name": "三谷",
+   "utterance": "三谷さんは今日、風邪でお休みです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 584,
+   "turn": 3,
+   "name": "三谷",
+   "utterance": "今日の日直は三谷さんなのですが、どうしましょう？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 584,
+   "turn": 4,
+   "name": "山田",
+   "utterance": "おお、そうでしたか。それでは、学級委員長の山田さんに日直の仕事を頼んでみますね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 584,
+   "turn": 5,
+   "name": "山田",
+   "utterance": "山田さんは今日、部活の試合があって公欠です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 584,
+   "turn": 9,
+   "name": "三谷",
+   "utterance": "今回、日直を引き受ける代わりに今度私が日直の時に、三谷さんに代わってもらってよいですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 585,
+   "turn": 2,
+   "name": "植木",
+   "utterance": "植木さんはダンス部ですよね。高校でもダンスを続けますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 590,
+   "turn": 3,
+   "name": "成美",
+   "utterance": "そうですか。成美ちゃんは塾に通っているのですね？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 595,
+   "turn": 5,
+   "name": "生徒",
+   "utterance": "個人レッスンなので、全て生徒さんのご希望でスケジュールを組むことができます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 603,
+   "turn": 6,
+   "name": "真奈美",
+   "utterance": "はい。私の場合は、先輩からも後輩からも「真奈美さん」と呼ばれています。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 604,
+   "turn": 2,
+   "name": "悠馬",
+   "utterance": "こんばんは。悠馬君は支度をしていますので、少しお待ちくださいね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 604,
+   "turn": 4,
+   "name": "悠馬",
+   "utterance": "お昼休みに園庭でかけっこをしたのですが、悠馬君はとても足が速かったですよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 605,
+   "turn": 6,
+   "name": "小倉",
+   "utterance": "3組の小倉さんもプールに入らないので、一緒にこの教室でこのプリントを自習していてください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 605,
+   "turn": 7,
+   "name": "小倉",
+   "utterance": "はい。後で小倉さんにも声を掛けておきます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 607,
+   "turn": 5,
+   "name": "未来",
+   "utterance": "ありがとうございます。後輩の未来ちゃんも一緒に送ってもらってもよいですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 607,
+   "turn": 7,
+   "name": "未来",
+   "utterance": "未来ちゃんはご両親が日曜日も働いていて、月見野高校まで送ってもらえないそうなのです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 607,
+   "turn": 8,
+   "name": "未来",
+   "utterance": "そうですか。それでは、行きも帰りも未来ちゃんを乗せて行きましょう。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 608,
+   "turn": 3,
+   "name": "三上",
+   "utterance": "三上さんは数学が95点でした。前回より随分点数が上がりましたね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 613,
+   "turn": 1,
+   "name": "朝陽",
+   "utterance": "朝陽君のお兄さんは、2歳上ですよね？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 622,
+   "turn": 5,
+   "name": "浦上",
+   "utterance": "いえ、前の席の浦上君がとても背が高くて体も大きいので、前が見にくいのです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 624,
+   "turn": 1,
+   "name": "哲也",
+   "utterance": "哲也君はピアノの演奏が上手ですね。将来は音楽大学に進学するのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 630,
+   "turn": 5,
+   "name": "早紀",
+   "utterance": "はい。同じクラスの早紀さんもピアノを習っているので、彼女もピアノの伴走者に立候補するかもしれません。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 642,
+   "turn": 1,
+   "name": "真奈",
+   "utterance": "真奈ちゃんのお母さま、こんにちは。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 642,
+   "turn": 5,
+   "name": "真奈",
+   "utterance": "真奈ちゃんが今日、トイレに間に合わなくておもらししてしまったのです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 650,
+   "turn": 4,
+   "name": "羽根田",
+   "utterance": "はい。羽根田さんなら大丈夫ですよ。それに、先生もお手伝いしますよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 652,
+   "turn": 4,
+   "name": "英樹",
+   "utterance": "僕はおいしかったと思うのですが、英樹君は食べられなくて残していました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 653,
+   "turn": 5,
+   "name": "村野",
+   "utterance": "とてもうれしいのですが、代わりに村野君が補欠になってしまいました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 653,
+   "turn": 7,
+   "name": "村野",
+   "utterance": "村野君がとても落ち込んでいて、かける言葉が見つかりませんでした。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 653,
+   "turn": 8,
+   "name": "村野",
+   "utterance": "気持ちを切り替えて、村野君の分まで試合で頑張りましょう。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 669,
+   "turn": 6,
+   "name": "浩章",
+   "utterance": "浩章君はよく気が付いて、困っている子に声を掛けてくれるので、助かっています。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 669,
+   "turn": 8,
+   "name": "浩章",
+   "utterance": "本当に優しいですね。幼稚園でも浩章君の良さを伸ばしていきたいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 677,
+   "turn": 1,
+   "name": "日下部",
+   "utterance": "日下部さんは英語の発音が素晴らしいですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 751,
+   "turn": 3,
+   "name": "友里",
+   "utterance": "友里ちゃんは習い事をたくさんしていますね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 754,
+   "turn": 3,
+   "name": "真奈",
+   "utterance": "では、真奈さんに読んでもらいます。これは何時ですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 758,
+   "turn": 1,
+   "name": "江本",
+   "utterance": "江本さんは2Bの鉛筆を使っているのですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 770,
+   "turn": 4,
+   "name": "後藤",
+   "utterance": "ありがとうございます。後藤さんにも手伝ってもらってください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 770,
+   "turn": 5,
+   "name": "藤原",
+   "utterance": "はい。後輩にも教えたいので、1年の藤原さんと熊谷さんにも来てもらってもよいですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 772,
+   "turn": 2,
+   "name": "莉緒",
+   "utterance": "そうですね。莉緒ちゃんはサッカーをするために少し遠い高校へ行ってしまいますね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 782,
+   "turn": 5,
+   "name": "紗枝",
+   "utterance": "でも、それでは紗枝さんがぬれてしまいます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 784,
+   "turn": 1,
+   "name": "幸田",
+   "utterance": "1組の幸田君ですが、「大学進学をやめる」と言っています。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 784,
+   "turn": 7,
+   "name": "幸田",
+   "utterance": "幸田君のお母さまに、この件についていきなり伺っても良いものでしょうか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 792,
+   "turn": 1,
+   "name": "小夜子",
+   "utterance": "仲良しグルーブの中で、小夜子さんだけ進学する中学校が違うのは悲しいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 799,
+   "turn": 1,
+   "name": "喜美",
+   "utterance": "喜美ちゃんは、夏休みの自由研究として牛乳パックでかわいいタンスを作ってきたのですね？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 800,
+   "turn": 4,
+   "name": "市長",
+   "utterance": "ああ、市長さんから表彰状を頂いていましたね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 804,
+   "turn": 2,
+   "name": "田代",
+   "utterance": "料理部の田代さんにですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 809,
+   "turn": 1,
+   "name": "鈴江",
+   "utterance": "まだ鈴江さんがランチルームに来ていませんね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 809,
+   "turn": 3,
+   "name": "鈴江",
+   "utterance": "鈴江さんは、午前中に「おなかが痛い」と言っていたので心配です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 820,
+   "turn": 1,
+   "name": "丹羽",
+   "utterance": "先生、丹羽さんが気持ち悪いそうです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 820,
+   "turn": 5,
+   "name": "木村",
+   "utterance": "私は生徒会からの報告をしなくてはなりません。木村さんに頼んでも良いですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 820,
+   "turn": 6,
+   "name": "木村",
+   "utterance": "はい。木村さんが大丈夫そうでしたら頼んでください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 827,
+   "turn": 5,
+   "name": "佐久間",
+   "utterance": "佐久間さんのおじいさんが作っているナスが使われていると聞きましたよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 828,
+   "turn": 3,
+   "name": "美咲",
+   "utterance": "美咲ちゃんと一緒に買いに行くのでお金をください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 828,
+   "turn": 5,
+   "name": "美咲",
+   "utterance": "2,000円くらいにしようと美咲ちゃんと話しました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 828,
+   "turn": 8,
+   "name": "美咲",
+   "utterance": "帰りに美咲ちゃんとドーナツでも食べていらっしゃい。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 834,
+   "turn": 2,
+   "name": "富樫",
+   "utterance": "いいですね。そういえば富樫君が「大縄跳びをする」と言っていましたよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 837,
+   "turn": 7,
+   "name": "大下",
+   "utterance": "では、大下さんたちは私と一緒に椅子を出す方をお願いします。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 845,
+   "turn": 1,
+   "name": "級委員",
+   "utterance": "学級委員さん、教室の後ろの掲示を全部取ってください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 847,
+   "turn": 1,
+   "name": "優香",
+   "utterance": "昨日、優香ちゃんから絵手紙が送られてきましたよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 855,
+   "turn": 2,
+   "name": "朝山",
+   "utterance": "今日の日直は朝山さんと足立さんです。でも、今日、足立さんはお休みです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 855,
+   "turn": 4,
+   "name": "足立",
+   "utterance": "足立さんの名前をそのまま書くのですか？それとも次の担当である、井川さんですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 855,
+   "turn": 5,
+   "name": "足立",
+   "utterance": "足立さんのままにしておくと、朝山さんが1人で日直の仕事をしなくてはなりません。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 855,
+   "turn": 6,
+   "name": "井川",
+   "utterance": "では、井川さんの名前を書いておきます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 855,
+   "turn": 7,
+   "name": "井川",
+   "utterance": "井川さんに今日の日直になったことを伝えるのを忘れずにお願いします。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 861,
+   "turn": 1,
+   "name": "加藤",
+   "utterance": "あなたは1年生の加藤さんでしたね？おうちに帰りませんか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 868,
+   "turn": 1,
+   "name": "瀬名",
+   "utterance": "瀬名さんは英語がお得意でしたよね？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 883,
+   "turn": 2,
+   "name": "川辺",
+   "utterance": "先生、今日休んでいる川辺さんの私物はどうしたら良いでしょう？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 883,
+   "turn": 3,
+   "name": "川辺",
+   "utterance": "それは私が職員室で預かります。この袋に川辺さんの私物をまとめてもらっても良いでしょうか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 899,
+   "turn": 2,
+   "name": "亜紀",
+   "utterance": "亜紀さんの家からは、三者面談にお母さまが来るのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 899,
+   "turn": 5,
+   "name": "美里",
+   "utterance": "いいえ。元々月曜日は父のお仕事が休みなのです。美里さんの家はお母さまが来るのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 901,
+   "turn": 8,
+   "name": "翔太",
+   "utterance": "良かったですね。それでは早速、翔太君のママに電話してみます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 902,
+   "turn": 2,
+   "name": "和孝",
+   "utterance": "和孝君は今週に入ってから宿題のプリントを忘れるのは2回目ですよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 909,
+   "turn": 4,
+   "name": "陣内",
+   "utterance": "はい。書道部の陣内さんに格好良く「紅組」と書いてもらいます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 909,
+   "turn": 8,
+   "name": "福田",
+   "utterance": "福田君の家の裏から竹を採ってきてもらうことになっています。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 911,
+   "turn": 2,
+   "name": "重田",
+   "utterance": "重田君の教科書のパラパラ漫画が素晴らしいので見ているのです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 911,
+   "turn": 7,
+   "name": "重田",
+   "utterance": "このように素晴らしいものを重田君はいつ描いたのでしょう？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 911,
+   "turn": 8,
+   "name": "重田",
+   "utterance": "気になりますよね。重田君は「秘密」と言っていました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 924,
+   "turn": 4,
+   "name": "森本",
+   "utterance": "森本さんはダンス同好会だったのですね。はい、メトロノームです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 933,
+   "turn": 4,
+   "name": "美幸",
+   "utterance": "これくらいなら美幸さんには簡単ですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 937,
+   "turn": 3,
+   "name": "琴子",
+   "utterance": "琴子ちゃんも一緒にどうですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 937,
+   "turn": 5,
+   "name": "琴子",
+   "utterance": "最初から誘うつもりでした。中学校は別々の学校へ進学することになってしまうので、琴子ちゃんと思い出作りをしたくて。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 937,
+   "turn": 6,
+   "name": "桜子",
+   "utterance": "うれしいです。私も桜子ちゃんと思い出を作りたいと思っていたので、ぜひ行きたいです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 937,
+   "turn": 7,
+   "name": "琴子",
+   "utterance": "良かったです。琴子ちゃんのお母さまと4人で行きましょう。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 950,
+   "turn": 1,
+   "name": "真美",
+   "utterance": "今日は、真美ちゃんと一緒に宿題をする約束をしました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 950,
+   "turn": 3,
+   "name": "真美",
+   "utterance": "真美ちゃんのおうちです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 950,
+   "turn": 4,
+   "name": "真美",
+   "utterance": "では、これから宿題を持って真美ちゃんのおうちへ行くのですね？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 950,
+   "turn": 7,
+   "name": "真美",
+   "utterance": "真美ちゃんの分もありますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 950,
+   "turn": 8,
+   "name": "真美",
+   "utterance": "もちろんです。たくさん包みましたので、真美ちゃんのご家族の方の分もあると思いますよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 959,
+   "turn": 1,
+   "name": "美晴",
+   "utterance": "美晴ちゃんは運動部に入ったのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 966,
+   "turn": 1,
+   "name": "原田",
+   "utterance": "原田君は「歯科技工士になりたい」と言っていましたね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 974,
+   "turn": 4,
+   "name": "栄養士",
+   "utterance": "栄養士さんがしっかり考えてくれているようですよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 975,
+   "turn": 1,
+   "name": "吉田",
+   "utterance": "吉田さんのクラスでは、学芸会で何をするのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 975,
+   "turn": 4,
+   "name": "鈴木",
+   "utterance": "そうです。鈴木君が台本を書いて、演出もします。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 975,
+   "turn": 6,
+   "name": "遠藤",
+   "utterance": "僕は猟師の役をします。遠藤君がもう一人の猟師の役になります。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 979,
+   "turn": 1,
+   "name": "小川",
+   "utterance": "小川君のお父さんはお医者さんだから、あなたも当然医学部に進むのですよね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 981,
+   "turn": 1,
+   "name": "小川",
+   "utterance": "小川さんが数学のテストで満点を取ったそうです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 981,
+   "turn": 5,
+   "name": "小川",
+   "utterance": "小川さんは「特別なことはしていない」と言っていました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 982,
+   "turn": 3,
+   "name": "兵道",
+   "utterance": "そうです。そのレースで僕たちのクラスの兵道君が素晴らしかったです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 982,
+   "turn": 5,
+   "name": "兵道",
+   "utterance": "兵道君がアンカーで走ったのですが、バトンを受け取ったときには先頭から50メートルぐらい離された最後尾でした。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 986,
+   "turn": 2,
+   "name": "池上",
+   "utterance": "僕と池上君です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 986,
+   "turn": 6,
+   "name": "山本",
+   "utterance": "はい。山本君が手伝ってくれるそうなので大丈夫です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 986,
+   "turn": 7,
+   "name": "山本",
+   "utterance": "それは良かったです。山本君は優しいですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 987,
+   "turn": 4,
+   "name": "青木",
+   "utterance": "いえ、30分ぐらいに縮めて行います。今、青木さんが台本を作っているところです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 987,
+   "turn": 6,
+   "name": "森田",
+   "utterance": "はい。アントーニオを森田さん、バサーニオを所さん、ポーシャを私が演じます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 987,
+   "turn": 8,
+   "name": "北野",
+   "utterance": "シャイロックは北野さんが演じます。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 992,
+   "turn": 1,
+   "name": "小川",
+   "utterance": "小川君は1単位足りませんね。このままでは進級できません。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 992,
+   "turn": 5,
+   "name": "小川",
+   "utterance": "小川君の家庭の事情は分かっていますよ。でも、こればかりは規則なので仕方ありません。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 998,
+   "turn": 1,
+   "name": "大山",
+   "utterance": "もしもし、大山君ですか？こちらは小山です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 998,
+   "turn": 6,
+   "name": "小山",
+   "utterance": "みんなの都合を聞いて、一番良い日に決めたらいいのではありませんか？会場は小山君に任せますよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1008,
+   "turn": 9,
+   "name": "早速皆",
+   "utterance": "分かりました。早速皆さんに諮って、誓約書を作ります。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1009,
+   "turn": 6,
+   "name": "杜氏",
+   "utterance": "先週は、酒造りを50年以上続けてきた杜氏さんに話してもらいました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1009,
+   "turn": 8,
+   "name": "杜氏",
+   "utterance": "みんな感動して、中にはその杜氏さんに弟子入りしたいという生徒も出てきたほどです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1014,
+   "turn": 1,
+   "name": "松田",
+   "utterance": "松田さんは高校では部活に所属していましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1015,
+   "turn": 3,
+   "name": "宮内",
+   "utterance": "数学が得意な宮内君がそのようなことを言うということは、今回は相当な難問だったということですね。私は赤点かもしれません。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1015,
+   "turn": 8,
+   "name": "高野",
+   "utterance": "僕の使っている参考書を高野さんに貸してあげましょうか？分かりやすい解説が載っていてなかなか良い参考書ですよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1017,
+   "turn": 1,
+   "name": "小林",
+   "utterance": "小林さんは学習塾でアルバイトをしているのですよね。私も塾のアルバイトに申し込んでみようと思っているので、どのような様子か聞かせてもらえますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1019,
+   "turn": 6,
+   "name": "渡辺",
+   "utterance": "関東地区の強豪とは、素晴らしいです。渡辺さんの高校で、水泳部は花形の部活だったのですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1019,
+   "turn": 8,
+   "name": "渡辺",
+   "utterance": "渡辺さんは「時々、仕事帰りにプールに行く」と言っていましたよね。同期の皆さんも、今なお泳いでいる方が多いのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1020,
+   "turn": 1,
+   "name": "浩子",
+   "utterance": "秋に開催される同窓会に、浩子ちゃんは行きますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1020,
+   "turn": 2,
+   "name": "直子",
+   "utterance": "同窓会の開催日は予定が入っていないので、私は参加しようと思っています。直子ちゃんはどうしますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1020,
+   "turn": 6,
+   "name": "中野",
+   "utterance": "最近はメンバーが固定されてきている感もありますが、クラスの半分以上は集まります。体育祭で応援団長だった中野君と副団長だった裕子ちゃんが交互に幹事を務めてくれています。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1020,
+   "turn": 7,
+   "name": "中野",
+   "utterance": "中野君と裕子ちゃんが幹事さんですか。今なおクラスのリーダーなのですね。同窓会には軽音楽部の田中君も来ていますか？彼は独特の価値観を持っていたので、どのような社会人になったのか気になります。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1020,
+   "turn": 8,
+   "name": "小林",
+   "utterance": "小林君もほぼ毎回参加しています。彼は「中学校の先生になった」と言っていました。社会科、特に地理を教えているそうです。世界を1人で旅した経験を生徒たちに話して聞かせるそうです。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1021,
+   "turn": 3,
+   "name": "森田",
+   "utterance": "今の森田君からは人見知りだった森田少年は想像がつきません。転校後の学校生活はつらかったのではありませんか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1023,
+   "turn": 3,
+   "name": "秀夫",
+   "utterance": "秀夫君は昨日もスイミング教室へ通う予定があって遊べませんでしたね。何曜日だと放課後に遊ぶことができますか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1023,
+   "turn": 6,
+   "name": "直樹",
+   "utterance": "直樹君がピアノを習っているとは知りませんでした。小さい頃からずっと習っているのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1025,
+   "turn": 4,
+   "name": "丸山",
+   "utterance": "応援団長だった丸山君や副団長だった佐藤さんも誘おうと思っていたのですが、2人とも落胆するでしょうか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1025,
+   "turn": 10,
+   "name": "山本",
+   "utterance": "そうです、優勝です。デコレーションパネル作りのリーダーの山本君が飛び上がって喜んでいたのを覚えています。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1026,
+   "turn": 2,
+   "name": "晴子",
+   "utterance": "晴子ちゃんの定期テストの成績は、理系科目と文系科目ではどちらが良いのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1026,
+   "turn": 6,
+   "name": "晴子",
+   "utterance": "晴子ちゃんの興味があることは何なのですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1026,
+   "turn": 8,
+   "name": "晴子",
+   "utterance": "それなら家政学のある大学をピックアップしてみてはどうでしょう。学科によって文系寄りだったり理系寄りだったりするようなので、理系か文系か決めかねている晴子ちゃんに合っているかもしれませんよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1027,
+   "turn": 1,
+   "name": "篤史",
+   "utterance": "今日は篤史君の入学式でしたね。ご入学おめでとうございます。ついこの間まで、頼りない足取りで歩いていた篤史君が小学校に入学だとは、よそのお子さんの成長はあっという間です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1027,
+   "turn": 3,
+   "name": "篤史",
+   "utterance": "篤史君は小学校の制服が似合っていますね。担任の先生はどなたでしたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1031,
+   "turn": 1,
+   "name": "佐倉",
+   "utterance": "佐倉さんは、この授業の試験がなくなったことをもう聞きましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1033,
+   "turn": 1,
+   "name": "瀬島",
+   "utterance": "瀬島さんは、大学から案内が来ていたティーチングアシスタントの募集に応募しましたか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1036,
+   "turn": 5,
+   "name": "吉田",
+   "utterance": "習字の時間に吉田さんが書いたものですよね。今見ても、お手本のようなきれいな字ですね。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1036,
+   "turn": 6,
+   "name": "吉田",
+   "utterance": "そうですね。確か、吉田さんのお母さまは書道教室の先生だった気がします。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1036,
+   "turn": 8,
+   "name": "吉田",
+   "utterance": "吉田さんにも久しぶりに会いたくなってきましたよ。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1037,
+   "turn": 3,
+   "name": "杏奈",
+   "utterance": "多分、B組だと思いますよ。先ほどB組の杏奈ちゃんが絵の具を借りにきていましたから。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1037,
+   "turn": 5,
+   "name": "相沢",
+   "utterance": "お相手が誰か気になります。同じ部活の相沢君ですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1037,
+   "turn": 6,
+   "name": "杉山",
+   "utterance": "いえ、杉山君です。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1041,
+   "turn": 7,
+   "name": "親御",
+   "utterance": "将来を決める重要な選択ですので、親御さんと相談するのは大切ですね。では、明日必ず提出してください。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1042,
+   "turn": 7,
+   "name": "予報士",
+   "utterance": "「所により雷」と気象予報士さんが言っていました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1047,
+   "turn": 2,
+   "name": "岡田",
+   "utterance": "田中です。私は岡田さんと初めて出会ったのではない気がします。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1047,
+   "turn": 6,
+   "name": "岡田",
+   "utterance": "岡田さんは、当時から高校生とは思えないプログラミング技術を持っていたので、お顔を覚えていました。"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1048,
+   "turn": 5,
+   "name": "中村",
+   "utterance": "そうですか。私はバレーボール部に所属しているのですが、身長が高い子にぜひ入部してほしいと考えています。中村さんの身長は何センチメートルですか？"
+  },
+  {
+   "file": "topic2.json",
+   "dialogue_id": 1057,
+   "turn": 5,
+   "name": "中島",
+   "utterance": "今日は中島さんと木村君が欠席なので、2つ余るはずです。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 17,
+   "turn": 6,
+   "name": "飼育員",
+   "utterance": "飼育員さんからよく話を聞くのがよさそうですね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 128,
+   "turn": 5,
+   "name": "運転手",
+   "utterance": "はい。運転手さんが気さくだったので、道中お話しするのも楽しかったです。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 157,
+   "turn": 4,
+   "name": "添乗員",
+   "utterance": "そのようなことはありません。例えば、ツアーに参加すれば、英語が分からなくても添乗員さんが助けてくれるので安心して旅行を楽しめると思いますよ。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 212,
+   "turn": 1,
+   "name": "坂本",
+   "utterance": "坂本さんはフランスに行ったことがあるそうですね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 248,
+   "turn": 1,
+   "name": "森保",
+   "utterance": "森保さんの車は大きなワゴン車ですね。キャンプ仕様になっているのですか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 269,
+   "turn": 1,
+   "name": "野田",
+   "utterance": "野田さんは、高校の修学旅行でどこに行きましたか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 275,
+   "turn": 1,
+   "name": "後藤",
+   "utterance": "後藤さんの自転車は格好良いですね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 279,
+   "turn": 8,
+   "name": "谷口",
+   "utterance": "私もドイツに行ったら谷口さんと同じことをすると思います。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 281,
+   "turn": 1,
+   "name": "久美子",
+   "utterance": "久美子さんは韓国ドラマがお好きと聞きました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 283,
+   "turn": 6,
+   "name": "加奈子",
+   "utterance": "私も加奈子さんも運転免許を持っていませんので、バスか電車で行ける所がいいです。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 284,
+   "turn": 1,
+   "name": "桃子",
+   "utterance": "桃子さんの家も、丸山公園のすぐそばでしたよね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 285,
+   "turn": 1,
+   "name": "松田",
+   "utterance": "松田さんの出身はどちらですか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 285,
+   "turn": 3,
+   "name": "松田",
+   "utterance": "そうですか。松田さんは標準語を話されているので、大阪出身だとは思いませんでした。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 287,
+   "turn": 1,
+   "name": "森田",
+   "utterance": "森田さんはサイクリングがお好きでしたよね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 300,
+   "turn": 9,
+   "name": "横山",
+   "utterance": "そうですか。横山さんのお話を聞いていたら、インドに行きたくなりました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 301,
+   "turn": 1,
+   "name": "馬場",
+   "utterance": "馬場さんは英語の発音がとても流ちょうですね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 304,
+   "turn": 3,
+   "name": "理子",
+   "utterance": "理子さんの行きたい場所はありますか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 327,
+   "turn": 2,
+   "name": "白石",
+   "utterance": "使っていません。予約をしようと思ったら、既に埋まっていて予約できませんでした。白石さんは利用できましたか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 361,
+   "turn": 6,
+   "name": "運転手",
+   "utterance": "優しい運転手さんですね。乗ってみてどうでしたか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 362,
+   "turn": 7,
+   "name": "石川",
+   "utterance": "それでは、石川さんの出張後、金曜日から日曜日にかけての2泊3日で大阪に行くのはどうでしょうか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 370,
+   "turn": 3,
+   "name": "直太朗",
+   "utterance": "由緒ある木ではないようですが、ある音楽番組で、森山直太朗さんがそのサクラの木の前で歌っているのを見たことがあります。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 450,
+   "turn": 1,
+   "name": "笠井",
+   "utterance": "笠井さんは釣りが趣味だそうですね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 451,
+   "turn": 2,
+   "name": "黒田",
+   "utterance": "黒田さんが逆走したのですか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 456,
+   "turn": 4,
+   "name": "黒田",
+   "utterance": "PICAリゾートはアウトドア体験ができる宿泊施設で、ドーム型のテントなどに泊まれるそうです。友達の黒田君が先日行ってきたそうで、とても面白かったと言っていました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 456,
+   "turn": 6,
+   "name": "黒田",
+   "utterance": "黒田君は、暖房設備がしっかり付いていて中はとても暖かかったと言っていました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 459,
+   "turn": 4,
+   "name": "遠藤",
+   "utterance": "確か、遠藤さんは車の運転はなさいませんよね。鉄道とバスで行ったのですか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 460,
+   "turn": 4,
+   "name": "大塚",
+   "utterance": "いいえ、特にはありません。もし大塚さんに考えがあるなら、私はそれでよいです。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 472,
+   "turn": 7,
+   "name": "女将",
+   "utterance": "番台に座っていた女将さんがお年を召して、体力が続かなくなり、泣く泣く閉店に踏み切ったのだそうです。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 472,
+   "turn": 8,
+   "name": "女将",
+   "utterance": "やさしい女将さんでしたね。学生時代はとても良くしてもらっていました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 481,
+   "turn": 5,
+   "name": "山田",
+   "utterance": "山田さんは韓国への出張が多いので、よくご存じですね。韓国への移動にフェリーをよく利用するのですか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 490,
+   "turn": 6,
+   "name": "仲居",
+   "utterance": "いいえ、仲居さんが敷いてくれますよ。仲居さんというのは、客の身の回りのお世話をするスタッフのことです。仲居さんは、部屋に到着した時にお茶をいれてくれたり、部屋に食事を運んでくれたりもします。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 529,
+   "turn": 6,
+   "name": "相沢",
+   "utterance": "相沢君です。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 529,
+   "turn": 7,
+   "name": "相沢",
+   "utterance": "困りましたね。どこかで相沢君を見かけませんでしたか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 529,
+   "turn": 8,
+   "name": "相沢",
+   "utterance": "いいえ。他の人にも、相沢君のことを知らないか聞いてみます。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 532,
+   "turn": 7,
+   "name": "販売員",
+   "utterance": "どのような飲み物を売っているか、販売員さんに聞いてから決めましょう。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 587,
+   "turn": 4,
+   "name": "莉子",
+   "utterance": "莉子ちゃんのお母さまがフィリピンの方だったとは、知りませんでした。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 605,
+   "turn": 1,
+   "name": "田畑",
+   "utterance": "こんにちは。田畑さんは、週末はご自宅がお留守だったようですね？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 610,
+   "turn": 2,
+   "name": "秋山",
+   "utterance": "今年の幹事は、秋山さんではありませんか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 610,
+   "turn": 3,
+   "name": "秋山",
+   "utterance": "その予定だったのですが、秋山さんが急に1カ月ほどタイ王国へ出張になってしまったのです。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 624,
+   "turn": 4,
+   "name": "伯父",
+   "utterance": "親戚の伯父さんが毎年のように、スノーボードをするためにスキー場へ連れて行ってくれたのです。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 624,
+   "turn": 6,
+   "name": "伯父",
+   "utterance": "はい。その伯父さんがいとこと私に教えてくれました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 716,
+   "turn": 2,
+   "name": "真美",
+   "utterance": "もしもし、真美さんですか？温泉は楽しんでいますか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 730,
+   "turn": 6,
+   "name": "前田",
+   "utterance": "そうでしょう。でも、ご近所の佐藤さんや前田さんに差し上げる分は、きちんとしたものを買ってきました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 742,
+   "turn": 5,
+   "name": "小林",
+   "utterance": "小林さんらしいですね。結局、何のお弁当を買ったのですか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 794,
+   "turn": 7,
+   "name": "奈美",
+   "utterance": "いとこの奈美ちゃんが東京スカイツリーのソラマチにあるすみだ水族館で動かなくなってしまいまして。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 795,
+   "turn": 1,
+   "name": "奈美",
+   "utterance": "奈美ちゃんはペンギンが気に入ったのですね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 795,
+   "turn": 5,
+   "name": "奈美",
+   "utterance": "どういたしまして。ペンギン好きになった奈美ちゃんには、一番の東京土産になると思ったのですよ。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 796,
+   "turn": 6,
+   "name": "山田",
+   "utterance": "そういえば、山田さんは新婚でしたね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 809,
+   "turn": 6,
+   "name": "船長",
+   "utterance": "先ほど、船長さんに渡しておきました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 819,
+   "turn": 7,
+   "name": "京子",
+   "utterance": "うっかり者の京子さんらしいですね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 852,
+   "turn": 4,
+   "name": "美鈴",
+   "utterance": "サークルの友人が教えてくれました。美鈴さんです、彼女を知っていますか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 857,
+   "turn": 5,
+   "name": "公子",
+   "utterance": "今回は公子さんのお仕事に付いて行ったのですか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 864,
+   "turn": 6,
+   "name": "美野里",
+   "utterance": "それでは、もし美野里さんと対戦したら確実に私が負けますね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 880,
+   "turn": 1,
+   "name": "佐久間",
+   "utterance": "課長、佐久間さんからお電話がありました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 880,
+   "turn": 2,
+   "name": "佐久間",
+   "utterance": "佐久間君は今、出張中で広島にいますよね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 882,
+   "turn": 5,
+   "name": "入山",
+   "utterance": "入山さんが宝塚ファンだとは今、初めて知りました。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 882,
+   "turn": 7,
+   "name": "入山",
+   "utterance": "言われてみれば納得です。入山さんは格好良いですものね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 884,
+   "turn": 5,
+   "name": "添乗員",
+   "utterance": "添乗員さんも1カ月間も気を抜けずに、大変ですね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 943,
+   "turn": 8,
+   "name": "運転手",
+   "utterance": "親切な運転手さんがいたものですね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 977,
+   "turn": 1,
+   "name": "木村",
+   "utterance": "木村さんは神奈川県の中学校に通われていましたよね。修学旅行はどちらへ行きましたか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 977,
+   "turn": 2,
+   "name": "落合",
+   "utterance": "ご多分に漏れず、修学旅行先は京都と奈良です。歴史的建造物よりも、修学旅行生だらけだったことを覚えています。落合さんも神奈川県のご出身ですから、修学旅行先は京都と奈良ですよね？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 978,
+   "turn": 3,
+   "name": "明子",
+   "utterance": "絵本作家の島田ゆかさんの作品展があるので行きたいと思っています。明子ちゃんも彼女の作品が好きだったでしょう。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 980,
+   "turn": 2,
+   "name": "松下",
+   "utterance": "はい。承知しました。松下さんが留学することを浅野教授はご存知でしょうか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 980,
+   "turn": 5,
+   "name": "木内",
+   "utterance": "口頭でお伝えするより、メールの方が確実ですよね。木内さんにメールでお送りすれば良いですか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 980,
+   "turn": 6,
+   "name": "松下",
+   "utterance": "はい、そうしてください。推薦状の件は私から浅野教授にお伝えしますが、松下さんからもお願しておいてくださいね。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 984,
+   "turn": 7,
+   "name": "白井",
+   "utterance": "サツマイモも白井さんの好きな秋の味覚ですね。焼き芋のおいしいお店をご存じでしたら教えてください。"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 986,
+   "turn": 2,
+   "name": "谷沢",
+   "utterance": "私は滅多に関東地方から出ることがないので、飛行機や新幹線に乗るのは私にとって特別なことです。毎度、かなりテンションが上がります。谷沢さんのように頻繁に出張する方でもそうなのですね？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 996,
+   "turn": 4,
+   "name": "太田",
+   "utterance": "そうですね。ところで、太田さんは高校時代の修学旅行の目的地は、どちらへ行きましたか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 1017,
+   "turn": 1,
+   "name": "向井",
+   "utterance": "向井君が、今一番行きたいところはどこですか？"
+  },
+  {
+   "file": "topic3.json",
+   "dialogue_id": 1018,
+   "turn": 1,
+   "name": "中村",
+   "utterance": "中村さんは、いろいろな国へ旅行に行っていますよね。とてもうらやましいです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 27,
+   "turn": 3,
+   "name": "吉田",
+   "utterance": "吉田さんは、「最近海に行ってない」と話していましたよね？土曜日はスケジュールが空いているので、お誘いしようと思ったのです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 37,
+   "turn": 1,
+   "name": "春美",
+   "utterance": "今日の春美さんは、花のような良い香りがしますね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 58,
+   "turn": 1,
+   "name": "鈴木",
+   "utterance": "もしもし、田中です。鈴木さんですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 59,
+   "turn": 7,
+   "name": "石井",
+   "utterance": "心配してくれて、ありがとうございます。石井君にも少しずつ私の仕事を任せたいと考えています。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 76,
+   "turn": 1,
+   "name": "石川",
+   "utterance": "石川さんのお肌は透明感がありますね。健康な肌を保つ秘訣が何かあるのでしょうか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 92,
+   "turn": 4,
+   "name": "指圧師",
+   "utterance": "夜、お風呂上がりにストレッチ体操を行っていますが、自分で凝りをほぐすのは難しいようです。結局はあん摩マッサージ指圧師さんにお願いしたくなります。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 113,
+   "turn": 5,
+   "name": "美容師",
+   "utterance": "はい、お気に入りの美容師さんがいますので、いつもここに通っています。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 133,
+   "turn": 3,
+   "name": "小島",
+   "utterance": "ストレートパーマをお薦めする場合もありますが、小島さんの場合はトリートメントで抑えるだけでも十分かも知れません。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 164,
+   "turn": 1,
+   "name": "兼子",
+   "utterance": "兼子さんは、術後も順調なので、明日からはリハビリテーションを始めますね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 165,
+   "turn": 1,
+   "name": "三谷",
+   "utterance": "もしもし、私は、下北沢幼稚園のさくら組担任の田中です。こちらは、三谷さんのお母さまのお電話で間違いないでしょうか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 165,
+   "turn": 3,
+   "name": "真子",
+   "utterance": "娘さんの真子さんに微熱があるようなので、お迎えに来てもらえますか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 267,
+   "turn": 2,
+   "name": "大迫",
+   "utterance": "大迫さんは、週2回のジム通いで、1時間のトレーニングを行っていますが、やや回数が少ないかも知れません。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 273,
+   "turn": 1,
+   "name": "洋子",
+   "utterance": "洋子さんの肌は、とてもきれいですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 284,
+   "turn": 5,
+   "name": "内山",
+   "utterance": "いえいえ、内山さんの頑張りのおかげですよ。術後の経過が順調なら、予定通り、退院できそうです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 290,
+   "turn": 1,
+   "name": "山中",
+   "utterance": "山中さんの娘さんは、小学校2年生ですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 290,
+   "turn": 2,
+   "name": "高木",
+   "utterance": "はい。高木さんの息子さんと同い年です。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 308,
+   "turn": 1,
+   "name": "吉川",
+   "utterance": "吉川さんは、最近筋肉がついて体が大きくなった気がします。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 422,
+   "turn": 2,
+   "name": "美子",
+   "utterance": "よいですよ。美子ちゃんは、自分で目薬をさせないのですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 426,
+   "turn": 6,
+   "name": "薬剤師",
+   "utterance": "長引くときには、まずは薬局で薬剤師さんに相談するといいですよ。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 433,
+   "turn": 5,
+   "name": "美容師",
+   "utterance": "お店によっていろいろ割引がきくようですし、美容師さんとの「会話なし」というコースも選べましたよ。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 433,
+   "turn": 6,
+   "name": "美容師",
+   "utterance": "美容師さんと会話しないということまで、選べるのですね、すごいです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 443,
+   "turn": 7,
+   "name": "獣医",
+   "utterance": "具合が悪いパンダの治療法が分からなくて、獣医さんが漢方薬を飲ませたらしいです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 458,
+   "turn": 7,
+   "name": "森山",
+   "utterance": "森山さんのように犬でも飼っていれば、散歩が良い機会になって続けられるのでしょうね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 517,
+   "turn": 6,
+   "name": "美容師",
+   "utterance": "はい。美容師さんに勧められて、少し明るい色に染めました。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 602,
+   "turn": 3,
+   "name": "妊婦",
+   "utterance": "そうでしたか。でも、妊婦さんがダイエットをするわけにもいきませんし、難しいですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 617,
+   "turn": 1,
+   "name": "緒方",
+   "utterance": "緒方さんはいつもペットボトルを机に置いていますね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 617,
+   "turn": 5,
+   "name": "緒方",
+   "utterance": "そうなるでしょうね。以前は緒方さんがコーヒーを飲む姿をよく見かけましたが、今は見なくなりました。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 653,
+   "turn": 1,
+   "name": "隼人",
+   "utterance": "隼人君は、おしゃべりが上手ですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 653,
+   "turn": 4,
+   "name": "正吾",
+   "utterance": "正吾君は隼人より半年くらい後に生まれたので、仕方ありませんよ。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 653,
+   "turn": 5,
+   "name": "隼人",
+   "utterance": "でも隼人君は半年前に、もうおしゃべりしていましたよね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 700,
+   "turn": 7,
+   "name": "坂本",
+   "utterance": "坂本さんが受けた救命講習はどのようなものでしたか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 748,
+   "turn": 2,
+   "name": "和子",
+   "utterance": "和子さんの目の調子はいかがですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 755,
+   "turn": 2,
+   "name": "和子",
+   "utterance": "それは良かったです。和子さんの体があざだらけで驚きましたよ。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 755,
+   "turn": 6,
+   "name": "和子",
+   "utterance": "よければこの湿布をどうぞ。和子さんにお夕飯をおごっていただきましたし、この湿布はそのお礼を兼ねたお見舞いです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 764,
+   "turn": 1,
+   "name": "木戸",
+   "utterance": "今日は隣の課の木戸さんがいませんね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 764,
+   "turn": 2,
+   "name": "木戸",
+   "utterance": "木戸さんは今日から産休ですよ。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 764,
+   "turn": 4,
+   "name": "妊婦",
+   "utterance": "はい。あまり妊婦さんらしいファッションではなかったので、驚く方が多いですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 764,
+   "turn": 8,
+   "name": "太田",
+   "utterance": "ありがとうございます。私と隣の課の太田さんが取りまとめています。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 813,
+   "turn": 2,
+   "name": "太田",
+   "utterance": "もしかして相手は太田さんですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 816,
+   "turn": 2,
+   "name": "石井",
+   "utterance": "あれ、石井さんは先ほど定時で上がられたはずですよね。どうしたのですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 816,
+   "turn": 5,
+   "name": "篠崎",
+   "utterance": "はい。食事会の後、ポーチを会社に置き忘れたことに気付いたのです。会社の近くまで来たら、部屋の電気がまだ付いていたので戻ってみました。これは篠崎さんに差し入れです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 827,
+   "turn": 5,
+   "name": "歯医者",
+   "utterance": "土曜日には歯医者さんへ行きましょうね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 831,
+   "turn": 5,
+   "name": "喜美",
+   "utterance": "はい、病院に行って薬もたくさんもらってきました。喜美ちゃんも手伝ってくれませんか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 844,
+   "turn": 6,
+   "name": "美容師",
+   "utterance": "美容師さんならそのようなミスはしないと思います。自分でやったのが間違いでした。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 857,
+   "turn": 2,
+   "name": "家永",
+   "utterance": "家永さんですね。お待ちしておりました。レントゲン写真を撮る前に金属が付いているものを外して、検査着に着替えてください。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 857,
+   "turn": 4,
+   "name": "家永",
+   "utterance": "はい。家永さんでしたらMサイズで大丈夫ですよ。Mサイズは、あちらの真ん中の棚にございます。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 862,
+   "turn": 1,
+   "name": "相撲",
+   "utterance": "お相撲さんの背中に丸い痕があるのを見たことがありますが、あれは何ですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 862,
+   "turn": 7,
+   "name": "相撲",
+   "utterance": "痕が付いているお相撲さんはそこが痛かったのですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 864,
+   "turn": 1,
+   "name": "金田",
+   "utterance": "先生、金田さんがしゃがんでしまいました。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 864,
+   "turn": 3,
+   "name": "金田",
+   "utterance": "金田さんは、立てないと言っています。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 864,
+   "turn": 6,
+   "name": "藤田",
+   "utterance": "付き添いはしなくても大丈夫ですよ。藤田さんはこのまま校長先生のお話を聞いていてください。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 867,
+   "turn": 5,
+   "name": "子叔母",
+   "utterance": "この間、急に幸子叔母さんの家に泊まったでしょう？その時にお風呂にあったのを借りたのですが、それが良かったので商品名と購入先を書いてもらったのです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 880,
+   "turn": 3,
+   "name": "大滝",
+   "utterance": "大滝さんはスケートボードをやっているでしょう？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 880,
+   "turn": 5,
+   "name": "大滝",
+   "utterance": "偶然ですが、スケートボードパークで大滝さんの格好良い姿をお見かけしたのです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 900,
+   "turn": 4,
+   "name": "鈴本",
+   "utterance": "私は鈴本さんに聞きました。その伊藤さんは筋肉痛でお休みですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 900,
+   "turn": 5,
+   "name": "鈴本",
+   "utterance": "鈴本さんは下山途中に滑って骨折してしまい、救急搬送されてしまったのです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 900,
+   "turn": 6,
+   "name": "鈴本",
+   "utterance": "鈴本さんが骨折されたのですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 901,
+   "turn": 4,
+   "name": "松永",
+   "utterance": "松永君も元は転校生ですけれど、上手になりましたよ。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 901,
+   "turn": 6,
+   "name": "松永",
+   "utterance": "松永君も最初は初心者でしたよ。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 901,
+   "turn": 8,
+   "name": "大畑",
+   "utterance": "はい。きっと大畑さんもすぐにうまくなりますよ。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 909,
+   "turn": 8,
+   "name": "福原",
+   "utterance": "全部をやっておいてくれた福原さんが神様に見えます。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 915,
+   "turn": 3,
+   "name": "健太",
+   "utterance": "健太君の野球を見に行ったら、みんなが言っていたのです。健太君が二塁に行こうとしていた時にそう言っていました。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 921,
+   "turn": 5,
+   "name": "看護師",
+   "utterance": "看護師さんから見た日本の医療ドラマはそのような感じなのですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 928,
+   "turn": 1,
+   "name": "山本",
+   "utterance": "山本さんのその歩行器はとても良いですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 949,
+   "turn": 6,
+   "name": "美玖",
+   "utterance": "分かりました。今日は美玖ちゃんと一緒に学校に行く約束をしていたのに、残念です。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 949,
+   "turn": 7,
+   "name": "美玖",
+   "utterance": "美玖ちゃんには私が電話をして、あなたが今日学校を休むことを伝えておきますよ。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 949,
+   "turn": 8,
+   "name": "美玖",
+   "utterance": "お願いします。美玖ちゃんに「ごめんなさい」と伝えてください。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 982,
+   "turn": 8,
+   "name": "大山",
+   "utterance": "大山さんは手首にギプスをしていますから、指や肘や肩を少しずつ動かすリハビリをすることになります。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1003,
+   "turn": 6,
+   "name": "看護師",
+   "utterance": "看護師さんはいつもそう言います。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1004,
+   "turn": 3,
+   "name": "緒方",
+   "utterance": "昨日は緒方君が久しぶりに家に遊びに来てくれたので、つい飲み過ぎてしまいました。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1004,
+   "turn": 7,
+   "name": "緒方",
+   "utterance": "緒方さんは、もう少し眠らせてあげましょう。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1011,
+   "turn": 3,
+   "name": "山中",
+   "utterance": "それだけですか？でも、山中さんのような天才ならそれでも良いのかもれませんね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1011,
+   "turn": 5,
+   "name": "山中",
+   "utterance": "もちろん今のご活躍は普段の努力の賜物だと思っていますが、山中さんは楽々と打っておられるように見えるので、何か気を付けていることがあればぜひお聞きしたいのです。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1015,
+   "turn": 2,
+   "name": "歯医者",
+   "utterance": "お母さんはしばらく歯医者さんに行っていませんでしたよね。歯が痛くなったのですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1015,
+   "turn": 4,
+   "name": "歯医者",
+   "utterance": "なぜこれまで行っていた歯医者さんには行かなかったのですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1016,
+   "turn": 8,
+   "name": "看護師",
+   "utterance": "駅前の皮膚科はいいですよ。先生も看護師さんも優しいですし、的確な処置をしてくれます。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1017,
+   "turn": 7,
+   "name": "大塚",
+   "utterance": "パソコンの画面を凝視するとまばたきの頻度が減ってしまって目が乾くのですね。大塚さんの場合、ドライアイは職業病ということですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1018,
+   "turn": 1,
+   "name": "梨香子",
+   "utterance": "梨香子さんの活躍を新聞で拝見しましたよ。全日本陸上選手権に出場するとは、素晴らしいですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1018,
+   "turn": 3,
+   "name": "親御",
+   "utterance": "親御さんのサポートもあってこそのことと思います。遠征試合には一緒に行かれるのですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1018,
+   "turn": 5,
+   "name": "梨香子",
+   "utterance": "そうでしたか。あの輝かしい記録は、梨香子ちゃんだけでなく、菊地さんご夫婦へのご褒美でもあるのですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1018,
+   "turn": 7,
+   "name": "梨香子",
+   "utterance": "梨香子ちゃんは、今はどちらにいるのですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1020,
+   "turn": 1,
+   "name": "青木",
+   "utterance": "青木さんは、昨日の午後は体調が優れず、半日休暇を取って帰られたと聞きました。お加減はいかがですか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1020,
+   "turn": 5,
+   "name": "青木",
+   "utterance": "爪がバロメーターなのですね。青木さんはスポーツマンでいつもお元気なご様子なので、体調が優れないと聞いて少し驚きました。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1022,
+   "turn": 5,
+   "name": "平井",
+   "utterance": "そういえば、平井さんがネイルをしているところは初めて見た気がします。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1023,
+   "turn": 8,
+   "name": "早苗",
+   "utterance": "甘い飲み物はお父さんが好きではないのですが、早苗さんのアドバイスだと言えば飲んでくれると思います。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1024,
+   "turn": 6,
+   "name": "柴田",
+   "utterance": "栄養ドリンクに頼り過ぎるのもあまり良くありませんね。柴田さんの身体が心配です。私は毎日お弁当を作ってきているので、今度柴田さんの分も作ってきましょうか？職場の休憩スペースで一緒に食べましょう。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1024,
+   "turn": 7,
+   "name": "船木",
+   "utterance": "とてもありがたいことですが、それでは船木さんの負担が増えますよね。心苦しく思います。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1026,
+   "turn": 2,
+   "name": "美恵子",
+   "utterance": "本当に暑いですね。汗をかくと、時間をかけてセットした髪も台無しです。美恵子さんのように髪をまとめられると涼しげでいいですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1026,
+   "turn": 3,
+   "name": "麻美",
+   "utterance": "麻美さんの髪もあと少し伸びればまとめられそうです。汗でお化粧が崩れてしまうのにも閉口します。何か良い方法はないものでしょうか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1026,
+   "turn": 5,
+   "name": "麻美",
+   "utterance": "麻美さんはきれいなお肌をしていますよね。どちらのメーカーの化粧品ですか？教えてください。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1027,
+   "turn": 1,
+   "name": "前田",
+   "utterance": "前田さんのご主人を見かけましたが、とてもお痩せになっていて驚きました。ご主人は週に一度は草野球をしていると奥さんから聞いたことがありますが、その効果でしょうか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1027,
+   "turn": 2,
+   "name": "前田",
+   "utterance": "前田さんは随分と細くなられましたよね。草野球の効果だけではなくて、毎日歩いているのが良いのだと思います。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1027,
+   "turn": 4,
+   "name": "前田",
+   "utterance": "僕が歩いている前田さんを見かけるようになったのも確か3年ほど前からだと思います。ほとんど毎朝、僕の出勤の時間帯に歩いていらっしゃいます。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1027,
+   "turn": 6,
+   "name": "前田",
+   "utterance": "ウォーキングは痩せると聞きますけれど、前田さんを見ると、それは本当だと思います。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1030,
+   "turn": 3,
+   "name": "宮崎",
+   "utterance": "アップダウンのない外周コースにしましょう。宮崎さんが先頭を走ってくれますか？"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1036,
+   "turn": 6,
+   "name": "阿部",
+   "utterance": "保健の先生を呼んでくるので、阿部さんに付き添ってもらって日陰で待っていてください。阿部さんにはあなたに水分補給をさせることと、首と脇と太ももを冷やすように伝えています。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1037,
+   "turn": 5,
+   "name": "由紀",
+   "utterance": "高価なので買ったことがありませんでしたが、由紀さんの肌の白さを見て購入したくなってきました。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1037,
+   "turn": 9,
+   "name": "由紀",
+   "utterance": "ありがとうございます。由紀さんは優しいですね。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1042,
+   "turn": 2,
+   "name": "朝美",
+   "utterance": "朝美さんはさすが鋭いですね。アイシャドーを新調しました。"
+  },
+  {
+   "file": "topic4.json",
+   "dialogue_id": 1050,
+   "turn": 5,
+   "name": "鈴木",
+   "utterance": "そうですか。確か、鈴木君の家は3階建てでしたよね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 9,
+   "turn": 6,
+   "name": "木桂治",
+   "utterance": "先輩の鈴木桂治さんです。オリンピックで金メダルを取りましたが、彼は学生の時から強かったです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 22,
+   "turn": 3,
+   "name": "加藤",
+   "utterance": "加藤さんの、好きなジャンルは何ですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 40,
+   "turn": 6,
+   "name": "加藤",
+   "utterance": "はい。加藤君が家まで迎えに来てくれます。加藤君は運転免許を取って新しい車を購入したようです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 47,
+   "turn": 4,
+   "name": "山中",
+   "utterance": "ありがとうございます。山中さんもおめでとうございます。どのような学校生活になるか、親としても楽しみです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 51,
+   "turn": 1,
+   "name": "城田",
+   "utterance": "すみません、俳優の城田さんですか？ファンです。一緒に写真を撮ってもらえませんか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 57,
+   "turn": 6,
+   "name": "歯医者",
+   "utterance": "少しは買いましたが、全部を買うことは難しかったので、残りは歯医者さんに置いてあったものを待ち時間に読みました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 60,
+   "turn": 5,
+   "name": "直太朗",
+   "utterance": "そういえば、森山直太朗さんの『トルコの人形』という曲があるのですが、ご存じですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 86,
+   "turn": 6,
+   "name": "山田",
+   "utterance": "山田君はバーベキューが好きで、毎年友人とやっていると聞きました。道具の準備については、彼に相談してみようと思います。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 152,
+   "turn": 3,
+   "name": "俳優",
+   "utterance": "そうなのですね。特に面白いのは、『愛の不時着』です。主人公の俳優さんが本当にすてきで、いつも見とれてしまいます。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 179,
+   "turn": 1,
+   "name": "女優",
+   "utterance": "昔の名画に出ているような、女優さんに憧れてしまいます。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 179,
+   "turn": 2,
+   "name": "女優",
+   "utterance": "それは、私もそうです。先日も、ファッション雑誌で古今東西の女優さんの特集がされていました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 179,
+   "turn": 6,
+   "name": "女優",
+   "utterance": "はい、とても面白かったです。私が昔から大ファンだった女優さんも載っていて、久しぶりに、彼女が出ている映画が見たくなりました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 212,
+   "turn": 1,
+   "name": "由佳",
+   "utterance": "由佳さんの誕生会に招待されました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 212,
+   "turn": 5,
+   "name": "由佳",
+   "utterance": "由佳さんの家です。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 225,
+   "turn": 1,
+   "name": "高野",
+   "utterance": "高野さんから、お歳暮が届きました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 237,
+   "turn": 8,
+   "name": "芸人",
+   "utterance": "今日の芸人さんは、どのような芸を見せてくれるのか楽しみですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 242,
+   "turn": 3,
+   "name": "芸人",
+   "utterance": "テレビで見た芸人さんが面白かったので、その方のライブに行ってみたくなりました。でも、ライブへ行くことは初めてなので、まずはお笑いについて詳しい人に、お話を聞きたいと思いました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 256,
+   "turn": 4,
+   "name": "渡辺",
+   "utterance": "お孫さんのご結婚おめでとうございます。でも、渡辺さんはわが町内会で毎回入選作品に選ばれるほど素晴らしい句をお詠みになりますから、句会のご欠席は残念です。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 266,
+   "turn": 1,
+   "name": "川島",
+   "utterance": "川島さんは、こいのぼりを持っていらっしゃるのですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 275,
+   "turn": 1,
+   "name": "優子",
+   "utterance": "優子さんは、クリスマスイブには何をしましたか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 275,
+   "turn": 4,
+   "name": "健太",
+   "utterance": "健太君は何をしましたか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 279,
+   "turn": 5,
+   "name": "近藤",
+   "utterance": "近藤さんは、クラシック音楽に詳しいですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 280,
+   "turn": 5,
+   "name": "長谷川",
+   "utterance": "長谷川さんは、年賀状を出しましたか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 281,
+   "turn": 1,
+   "name": "美久",
+   "utterance": "美久さんの部屋は、おしゃれですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 281,
+   "turn": 7,
+   "name": "美久",
+   "utterance": "すてきですね。ここにあるギターも、美久さんの物ですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 282,
+   "turn": 2,
+   "name": "礼子",
+   "utterance": "礼子さんのアルバムです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 282,
+   "turn": 6,
+   "name": "礼子",
+   "utterance": "そうかもしれませんね。礼子さんは、ぬいぐるみが大好きだったのですよ。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 283,
+   "turn": 1,
+   "name": "加藤",
+   "utterance": "加藤さんは洋画が好きだと聞きました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 289,
+   "turn": 1,
+   "name": "和田",
+   "utterance": "和田さんの部屋の本棚には、小説がたくさんありますね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 306,
+   "turn": 10,
+   "name": "星野",
+   "utterance": "分かりました。星野さんのお薦め動画もぜひ教えてください。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 310,
+   "turn": 1,
+   "name": "和田",
+   "utterance": "和田さんは、よく音楽を聴いていますね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 317,
+   "turn": 5,
+   "name": "原竜也",
+   "utterance": "藤原竜也さんの出演した映画が多いですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 321,
+   "turn": 1,
+   "name": "置浩二",
+   "utterance": "テレビで、玉置浩二さんがオーケストラとコラボレーションをしたライブを放送していました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 321,
+   "turn": 2,
+   "name": "置浩二",
+   "utterance": "「玉置浩二さんの歌唱力は日本人の中でトップだ」、と声楽を専門にされている方が言っていましたが、オーケストラをバックにした歌唱はどうでしたか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 321,
+   "turn": 3,
+   "name": "置浩二",
+   "utterance": "「素晴らしい」の一言に尽きます。正直、オーケストラの方がよく分かるのではないかと思っていましたが、そのようなことはなく、むしろ玉置浩二さんがオーケストラを引き立てているような雰囲気を感じました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 321,
+   "turn": 8,
+   "name": "玉置",
+   "utterance": "玉置さんの歌は、歌詞が意味を持ってしっかり伝わってくる感覚があるので、あなたたちは、より涙を誘われたのかもしれませんね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 327,
+   "turn": 3,
+   "name": "新庄",
+   "utterance": "はい。その新庄さんがバラエティー番組で100万円を生まれ故郷で使うという企画をしていました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 327,
+   "turn": 4,
+   "name": "新庄",
+   "utterance": "とても派手な番組ですね。新庄さんはどのようなお金の使い方をしていましたか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 327,
+   "turn": 7,
+   "name": "新庄",
+   "utterance": "新庄さんの所属していた少年野球チームの小学6年生に野球道具をプレゼントし、自身の現役時代のグローブの思い出を語っていたのです。プロとして、見本となる人間として素晴らしい話を小学6年生の少年たちに話していました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 333,
+   "turn": 3,
+   "name": "花火師",
+   "utterance": "田舎は、個人で花火師さんに依頼をして、花火を打ち上げる人がいます。何かの記念日に打ち上げる人がいるようです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 351,
+   "turn": 7,
+   "name": "村勇紀",
+   "utterance": "私は、バナナマンの日村勇紀さんは、素晴らしい人だと思います。タップダンスを踊ることができますし、アイドルと一緒に踊ることもできます。また、ピアノも独学で弾くことができるそうです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 355,
+   "turn": 6,
+   "name": "井原",
+   "utterance": "それは言いません。別に、言わなくても良いはずです。井原君こそ、その4個は誰からもらったのですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 355,
+   "turn": 7,
+   "name": "中村",
+   "utterance": "中村君が言わないなら、私も言いません。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 358,
+   "turn": 3,
+   "name": "井由実",
+   "utterance": "荒井由実さんの『ひこうき雲』など、とても有名なものがたくさん紹介されていました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 358,
+   "turn": 6,
+   "name": "置浩二",
+   "utterance": "今も歌の上手な方は多いですが、私はどうしても昭和の歌手の方に魅力を感じてしまいます。例えば、玉置浩二さんの歌はとても好きです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 362,
+   "turn": 7,
+   "name": "小栗旬",
+   "utterance": "主役は小栗旬さんです。源頼朝役は大泉洋さんが演じています。また、脚本は三谷幸喜さんです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 365,
+   "turn": 1,
+   "name": "高橋",
+   "utterance": "北海道では、また大荒れの天気のようですね。現地の高橋さんに聞いてみましょう。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 365,
+   "turn": 9,
+   "name": "高橋",
+   "utterance": "ありがとうございました。札幌市大通公園から高橋さんでした。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 370,
+   "turn": 9,
+   "name": "田耕司",
+   "utterance": "今田耕司さんや東野幸治さん、130Rの2人、YOUさん、篠原涼子さん他が出演していました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 385,
+   "turn": 5,
+   "name": "本間",
+   "utterance": "本間さんの家の近辺から見られる星は、どれくらいはっきり見ることができたのですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 417,
+   "turn": 5,
+   "name": "宮和也",
+   "utterance": "そうなのですね、嵐の二宮和也君の演技が素晴らしかったです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 428,
+   "turn": 5,
+   "name": "真美",
+   "utterance": "真美ちゃんは、僕だけにチョコレートをくれました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 428,
+   "turn": 6,
+   "name": "真美",
+   "utterance": "では来月、真美ちゃんにお礼をしましょう。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 469,
+   "turn": 1,
+   "name": "岸本",
+   "utterance": "岸本さんのお宅では、正月のおせち料理はどうしていますか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 469,
+   "turn": 9,
+   "name": "岸本",
+   "utterance": "そうですね。岸本さんのお宅は楽しそうですので、わが家でも一度挑戦してみます。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 477,
+   "turn": 1,
+   "name": "丹波",
+   "utterance": "気象予報士の丹波さん、週末は大雪になりそうですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 478,
+   "turn": 6,
+   "name": "深町",
+   "utterance": "はい。最近、深町さんと電話で話しました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 483,
+   "turn": 12,
+   "name": "健一",
+   "utterance": "その通りです。冬にアブラゼミが生きている理由は、まだよく分かっていないのです。健一君が研究してくれるとうれしいです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 494,
+   "turn": 1,
+   "name": "山田",
+   "utterance": "今日は3月3日、桃の節句ですね。山田さんのお嬢さんは初節句ですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 499,
+   "turn": 5,
+   "name": "鈴木",
+   "utterance": "そういえば、鈴木さんはピアノを弾くのでしたね。僕らのバンドでキーボードメンバーを募集中なのですが、入りませんか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 518,
+   "turn": 1,
+   "name": "江藤",
+   "utterance": "江藤さんは、バイオリンを習っているそうですね？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 537,
+   "turn": 1,
+   "name": "優斗",
+   "utterance": "優斗君はそのおもちゃが気に入っているようですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 578,
+   "turn": 3,
+   "name": "春香",
+   "utterance": "これはクラスメイトの春香ちゃんからです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 578,
+   "turn": 5,
+   "name": "春香",
+   "utterance": "春香ちゃんは絵が得意なのです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 590,
+   "turn": 1,
+   "name": "沙羅",
+   "utterance": "今度、沙羅ちゃんとテニスをする約束をしました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 590,
+   "turn": 5,
+   "name": "沙羅",
+   "utterance": "いいえ。そこは沙羅ちゃんの家から遠いので、すみれ体育広場のテニスコートがいいです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 607,
+   "turn": 2,
+   "name": "千夏",
+   "utterance": "はい、したいです。千夏ちゃんはどれを塗りますか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 611,
+   "turn": 7,
+   "name": "声優",
+   "utterance": "よく聞かれますが、見ていると声優さんの声が俳優さん本人の声として感じられるようになります。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 611,
+   "turn": 8,
+   "name": "声優",
+   "utterance": "そういうものなのですね。声優さんの力も素晴らしいですものね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 632,
+   "turn": 7,
+   "name": "会長",
+   "utterance": "申し込み用紙に記入して会長さんに提出するそうです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 672,
+   "turn": 1,
+   "name": "鈴木",
+   "utterance": "鈴木さんは、ルービックキューブが得意だそうですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 732,
+   "turn": 2,
+   "name": "麗華",
+   "utterance": "麗華さんはカラオケが好きですものね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 744,
+   "turn": 1,
+   "name": "由香",
+   "utterance": "由香ちゃんはお絵描きをしているのですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 745,
+   "turn": 3,
+   "name": "優香",
+   "utterance": "実は、これは優香さんが書いた小説です。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 745,
+   "turn": 4,
+   "name": "優香",
+   "utterance": "同級生の、あの優香さんですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 761,
+   "turn": 1,
+   "name": "美玖",
+   "utterance": "美玖ちゃんが作ってくれたカレーライスは、とてもおいしかったですよ。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 761,
+   "turn": 7,
+   "name": "美玖",
+   "utterance": "では、このカレーライスは美玖ちゃんとお父さんの合作ですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 763,
+   "turn": 3,
+   "name": "里香",
+   "utterance": "里香ちゃんは発表会でドレスを着るそうです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 764,
+   "turn": 6,
+   "name": "戸田",
+   "utterance": "戸田さんは海外旅行中です。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 770,
+   "turn": 2,
+   "name": "生徒",
+   "utterance": "そのマグカップは、陶芸教室の中でも一番上手な生徒さんの作品です。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 770,
+   "turn": 4,
+   "name": "生徒",
+   "utterance": "その生徒さんは、そろそろ自分でお店を始めたいそうですから、バザーに出品するのは今回が最後かもしれません。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 782,
+   "turn": 3,
+   "name": "松本",
+   "utterance": "結論を言わないでいてくれるとは、松本さんは優しいですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 801,
+   "turn": 1,
+   "name": "雨宮",
+   "utterance": "今日、お店で流れている曲は雨宮さんが持ってきたCDだそうですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 803,
+   "turn": 3,
+   "name": "手塚",
+   "utterance": "もしかしてその人は手塚さんですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 840,
+   "turn": 4,
+   "name": "浩二",
+   "utterance": "よかったら、浩二君と仁香ちゃんもいらしてください。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 841,
+   "turn": 5,
+   "name": "山口",
+   "utterance": "山口さんなら大歓迎です。もしよければ、鶏肉を持参していただけるとうれしいです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 845,
+   "turn": 5,
+   "name": "圭太",
+   "utterance": "圭太君が怪獣になって撃たれたのですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 848,
+   "turn": 2,
+   "name": "健太",
+   "utterance": "健太君が一人で作ったのですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 848,
+   "turn": 6,
+   "name": "健太",
+   "utterance": "それは健太君のおやつでしょう？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 852,
+   "turn": 4,
+   "name": "美紀",
+   "utterance": "100号だと美紀さんの身長より高いですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 857,
+   "turn": 3,
+   "name": "役者",
+   "utterance": "こけら落としは、人気のある役者さんが所属している大衆演劇だと聞きました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 861,
+   "turn": 1,
+   "name": "武蔵",
+   "utterance": "お母さん、今日は武蔵君の家にお泊まりをしてもよいですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 861,
+   "turn": 2,
+   "name": "武蔵",
+   "utterance": "構いませんが、急にお泊まりをさせてもらうのは武蔵君の家のご迷惑にならないでしょうか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 861,
+   "turn": 3,
+   "name": "武蔵",
+   "utterance": "武蔵君のお母さんもよいと言ってくれました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 861,
+   "turn": 5,
+   "name": "武蔵",
+   "utterance": "はい、武蔵君の家に電話してください。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 861,
+   "turn": 7,
+   "name": "武蔵",
+   "utterance": "武蔵君と新しいゲームをする約束をしました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 861,
+   "turn": 8,
+   "name": "武蔵",
+   "utterance": "分かりました。武蔵君のお母さんに「ゲームで遊ぶ時間は2時間までにしてください」とお願いしておきますね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 868,
+   "turn": 7,
+   "name": "高田",
+   "utterance": "高田さんも普段からおしゃれですものね。洋服はファッションブランドの店で買うこともあるのですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 868,
+   "turn": 9,
+   "name": "高田",
+   "utterance": "高田さんがブランド店で痛バッグを買っていたとは意外でした。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 871,
+   "turn": 1,
+   "name": "俊樹",
+   "utterance": "俊樹君にスイカ割りをしようと誘われました。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 871,
+   "turn": 2,
+   "name": "俊樹",
+   "utterance": "俊樹君のおうちでするのですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 871,
+   "turn": 3,
+   "name": "俊樹",
+   "utterance": "いいえ、俊樹君のおじいさんの畑でするそうです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 871,
+   "turn": 6,
+   "name": "俊樹",
+   "utterance": "俊樹君のお母さんに一応聞いてみますね。少し待っていてください。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 871,
+   "turn": 7,
+   "name": "俊樹",
+   "utterance": "電話は終わりましたか？俊樹君のお母さんは何と言っていましたか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 889,
+   "turn": 6,
+   "name": "農家",
+   "utterance": "そうですか。では、毎年買っているトウモロコシの農家さんには会えないのですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 898,
+   "turn": 1,
+   "name": "由紀",
+   "utterance": "のど自慢大会に由紀ちゃんが出るそうです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 898,
+   "turn": 2,
+   "name": "由紀",
+   "utterance": "由紀ちゃんは民謡を習っているから、歌が上手ですものね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 898,
+   "turn": 5,
+   "name": "由紀",
+   "utterance": "それでは由紀ちゃんの応援に行きたいです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 937,
+   "turn": 3,
+   "name": "美久",
+   "utterance": "美久ちゃんは旗日を知らないのですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 937,
+   "turn": 7,
+   "name": "木田",
+   "utterance": "はい、わが家ではいつからかやらなくなってしまいましたけれど、角の木田さんは今日も飾っていますよ。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 974,
+   "turn": 1,
+   "name": "中込環",
+   "utterance": "中込環さんはヒット曲がなかなか出ませんね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 974,
+   "turn": 6,
+   "name": "松山尋",
+   "utterance": "作詞を松山尋さんに頼んだらどうでしょう。中込さんの持つ情感をうまく引き出せると思います。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 974,
+   "turn": 8,
+   "name": "中込",
+   "utterance": "藤本タローさんが良いと思います。中込さんの声質に合う曲を書いてくれると思います。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 992,
+   "turn": 3,
+   "name": "絵里",
+   "utterance": "絵里ちゃんは何を描きましたか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 992,
+   "turn": 9,
+   "name": "絵里",
+   "utterance": "そうですか。絵里ちゃんが褒められて、お母さんもうれしいです。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1008,
+   "turn": 4,
+   "name": "順子",
+   "utterance": "予定は入っていません。順子さんのご家族は花火大会に行かなくていいのですか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1008,
+   "turn": 7,
+   "name": "由美",
+   "utterance": "そうです。私も桟敷席で見るのは初めてなので、今からとても楽しみです。秋も深まった日の夜なので、防寒着を用意してきてくださいね。チケットはもう一席分あるので、由美さんも誘いましょうか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1009,
+   "turn": 5,
+   "name": "本田",
+   "utterance": "はい。ポール・ニューマンとロバート・レッドフォードが2人で大掛かりな詐欺を仕掛ける痛快なコメディーです。本田さんもきっと気に入ることと思います。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1010,
+   "turn": 8,
+   "name": "栄養士",
+   "utterance": "学校の栄養士さんも、生徒たちが喜ぶようにいろいろと工夫をしてくださっていたのですね。星形のゼリーも立派な行事食ですね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1011,
+   "turn": 1,
+   "name": "中川",
+   "utterance": "昨日の大河ドラマを録画するのを忘れてしまいました。中川さんは大河ドラマを欠かさずに見ていると言っていましたよね。昨日の放送は録画してありますか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1011,
+   "turn": 8,
+   "name": "谷幸喜",
+   "utterance": "三谷幸喜さんの脚本は見る人を引きつけますよね。コメディーの中にも史実に基づいたシリアスなストーリーを巧みに織り交ぜていて、飽きさせません。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1014,
+   "turn": 8,
+   "name": "野口",
+   "utterance": "私もラジオを聞きたくなってきました。ラジコをスマートフォンに入れようと思います。野口さんのお薦めのラジオ番組を教えていただけますか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1018,
+   "turn": 1,
+   "name": "松下",
+   "utterance": "松下さんのお子さんの誕生祝いに何をプレゼントしましょうか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1018,
+   "turn": 5,
+   "name": "青木",
+   "utterance": "そうですね。迷ってしまいますね。お子さんのいる方にアドバイスを頂きましょうか？総務課の青木さんに聞いてみましょう。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1019,
+   "turn": 1,
+   "name": "早苗",
+   "utterance": "早苗ちゃんは図工の成績がいつも良いですね。小さい頃からお絵描きが上手でしたから、絵を描く才能があるのかもしれませんよ。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1019,
+   "turn": 3,
+   "name": "早苗",
+   "utterance": "早苗ちゃんの描いたこのイラストもとても味があって良いですよね。本人がしたいと言うのであれば、ぜひさせてあげてください。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1022,
+   "turn": 2,
+   "name": "井由実",
+   "utterance": "荒井由実さんの曲で、曲名は確か『ひこうき雲』だったと思います。最近公開されたスタジオジブリのアニメーション映画の主題歌になっています。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1028,
+   "turn": 8,
+   "name": "和田",
+   "utterance": "冗談はやめてください。憧れの和田さんと僕がクリスマスを一緒に過ごすなんて考えられません。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1028,
+   "turn": 9,
+   "name": "椎名",
+   "utterance": "椎名君が何と言おうと、私は一緒に過ごしたいのです。一緒に新しくできた水族館に行きませんか？"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1033,
+   "turn": 1,
+   "name": "菅田",
+   "utterance": "来月から、菅田さんと小松さんが出演する映画が公開されますね。"
+  },
+  {
+   "file": "topic5.json",
+   "dialogue_id": 1038,
+   "turn": 6,
+   "name": "代裕彦",
+   "utterance": "それなら、あきちゃんにぴったりの物語がありますよ。田代裕彦さんの『シナオシ』です。"
+  }
+ ]
+}
