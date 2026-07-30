@@ -1058,6 +1058,50 @@ lần này. Owner quyết lượt sau.
 `ban1.txt`: **212 dòng không-phải-nhãn** có chứa tên người (vd dòng 409
 `本田さん。`, dòng 530 `スミスです。`) — cùng tình trạng, chưa thay.
 
+### Sửa TÊN-TRONG-CÂU — phương án hẹp, 2026-07-30
+
+**BACKUP TRƯỚC KHI ĐỤNG** (luật mới G14-R13): 6 file copy sang
+`local-sources-backup/2026-07-30/`, sha256 bản sao == bản gốc, đã xác minh
+từng file. Thư mục đã gitignore.
+
+Chỉ sửa **một loại lỗi**: câu **gọi người đối diện** bằng tên không khớp nhãn
+người nghe. Ba luật hình thức, không phán đoán ngữ nghĩa:
+
+| luật | hình thức | thay bằng | số câu |
+|---|---|---|---:|
+| **a** | hô cách 「<tên>さん、」「<tên>さん。」 | tên NGƯỜI NGHE | **169** |
+| **b** | 「<tên>さん + は/も … ですか/ますか」 | tên NGƯỜI NGHE | **224** |
+| **c** | tự giới thiệu 「<tên>です」 lệch nhãn người nói | tên NGƯỜI NÓI | **24** |
+| | | **TỔNG** | **417** |
+
+Chỉ thay phần **họ**; giữ nguyên `さん・くん・君・ちゃん` và mọi thứ khác.
+
+**Phép chặn dương tính giả:** họ phải được **CHỨNG THỰC** — từng đứng trước
+`さん/くん/君/ちゃん` ở đâu đó trong chính kho (491 họ). Bản đầu không có phép
+này nên luật (c) nuốt nhầm `大変です`・`了解です`・`元気です` → **đã dừng và
+sửa trước khi ghi**. Sau khi có phép: 361 → **24** ca luật (c), đúng.
+
+| file | dòng trước → sau | sha256 trước → sau |
+|---|---|---|
+| `topic1.json` | 50.824 → 50.824 ✅ | `f16fe4ed8e8c` → `b2fea70225ea` |
+| `topic2.json` | 49.403 → 49.403 ✅ | `5e1a81602629` → `8dc37a80f053` |
+| `topic3.json` | 50.407 → 50.407 ✅ | `98a05af142f4` → `09db1fd9a832` |
+| `topic4.json` | 50.157 → 50.157 ✅ | `4b735e5b9835` → `ce45077354e9` |
+| `topic5.json` | 49.952 → 49.952 ✅ | `e2010415292d` → `5aa18bc05518` |
+
+Định dạng giữ nguyên: thụt lề **4**, EOL **LF**, **không** newline cuối file
+(đo từ bản gốc trước khi ghi).
+
+**CỜ — không tự sửa:** `scripts/content/sources/ten-lech-nhan.json`
+**698 lượt · 462 hội thoại** còn tên lệch nhãn mà 3 luật trên không xử được
+(nhắc người thứ ba vắng mặt, cấu trúc lạ). Máy gom chất liệu **bỏ qua** các
+hội thoại này — đã ghi vào G14-R3.
+
+Còn lại **5.256 − 462 = 4.794 hội thoại sạch** (91%), vẫn thừa dùng.
+
+`ban1.txt` **không đụng lượt này** — 212 dòng có tên người ở đó nằm ngoài cấu
+trúc JSON, luật a/b/c dựng cho trường `utterance` không áp thẳng được.
+
 ## Kết luận — một dòng mỗi nguồn
 
 | Nguồn | Kết luận |
