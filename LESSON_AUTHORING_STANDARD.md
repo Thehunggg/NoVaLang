@@ -1594,6 +1594,18 @@ Unit ngoài phạm vi đó (vd 10 lesson/unit ở Core Foundation hiragana/katak
 không phải `five_cards`) chưa áp được cơ chế `unit_comprehensive_cloze` —
 KHÔNG tính là "thiếu".
 
+> **MIỄN TRỪ KANA — owner chốt 2026-07-30.** Unit Core Foundation (học chữ
+> kana) MIỄN bài tổng hợp. Lý do: bài kana dạy CHỮ, không dạy tình huống giao
+> tiếp; dạng cloze theo unit không áp được. Đây là QUYẾT ĐỊNH SẢN PHẨM của
+> owner, KHÔNG phải hạn chế kỹ thuật.
+
+Khác với đoạn "ngoài phạm vi `SECTION_PLANS`" ở trên (quan sát KỸ THUẬT — số
+lesson không khớp plan): miễn trừ này khai theo **`niche === 'core_foundation'`**,
+độc lập với `SECTION_PLANS`. Dù sau này `SECTION_PLANS` mở rộng hỗ trợ unit
+10 lesson, Core Foundation **vẫn miễn** vì bản chất nội dung, không phải vì
+thiếu cơ chế kỹ thuật. `scripts/check-build-order.mjs` đọc `course.nicheId`
+để áp miễn trừ này riêng, không dựa vào việc `eligiblePlan` tình cờ false.
+
 **Đo 2026-07-30 (lúc ghi luật này):** `ja-daily_life-m01-u1` đã có bài tổng
 hợp (25 câu). `ja-daily_life-m01-u2` **2/2 lesson ready nhưng CHƯA có bài
 tổng hợp** — đây là việc phải xong TRƯỚC khi bắt đầu viết `ja-daily_life-m02-*`.
@@ -1625,7 +1637,9 @@ việc khác cho tới khi các bài tổng hợp còn thiếu được viết x
   unit phải xong TRƯỚC khi sang unit kế tiếp. Kiểm report-only:
   `scripts/check-build-order.mjs`. Đo lúc ghi luật: `ja-daily_life-m01-u2`
   đủ điều kiện (2/2 lesson ready) nhưng chưa có bài tổng hợp — 0 vi phạm THẬT
-  vì chưa unit nào sau nó có nội dung.
+  vì chưa unit nào sau nó có nội dung. **Cùng ngày, bổ sung miễn trừ:** unit
+  Core Foundation (kana) MIỄN bài tổng hợp — quyết định sản phẩm, khai theo
+  `niche`, không phụ thuộc `SECTION_PLANS`.
 - **2026-07-29 (bản 12 — G14 QUY TẮC BUILD BÀI v2, thay trọn G11–G13)** —
   G11 · G11.1–G11.5 · G12 · G13 rút mỗi mục còn MỘT DÒNG "thay bằng G14";
   nội dung cũ xoá, lịch sử còn trong git. **G14** vào ở số kế tiếp còn trống,
