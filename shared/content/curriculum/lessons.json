@@ -72384,9 +72384,9 @@
             "ja": "教室での朝"
           },
           "situationByNative": {
-            "vi": "Một học sinh gặp giáo viên vào buổi sáng.",
-            "en": "A student meets a teacher in the morning.",
-            "ja": "生徒が朝、先生に会います。"
+            "vi": "Vai vế: giáo viên và học viên của mình — quan hệ trên–dưới. Người dưới chào trước, và vì có khoảng cách vai vế nên cả hai giữ thể lịch sự suốt lượt trao đổi. Bối cảnh: đầu buổi học, hai người gặp nhau trong lớp.",
+            "en": "Roles: a teacher and their own student — an unequal, senior-to-junior relationship. The junior greets first, and because of the gap in standing both keep polite form throughout the exchange. Setting: the start of class, the two meet in the classroom.",
+            "ja": "関係：先生と自分の学生。上下関係があります。目下の人が先にあいさつし、立場の差があるため二人とも最後まで丁寧体を使います。場面：授業の始め、教室で二人が会います。"
           },
           "explanationByNative": {
             "vi": "Dùng おはようございます vì đây là buổi sáng.\nHọc sinh nói với giáo viên nên không dùng おはよう！\nよろしくお願いします ở đây thể hiện thiện chí học tập và hợp tác, không chỉ dùng khi mới gặp.",
@@ -72484,9 +72484,9 @@
             "ja": "同年代の二人が初めて会う"
           },
           "situationByNative": {
-            "vi": "Hai sinh viên ngồi cạnh nhau trong buổi định hướng.",
-            "en": "Two students sit next to each other during orientation.",
-            "ja": "オリエンテーションで二人の学生が隣同士に座っています。"
+            "vi": "Vai vế: hai sinh viên cùng tuổi, ngang vai, chưa từng quen nhau. Ngang vai nhưng MỚI gặp, nên vẫn dùng thể lịch sự: quyết định thể nói ở đây do độ THÂN, không do trên–dưới. Bối cảnh: hai người ngồi cạnh nhau trong buổi định hướng.",
+            "en": "Roles: two students of the same age, equal standing, who have never met. Equal standing but a FIRST meeting, so polite form still applies: what decides the speech style here is CLOSENESS, not rank. Setting: the two sit next to each other at orientation.",
+            "ja": "関係：同い年の学生二人。対等ですが、初対面です。対等でも初対面なので丁寧体を使います。ここで話し方を決めるのは上下関係ではなく親しさです。場面：オリエンテーションで隣同士に座っています。"
           },
           "explanationByNative": {
             "vi": "Hai người cùng tuổi nhưng mới gặp nên dùng cách lịch sự cơ bản.\nKhông cần chuyển ngay sang cách quá thân mật.\nKhi quan hệ thoải mái hơn, họ có thể dùng cách nói ngắn hơn.",
@@ -72584,9 +72584,9 @@
             "ja": "カジュアルな話し方への切り替え"
           },
           "situationByNative": {
-            "vi": "Tanaka và Sato đã trò chuyện một lúc và đồng ý nói chuyện thoải mái hơn.",
-            "en": "Tanaka and Sato have talked for a while and agree to speak more casually.",
-            "ja": "田中さんと佐藤さんはしばらく話し、もっと気楽に話すことにしました。"
+            "vi": "Vai vế: vẫn hai sinh viên ngang vai ở nhóm trên, nhưng đã trò chuyện một lúc và tự thoả thuận bỏ さん. Cùng một cặp vai vế, đổi độ thân thì đổi thể nói — đó là điều nhóm này cho thấy. Bối cảnh: cuối buổi định hướng, hai người rủ nhau nói chuyện thoải mái hơn.",
+            "en": "Roles: the same two equal-standing students as above, but they have talked for a while and agreed to drop さん. Same pair, same standing — change the closeness and the speech style changes with it; that is what this group shows. Setting: the end of orientation, the two agree to speak more freely.",
+            "ja": "関係：上のグループと同じ対等な学生二人ですが、しばらく話して「さん」をやめることにしました。同じ関係でも、親しさが変われば話し方も変わる。それがこのグループの見どころです。場面：オリエンテーションの終わり、二人はもっと気楽に話すことにします。"
           },
           "explanationByNative": {
             "vi": "よろしく！ là dạng thân mật của よろしくお願いします trong quan hệ phù hợp.\nKhông phải cứ gặp lần đầu là dùng ngay よろしく！\nViệc chuyển sang cách nói thân mật cần dựa vào mức độ thoải mái, tuổi tác, quan hệ và bối cảnh.",
@@ -73892,11 +73892,11 @@
               "en": "Morning in the classroom",
               "ja": "教室での朝"
             },
-            "situation": "Một học sinh gặp giáo viên vào buổi sáng.",
+            "situation": "Vai vế: giáo viên và học viên của mình — quan hệ trên–dưới. Người dưới chào trước, và vì có khoảng cách vai vế nên cả hai giữ thể lịch sự suốt lượt trao đổi. Bối cảnh: đầu buổi học, hai người gặp nhau trong lớp.",
             "situationByNative": {
-              "vi": "Một học sinh gặp giáo viên vào buổi sáng.",
-              "en": "A student meets a teacher in the morning.",
-              "ja": "生徒が朝、先生に会います。"
+              "vi": "Vai vế: giáo viên và học viên của mình — quan hệ trên–dưới. Người dưới chào trước, và vì có khoảng cách vai vế nên cả hai giữ thể lịch sự suốt lượt trao đổi. Bối cảnh: đầu buổi học, hai người gặp nhau trong lớp.",
+              "en": "Roles: a teacher and their own student — an unequal, senior-to-junior relationship. The junior greets first, and because of the gap in standing both keep polite form throughout the exchange. Setting: the start of class, the two meet in the classroom.",
+              "ja": "関係：先生と自分の学生。上下関係があります。目下の人が先にあいさつし、立場の差があるため二人とも最後まで丁寧体を使います。場面：授業の始め、教室で二人が会います。"
             },
             "lines": [
               {
@@ -74007,11 +74007,11 @@
               "en": "Two peers meet for the first time",
               "ja": "同年代の二人が初めて会う"
             },
-            "situation": "Hai sinh viên ngồi cạnh nhau trong buổi định hướng.",
+            "situation": "Vai vế: hai sinh viên cùng tuổi, ngang vai, chưa từng quen nhau. Ngang vai nhưng MỚI gặp, nên vẫn dùng thể lịch sự: quyết định thể nói ở đây do độ THÂN, không do trên–dưới. Bối cảnh: hai người ngồi cạnh nhau trong buổi định hướng.",
             "situationByNative": {
-              "vi": "Hai sinh viên ngồi cạnh nhau trong buổi định hướng.",
-              "en": "Two students sit next to each other during orientation.",
-              "ja": "オリエンテーションで二人の学生が隣同士に座っています。"
+              "vi": "Vai vế: hai sinh viên cùng tuổi, ngang vai, chưa từng quen nhau. Ngang vai nhưng MỚI gặp, nên vẫn dùng thể lịch sự: quyết định thể nói ở đây do độ THÂN, không do trên–dưới. Bối cảnh: hai người ngồi cạnh nhau trong buổi định hướng.",
+              "en": "Roles: two students of the same age, equal standing, who have never met. Equal standing but a FIRST meeting, so polite form still applies: what decides the speech style here is CLOSENESS, not rank. Setting: the two sit next to each other at orientation.",
+              "ja": "関係：同い年の学生二人。対等ですが、初対面です。対等でも初対面なので丁寧体を使います。ここで話し方を決めるのは上下関係ではなく親しさです。場面：オリエンテーションで隣同士に座っています。"
             },
             "lines": [
               {
@@ -74122,11 +74122,11 @@
               "en": "Switching to casual speech",
               "ja": "カジュアルな話し方への切り替え"
             },
-            "situation": "Tanaka và Sato đã trò chuyện một lúc và đồng ý nói chuyện thoải mái hơn.",
+            "situation": "Vai vế: vẫn hai sinh viên ngang vai ở nhóm trên, nhưng đã trò chuyện một lúc và tự thoả thuận bỏ さん. Cùng một cặp vai vế, đổi độ thân thì đổi thể nói — đó là điều nhóm này cho thấy. Bối cảnh: cuối buổi định hướng, hai người rủ nhau nói chuyện thoải mái hơn.",
             "situationByNative": {
-              "vi": "Tanaka và Sato đã trò chuyện một lúc và đồng ý nói chuyện thoải mái hơn.",
-              "en": "Tanaka and Sato have talked for a while and agree to speak more casually.",
-              "ja": "田中さんと佐藤さんはしばらく話し、もっと気楽に話すことにしました。"
+              "vi": "Vai vế: vẫn hai sinh viên ngang vai ở nhóm trên, nhưng đã trò chuyện một lúc và tự thoả thuận bỏ さん. Cùng một cặp vai vế, đổi độ thân thì đổi thể nói — đó là điều nhóm này cho thấy. Bối cảnh: cuối buổi định hướng, hai người rủ nhau nói chuyện thoải mái hơn.",
+              "en": "Roles: the same two equal-standing students as above, but they have talked for a while and agreed to drop さん. Same pair, same standing — change the closeness and the speech style changes with it; that is what this group shows. Setting: the end of orientation, the two agree to speak more freely.",
+              "ja": "関係：上のグループと同じ対等な学生二人ですが、しばらく話して「さん」をやめることにしました。同じ関係でも、親しさが変われば話し方も変わる。それがこのグループの見どころです。場面：オリエンテーションの終わり、二人はもっと気楽に話すことにします。"
             },
             "lines": [
               {
@@ -76125,11 +76125,11 @@
                 "en": "Asking the Way to the Dormitory",
                 "ja": "寮までの道を尋ねる"
               },
-              "scenarioDescription": "Buổi tối, du học sinh Tanaka không dùng được điện thoại nên không biết đường đến ký túc xá Sakura. Tanaka gặp Sato và hỏi đường. Sato dẫn Tanaka đến nơi.",
+              "scenarioDescription": "Vai vế: hai người HOÀN TOÀN LẠ, không ai trên ai dưới, nhưng một bên đang nhờ vả bên kia. Người nhờ giữ thể lịch sự suốt đoạn và cảm ơn nhiều lần; người giúp cũng đáp lịch sự vì chưa quen. Bối cảnh: buổi tối, du học sinh Tanaka không dùng được điện thoại nên không biết đường đến ký túc xá Sakura. Tanaka gặp Sato và hỏi đường. Sato dẫn Tanaka đến nơi.",
               "scenarioDescriptionByNative": {
-                "vi": "Buổi tối, du học sinh Tanaka không dùng được điện thoại nên không biết đường đến ký túc xá Sakura. Tanaka gặp Sato và hỏi đường. Sato dẫn Tanaka đến nơi.",
-                "en": "One evening, exchange student Tanaka can’t use their phone and doesn’t know the way to Sakura Dormitory. Tanaka meets Sato and asks for directions. Sato guides Tanaka there.",
-                "ja": "ある夜、留学生の田中さんはスマホが使えず、さくら寮への道が分かりません。田中さんは佐藤さんに会って道を尋ね、佐藤さんが寮まで案内します。"
+                "vi": "Vai vế: hai người HOÀN TOÀN LẠ, không ai trên ai dưới, nhưng một bên đang nhờ vả bên kia. Người nhờ giữ thể lịch sự suốt đoạn và cảm ơn nhiều lần; người giúp cũng đáp lịch sự vì chưa quen. Bối cảnh: buổi tối, du học sinh Tanaka không dùng được điện thoại nên không biết đường đến ký túc xá Sakura. Tanaka gặp Sato và hỏi đường. Sato dẫn Tanaka đến nơi.",
+                "en": "Roles: two COMPLETE strangers, neither senior to the other, but one is asking the other for a favour. The one asking keeps polite form the whole way and thanks the other repeatedly; the one helping also answers politely because they are not acquainted. Setting: at night, exchange student Tanaka cannot use their phone and does not know the way to Sakura Dormitory. Tanaka meets Sato and asks for directions. Sato walks Tanaka there.",
+                "ja": "関係：まったくの初対面で、上下関係はありませんが、一方がもう一方に頼みごとをしています。頼む側は最後まで丁寧体を使い、何度もお礼を言います。助ける側も知り合いではないので丁寧に答えます。場面：夜、留学生の田中さんはスマホが使えず、さくら寮への道がわかりません。佐藤さんに会って道をたずね、佐藤さんが連れて行ってくれます。"
               },
               "characterIds": [
                 "tanaka",
@@ -77134,9 +77134,9 @@
             "ja": "短く名前を聞く"
           },
           "situationByNative": {
-            "vi": "Hai người vừa gặp, một người hỏi tên ngắn gọn.",
-            "en": "Two people have just met; one asks the name briefly.",
-            "ja": "初対面の二人。一方が短く名前を聞きます。"
+            "vi": "Vai vế: hai người ngang vai, chưa quen nhau, không ai trên ai dưới. Vì ngang vai nên hỏi tên ngắn gọn được, chỉ cần một tiếng すみません mở lời. Bối cảnh: hai người vừa gặp, một người hỏi tên người kia.",
+            "en": "Roles: two people of equal standing who do not know each other, neither senior to the other. Because they are equals, a short question about the name is fine — one すみません is enough to open. Setting: the two have just met, and one asks the other their name.",
+            "ja": "関係：知り合いではない対等な二人で、上下関係はありません。対等なので名前は短くたずねられ、「すみません」の一言で切り出せます。場面：会ったばかりの二人、一方が相手の名前をたずねます。"
           },
           "explanationByNative": {
             "vi": "お名前は？ là cách hỏi tên ngắn gọn, tự nhiên khi ngữ cảnh đã rõ.\n～さんですね dùng để xác nhận tên vừa nghe.",
@@ -77254,9 +77254,9 @@
             "ja": "より丁寧に名前を聞く"
           },
           "situationByNative": {
-            "vi": "Hai người gặp nhau lần đầu và nói chuyện lịch sự.",
-            "en": "Two people meet for the first time and speak politely.",
-            "ja": "初対面の二人が丁寧に話します。"
+            "vi": "Vai vế: cũng hai người ngang vai chưa quen, nhưng đây là tình huống trang trọng hơn nhóm trên — nên người hỏi mở lời bằng 失礼ですが và hỏi trọn câu. Cùng một cặp vai vế, mức trang trọng của bối cảnh nâng lên thì cách hỏi dài ra. Bối cảnh: hai người gặp nhau lần đầu và giới thiệu tên.",
+            "en": "Roles: again two unacquainted equals, but this setting is more formal than the group above — so the asker opens with 失礼ですが and asks in a full sentence. Same pair, same standing: raise the formality of the setting and the question grows longer. Setting: the two meet for the first time and give their names.",
+            "ja": "関係：こちらも知り合いではない対等な二人ですが、上のグループより改まった場面です。そのため「失礼ですが」と切り出し、文を最後まで言ってたずねます。同じ関係でも、場面が改まればたずね方は長くなります。場面：初対面の二人が名前を伝え合います。"
           },
           "explanationByNative": {
             "vi": "失礼ですが làm cho câu hỏi lịch sự hơn.\nお名前は何ですか。 là cách hỏi tên đầy đủ và lịch sự.",
@@ -77374,9 +77374,9 @@
             "ja": "名前が聞き取れないとき"
           },
           "situationByNative": {
-            "vi": "Người nghe không nghe rõ tên và nhờ nói lại.",
-            "en": "The listener can’t catch the name and asks for it again.",
-            "ja": "聞き手が名前を聞き取れず、言い直しをお願いします。"
+            "vi": "Vai vế: hai người ngang vai, chưa quen. Ngang vai nên nhờ nói lại là chuyện bình thường, không mất lịch sự — người kia còn chủ động đánh vần từng âm. Bối cảnh: người hỏi không nghe rõ tên và nhờ nhắc lại.",
+            "en": "Roles: two unacquainted equals. Between equals, asking for a repeat is ordinary and not impolite — the other person even spells the name out sound by sound. Setting: the asker did not catch the name and asks for it again.",
+            "ja": "関係：知り合いではない対等な二人。対等な相手なら聞き返すのは普通のことで、失礼にはなりません。相手は一音ずつ言い直してくれます。場面：名前が聞き取れず、もう一度お願いします。"
           },
           "explanationByNative": {
             "vi": "もう一度お願いします dùng để nhờ nói lại.\nCó thể đánh vần từng âm để người nghe nghe rõ.",
@@ -78556,11 +78556,11 @@
               "en": "Asking a name briefly",
               "ja": "短く名前を聞く"
             },
-            "situation": "Hai người vừa gặp, một người hỏi tên ngắn gọn.",
+            "situation": "Vai vế: hai người ngang vai, chưa quen nhau, không ai trên ai dưới. Vì ngang vai nên hỏi tên ngắn gọn được, chỉ cần một tiếng すみません mở lời. Bối cảnh: hai người vừa gặp, một người hỏi tên người kia.",
             "situationByNative": {
-              "vi": "Hai người vừa gặp, một người hỏi tên ngắn gọn.",
-              "en": "Two people have just met; one asks the name briefly.",
-              "ja": "初対面の二人。一方が短く名前を聞きます。"
+              "vi": "Vai vế: hai người ngang vai, chưa quen nhau, không ai trên ai dưới. Vì ngang vai nên hỏi tên ngắn gọn được, chỉ cần một tiếng すみません mở lời. Bối cảnh: hai người vừa gặp, một người hỏi tên người kia.",
+              "en": "Roles: two people of equal standing who do not know each other, neither senior to the other. Because they are equals, a short question about the name is fine — one すみません is enough to open. Setting: the two have just met, and one asks the other their name.",
+              "ja": "関係：知り合いではない対等な二人で、上下関係はありません。対等なので名前は短くたずねられ、「すみません」の一言で切り出せます。場面：会ったばかりの二人、一方が相手の名前をたずねます。"
             },
             "lines": [
               {
@@ -78686,11 +78686,11 @@
               "en": "Asking a name more politely",
               "ja": "より丁寧に名前を聞く"
             },
-            "situation": "Hai người gặp nhau lần đầu và nói chuyện lịch sự.",
+            "situation": "Vai vế: cũng hai người ngang vai chưa quen, nhưng đây là tình huống trang trọng hơn nhóm trên — nên người hỏi mở lời bằng 失礼ですが và hỏi trọn câu. Cùng một cặp vai vế, mức trang trọng của bối cảnh nâng lên thì cách hỏi dài ra. Bối cảnh: hai người gặp nhau lần đầu và giới thiệu tên.",
             "situationByNative": {
-              "vi": "Hai người gặp nhau lần đầu và nói chuyện lịch sự.",
-              "en": "Two people meet for the first time and speak politely.",
-              "ja": "初対面の二人が丁寧に話します。"
+              "vi": "Vai vế: cũng hai người ngang vai chưa quen, nhưng đây là tình huống trang trọng hơn nhóm trên — nên người hỏi mở lời bằng 失礼ですが và hỏi trọn câu. Cùng một cặp vai vế, mức trang trọng của bối cảnh nâng lên thì cách hỏi dài ra. Bối cảnh: hai người gặp nhau lần đầu và giới thiệu tên.",
+              "en": "Roles: again two unacquainted equals, but this setting is more formal than the group above — so the asker opens with 失礼ですが and asks in a full sentence. Same pair, same standing: raise the formality of the setting and the question grows longer. Setting: the two meet for the first time and give their names.",
+              "ja": "関係：こちらも知り合いではない対等な二人ですが、上のグループより改まった場面です。そのため「失礼ですが」と切り出し、文を最後まで言ってたずねます。同じ関係でも、場面が改まればたずね方は長くなります。場面：初対面の二人が名前を伝え合います。"
             },
             "lines": [
               {
@@ -78816,11 +78816,11 @@
               "en": "When you can’t hear the name clearly",
               "ja": "名前が聞き取れないとき"
             },
-            "situation": "Người nghe không nghe rõ tên và nhờ nói lại.",
+            "situation": "Vai vế: hai người ngang vai, chưa quen. Ngang vai nên nhờ nói lại là chuyện bình thường, không mất lịch sự — người kia còn chủ động đánh vần từng âm. Bối cảnh: người hỏi không nghe rõ tên và nhờ nhắc lại.",
             "situationByNative": {
-              "vi": "Người nghe không nghe rõ tên và nhờ nói lại.",
-              "en": "The listener can’t catch the name and asks for it again.",
-              "ja": "聞き手が名前を聞き取れず、言い直しをお願いします。"
+              "vi": "Vai vế: hai người ngang vai, chưa quen. Ngang vai nên nhờ nói lại là chuyện bình thường, không mất lịch sự — người kia còn chủ động đánh vần từng âm. Bối cảnh: người hỏi không nghe rõ tên và nhờ nhắc lại.",
+              "en": "Roles: two unacquainted equals. Between equals, asking for a repeat is ordinary and not impolite — the other person even spells the name out sound by sound. Setting: the asker did not catch the name and asks for it again.",
+              "ja": "関係：知り合いではない対等な二人。対等な相手なら聞き返すのは普通のことで、失礼にはなりません。相手は一音ずつ言い直してくれます。場面：名前が聞き取れず、もう一度お願いします。"
             },
             "lines": [
               {
@@ -80439,11 +80439,11 @@
                 "en": "Meeting and asking names in a group",
                 "ja": "グループでの自己紹介と名前の確認"
               },
-              "scenarioDescription": "Ba người gặp nhau. Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận, và khi nghe chưa rõ thì nhờ nói lại.",
+              "scenarioDescription": "Vai vế: ba người ngang vai, chưa ai quen ai, không ai trên ai dưới — nên cả ba giữ cùng một mức lịch sự, không ai được nói trống không với ai. Bối cảnh: Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận lại, và khi nghe chưa rõ thì nhờ nói lại.",
               "scenarioDescriptionByNative": {
-                "vi": "Ba người gặp nhau. Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận, và khi nghe chưa rõ thì nhờ nói lại.",
-                "en": "Three people meet. Satō and Tanaka greet each other, then Itō arrives. They ask names, confirm them, and ask for a repeat when they can’t hear clearly.",
-                "ja": "三人が出会います。佐藤さんと田中さんがあいさつをした後、伊藤さんが来ます。名前を聞き、確認し、聞き取れないときは言い直しをお願いします。"
+                "vi": "Vai vế: ba người ngang vai, chưa ai quen ai, không ai trên ai dưới — nên cả ba giữ cùng một mức lịch sự, không ai được nói trống không với ai. Bối cảnh: Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận lại, và khi nghe chưa rõ thì nhờ nói lại.",
+                "en": "Roles: three people of equal standing, none acquainted with the others, none senior — so all three hold the same level of politeness, and nobody drops into plain form with anybody. Setting: Satō and Tanaka greet each other, then Itō arrives. They ask names, confirm them, and ask for a repeat when something is unclear.",
+                "ja": "関係：対等な三人で、互いに知り合いではなく、上下関係もありません。そのため三人とも同じ丁寧さを保ち、誰に対してもくだけた言い方はしません。場面：佐藤さんと田中さんがあいさつし、そこへ伊藤さんが来ます。名前をたずね、確認し、聞き取れないときはもう一度お願いします。"
               },
               "characterIds": [
                 "sato",
@@ -81299,9 +81299,9 @@
             "ja": "自己紹介への返事"
           },
           "situationByNative": {
-            "vi": "Hai người vừa giới thiệu tên, một người đáp lại thiện chí.",
-            "en": "Two people have just given their names; one returns the goodwill.",
-            "ja": "二人が名前を伝え、一方が返事をします。"
+            "vi": "Vai vế: hai người ngang vai, vừa mới quen nhau trong cùng một buổi. Ngang vai nên lời đáp là こちらこそ — đáp lại ĐÚNG mức người kia đã dùng, không hạ xuống cũng không nâng lên. Bối cảnh: hai người vừa giới thiệu tên xong.",
+            "en": "Roles: two people of equal standing who have just met at the same event. Being equals, the reply is こちらこそ — matching EXACTLY the level the other person used, neither lowering nor raising it. Setting: the two have just exchanged names.",
+            "ja": "関係：同じ場で知り合ったばかりの対等な二人。対等なので返事は「こちらこそ」— 相手が使ったのと同じ丁寧さでそのまま返し、下げも上げもしません。場面：名前を伝え合ったところです。"
           },
           "explanationByNative": {
             "vi": "こちらこそ đáp lại lời chúc よろしくお願いします.\nそうですか thể hiện mình đã nghe và tiếp nhận thông tin.",
@@ -81391,9 +81391,9 @@
             "ja": "丁寧に退出する"
           },
           "situationByNative": {
-            "vi": "Hết buổi, một người xin phép về trước.",
-            "en": "At the end, one person excuses themselves to leave first.",
-            "ja": "終わりに、一人が先に失礼します。"
+            "vi": "Vai vế: hai người ngang vai trong một lớp học, quen nhau nhưng chưa thân. お先に失礼します là lời xin phép của người RỜI ĐI TRƯỚC khi người khác còn ở lại — nó đánh dấu thứ tự ra về, không đánh dấu trên–dưới. Bối cảnh: hết buổi học, một người về trước.",
+            "en": "Roles: two classmates of equal standing, acquainted but not close. お先に失礼します is what the person LEAVING FIRST says while others are still there — it marks the order of leaving, not rank. Setting: class is over and one of them goes home first.",
+            "ja": "関係：教室にいる対等な二人。知り合いですが、まだ親しくはありません。「お先に失礼します」は、ほかの人が残っている中で先に帰る人が言う言葉で、帰る順番を表すものであり、上下関係を表すものではありません。場面：授業が終わり、一方が先に帰ります。"
           },
           "explanationByNative": {
             "vi": "お先に失礼します dùng khi rời đi trước người khác.\nお元気で dùng khi chia tay từ một tuần trở lên.",
@@ -81483,9 +81483,9 @@
             "ja": "友達同士のお別れ"
           },
           "situationByNative": {
-            "vi": "Hai người bạn chia tay, hẹn tuần sau.",
-            "en": "Two friends part, planning to meet next week.",
-            "ja": "友達二人が、また来週と言って別れます。"
+            "vi": "Vai vế: hai người bạn ngang vai đã thân — thân hơn cặp ở nhóm trên. Đủ thân nên đáp được bằng うん thay cho はい, và câu chào cuối rút ngắn còn じゃあ、また. Bối cảnh: hai người chia tay, hẹn gặp lại tuần sau.",
+            "en": "Roles: two friends of equal standing who are already close — closer than the pair in the group above. Close enough that うん replaces はい, and the last farewell shortens to じゃあ、また. Setting: the two part, planning to meet again next week.",
+            "ja": "関係：すでに親しい対等な友だち二人で、上のグループの二人より親しい間柄です。親しいので「はい」の代わりに「うん」で答えられ、最後のあいさつも「じゃあ、また」と短くなります。場面：来週会う約束をして別れます。"
           },
           "explanationByNative": {
             "vi": "じゃあ、また và また来週 là cách chào thân mật giữa bạn bè.\nTrong tình huống thân mật, thường bỏ chủ ngữ và nói ngắn.",
@@ -82529,11 +82529,11 @@
               "en": "Responding when introduced",
               "ja": "自己紹介への返事"
             },
-            "situation": "Hai người vừa giới thiệu tên, một người đáp lại thiện chí.",
+            "situation": "Vai vế: hai người ngang vai, vừa mới quen nhau trong cùng một buổi. Ngang vai nên lời đáp là こちらこそ — đáp lại ĐÚNG mức người kia đã dùng, không hạ xuống cũng không nâng lên. Bối cảnh: hai người vừa giới thiệu tên xong.",
             "situationByNative": {
-              "vi": "Hai người vừa giới thiệu tên, một người đáp lại thiện chí.",
-              "en": "Two people have just given their names; one returns the goodwill.",
-              "ja": "二人が名前を伝え、一方が返事をします。"
+              "vi": "Vai vế: hai người ngang vai, vừa mới quen nhau trong cùng một buổi. Ngang vai nên lời đáp là こちらこそ — đáp lại ĐÚNG mức người kia đã dùng, không hạ xuống cũng không nâng lên. Bối cảnh: hai người vừa giới thiệu tên xong.",
+              "en": "Roles: two people of equal standing who have just met at the same event. Being equals, the reply is こちらこそ — matching EXACTLY the level the other person used, neither lowering nor raising it. Setting: the two have just exchanged names.",
+              "ja": "関係：同じ場で知り合ったばかりの対等な二人。対等なので返事は「こちらこそ」— 相手が使ったのと同じ丁寧さでそのまま返し、下げも上げもしません。場面：名前を伝え合ったところです。"
             },
             "lines": [
               {
@@ -82632,11 +82632,11 @@
               "en": "Leaving class politely",
               "ja": "丁寧に退出する"
             },
-            "situation": "Hết buổi, một người xin phép về trước.",
+            "situation": "Vai vế: hai người ngang vai trong một lớp học, quen nhau nhưng chưa thân. お先に失礼します là lời xin phép của người RỜI ĐI TRƯỚC khi người khác còn ở lại — nó đánh dấu thứ tự ra về, không đánh dấu trên–dưới. Bối cảnh: hết buổi học, một người về trước.",
             "situationByNative": {
-              "vi": "Hết buổi, một người xin phép về trước.",
-              "en": "At the end, one person excuses themselves to leave first.",
-              "ja": "終わりに、一人が先に失礼します。"
+              "vi": "Vai vế: hai người ngang vai trong một lớp học, quen nhau nhưng chưa thân. お先に失礼します là lời xin phép của người RỜI ĐI TRƯỚC khi người khác còn ở lại — nó đánh dấu thứ tự ra về, không đánh dấu trên–dưới. Bối cảnh: hết buổi học, một người về trước.",
+              "en": "Roles: two classmates of equal standing, acquainted but not close. お先に失礼します is what the person LEAVING FIRST says while others are still there — it marks the order of leaving, not rank. Setting: class is over and one of them goes home first.",
+              "ja": "関係：教室にいる対等な二人。知り合いですが、まだ親しくはありません。「お先に失礼します」は、ほかの人が残っている中で先に帰る人が言う言葉で、帰る順番を表すものであり、上下関係を表すものではありません。場面：授業が終わり、一方が先に帰ります。"
             },
             "lines": [
               {
@@ -82735,11 +82735,11 @@
               "en": "Friends saying goodbye",
               "ja": "友達同士のお別れ"
             },
-            "situation": "Hai người bạn chia tay, hẹn tuần sau.",
+            "situation": "Vai vế: hai người bạn ngang vai đã thân — thân hơn cặp ở nhóm trên. Đủ thân nên đáp được bằng うん thay cho はい, và câu chào cuối rút ngắn còn じゃあ、また. Bối cảnh: hai người chia tay, hẹn gặp lại tuần sau.",
             "situationByNative": {
-              "vi": "Hai người bạn chia tay, hẹn tuần sau.",
-              "en": "Two friends part, planning to meet next week.",
-              "ja": "友達二人が、また来週と言って別れます。"
+              "vi": "Vai vế: hai người bạn ngang vai đã thân — thân hơn cặp ở nhóm trên. Đủ thân nên đáp được bằng うん thay cho はい, và câu chào cuối rút ngắn còn じゃあ、また. Bối cảnh: hai người chia tay, hẹn gặp lại tuần sau.",
+              "en": "Roles: two friends of equal standing who are already close — closer than the pair in the group above. Close enough that うん replaces はい, and the last farewell shortens to じゃあ、また. Setting: the two part, planning to meet again next week.",
+              "ja": "関係：すでに親しい対等な友だち二人で、上のグループの二人より親しい間柄です。親しいので「はい」の代わりに「うん」で答えられ、最後のあいさつも「じゃあ、また」と短くなります。場面：来週会う約束をして別れます。"
             },
             "lines": [
               {
@@ -84385,11 +84385,11 @@
                 "en": "Saying goodbye after getting acquainted",
                 "ja": "知り合った後のお別れ"
               },
-              "scenarioDescription": "Ba người vừa làm quen. Cuối buổi, họ đáp lời làm quen rồi lần lượt xin phép về, hẹn gặp lại và dặn nhau giữ sức khỏe.",
+              "scenarioDescription": "Vai vế: ba người ngang vai, vừa làm quen trong cùng một buổi, chưa ai thân với ai — nên lời chào về vẫn ở mức lịch sự, chưa rút gọn như giữa bạn thân. Bối cảnh: cuối buổi, họ đáp lời làm quen rồi lần lượt xin phép về, hẹn gặp lại và dặn nhau giữ sức khỏe.",
               "scenarioDescriptionByNative": {
-                "vi": "Ba người vừa làm quen. Cuối buổi, họ đáp lời làm quen rồi lần lượt xin phép về, hẹn gặp lại và dặn nhau giữ sức khỏe.",
-                "en": "Three people have just met. At the end they respond to the introductions, excuse themselves one by one, arrange to meet again, and tell each other to take care.",
-                "ja": "三人が知り合いました。終わりに、自己紹介に返事をし、一人ずつ失礼して、また会う約束をし、体に気をつけてと言い合います。"
+                "vi": "Vai vế: ba người ngang vai, vừa làm quen trong cùng một buổi, chưa ai thân với ai — nên lời chào về vẫn ở mức lịch sự, chưa rút gọn như giữa bạn thân. Bối cảnh: cuối buổi, họ đáp lời làm quen rồi lần lượt xin phép về, hẹn gặp lại và dặn nhau giữ sức khỏe.",
+                "en": "Roles: three people of equal standing who just got acquainted at the same event, none close to any other — so the farewells stay polite and are not shortened the way close friends would shorten them. Setting: at the end of the session they reply to the introductions, then take their leave one by one, arrange to meet again and wish each other well.",
+                "ja": "関係：同じ場で知り合ったばかりの対等な三人で、まだ誰とも親しくはありません。そのため別れのあいさつは丁寧なままで、親しい友だち同士のようには短くなりません。場面：終わりに、あいさつを返してから順に失礼し、また会う約束をして、体に気をつけてと言い合います。"
               },
               "characterIds": [
                 "tanaka",
@@ -85178,9 +85178,9 @@
             "ja": "二人とも丁寧体を使う"
           },
           "situationByNative": {
-            "vi": "Hai người lâu ngày không gặp đang chào hỏi nhau. Cả hai đều dùng thể lịch sự.",
-            "en": "Two people who have not met for a long time are greeting each other. Both use the polite form.",
-            "ja": "久しぶりに会った二人があいさつをしています。二人とも丁寧体を使っています。"
+            "vi": "Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và không thân thì cả hai cùng chọn thể lịch sự, và quan trọng là chọn GIỐNG NHAU. Bối cảnh: lâu ngày không gặp, hai người chào hỏi nhau.",
+            "en": "Roles: two people of equal standing, acquainted but not close. Equal and not close means both choose polite form — and, importantly, both choose the SAME one. Setting: they have not met for a long time and greet each other.",
+            "ja": "関係：対等な二人で、知り合いですが親しくはありません。対等で親しくない場合、二人とも丁寧体を選びます。そして大事なのは、二人が同じ話し方を選ぶという点です。場面：久しぶりに会ってあいさつします。"
           },
           "explanationByNative": {
             "vi": "Cả hai câu đều có お ở đầu và です ở cuối — dấu hiệu thể lịch sự.\nCâu đáp lịch sự là はい。おかげさまで。",
@@ -85278,9 +85278,9 @@
             "ja": "二人とも普通体を使う"
           },
           "situationByNative": {
-            "vi": "Hai người lâu ngày không gặp đang chào hỏi nhau. Cả hai đều dùng thể thường.",
-            "en": "Two people who have not met for a long time are greeting each other. Both use the plain form.",
-            "ja": "久しぶりに会った二人があいさつをしています。二人とも普通体を使っています。"
+            "vi": "Vai vế: hai người ngang vai và ĐÃ THÂN — khác nhóm trên đúng ở chỗ độ thân. Thân rồi thì cả hai cùng bỏ thể lịch sự, vẫn là chọn giống nhau. Bối cảnh: lâu ngày không gặp, hai người bạn chào hỏi nhau.",
+            "en": "Roles: two people of equal standing who are ALREADY CLOSE — the one thing that differs from the group above is closeness. Once close, both drop polite form, and they still match each other. Setting: two friends who have not met for a long time greet each other.",
+            "ja": "関係：対等で、すでに親しい二人。上のグループとの違いは親しさだけです。親しくなれば二人とも丁寧体をやめますが、やはり同じ話し方を選んでいます。場面：久しぶりに会った友だち同士があいさつします。"
           },
           "explanationByNative": {
             "vi": "Bỏ お và bỏ です là thành thể thường.\nCâu đáp thân mật là うん。元気。",
@@ -85378,9 +85378,9 @@
             "ja": "二人が違う体を使う"
           },
           "situationByNative": {
-            "vi": "Hai người lâu ngày không gặp đang chào hỏi nhau. Một bên dùng thể thường, bên kia đáp bằng thể lịch sự.",
-            "en": "Two people who have not met for a long time are greeting each other. One uses the plain form and the other replies in the polite form.",
-            "ja": "久しぶりに会った二人があいさつをしています。一方は普通体、もう一方は丁寧体で答えています。"
+            "vi": "Vai vế: giáo viên và học viên cũ của mình — quan hệ TRÊN–DƯỚI, khác hẳn hai nhóm ngang vai ở trên. Chính vì lệch vai nên hai bên KHÔNG dùng cùng một thể: người trên hỏi bằng thể thường, người dưới vẫn đáp bằng thể lịch sự. Đây là chỗ thấy rõ nhất rằng thể nói do vai vế quyết định, không do độ thân. Bối cảnh: lâu ngày không gặp, hai thầy trò chào hỏi nhau.",
+            "en": "Roles: a teacher and their former student — an UNEQUAL, senior-to-junior relationship, unlike the two equal-standing groups above. Precisely because the standing is unequal, the two do NOT use the same form: the senior asks in plain form while the junior still answers in polite form. This is where it shows most clearly that speech style is decided by standing, not by closeness. Setting: teacher and student meet again after a long time and greet each other.",
+            "ja": "関係：先生と、その元学生。上下関係があり、上の二つの対等なグループとは違います。立場が違うからこそ、二人は同じ話し方をしません。目上の人は普通体でたずね、目下の人は丁寧体で答えます。話し方を決めるのは親しさではなく立場だと、いちばんよくわかる場面です。場面：久しぶりに会った先生と学生があいさつします。"
           },
           "explanationByNative": {
             "vi": "Hai bên KHÔNG bắt buộc dùng cùng một thể.\nNgười ở vai trên nói thể thường, người ở vai dưới đáp bằng thể lịch sự.",
@@ -86465,11 +86465,11 @@
               "en": "Both use the polite form",
               "ja": "二人とも丁寧体を使う"
             },
-            "situation": "Hai người lâu ngày không gặp đang chào hỏi nhau. Cả hai đều dùng thể lịch sự.",
+            "situation": "Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và không thân thì cả hai cùng chọn thể lịch sự, và quan trọng là chọn GIỐNG NHAU. Bối cảnh: lâu ngày không gặp, hai người chào hỏi nhau.",
             "situationByNative": {
-              "vi": "Hai người lâu ngày không gặp đang chào hỏi nhau. Cả hai đều dùng thể lịch sự.",
-              "en": "Two people who have not met for a long time are greeting each other. Both use the polite form.",
-              "ja": "久しぶりに会った二人があいさつをしています。二人とも丁寧体を使っています。"
+              "vi": "Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và không thân thì cả hai cùng chọn thể lịch sự, và quan trọng là chọn GIỐNG NHAU. Bối cảnh: lâu ngày không gặp, hai người chào hỏi nhau.",
+              "en": "Roles: two people of equal standing, acquainted but not close. Equal and not close means both choose polite form — and, importantly, both choose the SAME one. Setting: they have not met for a long time and greet each other.",
+              "ja": "関係：対等な二人で、知り合いですが親しくはありません。対等で親しくない場合、二人とも丁寧体を選びます。そして大事なのは、二人が同じ話し方を選ぶという点です。場面：久しぶりに会ってあいさつします。"
             },
             "lines": [
               {
@@ -86576,11 +86576,11 @@
               "en": "Both use the plain form",
               "ja": "二人とも普通体を使う"
             },
-            "situation": "Hai người lâu ngày không gặp đang chào hỏi nhau. Cả hai đều dùng thể thường.",
+            "situation": "Vai vế: hai người ngang vai và ĐÃ THÂN — khác nhóm trên đúng ở chỗ độ thân. Thân rồi thì cả hai cùng bỏ thể lịch sự, vẫn là chọn giống nhau. Bối cảnh: lâu ngày không gặp, hai người bạn chào hỏi nhau.",
             "situationByNative": {
-              "vi": "Hai người lâu ngày không gặp đang chào hỏi nhau. Cả hai đều dùng thể thường.",
-              "en": "Two people who have not met for a long time are greeting each other. Both use the plain form.",
-              "ja": "久しぶりに会った二人があいさつをしています。二人とも普通体を使っています。"
+              "vi": "Vai vế: hai người ngang vai và ĐÃ THÂN — khác nhóm trên đúng ở chỗ độ thân. Thân rồi thì cả hai cùng bỏ thể lịch sự, vẫn là chọn giống nhau. Bối cảnh: lâu ngày không gặp, hai người bạn chào hỏi nhau.",
+              "en": "Roles: two people of equal standing who are ALREADY CLOSE — the one thing that differs from the group above is closeness. Once close, both drop polite form, and they still match each other. Setting: two friends who have not met for a long time greet each other.",
+              "ja": "関係：対等で、すでに親しい二人。上のグループとの違いは親しさだけです。親しくなれば二人とも丁寧体をやめますが、やはり同じ話し方を選んでいます。場面：久しぶりに会った友だち同士があいさつします。"
             },
             "lines": [
               {
@@ -86687,11 +86687,11 @@
               "en": "The two use different forms",
               "ja": "二人が違う体を使う"
             },
-            "situation": "Hai người lâu ngày không gặp đang chào hỏi nhau. Một bên dùng thể thường, bên kia đáp bằng thể lịch sự.",
+            "situation": "Vai vế: giáo viên và học viên cũ của mình — quan hệ TRÊN–DƯỚI, khác hẳn hai nhóm ngang vai ở trên. Chính vì lệch vai nên hai bên KHÔNG dùng cùng một thể: người trên hỏi bằng thể thường, người dưới vẫn đáp bằng thể lịch sự. Đây là chỗ thấy rõ nhất rằng thể nói do vai vế quyết định, không do độ thân. Bối cảnh: lâu ngày không gặp, hai thầy trò chào hỏi nhau.",
             "situationByNative": {
-              "vi": "Hai người lâu ngày không gặp đang chào hỏi nhau. Một bên dùng thể thường, bên kia đáp bằng thể lịch sự.",
-              "en": "Two people who have not met for a long time are greeting each other. One uses the plain form and the other replies in the polite form.",
-              "ja": "久しぶりに会った二人があいさつをしています。一方は普通体、もう一方は丁寧体で答えています。"
+              "vi": "Vai vế: giáo viên và học viên cũ của mình — quan hệ TRÊN–DƯỚI, khác hẳn hai nhóm ngang vai ở trên. Chính vì lệch vai nên hai bên KHÔNG dùng cùng một thể: người trên hỏi bằng thể thường, người dưới vẫn đáp bằng thể lịch sự. Đây là chỗ thấy rõ nhất rằng thể nói do vai vế quyết định, không do độ thân. Bối cảnh: lâu ngày không gặp, hai thầy trò chào hỏi nhau.",
+              "en": "Roles: a teacher and their former student — an UNEQUAL, senior-to-junior relationship, unlike the two equal-standing groups above. Precisely because the standing is unequal, the two do NOT use the same form: the senior asks in plain form while the junior still answers in polite form. This is where it shows most clearly that speech style is decided by standing, not by closeness. Setting: teacher and student meet again after a long time and greet each other.",
+              "ja": "関係：先生と、その元学生。上下関係があり、上の二つの対等なグループとは違います。立場が違うからこそ、二人は同じ話し方をしません。目上の人は普通体でたずね、目下の人は丁寧体で答えます。話し方を決めるのは親しさではなく立場だと、いちばんよくわかる場面です。場面：久しぶりに会った先生と学生があいさつします。"
             },
             "lines": [
               {
@@ -88321,11 +88321,11 @@
                 "en": "Three reunions after a long time",
                 "ja": "久しぶりの再会、三つの場面"
               },
-              "scenarioDescription": "Ba cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.",
+              "scenarioDescription": "Vai vế: ba cặp quan hệ khác nhau — hai người quen chưa thân, hai người bạn đã thân, và một cặp thầy trò lệch vai. Cùng một việc chào hỏi, nhưng vai vế và độ thân khác nhau nên thể nói chọn khác nhau; riêng cặp thầy trò thì hai bên dùng hai thể khác nhau. Bối cảnh: ba cuộc gặp lại sau lâu ngày không gặp.",
               "scenarioDescriptionByNative": {
-                "vi": "Ba cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.",
-                "en": "Three greetings between people who have not met for a long time. The same act, but the polite and plain forms are chosen differently each time.",
-                "ja": "久しぶりに会った二人のあいさつが三つ。同じことをしていますが、丁寧体と普通体の選び方が場面ごとに違います。"
+                "vi": "Vai vế: ba cặp quan hệ khác nhau — hai người quen chưa thân, hai người bạn đã thân, và một cặp thầy trò lệch vai. Cùng một việc chào hỏi, nhưng vai vế và độ thân khác nhau nên thể nói chọn khác nhau; riêng cặp thầy trò thì hai bên dùng hai thể khác nhau. Bối cảnh: ba cuộc gặp lại sau lâu ngày không gặp.",
+                "en": "Roles: three different relationships — two acquaintances who are not close, two friends who are, and a teacher-and-student pair of unequal standing. The same act of greeting, but different standing and closeness lead to different speech styles; in the teacher-and-student pair the two sides use different forms from each other. Setting: three reunions after a long time apart.",
+                "ja": "関係：三つの異なる間柄です。親しくない知り合い同士、すでに親しい友だち同士、そして立場の違う先生と学生。同じあいさつでも、立場と親しさが違えば選ぶ話し方も変わります。先生と学生の組だけは、二人が別々の話し方を使います。場面：久しぶりの再会が三つあります。"
               },
               "characterIds": [
                 "sato",
@@ -89191,9 +89191,9 @@
             "ja": "一年たって、もう慣れた"
           },
           "situationByNative": {
-            "vi": "Hai người quen gặp nhau. Một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.",
-            "en": "Two acquaintances meet. One asks how long the other has been in Japan and whether they have settled in.",
-            "ja": "知り合い二人が会います。一方が、日本に来てどのぐらいか、慣れたかをたずねます。"
+            "vi": "Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và chưa thân nên cả hai giữ thể lịch sự — hỏi chuyện riêng (sang Nhật bao lâu rồi) ở mức này là bình thường, không tọc mạch. Bối cảnh: hai người gặp nhau, một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.",
+            "en": "Roles: two people of equal standing, acquainted but not close. Equal and not close, so both keep polite form — asking something personal (how long you have been in Japan) at this level is ordinary, not prying. Setting: the two meet, and one asks how long the other has been in Japan and whether they have settled in.",
+            "ja": "関係：対等な二人で、知り合いですが親しくはありません。対等で親しくないので二人とも丁寧体を保ちます。この関係で「日本に来てどのぐらいか」を聞くのは普通のことで、立ち入りすぎにはなりません。場面：二人が会い、一方が日本に来てどのぐらいか、もう慣れたかをたずねます。"
           },
           "explanationByNative": {
             "vi": "どのぐらいになりますか hỏi đã được bao lâu; đáp bằng mốc thời gian + になります.\nもう慣れましたか hỏi đã quen chưa; đáp はい là đã quen.",
@@ -89291,9 +89291,9 @@
             "ja": "去年の9月に来た"
           },
           "situationByNative": {
-            "vi": "Cùng câu hỏi, nhưng người này trả lời bằng thời điểm đã đến thay vì độ dài thời gian.",
-            "en": "The same question, but this person answers with the arrival date instead of a length of time.",
-            "ja": "同じ質問ですが、この人は期間ではなく来た時期で答えます。"
+            "vi": "Vai vế: vẫn hai người ngang vai chưa thân, cùng mức lịch sự như nhóm trên — cặp vai vế giữ nguyên để người học thấy chỗ khác biệt nằm ở CÁCH TRẢ LỜI, không nằm ở quan hệ. Bối cảnh: cùng câu hỏi ấy, nhưng người này đáp bằng thời điểm đã đến thay vì độ dài thời gian.",
+            "en": "Roles: again two unacquainted equals at the same level of politeness as the group above — the relationship is held constant so learners see that the difference lies in HOW THE ANSWER IS GIVEN, not in the relationship. Setting: the same question, but this person answers with the date they arrived rather than a length of time.",
+            "ja": "関係：こちらも親しくない対等な二人で、丁寧さも上のグループと同じです。関係をあえて同じにしてあるので、違いは答え方にあり、関係にはないことがわかります。場面：同じ質問ですが、この人は期間ではなく来た時期で答えます。"
           },
           "explanationByNative": {
             "vi": "Câu hỏi どのぐらい có thể đáp bằng ĐỘ DÀI (1年) hoặc bằng THỜI ĐIỂM đã đến (去年の9月).\nはい、おかげさまで lịch sự hơn はい trần — cụm này đã học ở bài trước.",
@@ -89391,9 +89391,9 @@
             "ja": "来たばかりで、まだ慣れない"
           },
           "situationByNative": {
-            "vi": "Người vừa đến tháng trước, được hỏi đã quen chưa và đáp là vẫn chưa.",
-            "en": "Someone who arrived last month is asked whether they have settled in, and says not yet.",
-            "ja": "先月来たばかりの人が、慣れたかたずねられて「まだ」と答えます。"
+            "vi": "Vai vế: giáo viên hỏi học viên của mình — quan hệ trên–dưới, khác hai nhóm ngang vai ở trên. Ở bài này người trên vẫn hỏi bằng thể lịch sự (xem ghi chú miễn trừ G6): trên–dưới KHÔNG bắt buộc người trên phải nói trống. Người dưới đáp lịch sự, và khi phải nói điều chưa hay thì bỏ lửng câu thay vì nói thẳng \"chưa\". Bối cảnh: người mới sang tháng trước, được hỏi đã quen chưa.",
+            "en": "Roles: a teacher asking their own student — an unequal, senior-to-junior relationship, unlike the two equal-standing groups above. In this lesson the senior still asks in polite form (see the G6 exemption note): being senior does NOT oblige a speaker to use plain form. The junior answers politely and, having something less than good to report, trails off rather than saying \"not yet\" outright. Setting: someone who arrived only last month is asked whether they have settled in.",
+            "ja": "関係：先生が自分の学生にたずねる場面で、上下関係があり、上の二つの対等なグループとは違います。このレッスンでは目上の人も丁寧体でたずねます（G6の適用除外メモを参照）。目上だからといって普通体を使わなければならないわけではありません。目下の人は丁寧に答え、よくない知らせを言うときは「まだ」とはっきり言わず言いさします。場面：先月来たばかりの人が、もう慣れたかとたずねられます。"
           },
           "explanationByNative": {
             "vi": "まだ、ちょっと…… bỏ lửng cuối câu là cách đáp phủ định nhẹ nhàng, không nói thẳng \"chưa quen\".\n少し慣れましたか hỏi đã quen được một chút chưa — nhẹ hơn もう慣れましたか.",
@@ -90281,11 +90281,11 @@
               "en": "One year in, already settled",
               "ja": "一年たって、もう慣れた"
             },
-            "situation": "Hai người quen gặp nhau. Một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.",
+            "situation": "Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và chưa thân nên cả hai giữ thể lịch sự — hỏi chuyện riêng (sang Nhật bao lâu rồi) ở mức này là bình thường, không tọc mạch. Bối cảnh: hai người gặp nhau, một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.",
             "situationByNative": {
-              "vi": "Hai người quen gặp nhau. Một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.",
-              "en": "Two acquaintances meet. One asks how long the other has been in Japan and whether they have settled in.",
-              "ja": "知り合い二人が会います。一方が、日本に来てどのぐらいか、慣れたかをたずねます。"
+              "vi": "Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và chưa thân nên cả hai giữ thể lịch sự — hỏi chuyện riêng (sang Nhật bao lâu rồi) ở mức này là bình thường, không tọc mạch. Bối cảnh: hai người gặp nhau, một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.",
+              "en": "Roles: two people of equal standing, acquainted but not close. Equal and not close, so both keep polite form — asking something personal (how long you have been in Japan) at this level is ordinary, not prying. Setting: the two meet, and one asks how long the other has been in Japan and whether they have settled in.",
+              "ja": "関係：対等な二人で、知り合いですが親しくはありません。対等で親しくないので二人とも丁寧体を保ちます。この関係で「日本に来てどのぐらいか」を聞くのは普通のことで、立ち入りすぎにはなりません。場面：二人が会い、一方が日本に来てどのぐらいか、もう慣れたかをたずねます。"
             },
             "lines": [
               {
@@ -90392,11 +90392,11 @@
               "en": "Arrived last September",
               "ja": "去年の9月に来た"
             },
-            "situation": "Cùng câu hỏi, nhưng người này trả lời bằng thời điểm đã đến thay vì độ dài thời gian.",
+            "situation": "Vai vế: vẫn hai người ngang vai chưa thân, cùng mức lịch sự như nhóm trên — cặp vai vế giữ nguyên để người học thấy chỗ khác biệt nằm ở CÁCH TRẢ LỜI, không nằm ở quan hệ. Bối cảnh: cùng câu hỏi ấy, nhưng người này đáp bằng thời điểm đã đến thay vì độ dài thời gian.",
             "situationByNative": {
-              "vi": "Cùng câu hỏi, nhưng người này trả lời bằng thời điểm đã đến thay vì độ dài thời gian.",
-              "en": "The same question, but this person answers with the arrival date instead of a length of time.",
-              "ja": "同じ質問ですが、この人は期間ではなく来た時期で答えます。"
+              "vi": "Vai vế: vẫn hai người ngang vai chưa thân, cùng mức lịch sự như nhóm trên — cặp vai vế giữ nguyên để người học thấy chỗ khác biệt nằm ở CÁCH TRẢ LỜI, không nằm ở quan hệ. Bối cảnh: cùng câu hỏi ấy, nhưng người này đáp bằng thời điểm đã đến thay vì độ dài thời gian.",
+              "en": "Roles: again two unacquainted equals at the same level of politeness as the group above — the relationship is held constant so learners see that the difference lies in HOW THE ANSWER IS GIVEN, not in the relationship. Setting: the same question, but this person answers with the date they arrived rather than a length of time.",
+              "ja": "関係：こちらも親しくない対等な二人で、丁寧さも上のグループと同じです。関係をあえて同じにしてあるので、違いは答え方にあり、関係にはないことがわかります。場面：同じ質問ですが、この人は期間ではなく来た時期で答えます。"
             },
             "lines": [
               {
@@ -90503,11 +90503,11 @@
               "en": "Just arrived, not settled yet",
               "ja": "来たばかりで、まだ慣れない"
             },
-            "situation": "Người vừa đến tháng trước, được hỏi đã quen chưa và đáp là vẫn chưa.",
+            "situation": "Vai vế: giáo viên hỏi học viên của mình — quan hệ trên–dưới, khác hai nhóm ngang vai ở trên. Ở bài này người trên vẫn hỏi bằng thể lịch sự (xem ghi chú miễn trừ G6): trên–dưới KHÔNG bắt buộc người trên phải nói trống. Người dưới đáp lịch sự, và khi phải nói điều chưa hay thì bỏ lửng câu thay vì nói thẳng \"chưa\". Bối cảnh: người mới sang tháng trước, được hỏi đã quen chưa.",
             "situationByNative": {
-              "vi": "Người vừa đến tháng trước, được hỏi đã quen chưa và đáp là vẫn chưa.",
-              "en": "Someone who arrived last month is asked whether they have settled in, and says not yet.",
-              "ja": "先月来たばかりの人が、慣れたかたずねられて「まだ」と答えます。"
+              "vi": "Vai vế: giáo viên hỏi học viên của mình — quan hệ trên–dưới, khác hai nhóm ngang vai ở trên. Ở bài này người trên vẫn hỏi bằng thể lịch sự (xem ghi chú miễn trừ G6): trên–dưới KHÔNG bắt buộc người trên phải nói trống. Người dưới đáp lịch sự, và khi phải nói điều chưa hay thì bỏ lửng câu thay vì nói thẳng \"chưa\". Bối cảnh: người mới sang tháng trước, được hỏi đã quen chưa.",
+              "en": "Roles: a teacher asking their own student — an unequal, senior-to-junior relationship, unlike the two equal-standing groups above. In this lesson the senior still asks in polite form (see the G6 exemption note): being senior does NOT oblige a speaker to use plain form. The junior answers politely and, having something less than good to report, trails off rather than saying \"not yet\" outright. Setting: someone who arrived only last month is asked whether they have settled in.",
+              "ja": "関係：先生が自分の学生にたずねる場面で、上下関係があり、上の二つの対等なグループとは違います。このレッスンでは目上の人も丁寧体でたずねます（G6の適用除外メモを参照）。目上だからといって普通体を使わなければならないわけではありません。目下の人は丁寧に答え、よくない知らせを言うときは「まだ」とはっきり言わず言いさします。場面：先月来たばかりの人が、もう慣れたかとたずねられます。"
             },
             "lines": [
               {
@@ -92530,11 +92530,11 @@
                 "en": "Asked twice about how you have been",
                 "ja": "近況を二度たずねられる"
               },
-              "scenarioDescription": "Hai cuộc hỏi thăm khác nhau. Cùng một câu hỏi, hai người trả lời theo hai cách: một người đã quen, một người thì chưa.",
+              "scenarioDescription": "Vai vế: hai cặp quan hệ — một cặp ngang vai quen chưa thân, một cặp giáo viên với học viên của mình. Cả hai cặp đều giữ thể lịch sự (xem ghi chú miễn trừ G6), nên chỗ khác nhau nằm ở NỘI DUNG trả lời chứ không ở thể nói. Bối cảnh: hai cuộc hỏi thăm; cùng một câu hỏi, một người đáp là đã quen, một người đáp là chưa.",
               "scenarioDescriptionByNative": {
-                "vi": "Hai cuộc hỏi thăm khác nhau. Cùng một câu hỏi, hai người trả lời theo hai cách: một người đã quen, một người thì chưa.",
-                "en": "Two different exchanges. The same question, two answers: one person has settled in, the other has not.",
-                "ja": "二つの場面。同じ質問に、一人は慣れたと答え、もう一人はまだと答えます。"
+                "vi": "Vai vế: hai cặp quan hệ — một cặp ngang vai quen chưa thân, một cặp giáo viên với học viên của mình. Cả hai cặp đều giữ thể lịch sự (xem ghi chú miễn trừ G6), nên chỗ khác nhau nằm ở NỘI DUNG trả lời chứ không ở thể nói. Bối cảnh: hai cuộc hỏi thăm; cùng một câu hỏi, một người đáp là đã quen, một người đáp là chưa.",
+                "en": "Roles: two relationships — one pair of equals who are acquainted but not close, and a teacher with their own student. Both pairs keep polite form (see the G6 exemption note), so the difference lies in WHAT the answers say, not in the speech style. Setting: two exchanges; the same question, with one person answering that they have settled in and the other that they have not.",
+                "ja": "関係：二つの間柄があります。親しくない対等な二人と、先生とその学生です。どちらも丁寧体を保つので（G6の適用除外メモを参照）、違いは話し方ではなく答えの中身にあります。場面：二つのやりとり。同じ質問に対して、一人はもう慣れたと答え、もう一人はまだだと答えます。"
               },
               "characterIds": [
                 "sato",

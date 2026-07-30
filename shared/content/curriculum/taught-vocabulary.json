@@ -1,49 +1,276 @@
 {
-  "_note": "Sổ vốn từ ĐÃ DẠY, theo ngôn ngữ → lessonId → danh sách cụm. Dùng cho §G7 vùng A (bài tập chấm điểm chỉ dùng vốn đã dạy) và cho lọc vốn từ R5. Giá trị MÁY ĐỌC từ shared/generated/lessons.json, trường vocabulary[].displayText, đã bỏ furigana trong ngoặc — KHÔNG gõ tay.",
-  "_source": "shared/generated/lessons.json · vocabulary[].displayText",
-  "_quyTac": "Giữ dạng THẬT kể cả dấu câu (「元気？」 giữ dấu ？). R5 tự bỏ dấu câu khi so khớp.",
-  "_generatedFrom": "commit bc735bf · nhập 2026-07-29 (rule v2 bước 3)",
-  "ja": {
-    "ja-daily_life-m01-u1-l1": [
-      "おはようございます",
-      "こんにちは",
-      "こんばんは",
-      "はじめまして",
-      "～です",
-      "よろしくお願いします",
-      "こちらこそ、よろしくお願いします",
-      "さようなら"
-    ],
-    "ja-daily_life-m01-u1-l2": [
-      "名前",
-      "お名前",
-      "何ですか",
-      "お名前は何ですか",
-      "お名前は？",
-      "失礼ですが",
-      "すみません",
-      "もう一度",
-      "～さん",
-      "～ですね"
-    ],
-    "ja-daily_life-m01-u1-l3": [
-      "こちらこそ",
-      "そうですか",
-      "私も",
-      "失礼します",
-      "お先に失礼します",
-      "お元気で",
-      "じゃあ、また",
-      "来週"
-    ],
-    "ja-daily_life-m01-u2-l1": [
-      "お久しぶりです",
-      "久しぶり",
-      "お元気ですか",
-      "元気？",
-      "はい",
-      "おかげさまで",
-      "うん"
-    ]
-  }
+ "_note": "Sổ vốn từ ĐÃ DẠY, theo ngôn ngữ → lessonId → danh sách cụm. Dùng cho §G7 vùng A (bài tập chấm điểm chỉ dùng vốn đã dạy) và cho lọc vốn từ G14-R5. MÁY SINH — KHÔNG gõ tay. Sinh lại: node scripts/build-taught-vocabulary.mjs",
+ "_source": "shared/generated/lessons.json · vocabulary[].displayText (đã bỏ ngoặc chú âm)",
+ "_phamVi": "Mọi lesson contentStatus=ready + playable=true + có vocabulary[]. Gồm cả bài kana Core Foundation vì người học phải xong Core Foundation mới vào daily_life.",
+ "_quyTac": "Giữ dạng THẬT kể cả dấu câu (「元気？」 giữ dấu ？). R5 tự bỏ dấu câu khi so khớp.",
+ "_thuTu": "_order[<lang>] là thứ tự học, dùng để tính 'vốn đã dạy TỚI bài X'. Core Foundation trước daily_life là sự thật sản phẩm (cổng coreFoundationCompleted), không đo được từ lessons.json; phần còn lại xếp theo unitId + order.",
+ "_generatedAt": "2026-07-30",
+ "_order": {
+  "ja": [
+   "ja-hiragana-u1-l1",
+   "ja-hiragana-u1-l2",
+   "ja-hiragana-u1-l3",
+   "ja-hiragana-u1-l4",
+   "ja-hiragana-u1-l5",
+   "ja-hiragana-u1-l6",
+   "ja-hiragana-u1-l7",
+   "ja-hiragana-u1-l8",
+   "ja-hiragana-u1-l9",
+   "ja-hiragana-u1-l10",
+   "ja-katakana-u4-l1",
+   "ja-katakana-u4-l2",
+   "ja-katakana-u4-l3",
+   "ja-katakana-u4-l4",
+   "ja-katakana-u4-l5",
+   "ja-katakana-u4-l6",
+   "ja-katakana-u4-l7",
+   "ja-katakana-u4-l8",
+   "ja-katakana-u4-l9",
+   "ja-katakana-u4-l10",
+   "ja-daily_life-m01-u1-l1",
+   "ja-daily_life-m01-u1-l2",
+   "ja-daily_life-m01-u1-l3",
+   "ja-daily_life-m01-u2-l1",
+   "ja-daily_life-m01-u2-l2"
+  ],
+  "en": [
+   "en-alphabet-u1-l1",
+   "en-alphabet-u1-l2",
+   "en-alphabet-u1-l3",
+   "en-alphabet-u1-l4",
+   "en-alphabet-u1-l5",
+   "en-alphabet-u1-l6"
+  ]
+ },
+ "ja": {
+  "ja-hiragana-u1-l1": [
+   "あ",
+   "い",
+   "う",
+   "え",
+   "お"
+  ],
+  "ja-hiragana-u1-l2": [
+   "か",
+   "き",
+   "く",
+   "け",
+   "こ"
+  ],
+  "ja-hiragana-u1-l3": [
+   "さ",
+   "し",
+   "す",
+   "せ",
+   "そ"
+  ],
+  "ja-hiragana-u1-l4": [
+   "た",
+   "ち",
+   "つ",
+   "て",
+   "と"
+  ],
+  "ja-hiragana-u1-l5": [
+   "な",
+   "に",
+   "ぬ",
+   "ね",
+   "の"
+  ],
+  "ja-hiragana-u1-l6": [
+   "は",
+   "ひ",
+   "ふ",
+   "へ",
+   "ほ"
+  ],
+  "ja-hiragana-u1-l7": [
+   "ま",
+   "み",
+   "む",
+   "め",
+   "も"
+  ],
+  "ja-hiragana-u1-l8": [
+   "や",
+   "ゆ",
+   "よ"
+  ],
+  "ja-hiragana-u1-l9": [
+   "ら",
+   "り",
+   "る",
+   "れ",
+   "ろ"
+  ],
+  "ja-hiragana-u1-l10": [
+   "わ",
+   "を",
+   "ん"
+  ],
+  "ja-katakana-u4-l1": [
+   "ア",
+   "イ",
+   "ウ",
+   "エ",
+   "オ"
+  ],
+  "ja-katakana-u4-l2": [
+   "カ",
+   "キ",
+   "ク",
+   "ケ",
+   "コ"
+  ],
+  "ja-katakana-u4-l3": [
+   "サ",
+   "シ",
+   "ス",
+   "セ",
+   "ソ"
+  ],
+  "ja-katakana-u4-l4": [
+   "タ",
+   "チ",
+   "ツ",
+   "テ",
+   "ト"
+  ],
+  "ja-katakana-u4-l5": [
+   "ナ",
+   "ニ",
+   "ヌ",
+   "ネ",
+   "ノ"
+  ],
+  "ja-katakana-u4-l6": [
+   "ハ",
+   "ヒ",
+   "フ",
+   "ヘ",
+   "ホ"
+  ],
+  "ja-katakana-u4-l7": [
+   "マ",
+   "ミ",
+   "ム",
+   "メ",
+   "モ"
+  ],
+  "ja-katakana-u4-l8": [
+   "ヤ",
+   "ユ",
+   "ヨ"
+  ],
+  "ja-katakana-u4-l9": [
+   "ラ",
+   "リ",
+   "ル",
+   "レ",
+   "ロ"
+  ],
+  "ja-katakana-u4-l10": [
+   "ワ",
+   "ヲ",
+   "ン"
+  ],
+  "ja-daily_life-m01-u1-l1": [
+   "おはようございます",
+   "こんにちは",
+   "こんばんは",
+   "はじめまして",
+   "～です",
+   "よろしくお願いします",
+   "こちらこそ、よろしくお願いします",
+   "さようなら"
+  ],
+  "ja-daily_life-m01-u1-l2": [
+   "名前",
+   "お名前",
+   "何ですか",
+   "お名前は何ですか",
+   "お名前は？",
+   "失礼ですが",
+   "すみません",
+   "もう一度",
+   "～さん",
+   "～ですね"
+  ],
+  "ja-daily_life-m01-u1-l3": [
+   "こちらこそ",
+   "そうですか",
+   "私も",
+   "失礼します",
+   "お先に失礼します",
+   "お元気で",
+   "じゃあ、また",
+   "来週"
+  ],
+  "ja-daily_life-m01-u2-l1": [
+   "お久しぶりです",
+   "久しぶり",
+   "お元気ですか",
+   "元気？",
+   "はい",
+   "おかげさまで",
+   "うん"
+  ],
+  "ja-daily_life-m01-u2-l2": [
+   "どのぐらい",
+   "慣れる",
+   "日本",
+   "生活",
+   "～になります",
+   "もう",
+   "まだ",
+   "去年",
+   "先月"
+  ]
+ },
+ "en": {
+  "en-alphabet-u1-l1": [
+   "A",
+   "E",
+   "I",
+   "O",
+   "U"
+  ],
+  "en-alphabet-u1-l2": [
+   "B",
+   "C",
+   "D",
+   "F",
+   "G"
+  ],
+  "en-alphabet-u1-l3": [
+   "H",
+   "J",
+   "K",
+   "L",
+   "M"
+  ],
+  "en-alphabet-u1-l4": [
+   "N",
+   "P",
+   "Q",
+   "R",
+   "S"
+  ],
+  "en-alphabet-u1-l5": [
+   "T",
+   "V",
+   "W",
+   "X",
+   "Y",
+   "Z"
+  ],
+  "en-alphabet-u1-l6": [
+   "A",
+   "M",
+   "S",
+   "Y",
+   "Z"
+  ]
+ }
 }

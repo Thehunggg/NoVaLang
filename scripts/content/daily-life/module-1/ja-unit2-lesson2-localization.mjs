@@ -229,6 +229,28 @@ add(
   '佐藤さんが19時30分に伊藤さんへメッセージを送り、日本に来てどのぐらいか、こちらの生活に慣れたかをたずねます。二つの空欄に合う言葉を入力してください。',
 );
 
+// ── Vai vế trong tình huống hội thoại (G6 — thêm 2026-07-30) ────────────
+add(
+  'Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và chưa thân nên cả hai giữ thể lịch sự — hỏi chuyện riêng (sang Nhật bao lâu rồi) ở mức này là bình thường, không tọc mạch. Bối cảnh: hai người gặp nhau, một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.',
+  'Roles: two people of equal standing, acquainted but not close. Equal and not close, so both keep polite form — asking something personal (how long you have been in Japan) at this level is ordinary, not prying. Setting: the two meet, and one asks how long the other has been in Japan and whether they have settled in.',
+  '関係：対等な二人で、知り合いですが親しくはありません。対等で親しくないので二人とも丁寧体を保ちます。この関係で「日本に来てどのぐらいか」を聞くのは普通のことで、立ち入りすぎにはなりません。場面：二人が会い、一方が日本に来てどのぐらいか、もう慣れたかをたずねます。',
+);
+add(
+  'Vai vế: vẫn hai người ngang vai chưa thân, cùng mức lịch sự như nhóm trên — cặp vai vế giữ nguyên để người học thấy chỗ khác biệt nằm ở CÁCH TRẢ LỜI, không nằm ở quan hệ. Bối cảnh: cùng câu hỏi ấy, nhưng người này đáp bằng thời điểm đã đến thay vì độ dài thời gian.',
+  'Roles: again two unacquainted equals at the same level of politeness as the group above — the relationship is held constant so learners see that the difference lies in HOW THE ANSWER IS GIVEN, not in the relationship. Setting: the same question, but this person answers with the date they arrived rather than a length of time.',
+  '関係：こちらも親しくない対等な二人で、丁寧さも上のグループと同じです。関係をあえて同じにしてあるので、違いは答え方にあり、関係にはないことがわかります。場面：同じ質問ですが、この人は期間ではなく来た時期で答えます。',
+);
+add(
+  'Vai vế: giáo viên hỏi học viên của mình — quan hệ trên–dưới, khác hai nhóm ngang vai ở trên. Ở bài này người trên vẫn hỏi bằng thể lịch sự (xem ghi chú miễn trừ G6): trên–dưới KHÔNG bắt buộc người trên phải nói trống. Người dưới đáp lịch sự, và khi phải nói điều chưa hay thì bỏ lửng câu thay vì nói thẳng "chưa". Bối cảnh: người mới sang tháng trước, được hỏi đã quen chưa.',
+  'Roles: a teacher asking their own student — an unequal, senior-to-junior relationship, unlike the two equal-standing groups above. In this lesson the senior still asks in polite form (see the G6 exemption note): being senior does NOT oblige a speaker to use plain form. The junior answers politely and, having something less than good to report, trails off rather than saying "not yet" outright. Setting: someone who arrived only last month is asked whether they have settled in.',
+  '関係：先生が自分の学生にたずねる場面で、上下関係があり、上の二つの対等なグループとは違います。このレッスンでは目上の人も丁寧体でたずねます（G6の適用除外メモを参照）。目上だからといって普通体を使わなければならないわけではありません。目下の人は丁寧に答え、よくない知らせを言うときは「まだ」とはっきり言わず言いさします。場面：先月来たばかりの人が、もう慣れたかとたずねられます。',
+);
+add(
+  'Vai vế: hai cặp quan hệ — một cặp ngang vai quen chưa thân, một cặp giáo viên với học viên của mình. Cả hai cặp đều giữ thể lịch sự (xem ghi chú miễn trừ G6), nên chỗ khác nhau nằm ở NỘI DUNG trả lời chứ không ở thể nói. Bối cảnh: hai cuộc hỏi thăm; cùng một câu hỏi, một người đáp là đã quen, một người đáp là chưa.',
+  'Roles: two relationships — one pair of equals who are acquainted but not close, and a teacher with their own student. Both pairs keep polite form (see the G6 exemption note), so the difference lies in WHAT the answers say, not in the speech style. Setting: two exchanges; the same question, with one person answering that they have settled in and the other that they have not.',
+  '関係：二つの間柄があります。親しくない対等な二人と、先生とその学生です。どちらも丁寧体を保つので（G6の適用除外メモを参照）、違いは話し方ではなく答えの中身にあります。場面：二つのやりとり。同じ質問に対して、一人はもう慣れたと答え、もう一人はまだだと答えます。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];

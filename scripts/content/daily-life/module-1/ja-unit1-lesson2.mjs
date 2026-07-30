@@ -190,7 +190,7 @@ const PRACTICE_EXERCISES = [
     id: 'ja-daily_life-m01-u1-l2-practice-14', order: 14, plan: 'plus', type: 'real_world_practice_dialogue',
     nonGraded: true,
     scenarioTitle: 'Làm quen và hỏi tên trong nhóm',
-    scenarioDescription: 'Ba người gặp nhau. Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận, và khi nghe chưa rõ thì nhờ nói lại.',
+    scenarioDescription: 'Vai vế: ba người ngang vai, chưa ai quen ai, không ai trên ai dưới — nên cả ba giữ cùng một mức lịch sự, không ai được nói trống không với ai. Bối cảnh: Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận lại, và khi nghe chưa rõ thì nhờ nói lại.',
     characterIds: ['sato', 'tanaka', 'ito'],
     dialogueLines: [
       dialogueLine('sato', 'こんにちは。はじめまして。佐藤です。', 'こんにちは。はじめまして。さとうです。', 'Xin chào. Rất vui được gặp bạn. Tôi là Satō.', 'こんにちは。はじめまして。さとうです'),
@@ -274,7 +274,7 @@ const JA_UNIT1_LESSON2_SOURCE = {
       ],
       dialogueGroups: [
         {
-          id: 'ask-name-short', title: 'Hỏi tên một cách ngắn gọn', situation: 'Hai người vừa gặp, một người hỏi tên ngắn gọn.',
+          id: 'ask-name-short', title: 'Hỏi tên một cách ngắn gọn', situation: 'Vai vế: hai người ngang vai, chưa quen nhau, không ai trên ai dưới. Vì ngang vai nên hỏi tên ngắn gọn được, chỉ cần một tiếng すみません mở lời. Bối cảnh: hai người vừa gặp, một người hỏi tên người kia.',
           lines: [
             dialogueLine('tanaka', 'こんにちは。', 'こんにちは。', 'Xin chào.', 'こんにちは'),
             dialogueLine('ito', 'こんにちは。', 'こんにちは。', 'Xin chào.', 'こんにちは'),
@@ -285,7 +285,7 @@ const JA_UNIT1_LESSON2_SOURCE = {
           explanation: ['お名前は？ là cách hỏi tên ngắn gọn, tự nhiên khi ngữ cảnh đã rõ.', '～さんですね dùng để xác nhận tên vừa nghe.'],
         },
         {
-          id: 'ask-name-polite', title: 'Hỏi tên lịch sự hơn', situation: 'Hai người gặp nhau lần đầu và nói chuyện lịch sự.',
+          id: 'ask-name-polite', title: 'Hỏi tên lịch sự hơn', situation: 'Vai vế: cũng hai người ngang vai chưa quen, nhưng đây là tình huống trang trọng hơn nhóm trên — nên người hỏi mở lời bằng 失礼ですが và hỏi trọn câu. Cùng một cặp vai vế, mức trang trọng của bối cảnh nâng lên thì cách hỏi dài ra. Bối cảnh: hai người gặp nhau lần đầu và giới thiệu tên.',
           lines: [
             dialogueLine('sato', 'はじめまして。佐藤です。', 'はじめまして。さとうです。', 'Rất vui được gặp bạn. Tôi là Satō.', 'はじめまして。さとうです'),
             dialogueLine('tanaka', 'はじめまして。', 'はじめまして。', 'Rất vui được gặp bạn.', 'はじめまして'),
@@ -296,7 +296,7 @@ const JA_UNIT1_LESSON2_SOURCE = {
           explanation: ['失礼ですが làm cho câu hỏi lịch sự hơn.', 'お名前は何ですか。 là cách hỏi tên đầy đủ và lịch sự.'],
         },
         {
-          id: 'ask-name-repeat', title: 'Khi không nghe rõ tên', situation: 'Người nghe không nghe rõ tên và nhờ nói lại.',
+          id: 'ask-name-repeat', title: 'Khi không nghe rõ tên', situation: 'Vai vế: hai người ngang vai, chưa quen. Ngang vai nên nhờ nói lại là chuyện bình thường, không mất lịch sự — người kia còn chủ động đánh vần từng âm. Bối cảnh: người hỏi không nghe rõ tên và nhờ nhắc lại.',
           lines: [
             dialogueLine('sato', 'すみません、お名前は？', 'すみません、おなまえは？', 'Xin lỗi, tên bạn là gì?', 'すみません、おなまえは'),
             dialogueLine('ito', '伊藤です。', 'いとうです。', 'Tôi là Itō.', 'いとうです'),

@@ -269,6 +269,28 @@ add(
   '初めて会った二人がメッセージをやりとりします。一方が相手の名前をたずね、聞いた名前を確認のため言い直します。二つの空欄に合う言葉を入力してください。',
 );
 
+// ── Vai vế trong tình huống hội thoại (G6 — thêm 2026-07-30) ────────────
+add(
+  'Vai vế: hai người ngang vai, chưa quen nhau, không ai trên ai dưới. Vì ngang vai nên hỏi tên ngắn gọn được, chỉ cần một tiếng すみません mở lời. Bối cảnh: hai người vừa gặp, một người hỏi tên người kia.',
+  'Roles: two people of equal standing who do not know each other, neither senior to the other. Because they are equals, a short question about the name is fine — one すみません is enough to open. Setting: the two have just met, and one asks the other their name.',
+  '関係：知り合いではない対等な二人で、上下関係はありません。対等なので名前は短くたずねられ、「すみません」の一言で切り出せます。場面：会ったばかりの二人、一方が相手の名前をたずねます。',
+);
+add(
+  'Vai vế: cũng hai người ngang vai chưa quen, nhưng đây là tình huống trang trọng hơn nhóm trên — nên người hỏi mở lời bằng 失礼ですが và hỏi trọn câu. Cùng một cặp vai vế, mức trang trọng của bối cảnh nâng lên thì cách hỏi dài ra. Bối cảnh: hai người gặp nhau lần đầu và giới thiệu tên.',
+  'Roles: again two unacquainted equals, but this setting is more formal than the group above — so the asker opens with 失礼ですが and asks in a full sentence. Same pair, same standing: raise the formality of the setting and the question grows longer. Setting: the two meet for the first time and give their names.',
+  '関係：こちらも知り合いではない対等な二人ですが、上のグループより改まった場面です。そのため「失礼ですが」と切り出し、文を最後まで言ってたずねます。同じ関係でも、場面が改まればたずね方は長くなります。場面：初対面の二人が名前を伝え合います。',
+);
+add(
+  'Vai vế: hai người ngang vai, chưa quen. Ngang vai nên nhờ nói lại là chuyện bình thường, không mất lịch sự — người kia còn chủ động đánh vần từng âm. Bối cảnh: người hỏi không nghe rõ tên và nhờ nhắc lại.',
+  'Roles: two unacquainted equals. Between equals, asking for a repeat is ordinary and not impolite — the other person even spells the name out sound by sound. Setting: the asker did not catch the name and asks for it again.',
+  '関係：知り合いではない対等な二人。対等な相手なら聞き返すのは普通のことで、失礼にはなりません。相手は一音ずつ言い直してくれます。場面：名前が聞き取れず、もう一度お願いします。',
+);
+add(
+  'Vai vế: ba người ngang vai, chưa ai quen ai, không ai trên ai dưới — nên cả ba giữ cùng một mức lịch sự, không ai được nói trống không với ai. Bối cảnh: Satō và Tanaka chào nhau, rồi Itō đến. Họ hỏi tên, xác nhận lại, và khi nghe chưa rõ thì nhờ nói lại.',
+  'Roles: three people of equal standing, none acquainted with the others, none senior — so all three hold the same level of politeness, and nobody drops into plain form with anybody. Setting: Satō and Tanaka greet each other, then Itō arrives. They ask names, confirm them, and ask for a repeat when something is unclear.',
+  '関係：対等な三人で、互いに知り合いではなく、上下関係もありません。そのため三人とも同じ丁寧さを保ち、誰に対してもくだけた言い方はしません。場面：佐藤さんと田中さんがあいさつし、そこへ伊藤さんが来ます。名前をたずね、確認し、聞き取れないときはもう一度お願いします。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];

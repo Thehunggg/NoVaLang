@@ -203,6 +203,28 @@ add(
   '久しぶりの知り合い二人がメッセージをやりとりします。あいさつをして、おたがいの様子をたずね合います。二人とも丁寧な言い方を使います。二つの空欄に合う言葉を入力してください。',
 );
 
+// ── Vai vế trong tình huống hội thoại (G6 — thêm 2026-07-30) ────────────
+add(
+  'Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và không thân thì cả hai cùng chọn thể lịch sự, và quan trọng là chọn GIỐNG NHAU. Bối cảnh: lâu ngày không gặp, hai người chào hỏi nhau.',
+  'Roles: two people of equal standing, acquainted but not close. Equal and not close means both choose polite form — and, importantly, both choose the SAME one. Setting: they have not met for a long time and greet each other.',
+  '関係：対等な二人で、知り合いですが親しくはありません。対等で親しくない場合、二人とも丁寧体を選びます。そして大事なのは、二人が同じ話し方を選ぶという点です。場面：久しぶりに会ってあいさつします。',
+);
+add(
+  'Vai vế: hai người ngang vai và ĐÃ THÂN — khác nhóm trên đúng ở chỗ độ thân. Thân rồi thì cả hai cùng bỏ thể lịch sự, vẫn là chọn giống nhau. Bối cảnh: lâu ngày không gặp, hai người bạn chào hỏi nhau.',
+  'Roles: two people of equal standing who are ALREADY CLOSE — the one thing that differs from the group above is closeness. Once close, both drop polite form, and they still match each other. Setting: two friends who have not met for a long time greet each other.',
+  '関係：対等で、すでに親しい二人。上のグループとの違いは親しさだけです。親しくなれば二人とも丁寧体をやめますが、やはり同じ話し方を選んでいます。場面：久しぶりに会った友だち同士があいさつします。',
+);
+add(
+  'Vai vế: giáo viên và học viên cũ của mình — quan hệ TRÊN–DƯỚI, khác hẳn hai nhóm ngang vai ở trên. Chính vì lệch vai nên hai bên KHÔNG dùng cùng một thể: người trên hỏi bằng thể thường, người dưới vẫn đáp bằng thể lịch sự. Đây là chỗ thấy rõ nhất rằng thể nói do vai vế quyết định, không do độ thân. Bối cảnh: lâu ngày không gặp, hai thầy trò chào hỏi nhau.',
+  'Roles: a teacher and their former student — an UNEQUAL, senior-to-junior relationship, unlike the two equal-standing groups above. Precisely because the standing is unequal, the two do NOT use the same form: the senior asks in plain form while the junior still answers in polite form. This is where it shows most clearly that speech style is decided by standing, not by closeness. Setting: teacher and student meet again after a long time and greet each other.',
+  '関係：先生と、その元学生。上下関係があり、上の二つの対等なグループとは違います。立場が違うからこそ、二人は同じ話し方をしません。目上の人は普通体でたずね、目下の人は丁寧体で答えます。話し方を決めるのは親しさではなく立場だと、いちばんよくわかる場面です。場面：久しぶりに会った先生と学生があいさつします。',
+);
+add(
+  'Vai vế: ba cặp quan hệ khác nhau — hai người quen chưa thân, hai người bạn đã thân, và một cặp thầy trò lệch vai. Cùng một việc chào hỏi, nhưng vai vế và độ thân khác nhau nên thể nói chọn khác nhau; riêng cặp thầy trò thì hai bên dùng hai thể khác nhau. Bối cảnh: ba cuộc gặp lại sau lâu ngày không gặp.',
+  'Roles: three different relationships — two acquaintances who are not close, two friends who are, and a teacher-and-student pair of unequal standing. The same act of greeting, but different standing and closeness lead to different speech styles; in the teacher-and-student pair the two sides use different forms from each other. Setting: three reunions after a long time apart.',
+  '関係：三つの異なる間柄です。親しくない知り合い同士、すでに親しい友だち同士、そして立場の違う先生と学生。同じあいさつでも、立場と親しさが違えば選ぶ話し方も変わります。先生と学生の組だけは、二人が別々の話し方を使います。場面：久しぶりの再会が三つあります。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];

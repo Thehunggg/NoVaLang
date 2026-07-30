@@ -183,7 +183,7 @@ const PRACTICE_EXERCISES = [
     id: 'ja-daily_life-m01-u1-l3-practice-14', order: 14, plan: 'plus', type: 'real_world_practice_dialogue',
     nonGraded: true,
     scenarioTitle: 'Chào tạm biệt sau khi làm quen',
-    scenarioDescription: 'Ba người vừa làm quen. Cuối buổi, họ đáp lời làm quen rồi lần lượt xin phép về, hẹn gặp lại và dặn nhau giữ sức khỏe.',
+    scenarioDescription: 'Vai vế: ba người ngang vai, vừa làm quen trong cùng một buổi, chưa ai thân với ai — nên lời chào về vẫn ở mức lịch sự, chưa rút gọn như giữa bạn thân. Bối cảnh: cuối buổi, họ đáp lời làm quen rồi lần lượt xin phép về, hẹn gặp lại và dặn nhau giữ sức khỏe.',
     characterIds: ['tanaka', 'sato', 'ito'],
     dialogueLines: [
       dialogueLine('sato', '田中さん、そろそろ失礼します。', 'たなかさん、そろそろしつれいします。', 'Tanaka, tôi xin phép về trước đây.', 'たなかさん、そろそろしつれいします'),
@@ -268,7 +268,7 @@ const JA_UNIT1_LESSON3_SOURCE = {
       ],
       dialogueGroups: [
         {
-          id: 'respond-intro', title: 'Đáp lại khi được làm quen', situation: 'Hai người vừa giới thiệu tên, một người đáp lại thiện chí.',
+          id: 'respond-intro', title: 'Đáp lại khi được làm quen', situation: 'Vai vế: hai người ngang vai, vừa mới quen nhau trong cùng một buổi. Ngang vai nên lời đáp là こちらこそ — đáp lại ĐÚNG mức người kia đã dùng, không hạ xuống cũng không nâng lên. Bối cảnh: hai người vừa giới thiệu tên xong.',
           lines: [
             dialogueLine('sato', 'はじめまして。佐藤です。よろしくお願いします。', 'はじめまして。さとうです。よろしくおねがいします。', 'Rất vui được gặp. Tôi là Satō. Rất mong được làm quen.', 'はじめまして。さとうです。よろしくおねがいします'),
             dialogueLine('tanaka', 'こちらこそ。田中です。よろしくお願いします。', 'こちらこそ。たなかです。よろしくおねがいします。', 'Tôi cũng vậy. Tôi là Tanaka. Rất mong được làm quen.', 'こちらこそ。たなかです。よろしくおねがいします'),
@@ -278,7 +278,7 @@ const JA_UNIT1_LESSON3_SOURCE = {
           explanation: ['こちらこそ đáp lại lời chúc よろしくお願いします.', 'そうですか thể hiện mình đã nghe và tiếp nhận thông tin.'],
         },
         {
-          id: 'leave-polite', title: 'Rời lớp một cách lịch sự', situation: 'Hết buổi, một người xin phép về trước.',
+          id: 'leave-polite', title: 'Rời lớp một cách lịch sự', situation: 'Vai vế: hai người ngang vai trong một lớp học, quen nhau nhưng chưa thân. お先に失礼します là lời xin phép của người RỜI ĐI TRƯỚC khi người khác còn ở lại — nó đánh dấu thứ tự ra về, không đánh dấu trên–dưới. Bối cảnh: hết buổi học, một người về trước.',
           lines: [
             dialogueLine('tanaka', 'じゃあ、お先に失礼します。', 'じゃあ、おさきにしつれいします。', 'Vậy, tôi xin phép về trước.', 'じゃあ、おさきにしつれいします'),
             dialogueLine('sato', 'はい、また来週。', 'はい、またらいしゅう。', 'Vâng, hẹn tuần sau.', 'はい、またらいしゅう'),
@@ -288,7 +288,7 @@ const JA_UNIT1_LESSON3_SOURCE = {
           explanation: ['お先に失礼します dùng khi rời đi trước người khác.', 'お元気で dùng khi chia tay từ một tuần trở lên.'],
         },
         {
-          id: 'casual-bye', title: 'Bạn bè chào tạm biệt', situation: 'Hai người bạn chia tay, hẹn tuần sau.',
+          id: 'casual-bye', title: 'Bạn bè chào tạm biệt', situation: 'Vai vế: hai người bạn ngang vai đã thân — thân hơn cặp ở nhóm trên. Đủ thân nên đáp được bằng うん thay cho はい, và câu chào cuối rút ngắn còn じゃあ、また. Bối cảnh: hai người chia tay, hẹn gặp lại tuần sau.',
           lines: [
             dialogueLine('ito', 'じゃあ、また来週。', 'じゃあ、またらいしゅう。', 'Thôi, hẹn tuần sau.', 'じゃあ、またらいしゅう'),
             dialogueLine('tanaka', 'また来週。お元気で。', 'またらいしゅう。おげんきで。', 'Hẹn tuần sau. Giữ sức khỏe nhé.', 'またらいしゅう。おげんきで'),

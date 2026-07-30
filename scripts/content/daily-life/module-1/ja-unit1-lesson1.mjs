@@ -212,7 +212,7 @@ const PRACTICE_EXERCISES = [
     id: 'ja-daily_life-m01-u1-l1-practice-14', order: 14, plan: 'plus', type: 'real_world_practice_dialogue',
     nonGraded: true,
     scenarioTitle: 'Hỏi đường đến ký túc xá',
-    scenarioDescription: 'Buổi tối, du học sinh Tanaka không dùng được điện thoại nên không biết đường đến ký túc xá Sakura. Tanaka gặp Sato và hỏi đường. Sato dẫn Tanaka đến nơi.',
+    scenarioDescription: 'Vai vế: hai người HOÀN TOÀN LẠ, không ai trên ai dưới, nhưng một bên đang nhờ vả bên kia. Người nhờ giữ thể lịch sự suốt đoạn và cảm ơn nhiều lần; người giúp cũng đáp lịch sự vì chưa quen. Bối cảnh: buổi tối, du học sinh Tanaka không dùng được điện thoại nên không biết đường đến ký túc xá Sakura. Tanaka gặp Sato và hỏi đường. Sato dẫn Tanaka đến nơi.',
     characterIds: ['tanaka', 'sato'],
     dialogueLines: [
       dialogueLine('tanaka', 'こんばんは。すみません、ちょっとよろしいですか。', 'こんばんは。すみません、ちょっとよろしいですか。', 'Chào buổi tối. Xin lỗi, tôi có thể hỏi bạn một chút được không?', 'こんばんは。すみません、ちょっとよろしいですか。'),
@@ -361,17 +361,17 @@ const JA_UNIT1_LESSON1_SOURCE = {
       ],
       dialogueGroups: [
         {
-          id: 'morning-classroom', title: 'Buổi sáng trong lớp học', situation: 'Một học sinh gặp giáo viên vào buổi sáng.',
+          id: 'morning-classroom', title: 'Buổi sáng trong lớp học', situation: 'Vai vế: giáo viên và học viên của mình — quan hệ trên–dưới. Người dưới chào trước, và vì có khoảng cách vai vế nên cả hai giữ thể lịch sự suốt lượt trao đổi. Bối cảnh: đầu buổi học, hai người gặp nhau trong lớp.',
           lines: [dialogueLine('teacher', 'おはようございます。', 'おはようございます。', 'Chào buổi sáng.'), dialogueLine('tanaka', 'おはようございます。', 'おはようございます。', 'Chào buổi sáng.'), dialogueLine('teacher', '田中さん、今日もよろしくお願いします。', 'たなかさん、きょうもよろしくおねがいします。', 'Tanaka, hôm nay cũng cùng cố gắng nhé.'), dialogueLine('tanaka', 'はい、よろしくお願いします。', 'はい、よろしくおねがいします。', 'Vâng, mong thầy/cô giúp đỡ.')],
           explanation: ['Dùng おはようございます vì đây là buổi sáng.', 'Học sinh nói với giáo viên nên không dùng おはよう！', 'よろしくお願いします ở đây thể hiện thiện chí học tập và hợp tác, không chỉ dùng khi mới gặp.'],
         },
         {
-          id: 'same-age-first-meeting', title: 'Hai người cùng tuổi gặp lần đầu', situation: 'Hai sinh viên ngồi cạnh nhau trong buổi định hướng.',
+          id: 'same-age-first-meeting', title: 'Hai người cùng tuổi gặp lần đầu', situation: 'Vai vế: hai sinh viên cùng tuổi, ngang vai, chưa từng quen nhau. Ngang vai nhưng MỚI gặp, nên vẫn dùng thể lịch sự: quyết định thể nói ở đây do độ THÂN, không do trên–dưới. Bối cảnh: hai người ngồi cạnh nhau trong buổi định hướng.',
           lines: [dialogueLine('tanaka', 'こんにちは。はじめまして。田中です。', 'こんにちは。はじめまして。たなかです。', 'Xin chào. Rất vui được gặp bạn lần đầu. Mình là Tanaka.'), dialogueLine('sato', 'はじめまして。佐藤です。', 'はじめまして。さとうです。', 'Rất vui được gặp bạn lần đầu. Mình là Sato.'), dialogueLine('tanaka', 'よろしくお願いします。', 'よろしくおねがいします。', 'Rất mong được làm quen.'), dialogueLine('sato', 'こちらこそ、よろしくお願いします。', 'こちらこそ、よろしくおねがいします。', 'Mình cũng rất mong được làm quen.')],
           explanation: ['Hai người cùng tuổi nhưng mới gặp nên dùng cách lịch sự cơ bản.', 'Không cần chuyển ngay sang cách quá thân mật.', 'Khi quan hệ thoải mái hơn, họ có thể dùng cách nói ngắn hơn.'],
         },
         {
-          id: 'move-to-casual', title: 'Chuyển sang cách nói thân mật', situation: 'Tanaka và Sato đã trò chuyện một lúc và đồng ý nói chuyện thoải mái hơn.',
+          id: 'move-to-casual', title: 'Chuyển sang cách nói thân mật', situation: 'Vai vế: vẫn hai sinh viên ngang vai ở nhóm trên, nhưng đã trò chuyện một lúc và tự thoả thuận bỏ さん. Cùng một cặp vai vế, đổi độ thân thì đổi thể nói — đó là điều nhóm này cho thấy. Bối cảnh: cuối buổi định hướng, hai người rủ nhau nói chuyện thoải mái hơn.',
           lines: [dialogueLine('tanaka', 'あらためて、田中。よろしく！', 'あらためて、たなか。よろしく！', 'Nói lại nhé, mình là Tanaka. Làm quen nhé!'), dialogueLine('sato', '佐藤。よろしく！', 'さとう。よろしく！', 'Mình là Sato. Làm quen nhé!'), dialogueLine('tanaka', '佐藤さんじゃなくて、佐藤でいい？', 'さとうさんじゃなくて、さとうでいい？', 'Không cần gọi “Sato-san”, gọi Sato thôi được chứ?'), dialogueLine('sato', 'うん、いいよ。田中もよろしく！', 'うん、いいよ。たなかもよろしく！', 'Ừ, được. Tanaka cũng vậy nhé!'), dialogueLine('tanaka', 'じゃあ、また明日！', 'じゃあ、またあした！', 'Vậy mai gặp lại nhé!'), dialogueLine('sato', 'またね！', 'またね！', 'Gặp lại nhé!')],
           explanation: ['よろしく！ là dạng thân mật của よろしくお願いします trong quan hệ phù hợp.', 'Không phải cứ gặp lần đầu là dùng ngay よろしく！', 'Việc chuyển sang cách nói thân mật cần dựa vào mức độ thoải mái, tuổi tác, quan hệ và bối cảnh.'],
         },

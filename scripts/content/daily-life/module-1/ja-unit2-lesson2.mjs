@@ -194,7 +194,7 @@ const PRACTICE_EXERCISES = [
     id: 'ja-daily_life-m01-u2-l2-practice-14', order: 14, plan: 'plus', type: 'real_world_practice_dialogue',
     nonGraded: true,
     scenarioTitle: 'Hai lần được hỏi thăm',
-    scenarioDescription: 'Hai cuộc hỏi thăm khác nhau. Cùng một câu hỏi, hai người trả lời theo hai cách: một người đã quen, một người thì chưa.',
+    scenarioDescription: 'Vai vế: hai cặp quan hệ — một cặp ngang vai quen chưa thân, một cặp giáo viên với học viên của mình. Cả hai cặp đều giữ thể lịch sự (xem ghi chú miễn trừ G6), nên chỗ khác nhau nằm ở NỘI DUNG trả lời chứ không ở thể nói. Bối cảnh: hai cuộc hỏi thăm; cùng một câu hỏi, một người đáp là đã quen, một người đáp là chưa.',
     characterIds: ['sato', 'ito', 'sensei'],
     dialogueLines: [
       dialogueLine('sato', '日本に来て、どのぐらいですか？', 'にほんにきて、どのぐらいですか？', 'Bạn đến Nhật được bao lâu rồi?', 'にほんにきて、どのぐらいですか'),
@@ -272,7 +272,7 @@ const JA_UNIT2_LESSON2_SOURCE = {
       ],
       dialogueGroups: [
         {
-          id: 'one-year', title: 'Đã ở một năm, đã quen', situation: 'Hai người quen gặp nhau. Một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.',
+          id: 'one-year', title: 'Đã ở một năm, đã quen', situation: 'Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và chưa thân nên cả hai giữ thể lịch sự — hỏi chuyện riêng (sang Nhật bao lâu rồi) ở mức này là bình thường, không tọc mạch. Bối cảnh: hai người gặp nhau, một người hỏi thăm người kia đã ở Nhật bao lâu và đã quen chưa.',
           lines: [
             dialogueLine('sato', '日本に来て、どのぐらいになりますか？', 'にほんにきて、どのぐらいになりますか？', 'Bạn đến Nhật được bao lâu rồi?', 'にほんにきて、どのぐらいになりますか'),
             dialogueLine('ito', '1年になります。', 'いちねんになります。', 'Được tròn một năm rồi ạ.', 'いちねんになります'),
@@ -282,7 +282,7 @@ const JA_UNIT2_LESSON2_SOURCE = {
           explanation: ['どのぐらいになりますか hỏi đã được bao lâu; đáp bằng mốc thời gian + になります.', 'もう慣れましたか hỏi đã quen chưa; đáp はい là đã quen.'],
         },
         {
-          id: 'last-september', title: 'Đến từ tháng 9 năm ngoái', situation: 'Cùng câu hỏi, nhưng người này trả lời bằng thời điểm đã đến thay vì độ dài thời gian.',
+          id: 'last-september', title: 'Đến từ tháng 9 năm ngoái', situation: 'Vai vế: vẫn hai người ngang vai chưa thân, cùng mức lịch sự như nhóm trên — cặp vai vế giữ nguyên để người học thấy chỗ khác biệt nằm ở CÁCH TRẢ LỜI, không nằm ở quan hệ. Bối cảnh: cùng câu hỏi ấy, nhưng người này đáp bằng thời điểm đã đến thay vì độ dài thời gian.',
           lines: [
             dialogueLine('sato', '日本に来て、どのぐらいですか？', 'にほんにきて、どのぐらいですか？', 'Bạn đến Nhật được bao lâu rồi?', 'にほんにきて、どのぐらいですか'),
             dialogueLine('tanaka', '去年の9月に来ました。', 'きょねんのくがつにきました。', 'Tôi đến vào tháng 9 năm ngoái.', 'きょねんのくがつにきました'),
@@ -292,7 +292,7 @@ const JA_UNIT2_LESSON2_SOURCE = {
           explanation: ['Câu hỏi どのぐらい có thể đáp bằng ĐỘ DÀI (1年) hoặc bằng THỜI ĐIỂM đã đến (去年の9月).', 'はい、おかげさまで lịch sự hơn はい trần — cụm này đã học ở bài trước.'],
         },
         {
-          id: 'not-yet', title: 'Mới đến, chưa quen', situation: 'Người vừa đến tháng trước, được hỏi đã quen chưa và đáp là vẫn chưa.',
+          id: 'not-yet', title: 'Mới đến, chưa quen', situation: 'Vai vế: giáo viên hỏi học viên của mình — quan hệ trên–dưới, khác hai nhóm ngang vai ở trên. Ở bài này người trên vẫn hỏi bằng thể lịch sự (xem ghi chú miễn trừ G6): trên–dưới KHÔNG bắt buộc người trên phải nói trống. Người dưới đáp lịch sự, và khi phải nói điều chưa hay thì bỏ lửng câu thay vì nói thẳng "chưa". Bối cảnh: người mới sang tháng trước, được hỏi đã quen chưa.',
           lines: [
             dialogueLine('sensei', '日本に来て、どのぐらいになりますか？', 'にほんにきて、どのぐらいになりますか？', 'Em đến Nhật được bao lâu rồi?', 'にほんにきて、どのぐらいになりますか'),
             dialogueLine('sato', '私は、先月、来ました。', 'わたしは、せんげつ、きました。', 'Em mới đến tháng trước ạ.', 'わたしは、せんげつ、きました'),

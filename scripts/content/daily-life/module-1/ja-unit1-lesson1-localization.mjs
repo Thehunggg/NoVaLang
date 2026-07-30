@@ -428,6 +428,28 @@ add(
   '田中さんと佐藤さんが初めてメッセージをやりとりします。あいさつをして、順番に名前を言い、これからよろしくという一言を伝えます。二つの空欄に合う言葉を入力してください。',
 );
 
+// ── Vai vế trong tình huống hội thoại (G6 — thêm 2026-07-30) ────────────
+add(
+  'Vai vế: giáo viên và học viên của mình — quan hệ trên–dưới. Người dưới chào trước, và vì có khoảng cách vai vế nên cả hai giữ thể lịch sự suốt lượt trao đổi. Bối cảnh: đầu buổi học, hai người gặp nhau trong lớp.',
+  'Roles: a teacher and their own student — an unequal, senior-to-junior relationship. The junior greets first, and because of the gap in standing both keep polite form throughout the exchange. Setting: the start of class, the two meet in the classroom.',
+  '関係：先生と自分の学生。上下関係があります。目下の人が先にあいさつし、立場の差があるため二人とも最後まで丁寧体を使います。場面：授業の始め、教室で二人が会います。',
+);
+add(
+  'Vai vế: hai sinh viên cùng tuổi, ngang vai, chưa từng quen nhau. Ngang vai nhưng MỚI gặp, nên vẫn dùng thể lịch sự: quyết định thể nói ở đây do độ THÂN, không do trên–dưới. Bối cảnh: hai người ngồi cạnh nhau trong buổi định hướng.',
+  'Roles: two students of the same age, equal standing, who have never met. Equal standing but a FIRST meeting, so polite form still applies: what decides the speech style here is CLOSENESS, not rank. Setting: the two sit next to each other at orientation.',
+  '関係：同い年の学生二人。対等ですが、初対面です。対等でも初対面なので丁寧体を使います。ここで話し方を決めるのは上下関係ではなく親しさです。場面：オリエンテーションで隣同士に座っています。',
+);
+add(
+  'Vai vế: vẫn hai sinh viên ngang vai ở nhóm trên, nhưng đã trò chuyện một lúc và tự thoả thuận bỏ さん. Cùng một cặp vai vế, đổi độ thân thì đổi thể nói — đó là điều nhóm này cho thấy. Bối cảnh: cuối buổi định hướng, hai người rủ nhau nói chuyện thoải mái hơn.',
+  'Roles: the same two equal-standing students as above, but they have talked for a while and agreed to drop さん. Same pair, same standing — change the closeness and the speech style changes with it; that is what this group shows. Setting: the end of orientation, the two agree to speak more freely.',
+  '関係：上のグループと同じ対等な学生二人ですが、しばらく話して「さん」をやめることにしました。同じ関係でも、親しさが変われば話し方も変わる。それがこのグループの見どころです。場面：オリエンテーションの終わり、二人はもっと気楽に話すことにします。',
+);
+add(
+  'Vai vế: hai người HOÀN TOÀN LẠ, không ai trên ai dưới, nhưng một bên đang nhờ vả bên kia. Người nhờ giữ thể lịch sự suốt đoạn và cảm ơn nhiều lần; người giúp cũng đáp lịch sự vì chưa quen. Bối cảnh: buổi tối, du học sinh Tanaka không dùng được điện thoại nên không biết đường đến ký túc xá Sakura. Tanaka gặp Sato và hỏi đường. Sato dẫn Tanaka đến nơi.',
+  'Roles: two COMPLETE strangers, neither senior to the other, but one is asking the other for a favour. The one asking keeps polite form the whole way and thanks the other repeatedly; the one helping also answers politely because they are not acquainted. Setting: at night, exchange student Tanaka cannot use their phone and does not know the way to Sakura Dormitory. Tanaka meets Sato and asks for directions. Sato walks Tanaka there.',
+  '関係：まったくの初対面で、上下関係はありませんが、一方がもう一方に頼みごとをしています。頼む側は最後まで丁寧体を使い、何度もお礼を言います。助ける側も知り合いではないので丁寧に答えます。場面：夜、留学生の田中さんはスマホが使えず、さくら寮への道がわかりません。佐藤さんに会って道をたずね、佐藤さんが連れて行ってくれます。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];

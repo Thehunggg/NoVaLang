@@ -299,6 +299,28 @@ add(
   '知り合ったばかりの二人がメッセージをやりとりします。あいさつに返事をして、来週また会う約束をし、別れのあいさつをします。二つの空欄に合う言葉を入力してください。',
 );
 
+// ── Vai vế trong tình huống hội thoại (G6 — thêm 2026-07-30) ────────────
+add(
+  'Vai vế: hai người ngang vai, vừa mới quen nhau trong cùng một buổi. Ngang vai nên lời đáp là こちらこそ — đáp lại ĐÚNG mức người kia đã dùng, không hạ xuống cũng không nâng lên. Bối cảnh: hai người vừa giới thiệu tên xong.',
+  'Roles: two people of equal standing who have just met at the same event. Being equals, the reply is こちらこそ — matching EXACTLY the level the other person used, neither lowering nor raising it. Setting: the two have just exchanged names.',
+  '関係：同じ場で知り合ったばかりの対等な二人。対等なので返事は「こちらこそ」— 相手が使ったのと同じ丁寧さでそのまま返し、下げも上げもしません。場面：名前を伝え合ったところです。',
+);
+add(
+  'Vai vế: hai người ngang vai trong một lớp học, quen nhau nhưng chưa thân. お先に失礼します là lời xin phép của người RỜI ĐI TRƯỚC khi người khác còn ở lại — nó đánh dấu thứ tự ra về, không đánh dấu trên–dưới. Bối cảnh: hết buổi học, một người về trước.',
+  'Roles: two classmates of equal standing, acquainted but not close. お先に失礼します is what the person LEAVING FIRST says while others are still there — it marks the order of leaving, not rank. Setting: class is over and one of them goes home first.',
+  '関係：教室にいる対等な二人。知り合いですが、まだ親しくはありません。「お先に失礼します」は、ほかの人が残っている中で先に帰る人が言う言葉で、帰る順番を表すものであり、上下関係を表すものではありません。場面：授業が終わり、一方が先に帰ります。',
+);
+add(
+  'Vai vế: hai người bạn ngang vai đã thân — thân hơn cặp ở nhóm trên. Đủ thân nên đáp được bằng うん thay cho はい, và câu chào cuối rút ngắn còn じゃあ、また. Bối cảnh: hai người chia tay, hẹn gặp lại tuần sau.',
+  'Roles: two friends of equal standing who are already close — closer than the pair in the group above. Close enough that うん replaces はい, and the last farewell shortens to じゃあ、また. Setting: the two part, planning to meet again next week.',
+  '関係：すでに親しい対等な友だち二人で、上のグループの二人より親しい間柄です。親しいので「はい」の代わりに「うん」で答えられ、最後のあいさつも「じゃあ、また」と短くなります。場面：来週会う約束をして別れます。',
+);
+add(
+  'Vai vế: ba người ngang vai, vừa làm quen trong cùng một buổi, chưa ai thân với ai — nên lời chào về vẫn ở mức lịch sự, chưa rút gọn như giữa bạn thân. Bối cảnh: cuối buổi, họ đáp lời làm quen rồi lần lượt xin phép về, hẹn gặp lại và dặn nhau giữ sức khỏe.',
+  'Roles: three people of equal standing who just got acquainted at the same event, none close to any other — so the farewells stay polite and are not shortened the way close friends would shorten them. Setting: at the end of the session they reply to the introductions, then take their leave one by one, arrange to meet again and wish each other well.',
+  '関係：同じ場で知り合ったばかりの対等な三人で、まだ誰とも親しくはありません。そのため別れのあいさつは丁寧なままで、親しい友だち同士のようには短くなりません。場面：終わりに、あいさつを返してから順に失礼し、また会う約束をして、体に気をつけてと言い合います。',
+);
+
 export const supportTextByVietnamese = new Map(rows);
 
 const localeCodes = ['vi', 'en', 'ja'];

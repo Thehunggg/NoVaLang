@@ -208,7 +208,7 @@ const PRACTICE_EXERCISES = [
     id: 'ja-daily_life-m01-u2-l1-practice-14', order: 14, plan: 'plus', type: 'real_world_practice_dialogue',
     nonGraded: true,
     scenarioTitle: 'Ba lần gặp lại sau lâu ngày',
-    scenarioDescription: 'Ba cuộc chào hỏi giữa hai người lâu ngày không gặp. Cùng một việc, nhưng thể lịch sự và thể thường được chọn khác nhau ở từng cuộc.',
+    scenarioDescription: 'Vai vế: ba cặp quan hệ khác nhau — hai người quen chưa thân, hai người bạn đã thân, và một cặp thầy trò lệch vai. Cùng một việc chào hỏi, nhưng vai vế và độ thân khác nhau nên thể nói chọn khác nhau; riêng cặp thầy trò thì hai bên dùng hai thể khác nhau. Bối cảnh: ba cuộc gặp lại sau lâu ngày không gặp.',
     characterIds: ['sato', 'ito', 'tanaka', 'sensei'],
     dialogueLines: [
       dialogueLine('sato', 'あ、お久しぶりです。', 'あ、おひさしぶりです。', 'À, lâu rồi không gặp ạ.', 'あ、おひさしぶりです'),
@@ -291,7 +291,7 @@ const JA_UNIT2_LESSON1_SOURCE = {
       ],
       dialogueGroups: [
         {
-          id: 'both-polite', title: 'Cả hai dùng thể lịch sự', situation: 'Hai người lâu ngày không gặp đang chào hỏi nhau. Cả hai đều dùng thể lịch sự.',
+          id: 'both-polite', title: 'Cả hai dùng thể lịch sự', situation: 'Vai vế: hai người ngang vai, quen nhau nhưng chưa thân. Ngang vai và không thân thì cả hai cùng chọn thể lịch sự, và quan trọng là chọn GIỐNG NHAU. Bối cảnh: lâu ngày không gặp, hai người chào hỏi nhau.',
           lines: [
             dialogueLine('sato', 'あ、お久しぶりです。', 'あ、おひさしぶりです。', 'À, lâu rồi không gặp ạ.', 'あ、おひさしぶりです'),
             dialogueLine('ito', 'お久しぶりです。', 'おひさしぶりです。', 'Lâu rồi không gặp ạ.', 'おひさしぶりです'),
@@ -301,7 +301,7 @@ const JA_UNIT2_LESSON1_SOURCE = {
           explanation: ['Cả hai câu đều có お ở đầu và です ở cuối — dấu hiệu thể lịch sự.', 'Câu đáp lịch sự là はい。おかげさまで。'],
         },
         {
-          id: 'both-casual', title: 'Cả hai dùng thể thường', situation: 'Hai người lâu ngày không gặp đang chào hỏi nhau. Cả hai đều dùng thể thường.',
+          id: 'both-casual', title: 'Cả hai dùng thể thường', situation: 'Vai vế: hai người ngang vai và ĐÃ THÂN — khác nhóm trên đúng ở chỗ độ thân. Thân rồi thì cả hai cùng bỏ thể lịch sự, vẫn là chọn giống nhau. Bối cảnh: lâu ngày không gặp, hai người bạn chào hỏi nhau.',
           lines: [
             dialogueLine('tanaka', 'あ、久しぶり。', 'あ、ひさしぶり。', 'À, lâu rồi không gặp!', 'あ、ひさしぶり'),
             dialogueLine('sato', '久しぶり。', 'ひさしぶり。', 'Lâu rồi không gặp!', 'ひさしぶり'),
@@ -311,7 +311,7 @@ const JA_UNIT2_LESSON1_SOURCE = {
           explanation: ['Bỏ お và bỏ です là thành thể thường.', 'Câu đáp thân mật là うん。元気。'],
         },
         {
-          id: 'mixed-register', title: 'Hai bên dùng hai thể khác nhau', situation: 'Hai người lâu ngày không gặp đang chào hỏi nhau. Một bên dùng thể thường, bên kia đáp bằng thể lịch sự.',
+          id: 'mixed-register', title: 'Hai bên dùng hai thể khác nhau', situation: 'Vai vế: giáo viên và học viên cũ của mình — quan hệ TRÊN–DƯỚI, khác hẳn hai nhóm ngang vai ở trên. Chính vì lệch vai nên hai bên KHÔNG dùng cùng một thể: người trên hỏi bằng thể thường, người dưới vẫn đáp bằng thể lịch sự. Đây là chỗ thấy rõ nhất rằng thể nói do vai vế quyết định, không do độ thân. Bối cảnh: lâu ngày không gặp, hai thầy trò chào hỏi nhau.',
           lines: [
             dialogueLine('sensei', 'あ、久しぶり。', 'あ、ひさしぶり。', 'À, lâu rồi không gặp.', 'あ、ひさしぶり'),
             dialogueLine('sato', 'お久しぶりです。', 'おひさしぶりです。', 'Lâu rồi không gặp ạ.', 'おひさしぶりです'),
