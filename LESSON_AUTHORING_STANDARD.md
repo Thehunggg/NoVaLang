@@ -543,7 +543,11 @@ grammar,practice`. (`validate-curriculum.mjs:919`)
 **cùng số lượng**; ids khớp **1-1 đúng thứ tự**. (`:934–948`; ADR-019 amendment
 2026-07-19 — số 6–15 là range, không phải fixed 8)
 
-**D3. Card 3 dialogue.** **Đúng 3 nhóm, mỗi nhóm 2–8 lượt** (`:950`).
+**D3. Card 3 dialogue.** Số nhóm và số lượt mỗi nhóm là **KHOẢNG**, định nghĩa ở
+**`scripts/lib/five-cards-ranges.mjs`** (`dialogueGroups` · `dialogueLinesPerGroup`)
+— **một nguồn duy nhất**, validator và smoke cùng đọc. Cỡ soạn mặc định: **G14-R3b**.
+Đừng chép số ra đây; số ở file này cũ đi mà không ai biết (bản trước ghi "đúng 3
+nhóm" trong khi code đã là khoảng).
 (Owner chốt 2026-07-27 — hạ sàn từ 4, đặt trần 8. Cùng loại tiền lệ với
 "đúng 8 thẻ từ vựng" → khoảng 6–15, ADR-019 amendment.)
 
@@ -567,7 +571,10 @@ Bắt buộc:
 `approvedCharacterNamePool` (mỗi nhân vật có `id/displayName/canonicalName/
 audioName`); mọi `speakerId` phải nằm trong pool. (`:953–971`)
 
-**D4. Card 4 grammar.** **Đúng 3 grammar patterns.** (`:972`)
+**D4. Card 4 grammar.** Số mẫu ngữ pháp là **KHOẢNG**, định nghĩa ở
+**`scripts/lib/five-cards-ranges.mjs`** (`grammarPatterns`) — **một nguồn duy
+nhất**. Cỡ soạn mặc định: **G14-R3b**. (Bản trước ghi "đúng 3" trong khi code đã
+là khoảng.)
 
 **D5. Card 5 practice.** `totalQuestions === 14` và **đúng 14 exercises**
 (`:977`). Mỗi exercise: `order === index+1`. **Plan boundary: `index < 9` →
@@ -575,15 +582,18 @@ audioName`); mọi `speakerId` phải nằm trong pool. (`:953–971`)
 `:164`, `:250`). Áp cho mọi lesson kể cả Golden (ADR-008 Amendment 2026-07-19;
 Golden Q10 đã đổi `free → plus`).
 
-**D6. Loại câu ÉP CỨNG (chỉ 5 câu; còn lại tự do):**
-- Q3 (index 2) = `matching`, đúng 4 pairs, mỗi pair có `id/left.id/right.id`.
+**D6. Loại câu ÉP CỨNG (chỉ 5 câu; còn lại tự do).**
+LOẠI câu bị ép; **SỐ LƯỢNG bên trong mỗi câu là KHOẢNG** ở
+**`scripts/lib/five-cards-ranges.mjs`** — tên khoảng ghi trong ngoặc dưới đây.
+Không chép số ra đây.
+- Q3 (index 2) = `matching`, `matchingPairs` cặp, mỗi pair có `id/left.id/right.id`.
   (`:998`)
-- Q9 (index 8) = `checkpoint`, 5 câu con, mỗi câu 4 options + `correctOptionId`
-  hợp lệ. (`:986`)
-- Q10 (index 9) = `chat_text_fill`, 6 messages, 2 slots, mỗi slot đủ
+- Q9 (index 8) = `checkpoint`, `checkpointSubQuestions` câu con, mỗi câu
+  `optionsPerQuestion` phương án + `correctOptionId` hợp lệ. (`:986`)
+- Q10 (index 9) = `chat_text_fill`, `chatMessages` tin nhắn, `chatSlots` ô, mỗi ô đủ
   `displayText/canonicalText/audioText/acceptedAnswers`. (`:1006`)
-- Q13 (index 12) = `slot_ordering`, 6 `answerSlots`, **≥1 `unusedTokenIds`**
-  (distractor). (`:1015`)
+- Q13 (index 12) = `slot_ordering`, `advancedOrderingSlots` `answerSlots`,
+  **≥1 `unusedTokenIds`** (distractor). (`:1015`)
 - Q14 (index 13) = `real_world_practice_dialogue` (§D7).
 - **Q1, Q2, Q4, Q5, Q6, Q7, Q8, Q11, Q12: loại KHÔNG bị ép** — chọn theo khung
   gợi ý §B7.
@@ -652,8 +662,10 @@ là số chép từ Golden. Hai ca Q10 và Q13 ở trên đều đã lộ đúng
 trần, KHÔNG ép đúng 14 (`validate-curriculum.mjs:~1029–1043`;
 `smoke:~265–275`). Mỗi dòng: `speakerId` trong pool · `targetText` +
 `speechText` · `translationByNative` đủ locale native · `reading` KHÔNG chứa
-chữ Latin (`[a-zA-Z]`) · `romanization` qua pipeline. Đúng **1 scene divider**
-có dịch đủ locale native. (`:1026–1069`)
+chữ Latin (`[a-zA-Z]`) · `romanization` qua pipeline. Số dải phân cảnh theo khoảng
+`sceneDividers` (`scripts/lib/five-cards-ranges.mjs`), mỗi dải có dịch đủ locale
+native. (`:1026–1069`) — bản trước ghi "đúng 1", trong khi code cho phép **0**:
+chính con số 1 đó từng bắt u2-l1 vứt bỏ một đoạn nguyên văn của nguồn (§D6b).
 
 **D8. Audio (tầng nội dung — validator ÉP).** `validateFiveCardsStructure` ép
 `speechText` KHÔNG rỗng trên (2026-07-19):
@@ -1059,6 +1071,15 @@ xác minh. **Thà câu đơn giản chắc đúng.**
   nguồn → **KHÔNG dùng**. Mọi yếu tố mượn trước phải **ĐÁNH DẤU trong báo cáo**
   (thuộc CẦN SOI KỸ).
 
+**MIỄN TRỪ ĐÃ GHI — `ja-daily_life-m01-u2-l2`, khoản "xen kẽ trang trọng/thân
+mật theo vai vế".** Phần "xen kẽ trang trọng/thân mật theo vai vế" — owner quyết
+2026-07-30 giữ đồng loạt thể lịch sự cho u2-l2. Đây là QUYẾT ĐỊNH SẢN PHẨM của
+owner, KHÔNG phải hạn chế kỹ thuật: u2-l1 đã dạy thể thường (久しぶり/元気？/うん)
+và có nhóm both-casual + mixed-register, nên xen kẽ là làm được.
+
+Ba khoản còn lại của G6 **vẫn áp đủ** cho u2-l2 — riêng khoản "giải thích tình
+huống + vai vế trước hội thoại" đã ghi cho cả 5 bài ngày 2026-07-30.
+
 **G7 — PHẠM VI TỪ VỰNG — TÁCH LÀM HAI VÙNG.** (Owner chốt 2026-07-27, thay bản
 "cấm mọi từ chưa dạy" trước đó.)
 
@@ -1184,6 +1205,10 @@ chỉnh nhẹ". MUTATION là AUTHORED đặc biệt dành cho nhiễu (R6). Dị
 n5-Việt rồi sửa lỗi dính chữ = **AUTHORED**, reason `hiệu đính từ <file>:<dòng>` —
 có sửa tay thì không còn là verbatim.
 
+> **PHẠM VI R1 — MỘT CHUỖI.** R1 xét từng chuỗi một. Việc **ghép nhiều chuỗi
+> thành một đoạn hội thoại** do **§G10** quản: *cụm có nguồn KHÔNG làm cho đoạn
+> ghép có nguồn*. Mỗi lượt đều verbatim mà đoạn vẫn có thể sai — đọc §G10.
+
 **G14-R2. PROVENANCE — file song song, cổng máy kiểm.**
 `shared/content/curriculum/provenance/<lessonId>.provenance.json`. Mỗi item:
 `{path, targetText}` + một trong ba: `{source, line, verbatim:true}` ·
@@ -1274,6 +1299,10 @@ không dò bằng regex dòng, đọc thẳng trường.
   ý, không phải lỗi) → tách token **theo phân từ của nguồn**, chính xác hơn bộ thô.
 - Dư **1–2** từ mới → nhận + chú nghĩa + đưa vào `vocabularyReferences`.
   Dư **>2** → loại. **Dạng chia của từ đã biết** (たべました←たべる) không tính là từ mới.
+  > **NGƯỠNG "dư 1–2" CHỈ CHO VÙNG B.** Theo **§G7**, ngưỡng này áp cho **vùng B**
+  > (câu đọc hiểu). **Vùng A** — mọi chuỗi bị CHẤM: Q1–Q13, đáp án, ô trống,
+  > phương án, token — theo **§G7 vùng A**: **chỉ vốn đã dạy, không có ngoại lệ
+  > dư từ**. Đừng mang ngưỡng B sang A.
 - **[JA]** Câu có **kính ngữ cấp cao** (される・いらっしゃいます・でございます…) →
   **loại khỏi A0–A1** bất kể vốn từ.
 - `sentences_*.json` (khi dùng lại từ N4): khoá bỏ `_` cuối + **bắt buộc** kiểm
