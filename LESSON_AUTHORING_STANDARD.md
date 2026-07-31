@@ -1355,7 +1355,7 @@ không dò bằng regex dòng, đọc thẳng trường.
 
 **G14-R6. NHIỄU — không bao giờ phán độ tự nhiên.**
 (3 lần dính: 「お名前お願いします」・「お名前は？」・「伊藤さんですか」 — máy phán
-"thiếu tự nhiên" và trượt.) Ba đường, **khai trong provenance**:
+"thiếu tự nhiên" và trượt.) Bốn đường, **khai trong provenance**:
 1. **MUTATION** — `op` ∈ {`particle_swap` (は↔が↔を↔も↔の) · `form_swap`
    (lịch sự↔thường) · `conj_error` · `san_drop` / `san_add` · `o_prefix_self` ·
    `particle_dup`}. `from` = câu **có thật trong bài**. Máy kiểm theo R12b.
@@ -1363,9 +1363,19 @@ không dò bằng regex dòng, đọc thẳng trường.
    (`source` + `line`), **chỉ khi** thuộc mẫu đang dạy; lý do của nguồn đổ vào
    `feedback.explanation`. Parser xử **≥3 format**, **bỏ** khối không có câu Nhật.
 3. **CLOSED_FACT** — nhiễu đọc / nghĩa / kanji lấy từ **mục khác** trong JMdict.
+4. **MỤC TỪ KHÁC ĐÃ DẠY TRONG CHÍNH BÀI** (owner chốt 2026-07-31, feed từ
+   lượt build `ja-daily_life-m02-u1-l1`) — phương án là một cụm THẬT đã dạy
+   ở CHÍNH bài đang viết (không phải cụm bịa/mượn ngoài bài). Hợp lệ **CHỈ
+   KHI** ngữ cảnh đề bài nêu **RÕ** trục phân biệt (mức lịch sự / thì / vai
+   vế…) **VÀ** trục đó loại trừ được **MỌI** phương án còn lại — không nêu
+   rõ trục thì không được dùng loại này (quay lại 1–3). **Áp dụng TỪ bài
+   `ja-daily_life-m02-u1-l1` TRỞ ĐI — không hồi tố bài cũ nào, không đụng
+   Golden.**
 
 **CẤM nhiễu máy tự nghĩ.** **RÀ ĐỐI KHÁNG theo bối cảnh đề bài** với **từng**
-phương án: *"trong bối cảnh này, nó có thể đúng không?"* — **mutation cũng rà**.
+phương án: *"trong bối cảnh này, nó có thể đúng không?"* — **mutation cũng
+rà, loại 4 cũng rà** (đây chính là điều kiện bắt buộc của loại 4, không phải
+điều khoản miễn rà).
 
 **G14-R7. BÀI TẬP — dẫn xuất, không tự nghĩ.**
 - Dạng: validator khoá (Q3 matching · Q9 checkpoint · Q10 chat_text_fill ·

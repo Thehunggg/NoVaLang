@@ -976,6 +976,23 @@ function validateHiraganaLessonOneSpec(lesson) {
  * Exported ở module scope để script độc lập import chạy thử trực tiếp.
  */
 /**
+ * Mẫu tên nháp còn sót (§ kiểm five_cards) — khớp TÊN TRỌN, không phải
+ * substring (vá 2026-07-31). "ミン" chỉ bắt khi KHÔNG nằm trong một chuỗi
+ * KATAKANA dài hơn (ranh giới theo SCRIPT, vì katakana không có dấu cách
+ * giữa các mảnh — タイミング/ミント phải PASS, còn ミンさん vẫn phải FAIL vì
+ * さん là hiragana, khác script). Minh/Hưng/Linh dùng ranh giới CHỮ CÁI
+ * chung (`\p{L}`) vì đây là tên Latin/Việt, luôn có khoảng trắng phân
+ * cách trong văn bản thật — không có kiểu lỗi "dính liền" như katakana.
+ */
+const DRAFT_NAME_KATAKANA_RANGE = "ァ-ヶー";
+export const DRAFT_CHARACTER_NAME_RE = new RegExp(
+  `(?<![${DRAFT_NAME_KATAKANA_RANGE}])ミン(?![${DRAFT_NAME_KATAKANA_RANGE}])` +
+    `|(?<!\\p{L})Minh(?!\\p{L})` +
+    `|(?<!\\p{L})Hưng(?!\\p{L})` +
+    `|(?<!\\p{L})Linh(?!\\p{L})`,
+  "u",
+);
+/**
  * §B2e — MỨC ĐỘ LỊCH SỰ chỉ có ĐÚNG BA (owner chốt 2026-07-25):
  * **trang trọng · lịch sự · thân mật**. Không "trung tính", không "thông
  * thường", không biến thể mô tả dài kiểu "trung tính, lịch sự an toàn".
@@ -1551,7 +1568,14 @@ export function validateFiveCardsStructure(lesson) {
   ) {
     fail(`${lesson.id}: exercise 14 must have ${rangeText(RANGE.sceneDividers)} localized non-spoken scene dividers`);
   }
-  if (/(ミン|Minh|Hưng|Linh)/u.test(JSON.stringify(content))) {
+  // Khớp TÊN TRỌN, không phải substring — vá 2026-07-31 (owner chỉ ra): bản
+  // cũ khớp substring nên chặn nhầm chữ Nhật hợp lệ chứa "ミン" làm mảnh con
+  // (vd タイミング, ミント). ミン chỉ bị bắt khi KHÔNG nằm trong một chuỗi
+  // katakana dài hơn (ranh giới theo SCRIPT — ミンさん vẫn bắt được vì さん là
+  // hiragana, khác script với katakana của ミン). Minh/Hưng/Linh dùng ranh
+  // giới CHỮ CÁI chung (\p{L}) vì đây là tên Latin/Việt, không có vấn đề
+  // "dính liền không dấu cách" như katakana.
+  if (DRAFT_CHARACTER_NAME_RE.test(JSON.stringify(content))) {
     fail(`${lesson.id}: five_cards lesson must not contain leftover draft Vietnamese character names`);
   }
   const requireReading = (entry, label) => {

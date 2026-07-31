@@ -94186,15 +94186,15 @@
             },
             "examples": [
               {
-                "text": "助（たす）（助）かります。",
-                "reading": "助かります。",
+                "text": "助（たす）かります。",
+                "reading": "たすかります。",
                 "translation": "Vậy thì đỡ cho tôi quá.",
                 "translationByNative": {
                   "vi": "Vậy thì đỡ cho tôi quá.",
                   "en": "That really helps me.",
                   "ja": "助かります。"
                 },
-                "speechText": "助かります。"
+                "speechText": "たすかります。"
               }
             ]
           },
@@ -94270,15 +94270,15 @@
             },
             "examples": [
               {
-                "text": "助（たす）（助）かりました。",
-                "reading": "助かりました。",
+                "text": "助（たす）かりました。",
+                "reading": "たすかりました。",
                 "translation": "Việc đó đã giúp tôi nhiều lắm.",
                 "translationByNative": {
                   "vi": "Việc đó đã giúp tôi nhiều lắm.",
                   "en": "That really helped me a lot.",
                   "ja": "助かりました。"
                 },
-                "speechText": "助かりました。"
+                "speechText": "たすかりました。"
               }
             ],
             "notes": [
@@ -96029,7 +96029,7 @@
                     "speakerId": "a",
                     "segments": [
                       {
-                        "displayText": "これでよろしいでしょうか。"
+                        "displayText": "これでよろしいでしょうか？"
                       }
                     ]
                   },

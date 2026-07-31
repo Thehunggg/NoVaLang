@@ -964,9 +964,15 @@ tiền lệ 17–23%.**
 
 Trình độ: A0–A1 (です/ます, giới thiệu tên, hỏi giờ). Trùng Irodori 1/200.
 
-> **VƯỚNG: điều khoản NonCommercial.** NovaLang có gói trả phí (Plus/Pro/
-> Ultimate) → dùng nội dung CC BY-**NC** là rủi ro pháp lý. **Owner quyết**,
-> tôi không tự xếp vào bảng tầng.
+> **[ĐÃ GIẢI 2026-07-31]** Ghi chú gốc lúc khảo sát (2026-07-30, trước khi có
+> xác nhận): "VƯỚNG: điều khoản NonCommercial. NovaLang có gói trả phí
+> (Plus/Pro/Ultimate) → dùng nội dung CC BY-**NC** là rủi ro pháp lý. Owner
+> quyết, tôi không tự xếp vào bảng tầng." **Owner đã xác nhận CÙNG NGÀY
+> 2026-07-30** (mục "CẬP NHẬT 2026-07-30 — owner xác nhận nguồn tự viết +
+> đổi tên nhân vật" ở trên): `ban1.txt` là **nội dung owner tự viết**, không
+> phải bản CC BY-NC của Konomi/Portland State như dòng bản quyền ở đầu mục
+> này (dòng 939-940) từng ghi — "chủ đề nguồn gốc ĐÓNG... hết hiệu lực,
+> không hỏi lại". Rủi ro NonCommercial không còn áp dụng.
 
 ## 7. `ban2.txt` — NHK WORLD JAPAN «Cùng nhau học tiếng Nhật» → CHẶN
 
@@ -1107,7 +1113,7 @@ trúc JSON, luật a/b/c dựng cho trường `utterance` không áp thẳng đ�
 | Nguồn | Kết luận |
 |---|---|
 | `topic1–5.json` | **LẤP Ô HỘI THOẠI N4–N3** — 5.256 hội thoại, cổng PASS mức 1, trích được `source:line`. Phải viết tay `reading` cho mọi câu lấy ra. **Giấy phép chưa rõ — owner xác minh trước.** |
-| `ban1.txt` | Giáo trình A0–A1 sạch, có quy ước nhãn thứ 4 → để dành ô hội thoại sơ cấp, **CHỜ owner quyết điều khoản NonCommercial** |
+| `ban1.txt` | Giáo trình A0–A1 sạch, có quy ước nhãn thứ 4 → dùng được cho ô hội thoại sơ cấp. **Owner đã xác nhận 2026-07-30: nội dung owner tự viết** (mục "CẬP NHẬT 2026-07-30" bên dưới) — mục "chờ NonCommercial" ở đây đã LỖI THỜI, sửa 2026-07-31 |
 | `ban2.txt` | **BLOCKLIST** — hỏng bóc 55% + bản quyền NHK |
 
 ---
@@ -1331,11 +1337,12 @@ chưa phải quyết định sản phẩm. Owner duyệt trên trang preview HTM
 - `恐れ入ります`/`感謝` đo được nhưng KHÔNG đề xuất vào 8-10 từ chính (độ khó/
   bối cảnh lệch A1-A2) — nếu owner muốn dùng, cần nguồn ví dụ đơn giản hơn
   hoặc đưa vào "tham khảo thêm" thay vì thẻ chính.
-- `ban1.txt` vẫn ở trạng thái "CHỜ owner quyết điều khoản NonCommercial" theo
-  `ja.md`/INVENTORY mục 6 — owner đã xác nhận "nội dung owner tự viết" 2026-
-  07-30 (mục "CẬP NHẬT 2026-07-30" phía trên) nên coi là đã giải, nhưng ghi
-  lại vì tên trạng thái cũ ("CHỜ") chưa được sửa xoá khỏi bảng kết luận đầu
-  file này.
+- **[ĐÃ SỬA 2026-07-31]** `ban1.txt` từng ở trạng thái "CHỜ owner quyết điều
+  khoản NonCommercial" theo `ja.md`/INVENTORY mục 6 — owner đã xác nhận "nội
+  dung owner tự viết" 2026-07-30 (mục "CẬP NHẬT 2026-07-30" phía trên) nên
+  coi là đã giải; dòng kết luận đầu file (mục "Kết luận — một dòng mỗi
+  nguồn") đã cập nhật khớp. `ja.md` mục 6 (đường dẫn LS-11 gốc) CHƯA sửa
+  theo — ghi vào LÀM SAU, ngoài phạm vi lượt sửa INVENTORY.md này.
 
 > Mỗi mục: **việc** · **vì sao hoãn**. Thấy lỗi ngoài phạm vi lượt đang làm
 > thì ghi vào đây, không tự sửa (WORKING_RULES §1).
