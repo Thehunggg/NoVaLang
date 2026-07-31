@@ -1112,7 +1112,170 @@ trúc JSON, luật a/b/c dựng cho trường `utterance` không áp thẳng đ�
 
 ---
 
-# LÀM SAU — chưa làm, ghi để không quên
+# ĐO TRƯỚC KHI VIẾT — m02-u1-l1 「Cảm ơn theo mức độ」 (2026-07-31)
+
+> PHA A của lượt "PUSH + 2 PHA". Chỉ đo, chưa viết bài. Công cụ dùng:
+> `scripts/estimate-source-coverage.mjs` (đã có sẵn từ lượt trước, probe đầu
+> tiên đúng tên bài này — xác nhận lại bằng `--self-test` trước khi tin số).
+> Owner xác nhận 2026-07-30: `topic1-5.json`/`ban1.txt` là nội dung owner tự
+> viết, tên nhân vật đã đổi về roster `田中·佐藤·伊藤·先生`.
+
+## A1 — GRAMMARPATTERNS (mẫu liên quan cảm ơn)
+
+Quét `hanabira` (805 file .md ngữ pháp) · `n5_ngu-phap-vi.txt` · `ban1.txt` ·
+`topic1-5.json` (bỏ hội thoại trong `ten-lech-nhan.json`, 698 lượt/462 hội
+thoại bị cờ).
+
+**hanabira (805 file):** 0 file có TIÊU ĐỀ là mẫu cảm ơn (ありがとう/どうも/
+おかげさまで không phải "mẫu ngữ pháp productive" theo cách hanabira phân
+loại — chúng chỉ xuất hiện làm VÍ DỤ trong các mẫu khác: `Verb-てくださる`,
+`Verb-ていただく`…). Có **1 file thật sự dùng được**: `～おかげで_(〜okagede).md`
+— mẫu ngữ pháp 「Verb/Noun+おかげで」 (nhờ có…) + mục riêng cho cụm cố định
+「おかげさまで」 với hội thoại mẫu 「A: お元気ですか？ B: おかげさまで、元気で
+す。」 — **CHÍNH LÀ** cụm đã dạy ở `ja-daily_life-m01-u2-l1`. Cấu trúc đầy đủ
+おかげで/せいで hơi cao so với A1-A2 (ví dụ formal/written dùng thể た+おかげで
+phức) — chỉ phần cụm cố định おかげさまで + giải thích register là dùng trực
+tiếp được.
+
+**n5_ngu-phap-vi.txt:** 0 mẫu cảm ơn nào (0/41 mục ngữ pháp). 2 lượt
+`すみません` (dòng 551, 775) đều là nghĩa "xin lỗi làm phiền để nhờ việc",
+KHÔNG phải nghĩa cảm ơn.
+
+**ban1.txt:** đoạn "Offering and Accepting, Thanking" (dòng 374–401) —
+khối vựng+giải thích register THẬT, trích nguyên văn:
+> "Arigatou (gozaimasu) expresses thanks in general. You should never use
+> the short form with your superiors… Doumo expresses gratitude or apology.
+> It can also be combined with arigatou gozaimasu ('Thank you very much')
+> or sumimasen ('I'm very sorry'). Gozaimashita indicates past and is used
+> when the act is completed."
+
+Đây là **quan sát trực tiếp từ nguồn**, không phải suy luận của tôi — ghi lại
+để PHA B trích dẫn đúng, không diễn giải thêm (LUẬT CHỐNG BẪY). Kèm 1 hội
+thoại mẫu dòng 4981–4991 (伊藤 nói 「あ、どうも。」 sau khi được chỉ đường —
+伊藤 nằm trong roster đã duyệt).
+
+**topic1-5.json** (đã lọc `ten-lech-nhan.json`, đếm bằng token thật qua
+kuromoji — không phải đếm cụm kanji thô):
+
+| mẫu | lượt khớp | lượt ≤2 từ lạ (vùng B) | từ lạ điển hình | ví dụ 1 từ lạ (=chính mẫu, sẽ hết lạ khi thành thẻ từ vựng) |
+|---|---:|---:|---|---|
+| どうも (đứng riêng) | 1 | 0 | 悲観,的,ばかり | *(không có câu sạch — dùng ban1 làm nguồn chính)* |
+| ありがとう (trần) | 2 | 1 | ありがとう | `topic1.json:589` t8 (佐藤) 「ありがとう。」 |
+| ありがとうございます | 934 | 487 | ありがとう | `topic1.json:3` t8 (田中) 「ありがとうございます。」 |
+| ありがとうございました | 62 | 31 | ありがとう | `topic1.json:822` t10 (田中) 「ありがとうございました。」 |
+| どうもありがとう(ございます/ました) | 49 | 35 | ありがとう | `topic1.json:201` t10 (田中) 「どうもありがとう。」 |
+| 助かります/助かりました | 95 | 43 | 助かり | `topic1.json:533` t5 (佐藤) 「助かります。」 |
+| 恐れ入ります/恐縮 | 6 | 2 | 恐れ入り + 1 từ khác | `topic3.json:185` t7 (佐藤) 「恐れ入りますが、クレジットカードはお持ちでしょうか？」 (2 lạ: 恐れ入り, クレジットカード) |
+| 感謝 | 22 | 1 | 感謝 + ≥1 từ khác | `topic5.json:218` t1 (2 lạ: 勤労感謝の日,贈り物) 「勤労感謝の日に、お父さんに贈り物をしたいです。」 |
+
+**Kết luận A1: 6 mẫu dùng trực tiếp được** (どうも · ありがとう · ありがとう
+ございます · ありがとうございました · どうもありがとう · 助かります/まし
+た) — trên ngưỡng tối thiểu 4–5, KHÔNG cần dùng điều khoản "số ít hơn".
+**恐れ入ります/感謝 để riêng, chỉ hợp "tham khảo thêm"** (§B2b) vì mọi ví dụ
+sạch nhất vẫn ≥2 từ lạ, và bối cảnh dùng (khách sạn/thương mại, dịp lễ) lệch
+A1-A2 đời thường.
+
+**Đã dạy từ trước (không phải mẫu mới, nhưng CÙNG trục "mức độ cảm ơn"):**
+`すみません` (`ja-daily_life-m01-u1-l2`) và `おかげさまで` (`ja-daily_life-
+m01-u2-l1`) — `taught-vocabulary.json` xác nhận. Bài mới nên nối tiếp trục
+này, không dạy lại.
+
+## A2 — HỘI THOẠI (đo bằng token thật, không phải cụm kanji thô)
+
+Kho sạch (đã bỏ 462 hội thoại bị cờ `ten-lech-nhan.json`): **4.794 hội
+thoại**. Hội thoại có ít nhất 1 lượt chứa từ khoá cảm ơn
+(ありがとう/どうも/恐れ入り/恐縮/助かり/感謝): **927 hội thoại**.
+
+Với mỗi hội thoại, tìm ĐOẠN LIÊN TIẾP dài nhất mà MỖI lượt ≤2 từ lạ (vùng B)
+VÀ đoạn đó chứa ít nhất 1 lượt có từ khoá cảm ơn — phân bố độ dài đoạn:
+
+| độ dài đoạn sạch liên tiếp | số hội thoại |
+|---:|---:|
+| 0 (không đoạn nào đạt vùng B) | 419 |
+| 1 lượt | 242 |
+| 2 lượt (**cặp**) | 121 |
+| 3 lượt | 56 |
+| 4 lượt | 40 |
+| 5 lượt | 23 |
+| 6 lượt | 10 |
+| 7 lượt | 7 |
+| 8 lượt | 8 |
+| 9 lượt | 1 |
+
+**Cặp 2 lượt sạch:** 121 hội thoại đúng 2, cộng dồn ≥2 = **266 hội thoại**.
+**Khối 3–4 lượt sạch:** **96 hội thoại** (56+40).
+**Q14 cần ≥4 lượt liên tiếp:** **89 hội thoại đạt** (40+23+10+7+8+1) — CÓ
+đoạn đạt, **không cần kích hoạt điều khoản lùi R4**.
+
+Ví dụ khối dài (8 lượt sạch liên tiếp, `topic1.json:3`, chủ đề mời/nhận đồ
+uống — rất hợp A1-A2):
+```
+1. 伊藤: 休憩時間になりましたが、何か飲みますか？
+2. 田中: ありがとうございます。何を飲むか考えますね。
+3. 伊藤: コーヒーはいかがでしょうか？
+4. 田中: コーヒーは苦手です。他の飲み物はありますか？
+5. 伊藤: 紅茶もありますよ。
+6. 田中: 紅茶は大好きなので、紅茶にします。
+7. 伊藤: では、紅茶を入れます。
+8. 田中: ありがとうございます。
+```
+Ví dụ khối 4 lượt (`topic1.json:133`):
+```
+1. 田中: ロールケーキを買ってきたので、一緒に食べましょう。
+2. 佐藤: ありがとうございます。では、私はお茶を入れてきます。
+3. 田中: では、いつもの緑茶でお願いします。
+4. 佐藤: お母さん、最近いつも緑茶を飲んでいますね。
+```
+(lượt 4 lệch chủ đề cảm ơn nhưng vẫn sạch vùng B — PHA B tự cân nhắc cắt ở
+lượt 3 hay giữ nguyên 4 lượt tuỳ ngữ cảnh cả bài.)
+
+## A3 — TỪ VỰNG (8–10 cụm, đối chiếu taught-vocabulary)
+
+Ứng viên rút từ bảng A1 (đã lọc bỏ 恐れ入ります/感謝 — không hợp A1-A2):
+
+| # | cụm | trạng thái | nguồn |
+|---|---|---|---|
+| 1 | どうも | MỚI | `ban1.txt`:379-401, hội thoại dòng 4981-4991 |
+| 2 | ありがとう | MỚI | `ban1.txt`:387, `topic1.json:589` t8 |
+| 3 | ありがとうございます | MỚI | `ban1.txt`:393, `topic1.json:3` t8 (487 lượt sạch topic1-5) |
+| 4 | ありがとうございました | MỚI | `ban1.txt`:394, `topic1.json:822` t10 (31 lượt sạch) |
+| 5 | どうもありがとうございます | MỚI (ghép 1+3, đã có cả hai mảnh) | `topic1.json:524` t9 |
+| 6 | 助かります | MỚI | `topic1.json:533` t5, `topic3.json:7` t5 |
+| 7 | 助かりました | MỚI (quá khứ của #6, cùng trục thời của #3/#4) | `topic1.json:1049` t4 |
+| 8 | すみません | **ĐÃ DẠY** (`ja-daily_life-m01-u1-l2`) — cross-ref, không tính từ mới | — |
+| 9 | おかげさまで | **ĐÃ DẠY** (`ja-daily_life-m01-u2-l1`) — cross-ref, không tính từ mới | — |
+
+→ **7 cụm MỚI** (#1–7, đúng khoảng 8–10 nếu tính cả 2 cụm cross-ref #8–9 làm
+phần ôn — PHA B cân nhắc đưa #8/#9 vào `vocabularyReferences`/reviews thay vì
+thẻ từ vựng chính, vì đã có thẻ riêng ở bài trước). Quyết định cuối (thẻ nào
+là 8 thẻ chính) để owner duyệt trên preview theo đúng A4 dưới.
+
+## A4 — CAN-DO ĐỀ XUẤT (đưa vào CẦN MẮT NGƯỜI)
+
+Suy từ tiêu đề owner chốt "Cảm ơn theo mức độ" + trục register/thời quan sát
+được ở A1 (ban1.txt: gozaimasu=lịch sự chung, gozaimashita=việc đã xong,
+doumo=thân mật/ghép nhấn mạnh):
+
+- **vi:** "Cảm ơn đúng mức độ lịch sự — từ どうも thân mật tới ありがとうご
+  ざいました khi việc đã xong."
+- **en:** "Say thank you at the right level of politeness — from casual
+  どうも to ありがとうございました once something is finished."
+- **ja:** 「丁寧さのレベルに合わせてお礼を言うことができる — 気軽な「どうも」
+  から、済んだことへの「ありがとうございました」まで。」
+
+**CẦN MẮT NGƯỜI — mục 1:** can-do trên là ĐỀ XUẤT dựa trên chất liệu đo được,
+chưa phải quyết định sản phẩm. Owner duyệt trên trang preview HTML ở PHA B.
+
+## Vướng mắc PHA A
+
+- `恐れ入ります`/`感謝` đo được nhưng KHÔNG đề xuất vào 8-10 từ chính (độ khó/
+  bối cảnh lệch A1-A2) — nếu owner muốn dùng, cần nguồn ví dụ đơn giản hơn
+  hoặc đưa vào "tham khảo thêm" thay vì thẻ chính.
+- `ban1.txt` vẫn ở trạng thái "CHỜ owner quyết điều khoản NonCommercial" theo
+  `ja.md`/INVENTORY mục 6 — owner đã xác nhận "nội dung owner tự viết" 2026-
+  07-30 (mục "CẬP NHẬT 2026-07-30" phía trên) nên coi là đã giải, nhưng ghi
+  lại vì tên trạng thái cũ ("CHỜ") chưa được sửa xoá khỏi bảng kết luận đầu
+  file này.
 
 > Mỗi mục: **việc** · **vì sao hoãn**. Thấy lỗi ngoài phạm vi lượt đang làm
 > thì ghi vào đây, không tự sửa (WORKING_RULES §1).
