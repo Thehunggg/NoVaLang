@@ -5,12 +5,18 @@
 // xuất MỘT file HTML tự chứa (không server, không onboarding, mở file là xem)
 // vào scripts/preview/<lessonId>.html
 //
+// LS-15 (2026-07-30): NHẬN CẢ Unit có bài tổng hợp (comprehensiveTest trong
+// shared/generated/courses.json) — id không có hậu tố `-lN` thì thử tra ở
+// đó. Cùng chuẩn G14-R15, cùng CSS/script (wrapHtml), khác đường đọc dữ liệu
+// vì Unit.comprehensiveTest không sống trong lessons.json.
+//
 // Đây là trang DUYỆT, không phải trang chơi: hiện HẾT đáp án, hiện HẾT nhiễu,
 // đánh dấu rõ ✓ / ✗, kèm op mutation. Cuối trang là khối provenance để owner
 // mở đúng dòng file nguồn đối chiếu.
 //
-//   node scripts/preview-lesson.mjs ja-daily_life-m01-u2-l2
-//   node scripts/preview-lesson.mjs <id1> <id2> ...        (batch)
+//   node scripts/preview-lesson.mjs ja-daily_life-m01-u2-l2   (Lesson)
+//   node scripts/preview-lesson.mjs ja-daily_life-m01-u2      (Unit — bài tổng hợp)
+//   node scripts/preview-lesson.mjs <id1> <id2> ...        (batch, trộn được cả hai loại)
 
 import fs from "node:fs";
 import path from "node:path";
@@ -20,6 +26,7 @@ import { hasKanji, readingFromFurigana, stripFurigana } from "./lib/japanese-fur
 import { romajiLine } from "./lib/japanese-romaji.mjs";
 
 const LESSONS_FILE = "shared/generated/lessons.json";
+const COURSES_FILE = "shared/generated/courses.json";
 const PROV_DIR = "shared/content/curriculum/provenance";
 const OUT_DIR = "scripts/preview";
 const NAT = process.env.PREVIEW_NATIVE || "vi";
@@ -613,6 +620,214 @@ function renderProvenance(items) {
   return out.join("\n");
 }
 
+/* ═══════════════ BÀI TỔNG HỢP CUỐI UNIT (courses.json cấp Unit) ═══════════════
+ * A1 — LS-15. Nội dung này KHÔNG sống trong lessons.json (nó là
+ * Unit.comprehensiveTest, không phải một Lesson), nên toàn bộ khối dưới đây
+ * là một đường đọc + render RIÊNG — nhưng TÁI DÙNG mọi hàm chung ở trên
+ * (esc, nat, jaInline, cleanJa, wakachigaki, hasKanji, romajiLine,
+ * buildProvIndex, provBadge, MARK_OK/MARK_NO) để không có hai cách vẽ câu
+ * tiếng Nhật khác nhau trên cùng một trang duyệt.
+ * ─────────────────────────────────────────────────────────────────────── */
+
+function loadUnit(unitId) {
+  const db = JSON.parse(fs.readFileSync(COURSES_FILE, "utf8"));
+  for (const course of db.courses ?? []) {
+    for (const unit of course.units ?? []) {
+      if (unit.id === unitId) return unit;
+    }
+  }
+  return null;
+}
+
+/** Ghép mọi segment (kể cả ô trống, điền bằng displayAnswer) thành MỘT chuỗi
+ * còn nguyên ngoặc furigana — dùng để tính wakachigaki/romaji/TTS cho cả câu. */
+function assembleRaw(segments, blanks) {
+  return (segments ?? [])
+    .map((sg) => (sg.blankId ? (blanks.get(sg.blankId)?.displayAnswer ?? `?${sg.blankId}?`) : sg.displayText ?? ""))
+    .join("");
+}
+
+/** Như jaSentence(), nhưng đánh dấu rõ TỪNG Ô TRỐNG bằng khung riêng —
+ * đây là trang DUYỆT nên hiện luôn đáp án đúng trong khung, không để trống. */
+function comprehensiveSentence(segments, blanks, translation, badge = "") {
+  const raw = assembleRaw(segments, blanks);
+  if (!raw) return "";
+  const cleanParts = (segments ?? [])
+    .map((sg) => {
+      if (sg.blankId) {
+        const b = blanks.get(sg.blankId);
+        return `<span class="slot" title="ô ${esc(sg.blankId)}">${cleanJa(b?.displayAnswer ?? "?")}</span>`;
+      }
+      return cleanJa(sg.displayText ?? "");
+    })
+    .join("");
+  const out = [`<div class="s">`];
+  out.push(
+    `<div class="s1 ja">` +
+      `<button class="spk" type="button" data-say="${esc(stripFurigana(raw))}" title="Nghe câu này">🔊</button>` +
+      `${cleanParts}${badge}</div>`,
+  );
+  if (hasKanji(raw) && /（[぀-ゟー]+）/.test(raw)) {
+    out.push(`<div class="s2">${esc(wakachigaki(raw))}</div>`);
+    out.push(`<div class="s2r">${esc(romajiLine(raw))}</div>`);
+  }
+  if (translation) out.push(`<div class="s3">${esc(translation)}</div>`);
+  out.push(`</div>`);
+  return out.join("\n");
+}
+
+/** Nhãn "Ôn: <lessonId> (<kind>: <ref>)" cho reviews[] — bằng chứng §G7. */
+function reviewsLine(reviews) {
+  if (!(reviews ?? []).length) return `<span class="empty">[không có reviews]</span>`;
+  return (reviews ?? [])
+    .map((r) => `<span class="review">${esc(r.lessonId)} <i>(${esc(r.kind)}: ${esc(r.ref)})</i></span>`)
+    .join(" · ");
+}
+
+function renderComprehensiveQuestion(idx, q) {
+  const out = [`<div class="q" id="q${q.order}">`];
+  out.push(`<h3>Q${q.order} <span class="qtype">${esc(q.kind)}</span></h3>`);
+
+  const ctx = nat(q, "context");
+  if (ctx) out.push(`<p class="sit">${esc(ctx)}</p>`);
+  const prompt = nat(q, "prompt");
+  if (prompt) out.push(`<p class="prompt">${esc(prompt)}</p>`);
+
+  const blanks = new Map((q.blanks ?? []).map((b) => [b.id, b]));
+
+  if (q.kind === "dialogue_multi_blank_choice") {
+    out.push(`<table class="turns"><tbody>`);
+    for (const turn of q.dialogue ?? []) {
+      out.push(`<tr>
+        <td class="spk">${esc(turn.speakerId ?? "")}</td>
+        <td>${comprehensiveSentence(turn.segments, blanks, "", provBadge(idx, assembleRaw(turn.segments, blanks)))}</td>
+      </tr>`);
+    }
+    out.push(`</tbody></table>`);
+  } else {
+    out.push(comprehensiveSentence(q.segments, blanks, "", provBadge(idx, assembleRaw(q.segments, blanks))));
+  }
+
+  out.push(`<ul class="opts">`);
+  for (const opt of q.options ?? []) {
+    const isCorrect = opt.id === q.correctOptionId;
+    out.push(`<li class="${isCorrect ? "ok" : "no"}">
+      ${isCorrect ? MARK_OK : MARK_NO}
+      <span class="opt">${jaInline(opt.text)}</span>
+      <span class="oid">${esc(opt.id ?? "")}</span>
+      ${provBadge(idx, opt.canonicalText ?? opt.text)}
+    </li>`);
+  }
+  out.push(`</ul>`);
+
+  const explanation = nat(q, "explanation");
+  if (explanation) out.push(`<div class="fb"><div><b>Giải thích:</b> ${nl2br(explanation)}</div></div>`);
+
+  out.push(`<p class="reviews"><b>Ôn:</b> ${reviewsLine(q.reviews)}</p>`);
+  out.push(`</div>`);
+  return out.join("\n");
+}
+
+/** Bảng tóm tắt cuối trang — kind, lesson nguồn, chuỗi authored (khi có
+ * provenance thật) hoặc ghi rõ "chưa có file provenance" (khi miễn, vd
+ * m01-u1 theo G14-R2b). */
+function renderComprehensiveSummary(ct, idx, hasProvFile) {
+  const out = [`<h2 id="summary">⑦ TÓM TẮT</h2>`];
+
+  const byKind = new Map();
+  const byLesson = new Map();
+  for (const q of ct.questions) {
+    byKind.set(q.kind, (byKind.get(q.kind) ?? 0) + 1);
+    const lessons = new Set((q.reviews ?? []).map((r) => r.lessonId));
+    for (const l of lessons) byLesson.set(l, (byLesson.get(l) ?? 0) + 1);
+  }
+
+  out.push(`<h3>Số câu theo kind</h3><table class="pairs"><tbody>`);
+  for (const [k, n] of byKind) out.push(`<tr><td>${esc(k)}</td><td>${n} câu</td></tr>`);
+  out.push(`</tbody></table>`);
+
+  out.push(`<h3>Số câu có chạm mỗi lesson nguồn (theo reviews[])</h3><table class="pairs"><tbody>`);
+  for (const [l, n] of byLesson) out.push(`<tr><td>${esc(l)}</td><td>${n} câu</td></tr>`);
+  out.push(`</tbody></table>`);
+
+  out.push(`<h3>Chuỗi tự soạn (authored)</h3>`);
+  if (!hasProvFile) {
+    out.push(
+      `<p class="sit">Bài này MIỄN provenance (G14-R2b — dẫn xuất từ lesson đã miễn hoặc đã có ` +
+        `provenance riêng, xem <code>scripts/content/sources/provenance-exemptions.json</code>). ` +
+        `Không có file khai để liệt kê từng lý do; MỌI <code>context</code> + <code>explanation</code> ` +
+        `dưới đây là văn xuôi tiếng Việt tự soạn theo định nghĩa (giải thích cho người học, ` +
+        `không phải câu trích nguồn).</p>`,
+    );
+    out.push(`<table class="pairs"><thead><tr><th>câu</th><th>trường</th><th>nội dung</th></tr></thead><tbody>`);
+    for (const q of ct.questions) {
+      if (q.context) out.push(`<tr><td>Q${q.order}</td><td>context</td><td>${esc(q.context)}</td></tr>`);
+      out.push(`<tr><td>Q${q.order}</td><td>explanation</td><td>${esc(q.explanation)}</td></tr>`);
+    }
+    out.push(`</tbody></table>`);
+  } else {
+    const authored = idx.items.filter((i) => i.authored);
+    out.push(`<table class="pairs"><thead><tr><th>path</th><th>lý do</th></tr></thead><tbody>`);
+    for (const a of authored) {
+      out.push(`<tr><td class="paths">${esc(a.path)}</td><td>${esc(a.reason ?? "(không ghi lý do)")}</td></tr>`);
+    }
+    out.push(`</tbody></table>`);
+  }
+
+  return out.join("\n");
+}
+
+export function buildUnitPreview(unitId) {
+  const unit = loadUnit(unitId);
+  if (!unit) throw new Error(`Không thấy unit "${unitId}" trong ${COURSES_FILE}`);
+  const ct = unit.comprehensiveTest;
+  if (!ct) throw new Error(`Unit "${unitId}" chưa có comprehensiveTest`);
+
+  const provFile = path.join(PROV_DIR, `${ct.id}.provenance.json`);
+  let items = [];
+  let provNote = "";
+  const hasProvFile = fs.existsSync(provFile);
+  if (hasProvFile) {
+    items = JSON.parse(fs.readFileSync(provFile, "utf8")).items ?? [];
+  } else {
+    provNote = ` · <b>miễn provenance (G14-R2b)</b>`;
+  }
+  const idx = buildProvIndex(items);
+
+  const title = nat(ct, "title") ?? ct.title;
+  const description = nat(ct, "description") ?? ct.description ?? "";
+  const questions = [...ct.questions].sort((a, b) => a.order - b.order);
+
+  const body = [
+    `<div class="wrap">`,
+    `<h1>${esc(title)}</h1>`,
+    `<div class="meta">${esc(unitId)} · bài tổng hợp (unit_comprehensive_cloze) · plan ${esc(ct.plan)} · ` +
+      `${questions.length} câu · nguồn: ${esc((ct.sourceLessonIds ?? []).join(", "))} · ` +
+      `ngôn ngữ mẹ đẻ hiển thị: <b>${NAT}</b> · provenance ${items.length} mục${provNote}<br>` +
+      `${esc(description)}<br>` +
+      `Sinh lúc ${new Date().toISOString()} bằng <code>scripts/preview-lesson.mjs</code></div>`,
+    `<nav><a href="#c5">Câu hỏi</a><a href="#summary">⑦ Tóm tắt</a>${hasProvFile ? `<a href="#prov">Provenance</a>` : ""}</nav>`,
+    `<div id="aids">
+      <label><input type="checkbox" id="tKana" checked> Dòng đọc kana <span class="hint2">(tách theo ranh giới khối)</span></label>
+      <label><input type="checkbox" id="tRomaji"> Romaji <span class="hint2">(Hepburn, phiên từ kana)</span></label>
+      <span class="hint2">🔊 = nghe (giọng ja-JP của trình duyệt)</span>
+    </div>`,
+    `<h2 id="c5">CÂU HỎI — hiện hết đáp án + nhiễu</h2>`,
+    `<p class="sit">Trang duyệt: mọi phương án đều hiện, ✓ là đáp án đúng, ✗ là nhiễu; ô trống hiện sẵn đáp án trong khung xanh.</p>`,
+    ...questions.map((q) => renderComprehensiveQuestion(idx, q)),
+    renderComprehensiveSummary(ct, idx, hasProvFile),
+    hasProvFile ? renderProvenance(items) : "",
+    `</div>`,
+  ].join("\n");
+
+  const html = wrapHtml(title, unitId, body);
+
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  const out = path.join(OUT_DIR, `${unitId}.html`);
+  fs.writeFileSync(out, html, "utf8");
+  return { out, lessonId: unitId, title, items: items.length, exercises: questions.length };
+}
+
 /* ──────────────────────────── CSS ──────────────────────────── */
 
 const CSS = `
@@ -708,53 +923,21 @@ border-bottom:2px solid var(--ok);padding:0 .25rem;border-radius:3px}
 .sub-q{border-top:1px dashed var(--line);padding-top:.5rem;margin-top:.5rem}
 .raw{overflow-x:auto;font-size:.75rem;background:var(--bg);padding:.5rem}
 table{display:block;overflow-x:auto}
+.reviews{font-size:.85rem;color:var(--mut);margin:.5rem 0 0}
+.review{white-space:nowrap}
 `;
 
 /* ──────────────────────────── build ──────────────────────────── */
 
-export function buildPreview(lessonId) {
-  const db = JSON.parse(fs.readFileSync(LESSONS_FILE, "utf8"));
-  const lessons = Array.isArray(db) ? db : db.lessons ?? [];
-  const lesson = lessons.find((l) => l.id === lessonId);
-  if (!lesson) throw new Error(`Không thấy bài "${lessonId}" trong ${LESSONS_FILE}`);
-  if (!lesson.fiveCardContent) throw new Error(`Bài "${lessonId}" không phải five_cards`);
-
-  const provFile = path.join(PROV_DIR, `${lessonId}.provenance.json`);
-  let items = [];
-  let provNote = "";
-  if (fs.existsSync(provFile)) {
-    items = JSON.parse(fs.readFileSync(provFile, "utf8")).items ?? [];
-  } else {
-    provNote = ` · <b>chưa có file provenance</b>`;
-  }
-  const idx = buildProvIndex(items);
-
-  const title = nat(lesson, "title") ?? lesson.title;
-  const body = [
-    `<div class="wrap">`,
-    `<h1>${esc(title)}</h1>`,
-    `<div class="meta">${esc(lessonId)} · ${esc(lesson.level ?? "")} · ${esc(lesson.lessonFormat ?? "")} · ngôn ngữ mẹ đẻ hiển thị: <b>${NAT}</b> · provenance ${items.length} mục${provNote}<br>Sinh lúc ${new Date().toISOString()} bằng <code>scripts/preview-lesson.mjs</code></div>`,
-    `<nav><a href="#c1">① Intro</a><a href="#c2">② Từ vựng</a><a href="#c3">③ Hội thoại</a><a href="#c4">④ Ngữ pháp</a><a href="#c5">⑤ Bài tập</a><a href="#prov">⑥ Provenance</a></nav>`,
-    // Hai công tắc trợ đọc, theo đúng lối Q14 (Q14ReadingAidSessionStore):
-    // nhớ trong PHIÊN, không ghi đĩa, mỗi công tắc một trạng thái độc lập.
-    `<div id="aids">
-      <label><input type="checkbox" id="tKana" checked> Dòng đọc kana <span class="hint2">(tách theo ranh giới khối)</span></label>
-      <label><input type="checkbox" id="tRomaji"> Romaji <span class="hint2">(Hepburn, phiên từ kana)</span></label>
-      <span class="hint2">🔊 = nghe (giọng ja-JP của trình duyệt)</span>
-    </div>`,
-    renderIntro(lesson, idx),
-    renderVocabulary(lesson, idx),
-    renderDialogue(lesson, idx),
-    renderGrammar(lesson, idx),
-    renderPractice(lesson, idx),
-    renderProvenance(items),
-    `</div>`,
-  ].join("\n");
-
-  const html = `<!doctype html>
+/** Bọc HTML đầy đủ (style + script trợ đọc/nghe/chép) quanh `body` — DÙNG
+ * CHUNG cho cả trang Lesson (buildPreview) và trang Unit Comprehensive Test
+ * (buildUnitPreview), để hai loại trang không có hai bản script/CSS khác
+ * nhau lệch hành vi. */
+function wrapHtml(title, id, body) {
+  return `<!doctype html>
 <html lang="vi"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DUYỆT — ${esc(title)} (${esc(lessonId)})</title>
+<title>DUYỆT — ${esc(title)} (${esc(id)})</title>
 <style>${CSS}</style></head><body>
 ${body}
 <script>
@@ -820,6 +1003,48 @@ ${body}
 })();
 </script>
 </body></html>`;
+}
+
+export function buildPreview(lessonId) {
+  const db = JSON.parse(fs.readFileSync(LESSONS_FILE, "utf8"));
+  const lessons = Array.isArray(db) ? db : db.lessons ?? [];
+  const lesson = lessons.find((l) => l.id === lessonId);
+  if (!lesson) throw new Error(`Không thấy bài "${lessonId}" trong ${LESSONS_FILE}`);
+  if (!lesson.fiveCardContent) throw new Error(`Bài "${lessonId}" không phải five_cards`);
+
+  const provFile = path.join(PROV_DIR, `${lessonId}.provenance.json`);
+  let items = [];
+  let provNote = "";
+  if (fs.existsSync(provFile)) {
+    items = JSON.parse(fs.readFileSync(provFile, "utf8")).items ?? [];
+  } else {
+    provNote = ` · <b>chưa có file provenance</b>`;
+  }
+  const idx = buildProvIndex(items);
+
+  const title = nat(lesson, "title") ?? lesson.title;
+  const body = [
+    `<div class="wrap">`,
+    `<h1>${esc(title)}</h1>`,
+    `<div class="meta">${esc(lessonId)} · ${esc(lesson.level ?? "")} · ${esc(lesson.lessonFormat ?? "")} · ngôn ngữ mẹ đẻ hiển thị: <b>${NAT}</b> · provenance ${items.length} mục${provNote}<br>Sinh lúc ${new Date().toISOString()} bằng <code>scripts/preview-lesson.mjs</code></div>`,
+    `<nav><a href="#c1">① Intro</a><a href="#c2">② Từ vựng</a><a href="#c3">③ Hội thoại</a><a href="#c4">④ Ngữ pháp</a><a href="#c5">⑤ Bài tập</a><a href="#prov">⑥ Provenance</a></nav>`,
+    // Hai công tắc trợ đọc, theo đúng lối Q14 (Q14ReadingAidSessionStore):
+    // nhớ trong PHIÊN, không ghi đĩa, mỗi công tắc một trạng thái độc lập.
+    `<div id="aids">
+      <label><input type="checkbox" id="tKana" checked> Dòng đọc kana <span class="hint2">(tách theo ranh giới khối)</span></label>
+      <label><input type="checkbox" id="tRomaji"> Romaji <span class="hint2">(Hepburn, phiên từ kana)</span></label>
+      <span class="hint2">🔊 = nghe (giọng ja-JP của trình duyệt)</span>
+    </div>`,
+    renderIntro(lesson, idx),
+    renderVocabulary(lesson, idx),
+    renderDialogue(lesson, idx),
+    renderGrammar(lesson, idx),
+    renderPractice(lesson, idx),
+    renderProvenance(items),
+    `</div>`,
+  ].join("\n");
+
+  const html = wrapHtml(title, lessonId, body);
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const out = path.join(OUT_DIR, `${lessonId}.html`);
@@ -873,15 +1098,29 @@ function openInBrowser(file) {
   }
 }
 
+/**
+ * Một ID có thể là Lesson (lessons.json, có `fiveCardContent`) hoặc Unit có
+ * bài tổng hợp (courses.json, `comprehensiveTest`) — thử Lesson trước
+ * (đường cũ, nhiều bài hơn), rồi mới thử Unit.
+ */
+function buildAny(id) {
+  const db = JSON.parse(fs.readFileSync(LESSONS_FILE, "utf8"));
+  const lessons = Array.isArray(db) ? db : db.lessons ?? [];
+  if (lessons.some((l) => l.id === id && l.fiveCardContent)) return buildPreview(id);
+  const unit = loadUnit(id);
+  if (unit?.comprehensiveTest) return buildUnitPreview(id);
+  throw new Error(`"${id}" không phải Lesson five_cards cũng không phải Unit có comprehensiveTest`);
+}
+
 function main() {
   const args = process.argv.slice(2);
   const noOpen = args.includes("--no-open");
   const ids = args.filter((a) => !a.startsWith("-"));
   if (!ids.length) {
-    console.error("Dùng: node scripts/preview-lesson.mjs <lessonId> [lessonId...] [--no-open]");
+    console.error("Dùng: node scripts/preview-lesson.mjs <lessonId|unitId> [id...] [--no-open]");
     process.exit(2);
   }
-  const built = ids.map((id) => buildPreview(id));
+  const built = ids.map((id) => buildAny(id));
   for (const r of built) {
     console.log(`ĐÃ XUẤT  ${r.out}  (${r.exercises} bài tập · ${r.items} mục provenance)`);
     console.log(`         mở: file:///${path.resolve(r.out).replace(/\\/g, "/")}`);
