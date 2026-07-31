@@ -85,3 +85,21 @@ export function buildLessonPathIndex(lesson) {
   }
   return map;
 }
+
+/**
+ * Bản đồ path → giá trị THẬT cho bài tổng hợp cuối Unit (`Unit.comprehensiveTest`,
+ * courses.json) — cùng việc với buildLessonPathIndex nhưng KHÔNG có gốc
+ * fiveCardContent/vocabulary: comprehensiveTest không chia hai nhánh đó, nên
+ * walk THẲNG cả object, path sinh ra khớp nguyên văn đường dẫn thật trong
+ * courses.json (vd "questions[0].blanks[0].displayAnswer").
+ *
+ * @param {object} comprehensiveTest
+ * @returns {Map<string, string>}
+ */
+export function buildUnitPathIndex(comprehensiveTest) {
+  const map = new Map();
+  for (const { path, value } of walkLessonStrings(comprehensiveTest, "")) {
+    map.set(path, value);
+  }
+  return map;
+}

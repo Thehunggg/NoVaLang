@@ -29,7 +29,7 @@ import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readingFromFurigana } from "./lib/japanese-furigana.mjs";
-import { walkLessonStrings, buildLessonPathIndex, walkNodes } from "./lib/lesson-walk.mjs";
+import { walkLessonStrings, buildLessonPathIndex, buildUnitPathIndex, walkNodes } from "./lib/lesson-walk.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -283,6 +283,74 @@ export function checkPathMatches(pathIndex, item) {
   return { ok: true };
 }
 
+// ───────────────────────────────────────────────────────────────────────────
+// from_lesson (PHA C) — chuỗi ở BÀI TỔNG HỢP truy được về ĐÚNG một vị trí
+// trong MỘT LESSON đã build (lessons.json), thay vì khớp chuỗi trong file
+// nguồn thô. Trỏ path đích danh nên KHÔNG cần ngưỡng chống trùng ngẫu nhiên
+// (khác checkItem, vốn tìm-thấy-ở-đâu-đó trong cả file).
+//
+// Dạng đơn:  from_lesson: { lessonId, path }
+// Dạng ghép: from_lesson: [{ lessonId, path }, ...], join: { op: "concat", separator }
+// ───────────────────────────────────────────────────────────────────────────
+const lessonPathIndexCache = new Map();
+function getLessonPathIndex(lessonId, lessonsFile = "shared/generated/lessons.json") {
+  if (lessonPathIndexCache.has(lessonId)) return lessonPathIndexCache.get(lessonId);
+  const abs = path.join(ROOT, lessonsFile);
+  let result = null;
+  if (existsSync(abs)) {
+    const all = JSON.parse(readFileSync(abs, "utf8"));
+    const lesson = (all.lessons ?? all).find((l) => l.id === lessonId);
+    if (lesson) result = buildLessonPathIndex(lesson);
+  }
+  lessonPathIndexCache.set(lessonId, result);
+  return result;
+}
+
+function resolveFromLessonFragment(frag) {
+  if (!frag || typeof frag !== "object" || !frag.lessonId || !frag.path) {
+    return { ok: false, why: "from_lesson thiếu lessonId hoặc path" };
+  }
+  const idx = getLessonPathIndex(frag.lessonId);
+  if (!idx) return { ok: false, why: `lessonId không tồn tại trong lessons.json: ${frag.lessonId}` };
+  if (!idx.has(frag.path)) {
+    return { ok: false, why: `path không tồn tại trong ${frag.lessonId}: ${frag.path}` };
+  }
+  return { ok: true, value: idx.get(frag.path) };
+}
+
+/** @returns {{ok:true}|{ok:false, why:string, want?:string, got?:string}} */
+export function checkFromLesson(item) {
+  const frags = Array.isArray(item.from_lesson) ? item.from_lesson : [item.from_lesson];
+  if (!frags.length) return { ok: false, why: "from_lesson rỗng" };
+  const values = [];
+  for (const frag of frags) {
+    const r = resolveFromLessonFragment(frag);
+    if (!r.ok) return r;
+    values.push(r.value);
+  }
+  let joined;
+  if (values.length === 1) {
+    joined = values[0];
+  } else {
+    const op = item.join?.op;
+    if (op !== "concat") {
+      return { ok: false, why: `from_lesson nhiều mảnh cần item.join.op="concat" (đang: ${JSON.stringify(op)})` };
+    }
+    joined = values.join(item.join?.separator ?? "");
+  }
+  const want = normalize(item.targetText);
+  const got = normalize(joined);
+  if (want !== got) {
+    return { ok: false, why: "targetText KHÁC giá trị ráp từ from_lesson", want, got };
+  }
+  return { ok: true };
+}
+
+function describeFromLesson(fromLesson) {
+  const frags = Array.isArray(fromLesson) ? fromLesson : [fromLesson];
+  return frags.map((f) => `${f?.lessonId ?? "?"}:${f?.path ?? "?"}`).join(" + ");
+}
+
 /** @returns {{total:number, exempt:number, missing:Array<[string,string]>}} */
 export function checkCoverage(lessonId, items, lessonsFile = "shared/generated/lessons.json") {
   const abs = path.join(ROOT, lessonsFile);
@@ -301,6 +369,53 @@ export function checkCoverage(lessonId, items, lessonsFile = "shared/generated/l
     if (!declared.has(normalize(v))) missing.push([p, v]);
   }
   return { total: found.size, exempt, missing };
+}
+
+/**
+ * Gom mọi chuỗi tiếng Nhật hiển thị trong bài tổng hợp cuối Unit
+ * (`Unit.comprehensiveTest`, courses.json) — tương ứng collectDisplayedJapanese
+ * phía Lesson nhưng KHÔNG chia gốc fiveCardContent/vocabulary.
+ *
+ * LOẠI `options[].answersByBlankId.*`: khoá là blankId ĐỘNG (q1b1, q7b3, …),
+ * không phải tên trường cố định — registry (render-coverage.json) chỉ mô tả
+ * được tên trường cố định, không mô tả được khoá động. Nội dung của nhánh này
+ * luôn là bản KHÔNG-furigana, trùng với `options[].text` (đã khai) ghép bằng
+ * " / " — không phải chữ mới, nên loại khỏi yêu cầu khai riêng.
+ */
+export function collectDisplayedJapaneseUnit(comprehensiveTest) {
+  const out = new Map();
+  const JP = /[぀-ヿ一-鿿]/;
+  for (const { path: p, key, value } of walkLessonStrings(comprehensiveTest, "")) {
+    if (p.includes(".answersByBlankId.")) continue;
+    if (JP.test(value) && COVERAGE_FIELDS.includes(key)) out.set(p, value);
+  }
+  return out;
+}
+
+/**
+ * checkCoverage phía Unit — `id` nhận cả unit.id lẫn comprehensiveTest.id để
+ * khớp với cả `--unit <unitId>` (PHA B) lẫn `doc.lessonId` trong file
+ * provenance (vốn là ct.id, vd "ja-daily_life-m01-u2-comprehensive").
+ * @returns {{total:number, exempt:number, missing:Array<[string,string]>}|null}
+ */
+export function checkCoverageUnit(id, items, coursesFile = "shared/generated/courses.json") {
+  const abs = path.join(ROOT, coursesFile);
+  if (!existsSync(abs)) return null;
+  const all = JSON.parse(readFileSync(abs, "utf8"));
+  let ct = null;
+  for (const course of all.courses ?? []) {
+    for (const u of course.units ?? []) {
+      if (u.id === id || u.comprehensiveTest?.id === id) ct = u.comprehensiveTest;
+    }
+  }
+  if (!ct) return null;
+  const declared = new Set(items.map((i) => normalize(i.targetText)));
+  const found = collectDisplayedJapaneseUnit(ct);
+  const missing = [];
+  for (const [p, v] of found) {
+    if (!declared.has(normalize(v))) missing.push([p, v]);
+  }
+  return { total: found.size, exempt: 0, missing };
 }
 
 // ───────────────────────────────────────────────────────────────────────────
@@ -386,13 +501,15 @@ export function checkLessonFurigana(lessonId, lessonsFile = "shared/generated/le
  * MỌI trường chuỗi có furigana + có dòng đọc anh em cùng node — rộng hơn
  * Lesson một chút, nhưng an toàn hơn bỏ sót.
  */
-export function checkUnitFurigana(unitId, coursesFile = "shared/generated/courses.json") {
+export function checkUnitFurigana(id, coursesFile = "shared/generated/courses.json") {
   const abs = path.join(ROOT, coursesFile);
   if (!existsSync(abs)) return null;
   const all = JSON.parse(readFileSync(abs, "utf8"));
   let unit = null;
   for (const course of all.courses ?? []) {
-    for (const u of course.units ?? []) if (u.id === unitId) unit = u;
+    // `id` nhận cả unit.id (--unit CLI, PHA B) lẫn comprehensiveTest.id
+    // (doc.lessonId trong file provenance, PHA C).
+    for (const u of course.units ?? []) if (u.id === id || u.comprehensiveTest?.id === id) unit = u;
   }
   if (!unit?.comprehensiveTest) return null;
   return checkFuriganaInTree(unit.comprehensiveTest, "", () => true);
@@ -562,14 +679,37 @@ function main() {
   // giá trị THẬT trong lessons.json, đúng bằng targetText đã khai. Áp cho MỌI
   // loại item (verbatim/authored/mutation) vì path+targetText mô tả nội dung
   // đang hiện Ở ĐÂU, không phụ thuộc câu đó lấy từ đâu.
+  //
+  // PHA C: doc.lessonId có thể là comprehensiveTest.id (bài tổng hợp cuối
+  // Unit, courses.json) thay vì Lesson id thật — không tìm thấy trong
+  // lessons.json thì thử courses.json trước khi bỏ cuộc. `isUnit` quyết định
+  // dùng bản KIỂM PHỦ/R12d nào bên dưới (Lesson hay Unit).
   let pathIndex = null;
+  let isUnit = false;
   const lessonsPath = path.join(ROOT, "shared", "generated", "lessons.json");
   if (doc.lessonId && existsSync(lessonsPath)) {
     const allLessons = JSON.parse(readFileSync(lessonsPath, "utf8"));
     const lesson = (allLessons.lessons ?? allLessons).find((l) => l.id === doc.lessonId);
     if (lesson) pathIndex = buildLessonPathIndex(lesson);
   }
+  if (!pathIndex && doc.lessonId) {
+    const coursesPath = path.join(ROOT, "shared", "generated", "courses.json");
+    if (existsSync(coursesPath)) {
+      const allCourses = JSON.parse(readFileSync(coursesPath, "utf8"));
+      let ct = null;
+      for (const course of allCourses.courses ?? []) {
+        for (const u of course.units ?? []) {
+          if (u.comprehensiveTest?.id === doc.lessonId) ct = u.comprehensiveTest;
+        }
+      }
+      if (ct) {
+        pathIndex = buildUnitPathIndex(ct);
+        isUnit = true;
+      }
+    }
+  }
   let pathFail = 0;
+  let fromLessonCount = 0;
 
   // Corpus để R12b kiểm `mutation.from` có thật trong bài không.
   const corpus = new Set(items.map((i) => normalize(i.targetText)));
@@ -611,9 +751,37 @@ function main() {
       console.log(`  TỰ SOẠN  ${item.path} — ${item.reason ?? "(không ghi lý do)"}`);
       continue;
     }
+    if (item.from_lesson) {
+      const r = checkFromLesson(item);
+      if (r.ok) {
+        fromLessonCount += 1;
+        console.log(`  TỪ_BÀI   ${item.path}  ←  ${describeFromLesson(item.from_lesson)}`);
+      } else {
+        fail += 1;
+        console.log(`  FAIL     ${item.path} — from_lesson: ${r.why}`);
+        if (r.want !== undefined) {
+          console.log(`             bài (đã chuẩn hoá)   : ${r.want}`);
+          console.log(`             ráp từ from_lesson   : ${r.got}`);
+        }
+      }
+      continue;
+    }
     if (!item.verbatim) {
       fail += 1;
-      console.log(`  FAIL     ${item.path} — mục không khai verbatim cũng không khai authored`);
+      console.log(`  FAIL     ${item.path} — mục không khai verbatim/authored/from_lesson`);
+      continue;
+    }
+    // NGƯỠNG CHỐNG TRÙNG NGẪU NHIÊN (PHA C, chỉ áp cho provenance Unit-level —
+    // nơi cơ chế from_lesson vừa ra đời cùng lúc với ngưỡng này; KHÔNG áp
+    // ngược cho 172 file provenance Lesson đã duyệt, ngoài phạm vi lượt này).
+    // Chuỗi ≤3 ký tự khớp-chuỗi trong CẢ MỘT FILE nguồn rất dễ trùng ngẫu
+    // nhiên (ca thật: "は？" khớp ban2.txt) — phải trỏ path đích danh
+    // (from_lesson) hoặc khai authored, không được dựa vào khớp-chuỗi mù.
+    if (isUnit && !item.token && normalize(item.targetText).length <= 3) {
+      fail += 1;
+      console.log(
+        `  FAIL     ${item.path} — chuỗi ngắn (≤3 ký tự, "${item.targetText}") không được khai verbatim+source (dễ trùng ngẫu nhiên) — khai authored hoặc from_lesson`,
+      );
       continue;
     }
     const r = checkItem(item);
@@ -656,7 +824,7 @@ function main() {
   for (const [op, n] of mutationByOp) console.log(`  ${String(n).padStart(3)}  ${op}`);
   console.log(`── PASS-YẾU ── ${weak.length ? weak.join(", ") : "0"}`);
 
-  const cov = checkCoverage(doc.lessonId, items);
+  const cov = isUnit ? checkCoverageUnit(doc.lessonId, items) : checkCoverage(doc.lessonId, items);
   if (cov) {
     const need = cov.total - cov.exempt;
     console.log("── KIỂM PHỦ ──");
@@ -669,10 +837,10 @@ function main() {
     }
     fail += cov.missing.length;
   } else {
-    console.log("── KIỂM PHỦ ── BỎ QUA (chưa có bài trong lessons.json)");
+    console.log("── KIỂM PHỦ ── BỎ QUA (chưa có bài trong lessons.json/courses.json)");
   }
 
-  const furi = checkLessonFurigana(doc.lessonId);
+  const furi = isUnit ? checkUnitFurigana(doc.lessonId) : checkLessonFurigana(doc.lessonId);
   if (furi) {
     console.log("── R12d FURIGANA ↔ DÒNG ĐỌC ──");
     console.log(`  kiểm ${furi.checked} chuỗi · LỆCH ${furi.failed.length}`);
@@ -696,8 +864,8 @@ function main() {
 
   console.log("");
   console.log(
-    `TỔNG — nguyên văn PASS ${pass} · FAIL ${fail} · tự soạn ${authored} · mutation ${mutations}` +
-      (pathIndex ? ` · WALK PATH lệch ${pathFail}` : " · WALK PATH BỎ QUA (chưa có bài trong lessons.json)"),
+    `TỔNG — nguyên văn PASS ${pass} · FAIL ${fail} · tự soạn ${authored} · từ_bài(from_lesson) ${fromLessonCount} · mutation ${mutations}` +
+      (pathIndex ? ` · WALK PATH lệch ${pathFail}` : " · WALK PATH BỎ QUA (chưa có bài trong lessons.json/courses.json)"),
   );
   if (fail > 0) process.exit(1);
 }

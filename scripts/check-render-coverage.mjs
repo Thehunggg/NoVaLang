@@ -21,6 +21,7 @@ import { walkLessonStrings } from "./lib/lesson-walk.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LESSONS = path.join(ROOT, "shared", "generated", "lessons.json");
+const COURSES = path.join(ROOT, "shared", "generated", "courses.json");
 const MAP = path.join(ROOT, "shared", "config", "render-coverage.json");
 
 const JP = /[぀-ヿ一-鿿]/;
@@ -30,10 +31,16 @@ const CLASSES = ["display", "aid", "tts", "internal"];
 // Walk dùng CHUNG với verify-provenance.mjs (scripts/lib/lesson-walk.mjs) —
 // trước 2026-07-30 hai script tự viết hai bản walk-cây-JSON riêng, đúng loại
 // lỗi "hai nguồn sự thật" mà phá thật lộ ra khi vá path-verification.
-function collectFields(lesson) {
+function collectFields(root) {
   const found = new Map(); // tên trường → { count, viDu }
-  for (const { key, value } of walkLessonStrings(lesson)) {
+  for (const { path: p, key, value } of walkLessonStrings(root)) {
     if (!JP.test(value)) continue;
+    // options[].answersByBlankId.<blankId> — khoá là blankId ĐỘNG (q1b1,
+    // q7b3, …), không phải tên trường cố định mà registry có thể mô tả.
+    // Nội dung luôn trùng options[].text (đã khai) ghép bằng " / ", không
+    // phải chữ mới — loại khỏi kiểm phủ (xem collectDisplayedJapaneseUnit
+    // trong verify-provenance.mjs, cùng lý do).
+    if (p.includes(".answersByBlankId.")) continue;
     const cur = found.get(key) ?? { count: 0, viDu: value };
     cur.count += 1;
     found.set(key, cur);
@@ -60,10 +67,31 @@ function main() {
     }
   }
 
+  // PHA C (2026-07-31) — bài tổng hợp cuối Unit (courses.json,
+  // Unit.comprehensiveTest) trước đây KHÔNG được script này biết tới, nên
+  // tiếng Nhật ở đó (context/explanation/text/displayAnswer…) chưa từng bị
+  // soi. Gộp vào CÙNG bản đồ `seen` — registry là theo TÊN TRƯỜNG, dùng
+  // chung cho cả Lesson lẫn Unit.
+  let unitCount = 0;
+  if (existsSync(COURSES)) {
+    const allCourses = JSON.parse(readFileSync(COURSES, "utf8"));
+    for (const course of allCourses.courses ?? []) {
+      for (const u of course.units ?? []) {
+        if (!u.comprehensiveTest) continue;
+        unitCount += 1;
+        for (const [k, v] of collectFields(u.comprehensiveTest)) {
+          const cur = seen.get(k) ?? { count: 0, viDu: v.viDu };
+          cur.count += v.count;
+          seen.set(k, cur);
+        }
+      }
+    }
+  }
+
   const errors = [];
   const warnings = [];
 
-  console.log(`KIỂM PHỦ HIỂN THỊ (G14-R14) — ${lessons.length} bài five_cards`);
+  console.log(`KIỂM PHỦ HIỂN THỊ (G14-R14) — ${lessons.length} bài five_cards + ${unitCount} bài tổng hợp Unit`);
   console.log("");
 
   // 1. Trường có trong dữ liệu mà CHƯA khai.

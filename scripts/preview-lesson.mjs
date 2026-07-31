@@ -122,6 +122,11 @@ function provBadge(idx, text) {
   if (it.authored) {
     return `<span class="prov auth">✎ tự soạn — ${esc(it.reason ?? "")}</span>`;
   }
+  if (it.from_lesson) {
+    const frags = Array.isArray(it.from_lesson) ? it.from_lesson : [it.from_lesson];
+    const label = frags.map((f) => `${f?.lessonId ?? "?"}:${f?.path ?? "?"}`).join(" + ");
+    return `<span class="prov fl">→ ${esc(label)}</span>`;
+  }
   if (it.verbatim) {
     return `<span class="prov vb">↩ ${esc(path.basename(it.source))}:${it.line}</span>`;
   }
@@ -551,9 +556,10 @@ function renderPractice(lesson, idx) {
 function renderProvenance(items) {
   const out = [`<h2 id="prov">⑥ PROVENANCE — sổ nguồn</h2>`];
 
-  const verbatim = items.filter((i) => i.verbatim && !i.authored && !i.mutation);
+  const verbatim = items.filter((i) => i.verbatim && !i.authored && !i.mutation && !i.from_lesson);
   const authored = items.filter((i) => i.authored);
   const mutations = items.filter((i) => i.mutation);
+  const fromLesson = items.filter((i) => i.from_lesson);
 
   // Tỉ lệ theo CÂU MẸ: dedupe (source:line), đúng cách cổng đếm.
   const uniq = new Map();
@@ -588,6 +594,17 @@ function renderProvenance(items) {
       <td class="paths">${list.map((x) => `${esc(x.path)} = <span class="ja">${esc(x.targetText)}</span>`).join("<br>")}</td></tr>`);
   }
   out.push(`</tbody></table>`);
+
+  if (fromLesson.length) {
+    out.push(`<h3>Từ bài khác (from_lesson) — ${fromLesson.length} mục</h3>`);
+    out.push(`<table class="pairs"><thead><tr><th>trường</th><th>nội dung</th><th>trỏ tới</th></tr></thead><tbody>`);
+    for (const f of fromLesson) {
+      const frags = Array.isArray(f.from_lesson) ? f.from_lesson : [f.from_lesson];
+      const label = frags.map((fr) => `${esc(fr?.lessonId ?? "?")}:${esc(fr?.path ?? "?")}`).join(" + ");
+      out.push(`<tr><td class="paths">${esc(f.path)}</td><td class="ja">${esc(f.targetText)}</td><td class="paths">${label}</td></tr>`);
+    }
+    out.push(`</tbody></table>`);
+  }
 
   if (mutations.length) {
     out.push(`<h3>Mutation — ${mutations.length} mục</h3>`);
@@ -750,6 +767,22 @@ function renderComprehensiveSummary(ct, idx, hasProvFile) {
   for (const [l, n] of byLesson) out.push(`<tr><td>${esc(l)}</td><td>${n} câu</td></tr>`);
   out.push(`</tbody></table>`);
 
+  if (hasProvFile) {
+    const flCount = idx.items.filter((i) => i.from_lesson).length;
+    const authCount = idx.items.filter((i) => i.authored).length;
+    const vbCount = idx.items.filter((i) => i.verbatim && !i.authored && !i.mutation && !i.from_lesson).length;
+    const mutCount = idx.items.filter((i) => i.mutation).length;
+    out.push(
+      `<h3>Khai theo loại — ${idx.items.length} mục</h3>` +
+        `<table class="pairs"><tbody>` +
+        `<tr><td>từ_bài (from_lesson)</td><td>${flCount}</td></tr>` +
+        `<tr><td>tự soạn (authored)</td><td>${authCount}</td></tr>` +
+        `<tr><td>nguyên văn (verbatim)</td><td>${vbCount}</td></tr>` +
+        `<tr><td>mutation</td><td>${mutCount}</td></tr>` +
+        `</tbody></table>`,
+    );
+  }
+
   out.push(`<h3>Chuỗi tự soạn (authored)</h3>`);
   if (!hasProvFile) {
     out.push(
@@ -832,9 +865,9 @@ export function buildUnitPreview(unitId) {
 
 const CSS = `
 :root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--line:#ddd;--ok:#0a7d32;--no:#b3261e;
---vb:#0b5aa8;--auth:#8a5a00;--mutc:#7b2fa8;--card:#f7f7f9;}
+--vb:#0b5aa8;--auth:#8a5a00;--mutc:#7b2fa8;--fl:#0f8b8d;--card:#f7f7f9;}
 @media(prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e8e8ea;--mut:#9a9aa3;
---line:#33343c;--ok:#4ec97a;--no:#ff7b72;--vb:#6cb0ff;--auth:#e0b23c;--mutc:#c58cf0;--card:#1e1f26;}}
+--line:#33343c;--ok:#4ec97a;--no:#ff7b72;--vb:#6cb0ff;--auth:#e0b23c;--mutc:#c58cf0;--fl:#4fd1cc;--card:#1e1f26;}}
 *{box-sizing:border-box}
 body{margin:0;padding:0 1.2rem 4rem;background:var(--bg);color:var(--fg);
 font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;}
@@ -896,6 +929,7 @@ vertical-align:middle;margin-left:.3rem;overflow-wrap:anywhere}
 .prov.vb{color:var(--vb);border:1px solid var(--vb);white-space:nowrap}
 .prov.auth{color:var(--auth);border:1px solid var(--auth)}
 .prov.mut{color:var(--mutc);border:1px solid var(--mutc)}
+.prov.fl{color:var(--fl);border:1px solid var(--fl);white-space:nowrap}
 .ex,.gpat,.dgroup,.q{background:var(--card);border:1px solid var(--line);
 border-radius:6px;padding:.7rem .9rem;margin:.7rem 0}
 .exlabel{font-size:.85rem;color:var(--mut)}
