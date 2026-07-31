@@ -5546,7 +5546,2398 @@
           "lessonIds": [
             "ja-daily_life-m01-u2-l1",
             "ja-daily_life-m01-u2-l2"
-          ]
+          ],
+          "comprehensiveTest": {
+            "id": "ja-daily_life-m01-u2-comprehensive",
+            "unitId": "ja-daily_life-m01-u2",
+            "format": "unit_comprehensive_cloze",
+            "languageCode": "ja",
+            "targetLocale": "ja-JP",
+            "plan": "plus",
+            "graded": true,
+            "title": "Bài tổng hợp Unit 2",
+            "titleByNative": {
+              "vi": "Bài tổng hợp Unit 2",
+              "en": "Unit 2 Comprehensive Test",
+              "ja": "第2ユニット総合テスト"
+            },
+            "description": "Ôn lại toàn bộ Unit 2: chào người đã quen theo đúng vai vế, và đáp lời hỏi thăm đã ở Nhật bao lâu.",
+            "descriptionByNative": {
+              "vi": "Ôn lại toàn bộ Unit 2: chào người đã quen theo đúng vai vế, và đáp lời hỏi thăm đã ở Nhật bao lâu.",
+              "en": "Reviews all of Unit 2: greeting someone you already know at the right register, and answering how long you have been in Japan.",
+              "ja": "第2ユニット全体の復習：立場に合ったあいさつと、日本にどのぐらいいるかへの答え方。"
+            },
+            "estimatedMinutes": "12",
+            "totalQuestions": 18,
+            "sourceLessonIds": [
+              "ja-daily_life-m01-u2-l1",
+              "ja-daily_life-m01-u2-l2"
+            ],
+            "questions": [
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q1",
+                "order": 1,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Satō và Itō quen nhau nhưng chưa thân. Họ tình cờ gặp lại sau một thời gian dài, dùng thể lịch sự.",
+                "contextByNative": {
+                  "vi": "Satō và Itō quen nhau nhưng chưa thân. Họ tình cờ gặp lại sau một thời gian dài, dùng thể lịch sự.",
+                  "en": "Satō and Itō are acquainted but not close. They run into each other after a long time and use polite form.",
+                  "ja": "佐藤さんと伊藤さんは知り合いですが親しくはありません。久しぶりに会い、丁寧体を使います。"
+                },
+                "segments": [
+                  {
+                    "displayText": "あ、"
+                  },
+                  {
+                    "blankId": "q1b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q1b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q1b1",
+                    "displayAnswer": "お久（ひさ）しぶりです",
+                    "canonicalAnswer": "お久しぶりです",
+                    "audioText": "おひさしぶりです",
+                    "acceptedAnswers": [
+                      "お久しぶりです"
+                    ]
+                  },
+                  {
+                    "id": "q1b2",
+                    "displayAnswer": "お元気（げんき）ですか",
+                    "canonicalAnswer": "お元気ですか",
+                    "audioText": "おげんきですか",
+                    "acceptedAnswers": [
+                      "お元気ですか"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q1a",
+                    "text": "お久（ひさ）しぶりです / お元気（げんき）ですか",
+                    "answersByBlankId": {
+                      "q1b1": "お久しぶりです",
+                      "q1b2": "お元気ですか"
+                    }
+                  },
+                  {
+                    "id": "q1b",
+                    "text": "久（ひさ）しぶり / お元気（げんき）ですか",
+                    "answersByBlankId": {
+                      "q1b1": "久しぶり",
+                      "q1b2": "お元気ですか"
+                    }
+                  },
+                  {
+                    "id": "q1c",
+                    "text": "お久（ひさ）しぶりです / 元気（げんき）？",
+                    "answersByBlankId": {
+                      "q1b1": "お久しぶりです",
+                      "q1b2": "元気？"
+                    }
+                  },
+                  {
+                    "id": "q1d",
+                    "text": "お久（ひさ）しぶりです / おかげさまで",
+                    "answersByBlankId": {
+                      "q1b1": "お久しぶりです",
+                      "q1b2": "おかげさまで"
+                    }
+                  }
+                ],
+                "correctOptionId": "q1a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "o-hisashiburi-desu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "o-genki-desu-ka"
+                  }
+                ],
+                "explanation": "久しぶり là thể thường, không hợp khi hai người cùng dùng thể lịch sự. 元気？ cũng là thể thường — hỏi thăm lịch sự phải dùng お元気ですか. おかげさまで là câu ĐÁP lại lời hỏi thăm, không phải câu hỏi.",
+                "explanationByNative": {
+                  "vi": "久しぶり là thể thường, không hợp khi hai người cùng dùng thể lịch sự. 元気？ cũng là thể thường — hỏi thăm lịch sự phải dùng お元気ですか. おかげさまで là câu ĐÁP lại lời hỏi thăm, không phải câu hỏi.",
+                  "en": "久しぶり is plain form, which does not fit when both sides use polite form. 元気？ is likewise plain — asking politely takes お元気ですか. おかげさまで is the REPLY to being asked, not the question itself.",
+                  "ja": "「久しぶり」は普通体なので、丁寧体同士のやりとりには合いません。「元気？」も普通体です。丁寧にたずねるときは「お元気ですか」を使います。「おかげさまで」は尋ねられたときの返事であり、質問ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q2",
+                "order": 2,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Tanaka và Satō là bạn thân. Họ tình cờ gặp lại sau một thời gian dài, dùng thể thường.",
+                "contextByNative": {
+                  "vi": "Tanaka và Satō là bạn thân. Họ tình cờ gặp lại sau một thời gian dài, dùng thể thường.",
+                  "en": "Tanaka and Satō are close friends. They run into each other after a long time and use plain form.",
+                  "ja": "田中さんと佐藤さんは親しい友だちです。久しぶりに会い、普通体を使います。"
+                },
+                "segments": [
+                  {
+                    "displayText": "あ、"
+                  },
+                  {
+                    "blankId": "q2b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q2b2"
+                  },
+                  {
+                    "displayText": "？"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q2b1",
+                    "displayAnswer": "久（ひさ）しぶり",
+                    "canonicalAnswer": "久しぶり",
+                    "audioText": "ひさしぶり",
+                    "acceptedAnswers": [
+                      "久しぶり"
+                    ]
+                  },
+                  {
+                    "id": "q2b2",
+                    "displayAnswer": "元気（げんき）",
+                    "canonicalAnswer": "元気",
+                    "audioText": "げんき",
+                    "acceptedAnswers": [
+                      "元気"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q2a",
+                    "text": "久（ひさ）しぶり / 元気（げんき）？",
+                    "answersByBlankId": {
+                      "q2b1": "久しぶり",
+                      "q2b2": "元気"
+                    }
+                  },
+                  {
+                    "id": "q2b",
+                    "text": "お久（ひさ）しぶりです / 元気（げんき）？",
+                    "answersByBlankId": {
+                      "q2b1": "お久しぶりです",
+                      "q2b2": "元気"
+                    }
+                  },
+                  {
+                    "id": "q2c",
+                    "text": "久（ひさ）しぶり / お元気（げんき）ですか",
+                    "answersByBlankId": {
+                      "q2b1": "久しぶり",
+                      "q2b2": "お元気ですか"
+                    }
+                  },
+                  {
+                    "id": "q2d",
+                    "text": "久（ひさ）しぶり / おかげさまで",
+                    "answersByBlankId": {
+                      "q2b1": "久しぶり",
+                      "q2b2": "おかげさまで"
+                    }
+                  }
+                ],
+                "correctOptionId": "q2a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "hisashiburi"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "genki"
+                  }
+                ],
+                "explanation": "お久しぶりです là thể lịch sự, lệch với bạn thân dùng thể thường. お元気ですか cũng lịch sự — hỏi thăm thân mật phải dùng 元気？. おかげさまで là câu đáp, không phải câu hỏi.",
+                "explanationByNative": {
+                  "vi": "お久しぶりです là thể lịch sự, lệch với bạn thân dùng thể thường. お元気ですか cũng lịch sự — hỏi thăm thân mật phải dùng 元気？. おかげさまで là câu đáp, không phải câu hỏi.",
+                  "en": "お久しぶりです is polite form, which clashes with close friends using plain form. お元気ですか is likewise polite — asking casually takes 元気？. おかげさまで is a reply, not a question.",
+                  "ja": "「お久しぶりです」は丁寧体なので、普通体で話す親しい友だちには合いません。「お元気ですか」も丁寧です。気軽にたずねるときは「元気？」を使います。「おかげさまで」は返事であり、質問ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q3",
+                "order": 3,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Satō vừa được hỏi お元気ですか một cách lịch sự. Satō đáp lại đúng mức.",
+                "contextByNative": {
+                  "vi": "Satō vừa được hỏi お元気ですか một cách lịch sự. Satō đáp lại đúng mức.",
+                  "en": "Satō has just been politely asked お元気ですか and replies at the same level.",
+                  "ja": "佐藤さんは丁寧に「お元気ですか」と聞かれたばかりです。同じ丁寧さで返事をします。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q3b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q3b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q3b1",
+                    "displayAnswer": "はい",
+                    "canonicalAnswer": "はい",
+                    "audioText": "はい",
+                    "acceptedAnswers": [
+                      "はい"
+                    ]
+                  },
+                  {
+                    "id": "q3b2",
+                    "displayAnswer": "おかげさまで",
+                    "canonicalAnswer": "おかげさまで",
+                    "audioText": "おかげさまで",
+                    "acceptedAnswers": [
+                      "おかげさまで"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q3a",
+                    "text": "はい / おかげさまで",
+                    "answersByBlankId": {
+                      "q3b1": "はい",
+                      "q3b2": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q3b",
+                    "text": "うん / おかげさまで",
+                    "answersByBlankId": {
+                      "q3b1": "うん",
+                      "q3b2": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q3c",
+                    "text": "はい / 元気（げんき）",
+                    "answersByBlankId": {
+                      "q3b1": "はい",
+                      "q3b2": "元気"
+                    }
+                  },
+                  {
+                    "id": "q3d",
+                    "text": "お元気（げんき）ですか / おかげさまで",
+                    "answersByBlankId": {
+                      "q3b1": "お元気ですか",
+                      "q3b2": "おかげさまで"
+                    }
+                  }
+                ],
+                "correctOptionId": "q3a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "hai"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "okagesama-de"
+                  }
+                ],
+                "explanation": "うん là thể thường, lệch với người hỏi đã dùng thể lịch sự. 元気 (không kèm おかげさまで) là câu đáp kiểu thân mật, không hợp cảnh lịch sự. お元気ですか là lặp lại câu hỏi thay vì trả lời.",
+                "explanationByNative": {
+                  "vi": "うん là thể thường, lệch với người hỏi đã dùng thể lịch sự. 元気 (không kèm おかげさまで) là câu đáp kiểu thân mật, không hợp cảnh lịch sự. お元気ですか là lặp lại câu hỏi thay vì trả lời.",
+                  "en": "うん is plain form, mismatched with a polite question. 元気 alone answers casually, which does not fit a polite exchange. お元気ですか repeats the question instead of answering it.",
+                  "ja": "「うん」は普通体で、丁寧に聞かれたのと合いません。「元気」だけではカジュアルな返事になり、丁寧な場面には合いません。「お元気ですか」は質問を繰り返しているだけで、答えになっていません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q4",
+                "order": 4,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Satō hỏi Itō đã đến Nhật được bao lâu, dùng cách hỏi theo mốc tròn thời gian.",
+                "contextByNative": {
+                  "vi": "Satō hỏi Itō đã đến Nhật được bao lâu, dùng cách hỏi theo mốc tròn thời gian.",
+                  "en": "Satō asks Itō how long they have been in Japan, using the rounded-duration phrasing.",
+                  "ja": "佐藤さんは伊藤さんに、日本に来てどのぐらいになるかをたずねます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q4b1"
+                  },
+                  {
+                    "displayText": "に来（き）て、"
+                  },
+                  {
+                    "blankId": "q4b2"
+                  },
+                  {
+                    "displayText": "になりますか。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q4b1",
+                    "displayAnswer": "日本（にほん）",
+                    "canonicalAnswer": "日本",
+                    "audioText": "にほん",
+                    "acceptedAnswers": [
+                      "日本"
+                    ]
+                  },
+                  {
+                    "id": "q4b2",
+                    "displayAnswer": "どのぐらい",
+                    "canonicalAnswer": "どのぐらい",
+                    "audioText": "どのぐらい",
+                    "acceptedAnswers": [
+                      "どのぐらい"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q4a",
+                    "text": "日本（にほん） / どのぐらい",
+                    "answersByBlankId": {
+                      "q4b1": "日本",
+                      "q4b2": "どのぐらい"
+                    }
+                  },
+                  {
+                    "id": "q4b",
+                    "text": "生活（せいかつ） / どのぐらい",
+                    "answersByBlankId": {
+                      "q4b1": "生活",
+                      "q4b2": "どのぐらい"
+                    }
+                  },
+                  {
+                    "id": "q4c",
+                    "text": "日本（にほん） / もう",
+                    "answersByBlankId": {
+                      "q4b1": "日本",
+                      "q4b2": "もう"
+                    }
+                  },
+                  {
+                    "id": "q4d",
+                    "text": "日本（にほん） / まだ",
+                    "answersByBlankId": {
+                      "q4b1": "日本",
+                      "q4b2": "まだ"
+                    }
+                  }
+                ],
+                "correctOptionId": "q4a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "nihon"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "dono-gurai"
+                  }
+                ],
+                "explanation": "生活 nghĩa là \"cuộc sống\", không phải một nơi chốn nên không đi được với に来て. もう và まだ là trạng từ chỉ mức đã/chưa hoàn thành, không hỏi được \"bao lâu\" — phải dùng どのぐらい.",
+                "explanationByNative": {
+                  "vi": "生活 nghĩa là \"cuộc sống\", không phải một nơi chốn nên không đi được với に来て. もう và まだ là trạng từ chỉ mức đã/chưa hoàn thành, không hỏi được \"bao lâu\" — phải dùng どのぐらい.",
+                  "en": "生活 means \"life/living\", not a place, so it cannot take に来て. もう and まだ mark whether something is already/not yet done — they cannot ask \"how long\"; どのぐらい does that.",
+                  "ja": "「生活」は「くらし」という意味で場所ではないため、「に来て」とは結びつきません。「もう」と「まだ」は完了したかどうかを表す言葉で、「どのぐらい」のように期間をたずねることはできません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q5",
+                "order": 5,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Satō vừa được Tanaka hỏi 元気？ theo kiểu thân mật. Satō đáp lại đúng mức, nguyên văn cuộc trò chuyện của hai người.",
+                "contextByNative": {
+                  "vi": "Satō vừa được Tanaka hỏi 元気？ theo kiểu thân mật. Satō đáp lại đúng mức, nguyên văn cuộc trò chuyện của hai người.",
+                  "en": "Satō has just been casually asked 元気？ by Tanaka and replies at the same level, in their own words.",
+                  "ja": "佐藤さんは田中さんに「元気？」と気軽に聞かれたばかりです。同じ調子で、二人の会話そのままに返事をします。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q5b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q5b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q5b1",
+                    "displayAnswer": "うん",
+                    "canonicalAnswer": "うん",
+                    "audioText": "うん",
+                    "acceptedAnswers": [
+                      "うん"
+                    ]
+                  },
+                  {
+                    "id": "q5b2",
+                    "displayAnswer": "元気（げんき）",
+                    "canonicalAnswer": "元気",
+                    "audioText": "げんき",
+                    "acceptedAnswers": [
+                      "元気"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q5a",
+                    "text": "うん / 元気（げんき）",
+                    "answersByBlankId": {
+                      "q5b1": "うん",
+                      "q5b2": "元気"
+                    }
+                  },
+                  {
+                    "id": "q5b",
+                    "text": "はい / 元気（げんき）",
+                    "answersByBlankId": {
+                      "q5b1": "はい",
+                      "q5b2": "元気"
+                    }
+                  },
+                  {
+                    "id": "q5c",
+                    "text": "うん / おかげさまで",
+                    "answersByBlankId": {
+                      "q5b1": "うん",
+                      "q5b2": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q5d",
+                    "text": "うん / お元気（げんき）ですか",
+                    "answersByBlankId": {
+                      "q5b1": "うん",
+                      "q5b2": "お元気ですか"
+                    }
+                  }
+                ],
+                "correctOptionId": "q5a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "un"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "genki"
+                  }
+                ],
+                "explanation": "はい và おかげさまで đều là thể lịch sự, lệch với cuộc trò chuyện thân mật này. お元気ですか lặp lại câu hỏi lịch sự thay vì đáp thân mật.",
+                "explanationByNative": {
+                  "vi": "はい và おかげさまで đều là thể lịch sự, lệch với cuộc trò chuyện thân mật này. お元気ですか lặp lại câu hỏi lịch sự thay vì đáp thân mật.",
+                  "en": "はい and おかげさまで are both polite, mismatched with this casual exchange. お元気ですか repeats the question in polite form instead of answering casually.",
+                  "ja": "「はい」と「おかげさまで」はどちらも丁寧体で、この気軽な会話には合いません。「お元気ですか」は丁寧な質問を繰り返しているだけで、気軽な返事になっていません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q6",
+                "order": 6,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Tanaka đáp lại câu hỏi đã ở Nhật bao lâu bằng MỐC THỜI ĐIỂM đã đến, thay vì độ dài thời gian — nguyên văn câu Tanaka đã nói.",
+                "contextByNative": {
+                  "vi": "Tanaka đáp lại câu hỏi đã ở Nhật bao lâu bằng MỐC THỜI ĐIỂM đã đến, thay vì độ dài thời gian — nguyên văn câu Tanaka đã nói.",
+                  "en": "Tanaka answers how long they have been in Japan by giving the ARRIVAL TIME rather than a duration — Tanaka’s own words.",
+                  "ja": "田中さんは日本にどのぐらいかという質問に、期間ではなく来た時期で、田中さん自身の言葉のとおりに答えます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q6b1"
+                  },
+                  {
+                    "displayText": "の9月（くがつ）に"
+                  },
+                  {
+                    "blankId": "q6b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q6b1",
+                    "displayAnswer": "去年（きょねん）",
+                    "canonicalAnswer": "去年",
+                    "audioText": "きょねん",
+                    "acceptedAnswers": [
+                      "去年"
+                    ]
+                  },
+                  {
+                    "id": "q6b2",
+                    "displayAnswer": "来（き）ました",
+                    "canonicalAnswer": "来ました",
+                    "audioText": "きました",
+                    "acceptedAnswers": [
+                      "来ました"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q6a",
+                    "text": "去年（きょねん） / 来（き）ました",
+                    "answersByBlankId": {
+                      "q6b1": "去年",
+                      "q6b2": "来ました"
+                    }
+                  },
+                  {
+                    "id": "q6b",
+                    "text": "先月（せんげつ） / 来（き）ました",
+                    "answersByBlankId": {
+                      "q6b1": "先月",
+                      "q6b2": "来ました"
+                    }
+                  },
+                  {
+                    "id": "q6c",
+                    "text": "去年（きょねん） / 来（き）ます",
+                    "answersByBlankId": {
+                      "q6b1": "去年",
+                      "q6b2": "来ます"
+                    }
+                  },
+                  {
+                    "id": "q6d",
+                    "text": "去年（きょねん） / なります",
+                    "answersByBlankId": {
+                      "q6b1": "去年",
+                      "q6b2": "なります"
+                    }
+                  }
+                ],
+                "correctOptionId": "q6a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "kyonen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "grammar",
+                    "ref": "[動詞]＋ました — quá khứ lịch sự"
+                  }
+                ],
+                "explanation": "「先月の9月」mâu thuẫn — 先月 (tháng trước) không thể là \"tháng 9\" cụ thể trừ phi đang ở tháng 10. 来ます là thì hiện tại/tương lai, sai vì việc đến đã xảy ra rồi. なります nghĩa là \"trở thành\", không phải \"đến\".",
+                "explanationByNative": {
+                  "vi": "「先月の9月」mâu thuẫn — 先月 (tháng trước) không thể là \"tháng 9\" cụ thể trừ phi đang ở tháng 10. 来ます là thì hiện tại/tương lai, sai vì việc đến đã xảy ra rồi. なります nghĩa là \"trở thành\", không phải \"đến\".",
+                  "en": "「先月の9月」is contradictory — 先月 (last month) can only literally be September if the current month is October. 来ます is present/future tense, wrong because the arrival already happened. なります means \"becomes\", not \"arrived\".",
+                  "ja": "「先月の9月」は矛盾しています。今が10月でない限り、先月が9月とは限りません。「来ます」は現在・未来形で、すでに起きたことには合いません。「なります」は「〜になる」という意味で、「来た」ことを表しません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q7",
+                "order": 7,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: Satō và Itō ngang vai, quen nhau nhưng chưa thân — cả hai giữ thể lịch sự khi chào lại nhau sau một thời gian dài.",
+                "contextByNative": {
+                  "vi": "Vai vế: Satō và Itō ngang vai, quen nhau nhưng chưa thân — cả hai giữ thể lịch sự khi chào lại nhau sau một thời gian dài.",
+                  "en": "Roles: Satō and Itō are equal in standing, acquainted but not close — both keep polite form when greeting each other again after a long time.",
+                  "ja": "関係：佐藤さんと伊藤さんは対等で、知り合いですが親しくはありません。久しぶりに会い、二人とも丁寧体を保ちます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q7t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "あ、"
+                      },
+                      {
+                        "blankId": "q7b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q7t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q7b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q7t3",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q7b3"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q7b1",
+                    "displayAnswer": "お久（ひさ）しぶりです",
+                    "canonicalAnswer": "お久しぶりです",
+                    "audioText": "おひさしぶりです",
+                    "acceptedAnswers": [
+                      "お久しぶりです"
+                    ]
+                  },
+                  {
+                    "id": "q7b2",
+                    "displayAnswer": "お久（ひさ）しぶりです",
+                    "canonicalAnswer": "お久しぶりです",
+                    "audioText": "おひさしぶりです",
+                    "acceptedAnswers": [
+                      "お久しぶりです"
+                    ]
+                  },
+                  {
+                    "id": "q7b3",
+                    "displayAnswer": "お元気（げんき）ですか",
+                    "canonicalAnswer": "お元気ですか",
+                    "audioText": "おげんきですか",
+                    "acceptedAnswers": [
+                      "お元気ですか"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q7a",
+                    "text": "お久（ひさ）しぶりです / お久（ひさ）しぶりです / お元気（げんき）ですか",
+                    "answersByBlankId": {
+                      "q7b1": "お久しぶりです",
+                      "q7b2": "お久しぶりです",
+                      "q7b3": "お元気ですか"
+                    }
+                  },
+                  {
+                    "id": "q7b",
+                    "text": "久（ひさ）しぶり / お久（ひさ）しぶりです / お元気（げんき）ですか",
+                    "answersByBlankId": {
+                      "q7b1": "久しぶり",
+                      "q7b2": "お久しぶりです",
+                      "q7b3": "お元気ですか"
+                    }
+                  },
+                  {
+                    "id": "q7c",
+                    "text": "お久（ひさ）しぶりです / 久（ひさ）しぶり / お元気（げんき）ですか",
+                    "answersByBlankId": {
+                      "q7b1": "お久しぶりです",
+                      "q7b2": "久しぶり",
+                      "q7b3": "お元気ですか"
+                    }
+                  },
+                  {
+                    "id": "q7d",
+                    "text": "お久（ひさ）しぶりです / お久（ひさ）しぶりです / 元気（げんき）？",
+                    "answersByBlankId": {
+                      "q7b1": "お久しぶりです",
+                      "q7b2": "お久しぶりです",
+                      "q7b3": "元気？"
+                    }
+                  }
+                ],
+                "correctOptionId": "q7a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "o-hisashiburi-desu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "o-genki-desu-ka"
+                  }
+                ],
+                "explanation": "Mỗi phương án sai đổi ĐÚNG một ô sang thể thường (久しぶり / 元気？), lệch với cả cuộc trò chuyện đang giữ thể lịch sự.",
+                "explanationByNative": {
+                  "vi": "Mỗi phương án sai đổi ĐÚNG một ô sang thể thường (久しぶり / 元気？), lệch với cả cuộc trò chuyện đang giữ thể lịch sự.",
+                  "en": "Each wrong option changes exactly one blank to plain form (久しぶり / 元気？), clashing with the rest of the polite exchange.",
+                  "ja": "誤答はそれぞれ一つの空欄だけを普通体（久しぶり／元気？）に変えており、丁寧体で進む会話全体と合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q8",
+                "order": 8,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: vẫn Satō và Itō, cùng cảnh lịch sự như câu trước — Itō vừa được hỏi thăm và đáp lại.",
+                "contextByNative": {
+                  "vi": "Vai vế: vẫn Satō và Itō, cùng cảnh lịch sự như câu trước — Itō vừa được hỏi thăm và đáp lại.",
+                  "en": "Roles: still Satō and Itō, the same polite setting as the previous question — Itō has just been asked and replies.",
+                  "ja": "関係：引き続き佐藤さんと伊藤さんの丁寧な場面です。伊藤さんが尋ねられて答えます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q8t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q8b1"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q8t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q8b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q8b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q8b1",
+                    "displayAnswer": "お元気（げんき）ですか",
+                    "canonicalAnswer": "お元気ですか",
+                    "audioText": "おげんきですか",
+                    "acceptedAnswers": [
+                      "お元気ですか"
+                    ]
+                  },
+                  {
+                    "id": "q8b2",
+                    "displayAnswer": "はい",
+                    "canonicalAnswer": "はい",
+                    "audioText": "はい",
+                    "acceptedAnswers": [
+                      "はい"
+                    ]
+                  },
+                  {
+                    "id": "q8b3",
+                    "displayAnswer": "おかげさまで",
+                    "canonicalAnswer": "おかげさまで",
+                    "audioText": "おかげさまで",
+                    "acceptedAnswers": [
+                      "おかげさまで"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q8a",
+                    "text": "お元気（げんき）ですか / はい / おかげさまで",
+                    "answersByBlankId": {
+                      "q8b1": "お元気ですか",
+                      "q8b2": "はい",
+                      "q8b3": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q8b",
+                    "text": "元気（げんき）？ / はい / おかげさまで",
+                    "answersByBlankId": {
+                      "q8b1": "元気？",
+                      "q8b2": "はい",
+                      "q8b3": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q8c",
+                    "text": "お元気（げんき）ですか / うん / おかげさまで",
+                    "answersByBlankId": {
+                      "q8b1": "お元気ですか",
+                      "q8b2": "うん",
+                      "q8b3": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q8d",
+                    "text": "お元気（げんき）ですか / はい / 元気（げんき）",
+                    "answersByBlankId": {
+                      "q8b1": "お元気ですか",
+                      "q8b2": "はい",
+                      "q8b3": "元気"
+                    }
+                  }
+                ],
+                "correctOptionId": "q8a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "o-genki-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "hai"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "okagesama-de"
+                  }
+                ],
+                "explanation": "Mỗi phương án sai đổi đúng một ô sang thể thường (元気？ / うん / 元気), lệch với cả hai bên đang dùng thể lịch sự.",
+                "explanationByNative": {
+                  "vi": "Mỗi phương án sai đổi đúng một ô sang thể thường (元気？ / うん / 元気), lệch với cả hai bên đang dùng thể lịch sự.",
+                  "en": "Each wrong option changes exactly one blank to plain form (元気？ / うん / 元気), clashing with both sides using polite form.",
+                  "ja": "誤答はそれぞれ一つの空欄だけを普通体（元気？／うん／元気）に変えており、両者が丁寧体を使っているのと合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q9",
+                "order": 9,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: giáo viên và Satō — quan hệ trên–dưới. Người trên hỏi bằng thể thường, người dưới đáp bằng thể lịch sự — thể nói do vai vế quyết định, không do độ thân.",
+                "contextByNative": {
+                  "vi": "Vai vế: giáo viên và Satō — quan hệ trên–dưới. Người trên hỏi bằng thể thường, người dưới đáp bằng thể lịch sự — thể nói do vai vế quyết định, không do độ thân.",
+                  "en": "Roles: the teacher and Satō — an unequal, senior-to-junior relationship. The senior asks in plain form, the junior replies in polite form — speech style is decided by standing, not closeness.",
+                  "ja": "関係：先生と佐藤さんは上下関係です。目上の人は普通体でたずね、目下の人は丁寧体で答えます。話し方は親しさではなく立場で決まります。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q9t1",
+                    "speakerId": "sensei",
+                    "segments": [
+                      {
+                        "displayText": "あ、"
+                      },
+                      {
+                        "blankId": "q9b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q9t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q9b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q9t3",
+                    "speakerId": "sensei",
+                    "segments": [
+                      {
+                        "blankId": "q9b3"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q9b1",
+                    "displayAnswer": "久（ひさ）しぶり",
+                    "canonicalAnswer": "久しぶり",
+                    "audioText": "ひさしぶり",
+                    "acceptedAnswers": [
+                      "久しぶり"
+                    ]
+                  },
+                  {
+                    "id": "q9b2",
+                    "displayAnswer": "お久（ひさ）しぶりです",
+                    "canonicalAnswer": "お久しぶりです",
+                    "audioText": "おひさしぶりです",
+                    "acceptedAnswers": [
+                      "お久しぶりです"
+                    ]
+                  },
+                  {
+                    "id": "q9b3",
+                    "displayAnswer": "元気（げんき）",
+                    "canonicalAnswer": "元気",
+                    "audioText": "げんき",
+                    "acceptedAnswers": [
+                      "元気"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q9a",
+                    "text": "久（ひさ）しぶり / お久（ひさ）しぶりです / 元気（げんき）？",
+                    "answersByBlankId": {
+                      "q9b1": "久しぶり",
+                      "q9b2": "お久しぶりです",
+                      "q9b3": "元気"
+                    }
+                  },
+                  {
+                    "id": "q9b",
+                    "text": "お久（ひさ）しぶりです / お久（ひさ）しぶりです / 元気（げんき）？",
+                    "answersByBlankId": {
+                      "q9b1": "お久しぶりです",
+                      "q9b2": "お久しぶりです",
+                      "q9b3": "元気"
+                    }
+                  },
+                  {
+                    "id": "q9c",
+                    "text": "久（ひさ）しぶり / 久（ひさ）しぶり / 元気（げんき）？",
+                    "answersByBlankId": {
+                      "q9b1": "久しぶり",
+                      "q9b2": "久しぶり",
+                      "q9b3": "元気"
+                    }
+                  },
+                  {
+                    "id": "q9d",
+                    "text": "久（ひさ）しぶり / お久（ひさ）しぶりです / お元気（げんき）ですか",
+                    "answersByBlankId": {
+                      "q9b1": "久しぶり",
+                      "q9b2": "お久しぶりです",
+                      "q9b3": "お元気ですか"
+                    }
+                  }
+                ],
+                "correctOptionId": "q9a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "hisashiburi"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "o-hisashiburi-desu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "genki"
+                  }
+                ],
+                "explanation": "Giáo viên là người trên nên giữ thể thường suốt lượt nói — đổi sang お久しぶりです (phương án b) làm mất khoảng cách vai vế. Satō là người dưới nên phải giữ thể lịch sự — đổi thành 久しぶり (phương án c) làm mất phép lịch sự cần có. お元気ですか (phương án d) lại là thể lịch sự trong khi giáo viên đang dùng thể thường.",
+                "explanationByNative": {
+                  "vi": "Giáo viên là người trên nên giữ thể thường suốt lượt nói — đổi sang お久しぶりです (phương án b) làm mất khoảng cách vai vế. Satō là người dưới nên phải giữ thể lịch sự — đổi thành 久しぶり (phương án c) làm mất phép lịch sự cần có. お元気ですか (phương án d) lại là thể lịch sự trong khi giáo viên đang dùng thể thường.",
+                  "en": "The teacher is senior and keeps plain form throughout — switching to お久しぶりです (option b) erases that gap in standing. Satō is junior and must stay polite — switching to 久しぶり (option c) drops the required politeness. お元気ですか (option d) is polite form where the teacher has been using plain form.",
+                  "ja": "先生は目上なので、最初から最後まで普通体を保ちます。「お久しぶりです」（選択肢b）に変えると立場の差が消えてしまいます。佐藤さんは目下なので丁寧体を保つ必要があり、「久しぶり」（選択肢c）にすると必要な丁寧さが失われます。「お元気ですか」（選択肢d）は、先生が普通体を使っているのに丁寧体になっています。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q10",
+                "order": 10,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: Satō và Itō ngang vai, quen nhau nhưng chưa thân — Satō hỏi Itō đã ở Nhật bao lâu và đã quen chưa, giữ thể lịch sự.",
+                "contextByNative": {
+                  "vi": "Vai vế: Satō và Itō ngang vai, quen nhau nhưng chưa thân — Satō hỏi Itō đã ở Nhật bao lâu và đã quen chưa, giữ thể lịch sự.",
+                  "en": "Roles: Satō and Itō are equal in standing, acquainted but not close — Satō asks Itō how long they have been in Japan and whether they have settled in, keeping polite form.",
+                  "ja": "関係：佐藤さんと伊藤さんは対等で、知り合いですが親しくはありません。佐藤さんは伊藤さんに日本にどのぐらいか、もう慣れたかをたずね、丁寧体を保ちます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q10t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q10b1"
+                      },
+                      {
+                        "displayText": "に来（き）て、"
+                      },
+                      {
+                        "blankId": "q10b2"
+                      },
+                      {
+                        "displayText": "になりますか。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q10t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "displayText": "1年（いちねん）になります。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q10t3",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "そうですか。日本（にほん）の生活（せいかつ）に、"
+                      },
+                      {
+                        "blankId": "q10b3"
+                      },
+                      {
+                        "displayText": "慣（な）れましたか。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q10b1",
+                    "displayAnswer": "日本（にほん）",
+                    "canonicalAnswer": "日本",
+                    "audioText": "にほん",
+                    "acceptedAnswers": [
+                      "日本"
+                    ]
+                  },
+                  {
+                    "id": "q10b2",
+                    "displayAnswer": "どのぐらい",
+                    "canonicalAnswer": "どのぐらい",
+                    "audioText": "どのぐらい",
+                    "acceptedAnswers": [
+                      "どのぐらい"
+                    ]
+                  },
+                  {
+                    "id": "q10b3",
+                    "displayAnswer": "もう",
+                    "canonicalAnswer": "もう",
+                    "audioText": "もう",
+                    "acceptedAnswers": [
+                      "もう"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q10a",
+                    "text": "日本（にほん） / どのぐらい / もう",
+                    "answersByBlankId": {
+                      "q10b1": "日本",
+                      "q10b2": "どのぐらい",
+                      "q10b3": "もう"
+                    }
+                  },
+                  {
+                    "id": "q10b",
+                    "text": "生活（せいかつ） / どのぐらい / もう",
+                    "answersByBlankId": {
+                      "q10b1": "生活",
+                      "q10b2": "どのぐらい",
+                      "q10b3": "もう"
+                    }
+                  },
+                  {
+                    "id": "q10c",
+                    "text": "日本（にほん） / もう / もう",
+                    "answersByBlankId": {
+                      "q10b1": "日本",
+                      "q10b2": "もう",
+                      "q10b3": "もう"
+                    }
+                  },
+                  {
+                    "id": "q10d",
+                    "text": "日本（にほん） / どのぐらい / まだ",
+                    "answersByBlankId": {
+                      "q10b1": "日本",
+                      "q10b2": "どのぐらい",
+                      "q10b3": "まだ"
+                    }
+                  }
+                ],
+                "correctOptionId": "q10a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "nihon"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "dono-gurai"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "mou"
+                  }
+                ],
+                "explanation": "生活 nghĩa là \"cuộc sống\", không phải nơi chốn nên không đi được với に来て. もう ở ô thứ hai không hỏi được \"bao lâu\". まだ ở câu hỏi \"___慣れましたか\" sai — まだ dùng trong câu ĐÁP (\"vẫn chưa\"), câu hỏi phải dùng もう (\"đã… chưa\").",
+                "explanationByNative": {
+                  "vi": "生活 nghĩa là \"cuộc sống\", không phải nơi chốn nên không đi được với に来て. もう ở ô thứ hai không hỏi được \"bao lâu\". まだ ở câu hỏi \"___慣れましたか\" sai — まだ dùng trong câu ĐÁP (\"vẫn chưa\"), câu hỏi phải dùng もう (\"đã… chưa\").",
+                  "en": "生活 means \"life\", not a place, so it cannot take に来て. もう in the second blank cannot ask \"how long\". まだ is wrong in the question \"___慣れましたか\" — まだ belongs in an ANSWER (\"not yet\"); the question needs もう (\"have you already…\").",
+                  "ja": "「生活」は「くらし」という意味で場所ではないため、「に来て」とは結びつきません。二つ目の空欄に「もう」を入れると「どのぐらい」の代わりにならず、期間をたずねられません。「___慣れましたか」という質問に「まだ」を使うのは誤りです。「まだ」は「まだです」のような返事に使う言葉で、質問には「もう」を使います。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q11",
+                "order": 11,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: Satō và Tanaka ngang vai, quen nhau nhưng chưa thân, giữ thể lịch sự — Tanaka trả lời bằng THỜI ĐIỂM đã đến thay vì độ dài thời gian.",
+                "contextByNative": {
+                  "vi": "Vai vế: Satō và Tanaka ngang vai, quen nhau nhưng chưa thân, giữ thể lịch sự — Tanaka trả lời bằng THỜI ĐIỂM đã đến thay vì độ dài thời gian.",
+                  "en": "Roles: Satō and Tanaka are equal in standing, acquainted but not close, polite form — Tanaka answers with the ARRIVAL TIME rather than a duration.",
+                  "ja": "関係：佐藤さんと田中さんは対等で、知り合いですが親しくはありません。丁寧体を保ちます。田中さんは期間ではなく来た時期で答えます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q11t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "日本に来（き）て、"
+                      },
+                      {
+                        "blankId": "q11b1"
+                      },
+                      {
+                        "displayText": "ですか。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q11t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q11b2"
+                      },
+                      {
+                        "displayText": "の9月（くがつ）に"
+                      },
+                      {
+                        "blankId": "q11b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q11b1",
+                    "displayAnswer": "どのぐらい",
+                    "canonicalAnswer": "どのぐらい",
+                    "audioText": "どのぐらい",
+                    "acceptedAnswers": [
+                      "どのぐらい"
+                    ]
+                  },
+                  {
+                    "id": "q11b2",
+                    "displayAnswer": "去年（きょねん）",
+                    "canonicalAnswer": "去年",
+                    "audioText": "きょねん",
+                    "acceptedAnswers": [
+                      "去年"
+                    ]
+                  },
+                  {
+                    "id": "q11b3",
+                    "displayAnswer": "来（き）ました",
+                    "canonicalAnswer": "来ました",
+                    "audioText": "きました",
+                    "acceptedAnswers": [
+                      "来ました"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q11a",
+                    "text": "どのぐらい / 去年（きょねん） / 来（き）ました",
+                    "answersByBlankId": {
+                      "q11b1": "どのぐらい",
+                      "q11b2": "去年",
+                      "q11b3": "来ました"
+                    }
+                  },
+                  {
+                    "id": "q11b",
+                    "text": "もう / 去年（きょねん） / 来（き）ました",
+                    "answersByBlankId": {
+                      "q11b1": "もう",
+                      "q11b2": "去年",
+                      "q11b3": "来ました"
+                    }
+                  },
+                  {
+                    "id": "q11c",
+                    "text": "どのぐらい / 先月（せんげつ） / 来（き）ました",
+                    "answersByBlankId": {
+                      "q11b1": "どのぐらい",
+                      "q11b2": "先月",
+                      "q11b3": "来ました"
+                    }
+                  },
+                  {
+                    "id": "q11d",
+                    "text": "どのぐらい / 去年（きょねん） / なります",
+                    "answersByBlankId": {
+                      "q11b1": "どのぐらい",
+                      "q11b2": "去年",
+                      "q11b3": "なります"
+                    }
+                  }
+                ],
+                "correctOptionId": "q11a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "dono-gurai"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "kyonen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "grammar",
+                    "ref": "[động từ] ＋ ました — quá khứ lịch sự"
+                  }
+                ],
+                "explanation": "もう không hỏi được \"bao lâu\". 「先月の9月」mâu thuẫn về mốc thời gian. なります nghĩa là \"trở thành\", không phải \"đến\".",
+                "explanationByNative": {
+                  "vi": "もう không hỏi được \"bao lâu\". 「先月の9月」mâu thuẫn về mốc thời gian. なります nghĩa là \"trở thành\", không phải \"đến\".",
+                  "en": "もう cannot ask \"how long\". 「先月の9月」is a contradictory time reference. なります means \"becomes\", not \"arrived\".",
+                  "ja": "「もう」では期間をたずねられません。「先月の9月」は時期が矛盾しています。「なります」は「〜になる」という意味で、「来た」ことを表しません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q12",
+                "order": 12,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: giáo viên và Satō — quan hệ trên–dưới, nhưng ở bài này người trên vẫn hỏi bằng thể lịch sự (miễn trừ G6, owner chốt 2026-07-30 cho u2-l2 — không phải hạn chế kỹ thuật). Satō vừa đến tháng trước.",
+                "contextByNative": {
+                  "vi": "Vai vế: giáo viên và Satō — quan hệ trên–dưới, nhưng ở bài này người trên vẫn hỏi bằng thể lịch sự (miễn trừ G6, owner chốt 2026-07-30 cho u2-l2 — không phải hạn chế kỹ thuật). Satō vừa đến tháng trước.",
+                  "en": "Roles: the teacher and Satō — senior-to-junior, but in this lesson the senior still asks in polite form (G6 exemption, owner decision 2026-07-30 for u2-l2 — not a technical limitation). Satō arrived only last month.",
+                  "ja": "関係：先生と佐藤さんは上下関係ですが、このレッスンでは目上の人も丁寧体でたずねます（G6の適用除外、owner決定2026-07-30、技術的制約ではありません）。佐藤さんは先月来たばかりです。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q12t1",
+                    "speakerId": "sensei",
+                    "segments": [
+                      {
+                        "blankId": "q12b1"
+                      },
+                      {
+                        "displayText": "に来（き）て、どのぐらいになりますか。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q12t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "私（わたし）は、"
+                      },
+                      {
+                        "blankId": "q12b2"
+                      },
+                      {
+                        "displayText": "、来（き）ました。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q12t3",
+                    "speakerId": "sensei",
+                    "segments": [
+                      {
+                        "displayText": "そうですか。"
+                      },
+                      {
+                        "blankId": "q12b3"
+                      },
+                      {
+                        "displayText": "慣（な）れましたか。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q12b1",
+                    "displayAnswer": "日本（にほん）",
+                    "canonicalAnswer": "日本",
+                    "audioText": "にほん",
+                    "acceptedAnswers": [
+                      "日本"
+                    ]
+                  },
+                  {
+                    "id": "q12b2",
+                    "displayAnswer": "先月（せんげつ）",
+                    "canonicalAnswer": "先月",
+                    "audioText": "せんげつ",
+                    "acceptedAnswers": [
+                      "先月"
+                    ]
+                  },
+                  {
+                    "id": "q12b3",
+                    "displayAnswer": "もう",
+                    "canonicalAnswer": "もう",
+                    "audioText": "もう",
+                    "acceptedAnswers": [
+                      "もう"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q12a",
+                    "text": "日本（にほん） / 先月（せんげつ） / もう",
+                    "answersByBlankId": {
+                      "q12b1": "日本",
+                      "q12b2": "先月",
+                      "q12b3": "もう"
+                    }
+                  },
+                  {
+                    "id": "q12b",
+                    "text": "生活（せいかつ） / 先月（せんげつ） / もう",
+                    "answersByBlankId": {
+                      "q12b1": "生活",
+                      "q12b2": "先月",
+                      "q12b3": "もう"
+                    }
+                  },
+                  {
+                    "id": "q12c",
+                    "text": "日本（にほん） / 去年（きょねん） / もう",
+                    "answersByBlankId": {
+                      "q12b1": "日本",
+                      "q12b2": "去年",
+                      "q12b3": "もう"
+                    }
+                  },
+                  {
+                    "id": "q12d",
+                    "text": "日本（にほん） / 先月（せんげつ） / まだ",
+                    "answersByBlankId": {
+                      "q12b1": "日本",
+                      "q12b2": "先月",
+                      "q12b3": "まだ"
+                    }
+                  }
+                ],
+                "correctOptionId": "q12a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "nihon"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "sengetsu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "mou"
+                  }
+                ],
+                "explanation": "生活 không phải nơi chốn nên không đi được với に来て. 去年 lệch với tình huống đã nêu (Satō mới đến tháng trước, không phải năm ngoái). まだ trong câu hỏi \"___慣れましたか\" sai — まだ dùng trong câu đáp, câu hỏi cần もう.",
+                "explanationByNative": {
+                  "vi": "生活 không phải nơi chốn nên không đi được với に来て. 去年 lệch với tình huống đã nêu (Satō mới đến tháng trước, không phải năm ngoái). まだ trong câu hỏi \"___慣れましたか\" sai — まだ dùng trong câu đáp, câu hỏi cần もう.",
+                  "en": "生活 is not a place, so it cannot take に来て. 去年 clashes with the stated situation (Satō arrived only last month, not last year). まだ is wrong in the question \"___慣れましたか\" — まだ belongs in an answer; the question needs もう.",
+                  "ja": "「生活」は場所ではないため「に来て」とは結びつきません。「去年」は場面設定（佐藤さんは先月来たばかり）と矛盾します。「___慣れましたか」という質問に「まだ」を使うのは誤りです。「まだ」は返事に使う言葉で、質問には「もう」を使います。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q13",
+                "order": 13,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: vẫn Satō và Itō, ngang vai chưa thân, thể lịch sự — lần này Itō là người mở lời trước.",
+                "contextByNative": {
+                  "vi": "Vai vế: vẫn Satō và Itō, ngang vai chưa thân, thể lịch sự — lần này Itō là người mở lời trước.",
+                  "en": "Roles: still Satō and Itō, equal standing, not close, polite form — this time Itō speaks first.",
+                  "ja": "関係：引き続き対等で親しくない佐藤さんと伊藤さんです。今回は伊藤さんが先に声をかけます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q13t1",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "displayText": "あ、"
+                      },
+                      {
+                        "blankId": "q13b1"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q13b2"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q13t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q13b3"
+                      },
+                      {
+                        "displayText": "。おかげさまで。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q13b1",
+                    "displayAnswer": "お久（ひさ）しぶりです",
+                    "canonicalAnswer": "お久しぶりです",
+                    "audioText": "おひさしぶりです",
+                    "acceptedAnswers": [
+                      "お久しぶりです"
+                    ]
+                  },
+                  {
+                    "id": "q13b2",
+                    "displayAnswer": "お元気（げんき）ですか",
+                    "canonicalAnswer": "お元気ですか",
+                    "audioText": "おげんきですか",
+                    "acceptedAnswers": [
+                      "お元気ですか"
+                    ]
+                  },
+                  {
+                    "id": "q13b3",
+                    "displayAnswer": "はい",
+                    "canonicalAnswer": "はい",
+                    "audioText": "はい",
+                    "acceptedAnswers": [
+                      "はい"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q13a",
+                    "text": "お久（ひさ）しぶりです / お元気（げんき）ですか / はい",
+                    "answersByBlankId": {
+                      "q13b1": "お久しぶりです",
+                      "q13b2": "お元気ですか",
+                      "q13b3": "はい"
+                    }
+                  },
+                  {
+                    "id": "q13b",
+                    "text": "久（ひさ）しぶり / お元気（げんき）ですか / はい",
+                    "answersByBlankId": {
+                      "q13b1": "久しぶり",
+                      "q13b2": "お元気ですか",
+                      "q13b3": "はい"
+                    }
+                  },
+                  {
+                    "id": "q13c",
+                    "text": "お久（ひさ）しぶりです / 元気（げんき）？ / はい",
+                    "answersByBlankId": {
+                      "q13b1": "お久しぶりです",
+                      "q13b2": "元気？",
+                      "q13b3": "はい"
+                    }
+                  },
+                  {
+                    "id": "q13d",
+                    "text": "お久（ひさ）しぶりです / お元気（げんき）ですか / うん",
+                    "answersByBlankId": {
+                      "q13b1": "お久しぶりです",
+                      "q13b2": "お元気ですか",
+                      "q13b3": "うん"
+                    }
+                  }
+                ],
+                "correctOptionId": "q13a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "o-hisashiburi-desu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "o-genki-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "hai"
+                  }
+                ],
+                "explanation": "Mỗi phương án sai đổi đúng một ô sang thể thường (久しぶり / 元気？ / うん), lệch với cả cuộc trò chuyện lịch sự.",
+                "explanationByNative": {
+                  "vi": "Mỗi phương án sai đổi đúng một ô sang thể thường (久しぶり / 元気？ / うん), lệch với cả cuộc trò chuyện lịch sự.",
+                  "en": "Each wrong option changes exactly one blank to plain form (久しぶり / 元気？ / うん), clashing with the polite exchange.",
+                  "ja": "誤答はそれぞれ一つの空欄だけを普通体（久しぶり／元気？／うん）に変えており、丁寧な会話と合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q14",
+                "order": 14,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: vẫn Tanaka và Satō, hai người bạn thân, thể thường — lần này Satō là người mở lời trước.",
+                "contextByNative": {
+                  "vi": "Vai vế: vẫn Tanaka và Satō, hai người bạn thân, thể thường — lần này Satō là người mở lời trước.",
+                  "en": "Roles: still Tanaka and Satō, close friends, plain form — this time Satō speaks first.",
+                  "ja": "関係：引き続き親しい友だちの田中さんと佐藤さんです。今回は佐藤さんが先に声をかけます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q14t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "あ、"
+                      },
+                      {
+                        "blankId": "q14b1"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q14b2"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q14t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q14b3"
+                      },
+                      {
+                        "displayText": "。元気（げんき）。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q14b1",
+                    "displayAnswer": "久（ひさ）しぶり",
+                    "canonicalAnswer": "久しぶり",
+                    "audioText": "ひさしぶり",
+                    "acceptedAnswers": [
+                      "久しぶり"
+                    ]
+                  },
+                  {
+                    "id": "q14b2",
+                    "displayAnswer": "元気（げんき）",
+                    "canonicalAnswer": "元気",
+                    "audioText": "げんき",
+                    "acceptedAnswers": [
+                      "元気"
+                    ]
+                  },
+                  {
+                    "id": "q14b3",
+                    "displayAnswer": "うん",
+                    "canonicalAnswer": "うん",
+                    "audioText": "うん",
+                    "acceptedAnswers": [
+                      "うん"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q14a",
+                    "text": "久（ひさ）しぶり / 元気（げんき）？ / うん",
+                    "answersByBlankId": {
+                      "q14b1": "久しぶり",
+                      "q14b2": "元気",
+                      "q14b3": "うん"
+                    }
+                  },
+                  {
+                    "id": "q14b",
+                    "text": "お久（ひさ）しぶりです / 元気（げんき）？ / うん",
+                    "answersByBlankId": {
+                      "q14b1": "お久しぶりです",
+                      "q14b2": "元気",
+                      "q14b3": "うん"
+                    }
+                  },
+                  {
+                    "id": "q14c",
+                    "text": "久（ひさ）しぶり / お元気（げんき）ですか / うん",
+                    "answersByBlankId": {
+                      "q14b1": "久しぶり",
+                      "q14b2": "お元気ですか",
+                      "q14b3": "うん"
+                    }
+                  },
+                  {
+                    "id": "q14d",
+                    "text": "久（ひさ）しぶり / 元気（げんき）？ / はい",
+                    "answersByBlankId": {
+                      "q14b1": "久しぶり",
+                      "q14b2": "元気",
+                      "q14b3": "はい"
+                    }
+                  }
+                ],
+                "correctOptionId": "q14a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "hisashiburi"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "genki"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "un"
+                  }
+                ],
+                "explanation": "Mỗi phương án sai đổi đúng một ô sang thể lịch sự (お久しぶりです / お元気ですか / はい), lệch với cả cuộc trò chuyện thân mật.",
+                "explanationByNative": {
+                  "vi": "Mỗi phương án sai đổi đúng một ô sang thể lịch sự (お久しぶりです / お元気ですか / はい), lệch với cả cuộc trò chuyện thân mật.",
+                  "en": "Each wrong option changes exactly one blank to polite form (お久しぶりです / お元気ですか / はい), clashing with the casual exchange.",
+                  "ja": "誤答はそれぞれ一つの空欄だけを丁寧体（お久しぶりです／お元気ですか／はい）に変えており、気軽な会話と合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q15",
+                "order": 15,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: vẫn giáo viên và Satō, quan hệ trên–dưới — lần này là phần giáo viên hỏi thăm thân mật và Satō đáp lại lịch sự.",
+                "contextByNative": {
+                  "vi": "Vai vế: vẫn giáo viên và Satō, quan hệ trên–dưới — lần này là phần giáo viên hỏi thăm thân mật và Satō đáp lại lịch sự.",
+                  "en": "Roles: still the teacher and Satō, senior-to-junior — this time the teacher asks casually and Satō replies politely.",
+                  "ja": "関係：引き続き先生と佐藤さんの上下関係です。今回は先生が気軽にたずね、佐藤さんが丁寧に答えます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q15t1",
+                    "speakerId": "sensei",
+                    "segments": [
+                      {
+                        "blankId": "q15b1"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q15t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q15b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q15b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q15b1",
+                    "displayAnswer": "元気（げんき）",
+                    "canonicalAnswer": "元気",
+                    "audioText": "げんき",
+                    "acceptedAnswers": [
+                      "元気"
+                    ]
+                  },
+                  {
+                    "id": "q15b2",
+                    "displayAnswer": "はい",
+                    "canonicalAnswer": "はい",
+                    "audioText": "はい",
+                    "acceptedAnswers": [
+                      "はい"
+                    ]
+                  },
+                  {
+                    "id": "q15b3",
+                    "displayAnswer": "おかげさまで",
+                    "canonicalAnswer": "おかげさまで",
+                    "audioText": "おかげさまで",
+                    "acceptedAnswers": [
+                      "おかげさまで"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q15a",
+                    "text": "元気（げんき）？ / はい / おかげさまで",
+                    "answersByBlankId": {
+                      "q15b1": "元気",
+                      "q15b2": "はい",
+                      "q15b3": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q15b",
+                    "text": "お元気（げんき）ですか / はい / おかげさまで",
+                    "answersByBlankId": {
+                      "q15b1": "お元気ですか",
+                      "q15b2": "はい",
+                      "q15b3": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q15c",
+                    "text": "元気（げんき）？ / うん / おかげさまで",
+                    "answersByBlankId": {
+                      "q15b1": "元気",
+                      "q15b2": "うん",
+                      "q15b3": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q15d",
+                    "text": "元気（げんき）？ / はい / 元気（げんき）",
+                    "answersByBlankId": {
+                      "q15b1": "元気",
+                      "q15b2": "はい",
+                      "q15b3": "元気"
+                    }
+                  }
+                ],
+                "correctOptionId": "q15a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "genki"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "hai"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "okagesama-de"
+                  }
+                ],
+                "explanation": "Giáo viên là người trên nên giữ thể thường — đổi thành お元気ですか (phương án b) làm mất khoảng cách vai vế. Satō là người dưới nên phải giữ thể lịch sự — うん (phương án c) và 元気 (phương án d) đều làm mất phép lịch sự cần có.",
+                "explanationByNative": {
+                  "vi": "Giáo viên là người trên nên giữ thể thường — đổi thành お元気ですか (phương án b) làm mất khoảng cách vai vế. Satō là người dưới nên phải giữ thể lịch sự — うん (phương án c) và 元気 (phương án d) đều làm mất phép lịch sự cần có.",
+                  "en": "The teacher is senior and keeps plain form — switching to お元気ですか (option b) erases that gap in standing. Satō is junior and must stay polite — both うん (option c) and 元気 (option d) drop the required politeness.",
+                  "ja": "先生は目上なので普通体を保ちます。「お元気ですか」（選択肢b）に変えると立場の差が消えます。佐藤さんは目下なので丁寧体を保つ必要があり、「うん」（選択肢c）も「元気」（選択肢d）も必要な丁寧さを失わせます。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q16",
+                "order": 16,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: vẫn Satō và Itō, ngang vai chưa thân, thể lịch sự — lần này là phần đáp lại câu hỏi đã quen chưa.",
+                "contextByNative": {
+                  "vi": "Vai vế: vẫn Satō và Itō, ngang vai chưa thân, thể lịch sự — lần này là phần đáp lại câu hỏi đã quen chưa.",
+                  "en": "Roles: still Satō and Itō, equal standing, not close, polite form — this time the part where the question about settling in is answered.",
+                  "ja": "関係：引き続き対等で親しくない佐藤さんと伊藤さんです。今回は慣れたかという質問に答える部分です。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q16t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "そうですか。日本（にほん）の"
+                      },
+                      {
+                        "blankId": "q16b1"
+                      },
+                      {
+                        "displayText": "に、もう"
+                      },
+                      {
+                        "blankId": "q16b2"
+                      },
+                      {
+                        "displayText": "か。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q16t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q16b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q16b1",
+                    "displayAnswer": "生活（せいかつ）",
+                    "canonicalAnswer": "生活",
+                    "audioText": "せいかつ",
+                    "acceptedAnswers": [
+                      "生活"
+                    ]
+                  },
+                  {
+                    "id": "q16b2",
+                    "displayAnswer": "慣（な）れました",
+                    "canonicalAnswer": "慣れました",
+                    "audioText": "なれました",
+                    "acceptedAnswers": [
+                      "慣れました"
+                    ]
+                  },
+                  {
+                    "id": "q16b3",
+                    "displayAnswer": "はい",
+                    "canonicalAnswer": "はい",
+                    "audioText": "はい",
+                    "acceptedAnswers": [
+                      "はい"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q16a",
+                    "text": "生活（せいかつ） / 慣（な）れました / はい",
+                    "answersByBlankId": {
+                      "q16b1": "生活",
+                      "q16b2": "慣れました",
+                      "q16b3": "はい"
+                    }
+                  },
+                  {
+                    "id": "q16b",
+                    "text": "どのぐらい / 慣（な）れました / はい",
+                    "answersByBlankId": {
+                      "q16b1": "どのぐらい",
+                      "q16b2": "慣れました",
+                      "q16b3": "はい"
+                    }
+                  },
+                  {
+                    "id": "q16c",
+                    "text": "生活（せいかつ） / 慣（な）れます / はい",
+                    "answersByBlankId": {
+                      "q16b1": "生活",
+                      "q16b2": "慣れます",
+                      "q16b3": "はい"
+                    }
+                  },
+                  {
+                    "id": "q16d",
+                    "text": "生活（せいかつ） / 慣（な）れました / まだ",
+                    "answersByBlankId": {
+                      "q16b1": "生活",
+                      "q16b2": "慣れました",
+                      "q16b3": "まだ"
+                    }
+                  }
+                ],
+                "correctOptionId": "q16a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "seikatsu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "nareru"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "hai"
+                  }
+                ],
+                "explanation": "どのぐらい là từ để hỏi, không lắp được vào cụm \"日本の___に\". 慣れます là thì hiện tại/tương lai, sai vì câu hỏi đã dùng もう (đã…chưa) chỉ việc đã xảy ra. まだ đứng một mình không đáp trọn câu hỏi ngắn kiểu này — câu trả lời ngắn ở cảnh này là はい.",
+                "explanationByNative": {
+                  "vi": "どのぐらい là từ để hỏi, không lắp được vào cụm \"日本の___に\". 慣れます là thì hiện tại/tương lai, sai vì câu hỏi đã dùng もう (đã…chưa) chỉ việc đã xảy ra. まだ đứng một mình không đáp trọn câu hỏi ngắn kiểu này — câu trả lời ngắn ở cảnh này là はい.",
+                  "en": "どのぐらい is a question word and cannot fill \"日本の___に\". 慣れます is present/future tense, wrong because the question already used もう (have… already) for something that has happened. まだ alone does not answer this short-question pattern — the short answer in this scene is はい.",
+                  "ja": "「どのぐらい」は疑問詞なので「日本の___に」には入りません。「慣れます」は現在・未来形で、質問はすでに「もう」（もう〜したか）を使っているので合いません。「まだ」だけではこの短い質問への答えになりません。この場面での短い答えは「はい」です。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q17",
+                "order": 17,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: vẫn Satō và Tanaka, ngang vai chưa thân, thể lịch sự — lần này là phần Tanaka đáp đã quen chưa.",
+                "contextByNative": {
+                  "vi": "Vai vế: vẫn Satō và Tanaka, ngang vai chưa thân, thể lịch sự — lần này là phần Tanaka đáp đã quen chưa.",
+                  "en": "Roles: still Satō and Tanaka, equal standing, not close, polite form — this time the part where Tanaka answers whether they have settled in.",
+                  "ja": "関係：引き続き対等で親しくない佐藤さんと田中さんです。今回は慣れたかに田中さんが答える部分です。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q17t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "そうですか。"
+                      },
+                      {
+                        "blankId": "q17b1"
+                      },
+                      {
+                        "displayText": "慣（な）れましたか。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q17t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q17b2"
+                      },
+                      {
+                        "displayText": "、"
+                      },
+                      {
+                        "blankId": "q17b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q17b1",
+                    "displayAnswer": "もう",
+                    "canonicalAnswer": "もう",
+                    "audioText": "もう",
+                    "acceptedAnswers": [
+                      "もう"
+                    ]
+                  },
+                  {
+                    "id": "q17b2",
+                    "displayAnswer": "はい",
+                    "canonicalAnswer": "はい",
+                    "audioText": "はい",
+                    "acceptedAnswers": [
+                      "はい"
+                    ]
+                  },
+                  {
+                    "id": "q17b3",
+                    "displayAnswer": "おかげさまで",
+                    "canonicalAnswer": "おかげさまで",
+                    "audioText": "おかげさまで",
+                    "acceptedAnswers": [
+                      "おかげさまで"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q17a",
+                    "text": "もう / はい / おかげさまで",
+                    "answersByBlankId": {
+                      "q17b1": "もう",
+                      "q17b2": "はい",
+                      "q17b3": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q17b",
+                    "text": "まだ / はい / おかげさまで",
+                    "answersByBlankId": {
+                      "q17b1": "まだ",
+                      "q17b2": "はい",
+                      "q17b3": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q17c",
+                    "text": "もう / うん / おかげさまで",
+                    "answersByBlankId": {
+                      "q17b1": "もう",
+                      "q17b2": "うん",
+                      "q17b3": "おかげさまで"
+                    }
+                  },
+                  {
+                    "id": "q17d",
+                    "text": "もう / はい / 元気（げんき）",
+                    "answersByBlankId": {
+                      "q17b1": "もう",
+                      "q17b2": "はい",
+                      "q17b3": "元気"
+                    }
+                  }
+                ],
+                "correctOptionId": "q17a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "mou"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "hai"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "okagesama-de"
+                  }
+                ],
+                "explanation": "まだ trong câu hỏi \"___慣れましたか\" sai — まだ dùng trong câu đáp, câu hỏi cần もう. うん là thể thường, lệch với cả hai bên đang lịch sự. 元気 đáp cho câu hỏi sức khoẻ, không đáp cho câu hỏi đã quen chưa.",
+                "explanationByNative": {
+                  "vi": "まだ trong câu hỏi \"___慣れましたか\" sai — まだ dùng trong câu đáp, câu hỏi cần もう. うん là thể thường, lệch với cả hai bên đang lịch sự. 元気 đáp cho câu hỏi sức khoẻ, không đáp cho câu hỏi đã quen chưa.",
+                  "en": "まだ is wrong in the question \"___慣れましたか\" — まだ belongs in an answer; the question needs もう. うん is plain form, mismatched with both sides being polite. 元気 answers a question about health, not about settling in.",
+                  "ja": "「___慣れましたか」という質問に「まだ」を使うのは誤りです。「まだ」は返事に使う言葉で、質問には「もう」を使います。「うん」は普通体で、両者が丁寧体を使っているのと合いません。「元気」は体調をたずねる質問への返事で、慣れたかどうかの質問には合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m01-u2-comprehensive-q18",
+                "order": 18,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: vẫn giáo viên và Satō — quan hệ trên–dưới, cả hai giữ thể lịch sự (miễn trừ G6, xem câu 12) — hỏi lại đầy đủ và nghe câu trả lời.",
+                "contextByNative": {
+                  "vi": "Vai vế: vẫn giáo viên và Satō — quan hệ trên–dưới, cả hai giữ thể lịch sự (miễn trừ G6, xem câu 12) — hỏi lại đầy đủ và nghe câu trả lời.",
+                  "en": "Roles: still the teacher and Satō — senior-to-junior, both keep polite form (G6 exemption, see question 12) — asking again in full and hearing the answer.",
+                  "ja": "関係：引き続き先生と佐藤さんの上下関係です。両方とも丁寧体を保ちます（G6の適用除外、12問目参照）。もう一度たずねて、答えを聞きます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q18t1",
+                    "speakerId": "sensei",
+                    "segments": [
+                      {
+                        "blankId": "q18b1"
+                      },
+                      {
+                        "displayText": "に来（き）て、"
+                      },
+                      {
+                        "blankId": "q18b2"
+                      },
+                      {
+                        "displayText": "になりますか。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q18t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q18b3"
+                      },
+                      {
+                        "displayText": "、来（き）ました。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q18b1",
+                    "displayAnswer": "日本（にほん）",
+                    "canonicalAnswer": "日本",
+                    "audioText": "にほん",
+                    "acceptedAnswers": [
+                      "日本"
+                    ]
+                  },
+                  {
+                    "id": "q18b2",
+                    "displayAnswer": "どのぐらい",
+                    "canonicalAnswer": "どのぐらい",
+                    "audioText": "どのぐらい",
+                    "acceptedAnswers": [
+                      "どのぐらい"
+                    ]
+                  },
+                  {
+                    "id": "q18b3",
+                    "displayAnswer": "先月（せんげつ）",
+                    "canonicalAnswer": "先月",
+                    "audioText": "せんげつ",
+                    "acceptedAnswers": [
+                      "先月"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q18a",
+                    "text": "日本（にほん） / どのぐらい / 先月（せんげつ）",
+                    "answersByBlankId": {
+                      "q18b1": "日本",
+                      "q18b2": "どのぐらい",
+                      "q18b3": "先月"
+                    }
+                  },
+                  {
+                    "id": "q18b",
+                    "text": "生活（せいかつ） / どのぐらい / 先月（せんげつ）",
+                    "answersByBlankId": {
+                      "q18b1": "生活",
+                      "q18b2": "どのぐらい",
+                      "q18b3": "先月"
+                    }
+                  },
+                  {
+                    "id": "q18c",
+                    "text": "日本（にほん） / もう / 先月（せんげつ）",
+                    "answersByBlankId": {
+                      "q18b1": "日本",
+                      "q18b2": "もう",
+                      "q18b3": "先月"
+                    }
+                  },
+                  {
+                    "id": "q18d",
+                    "text": "日本（にほん） / どのぐらい / まだ",
+                    "answersByBlankId": {
+                      "q18b1": "日本",
+                      "q18b2": "どのぐらい",
+                      "q18b3": "まだ"
+                    }
+                  }
+                ],
+                "correctOptionId": "q18a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "nihon"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "dono-gurai"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m01-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "sengetsu"
+                  }
+                ],
+                "explanation": "生活 không phải nơi chốn nên không đi được với に来て. もう ở ô thứ hai không hỏi được \"bao lâu\". まだ không phải một mốc thời gian nên không lắp được vào \"___、来ました\".",
+                "explanationByNative": {
+                  "vi": "生活 không phải nơi chốn nên không đi được với に来て. もう ở ô thứ hai không hỏi được \"bao lâu\". まだ không phải một mốc thời gian nên không lắp được vào \"___、来ました\".",
+                  "en": "生活 is not a place, so it cannot take に来て. もう in the second blank cannot ask \"how long\". まだ is not a point in time, so it cannot fill \"___、来ました\".",
+                  "ja": "「生活」は場所ではないため「に来て」とは結びつきません。二つ目の空欄に「もう」を入れると期間をたずねられません。「まだ」は時点を表す言葉ではないため、「___、来ました」には入りません。"
+                }
+              }
+            ]
+          }
         }
       ]
     },

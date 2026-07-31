@@ -312,6 +312,7 @@ function assertTestWideRules(questions, { unitId }) {
 }
 
 import { JA_M01_U1_COMPREHENSIVE } from '../content/daily-life/module-1/ja-unit1-comprehensive.mjs';
+import { JA_M01_U2_COMPREHENSIVE } from '../content/daily-life/module-1/ja-unit2-comprehensive.mjs';
 
 /* ── Đăng ký nội dung đã duyệt ───────────────────────────────────────────── */
 
@@ -320,13 +321,14 @@ import { JA_M01_U1_COMPREHENSIVE } from '../content/daily-life/module-1/ja-unit1
  * (không theo vị trí mảng) — cùng nguyên tắc ID-stability của
  * `FIVE_CARDS_REGISTRY`.
  *
- * HIỆN TRỐNG: chưa có nội dung bài tổng hợp nào được duyệt. Thêm một bài =
- * viết file nguồn đã duyệt (theo G1–G9, có đối chiếu nguồn thật) rồi thêm
- * ĐÚNG MỘT dòng vào đây — vòng lặp sinh curriculum không cần sửa.
+ * Thêm một bài = viết file nguồn đã duyệt (theo G1–G9, có đối chiếu nguồn
+ * thật) rồi thêm ĐÚNG MỘT dòng vào đây — vòng lặp sinh curriculum không cần
+ * sửa.
  */
 export const UNIT_COMPREHENSIVE_REGISTRY = {
   ja: {
     'ja-daily_life-m01-u1': JA_M01_U1_COMPREHENSIVE,
+    'ja-daily_life-m01-u2': JA_M01_U2_COMPREHENSIVE,
   },
 };
 

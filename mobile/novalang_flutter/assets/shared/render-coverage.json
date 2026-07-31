@@ -62,6 +62,12 @@
       "renderedOn": ["web", "flutter"],
       "note": "Giải thích sau khi chấm. Hay trích câu đích làm dẫn chứng."
     },
+    "situation": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "renderedOn": ["web", "flutter"],
+      "waivedReason": "Văn xuôi TIẾNG MẸ ĐẺ mô tả bối cảnh + vai vế (G6), không phải câu tiếng Nhật người học phải nói. Chữ Nhật lọt vào chỉ là TRÍCH DẪN vốn từ do CHÍNH BÀI ĐÓ dạy — đo 2026-07-30: 6 chỗ, 9 mảnh (さん・すみません・失礼ですが・こちらこそ・お先に失礼します・うん・はい・じゃあ・また), 9/9 nằm trong taught-vocabulary.json tính tới bài đó. Khai nguồn lại cho một trích dẫn của chính mình là vòng lặp. Khác `explanation` ở chỗ nào: explanation trích câu ĐÍCH của bài tập (chuỗi bị chấm), nên nó vẫn phải khai.",
+      "note": "Mô tả tình huống + vai vế của mỗi nhóm hội thoại (card 3)."
+    },
     "incorrectMessage": {
       "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"]
