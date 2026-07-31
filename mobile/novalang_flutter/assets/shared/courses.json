@@ -7979,14 +7979,14 @@
       "placementTag": "daily_life_basic",
       "type": "communication",
       "unlockRequirement": "core_foundation_completed",
-      "contentStatus": "blueprint",
-      "playable": false,
+      "contentStatus": "ready",
+      "playable": true,
       "order": 12,
       "unitIds": [
         "ja-daily_life-m02-u1",
         "ja-daily_life-m02-u2"
       ],
-      "isComingSoon": true,
+      "isComingSoon": false,
       "units": [
         {
           "id": "ja-daily_life-m02-u1",

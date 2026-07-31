@@ -87,8 +87,8 @@
   ],
   "courseCount": 35,
   "lessonCount": 172,
-  "playableLessonCount": 31,
-  "blueprintLessonCount": 141,
+  "playableLessonCount": 32,
+  "blueprintLessonCount": 140,
   "unitCount": 69,
   "courses": [
     {
@@ -338,10 +338,10 @@
       "branch": "niche",
       "moduleId": "daily_life_m02_thanks_apology_politeness",
       "title": "Japanese · Daily Life Communication · Thanks, Apologies & Politeness",
-      "contentStatus": "blueprint",
-      "playable": false,
+      "contentStatus": "ready",
+      "playable": true,
       "lessonCount": 4,
-      "playableLessonCount": 0
+      "playableLessonCount": 1
     },
     {
       "id": "ja-daily_life-m03",

@@ -22,6 +22,12 @@
       "renderedOn": ["web", "flutter"],
       "note": "Mặt chữ chính. Luôn bỏ ngoặc chú âm khi vẽ."
     },
+    "displayAnswer": {
+      "category": "display", "mustRender": false, "mustDeclareProvenance": true,
+      "renderedOn": ["flutter"],
+      "waivedReason": "Bài tổng hợp cuối Unit hiện CHỈ có màn hình ở Flutter (unit_comprehensive_test_screen.dart dòng 264, 354) — Web chưa có màn đọc comprehensiveTest, ngoài phạm vi PHA C (2026-07-31). Bật mustRender=true khi Web có màn này.",
+      "note": "Mặt chữ (có chú âm) của một ô trống trong bài tổng hợp cuối Unit (comprehensiveTest.questions[].blanks[])."
+    },
     "targetText": {
       "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"],
@@ -106,6 +112,12 @@
       "waivedReason": "Như displayName — nhãn tên người nói.",
       "renderedOn": ["web", "flutter"]
     },
+    "speakerId": {
+      "category": "display", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Như displayName/speaker — nhãn TÊN nhân vật (approvedCharacterNamePool), không phải câu trích nguồn. Render: unit_comprehensive_test_screen.dart dòng 237 (Flutter) — Web chưa có màn đọc comprehensiveTest, ngoài phạm vi PHA C (2026-07-31).",
+      "renderedOn": ["flutter"],
+      "note": "speakerId của mỗi lượt hội thoại trong bài tổng hợp cuối Unit (comprehensiveTest.questions[].dialogue[]). Hai unit hiện KHÔNG cùng quy ước: m01-u1 dùng tên hiển thị thật (佐藤…), m01-u2 dùng id la-tinh hoá (sato…) — cả hai đều là nhãn tên, không phải câu đích."
+    },
 
     "reading": {
       "category": "aid", "mustRender": true, "mustDeclareProvenance": false,
@@ -164,6 +176,11 @@
       "renderedOn": []
     },
 
+    "ref": {
+      "category": "internal", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Con trỏ tham chiếu của comprehensiveTest.questions[].reviews[] về mục vocabulary/grammar trong lesson nguồn — KHÔNG được Flutter/Web đọc-vẽ (reviews[] chưa được parse trong model Dart; chỉ scripts/preview-lesson.mjs dùng cho trang duyệt G14-R15). kind=vocabulary trỏ id la-tinh hoá (không có chữ Nhật); kind=grammar trỏ gần-đúng chuỗi title của grammarPattern nguồn (đo 2026-07-31: '～ですね' ↔ u1-l2 title '～ですね', 'また＋[mốc thời gian]' ↔ u1-l3 title cùng chuỗi) — title đã là trường mustDeclareProvenance=true, khai trong CHÍNH provenance file của lesson đó rồi; khai lại ở đây là trích dẫn vòng lặp.",
+      "renderedOn": []
+    },
     "ja": {
       "category": "internal", "mustRender": false, "mustDeclareProvenance": false,
       "waivedReason": "Khoá ngôn ngữ trong map *ByNative — nội dung nổi lên trường gốc sau khi giải theo nativeLanguageCode, khai ở đó.",

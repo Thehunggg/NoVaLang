@@ -1,0 +1,1511 @@
+{
+  "lessonId": "ja-daily_life-m02-u1-l1",
+  "items": [
+    {
+      "path": "fiveCardContent.intro.examples[0].targetText",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.intro.examples[0].displayText",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.intro.examples[1].targetText",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.intro.examples[1].displayText",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.intro.examples[2].targetText",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.intro.examples[2].displayText",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[0].examples[0].text",
+      "targetText": "あ、どうも。",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[1].examples[0].text",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[2].examples[0].text",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[3].examples[0].text",
+      "targetText": "はい、ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[4].examples[0].text",
+      "targetText": "どうもありがとうございます。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 23565,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[5].examples[0].text",
+      "targetText": "助（たす）かります。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 24002,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[6].examples[0].text",
+      "targetText": "助（たす）かりました。",
+      "source": "local-sources/ja/topic2.json",
+      "line": 1383,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[0].term",
+      "targetText": "すみません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u1-l2",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[0].meaning",
+      "targetText": "Cách dùng MỚI của từ đã học ở bài trước: cảm ơn vì đã làm phiền người khác (khác nghĩa xin lỗi đã học). ありがとうございます thuần cảm ơn; すみません pha thêm ý áy náy vì làm phiền.",
+      "authored": true,
+      "reason": "mô tả cách dùng MỚI của từ đã dạy trước, do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI chính từ đang mô tả."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[0].example.text",
+      "targetText": "すみません。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1285,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[1].term",
+      "targetText": "おかげさまで",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[1].meaning",
+      "targetText": "Cách dùng MỚI của từ đã học ở bài trước: cảm ơn tổng quát nhờ có sự giúp đỡ (khác câu đáp hỏi thăm sức khoẻ đã học). Nhấn vào công của người kia, mạnh hơn 助かりました.",
+      "authored": true,
+      "reason": "mô tả cách dùng MỚI của từ đã dạy trước, do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI chính từ đang mô tả."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[1].example.text",
+      "targetText": "おかげさまで、助（たす）かりました。",
+      "authored": true,
+      "reason": "ghép おかげさまで (đã dạy, xem from_lesson khác trong bài) với 助かりました (verbatim topic2.json:1383) thành ví dụ MỚI cho cách dùng おかげさまで — không phải câu nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[0].targetText",
+      "targetText": "はい。教（おし）えてください。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25215,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[0].displayText",
+      "targetText": "はい。教（おし）えてください。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25215,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[1].targetText",
+      "targetText": "今（いま）、地図（ちず）をお持（も）ちしますね。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25220,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[1].displayText",
+      "targetText": "今（いま）、地図（ちず）をお持（も）ちしますね。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25220,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[2].targetText",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[2].displayText",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[0].targetText",
+      "targetText": "かしこまりました。こちらになります。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26780,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[0].displayText",
+      "targetText": "かしこまりました。こちらになります。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26780,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[1].targetText",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[1].displayText",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[0].targetText",
+      "targetText": "右上（みぎうえ）にあります。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1176,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[0].displayText",
+      "targetText": "右上（みぎうえ）にあります。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1176,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[1].targetText",
+      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1181,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[1].displayText",
+      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1181,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[2].targetText",
+      "targetText": "はい、ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[2].displayText",
+      "targetText": "はい、ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[0].title",
+      "targetText": "ありがとう ↔ ありがとうございます",
+      "authored": true,
+      "reason": "tiêu đề mẫu so sánh do người viết đặt, ghép các từ đã khai riêng bằng ký hiệu ↔／＋→."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[0].examples[0].text",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[0].examples[1].text",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[1].title",
+      "targetText": "ありがとうございます ↔ ありがとうございました",
+      "authored": true,
+      "reason": "tiêu đề mẫu so sánh do người viết đặt, ghép các từ đã khai riêng bằng ký hiệu ↔／＋→."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[1].examples[0].text",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[1].examples[1].text",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[2].title",
+      "targetText": "どうも (đứng riêng)",
+      "authored": true,
+      "reason": "tiêu đề mẫu so sánh do người viết đặt, ghép các từ đã khai riêng bằng ký hiệu ↔／＋→."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[2].examples[0].text",
+      "targetText": "あ、どうも。",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[3].title",
+      "targetText": "どうも ＋ ありがとうございます → どうもありがとうございます",
+      "authored": true,
+      "reason": "tiêu đề mẫu so sánh do người viết đặt, ghép các từ đã khai riêng bằng ký hiệu ↔／＋→."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[3].meaning",
+      "targetText": "Ghép どうも vào trước câu cảm ơn lịch sự để nhấn mạnh.",
+      "authored": true,
+      "reason": "tiêu đề mẫu so sánh do người viết đặt, ghép các từ đã khai riêng bằng ký hiệu ↔／＋→."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[3].examples[0].text",
+      "targetText": "どうもありがとうございます。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 23565,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[4].title",
+      "targetText": "助かります ↔ 助かりました",
+      "authored": true,
+      "reason": "tiêu đề mẫu so sánh do người viết đặt, ghép các từ đã khai riêng bằng ký hiệu ↔／＋→."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[4].examples[0].text",
+      "targetText": "助（たす）かります。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 24002,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[4].examples[1].text",
+      "targetText": "助（たす）かりました。",
+      "source": "local-sources/ja/topic2.json",
+      "line": 1383,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.japaneseTitle",
+      "targetText": "練習（れんしゅう）",
+      "authored": true,
+      "reason": "nhãn tiêu đề tiếng Nhật của mục 練習, không phải câu trích nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[0].text",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[0].canonicalText",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[1].text",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[1].canonicalText",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[2].text",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[2].canonicalText",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[3].text",
+      "targetText": "どうも。",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[3].canonicalText",
+      "targetText": "どうも。",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].feedback.correctAnswer",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].feedback.canonicalAnswer",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].feedback.explanation",
+      "targetText": "ありがとうございます dùng khi việc còn đang diễn ra; ありがとうございました dùng khi việc đã xong. ありがとう và どうも là thể thân mật, không hợp tình huống cần lịch sự.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[0].text",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[0].canonicalText",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[1].text",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[1].canonicalText",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[2].text",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[2].canonicalText",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[3].text",
+      "targetText": "助（たす）かりました。",
+      "source": "local-sources/ja/topic2.json",
+      "line": 1383,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[3].canonicalText",
+      "targetText": "助かりました。",
+      "source": "local-sources/ja/topic2.json",
+      "line": 1383,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].feedback.correctAnswer",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].feedback.canonicalAnswer",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].feedback.explanation",
+      "targetText": "Với bạn thân dùng thể thường ありがとう. ありがとうございます／ございました là thể lịch sự. 助かりました cũng là thể lịch sự.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[2].pairs[0].left.text",
+      "targetText": "ありがとうございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[2].pairs[1].left.text",
+      "targetText": "ありがとう",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[2].pairs[2].left.text",
+      "targetText": "ありがとうございました",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[2].pairs[3].left.text",
+      "targetText": "どうも",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[0].text",
+      "targetText": "どうも",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[0].canonicalText",
+      "targetText": "どうも",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[1].text",
+      "targetText": "ありがとう",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[1].canonicalText",
+      "targetText": "ありがとう",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[2].text",
+      "targetText": "ございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[2].canonicalText",
+      "targetText": "ございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[3].text",
+      "targetText": "うん",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[3].canonicalText",
+      "targetText": "うん",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[4].text",
+      "targetText": "もう",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[4].canonicalText",
+      "targetText": "もう",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].feedback.correctAnswer",
+      "targetText": "どうもありがとうございます。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 23565,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].feedback.canonicalAnswer",
+      "targetText": "どうもありがとうございます。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 23565,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].feedback.explanation",
+      "targetText": "どうも + ありがとう + ございます → どうもありがとうございます。 うん và もう không dùng ở đây.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[0].text",
+      "targetText": "ありがとう",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[0].canonicalText",
+      "targetText": "ありがとう",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[1].text",
+      "targetText": "ありがとうございました",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[1].canonicalText",
+      "targetText": "ありがとうございました",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[2].text",
+      "targetText": "助（たす）かります",
+      "source": "local-sources/ja/topic1.json",
+      "line": 24002,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[2].canonicalText",
+      "targetText": "助かります",
+      "source": "local-sources/ja/topic1.json",
+      "line": 24002,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].feedback.correctAnswer",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].feedback.canonicalAnswer",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].feedback.explanation",
+      "targetText": "Bạn thân đáp lại bằng thể thường ありがとう, không dùng thể lịch sự.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[5].feedback.explanation",
+      "targetText": "Câu nghe được là ありがとうございました — thì quá khứ nghĩa là việc đã xong.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[0].text",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[0].canonicalText",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[1].text",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[1].canonicalText",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[2].text",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[2].canonicalText",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[3].text",
+      "targetText": "どうも。",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[3].canonicalText",
+      "targetText": "どうも。",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].feedback.correctAnswer",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].feedback.explanation",
+      "targetText": "Việc đã xong thì dùng thì quá khứ ありがとうございました. ありがとうございます hợp khi việc còn đang xảy ra. ありがとう／どうも là thể thân mật.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[7].prompt",
+      "targetText": "「助かります」 dùng khi nào?",
+      "authored": true,
+      "reason": "đề bài/câu hỏi do người viết soạn; phần tiếng Nhật chèn vào (trong ngoặc kép) là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[7].feedback.explanation",
+      "targetText": "助かります nghĩa là việc đó giúp ích cho bạn — nói khi ai đó đang hoặc sắp giúp bạn.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[0].prompt",
+      "targetText": "ありがとうございます thuộc thể nào?",
+      "authored": true,
+      "reason": "đề bài/câu hỏi do người viết soạn; phần tiếng Nhật chèn vào (trong ngoặc kép) là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[0].feedback.explanation",
+      "targetText": "Có ございます ở cuối — dấu hiệu của thể lịch sự.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].prompt",
+      "targetText": "Bỏ ございます khỏi ありがとうございます thì còn gì?",
+      "authored": true,
+      "reason": "đề bài/câu hỏi do người viết soạn; phần tiếng Nhật chèn vào (trong ngoặc kép) là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[0].text",
+      "targetText": "ありがとう",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[0].canonicalText",
+      "targetText": "ありがとう",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text",
+      "targetText": "どうも",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].canonicalText",
+      "targetText": "どうも",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[2].text",
+      "targetText": "うん",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[2].canonicalText",
+      "targetText": "うん",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[3].text",
+      "targetText": "はい",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[3].canonicalText",
+      "targetText": "はい",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].feedback.correctAnswer",
+      "targetText": "ありがとう",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].feedback.explanation",
+      "targetText": "ありがとうございます → ありがとう là cặp lịch sự ↔ thân mật.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[0].text",
+      "targetText": "ありがとうございました",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[0].canonicalText",
+      "targetText": "ありがとうございました",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[1].text",
+      "targetText": "ありがとうございます",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[1].canonicalText",
+      "targetText": "ありがとうございます",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[2].text",
+      "targetText": "ありがとう",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[2].canonicalText",
+      "targetText": "ありがとう",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[3].text",
+      "targetText": "どうも",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[3].canonicalText",
+      "targetText": "どうも",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].feedback.correctAnswer",
+      "targetText": "ありがとうございました",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].feedback.explanation",
+      "targetText": "Thì quá khứ ました đánh dấu việc đã hoàn tất.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[3].prompt",
+      "targetText": "どうもありがとうございます ghép từ mấy phần?",
+      "authored": true,
+      "reason": "đề bài/câu hỏi do người viết soạn; phần tiếng Nhật chèn vào (trong ngoặc kép) là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[3].options[0].text",
+      "targetText": "3 phần: どうも + ありがとう + ございます",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[3].options[0].canonicalText",
+      "targetText": "3 phần: どうも + ありがとう + ございます",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[3].feedback.correctAnswer",
+      "targetText": "3 phần: どうも + ありがとう + ございます",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[3].feedback.explanation",
+      "targetText": "どうも ghép thêm vào ありがとうございます để nhấn mạnh.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[4].prompt",
+      "targetText": "助かりました khác 助かります ở điểm nào?",
+      "authored": true,
+      "reason": "đề bài/câu hỏi do người viết soạn; phần tiếng Nhật chèn vào (trong ngoặc kép) là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[4].options[0].text",
+      "targetText": "助（たす）かりました là việc đã xong (quá khứ)",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[4].options[0].canonicalText",
+      "targetText": "助かりました là việc đã xong (quá khứ)",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[4].options[1].text",
+      "targetText": "助（たす）かりました lịch sự hơn",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[4].options[1].canonicalText",
+      "targetText": "助かりました lịch sự hơn",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[4].feedback.correctAnswer",
+      "targetText": "助かりました là việc đã xong (quá khứ)",
+      "authored": true,
+      "reason": "nhãn đáp án do người viết soạn cho checkpoint; phần tiếng Nhật trong đó là TRÍCH LẠI từ đã khai riêng ở nơi khác trong bài."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[4].feedback.explanation",
+      "targetText": "ました đánh dấu việc đã hoàn tất, giống cặp ございます/ございました.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].chat.messages[0].segments[0].displayText",
+      "targetText": "今（いま）、地図（ちず）をお持（も）ちしますね。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25220,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].chat.messages[2].segments[0].displayText",
+      "targetText": "これでよろしいでしょうか？",
+      "source": "local-sources/ja/topic1.json",
+      "line": 27073,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].chat.messages[4].segments[0].displayText",
+      "targetText": "どういたしまして。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1191,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].slots[0].displayText",
+      "targetText": "ありがとうございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].slots[0].canonicalText",
+      "targetText": "ありがとうございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].slots[1].displayText",
+      "targetText": "助（たす）かります",
+      "source": "local-sources/ja/topic1.json",
+      "line": 24002,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].slots[1].canonicalText",
+      "targetText": "助かります",
+      "source": "local-sources/ja/topic1.json",
+      "line": 24002,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.correctAnswer",
+      "targetText": "ありがとうございます\n助かります",
+      "authored": true,
+      "reason": "tóm tắt đáp án ghép từ các ô/ đáp án đã khai riêng bằng dấu xuống dòng hoặc ／ — quy ước hiển thị phản hồi bài tập, không phải câu nguyên trong nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.canonicalAnswer",
+      "targetText": "ありがとうございます／助かります",
+      "authored": true,
+      "reason": "tóm tắt đáp án ghép từ các ô/ đáp án đã khai riêng bằng dấu xuống dòng hoặc ／ — quy ước hiển thị phản hồi bài tập, không phải câu nguyên trong nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.slotFeedback.chat_arigatou_slot.correctAnswer",
+      "targetText": "ありがとうございます",
+      "authored": true,
+      "reason": "tóm tắt đáp án ghép từ các ô/ đáp án đã khai riêng bằng dấu xuống dòng hoặc ／ — quy ước hiển thị phản hồi bài tập, không phải câu nguyên trong nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.slotFeedback.chat_arigatou_slot.explanation",
+      "targetText": "Được giúp ngay lúc đó thì đáp lịch sự bằng ありがとうございます.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.slotFeedback.chat_tasukarimasu_slot.correctAnswer",
+      "targetText": "助かります",
+      "authored": true,
+      "reason": "tóm tắt đáp án ghép từ các ô/ đáp án đã khai riêng bằng dấu xuống dòng hoặc ／ — quy ước hiển thị phản hồi bài tập, không phải câu nguyên trong nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.slotFeedback.chat_tasukarimasu_slot.explanation",
+      "targetText": "助かります nhấn thêm rằng việc đó thực sự giúp ích.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[0].text",
+      "targetText": "どうも",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[0].canonicalText",
+      "targetText": "どうも",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[1].text",
+      "targetText": "ございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[1].canonicalText",
+      "targetText": "ございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[2].text",
+      "targetText": "ございました",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[2].canonicalText",
+      "targetText": "ございました",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].feedback.correctAnswer",
+      "targetText": "どうも。",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].feedback.canonicalAnswer",
+      "targetText": "どうも。",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].feedback.explanation",
+      "targetText": "どうも đứng riêng là câu cảm ơn thân mật đầy đủ. ございます／ございました là thể lịch sự, không đi cùng câu ngắn này.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[0].text",
+      "targetText": "A: 手伝（てつだ）いますよ。\nB: ありがとう。",
+      "authored": true,
+      "reason": "phương án dạng hội thoại A/B do người viết ghép từ các câu đã khai riêng để làm bài 'chọn đoạn tự nhiên nhất' — không phải đoạn nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[0].canonicalText",
+      "targetText": "A: 手伝いますよ。\nB: ありがとう。",
+      "authored": true,
+      "reason": "phương án dạng hội thoại A/B do người viết ghép từ các câu đã khai riêng để làm bài 'chọn đoạn tự nhiên nhất' — không phải đoạn nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[1].text",
+      "targetText": "A: ありがとうございます。\nB: どうも。",
+      "authored": true,
+      "reason": "phương án dạng hội thoại A/B do người viết ghép từ các câu đã khai riêng để làm bài 'chọn đoạn tự nhiên nhất' — không phải đoạn nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[1].canonicalText",
+      "targetText": "A: ありがとうございます。\nB: どうも。",
+      "authored": true,
+      "reason": "phương án dạng hội thoại A/B do người viết ghép từ các câu đã khai riêng để làm bài 'chọn đoạn tự nhiên nhất' — không phải đoạn nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[2].text",
+      "targetText": "A: 助（たす）かります。\nB: ありがとうございました。ございます。",
+      "authored": true,
+      "reason": "phương án dạng hội thoại A/B do người viết ghép từ các câu đã khai riêng để làm bài 'chọn đoạn tự nhiên nhất' — không phải đoạn nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[2].canonicalText",
+      "targetText": "A: 助かります。\nB: ありがとうございました。ございます。",
+      "authored": true,
+      "reason": "phương án dạng hội thoại A/B do người viết ghép từ các câu đã khai riêng để làm bài 'chọn đoạn tự nhiên nhất' — không phải đoạn nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[3].text",
+      "targetText": "A: （まだ手伝（てつだ）っていない）\nB: ありがとうございました。",
+      "authored": true,
+      "reason": "phương án dạng hội thoại A/B do người viết ghép từ các câu đã khai riêng để làm bài 'chọn đoạn tự nhiên nhất' — không phải đoạn nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[3].canonicalText",
+      "targetText": "A: （まだ手伝（てつだ）っていない）\nB: ありがとうございました。",
+      "authored": true,
+      "reason": "phương án dạng hội thoại A/B do người viết ghép từ các câu đã khai riêng để làm bài 'chọn đoạn tự nhiên nhất' — không phải đoạn nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].feedback.correctAnswer",
+      "targetText": "A: 手伝いますよ。\nB: ありがとう。",
+      "authored": true,
+      "reason": "phương án dạng hội thoại A/B do người viết ghép từ các câu đã khai riêng để làm bài 'chọn đoạn tự nhiên nhất' — không phải đoạn nguyên trong một nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].feedback.explanation",
+      "targetText": "A tự nhiên: được giúp thì cảm ơn thân mật ngay. B lệch vì A hỏi/nói lịch sự mà B lại đáp thân mật. C thừa và ghép sai (ございました + ございます không đi cùng nhau). D sai thì: việc CHƯA xảy ra mà đã dùng quá khứ.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[0].text",
+      "targetText": "ありがとう",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[0].canonicalText",
+      "targetText": "ありがとう",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[1].text",
+      "targetText": "ございました",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[1].canonicalText",
+      "targetText": "ございました",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[2].text",
+      "targetText": "うん",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[2].canonicalText",
+      "targetText": "うん",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[3].text",
+      "targetText": "ございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[3].canonicalText",
+      "targetText": "ございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].feedback.correctAnswer",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].feedback.canonicalAnswer",
+      "targetText": "ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].feedback.explanation",
+      "targetText": "ありがとう + ございました → ありがとうございました。 うん là thể thường, ございます là việc đang xảy ra — cả hai không hợp câu này.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở nơi khác trong bài (blanks/dialogue/vocabulary)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[0].targetText",
+      "targetText": "今（いま）、地図（ちず）をお持（も）ちしますね。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25220,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[0].displayText",
+      "targetText": "今（いま）、地図（ちず）をお持（も）ちしますね。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25220,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[1].targetText",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[1].displayText",
+      "targetText": "ありがとうございます。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[2].targetText",
+      "targetText": "手伝（てつだ）いますよ。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 23997,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[2].displayText",
+      "targetText": "手伝（てつだ）いますよ。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 23997,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[3].targetText",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[3].displayText",
+      "targetText": "ありがとう。",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[4].targetText",
+      "targetText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1166,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[4].displayText",
+      "targetText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1166,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].targetText",
+      "targetText": "よいですよ。シャッターはどこですか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1171,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].displayText",
+      "targetText": "よいですよ。シャッターはどこですか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1171,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText",
+      "targetText": "右上（みぎうえ）にあります。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1176,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].displayText",
+      "targetText": "右上（みぎうえ）にあります。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1176,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText",
+      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1181,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].displayText",
+      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1181,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[8].targetText",
+      "targetText": "はい、ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[8].displayText",
+      "targetText": "はい、ありがとうございました。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].sceneDividers[0].targetText",
+      "targetText": "べつの日（ひ）",
+      "authored": true,
+      "reason": "dải phân cảnh không lời thoại của Q14 — G14-R7 quy định sceneDividers là authored."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].sceneDividers[1].targetText",
+      "targetText": "べつの日（ひ）",
+      "authored": true,
+      "reason": "dải phân cảnh không lời thoại của Q14 — G14-R7 quy định sceneDividers là authored."
+    },
+    {
+      "path": "vocabulary[0].displayText",
+      "targetText": "どうも",
+      "source": "local-sources/ja/ban1.txt",
+      "line": 4991,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "vocabulary[1].displayText",
+      "targetText": "ありがとう",
+      "source": "local-sources/ja/topic1.json",
+      "line": 26785,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "vocabulary[2].displayText",
+      "targetText": "ありがとうございます",
+      "source": "local-sources/ja/topic3.json",
+      "line": 25225,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "vocabulary[3].displayText",
+      "targetText": "ありがとうございました",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1186,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "vocabulary[4].displayText",
+      "targetText": "どうもありがとうございます",
+      "source": "local-sources/ja/topic1.json",
+      "line": 23565,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "vocabulary[5].displayText",
+      "targetText": "助（たす）かります",
+      "source": "local-sources/ja/topic1.json",
+      "line": 24002,
+      "verbatim": true,
+      "token": true
+    },
+    {
+      "path": "vocabulary[6].displayText",
+      "targetText": "助（たす）かりました",
+      "source": "local-sources/ja/topic2.json",
+      "line": 1383,
+      "verbatim": true,
+      "token": true
+    }
+  ]
+}
