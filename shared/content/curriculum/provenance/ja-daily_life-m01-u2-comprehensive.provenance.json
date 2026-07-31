@@ -1,0 +1,1507 @@
+{
+  "lessonId": "ja-daily_life-m01-u2-comprehensive",
+  "items": [
+    {
+      "path": "questions[0].explanation",
+      "targetText": "久しぶり là thể thường, không hợp khi hai người cùng dùng thể lịch sự. 元気？ cũng là thể thường — hỏi thăm lịch sự phải dùng お元気ですか. おかげさまで là câu ĐÁP lại lời hỏi thăm, không phải câu hỏi.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[0].segments[0].displayText",
+      "targetText": "あ、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[0].blanks[0].displayAnswer",
+      "targetText": "お久（ひさ）しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[0].blanks[0].canonicalAnswer",
+      "targetText": "お久しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[0].blanks[1].displayAnswer",
+      "targetText": "お元気（げんき）ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[0].blanks[1].canonicalAnswer",
+      "targetText": "お元気ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[0].options[0].text",
+      "targetText": "お久（ひさ）しぶりです / お元気（げんき）ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[0].options[1].text",
+      "targetText": "久（ひさ）しぶり / お元気（げんき）ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[0].options[2].text",
+      "targetText": "お久（ひさ）しぶりです / 元気（げんき）？",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[0].options[3].text",
+      "targetText": "お久（ひさ）しぶりです / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[1].explanation",
+      "targetText": "お久しぶりです là thể lịch sự, lệch với bạn thân dùng thể thường. お元気ですか cũng lịch sự — hỏi thăm thân mật phải dùng 元気？. おかげさまで là câu đáp, không phải câu hỏi.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[1].segments[0].displayText",
+      "targetText": "あ、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[1].blanks[0].displayAnswer",
+      "targetText": "久（ひさ）しぶり",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[1].blanks[0].canonicalAnswer",
+      "targetText": "久しぶり",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[1].blanks[1].displayAnswer",
+      "targetText": "元気（げんき）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[1].blanks[1].canonicalAnswer",
+      "targetText": "元気",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[1].options[0].text",
+      "targetText": "久（ひさ）しぶり / 元気（げんき）？",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[1].options[1].text",
+      "targetText": "お久（ひさ）しぶりです / 元気（げんき）？",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[1].options[2].text",
+      "targetText": "久（ひさ）しぶり / お元気（げんき）ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[1].options[3].text",
+      "targetText": "久（ひさ）しぶり / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[2].context",
+      "targetText": "Satō vừa được hỏi お元気ですか một cách lịch sự. Satō đáp lại đúng mức.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào là TRÍCH LẠI câu hỏi/đáp đã khai riêng ở blanks[] của câu này."
+    },
+    {
+      "path": "questions[2].explanation",
+      "targetText": "うん là thể thường, lệch với người hỏi đã dùng thể lịch sự. 元気 (không kèm おかげさまで) là câu đáp kiểu thân mật, không hợp cảnh lịch sự. お元気ですか là lặp lại câu hỏi thay vì trả lời.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[2].blanks[0].displayAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[2].blanks[0].canonicalAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[2].blanks[1].displayAnswer",
+      "targetText": "おかげさまで",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[2].blanks[1].canonicalAnswer",
+      "targetText": "おかげさまで",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[2].options[0].text",
+      "targetText": "はい / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[2].options[1].text",
+      "targetText": "うん / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[2].options[2].text",
+      "targetText": "はい / 元気（げんき）",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[2].options[3].text",
+      "targetText": "お元気（げんき）ですか / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[3].explanation",
+      "targetText": "生活 nghĩa là \"cuộc sống\", không phải một nơi chốn nên không đi được với に来て. もう và まだ là trạng từ chỉ mức đã/chưa hoàn thành, không hỏi được \"bao lâu\" — phải dùng どのぐらい.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[3].segments[1].displayText",
+      "targetText": "に来（き）て、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[3].segments[3].displayText",
+      "targetText": "になりますか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[3].blanks[0].displayAnswer",
+      "targetText": "日本（にほん）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[3].blanks[0].canonicalAnswer",
+      "targetText": "日本",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[3].blanks[1].displayAnswer",
+      "targetText": "どのぐらい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[3].blanks[1].canonicalAnswer",
+      "targetText": "どのぐらい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[3].options[0].text",
+      "targetText": "日本（にほん） / どのぐらい",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[3].options[1].text",
+      "targetText": "生活（せいかつ） / どのぐらい",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[3].options[2].text",
+      "targetText": "日本（にほん） / もう",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[3].options[3].text",
+      "targetText": "日本（にほん） / まだ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[4].context",
+      "targetText": "Satō vừa được Tanaka hỏi 元気？ theo kiểu thân mật. Satō đáp lại đúng mức, nguyên văn cuộc trò chuyện của hai người.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào là TRÍCH LẠI câu hỏi/đáp đã khai riêng ở blanks[] của câu này."
+    },
+    {
+      "path": "questions[4].explanation",
+      "targetText": "はい và おかげさまで đều là thể lịch sự, lệch với cuộc trò chuyện thân mật này. お元気ですか lặp lại câu hỏi lịch sự thay vì đáp thân mật.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[4].blanks[0].displayAnswer",
+      "targetText": "うん",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[4].blanks[0].canonicalAnswer",
+      "targetText": "うん",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[4].blanks[1].displayAnswer",
+      "targetText": "元気（げんき）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[4].blanks[1].canonicalAnswer",
+      "targetText": "元気",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[4].options[0].text",
+      "targetText": "うん / 元気（げんき）",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[4].options[1].text",
+      "targetText": "はい / 元気（げんき）",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[4].options[2].text",
+      "targetText": "うん / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[4].options[3].text",
+      "targetText": "うん / お元気（げんき）ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[5].explanation",
+      "targetText": "「先月の9月」mâu thuẫn — 先月 (tháng trước) không thể là \"tháng 9\" cụ thể trừ phi đang ở tháng 10. 来ます là thì hiện tại/tương lai, sai vì việc đến đã xảy ra rồi. なります nghĩa là \"trở thành\", không phải \"đến\".",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[5].segments[1].displayText",
+      "targetText": "の9月（くがつ）に",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[5].blanks[0].displayAnswer",
+      "targetText": "去年（きょねん）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[5].blanks[0].canonicalAnswer",
+      "targetText": "去年",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[5].blanks[1].displayAnswer",
+      "targetText": "来（き）ました",
+      "authored": true,
+      "reason": "chia quá khứ lịch sự của 来る (grammar đã dạy — xem reviews[].ref '[動詞]＋ました — quá khứ lịch sự') từ gốc 来る đã có trong u2-l2; không phải một mục từ vựng độc lập, chỉ nằm lồng trong câu dài hơn (vd '去年の9月に来ました。')."
+    },
+    {
+      "path": "questions[5].blanks[1].canonicalAnswer",
+      "targetText": "来ました",
+      "authored": true,
+      "reason": "chia quá khứ lịch sự của 来る (grammar đã dạy — xem reviews[].ref '[動詞]＋ました — quá khứ lịch sự') từ gốc 来る đã có trong u2-l2; không phải một mục từ vựng độc lập, chỉ nằm lồng trong câu dài hơn (vd '去年の9月に来ました。')."
+    },
+    {
+      "path": "questions[5].options[0].text",
+      "targetText": "去年（きょねん） / 来（き）ました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[5].options[1].text",
+      "targetText": "先月（せんげつ） / 来（き）ました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[5].options[2].text",
+      "targetText": "去年（きょねん） / 来（き）ます",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[5].options[3].text",
+      "targetText": "去年（きょねん） / なります",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[6].explanation",
+      "targetText": "Mỗi phương án sai đổi ĐÚNG một ô sang thể thường (久しぶり / 元気？), lệch với cả cuộc trò chuyện đang giữ thể lịch sự.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[6].dialogue[0].segments[0].displayText",
+      "targetText": "あ、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[6].blanks[0].displayAnswer",
+      "targetText": "お久（ひさ）しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[6].blanks[0].canonicalAnswer",
+      "targetText": "お久しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[6].blanks[1].displayAnswer",
+      "targetText": "お久（ひさ）しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[6].blanks[1].canonicalAnswer",
+      "targetText": "お久しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[6].blanks[2].displayAnswer",
+      "targetText": "お元気（げんき）ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[6].blanks[2].canonicalAnswer",
+      "targetText": "お元気ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[6].options[0].text",
+      "targetText": "お久（ひさ）しぶりです / お久（ひさ）しぶりです / お元気（げんき）ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[6].options[1].text",
+      "targetText": "久（ひさ）しぶり / お久（ひさ）しぶりです / お元気（げんき）ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[6].options[2].text",
+      "targetText": "お久（ひさ）しぶりです / 久（ひさ）しぶり / お元気（げんき）ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[6].options[3].text",
+      "targetText": "お久（ひさ）しぶりです / お久（ひさ）しぶりです / 元気（げんき）？",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[7].explanation",
+      "targetText": "Mỗi phương án sai đổi đúng một ô sang thể thường (元気？ / うん / 元気), lệch với cả hai bên đang dùng thể lịch sự.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[7].blanks[0].displayAnswer",
+      "targetText": "お元気（げんき）ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[7].blanks[0].canonicalAnswer",
+      "targetText": "お元気ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[7].blanks[1].displayAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[7].blanks[1].canonicalAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[7].blanks[2].displayAnswer",
+      "targetText": "おかげさまで",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[7].blanks[2].canonicalAnswer",
+      "targetText": "おかげさまで",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[7].options[0].text",
+      "targetText": "お元気（げんき）ですか / はい / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[7].options[1].text",
+      "targetText": "元気（げんき）？ / はい / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[7].options[2].text",
+      "targetText": "お元気（げんき）ですか / うん / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[7].options[3].text",
+      "targetText": "お元気（げんき）ですか / はい / 元気（げんき）",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[8].explanation",
+      "targetText": "Giáo viên là người trên nên giữ thể thường suốt lượt nói — đổi sang お久しぶりです (phương án b) làm mất khoảng cách vai vế. Satō là người dưới nên phải giữ thể lịch sự — đổi thành 久しぶり (phương án c) làm mất phép lịch sự cần có. お元気ですか (phương án d) lại là thể lịch sự trong khi giáo viên đang dùng thể thường.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[8].dialogue[0].segments[0].displayText",
+      "targetText": "あ、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[8].blanks[0].displayAnswer",
+      "targetText": "久（ひさ）しぶり",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[8].blanks[0].canonicalAnswer",
+      "targetText": "久しぶり",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[8].blanks[1].displayAnswer",
+      "targetText": "お久（ひさ）しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[8].blanks[1].canonicalAnswer",
+      "targetText": "お久しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[8].blanks[2].displayAnswer",
+      "targetText": "元気（げんき）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[8].blanks[2].canonicalAnswer",
+      "targetText": "元気",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[8].options[0].text",
+      "targetText": "久（ひさ）しぶり / お久（ひさ）しぶりです / 元気（げんき）？",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[8].options[1].text",
+      "targetText": "お久（ひさ）しぶりです / お久（ひさ）しぶりです / 元気（げんき）？",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[8].options[2].text",
+      "targetText": "久（ひさ）しぶり / 久（ひさ）しぶり / 元気（げんき）？",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[8].options[3].text",
+      "targetText": "久（ひさ）しぶり / お久（ひさ）しぶりです / お元気（げんき）ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[9].explanation",
+      "targetText": "生活 nghĩa là \"cuộc sống\", không phải nơi chốn nên không đi được với に来て. もう ở ô thứ hai không hỏi được \"bao lâu\". まだ ở câu hỏi \"___慣れましたか\" sai — まだ dùng trong câu ĐÁP (\"vẫn chưa\"), câu hỏi phải dùng もう (\"đã… chưa\").",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[9].dialogue[0].segments[1].displayText",
+      "targetText": "に来（き）て、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[9].dialogue[0].segments[3].displayText",
+      "targetText": "になりますか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[9].dialogue[1].segments[0].displayText",
+      "targetText": "1年（いちねん）になります。",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "fiveCardContent.practice.exercises[1].options[0].text"
+      }
+    },
+    {
+      "path": "questions[9].dialogue[2].segments[0].displayText",
+      "targetText": "そうですか。日本（にほん）の生活（せいかつ）に、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[9].dialogue[2].segments[2].displayText",
+      "targetText": "慣（な）れましたか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[9].blanks[0].displayAnswer",
+      "targetText": "日本（にほん）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[9].blanks[0].canonicalAnswer",
+      "targetText": "日本",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[9].blanks[1].displayAnswer",
+      "targetText": "どのぐらい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[9].blanks[1].canonicalAnswer",
+      "targetText": "どのぐらい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[9].blanks[2].displayAnswer",
+      "targetText": "もう",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[9].blanks[2].canonicalAnswer",
+      "targetText": "もう",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[9].options[0].text",
+      "targetText": "日本（にほん） / どのぐらい / もう",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[9].options[1].text",
+      "targetText": "生活（せいかつ） / どのぐらい / もう",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[9].options[2].text",
+      "targetText": "日本（にほん） / もう / もう",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[9].options[3].text",
+      "targetText": "日本（にほん） / どのぐらい / まだ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[10].explanation",
+      "targetText": "もう không hỏi được \"bao lâu\". 「先月の9月」mâu thuẫn về mốc thời gian. なります nghĩa là \"trở thành\", không phải \"đến\".",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[10].dialogue[0].segments[0].displayText",
+      "targetText": "日本に来（き）て、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[10].dialogue[0].segments[2].displayText",
+      "targetText": "ですか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[10].dialogue[1].segments[1].displayText",
+      "targetText": "の9月（くがつ）に",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[10].blanks[0].displayAnswer",
+      "targetText": "どのぐらい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[10].blanks[0].canonicalAnswer",
+      "targetText": "どのぐらい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[10].blanks[1].displayAnswer",
+      "targetText": "去年（きょねん）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[10].blanks[1].canonicalAnswer",
+      "targetText": "去年",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[10].blanks[2].displayAnswer",
+      "targetText": "来（き）ました",
+      "authored": true,
+      "reason": "chia quá khứ lịch sự của 来る (grammar đã dạy — xem reviews[].ref '[動詞]＋ました — quá khứ lịch sự') từ gốc 来る đã có trong u2-l2; không phải một mục từ vựng độc lập, chỉ nằm lồng trong câu dài hơn (vd '去年の9月に来ました。')."
+    },
+    {
+      "path": "questions[10].blanks[2].canonicalAnswer",
+      "targetText": "来ました",
+      "authored": true,
+      "reason": "chia quá khứ lịch sự của 来る (grammar đã dạy — xem reviews[].ref '[動詞]＋ました — quá khứ lịch sự') từ gốc 来る đã có trong u2-l2; không phải một mục từ vựng độc lập, chỉ nằm lồng trong câu dài hơn (vd '去年の9月に来ました。')."
+    },
+    {
+      "path": "questions[10].options[0].text",
+      "targetText": "どのぐらい / 去年（きょねん） / 来（き）ました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[10].options[1].text",
+      "targetText": "もう / 去年（きょねん） / 来（き）ました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[10].options[2].text",
+      "targetText": "どのぐらい / 先月（せんげつ） / 来（き）ました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[10].options[3].text",
+      "targetText": "どのぐらい / 去年（きょねん） / なります",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[11].explanation",
+      "targetText": "生活 không phải nơi chốn nên không đi được với に来て. 去年 lệch với tình huống đã nêu (Satō mới đến tháng trước, không phải năm ngoái). まだ trong câu hỏi \"___慣れましたか\" sai — まだ dùng trong câu đáp, câu hỏi cần もう.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[11].dialogue[0].segments[1].displayText",
+      "targetText": "に来（き）て、どのぐらいになりますか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[11].dialogue[1].segments[0].displayText",
+      "targetText": "私（わたし）は、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[11].dialogue[1].segments[2].displayText",
+      "targetText": "、来（き）ました。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[11].dialogue[2].segments[0].displayText",
+      "targetText": "そうですか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[11].dialogue[2].segments[2].displayText",
+      "targetText": "慣（な）れましたか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[11].blanks[0].displayAnswer",
+      "targetText": "日本（にほん）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[11].blanks[0].canonicalAnswer",
+      "targetText": "日本",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[11].blanks[1].displayAnswer",
+      "targetText": "先月（せんげつ）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[8].displayText"
+      }
+    },
+    {
+      "path": "questions[11].blanks[1].canonicalAnswer",
+      "targetText": "先月",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[8].displayText"
+      }
+    },
+    {
+      "path": "questions[11].blanks[2].displayAnswer",
+      "targetText": "もう",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[11].blanks[2].canonicalAnswer",
+      "targetText": "もう",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[11].options[0].text",
+      "targetText": "日本（にほん） / 先月（せんげつ） / もう",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[11].options[1].text",
+      "targetText": "生活（せいかつ） / 先月（せんげつ） / もう",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[11].options[2].text",
+      "targetText": "日本（にほん） / 去年（きょねん） / もう",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[11].options[3].text",
+      "targetText": "日本（にほん） / 先月（せんげつ） / まだ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[12].explanation",
+      "targetText": "Mỗi phương án sai đổi đúng một ô sang thể thường (久しぶり / 元気？ / うん), lệch với cả cuộc trò chuyện lịch sự.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[12].dialogue[0].segments[0].displayText",
+      "targetText": "あ、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[12].dialogue[1].segments[1].displayText",
+      "targetText": "。おかげさまで。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[12].blanks[0].displayAnswer",
+      "targetText": "お久（ひさ）しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[12].blanks[0].canonicalAnswer",
+      "targetText": "お久しぶりです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[12].blanks[1].displayAnswer",
+      "targetText": "お元気（げんき）ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[12].blanks[1].canonicalAnswer",
+      "targetText": "お元気ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[12].blanks[2].displayAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[12].blanks[2].canonicalAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[12].options[0].text",
+      "targetText": "お久（ひさ）しぶりです / お元気（げんき）ですか / はい",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[12].options[1].text",
+      "targetText": "久（ひさ）しぶり / お元気（げんき）ですか / はい",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[12].options[2].text",
+      "targetText": "お久（ひさ）しぶりです / 元気（げんき）？ / はい",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[12].options[3].text",
+      "targetText": "お久（ひさ）しぶりです / お元気（げんき）ですか / うん",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[13].explanation",
+      "targetText": "Mỗi phương án sai đổi đúng một ô sang thể lịch sự (お久しぶりです / お元気ですか / はい), lệch với cả cuộc trò chuyện thân mật.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[13].dialogue[0].segments[0].displayText",
+      "targetText": "あ、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[13].dialogue[1].segments[1].displayText",
+      "targetText": "。元気（げんき）。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[13].blanks[0].displayAnswer",
+      "targetText": "久（ひさ）しぶり",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[13].blanks[0].canonicalAnswer",
+      "targetText": "久しぶり",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[13].blanks[1].displayAnswer",
+      "targetText": "元気（げんき）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[13].blanks[1].canonicalAnswer",
+      "targetText": "元気",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[13].blanks[2].displayAnswer",
+      "targetText": "うん",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[13].blanks[2].canonicalAnswer",
+      "targetText": "うん",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[13].options[0].text",
+      "targetText": "久（ひさ）しぶり / 元気（げんき）？ / うん",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[13].options[1].text",
+      "targetText": "お久（ひさ）しぶりです / 元気（げんき）？ / うん",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[13].options[2].text",
+      "targetText": "久（ひさ）しぶり / お元気（げんき）ですか / うん",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[13].options[3].text",
+      "targetText": "久（ひさ）しぶり / 元気（げんき）？ / はい",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[14].explanation",
+      "targetText": "Giáo viên là người trên nên giữ thể thường — đổi thành お元気ですか (phương án b) làm mất khoảng cách vai vế. Satō là người dưới nên phải giữ thể lịch sự — うん (phương án c) và 元気 (phương án d) đều làm mất phép lịch sự cần có.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[14].blanks[0].displayAnswer",
+      "targetText": "元気（げんき）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[14].blanks[0].canonicalAnswer",
+      "targetText": "元気",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "fiveCardContent.practice.exercises[8].subQuestions[1].options[1].text"
+      }
+    },
+    {
+      "path": "questions[14].blanks[1].displayAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[14].blanks[1].canonicalAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[14].blanks[2].displayAnswer",
+      "targetText": "おかげさまで",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[14].blanks[2].canonicalAnswer",
+      "targetText": "おかげさまで",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[14].options[0].text",
+      "targetText": "元気（げんき）？ / はい / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[14].options[1].text",
+      "targetText": "お元気（げんき）ですか / はい / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[14].options[2].text",
+      "targetText": "元気（げんき）？ / うん / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[14].options[3].text",
+      "targetText": "元気（げんき）？ / はい / 元気（げんき）",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[15].explanation",
+      "targetText": "どのぐらい là từ để hỏi, không lắp được vào cụm \"日本の___に\". 慣れます là thì hiện tại/tương lai, sai vì câu hỏi đã dùng もう (đã…chưa) chỉ việc đã xảy ra. まだ đứng một mình không đáp trọn câu hỏi ngắn kiểu này — câu trả lời ngắn ở cảnh này là はい.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[15].dialogue[0].segments[0].displayText",
+      "targetText": "そうですか。日本（にほん）の",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[15].dialogue[0].segments[2].displayText",
+      "targetText": "に、もう",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[15].dialogue[0].segments[4].displayText",
+      "targetText": "か。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[15].blanks[0].displayAnswer",
+      "targetText": "生活（せいかつ）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[3].displayText"
+      }
+    },
+    {
+      "path": "questions[15].blanks[0].canonicalAnswer",
+      "targetText": "生活",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[3].displayText"
+      }
+    },
+    {
+      "path": "questions[15].blanks[1].displayAnswer",
+      "targetText": "慣（な）れました",
+      "authored": true,
+      "reason": "chia quá khứ lịch sự của 慣れる (động từ đã dạy trong u2-l2, xem vocabulary 'nareru'); không phải một mục từ vựng độc lập, chỉ nằm lồng trong câu dài hơn (vd 'そうですか。もう慣れましたか。')."
+    },
+    {
+      "path": "questions[15].blanks[1].canonicalAnswer",
+      "targetText": "慣れました",
+      "authored": true,
+      "reason": "chia quá khứ lịch sự của 慣れる (động từ đã dạy trong u2-l2, xem vocabulary 'nareru'); không phải một mục từ vựng độc lập, chỉ nằm lồng trong câu dài hơn (vd 'そうですか。もう慣れましたか。')."
+    },
+    {
+      "path": "questions[15].blanks[2].displayAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[15].blanks[2].canonicalAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[15].options[0].text",
+      "targetText": "生活（せいかつ） / 慣（な）れました / はい",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[15].options[1].text",
+      "targetText": "どのぐらい / 慣（な）れました / はい",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[15].options[2].text",
+      "targetText": "生活（せいかつ） / 慣（な）れます / はい",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[15].options[3].text",
+      "targetText": "生活（せいかつ） / 慣（な）れました / まだ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[16].explanation",
+      "targetText": "まだ trong câu hỏi \"___慣れましたか\" sai — まだ dùng trong câu đáp, câu hỏi cần もう. うん là thể thường, lệch với cả hai bên đang lịch sự. 元気 đáp cho câu hỏi sức khoẻ, không đáp cho câu hỏi đã quen chưa.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[16].dialogue[0].segments[0].displayText",
+      "targetText": "そうですか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[16].dialogue[0].segments[2].displayText",
+      "targetText": "慣（な）れましたか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[16].blanks[0].displayAnswer",
+      "targetText": "もう",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[16].blanks[0].canonicalAnswer",
+      "targetText": "もう",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[16].blanks[1].displayAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[16].blanks[1].canonicalAnswer",
+      "targetText": "はい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[16].blanks[2].displayAnswer",
+      "targetText": "おかげさまで",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[16].blanks[2].canonicalAnswer",
+      "targetText": "おかげさまで",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[16].options[0].text",
+      "targetText": "もう / はい / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[16].options[1].text",
+      "targetText": "まだ / はい / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[16].options[2].text",
+      "targetText": "もう / うん / おかげさまで",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[16].options[3].text",
+      "targetText": "もう / はい / 元気（げんき）",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[17].explanation",
+      "targetText": "生活 không phải nơi chốn nên không đi được với に来て. もう ở ô thứ hai không hỏi được \"bao lâu\". まだ không phải một mốc thời gian nên không lắp được vào \"___、来ました\".",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context của câu này."
+    },
+    {
+      "path": "questions[17].dialogue[0].segments[1].displayText",
+      "targetText": "に来（き）て、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[17].dialogue[0].segments[3].displayText",
+      "targetText": "になりますか。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[17].dialogue[1].segments[1].displayText",
+      "targetText": "、来（き）ました。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[17].blanks[0].displayAnswer",
+      "targetText": "日本（にほん）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[17].blanks[0].canonicalAnswer",
+      "targetText": "日本",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[17].blanks[1].displayAnswer",
+      "targetText": "どのぐらい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[17].blanks[1].canonicalAnswer",
+      "targetText": "どのぐらい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[17].blanks[2].displayAnswer",
+      "targetText": "先月（せんげつ）",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[8].displayText"
+      }
+    },
+    {
+      "path": "questions[17].blanks[2].canonicalAnswer",
+      "targetText": "先月",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m01-u2-l2",
+        "path": "vocabulary[8].displayText"
+      }
+    },
+    {
+      "path": "questions[17].options[0].text",
+      "targetText": "日本（にほん） / どのぐらい / 先月（せんげつ）",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[17].options[1].text",
+      "targetText": "生活（せいかつ） / どのぐらい / 先月（せんげつ）",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[17].options[2].text",
+      "targetText": "日本（にほん） / もう / 先月（せんげつ）",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[17].options[3].text",
+      "targetText": "日本（にほん） / どのぐらい / まだ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    }
+  ]
+}
