@@ -15,6 +15,9 @@ import {
 } from "./lib/native-localization.mjs";
 import { containsKana } from "./lib/japanese-pronunciation.mjs";
 import { requireGeneratedQ14Romanization } from "./lib/q14-romanization-validation.mjs";
+// Mẫu tên nháp còn sót — MỘT nguồn dùng chung với smoke-curriculum-flow.mjs
+// (vá 2026-07-31, xem comment trong lib/draft-character-names.mjs).
+import { DRAFT_CHARACTER_NAME_RE } from "./lib/draft-character-names.mjs";
 // Ràng buộc định lượng của five_cards: KHOẢNG + lý do, giữ ở MỘT nơi
 // (scripts/lib/five-cards-ranges.mjs) để validator và smoke không lệch nhau,
 // và để người sửa sau đọc được căn cứ ngay tại chỗ. §D6c.
@@ -975,23 +978,6 @@ function validateHiraganaLessonOneSpec(lesson) {
  *
  * Exported ở module scope để script độc lập import chạy thử trực tiếp.
  */
-/**
- * Mẫu tên nháp còn sót (§ kiểm five_cards) — khớp TÊN TRỌN, không phải
- * substring (vá 2026-07-31). "ミン" chỉ bắt khi KHÔNG nằm trong một chuỗi
- * KATAKANA dài hơn (ranh giới theo SCRIPT, vì katakana không có dấu cách
- * giữa các mảnh — タイミング/ミント phải PASS, còn ミンさん vẫn phải FAIL vì
- * さん là hiragana, khác script). Minh/Hưng/Linh dùng ranh giới CHỮ CÁI
- * chung (`\p{L}`) vì đây là tên Latin/Việt, luôn có khoảng trắng phân
- * cách trong văn bản thật — không có kiểu lỗi "dính liền" như katakana.
- */
-const DRAFT_NAME_KATAKANA_RANGE = "ァ-ヶー";
-export const DRAFT_CHARACTER_NAME_RE = new RegExp(
-  `(?<![${DRAFT_NAME_KATAKANA_RANGE}])ミン(?![${DRAFT_NAME_KATAKANA_RANGE}])` +
-    `|(?<!\\p{L})Minh(?!\\p{L})` +
-    `|(?<!\\p{L})Hưng(?!\\p{L})` +
-    `|(?<!\\p{L})Linh(?!\\p{L})`,
-  "u",
-);
 /**
  * §B2e — MỨC ĐỘ LỊCH SỰ chỉ có ĐÚNG BA (owner chốt 2026-07-25):
  * **trang trọng · lịch sự · thân mật**. Không "trung tính", không "thông

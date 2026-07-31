@@ -17,6 +17,14 @@ import {
 } from "./lib/native-localization.mjs";
 // Cùng nguồn khoảng với validator (§D6c) — hai file không được lệch nhau.
 import { FIVE_CARDS_RANGES as RANGE, inRange, rangeText } from "./lib/five-cards-ranges.mjs";
+// Cùng mẫu cấm tên nháp với validator — vá 2026-07-31: bản cũ ở ĐÂY khớp
+// substring (tự viết riêng, không import) nên vẫn chặn nhầm タイミング/ミント
+// dù validate-curriculum.mjs đã vá cùng ngày. Đặt hằng số ở lib/ trung lập
+// (không import thẳng từ validate-curriculum.mjs — file đó gọi main() vô
+// điều kiện ở cuối, không có entry-point guard, import thẳng sẽ tự chạy
+// toàn bộ validator như tác dụng phụ) — đúng loại lỗi "hai nguồn sự thật"
+// WORKING_RULES đã cảnh báo, tránh luôn.
+import { DRAFT_CHARACTER_NAME_RE } from "./lib/draft-character-names.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -207,7 +215,7 @@ function checkApprovedJaUnitOneLesson(lesson) {
   ) {
     fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, "Real-World Practice must keep its non-spoken localized scene divider after turn 10");
   }
-  if (/(ミン|Minh|Hưng|Linh)/u.test(JSON.stringify(content))) fail(section, { lessonId: lesson.id }, "Japanese Lesson 1 contains a Vietnamese character name");
+  if (DRAFT_CHARACTER_NAME_RE.test(JSON.stringify(content))) fail(section, { lessonId: lesson.id }, "Japanese Lesson 1 contains a Vietnamese character name");
   const konnichiwa = (content.vocabularyDetails ?? []).find((detail) => detail.id === "konnichiwa");
   if (
     !konnichiwa ||
@@ -299,7 +307,7 @@ function checkFiveCardsLessonStructure(lesson, section) {
   ) {
     fail(section, { lessonId: lesson.id, exerciseIndex: 14 }, `Real-World Practice must keep ${rangeText(RANGE.sceneDividers)} localized non-spoken scene dividers`);
   }
-  if (/(ミン|Minh|Hưng|Linh)/u.test(JSON.stringify(content))) fail(section, { lessonId: lesson.id }, "five_cards lesson must not contain a leftover draft Vietnamese character name");
+  if (DRAFT_CHARACTER_NAME_RE.test(JSON.stringify(content))) fail(section, { lessonId: lesson.id }, "five_cards lesson must not contain a leftover draft Vietnamese character name");
   const entries = [
     ...(lesson.vocabulary ?? []),
     ...groups.flatMap((group) => group.lines ?? []),
