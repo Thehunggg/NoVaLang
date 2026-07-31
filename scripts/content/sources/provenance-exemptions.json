@@ -26,11 +26,6 @@
       "id": "ja-daily_life-m01-u1-comprehensive",
       "type": "comprehensive",
       "reason": "dẫn xuất từ các lesson vốn đã được miễn (u1-l1/l2/l3, cả 3 đều trong danh sách này) — đòi provenance cho bản dẫn xuất trong khi nguồn được miễn là không nhất quán. Owner chốt 2026-07-30."
-    },
-    {
-      "id": "ja-daily_life-m01-u2-comprehensive",
-      "type": "comprehensive",
-      "reason": "cùng lý do trên. LƯU Ý: nguồn của bài này là u2-l1 (miễn) + u2-l2 (KHÔNG miễn, có provenance thật 164 mục) — miễn trừ vẫn áp theo quyết định owner 2026-07-30, không phải vì cả hai lesson nguồn đều miễn."
     }
   ]
 }

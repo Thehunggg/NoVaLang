@@ -1414,7 +1414,7 @@ tức **`ja-daily_life-m01-u2-l2` trở đi**.
 m02 — owner chốt 2026-07-30). Bảng dưới đây phải khớp file đó; đổi một bên mà
 quên bên kia là tạo hai nguồn sự thật.
 
-**MIỄN — 4 bài build TRƯỚC pipeline G14 + 2 bài tổng hợp dẫn xuất từ chúng:**
+**MIỄN — 4 bài build TRƯỚC pipeline G14 + 1 bài tổng hợp dẫn xuất từ chúng:**
 
 | bài / mục | loại | lý do miễn |
 |---|---|---|
@@ -1423,17 +1423,21 @@ quên bên kia là tạo hai nguồn sự thật.
 | `ja-daily_life-m01-u1-l3` | lesson | như trên |
 | `ja-daily_life-m01-u2-l1` | lesson | như trên |
 | `ja-daily_life-m01-u1-comprehensive` | bài tổng hợp | dẫn xuất từ u1-l1/l2/l3 — cả 3 đều miễn. Đòi provenance cho bản dẫn xuất trong khi nguồn được miễn là không nhất quán. Owner chốt 2026-07-30 |
-| `ja-daily_life-m01-u2-comprehensive` | bài tổng hợp | cùng lý do trên. LƯU Ý: nguồn thật là u2-l1 (miễn) **+ u2-l2 (KHÔNG miễn, có provenance thật)** — miễn vẫn áp theo quyết định owner, không phải vì mọi nguồn đều miễn |
 
 **Vì sao miễn chứ không truy hồi tố (4 lesson):** bốn bài đó viết khi chưa có
 sổ nguồn. Dựng provenance cho chúng bây giờ là **đoán xem câu nào lấy từ đâu**
 — đúng định nghĩa bịa (WORKING_RULES §g). Miễn tường minh, ghi lý do, hơn là
 có một sổ nguồn trông-như-thật mà không ai kiểm được.
 
-**2 bài tổng hợp là quyết định khác** — không phải "chưa có sổ nguồn" (chúng
-build sau G14) mà là "nguồn của chúng chính là các lesson đã miễn/đã có
-provenance riêng, khai provenance cho bản LẮP RÁP từ những nguồn đó là trùng
-lặp". Xét lại khi build bài tổng hợp cho m02 trở đi.
+**`ja-daily_life-m01-u2-comprehensive` KHÔNG còn trong danh sách miễn** (gỡ
+2026-07-31, PHA C) — có file provenance thật
+(`ja-daily_life-m01-u2-comprehensive.provenance.json`, 220 mục, 91 `from_lesson`
++ 129 `authored`). `from_lesson` (mới, PHA C) trỏ path đích danh vào MỘT lesson
+đã build (`lessons.json`), cổng mở lesson đó và so thật giá trị tại path —
+xem `checkFromLesson` trong `scripts/verify-provenance.mjs`. Nguồn của bài này
+là u2-l1 (miễn — chuỗi trace qua u2-l1 DỪNG Ở ĐÓ, không truy tiếp xuống Irodori)
++ u2-l2 (có provenance thật). `ja-daily_life-m01-u1-comprehensive` (25 câu) vẫn
+miễn — không thuộc phạm vi PHA C, xét lại riêng sau.
 
 **G14-R9. BLOCKLIST — máy đọc.** `scripts/content/sources/blocked-sources.json`.
 Cổng **FAIL** mọi verbatim trỏ vào. Mục `{path, reason, mức}`, `mức` ∈
@@ -1689,6 +1693,14 @@ việc khác cho tới khi các bài tổng hợp còn thiếu được viết x
 
 ## Changelog file này
 
+- **2026-07-31 (PHA C — from_lesson + khai provenance) — G14-R2b** — gỡ
+  `ja-daily_life-m01-u2-comprehensive` khỏi danh sách miễn (thêm 2026-07-30,
+  gỡ ngay hôm sau): viết xong provenance thật cho bài này (220 mục — 91
+  `from_lesson`, 129 `authored`), cổng PASS 0 FAIL. Cơ chế `from_lesson` MỚI
+  trong `verify-provenance.mjs` (`checkFromLesson`) cho phép một item trỏ
+  `{lessonId, path}` thẳng vào một Lesson đã build thay vì khớp chuỗi trong
+  file nguồn thô — mở `lessons.json`, tra path, so targetText thật. `m01-u1`
+  (25 câu) vẫn miễn, không đổi.
 - **2026-07-30 (lượt gộp PHA A) — §E4, §F-b/G14-R3, §B số cứng, G14-R2b** —
   **§E4:** số câu bài tổng hợp SỬA thành khoảng 18–25 quy đổi theo
   `SECTION_PLANS` (đo trực tiếp từ commit `1b470ac`: 3 lesson→25 (8/17), 2
