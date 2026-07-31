@@ -97,6 +97,53 @@ export function unknownTokensIn(text, tokenizer, known) {
   return out;
 }
 
+/**
+ * Token LẠ DUY NHẤT trên CẢ MỘT ĐOẠN nhiều lượt — khử trùng lặp qua UNION,
+ * KHÁC `unknownTokensIn` (đếm riêng từng lượt rồi cộng). Owner chỉ ra
+ * 2026-07-31: đếm theo lượt khiến một khối 4 lượt có thể mang tới 8 từ lạ
+ * (2/lượt × 4) trong khi bài chỉ dạy 7 cụm — số theo-lượt không phản ánh
+ * đúng gánh nặng từ vựng của CẢ khối.
+ * @param {string[]} texts mảng câu trong đoạn (theo thứ tự lượt)
+ * @returns {string[]} token lạ duy nhất, khử trùng lặp
+ */
+export function uniqueUnknownInSpan(texts, tokenizer, known) {
+  const set = new Set();
+  for (const text of texts) {
+    for (const w of unknownTokensIn(text, tokenizer, known)) set.add(w);
+  }
+  return [...set];
+}
+
+/**
+ * Với một hội thoại, tìm ĐOẠN LIÊN TIẾP DÀI NHẤT bắt đầu từ mỗi lượt mà
+ * UNION từ lạ (khử trùng lặp, `uniqueUnknownInSpan`) không vượt `threshold`
+ * VÀ đoạn đó chứa ít nhất một lượt khớp `keywordRe`. Union chỉ tăng hoặc
+ * giữ nguyên khi mở rộng đoạn (đơn điệu) nên vừa vượt ngưỡng thì dừng mở
+ * rộng từ điểm bắt đầu đó — không cần thử lại.
+ * @returns {{len:number, start:number, end:number, unk:string[]}|null} đoạn tốt nhất
+ *   (chứa từ khoá, dài nhất) toàn hội thoại, hoặc null nếu không đoạn nào đạt.
+ */
+export function bestQualifyingSpan(dialogue, tokenizer, known, threshold, keywordRe) {
+  const utterances = dialogue.utterances;
+  const n = utterances.length;
+  let best = null;
+  for (let i = 0; i < n; i++) {
+    const unionSet = new Set();
+    let hasKw = false;
+    for (let j = i; j < n; j++) {
+      const u = utterances[j];
+      if (keywordRe.test(u.utterance)) hasKw = true;
+      for (const w of unknownTokensIn(u.utterance, tokenizer, known)) unionSet.add(w);
+      if (unionSet.size > threshold) break; // đơn điệu — mở xa hơn cũng sẽ vượt
+      const len = j - i + 1;
+      if (hasKw && (!best || len > best.len)) {
+        best = { len, start: i, end: j, unk: [...unionSet] };
+      }
+    }
+  }
+  return best;
+}
+
 /** Đếm kiểu CŨ (chỉ cụm kanji liên tiếp) — giữ lại để in bảng so sánh. */
 function unknownKanjiOnly(text, taughtPhrases) {
   const out = new Set();
@@ -153,6 +200,57 @@ async function selfTest(tokenizer, known) {
   if (unkClean.length !== 0) allOk = false;
   console.log(allOk ? "  => PHÁ THẬT: bộ đếm mới bắt đúng, không báo động nhầm câu sạch." : "  => CÓ CA SAI, xem lại.");
   console.log("");
+
+  console.log("── PHÁ THẬT MỨC KHỐI — union từ lạ, không phải cộng theo lượt ──");
+  // 3 lượt, MỖI lượt chỉ 1 từ lạ RIÊNG (khác nhau cả 3) — kiểu đếm CŨ (mỗi
+  // lượt ≤2) sẽ nói "cả 3 lượt đều ổn". Union đúng phải thấy 3 từ lạ khác
+  // nhau khi gộp cả khối → ngưỡng 2 phải TỪ CHỐI lượt thứ 3, ngưỡng 3 mới
+  // nhận đủ. Đây đúng lỗ hổng owner chỉ ra 2026-07-31.
+  const blockDialogue = {
+    utterances: [
+      { turn_num: 1, speaker: "田中", utterance: "もちろんです。" },
+      { turn_num: 2, speaker: "佐藤", utterance: "コンビニで買います。" },
+      { turn_num: 3, speaker: "田中", utterance: "パスポートを見せます。" },
+    ],
+  };
+  const anyText = /./; // cô lập phép đếm union, không lẫn logic khớp từ khoá
+  const span2 = bestQualifyingSpan(blockDialogue, tokenizer, known, 2, anyText);
+  const okReject3rd = !!span2 && span2.len === 2;
+  console.log(
+    `  ${okReject3rd ? "OK  " : "FAIL"} ngưỡng≤2, 3 lượt (mỗi lượt 1 từ lạ RIÊNG) -> đoạn dài nhất = ${span2?.len ?? 0} lượt` +
+      ` [${span2?.unk.join(", ") ?? ""}] (phải DỪNG ở 2, không nhận lượt 3 dù riêng lượt 3 chỉ có 1 từ lạ)`,
+  );
+  if (!okReject3rd) allOk = false;
+
+  const span3 = bestQualifyingSpan(blockDialogue, tokenizer, known, 3, anyText);
+  const okAccept3 = !!span3 && span3.len === 3 && span3.unk.length === 3;
+  console.log(
+    `  ${okAccept3 ? "OK  " : "FAIL"} ngưỡng≤3, cùng 3 lượt -> đoạn dài nhất = ${span3?.len ?? 0} lượt` +
+      ` [${span3?.unk.join(", ") ?? ""}] (phải nhận đủ cả 3, union đúng 3 từ lạ)`,
+  );
+  if (!okAccept3) allOk = false;
+
+  // đối chứng khử trùng lặp: 2 lượt CÙNG NHẮC một từ lạ phải tính là 1, không phải 2.
+  const dupDialogue = {
+    utterances: [
+      { turn_num: 1, speaker: "田中", utterance: "もちろんです。" },
+      { turn_num: 2, speaker: "佐藤", utterance: "もちろん、いいですよ。" },
+    ],
+  };
+  const spanDup = bestQualifyingSpan(dupDialogue, tokenizer, known, 1, anyText);
+  const okDedupe = !!spanDup && spanDup.len === 2 && spanDup.unk.length === 1;
+  console.log(
+    `  ${okDedupe ? "OK  " : "FAIL"} 2 lượt cùng nhắc "もちろん", ngưỡng≤1 -> union = [${spanDup?.unk.join(", ") ?? ""}]` +
+      ` (phải khử trùng lặp còn 1, không phải 2 — nếu không cả đoạn sẽ bị từ chối oan)`,
+  );
+  if (!okDedupe) allOk = false;
+
+  console.log(
+    allOk
+      ? "  => PHÁ THẬT MỨC KHỐI: union đúng, khử trùng lặp đúng, bắt đúng ca đếm-theo-lượt sẽ bỏ sót."
+      : "  => CÓ CA SAI Ở MỨC KHỐI, xem lại.",
+  );
+  console.log("");
   return allOk;
 }
 
@@ -189,7 +287,53 @@ async function main() {
     console.log(`══ ${name}`);
     console.log(`   hội thoại khớp chủ đề: ${hit.length} / ${dialogues.length}  ·  tổng lượt: ${turns.length}`);
     console.log(`   CŨ (chỉ đếm cụm kanji)   : 0 lạ=${oldClean}  dư1-2=${oldOne2}  dư>2=${oldMany}`);
-    console.log(`   MỚI (token thật, kèm kana): 0 lạ=${newClean}  dư1-2=${newOne2}  dư>2=${newMany}`);
+    console.log(`   MỚI-THEO-LƯỢT (token thật, kèm kana): 0 lạ=${newClean}  dư1-2=${newOne2}  dư>2=${newMany}`);
+    console.log("   (số theo-lượt ở trên KHÔNG dùng để quyết định khối — xem báo cáo MỨC KHỐI bên dưới, owner chốt 2026-07-31)");
+    console.log("");
+  }
+
+  await blockLevelReport(tokenizer, known, dialogues);
+}
+
+/**
+ * Báo cáo MỨC KHỐI cho m02-u1-l1 (owner chốt 2026-07-31, thay số-theo-lượt
+ * ở trên) — với MỖI hội thoại khớp chủ đề, tìm đoạn liên tiếp dài nhất mà
+ * UNION từ lạ (khử trùng lặp) không vượt ngưỡng, cho cả ngưỡng ≤2 và ≤3.
+ * In histogram độ dài đoạn tốt nhất mỗi hội thoại + đúc kết theo 3 cỡ khối
+ * (cặp/khối 3-4/đoạn ≥4) mà B4 cần.
+ */
+async function blockLevelReport(tokenizer, known, dialogues) {
+  const KEYWORD = /ありがとう|どうも|恐れ入り|恐縮|助かり|感謝/;
+  const hit = dialogues.filter((d) => d.utterances.some((u) => KEYWORD.test(u.utterance)));
+
+  console.log("══ MỨC KHỐI (union, khử trùng lặp) — m02-u1-l1 · Cảm ơn theo mức độ");
+  console.log(`   hội thoại có từ khoá cảm ơn (đã lọc ten-lech-nhan.json): ${hit.length} / ${dialogues.length}`);
+  console.log("");
+
+  for (const threshold of [2, 3]) {
+    const histogram = {};
+    const examples = {};
+    for (const d of hit) {
+      const best = bestQualifyingSpan(d, tokenizer, known, threshold, KEYWORD);
+      const len = best ? best.len : 0;
+      histogram[len] = (histogram[len] ?? 0) + 1;
+      if (best && !examples[len]) examples[len] = { file: d._file, dialogue_id: d.dialogue_id, best };
+    }
+    const total = hit.length;
+    const lens = Object.keys(histogram).map(Number).sort((a, b) => a - b);
+    console.log(`  ── ngưỡng ≤${threshold} từ lạ DUY NHẤT trên cả đoạn ──`);
+    console.log(`     phân bố đoạn tốt nhất mỗi hội thoại: ${lens.map((l) => `${l}=${histogram[l]}`).join("  ")}`);
+
+    const dialoguesWithPair = lens.filter((l) => l >= 2).reduce((a, l) => a + histogram[l], 0);
+    const dialoguesWithBlock34 = lens.filter((l) => l >= 3).reduce((a, l) => a + histogram[l], 0);
+    const dialoguesWithRun4 = lens.filter((l) => l >= 4).reduce((a, l) => a + histogram[l], 0);
+    console.log(`     cặp 2 lượt (đoạn tốt nhất ≥2)      : ${dialoguesWithPair} hội thoại`);
+    console.log(`     khối 3-4 lượt (đoạn tốt nhất ≥3)    : ${dialoguesWithBlock34} hội thoại`);
+    console.log(`     đoạn ≥4 lượt liên tiếp — Q14 (≥4)   : ${dialoguesWithRun4} hội thoại`);
+    if (examples[4]) {
+      const e = examples[4];
+      console.log(`     ví dụ đoạn=4 (${e.file}:${e.dialogue_id}, lượt ${e.best.start + 1}-${e.best.end + 1}, union=[${e.best.unk.join(", ")}])`);
+    }
     console.log("");
   }
 }

@@ -1229,6 +1229,66 @@ Ví dụ khối 4 lượt (`topic1.json:133`):
 (lượt 4 lệch chủ đề cảm ơn nhưng vẫn sạch vùng B — PHA B tự cân nhắc cắt ở
 lượt 3 hay giữ nguyên 4 lượt tuỳ ngữ cảnh cả bài.)
 
+## A2' — ĐO LẠI Ở MỨC KHỐI (owner chốt 2026-07-31, SỬA số ở A2 trên)
+
+**Vì sao đo lại:** bảng A2 ở trên đếm "≤2 từ lạ" **THEO TỪNG LƯỢT** rồi cộng
+dồn thành đoạn — một khối 4 lượt có thể mang tới 8 từ lạ KHÁC NHAU (2/lượt ×
+4 lượt) trong khi bài chỉ dạy 7 cụm mới (A3). Số "89 hội thoại đạt Q14" ở A2
+vì vậy **nới tay hơn thực tế**. Đo lại: với mỗi hội thoại, tìm đoạn liên tiếp
+dài nhất mà **UNION từ lạ trên CẢ đoạn** (khử trùng lặp — `もちろん` nhắc 2
+lần chỉ tính 1) không vượt ngưỡng. Công cụ: `scripts/estimate-source-
+coverage.mjs`, hàm mới `bestQualifyingSpan`/`uniqueUnknownInSpan`. Phá thật
+trước khi tin số (`--self-test`), 2 ca mới thêm:
+
+```
+── PHÁ THẬT MỨC KHỐI — union từ lạ, không phải cộng theo lượt ──
+  OK   ngưỡng≤2, 3 lượt (mỗi lượt 1 từ lạ RIÊNG) -> đoạn dài nhất = 2 lượt [もちろん, コンビニ] (phải DỪNG ở 2, không nhận lượt 3 dù riêng lượt 3 chỉ có 1 từ lạ)
+  OK   ngưỡng≤3, cùng 3 lượt -> đoạn dài nhất = 3 lượt [もちろん, コンビニ, パスポート] (phải nhận đủ cả 3, union đúng 3 từ lạ)
+  OK   2 lượt cùng nhắc "もちろん", ngưỡng≤1 -> union = [もちろん] (phải khử trùng lặp còn 1, không phải 2 — nếu không cả đoạn sẽ bị từ chối oan)
+  => PHÁ THẬT MỨC KHỐI: union đúng, khử trùng lặp đúng, bắt đúng ca đếm-theo-lượt sẽ bỏ sót.
+```
+Ca 1 chứng minh **FAIL đúng chỗ** (một khối mà mỗi lượt riêng lẻ ≤2 nhưng
+UNION cả khối vượt ngưỡng phải bị từ chối — đúng lỗ hổng owner chỉ ra). Ca 2
+chứng minh cùng dữ liệu **PASS** khi nới ngưỡng. Ca 3 chứng minh khử trùng
+lặp không từ chối oan.
+
+**Kết quả đo thật (927 hội thoại có từ khoá cảm ơn):**
+
+| | ngưỡng ≤2 (union) | ngưỡng ≤3 (union) |
+|---|---:|---:|
+| phân bố đoạn tốt nhất | 0=419 · 1=378 · 2=112 · 3=12 · 4=6 | 0=265 · 1=408 · 2=182 · 3=51 · 4=17 · 5=3 · 7=1 |
+| cặp 2 lượt (đoạn tốt nhất ≥2) | **130 hội thoại** | 254 hội thoại |
+| khối 3–4 lượt (đoạn tốt nhất ≥3) | **18 hội thoại** | 72 hội thoại |
+| đoạn ≥4 lượt liên tiếp — Q14 | **6 hội thoại** | 21 hội thoại |
+
+So với A2 (đếm theo lượt): "89 hội thoại đạt Q14" **sụp còn 6** ở mức khối
+ngưỡng ≤2 — đúng như owner lường trước ("mức khối có thể sụp"). Nhưng 6 vẫn
+**≥1**, và 18 vẫn **≥3** — xem A'2 dưới.
+
+Ví dụ đoạn=4 ở ngưỡng ≤2 (`topic1.json:3`, lượt 5–8 — TRÙNG hội thoại dùng
+làm ví dụ khối-8-lượt ở A2, nhưng mức khối chỉ nhận **4/8 lượt** của nó,
+không phải cả 8, union=[ので, ありがとう]):
+```
+5. 伊藤: 紅茶もありますよ。
+6. 田中: 紅茶は大好きなので、紅茶にします。
+7. 伊藤: では、紅茶を入れます。
+8. 田中: ありがとうございます。
+```
+**Ghi rõ để không lẫn hai trích dẫn:** đoạn 8-lượt ở A2 phía trên (lượt 1-8
+nguyên khối) đo bằng phép-theo-lượt CŨ; đoạn 4-lượt này (lượt 5-8) đo bằng
+UNION mới — cùng một hội thoại nguồn nhưng hai phép đo chọn ra đoạn khác
+nhau.
+
+## A'2 — ĐIỀU KIỆN ĐẠT
+
+Ngưỡng cần: **≥3 khối 3–4 lượt** (từ ≥2 hội thoại khác nhau) **VÀ ≥1 đoạn
+≥4 lượt** (Q14).
+
+- Ngưỡng ≤2: khối 3-4 = **18** (≥3 ✓, từ 18 hội thoại khác nhau ≥2 ✓) · đoạn
+  ≥4 = **6** (≥1 ✓). **CẢ HAI ĐẠT NGAY Ở ≤2 — KHÔNG CẦN NỚI SANG ≤3.**
+- Kết luận: **PHA A' ĐẠT.** PHA B dùng ngưỡng ≤2 cho vùng B (§G7), không
+  cần lý do nới, không lùi Irodori.
+
 ## A3 — TỪ VỰNG (8–10 cụm, đối chiếu taught-vocabulary)
 
 Ứng viên rút từ bảng A1 (đã lọc bỏ 恐れ入ります/感謝 — không hợp A1-A2):
