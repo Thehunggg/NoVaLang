@@ -1117,7 +1117,7 @@ trúc JSON, luật a/b/c dựng cho trường `utterance` không áp thẳng đ�
 > Mỗi mục: **việc** · **vì sao hoãn**. Thấy lỗi ngoài phạm vi lượt đang làm
 > thì ghi vào đây, không tự sửa (WORKING_RULES §1).
 
-## Bảng ngắn — 10 mục đang treo
+## Bảng ngắn — 11 mục đang treo
 
 | # | Việc | Vì sao hoãn |
 |---|---|---|
@@ -1133,8 +1133,9 @@ trúc JSON, luật a/b/c dựng cho trường `utterance` không áp thẳng đ�
 | LS-10 | **`sentences_*.json` mở lại từ N4** | Đã đo có 5.281 câu / 1.039 khoá, nhưng bài hiện tại còn ở N5; mở sớm sẽ kéo từ chưa dạy vào (§G7) |
 | **LS-12** | **Rà 19 khoản FROZEN còn lại của `rules/languages/ja/`** — `register_taxonomy` · `honorifics_keigo` · `forms_of_address` · `tts_audio_policy` · `answer_acceptance_ja` · `naturalness_translation` · `romanization_hepburn` · `pronunciation_contextual`… đối chiếu G14, tìm xung đột **khác kiểu** `reading_aid_policy` | `reading_aid_policy` (D-11) đã lộ ra là mâu thuẫn với G14-R14 và phải supersede bằng D-93. Nhiều khả năng còn khoản khác cùng cảnh. **CHƯA rà lượt này theo yêu cầu owner** — cần một lượt riêng, đơn nhiệm |
 | **LS-11** | **Màn "Nguồn & Ghi công"** — JMdict/EDRDG · hanabira · Tanos | **BẮT BUỘC TRƯỚC PHÁT HÀNH.** Nguồn owner đã đóng chủ đề nguồn gốc, nhưng ba bộ dữ liệu BÊN THỨ BA này vẫn còn dùng (cách đọc, vốn từ JLPT) và giấy phép của chúng đòi ghi công. Chưa làm vì chưa tới mốc phát hành — nhưng **không được quên**, thiếu là vi phạm giấy phép |
-| **LS-13** | **`check-build-order.mjs` (G14-R16) nối thành cổng cứng** | Report-only từ 2026-07-30. Đo lúc ghi: `ja-daily_life-m01-u2` đủ điều kiện (2/2 lesson ready) nhưng chưa có bài tổng hợp — bật cổng cứng ngay sẽ chặn build cho tới khi viết xong bài đó |
+| **LS-13** | **`check-build-order.mjs` (G14-R16) nối thành cổng cứng** | **RÀ LẠI 2026-07-30 (cùng ngày):** điều kiện trigger ban đầu đã hết — `ja-daily_life-m01-u2` giờ CÓ bài tổng hợp (18 câu, commit cùng lượt). `check-build-order` hiện báo `TỔNG: 0 vi phạm` cho MỌI unit. Việc "nối thành cổng cứng" bản thân nó vẫn CHƯA làm (chưa ai được yêu cầu bật) — giữ report-only tới khi owner giao riêng |
 | **LS-14** | **`validateUnitComprehensiveTest` im lặng cho qua unit thiếu bài tổng hợp** | `validate-curriculum.mjs:1136` — `if (!test) return;` không phân biệt "unit chưa tới lượt" với "unit ĐỦ ĐIỀU KIỆN mà vẫn thiếu". Cùng họ lỗi đã vá ở `check-render-coverage.mjs`. Sửa: in CẢNH BÁO (không fail) khi đủ điều kiện mà thiếu — tách biệt khỏi việc bật cổng cứng ở LS-13 |
+| **LS-15** | **`preview-lesson.mjs` không hỗ trợ Unit Comprehensive Test** | Script chỉ đọc `lessons.json` cấp Lesson (five_cards); bài tổng hợp sống ở `courses.json` cấp Unit, hình dạng hoàn toàn khác (segments/blanks/options/dialogue turns). G14-R15 đòi "mọi lượt sửa nội dung kết thúc bằng trang duyệt" nhưng công cụ chưa làm được cho loại này — lượt build m01-u2 (2026-07-30) phải dùng dump text STOPGAP ra Desktop thay vì trang HTML thật |
 
 
 ## LS-1. Đem lối hiển thị 3 DÒNG lên APP THẬT (web + Flutter)
