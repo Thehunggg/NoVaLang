@@ -39,6 +39,31 @@ export function walkLessonStrings(root, prefix = "") {
 }
 
 /**
+ * Walk `root`, trả về MỌI NODE (object/phần tử mảng) dưới dạng {path, node}
+ * — kể cả root. Dùng khi cần xét CẢ node (vd "node này có `reading`/
+ * `audioText` không") thay vì chỉ bóc chuỗi lá, như R12d (furigana ↔ dòng
+ * đọc): mỗi node tự có "dòng đọc của chính nó" trong `reading`/`audioText`,
+ * áp cho các trường chuỗi NGAY TRONG node đó.
+ *
+ * @param {unknown} root
+ * @param {string} [prefix]
+ * @returns {Array<{path: string, node: object}>}
+ */
+export function walkNodes(root, prefix = "") {
+  const out = [];
+  const walk = (node, p) => {
+    if (Array.isArray(node)) return node.forEach((v, i) => walk(v, `${p}[${i}]`));
+    if (!node || typeof node !== "object") return;
+    out.push({ path: p, node });
+    for (const [key, value] of Object.entries(node)) {
+      if (typeof value !== "string") walk(value, p ? `${p}.${key}` : key);
+    }
+  };
+  walk(root, prefix);
+  return out;
+}
+
+/**
  * Bản đồ path → giá trị THẬT cho MỘT lesson — dùng để tra cứu `item.path`
  * của một provenance item và so với `item.targetText`.
  *

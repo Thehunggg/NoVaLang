@@ -3,6 +3,8 @@
 // file nguồn không.
 //
 // Dùng:  node scripts/verify-provenance.mjs <provenance.json>
+//        node scripts/verify-provenance.mjs --unit <unitId>   (chỉ R12d, bài
+//        tổng hợp cuối Unit chưa có provenance file — xem G14-R2b)
 //
 // Dạng file provenance:
 //   { "lessonId": "...",
@@ -27,7 +29,7 @@ import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readingFromFurigana } from "./lib/japanese-furigana.mjs";
-import { walkLessonStrings, buildLessonPathIndex } from "./lib/lesson-walk.mjs";
+import { walkLessonStrings, buildLessonPathIndex, walkNodes } from "./lib/lesson-walk.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -331,9 +333,39 @@ export function checkFuriganaAgainstReading(displayText, reading) {
   return { ok: false, got, want };
 }
 
+const KANA_LINE = /^[぀-ゟ゠-ヿー、。！？\s]+$/;
+
 /**
- * Chạy R12d cho CẢ BÀI: mọi node vừa có trường hiển thị đã gắn furigana, vừa
- * có dòng đọc kana (reading / audioText).
+ * Lõi R12d dùng CHUNG cho Lesson lẫn Unit — walk qua `walkNodes()`
+ * (scripts/lib/lesson-walk.mjs, MỘT bản, không viết lại) thay vì tự viết
+ * đường walk riêng lần nữa. Mỗi node tự có "dòng đọc của chính nó"
+ * (`reading` hoặc `audioText` thuần kana); áp cho các trường chuỗi NGAY
+ * TRONG node đó, lọc theo `fieldOk(key)` do caller quyết.
+ */
+function checkFuriganaInTree(root, prefix, fieldOk) {
+  const checked = [];
+  const failed = [];
+  for (const { path: p, node: n } of walkNodes(root, prefix)) {
+    const line =
+      (typeof n.reading === "string" && n.reading.trim() && n.reading) ||
+      (typeof n.audioText === "string" && KANA_LINE.test(n.audioText) && n.audioText) ||
+      null;
+    if (!line) continue;
+    for (const [k, v] of Object.entries(n)) {
+      if (typeof v !== "string" || !fieldOk(k)) continue;
+      const r = checkFuriganaAgainstReading(v, line);
+      if (r.skipped) continue;
+      const here = p ? `${p}.${k}` : k;
+      checked.push(here);
+      if (!r.ok) failed.push([here, v, line, r.got, r.want]);
+    }
+  }
+  return { checked: checked.length, failed };
+}
+
+/**
+ * Chạy R12d cho CẢ BÀI (Lesson, lessons.json): mọi node vừa có trường hiển
+ * thị đã gắn furigana, vừa có dòng đọc kana (reading / audioText).
  */
 export function checkLessonFurigana(lessonId, lessonsFile = "shared/generated/lessons.json") {
   const abs = path.join(ROOT, lessonsFile);
@@ -341,30 +373,29 @@ export function checkLessonFurigana(lessonId, lessonsFile = "shared/generated/le
   const all = JSON.parse(readFileSync(abs, "utf8"));
   const lesson = (all.lessons ?? all).find((l) => l.id === lessonId);
   if (!lesson) return null;
+  return checkFuriganaInTree(lesson, "", (key) => COVERAGE_FIELDS.includes(key));
+}
 
-  const KANA_LINE = /^[぀-ゟ゠-ヿー、。！？\s]+$/;
-  const checked = [];
-  const failed = [];
-  const walk = (n, p) => {
-    if (Array.isArray(n)) return n.forEach((v, i) => walk(v, `${p}[${i}]`));
-    if (!n || typeof n !== "object") return;
-    const line =
-      (typeof n.reading === "string" && n.reading.trim() && n.reading) ||
-      (typeof n.audioText === "string" && KANA_LINE.test(n.audioText) && n.audioText) ||
-      null;
-    for (const [k, v] of Object.entries(n)) {
-      const here = p ? `${p}.${k}` : k;
-      if (typeof v === "string") {
-        if (!COVERAGE_FIELDS.includes(k) || !line) continue;
-        const r = checkFuriganaAgainstReading(v, line);
-        if (r.skipped) continue;
-        checked.push(here);
-        if (!r.ok) failed.push([here, v, line, r.got, r.want]);
-      } else walk(v, here);
-    }
-  };
-  walk(lesson, "");
-  return { checked: checked.length, failed };
+/**
+ * Chạy R12d cho bài tổng hợp cuối Unit (courses.json, `Unit.comprehensiveTest`).
+ *
+ * KHÔNG lọc theo COVERAGE_FIELDS như phía Lesson — trường `displayAnswer`
+ * (nơi furigana của mỗi ô trống sống) CHƯA đăng ký trong
+ * shared/config/render-coverage.json (việc đó là C2, chưa làm ở đây). Lọc
+ * theo COVERAGE_FIELDS lúc này sẽ bỏ sót đúng trường quan trọng nhất. Kiểm
+ * MỌI trường chuỗi có furigana + có dòng đọc anh em cùng node — rộng hơn
+ * Lesson một chút, nhưng an toàn hơn bỏ sót.
+ */
+export function checkUnitFurigana(unitId, coursesFile = "shared/generated/courses.json") {
+  const abs = path.join(ROOT, coursesFile);
+  if (!existsSync(abs)) return null;
+  const all = JSON.parse(readFileSync(abs, "utf8"));
+  let unit = null;
+  for (const course of all.courses ?? []) {
+    for (const u of course.units ?? []) if (u.id === unitId) unit = u;
+  }
+  if (!unit?.comprehensiveTest) return null;
+  return checkFuriganaInTree(unit.comprehensiveTest, "", () => true);
 }
 
 export function checkExampleMatchesPattern(example, surfaces) {
@@ -476,10 +507,41 @@ function checkItem(item) {
   };
 }
 
+/** `node scripts/verify-provenance.mjs --unit <unitId>` — CHỈ chạy R12d cho
+ * bài tổng hợp cuối Unit (chưa có provenance file để kiểm phần còn lại, xem
+ * G14-R2b/provenance-exemptions.json — đó là việc của PHA C, không phải đây). */
+function runUnitFuriganaOnly(unitId) {
+  const furi = checkUnitFurigana(unitId);
+  if (!furi) {
+    console.error(`Không thấy unit "${unitId}" hoặc unit đó chưa có comprehensiveTest.`);
+    process.exit(2);
+  }
+  console.log(`R12D — ${unitId} (bài tổng hợp)`);
+  console.log(`  kiểm ${furi.checked} chuỗi · LỆCH ${furi.failed.length}`);
+  for (const [p, text, line, got, want] of furi.failed) {
+    console.log(`  FAIL  ${p}`);
+    console.log(`          mặt chữ  : ${text}`);
+    console.log(`          ráp ngược: ${got}`);
+    console.log(`          dòng đọc : ${want}   (${line})`);
+  }
+  if (furi.failed.length > 0) process.exit(1);
+}
+
 function main() {
+  const unitFlagIdx = process.argv.indexOf("--unit");
+  if (unitFlagIdx !== -1) {
+    const unitId = process.argv[unitFlagIdx + 1];
+    if (!unitId) {
+      console.error("dùng: node scripts/verify-provenance.mjs --unit <unitId>");
+      process.exit(2);
+    }
+    runUnitFuriganaOnly(unitId);
+    return;
+  }
+
   const file = process.argv[2];
   if (!file) {
-    console.error("dùng: node scripts/verify-provenance.mjs <provenance.json>");
+    console.error("dùng: node scripts/verify-provenance.mjs <provenance.json>  |  --unit <unitId>");
     process.exit(2);
   }
   const doc = JSON.parse(readFileSync(file, "utf8"));
