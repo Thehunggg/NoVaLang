@@ -30,7 +30,7 @@ add('Chọn đúng mức lịch sự và đúng thì (đang xảy ra hay đã xo
 
 // ── Intro situation ──────────────────────────────────────────────────────
 add('Ai đó vừa giúp bạn một việc, hoặc đang giúp bạn ngay lúc này.', 'Someone has just helped you with something, or is helping you right now.', '誰かが何かを手伝ってくれたところか、今まさに手伝ってくれています。');
-add('Bạn cảm ơn theo đúng mức lịch sự và đúng thời điểm của việc đó.', 'You thank them at the right level of politeness and at the right point in time.', 'その状況に合った丁寧さと時期でお礼を言います。');
+add('Bạn cảm ơn theo đúng mức lịch sự và đúng thời điểm của việc đó.', 'You thank them at the right level of politeness and at the right point in time.', 'その状況に合った丁寧さとタイミングでお礼を言います。');
 
 // ── Intro example labels ────────────────────────────────────────────────
 add('Việc đang xảy ra, lịch sự:', 'Something ongoing, politely:', '進行中のこと、丁寧に：');

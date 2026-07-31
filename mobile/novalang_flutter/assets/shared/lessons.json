@@ -92799,7 +92799,7 @@
       "situationByNative": {
         "vi": "Ai đó vừa giúp bạn một việc, hoặc đang giúp bạn ngay lúc này.\nBạn cảm ơn theo đúng mức lịch sự và đúng thời điểm của việc đó.",
         "en": "Someone has just helped you with something, or is helping you right now.\nYou thank them at the right level of politeness and at the right point in time.",
-        "ja": "誰かが何かを手伝ってくれたところか、今まさに手伝ってくれています。\nその状況に合った丁寧さと時期でお礼を言います。"
+        "ja": "誰かが何かを手伝ってくれたところか、今まさに手伝ってくれています。\nその状況に合った丁寧さとタイミングでお礼を言います。"
       },
       "objectives": [
         "Cảm ơn lịch sự khi việc còn đang xảy ra bằng ありがとうございます.",
@@ -93516,7 +93516,7 @@
             ],
             "ja": [
               "誰かが何かを手伝ってくれたところか、今まさに手伝ってくれています。",
-              "その状況に合った丁寧さと時期でお礼を言います。"
+              "その状況に合った丁寧さとタイミングでお礼を言います。"
             ]
           },
           "examples": [
