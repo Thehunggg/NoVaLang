@@ -1,0 +1,138 @@
+{
+  "lessonId": "ja-daily_life-m02-u1-l2",
+  "ngày": "2026-08-02",
+  "nguồn": [
+    {
+      "path": "local-sources/ja/irodori/markdown/",
+      "coHang": true,
+      "soCauQuaLoc": 3,
+      "cachQuet": "grep 8 cụm (どういたしまして・いえいえ・とんでもない・とんでもございません・こちらこそ・気にしないで・気にしない・全然) trên 4 file markdown; hàng thật: こちらこそ (So_cap_1_A2.md:23241, có chú giải sách giáo khoa '相手にあいさつや感謝のことばを返す' — đúng chủ đề đáp lễ), いえいえ (So_cap_1_A2.md:23305), とんでもない (So_cap_2_A2.md:30778, trong đoạn giải thích văn hoá tiếng Việt, không phải hội thoại)"
+    },
+    {
+      "path": "local-sources/ja/topic1.json",
+      "coHang": true,
+      "soCauQuaLoc": 20,
+      "cachQuet": "grep 9 cụm (8 cụm gốc + いえいえ bổ sung) trên field utterance; 20 dòng khớp thô, đa số どういたしまして/いえいえ/気にしないでください trong hội thoại thật"
+    },
+    {
+      "path": "local-sources/ja/topic2.json",
+      "coHang": true,
+      "soCauQuaLoc": 27,
+      "cachQuet": "như trên; có cặp 'それは助かります。どうもありがとうございます。'→'いえいえ、お安い御用ですよ。' (dialogue_id 502) và 'いえいえ、とんでもありません。' (dialogue_id 515) — cả hai đều sạch, đúng chủ đề"
+    },
+    {
+      "path": "local-sources/ja/topic3.json",
+      "coHang": true,
+      "soCauQuaLoc": 30,
+      "cachQuet": "như trên; dialogue_id 31 nối tiếp NGAY SAU đoạn đã dùng ở Q14 m02-u1-l1 (cùng nhân vật 田中/佐藤, cùng cảnh chụp ảnh) — lượt kế tiếp là 佐藤「どういたしまして。」"
+    },
+    {
+      "path": "local-sources/ja/topic4.json",
+      "coHang": true,
+      "soCauQuaLoc": 23,
+      "cachQuet": "như trên"
+    },
+    {
+      "path": "local-sources/ja/topic5.json",
+      "coHang": true,
+      "soCauQuaLoc": 17,
+      "cachQuet": "như trên"
+    },
+    {
+      "path": "local-sources/ja/n5/n5_ngu-phap-vi.txt",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "grep 9 cụm trên toàn file — 0 khớp"
+    },
+    {
+      "path": "local-sources/ja/ban1.txt",
+      "coHang": true,
+      "soCauQuaLoc": 9,
+      "cachQuet": "grep 9 cụm; どういたしまして (dòng 448, mục từ vựng đứng riêng), いえいえ (dòng 1929 'いえいえ、まだまだです。' — đáp lại lời khen, gần chủ đề), 全然 (mục từ vựng + 2 câu mẫu, không liên quan đáp lễ cảm ơn)"
+    },
+    {
+      "path": "local-sources/ja/hanabira.org-main/backend/express/json_data/grammar_ja_JLPT_N{1..5}_0001.json",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "grep 9 cụm trên 5 file (N1-N5) — chỉ 全然 khớp (N1/N2), nhưng LÀ TRẠNG TỪ trong câu ví dụ của các điểm ngữ pháp KHÁC (ăn kiêng, than phiền...), không liên quan chủ đề đáp lễ cảm ơn — coi là KHÔNG có hàng phù hợp chủ đề"
+    },
+    {
+      "path": "local-sources/ja/hanabira.org-main/backend/express/json_data/wordsTanos_openai_JLPT_N{1..5}_tanos_vocab_list.json",
+      "coHang": true,
+      "soCauQuaLoc": 3,
+      "cachQuet": "grep 9 cụm trên 5 file; こちらこそ (N2), 全然+とんでもない (N3) có mục từ — nguồn CHỈ có từ đơn + JLPT tag, KHÔNG có câu ví dụ (theo INVENTORY §2.3) nên không đóng góp được câu mẹ, chỉ dùng để xác nhận cấp JLPT"
+    },
+    {
+      "path": "local-sources/ja/jmdict/jmdict-eng-3.6.2.json",
+      "coHang": true,
+      "soCauQuaLoc": 5,
+      "cachQuet": "grep 9 cụm; có mục từ điển cho いえいえ/こちらこそ/とんでもない/どういたしまして/全然 — nguồn TỪ ĐIỂN (nghĩa/đọc đóng), không có câu ví dụ, dùng cho CLOSED_FACT nhiễu ở PHA B, không đóng góp câu mẹ"
+    },
+    {
+      "path": "local-sources/ja/kanji-data-master/kanji.json",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "grep 9 cụm — 0 khớp; nguồn chỉ có dữ liệu từng kanji rời (nét/âm/nghĩa), không có cụm/câu nên về bản chất không áp dụng cho chủ đề này"
+    },
+    {
+      "path": "local-sources/ja/n1/ (4 file .md)",
+      "coHang": true,
+      "soCauQuaLoc": 3,
+      "cachQuet": "grep 9 cụm; とんでもない xuất hiện trong ĐỊNH NGHĨA của một điểm ngữ pháp khác (以ての外), 気にしないで xuất hiện như MẢNH trong mẫu ngữ pháp khác (も顧みず) — cả hai đều KHÔNG phải ví dụ độc lập cho chủ đề đáp lễ cảm ơn, coi là không có hàng phù hợp"
+    },
+    {
+      "path": "local-sources/ja/n2/ (nhiều file .md)",
+      "coHang": true,
+      "soCauQuaLoc": 2,
+      "cachQuet": "grep 9 cụm; こちらこそよろしく。(n2_grammar-125.md:1036, câu mẫu độc lập, đúng dạng chào/đáp lễ) + とんでもない (n2_vocab-list.md, mục từ vựng có gloss, không có câu)"
+    },
+    {
+      "path": "local-sources/ja/n3/ (nhiều file .md)",
+      "coHang": true,
+      "soCauQuaLoc": 6,
+      "cachQuet": "grep 9 cụm; 全然 xuất hiện nhiều lần nhưng LUÔN là trạng từ trong câu ví dụ ngữ pháp KHÁC (bận rộn, chưa giỏi tiếng Nhật, kết quả thi...) — không liên quan chủ đề; とんでもない chỉ có ở vocab-list (gloss, không câu) — coi là không có hàng phù hợp chủ đề"
+    },
+    {
+      "path": "local-sources/ja/n4/ (3 file .md)",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "grep 9 cụm trên cả 3 file — 0 khớp"
+    },
+    {
+      "path": "local-sources/ja/n5/ (8 file, trừ n5_ngu-phap-vi.txt)",
+      "coHang": true,
+      "soCauQuaLoc": 14,
+      "cachQuet": "grep 9 cụm; どういたしまして/こちらこそ xuất hiện trong ĐỀ BÀI TẬP TRẮC NGHIỆM (n5_bai-tap-tieng-Nhat-so-cap-1.md — nối cặp câu hỏi/đáp án), không phải hội thoại tự nhiên — xác nhận đây là cụm trình độ N5 chuẩn, không dùng làm câu mẹ trực tiếp vì format là đề thi, không phải lời thoại"
+    },
+    {
+      "path": "local-sources/ja/New Tài liệu văn bản.txt (敬語の指針)",
+      "coHang": true,
+      "soCauQuaLoc": 6,
+      "cachQuet": "grep 9 cụm; đoạn 2230-2260 giải thích CHÍNH THỨC về とんでもございません／とんでもないです／とんでもないことでございます — văn xuôi giải thích register, dùng cho grammarPattern + ghi chú cách dùng, không phải hội thoại"
+    },
+    {
+      "path": "local-sources/ja/vocab-3000/Collins_Japanese_3000_words_and_phrases.pdf",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "pdftotext toàn văn (10657 dòng, có cảnh báo font 'Adobe-Japan1' — biết trước là bóc PDF không hoàn hảo) + grep 9 cụm — 0 khớp. Kể cả nếu có khớp, nguồn này ở mức cấm-trích (G14-R9, blocked-sources.json) nên không trích verbatim được"
+    },
+    {
+      "path": "local-sources/ja/grammar-books/N5 Grammar Master (japanvitta.com).pdf",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "pdftotext toàn văn (4554 dòng, trích sạch không lỗi) + grep 9 cụm — 0 khớp"
+    },
+    {
+      "path": "local-sources/ja/grammar-books/Nihongo_Sou_Matome_*.pdf (5 file)",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "KHÔNG quét — cấm-hẳn theo G14-R9/blocked-sources.json (PDF ảnh scan, 0 hoặc gần-0 dòng chữ Nhật thật), không dùng vào việc gì được nên quét là vô nghĩa"
+    },
+    {
+      "path": "local-sources/ja/ban2.txt",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "KHÔNG quét — cấm-hẳn theo G14-R9/blocked-sources.json (bóc PDF hỏng 55%, cấu trúc vỡ)"
+    }
+  ]
+}

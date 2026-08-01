@@ -1405,3 +1405,164 @@ giới TỪ THẬT, tức cần bộ tách từ — thứ vừa bị cấm khỏ
 đoán sai âm đọc. Nếu đem lên app thì owner chốt trước: chịu cắt theo khối,
 hay cho dùng bộ tách từ **chỉ để chia khoảng cách hiển thị**, tuyệt đối không
 cho nó đụng vào âm đọc.
+
+---
+
+# ĐO TRƯỚC KHI VIẾT — m02-u1-l2 「Đáp khi được cảm ơn」 (2026-08-02)
+
+> PHA A của lệnh `/build-lesson m02-u1-l2` — lần chạy thật đầu tiên của lệnh
+> này. Áp luật CÂN NGUỒN mới (G14-R3b, owner chốt 2026-08-01) — quét MỌI
+> nguồn trong kho, không xếp thứ tự ưu tiên. Kết quả máy đọc đầy đủ:
+> `scripts/content/sources/scan/ja-daily_life-m02-u1-l2.scan.json` (22 nguồn,
+> 14 coHang=true, 8 coHang=false — mỗi dòng kèm cách quét).
+>
+> Chủ đề đã có sẵn từ blueprint (`shared/generated/lessons.json`, KHÔNG tự
+> đặt): `titleVi: "Đáp khi được cảm ơn"`, `titleByNative.ja:
+> "お礼を言われたときの返事"` — khớp tên unit `ja-daily_life-m02-u1: "Cảm ơn &
+> đáp lại"` (l1 dạy cảm ơn, l2 dạy đáp lại).
+
+## B1 — CÂN NGUỒN: hai bug tooling lộ ra khi quét thật
+
+1. **`walk()` trong script quét nguồn của lượt này tự viết** — truyền mảng
+   đuôi file rỗng `[]` để nghĩa là "khớp mọi file", nhưng
+   `[].some(...)` luôn `false` nên **0 file nào được nhận** — hanabira
+   grammar-json/Tanos-json bị bỏ sót hoàn toàn ở lượt quét đầu. Phát hiện nhờ
+   `find` xác nhận file có thật (10 file) mà script báo "0 file". Đã sửa
+   (script tạm, không phải file trong repo) và quét lại tay bằng grep trực
+   tiếp — kết quả đã vào `scan.json`.
+2. **`taught-vocabulary.json` cũ, thiếu `ja-daily_life-m02-u1-l1`** —
+   `_order.ja` dừng ở `m01-u2-l2`; bài m02-u1-l1 (build 2026-07-31) chưa bao
+   giờ được "nối" vào sổ (G14-R11 nói máy đọc từ `lessons.json`, có script
+   `scripts/build-taught-vocabulary.mjs` nhưng KHÔNG ai chạy lại sau khi build
+   m02-u1-l1). Hậu quả: bộ đo mức-khối coi cả `ありがとう`/`ありがとうございます`
+   là "từ lạ" — sai, vì đó là từ đã dạy ngay bài liền trước. Đã chạy
+   `node scripts/build-taught-vocabulary.mjs` (26 bài · 141 cụm, có
+   `m02-u1-l1`), đo lại toàn bộ sau khi sửa. Đây là bug **có thật, tái diễn**
+   — comment trong chính script ghi nhận nó đã xảy ra một lần trước
+   (thiếu u2-l2), giờ lặp lại với m02-u1-l1. **Đề xuất cho báo cáo cuối:**
+   thêm bước "chạy `build-taught-vocabulary.mjs`" vào cổng bắt buộc của PHA B
+   trong `/build-lesson`, để không lặp lần thứ ba.
+
+## B2 — grammarPatterns (mẫu thật, có nguồn)
+
+| Mẫu | Nguồn | Trích |
+|---|---|---|
+| とんでもない ↔ とんでもないです／とんでもございません (register) | 敬語の指針 `New Tài liệu văn bản.txt:2243-2251` (văn bản CHÍNH THỨC của 文化審議会答申) | "とんでもございません（とんでもありません）は…" · "とんでもない」を丁寧にするためには「とんでもないです」「とんでもないことでございます」…にすれば良い" |
+| 気にしないでください (câu nguyên, không tách được casual/polite vì KHÔNG tìm thấy dạng で trần) | topic1.json:4791 · topic2.json:29139 · topic4.json:23465 (nhiều, nhất quán) | "気にしないでください。" |
+| お役に立てて良かったです／幸いです (đáp khi được cảm ơn vì đã giúp) | topic1.json:5313 · topic2.json:26909 | "お役に立てて幸いです。" · "お役に立てて良かったです。" |
+
+**Đã quét, không có:** dạng 気にしないで **trần** (không kèm ください) — 12/12
+lượt khớp trong topic1-5.json đều có ください đi kèm. Không dựng được cặp
+casual/polite cho mẫu này từ nguồn hiện có.
+
+## B3 — Hội thoại MỨC KHỐI — kết quả có SẮC THÁI, cần owner đọc kỹ
+
+Công cụ đo (`node scripts/estimate-source-coverage.mjs`, đã tổng quát hoá
+`blockLevelReport` — trước chỉ chạy được cho m02-u1-l1, giờ nhận `label` +
+`keywordRe` bất kỳ, phá thật lại 3 ca cũ xanh, số m02-u1-l1 KHÔNG đổi sau khi
+tổng quát hoá — xem `--self-test`).
+
+**Từ khoá dùng:** `どういたしまして|こちらこそ|お役に立て|とんでもな|いえいえ`
+(4 cụm gốc trong `PROBES` + `いえいえ` bổ sung — cụm này vắng mặt ở bản gốc
+dù có nhiều ví dụ sạch nhất trong kho, xem B3c).
+
+**Số máy đo (union từ lạ, khử trùng lặp):**
+
+| ngưỡng | khối 3-4 lượt (cần ≥3) | đoạn ≥4 lượt cho Q14 (cần ≥1) |
+|---|---|---|
+| ≤2 (mặc định) | **2** — KHÔNG ĐẠT | **1** — ĐẠT |
+| ≤3 (nới) | **4** — ĐẠT | **2** — ĐẠT |
+
+**B3a — Đọc kỹ 4 khối ở ngưỡng ≤3, không chỉ đếm số:**
+
+1. **topic2.json:575, 4 lượt** — SẠCH, ĐÚNG TRỌNG TÂM: すみません→見つけました
+   (đã giúp tìm đồ)→どうもありがとうございます→**どういたしまして**. Mẫu hội
+   thoại "giúp → được cảm ơn → đáp どういたしまして" gần như giáo khoa.
+2. **topic3.json:31, 5 lượt (đoạn≥4 mẫu)** — SẠCH, ĐÚNG TRỌNG TÂM, và có mối
+   nối đặc biệt: đây là **CÙNG hội thoại** đã dùng cho Q14 của m02-u1-l1
+   (cùng cảnh 田中/佐藤 chụp ảnh ở Hachiko, xem
+   `ja-unit1-lesson1-m02.mjs` dòng 210-219) — lượt kế tiếp NGAY SAU đoạn đã
+   dùng là 佐藤「どういたしまして。」. Có thể nối tiếp thành một mạch chuyện.
+3. **topic2.json:628, 3 lượt** — `こちらこそ` nhưng KHÔNG phải đáp lời cảm ơn
+   trực tiếp: 田中「十分です。ぜひお願いしたいです。」→佐藤「分かりました。
+   よろしくお願いします。」→田中「ありがとうございます。**こちらこそ**よろし
+   くお願いします。」 — đây là cặp よろしくお願いします hai chiều (giống cách
+   Golden L1 đã dạy こちらこそ), không phải "được cảm ơn rồi đáp lại".
+4. **topic5.json:105, 3 lượt** — cùng vấn đề: あけましておめでとう…よろしく
+   お願いいたします→田中「**こちらこそ**、よろしくお願いいたします。」 — lời
+   chúc Tết + よろしくお願いします hai chiều, không phải đáp lễ cảm ơn.
+
+**B3b — Vì sao (3) và (4) không hẳn sai, chỉ KHÔNG PHẢI bằng chứng "đáp lễ
+cảm ơn":** Irodori (`IRODORI_So_cap_1_A2.md:23241`) dạy こちらこそ trong đúng
+khuôn 「…お世話になっています」→「こちらこそ」, kèm chú giải sách giáo khoa
+**"相手にあいさつや感謝のことばを返す"** (đáp lại lời chào/lời cảm ơn của đối
+phương) — tức こちらこそ đúng là một cách "đáp lễ" theo nghĩa RỘNG (đáp lại
+thiện ý/ơn nghĩa nói chung), nhưng (3)/(4) không mang dạng lời CẢM ƠN trực
+tiếp (ありがとう) làm lượt trước — chúng là dạng よろしくお願いします. Dùng làm
+Q14/dialogueGroup cho lesson này có nguy cơ **trùng lặp** với cách Golden L1
+đã dạy こちらこそ (chào hỏi/nhờ vả), không dạy được KHÍA CẠNH MỚI (đáp lễ khi
+được cảm ơn trực tiếp) — trừ khi đóng khung rõ là "cách dùng khác của từ đã
+học" (mẫu §B2b, như おかげさまで/すみません ở m02-u1-l1).
+
+**B3c — いえいえ: giàu nhất nhưng chỉ ra cặp 2 lượt, không ra khối 3-4:**
+Bổ sung いえいえ vào từ khoá làm số hội thoại khớp tăng 59→66, nhưng KHÔNG
+thêm khối 3-4 lượt nào (mọi cặp ありがとうございます→いえいえ đều đúng 2 lượt,
+lượt sau đó chuyển chủ đề). Ví dụ sạch nhất: 「それは助かります。どうもありが
+とうございます。」→「**いえいえ**、お安い御用ですよ。」(topic2.json, dialogue
+502) và 「いえいえ、とんでもありません。」(topic2.json, dialogue 515 — kết hợp
+いえいえ + とんでも trong một câu). Nguyên liệu tốt cho **matching/dialogue_fill
+2 lượt** (như Q3/Q5 kiểu m02-u1-l1), không đủ cho dialogueGroup 3-4 lượt hay
+Q14.
+
+**B3d — Kết luận đo (KHÔNG tự quyết):**
+- Ở ngưỡng mặc định ≤2: **KHÔNG ĐẠT** "≥3 khối" (chỉ 2), dù đạt "≥1 đoạn≥4".
+- Ở ngưỡng ≤3 (cần nới + ghi lý do — chủ đề hẹp hơn "cảm ơn" nói chung: 66/4794
+  hội thoại khớp so với 927/4794 của m02-u1-l1): đạt cả hai số, nhưng **chỉ
+  2/4 khối là bằng chứng sạch, đúng trọng tâm** (topic2:575, topic3:31) — 2/4
+  còn lại (topic2:628, topic5:105) là こちらこそ ở nghĩa khác đã dạy.
+
+## B4 — Từ vựng mới (đối chiếu taught-vocabulary.json SAU khi vá — 141 cụm)
+
+| Cụm | Trạng thái |
+|---|---|
+| どういたしまして | MỚI |
+| いえいえ | MỚI |
+| とんでもない (+ biến thể register とんでもないです／とんでもございません) | MỚI |
+| 気にしないでください | MỚI |
+| お役に立てて良かったです | MỚI |
+| こちらこそ | **ĐÃ DẠY** (Golden L1) — nếu dùng, phải đóng khung "cách dùng MỚI" như B3b nói, không tính vào ngân sách từ mới |
+
+**5 cụm mới cốt lõi** (+ 1 cách-dùng-mới của từ cũ nếu owner duyệt hướng
+B3b) — trong khoảng 8-10 của G14-R3b, còn dư chỗ cho biến thể register nếu
+tách とんでもない thành nhiều thẻ như m02-u1-l1 đã làm với ありがとう.
+
+## B5 — Can-do đề xuất (CẦN MẮT NGƯỜI mục 1)
+
+**Tên bài:** Đáp khi được cảm ơn (お礼を言われたときの返事) — khớp blueprint có
+sẵn, không tự đặt.
+
+**Mục tiêu đề xuất** (theo mẫu u2-l1, dựa đúng cụm đã xác nhận có nguồn ở B2):
+
+- Đáp lại lời cảm ơn một cách lịch sự bằng どういたしまして.
+- Đáp lại lời cảm ơn một cách thân mật, giản dị bằng いえいえ.
+- Khiêm tốn từ chối lời cảm ơn/khen ngợi bằng とんでもない／とんでもないです／
+  とんでもございません.
+- Trấn an người khác rằng không cần bận tâm bằng 気にしないでください.
+- Bày tỏ vui vì đã giúp được bằng お役に立てて良かったです／幸いです.
+- *(Tuỳ owner chọn B3b)* Dùng こちらこそ như một cách đáp lễ khi ai đó bày tỏ
+  thiện ý/biết ơn với mình — cách dùng khác của từ đã học ở bài chào hỏi.
+
+## CẦN MẮT NGƯỜI — owner quyết trước khi sang PHA B
+
+1. **Can-do ở B5** — duyệt/sửa tên bài + mục tiêu.
+2. **Ngưỡng hội thoại (B3d)** — chọn:
+   - (A) Chấp nhận nới lên ≤3, dùng cả 4 khối kể cả 2 khối こちảnh こそ "lệch
+     trọng tâm" (đóng khung theo B3b, dạy こちらこそ như cách dùng mới), hoặc
+   - (B) Chỉ dùng 2 khối sạch tuyệt đối (topic2:575, topic3:31) làm
+     dialogueGroups + Q14, bỏ こちらこそ ra khỏi Q14/dialogueGroup (vẫn có thể
+     giữ trong vocabularyReferences như m02-u1-l1 đã làm với すみません/
+     おかげさまで), chấp nhận PHA B chỉ có 2 khối 3+ lượt thay vì 3 theo cấu
+     hình mặc định G14-R3b (cần owner xác nhận ngoại lệ số lượng).
+3. **Bug tooling B1.2** (taught-vocabulary.json không tự cập nhật) — đề xuất
+   thêm bước `node scripts/build-taught-vocabulary.mjs` vào cổng PHA B của
+   `/build-lesson` để không tái diễn lần ba.
