@@ -1066,6 +1066,19 @@ function validateRegisterVocabulary(node, lessonId, path = "") {
  *   khớp BARE. Danh từ chung mơ hồ (nguồn, từ điển, dictionary, 辞書…) chỉ
  *   khớp khi đi kèm cụm mang nghĩa TRÍCH DẪN (theo/trong/trích từ…) — bare
  *   một mình không đủ để khớp.
+ *
+ * MỞ RỘNG 2026-08-01 (§G5 mục 5) — chú thích PROVENANCE lọt vào nội dung
+ * hiển thị: nhãn trang duyệt kiểu "✎ tự soạn — <reason>" / "↩ <file>:<dòng>"
+ * (xem provBadge() trong scripts/preview-lesson.mjs) chỉ được sống ở trang
+ * duyệt + file provenance — không có lý do chính đáng để một trong các nhãn
+ * đó (hay cụm "verbatim"/"roster"/"gắn tên nhân vật") xuất hiện trong data
+ * app. Quét thật 2026-08-01: 0 chỗ trong lessons.json/courses.json (cả bản
+ * shared/generated lẫn bản đồng bộ Flutter) — thêm pattern đây là PHÒNG,
+ * không phải vá một rò rỉ đã xảy ra.
+ *   - "<file>:<dòng>" khớp bằng regex tên-file (chữ/số/khoảng trắng/gạch
+ *     ngang/gạch dưới, có dấu tiếng Việt) + đúng đuôi .json/.md/.txt + ":" +
+ *     số — phá thật 2 câu đối kháng để tránh chặn oan giờ giấc kiểu "8:30" và
+ *     câu liệt kê "Chương 5: ...": cả hai đều KHÔNG khớp (không có đuôi file).
  */
 const SOURCE_MENTION_PATTERNS = [
   // Tên riêng / thương hiệu — không có cách dùng nào khác trong văn xuôi dạy
@@ -1092,6 +1105,21 @@ const SOURCE_MENTION_PATTERNS = [
   { label: "textbook", re: /\btextbook\b/i },
   { label: "dictionary (trích dẫn)", re: /\b(?:according to|per|in)\s+(?:the\s+|a\s+)?dictionary\b/i },
   { label: "辞書 (trích dẫn, khác 辞書形)", re: /辞書(?!形)/ },
+  // Nhãn PROVENANCE (trang duyệt G14-R15 / file provenance) — không có lý do
+  // chính đáng để lọt vào data app, khớp bare an toàn (không đụng phải nghĩa
+  // nào khác trong văn xuôi dạy học tiếng Việt/Anh/Nhật của app này).
+  { label: "✎", re: /✎/ },
+  { label: "tự soạn", re: /\btự\s+soạn\b/i },
+  { label: "verbatim", re: /\bverbatim\b/i },
+  { label: "câu do người viết soạn", re: /do\s+người\s+viết\s+soạn/i },
+  { label: "authored", re: /\bauthored\b/i },
+  { label: "roster", re: /\broster\b/i },
+  { label: "gắn tên nhân vật", re: /gắn\s+tên\s+nhân\s+vật/i },
+  // "<file>:<dòng>" — mẫu trích dòng nguồn (vd IRODORI_So_cap_1_A2.md:23239).
+  // Bắt đúng tên-file+đuôi thật (.json/.md/.txt) + ":" + số, để KHÔNG khớp
+  // giờ giấc ("8:30") hay câu liệt kê ("Chương 5: ...") — cả hai không có
+  // đuôi file nên không khớp.
+  { label: "<file>:<dòng>", re: /[\p{L}\p{N}_\- ]+\.(?:json|md|txt):\d+/u },
 ];
 
 function findSourceMention(value) {
