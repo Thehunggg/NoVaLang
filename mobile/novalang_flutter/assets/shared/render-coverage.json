@@ -74,6 +74,76 @@
       "waivedReason": "Văn xuôi TIẾNG MẸ ĐẺ mô tả bối cảnh + vai vế (G6), không phải câu tiếng Nhật người học phải nói. Chữ Nhật lọt vào chỉ là TRÍCH DẪN vốn từ do CHÍNH BÀI ĐÓ dạy — đo 2026-07-30: 6 chỗ, 9 mảnh (さん・すみません・失礼ですが・こちらこそ・お先に失礼します・うん・はい・じゃあ・また), 9/9 nằm trong taught-vocabulary.json tính tới bài đó. Khai nguồn lại cho một trích dẫn của chính mình là vòng lặp. Khác `explanation` ở chỗ nào: explanation trích câu ĐÍCH của bài tập (chuỗi bị chấm), nên nó vẫn phải khai.",
       "note": "Mô tả tình huống + vai vế của mỗi nhóm hội thoại (card 3)."
     },
+    "avoid": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như `situation` — gạch đầu dòng TIẾNG MẸ ĐẺ liệt kê khi KHÔNG nên dùng, chữ Nhật lọt vào chỉ là trích dẫn từ đã dạy trong CHÍNH bài đó (đo 2026-08-01, phá thật lộ ra khi vá bug walkLessonStrings bỏ sót chuỗi nằm thẳng trong mảng — xem ghi chú trong scripts/lib/lesson-walk.mjs).",
+      "renderedOn": ["web", "flutter"],
+      "note": "vocabularyDetails[].avoid — nhãn 'avoidUse'."
+    },
+    "casual": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Mảng nhãn+cụm xen kẽ ('Cách thân mật chuẩn:' + cụm Nhật + 'Dùng với:' + đối tượng) — cụm Nhật LUÔN là một mục vocabulary/dialogue KHÁC đã khai verbatim trong CHÍNH bài đó (đối chiếu cụ thể 2026-08-01: vocabularyDetails[4].formal[1] 'お名前は何ですか' trong ja-daily_life-m01-u1-l2 trùng khớp fiveCardContent.vocabularyDetails[4].examples[0]/practice.exercises[1] đã khai). Khai lại là trích dẫn vòng lặp, như `situation`.",
+      "renderedOn": ["web", "flutter"],
+      "note": "vocabularyDetails[].casual — nhãn 'otherExpressions'."
+    },
+    "casualNotes": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như `notes` — văn xuôi tiếng mẹ đẻ, chữ Nhật lọt vào là trích dẫn nội bộ bài.",
+      "renderedOn": ["web", "flutter"],
+      "note": "vocabularyDetails[].casualNotes — dự phòng khi không có `notes` (nhãn 'importantNote')."
+    },
+    "commonMistake": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như `notes` — ví dụ lỗi sai viết bằng tiếng mẹ đẻ, trích lại cụm đã dạy để minh hoạ.",
+      "renderedOn": ["web", "flutter"],
+      "note": "grammarPatterns[].commonMistake."
+    },
+    "comparison": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như `notes` — đối chiếu mức lịch sự, trích lại cụm đã dạy.",
+      "renderedOn": ["web", "flutter"],
+      "note": "grammarPatterns[].comparison."
+    },
+    "formal": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như `casual`, hướng ngược lại (mức trang trọng hơn) — cụm Nhật là một mục khác đã khai verbatim trong CHÍNH bài đó.",
+      "renderedOn": ["web", "flutter"],
+      "note": "vocabularyDetails[].formal — nhãn 'vocabFormalExpression'."
+    },
+    "importantNote": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như `situation` — gạch đầu dòng 'điểm cần nhớ' của Card 1, chữ Nhật lọt vào là trích dẫn từ đã dạy trong CHÍNH bài đó.",
+      "renderedOn": ["web", "flutter"],
+      "note": "intro.importantNote (Card 1) — KHÁC vocabularyDetails[].notes dù cùng nhãn UI 'importantNote'; đây là trường JSON tên `importantNote` thật."
+    },
+    "notes": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Văn xuôi tiếng mẹ đẻ giải thích sắc thái/cách chia — chữ Nhật lọt vào là trích dẫn từ đã dạy trong CHÍNH bài đó, không phải câu đích mới. Ca thật 2026-08-01: とんでもない từng có notes 'Theo JMdict...' — bị xoá vì thuần thông tin tra cứu (§G5), nhưng notes có nội dung DẠY thật (vd 慣れる 'Dạng từ điển — mức lịch sự nằm ở cách chia') vẫn hợp lệ và vẫn miễn khai nguồn ở đây.",
+      "renderedOn": ["web", "flutter"],
+      "note": "vocabularyDetails[].notes / grammarPatterns[].explanation dùng field riêng `notes` cho grammar? KHÔNG — grammarPatterns dùng `explanation` (đã khai ở trên); `notes` chỉ thuộc vocabularyDetails[]."
+    },
+    "timingAndContext": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Như `situation` — gạch đầu dòng tiếng mẹ đẻ mô tả lúc nào dùng, chữ Nhật lọt vào là trích dẫn nội bộ bài.",
+      "renderedOn": ["web", "flutter"],
+      "note": "vocabularyDetails[].timingAndContext — nhãn 'whenToUse'."
+    },
+    "objectives": {
+      "category": "display", "mustRender": true, "mustDeclareProvenance": false,
+      "waivedReason": "Danh sách 'sau bài học này, người học có thể' (Card 1) — văn xuôi tiếng mẹ đẻ, chữ Nhật lọt vào là trích dẫn cụm ĐÃ dạy trong CHÍNH bài đó (đối chiếu cụ thể 2026-08-01: お名前は何ですか trong objectives[2] của ja-daily_life-m01-u1-l2 trùng khớp vocabulary[3]/dialogueGroups đã khai verbatim).",
+      "renderedOn": ["web", "flutter"],
+      "note": "fiveCardContent.intro.objectives (FiveCardIntro.tsx / lesson_five_card_pages.dart:310) + mirror top-level lesson.objectives."
+    },
+    "objectivesVi": {
+      "category": "internal", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Bản sao THUẦN top-level của objectives, được parse vào Lesson model Flutter (models/curriculum.dart) nhưng KHÔNG widget/screen nào đọc để vẽ (đo 2026-08-01: 0 kết quả trong lib/screens, lib/widgets). Web không có field tương ứng. Nội dung trùng `objectives` (đã miễn khai ở trên) nên dù có bật render sau này cũng cùng lý do miễn.",
+      "renderedOn": []
+    },
+    "acceptedAnswers": {
+      "category": "internal", "mustRender": false, "mustDeclareProvenance": false,
+      "waivedReason": "Danh sách biến thể chấp nhận được khi chấm ô tự gõ — KHÔNG hiện ra màn hình (dùng để so khớp, không phải mặt chữ trích nguồn). Luôn trùng hoặc là biến thể chính tả của displayText/canonicalText/correctAnswer đã khai trên CÙNG object (đối chiếu cụ thể 2026-08-01: acceptedAnswers ≡ correctAnswer ở các bài ja-hiragana).",
+      "renderedOn": []
+    },
     "incorrectMessage": {
       "category": "display", "mustRender": true, "mustDeclareProvenance": true,
       "renderedOn": ["web", "flutter"]

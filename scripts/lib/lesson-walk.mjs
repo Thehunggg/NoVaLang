@@ -25,16 +25,33 @@
  */
 export function walkLessonStrings(root, prefix = "") {
   const out = [];
-  const walk = (node, p) => {
-    if (Array.isArray(node)) return node.forEach((v, i) => walk(v, `${p}[${i}]`));
+  // `key` theo cùng xuống nhánh mảng: một chuỗi NẰM THẲNG trong mảng (vd
+  // `notes: ['...']`) không có "tên trường của riêng nó" — key hợp lý duy
+  // nhất là tên trường của CHÍNH MẢNG đó (vd "notes"), nên truyền `key` xuống
+  // qua đệ quy thay vì chỉ đọc trong vòng Object.entries.
+  //
+  // Phá thật 2026-08-01: trước bản vá này, một chuỗi nằm thẳng trong mảng bị
+  // BỎ QUA HOÀN TOÀN — `walk(v, path)` với `v` là string rơi thẳng vào nhánh
+  // `typeof node !== "object" → return` mà KHÔNG BAO GIỜ được push, vì việc
+  // push chỉ xảy ra bên trong vòng `Object.entries` (chỉ thấy được string khi
+  // nó là GIÁ TRỊ của một property, không thấy được khi nó là PHẦN TỬ mảng).
+  // Bắt được nhờ cổng chặn nhắc-nguồn (§G5): tiêm "theo từ điển JMdict" vào
+  // `vocabularyDetails[0].notes` rồi chạy validate — PASS giả, đúng lẽ phải
+  // FAIL. `notes`/`avoid`/`timingAndContext`/`appropriateFor`/`formal`/
+  // `casual`/dialogueGroups.explanation đều là `string[]` — nhóm trường chịu
+  // ảnh hưởng nặng nhất, và đúng là nhóm trường đang chứa vi phạm thật.
+  const walk = (node, p, key) => {
+    if (typeof node === "string") {
+      out.push({ path: p, key, value: node });
+      return;
+    }
+    if (Array.isArray(node)) return node.forEach((v, i) => walk(v, `${p}[${i}]`, key));
     if (!node || typeof node !== "object") return;
-    for (const [key, value] of Object.entries(node)) {
-      const here = p ? `${p}.${key}` : key;
-      if (typeof value === "string") out.push({ path: here, key, value });
-      else walk(value, here);
+    for (const [k, value] of Object.entries(node)) {
+      walk(value, p ? `${p}.${k}` : k, k);
     }
   };
-  walk(root, prefix);
+  walk(root, prefix, undefined);
   return out;
 }
 

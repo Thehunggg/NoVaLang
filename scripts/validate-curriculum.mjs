@@ -18,6 +18,9 @@ import { requireGeneratedQ14Romanization } from "./lib/q14-romanization-validati
 // Mẫu tên nháp còn sót — MỘT nguồn dùng chung với smoke-curriculum-flow.mjs
 // (vá 2026-07-31, xem comment trong lib/draft-character-names.mjs).
 import { DRAFT_CHARACTER_NAME_RE } from "./lib/draft-character-names.mjs";
+// WALK CHUNG (2026-07-30) — dùng lại cho cổng chặn nhắc-nguồn trong nội dung
+// hiển thị (§G5, vá 2026-08-01). Xem comment đầu file lesson-walk.mjs.
+import { walkLessonStrings } from "./lib/lesson-walk.mjs";
 // Ràng buộc định lượng của five_cards: KHOẢNG + lý do, giữ ở MỘT nơi
 // (scripts/lib/five-cards-ranges.mjs) để validator và smoke không lệch nhau,
 // và để người sửa sau đọc được căn cứ ngay tại chỗ. §D6c.
@@ -1038,6 +1041,80 @@ function validateRegisterVocabulary(node, lessonId, path = "") {
 }
 
 /**
+ * §G5 (LESSON_AUTHORING_STANDARD.md) — "Ghi nguồn / bậc CHỈ nằm trong báo cáo
+ * cho owner — KHÔNG vào data app." Ca rò rỉ thật phát hiện 2026-08-01: ghi chú
+ * thẻ từ vựng とんでもない nhắc "Theo JMdict"/"Theo 敬語の指針", tình huống hội
+ * thoại nhắc "trong nguồn"/"đúng trạng thái trong nguồn" — người học đọc được
+ * cả trên web (FiveCardVocabulary/FiveCardGrammar, nhãn "Ghi chú quan trọng")
+ * lẫn Flutter (lesson_five_card_pages.dart, lesson_screen.dart).
+ *
+ * QUÉT TOÀN BỘ CÂY, không lọc theo tên trường: registry render-coverage.json
+ * (G14-R14) chỉ theo dõi trường CHỨA KÝ TỰ NHẬT (`_luuY` trong chính file đó)
+ * — `notes`/`overview`/`timingAndContext`… là học liệu tiếng Việt/Anh thuần
+ * nên NẰM NGOÀI registry đó dù widget vẫn vẽ ra màn hình thật. Đây chính là
+ * trường xảy ra rò rỉ, nên cổng này không dùng lại registry mà quét mọi chuỗi
+ * lá của lesson/comprehensiveTest — không có trường nào trong data app có lý
+ * do chính đáng để nhắc tên một cuốn từ điển/giáo trình cụ thể.
+ *
+ * KHỚP — TRÁNH ÂM TÍNH GIẢ (owner yêu cầu ví dụ cụ thể, cả hai đều có thật
+ * trong bài đã duyệt và KHÔNG được coi là rò rỉ):
+ *   - "nguồn nước" (nghĩa đen: nước) — nếu khớp bare "nguồn" sẽ bị chặn oan.
+ *   - "Dạng từ điển — mức lịch sự nằm ở cách chia: 慣れます／慣れる" (u2-l2,
+ *     dạng TỪ ĐIỂN = dictionary form, thuật ngữ ngữ pháp) — nếu khớp bare
+ *     "từ điển" sẽ bị chặn oan.
+ * → Tên riêng/thương hiệu (không có nghĩa nào khác trong văn xuôi dạy học)
+ *   khớp BARE. Danh từ chung mơ hồ (nguồn, từ điển, dictionary, 辞書…) chỉ
+ *   khớp khi đi kèm cụm mang nghĩa TRÍCH DẪN (theo/trong/trích từ…) — bare
+ *   một mình không đủ để khớp.
+ */
+const SOURCE_MENTION_PATTERNS = [
+  // Tên riêng / thương hiệu — không có cách dùng nào khác trong văn xuôi dạy
+  // học, khớp bare an toàn.
+  { label: "JMdict", re: /JMdict/i },
+  { label: "Irodori", re: /Irodori/i },
+  { label: "hanabira", re: /hanabira/i },
+  { label: "Tanos", re: /Tanos/i },
+  { label: "kanji-data", re: /kanji-data/i },
+  { label: "Collins", re: /Collins/i },
+  { label: "敬語の指針", re: /敬語の指針/ },
+  { label: "出典", re: /出典/ },
+  // Danh từ chung mơ hồ — CHỈ khớp khi đi kèm cụm mang nghĩa trích dẫn, để
+  // không chặn oan "nguồn nước" / "nguồn gốc" / "dạng từ điển" (辞書形).
+  { label: "trong nguồn", re: /\btrong\s+nguồn\b/i },
+  { label: "theo nguồn", re: /\btheo\s+nguồn\b/i },
+  { label: "nguồn tìm được", re: /\bnguồn\s+tìm\s+được\b/i },
+  { label: "nguồn tài liệu", re: /\bnguồn\s+tài\s+liệu\b/i },
+  { label: "theo từ điển", re: /\btheo\s+từ\s+điển\b/i },
+  { label: "trong từ điển", re: /\btrong\s+từ\s+điển\b/i },
+  { label: "trích từ", re: /\btrích\s+từ\b/i },
+  { label: "theo sách", re: /\btheo\s+sách\b/i },
+  { label: "giáo trình", re: /\bgiáo\s+trình\b/i },
+  { label: "textbook", re: /\btextbook\b/i },
+  { label: "dictionary (trích dẫn)", re: /\b(?:according to|per|in)\s+(?:the\s+|a\s+)?dictionary\b/i },
+  { label: "辞書 (trích dẫn, khác 辞書形)", re: /辞書(?!形)/ },
+];
+
+function findSourceMention(value) {
+  for (const { label, re } of SOURCE_MENTION_PATTERNS) {
+    if (re.test(value)) return label;
+  }
+  return null;
+}
+
+function validateNoSourceMentionInDisplay(root, label) {
+  for (const { path, value } of walkLessonStrings(root)) {
+    const hit = findSourceMention(value);
+    if (hit) {
+      fail(
+        `${label}: ${path} nhắc nguồn/từ điển trong nội dung hiển thị ` +
+          `(khớp "${hit}") — §G5 chỉ cho phép ghi nguồn trong báo cáo cho ` +
+          `owner, không được vào data app: ${JSON.stringify(value)}`,
+      );
+    }
+  }
+}
+
+/**
  * §B2d — mọi kanji HIỂN THỊ cho người học phải kèm hiragana (owner chốt
  * 2026-07-25), ở MỌI cấp độ.
  *
@@ -1142,6 +1219,8 @@ export function validateUnitComprehensiveTest(unit) {
 
   const lessonIds = unit.lessonIds ?? [];
   const at = `${unit.id} comprehensiveTest`;
+
+  validateNoSourceMentionInDisplay(test, at);
 
   if (test.unitId !== unit.id) {
     fail(`${at}: unitId='${test.unitId}' không khớp unit chứa nó ('${unit.id}')`);
@@ -1925,6 +2004,7 @@ async function main() {
 
   const allowedNiches = new Set(["daily_life", "core_foundation"]);
   for (const lesson of lessons) {
+    validateNoSourceMentionInDisplay(lesson, lesson.id);
     if (!["en", "ja"].includes(lesson.languageCode)) {
       fail(`${lesson.id}: only en/ja playable lessons allowed in this scope`);
     }
