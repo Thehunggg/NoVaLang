@@ -174,7 +174,7 @@ const PROBES = {
   "m02-u1-l1 · Cảm ơn theo mức độ": [
     /ありがとうございました/, /ありがとうございます/, /どうもありがとう/, /ありがとう/, /恐れ入ります/, /助かりました/,
   ],
-  "m02-u1-l2 · Đáp khi được cảm ơn": [/どういたしまして/, /こちらこそ/, /お役に立て/, /とんでもな/],
+  "m02-u1-l2 · Đáp khi được cảm ơn": [/どういたしまして/, /こちらこそ/, /お役に立て/, /とんでもな/, /いえいえ/],
   "m02-u2-l1 · Xin lỗi & xin phép": [
     /すみません/, /申し訳(あり|ござ)/, /ごめんなさい/, /失礼します/, /よろしいですか/,
   ],
@@ -292,29 +292,39 @@ async function main() {
     console.log("");
   }
 
-  await blockLevelReport(tokenizer, known, dialogues);
+  // Chủ đề đã cần báo cáo MỨC KHỐI thật (không phải mọi PROBES — chỉ bài
+  // đang đo trong lượt build hiện tại). Danh sách nối dần từng bài, không
+  // xoá bài cũ (owner đối chiếu lại được số cũ bất cứ lúc nào).
+  const BLOCK_LEVEL_TOPICS = [
+    { label: "m02-u1-l1 · Cảm ơn theo mức độ", keyword: /ありがとう|どうも|恐れ入り|恐縮|助かり|感謝/ },
+    { label: "m02-u1-l2 · Đáp khi được cảm ơn", keyword: /どういたしまして|こちらこそ|お役に立て|とんでもな|いえいえ/ },
+  ];
+  for (const { label, keyword } of BLOCK_LEVEL_TOPICS) {
+    await blockLevelReport(tokenizer, known, dialogues, label, keyword);
+  }
 }
 
 /**
- * Báo cáo MỨC KHỐI cho m02-u1-l1 (owner chốt 2026-07-31, thay số-theo-lượt
- * ở trên) — với MỖI hội thoại khớp chủ đề, tìm đoạn liên tiếp dài nhất mà
- * UNION từ lạ (khử trùng lặp) không vượt ngưỡng, cho cả ngưỡng ≤2 và ≤3.
- * In histogram độ dài đoạn tốt nhất mỗi hội thoại + đúc kết theo 3 cỡ khối
- * (cặp/khối 3-4/đoạn ≥4) mà B4 cần.
+ * Báo cáo MỨC KHỐI, tổng quát cho MỌI chủ đề (owner chốt 2026-07-31 cho cơ
+ * chế; tổng quát hoá 2026-08-02 khi build m02-u1-l2 — bản trước hoá cứng
+ * riêng cho m02-u1-l1, không gọi lại được cho bài khác). Với MỖI hội thoại
+ * khớp `keywordRe`, tìm đoạn liên tiếp dài nhất mà UNION từ lạ (khử trùng
+ * lặp) không vượt ngưỡng, cho cả ngưỡng ≤2 và ≤3. In histogram độ dài đoạn
+ * tốt nhất mỗi hội thoại + đúc kết theo 3 cỡ khối (cặp/khối 3-4/đoạn ≥4) mà
+ * B4 cần.
  */
-async function blockLevelReport(tokenizer, known, dialogues) {
-  const KEYWORD = /ありがとう|どうも|恐れ入り|恐縮|助かり|感謝/;
-  const hit = dialogues.filter((d) => d.utterances.some((u) => KEYWORD.test(u.utterance)));
+async function blockLevelReport(tokenizer, known, dialogues, label, keywordRe) {
+  const hit = dialogues.filter((d) => d.utterances.some((u) => keywordRe.test(u.utterance)));
 
-  console.log("══ MỨC KHỐI (union, khử trùng lặp) — m02-u1-l1 · Cảm ơn theo mức độ");
-  console.log(`   hội thoại có từ khoá cảm ơn (đã lọc ten-lech-nhan.json): ${hit.length} / ${dialogues.length}`);
+  console.log(`══ MỨC KHỐI (union, khử trùng lặp) — ${label}`);
+  console.log(`   hội thoại có từ khoá chủ đề (đã lọc ten-lech-nhan.json): ${hit.length} / ${dialogues.length}`);
   console.log("");
 
   for (const threshold of [2, 3]) {
     const histogram = {};
     const examples = {};
     for (const d of hit) {
-      const best = bestQualifyingSpan(d, tokenizer, known, threshold, KEYWORD);
+      const best = bestQualifyingSpan(d, tokenizer, known, threshold, keywordRe);
       const len = best ? best.len : 0;
       histogram[len] = (histogram[len] ?? 0) + 1;
       if (best && !examples[len]) examples[len] = { file: d._file, dialogue_id: d.dialogue_id, best };
