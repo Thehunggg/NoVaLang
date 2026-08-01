@@ -1533,6 +1533,42 @@
       "authored": true,
       "targetText": "べつの日（ひ）",
       "reason": "dải phân cảnh không lời thoại của Q14 — G14-R7 quy định sceneDividers là authored."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].explanation[0]",
+      "authored": true,
+      "targetText": "どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó (どういたしまして) là TRÍCH LẠI từ đã khai verbatim ở vocabularyDetails[0]/grammarPatterns[0]."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].explanation[0]",
+      "authored": true,
+      "targetText": "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI các lượt đã khai từ_bài (from_lesson) ở dialogueGroups[1].lines cùng bài, cộng どういたしまして đã khai verbatim ở vocabularyDetails[0]."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].explanation[1]",
+      "authored": true,
+      "targetText": "Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó (どういたしまして) là TRÍCH LẠI từ đã khai verbatim ở vocabularyDetails[0]."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].explanation[0]",
+      "authored": true,
+      "targetText": "こちらこそ ở đây đáp lại một câu bày tỏ lòng biết ơn về MỐI QUAN HỆ nói chung (お世話になっています), khác với こちらこそ đáp lễ lời chào ở bài trước.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó (こちらこそ, お世話になっています) là TRÍCH LẠI từ đã khai verbatim ở dialogueGroups[2].lines/vocabularyReferences."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[1].explanation[0]",
+      "authored": true,
+      "targetText": "Thể thân mật của どういたしまして; có thể thêm câu sau để nhẹ nhàng hơn.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó (どういたしまして) là TRÍCH LẠI từ đã khai verbatim ở vocabularyDetails[0]/grammarPatterns[0]."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[2].explanation[0]",
+      "authored": true,
+      "targetText": "とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます.",
+      "reason": "giải thích do người viết soạn dựa theo 敬語の指針 (kiến thức nền của tác giả, KHÔNG nhắc tên nguồn trong data app theo §G5); phần tiếng Nhật trong đó (とんでもない, とんでもございません) là TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[2]/[3]/grammarPatterns[2].examples."
     }
   ]
 }

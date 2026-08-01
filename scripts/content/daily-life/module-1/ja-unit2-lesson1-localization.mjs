@@ -160,7 +160,7 @@ add('お久しぶりです → 久しぶり là cặp lịch sự ↔ thân mậ
 add('Đáp thân mật cho câu 「元気（げんき）？」 là gì?', 'What is the casual reply to 「元気？」?', '「元気？」へのカジュアルな答えは何ですか。');
 add('うん là はい ở thể thường; đi cùng 元気 không có です.', 'うん is はい in the plain form; it goes with 元気 without です.', '「うん」は「はい」の普通体で、「です」の付かない「元気」と一緒に使います。');
 add('おかげさまで đi cùng từ nào ở đầu câu?', 'Which word comes before おかげさまで?', '「おかげさまで」の前にはどの言葉が来ますか。');
-add('Trong nguồn, câu đáp lịch sự là はい。おかげさまで。', 'In the source, the polite reply is はい。おかげさまで。', '出典では、丁寧な答えは「はい。おかげさまで。」です。');
+add('Câu đáp lịch sự là はい。おかげさまで。', 'The polite reply is はい。おかげさまで。', '丁寧な答えは「はい。おかげさまで。」です。');
 add('Với thầy cô thì câu nào KHÔNG dùng được?', 'Which sentence can NOT be used with a teacher?', '先生に使えない文はどれですか。');
 add('元気？ là thể thường, không dùng với thầy cô.', '元気？ is the plain form and is not used with a teacher.', '「元気？」は普通体なので、先生には使いません。');
 add('Hoàn thành đoạn chat', 'Complete the chat', 'チャットを完成させてください');

@@ -87867,11 +87867,11 @@
                   "correctOptionId": "hai",
                   "feedback": {
                     "correctAnswer": "はい",
-                    "explanation": "Trong nguồn, câu đáp lịch sự là はい。おかげさまで。",
+                    "explanation": "Câu đáp lịch sự là はい。おかげさまで。",
                     "explanationByNative": {
-                      "vi": "Trong nguồn, câu đáp lịch sự là はい。おかげさまで。",
-                      "en": "In the source, the polite reply is はい。おかげさまで。",
-                      "ja": "出典では、丁寧な答えは「はい。おかげさまで。」です。"
+                      "vi": "Câu đáp lịch sự là はい。おかげさまで。",
+                      "en": "The polite reply is はい。おかげさまで。",
+                      "ja": "丁寧な答えは「はい。おかげさまで。」です。"
                     }
                   }
                 },
@@ -97020,14 +97020,14 @@
             "ja": "丁寧 — 物を探すのを手伝ってもらう"
           },
           "situationByNative": {
-            "vi": "Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự theo đúng trạng thái trong nguồn. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.",
-            "en": "Relationship: two classmates who are not yet close — keeping the polite register as it appears in the source. Situation: Sato dropped an eraser, and Ito helps look and finds it.",
-            "ja": "関係性：まだ親しくないクラスメート同士 — 出典どおり丁寧体を保っています。場面：佐藤が消しゴムを落とし、伊藤が捜すのを手伝って見つけます。"
+            "vi": "Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.",
+            "en": "Relationship: two classmates who are not yet close — keeping the polite register. Situation: Sato dropped an eraser, and Ito helps look and finds it.",
+            "ja": "関係性：まだ親しくないクラスメート同士 — 丁寧体を保っています。場面：佐藤が消しゴムを落とし、伊藤が捜すのを手伝って見つけます。"
           },
           "explanationByNative": {
-            "vi": "どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.\nCả hai giữ thể lịch sự vì là bạn học chưa thân, đúng trạng thái trong nguồn.",
-            "en": "どういたしまして is the standard polite reply, usable for almost any thanks, without needing to specify anything.\nBoth keep the polite register since they are classmates who are not yet close, matching the source.",
-            "ja": "「どういたしまして」は標準的な丁寧な返事で、具体的な内容を言わなくても、ほとんどのお礼に使えます。\n二人ともまだ親しくないクラスメートなので丁寧体を保っています。出典どおりです。"
+            "vi": "どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.\nCả hai giữ thể lịch sự vì là bạn học chưa thân.",
+            "en": "どういたしまして is the standard polite reply, usable for almost any thanks, without needing to specify anything.\nBoth keep the polite register since they are classmates who are not yet close.",
+            "ja": "「どういたしまして」は標準的な丁寧な返事で、具体的な内容を言わなくても、ほとんどのお礼に使えます。\n二人ともまだ親しくないクラスメートなので丁寧体を保っています。"
           },
           "lines": [
             {
@@ -97667,21 +97667,7 @@
                 },
                 "speechText": "とんでもない"
               }
-            ],
-            "notes": [
-              "Theo JMdict, とんでもない cũng có dạng kanji hiếm とんでも無い／飛んでもない, nhưng thực tế luôn viết bằng hiragana."
-            ],
-            "notesByNative": {
-              "vi": [
-                "Theo JMdict, とんでもない cũng có dạng kanji hiếm とんでも無い／飛んでもない, nhưng thực tế luôn viết bằng hiragana."
-              ],
-              "en": [
-                "Per JMdict, とんでもない also has a rare kanji form とんでも無い／飛んでもない, but it is always written in hiragana in practice."
-              ],
-              "ja": [
-                "JMdictによると、「とんでもない」には稀な漢字表記「とんでも無い」「飛んでもない」もありますが、実際には常にひらがなで書かれます。"
-              ]
-            }
+            ]
           },
           {
             "id": "tondemogozaimasen",
@@ -97740,17 +97726,17 @@
               }
             ],
             "notes": [
-              "Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
+              "とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
             ],
             "notesByNative": {
               "vi": [
-                "Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
+                "とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
               ],
               "en": [
-                "Per the 敬語の指針 (Japanese honorifics guidance): とんでもない is originally ONE whole adjective, so とんでもございません (replacing just the ない part) is widely used but considered not strictly standard; the STANDARD forms are とんでもないです／とんでもないことでございます."
+                "とんでもない is originally ONE whole adjective, so とんでもございません (replacing just the ない part) is widely used but considered not strictly standard; the STANDARD forms are とんでもないです／とんでもないことでございます."
               ],
               "ja": [
-                "敬語の指針によると、「とんでもない」はもともと一語の形容詞なので、「ない」の部分だけを変えた「とんでもございません」は広く使われているものの、厳密には標準的ではないとされます。標準的な形は「とんでもないです」「とんでもないことでございます」です。"
+                "「とんでもない」はもともと一語の形容詞なので、「ない」の部分だけを変えた「とんでもございません」は広く使われているものの、厳密には標準的ではないとされます。標準的な形は「とんでもないです」「とんでもないことでございます」です。"
               ]
             }
           },
@@ -97803,21 +97789,7 @@
                 },
                 "speechText": "きにしないでください。"
               }
-            ],
-            "notes": [
-              "Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng."
-            ],
-            "notesByNative": {
-              "vi": [
-                "Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng."
-              ],
-              "en": [
-                "Always appears together with ください in the sources found — no standalone form has been found."
-              ],
-              "ja": [
-                "見つかった出典では常に「ください」とセットで使われており、単独の形は見つかっていません。"
-              ]
-            }
+            ]
           },
           {
             "id": "oyakunitatete",
@@ -97951,11 +97923,11 @@
               "en": "Polite — helped find something",
               "ja": "丁寧 — 物を探すのを手伝ってもらう"
             },
-            "situation": "Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự theo đúng trạng thái trong nguồn. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.",
+            "situation": "Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.",
             "situationByNative": {
-              "vi": "Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự theo đúng trạng thái trong nguồn. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.",
-              "en": "Relationship: two classmates who are not yet close — keeping the polite register as it appears in the source. Situation: Sato dropped an eraser, and Ito helps look and finds it.",
-              "ja": "関係性：まだ親しくないクラスメート同士 — 出典どおり丁寧体を保っています。場面：佐藤が消しゴムを落とし、伊藤が捜すのを手伝って見つけます。"
+              "vi": "Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.",
+              "en": "Relationship: two classmates who are not yet close — keeping the polite register. Situation: Sato dropped an eraser, and Ito helps look and finds it.",
+              "ja": "関係性：まだ親しくないクラスメート同士 — 丁寧体を保っています。場面：佐藤が消しゴムを落とし、伊藤が捜すのを手伝って見つけます。"
             },
             "lines": [
               {
@@ -98037,20 +98009,20 @@
             ],
             "explanation": [
               "どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.",
-              "Cả hai giữ thể lịch sự vì là bạn học chưa thân, đúng trạng thái trong nguồn."
+              "Cả hai giữ thể lịch sự vì là bạn học chưa thân."
             ],
             "explanationByNative": {
               "vi": [
                 "どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.",
-                "Cả hai giữ thể lịch sự vì là bạn học chưa thân, đúng trạng thái trong nguồn."
+                "Cả hai giữ thể lịch sự vì là bạn học chưa thân."
               ],
               "en": [
                 "どういたしまして is the standard polite reply, usable for almost any thanks, without needing to specify anything.",
-                "Both keep the polite register since they are classmates who are not yet close, matching the source."
+                "Both keep the polite register since they are classmates who are not yet close."
               ],
               "ja": [
                 "「どういたしまして」は標準的な丁寧な返事で、具体的な内容を言わなくても、ほとんどのお礼に使えます。",
-                "二人ともまだ親しくないクラスメートなので丁寧体を保っています。出典どおりです。"
+                "二人ともまだ親しくないクラスメートなので丁寧体を保っています。"
               ]
             }
           },
@@ -98361,17 +98333,17 @@
               }
             ],
             "explanation": [
-              "Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
+              "とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
             ],
             "explanationByNative": {
               "vi": [
-                "Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
+                "とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
               ],
               "en": [
-                "Per the 敬語の指針 (Japanese honorifics guidance): とんでもない is originally ONE whole adjective, so とんでもございません (replacing just the ない part) is widely used but considered not strictly standard; the STANDARD forms are とんでもないです／とんでもないことでございます."
+                "とんでもない is originally ONE whole adjective, so とんでもございません (replacing just the ない part) is widely used but considered not strictly standard; the STANDARD forms are とんでもないです／とんでもないことでございます."
               ],
               "ja": [
-                "敬語の指針によると、「とんでもない」はもともと一語の形容詞なので、「ない」の部分だけを変えた「とんでもございません」は広く使われているものの、厳密には標準的ではないとされます。標準的な形は「とんでもないです」「とんでもないことでございます」です。"
+                "「とんでもない」はもともと一語の形容詞なので、「ない」の部分だけを変えた「とんでもございません」は広く使われているものの、厳密には標準的ではないとされます。標準的な形は「とんでもないです」「とんでもないことでございます」です。"
               ]
             }
           },
@@ -98402,21 +98374,7 @@
                 },
                 "speechText": "きにしないでください。"
               }
-            ],
-            "explanation": [
-              "Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng."
-            ],
-            "explanationByNative": {
-              "vi": [
-                "Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng."
-              ],
-              "en": [
-                "Always appears together with ください in the sources found — no standalone form has been found."
-              ],
-              "ja": [
-                "見つかった出典では常に「ください」とセットで使われており、単独の形は見つかっていません。"
-              ]
-            }
+            ]
           }
         ],
         "practice": {

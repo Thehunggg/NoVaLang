@@ -1506,6 +1506,54 @@
       "line": 1383,
       "verbatim": true,
       "token": true
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].explanation[0]",
+      "authored": true,
+      "targetText": "Nhân viên ĐANG đi lấy bản đồ, việc còn chưa xong — khách cảm ơn bằng ありがとうございます, không phải ありがとうございました.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/cụm đã khai riêng ở nơi khác trong bài (vocabularyDetails/dialogueGroups/grammarPatterns)."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].explanation[0]",
+      "authored": true,
+      "targetText": "Khách hàng dùng thể thân mật ありがとう dù nhân viên vẫn giữ thể lịch sự かしこまりました.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/cụm đã khai riêng ở nơi khác trong bài (vocabularyDetails/dialogueGroups/grammarPatterns)."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].explanation[0]",
+      "authored": true,
+      "targetText": "Ảnh đã chụp XONG nên 田中 cảm ơn bằng ありがとうございました (thì quá khứ), không phải ありがとうございます.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/cụm đã khai riêng ở nơi khác trong bài (vocabularyDetails/dialogueGroups/grammarPatterns)."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[0].explanation[0]",
+      "authored": true,
+      "targetText": "Thêm ございます ở cuối là thể lịch sự; bỏ đi là thể thường.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/cụm đã khai riêng ở nơi khác trong bài (vocabularyDetails/dialogueGroups/grammarPatterns)."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[1].explanation[0]",
+      "authored": true,
+      "targetText": "ございます dùng khi việc còn đang xảy ra; ございました (thì quá khứ) dùng khi việc đã xong.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/cụm đã khai riêng ở nơi khác trong bài (vocabularyDetails/dialogueGroups/grammarPatterns)."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[2].explanation[0]",
+      "authored": true,
+      "targetText": "どうも có thể đứng riêng làm câu cảm ơn đầy đủ, không cần thêm từ khác.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/cụm đã khai riêng ở nơi khác trong bài (vocabularyDetails/dialogueGroups/grammarPatterns)."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[3].explanation[0]",
+      "authored": true,
+      "targetText": "どうも ghép thêm vào KHÔNG đổi thể của ありがとうございます, chỉ thêm mức nhấn mạnh.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/cụm đã khai riêng ở nơi khác trong bài (vocabularyDetails/dialogueGroups/grammarPatterns)."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[4].explanation[0]",
+      "authored": true,
+      "targetText": "Cùng cơ chế với ありがとうございます／ました: ます là đang xảy ra, ました là đã xong.",
+      "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI từ/cụm đã khai riêng ở nơi khác trong bài (vocabularyDetails/dialogueGroups/grammarPatterns)."
     }
   ]
 }

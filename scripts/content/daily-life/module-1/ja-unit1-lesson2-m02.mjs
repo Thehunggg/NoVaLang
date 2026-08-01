@@ -270,9 +270,9 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
       vocabularyDetails: [
         { id: 'douitashimashite', timingAndContext: ['Đáp lại lời cảm ơn một cách lịch sự, không nói rõ vì sao.'], appropriateFor: ['Thầy cô', 'Người trên', 'Người quen', 'Đồng nghiệp'], avoid: [], register: 'Lịch sự.', formal: [], casual: ['Cách thân mật chuẩn:', 'いえいえ', 'Dùng với:', 'Bạn bè', 'Người ngang hàng đã thân'], overview: 'Đáp lại lời cảm ơn (lịch sự, chung chung).', examples: [example('どういたしまして。', 'どういたしまして。', 'Không có gì đâu.')] },
         { id: 'ieie', timingAndContext: ['Đáp lại lời cảm ơn một cách thân mật, giữa những người đã thân.'], appropriateFor: ['Bạn bè', 'Người ngang hàng đã thân'], avoid: ['Không dùng dạng này với thầy cô hoặc người trên.'], register: 'Thân mật.', formal: ['Cách trang trọng hơn:', 'どういたしまして', 'Dùng với:', 'Thầy cô', 'Người trên'], casual: [], overview: 'Đáp lại lời cảm ơn (thân mật).', examples: [example('いえいえ、お安い御用ですよ。', 'いえいえ、おやすいごようですよ。', 'Không sao, chuyện nhỏ mà.'), example('いえいえ、まだまだです。', 'いえいえ、まだまだです。', 'Đâu có, còn kém lắm.'), example('いえいえ、内山（うちやま）さんの頑張（がんば）りのおかげですよ。', 'いえいえ、うちやまさんのがんばりのおかげですよ。', 'Không có gì đâu, đó là nhờ chị Uchiyama đã cố gắng thôi.')] },
-        { id: 'tondemonai', timingAndContext: ['Nhẹ nhàng từ chối lời khen hoặc lời cảm ơn quá lời, thân mật.'], appropriateFor: ['Bạn bè', 'Người ngang hàng đã thân'], avoid: ['Không dùng dạng này với thầy cô hoặc người trên.'], register: 'Thân mật.', formal: ['Cách trang trọng hơn:', 'とんでもございません', 'Dùng với:', 'Thầy cô', 'Người trên'], casual: [], overview: 'Từ chối lời khen/cảm ơn quá lời (thân mật).', examples: [example('とんでもない', 'とんでもない', 'Đâu có, có gì đâu.')], notes: ['Theo JMdict, とんでもない cũng có dạng kanji hiếm とんでも無い／飛んでもない, nhưng thực tế luôn viết bằng hiragana.'] },
-        { id: 'tondemogozaimasen', timingAndContext: ['Khiêm tốn từ chối lời khen hoặc lời cảm ơn quá lời, lịch sự.'], appropriateFor: ['Thầy cô', 'Người trên', 'Người quen', 'Đồng nghiệp'], avoid: [], register: 'Lịch sự.', formal: [], casual: ['Cách thân mật chuẩn:', 'とんでもない', 'Dùng với:', 'Bạn bè', 'Người ngang hàng đã thân'], overview: 'Từ chối lời khen/cảm ơn quá lời (lịch sự).', examples: [example('とんでもございません', 'とんでもございません', 'Đâu có ạ, không có gì đâu ạ.')], notes: ['Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます.'] },
-        { id: 'kininaide', timingAndContext: ['Trấn an người khác rằng một chút phiền phức không đáng bận tâm.'], appropriateFor: ['Thầy cô', 'Người trên', 'Người quen', 'Đồng nghiệp'], avoid: [], register: 'Lịch sự.', formal: [], casual: [], overview: 'Đừng bận tâm về việc đó (lịch sự).', examples: [example('気にしないでください。', 'きにしないでください。', 'Xin đừng bận tâm ạ.')], notes: ['Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng.'] },
+        { id: 'tondemonai', timingAndContext: ['Nhẹ nhàng từ chối lời khen hoặc lời cảm ơn quá lời, thân mật.'], appropriateFor: ['Bạn bè', 'Người ngang hàng đã thân'], avoid: ['Không dùng dạng này với thầy cô hoặc người trên.'], register: 'Thân mật.', formal: ['Cách trang trọng hơn:', 'とんでもございません', 'Dùng với:', 'Thầy cô', 'Người trên'], casual: [], overview: 'Từ chối lời khen/cảm ơn quá lời (thân mật).', examples: [example('とんでもない', 'とんでもない', 'Đâu có, có gì đâu.')] },
+        { id: 'tondemogozaimasen', timingAndContext: ['Khiêm tốn từ chối lời khen hoặc lời cảm ơn quá lời, lịch sự.'], appropriateFor: ['Thầy cô', 'Người trên', 'Người quen', 'Đồng nghiệp'], avoid: [], register: 'Lịch sự.', formal: [], casual: ['Cách thân mật chuẩn:', 'とんでもない', 'Dùng với:', 'Bạn bè', 'Người ngang hàng đã thân'], overview: 'Từ chối lời khen/cảm ơn quá lời (lịch sự).', examples: [example('とんでもございません', 'とんでもございません', 'Đâu có ạ, không có gì đâu ạ.')], notes: ['とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます.'] },
+        { id: 'kininaide', timingAndContext: ['Trấn an người khác rằng một chút phiền phức không đáng bận tâm.'], appropriateFor: ['Thầy cô', 'Người trên', 'Người quen', 'Đồng nghiệp'], avoid: [], register: 'Lịch sự.', formal: [], casual: [], overview: 'Đừng bận tâm về việc đó (lịch sự).', examples: [example('気にしないでください。', 'きにしないでください。', 'Xin đừng bận tâm ạ.')] },
         { id: 'oyakunitatete', timingAndContext: ['Bày tỏ niềm vui vì vừa giúp được ai đó việc gì, lịch sự.'], appropriateFor: ['Thầy cô', 'Người trên', 'Người quen', 'Đồng nghiệp'], avoid: ['Không dùng khi bản thân vừa được người khác giúp — đây là câu MÌNH nói khi MÌNH giúp được người khác.'], register: 'Lịch sự.', formal: [], casual: [], overview: 'Vui vì đã giúp được (lịch sự).', examples: [example('お役に立てて良かったです。', 'おやくにたててよかったです。', 'Tôi vui vì đã giúp được ạ.')] },
       ],
       // "Tham khảo thêm" (§B2b) — こちらこそ ĐÃ DẠY TRƯỚC (Golden L1), ở đây
@@ -284,14 +284,14 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
       ],
       dialogueGroups: [
         {
-          id: 'lost-eraser-help', title: 'Lịch sự — được giúp tìm đồ', situation: 'Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự theo đúng trạng thái trong nguồn. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.',
+          id: 'lost-eraser-help', title: 'Lịch sự — được giúp tìm đồ', situation: 'Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.',
           lines: [
             dialogueLine('sato', 'すみません。', 'すみません。', 'Phiền chị quá.', 'すみません'),
             dialogueLine('ito', 'あ、見つけました。私の足元にありましたよ。', 'あ、みつけました。わたしのあしもとにありましたよ。', 'À, tìm thấy rồi. Nó ở dưới chân tôi này.', 'あ、みつけました。わたしのあしもとにありましたよ'),
             dialogueLine('sato', 'どうもありがとうございます。', 'どうもありがとうございます。', 'Cảm ơn chị nhiều ạ.', 'どうもありがとうございます'),
             dialogueLine('ito', 'どういたしまして。', 'どういたしまして。', 'Không có gì đâu.', 'どういたしまして'),
           ],
-          explanation: ['どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.', 'Cả hai giữ thể lịch sự vì là bạn học chưa thân, đúng trạng thái trong nguồn.'],
+          explanation: ['どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.', 'Cả hai giữ thể lịch sự vì là bạn học chưa thân.'],
         },
         {
           id: 'photo-help-done', title: 'Lịch sự — việc đã xong (nối tiếp bài trước)', situation: 'Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).',
@@ -326,12 +326,11 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
         {
           title: 'とんでもない ↔ とんでもございません', formula: 'とんでもない ／ とんでもございません', formulaReading: 'とんでもない ／ とんでもございません', meaning: 'Cùng ý khiêm tốn từ chối lời khen/cảm ơn, hai thể.',
           examples: [example('とんでもない', 'とんでもない', 'Đâu có.'), example('とんでもございません', 'とんでもございません', 'Đâu có ạ.')],
-          explanation: ['Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます.'],
+          explanation: ['とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます.'],
         },
         {
           title: '気にしないでください (đứng riêng)', formula: '気にしないでください', formulaReading: 'きにしないでください', meaning: 'Trấn an người khác đừng bận tâm/lo lắng, lịch sự.',
           examples: [example('気にしないでください。', 'きにしないでください。', 'Xin đừng bận tâm ạ.')],
-          explanation: ['Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng.'],
         },
       ],
       practice: {
