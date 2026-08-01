@@ -6,6 +6,7 @@ import { JA_UNIT1_LESSON3 } from './ja-unit1-lesson3.mjs';
 import { JA_UNIT2_LESSON1 } from './ja-unit2-lesson1.mjs';
 import { JA_UNIT2_LESSON2 } from './ja-unit2-lesson2.mjs';
 import { JA_M02_UNIT1_LESSON1 } from './ja-unit1-lesson1-m02.mjs';
+import { JA_M02_UNIT1_LESSON2 } from './ja-unit1-lesson2-m02.mjs';
 import { prepareJapaneseRomanization, toReadableRomaji } from '../../../lib/japanese-pronunciation.mjs';
 import { resolveLanguageDisplayName } from '../../../lib/language-names.mjs';
 import { NATIVE_CODES as CODES } from '../../../lib/native-localization.mjs';
@@ -37,6 +38,7 @@ await prepareJapaneseRomanization([
   ...q14Targets(JA_UNIT2_LESSON1),
   ...q14Targets(JA_UNIT2_LESSON2),
   ...q14Targets(JA_M02_UNIT1_LESSON1),
+  ...q14Targets(JA_M02_UNIT1_LESSON2),
 ]);
 
 // Registry of approved five_cards lessons, keyed by language then the FINAL
@@ -60,6 +62,7 @@ const FIVE_CARDS_REGISTRY = {
     'ja-daily_life-m01-u2-l1': JA_UNIT2_LESSON1,
     'ja-daily_life-m01-u2-l2': JA_UNIT2_LESSON2,
     'ja-daily_life-m02-u1-l1': JA_M02_UNIT1_LESSON1,
+    'ja-daily_life-m02-u1-l2': JA_M02_UNIT1_LESSON2,
   },
 };
 

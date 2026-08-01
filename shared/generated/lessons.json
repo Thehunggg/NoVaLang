@@ -96565,416 +96565,3478 @@
       "levelRange": "A0–A1",
       "placementTag": "daily_life_basic",
       "template": "vocabularyLesson",
-      "title": "Reply When Someone Thanks You",
+      "title": "Đáp khi được cảm ơn",
       "titleVi": "Đáp khi được cảm ơn",
       "titleByNative": {
-        "en": "Reply When Someone Thanks You",
         "vi": "Đáp khi được cảm ơn",
-        "ja": "お礼を言われたときの返事",
-        "ko": "감사 인사를 받았을 때 답하기",
-        "zh": "被感谢时如何回应"
+        "en": "Reply When Someone Thanks You",
+        "ja": "お礼を言われたときの返事"
       },
-      "description": "Learn to use \"Reply When Someone Thanks You\" naturally in daily conversation.",
-      "descriptionVi": "Học cách dùng \"Đáp khi được cảm ơn\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "description": "Sau bài học này, người học có thể:",
+      "descriptionVi": "Sau bài học này, người học có thể:",
       "descriptionByNative": {
-        "en": "Learn to use \"Reply When Someone Thanks You\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Đáp khi được cảm ơn\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「お礼を言われたときの返事」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"감사 인사를 받았을 때 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“被感谢时如何回应”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
-      "canDoObjective": "Learn to use \"Reply When Someone Thanks You\" naturally in daily conversation.",
-      "canDoObjectiveVi": "Học cách dùng \"Đáp khi được cảm ơn\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "canDoObjective": "Sau bài học này, người học có thể:",
+      "canDoObjectiveVi": "Sau bài học này, người học có thể:",
       "canDoObjectiveByNative": {
-        "en": "Learn to use \"Reply When Someone Thanks You\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Đáp khi được cảm ơn\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「お礼を言われたときの返事」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"감사 인사를 받았을 때 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“被感谢时如何回应”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
       "goalByNative": {
-        "en": "Learn to use \"Reply When Someone Thanks You\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Đáp khi được cảm ơn\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「お礼を言われたときの返事」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"감사 인사를 받았을 때 답하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“被感谢时如何回应”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
       "situationByNative": {
-        "en": "A real-life moment where you need \"Reply When Someone Thanks You\".",
-        "vi": "Tình huống thật khi bạn cần dùng \"Đáp khi được cảm ơn\".",
-        "ja": "「お礼を言われたときの返事」が必要な実生活の場面。",
-        "ko": "\"감사 인사를 받았을 때 답하기\"가 필요한 실제 상황.",
-        "zh": "需要用到“被感谢时如何回应”的真实场景。"
-      },
-      "canSayByNative": {
-        "en": "After this lesson, you can handle \"Reply When Someone Thanks You\" in simple conversations.",
-        "vi": "Sau bài này, bạn có thể dùng \"Đáp khi được cảm ơn\" trong hội thoại đơn giản.",
-        "ja": "このレッスンの後、「お礼を言われたときの返事」を簡単な会話で使えます。",
-        "ko": "이 레슨 후 간단한 대화에서 \"감사 인사를 받았을 때 답하기\"를 사용할 수 있습니다.",
-        "zh": "学完本课后，你可以在简单对话中使用“被感谢时如何回应”。"
+        "vi": "Ai đó vừa cảm ơn bạn, hoặc bày tỏ lòng biết ơn với bạn.\nBạn đáp lại theo đúng mức lịch sự và đúng lý do được cảm ơn.",
+        "en": "Someone has just thanked you, or expressed gratitude toward you.\nYou reply at the right level of politeness and for the right reason.",
+        "ja": "誰かがあなたにお礼を言った、または感謝の気持ちを伝えたところです。\nその丁寧さのレベルと感謝された理由に合わせて返事をします。"
       },
       "objectives": [
-        "Learn to use \"Reply When Someone Thanks You\" naturally in daily conversation."
+        "Đáp lại lời cảm ơn một cách lịch sự bằng どういたしまして.",
+        "Đáp lại lời cảm ơn một cách thân mật, giản dị bằng いえいえ.",
+        "Khiêm tốn từ chối lời khen bằng とんでもございません.",
+        "Trấn an người khác rằng không cần bận tâm bằng 気にしないでください.",
+        "Bày tỏ vui vì đã giúp được bằng お役に立てて良かったです.",
+        "Dùng こちらこそ để đáp lễ khi ai đó bày tỏ lòng biết ơn với mình — cách dùng khác của từ đã học ở bài chào hỏi.",
+        "Chọn đúng cách đáp theo mức lịch sự và lý do được cảm ơn."
       ],
       "objectivesVi": [
-        "Học cách dùng \"Đáp khi được cảm ơn\" một cách tự nhiên trong giao tiếp hằng ngày."
+        "Đáp lại lời cảm ơn một cách lịch sự bằng どういたしまして.",
+        "Đáp lại lời cảm ơn một cách thân mật, giản dị bằng いえいえ.",
+        "Khiêm tốn từ chối lời khen bằng とんでもございません.",
+        "Trấn an người khác rằng không cần bận tâm bằng 気にしないでください.",
+        "Bày tỏ vui vì đã giúp được bằng お役に立てて良かったです.",
+        "Dùng こちらこそ để đáp lễ khi ai đó bày tỏ lòng biết ơn với mình — cách dùng khác của từ đã học ở bài chào hỏi.",
+        "Chọn đúng cách đáp theo mức lịch sự và lý do được cảm ơn."
       ],
+      "objectivesByNative": {
+        "vi": [
+          "Đáp lại lời cảm ơn một cách lịch sự bằng どういたしまして.",
+          "Đáp lại lời cảm ơn một cách thân mật, giản dị bằng いえいえ.",
+          "Khiêm tốn từ chối lời khen bằng とんでもございません.",
+          "Trấn an người khác rằng không cần bận tâm bằng 気にしないでください.",
+          "Bày tỏ vui vì đã giúp được bằng お役に立てて良かったです.",
+          "Dùng こちらこそ để đáp lễ khi ai đó bày tỏ lòng biết ơn với mình — cách dùng khác của từ đã học ở bài chào hỏi.",
+          "Chọn đúng cách đáp theo mức lịch sự và lý do được cảm ơn."
+        ],
+        "en": [
+          "Reply to thanks politely with どういたしまして.",
+          "Reply to thanks casually and simply with いえいえ.",
+          "Humbly deflect a compliment with とんでもございません.",
+          "Reassure someone not to worry, with 気にしないでください.",
+          "Express that you are glad to have helped, with お役に立てて良かったです.",
+          "Use こちらこそ to reciprocate when someone expresses gratitude toward you — a different use of a word already learned in the greetings lesson.",
+          "Choose the right reply based on politeness level and the reason for the thanks."
+        ],
+        "ja": [
+          "「どういたしまして」で丁寧にお礼の返事ができます。",
+          "「いえいえ」でカジュアルにお礼の返事ができます。",
+          "「とんでもございません」で褒め言葉を謙遜して打ち消せます。",
+          "「気にしないでください」で相手を安心させられます。",
+          "「お役に立てて良かったです」で、役に立てたことへの喜びを伝えられます。",
+          "「こちらこそ」で相手の感謝の気持ちに応えられます — 挨拶のレッスンで習った使い方とは別の使い方です。",
+          "丁寧さのレベルと感謝された理由に合わせて、正しい返事を選べます。"
+        ]
+      },
       "introPoints": [
-        "A real-life moment where you need \"Reply When Someone Thanks You\".",
-        "After this lesson, you can handle \"Reply When Someone Thanks You\" in simple conversations."
+        "Đáp lại lời cảm ơn một cách lịch sự bằng どういたしまして.",
+        "Đáp lại lời cảm ơn một cách thân mật, giản dị bằng いえいえ.",
+        "Khiêm tốn từ chối lời khen bằng とんでもございません.",
+        "Trấn an người khác rằng không cần bận tâm bằng 気にしないでください.",
+        "Bày tỏ vui vì đã giúp được bằng お役に立てて良かったです.",
+        "Dùng こちらこそ để đáp lễ khi ai đó bày tỏ lòng biết ơn với mình — cách dùng khác của từ đã học ở bài chào hỏi.",
+        "Chọn đúng cách đáp theo mức lịch sự và lý do được cảm ơn."
       ],
       "introPointsVi": [
-        "Tình huống thật khi bạn cần dùng \"Đáp khi được cảm ơn\".",
-        "Sau bài này, bạn có thể dùng \"Đáp khi được cảm ơn\" trong hội thoại đơn giản."
+        "Đáp lại lời cảm ơn một cách lịch sự bằng どういたしまして.",
+        "Đáp lại lời cảm ơn một cách thân mật, giản dị bằng いえいえ.",
+        "Khiêm tốn từ chối lời khen bằng とんでもございません.",
+        "Trấn an người khác rằng không cần bận tâm bằng 気にしないでください.",
+        "Bày tỏ vui vì đã giúp được bằng お役に立てて良かったです.",
+        "Dùng こちらこそ để đáp lễ khi ai đó bày tỏ lòng biết ơn với mình — cách dùng khác của từ đã học ở bài chào hỏi.",
+        "Chọn đúng cách đáp theo mức lịch sự và lý do được cảm ơn."
       ],
       "introPointsByNative": {
         "vi": [
-          "Tình huống thật khi bạn cần dùng \"Đáp khi được cảm ơn\".",
-          "Sau bài này, bạn có thể dùng \"Đáp khi được cảm ơn\" trong hội thoại đơn giản."
+          "Đáp lại lời cảm ơn một cách lịch sự bằng どういたしまして.",
+          "Đáp lại lời cảm ơn một cách thân mật, giản dị bằng いえいえ.",
+          "Khiêm tốn từ chối lời khen bằng とんでもございません.",
+          "Trấn an người khác rằng không cần bận tâm bằng 気にしないでください.",
+          "Bày tỏ vui vì đã giúp được bằng お役に立てて良かったです.",
+          "Dùng こちらこそ để đáp lễ khi ai đó bày tỏ lòng biết ơn với mình — cách dùng khác của từ đã học ở bài chào hỏi.",
+          "Chọn đúng cách đáp theo mức lịch sự và lý do được cảm ơn."
         ],
         "en": [
-          "A real-life moment where you need \"Reply When Someone Thanks You\".",
-          "After this lesson, you can handle \"Reply When Someone Thanks You\" in simple conversations."
+          "Reply to thanks politely with どういたしまして.",
+          "Reply to thanks casually and simply with いえいえ.",
+          "Humbly deflect a compliment with とんでもございません.",
+          "Reassure someone not to worry, with 気にしないでください.",
+          "Express that you are glad to have helped, with お役に立てて良かったです.",
+          "Use こちらこそ to reciprocate when someone expresses gratitude toward you — a different use of a word already learned in the greetings lesson.",
+          "Choose the right reply based on politeness level and the reason for the thanks."
         ],
         "ja": [
-          "「お礼を言われたときの返事」が必要な実生活の場面。",
-          "このレッスンの後、「お礼を言われたときの返事」を簡単な会話で使えます。"
-        ],
-        "ko": [
-          "\"감사 인사를 받았을 때 답하기\"가 필요한 실제 상황.",
-          "이 레슨 후 간단한 대화에서 \"감사 인사를 받았을 때 답하기\"를 사용할 수 있습니다."
-        ],
-        "zh": [
-          "需要用到“被感谢时如何回应”的真实场景。",
-          "学完本课后，你可以在简单对话中使用“被感谢时如何回应”。"
+          "「どういたしまして」で丁寧にお礼の返事ができます。",
+          "「いえいえ」でカジュアルにお礼の返事ができます。",
+          "「とんでもございません」で褒め言葉を謙遜して打ち消せます。",
+          "「気にしないでください」で相手を安心させられます。",
+          "「お役に立てて良かったです」で、役に立てたことへの喜びを伝えられます。",
+          "「こちらこそ」で相手の感謝の気持ちに応えられます — 挨拶のレッスンで習った使い方とは別の使い方です。",
+          "丁寧さのレベルと感謝された理由に合わせて、正しい返事を選べます。"
         ]
       },
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 12,
       "track": "ja-daily_life",
-      "vocabulary": [],
+      "vocabulary": [
+        {
+          "id": "douitashimashite",
+          "displayText": "どういたしまして",
+          "reading": "どういたしまして",
+          "romanization": "dou itashimashite",
+          "speechText": "どういたしまして",
+          "meaningVi": "Đáp lại lời cảm ơn (lịch sự, chung chung).",
+          "translationByNative": {
+            "vi": "Đáp lại lời cảm ơn (lịch sự, chung chung).",
+            "en": "Reply to thanks (polite, generic).",
+            "ja": "お礼への返事（丁寧、一般的）。"
+          },
+          "translations": {
+            "vi": "Đáp lại lời cảm ơn (lịch sự, chung chung).",
+            "en": "Reply to thanks (polite, generic).",
+            "ja": "お礼への返事（丁寧、一般的）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "ieie",
+          "displayText": "いえいえ",
+          "reading": "いえいえ",
+          "romanization": "ie ie",
+          "speechText": "いえいえ",
+          "meaningVi": "Đáp lại lời cảm ơn (thân mật).",
+          "translationByNative": {
+            "vi": "Đáp lại lời cảm ơn (thân mật).",
+            "en": "Reply to thanks (casual).",
+            "ja": "お礼への返事（カジュアル）。"
+          },
+          "translations": {
+            "vi": "Đáp lại lời cảm ơn (thân mật).",
+            "en": "Reply to thanks (casual).",
+            "ja": "お礼への返事（カジュアル）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "tondemonai",
+          "displayText": "とんでもない",
+          "reading": "とんでもない",
+          "romanization": "tondemonai",
+          "speechText": "とんでもない",
+          "meaningVi": "Từ chối lời khen/cảm ơn quá lời (thân mật).",
+          "translationByNative": {
+            "vi": "Từ chối lời khen/cảm ơn quá lời (thân mật).",
+            "en": "Deflect excessive praise or thanks (casual).",
+            "ja": "大げさな褒め言葉やお礼を打ち消す（カジュアル）。"
+          },
+          "translations": {
+            "vi": "Từ chối lời khen/cảm ơn quá lời (thân mật).",
+            "en": "Deflect excessive praise or thanks (casual).",
+            "ja": "大げさな褒め言葉やお礼を打ち消す（カジュアル）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "tondemogozaimasen",
+          "displayText": "とんでもございません",
+          "reading": "とんでもございません",
+          "romanization": "tondemo gozaimasen",
+          "speechText": "とんでもございません",
+          "meaningVi": "Từ chối lời khen/cảm ơn quá lời (lịch sự).",
+          "translationByNative": {
+            "vi": "Từ chối lời khen/cảm ơn quá lời (lịch sự).",
+            "en": "Deflect excessive praise or thanks (polite).",
+            "ja": "大げさな褒め言葉やお礼を打ち消す（丁寧）。"
+          },
+          "translations": {
+            "vi": "Từ chối lời khen/cảm ơn quá lời (lịch sự).",
+            "en": "Deflect excessive praise or thanks (polite).",
+            "ja": "大げさな褒め言葉やお礼を打ち消す（丁寧）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "kininaide",
+          "displayText": "気（き）にしないでください",
+          "reading": "きにしないでください",
+          "romanization": "ki ni shinaide kudasai",
+          "speechText": "きにしないでください",
+          "meaningVi": "Đừng bận tâm về việc đó (lịch sự).",
+          "translationByNative": {
+            "vi": "Đừng bận tâm về việc đó (lịch sự).",
+            "en": "Please do not worry about it (polite).",
+            "ja": "そのことを気にしないでほしい（丁寧）。"
+          },
+          "translations": {
+            "vi": "Đừng bận tâm về việc đó (lịch sự).",
+            "en": "Please do not worry about it (polite).",
+            "ja": "そのことを気にしないでほしい（丁寧）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "oyakunitatete",
+          "displayText": "お役（やく）に立（た）てて良（よ）かったです",
+          "reading": "おやくにたててよかったです",
+          "romanization": "oyaku ni tatete yokatta desu",
+          "speechText": "おやくにたててよかったです",
+          "meaningVi": "Vui vì đã giúp được (lịch sự).",
+          "translationByNative": {
+            "vi": "Vui vì đã giúp được (lịch sự).",
+            "en": "Glad to have been able to help (polite).",
+            "ja": "役に立てて嬉しい（丁寧）。"
+          },
+          "translations": {
+            "vi": "Vui vì đã giúp được (lịch sự).",
+            "en": "Glad to have been able to help (polite).",
+            "ja": "役に立てて嬉しい（丁寧）。"
+          },
+          "audioLocale": "ja-JP"
+        }
+      ],
       "keyPhrases": [],
-      "dialogue": [],
+      "dialogue": [
+        {
+          "targetText": "すみません。",
+          "displayText": "すみません。",
+          "reading": "すみません。",
+          "speechText": "すみません",
+          "translationByNative": {
+            "vi": "Phiền chị quá.",
+            "en": "Sorry to trouble you.",
+            "ja": "すみません。"
+          },
+          "translations": {
+            "vi": "Phiền chị quá.",
+            "en": "Sorry to trouble you.",
+            "ja": "すみません。"
+          },
+          "meaningVi": "Phiền chị quá.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m02-u1-l2-lost-eraser-help-1"
+        },
+        {
+          "targetText": "あ、見（み）つけました。私（わたし）の足元（あしもと）にありましたよ。",
+          "displayText": "あ、見（み）つけました。私（わたし）の足元（あしもと）にありましたよ。",
+          "reading": "あ、みつけました。わたしのあしもとにありましたよ。",
+          "speechText": "あ、みつけました。わたしのあしもとにありましたよ",
+          "translationByNative": {
+            "vi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+            "en": "Oh, I found it. It was under my feet.",
+            "ja": "あ、見つけました。私の足元にありましたよ。"
+          },
+          "translations": {
+            "vi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+            "en": "Oh, I found it. It was under my feet.",
+            "ja": "あ、見つけました。私の足元にありましたよ。"
+          },
+          "meaningVi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m02-u1-l2-lost-eraser-help-2"
+        },
+        {
+          "targetText": "どうもありがとうございます。",
+          "displayText": "どうもありがとうございます。",
+          "reading": "どうもありがとうございます。",
+          "speechText": "どうもありがとうございます",
+          "translationByNative": {
+            "vi": "Cảm ơn chị nhiều ạ.",
+            "en": "Thank you very much.",
+            "ja": "どうもありがとうございます。"
+          },
+          "translations": {
+            "vi": "Cảm ơn chị nhiều ạ.",
+            "en": "Thank you very much.",
+            "ja": "どうもありがとうございます。"
+          },
+          "meaningVi": "Cảm ơn chị nhiều ạ.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m02-u1-l2-lost-eraser-help-3"
+        },
+        {
+          "targetText": "どういたしまして。",
+          "displayText": "どういたしまして。",
+          "reading": "どういたしまして。",
+          "speechText": "どういたしまして",
+          "translationByNative": {
+            "vi": "Không có gì đâu.",
+            "en": "You're welcome.",
+            "ja": "どういたしまして。"
+          },
+          "translations": {
+            "vi": "Không có gì đâu.",
+            "en": "You're welcome.",
+            "ja": "どういたしまして。"
+          },
+          "meaningVi": "Không có gì đâu.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m02-u1-l2-lost-eraser-help-4"
+        },
+        {
+          "targetText": "右上（みぎうえ）にあります。",
+          "displayText": "右上（みぎうえ）にあります。",
+          "reading": "みぎうえにあります。",
+          "speechText": "みぎうえにあります",
+          "translationByNative": {
+            "vi": "Ở phía trên bên phải.",
+            "en": "It is on the upper right.",
+            "ja": "右上にあります。"
+          },
+          "translations": {
+            "vi": "Ở phía trên bên phải.",
+            "en": "It is on the upper right.",
+            "ja": "右上にあります。"
+          },
+          "meaningVi": "Ở phía trên bên phải.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-1"
+        },
+        {
+          "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+          "displayText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+          "reading": "みぎうえですね。ではとりますよ。このようなかんじでどうですか？",
+          "speechText": "みぎうえですね。ではとりますよ。このようなかんじでどうですか",
+          "translationByNative": {
+            "vi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+            "en": "Upper right, got it. I will take the photo now. How does this look?",
+            "ja": "右上ですね。では撮りますよ。このような感じでどうですか？"
+          },
+          "translations": {
+            "vi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+            "en": "Upper right, got it. I will take the photo now. How does this look?",
+            "ja": "右上ですね。では撮りますよ。このような感じでどうですか？"
+          },
+          "meaningVi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-2"
+        },
+        {
+          "targetText": "はい、ありがとうございました。",
+          "displayText": "はい、ありがとうございました。",
+          "reading": "はい、ありがとうございました。",
+          "speechText": "はい、ありがとうございました",
+          "translationByNative": {
+            "vi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+            "en": "Yes, thank you very much.",
+            "ja": "はい、ありがとうございました。"
+          },
+          "translations": {
+            "vi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+            "en": "Yes, thank you very much.",
+            "ja": "はい、ありがとうございました。"
+          },
+          "meaningVi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-3"
+        },
+        {
+          "targetText": "どういたしまして。",
+          "displayText": "どういたしまして。",
+          "reading": "どういたしまして。",
+          "speechText": "どういたしまして",
+          "translationByNative": {
+            "vi": "Không có gì đâu.",
+            "en": "You're welcome.",
+            "ja": "どういたしまして。"
+          },
+          "translations": {
+            "vi": "Không có gì đâu.",
+            "en": "You're welcome.",
+            "ja": "どういたしまして。"
+          },
+          "meaningVi": "Không có gì đâu.",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-4"
+        },
+        {
+          "targetText": "田中（たなか）さんには、いつもお世話（せわ）になっています。",
+          "displayText": "田中（たなか）さんには、いつもお世話（せわ）になっています。",
+          "reading": "たなかさんには、いつもおせわになっています。",
+          "speechText": "たなかさんには、いつもおせわになっています",
+          "translationByNative": {
+            "vi": "Tôi luôn được anh Tanaka giúp đỡ nhiều.",
+            "en": "I'm always in Tanaka's debt.",
+            "ja": "田中さんには、いつもお世話になっています。"
+          },
+          "translations": {
+            "vi": "Tôi luôn được anh Tanaka giúp đỡ nhiều.",
+            "en": "I'm always in Tanaka's debt.",
+            "ja": "田中さんには、いつもお世話になっています。"
+          },
+          "meaningVi": "Tôi luôn được anh Tanaka giúp đỡ nhiều.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m02-u1-l2-ongoing-gratitude-1"
+        },
+        {
+          "targetText": "こちらこそ、お世話（せわ）になっています。",
+          "displayText": "こちらこそ、お世話（せわ）になっています。",
+          "reading": "こちらこそ、おせわになっています。",
+          "speechText": "こちらこそ、おせわになっています",
+          "translationByNative": {
+            "vi": "Không, chính tôi mới là người phải cảm ơn chị.",
+            "en": "No, it is I who should be thanking you.",
+            "ja": "こちらこそ、お世話になっています。"
+          },
+          "translations": {
+            "vi": "Không, chính tôi mới là người phải cảm ơn chị.",
+            "en": "No, it is I who should be thanking you.",
+            "ja": "こちらこそ、お世話になっています。"
+          },
+          "meaningVi": "Không, chính tôi mới là người phải cảm ơn chị.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m02-u1-l2-ongoing-gratitude-2"
+        }
+      ],
+      "dialogueGroups": [
+        {
+          "id": "ja-daily_life-m02-u1-l2-lost-eraser-help",
+          "titleByNative": {
+            "vi": "Lịch sự — được giúp tìm đồ",
+            "en": "Polite — helped find something",
+            "ja": "丁寧 — 物を探すのを手伝ってもらう"
+          },
+          "situationByNative": {
+            "vi": "Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự theo đúng trạng thái trong nguồn. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.",
+            "en": "Relationship: two classmates who are not yet close — keeping the polite register as it appears in the source. Situation: Sato dropped an eraser, and Ito helps look and finds it.",
+            "ja": "関係性：まだ親しくないクラスメート同士 — 出典どおり丁寧体を保っています。場面：佐藤が消しゴムを落とし、伊藤が捜すのを手伝って見つけます。"
+          },
+          "explanationByNative": {
+            "vi": "どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.\nCả hai giữ thể lịch sự vì là bạn học chưa thân, đúng trạng thái trong nguồn.",
+            "en": "どういたしまして is the standard polite reply, usable for almost any thanks, without needing to specify anything.\nBoth keep the polite register since they are classmates who are not yet close, matching the source.",
+            "ja": "「どういたしまして」は標準的な丁寧な返事で、具体的な内容を言わなくても、ほとんどのお礼に使えます。\n二人ともまだ親しくないクラスメートなので丁寧体を保っています。出典どおりです。"
+          },
+          "lines": [
+            {
+              "targetText": "すみません。",
+              "displayText": "すみません。",
+              "reading": "すみません。",
+              "speechText": "すみません",
+              "translationByNative": {
+                "vi": "Phiền chị quá.",
+                "en": "Sorry to trouble you.",
+                "ja": "すみません。"
+              },
+              "translations": {
+                "vi": "Phiền chị quá.",
+                "en": "Sorry to trouble you.",
+                "ja": "すみません。"
+              },
+              "meaningVi": "Phiền chị quá.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m02-u1-l2-lost-eraser-help-1"
+            },
+            {
+              "targetText": "あ、見（み）つけました。私（わたし）の足元（あしもと）にありましたよ。",
+              "displayText": "あ、見（み）つけました。私（わたし）の足元（あしもと）にありましたよ。",
+              "reading": "あ、みつけました。わたしのあしもとにありましたよ。",
+              "speechText": "あ、みつけました。わたしのあしもとにありましたよ",
+              "translationByNative": {
+                "vi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+                "en": "Oh, I found it. It was under my feet.",
+                "ja": "あ、見つけました。私の足元にありましたよ。"
+              },
+              "translations": {
+                "vi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+                "en": "Oh, I found it. It was under my feet.",
+                "ja": "あ、見つけました。私の足元にありましたよ。"
+              },
+              "meaningVi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m02-u1-l2-lost-eraser-help-2"
+            },
+            {
+              "targetText": "どうもありがとうございます。",
+              "displayText": "どうもありがとうございます。",
+              "reading": "どうもありがとうございます。",
+              "speechText": "どうもありがとうございます",
+              "translationByNative": {
+                "vi": "Cảm ơn chị nhiều ạ.",
+                "en": "Thank you very much.",
+                "ja": "どうもありがとうございます。"
+              },
+              "translations": {
+                "vi": "Cảm ơn chị nhiều ạ.",
+                "en": "Thank you very much.",
+                "ja": "どうもありがとうございます。"
+              },
+              "meaningVi": "Cảm ơn chị nhiều ạ.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m02-u1-l2-lost-eraser-help-3"
+            },
+            {
+              "targetText": "どういたしまして。",
+              "displayText": "どういたしまして。",
+              "reading": "どういたしまして。",
+              "speechText": "どういたしまして",
+              "translationByNative": {
+                "vi": "Không có gì đâu.",
+                "en": "You're welcome.",
+                "ja": "どういたしまして。"
+              },
+              "translations": {
+                "vi": "Không có gì đâu.",
+                "en": "You're welcome.",
+                "ja": "どういたしまして。"
+              },
+              "meaningVi": "Không có gì đâu.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m02-u1-l2-lost-eraser-help-4"
+            }
+          ]
+        },
+        {
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done",
+          "titleByNative": {
+            "vi": "Lịch sự — việc đã xong (nối tiếp bài trước)",
+            "en": "Polite — something finished (continuing the previous lesson)",
+            "ja": "丁寧 — 終わったこと（前のレッスンの続き）"
+          },
+          "situationByNative": {
+            "vi": "Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).",
+            "en": "Relationship: as already established in the previous lesson (m02-u1-l1) — two people of equal standing on a trip, keeping the polite register. Situation: this continues RIGHT AFTER the passage already taught in the previous lesson — Sato has just finished taking a photo for Tanaka, is thanked, and THIS TIME replies with どういたしまして (the reply that lesson left out).",
+            "ja": "関係性：前のレッスン（m02-u1-l1）ですでに設定した通り — 旅行中の対等な二人、丁寧体を保っています。場面：前のレッスンで習った箇所のすぐ続き — 佐藤が田中の写真を撮り終えてお礼を言われ、今回は「どういたしまして」と返事をします（前のレッスンでは抜けていた返事）。"
+          },
+          "explanationByNative": {
+            "vi": "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.\nCùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.",
+            "en": "This continues the previous lesson — the first turns (右上にあります／では撮りますよ／ありがとうございました) were already taught in m02-u1-l1; どういたしまして is new in this lesson.\nThe same どういたしまして, but a different situation from group 1 (one is travel/photos, the other is helping find something in class) — showing this phrase works across many situations.",
+            "ja": "これは前のレッスンの続きです — 最初のやり取り（右上にあります／では撮りますよ／ありがとうございました）はm02-u1-l1ですでに習っており、「どういたしまして」がこのレッスンの新しい部分です。\n同じ「どういたしまして」ですが、グループ1とは場面が異なります（一方は旅行・写真、もう一方は教室で物を探す手伝い）— この表現が様々な場面で使えることが分かります。"
+          },
+          "lines": [
+            {
+              "targetText": "右上（みぎうえ）にあります。",
+              "displayText": "右上（みぎうえ）にあります。",
+              "reading": "みぎうえにあります。",
+              "speechText": "みぎうえにあります",
+              "translationByNative": {
+                "vi": "Ở phía trên bên phải.",
+                "en": "It is on the upper right.",
+                "ja": "右上にあります。"
+              },
+              "translations": {
+                "vi": "Ở phía trên bên phải.",
+                "en": "It is on the upper right.",
+                "ja": "右上にあります。"
+              },
+              "meaningVi": "Ở phía trên bên phải.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-1"
+            },
+            {
+              "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+              "displayText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+              "reading": "みぎうえですね。ではとりますよ。このようなかんじでどうですか？",
+              "speechText": "みぎうえですね。ではとりますよ。このようなかんじでどうですか",
+              "translationByNative": {
+                "vi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+                "en": "Upper right, got it. I will take the photo now. How does this look?",
+                "ja": "右上ですね。では撮りますよ。このような感じでどうですか？"
+              },
+              "translations": {
+                "vi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+                "en": "Upper right, got it. I will take the photo now. How does this look?",
+                "ja": "右上ですね。では撮りますよ。このような感じでどうですか？"
+              },
+              "meaningVi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-2"
+            },
+            {
+              "targetText": "はい、ありがとうございました。",
+              "displayText": "はい、ありがとうございました。",
+              "reading": "はい、ありがとうございました。",
+              "speechText": "はい、ありがとうございました",
+              "translationByNative": {
+                "vi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+                "en": "Yes, thank you very much.",
+                "ja": "はい、ありがとうございました。"
+              },
+              "translations": {
+                "vi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+                "en": "Yes, thank you very much.",
+                "ja": "はい、ありがとうございました。"
+              },
+              "meaningVi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-3"
+            },
+            {
+              "targetText": "どういたしまして。",
+              "displayText": "どういたしまして。",
+              "reading": "どういたしまして。",
+              "speechText": "どういたしまして",
+              "translationByNative": {
+                "vi": "Không có gì đâu.",
+                "en": "You're welcome.",
+                "ja": "どういたしまして。"
+              },
+              "translations": {
+                "vi": "Không có gì đâu.",
+                "en": "You're welcome.",
+                "ja": "どういたしまして。"
+              },
+              "meaningVi": "Không có gì đâu.",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-4"
+            }
+          ]
+        },
+        {
+          "id": "ja-daily_life-m02-u1-l2-ongoing-gratitude",
+          "titleByNative": {
+            "vi": "こちらこそ — đáp lễ lòng biết ơn (KHÁC bài trước)",
+            "en": "こちらこそ — reciprocating gratitude (DIFFERENT from the previous lesson)",
+            "ja": "「こちらこそ」— 感謝の気持ちに応える（前のレッスンとは別の使い方）"
+          },
+          "situationByNative": {
+            "vi": "Vai vế: hai đồng nghiệp/người quen đã biết nhau lâu. Bối cảnh: KHÔNG PHẢI đáp lại một lời cảm ơn cụ thể vừa xảy ra như hai nhóm trên — đây là cách bày tỏ lòng biết ơn/thiện chí CHUNG khi nhắc tới mối quan hệ đôi bên, một tình huống KHÁC. こちらこそ ở đây KHÔNG phải đáp lễ lời chào よろしくお願いします như đã học ở bài chào hỏi.",
+            "en": "Relationship: two colleagues/acquaintances who have known each other for a long time. Situation: this is NOT a reply to a specific thanks that just happened, unlike the two groups above — this is a general way of expressing mutual gratitude/goodwill when the relationship itself comes up, a DIFFERENT situation. こちらこそ here is NOT reciprocating a よろしくお願いします greeting like in the greetings lesson.",
+            "ja": "関係性：長年の付き合いがある同僚・知人同士。場面：上の二つのグループのように、今起きた具体的なお礼への返事ではありません — これは、間柄そのものに触れたときにお互いへの感謝や好意を伝える、別の場面です。ここでの「こちらこそ」は、挨拶のレッスンで習った「よろしくお願いします」への返事ではありません。"
+          },
+          "explanationByNative": {
+            "vi": "こちらこそ ở đây đáp lại một câu bày tỏ lòng biết ơn về MỐI QUAN HỆ nói chung (お世話になっています), khác với こちらこそ đáp lễ lời chào ở bài trước.\nKhông có lời cảm ơn CỤ THỂ vừa xảy ra (như \"cảm ơn vì đã giúp tìm đồ\") — đây là cách hai người quen biết lâu bày tỏ thiện ý với nhau.",
+            "en": "Here こちらこそ replies to a statement expressing gratitude about the RELATIONSHIP in general (お世話になっています), unlike the こちらこそ that reciprocated a greeting in the earlier lesson.\nThere is no SPECIFIC thanks that just happened (like \"thanks for helping find something\") — this is how two long-time acquaintances express goodwill toward each other.",
+            "ja": "ここでの「こちらこそ」は、間柄全体への感謝の言葉（お世話になっています）への返事であり、前のレッスンで挨拶に返事をした「こちらこそ」とは異なります。\n（「探すのを手伝ってくれてありがとう」のような）具体的なお礼が今起きたわけではありません — これは長い付き合いのある二人がお互いへの好意を伝える方法です。"
+          },
+          "lines": [
+            {
+              "targetText": "田中（たなか）さんには、いつもお世話（せわ）になっています。",
+              "displayText": "田中（たなか）さんには、いつもお世話（せわ）になっています。",
+              "reading": "たなかさんには、いつもおせわになっています。",
+              "speechText": "たなかさんには、いつもおせわになっています",
+              "translationByNative": {
+                "vi": "Tôi luôn được anh Tanaka giúp đỡ nhiều.",
+                "en": "I'm always in Tanaka's debt.",
+                "ja": "田中さんには、いつもお世話になっています。"
+              },
+              "translations": {
+                "vi": "Tôi luôn được anh Tanaka giúp đỡ nhiều.",
+                "en": "I'm always in Tanaka's debt.",
+                "ja": "田中さんには、いつもお世話になっています。"
+              },
+              "meaningVi": "Tôi luôn được anh Tanaka giúp đỡ nhiều.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m02-u1-l2-ongoing-gratitude-1"
+            },
+            {
+              "targetText": "こちらこそ、お世話（せわ）になっています。",
+              "displayText": "こちらこそ、お世話（せわ）になっています。",
+              "reading": "こちらこそ、おせわになっています。",
+              "speechText": "こちらこそ、おせわになっています",
+              "translationByNative": {
+                "vi": "Không, chính tôi mới là người phải cảm ơn chị.",
+                "en": "No, it is I who should be thanking you.",
+                "ja": "こちらこそ、お世話になっています。"
+              },
+              "translations": {
+                "vi": "Không, chính tôi mới là người phải cảm ơn chị.",
+                "en": "No, it is I who should be thanking you.",
+                "ja": "こちらこそ、お世話になっています。"
+              },
+              "meaningVi": "Không, chính tôi mới là người phải cảm ơn chị.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m02-u1-l2-ongoing-gratitude-2"
+            }
+          ]
+        }
+      ],
       "reviewItems": [],
       "grammarFocus": null,
       "grammarFocusVi": null,
       "cultureNote": null,
       "cultureNoteVi": null,
-      "contentStatus": "blueprint",
-      "playable": false,
-      "comingSoon": true,
-      "canSkip": true,
-      "exerciseStatus": "placeholder",
-      "learnSection": {
-        "vocabularyPhraseCards": {
-          "status": "placeholder"
+      "contextualVariations": [],
+      "communicationStrategyByNative": {},
+      "lessonFormat": "five_cards",
+      "fiveCardContent": {
+        "mainCards": [
+          "intro",
+          "vocabulary",
+          "dialogue",
+          "grammar",
+          "practice"
+        ],
+        "targetLanguage": "ja",
+        "targetLocale": "ja-JP",
+        "cultureContext": "Japan",
+        "approvedCharacterNamePool": [
+          {
+            "id": "tanaka",
+            "displayName": "田中（たなか）",
+            "canonicalName": "田中",
+            "audioName": "たなか"
+          },
+          {
+            "id": "ito",
+            "displayName": "伊藤（いとう）",
+            "canonicalName": "伊藤",
+            "audioName": "いとう"
+          },
+          {
+            "id": "sato",
+            "displayName": "佐藤（さとう）",
+            "canonicalName": "佐藤",
+            "audioName": "さとう"
+          },
+          {
+            "id": "sensei",
+            "displayName": "先生（せんせい）",
+            "canonicalName": "先生",
+            "audioName": "せんせい"
+          }
+        ],
+        "intro": {
+          "objectives": [
+            "Đáp lại lời cảm ơn một cách lịch sự bằng どういたしまして.",
+            "Đáp lại lời cảm ơn một cách thân mật, giản dị bằng いえいえ.",
+            "Khiêm tốn từ chối lời khen bằng とんでもございません.",
+            "Trấn an người khác rằng không cần bận tâm bằng 気にしないでください.",
+            "Bày tỏ vui vì đã giúp được bằng お役に立てて良かったです.",
+            "Dùng こちらこそ để đáp lễ khi ai đó bày tỏ lòng biết ơn với mình — cách dùng khác của từ đã học ở bài chào hỏi.",
+            "Chọn đúng cách đáp theo mức lịch sự và lý do được cảm ơn."
+          ],
+          "objectivesByNative": {
+            "vi": [
+              "Đáp lại lời cảm ơn một cách lịch sự bằng どういたしまして.",
+              "Đáp lại lời cảm ơn một cách thân mật, giản dị bằng いえいえ.",
+              "Khiêm tốn từ chối lời khen bằng とんでもございません.",
+              "Trấn an người khác rằng không cần bận tâm bằng 気にしないでください.",
+              "Bày tỏ vui vì đã giúp được bằng お役に立てて良かったです.",
+              "Dùng こちらこそ để đáp lễ khi ai đó bày tỏ lòng biết ơn với mình — cách dùng khác của từ đã học ở bài chào hỏi.",
+              "Chọn đúng cách đáp theo mức lịch sự và lý do được cảm ơn."
+            ],
+            "en": [
+              "Reply to thanks politely with どういたしまして.",
+              "Reply to thanks casually and simply with いえいえ.",
+              "Humbly deflect a compliment with とんでもございません.",
+              "Reassure someone not to worry, with 気にしないでください.",
+              "Express that you are glad to have helped, with お役に立てて良かったです.",
+              "Use こちらこそ to reciprocate when someone expresses gratitude toward you — a different use of a word already learned in the greetings lesson.",
+              "Choose the right reply based on politeness level and the reason for the thanks."
+            ],
+            "ja": [
+              "「どういたしまして」で丁寧にお礼の返事ができます。",
+              "「いえいえ」でカジュアルにお礼の返事ができます。",
+              "「とんでもございません」で褒め言葉を謙遜して打ち消せます。",
+              "「気にしないでください」で相手を安心させられます。",
+              "「お役に立てて良かったです」で、役に立てたことへの喜びを伝えられます。",
+              "「こちらこそ」で相手の感謝の気持ちに応えられます — 挨拶のレッスンで習った使い方とは別の使い方です。",
+              "丁寧さのレベルと感謝された理由に合わせて、正しい返事を選べます。"
+            ]
+          },
+          "situation": [
+            "Ai đó vừa cảm ơn bạn, hoặc bày tỏ lòng biết ơn với bạn.",
+            "Bạn đáp lại theo đúng mức lịch sự và đúng lý do được cảm ơn."
+          ],
+          "situationByNative": {
+            "vi": [
+              "Ai đó vừa cảm ơn bạn, hoặc bày tỏ lòng biết ơn với bạn.",
+              "Bạn đáp lại theo đúng mức lịch sự và đúng lý do được cảm ơn."
+            ],
+            "en": [
+              "Someone has just thanked you, or expressed gratitude toward you.",
+              "You reply at the right level of politeness and for the right reason."
+            ],
+            "ja": [
+              "誰かがあなたにお礼を言った、または感謝の気持ちを伝えたところです。",
+              "その丁寧さのレベルと感謝された理由に合わせて返事をします。"
+            ]
+          },
+          "examples": [
+            {
+              "label": "Lịch sự, chung chung:",
+              "labelByNative": {
+                "vi": "Lịch sự, chung chung:",
+                "en": "Politely, in general:",
+                "ja": "丁寧に、一般的に："
+              },
+              "speaker": "",
+              "targetText": "どういたしまして。",
+              "displayText": "どういたしまして。",
+              "reading": "どういたしまして。",
+              "speechText": "どういたしまして",
+              "translationByNative": {
+                "vi": "Không có gì đâu.",
+                "en": "You're welcome.",
+                "ja": "どういたしまして。"
+              },
+              "translations": {
+                "vi": "Không có gì đâu.",
+                "en": "You're welcome.",
+                "ja": "どういたしまして。"
+              },
+              "meaningVi": "Không có gì đâu.",
+              "audioLocale": "ja-JP"
+            },
+            {
+              "label": "Thân mật:",
+              "labelByNative": {
+                "vi": "Thân mật:",
+                "en": "Casually:",
+                "ja": "カジュアルに："
+              },
+              "speaker": "",
+              "targetText": "いえいえ。",
+              "displayText": "いえいえ。",
+              "reading": "いえいえ。",
+              "speechText": "いえいえ",
+              "translationByNative": {
+                "vi": "Không sao mà.",
+                "en": "It's nothing.",
+                "ja": "いえいえ。"
+              },
+              "translations": {
+                "vi": "Không sao mà.",
+                "en": "It's nothing.",
+                "ja": "いえいえ。"
+              },
+              "meaningVi": "Không sao mà.",
+              "audioLocale": "ja-JP"
+            },
+            {
+              "label": "Khi mình vừa giúp được việc:",
+              "labelByNative": {
+                "vi": "Khi mình vừa giúp được việc:",
+                "en": "When you have just helped with something:",
+                "ja": "何かを手伝えたとき："
+              },
+              "speaker": "",
+              "targetText": "お役（やく）に立（た）てて良（よ）かったです。",
+              "displayText": "お役（やく）に立（た）てて良（よ）かったです。",
+              "reading": "おやくにたててよかったです。",
+              "speechText": "おやくにたててよかったです",
+              "translationByNative": {
+                "vi": "Tôi vui vì đã giúp được ạ.",
+                "en": "I'm glad I could help.",
+                "ja": "お役に立てて良かったです。"
+              },
+              "translations": {
+                "vi": "Tôi vui vì đã giúp được ạ.",
+                "en": "I'm glad I could help.",
+                "ja": "お役に立てて良かったです。"
+              },
+              "meaningVi": "Tôi vui vì đã giúp được ạ.",
+              "audioLocale": "ja-JP"
+            }
+          ],
+          "importantNote": [
+            "どういたしまして dùng chung, không nói cụ thể vì sao được cảm ơn.",
+            "とんでもございません dùng khi lời khen/cảm ơn có vẻ quá lời — bạn khiêm tốn từ chối.",
+            "気にしないでください dùng khi có chút phiền phức mà bạn muốn người kia đừng bận tâm."
+          ],
+          "importantNoteByNative": {
+            "vi": [
+              "どういたしまして dùng chung, không nói cụ thể vì sao được cảm ơn.",
+              "とんでもございません dùng khi lời khen/cảm ơn có vẻ quá lời — bạn khiêm tốn từ chối.",
+              "気にしないでください dùng khi có chút phiền phức mà bạn muốn người kia đừng bận tâm."
+            ],
+            "en": [
+              "どういたしまして is generic — it does not name the specific reason for the thanks.",
+              "とんでもございません is for when a compliment or thanks feels excessive — you humbly deflect it.",
+              "気にしないでください is for when there was some minor trouble and you want the other person not to worry about it."
+            ],
+            "ja": [
+              "「どういたしまして」は一般的な表現で、感謝された具体的な理由には触れません。",
+              "「とんでもございません」は褒め言葉やお礼が大げさに感じられるときに、謙遜して打ち消す表現です。",
+              "「気にしないでください」は、多少の面倒があったときに相手を安心させる表現です。"
+            ]
+          }
         },
-        "grammarSentencePatterns": {
-          "status": "placeholder"
+        "vocabularyDetails": [
+          {
+            "id": "douitashimashite",
+            "timingAndContext": [
+              "Đáp lại lời cảm ơn một cách lịch sự, không nói rõ vì sao."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Đáp lại lời cảm ơn một cách lịch sự, không nói rõ vì sao."
+              ],
+              "en": [
+                "Reply to thanks politely, without specifying the reason."
+              ],
+              "ja": [
+                "理由を言わずに、丁寧にお礼の返事をするとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Thầy cô",
+              "Người trên",
+              "Người quen",
+              "Đồng nghiệp"
+            ],
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [
+              "Cách thân mật chuẩn:",
+              "いえいえ",
+              "Dùng với:",
+              "Bạn bè",
+              "Người ngang hàng đã thân"
+            ],
+            "overview": "Đáp lại lời cảm ơn (lịch sự, chung chung).",
+            "overviewByNative": {
+              "vi": "Đáp lại lời cảm ơn (lịch sự, chung chung).",
+              "en": "Reply to thanks (polite, generic).",
+              "ja": "お礼への返事（丁寧、一般的）。"
+            },
+            "examples": [
+              {
+                "text": "どういたしまして。",
+                "reading": "どういたしまして。",
+                "translation": "Không có gì đâu.",
+                "translationByNative": {
+                  "vi": "Không có gì đâu.",
+                  "en": "You're welcome.",
+                  "ja": "どういたしまして。"
+                },
+                "speechText": "どういたしまして。"
+              }
+            ]
+          },
+          {
+            "id": "ieie",
+            "timingAndContext": [
+              "Đáp lại lời cảm ơn một cách thân mật, giữa những người đã thân."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Đáp lại lời cảm ơn một cách thân mật, giữa những người đã thân."
+              ],
+              "en": [
+                "Reply to thanks casually, between people who already know each other well."
+              ],
+              "ja": [
+                "親しい間柄で、カジュアルにお礼の返事をするとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Bạn bè",
+              "Người ngang hàng đã thân"
+            ],
+            "avoid": [
+              "Không dùng dạng này với thầy cô hoặc người trên."
+            ],
+            "register": "Thân mật.",
+            "registerByNative": {
+              "vi": "Thân mật.",
+              "en": "Casual.",
+              "ja": "カジュアル。"
+            },
+            "formal": [
+              "Cách trang trọng hơn:",
+              "どういたしまして",
+              "Dùng với:",
+              "Thầy cô",
+              "Người trên"
+            ],
+            "casual": [],
+            "overview": "Đáp lại lời cảm ơn (thân mật).",
+            "overviewByNative": {
+              "vi": "Đáp lại lời cảm ơn (thân mật).",
+              "en": "Reply to thanks (casual).",
+              "ja": "お礼への返事（カジュアル）。"
+            },
+            "examples": [
+              {
+                "text": "いえいえ、お安（やす）い御用（ごよう）ですよ。",
+                "reading": "いえいえ、おやすいごようですよ。",
+                "translation": "Không sao, chuyện nhỏ mà.",
+                "translationByNative": {
+                  "vi": "Không sao, chuyện nhỏ mà.",
+                  "en": "It's nothing.",
+                  "ja": "大丈夫、ちょっとしたことだよ。"
+                },
+                "speechText": "いえいえ、おやすいごようですよ。"
+              },
+              {
+                "text": "いえいえ、まだまだです。",
+                "reading": "いえいえ、まだまだです。",
+                "translation": "Đâu có, còn kém lắm.",
+                "translationByNative": {
+                  "vi": "Đâu có, còn kém lắm.",
+                  "en": "Not at all, I still have a long way to go.",
+                  "ja": "いえいえ、まだまだです。"
+                },
+                "speechText": "いえいえ、まだまだです。"
+              },
+              {
+                "text": "いえいえ、内山（うちやま）さんの頑張（がんば）りのおかげですよ。",
+                "reading": "いえいえ、うちやまさんのがんばりのおかげですよ。",
+                "translation": "Không có gì đâu, đó là nhờ chị Uchiyama đã cố gắng thôi.",
+                "translationByNative": {
+                  "vi": "Không có gì đâu, đó là nhờ chị Uchiyama đã cố gắng thôi.",
+                  "en": "It's nothing, that's thanks to Uchiyama's hard work.",
+                  "ja": "いえいえ、内山さんの頑張りのおかげですよ。"
+                },
+                "speechText": "いえいえ、うちやまさんのがんばりのおかげですよ。"
+              }
+            ]
+          },
+          {
+            "id": "tondemonai",
+            "timingAndContext": [
+              "Nhẹ nhàng từ chối lời khen hoặc lời cảm ơn quá lời, thân mật."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nhẹ nhàng từ chối lời khen hoặc lời cảm ơn quá lời, thân mật."
+              ],
+              "en": [
+                "Casually and gently deflect a compliment or excessive thanks."
+              ],
+              "ja": [
+                "褒め言葉や大げさなお礼を、カジュアルに軽く打ち消すとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Bạn bè",
+              "Người ngang hàng đã thân"
+            ],
+            "avoid": [
+              "Không dùng dạng này với thầy cô hoặc người trên."
+            ],
+            "register": "Thân mật.",
+            "registerByNative": {
+              "vi": "Thân mật.",
+              "en": "Casual.",
+              "ja": "カジュアル。"
+            },
+            "formal": [
+              "Cách trang trọng hơn:",
+              "とんでもございません",
+              "Dùng với:",
+              "Thầy cô",
+              "Người trên"
+            ],
+            "casual": [],
+            "overview": "Từ chối lời khen/cảm ơn quá lời (thân mật).",
+            "overviewByNative": {
+              "vi": "Từ chối lời khen/cảm ơn quá lời (thân mật).",
+              "en": "Deflect excessive praise or thanks (casual).",
+              "ja": "大げさな褒め言葉やお礼を打ち消す（カジュアル）。"
+            },
+            "examples": [
+              {
+                "text": "とんでもない",
+                "reading": "とんでもない",
+                "translation": "Đâu có, có gì đâu.",
+                "translationByNative": {
+                  "vi": "Đâu có, có gì đâu.",
+                  "en": "Not at all.",
+                  "ja": "とんでもない。"
+                },
+                "speechText": "とんでもない"
+              }
+            ],
+            "notes": [
+              "Theo JMdict, とんでもない cũng có dạng kanji hiếm とんでも無い／飛んでもない, nhưng thực tế luôn viết bằng hiragana."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Theo JMdict, とんでもない cũng có dạng kanji hiếm とんでも無い／飛んでもない, nhưng thực tế luôn viết bằng hiragana."
+              ],
+              "en": [
+                "Per JMdict, とんでもない also has a rare kanji form とんでも無い／飛んでもない, but it is always written in hiragana in practice."
+              ],
+              "ja": [
+                "JMdictによると、「とんでもない」には稀な漢字表記「とんでも無い」「飛んでもない」もありますが、実際には常にひらがなで書かれます。"
+              ]
+            }
+          },
+          {
+            "id": "tondemogozaimasen",
+            "timingAndContext": [
+              "Khiêm tốn từ chối lời khen hoặc lời cảm ơn quá lời, lịch sự."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Khiêm tốn từ chối lời khen hoặc lời cảm ơn quá lời, lịch sự."
+              ],
+              "en": [
+                "Humbly deflect a compliment or excessive thanks, politely."
+              ],
+              "ja": [
+                "褒め言葉や大げさなお礼を、丁寧に謙遜して打ち消すとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Thầy cô",
+              "Người trên",
+              "Người quen",
+              "Đồng nghiệp"
+            ],
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [
+              "Cách thân mật chuẩn:",
+              "とんでもない",
+              "Dùng với:",
+              "Bạn bè",
+              "Người ngang hàng đã thân"
+            ],
+            "overview": "Từ chối lời khen/cảm ơn quá lời (lịch sự).",
+            "overviewByNative": {
+              "vi": "Từ chối lời khen/cảm ơn quá lời (lịch sự).",
+              "en": "Deflect excessive praise or thanks (polite).",
+              "ja": "大げさな褒め言葉やお礼を打ち消す（丁寧）。"
+            },
+            "examples": [
+              {
+                "text": "とんでもございません",
+                "reading": "とんでもございません",
+                "translation": "Đâu có ạ, không có gì đâu ạ.",
+                "translationByNative": {
+                  "vi": "Đâu có ạ, không có gì đâu ạ.",
+                  "en": "Not at all.",
+                  "ja": "とんでもございません。"
+                },
+                "speechText": "とんでもございません"
+              }
+            ],
+            "notes": [
+              "Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
+              ],
+              "en": [
+                "Per the 敬語の指針 (Japanese honorifics guidance): とんでもない is originally ONE whole adjective, so とんでもございません (replacing just the ない part) is widely used but considered not strictly standard; the STANDARD forms are とんでもないです／とんでもないことでございます."
+              ],
+              "ja": [
+                "敬語の指針によると、「とんでもない」はもともと一語の形容詞なので、「ない」の部分だけを変えた「とんでもございません」は広く使われているものの、厳密には標準的ではないとされます。標準的な形は「とんでもないです」「とんでもないことでございます」です。"
+              ]
+            }
+          },
+          {
+            "id": "kininaide",
+            "timingAndContext": [
+              "Trấn an người khác rằng một chút phiền phức không đáng bận tâm."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Trấn an người khác rằng một chút phiền phức không đáng bận tâm."
+              ],
+              "en": [
+                "Reassure someone that a minor inconvenience is not worth worrying about."
+              ],
+              "ja": [
+                "多少の面倒は気にしなくていいと相手を安心させるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Thầy cô",
+              "Người trên",
+              "Người quen",
+              "Đồng nghiệp"
+            ],
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Đừng bận tâm về việc đó (lịch sự).",
+            "overviewByNative": {
+              "vi": "Đừng bận tâm về việc đó (lịch sự).",
+              "en": "Please do not worry about it (polite).",
+              "ja": "そのことを気にしないでほしい（丁寧）。"
+            },
+            "examples": [
+              {
+                "text": "気（き）にしないでください。",
+                "reading": "きにしないでください。",
+                "translation": "Xin đừng bận tâm ạ.",
+                "translationByNative": {
+                  "vi": "Xin đừng bận tâm ạ.",
+                  "en": "Please don't worry about it.",
+                  "ja": "気にしないでください。"
+                },
+                "speechText": "きにしないでください。"
+              }
+            ],
+            "notes": [
+              "Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng."
+              ],
+              "en": [
+                "Always appears together with ください in the sources found — no standalone form has been found."
+              ],
+              "ja": [
+                "見つかった出典では常に「ください」とセットで使われており、単独の形は見つかっていません。"
+              ]
+            }
+          },
+          {
+            "id": "oyakunitatete",
+            "timingAndContext": [
+              "Bày tỏ niềm vui vì vừa giúp được ai đó việc gì, lịch sự."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Bày tỏ niềm vui vì vừa giúp được ai đó việc gì, lịch sự."
+              ],
+              "en": [
+                "Express happiness at having just been able to help someone, politely."
+              ],
+              "ja": [
+                "誰かの役に立てたことへの喜びを、丁寧に伝えるとき。"
+              ]
+            },
+            "appropriateFor": [
+              "Thầy cô",
+              "Người trên",
+              "Người quen",
+              "Đồng nghiệp"
+            ],
+            "avoid": [
+              "Không dùng khi bản thân vừa được người khác giúp — đây là câu MÌNH nói khi MÌNH giúp được người khác."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng khi bản thân vừa được người khác giúp — đây là câu MÌNH nói khi MÌNH giúp được người khác."
+              ],
+              "en": [
+                "Not used when you were the one helped — this is what YOU say when YOU helped someone else."
+              ],
+              "ja": [
+                "自分が助けてもらったときには使わない — これは自分が誰かの役に立てたときに言う言葉です。"
+              ]
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [],
+            "casual": [],
+            "overview": "Vui vì đã giúp được (lịch sự).",
+            "overviewByNative": {
+              "vi": "Vui vì đã giúp được (lịch sự).",
+              "en": "Glad to have been able to help (polite).",
+              "ja": "役に立てて嬉しい（丁寧）。"
+            },
+            "examples": [
+              {
+                "text": "お役（やく）に立（た）てて良（よ）かったです。",
+                "reading": "おやくにたててよかったです。",
+                "translation": "Tôi vui vì đã giúp được ạ.",
+                "translationByNative": {
+                  "vi": "Tôi vui vì đã giúp được ạ.",
+                  "en": "I'm glad I could help.",
+                  "ja": "お役に立てて良かったです。"
+                },
+                "speechText": "おやくにたててよかったです。"
+              }
+            ]
+          }
+        ],
+        "vocabularyReferences": [
+          {
+            "term": "こちらこそ",
+            "reading": "こちらこそ",
+            "speechText": "こちらこそ",
+            "meaning": "Cách dùng MỚI của từ đã học ở bài chào hỏi: đáp lễ khi ai đó bày tỏ lòng biết ơn với mình, không chỉ dùng khi đáp lễ よろしくお願いします. Khác どういたしまして／いえいえ ở chỗ: こちらこそ ngụ ý \"chính TÔI mới là người phải cảm ơn/mang ơn BẠN\".",
+            "meaningByNative": {
+              "vi": "Cách dùng MỚI của từ đã học ở bài chào hỏi: đáp lễ khi ai đó bày tỏ lòng biết ơn với mình, không chỉ dùng khi đáp lễ よろしくお願いします. Khác どういたしまして／いえいえ ở chỗ: こちらこそ ngụ ý \"chính TÔI mới là người phải cảm ơn/mang ơn BẠN\".",
+              "en": "A NEW use of a word already learned in the greetings lesson: reciprocating when someone expresses gratitude toward you, not only when reciprocating よろしくお願いします. Unlike どういたしまして／いえいえ, こちらこそ implies \"it is actually I who owe YOU thanks.\"",
+              "ja": "挨拶のレッスンで習った言葉の新しい使い方 — 「よろしくお願いします」への返事だけでなく、相手が感謝の気持ちを伝えてきたときに応える使い方です。「どういたしまして」「いえいえ」と違い、「こちらこそ」は「感謝すべきなのはむしろ自分の方だ」という意味合いを持ちます。"
+            },
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "example": {
+              "text": "こちらこそ、お世話（せわ）になっています。",
+              "reading": "こちらこそ、おせわになっています。",
+              "translation": "Không, chính tôi mới là người phải cảm ơn anh/chị.",
+              "translationByNative": {
+                "vi": "Không, chính tôi mới là người phải cảm ơn anh/chị.",
+                "en": "No, it is I who should be thanking you.",
+                "ja": "こちらこそ、お世話になっています。"
+              },
+              "speechText": "こちらこそ、おせわになっています。"
+            }
+          },
+          {
+            "term": "こちらこそよろしく",
+            "reading": "こちらこそよろしく",
+            "speechText": "こちらこそよろしく",
+            "meaning": "Đối chiếu: đây LÀ cách dùng こちらこそ đã học ở bài chào hỏi (đáp lễ よろしくお願いします) — khác với cách dùng MỚI ở bài này (đáp lễ lòng biết ơn お世話になっています, không có よろしく).",
+            "meaningByNative": {
+              "vi": "Đối chiếu: đây LÀ cách dùng こちらこそ đã học ở bài chào hỏi (đáp lễ よろしくお願いします) — khác với cách dùng MỚI ở bài này (đáp lễ lòng biết ơn お世話になっています, không có よろしく).",
+              "en": "For contrast: this IS the こちらこそ usage already learned in the greetings lesson (reciprocating よろしくお願いします) — different from the NEW usage in this lesson (reciprocating gratitude お世話になっています, without よろしく).",
+              "ja": "比較のため：これは挨拶のレッスンですでに習った「こちらこそ」の使い方（「よろしくお願いします」への返事）です — このレッスンの新しい使い方（「よろしく」を伴わない、感謝「お世話になっています」への返事）とは異なります。"
+            },
+            "register": "Trang trọng.",
+            "registerByNative": {
+              "vi": "Trang trọng.",
+              "en": "Formal.",
+              "ja": "改まった言い方。"
+            },
+            "example": {
+              "text": "こちらこそよろしく。",
+              "reading": "こちらこそよろしく。",
+              "translation": "Chính tôi mới là người phải nhờ anh/chị giúp đỡ.",
+              "translationByNative": {
+                "vi": "Chính tôi mới là người phải nhờ anh/chị giúp đỡ.",
+                "en": "It is I who should be asking for your favor.",
+                "ja": "こちらこそよろしく。"
+              },
+              "speechText": "こちらこそよろしく。"
+            }
+          }
+        ],
+        "dialogueGroups": [
+          {
+            "id": "lost-eraser-help",
+            "title": "Lịch sự — được giúp tìm đồ",
+            "titleByNative": {
+              "vi": "Lịch sự — được giúp tìm đồ",
+              "en": "Polite — helped find something",
+              "ja": "丁寧 — 物を探すのを手伝ってもらう"
+            },
+            "situation": "Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự theo đúng trạng thái trong nguồn. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.",
+            "situationByNative": {
+              "vi": "Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự theo đúng trạng thái trong nguồn. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.",
+              "en": "Relationship: two classmates who are not yet close — keeping the polite register as it appears in the source. Situation: Sato dropped an eraser, and Ito helps look and finds it.",
+              "ja": "関係性：まだ親しくないクラスメート同士 — 出典どおり丁寧体を保っています。場面：佐藤が消しゴムを落とし、伊藤が捜すのを手伝って見つけます。"
+            },
+            "lines": [
+              {
+                "targetText": "すみません。",
+                "displayText": "すみません。",
+                "reading": "すみません。",
+                "speechText": "すみません",
+                "translationByNative": {
+                  "vi": "Phiền chị quá.",
+                  "en": "Sorry to trouble you.",
+                  "ja": "すみません。"
+                },
+                "translations": {
+                  "vi": "Phiền chị quá.",
+                  "en": "Sorry to trouble you.",
+                  "ja": "すみません。"
+                },
+                "meaningVi": "Phiền chị quá.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "あ、見（み）つけました。私（わたし）の足元（あしもと）にありましたよ。",
+                "displayText": "あ、見（み）つけました。私（わたし）の足元（あしもと）にありましたよ。",
+                "reading": "あ、みつけました。わたしのあしもとにありましたよ。",
+                "speechText": "あ、みつけました。わたしのあしもとにありましたよ",
+                "translationByNative": {
+                  "vi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+                  "en": "Oh, I found it. It was under my feet.",
+                  "ja": "あ、見つけました。私の足元にありましたよ。"
+                },
+                "translations": {
+                  "vi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+                  "en": "Oh, I found it. It was under my feet.",
+                  "ja": "あ、見つけました。私の足元にありましたよ。"
+                },
+                "meaningVi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "どうもありがとうございます。",
+                "displayText": "どうもありがとうございます。",
+                "reading": "どうもありがとうございます。",
+                "speechText": "どうもありがとうございます",
+                "translationByNative": {
+                  "vi": "Cảm ơn chị nhiều ạ.",
+                  "en": "Thank you very much.",
+                  "ja": "どうもありがとうございます。"
+                },
+                "translations": {
+                  "vi": "Cảm ơn chị nhiều ạ.",
+                  "en": "Thank you very much.",
+                  "ja": "どうもありがとうございます。"
+                },
+                "meaningVi": "Cảm ơn chị nhiều ạ.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "どういたしまして。",
+                "displayText": "どういたしまして。",
+                "reading": "どういたしまして。",
+                "speechText": "どういたしまして",
+                "translationByNative": {
+                  "vi": "Không có gì đâu.",
+                  "en": "You're welcome.",
+                  "ja": "どういたしまして。"
+                },
+                "translations": {
+                  "vi": "Không có gì đâu.",
+                  "en": "You're welcome.",
+                  "ja": "どういたしまして。"
+                },
+                "meaningVi": "Không có gì đâu.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              }
+            ],
+            "explanation": [
+              "どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.",
+              "Cả hai giữ thể lịch sự vì là bạn học chưa thân, đúng trạng thái trong nguồn."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.",
+                "Cả hai giữ thể lịch sự vì là bạn học chưa thân, đúng trạng thái trong nguồn."
+              ],
+              "en": [
+                "どういたしまして is the standard polite reply, usable for almost any thanks, without needing to specify anything.",
+                "Both keep the polite register since they are classmates who are not yet close, matching the source."
+              ],
+              "ja": [
+                "「どういたしまして」は標準的な丁寧な返事で、具体的な内容を言わなくても、ほとんどのお礼に使えます。",
+                "二人ともまだ親しくないクラスメートなので丁寧体を保っています。出典どおりです。"
+              ]
+            }
+          },
+          {
+            "id": "photo-help-done",
+            "title": "Lịch sự — việc đã xong (nối tiếp bài trước)",
+            "titleByNative": {
+              "vi": "Lịch sự — việc đã xong (nối tiếp bài trước)",
+              "en": "Polite — something finished (continuing the previous lesson)",
+              "ja": "丁寧 — 終わったこと（前のレッスンの続き）"
+            },
+            "situation": "Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).",
+            "situationByNative": {
+              "vi": "Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).",
+              "en": "Relationship: as already established in the previous lesson (m02-u1-l1) — two people of equal standing on a trip, keeping the polite register. Situation: this continues RIGHT AFTER the passage already taught in the previous lesson — Sato has just finished taking a photo for Tanaka, is thanked, and THIS TIME replies with どういたしまして (the reply that lesson left out).",
+              "ja": "関係性：前のレッスン（m02-u1-l1）ですでに設定した通り — 旅行中の対等な二人、丁寧体を保っています。場面：前のレッスンで習った箇所のすぐ続き — 佐藤が田中の写真を撮り終えてお礼を言われ、今回は「どういたしまして」と返事をします（前のレッスンでは抜けていた返事）。"
+            },
+            "lines": [
+              {
+                "targetText": "右上（みぎうえ）にあります。",
+                "displayText": "右上（みぎうえ）にあります。",
+                "reading": "みぎうえにあります。",
+                "speechText": "みぎうえにあります",
+                "translationByNative": {
+                  "vi": "Ở phía trên bên phải.",
+                  "en": "It is on the upper right.",
+                  "ja": "右上にあります。"
+                },
+                "translations": {
+                  "vi": "Ở phía trên bên phải.",
+                  "en": "It is on the upper right.",
+                  "ja": "右上にあります。"
+                },
+                "meaningVi": "Ở phía trên bên phải.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
+              {
+                "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+                "displayText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+                "reading": "みぎうえですね。ではとりますよ。このようなかんじでどうですか？",
+                "speechText": "みぎうえですね。ではとりますよ。このようなかんじでどうですか",
+                "translationByNative": {
+                  "vi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+                  "en": "Upper right, got it. I will take the photo now. How does this look?",
+                  "ja": "右上ですね。では撮りますよ。このような感じでどうですか？"
+                },
+                "translations": {
+                  "vi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+                  "en": "Upper right, got it. I will take the photo now. How does this look?",
+                  "ja": "右上ですね。では撮りますよ。このような感じでどうですか？"
+                },
+                "meaningVi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "はい、ありがとうございました。",
+                "displayText": "はい、ありがとうございました。",
+                "reading": "はい、ありがとうございました。",
+                "speechText": "はい、ありがとうございました",
+                "translationByNative": {
+                  "vi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+                  "en": "Yes, thank you very much.",
+                  "ja": "はい、ありがとうございました。"
+                },
+                "translations": {
+                  "vi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+                  "en": "Yes, thank you very much.",
+                  "ja": "はい、ありがとうございました。"
+                },
+                "meaningVi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
+              {
+                "targetText": "どういたしまして。",
+                "displayText": "どういたしまして。",
+                "reading": "どういたしまして。",
+                "speechText": "どういたしまして",
+                "translationByNative": {
+                  "vi": "Không có gì đâu.",
+                  "en": "You're welcome.",
+                  "ja": "どういたしまして。"
+                },
+                "translations": {
+                  "vi": "Không có gì đâu.",
+                  "en": "You're welcome.",
+                  "ja": "どういたしまして。"
+                },
+                "meaningVi": "Không có gì đâu.",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              }
+            ],
+            "explanation": [
+              "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
+              "Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
+                "Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống."
+              ],
+              "en": [
+                "This continues the previous lesson — the first turns (右上にあります／では撮りますよ／ありがとうございました) were already taught in m02-u1-l1; どういたしまして is new in this lesson.",
+                "The same どういたしまして, but a different situation from group 1 (one is travel/photos, the other is helping find something in class) — showing this phrase works across many situations."
+              ],
+              "ja": [
+                "これは前のレッスンの続きです — 最初のやり取り（右上にあります／では撮りますよ／ありがとうございました）はm02-u1-l1ですでに習っており、「どういたしまして」がこのレッスンの新しい部分です。",
+                "同じ「どういたしまして」ですが、グループ1とは場面が異なります（一方は旅行・写真、もう一方は教室で物を探す手伝い）— この表現が様々な場面で使えることが分かります。"
+              ]
+            }
+          },
+          {
+            "id": "ongoing-gratitude",
+            "title": "こちらこそ — đáp lễ lòng biết ơn (KHÁC bài trước)",
+            "titleByNative": {
+              "vi": "こちらこそ — đáp lễ lòng biết ơn (KHÁC bài trước)",
+              "en": "こちらこそ — reciprocating gratitude (DIFFERENT from the previous lesson)",
+              "ja": "「こちらこそ」— 感謝の気持ちに応える（前のレッスンとは別の使い方）"
+            },
+            "situation": "Vai vế: hai đồng nghiệp/người quen đã biết nhau lâu. Bối cảnh: KHÔNG PHẢI đáp lại một lời cảm ơn cụ thể vừa xảy ra như hai nhóm trên — đây là cách bày tỏ lòng biết ơn/thiện chí CHUNG khi nhắc tới mối quan hệ đôi bên, một tình huống KHÁC. こちらこそ ở đây KHÔNG phải đáp lễ lời chào よろしくお願いします như đã học ở bài chào hỏi.",
+            "situationByNative": {
+              "vi": "Vai vế: hai đồng nghiệp/người quen đã biết nhau lâu. Bối cảnh: KHÔNG PHẢI đáp lại một lời cảm ơn cụ thể vừa xảy ra như hai nhóm trên — đây là cách bày tỏ lòng biết ơn/thiện chí CHUNG khi nhắc tới mối quan hệ đôi bên, một tình huống KHÁC. こちらこそ ở đây KHÔNG phải đáp lễ lời chào よろしくお願いします như đã học ở bài chào hỏi.",
+              "en": "Relationship: two colleagues/acquaintances who have known each other for a long time. Situation: this is NOT a reply to a specific thanks that just happened, unlike the two groups above — this is a general way of expressing mutual gratitude/goodwill when the relationship itself comes up, a DIFFERENT situation. こちらこそ here is NOT reciprocating a よろしくお願いします greeting like in the greetings lesson.",
+              "ja": "関係性：長年の付き合いがある同僚・知人同士。場面：上の二つのグループのように、今起きた具体的なお礼への返事ではありません — これは、間柄そのものに触れたときにお互いへの感謝や好意を伝える、別の場面です。ここでの「こちらこそ」は、挨拶のレッスンで習った「よろしくお願いします」への返事ではありません。"
+            },
+            "lines": [
+              {
+                "targetText": "田中（たなか）さんには、いつもお世話（せわ）になっています。",
+                "displayText": "田中（たなか）さんには、いつもお世話（せわ）になっています。",
+                "reading": "たなかさんには、いつもおせわになっています。",
+                "speechText": "たなかさんには、いつもおせわになっています",
+                "translationByNative": {
+                  "vi": "Tôi luôn được anh Tanaka giúp đỡ nhiều.",
+                  "en": "I'm always in Tanaka's debt.",
+                  "ja": "田中さんには、いつもお世話になっています。"
+                },
+                "translations": {
+                  "vi": "Tôi luôn được anh Tanaka giúp đỡ nhiều.",
+                  "en": "I'm always in Tanaka's debt.",
+                  "ja": "田中さんには、いつもお世話になっています。"
+                },
+                "meaningVi": "Tôi luôn được anh Tanaka giúp đỡ nhiều.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "こちらこそ、お世話（せわ）になっています。",
+                "displayText": "こちらこそ、お世話（せわ）になっています。",
+                "reading": "こちらこそ、おせわになっています。",
+                "speechText": "こちらこそ、おせわになっています",
+                "translationByNative": {
+                  "vi": "Không, chính tôi mới là người phải cảm ơn chị.",
+                  "en": "No, it is I who should be thanking you.",
+                  "ja": "こちらこそ、お世話になっています。"
+                },
+                "translations": {
+                  "vi": "Không, chính tôi mới là người phải cảm ơn chị.",
+                  "en": "No, it is I who should be thanking you.",
+                  "ja": "こちらこそ、お世話になっています。"
+                },
+                "meaningVi": "Không, chính tôi mới là người phải cảm ơn chị.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              }
+            ],
+            "explanation": [
+              "こちらこそ ở đây đáp lại một câu bày tỏ lòng biết ơn về MỐI QUAN HỆ nói chung (お世話になっています), khác với こちらこそ đáp lễ lời chào ở bài trước.",
+              "Không có lời cảm ơn CỤ THỂ vừa xảy ra (như \"cảm ơn vì đã giúp tìm đồ\") — đây là cách hai người quen biết lâu bày tỏ thiện ý với nhau."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "こちらこそ ở đây đáp lại một câu bày tỏ lòng biết ơn về MỐI QUAN HỆ nói chung (お世話になっています), khác với こちらこそ đáp lễ lời chào ở bài trước.",
+                "Không có lời cảm ơn CỤ THỂ vừa xảy ra (như \"cảm ơn vì đã giúp tìm đồ\") — đây là cách hai người quen biết lâu bày tỏ thiện ý với nhau."
+              ],
+              "en": [
+                "Here こちらこそ replies to a statement expressing gratitude about the RELATIONSHIP in general (お世話になっています), unlike the こちらこそ that reciprocated a greeting in the earlier lesson.",
+                "There is no SPECIFIC thanks that just happened (like \"thanks for helping find something\") — this is how two long-time acquaintances express goodwill toward each other."
+              ],
+              "ja": [
+                "ここでの「こちらこそ」は、間柄全体への感謝の言葉（お世話になっています）への返事であり、前のレッスンで挨拶に返事をした「こちらこそ」とは異なります。",
+                "（「探すのを手伝ってくれてありがとう」のような）具体的なお礼が今起きたわけではありません — これは長い付き合いのある二人がお互いへの好意を伝える方法です。"
+              ]
+            }
+          }
+        ],
+        "grammarPatterns": [
+          {
+            "title": "どういたしまして (đứng riêng)",
+            "titleByNative": {
+              "vi": "どういたしまして (đứng riêng)",
+              "en": "どういたしまして (standalone)",
+              "ja": "「どういたしまして」（単独）"
+            },
+            "formula": "どういたしまして",
+            "formulaReading": "どういたしまして",
+            "meaning": "Đáp lại lời cảm ơn, lịch sự, chung chung.",
+            "meaningByNative": {
+              "vi": "Đáp lại lời cảm ơn, lịch sự, chung chung.",
+              "en": "Reply to thanks, polite, generic.",
+              "ja": "お礼への返事、丁寧、一般的。"
+            },
+            "examples": [
+              {
+                "text": "どういたしまして。",
+                "reading": "どういたしまして。",
+                "translation": "Không có gì đâu.",
+                "translationByNative": {
+                  "vi": "Không có gì đâu.",
+                  "en": "You're welcome.",
+                  "ja": "どういたしまして。"
+                },
+                "speechText": "どういたしまして。"
+              }
+            ],
+            "explanation": [
+              "Dùng được cho hầu hết mọi tình huống lịch sự, không cần nêu cụ thể đã giúp gì."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Dùng được cho hầu hết mọi tình huống lịch sự, không cần nêu cụ thể đã giúp gì."
+              ],
+              "en": [
+                "Usable in almost any polite situation, without specifying what was helped with."
+              ],
+              "ja": [
+                "ほとんどの丁寧な場面で使え、何を手伝ったか言う必要はありません。"
+              ]
+            }
+          },
+          {
+            "title": "いえいえ (đứng riêng)",
+            "titleByNative": {
+              "vi": "いえいえ (đứng riêng)",
+              "en": "いえいえ (standalone)",
+              "ja": "「いえいえ」（単独）"
+            },
+            "formula": "いえいえ",
+            "formulaReading": "いえいえ",
+            "meaning": "Đáp lại lời cảm ơn, thân mật.",
+            "meaningByNative": {
+              "vi": "Đáp lại lời cảm ơn, thân mật.",
+              "en": "Reply to thanks, casual.",
+              "ja": "お礼への返事、カジュアル。"
+            },
+            "examples": [
+              {
+                "text": "いえいえ、お安（やす）い御用（ごよう）ですよ。",
+                "reading": "いえいえ、おやすいごようですよ。",
+                "translation": "Không sao, chuyện nhỏ mà.",
+                "translationByNative": {
+                  "vi": "Không sao, chuyện nhỏ mà.",
+                  "en": "It's nothing.",
+                  "ja": "大丈夫、ちょっとしたことだよ。"
+                },
+                "speechText": "いえいえ、おやすいごようですよ。"
+              }
+            ],
+            "explanation": [
+              "Thể thân mật của どういたしまして; có thể thêm câu sau để nhẹ nhàng hơn."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Thể thân mật của どういたしまして; có thể thêm câu sau để nhẹ nhàng hơn."
+              ],
+              "en": [
+                "The casual counterpart of どういたしまして; a follow-up sentence can be added to soften it further."
+              ],
+              "ja": [
+                "「どういたしまして」のカジュアル版。後に一言添えると、より柔らかくなります。"
+              ]
+            }
+          },
+          {
+            "title": "とんでもない ↔ とんでもございません",
+            "formula": "とんでもない ／ とんでもございません",
+            "formulaReading": "とんでもない ／ とんでもございません",
+            "meaning": "Cùng ý khiêm tốn từ chối lời khen/cảm ơn, hai thể.",
+            "meaningByNative": {
+              "vi": "Cùng ý khiêm tốn từ chối lời khen/cảm ơn, hai thể.",
+              "en": "The same idea of humbly deflecting praise or thanks, in two registers.",
+              "ja": "褒め言葉やお礼を謙遜して打ち消す、同じ意味の二つの丁寧さ。"
+            },
+            "examples": [
+              {
+                "text": "とんでもない",
+                "reading": "とんでもない",
+                "translation": "Đâu có.",
+                "translationByNative": {
+                  "vi": "Đâu có.",
+                  "en": "Not at all.",
+                  "ja": "とんでもない。"
+                },
+                "speechText": "とんでもない"
+              },
+              {
+                "text": "とんでもございません",
+                "reading": "とんでもございません",
+                "translation": "Đâu có ạ.",
+                "translationByNative": {
+                  "vi": "Đâu có ạ.",
+                  "en": "Not at all.",
+                  "ja": "とんでもございません。"
+                },
+                "speechText": "とんでもございません"
+              }
+            ],
+            "explanation": [
+              "Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Theo 敬語の指針: とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます."
+              ],
+              "en": [
+                "Per the 敬語の指針 (Japanese honorifics guidance): とんでもない is originally ONE whole adjective, so とんでもございません (replacing just the ない part) is widely used but considered not strictly standard; the STANDARD forms are とんでもないです／とんでもないことでございます."
+              ],
+              "ja": [
+                "敬語の指針によると、「とんでもない」はもともと一語の形容詞なので、「ない」の部分だけを変えた「とんでもございません」は広く使われているものの、厳密には標準的ではないとされます。標準的な形は「とんでもないです」「とんでもないことでございます」です。"
+              ]
+            }
+          },
+          {
+            "title": "気にしないでください (đứng riêng)",
+            "titleByNative": {
+              "vi": "気にしないでください (đứng riêng)",
+              "en": "気にしないでください (standalone)",
+              "ja": "「気にしないでください」（単独）"
+            },
+            "formula": "気にしないでください",
+            "formulaReading": "きにしないでください",
+            "meaning": "Trấn an người khác đừng bận tâm/lo lắng, lịch sự.",
+            "meaningByNative": {
+              "vi": "Trấn an người khác đừng bận tâm/lo lắng, lịch sự.",
+              "en": "Reassure someone not to worry, politely.",
+              "ja": "相手に気にしないでほしいと、丁寧に伝える。"
+            },
+            "examples": [
+              {
+                "text": "気（き）にしないでください。",
+                "reading": "きにしないでください。",
+                "translation": "Xin đừng bận tâm ạ.",
+                "translationByNative": {
+                  "vi": "Xin đừng bận tâm ạ.",
+                  "en": "Please don't worry about it.",
+                  "ja": "気にしないでください。"
+                },
+                "speechText": "きにしないでください。"
+              }
+            ],
+            "explanation": [
+              "Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Luôn đi kèm ください trong nguồn tìm được — chưa tìm thấy dạng đứng riêng."
+              ],
+              "en": [
+                "Always appears together with ください in the sources found — no standalone form has been found."
+              ],
+              "ja": [
+                "見つかった出典では常に「ください」とセットで使われており、単独の形は見つかっていません。"
+              ]
+            }
+          }
+        ],
+        "practice": {
+          "title": "Bài tập",
+          "titleByNative": {
+            "vi": "Bài tập",
+            "en": "Exercises",
+            "ja": "練習"
+          },
+          "japaneseTitle": "練習（れんしゅう）",
+          "totalQuestions": 14,
+          "estimatedMinutes": "Khoảng 8–10 phút",
+          "estimatedMinutesByNative": {
+            "vi": "Khoảng 8–10 phút",
+            "en": "About 8–10 minutes",
+            "ja": "約8〜10分"
+          },
+          "reviewTopics": "Từ vựng · Hội thoại · Ngữ pháp",
+          "reviewTopicsByNative": {
+            "vi": "Từ vựng · Hội thoại · Ngữ pháp",
+            "en": "Vocabulary · Dialogue · Grammar",
+            "ja": "語彙・会話・文法"
+          },
+          "groups": [
+            {
+              "id": "free",
+              "number": "01",
+              "title": "Luyện tập cơ bản",
+              "titleByNative": {
+                "vi": "Luyện tập cơ bản",
+                "en": "Basic practice",
+                "ja": "基本練習"
+              },
+              "range": "Câu 1–9",
+              "rangeByNative": {
+                "vi": "Câu 1–9",
+                "en": "Questions 1–9",
+                "ja": "問題1〜9"
+              },
+              "details": "Từ vựng · Nghe · Ngữ pháp\nHội thoại",
+              "detailsByNative": {
+                "vi": "Từ vựng · Nghe · Ngữ pháp\nHội thoại",
+                "en": "Vocabulary · Listening · Grammar\nDialogue",
+                "ja": "語彙・リスニング・文法\n会話"
+              },
+              "start": 1,
+              "end": 9,
+              "plan": "free"
+            },
+            {
+              "id": "plus",
+              "number": "02",
+              "title": "Luyện tập nâng cao",
+              "titleByNative": {
+                "vi": "Luyện tập nâng cao",
+                "en": "Advanced practice",
+                "ja": "応用練習"
+              },
+              "range": "Câu 10–14",
+              "rangeByNative": {
+                "vi": "Câu 10–14",
+                "en": "Questions 10–14",
+                "ja": "問題10〜14"
+              },
+              "details": "Tình huống thực tế\nHội thoại thực hành nâng cao",
+              "detailsByNative": {
+                "vi": "Tình huống thực tế\nHội thoại thực hành nâng cao",
+                "en": "Real-world situations\nAdvanced practice dialogue",
+                "ja": "実践的な場面\n応用練習会話"
+              },
+              "start": 10,
+              "end": 14,
+              "plan": "plus"
+            }
+          ],
+          "exercises": [
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-1",
+              "order": 1,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Một người bạn thân vừa giúp bạn một việc nhỏ và bạn cảm ơn. Người đó đáp lại thế nào (thân mật)?",
+              "contextByNative": {
+                "vi": "Một người bạn thân vừa giúp bạn một việc nhỏ và bạn cảm ơn. Người đó đáp lại thế nào (thân mật)?",
+                "en": "A close friend just helped you with something small and you thanked them. How do they reply (casually)?",
+                "ja": "親しい友達が小さなことを手伝ってくれて、あなたがお礼を言いました。相手はどう返事しますか（カジュアルに）？"
+              },
+              "prompt": "Một người bạn thân vừa giúp bạn một việc nhỏ và bạn cảm ơn. Người đó đáp lại thế nào (thân mật)?",
+              "promptByNative": {
+                "vi": "Một người bạn thân vừa giúp bạn một việc nhỏ và bạn cảm ơn. Người đó đáp lại thế nào (thân mật)?",
+                "en": "A close friend just helped you with something small and you thanked them. How do they reply (casually)?",
+                "ja": "親しい友達が小さなことを手伝ってくれて、あなたがお礼を言いました。相手はどう返事しますか（カジュアルに）？"
+              },
+              "options": [
+                {
+                  "id": "ieie",
+                  "text": "いえいえ。",
+                  "canonicalText": "いえいえ。",
+                  "audioText": "いえいえ。"
+                },
+                {
+                  "id": "douitashimashite",
+                  "text": "どういたしまして。",
+                  "canonicalText": "どういたしまして。",
+                  "audioText": "どういたしまして。"
+                },
+                {
+                  "id": "tondemogozaimasen",
+                  "text": "とんでもございません。",
+                  "canonicalText": "とんでもございません。",
+                  "audioText": "とんでもございません。"
+                },
+                {
+                  "id": "oyakunitatete",
+                  "text": "お役（やく）に立（た）てて良（よ）かったです。",
+                  "canonicalText": "お役に立てて良かったです。",
+                  "audioText": "お役に立てて良かったです。"
+                }
+              ],
+              "correctOptionId": "ieie",
+              "feedback": {
+                "correctAnswer": "いえいえ。",
+                "canonicalAnswer": "いえいえ。",
+                "audioText": "いえいえ",
+                "explanation": "いえいえ là thể thân mật, hợp với bạn thân. どういたしまして／とんでもございません là thể lịch sự, không hợp bạn thân. お役に立てて良かったです cũng lịch sự và dài hơn mức cần cho một việc nhỏ giữa bạn bè.",
+                "explanationByNative": {
+                  "vi": "いえいえ là thể thân mật, hợp với bạn thân. どういたしまして／とんでもございません là thể lịch sự, không hợp bạn thân. お役に立てて良かったです cũng lịch sự và dài hơn mức cần cho một việc nhỏ giữa bạn bè.",
+                  "en": "いえいえ is the casual register, fitting a close friend. どういたしまして／とんでもございません are polite and do not fit a close friend. お役に立てて良かったです is also polite and longer than needed for something small between friends.",
+                  "ja": "「いえいえ」はカジュアルで、親しい友達に合います。「どういたしまして」「とんでもございません」は丁寧体で、親しい友達には合いません。「お役に立てて良かったです」も丁寧で、友達同士の小さなことには長すぎます。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-2",
+              "order": 2,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Đồng nghiệp chưa thân vừa cảm ơn bạn vì một việc bình thường (không phải lời khen). Bạn đáp lại thế nào (lịch sự)?",
+              "contextByNative": {
+                "vi": "Đồng nghiệp chưa thân vừa cảm ơn bạn vì một việc bình thường (không phải lời khen). Bạn đáp lại thế nào (lịch sự)?",
+                "en": "A colleague you are not yet close with just thanked you for something ordinary (not a compliment). How do you reply (politely)?",
+                "ja": "まだ親しくない同僚が、普通のことでお礼を言ってくれました（褒め言葉ではありません）。どう返事しますか（丁寧に）？"
+              },
+              "prompt": "Đồng nghiệp chưa thân vừa cảm ơn bạn vì một việc bình thường (không phải lời khen). Bạn đáp lại thế nào (lịch sự)?",
+              "promptByNative": {
+                "vi": "Đồng nghiệp chưa thân vừa cảm ơn bạn vì một việc bình thường (không phải lời khen). Bạn đáp lại thế nào (lịch sự)?",
+                "en": "A colleague you are not yet close with just thanked you for something ordinary (not a compliment). How do you reply (politely)?",
+                "ja": "まだ親しくない同僚が、普通のことでお礼を言ってくれました（褒め言葉ではありません）。どう返事しますか（丁寧に）？"
+              },
+              "options": [
+                {
+                  "id": "douitashimashite",
+                  "text": "どういたしまして。",
+                  "canonicalText": "どういたしまして。",
+                  "audioText": "どういたしまして。"
+                },
+                {
+                  "id": "ieie",
+                  "text": "いえいえ。",
+                  "canonicalText": "いえいえ。",
+                  "audioText": "いえいえ。"
+                },
+                {
+                  "id": "tondemonai",
+                  "text": "とんでもない。",
+                  "canonicalText": "とんでもない。",
+                  "audioText": "とんでもない。"
+                },
+                {
+                  "id": "kininai",
+                  "text": "気（き）にしないでください。",
+                  "canonicalText": "気にしないでください。",
+                  "audioText": "気にしないでください。"
+                }
+              ],
+              "correctOptionId": "douitashimashite",
+              "feedback": {
+                "correctAnswer": "どういたしまして。",
+                "canonicalAnswer": "どういたしまして。",
+                "audioText": "どういたしまして",
+                "explanation": "どういたしまして đúng cả về mức lịch sự lẫn tình huống (đáp lại lời cảm ơn bình thường). いえいえ／とんでもない là thể thân mật, sai trục lịch sự. 気にしないでください dùng khi có phiền phức cụ thể, không phải câu đáp chung cho lời cảm ơn.",
+                "explanationByNative": {
+                  "vi": "どういたしまして đúng cả về mức lịch sự lẫn tình huống (đáp lại lời cảm ơn bình thường). いえいえ／とんでもない là thể thân mật, sai trục lịch sự. 気にしないでください dùng khi có phiền phức cụ thể, không phải câu đáp chung cho lời cảm ơn.",
+                  "en": "どういたしまして is correct both in register and situation (replying to ordinary thanks). いえいえ／とんでもない are casual, wrong on the register axis. 気にしないでください is for a specific inconvenience, not a generic reply to thanks.",
+                  "ja": "「どういたしまして」は丁寧さの面でも場面の面でも正しいです（普通のお礼への返事）。「いえいえ」「とんでもない」はカジュアルで、丁寧さの軸で誤りです。「気にしないでください」は具体的な面倒があるときのもので、お礼への一般的な返事ではありません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-3",
+              "order": 3,
+              "plan": "free",
+              "type": "matching",
+              "prompt": "Nối mỗi câu với cách dùng của nó.",
+              "promptByNative": {
+                "vi": "Nối mỗi câu với cách dùng của nó.",
+                "en": "Match each phrase with its use.",
+                "ja": "それぞれの表現を使い方と結びつけましょう。"
+              },
+              "pairs": [
+                {
+                  "id": "douitashimashite",
+                  "left": {
+                    "id": "douitashimashite_l",
+                    "text": "どういたしまして"
+                  },
+                  "right": {
+                    "id": "douitashimashite_r",
+                    "text": "Đáp lại lời cảm ơn — lịch sự, chung chung",
+                    "textByNative": {
+                      "vi": "Đáp lại lời cảm ơn — lịch sự, chung chung",
+                      "en": "Reply to thanks — polite, generic",
+                      "ja": "お礼への返事 — 丁寧、一般的"
+                    }
+                  }
+                },
+                {
+                  "id": "ieie",
+                  "left": {
+                    "id": "ieie_l",
+                    "text": "いえいえ"
+                  },
+                  "right": {
+                    "id": "ieie_r",
+                    "text": "Đáp lại lời cảm ơn — thân mật",
+                    "textByNative": {
+                      "vi": "Đáp lại lời cảm ơn — thân mật",
+                      "en": "Reply to thanks — casual",
+                      "ja": "お礼への返事 — カジュアル"
+                    }
+                  }
+                },
+                {
+                  "id": "tondemogozaimasen",
+                  "left": {
+                    "id": "tondemogozaimasen_l",
+                    "text": "とんでもございません"
+                  },
+                  "right": {
+                    "id": "tondemogozaimasen_r",
+                    "text": "Khiêm tốn từ chối lời khen — lịch sự",
+                    "textByNative": {
+                      "vi": "Khiêm tốn từ chối lời khen — lịch sự",
+                      "en": "Humbly deflect a compliment — polite",
+                      "ja": "褒め言葉を謙遜して打ち消す — 丁寧"
+                    }
+                  }
+                },
+                {
+                  "id": "kininaide",
+                  "left": {
+                    "id": "kininaide_l",
+                    "text": "気（き）にしないでください"
+                  },
+                  "right": {
+                    "id": "kininaide_r",
+                    "text": "Trấn an đừng bận tâm — lịch sự",
+                    "textByNative": {
+                      "vi": "Trấn an đừng bận tâm — lịch sự",
+                      "en": "Reassure not to worry — polite",
+                      "ja": "気にしないでほしいと伝える — 丁寧"
+                    }
+                  }
+                }
+              ],
+              "feedback": {
+                "explanation": "Bốn câu cùng thuộc nhóm \"đáp lễ\" nhưng khác nhau ở mức lịch sự và điều được đáp lại: lời cảm ơn, lời khen, hay một chút phiền phức.",
+                "explanationByNative": {
+                  "vi": "Bốn câu cùng thuộc nhóm \"đáp lễ\" nhưng khác nhau ở mức lịch sự và điều được đáp lại: lời cảm ơn, lời khen, hay một chút phiền phức.",
+                  "en": "All four phrases belong to the \"reciprocating\" group but differ in register and in what is being replied to: thanks, a compliment, or a minor inconvenience.",
+                  "ja": "四つの表現はすべて「お返しする」グループに属しますが、丁寧さのレベルと、何に対する返事か（お礼、褒め言葉、ちょっとした面倒）が異なります。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-4",
+              "order": 4,
+              "plan": "free",
+              "type": "sentence_ordering",
+              "prompt": "Sắp xếp thành câu trấn an lịch sự.",
+              "promptByNative": {
+                "vi": "Sắp xếp thành câu trấn an lịch sự.",
+                "en": "Arrange into a polite reassurance sentence.",
+                "ja": "丁寧な安心させる文を組み立てましょう。"
+              },
+              "tokens": [
+                {
+                  "id": "kini",
+                  "text": "気（き）に",
+                  "canonicalText": "気に",
+                  "audioText": "気に"
+                },
+                {
+                  "id": "shinaide",
+                  "text": "しないで",
+                  "canonicalText": "しないで",
+                  "audioText": "しないで"
+                },
+                {
+                  "id": "kudasai",
+                  "text": "ください",
+                  "canonicalText": "ください",
+                  "audioText": "ください"
+                },
+                {
+                  "id": "gozaimasen",
+                  "text": "ございません",
+                  "canonicalText": "ございません",
+                  "audioText": "ございません"
+                },
+                {
+                  "id": "yokatta",
+                  "text": "良（よ）かった",
+                  "canonicalText": "良かった",
+                  "audioText": "良かった"
+                }
+              ],
+              "correctTokenIds": [
+                "kini",
+                "shinaide",
+                "kudasai"
+              ],
+              "feedback": {
+                "correctAnswer": "気にしないでください。",
+                "canonicalAnswer": "気にしないでください。",
+                "audioText": "きにしないでください",
+                "explanation": "気に + しないで + ください → 気にしないでください。 ございません／良かった là mảnh của とんでもございません／お役に立てて良かったです, không thuộc câu này.",
+                "explanationByNative": {
+                  "vi": "気に + しないで + ください → 気にしないでください。 ございません／良かった là mảnh của とんでもございません／お役に立てて良かったです, không thuộc câu này.",
+                  "en": "気に + しないで + ください → 気にしないでください。 ございません／良かった are fragments of とんでもございません／お役に立てて良かったです and do not belong in this sentence.",
+                  "ja": "気に＋しないで＋ください→気にしないでください。「ございません」「良かった」は「とんでもございません」「お役に立てて良かったです」の一部で、この文には属しません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-5",
+              "order": 5,
+              "plan": "free",
+              "type": "dialogue_fill",
+              "context": "Vai vế: hai bạn học, 田中 vừa nhờ 佐藤 cho mượn tài liệu và cảm ơn bằng thể lịch sự, nhưng 佐藤 đáp lại thân mật (giống mẫu vai vế đã học ở dialogueGroup 1) — điền đúng câu 佐藤 THẬT đã nói.",
+              "contextByNative": {
+                "vi": "Vai vế: hai bạn học, 田中 vừa nhờ 佐藤 cho mượn tài liệu và cảm ơn bằng thể lịch sự, nhưng 佐藤 đáp lại thân mật (giống mẫu vai vế đã học ở dialogueGroup 1) — điền đúng câu 佐藤 THẬT đã nói.",
+                "en": "Relationship: two classmates — Tanaka just asked Sato to lend notes and thanked them politely, but Sato replies casually (matching the relationship pattern from dialogueGroup 1) — fill in the exact line Sato really said.",
+                "ja": "関係性：クラスメート同士 — 田中が佐藤にノートを借りたいと頼んでお礼を丁寧に言いましたが、佐藤はカジュアルに返事をします（dialogueGroup 1で習った関係性のパターンと同じ）— 佐藤が実際に言った文をそのまま入力してください。"
+              },
+              "prompt": "Điền chỗ trống để hoàn thành hội thoại.",
+              "promptByNative": {
+                "vi": "Điền chỗ trống để hoàn thành hội thoại.",
+                "en": "Fill in the blank to complete the dialogue.",
+                "ja": "空欄を埋めて会話を完成させましょう。"
+              },
+              "dialogue": [
+                "田中: それは助かります。どうもありがとうございます。",
+                "佐藤: {{slot_1}}"
+              ],
+              "slots": [
+                {
+                  "id": "slot_1",
+                  "answerId": "ieie",
+                  "placeholder": "________"
+                }
+              ],
+              "wordBank": [
+                {
+                  "id": "ieie",
+                  "text": "いえいえ、お安（やす）い御用（ごよう）ですよ。",
+                  "canonicalText": "いえいえ、お安い御用ですよ。",
+                  "audioText": "いえいえ、お安い御用ですよ。"
+                },
+                {
+                  "id": "douitashimashite",
+                  "text": "どういたしまして。",
+                  "canonicalText": "どういたしまして。",
+                  "audioText": "どういたしまして。"
+                },
+                {
+                  "id": "tondemogozaimasen",
+                  "text": "とんでもございません。",
+                  "canonicalText": "とんでもございません。",
+                  "audioText": "とんでもございません。"
+                }
+              ],
+              "feedback": {
+                "correctAnswer": "いえいえ、お安い御用ですよ。",
+                "canonicalAnswer": "いえいえ、お安い御用ですよ。",
+                "audioText": "いえいえ、おやすいごようですよ",
+                "explanation": "佐藤 đáp lại thân mật bằng いえいえ dù 田中 vừa nói lịch sự — đúng vai vế đã thiết lập ở dialogueGroup 1. どういたしまして／とんでもございません đều là thể lịch sự, không khớp câu佐藤 thật đã nói.",
+                "explanationByNative": {
+                  "vi": "佐藤 đáp lại thân mật bằng いえいえ dù 田中 vừa nói lịch sự — đúng vai vế đã thiết lập ở dialogueGroup 1. どういたしまして／とんでもございません đều là thể lịch sự, không khớp câu佐藤 thật đã nói.",
+                  "en": "Sato replies casually with いえいえ even though Tanaka just spoke politely — matching the relationship established in dialogueGroup 1. どういたしまして／とんでもございません are both polite and do not match what Sato actually said.",
+                  "ja": "田中が丁寧に話したのに対し、佐藤は「いえいえ」とカジュアルに返事をします — dialogueGroup 1で設定した関係性のとおりです。「どういたしまして」「とんでもございません」はどちらも丁寧体で、佐藤が実際に言った文とは一致しません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-6",
+              "order": 6,
+              "plan": "free",
+              "type": "listening_multiple_choice",
+              "prompt": "Bạn vừa nghe câu nào?",
+              "promptByNative": {
+                "vi": "Bạn vừa nghe câu nào?",
+                "en": "Which sentence did you just hear?",
+                "ja": "今、どの文を聞きましたか？"
+              },
+              "audioText": "とんでもございません",
+              "options": [
+                {
+                  "id": "deflect_polite",
+                  "text": "Khiêm tốn từ chối lời khen, lịch sự",
+                  "textByNative": {
+                    "vi": "Khiêm tốn từ chối lời khen, lịch sự",
+                    "en": "Humbly deflect a compliment, polite",
+                    "ja": "褒め言葉を謙遜して打ち消す、丁寧"
+                  },
+                  "canonicalText": "Khiêm tốn từ chối lời khen, lịch sự",
+                  "canonicalTextByNative": {
+                    "vi": "Khiêm tốn từ chối lời khen, lịch sự",
+                    "en": "Humbly deflect a compliment, polite",
+                    "ja": "褒め言葉を謙遜して打ち消す、丁寧"
+                  },
+                  "audioText": "Khiêm tốn từ chối lời khen, lịch sự",
+                  "audioTextByNative": {
+                    "vi": "Khiêm tốn từ chối lời khen, lịch sự",
+                    "en": "Humbly deflect a compliment, polite",
+                    "ja": "褒め言葉を謙遜して打ち消す、丁寧"
+                  }
+                },
+                {
+                  "id": "reply_polite",
+                  "text": "Đáp lại lời cảm ơn, lịch sự",
+                  "textByNative": {
+                    "vi": "Đáp lại lời cảm ơn, lịch sự",
+                    "en": "Reply to thanks, polite",
+                    "ja": "お礼への返事、丁寧"
+                  },
+                  "canonicalText": "Đáp lại lời cảm ơn, lịch sự",
+                  "canonicalTextByNative": {
+                    "vi": "Đáp lại lời cảm ơn, lịch sự",
+                    "en": "Reply to thanks, polite",
+                    "ja": "お礼への返事、丁寧"
+                  },
+                  "audioText": "Đáp lại lời cảm ơn, lịch sự",
+                  "audioTextByNative": {
+                    "vi": "Đáp lại lời cảm ơn, lịch sự",
+                    "en": "Reply to thanks, polite",
+                    "ja": "お礼への返事、丁寧"
+                  }
+                },
+                {
+                  "id": "reassure",
+                  "text": "Trấn an đừng bận tâm",
+                  "textByNative": {
+                    "vi": "Trấn an đừng bận tâm",
+                    "en": "Reassure not to worry",
+                    "ja": "気にしないでほしいと伝える"
+                  },
+                  "canonicalText": "Trấn an đừng bận tâm",
+                  "canonicalTextByNative": {
+                    "vi": "Trấn an đừng bận tâm",
+                    "en": "Reassure not to worry",
+                    "ja": "気にしないでほしいと伝える"
+                  },
+                  "audioText": "Trấn an đừng bận tâm",
+                  "audioTextByNative": {
+                    "vi": "Trấn an đừng bận tâm",
+                    "en": "Reassure not to worry",
+                    "ja": "気にしないでほしいと伝える"
+                  }
+                },
+                {
+                  "id": "glad_helped",
+                  "text": "Vui vì đã giúp được",
+                  "textByNative": {
+                    "vi": "Vui vì đã giúp được",
+                    "en": "Glad to have helped",
+                    "ja": "役に立てて嬉しい"
+                  },
+                  "canonicalText": "Vui vì đã giúp được",
+                  "canonicalTextByNative": {
+                    "vi": "Vui vì đã giúp được",
+                    "en": "Glad to have helped",
+                    "ja": "役に立てて嬉しい"
+                  },
+                  "audioText": "Vui vì đã giúp được",
+                  "audioTextByNative": {
+                    "vi": "Vui vì đã giúp được",
+                    "en": "Glad to have helped",
+                    "ja": "役に立てて嬉しい"
+                  }
+                }
+              ],
+              "correctOptionId": "deflect_polite",
+              "feedback": {
+                "correctAnswer": "Khiêm tốn từ chối lời khen, lịch sự",
+                "correctAnswerByNative": {
+                  "vi": "Khiêm tốn từ chối lời khen, lịch sự",
+                  "en": "Humbly deflect a compliment, polite",
+                  "ja": "褒め言葉を謙遜して打ち消す、丁寧"
+                },
+                "explanation": "Câu nghe được là とんでもございません — dùng khi khiêm tốn từ chối lời khen, không phải câu đáp chung cho lời cảm ơn.",
+                "explanationByNative": {
+                  "vi": "Câu nghe được là とんでもございません — dùng khi khiêm tốn từ chối lời khen, không phải câu đáp chung cho lời cảm ơn.",
+                  "en": "The sentence heard is とんでもございません — used to humbly deflect a compliment, not a generic reply to thanks.",
+                  "ja": "聞こえた文は「とんでもございません」— 褒め言葉を謙遜して打ち消すときのもので、お礼への一般的な返事ではありません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-7",
+              "order": 7,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Thầy/cô vừa khen bạn làm bài tốt (không phải cảm ơn vì việc gì). Bạn khiêm tốn đáp lại thế nào (lịch sự)?",
+              "contextByNative": {
+                "vi": "Thầy/cô vừa khen bạn làm bài tốt (không phải cảm ơn vì việc gì). Bạn khiêm tốn đáp lại thế nào (lịch sự)?",
+                "en": "Your teacher just complimented your good work (not thanking you for a favor). How do you humbly reply (politely)?",
+                "ja": "先生があなたの良い出来を褒めてくれました（何かのお礼ではありません）。どう謙遜して返事しますか（丁寧に）？"
+              },
+              "prompt": "Thầy/cô vừa khen bạn làm bài tốt (không phải cảm ơn vì việc gì). Bạn khiêm tốn đáp lại thế nào (lịch sự)?",
+              "promptByNative": {
+                "vi": "Thầy/cô vừa khen bạn làm bài tốt (không phải cảm ơn vì việc gì). Bạn khiêm tốn đáp lại thế nào (lịch sự)?",
+                "en": "Your teacher just complimented your good work (not thanking you for a favor). How do you humbly reply (politely)?",
+                "ja": "先生があなたの良い出来を褒めてくれました（何かのお礼ではありません）。どう謙遜して返事しますか（丁寧に）？"
+              },
+              "options": [
+                {
+                  "id": "tondemogozaimasen",
+                  "text": "とんでもございません。",
+                  "canonicalText": "とんでもございません。",
+                  "audioText": "とんでもございません。"
+                },
+                {
+                  "id": "douitashimashite",
+                  "text": "どういたしまして。",
+                  "canonicalText": "どういたしまして。",
+                  "audioText": "どういたしまして。"
+                },
+                {
+                  "id": "ieie",
+                  "text": "いえいえ。",
+                  "canonicalText": "いえいえ。",
+                  "audioText": "いえいえ。"
+                },
+                {
+                  "id": "kininaide",
+                  "text": "気（き）にしないでください。",
+                  "canonicalText": "気にしないでください。",
+                  "audioText": "気にしないでください。"
+                }
+              ],
+              "correctOptionId": "tondemogozaimasen",
+              "feedback": {
+                "correctAnswer": "とんでもございません。",
+                "explanation": "とんでもございません đúng chức năng (đáp lại lời KHEN, không phải lời cảm ơn cụ thể). どういたしまして đáp lại lời CẢM ƠN, không phải lời khen. いえいえ sai cả trục lịch sự lẫn chức năng. 気にしないでください dùng khi có phiền phức, không phải khi được khen.",
+                "explanationByNative": {
+                  "vi": "とんでもございません đúng chức năng (đáp lại lời KHEN, không phải lời cảm ơn cụ thể). どういたしまして đáp lại lời CẢM ƠN, không phải lời khen. いえいえ sai cả trục lịch sự lẫn chức năng. 気にしないでください dùng khi có phiền phức, không phải khi được khen.",
+                  "en": "とんでもございません has the right function (replying to a COMPLIMENT, not specific thanks). どういたしまして replies to THANKS, not a compliment. いえいえ is wrong on both register and function. 気にしないでください is for when there is trouble, not when complimented.",
+                  "ja": "「とんでもございません」は機能が正しいです（褒め言葉への返事で、具体的なお礼ではない）。「どういたしまして」はお礼への返事で、褒め言葉へのものではありません。「いえいえ」は丁寧さも機能も誤りです。「気にしないでください」は面倒があるときのもので、褒められたときのものではありません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-8",
+              "order": 8,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Bạn vô tình làm phiền một chút (đến muộn), người kia nói không sao. Bạn muốn nói người đó đừng bận tâm (lịch sự). Nói gì?",
+              "contextByNative": {
+                "vi": "Bạn vô tình làm phiền một chút (đến muộn), người kia nói không sao. Bạn muốn nói người đó đừng bận tâm (lịch sự). Nói gì?",
+                "en": "You accidentally caused a little trouble (arriving late), and the other person says it is fine. You want to tell them not to worry (politely). What do you say?",
+                "ja": "ちょっとした迷惑をかけてしまい（遅刻など）、相手は大丈夫だと言っています。相手に気にしないでほしいと伝えたいです（丁寧に）。何と言いますか？"
+              },
+              "prompt": "Bạn vô tình làm phiền một chút (đến muộn), người kia nói không sao. Bạn muốn nói người đó đừng bận tâm (lịch sự). Nói gì?",
+              "promptByNative": {
+                "vi": "Bạn vô tình làm phiền một chút (đến muộn), người kia nói không sao. Bạn muốn nói người đó đừng bận tâm (lịch sự). Nói gì?",
+                "en": "You accidentally caused a little trouble (arriving late), and the other person says it is fine. You want to tell them not to worry (politely). What do you say?",
+                "ja": "ちょっとした迷惑をかけてしまい（遅刻など）、相手は大丈夫だと言っています。相手に気にしないでほしいと伝えたいです（丁寧に）。何と言いますか？"
+              },
+              "options": [
+                {
+                  "id": "kininaide",
+                  "text": "気（き）にしないでください。",
+                  "canonicalText": "気にしないでください。",
+                  "audioText": "気にしないでください。"
+                },
+                {
+                  "id": "tondemogozaimasen",
+                  "text": "とんでもございません。",
+                  "canonicalText": "とんでもございません。",
+                  "audioText": "とんでもございません。"
+                },
+                {
+                  "id": "douitashimashite",
+                  "text": "どういたしまして。",
+                  "canonicalText": "どういたしまして。",
+                  "audioText": "どういたしまして。"
+                },
+                {
+                  "id": "oyakunitatete",
+                  "text": "お役（やく）に立（た）てて良（よ）かったです。",
+                  "canonicalText": "お役に立てて良かったです。",
+                  "audioText": "お役に立てて良かったです。"
+                }
+              ],
+              "correctOptionId": "kininaide",
+              "feedback": {
+                "correctAnswer": "気にしないでください。",
+                "explanation": "気にしないでください đúng chức năng (có phiền phức cụ thể, muốn người kia đừng bận tâm). とんでもございません dùng khi khiêm tốn từ chối KHEN, không phải trấn an. どういたしまして đáp lại lời cảm ơn, không phải trấn an. お役に立てて良かったです là câu MÌNH nói khi MÌNH giúp được — ở đây bạn là người gây phiền, không phải người giúp.",
+                "explanationByNative": {
+                  "vi": "気にしないでください đúng chức năng (có phiền phức cụ thể, muốn người kia đừng bận tâm). とんでもございません dùng khi khiêm tốn từ chối KHEN, không phải trấn an. どういたしまして đáp lại lời cảm ơn, không phải trấn an. お役に立てて良かったです là câu MÌNH nói khi MÌNH giúp được — ở đây bạn là người gây phiền, không phải người giúp.",
+                  "en": "気にしないでください has the right function (there is specific trouble, and you want them not to worry). とんでもございません is for humbly deflecting a COMPLIMENT, not reassuring. どういたしまして replies to thanks, not for reassuring. お役に立てて良かったです is what YOU say when YOU helped — here you are the one who caused the trouble, not the one who helped.",
+                  "ja": "「気にしないでください」は機能が正しいです（具体的な面倒があり、相手に気にしないでほしい）。「とんでもございません」は褒め言葉を謙遜して打ち消すためのもので、安心させるためのものではありません。「どういたしまして」はお礼への返事で、安心させるためのものではありません。「お役に立てて良かったです」は自分が役に立てたときに言う言葉です — ここではあなたが迷惑をかけた側で、助けた側ではありません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-9",
+              "order": 9,
+              "plan": "free",
+              "type": "checkpoint",
+              "prompt": "Checkpoint 5 câu nhỏ",
+              "promptByNative": {
+                "vi": "Checkpoint 5 câu nhỏ",
+                "en": "Checkpoint, 5 short questions",
+                "ja": "チェックポイント、5つの小問"
+              },
+              "subQuestions": [
+                {
+                  "id": "q9_1",
+                  "prompt": "どういたしまして thuộc thể nào?",
+                  "promptByNative": {
+                    "vi": "どういたしまして thuộc thể nào?",
+                    "en": "What register is どういたしまして?",
+                    "ja": "「どういたしまして」はどの丁寧さですか？"
+                  },
+                  "options": [
+                    {
+                      "id": "polite",
+                      "text": "Thể lịch sự",
+                      "textByNative": {
+                        "vi": "Thể lịch sự",
+                        "en": "Polite register",
+                        "ja": "丁寧"
+                      },
+                      "canonicalText": "Thể lịch sự",
+                      "canonicalTextByNative": {
+                        "vi": "Thể lịch sự",
+                        "en": "Polite register",
+                        "ja": "丁寧"
+                      },
+                      "audioText": "Thể lịch sự",
+                      "audioTextByNative": {
+                        "vi": "Thể lịch sự",
+                        "en": "Polite register",
+                        "ja": "丁寧"
+                      }
+                    },
+                    {
+                      "id": "casual",
+                      "text": "Thể thường",
+                      "textByNative": {
+                        "vi": "Thể thường",
+                        "en": "Casual register",
+                        "ja": "普通体"
+                      },
+                      "canonicalText": "Thể thường",
+                      "canonicalTextByNative": {
+                        "vi": "Thể thường",
+                        "en": "Casual register",
+                        "ja": "普通体"
+                      },
+                      "audioText": "Thể thường",
+                      "audioTextByNative": {
+                        "vi": "Thể thường",
+                        "en": "Casual register",
+                        "ja": "普通体"
+                      }
+                    },
+                    {
+                      "id": "both",
+                      "text": "Cả hai như nhau",
+                      "textByNative": {
+                        "vi": "Cả hai như nhau",
+                        "en": "Both the same",
+                        "ja": "どちらも同じ"
+                      },
+                      "canonicalText": "Cả hai như nhau",
+                      "canonicalTextByNative": {
+                        "vi": "Cả hai như nhau",
+                        "en": "Both the same",
+                        "ja": "どちらも同じ"
+                      },
+                      "audioText": "Cả hai như nhau",
+                      "audioTextByNative": {
+                        "vi": "Cả hai như nhau",
+                        "en": "Both the same",
+                        "ja": "どちらも同じ"
+                      }
+                    },
+                    {
+                      "id": "none",
+                      "text": "Không thuộc thể nào",
+                      "textByNative": {
+                        "vi": "Không thuộc thể nào",
+                        "en": "Neither register",
+                        "ja": "どちらでもない"
+                      },
+                      "canonicalText": "Không thuộc thể nào",
+                      "canonicalTextByNative": {
+                        "vi": "Không thuộc thể nào",
+                        "en": "Neither register",
+                        "ja": "どちらでもない"
+                      },
+                      "audioText": "Không thuộc thể nào",
+                      "audioTextByNative": {
+                        "vi": "Không thuộc thể nào",
+                        "en": "Neither register",
+                        "ja": "どちらでもない"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "polite",
+                  "feedback": {
+                    "correctAnswer": "Thể lịch sự",
+                    "correctAnswerByNative": {
+                      "vi": "Thể lịch sự",
+                      "en": "Polite register",
+                      "ja": "丁寧"
+                    },
+                    "explanation": "Đây là câu đáp lịch sự tiêu chuẩn, dùng chung cho hầu hết mọi lời cảm ơn.",
+                    "explanationByNative": {
+                      "vi": "Đây là câu đáp lịch sự tiêu chuẩn, dùng chung cho hầu hết mọi lời cảm ơn.",
+                      "en": "This is the standard polite reply, usable for almost any thanks.",
+                      "ja": "これは標準的な丁寧な返事で、ほとんどのお礼に使えます。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_2",
+                  "prompt": "Bỏ ございません khỏi とんでもございません thì gần nghĩa với cụm nào?",
+                  "promptByNative": {
+                    "vi": "Bỏ ございません khỏi とんでもございません thì gần nghĩa với cụm nào?",
+                    "en": "Remove ございません from とんでもございません — which phrase is it closest to?",
+                    "ja": "「とんでもございません」から「ございません」を取ると、どの表現に近くなりますか？"
+                  },
+                  "options": [
+                    {
+                      "id": "tondemonai",
+                      "text": "とんでもない",
+                      "canonicalText": "とんでもない",
+                      "audioText": "とんでもない"
+                    },
+                    {
+                      "id": "douitashimashite",
+                      "text": "どういたしまして",
+                      "canonicalText": "どういたしまして",
+                      "audioText": "どういたしまして"
+                    },
+                    {
+                      "id": "ieie",
+                      "text": "いえいえ",
+                      "canonicalText": "いえいえ",
+                      "audioText": "いえいえ"
+                    },
+                    {
+                      "id": "kininaide",
+                      "text": "気（き）にしないでください",
+                      "canonicalText": "気にしないでください",
+                      "audioText": "気にしないでください"
+                    }
+                  ],
+                  "correctOptionId": "tondemonai",
+                  "feedback": {
+                    "correctAnswer": "とんでもない",
+                    "explanation": "とんでもない → とんでもございません là cặp lịch sự ↔ thân mật, cùng ý khiêm tốn từ chối lời khen.",
+                    "explanationByNative": {
+                      "vi": "とんでもない → とんでもございません là cặp lịch sự ↔ thân mật, cùng ý khiêm tốn từ chối lời khen.",
+                      "en": "とんでもない → とんでもございません is a casual ↔ polite pair, both meaning to humbly deflect a compliment.",
+                      "ja": "「とんでもない」→「とんでもございません」はカジュアル↔丁寧のペアで、どちらも褒め言葉を謙遜して打ち消す意味です。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_3",
+                  "prompt": "Được KHEN (không phải được cảm ơn vì một việc cụ thể) thì khiêm tốn đáp bằng gì, lịch sự?",
+                  "promptByNative": {
+                    "vi": "Được KHEN (không phải được cảm ơn vì một việc cụ thể) thì khiêm tốn đáp bằng gì, lịch sự?",
+                    "en": "When you are complimented (not thanked for a specific favor), how do you humbly reply, politely?",
+                    "ja": "（何かのお礼ではなく）褒められたとき、丁寧にどう謙遜して返事しますか？"
+                  },
+                  "options": [
+                    {
+                      "id": "tondemogozaimasen",
+                      "text": "とんでもございません",
+                      "canonicalText": "とんでもございません",
+                      "audioText": "とんでもございません"
+                    },
+                    {
+                      "id": "douitashimashite",
+                      "text": "どういたしまして",
+                      "canonicalText": "どういたしまして",
+                      "audioText": "どういたしまして"
+                    },
+                    {
+                      "id": "ieie",
+                      "text": "いえいえ",
+                      "canonicalText": "いえいえ",
+                      "audioText": "いえいえ"
+                    },
+                    {
+                      "id": "kininaide",
+                      "text": "気（き）にしないでください",
+                      "canonicalText": "気にしないでください",
+                      "audioText": "気にしないでください"
+                    }
+                  ],
+                  "correctOptionId": "tondemogozaimasen",
+                  "feedback": {
+                    "correctAnswer": "とんでもございません",
+                    "explanation": "とんでもございません dùng đúng khi lời khen có vẻ quá lời; どういたしまして／いえいえ dùng cho lời CẢM ƠN, không phải lời KHEN; 気にしないでください dùng khi có phiền phức, không phải khi được khen.",
+                    "explanationByNative": {
+                      "vi": "とんでもございません dùng đúng khi lời khen có vẻ quá lời; どういたしまして／いえいえ dùng cho lời CẢM ƠN, không phải lời KHEN; 気にしないでください dùng khi có phiền phức, không phải khi được khen.",
+                      "en": "とんでもございません fits when a compliment feels excessive; どういたしまして／いえいえ are for THANKS, not compliments; 気にしないでください is for when there was trouble, not when complimented.",
+                      "ja": "「とんでもございません」は褒め言葉が大げさに感じられるときに合います。「どういたしまして」「いえいえ」は感謝への返事であり、褒め言葉への返事ではありません。「気にしないでください」は面倒があったときのもので、褒められたときのものではありません。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_4",
+                  "prompt": "お役に立てて良かったです dùng khi nào, lịch sự?",
+                  "promptByNative": {
+                    "vi": "お役に立てて良かったです dùng khi nào, lịch sự?",
+                    "en": "When is お役に立てて良かったです used, politely?",
+                    "ja": "「お役に立てて良かったです」はいつ、丁寧に使いますか？"
+                  },
+                  "options": [
+                    {
+                      "id": "helped",
+                      "text": "Khi mình vừa giúp được việc gì đó cho người khác",
+                      "textByNative": {
+                        "vi": "Khi mình vừa giúp được việc gì đó cho người khác",
+                        "en": "When you have just been able to help someone with something",
+                        "ja": "自分が誰かの役に立てたとき"
+                      },
+                      "canonicalText": "Khi mình vừa giúp được việc gì đó cho người khác",
+                      "canonicalTextByNative": {
+                        "vi": "Khi mình vừa giúp được việc gì đó cho người khác",
+                        "en": "When you have just been able to help someone with something",
+                        "ja": "自分が誰かの役に立てたとき"
+                      },
+                      "audioText": "Khi mình vừa giúp được việc gì đó cho người khác",
+                      "audioTextByNative": {
+                        "vi": "Khi mình vừa giúp được việc gì đó cho người khác",
+                        "en": "When you have just been able to help someone with something",
+                        "ja": "自分が誰かの役に立てたとき"
+                      }
+                    },
+                    {
+                      "id": "was_helped",
+                      "text": "Khi mình vừa được người khác giúp",
+                      "textByNative": {
+                        "vi": "Khi mình vừa được người khác giúp",
+                        "en": "When you have just been helped by someone",
+                        "ja": "自分が誰かに助けてもらったとき"
+                      },
+                      "canonicalText": "Khi mình vừa được người khác giúp",
+                      "canonicalTextByNative": {
+                        "vi": "Khi mình vừa được người khác giúp",
+                        "en": "When you have just been helped by someone",
+                        "ja": "自分が誰かに助けてもらったとき"
+                      },
+                      "audioText": "Khi mình vừa được người khác giúp",
+                      "audioTextByNative": {
+                        "vi": "Khi mình vừa được người khác giúp",
+                        "en": "When you have just been helped by someone",
+                        "ja": "自分が誰かに助けてもらったとき"
+                      }
+                    },
+                    {
+                      "id": "apology",
+                      "text": "Khi mình xin lỗi vì đã làm phiền",
+                      "textByNative": {
+                        "vi": "Khi mình xin lỗi vì đã làm phiền",
+                        "en": "When you are apologizing for causing trouble",
+                        "ja": "迷惑をかけたことを謝るとき"
+                      },
+                      "canonicalText": "Khi mình xin lỗi vì đã làm phiền",
+                      "canonicalTextByNative": {
+                        "vi": "Khi mình xin lỗi vì đã làm phiền",
+                        "en": "When you are apologizing for causing trouble",
+                        "ja": "迷惑をかけたことを謝るとき"
+                      },
+                      "audioText": "Khi mình xin lỗi vì đã làm phiền",
+                      "audioTextByNative": {
+                        "vi": "Khi mình xin lỗi vì đã làm phiền",
+                        "en": "When you are apologizing for causing trouble",
+                        "ja": "迷惑をかけたことを謝るとき"
+                      }
+                    },
+                    {
+                      "id": "farewell",
+                      "text": "Khi mình chào tạm biệt",
+                      "textByNative": {
+                        "vi": "Khi mình chào tạm biệt",
+                        "en": "When you are saying goodbye",
+                        "ja": "お別れの挨拶をするとき"
+                      },
+                      "canonicalText": "Khi mình chào tạm biệt",
+                      "canonicalTextByNative": {
+                        "vi": "Khi mình chào tạm biệt",
+                        "en": "When you are saying goodbye",
+                        "ja": "お別れの挨拶をするとき"
+                      },
+                      "audioText": "Khi mình chào tạm biệt",
+                      "audioTextByNative": {
+                        "vi": "Khi mình chào tạm biệt",
+                        "en": "When you are saying goodbye",
+                        "ja": "お別れの挨拶をするとき"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "helped",
+                  "feedback": {
+                    "correctAnswer": "Khi mình vừa giúp được việc gì đó cho người khác",
+                    "correctAnswerByNative": {
+                      "vi": "Khi mình vừa giúp được việc gì đó cho người khác",
+                      "en": "When you have just been able to help someone with something",
+                      "ja": "自分が誰かの役に立てたとき"
+                    },
+                    "explanation": "Đây là câu MÌNH nói khi MÌNH giúp được người khác, không phải câu đáp khi được người khác giúp.",
+                    "explanationByNative": {
+                      "vi": "Đây là câu MÌNH nói khi MÌNH giúp được người khác, không phải câu đáp khi được người khác giúp.",
+                      "en": "This is what YOU say when YOU helped someone else, not a reply for when you were helped.",
+                      "ja": "これは自分が誰かの役に立てたときに言う言葉であり、自分が助けてもらったときの返事ではありません。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_5",
+                  "prompt": "こちらこそ ở bài này khác こちらこそ đã học ở bài chào hỏi thế nào?",
+                  "promptByNative": {
+                    "vi": "こちらこそ ở bài này khác こちらこそ đã học ở bài chào hỏi thế nào?",
+                    "en": "How does こちらこそ in this lesson differ from the こちらこそ learned in the greetings lesson?",
+                    "ja": "このレッスンの「こちらこそ」は、挨拶のレッスンで習った「こちらこそ」とどう違いますか？"
+                  },
+                  "options": [
+                    {
+                      "id": "reciprocate_gratitude",
+                      "text": "Đáp lễ khi được bày tỏ lòng biết ơn, không phải đáp lễ lời chào よろしくお願（ねが）いします",
+                      "textByNative": {
+                        "vi": "Đáp lễ khi được bày tỏ lòng biết ơn, không phải đáp lễ lời chào よろしくお願いします",
+                        "en": "Reciprocating when gratitude is expressed toward you, not reciprocating a よろしくお願いします greeting",
+                        "ja": "感謝の気持ちを伝えられたときに応える — 「よろしくお願いします」という挨拶に応えるのではない"
+                      },
+                      "canonicalText": "Đáp lễ khi được bày tỏ lòng biết ơn, không phải đáp lễ lời chào よろしくお願いします",
+                      "canonicalTextByNative": {
+                        "vi": "Đáp lễ khi được bày tỏ lòng biết ơn, không phải đáp lễ lời chào よろしくお願いします",
+                        "en": "Reciprocating when gratitude is expressed toward you, not reciprocating a よろしくお願いします greeting",
+                        "ja": "感謝の気持ちを伝えられたときに応える — 「よろしくお願いします」という挨拶に応えるのではない"
+                      },
+                      "audioText": "Đáp lễ khi được bày tỏ lòng biết ơn, không phải đáp lễ lời chào よろしくお願いします",
+                      "audioTextByNative": {
+                        "vi": "Đáp lễ khi được bày tỏ lòng biết ơn, không phải đáp lễ lời chào よろしくお願いします",
+                        "en": "Reciprocating when gratitude is expressed toward you, not reciprocating a よろしくお願いします greeting",
+                        "ja": "感謝の気持ちを伝えられたときに応える — 「よろしくお願いします」という挨拶に応えるのではない"
+                      }
+                    },
+                    {
+                      "id": "same",
+                      "text": "Hai cách dùng giống hệt nhau, không có gì khác",
+                      "textByNative": {
+                        "vi": "Hai cách dùng giống hệt nhau, không có gì khác",
+                        "en": "The two uses are identical, no difference",
+                        "ja": "二つの使い方はまったく同じで、違いはない"
+                      },
+                      "canonicalText": "Hai cách dùng giống hệt nhau, không có gì khác",
+                      "canonicalTextByNative": {
+                        "vi": "Hai cách dùng giống hệt nhau, không có gì khác",
+                        "en": "The two uses are identical, no difference",
+                        "ja": "二つの使い方はまったく同じで、違いはない"
+                      },
+                      "audioText": "Hai cách dùng giống hệt nhau, không có gì khác",
+                      "audioTextByNative": {
+                        "vi": "Hai cách dùng giống hệt nhau, không có gì khác",
+                        "en": "The two uses are identical, no difference",
+                        "ja": "二つの使い方はまったく同じで、違いはない"
+                      }
+                    },
+                    {
+                      "id": "strangers_only",
+                      "text": "Chỉ dùng được với người lạ",
+                      "textByNative": {
+                        "vi": "Chỉ dùng được với người lạ",
+                        "en": "Only usable with strangers",
+                        "ja": "見知らぬ人にしか使えない"
+                      },
+                      "canonicalText": "Chỉ dùng được với người lạ",
+                      "canonicalTextByNative": {
+                        "vi": "Chỉ dùng được với người lạ",
+                        "en": "Only usable with strangers",
+                        "ja": "見知らぬ人にしか使えない"
+                      },
+                      "audioText": "Chỉ dùng được với người lạ",
+                      "audioTextByNative": {
+                        "vi": "Chỉ dùng được với người lạ",
+                        "en": "Only usable with strangers",
+                        "ja": "見知らぬ人にしか使えない"
+                      }
+                    },
+                    {
+                      "id": "farewell_only",
+                      "text": "Chỉ dùng được khi chia tay",
+                      "textByNative": {
+                        "vi": "Chỉ dùng được khi chia tay",
+                        "en": "Only usable when saying goodbye",
+                        "ja": "お別れのときにしか使えない"
+                      },
+                      "canonicalText": "Chỉ dùng được khi chia tay",
+                      "canonicalTextByNative": {
+                        "vi": "Chỉ dùng được khi chia tay",
+                        "en": "Only usable when saying goodbye",
+                        "ja": "お別れのときにしか使えない"
+                      },
+                      "audioText": "Chỉ dùng được khi chia tay",
+                      "audioTextByNative": {
+                        "vi": "Chỉ dùng được khi chia tay",
+                        "en": "Only usable when saying goodbye",
+                        "ja": "お別れのときにしか使えない"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "reciprocate_gratitude",
+                  "feedback": {
+                    "correctAnswer": "Đáp lễ khi được bày tỏ lòng biết ơn, không phải đáp lễ lời chào よろしくお願いします",
+                    "correctAnswerByNative": {
+                      "vi": "Đáp lễ khi được bày tỏ lòng biết ơn, không phải đáp lễ lời chào よろしくお願いします",
+                      "en": "Reciprocating when gratitude is expressed toward you, not reciprocating a よろしくお願いします greeting",
+                      "ja": "感謝の気持ちを伝えられたときに応える — 「よろしくお願いします」という挨拶に応えるのではない"
+                    },
+                    "explanation": "こちらこそ luôn mang nghĩa gốc \"đáp lễ\" nhưng ĐIỀU ĐƯỢC ĐÁP LỄ khác nhau theo tình huống — lời chào hay lời cảm ơn.",
+                    "explanationByNative": {
+                      "vi": "こちらこそ luôn mang nghĩa gốc \"đáp lễ\" nhưng ĐIỀU ĐƯỢC ĐÁP LỄ khác nhau theo tình huống — lời chào hay lời cảm ơn.",
+                      "en": "こちらこそ always carries the base meaning of \"reciprocating,\" but WHAT is being reciprocated differs by situation — a greeting or an expression of gratitude.",
+                      "ja": "「こちらこそ」は常に「お返しする」という基本の意味を持ちますが、場面によって何に対してお返しするか（挨拶か、感謝の言葉か）が異なります。"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-10",
+              "order": 10,
+              "plan": "plus",
+              "type": "chat_text_fill",
+              "prompt": "Hoàn thành đoạn chat",
+              "promptByNative": {
+                "vi": "Hoàn thành đoạn chat",
+                "en": "Complete the chat",
+                "ja": "チャットを完成させましょう"
+              },
+              "chat": {
+                "timestamp": "16:20",
+                "context": "Hai đồng nghiệp nhắn tin: một người vừa giúp việc, người kia cảm ơn và được đáp lại lịch sự. Nhập từ phù hợp vào hai ô trống.",
+                "contextByNative": {
+                  "vi": "Hai đồng nghiệp nhắn tin: một người vừa giúp việc, người kia cảm ơn và được đáp lại lịch sự. Nhập từ phù hợp vào hai ô trống.",
+                  "en": "Two colleagues are texting: one just helped with something, the other thanks them and is replied to politely. Type the right word into the two blanks.",
+                  "ja": "同僚同士がメッセージのやり取りをしています：一方が手伝い、もう一方がお礼を言い、丁寧に返事をされます。二つの空欄に合う言葉を入力してください。"
+                },
+                "speakers": [
+                  {
+                    "id": "a",
+                    "label": "A",
+                    "alignment": "right"
+                  },
+                  {
+                    "id": "b",
+                    "label": "B",
+                    "alignment": "left"
+                  }
+                ],
+                "messages": [
+                  {
+                    "id": "message_1",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "displayText": "明日（あした）にでも、実験結果（じっけんけっか）をまとめたレポートを貸（か）しましょうか？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_2",
+                    "speakerId": "b",
+                    "segments": [
+                      {
+                        "displayText": "それは助（たす）かります。",
+                        "displayTextByNative": {
+                          "vi": "それは助かります。",
+                          "en": "That would help a lot.",
+                          "ja": "それは助かります。"
+                        }
+                      },
+                      {
+                        "slotId": "chat_douitashimashite_setup_slot"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_3",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "slotId": "chat_oyakunitatete_slot"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "slots": [
+                {
+                  "id": "chat_douitashimashite_setup_slot",
+                  "displayText": "どうもありがとうございます",
+                  "canonicalText": "どうもありがとうございます",
+                  "audioText": "どうもありがとうございます",
+                  "acceptedAnswers": [
+                    "どうもありがとうございます"
+                  ]
+                },
+                {
+                  "id": "chat_oyakunitatete_slot",
+                  "displayText": "お役（やく）に立（た）てて良（よ）かったです",
+                  "canonicalText": "お役に立てて良かったです",
+                  "audioText": "おやくにたててよかったです",
+                  "acceptedAnswers": [
+                    "お役に立てて良かったです"
+                  ]
+                }
+              ],
+              "feedback": {
+                "correctAnswer": "どうもありがとうございます\nお役に立てて良かったです",
+                "canonicalAnswer": "どうもありがとうございます／お役に立てて良かったです",
+                "audioText": "どうもありがとうございます／おやくにたててよかったです",
+                "correctMessage": "Bạn làm tốt lắm!",
+                "correctMessageByNative": {
+                  "vi": "Bạn làm tốt lắm!",
+                  "en": "You did great!",
+                  "ja": "よくできました！"
+                },
+                "slotFeedback": {
+                  "chat_douitashimashite_setup_slot": {
+                    "incorrectMessage": "Ô này cảm ơn lịch sự, nhấn mạnh.",
+                    "incorrectMessageByNative": {
+                      "vi": "Ô này cảm ơn lịch sự, nhấn mạnh.",
+                      "en": "This blank gives polite, emphatic thanks.",
+                      "ja": "このマス目は丁寧に強調してお礼を言います。"
+                    },
+                    "correctAnswer": "どうもありがとうございます",
+                    "explanation": "Nhắc lại mẫu cảm ơn lịch sự đã học ở bài trước, để có lời cảm ơn cho B đáp lại.",
+                    "explanationByNative": {
+                      "vi": "Nhắc lại mẫu cảm ơn lịch sự đã học ở bài trước, để có lời cảm ơn cho B đáp lại.",
+                      "en": "Recalls the polite thanks pattern from the previous lesson, giving B something to reply to.",
+                      "ja": "前のレッスンで習った丁寧なお礼のパターンを思い出させ、Bが返事できるお礼の言葉を作ります。"
+                    }
+                  },
+                  "chat_oyakunitatete_slot": {
+                    "incorrectMessage": "Ô này bày tỏ vui vì đã giúp được, lịch sự.",
+                    "incorrectMessageByNative": {
+                      "vi": "Ô này bày tỏ vui vì đã giúp được, lịch sự.",
+                      "en": "This blank expresses being glad to have helped, politely.",
+                      "ja": "このマス目は、役に立てて嬉しいという気持ちを丁寧に伝えます。"
+                    },
+                    "correctAnswer": "お役に立てて良かったです",
+                    "explanation": "A vừa giúp (cho mượn báo cáo) nên đáp lại bằng câu bày tỏ niềm vui đã giúp được, không phải どういたしまして (câu đó dành cho B, người ĐƯỢC giúp).",
+                    "explanationByNative": {
+                      "vi": "A vừa giúp (cho mượn báo cáo) nên đáp lại bằng câu bày tỏ niềm vui đã giúp được, không phải どういたしまして (câu đó dành cho B, người ĐƯỢC giúp).",
+                      "en": "A just helped (by lending the report), so A replies with a phrase expressing joy at having helped, not どういたしまして (that phrase is for B, the one who WAS helped).",
+                      "ja": "Aは手伝ったばかりなので（レポートを貸した）、役に立てた喜びを表す言葉で返事をします。「どういたしまして」ではありません（それは助けてもらったBのための言葉です）。"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-11",
+              "order": 11,
+              "plan": "plus",
+              "type": "slot_ordering",
+              "prompt": "Sắp xếp thành câu đáp lại lời cảm ơn thân mật. Có thẻ không cần dùng.",
+              "promptByNative": {
+                "vi": "Sắp xếp thành câu đáp lại lời cảm ơn thân mật. Có thẻ không cần dùng.",
+                "en": "Arrange into a casual reply to thanks. Some cards are not needed.",
+                "ja": "カジュアルなお礼への返事に並べかえてください。使わないカードがあります。"
+              },
+              "tokens": [
+                {
+                  "id": "ieie",
+                  "text": "いえいえ",
+                  "canonicalText": "いえいえ",
+                  "audioText": "いえいえ"
+                },
+                {
+                  "id": "gozaimasen_distractor",
+                  "text": "ございません",
+                  "canonicalText": "ございません",
+                  "audioText": "ございません"
+                },
+                {
+                  "id": "yokatta_distractor",
+                  "text": "良（よ）かったです",
+                  "canonicalText": "良かったです",
+                  "audioText": "良かったです"
+                }
+              ],
+              "answerSlots": [
+                {
+                  "id": "s1",
+                  "expectedTokenId": "ieie",
+                  "afterText": "。"
+                }
+              ],
+              "unusedTokenIds": [
+                "gozaimasen_distractor",
+                "yokatta_distractor"
+              ],
+              "feedback": {
+                "correctAnswer": "いえいえ。",
+                "canonicalAnswer": "いえいえ。",
+                "audioText": "いえいえ",
+                "explanation": "いえいえ đứng riêng là câu đáp thân mật đầy đủ. ございません／良かったです là mảnh của とんでもございません／お役に立てて良かったです, không đi cùng câu ngắn này.",
+                "explanationByNative": {
+                  "vi": "いえいえ đứng riêng là câu đáp thân mật đầy đủ. ございません／良かったです là mảnh của とんでもございません／お役に立てて良かったです, không đi cùng câu ngắn này.",
+                  "en": "いえいえ standing alone is a complete casual reply. ございません／良かったです are fragments of とんでもございません／お役に立てて良かったです and do not belong in this short sentence.",
+                  "ja": "「いえいえ」は単独で完全なカジュアルな返事になります。「ございません」「良かったです」は「とんでもございません」「お役に立てて良かったです」の一部で、この短い文には合いません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-12",
+              "order": 12,
+              "plan": "plus",
+              "type": "multiple_choice",
+              "prompt": "Chọn đoạn hội thoại tự nhiên nhất.",
+              "promptByNative": {
+                "vi": "Chọn đoạn hội thoại tự nhiên nhất.",
+                "en": "Choose the most natural exchange.",
+                "ja": "最も自然な会話を選びましょう。"
+              },
+              "options": [
+                {
+                  "id": "natural",
+                  "text": "A: どうもありがとうございます。\nB: どういたしまして。",
+                  "canonicalText": "A: どうもありがとうございます。\nB: どういたしまして。",
+                  "audioText": "A: どうもありがとうございます。\nB: どういたしまして。"
+                },
+                {
+                  "id": "register_mismatch",
+                  "text": "A: ありがとう。\nB: とんでもございません。",
+                  "canonicalText": "A: ありがとう。\nB: とんでもございません。",
+                  "audioText": "A: ありがとう。\nB: とんでもございません。"
+                },
+                {
+                  "id": "malformed",
+                  "text": "A: 助（たす）かります。\nB: いえいえ、とんでもございませんです。",
+                  "canonicalText": "A: 助かります。\nB: いえいえ、とんでもございませんです。",
+                  "audioText": "A: 助かります。\nB: いえいえ、とんでもございませんです。"
+                },
+                {
+                  "id": "wrong_function",
+                  "text": "A: （とても上手（じょうず）ですね！）\nB: どういたしまして。",
+                  "canonicalText": "A: （とても上手（じょうず）ですね！）\nB: どういたしまして。",
+                  "audioText": "A: （とても上手（じょうず）ですね！）\nB: どういたしまして。"
+                }
+              ],
+              "correctOptionId": "natural",
+              "feedback": {
+                "correctAnswer": "A: どうもありがとうございます。\nB: どういたしまして。",
+                "explanation": "A tự nhiên: lời cảm ơn lịch sự được đáp lại lịch sự, đúng chức năng. B lệch trục lịch sự: A nói thân mật mà B lại đáp quá trang trọng. C ghép sai (ございませんです không tồn tại — とんでもございません đã đủ lịch sự, không thêm です). D sai chức năng: lời trong ngoặc là LỜI KHEN, nhưng どういたしまして chỉ đáp lại lời CẢM ƠN.",
+                "explanationByNative": {
+                  "vi": "A tự nhiên: lời cảm ơn lịch sự được đáp lại lịch sự, đúng chức năng. B lệch trục lịch sự: A nói thân mật mà B lại đáp quá trang trọng. C ghép sai (ございませんです không tồn tại — とんでもございません đã đủ lịch sự, không thêm です). D sai chức năng: lời trong ngoặc là LỜI KHEN, nhưng どういたしまして chỉ đáp lại lời CẢM ƠN.",
+                  "en": "A is natural: polite thanks is met with a polite, correctly-functioning reply. B is off on register: A speaks casually but B replies overly formally. C is wrongly combined (ございませんです does not exist — とんでもございません is already polite enough without adding です). D has the wrong function: the bracketed line is a COMPLIMENT, but どういたしまして only replies to THANKS.",
+                  "ja": "Aは自然です。丁寧なお礼に丁寧に、正しい機能で返事をしています。Bは丁寧さの軸がずれています。Aはカジュアルに話しているのに、Bが丁寧すぎる返事をしています。Cは組み合わせが誤りです（「ございませんです」は存在しません — 「とんでもございません」ですでに十分丁寧で、「です」を足す必要はありません）。Dは機能が誤りです。かっこ内の言葉は褒め言葉ですが、「どういたしまして」はお礼にしか返事をしません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-13",
+              "order": 13,
+              "plan": "plus",
+              "type": "slot_ordering",
+              "prompt": "Sắp xếp thành câu bày tỏ vui vì đã giúp được, lịch sự. Có thẻ không cần dùng.",
+              "promptByNative": {
+                "vi": "Sắp xếp thành câu bày tỏ vui vì đã giúp được, lịch sự. Có thẻ không cần dùng.",
+                "en": "Arrange into a polite phrase expressing joy at having helped. Some cards are not needed.",
+                "ja": "役に立てて嬉しいという丁寧な文に並べかえてください。使わないカードがあります。"
+              },
+              "tokens": [
+                {
+                  "id": "oyakunitatete",
+                  "text": "お役（やく）に立（た）てて",
+                  "canonicalText": "お役に立てて",
+                  "audioText": "お役に立てて"
+                },
+                {
+                  "id": "yokatta",
+                  "text": "良（よ）かった",
+                  "canonicalText": "良かった",
+                  "audioText": "良かった"
+                },
+                {
+                  "id": "desu",
+                  "text": "です",
+                  "canonicalText": "です",
+                  "audioText": "です"
+                },
+                {
+                  "id": "gozaimasen_distractor",
+                  "text": "ございません",
+                  "canonicalText": "ございません",
+                  "audioText": "ございません"
+                },
+                {
+                  "id": "kininaide_distractor",
+                  "text": "気（き）にしないで",
+                  "canonicalText": "気にしないで",
+                  "audioText": "気にしないで"
+                }
+              ],
+              "answerSlots": [
+                {
+                  "id": "s1",
+                  "expectedTokenId": "oyakunitatete"
+                },
+                {
+                  "id": "s2",
+                  "expectedTokenId": "yokatta"
+                },
+                {
+                  "id": "s3",
+                  "expectedTokenId": "desu",
+                  "afterText": "。"
+                }
+              ],
+              "unusedTokenIds": [
+                "gozaimasen_distractor",
+                "kininaide_distractor"
+              ],
+              "feedback": {
+                "correctAnswer": "お役に立てて良かったです。",
+                "canonicalAnswer": "お役に立てて良かったです。",
+                "audioText": "おやくにたててよかったです",
+                "explanation": "お役に立てて + 良かった + です → お役に立てて良かったです。 ございません là mảnh của とんでもございません, 気にしないで là mảnh của 気にしないでください — cả hai không thuộc câu này.",
+                "explanationByNative": {
+                  "vi": "お役に立てて + 良かった + です → お役に立てて良かったです。 ございません là mảnh của とんでもございません, 気にしないで là mảnh của 気にしないでください — cả hai không thuộc câu này.",
+                  "en": "お役に立てて + 良かった + です → お役に立てて良かったです。 ございません is a fragment of とんでもございません, and 気にしないで is a fragment of 気にしないでください — neither belongs in this sentence.",
+                  "ja": "お役に立てて＋良かった＋です→お役に立てて良かったです。「ございません」は「とんでもございません」の一部、「気にしないで」は「気にしないでください」の一部で、どちらもこの文には属しません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u1-l2-practice-14",
+              "order": 14,
+              "plan": "plus",
+              "type": "real_world_practice_dialogue",
+              "nonGraded": true,
+              "scenarioTitle": "Đáp lại lời cảm ơn trong hai tình huống",
+              "scenarioTitleByNative": {
+                "vi": "Đáp lại lời cảm ơn trong hai tình huống",
+                "en": "Replying to thanks in two situations",
+                "ja": "二つの場面でお礼に返事をする"
+              },
+              "scenarioDescription": "Vai vế: nối tiếp bài trước (chuyến du lịch, hai người ngang vai, lịch sự) rồi chuyển sang một tình huống khác (bạn học giúp tìm đồ, lịch sự vì chưa thân). Cùng là đáp lại lời cảm ơn lịch sự, nhưng câu đáp chuẩn dùng chung được cho cả hai, không cần nêu cụ thể đã giúp gì.",
+              "scenarioDescriptionByNative": {
+                "vi": "Vai vế: nối tiếp bài trước (chuyến du lịch, hai người ngang vai, lịch sự) rồi chuyển sang một tình huống khác (bạn học giúp tìm đồ, lịch sự vì chưa thân). Cùng là đáp lại lời cảm ơn lịch sự, nhưng câu đáp chuẩn dùng chung được cho cả hai, không cần nêu cụ thể đã giúp gì.",
+                "en": "Relationship: continues the previous lesson (a trip, two people of equal standing, polite) then moves to a different situation (a classmate helping find something, polite since not yet close). Both are polite replies to thanks, but the standard reply works for both without needing to name what was helped with.",
+                "ja": "関係性：前のレッスンの続き（旅行、対等な二人、丁寧）から、別の場面（クラスメートが物を探すのを手伝う、まだ親しくないので丁寧）に移ります。どちらも丁寧なお礼への返事ですが、標準的な返事はどちらにも使え、何を手伝ったか言う必要はありません。"
+              },
+              "characterIds": [
+                "tanaka",
+                "sato",
+                "ito"
+              ],
+              "dialogueLines": [
+                {
+                  "targetText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+                  "displayText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+                  "reading": "ハチこうといっしょにしゃしんをとってもらえませんか？",
+                  "speechText": "ハチこうといっしょにしゃしんをとってもらえませんか",
+                  "translationByNative": {
+                    "vi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+                    "en": "Could you take a photo of me with the Hachiko statue?",
+                    "ja": "ハチ公と一緒に写真を撮ってもらえませんか？"
+                  },
+                  "translations": {
+                    "vi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+                    "en": "Could you take a photo of me with the Hachiko statue?",
+                    "ja": "ハチ公と一緒に写真を撮ってもらえませんか？"
+                  },
+                  "meaningVi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "Hachikō to issho ni shashin o totte moraemasen ka?"
+                },
+                {
+                  "targetText": "よいですよ。シャッターはどこですか？",
+                  "displayText": "よいですよ。シャッターはどこですか？",
+                  "reading": "よいですよ。シャッターはどこですか？",
+                  "speechText": "よいですよ。シャッターはどこですか",
+                  "translationByNative": {
+                    "vi": "Được chứ. Nút chụp ở đâu vậy?",
+                    "en": "Sure. Where is the shutter button?",
+                    "ja": "よいですよ。シャッターはどこですか？"
+                  },
+                  "translations": {
+                    "vi": "Được chứ. Nút chụp ở đâu vậy?",
+                    "en": "Sure. Where is the shutter button?",
+                    "ja": "よいですよ。シャッターはどこですか？"
+                  },
+                  "meaningVi": "Được chứ. Nút chụp ở đâu vậy?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "yoi desu yo. shattā wa doko desu ka?"
+                },
+                {
+                  "targetText": "右上（みぎうえ）にあります。",
+                  "displayText": "右上（みぎうえ）にあります。",
+                  "reading": "みぎうえにあります。",
+                  "speechText": "みぎうえにあります",
+                  "translationByNative": {
+                    "vi": "Ở phía trên bên phải.",
+                    "en": "It is on the upper right.",
+                    "ja": "右上にあります。"
+                  },
+                  "translations": {
+                    "vi": "Ở phía trên bên phải.",
+                    "en": "It is on the upper right.",
+                    "ja": "右上にあります。"
+                  },
+                  "meaningVi": "Ở phía trên bên phải.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "migijō ni arimasu."
+                },
+                {
+                  "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+                  "displayText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
+                  "reading": "みぎうえですね。ではとりますよ。このようなかんじでどうですか？",
+                  "speechText": "みぎうえですね。ではとりますよ。このようなかんじでどうですか",
+                  "translationByNative": {
+                    "vi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+                    "en": "Upper right, got it. I will take the photo now. How does this look?",
+                    "ja": "右上ですね。では撮りますよ。このような感じでどうですか？"
+                  },
+                  "translations": {
+                    "vi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+                    "en": "Upper right, got it. I will take the photo now. How does this look?",
+                    "ja": "右上ですね。では撮りますよ。このような感じでどうですか？"
+                  },
+                  "meaningVi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "migijō desu ne. deha torimasu yo. kono yōna kanji de dō desu ka?"
+                },
+                {
+                  "targetText": "はい、ありがとうございました。",
+                  "displayText": "はい、ありがとうございました。",
+                  "reading": "はい、ありがとうございました。",
+                  "speechText": "はい、ありがとうございました",
+                  "translationByNative": {
+                    "vi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+                    "en": "Yes, thank you very much.",
+                    "ja": "はい、ありがとうございました。"
+                  },
+                  "translations": {
+                    "vi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+                    "en": "Yes, thank you very much.",
+                    "ja": "はい、ありがとうございました。"
+                  },
+                  "meaningVi": "Vâng, cảm ơn anh/chị nhiều ạ.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "hai, arigatō gozaimashita."
+                },
+                {
+                  "targetText": "どういたしまして。",
+                  "displayText": "どういたしまして。",
+                  "reading": "どういたしまして。",
+                  "speechText": "どういたしまして",
+                  "translationByNative": {
+                    "vi": "Không có gì đâu.",
+                    "en": "You're welcome.",
+                    "ja": "どういたしまして。"
+                  },
+                  "translations": {
+                    "vi": "Không có gì đâu.",
+                    "en": "You're welcome.",
+                    "ja": "どういたしまして。"
+                  },
+                  "meaningVi": "Không có gì đâu.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "dōitashimashite."
+                },
+                {
+                  "targetText": "あ、見（み）つけました。私（わたし）の足元（あしもと）にありましたよ。",
+                  "displayText": "あ、見（み）つけました。私（わたし）の足元（あしもと）にありましたよ。",
+                  "reading": "あ、みつけました。わたしのあしもとにありましたよ。",
+                  "speechText": "あ、みつけました。わたしのあしもとにありましたよ",
+                  "translationByNative": {
+                    "vi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+                    "en": "Oh, I found it. It was under my feet.",
+                    "ja": "あ、見つけました。私の足元にありましたよ。"
+                  },
+                  "translations": {
+                    "vi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+                    "en": "Oh, I found it. It was under my feet.",
+                    "ja": "あ、見つけました。私の足元にありましたよ。"
+                  },
+                  "meaningVi": "À, tìm thấy rồi. Nó ở dưới chân tôi này.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "a, mitsukemashita. watashi no ashimoto ni arimashita yo."
+                },
+                {
+                  "targetText": "どうもありがとうございます。",
+                  "displayText": "どうもありがとうございます。",
+                  "reading": "どうもありがとうございます。",
+                  "speechText": "どうもありがとうございます",
+                  "translationByNative": {
+                    "vi": "Cảm ơn chị nhiều ạ.",
+                    "en": "Thank you very much.",
+                    "ja": "どうもありがとうございます。"
+                  },
+                  "translations": {
+                    "vi": "Cảm ơn chị nhiều ạ.",
+                    "en": "Thank you very much.",
+                    "ja": "どうもありがとうございます。"
+                  },
+                  "meaningVi": "Cảm ơn chị nhiều ạ.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "dōmo arigatō gozaimasu."
+                },
+                {
+                  "targetText": "どういたしまして。",
+                  "displayText": "どういたしまして。",
+                  "reading": "どういたしまして。",
+                  "speechText": "どういたしまして",
+                  "translationByNative": {
+                    "vi": "Không có gì đâu.",
+                    "en": "You're welcome.",
+                    "ja": "どういたしまして。"
+                  },
+                  "translations": {
+                    "vi": "Không có gì đâu.",
+                    "en": "You're welcome.",
+                    "ja": "どういたしまして。"
+                  },
+                  "meaningVi": "Không có gì đâu.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "dōitashimashite."
+                }
+              ],
+              "sceneDividers": [
+                {
+                  "afterDialogueLine": 6,
+                  "targetText": "べつの日（ひ）",
+                  "translationByNative": {
+                    "vi": "Một ngày khác",
+                    "en": "Another day",
+                    "ja": "べつの日"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "contentStatus": "ready",
+      "playable": true,
+      "comingSoon": false,
+      "canSkip": false,
+      "exerciseStatus": "ready",
+      "learnSection": {
+        "lessonIntro": {
+          "status": "ready"
+        },
+        "vocabularyPhraseCards": {
+          "status": "ready"
         },
         "miniDialogue": {
-          "status": "placeholder"
+          "status": "ready",
+          "dialogueGroupCount": 3
         },
-        "cultureNuanceNote": {
-          "status": "placeholder"
+        "grammarSentencePatterns": {
+          "status": "ready"
         },
-        "contextualVariations": {
-          "status": "placeholder"
-        },
-        "communicationStrategy": {
-          "status": "placeholder"
+        "practiceExercises": {
+          "status": "ready"
         }
       },
-      "practiceStages": [
-        {
-          "key": "warmup",
-          "labelByNative": {
-            "en": "Warm-up",
-            "vi": "Khởi động",
-            "ja": "ウォームアップ",
-            "ko": "워밍업",
-            "zh": "热身"
-          },
-          "goalByNative": {
-            "en": "Recognize phrases, listen basically, understand meaning, and use simple patterns.",
-            "vi": "Nhận diện từ/cụm câu, nghe cơ bản, hiểu nghĩa, dùng mẫu câu đơn giản.",
-            "ja": "フレーズを認識し、基本の聞き取りと意味理解、簡単な文型を使います。",
-            "ko": "표현을 인식하고 기본 듣기·의미 이해·간단한 문형을 사용합니다.",
-            "zh": "识别短语，进行基础听力与意义理解，并使用简单句型。"
-          },
-          "exerciseOrders": [
-            1,
-            2,
-            3,
-            4,
-            5
-          ],
-          "exercises": [
-            {
-              "order": 1,
-              "type": "matchPairs",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 2,
-              "type": "listenAndChoose",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 3,
-              "type": "multipleChoiceMeaning",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 4,
-              "type": "fillBlank",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 5,
-              "type": "arrangeWords",
-              "plan": "free",
-              "status": "placeholder"
-            }
-          ]
-        },
-        {
-          "key": "real_world",
-          "labelByNative": {
-            "en": "Real-world Practice",
-            "vi": "Thực chiến",
-            "ja": "実践練習",
-            "ko": "실전 연습",
-            "zh": "实战练习"
-          },
-          "goalByNative": {
-            "en": "Use sentences in dialogue, choose natural responses, advanced listening, AI Q&A, and checkpoint.",
-            "vi": "Dùng câu trong hội thoại, chọn phản hồi tự nhiên, nghe nâng cao, AI Q&A và checkpoint.",
-            "ja": "会話で文を使い、自然な返事を選び、高度な聞き取り・AI質問・チェックを行います。",
-            "ko": "대화에서 문장을 쓰고 자연스러운 대답을 고르며 심화 듣기·AI Q&A·체크포인트를 합니다.",
-            "zh": "在对话中用句，选择自然回应，完成进阶听力、AI问答与检查点。"
-          },
-          "exerciseOrders": [
-            6,
-            7,
-            8,
-            9,
-            10
-          ],
-          "exercises": [
-            {
-              "order": 6,
-              "type": "dialogueCompletion",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 7,
-              "type": "naturalResponseChoice",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 8,
-              "type": "plusListeningVocabularyChallenge",
-              "plan": "plus",
-              "status": "placeholder"
-            },
-            {
-              "order": 9,
-              "type": "controlledAiQa",
-              "plan": "plus",
-              "status": "placeholder"
-            },
-            {
-              "order": 10,
-              "type": "reviewCheckpoint",
-              "plan": "plus",
-              "status": "placeholder"
-            }
-          ]
-        }
-      ],
       "saveToReview": {
-        "status": "placeholder"
+        "status": "ready",
+        "itemIds": [
+          "douitashimashite",
+          "ieie",
+          "tondemonai",
+          "tondemogozaimasen",
+          "kininaide",
+          "oyakunitatete"
+        ]
       },
-      "unlockRequirement": "core_foundation_completed",
-      "courseType": "communication",
-      "exercises": [
-        {
-          "id": "ja-daily_life-m02-u1-l2-e1",
-          "order": 1,
-          "type": "matchPairs",
-          "titleByNative": {
-            "en": "Match phrase and meaning",
-            "vi": "Nối cụm câu với nghĩa",
-            "ja": "フレーズと意味をつなげる",
-            "ko": "표현과 뜻 연결하기",
-            "zh": "匹配短语和意思"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u1-l2-e2",
-          "order": 2,
-          "type": "listenAndChoose",
-          "titleByNative": {
-            "en": "Listen and choose",
-            "vi": "Nghe và chọn",
-            "ja": "聞いて選ぶ",
-            "ko": "듣고 고르기",
-            "zh": "听音选择"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u1-l2-e3",
-          "order": 3,
-          "type": "multipleChoiceMeaning",
-          "titleByNative": {
-            "en": "Choose the correct meaning",
-            "vi": "Chọn nghĩa đúng",
-            "ja": "正しい意味を選ぶ",
-            "ko": "맞는 뜻 고르기",
-            "zh": "选择正确意思"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u1-l2-e4",
-          "order": 4,
-          "type": "fillBlank",
-          "titleByNative": {
-            "en": "Fill the missing word",
-            "vi": "Điền từ còn thiếu",
-            "ja": "空欄を埋める",
-            "ko": "빈칸 채우기",
-            "zh": "填空"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u1-l2-e5",
-          "order": 5,
-          "type": "arrangeWords",
-          "titleByNative": {
-            "en": "Arrange the sentence",
-            "vi": "Sắp xếp câu",
-            "ja": "文を並べる",
-            "ko": "문장 배열하기",
-            "zh": "排列句子"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u1-l2-e6",
-          "order": 6,
-          "type": "dialogueCompletion",
-          "titleByNative": {
-            "en": "Complete the dialogue",
-            "vi": "Hoàn thành hội thoại",
-            "ja": "会話を完成させる",
-            "ko": "대화 완성하기",
-            "zh": "完成对话"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u1-l2-e7",
-          "order": 7,
-          "type": "naturalResponseChoice",
-          "titleByNative": {
-            "en": "Choose a natural response",
-            "vi": "Chọn phản hồi tự nhiên",
-            "ja": "自然な返事を選ぶ",
-            "ko": "자연스러운 대답 고르기",
-            "zh": "选择自然回应"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u1-l2-e8",
-          "order": 8,
-          "type": "plusListeningVocabularyChallenge",
-          "titleByNative": {
-            "en": "Plus · Listening challenge",
-            "vi": "Plus · Thử thách nghe",
-            "ja": "Plus・リスニングチャレンジ",
-            "ko": "Plus · 듣기 챌린지",
-            "zh": "Plus · 听力挑战"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u1-l2-e9",
-          "order": 9,
-          "type": "controlledAiQa",
-          "titleByNative": {
-            "en": "Plus · AI Q&A practice",
-            "vi": "Plus · Luyện hỏi đáp AI",
-            "ja": "Plus・AI質問練習",
-            "ko": "Plus · AI 질의응답 연습",
-            "zh": "Plus · AI问答练习"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u1-l2-e10",
-          "order": 10,
-          "type": "reviewCheckpoint",
-          "titleByNative": {
-            "en": "Plus · Review checkpoint",
-            "vi": "Plus · Kiểm tra tổng hợp",
-            "ja": "Plus・復習チェック",
-            "ko": "Plus · 복습 체크",
-            "zh": "Plus · 复习检查"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        }
-      ],
+      "exercises": [],
       "displayOrder": 2
     },
     {

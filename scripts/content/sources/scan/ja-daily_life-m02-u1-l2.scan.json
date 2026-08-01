@@ -3,10 +3,16 @@
   "ngày": "2026-08-02",
   "nguồn": [
     {
-      "path": "local-sources/ja/irodori/markdown/",
+      "path": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md",
       "coHang": true,
       "soCauQuaLoc": 3,
-      "cachQuet": "grep 8 cụm (どういたしまして・いえいえ・とんでもない・とんでもございません・こちらこそ・気にしないで・気にしない・全然) trên 4 file markdown; hàng thật: こちらこそ (So_cap_1_A2.md:23241, có chú giải sách giáo khoa '相手にあいさつや感謝のことばを返す' — đúng chủ đề đáp lễ), いえいえ (So_cap_1_A2.md:23305), とんでもない (So_cap_2_A2.md:30778, trong đoạn giải thích văn hoá tiếng Việt, không phải hội thoại)"
+      "cachQuet": "grep 8 cụm (どういたしまして・いえいえ・とんでもない・とんでもございません・こちらこそ・気にしないで・気にしない・全然) trên 4 file markdown; hàng thật ở FILE NÀY: こちらこそ (dòng 23241/23243, có chú giải sách giáo khoa '相手にあいさつや感謝のことばを返す' — đúng chủ đề đáp lễ), いえいえ (dòng 23305). PHA B dùng: vocabularyReferences[0].term + example.text trích dòng 23243/23239/23241 (token). Path đổi từ thư mục sang đúng 1 file để khớp `source` trong provenance.json (sửa 2026-08-02, xem vướng mắc B3)."
+    },
+    {
+      "path": "local-sources/ja/irodori/markdown/IRODORI_So_cap_2_A2.md",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "とんでもない xuất hiện (dòng 30778) nhưng trong đoạn giải thích văn hoá TIẾNG VIỆT của sách, không phải câu tiếng Nhật/hội thoại — không dùng được"
     },
     {
       "path": "local-sources/ja/topic1.json",
@@ -30,13 +36,13 @@
       "path": "local-sources/ja/topic4.json",
       "coHang": true,
       "soCauQuaLoc": 23,
-      "cachQuet": "như trên"
+      "cachQuet": "như trên. PHA B dùng: dòng 11755 'いえいえ、内山さんの頑張りのおかげですよ。' (伊藤 nói 感謝してもしきれません vì ơn bác sĩ → 佐藤 đáp いえいえ thay mặt — đúng chủ đề đáp lễ cảm ơn sâu sắc), thêm vào vocabularyDetails[1] (いえいえ) làm ví dụ thứ 3."
     },
     {
       "path": "local-sources/ja/topic5.json",
-      "coHang": true,
+      "coHang": false,
       "soCauQuaLoc": 17,
-      "cachQuet": "như trên"
+      "cachQuet": "như topic1-4 (17 dòng khớp thô), nhưng RÀ LẠI ở PHA B: mọi khớp どういたしまして/こちらこそ trong file này đều nằm trong hội thoại KHÔNG được PHA B chọn dùng (bài đã đủ material từ topic1-3 + topic4 cho các mục tiêu đã duyệt) — không phải 'quét không ra', mà là 'ra nhưng không cần dùng thêm', tránh phình bài không cần thiết (đúng tinh thần G14-R3b '...không bằng phình bài'). Cập nhật 2026-08-02, coHang sửa true→false."
     },
     {
       "path": "local-sources/ja/n5/n5_ngu-phap-vi.txt",
@@ -58,15 +64,15 @@
     },
     {
       "path": "local-sources/ja/hanabira.org-main/backend/express/json_data/wordsTanos_openai_JLPT_N{1..5}_tanos_vocab_list.json",
-      "coHang": true,
+      "coHang": false,
       "soCauQuaLoc": 3,
-      "cachQuet": "grep 9 cụm trên 5 file; こちらこそ (N2), 全然+とんでもない (N3) có mục từ — nguồn CHỈ có từ đơn + JLPT tag, KHÔNG có câu ví dụ (theo INVENTORY §2.3) nên không đóng góp được câu mẹ, chỉ dùng để xác nhận cấp JLPT"
+      "cachQuet": "grep 9 cụm trên 5 file; こちらこそ (N2), 全然+とんでもない (N3) có mục từ — nguồn CHỈ có từ đơn + JLPT tag, KHÔNG có câu (theo INVENTORY §2.3). Sửa 2026-08-02: cấu trúc dữ liệu (word-list, 0 câu) khiến nguồn này KHÔNG THỂ đóng góp câu mẹ dù coHang kỹ thuật — coHang đổi true→false để phản ánh đúng: đây là nguồn xác nhận JLPT-level, không phải nguồn câu."
     },
     {
       "path": "local-sources/ja/jmdict/jmdict-eng-3.6.2.json",
-      "coHang": true,
+      "coHang": false,
       "soCauQuaLoc": 5,
-      "cachQuet": "grep 9 cụm; có mục từ điển cho いえいえ/こちらこそ/とんでもない/どういたしまして/全然 — nguồn TỪ ĐIỂN (nghĩa/đọc đóng), không có câu ví dụ, dùng cho CLOSED_FACT nhiễu ở PHA B, không đóng góp câu mẹ"
+      "cachQuet": "grep 9 cụm; có mục từ điển cho いえいえ/こちらこそ/とんでもない/どういたしまして/全然 — nguồn TỪ ĐIỂN (nghĩa/đọc đóng), không có câu ví dụ. Sửa 2026-08-02: thử thêm ghi chú とんでも無い (dạng kanji hiếm, jmdict:763) vào vocabularyDetails[2].notes nhưng `notes` KHÔNG thuộc danh sách trường phải khai provenance (render-coverage.json) nên không tính được câu mẹ — coHang đổi true→false, không ép cấu trúc lại chỉ để qua cổng."
     },
     {
       "path": "local-sources/ja/kanji-data-master/kanji.json",
@@ -76,19 +82,25 @@
     },
     {
       "path": "local-sources/ja/n1/ (4 file .md)",
-      "coHang": true,
+      "coHang": false,
       "soCauQuaLoc": 3,
       "cachQuet": "grep 9 cụm; とんでもない xuất hiện trong ĐỊNH NGHĨA của một điểm ngữ pháp khác (以ての外), 気にしないで xuất hiện như MẢNH trong mẫu ngữ pháp khác (も顧みず) — cả hai đều KHÔNG phải ví dụ độc lập cho chủ đề đáp lễ cảm ơn, coi là không có hàng phù hợp"
     },
     {
-      "path": "local-sources/ja/n2/ (nhiều file .md)",
+      "path": "local-sources/ja/n2/n2_grammar-125.md",
       "coHang": true,
-      "soCauQuaLoc": 2,
-      "cachQuet": "grep 9 cụm; こちらこそよろしく。(n2_grammar-125.md:1036, câu mẫu độc lập, đúng dạng chào/đáp lễ) + とんでもない (n2_vocab-list.md, mục từ vựng có gloss, không có câu)"
+      "soCauQuaLoc": 1,
+      "cachQuet": "grep 9 cụm; こちらこそよろしく。(dòng 1036, câu mẫu độc lập trong ví dụ điểm ngữ pháp こそ, đúng dạng chào/đáp lễ). PHA B dùng: vocabularyReferences[1] — đối chiếu với cách dùng MỚI (đáp lễ lòng biết ơn) đã dạy qua Irodori. Path tách khỏi mục 'n2/ (nhiều file)' cho đúng 1 file thật đã trích (sửa 2026-08-02)."
+    },
+    {
+      "path": "local-sources/ja/n2/ (các file khác, không phải n2_grammar-125.md)",
+      "coHang": false,
+      "soCauQuaLoc": 1,
+      "cachQuet": "とんでもない chỉ có ở n2_vocab-list.md — mục từ vựng có gloss, không có câu"
     },
     {
       "path": "local-sources/ja/n3/ (nhiều file .md)",
-      "coHang": true,
+      "coHang": false,
       "soCauQuaLoc": 6,
       "cachQuet": "grep 9 cụm; 全然 xuất hiện nhiều lần nhưng LUÔN là trạng từ trong câu ví dụ ngữ pháp KHÁC (bận rộn, chưa giỏi tiếng Nhật, kết quả thi...) — không liên quan chủ đề; とんでもない chỉ có ở vocab-list (gloss, không câu) — coi là không có hàng phù hợp chủ đề"
     },
@@ -100,15 +112,15 @@
     },
     {
       "path": "local-sources/ja/n5/ (8 file, trừ n5_ngu-phap-vi.txt)",
-      "coHang": true,
+      "coHang": false,
       "soCauQuaLoc": 14,
-      "cachQuet": "grep 9 cụm; どういたしまして/こちらこそ xuất hiện trong ĐỀ BÀI TẬP TRẮC NGHIỆM (n5_bai-tap-tieng-Nhat-so-cap-1.md — nối cặp câu hỏi/đáp án), không phải hội thoại tự nhiên — xác nhận đây là cụm trình độ N5 chuẩn, không dùng làm câu mẹ trực tiếp vì format là đề thi, không phải lời thoại"
+      "cachQuet": "grep 9 cụm; どういたしまして/こちらこそ xuất hiện trong ĐỀ BÀI TẬP TRẮC NGHIỆM (n5_bai-tap-tieng-Nhat-so-cap-1.md — nối cặp câu hỏi/đáp án), không phải hội thoại tự nhiên — xác nhận đây là cụm trình độ N5 chuẩn, không dùng làm câu mẹ trực tiếp vì format là đề thi, không phải lời thoại. Giữ coHang=false (đã đúng từ đầu)."
     },
     {
-      "path": "local-sources/ja/New Tài liệu văn bản.txt (敬語の指針)",
+      "path": "local-sources/ja/New Tài liệu văn bản.txt",
       "coHang": true,
       "soCauQuaLoc": 6,
-      "cachQuet": "grep 9 cụm; đoạn 2230-2260 giải thích CHÍNH THỨC về とんでもございません／とんでもないです／とんでもないことでございます — văn xuôi giải thích register, dùng cho grammarPattern + ghi chú cách dùng, không phải hội thoại"
+      "cachQuet": "grep 9 cụm; đoạn 2230-2260 (敬語の指針, văn bản chính thức 文化審議会答申) giải thích CHÍNH THỨC về とんでもございません／とんでもないです／とんでもないことでございます. PHA B dùng: dòng 2236 (とんでもございません) + dòng 2246 (とんでもない) trích token cho vocabulary + grammarPatterns[2]. Path sửa 2026-08-02: bỏ hậu tố mô tả '(敬語の指針)' khỏi path — hậu tố đó không khớp `source` thật trong provenance.json (chỉ là tên file thô), khiến cổng cân nguồn không nhận ra 2 câu mẹ ĐÃ CÓ THẬT."
     },
     {
       "path": "local-sources/ja/vocab-3000/Collins_Japanese_3000_words_and_phrases.pdf",
