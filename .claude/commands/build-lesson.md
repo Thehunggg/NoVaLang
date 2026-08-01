@@ -118,9 +118,10 @@ WORKING_RULES §f: **điểm dừng hợp lệ DUY NHẤT là sau commit PHA A.*
    - **Trước khi gắn nhãn loại 4 cho một phương án, tự hỏi: phương án này có thật sự được DẠY (xuất hiện trong vocabulary/dialogue/Q14 của CHÍNH bài đang viết), hay chỉ là từ quen thuộc mượn từ bài khác?** Mượn từ bài khác không tự động là sai, nhưng KHÔNG được gắn nhãn loại 4 — phải tìm lý do khác (loại 1–3) hoặc đổi phương án.
 6. **Furigana** — để máy tự ráp qua pass kuromoji trong `generate-curriculum.mjs`. Không tự đoán âm, không gõ tay furigana.
 7. **Provenance** — viết cùng lúc với nội dung (không để dồn cuối bài), đủ 100% trường `mustDeclareProvenance: true` theo `shared/config/render-coverage.json`.
-8. **Cổng bắt buộc, theo đúng thứ tự** (đã chứng minh chạy được ở m02-u1-l1, 2026-07-31). `verify-provenance.mjs` bên dưới **gồm cả cổng CÂN NGUỒN** (G14-R3b, đọc `scan.json`, thêm 2026-08-01) — **cổng CỨNG**: nguồn `coHang:true` có 0 câu mẹ, hoặc một nguồn >50% câu mẹ → FAIL, **không được commit** khi cổng này còn đỏ (không nới ngưỡng, không xoá dòng scan.json cho qua):
+8. **Cổng bắt buộc, theo đúng thứ tự** (đã chứng minh chạy được ở m02-u1-l1, 2026-07-31). `verify-provenance.mjs` bên dưới **gồm cả cổng CÂN NGUỒN** (G14-R3b, đọc `scan.json`, thêm 2026-08-01) — **cổng CỨNG**: nguồn `coHang:true` có 0 câu mẹ, hoặc một nguồn >50% câu mẹ → FAIL, **không được commit** khi cổng này còn đỏ (không nới ngưỡng, không xoá dòng scan.json cho qua). **Bước `build-taught-vocabulary.mjs` NGAY SAU `generate:curriculum` là bắt buộc** (G14-R11, owner chốt 2026-08-02 sau khi sổ bị bỏ quên 2 lần liên tiếp — lần gần nhất làm sai toàn bộ phép đo mức-khối của m02-u1-l2) — file `taught-vocabulary.json` kết quả **commit cùng nhóm content**, không phải nhóm tooling:
    ```
    npm run generate:curriculum
+   node scripts/build-taught-vocabulary.mjs
    npm run sync:flutter-assets
    npm run validate:curriculum
    npm run smoke:curriculum

@@ -1513,6 +1513,16 @@ thường lệ · (4) PASS-yếu. Owner duyệt danh sách này thay vì bơi tr
 mỗi bài, **nối** `displayText` (bỏ furigana trong ngoặc, **giữ dạng thật** kể cả
 「？」; R5 tự bỏ dấu câu khi so). **Máy đọc** từ `lessons.json`, không gõ tay.
 
+**Bắt buộc chạy lại `node scripts/build-taught-vocabulary.mjs` cuối MỖI lượt
+build/sửa bài** (owner chốt 2026-08-02, sau khi build m02-u1-l2), ngay sau
+`generate:curriculum`, commit sổ cùng nhóm content. Ca thật gây ra luật này:
+sổ không được cập nhật sau khi build `m02-u1-l1` — 2 lượt sau, `estimate-
+source-coverage.mjs` coi `ありがとう`/`どうも` là "từ lạ" vì sổ chưa có, làm
+sai toàn bộ phép đo mức-khối của bài kế tiếp. Script đã tồn tại từ trước
+(chính comment đầu file `build-taught-vocabulary.mjs` ghi nhận đây là lần
+**thứ hai** sổ bị bỏ quên — lần đầu thiếu u2-l2) — vấn đề không phải thiếu
+công cụ, mà thiếu bước gọi nó vào đúng quy trình.
+
 **G14-R12. MÁY KIỂM BỔ SUNG** (trong `verify-provenance.mjs`):
 - **a. Furigana đối chiếu JMdict** — validator cũ chỉ bắt **THIẾU**, không bắt
   **SAI**. Mọi reading đối chiếu danh sách kana của từ trong JMdict: không nằm
