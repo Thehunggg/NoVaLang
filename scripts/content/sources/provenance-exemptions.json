@@ -1,31 +1,55 @@
 {
-  "_note": "Danh sách MIỄN CỔNG PROVENANCE máy đọc được — G14-R2b. Trước 2026-07-30 miễn trừ chỉ SỐNG dưới dạng văn bản (bảng trong LESSON_AUTHORING_STANDARD.md) + việc verify-provenance.mjs im lặng bỏ qua khi không có file <lessonId>.provenance.json. Cách cũ mập mờ: không phân biệt được 'cố ý miễn' với 'quên viết provenance'. File này là NGUỒN DUY NHẤT cho danh sách miễn — bảng trong LESSON_AUTHORING_STANDARD.md phải khớp, không tự thêm bớt ở một bên.",
-  "_dongList": "ĐÓNG cho m01. Xét lại từ m02 trở đi — owner chốt 2026-07-30. KHÔNG tự thêm bài mới vào đây khi build m02+; bài mới phải có provenance thật.",
+  "_note": "Danh sách MIỄN CỔNG máy đọc được — G14-R2b (provenance) + G14-R3b (cân nguồn, thêm 2026-08-01). Trước 2026-07-30 miễn trừ chỉ SỐNG dưới dạng văn bản (bảng trong LESSON_AUTHORING_STANDARD.md) + việc verify-provenance.mjs im lặng bỏ qua khi không có file <lessonId>.provenance.json. Cách cũ mập mờ: không phân biệt được 'cố ý miễn' với 'quên viết provenance'. File này là NGUỒN DUY NHẤT cho danh sách miễn — bảng trong LESSON_AUTHORING_STANDARD.md phải khớp, không tự thêm bớt ở một bên.",
+  "_scope": "Mỗi mục PHẢI có 'scope' (mảng) khai RÕ miễn cổng nào — hai cổng độc lập, không suy ra lẫn nhau: 'provenance' = miễn toàn bộ cổng verify-provenance.mjs (bài không có file <lessonId>.provenance.json, cổng không chạy được vì không có gì để đọc). 'source-balance' = CHỈ miễn cổng CÂN NGUỒN (G14-R3b, đọc scan.json) — bài vẫn có provenance thật, verify-provenance.mjs vẫn chạy đủ mọi cổng khác (R12d, KIỂM PHỦ, WALK PATH...), chỉ riêng cổng cân nguồn bị bỏ qua vì bài xây trước khi scan.json tồn tại.",
+  "_dongList": "'provenance' ĐÓNG cho m01 — owner chốt 2026-07-30. KHÔNG tự thêm bài mới vào scope 'provenance' khi build m02+; bài mới phải có provenance thật. 'source-balance' KHÔNG đóng theo mốc m01/m02 — mở cho MỌI bài đã có provenance thật nhưng xây trước 2026-08-01 (ngày scan.json ra đời); bài xây SAU mốc đó bắt buộc có scan.json, không được thêm vào scope này.",
   "exempt": [
     {
       "id": "ja-daily_life-m01-u1-l1",
       "type": "lesson",
+      "scope": ["provenance"],
       "reason": "build 2026-07 trước khi có G14/pipeline provenance"
     },
     {
       "id": "ja-daily_life-m01-u1-l2",
       "type": "lesson",
+      "scope": ["provenance"],
       "reason": "build 2026-07 trước khi có G14/pipeline provenance"
     },
     {
       "id": "ja-daily_life-m01-u1-l3",
       "type": "lesson",
+      "scope": ["provenance"],
       "reason": "build 2026-07 trước khi có G14/pipeline provenance"
     },
     {
       "id": "ja-daily_life-m01-u2-l1",
       "type": "lesson",
+      "scope": ["provenance"],
       "reason": "build 2026-07 trước khi có G14/pipeline provenance"
     },
     {
       "id": "ja-daily_life-m01-u1-comprehensive",
       "type": "comprehensive",
+      "scope": ["provenance"],
       "reason": "dẫn xuất từ các lesson vốn đã được miễn (u1-l1/l2/l3, cả 3 đều trong danh sách này) — đòi provenance cho bản dẫn xuất trong khi nguồn được miễn là không nhất quán. Owner chốt 2026-07-30."
+    },
+    {
+      "id": "ja-daily_life-m01-u2-l2",
+      "type": "lesson",
+      "scope": ["source-balance"],
+      "reason": "có provenance thật (166/166, commit 8edb029, 2026-07-28) — KHÔNG miễn scope 'provenance'. Xây trước khi scan.json/cổng cân nguồn tồn tại (2026-08-01) nên không có scan.json để đối chiếu; luật cân nguồn áp từ m02-u1-l2 trở đi. Owner chốt 2026-08-01."
+    },
+    {
+      "id": "ja-daily_life-m01-u2-comprehensive",
+      "type": "comprehensive",
+      "scope": ["source-balance"],
+      "reason": "có provenance thật (220 mục: 91 from_lesson + 129 authored, 2026-07-31) — KHÔNG miễn scope 'provenance'. Xây trước khi scan.json/cổng cân nguồn tồn tại nên không có scan.json để đối chiếu. Owner chốt 2026-08-01."
+    },
+    {
+      "id": "ja-daily_life-m02-u1-l1",
+      "type": "lesson",
+      "scope": ["source-balance"],
+      "reason": "build 2026-07-31 trước khi có luật cân nguồn; PHA A của bài đó không quét Irodori nên 0% Irodori là chưa-tra chứ không phải không-có. Owner chốt giữ nguyên bài, luật mới áp từ m02-u1-l2 (2026-08-01)."
     }
   ]
 }

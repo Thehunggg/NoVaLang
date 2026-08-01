@@ -644,6 +644,73 @@ function runUnitFuriganaOnly(unitId) {
   if (furi.failed.length > 0) process.exit(1);
 }
 
+/** G14-R3b — CÂN NGUỒN (cổng cứng, thêm 2026-08-01, thay thang tuần tự cũ).
+ * Đọc `scripts/content/sources/scan/<lessonId>.scan.json` (nếu có) + tỉ lệ
+ * nguồn đã đếm được từ chính provenance (`uniqBySource`/`totU`, xem main()):
+ *  - nguồn `coHang:true` trong scan.json mà provenance có 0 câu mẹ từ đó → FAIL
+ *  - nguồn nào chiếm >50% tổng câu mẹ → FAIL
+ *  - không có scan.json và lessonId không có trong provenance-exemptions.json
+ *    với `scope` chứa `"source-balance"` → FAIL (cấm miễn ngầm)
+ *  - có trong danh sách miễn → bỏ qua toàn bộ, in rõ lý do
+ * @returns {{skipped:boolean, fails:number, messages:string[]}}
+ */
+function checkSourceBalance(lessonId, uniqBySource, totU) {
+  const exemptPath = path.join(ROOT, "scripts", "content", "sources", "provenance-exemptions.json");
+  let exemptEntry = null;
+  if (existsSync(exemptPath)) {
+    const doc = JSON.parse(readFileSync(exemptPath, "utf8"));
+    exemptEntry = (doc.exempt ?? []).find(
+      (e) => e.id === lessonId && Array.isArray(e.scope) && e.scope.includes("source-balance"),
+    );
+  }
+  if (exemptEntry) {
+    return {
+      skipped: true,
+      fails: 0,
+      messages: [`BỎ QUA — miễn (provenance-exemptions.json: ${exemptEntry.reason})`],
+    };
+  }
+
+  const scanRelPath = path.join("scripts", "content", "sources", "scan", `${lessonId}.scan.json`);
+  const scanPath = path.join(ROOT, scanRelPath);
+  if (!existsSync(scanPath)) {
+    return {
+      skipped: false,
+      fails: 1,
+      messages: [
+        `FAIL  không có scan.json (${scanRelPath.split(path.sep).join("/")}) và "${lessonId}" không có ` +
+          `trong provenance-exemptions.json với scope "source-balance" — không được miễn ngầm (G14-R3b)`,
+      ],
+    };
+  }
+
+  const scan = JSON.parse(readFileSync(scanPath, "utf8"));
+  let fails = 0;
+  const messages = [];
+  for (const src of scan.nguồn ?? []) {
+    if (!src.coHang) continue;
+    const have = uniqBySource.get(src.path);
+    const n = have ? have.size : 0;
+    if (n === 0) {
+      fails += 1;
+      messages.push(
+        `FAIL  nguồn "${src.path}" coHang=true (${src.soCauQuaLoc} câu qua lọc) nhưng provenance có 0 câu mẹ từ đó`,
+      );
+    }
+  }
+  for (const [src, set] of uniqBySource) {
+    const pct = totU > 0 ? Math.round((set.size * 100) / totU) : 0;
+    if (pct > 50) {
+      fails += 1;
+      messages.push(`FAIL  nguồn "${src}" chiếm ${pct}% câu mẹ (${set.size}/${totU}) — vượt trần 50%`);
+    }
+  }
+  if (messages.length === 0) {
+    messages.push("PASS — mọi nguồn coHang=true đều có câu mẹ, không nguồn nào >50%");
+  }
+  return { skipped: false, fails, messages };
+}
+
 function main() {
   const unitFlagIdx = process.argv.indexOf("--unit");
   if (unitFlagIdx !== -1) {
@@ -823,6 +890,11 @@ function main() {
   console.log("── MUTATION theo op ──");
   for (const [op, n] of mutationByOp) console.log(`  ${String(n).padStart(3)}  ${op}`);
   console.log(`── PASS-YẾU ── ${weak.length ? weak.join(", ") : "0"}`);
+
+  console.log("── CÂN NGUỒN (G14-R3b) ──");
+  const balance = checkSourceBalance(doc.lessonId, uniqBySource, totU);
+  for (const m of balance.messages) console.log(`  ${m}`);
+  fail += balance.fails;
 
   const cov = isUnit ? checkCoverageUnit(doc.lessonId, items) : checkCoverage(doc.lessonId, items);
   if (cov) {

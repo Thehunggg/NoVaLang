@@ -1314,11 +1314,35 @@ Mục tiêu kép: an toàn ngang tối đa + **owner check ít nhất**.
 - `grammarPatterns` **4–5** (trần 8) · `vocabulary` **8–10** (trần 15)
 - `dialogueGroups` **3 nhóm × 3–4 lượt**, lấy từ **≥2 kịch bản khác nhau**
 - Q14 **6–8 lượt** (validator ≥4)
-- **Thứ tự lấy ví dụ cho MỌI câu:** (1) tái dùng câu đã có trong bài → (2)
-  `n5_ngu-phap-vi` → (3) Irodori. `sentences_*.json`: không dùng ở A0–A1.
-- **Không có cổng tỉ lệ %.** Tỉ lệ Irodori giảm dần bằng **thêm nguồn** và vốn từ
-  tích luỹ, **không** bằng phình bài. Báo cáo in tỉ lệ thật theo **câu duy nhất**
-  (tái dùng không đếm trùng) **và** theo trường.
+- **CÂN NGUỒN, không xếp thứ tự ưu tiên** (owner chốt 2026-08-01 — thay cho
+  bản cũ "(1) tái dùng → (2) `n5_ngu-phap-vi` → (3) Irodori": thang tuần tự
+  khiến nguồn dưới KHÔNG BAO GIỜ được gọi khi nguồn trên đủ hàng. Ca thật:
+  `ja-daily_life-m02-u1-l1` ra 0% Irodori — nhưng đó là CHƯA TRA, không phải
+  TRA RỒI KHÔNG CÓ, vì PHA A lượt đó không quét Irodori):
+  1. Mỗi bài phải **quét MỌI nguồn trong kho** (xem
+     `scripts/content/sources/INVENTORY.md` mục 1–2 cho danh sách thật —
+     không bỏ nguồn nào chỉ vì thứ tự ưu tiên).
+  2. Nguồn nào **có hàng qua lọc R5 (mức khối)** → phải đóng góp **ít nhất
+     1 câu mẹ** vào bài.
+  3. Nguồn quét ra 0 → được phép 0%, nhưng báo cáo **bắt buộc** ghi "đã
+     quét, không có" kèm cách quét (pattern/từ khoá đã dùng) — 0% không kèm
+     bằng chứng đã quét là KHÔNG hợp lệ.
+  4. **Không nguồn nào chiếm quá 50% số câu mẹ** trong một bài.
+  5. "Tái dùng câu đã có trong bài" (từ thẻ khác trong CHÍNH bài,
+     `from_lesson`) KHÔNG tính vào phép cân nguồn 4 mục trên — đó là tiết
+     kiệm công viết, không phải chọn nguồn ngoài.
+  `sentences_*.json`: không dùng ở A0–A1.
+  **Máy kiểm:** PHA A phải xuất `scripts/content/sources/scan/<lessonId>.scan.json`
+  — `{ lessonId, ngày, nguồn: [ { path, coHang, soCauQuaLoc, cachQuet } ] }`,
+  một dòng mỗi nguồn đã quét. `verify-provenance.mjs` đọc file này + provenance
+  của bài, FAIL nếu mục 2 hoặc mục 4 bị vi phạm. Bài không có `scan.json` (xây
+  trước 2026-08-01) → cổng này bỏ qua, nhưng phải khai rõ trong
+  `scripts/content/sources/provenance-exemptions.json` (`scope` chứa
+  `"source-balance"`) — không được miễn ngầm.
+- **Cổng tỉ lệ %:** mục 4 ở trên LÀ một cổng tỉ lệ cứng (>50% một nguồn →
+  FAIL). Ngoài trần 50% đó, tỉ lệ Irodori giảm dần bằng **thêm nguồn** và vốn
+  từ tích luỹ, **không** bằng phình bài. Báo cáo in tỉ lệ thật theo **câu duy
+  nhất** (tái dùng không đếm trùng) **và** theo trường.
 
 **G14-R4. HỘI THOẠI — điều khoản lùi + danh sách pattern tập trung.**
 Dò hội thoại đã trượt **3 lần, 3 quy ước**: `Ａ：` · `- **A:**` · `A ` (không dấu
@@ -1420,11 +1444,19 @@ Cổng provenance (kể cả kiểm phủ trường-mới) **chỉ áp bài CÓ 
 tức **`ja-daily_life-m01-u2-l2` trở đi**.
 
 **Danh sách miễn — NGUỒN DUY NHẤT:**
-`scripts/content/sources/provenance-exemptions.json` (đóng cho m01, xét lại từ
-m02 — owner chốt 2026-07-30). Bảng dưới đây phải khớp file đó; đổi một bên mà
-quên bên kia là tạo hai nguồn sự thật.
+`scripts/content/sources/provenance-exemptions.json`. Bảng dưới đây phải khớp
+file đó; đổi một bên mà quên bên kia là tạo hai nguồn sự thật.
 
-**MIỄN — 4 bài build TRƯỚC pipeline G14 + 1 bài tổng hợp dẫn xuất từ chúng:**
+**Hai `scope` độc lập** (file thêm trường `scope` 2026-08-01, xem G14-R3b cho
+cổng thứ hai): `provenance` = miễn TOÀN BỘ cổng verify-provenance.mjs (bài
+không có file `<lessonId>.provenance.json`). `source-balance` = bài **vẫn có
+provenance thật, mọi cổng khác vẫn chạy** — chỉ riêng cổng CÂN NGUỒN (đọc
+`scan.json`) bị bỏ qua vì bài xây trước khi `scan.json` tồn tại (2026-08-01).
+Hai scope không suy ra lẫn nhau — một bài có thể ở scope này mà không ở scope
+kia.
+
+**scope `provenance` — ĐÓNG cho m01, xét lại từ m02 (owner chốt 2026-07-30) —
+4 bài build TRƯỚC pipeline G14 + 1 bài tổng hợp dẫn xuất từ chúng:**
 
 | bài / mục | loại | lý do miễn |
 |---|---|---|
@@ -1439,7 +1471,7 @@ sổ nguồn. Dựng provenance cho chúng bây giờ là **đoán xem câu nào
 — đúng định nghĩa bịa (WORKING_RULES §g). Miễn tường minh, ghi lý do, hơn là
 có một sổ nguồn trông-như-thật mà không ai kiểm được.
 
-**`ja-daily_life-m01-u2-comprehensive` KHÔNG còn trong danh sách miễn** (gỡ
+**`ja-daily_life-m01-u2-comprehensive` KHÔNG có trong scope `provenance`** (gỡ
 2026-07-31, PHA C) — có file provenance thật
 (`ja-daily_life-m01-u2-comprehensive.provenance.json`, 220 mục, 91 `from_lesson`
 + 129 `authored`). `from_lesson` (mới, PHA C) trỏ path đích danh vào MỘT lesson
@@ -1447,7 +1479,20 @@ có một sổ nguồn trông-như-thật mà không ai kiểm được.
 xem `checkFromLesson` trong `scripts/verify-provenance.mjs`. Nguồn của bài này
 là u2-l1 (miễn — chuỗi trace qua u2-l1 DỪNG Ở ĐÓ, không truy tiếp xuống Irodori)
 + u2-l2 (có provenance thật). `ja-daily_life-m01-u1-comprehensive` (25 câu) vẫn
-miễn — không thuộc phạm vi PHA C, xét lại riêng sau.
+miễn scope `provenance` — không thuộc phạm vi PHA C, xét lại riêng sau.
+
+**scope `source-balance` — KHÔNG đóng theo mốc m01/m02, mở cho MỌI bài đã có
+provenance thật nhưng xây trước 2026-08-01 (thêm 2026-08-01, cùng lượt sửa
+G14-R3b từ thang tuần tự sang cân nguồn):**
+
+| bài / mục | loại | lý do miễn |
+|---|---|---|
+| `ja-daily_life-m01-u2-l2` | lesson | có provenance thật (166/166, commit `8edb029`, 2026-07-28) — xây trước khi `scan.json`/cổng cân nguồn tồn tại |
+| `ja-daily_life-m01-u2-comprehensive` | bài tổng hợp | có provenance thật (220 mục, 2026-07-31) — xây trước khi `scan.json`/cổng cân nguồn tồn tại |
+| `ja-daily_life-m02-u1-l1` | lesson | build 2026-07-31 trước khi có luật cân nguồn; PHA A của bài đó không quét Irodori nên 0% Irodori là chưa-tra chứ không phải không-có. Owner chốt giữ nguyên bài, luật mới áp từ `m02-u1-l2` (2026-08-01) |
+
+Bài xây SAU 2026-08-01 bắt buộc có `scan.json` — không được thêm vào scope
+`source-balance` chỉ vì tiện.
 
 **G14-R9. BLOCKLIST — máy đọc.** `scripts/content/sources/blocked-sources.json`.
 Cổng **FAIL** mọi verbatim trỏ vào. Mục `{path, reason, mức}`, `mức` ∈
