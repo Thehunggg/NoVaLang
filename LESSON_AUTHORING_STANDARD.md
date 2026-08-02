@@ -248,35 +248,44 @@ thì viết ở `notes`, không nhét vào `register`.
   nhắc nhiều lần, nên chặn build chứ không nhắc nhở. Áp cho cả `register` và
   `registerByNative`, kiểm từng locale riêng (lệch một locale cũng bắt).
 
-**B2f. NGHĨA CỦA TỪ CHƯA DẠY TRONG HỘI THOẠI — CƠ CHẾ CHƯA CÓ.**
-(Kiểm 2026-07-27. §G7 vùng B điều kiện 3 phụ thuộc mục này.)
+**B2f. NGHĨA CỦA TỪ CHƯA DẠY TRONG HỘI THOẠI — CƠ CHẾ ĐÃ CHỐT (owner
+2026-08-02, thay bản "CHƯA CÓ" 2026-07-27).**
+(§G7 vùng B điều kiện 3 phụ thuộc mục này.)
 
-**Trạng thái: CHƯA CÓ.** Đã soi cả schema lẫn UI, không phải suy đoán:
-- `shared/types.ts` — không có trường `gloss` / `annotation` / `newWords` /
-  `note` nào ở cấp dòng hội thoại hay cấp nhóm hội thoại.
-- Model Flutter `PracticeDialogueLine` chỉ có `speakerId` · `targetText` ·
-  `reading` · `speechText` · `translation` · `audioLocale` · `romanization`.
-- `_DialoguePanel` (màn card 3) chỉ render `title` · `situation` · `lines` ·
-  `explanation`. `explanation` là mảng chuỗi giải thích cho CẢ NHÓM, không gắn
-  được vào một từ.
-- `vocabularyReferences` (§B2b) có đủ trường nghĩa, nhưng nó nằm ở **card 2** và
-  mang nghĩa "biến thể của cụm đã dạy" — không phải "từ lạ vừa gặp trong đoạn
-  hội thoại này". Dùng nó cho việc này là bẻ cong ý nghĩa của trường.
+**Lịch sử ngắn:** bản 2026-07-27 kiểm schema/UI lúc đó, kết luận không có
+trường `gloss`/`annotation`/`newWords` gắn vào TỪNG DÒNG hay TỪNG NHÓM hội
+thoại — đúng, vẫn đúng tới hôm nay (`shared/types.ts`, model Flutter
+`PracticeDialogueLine`, `_DialoguePanel` không đổi). Từ đó kết luận
+`vocabularyReferences` "dùng cho việc này là bẻ cong ý nghĩa của trường" và
+**§G7 vùng B chưa dùng được**. Kết luận đó bị chính thực tế build vượt qua
+**một ngày sau**: `ja-daily_life-m01-u2-l2` (2026-07-28) dùng đúng
+`vocabularyReferences` cho `半年`/`なんとか` — hai từ xuất hiện trong Q14,
+chưa từng là thẻ từ vựng — với ghi chú tại chỗ "'Tham khảo thêm' (§B2b) —
+hai từ xuất hiện ở Q14, đúng mức 'dư 1–2 từ mới' mà §G14-R5 cho phép." Bài
+đó đã lên `shared/generated/lessons.json`, qua mọi cổng, chưa ai gỡ.
 
-→ **Hệ quả bắt buộc:** cho tới khi có cơ chế, **§G7 vùng B chưa dùng được**.
-Bài viết trong thời gian này vẫn theo mức nghiêm của vùng A cho toàn bài.
-Không được lấy cớ "luật đã nới" để đưa từ chưa dạy vào hội thoại khi người học
-không có chỗ nào tra nghĩa.
+**Trạng thái: CÓ, dạng WORKAROUND — không phải cơ chế lý tưởng.**
+- `vocabularyReferences` (card 2) là một **danh mục ĐỘC LẬP với vị trí dùng**
+  — không gắn vào một dòng/nhóm hội thoại cụ thể như `newWords[]` ở đề xuất
+  cũ sẽ làm, nhưng người học vẫn tra được: mở card 2, tìm đúng `term`.
+- Không phân biệt được "từ lạ trong dialogueGroups (card 3)" với "từ lạ
+  trong Q14 (card 5)" hay "cách dùng mới của từ đã dạy" (§B2b) bằng CẤU
+  TRÚC — cùng một mảng, cùng một hình dạng. Phân biệt bằng **ghi chú tại
+  chỗ trong code** (comment ngay trên mảng, như ca `半年`/`なんとか` và ca
+  こちらこそ ở `m02-u1-l2`) — không phải trường máy đọc được.
+- **Đủ để thoả điều kiện 3 của §G7 vùng B** (owner chốt): nghĩa CÓ hiển thị
+  cho người học, chỉ là không hiển thị NGAY TẠI DÒNG hội thoại chứa từ đó.
+  Owner chấp nhận đánh đổi này để không phải chờ xây `newWords[]`.
 
-**Đề xuất (CHƯA làm, chờ owner duyệt):** thêm trường TUỲ CHỌN
-`newWords[]` ở cấp NHÓM hội thoại và ở Q14, mỗi mục gồm `term` ·
-`reading` · `meaning` (qua `*ByNative`), đúng hình dạng đã dùng ở
-`vocabularyReferences` để không đẻ ra kiểu dữ liệu thứ hai. Render bằng
-`_ContentPanel` + `_DetailList` sẵn có, ngay dưới `explanation`. Đụng: schema
-(`shared/types.ts`), validator (kiểm hình dạng + kiểm mọi từ chưa dạy trong
-đoạn đều được khai), 2 chỗ render (`lesson_five_card_pages.dart`,
-`five_card_exercise_flow.dart`), 1 khoá i18n, và test. Trường TUỲ CHỌN nên
-mọi bài đang có vẫn hợp lệ nguyên trạng.
+→ **Hệ quả:** §G7 vùng B **DÙNG ĐƯỢC** kể từ 2026-08-02, với điều kiện 3 thoả
+mãn bằng `vocabularyReferences`. `verify-provenance.mjs` gác bằng máy (G14-R5
+mở rộng) — mọi từ lạ trong khối hội thoại phải khớp một `term` trong
+`vocabularyReferences`, thiếu → FAIL.
+
+**Đề xuất cũ (vẫn CHƯA làm, vẫn là hướng tốt hơn nếu có ngân sách sau
+này):** trường TUỲ CHỌN `newWords[]` gắn thẳng vào cấp NHÓM hội thoại/Q14 —
+xem lý do trong lịch sử git của mục này (bản 2026-07-27). Không bắt buộc khi
+`vocabularyReferences` đã đủ thoả điều kiện 3.
 
 **B3. Card 3 — Dialogue.** (Owner §6; ràng buộc §D3)
 - Số nhóm và số dòng mỗi nhóm là **KHOẢNG**, định nghĩa ở
@@ -1374,9 +1383,26 @@ không dò bằng regex dòng, đọc thẳng trường.
   câu** (「元気？」 khớp 「元気」).
 - Nguồn **có phân từ sẵn** (`n5_ngu-phap-vi`: 「わたしは ケーキを たべました」 — cố
   ý, không phải lỗi) → tách token **theo phân từ của nguồn**, chính xác hơn bộ thô.
-- Dư **1–2** từ mới → nhận + chú nghĩa + đưa vào `vocabularyReferences`.
-  Dư **>2** → loại. **Dạng chia của từ đã biết** (たべました←たべる) không tính là từ mới.
-  > **NGƯỠNG "dư 1–2" CHỈ CHO VÙNG B.** Theo **§G7**, ngưỡng này áp cho **vùng B**
+- **Dư ≤4 từ lạ DUY NHẤT trên cả khối** (mức khối — khử trùng lặp qua UNION,
+  KHÔNG cộng dồn theo từng lượt riêng; owner chốt 2026-08-02, nâng từ ≤2 —
+  bản ≤2 SIẾT CHẶT HƠN chính §G7 vùng B đòi hỏi, khiến gần như mọi khối
+  hội thoại bị cắt ngắn vào đúng chỗ "chưa tới nội dung mới": owner duyệt
+  preview `m02-u1-l2` thấy hội thoại CỤT, đo lại thì 2/3 khối bị chặn bởi
+  ngưỡng ≤2 chứ không phải do kho nguồn thiếu hàng) → nhận, với điều kiện
+  **đủ CẢ 4 điều khoản §G7 vùng B** (không phải luật mới, nhắc lại vì hay bị
+  bỏ sót điều kiện 3):
+  1. Đoạn lấy NGUYÊN VĂN từ nguồn (§G10) — không tự chế câu chứa từ lạ.
+  2. Mọi kanji có furigana (§B2d).
+  3. **Từ lạ phải có NGHĨA hiển thị cho người học** — cơ chế: mục
+     `vocabularyReferences` (card 2), đúng hình dạng `term/reading/
+     speechText/meaning/register/example` đã dùng cho `半年`/`なんとか` ở
+     `ja-daily_life-m01-u2-l2` (Q14). §B2f trước đây ghi "chưa có cơ chế,
+     dùng `vocabularyReferences` cho việc này là bẻ cong ý nghĩa của
+     trường" — đã LỖI THỜI kể từ chính lượt build đó; §B2f đã cập nhật lại
+     cho khớp thực tế.
+  4. Không lạm dụng — từ lạ là ngữ cảnh, không phải trọng tâm bài.
+  **Dư >4** → loại. **Dạng chia của từ đã biết** (たべました←たべる) không tính là từ mới.
+  > **NGƯỠNG "≤4" CHỈ CHO VÙNG B.** Theo **§G7**, ngưỡng này áp cho **vùng B**
   > (câu đọc hiểu). **Vùng A** — mọi chuỗi bị CHẤM: Q1–Q13, đáp án, ô trống,
   > phương án, token — theo **§G7 vùng A**: **chỉ vốn đã dạy, không có ngoại lệ
   > dư từ**. Đừng mang ngưỡng B sang A.

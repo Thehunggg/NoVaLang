@@ -30,6 +30,12 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readingFromFurigana } from "./lib/japanese-furigana.mjs";
 import { walkLessonStrings, buildLessonPathIndex, buildUnitPathIndex, walkNodes } from "./lib/lesson-walk.mjs";
+// G14-R5 mở rộng (owner chốt 2026-08-02) — mọi từ lạ trong dialogueGroups
+// (card 3) phải có mục nghĩa trong vocabularyReferences (§G7 vùng B điều
+// kiện 3, §B2f). Dùng lại đúng bộ tokenizer/known-set đã xây cho PHA A đo
+// mức khối — MỘT nguồn duy nhất, không viết bộ đếm từ lạ thứ hai.
+import { buildKnownTokenSet, unknownTokensIn } from "./estimate-source-coverage.mjs";
+import { _internal as jaPronunciationInternal } from "./lib/japanese-pronunciation.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -711,7 +717,56 @@ function checkSourceBalance(lessonId, uniqBySource, totU) {
   return { skipped: false, fails, messages };
 }
 
-function main() {
+/**
+ * §G7 vùng B điều kiện 3 / G14-R5 (owner chốt 2026-08-02) — mọi từ lạ trong
+ * `dialogueGroups[].lines[]` (card 3) phải có mục nghĩa trong
+ * `vocabularyReferences` (§B2f: cơ chế hiển thị nghĩa đã chốt, dùng đúng
+ * hình dạng `半年`/`なんとか` ở `ja-daily_life-m01-u2-l2`).
+ *
+ * "Từ lạ" = token không thuộc (Tanos N5 ∪ taught-vocabulary.json TÍNH CẢ
+ * bài đang kiểm — G14-R11 bắt build-taught-vocabulary.mjs chạy ngay sau
+ * generate nên tới lúc cổng này chạy, sổ đã có từ vựng CHÍNH của bài rồi,
+ * "từ lạ" ở đây chỉ còn đúng nghĩa "chưa từng dạy ở đâu cả").
+ *
+ * Khớp nghĩa: so `term` (bỏ ngoặc chú âm) với token lạ ở CẢ hai dạng
+ * surface/basic — kuromoji chia động từ (見つけました → 見つけ), nên so cả hai
+ * chiều "chứa nhau" thay vì đòi khớp tuyệt đối, để không bắt oan một mục
+ * nghĩa đã khai đúng nhưng khác dạng chia.
+ *
+ * @param {object} lesson
+ * @returns {Promise<{missing: string[], checked: number}>}
+ */
+async function checkDialogueUnknownWordsHaveGloss(lesson) {
+  const groups = lesson?.fiveCardContent?.dialogueGroups ?? [];
+  if (groups.length === 0) return { missing: [], checked: 0 };
+
+  const tokenizer = await jaPronunciationInternal.getTokenizer();
+  const known = await buildKnownTokenSet();
+
+  const refs = lesson.fiveCardContent?.vocabularyReferences ?? [];
+  const stripFurigana = (s) => String(s ?? "").replace(/（[^）]*）/g, "");
+  const glossTerms = refs.map((r) => stripFurigana(r.term)).filter(Boolean);
+  const hasGloss = (word) => glossTerms.some((t) => t.includes(word) || word.includes(t));
+
+  const missing = new Set();
+  let checked = 0;
+  for (const group of groups) {
+    for (const line of group.lines ?? []) {
+      // targetText đã sinh (shared/generated/lessons.json) mang chú âm
+      // trong ngoặc (vd "足元（あしもと）") — bóc trước khi tokenize, không
+      // thì kuromoji tách luôn phần kana trong ngoặc thành token rời
+      // (もと/うえ/せわ…), báo "từ lạ" oan cho một mảnh chú âm.
+      const plain = stripFurigana(line.targetText ?? "");
+      for (const w of unknownTokensIn(plain, tokenizer, known)) {
+        checked += 1;
+        if (!hasGloss(w)) missing.add(w);
+      }
+    }
+  }
+  return { missing: [...missing], checked };
+}
+
+async function main() {
   const unitFlagIdx = process.argv.indexOf("--unit");
   if (unitFlagIdx !== -1) {
     const unitId = process.argv[unitFlagIdx + 1];
@@ -753,11 +808,15 @@ function main() {
   // dùng bản KIỂM PHỦ/R12d nào bên dưới (Lesson hay Unit).
   let pathIndex = null;
   let isUnit = false;
+  let lessonObj = null;
   const lessonsPath = path.join(ROOT, "shared", "generated", "lessons.json");
   if (doc.lessonId && existsSync(lessonsPath)) {
     const allLessons = JSON.parse(readFileSync(lessonsPath, "utf8"));
     const lesson = (allLessons.lessons ?? allLessons).find((l) => l.id === doc.lessonId);
-    if (lesson) pathIndex = buildLessonPathIndex(lesson);
+    if (lesson) {
+      pathIndex = buildLessonPathIndex(lesson);
+      lessonObj = lesson;
+    }
   }
   if (!pathIndex && doc.lessonId) {
     const coursesPath = path.join(ROOT, "shared", "generated", "courses.json");
@@ -777,6 +836,14 @@ function main() {
   }
   let pathFail = 0;
   let fromLessonCount = 0;
+
+  // G14-R5 mở rộng — từ lạ trong dialogueGroups phải có nghĩa hiển thị.
+  // Chỉ chạy cho Lesson thật (isUnit=false); comprehensiveTest không có
+  // dialogueGroups/vocabularyReferences nên bỏ qua tự nhiên.
+  let glossCheck = { missing: [], checked: 0 };
+  if (lessonObj && !isUnit) {
+    glossCheck = await checkDialogueUnknownWordsHaveGloss(lessonObj);
+  }
 
   // Corpus để R12b kiểm `mutation.from` có thật trong bài không.
   const corpus = new Set(items.map((i) => normalize(i.targetText)));
@@ -895,6 +962,17 @@ function main() {
   const balance = checkSourceBalance(doc.lessonId, uniqBySource, totU);
   for (const m of balance.messages) console.log(`  ${m}`);
   fail += balance.fails;
+
+  console.log("── TỪ LẠ TRONG HỘI THOẠI CÓ NGHĨA (G14-R5 mở rộng, §G7 vùng B) ──");
+  if (lessonObj && !isUnit) {
+    console.log(`  kiểm ${glossCheck.checked} lượt token · THIẾU NGHĨA ${glossCheck.missing.length}`);
+    for (const w of glossCheck.missing) {
+      console.log(`  FAIL  từ lạ "${w}" trong dialogueGroups chưa có mục trong vocabularyReferences`);
+    }
+    fail += glossCheck.missing.length;
+  } else {
+    console.log("  BỎ QUA (không phải Lesson thật, hoặc chưa có bài trong lessons.json)");
+  }
 
   const cov = isUnit ? checkCoverageUnit(doc.lessonId, items) : checkCoverage(doc.lessonId, items);
   if (cov) {

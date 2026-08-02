@@ -230,6 +230,32 @@ async function selfTest(tokenizer, known) {
   );
   if (!okAccept3) allOk = false;
 
+  // Ngưỡng ≤4 (G14-R5, owner chốt 2026-08-02) — nối thêm lượt 4, MỖI lượt vẫn
+  // 1 từ lạ RIÊNG (khác cả 4). ≤3 phải TỪ CHỐI lượt 4 (dừng ở 3, giống hệt
+  // test ngay trên); ≤4 phải NHẬN đủ cả 4. Đây là phép đối chứng "1 PASS ở
+  // ≤4 nhưng FAIL ở ≤3" mà owner yêu cầu khi nâng ngưỡng.
+  const blockDialogue4 = {
+    utterances: [
+      ...blockDialogue.utterances,
+      { turn_num: 4, speaker: "佐藤", utterance: "新幹線で行きます。" },
+    ],
+  };
+  const span3of4 = bestQualifyingSpan(blockDialogue4, tokenizer, known, 3, anyText);
+  const okReject4th = !!span3of4 && span3of4.len === 3;
+  console.log(
+    `  ${okReject4th ? "OK  " : "FAIL"} ngưỡng≤3, 4 lượt (mỗi lượt 1 từ lạ RIÊNG) -> đoạn dài nhất = ${span3of4?.len ?? 0} lượt` +
+      ` [${span3of4?.unk.join(", ") ?? ""}] (phải DỪNG ở 3, từ chối lượt 4 — ca FAIL đối chứng cho ngưỡng ≤4 bên dưới)`,
+  );
+  if (!okReject4th) allOk = false;
+
+  const span4 = bestQualifyingSpan(blockDialogue4, tokenizer, known, 4, anyText);
+  const okAccept4 = !!span4 && span4.len === 4 && span4.unk.length === 4;
+  console.log(
+    `  ${okAccept4 ? "OK  " : "FAIL"} ngưỡng≤4, cùng 4 lượt -> đoạn dài nhất = ${span4?.len ?? 0} lượt` +
+      ` [${span4?.unk.join(", ") ?? ""}] (phải nhận đủ cả 4, union đúng 4 từ lạ — ca PASS nhờ nâng ngưỡng)`,
+  );
+  if (!okAccept4) allOk = false;
+
   // đối chứng khử trùng lặp: 2 lượt CÙNG NHẮC một từ lạ phải tính là 1, không phải 2.
   const dupDialogue = {
     utterances: [
@@ -309,9 +335,10 @@ async function main() {
  * chế; tổng quát hoá 2026-08-02 khi build m02-u1-l2 — bản trước hoá cứng
  * riêng cho m02-u1-l1, không gọi lại được cho bài khác). Với MỖI hội thoại
  * khớp `keywordRe`, tìm đoạn liên tiếp dài nhất mà UNION từ lạ (khử trùng
- * lặp) không vượt ngưỡng, cho cả ngưỡng ≤2 và ≤3. In histogram độ dài đoạn
- * tốt nhất mỗi hội thoại + đúc kết theo 3 cỡ khối (cặp/khối 3-4/đoạn ≥4) mà
- * B4 cần.
+ * lặp) không vượt ngưỡng, cho cả ba ngưỡng ≤2, ≤3 và ≤4 (≤4 thêm 2026-08-02,
+ * G14-R5 — ngưỡng LÀM VIỆC hiện tại; ≤2/≤3 giữ lại để owner thấy đánh đổi
+ * giữa các mức). In histogram độ dài đoạn tốt nhất mỗi hội thoại + đúc kết
+ * theo 3 cỡ khối (cặp/khối 3-4/đoạn ≥4) mà B4 cần.
  */
 async function blockLevelReport(tokenizer, known, dialogues, label, keywordRe) {
   const hit = dialogues.filter((d) => d.utterances.some((u) => keywordRe.test(u.utterance)));
@@ -320,7 +347,7 @@ async function blockLevelReport(tokenizer, known, dialogues, label, keywordRe) {
   console.log(`   hội thoại có từ khoá chủ đề (đã lọc ten-lech-nhan.json): ${hit.length} / ${dialogues.length}`);
   console.log("");
 
-  for (const threshold of [2, 3]) {
+  for (const threshold of [2, 3, 4]) {
     const histogram = {};
     const examples = {};
     for (const d of hit) {
