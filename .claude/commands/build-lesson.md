@@ -95,9 +95,10 @@ WORKING_RULES §f: **điểm dừng hợp lệ DUY NHẤT là sau commit PHA A.*
 2. **Đo nguồn cho `grammarPatterns`**: tìm mẫu ngữ pháp thật trong kết quả quét bước 1 khớp chủ đề bài, trích dẫn `source:line`. Không có mẫu thật → không đưa mẫu đó vào bài (không tự sáng tác).
 3. **Đo hội thoại ở MỨC KHỐI**, dùng `node scripts/estimate-source-coverage.mjs` (hàm `uniqueUnknownInSpan`/`bestQualifyingSpan`, xây ở lượt build m02-u1-l1) — đếm từ lạ **DUY NHẤT trên toàn khối** (union, không cộng dồn theo từng lượt riêng). Ngưỡng mặc định ≤2 từ lạ/khối; nới lên ≤3 **phải ghi lý do cụ thể** trong báo cáo (không lặng lẽ nới ngưỡng).
    - Nếu chủ đề bài chưa có trong danh sách hằng số của script → thêm entry mới theo mẫu các entry hiện có, **phá thật lại 3 ca self-test đã có** (`--self-test`) để chắc không phá logic cũ, rồi mới đo.
-4. **Điều kiện ĐẠT** (owner chốt, dùng lại nguyên văn cho mọi bài):
-   - **≥3 khối** dài 3–4 lượt, lấy từ **≥2 hội thoại nguồn khác nhau**, VÀ
+4. **Điều kiện ĐẠT** (owner chốt 2026-08-02, dùng lại nguyên văn cho mọi bài):
+   - **≥3 khối** dài **4–6 lượt** (G14-R3b, nâng từ 3–4 sau khi owner duyệt preview `m02-u1-l2` thấy hội thoại CỤT — thiếu câu mở/câu chốt), lấy từ **≥2 hội thoại nguồn khác nhau**, VÀ
    - **≥1 đoạn ≥4 lượt** riêng, dành cho Q14 (`real_world_practice_dialogue`, cần 6–8 lượt theo G14-R7 — đoạn ≥4 lượt là nguyên liệu tối thiểu để ghép đủ, không phải toàn bộ Q14).
+   - **Với mỗi khối, đo và báo ĐOẠN DÀI NHẤT đạt được** (không chỉ đoạn vừa đủ ngưỡng) — ưu tiên lấy nguyên văn đoạn dài nhất mà nguồn cho phép trong giới hạn lọc R5 mức khối, KHÔNG ghép câu tự soạn để kéo dài. Nguồn chỉ đủ ngắn hơn 4–6 thì giữ độ dài đo được và ghi rõ lý do (đo bao nhiêu, ngưỡng ≤2 hay ≤3) — không phải lỗi, miễn có bằng chứng đã đo tới giới hạn.
    - **Không đạt** → DỪNG, báo owner đúng con số đo được, đề xuất hướng (đổi chủ đề/gộp chủ đề/chờ thêm nguồn). **KHÔNG tự ý lùi sang Irodori hay nguồn khác để né ngưỡng** — đó là quyết định curriculum của owner.
 5. **Đo từ vựng mới** so với `taught-vocabulary.json` tính đến bài này: từ nào thật sự mới (tính vào ngân sách), từ nào là "cách dùng mới của từ đã dạy" (không tính vào ngân sách, theo mẫu §B2b/owner chốt ở PHA B của m02-u1-l1).
 6. **Đề xuất can-do**: tên bài (tiếng Việt + tiêu đề tiếng Nhật nếu có) + danh sách mục tiêu (objectives), viết đúng dạng câu hành động đã dùng ở u2-l1 (vd "Cảm ơn lịch sự khi việc còn đang xảy ra bằng ...").
@@ -107,7 +108,7 @@ WORKING_RULES §f: **điểm dừng hợp lệ DUY NHẤT là sau commit PHA A.*
 
 ### PHA B — Build (commit nhóm "content", chỉ chạy sau khi owner duyệt PHA A)
 
-1. **Cấu hình A** theo G14-R3b (đọc lại rule tại thời điểm chạy — không chép số cũ, rule có thể đã cập nhật).
+1. **Cấu hình A** theo G14-R3b (đọc lại rule tại thời điểm chạy — không chép số cũ, rule có thể đã cập nhật). Với mỗi `dialogueGroup`: lấy đoạn **DÀI NHẤT** mà nguồn cho phép trong giới hạn lọc R5 mức khối (đã đo ở PHA A bước 3), không cắt ngắn xuống vừa đủ ngưỡng dưới nếu nguồn cho phép dài hơn.
 2. **Cân nguồn, KHÔNG xếp thứ tự ưu tiên** (G14-R3b, owner chốt 2026-08-01 — thay cho thang tuần tự cũ "(1) tái dùng → (2) nguồn owner → (3) Irodori", vốn khiến nguồn dưới không bao giờ được dùng). Dùng kết quả quét PHA A bước 1:
    - Mọi nguồn `coHang: true` trong `scan.json` phải đóng góp **≥1 câu mẹ** vào bài.
    - Không nguồn nào chiếm **>50%** số câu mẹ.
@@ -147,6 +148,7 @@ WORKING_RULES §f: **điểm dừng hợp lệ DUY NHẤT là sau commit PHA A.*
 
 1. **Tỉ lệ nguồn theo câu mẹ** — % mỗi file nguồn đóng góp (giống output `verify-provenance.mjs` mục "TỈ LỆ NGUỒN (G14-R10)").
 2. **BẢNG CÂN NGUỒN** (G14-R3b) — một dòng mỗi nguồn đã quét ở PHA A bước 1: tên nguồn · có hàng bao nhiêu câu qua lọc (`soCauQuaLoc`) · bài dùng bao nhiêu câu mẹ · nếu dùng 0 thì ghi lại cách quét (`cachQuet`) đã dùng. Nguồn nào có hàng mà bài dùng 0 → đây chính là cổng sẽ FAIL, phải sửa TRƯỚC khi báo cáo, không phải chỉ ghi nhận rồi cho qua.
+2b. **BẢNG ĐỘ DÀI HỘI THOẠI** (G14-R3b, thêm 2026-08-02) — một dòng mỗi `dialogueGroup`: mấy lượt trong bài · đoạn dài nhất đo được ở nguồn đó (PHA A bước 3) · nếu hai số lệch nhau thì ghi rõ vì sao không lấy dài hơn (hết đoạn liên tiếp / vượt ngưỡng lọc R5 / khác).
 3. **Authored theo reason** — đếm theo từng lý do authored (mục "AUTHORED theo reason").
 4. **Mutation/nhiễu theo loại** — đếm bao nhiêu phương án mỗi loại (1/2/3/4) trong toàn bài.
 5. **BẢNG RÀ ĐỐI KHÁNG TỪNG PHƯƠNG ÁN** — một dòng mỗi phương án (câu hỏi · phương án · đúng/sai · loại · vì sao bị loại/vì sao hợp lệ), **không giấu trong `feedback.explanation`** — bảng này phải đứng độc lập trong báo cáo.

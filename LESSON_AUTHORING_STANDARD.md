@@ -1312,7 +1312,16 @@ nguồn vào `lessons.json`.
 **G14-R3b. CẤU HÌNH A — cỡ bài mặc định toàn khoá daily_life.**
 Mục tiêu kép: an toàn ngang tối đa + **owner check ít nhất**.
 - `grammarPatterns` **4–5** (trần 8) · `vocabulary` **8–10** (trần 15)
-- `dialogueGroups` **3 nhóm × 3–4 lượt**, lấy từ **≥2 kịch bản khác nhau**
+- `dialogueGroups` **3 nhóm × 4–6 lượt** (owner chốt 2026-08-02, nâng từ
+  3–4 — bản 3–4 tối ưu tốc độ duyệt nhưng đánh đổi bằng hội thoại thiếu câu
+  mở/câu chốt: owner duyệt preview `m02-u1-l2` thấy CỤT, vào thẳng すみません,
+  kết ngay どういたしまして. Validator đã cho phép tới 8 từ trước
+  (`dialogueLinesPerGroup` ở `five-cards-ranges.mjs`) — mục này chỉ nâng CỠ
+  SOẠN MẶC ĐỊNH cho khớp, không đổi trần validator), lấy từ **≥2 kịch bản
+  khác nhau**. Nguyên tắc: ưu tiên đoạn **DÀI NHẤT** nguồn có, trong giới
+  hạn lọc R5 mức khối — **KHÔNG** ghép câu tự soạn để kéo dài; nguồn chỉ đủ
+  4 lượt thì giữ 4 và **ghi rõ lý do** (đo được bao nhiêu, ngưỡng nào) trong
+  báo cáo.
 - Q14 **6–8 lượt** (validator ≥4)
 - **CÂN NGUỒN, không xếp thứ tự ưu tiên** (owner chốt 2026-08-01 — thay cho
   bản cũ "(1) tái dùng → (2) `n5_ngu-phap-vi` → (3) Irodori": thang tuần tự
