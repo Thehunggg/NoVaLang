@@ -281,6 +281,19 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
       vocabularyReferences: [
         { term: 'こちらこそ', reading: 'こちらこそ', speechText: 'こちらこそ', meaning: 'Cách dùng MỚI của từ đã học ở bài chào hỏi: đáp lễ khi ai đó bày tỏ lòng biết ơn với mình, không chỉ dùng khi đáp lễ よろしくお願いします. Khác どういたしまして／いえいえ ở chỗ: こちらこそ ngụ ý "chính TÔI mới là người phải cảm ơn/mang ơn BẠN".', register: 'Lịch sự.', example: example('こちらこそ、お世話になっています。', 'こちらこそ、おせわになっています。', 'Không, chính tôi mới là người phải cảm ơn anh/chị.') },
         { term: 'こちらこそよろしく', reading: 'こちらこそよろしく', speechText: 'こちらこそよろしく', meaning: 'Đối chiếu: đây LÀ cách dùng こちらこそ đã học ở bài chào hỏi (đáp lễ よろしくお願いします) — khác với cách dùng MỚI ở bài này (đáp lễ lòng biết ơn お世話になっています, không có よろしく).', register: 'Trang trọng.', example: example('こちらこそよろしく。', 'こちらこそよろしく。', 'Chính tôi mới là người phải nhờ anh/chị giúp đỡ.') },
+        // §G7 vùng B điều kiện 3 (§B2f, owner chốt 2026-08-02) — nghĩa của
+        // từ lạ xuất hiện trong dialogueGroups (card 3), đúng mức "dư ≤4 từ
+        // lạ/khối" mà G14-R5 cho phép. Cùng cơ chế/hình dạng với 半年/なんとか
+        // ở m01-u2-l2 — không phải "cách dùng mới của từ đã dạy" (đó là 2
+        // mục こちらこそ ở trên); đây là 7 từ CHƯA từng dạy, gặp trong hội
+        // thoại đọc hiểu, không dùng ở Q1–Q13.
+        { term: '見（み）つける', reading: 'みつける', speechText: 'みつける', meaning: 'Tìm thấy.', register: '', example: example('あ、見つけました。', 'あ、みつけました。', 'À, tìm thấy rồi.') },
+        { term: '足元（あしもと）', reading: 'あしもと', speechText: 'あしもと', meaning: 'Dưới chân, ngay chỗ mình đứng.', register: '', example: example('私の足元にありましたよ。', 'わたしのあしもとにありましたよ。', 'Nó ở dưới chân tôi này.') },
+        { term: 'シャッター', reading: 'シャッター', speechText: 'シャッター', meaning: 'Nút chụp (máy ảnh).', register: '', example: example('シャッターはどこですか？', 'シャッターはどこですか？', 'Nút chụp ở đâu vậy?') },
+        { term: '感（かん）じ', reading: 'かんじ', speechText: 'かんじ', meaning: 'Cảm giác, kiểu/dáng vẻ thế này.', register: '', example: example('このような感じでどうですか？', 'このようなかんじでどうですか？', 'Kiểu này được không?') },
+        { term: 'お世話（せわ）', reading: 'おせわ', speechText: 'おせわ', meaning: 'Sự giúp đỡ, chăm sóc — thường dùng trong お世話になっています (được giúp đỡ/mang ơn).', register: '', example: example('いつもお世話になっています。', 'いつもおせわになっています。', 'Luôn được anh/chị giúp đỡ nhiều.') },
+        { term: 'ハチ公（こう）', reading: 'ハチこう', speechText: 'ハチこう', meaning: 'Tượng chú chó Hachiko, nổi tiếng ở nhà ga Shibuya.', register: '', example: example('ハチ公と一緒に写真を撮ってもらえませんか？', 'ハチこうといっしょにしゃしんをとってもらえませんか？', 'Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?') },
+        { term: 'もらえる', reading: 'もらえる', speechText: 'もらえる', meaning: 'Có thể nhờ ai làm gì cho mình (thể khả năng của もらう — nhận được).', register: '', example: example('写真を撮ってもらえませんか？', 'しゃしんをとってもらえませんか？', 'Anh/chị chụp giúp tôi tấm ảnh được không?') },
       ],
       dialogueGroups: [
         {
@@ -294,15 +307,16 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
           explanation: ['どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.', 'Cả hai giữ thể lịch sự vì là bạn học chưa thân.'],
         },
         {
-          id: 'photo-help-done', title: 'Lịch sự — việc đã xong (nối tiếp bài trước)', situation: 'Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước, bắt đầu từ lượt nhận lời chụp — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).',
+          id: 'photo-help-done', title: 'Lịch sự — việc đã xong (nối tiếp bài trước)', situation: 'Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY từ lượt nhờ chụp ảnh đã học ở bài trước — 田中 nhờ 佐藤 chụp giúp, 佐藤 nhận lời và chụp xong, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).',
           lines: [
+            dialogueLine('tanaka', 'ハチ公と一緒に写真を撮ってもらえませんか？', 'ハチこうといっしょにしゃしんをとってもらえませんか？', 'Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?', 'ハチこうといっしょにしゃしんをとってもらえませんか'),
             dialogueLine('sato', 'よいですよ。シャッターはどこですか？', 'よいですよ。シャッターはどこですか？', 'Được chứ. Nút chụp ở đâu vậy?', 'よいですよ。シャッターはどこですか'),
             dialogueLine('tanaka', '右上にあります。', 'みぎうえにあります。', 'Ở phía trên bên phải.', 'みぎうえにあります'),
             dialogueLine('sato', '右上ですね。では撮りますよ。このような感じでどうですか？', 'みぎうえですね。ではとりますよ。このようなかんじでどうですか？', 'Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?', 'みぎうえですね。ではとりますよ。このようなかんじでどうですか'),
             dialogueLine('tanaka', 'はい、ありがとうございました。', 'はい、ありがとうございました。', 'Vâng, cảm ơn anh/chị nhiều ạ.', 'はい、ありがとうございました'),
             dialogueLine('sato', 'どういたしまして。', 'どういたしまして。', 'Không có gì đâu.', 'どういたしまして'),
           ],
-          explanation: ['Đây là đoạn nối tiếp bài trước — 4 lượt đầu (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.', 'Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.'],
+          explanation: ['Đây là đoạn nối tiếp bài trước — 5 lượt đầu (ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.', 'Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.'],
         },
         {
           id: 'ongoing-gratitude', title: 'こちらこそ — đáp lễ lòng biết ơn (KHÁC bài trước)', situation: 'Vai vế: hai đồng nghiệp/người quen đã biết nhau lâu. Bối cảnh: KHÔNG PHẢI đáp lại một lời cảm ơn cụ thể vừa xảy ra như hai nhóm trên — đây là cách bày tỏ lòng biết ơn/thiện chí CHUNG khi nhắc tới mối quan hệ đôi bên, một tình huống KHÁC. こちらこそ ở đây KHÔNG phải đáp lễ lời chào よろしくお願いします như đã học ở bài chào hỏi.',

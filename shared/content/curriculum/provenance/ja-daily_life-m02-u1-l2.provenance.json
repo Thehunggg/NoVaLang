@@ -1481,7 +1481,7 @@
     {
       "path": "fiveCardContent.dialogueGroups[1].explanation[0]",
       "authored": true,
-      "targetText": "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
+      "targetText": "Đây là đoạn nối tiếp bài trước — 5 lượt đầu (ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
       "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI các lượt đã khai từ_bài (from_lesson) ở dialogueGroups[1].lines cùng bài, cộng どういたしまして đã khai verbatim ở vocabularyDetails[0]."
     },
     {
@@ -1512,60 +1512,68 @@
       "path": "fiveCardContent.dialogueGroups[1].lines[0].targetText",
       "from_lesson": {
         "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].targetText"
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[4].targetText"
       },
-      "targetText": "よいですよ。シャッターはどこですか？"
+      "targetText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？"
     },
     {
       "path": "fiveCardContent.dialogueGroups[1].lines[0].displayText",
       "from_lesson": {
         "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].targetText"
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[4].targetText"
       },
-      "targetText": "よいですよ。シャッターはどこですか？"
+      "targetText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？"
     },
     {
       "path": "fiveCardContent.dialogueGroups[1].lines[1].targetText",
       "from_lesson": {
         "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText"
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].targetText"
       },
-      "targetText": "右上（みぎうえ）にあります。"
+      "targetText": "よいですよ。シャッターはどこですか？"
     },
     {
       "path": "fiveCardContent.dialogueGroups[1].lines[1].displayText",
       "from_lesson": {
         "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText"
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].targetText"
       },
-      "targetText": "右上（みぎうえ）にあります。"
+      "targetText": "よいですよ。シャッターはどこですか？"
     },
     {
       "path": "fiveCardContent.dialogueGroups[1].lines[2].targetText",
       "from_lesson": {
         "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText"
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText"
       },
-      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？"
+      "targetText": "右上（みぎうえ）にあります。"
     },
     {
       "path": "fiveCardContent.dialogueGroups[1].lines[2].displayText",
       "from_lesson": {
         "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText"
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText"
       },
-      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？"
+      "targetText": "右上（みぎうえ）にあります。"
     },
     {
       "path": "fiveCardContent.dialogueGroups[1].lines[3].targetText",
       "from_lesson": {
         "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[8].targetText"
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText"
       },
-      "targetText": "はい、ありがとうございました。"
+      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？"
     },
     {
       "path": "fiveCardContent.dialogueGroups[1].lines[3].displayText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText"
+      },
+      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[4].targetText",
       "from_lesson": {
         "lessonId": "ja-daily_life-m02-u1-l1",
         "path": "fiveCardContent.practice.exercises[13].dialogueLines[8].targetText"
@@ -1573,18 +1581,173 @@
       "targetText": "はい、ありがとうございました。"
     },
     {
-      "path": "fiveCardContent.dialogueGroups[1].lines[4].targetText",
+      "path": "fiveCardContent.dialogueGroups[1].lines[4].displayText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[8].targetText"
+      },
+      "targetText": "はい、ありがとうございました。"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[5].targetText",
       "verbatim": true,
       "targetText": "どういたしまして。",
       "source": "local-sources/ja/topic3.json",
       "line": 1191
     },
     {
-      "path": "fiveCardContent.dialogueGroups[1].lines[4].displayText",
+      "path": "fiveCardContent.dialogueGroups[1].lines[5].displayText",
       "verbatim": true,
       "targetText": "どういたしまして。",
       "source": "local-sources/ja/topic3.json",
       "line": 1191
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[2].term",
+      "authored": true,
+      "targetText": "見（み）つける",
+      "reason": "dạng từ điển của động từ đã khai verbatim ở dialogueGroups[0].lines[1] (見つけました, topic2.json:25798) — chia lại về gốc để làm mục tham khảo."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[2].meaning",
+      "authored": true,
+      "targetText": "Tìm thấy.",
+      "reason": "chú nghĩa do người viết soạn cho từ lạ trong hội thoại (§G7 vùng B điều kiện 3, §B2f)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[2].example.text",
+      "verbatim": true,
+      "targetText": "あ、見（み）つけました。",
+      "source": "local-sources/ja/topic2.json",
+      "line": 25798,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[3].term",
+      "verbatim": true,
+      "targetText": "足元（あしもと）",
+      "source": "local-sources/ja/topic2.json",
+      "line": 25798,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[3].meaning",
+      "authored": true,
+      "targetText": "Dưới chân, ngay chỗ mình đứng.",
+      "reason": "chú nghĩa do người viết soạn cho từ lạ trong hội thoại (§G7 vùng B điều kiện 3, §B2f)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[3].example.text",
+      "verbatim": true,
+      "targetText": "私（わたし）の足元（あしもと）にありましたよ。",
+      "source": "local-sources/ja/topic2.json",
+      "line": 25798,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[4].term",
+      "verbatim": true,
+      "targetText": "シャッター",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1171,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[4].meaning",
+      "authored": true,
+      "targetText": "Nút chụp (máy ảnh).",
+      "reason": "chú nghĩa do người viết soạn cho từ lạ trong hội thoại (§G7 vùng B điều kiện 3, §B2f)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[4].example.text",
+      "verbatim": true,
+      "targetText": "シャッターはどこですか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1171,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[5].term",
+      "verbatim": true,
+      "targetText": "感（かん）じ",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1181,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[5].meaning",
+      "authored": true,
+      "targetText": "Cảm giác, kiểu/dáng vẻ thế này.",
+      "reason": "chú nghĩa do người viết soạn cho từ lạ trong hội thoại (§G7 vùng B điều kiện 3, §B2f)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[5].example.text",
+      "verbatim": true,
+      "targetText": "このような感（かん）じでどうですか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1181,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[6].term",
+      "verbatim": true,
+      "targetText": "お世話（せわ）",
+      "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md",
+      "line": 23239,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[6].meaning",
+      "authored": true,
+      "targetText": "Sự giúp đỡ, chăm sóc — thường dùng trong お世話になっています (được giúp đỡ/mang ơn).",
+      "reason": "chú nghĩa do người viết soạn cho từ lạ trong hội thoại (§G7 vùng B điều kiện 3, §B2f)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[6].example.text",
+      "authored": true,
+      "targetText": "いつもお世話（せわ）になっています。",
+      "reason": "câu ví dụ do người viết soạn, TRÍCH LẠI cụm お世話になっています đã khai verbatim ở dialogueGroups[2].lines[0] (Irodori :23239)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[7].term",
+      "verbatim": true,
+      "targetText": "ハチ公（こう）",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1166,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[7].meaning",
+      "authored": true,
+      "targetText": "Tượng chú chó Hachiko, nổi tiếng ở nhà ga Shibuya.",
+      "reason": "chú nghĩa do người viết soạn cho từ lạ trong hội thoại (§G7 vùng B điều kiện 3, §B2f)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[7].example.text",
+      "verbatim": true,
+      "targetText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1166
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[8].term",
+      "authored": true,
+      "targetText": "もらえる",
+      "reason": "thể khả năng của động từ đã khai verbatim ở vocabularyReferences[7].example (もらえませんか, topic3.json:1166) — kuromoji nhận diện もらえる là lemma riêng (không rút lại thành もらう), giữ đúng dạng chia đang dùng trong câu."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[8].meaning",
+      "authored": true,
+      "targetText": "Có thể nhờ ai làm gì cho mình (thể khả năng của もらう — nhận được).",
+      "reason": "chú nghĩa do người viết soạn cho từ lạ trong hội thoại (§G7 vùng B điều kiện 3, §B2f)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[8].example.text",
+      "verbatim": true,
+      "targetText": "写真（しゃしん）を撮（と）ってもらえませんか？",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1166,
+      "token": true
     }
   ]
 }
