@@ -246,68 +246,6 @@
       "line": 1350
     },
     {
-      "path": "fiveCardContent.dialogueGroups[1].lines[0].targetText",
-      "targetText": "右上（みぎうえ）にあります。",
-      "from_lesson": {
-        "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText"
-      }
-    },
-    {
-      "path": "fiveCardContent.dialogueGroups[1].lines[0].displayText",
-      "targetText": "右上（みぎうえ）にあります。",
-      "from_lesson": {
-        "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText"
-      }
-    },
-    {
-      "path": "fiveCardContent.dialogueGroups[1].lines[1].targetText",
-      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
-      "from_lesson": {
-        "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText"
-      }
-    },
-    {
-      "path": "fiveCardContent.dialogueGroups[1].lines[1].displayText",
-      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
-      "from_lesson": {
-        "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText"
-      }
-    },
-    {
-      "path": "fiveCardContent.dialogueGroups[1].lines[2].targetText",
-      "targetText": "はい、ありがとうございました。",
-      "from_lesson": {
-        "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[8].targetText"
-      }
-    },
-    {
-      "path": "fiveCardContent.dialogueGroups[1].lines[2].displayText",
-      "targetText": "はい、ありがとうございました。",
-      "from_lesson": {
-        "lessonId": "ja-daily_life-m02-u1-l1",
-        "path": "fiveCardContent.practice.exercises[13].dialogueLines[8].targetText"
-      }
-    },
-    {
-      "path": "fiveCardContent.dialogueGroups[1].lines[3].targetText",
-      "verbatim": true,
-      "targetText": "どういたしまして。",
-      "source": "local-sources/ja/topic3.json",
-      "line": 1191
-    },
-    {
-      "path": "fiveCardContent.dialogueGroups[1].lines[3].displayText",
-      "verbatim": true,
-      "targetText": "どういたしまして。",
-      "source": "local-sources/ja/topic3.json",
-      "line": 1191
-    },
-    {
       "path": "fiveCardContent.dialogueGroups[2].title",
       "authored": true,
       "targetText": "こちらこそ — đáp lễ lòng biết ơn (KHÁC bài trước)",
@@ -1543,7 +1481,7 @@
     {
       "path": "fiveCardContent.dialogueGroups[1].explanation[0]",
       "authored": true,
-      "targetText": "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
+      "targetText": "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
       "reason": "giải thích do người viết soạn; phần tiếng Nhật trong đó là TRÍCH LẠI các lượt đã khai từ_bài (from_lesson) ở dialogueGroups[1].lines cùng bài, cộng どういたしまして đã khai verbatim ở vocabularyDetails[0]."
     },
     {
@@ -1569,6 +1507,84 @@
       "authored": true,
       "targetText": "とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます.",
       "reason": "giải thích do người viết soạn dựa theo 敬語の指針 (kiến thức nền của tác giả, KHÔNG nhắc tên nguồn trong data app theo §G5); phần tiếng Nhật trong đó (とんでもない, とんでもございません) là TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[2]/[3]/grammarPatterns[2].examples."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[0].targetText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].targetText"
+      },
+      "targetText": "よいですよ。シャッターはどこですか？"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[0].displayText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].targetText"
+      },
+      "targetText": "よいですよ。シャッターはどこですか？"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[1].targetText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText"
+      },
+      "targetText": "右上（みぎうえ）にあります。"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[1].displayText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[6].targetText"
+      },
+      "targetText": "右上（みぎうえ）にあります。"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[2].targetText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText"
+      },
+      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[2].displayText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[7].targetText"
+      },
+      "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[3].targetText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[8].targetText"
+      },
+      "targetText": "はい、ありがとうございました。"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[3].displayText",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u1-l1",
+        "path": "fiveCardContent.practice.exercises[13].dialogueLines[8].targetText"
+      },
+      "targetText": "はい、ありがとうございました。"
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[4].targetText",
+      "verbatim": true,
+      "targetText": "どういたしまして。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1191
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[4].displayText",
+      "verbatim": true,
+      "targetText": "どういたしまして。",
+      "source": "local-sources/ja/topic3.json",
+      "line": 1191
     }
   ]
 }
