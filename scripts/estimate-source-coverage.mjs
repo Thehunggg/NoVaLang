@@ -84,17 +84,29 @@ export async function buildKnownTokenSet() {
 
 /**
  * Đếm token LẠ trong một câu — token không có trong `known`, không phải dấu
- * câu, không phải tên trong roster.
- * @returns {string[]} danh sách surface_form lạ (có thể rỗng)
+ * câu, không phải tên trong roster. Trả về CẢ surface lẫn basic (dạng từ
+ * điển) — nơi cần so khớp thêm (vd verify-provenance.mjs kiểm nghĩa hiển thị)
+ * cần basic vì kuromoji chia động từ (もらえ ← もらう, khác hẳn ở đuôi, so
+ * bằng substring trên surface sẽ trượt).
+ * @returns {Array<{surface: string, basic: string}>}
  */
-export function unknownTokensIn(text, tokenizer, known) {
+export function unknownTokenDetailsIn(text, tokenizer, known) {
   const out = [];
   for (const { surface, basic } of tokenizeWords(text, tokenizer)) {
     if (ROSTER.some((r) => surface.includes(r))) continue;
     if (known.has(surface) || known.has(basic)) continue;
-    out.push(surface);
+    out.push({ surface, basic });
   }
   return out;
+}
+
+/**
+ * Đếm token LẠ trong một câu — bản CHỈ surface, giữ lại cho các nơi gọi cũ
+ * (bestQualifyingSpan, uniqueUnknownInSpan) không cần dạng từ điển.
+ * @returns {string[]} danh sách surface_form lạ (có thể rỗng)
+ */
+export function unknownTokensIn(text, tokenizer, known) {
+  return unknownTokenDetailsIn(text, tokenizer, known).map((t) => t.surface);
 }
 
 /**

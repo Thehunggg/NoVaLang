@@ -34,7 +34,7 @@ import { walkLessonStrings, buildLessonPathIndex, buildUnitPathIndex, walkNodes 
 // (card 3) phải có mục nghĩa trong vocabularyReferences (§G7 vùng B điều
 // kiện 3, §B2f). Dùng lại đúng bộ tokenizer/known-set đã xây cho PHA A đo
 // mức khối — MỘT nguồn duy nhất, không viết bộ đếm từ lạ thứ hai.
-import { buildKnownTokenSet, unknownTokensIn } from "./estimate-source-coverage.mjs";
+import { buildKnownTokenSet, unknownTokenDetailsIn } from "./estimate-source-coverage.mjs";
 import { _internal as jaPronunciationInternal } from "./lib/japanese-pronunciation.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -746,7 +746,14 @@ async function checkDialogueUnknownWordsHaveGloss(lesson) {
   const refs = lesson.fiveCardContent?.vocabularyReferences ?? [];
   const stripFurigana = (s) => String(s ?? "").replace(/（[^）]*）/g, "");
   const glossTerms = refs.map((r) => stripFurigana(r.term)).filter(Boolean);
-  const hasGloss = (word) => glossTerms.some((t) => t.includes(word) || word.includes(t));
+  // So khớp CẢ surface lẫn basic (dạng từ điển) — kuromoji chia động từ dạng
+  // khả năng/phủ định (もらえ ← もらう, 見つけ ← 見つける) khác hẳn ở đuôi so
+  // với gốc, so bằng substring trên riêng surface sẽ trượt oan (đo được thật:
+  // "もらえ" không phải substring của "もらう" theo bất kỳ chiều nào).
+  const hasGloss = (surface, basic) =>
+    glossTerms.some(
+      (t) => t.includes(surface) || surface.includes(t) || t.includes(basic) || basic.includes(t),
+    );
 
   const missing = new Set();
   let checked = 0;
@@ -757,9 +764,9 @@ async function checkDialogueUnknownWordsHaveGloss(lesson) {
       // thì kuromoji tách luôn phần kana trong ngoặc thành token rời
       // (もと/うえ/せわ…), báo "từ lạ" oan cho một mảnh chú âm.
       const plain = stripFurigana(line.targetText ?? "");
-      for (const w of unknownTokensIn(plain, tokenizer, known)) {
+      for (const { surface, basic } of unknownTokenDetailsIn(plain, tokenizer, known)) {
         checked += 1;
-        if (!hasGloss(w)) missing.add(w);
+        if (!hasGloss(surface, basic)) missing.add(surface);
       }
     }
   }
