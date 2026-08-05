@@ -8018,7 +8018,2429 @@
           "lessonIds": [
             "ja-daily_life-m02-u1-l1",
             "ja-daily_life-m02-u1-l2"
-          ]
+          ],
+          "comprehensiveTest": {
+            "id": "ja-daily_life-m02-u1-comprehensive",
+            "unitId": "ja-daily_life-m02-u1",
+            "format": "unit_comprehensive_cloze",
+            "languageCode": "ja",
+            "targetLocale": "ja-JP",
+            "plan": "plus",
+            "graded": true,
+            "title": "Bài tổng hợp Unit 1",
+            "titleByNative": {
+              "vi": "Bài tổng hợp Unit 1",
+              "en": "Unit 1 Comprehensive Test",
+              "ja": "第1ユニット総合テスト"
+            },
+            "description": "Ôn lại toàn bộ Unit 1 của Module 2: cảm ơn đúng mức độ, và đáp lại lời cảm ơn đúng tình huống.",
+            "descriptionByNative": {
+              "vi": "Ôn lại toàn bộ Unit 1 của Module 2: cảm ơn đúng mức độ, và đáp lại lời cảm ơn đúng tình huống.",
+              "en": "Reviews all of Module 2 Unit 1: thanking at the right level, and replying to thanks in the right situation.",
+              "ja": "モジュール2・第1ユニット全体の復習：適切な度合いでのお礼の言い方と、状況に合った返事の仕方。"
+            },
+            "estimatedMinutes": "12",
+            "totalQuestions": 18,
+            "sourceLessonIds": [
+              "ja-daily_life-m02-u1-l1",
+              "ja-daily_life-m02-u1-l2"
+            ],
+            "questions": [
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q1",
+                "order": 1,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Một người quen vừa giúp bạn NGAY BÂY GIỜ (việc đang xảy ra). Bạn cảm ơn thật lịch sự và nhấn mạnh.",
+                "contextByNative": {
+                  "vi": "Một người quen vừa giúp bạn NGAY BÂY GIỜ (việc đang xảy ra). Bạn cảm ơn thật lịch sự và nhấn mạnh.",
+                  "en": "An acquaintance is helping you RIGHT NOW (still in progress). You thank them very politely and with emphasis.",
+                  "ja": "知り合いが今まさに手伝ってくれています（まだ終わっていません）。とても丁寧に、強調して感謝を伝えます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q1b1"
+                  },
+                  {
+                    "blankId": "q1b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q1b1",
+                    "displayAnswer": "どうも",
+                    "canonicalAnswer": "どうも",
+                    "audioText": "どうも",
+                    "acceptedAnswers": [
+                      "どうも"
+                    ]
+                  },
+                  {
+                    "id": "q1b2",
+                    "displayAnswer": "ありがとうございます",
+                    "canonicalAnswer": "ありがとうございます",
+                    "audioText": "ありがとうございます",
+                    "acceptedAnswers": [
+                      "ありがとうございます"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q1a",
+                    "text": "どうも / ありがとうございます",
+                    "answersByBlankId": {
+                      "q1b1": "どうも",
+                      "q1b2": "ありがとうございます"
+                    }
+                  },
+                  {
+                    "id": "q1b",
+                    "text": "どうも / ありがとうございました",
+                    "answersByBlankId": {
+                      "q1b1": "どうも",
+                      "q1b2": "ありがとうございました"
+                    }
+                  },
+                  {
+                    "id": "q1c",
+                    "text": "どうも / ありがとう",
+                    "answersByBlankId": {
+                      "q1b1": "どうも",
+                      "q1b2": "ありがとう"
+                    }
+                  },
+                  {
+                    "id": "q1d",
+                    "text": "それなら / ありがとうございます",
+                    "answersByBlankId": {
+                      "q1b1": "それなら",
+                      "q1b2": "ありがとうございます"
+                    }
+                  }
+                ],
+                "correctOptionId": "q1a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "arigatou-gozaimasu"
+                  }
+                ],
+                "explanation": "ありがとうございました là thì quá khứ, sai vì việc còn đang xảy ra. ありがとう là thể thân mật, lệch mức lịch sự đang cần. それなら là từ nối \"nếu vậy thì\" (học ở bài Đáp khi được cảm ơn) — không đứng được ở vị trí nhấn mạnh trước lời cảm ơn.",
+                "explanationByNative": {
+                  "vi": "ありがとうございました là thì quá khứ, sai vì việc còn đang xảy ra. ありがとう là thể thân mật, lệch mức lịch sự đang cần. それなら là từ nối \"nếu vậy thì\" (học ở bài Đáp khi được cảm ơn) — không đứng được ở vị trí nhấn mạnh trước lời cảm ơn.",
+                  "en": "ありがとうございました is past tense, wrong because the help is still ongoing. ありがとう is plain/casual form, mismatched with the politeness this situation needs. それなら is the connector \"in that case\" (from the Responding to Thanks lesson) — it cannot stand in the emphasis slot before a thank-you.",
+                  "ja": "「ありがとうございました」は過去形で、まだ終わっていないことには合いません。「ありがとう」は普通体で、必要な丁寧さに合いません。「それなら」（「お礼を言われたときの返事」のレッスンで学習）は「そういうことなら」という意味の接続語で、お礼を強調する位置には入りません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q2",
+                "order": 2,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Ai đó vừa giúp XONG một việc quan trọng cho bạn, tình huống cần lịch sự. Bạn cảm ơn và nói thêm rằng việc đó đã giúp ích cho bạn.",
+                "contextByNative": {
+                  "vi": "Ai đó vừa giúp XONG một việc quan trọng cho bạn, tình huống cần lịch sự. Bạn cảm ơn và nói thêm rằng việc đó đã giúp ích cho bạn.",
+                  "en": "Someone has just FINISHED helping you with something important, in a situation that calls for politeness. You thank them and add that it really helped you.",
+                  "ja": "誰かが大事な用事を丁寧な場面で手伝い終えたばかりです。お礼を言い、それが助かったと付け加えます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q2b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q2b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q2b1",
+                    "displayAnswer": "ありがとうございました",
+                    "canonicalAnswer": "ありがとうございました",
+                    "audioText": "ありがとうございました",
+                    "acceptedAnswers": [
+                      "ありがとうございました"
+                    ]
+                  },
+                  {
+                    "id": "q2b2",
+                    "displayAnswer": "助（たす）かりました",
+                    "canonicalAnswer": "助かりました",
+                    "audioText": "たすかりました",
+                    "acceptedAnswers": [
+                      "助かりました"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q2a",
+                    "text": "ありがとうございました / 助（たす）かりました",
+                    "answersByBlankId": {
+                      "q2b1": "ありがとうございました",
+                      "q2b2": "助かりました"
+                    }
+                  },
+                  {
+                    "id": "q2b",
+                    "text": "ありがとうございます / 助（たす）かりました",
+                    "answersByBlankId": {
+                      "q2b1": "ありがとうございます",
+                      "q2b2": "助かりました"
+                    }
+                  },
+                  {
+                    "id": "q2c",
+                    "text": "ありがとうございました / 助（たす）かります",
+                    "answersByBlankId": {
+                      "q2b1": "ありがとうございました",
+                      "q2b2": "助かります"
+                    }
+                  },
+                  {
+                    "id": "q2d",
+                    "text": "ありがとう / 助（たす）かりました",
+                    "answersByBlankId": {
+                      "q2b1": "ありがとう",
+                      "q2b2": "助かりました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q2a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "arigatou-gozaimashita"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "tasukarimashita"
+                  }
+                ],
+                "explanation": "Việc ĐÃ xong nên cả hai câu phải cùng giữ thì quá khứ ました. ありがとうございます (b) và 助かります (c) đều là thì đang xảy ra, sai vì việc đã hoàn tất. ありがとう (d) là thể thân mật, lệch mức lịch sự.",
+                "explanationByNative": {
+                  "vi": "Việc ĐÃ xong nên cả hai câu phải cùng giữ thì quá khứ ました. ありがとうございます (b) và 助かります (c) đều là thì đang xảy ra, sai vì việc đã hoàn tất. ありがとう (d) là thể thân mật, lệch mức lịch sự.",
+                  "en": "Since the help is already finished, both sentences must stay in the past ました form. ありがとうございます (b) and 助かります (c) are both present/ongoing tense, wrong because it is already done. ありがとう (d) is plain/casual, mismatched with the politeness needed.",
+                  "ja": "すでに終わったことなので、両方とも過去形「ました」を保つ必要があります。「ありがとうございます」(b)と「助かります」(c)はどちらも現在形で、すでに終わったこととは合いません。「ありがとう」(d)は普通体で、必要な丁寧さに合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q3",
+                "order": 3,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Một người bạn thân vừa giúp bạn một việc nhỏ. Thân mật.",
+                "contextByNative": {
+                  "vi": "Một người bạn thân vừa giúp bạn một việc nhỏ. Thân mật.",
+                  "en": "A close friend has just helped you with a small favor. Casual/close.",
+                  "ja": "親しい友だちがちょっとした用事を手伝ってくれたばかりです。気軽な間柄です。"
+                },
+                "segments": [
+                  {
+                    "displayText": "あ、"
+                  },
+                  {
+                    "blankId": "q3b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q3b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q3b1",
+                    "displayAnswer": "どうも",
+                    "canonicalAnswer": "どうも",
+                    "audioText": "どうも",
+                    "acceptedAnswers": [
+                      "どうも"
+                    ]
+                  },
+                  {
+                    "id": "q3b2",
+                    "displayAnswer": "ありがとう",
+                    "canonicalAnswer": "ありがとう",
+                    "audioText": "ありがとう",
+                    "acceptedAnswers": [
+                      "ありがとう"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q3a",
+                    "text": "どうも / ありがとう",
+                    "answersByBlankId": {
+                      "q3b1": "どうも",
+                      "q3b2": "ありがとう"
+                    }
+                  },
+                  {
+                    "id": "q3b",
+                    "text": "どうもありがとうございます / ありがとう",
+                    "answersByBlankId": {
+                      "q3b1": "どうもありがとうございます",
+                      "q3b2": "ありがとう"
+                    }
+                  },
+                  {
+                    "id": "q3c",
+                    "text": "どうも / ありがとうございます",
+                    "answersByBlankId": {
+                      "q3b1": "どうも",
+                      "q3b2": "ありがとうございます"
+                    }
+                  },
+                  {
+                    "id": "q3d",
+                    "text": "それなら / ありがとう",
+                    "answersByBlankId": {
+                      "q3b1": "それなら",
+                      "q3b2": "ありがとう"
+                    }
+                  }
+                ],
+                "correctOptionId": "q3a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "arigatou"
+                  }
+                ],
+                "explanation": "どうもありがとうございます (b) là cụm lịch sự nhấn mạnh, lệch với bạn thân đang dùng thể thường. ありがとうございます (c) cũng là thể lịch sự. それなら (d) là từ nối \"nếu vậy thì\", không hợp vị trí một lời cảm ơn ngắn.",
+                "explanationByNative": {
+                  "vi": "どうもありがとうございます (b) là cụm lịch sự nhấn mạnh, lệch với bạn thân đang dùng thể thường. ありがとうございます (c) cũng là thể lịch sự. それなら (d) là từ nối \"nếu vậy thì\", không hợp vị trí một lời cảm ơn ngắn.",
+                  "en": "どうもありがとうございます (b) is the emphasized polite phrase, mismatched with a close friend using plain form. ありがとうございます (c) is likewise polite. それなら (d) is the connector \"in that case\" and does not fit the slot for a short thank-you.",
+                  "ja": "「どうもありがとうございます」(b)は強調した丁寧な言い方で、普通体で話す親しい友だちには合いません。「ありがとうございます」(c)も丁寧体です。「それなら」(d)は「そういうことなら」という接続語で、短いお礼の位置には入りません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q4",
+                "order": 4,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Đồng nghiệp chưa thân vừa cảm ơn bạn vì một việc bình thường. Bạn đáp lại lịch sự, rồi nói thêm rằng bạn vui vì đã giúp được.",
+                "contextByNative": {
+                  "vi": "Đồng nghiệp chưa thân vừa cảm ơn bạn vì một việc bình thường. Bạn đáp lại lịch sự, rồi nói thêm rằng bạn vui vì đã giúp được.",
+                  "en": "A not-yet-close colleague has just thanked you for something ordinary. You reply politely, then add that you are glad you could help.",
+                  "ja": "まだ親しくない同僚が普通のことでお礼を言ってくれました。丁寧に返事をし、役に立ててよかったと付け加えます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q4b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q4b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q4b1",
+                    "displayAnswer": "どういたしまして",
+                    "canonicalAnswer": "どういたしまして",
+                    "audioText": "どういたしまして",
+                    "acceptedAnswers": [
+                      "どういたしまして"
+                    ]
+                  },
+                  {
+                    "id": "q4b2",
+                    "displayAnswer": "お役（やく）に立（た）てて良（よ）かったです",
+                    "canonicalAnswer": "お役に立てて良かったです",
+                    "audioText": "おやくにたててよかったです",
+                    "acceptedAnswers": [
+                      "お役に立てて良かったです"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q4a",
+                    "text": "どういたしまして / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q4b1": "どういたしまして",
+                      "q4b2": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q4b",
+                    "text": "いえいえ / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q4b1": "いえいえ",
+                      "q4b2": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q4c",
+                    "text": "どういたしまして / 気（き）にしないでください",
+                    "answersByBlankId": {
+                      "q4b1": "どういたしまして",
+                      "q4b2": "気にしないでください"
+                    }
+                  },
+                  {
+                    "id": "q4d",
+                    "text": "とんでもございません / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q4b1": "とんでもございません",
+                      "q4b2": "お役に立てて良かったです"
+                    }
+                  }
+                ],
+                "correctOptionId": "q4a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "douitashimashite"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "oyakunitatete"
+                  }
+                ],
+                "explanation": "いえいえ (b) là thể thân mật, lệch với đồng nghiệp chưa thân. 気にしないでください (c) dùng khi có phiền phức cụ thể, không phải câu đáp chung cho lời cảm ơn. とんでもございません (d) dùng để khiêm tốn từ chối lời KHEN, không phải đáp một lời cảm ơn bình thường.",
+                "explanationByNative": {
+                  "vi": "いえいえ (b) là thể thân mật, lệch với đồng nghiệp chưa thân. 気にしないでください (c) dùng khi có phiền phức cụ thể, không phải câu đáp chung cho lời cảm ơn. とんでもございません (d) dùng để khiêm tốn từ chối lời KHEN, không phải đáp một lời cảm ơn bình thường.",
+                  "en": "いえいえ (b) is casual, mismatched with a not-yet-close colleague. 気にしないでください (c) is for a specific inconvenience, not a general reply to thanks. とんでもございません (d) humbly deflects a COMPLIMENT, not an ordinary thank-you.",
+                  "ja": "「いえいえ」(b)は気軽な言い方で、まだ親しくない同僚には合いません。「気にしないでください」(c)は具体的な迷惑があったときに使うもので、お礼への一般的な返事ではありません。「とんでもございません」(d)は褒め言葉を謙遜して断るときに使うもので、普通のお礼への返事ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q5",
+                "order": 5,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Ai đó vừa khen bạn, tình huống lịch sự. Bạn khiêm tốn từ chối lời khen, rồi trấn an rằng đừng bận tâm.",
+                "contextByNative": {
+                  "vi": "Ai đó vừa khen bạn, tình huống lịch sự. Bạn khiêm tốn từ chối lời khen, rồi trấn an rằng đừng bận tâm.",
+                  "en": "Someone has just complimented you, a polite situation. You humbly deflect the compliment, then reassure them not to worry about it.",
+                  "ja": "誰かに丁寧な場面で褒められました。謙遜して褒め言葉を断り、気にしないでほしいと伝えます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q5b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q5b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q5b1",
+                    "displayAnswer": "とんでもございません",
+                    "canonicalAnswer": "とんでもございません",
+                    "audioText": "とんでもございません",
+                    "acceptedAnswers": [
+                      "とんでもございません"
+                    ]
+                  },
+                  {
+                    "id": "q5b2",
+                    "displayAnswer": "気（き）にしないでください",
+                    "canonicalAnswer": "気にしないでください",
+                    "audioText": "きにしないでください",
+                    "acceptedAnswers": [
+                      "気にしないでください"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q5a",
+                    "text": "とんでもございません / 気（き）にしないでください",
+                    "answersByBlankId": {
+                      "q5b1": "とんでもございません",
+                      "q5b2": "気にしないでください"
+                    }
+                  },
+                  {
+                    "id": "q5b",
+                    "text": "とんでもない / 気（き）にしないでください",
+                    "answersByBlankId": {
+                      "q5b1": "とんでもない",
+                      "q5b2": "気にしないでください"
+                    }
+                  },
+                  {
+                    "id": "q5c",
+                    "text": "とんでもございません / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q5b1": "とんでもございません",
+                      "q5b2": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q5d",
+                    "text": "どういたしまして / 気（き）にしないでください",
+                    "answersByBlankId": {
+                      "q5b1": "どういたしまして",
+                      "q5b2": "気にしないでください"
+                    }
+                  }
+                ],
+                "correctOptionId": "q5a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "tondemogozaimasen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "kininaide"
+                  }
+                ],
+                "explanation": "とんでもない (b) là thể thân mật, lệch mức lịch sự cần có. お役に立てて良かったです (c) là câu MÌNH nói khi MÌNH vừa giúp được, không hợp khi đang được khen. どういたしまして (d) đáp lại lời CẢM ƠN, không phải lời KHEN.",
+                "explanationByNative": {
+                  "vi": "とんでもない (b) là thể thân mật, lệch mức lịch sự cần có. お役に立てて良かったです (c) là câu MÌNH nói khi MÌNH vừa giúp được, không hợp khi đang được khen. どういたしまして (d) đáp lại lời CẢM ƠN, không phải lời KHEN.",
+                  "en": "とんでもない (b) is casual, mismatched with the politeness needed. お役に立てて良かったです (c) is said by the person who just helped, not by someone deflecting a compliment. どういたしまして (d) replies to THANKS, not to a COMPLIMENT.",
+                  "ja": "「とんでもない」(b)は普通体で、必要な丁寧さに合いません。「お役に立てて良かったです」(c)は自分が手伝ったときに言う言葉で、褒められたときには合いません。「どういたしまして」(d)は「お礼」への返事であり、「褒め言葉」への返事ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q6",
+                "order": 6,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Bạn nghe nói bạn học vừa làm rơi đồ trong lớp. Bạn nói \"nếu vậy thì\" và đề nghị cùng tìm giúp — lịch sự vì hai người chưa thân.",
+                "contextByNative": {
+                  "vi": "Bạn nghe nói bạn học vừa làm rơi đồ trong lớp. Bạn nói \"nếu vậy thì\" và đề nghị cùng tìm giúp — lịch sự vì hai người chưa thân.",
+                  "en": "You hear that a classmate just dropped something in the classroom. You say \"in that case\" and offer to help look — politely, since the two of you are not close.",
+                  "ja": "クラスメートが教室で物を落としたと聞きました。「それなら」と言い、丁寧に一緒に探すと申し出ます。まだ親しくないので丁寧体です。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q6b1"
+                  },
+                  {
+                    "displayText": "、近（ちか）くにあるはずですね。私（わたし）も"
+                  },
+                  {
+                    "blankId": "q6b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q6b1",
+                    "displayAnswer": "それなら",
+                    "canonicalAnswer": "それなら",
+                    "audioText": "それなら",
+                    "acceptedAnswers": [
+                      "それなら"
+                    ]
+                  },
+                  {
+                    "id": "q6b2",
+                    "displayAnswer": "探（さが）します",
+                    "canonicalAnswer": "探します",
+                    "audioText": "さがします",
+                    "acceptedAnswers": [
+                      "探します"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q6a",
+                    "text": "それなら / 探（さが）します",
+                    "answersByBlankId": {
+                      "q6b1": "それなら",
+                      "q6b2": "探します"
+                    }
+                  },
+                  {
+                    "id": "q6b",
+                    "text": "それなら / 探（さが）す",
+                    "answersByBlankId": {
+                      "q6b1": "それなら",
+                      "q6b2": "探す"
+                    }
+                  },
+                  {
+                    "id": "q6c",
+                    "text": "それなら / 探（さが）した",
+                    "answersByBlankId": {
+                      "q6b1": "それなら",
+                      "q6b2": "探した"
+                    }
+                  },
+                  {
+                    "id": "q6d",
+                    "text": "感（かん）じ / 探（さが）します",
+                    "answersByBlankId": {
+                      "q6b1": "感じ",
+                      "q6b2": "探します"
+                    }
+                  }
+                ],
+                "correctOptionId": "q6a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "sorenara"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "sagasu"
+                  }
+                ],
+                "explanation": "探す (b) là dạng từ điển, thể thân mật, lệch mức lịch sự cần có với người chưa thân. 探した (c) là thì quá khứ, sai vì việc tìm còn CHƯA xảy ra. 感じ (d) là danh từ khác đã dạy trong bài (nghĩa \"cảm giác, kiểu\"), không đứng được ở vị trí liên từ đầu câu.",
+                "explanationByNative": {
+                  "vi": "探す (b) là dạng từ điển, thể thân mật, lệch mức lịch sự cần có với người chưa thân. 探した (c) là thì quá khứ, sai vì việc tìm còn CHƯA xảy ra. 感じ (d) là danh từ khác đã dạy trong bài (nghĩa \"cảm giác, kiểu\"), không đứng được ở vị trí liên từ đầu câu.",
+                  "en": "探す (b) is the dictionary/plain form, mismatched with the politeness needed for someone not yet close. 探した (c) is past tense, wrong because the search has not happened yet. 感じ (d) is another taught word (meaning \"a feeling/style\") and cannot stand in the connector slot at the start of the sentence.",
+                  "ja": "「探す」(b)は辞書形・普通体で、まだ親しくない相手に必要な丁寧さに合いません。「探した」(c)は過去形で、まだ探していないことには合いません。「感じ」(d)はレッスンで学んだ別の単語（「感覚・様子」という意味）で、文頭の接続語の位置には入りません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q7",
+                "order": 7,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai bạn học cùng lớp, chưa thân — cả hai giữ thể lịch sự. 伊藤 vừa giúp 佐藤 tìm được cục tẩy bị rơi.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai bạn học cùng lớp, chưa thân — cả hai giữ thể lịch sự. 伊藤 vừa giúp 佐藤 tìm được cục tẩy bị rơi.",
+                  "en": "Roles: two classmates, not yet close — both keep polite form. Itō has just helped Satō find a dropped eraser.",
+                  "ja": "関係：クラスメート同士で、まだ親しくありません。二人とも丁寧体を保ちます。伊藤さんは佐藤さんが落とした消しゴムを見つけたところです。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q7t1",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "displayText": "あ、見（み）つけました。私（わたし）の足元（あしもと）にありましたよ。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q7t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q7b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q7t3",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q7b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q7b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q7b1",
+                    "displayAnswer": "どうもありがとうございます",
+                    "canonicalAnswer": "どうもありがとうございます",
+                    "audioText": "どうもありがとうございます",
+                    "acceptedAnswers": [
+                      "どうもありがとうございます"
+                    ]
+                  },
+                  {
+                    "id": "q7b2",
+                    "displayAnswer": "どういたしまして",
+                    "canonicalAnswer": "どういたしまして",
+                    "audioText": "どういたしまして",
+                    "acceptedAnswers": [
+                      "どういたしまして"
+                    ]
+                  },
+                  {
+                    "id": "q7b3",
+                    "displayAnswer": "お役（やく）に立（た）てて良（よ）かったです",
+                    "canonicalAnswer": "お役に立てて良かったです",
+                    "audioText": "おやくにたててよかったです",
+                    "acceptedAnswers": [
+                      "お役に立てて良かったです"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q7a",
+                    "text": "どうもありがとうございます / どういたしまして / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q7b1": "どうもありがとうございます",
+                      "q7b2": "どういたしまして",
+                      "q7b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q7b",
+                    "text": "ありがとう / どういたしまして / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q7b1": "ありがとう",
+                      "q7b2": "どういたしまして",
+                      "q7b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q7c",
+                    "text": "どうもありがとうございます / いえいえ / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q7b1": "どうもありがとうございます",
+                      "q7b2": "いえいえ",
+                      "q7b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q7d",
+                    "text": "どうもありがとうございます / どういたしまして / 気（き）にしないでください",
+                    "answersByBlankId": {
+                      "q7b1": "どうもありがとうございます",
+                      "q7b2": "どういたしまして",
+                      "q7b3": "気にしないでください"
+                    }
+                  }
+                ],
+                "correctOptionId": "q7a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo-arigatou-gozaimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "douitashimashite"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "oyakunitatete"
+                  }
+                ],
+                "explanation": "ありがとう (b) là thể thân mật, lệch với hai bạn học chưa thân đang giữ thể lịch sự. いえいえ (c) cũng là thể thân mật. 気にしないでください (d) dùng khi có phiền phức cụ thể, không phải câu tiếp nối sau khi vừa giúp xong.",
+                "explanationByNative": {
+                  "vi": "ありがとう (b) là thể thân mật, lệch với hai bạn học chưa thân đang giữ thể lịch sự. いえいえ (c) cũng là thể thân mật. 気にしないでください (d) dùng khi có phiền phức cụ thể, không phải câu tiếp nối sau khi vừa giúp xong.",
+                  "en": "ありがとう (b) is casual, mismatched with two not-yet-close classmates keeping polite form. いえいえ (c) is likewise casual. 気にしないでください (d) is for a specific inconvenience, not a natural follow-up after just having helped.",
+                  "ja": "「ありがとう」(b)は普通体で、丁寧体を保つまだ親しくないクラスメートには合いません。「いえいえ」(c)も普通体です。「気にしないでください」(d)は具体的な迷惑があったときに使うもので、手伝った直後の言葉としては合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q8",
+                "order": 8,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: khách và nhân viên khách sạn, chưa quen biết — cả hai giữ thể lịch sự. Nhân viên đang tìm bản đồ giúp khách NGAY LÚC NÀY (việc chưa xong).",
+                "contextByNative": {
+                  "vi": "Vai vế: khách và nhân viên khách sạn, chưa quen biết — cả hai giữ thể lịch sự. Nhân viên đang tìm bản đồ giúp khách NGAY LÚC NÀY (việc chưa xong).",
+                  "en": "Roles: a guest and a hotel staff member, strangers — both keep polite form. The staff member is fetching a map for the guest RIGHT NOW (not yet finished).",
+                  "ja": "関係：ホテルの客と従業員で、初対面です。二人とも丁寧体を保ちます。従業員は今まさに客のために地図を探しています（まだ終わっていません）。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q8t1",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "displayText": "今（いま）、地図（ちず）をお持（も）ちしますね。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q8t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q8b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q8t3",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q8b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q8b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q8b1",
+                    "displayAnswer": "ありがとうございます",
+                    "canonicalAnswer": "ありがとうございます",
+                    "audioText": "ありがとうございます",
+                    "acceptedAnswers": [
+                      "ありがとうございます"
+                    ]
+                  },
+                  {
+                    "id": "q8b2",
+                    "displayAnswer": "どういたしまして",
+                    "canonicalAnswer": "どういたしまして",
+                    "audioText": "どういたしまして",
+                    "acceptedAnswers": [
+                      "どういたしまして"
+                    ]
+                  },
+                  {
+                    "id": "q8b3",
+                    "displayAnswer": "お役（やく）に立（た）てて良（よ）かったです",
+                    "canonicalAnswer": "お役に立てて良かったです",
+                    "audioText": "おやくにたててよかったです",
+                    "acceptedAnswers": [
+                      "お役に立てて良かったです"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q8a",
+                    "text": "ありがとうございます / どういたしまして / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q8b1": "ありがとうございます",
+                      "q8b2": "どういたしまして",
+                      "q8b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q8b",
+                    "text": "ありがとうございました / どういたしまして / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q8b1": "ありがとうございました",
+                      "q8b2": "どういたしまして",
+                      "q8b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q8c",
+                    "text": "ありがとうございます / いえいえ / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q8b1": "ありがとうございます",
+                      "q8b2": "いえいえ",
+                      "q8b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q8d",
+                    "text": "ありがとうございます / どういたしまして / 気（き）にしないでください",
+                    "answersByBlankId": {
+                      "q8b1": "ありがとうございます",
+                      "q8b2": "どういたしまして",
+                      "q8b3": "気にしないでください"
+                    }
+                  }
+                ],
+                "correctOptionId": "q8a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "arigatou-gozaimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "douitashimashite"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "oyakunitatete"
+                  }
+                ],
+                "explanation": "ありがとうございました (b) là thì quá khứ, sai vì nhân viên còn đang đi lấy bản đồ, việc chưa xong. いえいえ (c) là thể thân mật, lệch với quan hệ khách – nhân viên. 気にしないでください (d) dùng khi có phiền phức cụ thể, không hợp làm câu đáp ở đây.",
+                "explanationByNative": {
+                  "vi": "ありがとうございました (b) là thì quá khứ, sai vì nhân viên còn đang đi lấy bản đồ, việc chưa xong. いえいえ (c) là thể thân mật, lệch với quan hệ khách – nhân viên. 気にしないでください (d) dùng khi có phiền phức cụ thể, không hợp làm câu đáp ở đây.",
+                  "en": "ありがとうございました (b) is past tense, wrong because the staff member is still fetching the map — it is not done yet. いえいえ (c) is casual, mismatched with a guest–staff relationship. 気にしないでください (d) is for a specific inconvenience, not a fitting reply here.",
+                  "ja": "「ありがとうございました」(b)は過去形で、従業員がまだ地図を取りに行っている最中（未完了）なので合いません。「いえいえ」(c)は普通体で、客と従業員の関係には合いません。「気にしないでください」(d)は具体的な迷惑があったときに使うもので、ここでの返事には合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q9",
+                "order": 9,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: khách hàng và nhân viên cửa hàng. Nhân viên luôn giữ thể lịch sự vì tính chất công việc; khách hàng có thể đáp lại bằng thể thân mật.",
+                "contextByNative": {
+                  "vi": "Vai vế: khách hàng và nhân viên cửa hàng. Nhân viên luôn giữ thể lịch sự vì tính chất công việc; khách hàng có thể đáp lại bằng thể thân mật.",
+                  "en": "Roles: a customer and a shop employee. The employee always keeps polite form due to the nature of the job; the customer may reply casually.",
+                  "ja": "関係：客と店員です。店員は仕事の性質上、常に丁寧体を保ちます。客は気軽な言い方で返してもかまいません。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q9t1",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "displayText": "かしこまりました。こちらになります。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q9t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q9b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q9t3",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q9b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q9b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q9b1",
+                    "displayAnswer": "ありがとう",
+                    "canonicalAnswer": "ありがとう",
+                    "audioText": "ありがとう",
+                    "acceptedAnswers": [
+                      "ありがとう"
+                    ]
+                  },
+                  {
+                    "id": "q9b2",
+                    "displayAnswer": "どういたしまして",
+                    "canonicalAnswer": "どういたしまして",
+                    "audioText": "どういたしまして",
+                    "acceptedAnswers": [
+                      "どういたしまして"
+                    ]
+                  },
+                  {
+                    "id": "q9b3",
+                    "displayAnswer": "お役（やく）に立（た）てて良（よ）かったです",
+                    "canonicalAnswer": "お役に立てて良かったです",
+                    "audioText": "おやくにたててよかったです",
+                    "acceptedAnswers": [
+                      "お役に立てて良かったです"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q9a",
+                    "text": "ありがとう / どういたしまして / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q9b1": "ありがとう",
+                      "q9b2": "どういたしまして",
+                      "q9b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q9b",
+                    "text": "ありがとうございます / どういたしまして / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q9b1": "ありがとうございます",
+                      "q9b2": "どういたしまして",
+                      "q9b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q9c",
+                    "text": "ありがとう / いえいえ / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q9b1": "ありがとう",
+                      "q9b2": "いえいえ",
+                      "q9b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q9d",
+                    "text": "ありがとう / どういたしまして / 気（き）にしないでください",
+                    "answersByBlankId": {
+                      "q9b1": "ありがとう",
+                      "q9b2": "どういたしまして",
+                      "q9b3": "気にしないでください"
+                    }
+                  }
+                ],
+                "correctOptionId": "q9a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "arigatou"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "douitashimashite"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "oyakunitatete"
+                  }
+                ],
+                "explanation": "ありがとうございます (b) không sai ngữ pháp nhưng lệch với vai vế khách hàng đã thiết lập (được phép thân mật). いえいえ (c) là thể thân mật, lệch với nhân viên luôn giữ lịch sự vì công việc. 気にしないでください (d) dùng khi có phiền phức cụ thể.",
+                "explanationByNative": {
+                  "vi": "ありがとうございます (b) không sai ngữ pháp nhưng lệch với vai vế khách hàng đã thiết lập (được phép thân mật). いえいえ (c) là thể thân mật, lệch với nhân viên luôn giữ lịch sự vì công việc. 気にしないでください (d) dùng khi có phiền phức cụ thể.",
+                  "en": "ありがとうございます (b) is not ungrammatical, but it clashes with the customer role already established (allowed to be casual). いえいえ (c) is casual, mismatched with the employee who always stays polite for work. 気にしないでください (d) is for a specific inconvenience.",
+                  "ja": "「ありがとうございます」(b)は文法的には誤りではありませんが、すでに設定された客の立場（気軽でよい）と合いません。「いえいえ」(c)は普通体で、仕事上常に丁寧な店員には合いません。「気にしないでください」(d)は具体的な迷惑があったときに使う言葉です。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q10",
+                "order": 10,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. 佐藤 vừa chụp ảnh xong giúp 田中.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. 佐藤 vừa chụp ảnh xong giúp 田中.",
+                  "en": "Roles: two travel companions of equal standing, keeping polite form. Satō has just finished taking a photo for Tanaka.",
+                  "ja": "関係：旅行中の対等な二人で、丁寧体を保ちます。佐藤さんは田中さんのために写真を撮り終えたところです。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q10t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q10t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "displayText": "はい、"
+                      },
+                      {
+                        "blankId": "q10b1"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q10b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q10t3",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q10b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q10b1",
+                    "displayAnswer": "ありがとうございました",
+                    "canonicalAnswer": "ありがとうございました",
+                    "audioText": "ありがとうございました",
+                    "acceptedAnswers": [
+                      "ありがとうございました"
+                    ]
+                  },
+                  {
+                    "id": "q10b2",
+                    "displayAnswer": "助（たす）かりました",
+                    "canonicalAnswer": "助かりました",
+                    "audioText": "たすかりました",
+                    "acceptedAnswers": [
+                      "助かりました"
+                    ]
+                  },
+                  {
+                    "id": "q10b3",
+                    "displayAnswer": "どういたしまして",
+                    "canonicalAnswer": "どういたしまして",
+                    "audioText": "どういたしまして",
+                    "acceptedAnswers": [
+                      "どういたしまして"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q10a",
+                    "text": "ありがとうございました / 助（たす）かりました / どういたしまして",
+                    "answersByBlankId": {
+                      "q10b1": "ありがとうございました",
+                      "q10b2": "助かりました",
+                      "q10b3": "どういたしまして"
+                    }
+                  },
+                  {
+                    "id": "q10b",
+                    "text": "ありがとうございます / 助（たす）かりました / どういたしまして",
+                    "answersByBlankId": {
+                      "q10b1": "ありがとうございます",
+                      "q10b2": "助かりました",
+                      "q10b3": "どういたしまして"
+                    }
+                  },
+                  {
+                    "id": "q10c",
+                    "text": "ありがとうございました / 助（たす）かります / どういたしまして",
+                    "answersByBlankId": {
+                      "q10b1": "ありがとうございました",
+                      "q10b2": "助かります",
+                      "q10b3": "どういたしまして"
+                    }
+                  },
+                  {
+                    "id": "q10d",
+                    "text": "ありがとうございました / 助（たす）かりました / いえいえ",
+                    "answersByBlankId": {
+                      "q10b1": "ありがとうございました",
+                      "q10b2": "助かりました",
+                      "q10b3": "いえいえ"
+                    }
+                  }
+                ],
+                "correctOptionId": "q10a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "arigatou-gozaimashita"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "tasukarimashita"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "douitashimashite"
+                  }
+                ],
+                "explanation": "ありがとうございます (b) và 助かります (c) đều là thì đang xảy ra, sai vì ảnh đã chụp XONG. いえいえ (d) là thể thân mật — hai người \"chưa đủ thân để chuyển sang thể thường\" (vai vế đã thiết lập ở dialogueGroup này).",
+                "explanationByNative": {
+                  "vi": "ありがとうございます (b) và 助かります (c) đều là thì đang xảy ra, sai vì ảnh đã chụp XONG. いえいえ (d) là thể thân mật — hai người \"chưa đủ thân để chuyển sang thể thường\" (vai vế đã thiết lập ở dialogueGroup này).",
+                  "en": "ありがとうございます (b) and 助かります (c) are both present/ongoing tense, wrong because the photo is already DONE. いえいえ (d) is casual — the two are \"not yet close enough to switch to plain form\" (the register established for this scene).",
+                  "ja": "「ありがとうございます」(b)と「助かります」(c)はどちらも現在形で、写真はすでに撮り終わっているので合いません。「いえいえ」(d)は普通体ですが、この場面で設定された二人の関係は「まだ普通体に切り替えるほど親しくない」というものです。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q11",
+                "order": 11,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: như đã thiết lập ở bài trước — 伊藤 và 佐藤 là bạn học cùng lớp, chưa thân, giữ thể lịch sự. 佐藤 cảm ơn 伊藤 thật nhiều vì đã giúp đỡ — lời cảm ơn có vẻ hơi quá lời.",
+                "contextByNative": {
+                  "vi": "Vai vế: như đã thiết lập ở bài trước — 伊藤 và 佐藤 là bạn học cùng lớp, chưa thân, giữ thể lịch sự. 佐藤 cảm ơn 伊藤 thật nhiều vì đã giúp đỡ — lời cảm ơn có vẻ hơi quá lời.",
+                  "en": "Roles: as established before — Itō and Satō are classmates, not yet close, keeping polite form. Satō thanks Itō profusely for the help — the thanks sounds a bit over the top.",
+                  "ja": "関係：以前と同じ設定です。伊藤さんと佐藤さんはクラスメートで、まだ親しくなく、丁寧体を保ちます。佐藤さんは伊藤さんの手伝いに何度もお礼を言い、少し大げさに聞こえます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q11t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q11b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q11t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q11b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q11b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q11b1",
+                    "displayAnswer": "どうもありがとうございます",
+                    "canonicalAnswer": "どうもありがとうございます",
+                    "audioText": "どうもありがとうございます",
+                    "acceptedAnswers": [
+                      "どうもありがとうございます"
+                    ]
+                  },
+                  {
+                    "id": "q11b2",
+                    "displayAnswer": "とんでもございません",
+                    "canonicalAnswer": "とんでもございません",
+                    "audioText": "とんでもございません",
+                    "acceptedAnswers": [
+                      "とんでもございません"
+                    ]
+                  },
+                  {
+                    "id": "q11b3",
+                    "displayAnswer": "お役（やく）に立（た）てて良（よ）かったです",
+                    "canonicalAnswer": "お役に立てて良かったです",
+                    "audioText": "おやくにたててよかったです",
+                    "acceptedAnswers": [
+                      "お役に立てて良かったです"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q11a",
+                    "text": "どうもありがとうございます / とんでもございません / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q11b1": "どうもありがとうございます",
+                      "q11b2": "とんでもございません",
+                      "q11b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q11b",
+                    "text": "どうもありがとうございます / とんでもない / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q11b1": "どうもありがとうございます",
+                      "q11b2": "とんでもない",
+                      "q11b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q11c",
+                    "text": "ありがとう / とんでもございません / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q11b1": "ありがとう",
+                      "q11b2": "とんでもございません",
+                      "q11b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q11d",
+                    "text": "どうもありがとうございます / とんでもございません / どういたしまして",
+                    "answersByBlankId": {
+                      "q11b1": "どうもありがとうございます",
+                      "q11b2": "とんでもございません",
+                      "q11b3": "どういたしまして"
+                    }
+                  }
+                ],
+                "correctOptionId": "q11a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo-arigatou-gozaimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "tondemogozaimasen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "oyakunitatete"
+                  }
+                ],
+                "explanation": "とんでもない (b) là thể thân mật, lệch với hai người chưa thân đang giữ lịch sự. ありがとう (c) là thể thân mật, cùng lý do. どういたしまして (d) đáp lại lời cảm ơn thường, không hợp làm câu tiếp sau lời từ chối một lời cảm ơn quá lời — お役に立てて良かったです mới đúng ý \"thêm rằng mình vui vì giúp được\".",
+                "explanationByNative": {
+                  "vi": "とんでもない (b) là thể thân mật, lệch với hai người chưa thân đang giữ lịch sự. ありがとう (c) là thể thân mật, cùng lý do. どういたしまして (d) đáp lại lời cảm ơn thường, không hợp làm câu tiếp sau lời từ chối một lời cảm ơn quá lời — お役に立てて良かったです mới đúng ý \"thêm rằng mình vui vì giúp được\".",
+                  "en": "とんでもない (b) is casual, mismatched with two not-yet-close people keeping polite form. ありがとう (c) is casual for the same reason. どういたしまして (d) replies to an ordinary thank-you and does not fit as the follow-up after deflecting an over-the-top one — お役に立てて良かったです is the one that actually adds \"glad I could help\".",
+                  "ja": "「とんでもない」(b)は普通体で、丁寧体を保つまだ親しくない二人には合いません。「ありがとう」(c)も同じ理由で普通体です。「どういたしまして」(d)は普通のお礼への返事で、大げさなお礼を謙遜して断った後に続く言葉としては合いません——「お役に立てて良かったです」こそ「役に立ててうれしい」という意味を付け加えます。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q12",
+                "order": 12,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: như đã thiết lập ở bài trước — khách hàng và nhân viên cửa hàng. Khách hàng khen ngợi nhân viên nhiệt tình, thân mật; nhân viên vẫn giữ thể lịch sự vì công việc.",
+                "contextByNative": {
+                  "vi": "Vai vế: như đã thiết lập ở bài trước — khách hàng và nhân viên cửa hàng. Khách hàng khen ngợi nhân viên nhiệt tình, thân mật; nhân viên vẫn giữ thể lịch sự vì công việc.",
+                  "en": "Roles: as before — a customer and a shop employee. The customer casually praises how attentive the employee was; the employee still keeps polite form for work.",
+                  "ja": "関係：以前と同じく、客と店員です。客は気軽な調子で店員の対応を褒めます。店員は仕事上、丁寧体を保ちます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q12t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "あ、"
+                      },
+                      {
+                        "blankId": "q12b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q12t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q12b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q12b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q12b1",
+                    "displayAnswer": "どうも",
+                    "canonicalAnswer": "どうも",
+                    "audioText": "どうも",
+                    "acceptedAnswers": [
+                      "どうも"
+                    ]
+                  },
+                  {
+                    "id": "q12b2",
+                    "displayAnswer": "とんでもございません",
+                    "canonicalAnswer": "とんでもございません",
+                    "audioText": "とんでもございません",
+                    "acceptedAnswers": [
+                      "とんでもございません"
+                    ]
+                  },
+                  {
+                    "id": "q12b3",
+                    "displayAnswer": "お役（やく）に立（た）てて良（よ）かったです",
+                    "canonicalAnswer": "お役に立てて良かったです",
+                    "audioText": "おやくにたててよかったです",
+                    "acceptedAnswers": [
+                      "お役に立てて良かったです"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q12a",
+                    "text": "どうも / とんでもございません / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q12b1": "どうも",
+                      "q12b2": "とんでもございません",
+                      "q12b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q12b",
+                    "text": "どうも / とんでもない / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q12b1": "どうも",
+                      "q12b2": "とんでもない",
+                      "q12b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q12c",
+                    "text": "ありがとうございます / とんでもございません / お役（やく）に立（た）てて良（よ）かったです",
+                    "answersByBlankId": {
+                      "q12b1": "ありがとうございます",
+                      "q12b2": "とんでもございません",
+                      "q12b3": "お役に立てて良かったです"
+                    }
+                  },
+                  {
+                    "id": "q12d",
+                    "text": "どうも / とんでもございません / 気（き）にしないでください",
+                    "answersByBlankId": {
+                      "q12b1": "どうも",
+                      "q12b2": "とんでもございません",
+                      "q12b3": "気にしないでください"
+                    }
+                  }
+                ],
+                "correctOptionId": "q12a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "tondemogozaimasen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "oyakunitatete"
+                  }
+                ],
+                "explanation": "とんでもない (b) là thể thân mật — nhân viên phải giữ lịch sự dù khách thân mật, đổi sang とんでもない làm mất vai vế công việc. ありがとうございます (c) không sai ngữ pháp nhưng lệch với vai vế khách hàng đã thiết lập (được phép thân mật). 気にしないでください (d) dùng khi có phiền phức cụ thể, không phải lời khen.",
+                "explanationByNative": {
+                  "vi": "とんでもない (b) là thể thân mật — nhân viên phải giữ lịch sự dù khách thân mật, đổi sang とんでもない làm mất vai vế công việc. ありがとうございます (c) không sai ngữ pháp nhưng lệch với vai vế khách hàng đã thiết lập (được phép thân mật). 気にしないでください (d) dùng khi có phiền phức cụ thể, không phải lời khen.",
+                  "en": "とんでもない (b) is casual — the employee must stay polite even when the customer is casual, so switching to とんでもない breaks the work register. ありがとうございます (c) is not ungrammatical, but it clashes with the customer role already established (allowed to be casual). 気にしないでください (d) is for a specific inconvenience, not a compliment.",
+                  "ja": "「とんでもない」(b)は普通体です——客が気軽でも店員は丁寧さを保つ必要があり、「とんでもない」に変えると仕事上の立場が崩れます。「ありがとうございます」(c)は文法的には誤りではありませんが、すでに設定された客の立場（気軽でよい）と合いません。「気にしないでください」(d)は具体的な迷惑があったときに使うもので、褒め言葉には合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q13",
+                "order": 13,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: 伊藤 và 佐藤, bạn học cùng lớp chưa thân, giữ thể lịch sự. 佐藤 vừa làm rơi một thứ trong lớp.",
+                "contextByNative": {
+                  "vi": "Vai vế: 伊藤 và 佐藤, bạn học cùng lớp chưa thân, giữ thể lịch sự. 佐藤 vừa làm rơi một thứ trong lớp.",
+                  "en": "Roles: Itō and Satō, classmates not yet close, keeping polite form. Satō has just dropped something in the classroom.",
+                  "ja": "関係：伊藤さんと佐藤さんはクラスメートで、まだ親しくなく、丁寧体を保ちます。佐藤さんは教室で何かを落としたところです。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q13t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "すみません。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q13t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q13b1"
+                      },
+                      {
+                        "displayText": "、近（ちか）くにあるはずですね。私（わたし）も"
+                      },
+                      {
+                        "blankId": "q13b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q13t3",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q13b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q13b1",
+                    "displayAnswer": "それなら",
+                    "canonicalAnswer": "それなら",
+                    "audioText": "それなら",
+                    "acceptedAnswers": [
+                      "それなら"
+                    ]
+                  },
+                  {
+                    "id": "q13b2",
+                    "displayAnswer": "探（さが）します",
+                    "canonicalAnswer": "探します",
+                    "audioText": "さがします",
+                    "acceptedAnswers": [
+                      "探します"
+                    ]
+                  },
+                  {
+                    "id": "q13b3",
+                    "displayAnswer": "どうもありがとうございます",
+                    "canonicalAnswer": "どうもありがとうございます",
+                    "audioText": "どうもありがとうございます",
+                    "acceptedAnswers": [
+                      "どうもありがとうございます"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q13a",
+                    "text": "それなら / 探（さが）します / どうもありがとうございます",
+                    "answersByBlankId": {
+                      "q13b1": "それなら",
+                      "q13b2": "探します",
+                      "q13b3": "どうもありがとうございます"
+                    }
+                  },
+                  {
+                    "id": "q13b",
+                    "text": "それなら / 探（さが）す / どうもありがとうございます",
+                    "answersByBlankId": {
+                      "q13b1": "それなら",
+                      "q13b2": "探す",
+                      "q13b3": "どうもありがとうございます"
+                    }
+                  },
+                  {
+                    "id": "q13c",
+                    "text": "感（かん）じ / 探（さが）します / どうもありがとうございます",
+                    "answersByBlankId": {
+                      "q13b1": "感じ",
+                      "q13b2": "探します",
+                      "q13b3": "どうもありがとうございます"
+                    }
+                  },
+                  {
+                    "id": "q13d",
+                    "text": "それなら / 探（さが）します / ありがとう",
+                    "answersByBlankId": {
+                      "q13b1": "それなら",
+                      "q13b2": "探します",
+                      "q13b3": "ありがとう"
+                    }
+                  }
+                ],
+                "correctOptionId": "q13a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "sorenara"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "sagasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo-arigatou-gozaimasu"
+                  }
+                ],
+                "explanation": "探す (b) là dạng từ điển, thể thân mật, lệch với hai người chưa thân đang giữ lịch sự. 感じ (c) là danh từ khác đã dạy trong bài, không hợp vị trí liên từ đầu câu. ありがとう (d) là thể thân mật, lệch mức lịch sự.",
+                "explanationByNative": {
+                  "vi": "探す (b) là dạng từ điển, thể thân mật, lệch với hai người chưa thân đang giữ lịch sự. 感じ (c) là danh từ khác đã dạy trong bài, không hợp vị trí liên từ đầu câu. ありがとう (d) là thể thân mật, lệch mức lịch sự.",
+                  "en": "探す (b) is the dictionary/plain form, mismatched with two not-yet-close people keeping polite form. 感じ (c) is another taught word and does not fit the connector slot at the start. ありがとう (d) is casual, mismatched with the politeness needed.",
+                  "ja": "「探す」(b)は辞書形・普通体で、丁寧体を保つまだ親しくない二人には合いません。「感じ」(c)はレッスンで学んだ別の単語で、文頭の接続語の位置には入りません。「ありがとう」(d)は普通体で、必要な丁寧さに合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q14",
+                "order": 14,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: như đã thiết lập ở bài trước — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. 佐藤 đang chụp ảnh giúp 田中.",
+                "contextByNative": {
+                  "vi": "Vai vế: như đã thiết lập ở bài trước — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. 佐藤 đang chụp ảnh giúp 田中.",
+                  "en": "Roles: as before — two travel companions of equal standing, keeping polite form. Satō is taking a photo for Tanaka.",
+                  "ja": "関係：以前と同じく、旅行中の対等な二人で、丁寧体を保ちます。佐藤さんは田中さんのために写真を撮っています。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q14t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような"
+                      },
+                      {
+                        "blankId": "q14b1"
+                      },
+                      {
+                        "displayText": "でどうですか？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q14t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "displayText": "はい、"
+                      },
+                      {
+                        "blankId": "q14b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q14t3",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q14b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q14b1",
+                    "displayAnswer": "感（かん）じ",
+                    "canonicalAnswer": "感じ",
+                    "audioText": "かんじ",
+                    "acceptedAnswers": [
+                      "感じ"
+                    ]
+                  },
+                  {
+                    "id": "q14b2",
+                    "displayAnswer": "ありがとうございました",
+                    "canonicalAnswer": "ありがとうございました",
+                    "audioText": "ありがとうございました",
+                    "acceptedAnswers": [
+                      "ありがとうございました"
+                    ]
+                  },
+                  {
+                    "id": "q14b3",
+                    "displayAnswer": "どういたしまして",
+                    "canonicalAnswer": "どういたしまして",
+                    "audioText": "どういたしまして",
+                    "acceptedAnswers": [
+                      "どういたしまして"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q14a",
+                    "text": "感（かん）じ / ありがとうございました / どういたしまして",
+                    "answersByBlankId": {
+                      "q14b1": "感じ",
+                      "q14b2": "ありがとうございました",
+                      "q14b3": "どういたしまして"
+                    }
+                  },
+                  {
+                    "id": "q14b",
+                    "text": "お世話（せわ） / ありがとうございました / どういたしまして",
+                    "answersByBlankId": {
+                      "q14b1": "お世話",
+                      "q14b2": "ありがとうございました",
+                      "q14b3": "どういたしまして"
+                    }
+                  },
+                  {
+                    "id": "q14c",
+                    "text": "感（かん）じ / ありがとうございます / どういたしまして",
+                    "answersByBlankId": {
+                      "q14b1": "感じ",
+                      "q14b2": "ありがとうございます",
+                      "q14b3": "どういたしまして"
+                    }
+                  },
+                  {
+                    "id": "q14d",
+                    "text": "感（かん）じ / ありがとうございました / いえいえ",
+                    "answersByBlankId": {
+                      "q14b1": "感じ",
+                      "q14b2": "ありがとうございました",
+                      "q14b3": "いえいえ"
+                    }
+                  }
+                ],
+                "correctOptionId": "q14a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "kanji"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "arigatou-gozaimashita"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "douitashimashite"
+                  }
+                ],
+                "explanation": "お世話 (b) là danh từ khác đã dạy trong bài (nghĩa \"sự giúp đỡ\"), không hợp nghĩa \"kiểu/dáng vẻ chụp ảnh\". ありがとうございます (c) là thì đang xảy ra, sai vì ảnh đã chụp XONG. いえいえ (d) là thể thân mật, lệch vai vế lịch sự đã thiết lập.",
+                "explanationByNative": {
+                  "vi": "お世話 (b) là danh từ khác đã dạy trong bài (nghĩa \"sự giúp đỡ\"), không hợp nghĩa \"kiểu/dáng vẻ chụp ảnh\". ありがとうございます (c) là thì đang xảy ra, sai vì ảnh đã chụp XONG. いえいえ (d) là thể thân mật, lệch vai vế lịch sự đã thiết lập.",
+                  "en": "お世話 (b) is another taught noun (meaning \"help/care\") and does not fit the meaning \"a look/style\" for the photo. ありがとうございます (c) is present/ongoing tense, wrong because the photo is already DONE. いえいえ (d) is casual, mismatched with the polite register already established.",
+                  "ja": "「お世話」(b)はレッスンで学んだ別の名詞（「助け・世話」という意味）で、写真の「様子・感じ」という意味には合いません。「ありがとうございます」(c)は現在形で、写真はすでに撮り終わっているので合いません。「いえいえ」(d)は普通体で、すでに設定された丁寧な関係に合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q15",
+                "order": 15,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: 田中 và 佐藤, giữ thể lịch sự. 田中 lỡ làm phiền 佐藤 một chút. 佐藤 trấn an đừng bận tâm, 田中 cảm ơn và nói thêm rằng việc đó đã giúp ích.",
+                "contextByNative": {
+                  "vi": "Vai vế: 田中 và 佐藤, giữ thể lịch sự. 田中 lỡ làm phiền 佐藤 một chút. 佐藤 trấn an đừng bận tâm, 田中 cảm ơn và nói thêm rằng việc đó đã giúp ích.",
+                  "en": "Roles: Tanaka and Satō, keeping polite form. Tanaka has slightly inconvenienced Satō. Satō reassures them not to worry, and Tanaka thanks them and adds that it really helped.",
+                  "ja": "関係：田中さんと佐藤さんは丁寧体を保ちます。田中さんが佐藤さんに少し迷惑をかけました。佐藤さんは気にしないでほしいと伝え、田中さんはお礼を言い、助かったと付け加えます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q15t1",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "displayText": "すみません。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q15t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q15b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q15t3",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q15b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q15b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q15b1",
+                    "displayAnswer": "気（き）にしないでください",
+                    "canonicalAnswer": "気にしないでください",
+                    "audioText": "きにしないでください",
+                    "acceptedAnswers": [
+                      "気にしないでください"
+                    ]
+                  },
+                  {
+                    "id": "q15b2",
+                    "displayAnswer": "どうもありがとうございます",
+                    "canonicalAnswer": "どうもありがとうございます",
+                    "audioText": "どうもありがとうございます",
+                    "acceptedAnswers": [
+                      "どうもありがとうございます"
+                    ]
+                  },
+                  {
+                    "id": "q15b3",
+                    "displayAnswer": "助（たす）かりました",
+                    "canonicalAnswer": "助かりました",
+                    "audioText": "たすかりました",
+                    "acceptedAnswers": [
+                      "助かりました"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q15a",
+                    "text": "気（き）にしないでください / どうもありがとうございます / 助（たす）かりました",
+                    "answersByBlankId": {
+                      "q15b1": "気にしないでください",
+                      "q15b2": "どうもありがとうございます",
+                      "q15b3": "助かりました"
+                    }
+                  },
+                  {
+                    "id": "q15b",
+                    "text": "とんでもございません / どうもありがとうございます / 助（たす）かりました",
+                    "answersByBlankId": {
+                      "q15b1": "とんでもございません",
+                      "q15b2": "どうもありがとうございます",
+                      "q15b3": "助かりました"
+                    }
+                  },
+                  {
+                    "id": "q15c",
+                    "text": "気（き）にしないでください / どうもありがとうございます / 助（たす）かります",
+                    "answersByBlankId": {
+                      "q15b1": "気にしないでください",
+                      "q15b2": "どうもありがとうございます",
+                      "q15b3": "助かります"
+                    }
+                  },
+                  {
+                    "id": "q15d",
+                    "text": "気（き）にしないでください / ありがとう / 助（たす）かりました",
+                    "answersByBlankId": {
+                      "q15b1": "気にしないでください",
+                      "q15b2": "ありがとう",
+                      "q15b3": "助かりました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q15a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "kininaide"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo-arigatou-gozaimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "tasukarimashita"
+                  }
+                ],
+                "explanation": "とんでもございません (b) dùng để khiêm tốn từ chối lời KHEN, không phải trấn an một chút phiền phức. 助かります (c) là thì đang xảy ra, sai vì việc phiền phức đã qua. ありがとう (d) là thể thân mật, lệch mức lịch sự.",
+                "explanationByNative": {
+                  "vi": "とんでもございません (b) dùng để khiêm tốn từ chối lời KHEN, không phải trấn an một chút phiền phức. 助かります (c) là thì đang xảy ra, sai vì việc phiền phức đã qua. ありがとう (d) là thể thân mật, lệch mức lịch sự.",
+                  "en": "とんでもございません (b) humbly deflects a COMPLIMENT, not a reassurance about a small inconvenience. 助かります (c) is present/ongoing tense, wrong because the inconvenience is already past. ありがとう (d) is casual, mismatched with the politeness needed.",
+                  "ja": "「とんでもございません」(b)は褒め言葉を謙遜して断るときに使うもので、ちょっとした迷惑への「気にしないで」という言葉ではありません。「助かります」(c)は現在形で、迷惑はすでに過ぎたことなので合いません。「ありがとう」(d)は普通体で、必要な丁寧さに合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q16",
+                "order": 16,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai đồng nghiệp/người quen đã biết nhau lâu, giữ thể lịch sự. Đây KHÔNG phải đáp lại một lời cảm ơn cụ thể — là cách bày tỏ lòng biết ơn CHUNG về mối quan hệ. 伊藤 nhắc lại luôn được 田中 giúp đỡ, rồi cảm ơn thêm một lần cụ thể vì việc gần đây.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai đồng nghiệp/người quen đã biết nhau lâu, giữ thể lịch sự. Đây KHÔNG phải đáp lại một lời cảm ơn cụ thể — là cách bày tỏ lòng biết ơn CHUNG về mối quan hệ. 伊藤 nhắc lại luôn được 田中 giúp đỡ, rồi cảm ơn thêm một lần cụ thể vì việc gần đây.",
+                  "en": "Roles: two colleagues/acquaintances who have known each other a long time, keeping polite form. This is NOT a reply to one specific thank-you — it is a way of expressing GENERAL gratitude about the relationship. Itō mentions always being helped by Tanaka, then adds one more specific thanks for something recent.",
+                  "ja": "関係：長い付き合いの同僚・知り合いで、丁寧体を保ちます。これは特定のお礼への返事ではなく、関係全体への一般的な感謝の表し方です。伊藤さんはいつも田中さんに世話になっていると述べ、さらに最近の具体的なことでもお礼を言います。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q16t1",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "displayText": "田中（たなか）さんには、いつも"
+                      },
+                      {
+                        "blankId": "q16b1"
+                      },
+                      {
+                        "displayText": "になっています。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q16t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "displayText": "こちらこそ、"
+                      },
+                      {
+                        "blankId": "q16b2"
+                      },
+                      {
+                        "displayText": "になっています。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q16t3",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q16b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q16b1",
+                    "displayAnswer": "お世話（せわ）",
+                    "canonicalAnswer": "お世話",
+                    "audioText": "おせわ",
+                    "acceptedAnswers": [
+                      "お世話"
+                    ]
+                  },
+                  {
+                    "id": "q16b2",
+                    "displayAnswer": "お世話（せわ）",
+                    "canonicalAnswer": "お世話",
+                    "audioText": "おせわ",
+                    "acceptedAnswers": [
+                      "お世話"
+                    ]
+                  },
+                  {
+                    "id": "q16b3",
+                    "displayAnswer": "どうもありがとうございます",
+                    "canonicalAnswer": "どうもありがとうございます",
+                    "audioText": "どうもありがとうございます",
+                    "acceptedAnswers": [
+                      "どうもありがとうございます"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q16a",
+                    "text": "お世話（せわ） / お世話（せわ） / どうもありがとうございます",
+                    "answersByBlankId": {
+                      "q16b1": "お世話",
+                      "q16b2": "お世話",
+                      "q16b3": "どうもありがとうございます"
+                    }
+                  },
+                  {
+                    "id": "q16b",
+                    "text": "感（かん）じ / お世話（せわ） / どうもありがとうございます",
+                    "answersByBlankId": {
+                      "q16b1": "感じ",
+                      "q16b2": "お世話",
+                      "q16b3": "どうもありがとうございます"
+                    }
+                  },
+                  {
+                    "id": "q16c",
+                    "text": "お世話（せわ） / 感（かん）じ / どうもありがとうございます",
+                    "answersByBlankId": {
+                      "q16b1": "お世話",
+                      "q16b2": "感じ",
+                      "q16b3": "どうもありがとうございます"
+                    }
+                  },
+                  {
+                    "id": "q16d",
+                    "text": "お世話（せわ） / お世話（せわ） / ありがとう",
+                    "answersByBlankId": {
+                      "q16b1": "お世話",
+                      "q16b2": "お世話",
+                      "q16b3": "ありがとう"
+                    }
+                  }
+                ],
+                "correctOptionId": "q16a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "osewa"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo-arigatou-gozaimasu"
+                  }
+                ],
+                "explanation": "感じ (b, c) là danh từ khác đã dạy trong bài (nghĩa \"cảm giác, kiểu\"), không hợp nghĩa \"sự giúp đỡ\" của cụm お世話になっています. ありがとう (d) là thể thân mật, lệch với hai người vẫn giữ lịch sự dù đã quen lâu.",
+                "explanationByNative": {
+                  "vi": "感じ (b, c) là danh từ khác đã dạy trong bài (nghĩa \"cảm giác, kiểu\"), không hợp nghĩa \"sự giúp đỡ\" của cụm お世話になっています. ありがとう (d) là thể thân mật, lệch với hai người vẫn giữ lịch sự dù đã quen lâu.",
+                  "en": "感じ (b, c) is another taught noun (meaning \"a feeling/style\") and does not fit the \"help/care\" meaning of お世話になっています. ありがとう (d) is casual, mismatched with the two keeping polite form despite knowing each other a long time.",
+                  "ja": "「感じ」(b, c)はレッスンで学んだ別の名詞（「感覚・様子」という意味）で、「お世話になっています」の「助け・世話」という意味には合いません。「ありがとう」(d)は普通体で、長い付き合いでも丁寧体を保つ二人には合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q17",
+                "order": 17,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai người bạn thân. Một người vừa giúp bạn kia một việc nhỏ. Thân mật.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai người bạn thân. Một người vừa giúp bạn kia một việc nhỏ. Thân mật.",
+                  "en": "Roles: two close friends. One has just helped the other with a small favor. Casual.",
+                  "ja": "関係：親しい友だち二人です。一方がもう一方のちょっとした用事を手伝ったところです。気軽な間柄です。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q17t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q17b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q17t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q17b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q17t3",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q17b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q17b1",
+                    "displayAnswer": "ありがとう",
+                    "canonicalAnswer": "ありがとう",
+                    "audioText": "ありがとう",
+                    "acceptedAnswers": [
+                      "ありがとう"
+                    ]
+                  },
+                  {
+                    "id": "q17b2",
+                    "displayAnswer": "いえいえ",
+                    "canonicalAnswer": "いえいえ",
+                    "audioText": "いえいえ",
+                    "acceptedAnswers": [
+                      "いえいえ"
+                    ]
+                  },
+                  {
+                    "id": "q17b3",
+                    "displayAnswer": "どうも",
+                    "canonicalAnswer": "どうも",
+                    "audioText": "どうも",
+                    "acceptedAnswers": [
+                      "どうも"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q17a",
+                    "text": "ありがとう / いえいえ / どうも",
+                    "answersByBlankId": {
+                      "q17b1": "ありがとう",
+                      "q17b2": "いえいえ",
+                      "q17b3": "どうも"
+                    }
+                  },
+                  {
+                    "id": "q17b",
+                    "text": "ありがとうございます / いえいえ / どうも",
+                    "answersByBlankId": {
+                      "q17b1": "ありがとうございます",
+                      "q17b2": "いえいえ",
+                      "q17b3": "どうも"
+                    }
+                  },
+                  {
+                    "id": "q17c",
+                    "text": "ありがとう / どういたしまして / どうも",
+                    "answersByBlankId": {
+                      "q17b1": "ありがとう",
+                      "q17b2": "どういたしまして",
+                      "q17b3": "どうも"
+                    }
+                  },
+                  {
+                    "id": "q17d",
+                    "text": "ありがとう / いえいえ / 助（たす）かりました",
+                    "answersByBlankId": {
+                      "q17b1": "ありがとう",
+                      "q17b2": "いえいえ",
+                      "q17b3": "助かりました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q17a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "arigatou"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "ieie"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo"
+                  }
+                ],
+                "explanation": "ありがとうございます (b) là thể lịch sự, lệch với hai bạn thân đang dùng thể thường. どういたしまして (c) cũng là thể lịch sự. 助かりました (d) cũng là thể lịch sự, và là câu MÌNH nói khi MÌNH vừa giúp được, không phải câu SATO nói thêm ở đây.",
+                "explanationByNative": {
+                  "vi": "ありがとうございます (b) là thể lịch sự, lệch với hai bạn thân đang dùng thể thường. どういたしまして (c) cũng là thể lịch sự. 助かりました (d) cũng là thể lịch sự, và là câu MÌNH nói khi MÌNH vừa giúp được, không phải câu SATO nói thêm ở đây.",
+                  "en": "ありがとうございます (b) is polite, mismatched with two close friends using plain form. どういたしまして (c) is likewise polite. 助かりました (d) is also polite, and is said by the person who just helped — not what Satō would add here.",
+                  "ja": "「ありがとうございます」(b)は丁寧体で、普通体で話す親しい友だち二人には合いません。「どういたしまして」(c)も丁寧体です。「助かりました」(d)も丁寧体で、しかも自分が手伝ったときに言う言葉であり、ここで佐藤さんが付け加える言葉ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u1-comprehensive-q18",
+                "order": 18,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai người bạn thân. Một người khen bạn kia làm tốt việc gì đó — bạn kia khiêm tốn từ chối, thân mật.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai người bạn thân. Một người khen bạn kia làm tốt việc gì đó — bạn kia khiêm tốn từ chối, thân mật.",
+                  "en": "Roles: two close friends. One compliments the other on doing something well — the other humbly deflects, casually.",
+                  "ja": "関係：親しい友だち二人です。一方がもう一方の頑張りを褒め、もう一方は気軽に謙遜します。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q18t1",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "displayText": "あ、"
+                      },
+                      {
+                        "blankId": "q18b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q18t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q18b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q18t3",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q18b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q18b1",
+                    "displayAnswer": "どうも",
+                    "canonicalAnswer": "どうも",
+                    "audioText": "どうも",
+                    "acceptedAnswers": [
+                      "どうも"
+                    ]
+                  },
+                  {
+                    "id": "q18b2",
+                    "displayAnswer": "とんでもない",
+                    "canonicalAnswer": "とんでもない",
+                    "audioText": "とんでもない",
+                    "acceptedAnswers": [
+                      "とんでもない"
+                    ]
+                  },
+                  {
+                    "id": "q18b3",
+                    "displayAnswer": "どうも",
+                    "canonicalAnswer": "どうも",
+                    "audioText": "どうも",
+                    "acceptedAnswers": [
+                      "どうも"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q18a",
+                    "text": "どうも / とんでもない / どうも",
+                    "answersByBlankId": {
+                      "q18b1": "どうも",
+                      "q18b2": "とんでもない",
+                      "q18b3": "どうも"
+                    }
+                  },
+                  {
+                    "id": "q18b",
+                    "text": "どうもありがとうございます / とんでもない / どうも",
+                    "answersByBlankId": {
+                      "q18b1": "どうもありがとうございます",
+                      "q18b2": "とんでもない",
+                      "q18b3": "どうも"
+                    }
+                  },
+                  {
+                    "id": "q18c",
+                    "text": "どうも / とんでもございません / どうも",
+                    "answersByBlankId": {
+                      "q18b1": "どうも",
+                      "q18b2": "とんでもございません",
+                      "q18b3": "どうも"
+                    }
+                  },
+                  {
+                    "id": "q18d",
+                    "text": "どうも / とんでもない / ありがとうございます",
+                    "answersByBlankId": {
+                      "q18b1": "どうも",
+                      "q18b2": "とんでもない",
+                      "q18b3": "ありがとうございます"
+                    }
+                  }
+                ],
+                "correctOptionId": "q18a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l1",
+                    "kind": "vocabulary",
+                    "ref": "doumo"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u1-l2",
+                    "kind": "vocabulary",
+                    "ref": "tondemonai"
+                  }
+                ],
+                "explanation": "どうもありがとうございます (b) là cụm lịch sự nhấn mạnh, lệch với hai bạn thân đang thân mật. とんでもございません (c) là thể lịch sự. ありがとうございます (d) cũng là thể lịch sự — cả ba đều lệch mức thân mật đã thiết lập.",
+                "explanationByNative": {
+                  "vi": "どうもありがとうございます (b) là cụm lịch sự nhấn mạnh, lệch với hai bạn thân đang thân mật. とんでもございません (c) là thể lịch sự. ありがとうございます (d) cũng là thể lịch sự — cả ba đều lệch mức thân mật đã thiết lập.",
+                  "en": "どうもありがとうございます (b) is the emphasized polite phrase, mismatched with two casual close friends. とんでもございません (c) is polite. ありがとうございます (d) is likewise polite — all three clash with the casual register established here.",
+                  "ja": "「どうもありがとうございます」(b)は強調した丁寧な言い方で、気軽な親しい友だち二人には合いません。「とんでもございません」(c)は丁寧体です。「ありがとうございます」(d)も丁寧体です——三つとも、ここで設定された気軽な関係に合いません。"
+                }
+              }
+            ]
+          }
         },
         {
           "id": "ja-daily_life-m02-u2",
