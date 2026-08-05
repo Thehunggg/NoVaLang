@@ -1,0 +1,1495 @@
+{
+  "lessonId": "ja-daily_life-m02-u2-l2",
+  "items": [
+    {
+      "path": "fiveCardContent.intro.examples[0].targetText",
+      "targetText": "貸（か）してもらえませんか。",
+      "authored": true,
+      "reason": "dạng câu hoàn chỉnh do người viết cắt lấy phần sau (bỏ 本当ですか？ mở đầu) để hiển thị như ví dụ độc lập; phần tiếng Nhật (貸してもらえませんか) là TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[0]/dialogueGroups[0] (topic2.json:16472); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.intro.examples[0].displayText",
+      "targetText": "貸（か）してもらえませんか。",
+      "authored": true,
+      "reason": "dạng câu hoàn chỉnh do người viết cắt lấy phần sau (bỏ 本当ですか？ mở đầu) để hiển thị như ví dụ độc lập; phần tiếng Nhật (貸してもらえませんか) là TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[0]/dialogueGroups[0] (topic2.json:16472); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.intro.examples[1].targetText",
+      "targetText": "お造（つく）りにしていただけますか。",
+      "authored": true,
+      "reason": "dạng câu hoàn chỉnh do người viết cắt lấy TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[1]/dialogueGroups[1] (topic1.json:41314); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.intro.examples[1].displayText",
+      "targetText": "お造（つく）りにしていただけますか。",
+      "authored": true,
+      "reason": "dạng câu hoàn chỉnh do người viết cắt lấy TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[1]/dialogueGroups[1] (topic1.json:41314); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.intro.examples[2].targetText",
+      "targetText": "手伝（てつだ）ってくれませんか。",
+      "authored": true,
+      "reason": "dạng câu hoàn chỉnh do người viết cắt lấy phần sau (bỏ では、梅酒づくりを mở đầu) để hiển thị như ví dụ độc lập; phần tiếng Nhật (手伝ってくれませんか) là TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[2]/dialogueGroups[2] (topic1.json:39255); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.intro.examples[2].displayText",
+      "targetText": "手伝（てつだ）ってくれませんか。",
+      "authored": true,
+      "reason": "dạng câu hoàn chỉnh do người viết cắt lấy phần sau (bỏ では、梅酒づくりを mở đầu) để hiển thị như ví dụ độc lập; phần tiếng Nhật (手伝ってくれませんか) là TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[2]/dialogueGroups[2] (topic1.json:39255); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[0].examples[0].text",
+      "targetText": "貸（か）してもらえませんか。",
+      "authored": true,
+      "reason": "cụm 貸してもらえませんか TRÍCH LẠI từ dialogueGroups[0].lines[1] đã khai verbatim (topic2.json:16472); bỏ 本当ですか？ mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[1].examples[0].text",
+      "targetText": "お造（つく）りにしていただけますか。",
+      "authored": true,
+      "reason": "câu TRÍCH LẠI nguyên vẹn từ dialogueGroups[1].lines[0] đã khai verbatim (topic1.json:41314); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[2].examples[0].text",
+      "targetText": "梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+      "authored": true,
+      "reason": "cụm 梅酒づくりを手伝ってくれませんか TRÍCH LẠI từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); bỏ では、mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[3].examples[0].text",
+      "targetText": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41324
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[4].examples[0].text",
+      "targetText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+      "authored": true,
+      "reason": "câu TRÍCH LẠI nguyên vẹn từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[5].examples[0].text",
+      "targetText": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16477
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[6].examples[0].text",
+      "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[7].examples[0].text",
+      "targetText": "お願（ねが）いします。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic5.json",
+      "line": 9525
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[8].examples[0].text",
+      "targetText": "貸（か）してもらえませんか。",
+      "authored": true,
+      "reason": "cụm 貸してもらえませんか TRÍCH LẠI từ dialogueGroups[0].lines[1] đã khai verbatim (topic2.json:16472); bỏ 本当ですか？ mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyDetails[9].examples[0].text",
+      "targetText": "梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+      "authored": true,
+      "reason": "cụm 梅酒づくりを手伝ってくれませんか TRÍCH LẠI từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); bỏ では、mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[0].term",
+      "targetText": "曲（きょく）",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16467,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[0].example.text",
+      "targetText": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16467
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[1].term",
+      "targetText": "造（つく）り",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[1].meaning",
+      "targetText": "Cách làm, món ăn được làm (trong お造り = món sashimi).",
+      "authored": true,
+      "reason": "nghĩa do người viết soạn bằng tiếng Việt; cụm お造り trong ngoặc là TRÍCH LẠI ngữ cảnh đã khai verbatim ở dialogueGroups[1].lines[0] (topic1.json:41314)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[1].example.text",
+      "targetText": "お造（つく）りにしていただけますか。",
+      "authored": true,
+      "reason": "câu TRÍCH LẠI nguyên vẹn từ dialogueGroups[1].lines[0] đã khai verbatim (topic1.json:41314); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[2].term",
+      "targetText": "汁（じる）",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41324,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[2].example.text",
+      "targetText": "アラ汁（じる）にしようと思（おも）います。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41324
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[3].term",
+      "targetText": "思（おも）い",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41324,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[3].meaning",
+      "targetText": "Nghĩ, định (trong 思います = tôi nghĩ/tôi định).",
+      "authored": true,
+      "reason": "nghĩa do người viết soạn bằng tiếng Việt; cụm 思います trong ngoặc là TRÍCH LẠI ngữ cảnh đã khai verbatim ở dialogueGroups[1].lines[2] (topic1.json:41324)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[3].example.text",
+      "targetText": "アラ汁（じる）にしようと思（おも）います。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41324
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[4].term",
+      "targetText": "梅酒（うめしゅ）",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39255,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[4].example.text",
+      "targetText": "梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+      "authored": true,
+      "reason": "cụm 梅酒づくりを手伝ってくれませんか TRÍCH LẠI từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); bỏ では、mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[5].term",
+      "targetText": "づくり",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39255,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[5].meaning",
+      "targetText": "Việc làm/chế biến ra (hậu tố ghép sau danh từ, như 梅酒づくり = làm rượu mơ).",
+      "authored": true,
+      "reason": "nghĩa do người viết soạn bằng tiếng Việt; cụm 梅酒づくり trong ngoặc là TRÍCH LẠI ngữ cảnh đã khai verbatim ở dialogueGroups[2].lines[2] (topic1.json:39255)."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[5].example.text",
+      "targetText": "梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+      "authored": true,
+      "reason": "cụm 梅酒づくりを手伝ってくれませんか TRÍCH LẠI từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); bỏ では、mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[6].term",
+      "targetText": "ば",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39260,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.vocabularyReferences[6].example.text",
+      "targetText": "なにをすればよいのですか。",
+      "authored": true,
+      "reason": "cụm 何をすればよいのですか TRÍCH LẠI từ dialogueGroups[2].lines[3] đã khai verbatim (topic1.json:39260); đổi chữ Hán 何 sang hiragana なに để tránh xung đột cách đọc なん/なに toàn kho (m01-u1-l2 đã dùng 何 với âm なん — cùng lý do đã đổi ở dialogueGroups[2].lines[3]/Q14 của chính bài này); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[0].targetText",
+      "targetText": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16467
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[0].displayText",
+      "targetText": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16467
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[1].targetText",
+      "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[1].displayText",
+      "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[2].targetText",
+      "targetText": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16477
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[2].displayText",
+      "targetText": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16477
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[3].targetText",
+      "targetText": "ありがとうございます。助（たす）かります。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16482
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].lines[3].displayText",
+      "targetText": "ありがとうございます。助（たす）かります。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16482
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].explanation[0]",
+      "targetText": "貸してもらえませんか dùng để nhờ vả lịch sự — hợp với quan hệ đồng nghiệp/bạn bè chưa quá thân.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm 貸してもらえませんか xen trong câu là TRÍCH LẠI dialogueGroups[0].lines[1] đã khai verbatim (topic2.json:16472)."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[0].explanation[1]",
+      "targetText": "助かります là câu cảm ơn khi được giúp — đã học ở bài trước (m02-u1-l1), tái dùng ở đây để đáp lại lời nhờ được đồng ý.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm 助かります xen trong câu là TRÍCH LẠI dialogueGroups[0].lines[3] đã khai verbatim (topic2.json:16482)."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[0].targetText",
+      "targetText": "お造（つく）りにしていただけますか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[0].displayText",
+      "targetText": "お造（つく）りにしていただけますか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[1].targetText",
+      "targetText": "はい。アラはどうしますか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41319
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[1].displayText",
+      "targetText": "はい。アラはどうしますか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41319
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[2].targetText",
+      "targetText": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41324
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[2].displayText",
+      "targetText": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41324
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[3].targetText",
+      "targetText": "かしこまりました。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41329
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].lines[3].displayText",
+      "targetText": "かしこまりました。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41329
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].explanation[0]",
+      "targetText": "お造りにしていただけますか rất lịch sự — hợp với quan hệ khách hàng/nhân viên chưa quen biết.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm お造りにしていただけますか xen trong câu là TRÍCH LẠI dialogueGroups[1].lines[0] đã khai verbatim (topic1.json:41314)."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[1].explanation[1]",
+      "targetText": "かしこまりました là cách nhân viên đồng ý một cách rất lịch sự — mức lịch sự cao nhất trong ba cách đồng ý giúp đã học ở bài này.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm かしこまりました xen trong câu là TRÍCH LẠI dialogueGroups[1].lines[3] đã khai verbatim (topic1.json:41329)."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[0].targetText",
+      "targetText": "今日（きょう）は暇（ひま）ですか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39245
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[0].displayText",
+      "targetText": "今日（きょう）は暇（ひま）ですか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39245
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[1].targetText",
+      "targetText": "休（やす）みですから暇（ひま）ですよ。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39250
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[1].displayText",
+      "targetText": "休（やす）みですから暇（ひま）ですよ。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39250
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[2].targetText",
+      "targetText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39255
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[2].displayText",
+      "targetText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39255
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[3].targetText",
+      "targetText": "もちろんです。なにをすればよいのですか？",
+      "authored": true,
+      "reason": "câu TRÍCH LẠI từ dialogueGroups[2] cùng nhóm (nguồn topic1.json:39260, もちろんです。何をすればよいのですか？); đổi chữ Hán 何 sang hiragana なに để tránh xung đột cách đọc なん/なに toàn kho — m01-u1-l2 (bài đã duyệt, không thuộc phạm vi sửa của lệnh này) đã dùng 何 với âm なん ở nhiều chỗ (何ですか、お名前は何ですか) mà không khai furigana cục bộ; máy ráp furigana dùng chung một SỔ TRA cho toàn bộ chương trình, nên bài này thêm âm なに cho 何 sẽ làm sổ tra có 2 cách đọc và bắt các câu bên m01 phải khai lại — đổi hẳn sang hiragana để không đụng tới bài đã duyệt."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].lines[3].displayText",
+      "targetText": "もちろんです。なにをすればよいのですか？",
+      "authored": true,
+      "reason": "câu TRÍCH LẠI từ dialogueGroups[2] cùng nhóm (nguồn topic1.json:39260, もちろんです。何をすればよいのですか？); đổi chữ Hán 何 sang hiragana なに để tránh xung đột cách đọc なん/なに toàn kho — m01-u1-l2 (bài đã duyệt, không thuộc phạm vi sửa của lệnh này) đã dùng 何 với âm なん ở nhiều chỗ (何ですか、お名前は何ですか) mà không khai furigana cục bộ; máy ráp furigana dùng chung một SỔ TRA cho toàn bộ chương trình, nên bài này thêm âm なに cho 何 sẽ làm sổ tra có 2 cách đọc và bắt các câu bên m01 phải khai lại — đổi hẳn sang hiragana để không đụng tới bài đã duyệt."
+    },
+    {
+      "path": "fiveCardContent.dialogueGroups[2].explanation[0]",
+      "targetText": "手伝ってくれませんか (thân mật) khác 手伝っていただけますか (rất lịch sự, dùng ở nhóm trước) — bạn bè thân mật thì dùng thể ngắn gọn hơn.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm 手伝ってくれませんか／手伝っていただけますか xen trong câu — cụm đầu TRÍCH LẠI dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255), cụm sau TRÍCH LẠI dialogueGroups[1].lines[0] đã khai verbatim (topic1.json:41314, đổi động từ)."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[0].title",
+      "targetText": "てもらえませんか ↔ ていただけますか ↔ てくれませんか",
+      "authored": true,
+      "reason": "tiêu đề ghép 3 cụm đã khai verbatim riêng lẻ (てもらえませんか ở vocabularyDetails[0]/topic2.json:16472 · ていただけますか ở vocabularyDetails[1]/topic1.json:41314 · てくれませんか ở vocabularyDetails[2]/topic1.json:39255), dùng ký hiệu ↔ do người viết thêm để thể hiện quan hệ 3 tầng lịch sự."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[0].examples[0].text",
+      "targetText": "貸（か）してもらえませんか。",
+      "authored": true,
+      "reason": "cụm 貸してもらえませんか TRÍCH LẠI từ dialogueGroups[0].lines[1] đã khai verbatim (topic2.json:16472); bỏ 本当ですか？ mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[0].examples[1].text",
+      "targetText": "お造（つく）りにしていただけますか。",
+      "authored": true,
+      "reason": "câu TRÍCH LẠI nguyên vẹn từ dialogueGroups[1].lines[0] đã khai verbatim (topic1.json:41314); đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[0].examples[2].text",
+      "targetText": "手伝（てつだ）ってくれませんか。",
+      "authored": true,
+      "reason": "cụm 手伝ってくれませんか TRÍCH LẠI từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); bỏ では、mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[0].explanation[0]",
+      "targetText": "てくれませんか dùng với bạn bè/người thân; てもらえませんか dùng khi cần lịch sự; ていただけますか lịch sự nhất, hay dùng với người lạ/khách hàng/cấp trên.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; ba cụm てくれませんか／てもらえませんか／ていただけますか xen trong câu đều TRÍCH LẠI các mục đã khai verbatim ở vocabularyDetails[0]/[1]/[2] và grammarPatterns[0].examples cùng mục."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[1].title",
+      "targetText": "～てくれる (đứng riêng, ai đó làm gì cho mình)",
+      "authored": true,
+      "reason": "tiêu đề mô tả bằng tiếng Việt; cụm てくれる là TRÍCH LẠI mẫu đã khai verbatim ở n5_ngu-phap-vi.txt:291-293."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[1].examples[0].text",
+      "targetText": "母（はは）がお弁当（べんとう）を作（つく）ってくれた。",
+      "verbatim": true,
+      "source": "local-sources/ja/n5/n5_ngu-phap-vi.txt",
+      "line": 291
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[1].examples[1].text",
+      "targetText": "友達（ともだち）が買（か）い物（もの）をしてくれました。",
+      "verbatim": true,
+      "source": "local-sources/ja/n5/n5_ngu-phap-vi.txt",
+      "line": 293
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[1].explanation[0]",
+      "targetText": "Đây là câu KỂ về việc ai đó làm giúp mình — khác với てくれませんか, vốn là câu HỎI để nhờ vả.",
+      "authored": true,
+      "reason": "giải thích ngữ pháp do người viết soạn bằng tiếng Việt; cụm てくれませんか xen trong câu là TRÍCH LẠI mẫu đã khai verbatim ở grammarPatterns[0] cùng bài."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[2].title",
+      "targetText": "かしこまりました ↔ 了解しました ↔ よいですよ",
+      "authored": true,
+      "reason": "tiêu đề ghép 3 cụm đã khai verbatim riêng lẻ (かしこまりました ở vocabulary[3]/topic3.json:365 · 了解しました ở topic1.json:39270 · よいですよ ở dialogueGroups[0].lines[2]/topic2.json:16477), dùng ký hiệu ↔ do người viết thêm."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[2].examples[0].text",
+      "targetText": "かしこまりました。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[2].examples[1].text",
+      "targetText": "了解（りょうかい）しました。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39270
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[2].examples[2].text",
+      "targetText": "よいですよ。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16477
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[2].explanation[0]",
+      "targetText": "Cả ba đều đáp 'được' cho một lời nhờ vả — かしこまりました rất lịch sự (dịch vụ), 了解しました thân mật/thông thường hơn, よいですよ trung tính.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; ba cụm かしこまりました／了解しました／よいですよ xen trong câu đều TRÍCH LẠI các mục đã khai verbatim ở grammarPatterns[2].examples cùng mục."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[3].title",
+      "targetText": "本当ですか (đứng riêng, phản ứng ngạc nhiên)",
+      "authored": true,
+      "reason": "tiêu đề mô tả bằng tiếng Việt; cụm 本当ですか là TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[6]/dialogueGroups[0].lines[1] (topic2.json:16472)."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[3].examples[0].text",
+      "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[3].explanation[0]",
+      "targetText": "本当ですか thường đứng ở đầu câu, trước khi nói tiếp — không phải câu nhờ vả hay xin lỗi.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt, không chứa cụm tiếng Nhật cần trích riêng — chỉ nêu khái niệm câu."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[4].title",
+      "targetText": "お願いします (đứng riêng, nhờ vả ngắn gọn)",
+      "authored": true,
+      "reason": "tiêu đề mô tả bằng tiếng Việt; cụm お願いします là TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[7] (topic5.json:9525)."
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[4].examples[0].text",
+      "targetText": "お願（ねが）いします。",
+      "verbatim": true,
+      "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_2_A2.md",
+      "line": 3461,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.grammarPatterns[4].explanation[0]",
+      "targetText": "お願いします không nêu rõ việc nhờ là gì — thường dùng SAU khi đã nói rõ việc cần nhờ, hoặc khi ngữ cảnh đã đủ rõ.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm お願いします xen trong câu là TRÍCH LẠI mục đã khai verbatim ở grammarPatterns[4].examples cùng mục."
+    },
+    {
+      "path": "fiveCardContent.practice.japaneseTitle",
+      "targetText": "練習（れんしゅう）",
+      "authored": true,
+      "reason": "nhãn thẻ 'Bài tập' bằng tiếng Nhật, cụm chuẩn dùng thống nhất ở mọi bài five_cards (như m02-u1-l1/l2, m02-u2-l1), không trích từ nguồn hội thoại/ngữ pháp của riêng bài này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[0].text",
+      "targetText": "貸（か）してもらえませんか。",
+      "authored": true,
+      "reason": "cụm 貸してもらえませんか TRÍCH LẠI từ dialogueGroups[0].lines[1] đã khai verbatim (topic2.json:16472); bỏ 本当ですか？ mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[0].canonicalText",
+      "targetText": "貸してもらえませんか。",
+      "authored": true,
+      "reason": "cụm 貸してもらえませんか TRÍCH LẠI từ dialogueGroups[0].lines[1] đã khai verbatim (topic2.json:16472); bỏ 本当ですか？ mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[1].text",
+      "targetText": "貸（か）していただけますか。",
+      "authored": true,
+      "reason": "phương án nhiễu ghép 貸して (đã khai verbatim ở vocabularyDetails[8]/topic2.json:16472) với ていただけますか (đã khai verbatim ở vocabularyDetails[1]/topic1.json:41314, đổi động từ) — mức lịch sự cao hơn mức cần cho đồng nghiệp."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[1].canonicalText",
+      "targetText": "貸していただけますか。",
+      "authored": true,
+      "reason": "phương án nhiễu ghép 貸して (đã khai verbatim ở vocabularyDetails[8]/topic2.json:16472) với ていただけますか (đã khai verbatim ở vocabularyDetails[1]/topic1.json:41314, đổi động từ) — mức lịch sự cao hơn mức cần cho đồng nghiệp."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[2].text",
+      "targetText": "貸（か）してくれませんか。",
+      "authored": true,
+      "reason": "phương án nhiễu ghép 貸して (đã khai verbatim ở vocabularyDetails[8]/topic2.json:16472) với てくれませんか (đã khai verbatim ở vocabularyDetails[2]/topic1.json:39255, đổi động từ) — mức thân mật, không hợp đồng nghiệp."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[2].canonicalText",
+      "targetText": "貸してくれませんか。",
+      "authored": true,
+      "reason": "phương án nhiễu ghép 貸して (đã khai verbatim ở vocabularyDetails[8]/topic2.json:16472) với てくれませんか (đã khai verbatim ở vocabularyDetails[2]/topic1.json:39255, đổi động từ) — mức thân mật, không hợp đồng nghiệp."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[3].text",
+      "targetText": "お願（ねが）いします。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic4.json",
+      "line": 41
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].options[3].canonicalText",
+      "targetText": "お願いします。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic4.json",
+      "line": 41
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].feedback.correctAnswer",
+      "targetText": "貸してもらえませんか。",
+      "authored": true,
+      "reason": "cụm 貸してもらえませんか TRÍCH LẠI từ dialogueGroups[0].lines[1] đã khai verbatim (topic2.json:16472); bỏ 本当ですか？ mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].feedback.canonicalAnswer",
+      "targetText": "貸してもらえませんか。",
+      "authored": true,
+      "reason": "cụm 貸してもらえませんか TRÍCH LẠI từ dialogueGroups[0].lines[1] đã khai verbatim (topic2.json:16472); bỏ 本当ですか？ mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[0].feedback.explanation",
+      "targetText": "～てもらえませんか đúng mức lịch sự với đồng nghiệp. ～ていただけますか lịch sự hơn mức cần. ～てくれませんか là thể thân mật. お願いします đứng riêng không nêu rõ việc nhờ là gì.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; các cụm tiếng Nhật xen trong câu đều TRÍCH LẠI các phương án đã khai ở cùng câu hỏi này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[0].text",
+      "targetText": "手伝（てつだ）ってくれませんか。",
+      "authored": true,
+      "reason": "cụm 手伝ってくれませんか TRÍCH LẠI từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); bỏ では、mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[0].canonicalText",
+      "targetText": "手伝ってくれませんか。",
+      "authored": true,
+      "reason": "cụm 手伝ってくれませんか TRÍCH LẠI từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); bỏ では、mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[1].text",
+      "targetText": "手伝（てつだ）ってもらえませんか。",
+      "authored": true,
+      "reason": "phương án nhiễu ghép 手伝って (đã khai verbatim ở vocabularyDetails[9]/topic1.json:39255) với てもらえませんか (đã khai verbatim ở vocabularyDetails[0]/topic2.json:16472) — lịch sự hơn mức cần cho bạn thân."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[1].canonicalText",
+      "targetText": "手伝ってもらえませんか。",
+      "authored": true,
+      "reason": "phương án nhiễu ghép 手伝って (đã khai verbatim ở vocabularyDetails[9]/topic1.json:39255) với てもらえませんか (đã khai verbatim ở vocabularyDetails[0]/topic2.json:16472) — lịch sự hơn mức cần cho bạn thân."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[2].text",
+      "targetText": "手伝（てつだ）っていただけますか。",
+      "authored": true,
+      "reason": "phương án nhiễu ghép 手伝って (đã khai verbatim ở vocabularyDetails[9]/topic1.json:39255) với ていただけますか (đã khai verbatim ở vocabularyDetails[1]/topic1.json:41314) — lịch sự nhất, không hợp bạn thân."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[2].canonicalText",
+      "targetText": "手伝っていただけますか。",
+      "authored": true,
+      "reason": "phương án nhiễu ghép 手伝って (đã khai verbatim ở vocabularyDetails[9]/topic1.json:39255) với ていただけますか (đã khai verbatim ở vocabularyDetails[1]/topic1.json:41314) — lịch sự nhất, không hợp bạn thân."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[3].text",
+      "targetText": "かしこまりました。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41329
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].options[3].canonicalText",
+      "targetText": "かしこまりました。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41329
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].feedback.correctAnswer",
+      "targetText": "手伝ってくれませんか。",
+      "authored": true,
+      "reason": "cụm 手伝ってくれませんか TRÍCH LẠI từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); bỏ では、mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].feedback.canonicalAnswer",
+      "targetText": "手伝ってくれませんか。",
+      "authored": true,
+      "reason": "cụm 手伝ってくれませんか TRÍCH LẠI từ dialogueGroups[2].lines[2] đã khai verbatim (topic1.json:39255); bỏ では、mở đầu, đổi dấu ？ cuối câu thành dấu 。."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[1].feedback.explanation",
+      "targetText": "Với bạn thân dùng thể thân mật ～てくれませんか. ～てもらえませんか／～ていただけますか đều lịch sự hơn mức cần. かしこまりました là câu người ĐƯỢC nhờ nói, không phải câu đi nhờ.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; các cụm tiếng Nhật xen trong câu đều TRÍCH LẠI các phương án đã khai ở cùng câu hỏi này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[2].pairs[0].left.text",
+      "targetText": "ていただけますか",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[2].pairs[1].left.text",
+      "targetText": "てもらえませんか",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[2].pairs[2].left.text",
+      "targetText": "てくれませんか",
+      "verbatim": true,
+      "source": "local-sources/ja/irodori/markdown/IRODORI_So_trung_cap_A2-B1.md",
+      "line": 2029,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[2].pairs[3].left.text",
+      "targetText": "かしこまりました",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[0].text",
+      "targetText": "これを",
+      "authored": true,
+      "reason": "これを do người viết soạn mới (đại từ chỉ vật, không có trong 3 khối hội thoại nguồn của bài này) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[0].canonicalText",
+      "targetText": "これを",
+      "authored": true,
+      "reason": "これを do người viết soạn mới (đại từ chỉ vật, không có trong 3 khối hội thoại nguồn của bài này) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[1].text",
+      "targetText": "貸（か）して",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[1].canonicalText",
+      "targetText": "貸して",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[2].text",
+      "targetText": "もらえません",
+      "verbatim": true,
+      "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md",
+      "line": 3599,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[2].canonicalText",
+      "targetText": "もらえません",
+      "verbatim": true,
+      "source": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md",
+      "line": 3599,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[3].text",
+      "targetText": "か",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].tokens[3].canonicalText",
+      "targetText": "か",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].feedback.correctAnswer",
+      "targetText": "これを貸してもらえませんか。",
+      "authored": true,
+      "reason": "ghép các token đã khai ở exercises[3].tokens cùng bài tập này (これを貸してもらえませんか), không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].feedback.canonicalAnswer",
+      "targetText": "これを貸してもらえませんか。",
+      "authored": true,
+      "reason": "ghép các token đã khai ở exercises[3].tokens cùng bài tập này (これを貸してもらえませんか), không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[3].feedback.explanation",
+      "targetText": "貸して + もらえません + か → 貸してもらえませんか, câu nhờ vả lịch sự.",
+      "authored": true,
+      "reason": "giải thích ngữ pháp do người viết soạn bằng tiếng Việt; cụm 貸して／もらえません／か xen trong câu TRÍCH LẠI các token đã khai ở cùng bài tập này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[0].text",
+      "targetText": "いいよ",
+      "authored": true,
+      "reason": "いいよ do người viết soạn mới (đáp lời thân mật, không có nguyên văn trong 3 khối hội thoại nguồn của bài này — các khối chỉ có đáp lời trung tính/rất lịch sự) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[0].canonicalText",
+      "targetText": "いいよ",
+      "authored": true,
+      "reason": "いいよ do người viết soạn mới (đáp lời thân mật, không có nguyên văn trong 3 khối hội thoại nguồn của bài này — các khối chỉ có đáp lời trung tính/rất lịch sự) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[1].text",
+      "targetText": "かしこまりました",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[1].canonicalText",
+      "targetText": "かしこまりました",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[2].text",
+      "targetText": "いただけますか",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].wordBank[2].canonicalText",
+      "targetText": "いただけますか",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].feedback.correctAnswer",
+      "targetText": "いいよ。",
+      "authored": true,
+      "reason": "いいよ do người viết soạn mới (đáp lời thân mật, không có nguyên văn trong 3 khối hội thoại nguồn của bài này — các khối chỉ có đáp lời trung tính/rất lịch sự) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].feedback.canonicalAnswer",
+      "targetText": "いいよ。",
+      "authored": true,
+      "reason": "いいよ do người viết soạn mới (đáp lời thân mật, không có nguyên văn trong 3 khối hội thoại nguồn của bài này — các khối chỉ có đáp lời trung tính/rất lịch sự) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[4].feedback.explanation",
+      "targetText": "Bạn thân đáp thân mật いいよ, không dùng かしこまりました (quá lịch sự) hay いただけますか (đó là câu ĐI nhờ, không phải câu đồng ý).",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; các cụm tiếng Nhật xen trong câu TRÍCH LẠI các phương án đã khai ở cùng bài tập này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[5].feedback.explanation",
+      "targetText": "Câu nghe được là かしこまりました — mức lịch sự cao nhất khi đồng ý giúp, hay dùng trong dịch vụ.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm かしこまりました xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabulary[3]/exercises[5].audioText."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[0].text",
+      "targetText": "していただけますか。",
+      "authored": true,
+      "reason": "していただけますか do người viết soạn (ghép する với mẫu ていただけますか đã khai verbatim ở vocabularyDetails[1]/topic1.json:41314, đổi động từ) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[0].canonicalText",
+      "targetText": "していただけますか。",
+      "authored": true,
+      "reason": "していただけますか do người viết soạn (ghép する với mẫu ていただけますか đã khai verbatim ở vocabularyDetails[1]/topic1.json:41314, đổi động từ) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[1].text",
+      "targetText": "してもらえませんか。",
+      "authored": true,
+      "reason": "してもらえませんか do người viết soạn (ghép する với mẫu てもらえませんか đã khai verbatim ở vocabularyDetails[0]/topic2.json:16472, đổi động từ) — phương án nhiễu lịch sự kém hơn mức cần."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[1].canonicalText",
+      "targetText": "してもらえませんか。",
+      "authored": true,
+      "reason": "してもらえませんか do người viết soạn (ghép する với mẫu てもらえませんか đã khai verbatim ở vocabularyDetails[0]/topic2.json:16472, đổi động từ) — phương án nhiễu lịch sự kém hơn mức cần."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[2].text",
+      "targetText": "してくれませんか。",
+      "authored": true,
+      "reason": "してくれませんか do người viết soạn (ghép する với mẫu てくれませんか đã khai verbatim ở vocabularyDetails[2]/topic1.json:39255, đổi động từ) — phương án nhiễu quá thân mật cho nhân viên cửa hàng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[2].canonicalText",
+      "targetText": "してくれませんか。",
+      "authored": true,
+      "reason": "してくれませんか do người viết soạn (ghép する với mẫu てくれませんか đã khai verbatim ở vocabularyDetails[2]/topic1.json:39255, đổi động từ) — phương án nhiễu quá thân mật cho nhân viên cửa hàng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[3].text",
+      "targetText": "してもいいですか。",
+      "authored": true,
+      "reason": "してもいいですか do người viết soạn — mục từ khác đã dạy ở bài trước (m02-u2-l1, xin phép cho CHÍNH MÌNH), không phải cụm chính của bài này (nhờ NGƯỜI KHÁC làm)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].options[3].canonicalText",
+      "targetText": "してもいいですか。",
+      "authored": true,
+      "reason": "してもいいですか do người viết soạn — mục từ khác đã dạy ở bài trước (m02-u2-l1, xin phép cho CHÍNH MÌNH), không phải cụm chính của bài này (nhờ NGƯỜI KHÁC làm)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].feedback.correctAnswer",
+      "targetText": "していただけますか。",
+      "authored": true,
+      "reason": "していただけますか do người viết soạn (ghép する với mẫu ていただけますか đã khai verbatim ở vocabularyDetails[1]/topic1.json:41314, đổi động từ) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[6].feedback.explanation",
+      "targetText": "していただけますか lịch sự nhất trong ba cách nhờ, đúng mức cần cho nhân viên cửa hàng. してもいいですか dùng để XIN PHÉP cho CHÍNH MÌNH làm gì, không phải nhờ NGƯỜI KHÁC làm.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; các cụm tiếng Nhật xen trong câu đều TRÍCH LẠI các phương án đã khai ở cùng câu hỏi này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[7].prompt",
+      "targetText": "本当ですか dùng khi nào?",
+      "authored": true,
+      "reason": "câu hỏi bài tập do người viết soạn bằng tiếng Việt; cụm 本当ですか xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[6]/dialogueGroups[0].lines[1] (topic2.json:16472)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[7].feedback.explanation",
+      "targetText": "本当ですか là câu người NGHE nói để xác nhận lại một tin bất ngờ/vui, không phải câu nhờ vả hay xin lỗi.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm 本当ですか xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[6] (topic2.json:16472)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[0].prompt",
+      "targetText": "てくれませんか thuộc mức nào?",
+      "authored": true,
+      "reason": "câu hỏi bài tập do người viết soạn bằng tiếng Việt; cụm てくれませんか xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[2]/dialogueGroups[2].lines[2] (topic1.json:39255)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[0].feedback.explanation",
+      "targetText": "てくれませんか là mức thân mật trong ba cách nhờ vả.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm てくれませんか xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[2] (topic1.json:39255)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].prompt",
+      "targetText": "ていただけますか lịch sự hơn hay kém lịch sự hơn てもらえませんか?",
+      "authored": true,
+      "reason": "câu hỏi so sánh ghép 2 cụm đã khai verbatim riêng lẻ (ていただけますか ở vocabularyDetails[1]/topic1.json:41314 · てもらえませんか ở vocabularyDetails[0]/topic2.json:16472)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[1].feedback.explanation",
+      "targetText": "いただく là thể khiêm nhường, lịch sự hơn もらう — đúng cho cả cặp này.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; các cụm いただく／もらう là các động từ khiêm nhường/thường phổ thông, không phải cụm riêng của nguồn bài này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].prompt",
+      "targetText": "かしこまりました và 了解しました khác nhau ở điểm nào?",
+      "authored": true,
+      "reason": "câu hỏi so sánh ghép 2 cụm đã khai verbatim riêng lẻ (かしこまりました ở vocabulary[3]/topic3.json:365 · 了解しました ở topic1.json:39270)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[0].text",
+      "targetText": "かしこまりました rất lịch sự (dịch vụ); 了解（りょうかい）しました thân mật/thông thường hơn",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; hai cụm かしこまりました／了解しました xen trong câu TRÍCH LẠI các mục đã khai verbatim ở vocabulary[3]/vocabulary[4]."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[0].canonicalText",
+      "targetText": "かしこまりました rất lịch sự (dịch vụ); 了解しました thân mật/thông thường hơn",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; hai cụm かしこまりました／了解しました xen trong câu TRÍCH LẠI các mục đã khai verbatim ở vocabulary[3]/vocabulary[4]."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[2].text",
+      "targetText": "了解（りょうかい）しました lịch sự hơn",
+      "authored": true,
+      "reason": "cụm 了解しました TRÍCH LẠI vocabulary[4] đã khai verbatim (topic1.json:39270); phần còn lại là phương án nhiễu do người viết soạn bằng tiếng Việt (loại CLOSED_FACT — sai vì 了解しました không lịch sự hơn かしこまりました, ngược lại mới đúng)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].options[2].canonicalText",
+      "targetText": "了解しました lịch sự hơn",
+      "authored": true,
+      "reason": "cụm 了解しました TRÍCH LẠI vocabulary[4] đã khai verbatim (topic1.json:39270); phần còn lại là phương án nhiễu do người viết soạn bằng tiếng Việt (loại CLOSED_FACT — sai vì 了解しました không lịch sự hơn かしこまりました, ngược lại mới đúng)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[2].feedback.correctAnswer",
+      "targetText": "かしこまりました rất lịch sự (dịch vụ); 了解しました thân mật/thông thường hơn",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; hai cụm かしこまりました／了解しました xen trong câu TRÍCH LẠI các mục đã khai verbatim ở vocabulary[3]/vocabulary[4]."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[3].prompt",
+      "targetText": "お願いします thường nói khi nào?",
+      "authored": true,
+      "reason": "câu hỏi bài tập do người viết soạn bằng tiếng Việt; cụm お願いします xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[7] (topic5.json:9525)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[3].feedback.explanation",
+      "targetText": "お願いします là câu nhờ vả ngắn gọn, hay đi kèm hoặc kết thúc một lượt nhờ.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm お願いします xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[7] (topic5.json:9525)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[4].prompt",
+      "targetText": "てくれませんか thuộc mức nào?",
+      "authored": true,
+      "reason": "câu hỏi bài tập do người viết soạn bằng tiếng Việt; cụm てくれませんか xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[2]/dialogueGroups[2].lines[2] (topic1.json:39255)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[8].subQuestions[4].feedback.explanation",
+      "targetText": "てくれませんか là mức thân mật trong ba cách nhờ vả.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm てくれませんか xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[2] (topic1.json:39255)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].chat.messages[2].segments[0].displayText",
+      "targetText": "ありがとうございます。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16482
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].slots[0].displayText",
+      "targetText": "資料（しりょう）を明日（あした）までに送（おく）ってもらえませんか",
+      "authored": true,
+      "reason": "câu chat do người viết soạn bằng tiếng Nhật, ghép cụm てもらえませんか đã khai verbatim ở vocabularyDetails[0]/dialogueGroups[0].lines[1] (topic2.json:16472) với ngữ cảnh gửi tài liệu mới (không có trong nguồn) — bài tập vận dụng, không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].slots[0].canonicalText",
+      "targetText": "資料を明日までに送ってもらえませんか",
+      "authored": true,
+      "reason": "câu chat do người viết soạn bằng tiếng Nhật, ghép cụm てもらえませんか đã khai verbatim ở vocabularyDetails[0]/dialogueGroups[0].lines[1] (topic2.json:16472) với ngữ cảnh gửi tài liệu mới (không có trong nguồn) — bài tập vận dụng, không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].slots[1].displayText",
+      "targetText": "かしこまりました",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].slots[1].canonicalText",
+      "targetText": "かしこまりました",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.correctAnswer",
+      "targetText": "資料を明日までに送ってもらえませんか\nかしこまりました",
+      "authored": true,
+      "reason": "ghép 2 ô đã khai ở slots[0]/slots[1] cùng bài tập này, không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.canonicalAnswer",
+      "targetText": "資料を明日までに送ってもらえませんか／かしこまりました",
+      "authored": true,
+      "reason": "ghép 2 ô đã khai ở slots[0]/slots[1] cùng bài tập này, không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.slotFeedback.chat_moraemasenka_slot.correctAnswer",
+      "targetText": "資料を明日までに送ってもらえませんか",
+      "authored": true,
+      "reason": "câu chat do người viết soạn bằng tiếng Nhật, ghép cụm てもらえませんか đã khai verbatim ở vocabularyDetails[0]/dialogueGroups[0].lines[1] (topic2.json:16472) với ngữ cảnh gửi tài liệu mới (không có trong nguồn) — bài tập vận dụng, không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.slotFeedback.chat_moraemasenka_slot.explanation",
+      "targetText": "Ô này nhờ gửi tài liệu, dùng thể てもらえませんか vì đồng nghiệp.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm てもらえませんか xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabularyDetails[0] (topic2.json:16472)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.slotFeedback.chat_kashikomari_slot.correctAnswer",
+      "targetText": "かしこまりました",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[9].feedback.slotFeedback.chat_kashikomari_slot.explanation",
+      "targetText": "Ô này đồng ý giúp, mức rất lịch sự bằng かしこまりました.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm かしこまりました xen trong câu TRÍCH LẠI mục đã khai verbatim ở vocabulary[3] (topic3.json:365)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[0].text",
+      "targetText": "荷物（にもつ）を",
+      "authored": true,
+      "reason": "荷物を do người viết soạn mới (danh từ hành lý, không có trong 3 khối hội thoại nguồn của bài này) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[0].canonicalText",
+      "targetText": "荷物を",
+      "authored": true,
+      "reason": "荷物を do người viết soạn mới (danh từ hành lý, không có trong 3 khối hội thoại nguồn của bài này) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[1].text",
+      "targetText": "運（はこ）んで",
+      "authored": true,
+      "reason": "運んで do người viết soạn mới (động từ mang/vác, không có trong 3 khối hội thoại nguồn của bài này) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[1].canonicalText",
+      "targetText": "運んで",
+      "authored": true,
+      "reason": "運んで do người viết soạn mới (động từ mang/vác, không có trong 3 khối hội thoại nguồn của bài này) để tạo bài tập vận dụng."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[2].text",
+      "targetText": "くれない",
+      "authored": true,
+      "reason": "くれない TRÍCH LẠI gốc てくれませんか đã khai verbatim ở vocabularyDetails[2]/dialogueGroups[2].lines[2] (topic1.json:39255), đổi dạng phủ định lịch sự sang phủ định thân mật để hợp ngữ cảnh bạn bè."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[2].canonicalText",
+      "targetText": "くれない",
+      "authored": true,
+      "reason": "くれない TRÍCH LẠI gốc てくれませんか đã khai verbatim ở vocabularyDetails[2]/dialogueGroups[2].lines[2] (topic1.json:39255), đổi dạng phủ định lịch sự sang phủ định thân mật để hợp ngữ cảnh bạn bè."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[3].text",
+      "targetText": "いただけ",
+      "verbatim": true,
+      "source": "local-sources/ja/ban1.txt",
+      "line": 7780,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[3].canonicalText",
+      "targetText": "いただけ",
+      "verbatim": true,
+      "source": "local-sources/ja/ban1.txt",
+      "line": 7780,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[4].text",
+      "targetText": "かしこまり",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].tokens[4].canonicalText",
+      "targetText": "かしこまり",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].feedback.correctAnswer",
+      "targetText": "荷物を運んでくれない？",
+      "authored": true,
+      "reason": "ghép các token đã khai ở exercises[10].tokens cùng bài tập này (荷物を運んでくれない？), không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].feedback.canonicalAnswer",
+      "targetText": "荷物を運んでくれない？",
+      "authored": true,
+      "reason": "ghép các token đã khai ở exercises[10].tokens cùng bài tập này (荷物を運んでくれない？), không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[10].feedback.explanation",
+      "targetText": "Nhờ vả thân mật dùng てくれない. いただけ quá lịch sự cho bạn thân, かしこまり không hợp câu nhờ (đó là câu ĐÁP).",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; cụm てくれない／いただけ／かしこまり xen trong câu TRÍCH LẠI các mục đã khai ở exercises[10].tokens cùng bài tập này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[0].text",
+      "targetText": "A: 貸（か）してくれない？\nB: いいよ。",
+      "authored": true,
+      "reason": "hội thoại A/B do người viết ghép: 貸してくれない TRÍCH LẠI mẫu てくれない đã khai ở exercises[10].tokens[2] (gốc topic1.json:39255, đổi động từ), いいよ TRÍCH LẠI đã khai ở exercises[4].wordBank[0] — bài tập vận dụng, không phải trích nguyên văn một hội thoại nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[0].canonicalText",
+      "targetText": "A: 貸（か）してくれない？\nB: いいよ。",
+      "authored": true,
+      "reason": "hội thoại A/B do người viết ghép: 貸してくれない TRÍCH LẠI mẫu てくれない đã khai ở exercises[10].tokens[2] (gốc topic1.json:39255, đổi động từ), いいよ TRÍCH LẠI đã khai ở exercises[4].wordBank[0] — bài tập vận dụng, không phải trích nguyên văn một hội thoại nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[1].text",
+      "targetText": "A: 貸（か）していただけますか。\nB: いいよ。",
+      "authored": true,
+      "reason": "hội thoại A/B do người viết ghép: 貸していただけますか TRÍCH LẠI mẫu ていただけますか đã khai verbatim ở vocabularyDetails[1] (topic1.json:41314, đổi động từ), いいよ TRÍCH LẠI đã khai ở exercises[4].wordBank[0] — phương án nhiễu lệch mức lịch sự (A hỏi rất lịch sự, B đáp thân mật)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[1].canonicalText",
+      "targetText": "A: 貸（か）していただけますか。\nB: いいよ。",
+      "authored": true,
+      "reason": "hội thoại A/B do người viết ghép: 貸していただけますか TRÍCH LẠI mẫu ていただけますか đã khai verbatim ở vocabularyDetails[1] (topic1.json:41314, đổi động từ), いいよ TRÍCH LẠI đã khai ở exercises[4].wordBank[0] — phương án nhiễu lệch mức lịch sự (A hỏi rất lịch sự, B đáp thân mật)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[2].text",
+      "targetText": "A: 貸（か）してくれない？\nB: かしこまりました。",
+      "authored": true,
+      "reason": "hội thoại A/B do người viết ghép: 貸してくれない TRÍCH LẠI mẫu てくれない đã khai ở exercises[10].tokens[2] (gốc topic1.json:39255, đổi động từ), かしこまりました TRÍCH LẠI vocabulary[3] đã khai verbatim (topic3.json:365) — phương án nhiễu lệch mức lịch sự ngược lại."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[2].canonicalText",
+      "targetText": "A: 貸（か）してくれない？\nB: かしこまりました。",
+      "authored": true,
+      "reason": "hội thoại A/B do người viết ghép: 貸してくれない TRÍCH LẠI mẫu てくれない đã khai ở exercises[10].tokens[2] (gốc topic1.json:39255, đổi động từ), かしこまりました TRÍCH LẠI vocabulary[3] đã khai verbatim (topic3.json:365) — phương án nhiễu lệch mức lịch sự ngược lại."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[3].text",
+      "targetText": "A: 本当（ほんとう）ですか。\nB: いいよ。",
+      "authored": true,
+      "reason": "hội thoại A/B do người viết ghép: 本当ですか TRÍCH LẠI vocabularyDetails[6] đã khai verbatim (topic2.json:16472), いいよ TRÍCH LẠI đã khai ở exercises[4].wordBank[0] — phương án nhiễu sai chức năng (A đang xác nhận tin bất ngờ, không phải nhờ vả, nên B đáp いいよ vô nghĩa)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].options[3].canonicalText",
+      "targetText": "A: 本当（ほんとう）ですか。\nB: いいよ。",
+      "authored": true,
+      "reason": "hội thoại A/B do người viết ghép: 本当ですか TRÍCH LẠI vocabularyDetails[6] đã khai verbatim (topic2.json:16472), いいよ TRÍCH LẠI đã khai ở exercises[4].wordBank[0] — phương án nhiễu sai chức năng (A đang xác nhận tin bất ngờ, không phải nhờ vả, nên B đáp いいよ vô nghĩa)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[11].feedback.correctAnswer",
+      "targetText": "A: 貸（か）してくれない？\nB: いいよ。",
+      "authored": true,
+      "reason": "hội thoại A/B do người viết ghép: 貸してくれない TRÍCH LẠI mẫu てくれない đã khai ở exercises[10].tokens[2] (gốc topic1.json:39255, đổi động từ), いいよ TRÍCH LẠI đã khai ở exercises[4].wordBank[0] — bài tập vận dụng, không phải trích nguyên văn một hội thoại nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[0].text",
+      "targetText": "教（おし）えて",
+      "verbatim": true,
+      "source": "local-sources/ja/hanabira.org-main/frontend-next/content/markdown_grammar_japanese/Verb_ていただく_(〜te_itadaku).md",
+      "line": 30,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[0].canonicalText",
+      "targetText": "教えて",
+      "verbatim": true,
+      "source": "local-sources/ja/hanabira.org-main/frontend-next/content/markdown_grammar_japanese/Verb_ていただく_(〜te_itadaku).md",
+      "line": 30,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[1].text",
+      "targetText": "いただけます",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[1].canonicalText",
+      "targetText": "いただけます",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[2].text",
+      "targetText": "か",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[2].canonicalText",
+      "targetText": "か",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[3].text",
+      "targetText": "くれない",
+      "authored": true,
+      "reason": "phương án nhiễu くれない TRÍCH LẠI gốc てくれませんか đã khai verbatim ở vocabularyDetails[2] (topic1.json:39255) — mục từ khác đã dạy trong chính bài, không phải mức lịch sự cần cho câu này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[3].canonicalText",
+      "targetText": "くれない",
+      "authored": true,
+      "reason": "phương án nhiễu くれない TRÍCH LẠI gốc てくれませんか đã khai verbatim ở vocabularyDetails[2] (topic1.json:39255) — mục từ khác đã dạy trong chính bài, không phải mức lịch sự cần cho câu này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[4].text",
+      "targetText": "かしこまり",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].tokens[4].canonicalText",
+      "targetText": "かしこまり",
+      "verbatim": true,
+      "source": "local-sources/ja/topic3.json",
+      "line": 365,
+      "token": true
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].feedback.correctAnswer",
+      "targetText": "教えていただけますか。",
+      "authored": true,
+      "reason": "ghép các token đã khai ở exercises[12].tokens cùng bài tập này (教えていただけますか), không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].feedback.canonicalAnswer",
+      "targetText": "教えていただけますか。",
+      "authored": true,
+      "reason": "ghép các token đã khai ở exercises[12].tokens cùng bài tập này (教えていただけますか), không phải trích nguyên văn một câu nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[12].feedback.explanation",
+      "targetText": "教えて + いただけます + か → 教えていただけますか. くれない thân mật kém hơn, かしこまり không đi cùng câu nhờ.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn bằng tiếng Việt; các cụm tiếng Nhật xen trong câu TRÍCH LẠI các token đã khai ở cùng bài tập này."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[0].targetText",
+      "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[0].displayText",
+      "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[1].targetText",
+      "targetText": "お造（つく）りにしていただけますか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[1].displayText",
+      "targetText": "お造（つく）りにしていただけますか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41314
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[2].targetText",
+      "targetText": "今日（きょう）は暇（ひま）ですか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39245
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[2].displayText",
+      "targetText": "今日（きょう）は暇（ひま）ですか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39245
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[3].targetText",
+      "targetText": "休（やす）みですから暇（ひま）ですよ。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39250
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[3].displayText",
+      "targetText": "休（やす）みですから暇（ひま）ですよ。",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39250
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[4].targetText",
+      "targetText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39255
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[4].displayText",
+      "targetText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39255
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].targetText",
+      "targetText": "もちろんです。なにをすればよいのですか？",
+      "authored": true,
+      "reason": "câu TRÍCH LẠI từ dialogueGroups[2].lines[3] cùng bài (nguồn topic1.json:39260, もちろんです。何をすればよいのですか？); đổi chữ Hán 何 sang hiragana なに — cùng lý do đã ghi ở dialogueGroups[2].lines[3] (tránh xung đột cách đọc なん/なに toàn kho với m01-u1-l2)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].dialogueLines[5].displayText",
+      "targetText": "もちろんです。なにをすればよいのですか？",
+      "authored": true,
+      "reason": "câu TRÍCH LẠI từ dialogueGroups[2].lines[3] cùng bài (nguồn topic1.json:39260, もちろんです。何をすればよいのですか？); đổi chữ Hán 何 sang hiragana なに — cùng lý do đã ghi ở dialogueGroups[2].lines[3] (tránh xung đột cách đọc なん/なに toàn kho với m01-u1-l2)."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].sceneDividers[0].targetText",
+      "targetText": "べつの日（ひ）",
+      "authored": true,
+      "reason": "nhãn chuyển cảnh べつの日 do người viết thêm cho Q14 (Lesson Format 3.0, real_world_practice_dialogue, nonGraded — không phải nội dung chấm điểm) để nối 3 đoạn hội thoại nguồn khác nhau (topic2.json:378, topic1.json:882, topic1.json:839) thành một bài luyện tổng hợp; không trích nguyên văn từ nguồn."
+    },
+    {
+      "path": "fiveCardContent.practice.exercises[13].sceneDividers[1].targetText",
+      "targetText": "べつの日（ひ）",
+      "authored": true,
+      "reason": "nhãn chuyển cảnh べつの日 do người viết thêm cho Q14 (Lesson Format 3.0, real_world_practice_dialogue, nonGraded — không phải nội dung chấm điểm) để nối 3 đoạn hội thoại nguồn khác nhau (topic2.json:378, topic1.json:882, topic1.json:839) thành một bài luyện tổng hợp; không trích nguyên văn từ nguồn."
+    },
+    {
+      "path": "vocabulary[0].displayText",
+      "targetText": "～てもらえませんか",
+      "authored": true,
+      "reason": "dạng từ điển ～てもらえませんか do người viết soạn (thêm dấu ～ đứng đầu để đánh dấu mẫu ngữ pháp) TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[0]/dialogueGroups[0].lines[1] (topic2.json:16472)."
+    },
+    {
+      "path": "vocabulary[1].displayText",
+      "targetText": "～ていただけますか",
+      "authored": true,
+      "reason": "dạng từ điển ～ていただけますか do người viết soạn (thêm dấu ～ đứng đầu) TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[1]/dialogueGroups[1].lines[0] (topic1.json:41314)."
+    },
+    {
+      "path": "vocabulary[2].displayText",
+      "targetText": "～てくれませんか",
+      "authored": true,
+      "reason": "dạng từ điển ～てくれませんか do người viết soạn (thêm dấu ～ đứng đầu) TRÍCH LẠI cụm đã khai verbatim ở vocabularyDetails[2]/dialogueGroups[2].lines[2] (topic1.json:39255)."
+    },
+    {
+      "path": "vocabulary[3].displayText",
+      "targetText": "かしこまりました",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 41329,
+      "token": true
+    },
+    {
+      "path": "vocabulary[4].displayText",
+      "targetText": "了解（りょうかい）しました",
+      "verbatim": true,
+      "source": "local-sources/ja/topic1.json",
+      "line": 39270,
+      "token": true
+    },
+    {
+      "path": "vocabulary[5].displayText",
+      "targetText": "よいですよ",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16477,
+      "token": true
+    },
+    {
+      "path": "vocabulary[6].displayText",
+      "targetText": "本当（ほんとう）ですか",
+      "verbatim": true,
+      "source": "local-sources/ja/topic2.json",
+      "line": 16472,
+      "token": true
+    },
+    {
+      "path": "vocabulary[7].displayText",
+      "targetText": "お願（ねが）いします",
+      "verbatim": true,
+      "source": "local-sources/ja/irodori/markdown/IRODORI_Nhap_mon_A1.md",
+      "line": 3555,
+      "token": true
+    },
+    {
+      "path": "vocabulary[8].displayText",
+      "targetText": "貸（か）す",
+      "authored": true,
+      "reason": "dạng từ điển 貸す do người viết suy ra từ dạng chia 貸して đã khai verbatim ở vocabularyDetails[0]/dialogueGroups[0].lines[1] (topic2.json:16472) — nguồn chỉ có dạng chia, không có dạng từ điển nguyên văn."
+    },
+    {
+      "path": "vocabulary[9].displayText",
+      "targetText": "手伝（てつだ）う",
+      "authored": true,
+      "reason": "dạng từ điển 手伝う do người viết suy ra từ dạng chia 手伝って đã khai verbatim ở vocabularyDetails[2]/dialogueGroups[2].lines[2] (topic1.json:39255) — nguồn chỉ có dạng chia, không có dạng từ điển nguyên văn."
+    }
+  ]
+}

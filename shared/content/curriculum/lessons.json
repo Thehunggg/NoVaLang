@@ -104988,416 +104988,4458 @@
       "levelRange": "A0–A1",
       "placementTag": "daily_life_basic",
       "template": "vocabularyLesson",
-      "title": "Ask Someone for a Small Favor",
+      "title": "Nhờ ai đó việc nhỏ",
       "titleVi": "Nhờ ai đó việc nhỏ",
       "titleByNative": {
-        "en": "Ask Someone for a Small Favor",
         "vi": "Nhờ ai đó việc nhỏ",
-        "ja": "ちょっとしたお願いをする",
-        "ko": "작은 부탁하기",
-        "zh": "请人帮个小忙"
+        "en": "Ask Someone for a Small Favor",
+        "ja": "ちょっとしたお願いをする"
       },
-      "description": "Learn to use \"Ask Someone for a Small Favor\" naturally in daily conversation.",
-      "descriptionVi": "Học cách dùng \"Nhờ ai đó việc nhỏ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "description": "Sau bài học này, người học có thể:",
+      "descriptionVi": "Sau bài học này, người học có thể:",
       "descriptionByNative": {
-        "en": "Learn to use \"Ask Someone for a Small Favor\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Nhờ ai đó việc nhỏ\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「ちょっとしたお願いをする」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"작은 부탁하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“请人帮个小忙”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
-      "canDoObjective": "Learn to use \"Ask Someone for a Small Favor\" naturally in daily conversation.",
-      "canDoObjectiveVi": "Học cách dùng \"Nhờ ai đó việc nhỏ\" một cách tự nhiên trong giao tiếp hằng ngày.",
+      "canDoObjective": "Sau bài học này, người học có thể:",
+      "canDoObjectiveVi": "Sau bài học này, người học có thể:",
       "canDoObjectiveByNative": {
-        "en": "Learn to use \"Ask Someone for a Small Favor\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Nhờ ai đó việc nhỏ\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「ちょっとしたお願いをする」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"작은 부탁하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“请人帮个小忙”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
       "goalByNative": {
-        "en": "Learn to use \"Ask Someone for a Small Favor\" naturally in daily conversation.",
-        "vi": "Học cách dùng \"Nhờ ai đó việc nhỏ\" một cách tự nhiên trong giao tiếp hằng ngày.",
-        "ja": "日常会話で「ちょっとしたお願いをする」を自然に使えるようになります。",
-        "ko": "일상 대화에서 \"작은 부탁하기\"를 자연스럽게 사용합니다.",
-        "zh": "在日常交流中自然使用“请人帮个小忙”。"
+        "vi": "Sau bài học này, người học có thể:",
+        "en": "After this lesson, learners can:",
+        "ja": "このレッスンの後、次のことができるようになります。"
       },
       "situationByNative": {
-        "en": "A real-life moment where you need \"Ask Someone for a Small Favor\".",
-        "vi": "Tình huống thật khi bạn cần dùng \"Nhờ ai đó việc nhỏ\".",
-        "ja": "「ちょっとしたお願いをする」が必要な実生活の場面。",
-        "ko": "\"작은 부탁하기\"가 필요한 실제 상황.",
-        "zh": "需要用到“请人帮个小忙”的真实场景。"
-      },
-      "canSayByNative": {
-        "en": "After this lesson, you can handle \"Ask Someone for a Small Favor\" in simple conversations.",
-        "vi": "Sau bài này, bạn có thể dùng \"Nhờ ai đó việc nhỏ\" trong hội thoại đơn giản.",
-        "ja": "このレッスンの後、「ちょっとしたお願いをする」を簡単な会話で使えます。",
-        "ko": "이 레슨 후 간단한 대화에서 \"작은 부탁하기\"를 사용할 수 있습니다.",
-        "zh": "学完本课后，你可以在简单对话中使用“请人帮个小忙”。"
+        "vi": "Ai đó cần nhờ người khác giúp một việc nhỏ.\nBạn chọn đúng mức lịch sự và đúng cách nói theo tình huống.",
+        "en": "Someone needs to ask another person for a small favor.\nYou choose the right politeness level and phrasing for the situation.",
+        "ja": "誰かがちょっとしたお願いをする必要があります。\n状況に合った丁寧さと言い方を選びます。"
       },
       "objectives": [
-        "Learn to use \"Ask Someone for a Small Favor\" naturally in daily conversation."
+        "Nhờ vả lịch sự bằng ～てもらえませんか.",
+        "Nhờ vả rất lịch sự bằng ～ていただけますか.",
+        "Nhờ vả thân mật bằng ～てくれませんか.",
+        "Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).",
+        "Phản ứng khi nghe tin vui bằng 本当ですか.",
+        "Nhờ vả ngắn gọn bằng お願いします."
       ],
       "objectivesVi": [
-        "Học cách dùng \"Nhờ ai đó việc nhỏ\" một cách tự nhiên trong giao tiếp hằng ngày."
+        "Nhờ vả lịch sự bằng ～てもらえませんか.",
+        "Nhờ vả rất lịch sự bằng ～ていただけますか.",
+        "Nhờ vả thân mật bằng ～てくれませんか.",
+        "Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).",
+        "Phản ứng khi nghe tin vui bằng 本当ですか.",
+        "Nhờ vả ngắn gọn bằng お願いします."
       ],
+      "objectivesByNative": {
+        "vi": [
+          "Nhờ vả lịch sự bằng ～てもらえませんか.",
+          "Nhờ vả rất lịch sự bằng ～ていただけますか.",
+          "Nhờ vả thân mật bằng ～てくれませんか.",
+          "Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).",
+          "Phản ứng khi nghe tin vui bằng 本当ですか.",
+          "Nhờ vả ngắn gọn bằng お願いします."
+        ],
+        "en": [
+          "Ask a favor politely with ～てもらえませんか.",
+          "Ask a favor very politely with ～ていただけますか.",
+          "Ask a favor casually with ～てくれませんか.",
+          "Agree to help with かしこまりました／了解しました／よいですよ (depending on politeness level).",
+          "React to good news with 本当ですか.",
+          "Make a brief request with お願いします."
+        ],
+        "ja": [
+          "～てもらえませんかで丁寧にお願いします。",
+          "～ていただけますかでとても丁寧にお願いします。",
+          "～てくれませんかで気軽にお願いします。",
+          "かしこまりました／了解しました／よいですよで承知します（丁寧さによる）。",
+          "本当ですかでうれしい知らせに反応します。",
+          "お願いしますで簡潔にお願いします。"
+        ]
+      },
       "introPoints": [
-        "A real-life moment where you need \"Ask Someone for a Small Favor\".",
-        "After this lesson, you can handle \"Ask Someone for a Small Favor\" in simple conversations."
+        "Nhờ vả lịch sự bằng ～てもらえませんか.",
+        "Nhờ vả rất lịch sự bằng ～ていただけますか.",
+        "Nhờ vả thân mật bằng ～てくれませんか.",
+        "Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).",
+        "Phản ứng khi nghe tin vui bằng 本当ですか.",
+        "Nhờ vả ngắn gọn bằng お願いします."
       ],
       "introPointsVi": [
-        "Tình huống thật khi bạn cần dùng \"Nhờ ai đó việc nhỏ\".",
-        "Sau bài này, bạn có thể dùng \"Nhờ ai đó việc nhỏ\" trong hội thoại đơn giản."
+        "Nhờ vả lịch sự bằng ～てもらえませんか.",
+        "Nhờ vả rất lịch sự bằng ～ていただけますか.",
+        "Nhờ vả thân mật bằng ～てくれませんか.",
+        "Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).",
+        "Phản ứng khi nghe tin vui bằng 本当ですか.",
+        "Nhờ vả ngắn gọn bằng お願いします."
       ],
       "introPointsByNative": {
         "vi": [
-          "Tình huống thật khi bạn cần dùng \"Nhờ ai đó việc nhỏ\".",
-          "Sau bài này, bạn có thể dùng \"Nhờ ai đó việc nhỏ\" trong hội thoại đơn giản."
+          "Nhờ vả lịch sự bằng ～てもらえませんか.",
+          "Nhờ vả rất lịch sự bằng ～ていただけますか.",
+          "Nhờ vả thân mật bằng ～てくれませんか.",
+          "Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).",
+          "Phản ứng khi nghe tin vui bằng 本当ですか.",
+          "Nhờ vả ngắn gọn bằng お願いします."
         ],
         "en": [
-          "A real-life moment where you need \"Ask Someone for a Small Favor\".",
-          "After this lesson, you can handle \"Ask Someone for a Small Favor\" in simple conversations."
+          "Ask a favor politely with ～てもらえませんか.",
+          "Ask a favor very politely with ～ていただけますか.",
+          "Ask a favor casually with ～てくれませんか.",
+          "Agree to help with かしこまりました／了解しました／よいですよ (depending on politeness level).",
+          "React to good news with 本当ですか.",
+          "Make a brief request with お願いします."
         ],
         "ja": [
-          "「ちょっとしたお願いをする」が必要な実生活の場面。",
-          "このレッスンの後、「ちょっとしたお願いをする」を簡単な会話で使えます。"
-        ],
-        "ko": [
-          "\"작은 부탁하기\"가 필요한 실제 상황.",
-          "이 레슨 후 간단한 대화에서 \"작은 부탁하기\"를 사용할 수 있습니다."
-        ],
-        "zh": [
-          "需要用到“请人帮个小忙”的真实场景。",
-          "学完本课后，你可以在简单对话中使用“请人帮个小忙”。"
+          "～てもらえませんかで丁寧にお願いします。",
+          "～ていただけますかでとても丁寧にお願いします。",
+          "～てくれませんかで気軽にお願いします。",
+          "かしこまりました／了解しました／よいですよで承知します（丁寧さによる）。",
+          "本当ですかでうれしい知らせに反応します。",
+          "お願いしますで簡潔にお願いします。"
         ]
       },
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 12,
       "track": "ja-daily_life",
-      "vocabulary": [],
+      "vocabulary": [
+        {
+          "id": "temo-moraemasenka",
+          "displayText": "～てもらえませんか",
+          "reading": "てもらえませんか",
+          "romanization": "temoraemasenka",
+          "speechText": "てもらえませんか",
+          "meaningVi": "...được không? (nhờ vả, lịch sự).",
+          "translationByNative": {
+            "vi": "...được không? (nhờ vả, lịch sự).",
+            "en": "...could you? (asking a favor, polite).",
+            "ja": "～てもらえませんか（お願い、丁寧）。"
+          },
+          "translations": {
+            "vi": "...được không? (nhờ vả, lịch sự).",
+            "en": "...could you? (asking a favor, polite).",
+            "ja": "～てもらえませんか（お願い、丁寧）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "teitadakemasu-ka",
+          "displayText": "～ていただけますか",
+          "reading": "ていただけますか",
+          "romanization": "teitadakemasu ka",
+          "speechText": "ていただけますか",
+          "meaningVi": "...được không ạ? (nhờ vả, rất lịch sự).",
+          "translationByNative": {
+            "vi": "...được không ạ? (nhờ vả, rất lịch sự).",
+            "en": "...could you please? (asking a favor, very polite).",
+            "ja": "～ていただけますか（お願い、とても丁寧）。"
+          },
+          "translations": {
+            "vi": "...được không ạ? (nhờ vả, rất lịch sự).",
+            "en": "...could you please? (asking a favor, very polite).",
+            "ja": "～ていただけますか（お願い、とても丁寧）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "tekuremasenka",
+          "displayText": "～てくれませんか",
+          "reading": "てくれませんか",
+          "romanization": "tekuremasen ka",
+          "speechText": "てくれませんか",
+          "meaningVi": "...được không? (nhờ vả, thân mật).",
+          "translationByNative": {
+            "vi": "...được không? (nhờ vả, thân mật).",
+            "en": "...could you? (asking a favor, casual).",
+            "ja": "～てくれませんか（お願い、気軽）。"
+          },
+          "translations": {
+            "vi": "...được không? (nhờ vả, thân mật).",
+            "en": "...could you? (asking a favor, casual).",
+            "ja": "～てくれませんか（お願い、気軽）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "kashikomarimashita",
+          "displayText": "かしこまりました",
+          "reading": "かしこまりました",
+          "romanization": "kashikomarimashita",
+          "speechText": "かしこまりました",
+          "meaningVi": "Vâng ạ, tôi hiểu rồi (đồng ý giúp, rất lịch sự).",
+          "translationByNative": {
+            "vi": "Vâng ạ, tôi hiểu rồi (đồng ý giúp, rất lịch sự).",
+            "en": "Certainly, understood (agreeing to help, very polite).",
+            "ja": "かしこまりました（承知、とても丁寧）。"
+          },
+          "translations": {
+            "vi": "Vâng ạ, tôi hiểu rồi (đồng ý giúp, rất lịch sự).",
+            "en": "Certainly, understood (agreeing to help, very polite).",
+            "ja": "かしこまりました（承知、とても丁寧）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "ryoukai-shimashita",
+          "displayText": "了解（りょうかい）しました",
+          "reading": "りょうかいしました",
+          "romanization": "ryoukai shimashita",
+          "speechText": "りょうかいしました",
+          "meaningVi": "Được, tôi hiểu rồi (đồng ý giúp, thân mật/thông thường).",
+          "translationByNative": {
+            "vi": "Được, tôi hiểu rồi (đồng ý giúp, thân mật/thông thường).",
+            "en": "Got it, understood (agreeing to help, casual/ordinary).",
+            "ja": "了解しました（承知、気軽・普通）。"
+          },
+          "translations": {
+            "vi": "Được, tôi hiểu rồi (đồng ý giúp, thân mật/thông thường).",
+            "en": "Got it, understood (agreeing to help, casual/ordinary).",
+            "ja": "了解しました（承知、気軽・普通）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "yoi-desu-yo",
+          "displayText": "よいですよ",
+          "reading": "よいですよ",
+          "romanization": "yoi desu yo",
+          "speechText": "よいですよ",
+          "meaningVi": "Được đấy (đồng ý giúp, trung tính).",
+          "translationByNative": {
+            "vi": "Được đấy (đồng ý giúp, trung tính).",
+            "en": "Sure (agreeing to help, neutral).",
+            "ja": "よいですよ（承知、中立）。"
+          },
+          "translations": {
+            "vi": "Được đấy (đồng ý giúp, trung tính).",
+            "en": "Sure (agreeing to help, neutral).",
+            "ja": "よいですよ（承知、中立）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "hontou-desu-ka",
+          "displayText": "本当（ほんとう）ですか",
+          "reading": "ほんとうですか",
+          "romanization": "hontou desu ka",
+          "speechText": "ほんとうですか",
+          "meaningVi": "Thật à? (phản ứng ngạc nhiên/vui).",
+          "translationByNative": {
+            "vi": "Thật à? (phản ứng ngạc nhiên/vui).",
+            "en": "Really? (surprised/happy reaction).",
+            "ja": "本当ですか（驚き・うれしい反応）。"
+          },
+          "translations": {
+            "vi": "Thật à? (phản ứng ngạc nhiên/vui).",
+            "en": "Really? (surprised/happy reaction).",
+            "ja": "本当ですか（驚き・うれしい反応）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "onegai-shimasu",
+          "displayText": "お願（ねが）いします",
+          "reading": "おねがいします",
+          "romanization": "onegai shimasu",
+          "speechText": "おねがいします",
+          "meaningVi": "Xin nhờ / làm ơn (nhờ vả ngắn gọn).",
+          "translationByNative": {
+            "vi": "Xin nhờ / làm ơn (nhờ vả ngắn gọn).",
+            "en": "Please (a brief request).",
+            "ja": "お願いします（簡潔なお願い）。"
+          },
+          "translations": {
+            "vi": "Xin nhờ / làm ơn (nhờ vả ngắn gọn).",
+            "en": "Please (a brief request).",
+            "ja": "お願いします（簡潔なお願い）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "kasu",
+          "displayText": "貸（か）す",
+          "reading": "かす",
+          "romanization": "kasu",
+          "speechText": "かす",
+          "meaningVi": "Cho mượn (dạng từ điển).",
+          "translationByNative": {
+            "vi": "Cho mượn (dạng từ điển).",
+            "en": "To lend (dictionary form).",
+            "ja": "貸す（辞書形）。"
+          },
+          "translations": {
+            "vi": "Cho mượn (dạng từ điển).",
+            "en": "To lend (dictionary form).",
+            "ja": "貸す（辞書形）。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "tetsudau",
+          "displayText": "手伝（てつだ）う",
+          "reading": "てつだう",
+          "romanization": "tetsudau",
+          "speechText": "てつだう",
+          "meaningVi": "Giúp đỡ (dạng từ điển).",
+          "translationByNative": {
+            "vi": "Giúp đỡ (dạng từ điển).",
+            "en": "To help (dictionary form).",
+            "ja": "手伝う（辞書形）。"
+          },
+          "translations": {
+            "vi": "Giúp đỡ (dạng từ điển).",
+            "en": "To help (dictionary form).",
+            "ja": "手伝う（辞書形）。"
+          },
+          "audioLocale": "ja-JP"
+        }
+      ],
       "keyPhrases": [],
-      "dialogue": [],
+      "dialogue": [
+        {
+          "targetText": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+          "displayText": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+          "reading": "このきょくなら、いえにCDがありますよ。",
+          "speechText": "このきょくなら、いえにシーディーがありますよ",
+          "translationByNative": {
+            "vi": "Bài này thì nhà tôi có đĩa CD đấy.",
+            "en": "If it is this song, I have the CD at home.",
+            "ja": "この曲なら、家にCDがありますよ。"
+          },
+          "translations": {
+            "vi": "Bài này thì nhà tôi có đĩa CD đấy.",
+            "en": "If it is this song, I have the CD at home.",
+            "ja": "この曲なら、家にCDがありますよ。"
+          },
+          "meaningVi": "Bài này thì nhà tôi có đĩa CD đấy.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m02-u2-l2-favor-polite-1"
+        },
+        {
+          "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+          "displayText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+          "reading": "ほんとうですか？かしてもらえませんか？",
+          "speechText": "ほんとうですか かしてもらえませんか",
+          "translationByNative": {
+            "vi": "Thật à? Cho tôi mượn được không?",
+            "en": "Really? Could you lend it to me?",
+            "ja": "本当ですか？貸してもらえませんか？"
+          },
+          "translations": {
+            "vi": "Thật à? Cho tôi mượn được không?",
+            "en": "Really? Could you lend it to me?",
+            "ja": "本当ですか？貸してもらえませんか？"
+          },
+          "meaningVi": "Thật à? Cho tôi mượn được không?",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m02-u2-l2-favor-polite-2"
+        },
+        {
+          "targetText": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+          "displayText": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+          "reading": "よいですよ。あした、CDをもってきますね。",
+          "speechText": "よいですよ あした シーディーをもってきますね",
+          "translationByNative": {
+            "vi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+            "en": "Sure. I'll bring the CD tomorrow.",
+            "ja": "よいですよ。明日、CDを持ってきますね。"
+          },
+          "translations": {
+            "vi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+            "en": "Sure. I'll bring the CD tomorrow.",
+            "ja": "よいですよ。明日、CDを持ってきますね。"
+          },
+          "meaningVi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m02-u2-l2-favor-polite-3"
+        },
+        {
+          "targetText": "ありがとうございます。助（たす）かります。",
+          "displayText": "ありがとうございます。助（たす）かります。",
+          "reading": "ありがとうございます。たすかります。",
+          "speechText": "ありがとうございます たすかります",
+          "translationByNative": {
+            "vi": "Cảm ơn bạn. Giúp mình nhiều lắm.",
+            "en": "Thank you. That helps me a lot.",
+            "ja": "ありがとうございます。助かります。"
+          },
+          "translations": {
+            "vi": "Cảm ơn bạn. Giúp mình nhiều lắm.",
+            "en": "Thank you. That helps me a lot.",
+            "ja": "ありがとうございます。助かります。"
+          },
+          "meaningVi": "Cảm ơn bạn. Giúp mình nhiều lắm.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m02-u2-l2-favor-polite-4"
+        },
+        {
+          "targetText": "お造（つく）りにしていただけますか？",
+          "displayText": "お造（つく）りにしていただけますか？",
+          "reading": "おつくりにしていただけますか？",
+          "speechText": "おつくりにしていただけますか",
+          "translationByNative": {
+            "vi": "Làm sashimi giúp tôi được không ạ?",
+            "en": "Could you make it into sashimi for me?",
+            "ja": "お造りにしていただけますか。"
+          },
+          "translations": {
+            "vi": "Làm sashimi giúp tôi được không ạ?",
+            "en": "Could you make it into sashimi for me?",
+            "ja": "お造りにしていただけますか。"
+          },
+          "meaningVi": "Làm sashimi giúp tôi được không ạ?",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m02-u2-l2-favor-very-polite-1"
+        },
+        {
+          "targetText": "はい。アラはどうしますか？",
+          "displayText": "はい。アラはどうしますか？",
+          "reading": "はい。あらはどうしますか？",
+          "speechText": "はい あらはどうしますか",
+          "translationByNative": {
+            "vi": "Vâng. Phần xương thì làm sao ạ?",
+            "en": "Understood. What should we do with the bones?",
+            "ja": "かしこまりました。アラはどうしますか。"
+          },
+          "translations": {
+            "vi": "Vâng. Phần xương thì làm sao ạ?",
+            "en": "Understood. What should we do with the bones?",
+            "ja": "かしこまりました。アラはどうしますか。"
+          },
+          "meaningVi": "Vâng. Phần xương thì làm sao ạ?",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m02-u2-l2-favor-very-polite-2"
+        },
+        {
+          "targetText": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+          "displayText": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+          "reading": "あらもつけてください。あらじるにしようとおもいます。",
+          "speechText": "あらもつけてください あらじるにしようとおもいます",
+          "translationByNative": {
+            "vi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+            "en": "Please add the fish bones too. I'm planning to make fish bone soup.",
+            "ja": "アラも付けてください。アラ汁にしようと思います。"
+          },
+          "translations": {
+            "vi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+            "en": "Please add the fish bones too. I'm planning to make fish bone soup.",
+            "ja": "アラも付けてください。アラ汁にしようと思います。"
+          },
+          "meaningVi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m02-u2-l2-favor-very-polite-3"
+        },
+        {
+          "targetText": "かしこまりました。",
+          "displayText": "かしこまりました。",
+          "reading": "かしこまりました。",
+          "speechText": "かしこまりました",
+          "translationByNative": {
+            "vi": "Vâng ạ, tôi hiểu rồi.",
+            "en": "Certainly, understood.",
+            "ja": "かしこまりました。"
+          },
+          "translations": {
+            "vi": "Vâng ạ, tôi hiểu rồi.",
+            "en": "Certainly, understood.",
+            "ja": "かしこまりました。"
+          },
+          "meaningVi": "Vâng ạ, tôi hiểu rồi.",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m02-u2-l2-favor-very-polite-4"
+        },
+        {
+          "targetText": "今日（きょう）は暇（ひま）ですか？",
+          "displayText": "今日（きょう）は暇（ひま）ですか？",
+          "reading": "きょうはひまですか？",
+          "speechText": "きょうはひまですか",
+          "translationByNative": {
+            "vi": "Hôm nay bạn rảnh không?",
+            "en": "Are you free today?",
+            "ja": "今日は暇ですか。"
+          },
+          "translations": {
+            "vi": "Hôm nay bạn rảnh không?",
+            "en": "Are you free today?",
+            "ja": "今日は暇ですか。"
+          },
+          "meaningVi": "Hôm nay bạn rảnh không?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m02-u2-l2-favor-casual-1"
+        },
+        {
+          "targetText": "休（やす）みですから暇（ひま）ですよ。",
+          "displayText": "休（やす）みですから暇（ひま）ですよ。",
+          "reading": "やすみですからひまですよ。",
+          "speechText": "やすみですから ひまですよ",
+          "translationByNative": {
+            "vi": "Tôi nghỉ nên rảnh đấy.",
+            "en": "I'm off work, so I'm free.",
+            "ja": "休みですから暇ですよ。"
+          },
+          "translations": {
+            "vi": "Tôi nghỉ nên rảnh đấy.",
+            "en": "I'm off work, so I'm free.",
+            "ja": "休みですから暇ですよ。"
+          },
+          "meaningVi": "Tôi nghỉ nên rảnh đấy.",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m02-u2-l2-favor-casual-2"
+        },
+        {
+          "targetText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+          "displayText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+          "reading": "では、うめしゅづくりをてつだってくれませんか？",
+          "speechText": "では うめしゅづくりを てつだってくれませんか",
+          "translationByNative": {
+            "vi": "Vậy giúp tôi làm rượu mơ được không?",
+            "en": "So, could you help me make plum wine?",
+            "ja": "では、梅酒づくりを手伝ってくれませんか。"
+          },
+          "translations": {
+            "vi": "Vậy giúp tôi làm rượu mơ được không?",
+            "en": "So, could you help me make plum wine?",
+            "ja": "では、梅酒づくりを手伝ってくれませんか。"
+          },
+          "meaningVi": "Vậy giúp tôi làm rượu mơ được không?",
+          "audioLocale": "ja-JP",
+          "speakerId": "sato",
+          "id": "ja-daily_life-m02-u2-l2-favor-casual-3"
+        },
+        {
+          "targetText": "もちろんです。なにをすればよいのですか？",
+          "displayText": "もちろんです。なにをすればよいのですか？",
+          "reading": "もちろんです。なにをすればよいのですか？",
+          "speechText": "もちろんです なにをすればよいのですか",
+          "translationByNative": {
+            "vi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+            "en": "Of course. What should I do?",
+            "ja": "もちろんです。何をすればよいのですか。"
+          },
+          "translations": {
+            "vi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+            "en": "Of course. What should I do?",
+            "ja": "もちろんです。何をすればよいのですか。"
+          },
+          "meaningVi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+          "audioLocale": "ja-JP",
+          "speakerId": "ito",
+          "id": "ja-daily_life-m02-u2-l2-favor-casual-4"
+        }
+      ],
+      "dialogueGroups": [
+        {
+          "id": "ja-daily_life-m02-u2-l2-favor-polite",
+          "titleByNative": {
+            "vi": "Lịch sự — nhờ mượn CD",
+            "en": "Polite — asking to borrow a CD",
+            "ja": "丁寧——CDを借りるお願い"
+          },
+          "situationByNative": {
+            "vi": "Vai vế: hai người quen (đồng nghiệp/bạn), giữ thể lịch sự. 田中 muốn mượn đĩa CD từ 伊藤.",
+            "en": "Relationship: two acquaintances (colleagues/friends), keeping the polite register. 田中 wants to borrow a CD from 伊藤.",
+            "ja": "関係性：知人同士（同僚・友人）、丁寧体を保つ。田中さんは伊藤さんからCDを借りたいと思っています。"
+          },
+          "explanationByNative": {
+            "vi": "貸してもらえませんか dùng để nhờ vả lịch sự — hợp với quan hệ đồng nghiệp/bạn bè chưa quá thân.\n助かります là câu cảm ơn khi được giúp — đã học ở bài trước (m02-u1-l1), tái dùng ở đây để đáp lại lời nhờ được đồng ý.",
+            "en": "貸してもらえませんか is used to ask a favor politely — fitting for colleagues/friends who are not extremely close.\n助かります is a thank-you phrase for being helped — learned in the previous lesson (m02-u1-l1), reused here to respond after a favor is granted.",
+            "ja": "貸してもらえませんかは丁寧にお願いする表現——あまり親しくない同僚・友人に合います。\n助かりますは助けてもらった時のお礼の言葉——前のレッスン（m02-u1-l1）で学んだ表現を、お願いが受け入れられた後の返事として再利用しています。"
+          },
+          "lines": [
+            {
+              "targetText": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+              "displayText": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+              "reading": "このきょくなら、いえにCDがありますよ。",
+              "speechText": "このきょくなら、いえにシーディーがありますよ",
+              "translationByNative": {
+                "vi": "Bài này thì nhà tôi có đĩa CD đấy.",
+                "en": "If it is this song, I have the CD at home.",
+                "ja": "この曲なら、家にCDがありますよ。"
+              },
+              "translations": {
+                "vi": "Bài này thì nhà tôi có đĩa CD đấy.",
+                "en": "If it is this song, I have the CD at home.",
+                "ja": "この曲なら、家にCDがありますよ。"
+              },
+              "meaningVi": "Bài này thì nhà tôi có đĩa CD đấy.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m02-u2-l2-favor-polite-1"
+            },
+            {
+              "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+              "displayText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+              "reading": "ほんとうですか？かしてもらえませんか？",
+              "speechText": "ほんとうですか かしてもらえませんか",
+              "translationByNative": {
+                "vi": "Thật à? Cho tôi mượn được không?",
+                "en": "Really? Could you lend it to me?",
+                "ja": "本当ですか？貸してもらえませんか？"
+              },
+              "translations": {
+                "vi": "Thật à? Cho tôi mượn được không?",
+                "en": "Really? Could you lend it to me?",
+                "ja": "本当ですか？貸してもらえませんか？"
+              },
+              "meaningVi": "Thật à? Cho tôi mượn được không?",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m02-u2-l2-favor-polite-2"
+            },
+            {
+              "targetText": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+              "displayText": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+              "reading": "よいですよ。あした、CDをもってきますね。",
+              "speechText": "よいですよ あした シーディーをもってきますね",
+              "translationByNative": {
+                "vi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+                "en": "Sure. I'll bring the CD tomorrow.",
+                "ja": "よいですよ。明日、CDを持ってきますね。"
+              },
+              "translations": {
+                "vi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+                "en": "Sure. I'll bring the CD tomorrow.",
+                "ja": "よいですよ。明日、CDを持ってきますね。"
+              },
+              "meaningVi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m02-u2-l2-favor-polite-3"
+            },
+            {
+              "targetText": "ありがとうございます。助（たす）かります。",
+              "displayText": "ありがとうございます。助（たす）かります。",
+              "reading": "ありがとうございます。たすかります。",
+              "speechText": "ありがとうございます たすかります",
+              "translationByNative": {
+                "vi": "Cảm ơn bạn. Giúp mình nhiều lắm.",
+                "en": "Thank you. That helps me a lot.",
+                "ja": "ありがとうございます。助かります。"
+              },
+              "translations": {
+                "vi": "Cảm ơn bạn. Giúp mình nhiều lắm.",
+                "en": "Thank you. That helps me a lot.",
+                "ja": "ありがとうございます。助かります。"
+              },
+              "meaningVi": "Cảm ơn bạn. Giúp mình nhiều lắm.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m02-u2-l2-favor-polite-4"
+            }
+          ]
+        },
+        {
+          "id": "ja-daily_life-m02-u2-l2-favor-very-polite",
+          "titleByNative": {
+            "vi": "Rất lịch sự — nhờ nhân viên cửa hàng cá",
+            "en": "Very polite — asking a fishmonger for a favor",
+            "ja": "とても丁寧——魚屋の店員へのお願い"
+          },
+          "situationByNative": {
+            "vi": "Vai vế: khách và nhân viên cửa hàng cá, chưa quen biết — cả hai giữ thể rất lịch sự. Khách nhờ nhân viên làm sashimi.",
+            "en": "Relationship: a customer and a fishmonger, not previously acquainted — both keep the very polite register. The customer asks the staff to make sashimi.",
+            "ja": "関係性：客と魚屋の店員、初対面——両方ともとても丁寧な言葉遣いを保つ。客は店員に刺身にしてもらうようお願いします。"
+          },
+          "explanationByNative": {
+            "vi": "お造りにしていただけますか rất lịch sự — hợp với quan hệ khách hàng/nhân viên chưa quen biết.\nかしこまりました là cách nhân viên đồng ý một cách rất lịch sự — mức lịch sự cao nhất trong ba cách đồng ý giúp đã học ở bài này.",
+            "en": "お造りにしていただけますか is very polite — fitting for a customer/staff relationship between strangers.\nかしこまりました is how the staff agrees very politely — the most polite of the three ways to agree to help learned in this lesson.",
+            "ja": "お造りにしていただけますかはとても丁寧——初対面の客と店員の関係に合います。\nかしこまりましたは店員がとても丁寧に承諾する言い方——このレッスンで学んだ三つの承諾の言い方の中で最も丁寧です。"
+          },
+          "lines": [
+            {
+              "targetText": "お造（つく）りにしていただけますか？",
+              "displayText": "お造（つく）りにしていただけますか？",
+              "reading": "おつくりにしていただけますか？",
+              "speechText": "おつくりにしていただけますか",
+              "translationByNative": {
+                "vi": "Làm sashimi giúp tôi được không ạ?",
+                "en": "Could you make it into sashimi for me?",
+                "ja": "お造りにしていただけますか。"
+              },
+              "translations": {
+                "vi": "Làm sashimi giúp tôi được không ạ?",
+                "en": "Could you make it into sashimi for me?",
+                "ja": "お造りにしていただけますか。"
+              },
+              "meaningVi": "Làm sashimi giúp tôi được không ạ?",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m02-u2-l2-favor-very-polite-1"
+            },
+            {
+              "targetText": "はい。アラはどうしますか？",
+              "displayText": "はい。アラはどうしますか？",
+              "reading": "はい。あらはどうしますか？",
+              "speechText": "はい あらはどうしますか",
+              "translationByNative": {
+                "vi": "Vâng. Phần xương thì làm sao ạ?",
+                "en": "Understood. What should we do with the bones?",
+                "ja": "かしこまりました。アラはどうしますか。"
+              },
+              "translations": {
+                "vi": "Vâng. Phần xương thì làm sao ạ?",
+                "en": "Understood. What should we do with the bones?",
+                "ja": "かしこまりました。アラはどうしますか。"
+              },
+              "meaningVi": "Vâng. Phần xương thì làm sao ạ?",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m02-u2-l2-favor-very-polite-2"
+            },
+            {
+              "targetText": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+              "displayText": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+              "reading": "あらもつけてください。あらじるにしようとおもいます。",
+              "speechText": "あらもつけてください あらじるにしようとおもいます",
+              "translationByNative": {
+                "vi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+                "en": "Please add the fish bones too. I'm planning to make fish bone soup.",
+                "ja": "アラも付けてください。アラ汁にしようと思います。"
+              },
+              "translations": {
+                "vi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+                "en": "Please add the fish bones too. I'm planning to make fish bone soup.",
+                "ja": "アラも付けてください。アラ汁にしようと思います。"
+              },
+              "meaningVi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m02-u2-l2-favor-very-polite-3"
+            },
+            {
+              "targetText": "かしこまりました。",
+              "displayText": "かしこまりました。",
+              "reading": "かしこまりました。",
+              "speechText": "かしこまりました",
+              "translationByNative": {
+                "vi": "Vâng ạ, tôi hiểu rồi.",
+                "en": "Certainly, understood.",
+                "ja": "かしこまりました。"
+              },
+              "translations": {
+                "vi": "Vâng ạ, tôi hiểu rồi.",
+                "en": "Certainly, understood.",
+                "ja": "かしこまりました。"
+              },
+              "meaningVi": "Vâng ạ, tôi hiểu rồi.",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m02-u2-l2-favor-very-polite-4"
+            }
+          ]
+        },
+        {
+          "id": "ja-daily_life-m02-u2-l2-favor-casual",
+          "titleByNative": {
+            "vi": "Thân mật — nhờ bạn giúp làm rượu mơ",
+            "en": "Casual — asking a friend to help make plum wine",
+            "ja": "気軽——梅酒作りを手伝ってもらうお願い"
+          },
+          "situationByNative": {
+            "vi": "Vai vế: hai người bạn thân — thân mật. 佐藤 nhờ 伊藤 giúp làm rượu mơ.",
+            "en": "Relationship: two close friends — casual. 佐藤 asks 伊藤 to help make plum wine.",
+            "ja": "関係性：親しい友人同士——気軽。佐藤さんは伊藤さんに梅酒作りを手伝ってもらうようお願いします。"
+          },
+          "explanationByNative": {
+            "vi": "手伝ってくれませんか (thân mật) khác 手伝っていただけますか (rất lịch sự, dùng ở nhóm trước) — bạn bè thân mật thì dùng thể ngắn gọn hơn.",
+            "en": "手伝ってくれませんか (casual) differs from 手伝っていただけますか (very polite, used in the earlier group) — close friends use the shorter, casual form.",
+            "ja": "手伝ってくれませんか（気軽）は手伝っていただけますか（とても丁寧、前のグループで使用）とは異なります——親しい友人には短い気軽な形を使います。"
+          },
+          "lines": [
+            {
+              "targetText": "今日（きょう）は暇（ひま）ですか？",
+              "displayText": "今日（きょう）は暇（ひま）ですか？",
+              "reading": "きょうはひまですか？",
+              "speechText": "きょうはひまですか",
+              "translationByNative": {
+                "vi": "Hôm nay bạn rảnh không?",
+                "en": "Are you free today?",
+                "ja": "今日は暇ですか。"
+              },
+              "translations": {
+                "vi": "Hôm nay bạn rảnh không?",
+                "en": "Are you free today?",
+                "ja": "今日は暇ですか。"
+              },
+              "meaningVi": "Hôm nay bạn rảnh không?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m02-u2-l2-favor-casual-1"
+            },
+            {
+              "targetText": "休（やす）みですから暇（ひま）ですよ。",
+              "displayText": "休（やす）みですから暇（ひま）ですよ。",
+              "reading": "やすみですからひまですよ。",
+              "speechText": "やすみですから ひまですよ",
+              "translationByNative": {
+                "vi": "Tôi nghỉ nên rảnh đấy.",
+                "en": "I'm off work, so I'm free.",
+                "ja": "休みですから暇ですよ。"
+              },
+              "translations": {
+                "vi": "Tôi nghỉ nên rảnh đấy.",
+                "en": "I'm off work, so I'm free.",
+                "ja": "休みですから暇ですよ。"
+              },
+              "meaningVi": "Tôi nghỉ nên rảnh đấy.",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m02-u2-l2-favor-casual-2"
+            },
+            {
+              "targetText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+              "displayText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+              "reading": "では、うめしゅづくりをてつだってくれませんか？",
+              "speechText": "では うめしゅづくりを てつだってくれませんか",
+              "translationByNative": {
+                "vi": "Vậy giúp tôi làm rượu mơ được không?",
+                "en": "So, could you help me make plum wine?",
+                "ja": "では、梅酒づくりを手伝ってくれませんか。"
+              },
+              "translations": {
+                "vi": "Vậy giúp tôi làm rượu mơ được không?",
+                "en": "So, could you help me make plum wine?",
+                "ja": "では、梅酒づくりを手伝ってくれませんか。"
+              },
+              "meaningVi": "Vậy giúp tôi làm rượu mơ được không?",
+              "audioLocale": "ja-JP",
+              "speakerId": "sato",
+              "id": "ja-daily_life-m02-u2-l2-favor-casual-3"
+            },
+            {
+              "targetText": "もちろんです。なにをすればよいのですか？",
+              "displayText": "もちろんです。なにをすればよいのですか？",
+              "reading": "もちろんです。なにをすればよいのですか？",
+              "speechText": "もちろんです なにをすればよいのですか",
+              "translationByNative": {
+                "vi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+                "en": "Of course. What should I do?",
+                "ja": "もちろんです。何をすればよいのですか。"
+              },
+              "translations": {
+                "vi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+                "en": "Of course. What should I do?",
+                "ja": "もちろんです。何をすればよいのですか。"
+              },
+              "meaningVi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+              "audioLocale": "ja-JP",
+              "speakerId": "ito",
+              "id": "ja-daily_life-m02-u2-l2-favor-casual-4"
+            }
+          ]
+        }
+      ],
       "reviewItems": [],
       "grammarFocus": null,
       "grammarFocusVi": null,
       "cultureNote": null,
       "cultureNoteVi": null,
-      "contentStatus": "blueprint",
-      "playable": false,
-      "comingSoon": true,
-      "canSkip": true,
-      "exerciseStatus": "placeholder",
-      "learnSection": {
-        "vocabularyPhraseCards": {
-          "status": "placeholder"
+      "contextualVariations": [],
+      "communicationStrategyByNative": {},
+      "lessonFormat": "five_cards",
+      "fiveCardContent": {
+        "mainCards": [
+          "intro",
+          "vocabulary",
+          "dialogue",
+          "grammar",
+          "practice"
+        ],
+        "targetLanguage": "ja",
+        "targetLocale": "ja-JP",
+        "cultureContext": "Japan",
+        "approvedCharacterNamePool": [
+          {
+            "id": "tanaka",
+            "displayName": "田中（たなか）",
+            "canonicalName": "田中",
+            "audioName": "たなか"
+          },
+          {
+            "id": "ito",
+            "displayName": "伊藤（いとう）",
+            "canonicalName": "伊藤",
+            "audioName": "いとう"
+          },
+          {
+            "id": "sato",
+            "displayName": "佐藤（さとう）",
+            "canonicalName": "佐藤",
+            "audioName": "さとう"
+          },
+          {
+            "id": "sensei",
+            "displayName": "先生（せんせい）",
+            "canonicalName": "先生",
+            "audioName": "せんせい"
+          }
+        ],
+        "intro": {
+          "objectives": [
+            "Nhờ vả lịch sự bằng ～てもらえませんか.",
+            "Nhờ vả rất lịch sự bằng ～ていただけますか.",
+            "Nhờ vả thân mật bằng ～てくれませんか.",
+            "Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).",
+            "Phản ứng khi nghe tin vui bằng 本当ですか.",
+            "Nhờ vả ngắn gọn bằng お願いします."
+          ],
+          "objectivesByNative": {
+            "vi": [
+              "Nhờ vả lịch sự bằng ～てもらえませんか.",
+              "Nhờ vả rất lịch sự bằng ～ていただけますか.",
+              "Nhờ vả thân mật bằng ～てくれませんか.",
+              "Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).",
+              "Phản ứng khi nghe tin vui bằng 本当ですか.",
+              "Nhờ vả ngắn gọn bằng お願いします."
+            ],
+            "en": [
+              "Ask a favor politely with ～てもらえませんか.",
+              "Ask a favor very politely with ～ていただけますか.",
+              "Ask a favor casually with ～てくれませんか.",
+              "Agree to help with かしこまりました／了解しました／よいですよ (depending on politeness level).",
+              "React to good news with 本当ですか.",
+              "Make a brief request with お願いします."
+            ],
+            "ja": [
+              "～てもらえませんかで丁寧にお願いします。",
+              "～ていただけますかでとても丁寧にお願いします。",
+              "～てくれませんかで気軽にお願いします。",
+              "かしこまりました／了解しました／よいですよで承知します（丁寧さによる）。",
+              "本当ですかでうれしい知らせに反応します。",
+              "お願いしますで簡潔にお願いします。"
+            ]
+          },
+          "situation": [
+            "Ai đó cần nhờ người khác giúp một việc nhỏ.",
+            "Bạn chọn đúng mức lịch sự và đúng cách nói theo tình huống."
+          ],
+          "situationByNative": {
+            "vi": [
+              "Ai đó cần nhờ người khác giúp một việc nhỏ.",
+              "Bạn chọn đúng mức lịch sự và đúng cách nói theo tình huống."
+            ],
+            "en": [
+              "Someone needs to ask another person for a small favor.",
+              "You choose the right politeness level and phrasing for the situation."
+            ],
+            "ja": [
+              "誰かがちょっとしたお願いをする必要があります。",
+              "状況に合った丁寧さと言い方を選びます。"
+            ]
+          },
+          "examples": [
+            {
+              "label": "Nhờ vả, lịch sự:",
+              "labelByNative": {
+                "vi": "Nhờ vả, lịch sự:",
+                "en": "Asking a favor, polite:",
+                "ja": "お願いする、丁寧："
+              },
+              "speaker": "",
+              "targetText": "貸（か）してもらえませんか。",
+              "displayText": "貸（か）してもらえませんか。",
+              "reading": "かしてもらえませんか。",
+              "speechText": "かしてもらえませんか",
+              "translationByNative": {
+                "vi": "Cho tôi mượn được không?",
+                "en": "Could you lend it to me?",
+                "ja": "貸してもらえませんか。"
+              },
+              "translations": {
+                "vi": "Cho tôi mượn được không?",
+                "en": "Could you lend it to me?",
+                "ja": "貸してもらえませんか。"
+              },
+              "meaningVi": "Cho tôi mượn được không?",
+              "audioLocale": "ja-JP"
+            },
+            {
+              "label": "Nhờ vả, rất lịch sự:",
+              "labelByNative": {
+                "vi": "Nhờ vả, rất lịch sự:",
+                "en": "Asking a favor, very polite:",
+                "ja": "お願いする、とても丁寧："
+              },
+              "speaker": "",
+              "targetText": "お造（つく）りにしていただけますか。",
+              "displayText": "お造（つく）りにしていただけますか。",
+              "reading": "おつくりにしていただけますか。",
+              "speechText": "おつくりにしていただけますか",
+              "translationByNative": {
+                "vi": "Làm sashimi giúp tôi được không ạ?",
+                "en": "Could you make it into sashimi for me?",
+                "ja": "お造りにしていただけますか。"
+              },
+              "translations": {
+                "vi": "Làm sashimi giúp tôi được không ạ?",
+                "en": "Could you make it into sashimi for me?",
+                "ja": "お造りにしていただけますか。"
+              },
+              "meaningVi": "Làm sashimi giúp tôi được không ạ?",
+              "audioLocale": "ja-JP"
+            },
+            {
+              "label": "Với bạn thân:",
+              "labelByNative": {
+                "vi": "Với bạn thân:",
+                "en": "With a close friend:",
+                "ja": "親しい友だちには："
+              },
+              "speaker": "",
+              "targetText": "手伝（てつだ）ってくれませんか。",
+              "displayText": "手伝（てつだ）ってくれませんか。",
+              "reading": "てつだってくれませんか。",
+              "speechText": "てつだってくれませんか",
+              "translationByNative": {
+                "vi": "Giúp tôi được không?",
+                "en": "Could you help me?",
+                "ja": "手伝ってくれませんか。"
+              },
+              "translations": {
+                "vi": "Giúp tôi được không?",
+                "en": "Could you help me?",
+                "ja": "手伝ってくれませんか。"
+              },
+              "meaningVi": "Giúp tôi được không?",
+              "audioLocale": "ja-JP"
+            }
+          ],
+          "importantNote": [
+            "ていただけますか dùng thể khiêm nhường, lịch sự hơn てもらえませんか — mức nào cũng nhờ vả, khác nhau ở đối tượng.",
+            "てくれませんか thân mật hơn てもらえませんか — cùng nhờ vả, khác mức trang trọng.",
+            "かしこまりました／了解しました／よいですよ đều đáp 'được' cho lời nhờ, chỉ khác mức lịch sự."
+          ],
+          "importantNoteByNative": {
+            "vi": [
+              "ていただけますか dùng thể khiêm nhường, lịch sự hơn てもらえませんか — mức nào cũng nhờ vả, khác nhau ở đối tượng.",
+              "てくれませんか thân mật hơn てもらえませんか — cùng nhờ vả, khác mức trang trọng.",
+              "かしこまりました／了解しました／よいですよ đều đáp 'được' cho lời nhờ, chỉ khác mức lịch sự."
+            ],
+            "en": [
+              "ていただけますか uses humble language and is more polite than てもらえませんか — both ask a favor, they differ in who you say them to.",
+              "てくれませんか is more casual than てもらえませんか — both ask a favor, they differ in formality.",
+              "かしこまりました／了解しました／よいですよ all agree to a request, they just differ in politeness."
+            ],
+            "ja": [
+              "ていただけますかは謙譲語でてもらえませんかより丁寧です——どちらもお願いする言葉ですが、相手によって使い分けます。",
+              "てくれませんかはてもらえませんかより気軽です——どちらもお願いしますが、丁寧さが違います。",
+              "かしこまりました／了解しました／よいですよはすべてお願いを引き受ける言葉で、丁寧さだけが違います。"
+            ]
+          }
         },
-        "grammarSentencePatterns": {
-          "status": "placeholder"
+        "vocabularyDetails": [
+          {
+            "id": "temo-moraemasenka",
+            "timingAndContext": [
+              "Nhờ ai đó làm gì đó cho mình, mức lịch sự, thường dùng với đồng nghiệp/người quen."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nhờ ai đó làm gì đó cho mình, mức lịch sự, thường dùng với đồng nghiệp/người quen."
+              ],
+              "en": [
+                "Asking someone to do something for you, polite level, usually used with colleagues/acquaintances."
+              ],
+              "ja": [
+                "誰かに何かをしてもらう、丁寧なレベル、同僚・知人によく使う。"
+              ]
+            },
+            "appropriateFor": [
+              "Đồng nghiệp",
+              "Người quen",
+              "Bạn bè chưa quá thân"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Đồng nghiệp",
+                "Người quen",
+                "Bạn bè chưa quá thân"
+              ],
+              "en": [
+                "Colleague",
+                "Acquaintance",
+                "Friends who are not extremely close"
+              ],
+              "ja": [
+                "同僚",
+                "知人",
+                "あまり親しくない友人"
+              ]
+            },
+            "avoid": [],
+            "register": "Lịch sự.",
+            "registerByNative": {
+              "vi": "Lịch sự.",
+              "en": "Polite.",
+              "ja": "丁寧。"
+            },
+            "formal": [
+              "Cách trang trọng hơn:",
+              "～ていただけますか",
+              "Dùng với:",
+              "Khách hàng",
+              "Cấp trên trong công việc"
+            ],
+            "formalByNative": {
+              "vi": [
+                "Cách trang trọng hơn:",
+                "～ていただけますか",
+                "Dùng với:",
+                "Khách hàng",
+                "Cấp trên trong công việc"
+              ],
+              "en": [
+                "A more formal way:",
+                "～ていただけますか",
+                "Used with:",
+                "Customer",
+                "A superior at work"
+              ],
+              "ja": [
+                "より丁寧な言い方：",
+                "～ていただけますか",
+                "使う相手：",
+                "客",
+                "仕事の上司"
+              ]
+            },
+            "casual": [
+              "Cách thân mật:",
+              "～てくれませんか",
+              "Dùng với:",
+              "Bạn bè",
+              "Gia đình"
+            ],
+            "casualByNative": {
+              "vi": [
+                "Cách thân mật:",
+                "～てくれませんか",
+                "Dùng với:",
+                "Bạn bè",
+                "Gia đình"
+              ],
+              "en": [
+                "A casual way:",
+                "～てくれませんか",
+                "Used with:",
+                "Friends",
+                "Family"
+              ],
+              "ja": [
+                "気軽な言い方：",
+                "～てくれませんか",
+                "使う相手：",
+                "友人",
+                "家族"
+              ]
+            },
+            "overview": "...được không? (nhờ vả, lịch sự).",
+            "overviewByNative": {
+              "vi": "...được không? (nhờ vả, lịch sự).",
+              "en": "...could you? (asking a favor, polite).",
+              "ja": "～てもらえませんか（お願い、丁寧）。"
+            },
+            "examples": [
+              {
+                "text": "貸（か）してもらえませんか。",
+                "reading": "かしてもらえませんか。",
+                "translation": "Cho tôi mượn được không?",
+                "translationByNative": {
+                  "vi": "Cho tôi mượn được không?",
+                  "en": "Could you lend it to me?",
+                  "ja": "貸してもらえませんか。"
+                },
+                "speechText": "かしてもらえませんか。"
+              }
+            ]
+          },
+          {
+            "id": "teitadakemasu-ka",
+            "timingAndContext": [
+              "Nhờ ai đó làm gì đó cho mình, mức rất lịch sự — hợp khi nói với người lạ, khách hàng, cấp trên."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nhờ ai đó làm gì đó cho mình, mức rất lịch sự — hợp khi nói với người lạ, khách hàng, cấp trên."
+              ],
+              "en": [
+                "Asking someone to do something for you, very polite level — fitting when speaking with strangers, customers, or superiors."
+              ],
+              "ja": [
+                "誰かに何かをしてもらう、とても丁寧なレベル——初対面の人、客、目上の人に話す時に合う。"
+              ]
+            },
+            "appropriateFor": [
+              "Người lạ",
+              "Khách hàng",
+              "Cấp trên"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Người lạ",
+                "Khách hàng",
+                "Cấp trên"
+              ],
+              "en": [
+                "A stranger",
+                "Customer",
+                "A superior"
+              ],
+              "ja": [
+                "初対面の人",
+                "客",
+                "目上の人"
+              ]
+            },
+            "avoid": [
+              "Không dùng với bạn bè/gia đình — nghe quá xa cách."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng với bạn bè/gia đình — nghe quá xa cách."
+              ],
+              "en": [
+                "Not used with friends/family — it sounds too distant."
+              ],
+              "ja": [
+                "友人・家族には使わない——よそよそしく聞こえる。"
+              ]
+            },
+            "register": "Trang trọng.",
+            "registerByNative": {
+              "vi": "Trang trọng.",
+              "en": "Formal.",
+              "ja": "改まった言い方。"
+            },
+            "formal": [],
+            "casual": [
+              "Cách trung tính hơn:",
+              "～てもらえませんか",
+              "Dùng với:",
+              "Người đã quen"
+            ],
+            "casualByNative": {
+              "vi": [
+                "Cách trung tính hơn:",
+                "～てもらえませんか",
+                "Dùng với:",
+                "Người đã quen"
+              ],
+              "en": [
+                "A more neutral way:",
+                "～てもらえませんか",
+                "Used with:",
+                "Someone you already know"
+              ],
+              "ja": [
+                "より中立的な言い方：",
+                "～てもらえませんか",
+                "使う相手：",
+                "知り合いの人"
+              ]
+            },
+            "overview": "...được không ạ? (nhờ vả, rất lịch sự).",
+            "overviewByNative": {
+              "vi": "...được không ạ? (nhờ vả, rất lịch sự).",
+              "en": "...could you please? (asking a favor, very polite).",
+              "ja": "～ていただけますか（お願い、とても丁寧）。"
+            },
+            "examples": [
+              {
+                "text": "お造（つく）りにしていただけますか。",
+                "reading": "おつくりにしていただけますか。",
+                "translation": "Làm sashimi giúp tôi được không ạ?",
+                "translationByNative": {
+                  "vi": "Làm sashimi giúp tôi được không ạ?",
+                  "en": "Could you make it into sashimi for me?",
+                  "ja": "お造りにしていただけますか。"
+                },
+                "speechText": "おつくりにしていただけますか。"
+              }
+            ]
+          },
+          {
+            "id": "tekuremasenka",
+            "timingAndContext": [
+              "Nhờ ai đó làm gì đó cho mình, mức thân mật, giữa những người đã thân."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Nhờ ai đó làm gì đó cho mình, mức thân mật, giữa những người đã thân."
+              ],
+              "en": [
+                "Asking someone to do something for you, casual level, between people who are already close."
+              ],
+              "ja": [
+                "誰かに何かをしてもらう、気軽なレベル、親しい間柄で使う。"
+              ]
+            },
+            "appropriateFor": [
+              "Bạn bè",
+              "Gia đình",
+              "Người ngang hàng đã thân"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Bạn bè",
+                "Gia đình",
+                "Người ngang hàng đã thân"
+              ],
+              "en": [
+                "Friends",
+                "Family",
+                "A close peer"
+              ],
+              "ja": [
+                "友人",
+                "家族",
+                "親しい同等の相手"
+              ]
+            },
+            "avoid": [
+              "Không dùng dạng thân mật này với thầy cô hoặc người trên."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng dạng thân mật này với thầy cô hoặc người trên."
+              ],
+              "en": [
+                "Do not use this casual form with teachers or superiors."
+              ],
+              "ja": [
+                "この気軽な形は先生や目上の人には使わない。"
+              ]
+            },
+            "register": "Thân mật.",
+            "registerByNative": {
+              "vi": "Thân mật.",
+              "en": "Casual.",
+              "ja": "カジュアル。"
+            },
+            "formal": [
+              "Cách trang trọng hơn:",
+              "～てもらえませんか",
+              "Dùng với:",
+              "Đồng nghiệp",
+              "Người quen"
+            ],
+            "formalByNative": {
+              "vi": [
+                "Cách trang trọng hơn:",
+                "～てもらえませんか",
+                "Dùng với:",
+                "Đồng nghiệp",
+                "Người quen"
+              ],
+              "en": [
+                "A more formal way:",
+                "～てもらえませんか",
+                "Used with:",
+                "Colleague",
+                "Acquaintance"
+              ],
+              "ja": [
+                "より丁寧な言い方：",
+                "～てもらえませんか",
+                "使う相手：",
+                "同僚",
+                "知人"
+              ]
+            },
+            "casual": [],
+            "overview": "...được không? (nhờ vả, thân mật).",
+            "overviewByNative": {
+              "vi": "...được không? (nhờ vả, thân mật).",
+              "en": "...could you? (asking a favor, casual).",
+              "ja": "～てくれませんか（お願い、気軽）。"
+            },
+            "examples": [
+              {
+                "text": "梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+                "reading": "うめしゅづくりをてつだってくれませんか。",
+                "translation": "Giúp tôi làm rượu mơ được không?",
+                "translationByNative": {
+                  "vi": "Giúp tôi làm rượu mơ được không?",
+                  "en": "Could you help me make plum wine?",
+                  "ja": "梅酒づくりを手伝ってくれませんか。"
+                },
+                "speechText": "うめしゅづくりをてつだってくれませんか。"
+              }
+            ]
+          },
+          {
+            "id": "kashikomarimashita",
+            "timingAndContext": [
+              "Đồng ý giúp một cách rất lịch sự, thường dùng trong dịch vụ khách hàng, nơi làm việc."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Đồng ý giúp một cách rất lịch sự, thường dùng trong dịch vụ khách hàng, nơi làm việc."
+              ],
+              "en": [
+                "Agreeing to help very politely, often used in customer service, at work."
+              ],
+              "ja": [
+                "とても丁寧に手伝うことを承諾する、接客や職場でよく使う。"
+              ]
+            },
+            "appropriateFor": [
+              "Khách hàng",
+              "Cấp trên trong công việc",
+              "Tình huống trang trọng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Khách hàng",
+                "Cấp trên trong công việc",
+                "Tình huống trang trọng"
+              ],
+              "en": [
+                "Customer",
+                "A superior at work",
+                "A formal situation"
+              ],
+              "ja": [
+                "客",
+                "仕事の上司",
+                "改まった場面"
+              ]
+            },
+            "avoid": [
+              "Không dùng với bạn bè/gia đình — nghe quá xa cách."
+            ],
+            "avoidByNative": {
+              "vi": [
+                "Không dùng với bạn bè/gia đình — nghe quá xa cách."
+              ],
+              "en": [
+                "Not used with friends/family — it sounds too distant."
+              ],
+              "ja": [
+                "友人・家族には使わない——よそよそしく聞こえる。"
+              ]
+            },
+            "register": "Trang trọng.",
+            "registerByNative": {
+              "vi": "Trang trọng.",
+              "en": "Formal.",
+              "ja": "改まった言い方。"
+            },
+            "formal": [],
+            "casual": [
+              "Cách thân mật:",
+              "了解しました",
+              "Dùng với:",
+              "Bạn bè",
+              "Gia đình"
+            ],
+            "casualByNative": {
+              "vi": [
+                "Cách thân mật:",
+                "了解しました",
+                "Dùng với:",
+                "Bạn bè",
+                "Gia đình"
+              ],
+              "en": [
+                "A casual way:",
+                "了解しました",
+                "Used with:",
+                "Friends",
+                "Family"
+              ],
+              "ja": [
+                "気軽な言い方：",
+                "了解しました",
+                "使う相手：",
+                "友人",
+                "家族"
+              ]
+            },
+            "overview": "Vâng ạ, tôi hiểu rồi (đồng ý giúp, rất lịch sự).",
+            "overviewByNative": {
+              "vi": "Vâng ạ, tôi hiểu rồi (đồng ý giúp, rất lịch sự).",
+              "en": "Certainly, understood (agreeing to help, very polite).",
+              "ja": "かしこまりました（承知、とても丁寧）。"
+            },
+            "examples": [
+              {
+                "text": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+                "reading": "あらもつけてください。あらじるにしようとおもいます。",
+                "translation": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+                "translationByNative": {
+                  "vi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+                  "en": "Please add the fish bones too. I'm planning to make fish bone soup.",
+                  "ja": "アラも付けてください。アラ汁にしようと思います。"
+                },
+                "speechText": "あらもつけてください。あらじるにしようとおもいます。"
+              }
+            ],
+            "notes": [
+              "Câu đáp かしこまりました của nhân viên nằm ngay sau lượt yêu cầu này trong hội thoại."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Câu đáp かしこまりました của nhân viên nằm ngay sau lượt yêu cầu này trong hội thoại."
+              ],
+              "en": [
+                "The staff's かしこまりました reply comes right after this request turn in the dialogue."
+              ],
+              "ja": [
+                "店員の「かしこまりました」という返事は、この会話の依頼の発話のすぐ後にあります。"
+              ]
+            }
+          },
+          {
+            "id": "ryoukai-shimashita",
+            "timingAndContext": [
+              "Đồng ý giúp một cách thân mật/thông thường, không quá trang trọng cũng không quá suồng sã."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Đồng ý giúp một cách thân mật/thông thường, không quá trang trọng cũng không quá suồng sã."
+              ],
+              "en": [
+                "Agreeing to help casually/ordinarily, neither too formal nor too rough."
+              ],
+              "ja": [
+                "気軽・普通に手伝うことを承諾する、丁寧すぎず砕けすぎない。"
+              ]
+            },
+            "appropriateFor": [
+              "Bạn bè",
+              "Đồng nghiệp ngang hàng",
+              "Người quen"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Bạn bè",
+                "Đồng nghiệp ngang hàng",
+                "Người quen"
+              ],
+              "en": [
+                "Friends",
+                "A peer colleague",
+                "Acquaintance"
+              ],
+              "ja": [
+                "友人",
+                "同等の同僚",
+                "知人"
+              ]
+            },
+            "avoid": [],
+            "register": "",
+            "formal": [
+              "Cách trang trọng hơn:",
+              "かしこまりました",
+              "Dùng với:",
+              "Khách hàng",
+              "Cấp trên"
+            ],
+            "formalByNative": {
+              "vi": [
+                "Cách trang trọng hơn:",
+                "かしこまりました",
+                "Dùng với:",
+                "Khách hàng",
+                "Cấp trên"
+              ],
+              "en": [
+                "A more formal way:",
+                "かしこまりました",
+                "Used with:",
+                "Customer",
+                "A superior"
+              ],
+              "ja": [
+                "より丁寧な言い方：",
+                "かしこまりました",
+                "使う相手：",
+                "客",
+                "目上の人"
+              ]
+            },
+            "casual": [],
+            "overview": "Được, tôi hiểu rồi (đồng ý giúp, thân mật/thông thường).",
+            "overviewByNative": {
+              "vi": "Được, tôi hiểu rồi (đồng ý giúp, thân mật/thông thường).",
+              "en": "Got it, understood (agreeing to help, casual/ordinary).",
+              "ja": "了解しました（承知、気軽・普通）。"
+            },
+            "examples": [
+              {
+                "text": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+                "reading": "では、うめしゅづくりをてつだってくれませんか。",
+                "translation": "Vậy giúp tôi làm rượu mơ được không?",
+                "translationByNative": {
+                  "vi": "Vậy giúp tôi làm rượu mơ được không?",
+                  "en": "So, could you help me make plum wine?",
+                  "ja": "では、梅酒づくりを手伝ってくれませんか。"
+                },
+                "speechText": "では、うめしゅづくりをてつだってくれませんか。"
+              }
+            ],
+            "notes": [
+              "Câu đáp 了解しました của 伊藤 nằm ngay sau lượt hướng dẫn cụ thể trong hội thoại gốc."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Câu đáp 了解しました của 伊藤 nằm ngay sau lượt hướng dẫn cụ thể trong hội thoại gốc."
+              ],
+              "en": [
+                "伊藤's 了解しました reply comes right after the specific instruction turn in the original dialogue."
+              ],
+              "ja": [
+                "伊藤さんの「了解しました」という返事は、元の会話の具体的な指示の発話のすぐ後にあります。"
+              ]
+            }
+          },
+          {
+            "id": "yoi-desu-yo",
+            "timingAndContext": [
+              "Đồng ý giúp một cách trung tính, dứt khoát."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Đồng ý giúp một cách trung tính, dứt khoát."
+              ],
+              "en": [
+                "Agreeing to help neutrally and decisively."
+              ],
+              "ja": [
+                "中立的に、はっきりと手伝うことを承諾する。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng ở mức trung tính"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng ở mức trung tính"
+              ],
+              "en": [
+                "Anyone, at a neutral level"
+              ],
+              "ja": [
+                "中立的なレベルで誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "",
+            "formal": [],
+            "casual": [],
+            "overview": "Được đấy (đồng ý giúp, trung tính).",
+            "overviewByNative": {
+              "vi": "Được đấy (đồng ý giúp, trung tính).",
+              "en": "Sure (agreeing to help, neutral).",
+              "ja": "よいですよ（承知、中立）。"
+            },
+            "examples": [
+              {
+                "text": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+                "reading": "よいですよ。あした、CDをもってきますね。",
+                "translation": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+                "translationByNative": {
+                  "vi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+                  "en": "Sure. I'll bring the CD tomorrow.",
+                  "ja": "よいですよ。明日、CDを持ってきますね。"
+                },
+                "speechText": "よいですよ。あした、シーディーをもってきますね。"
+              }
+            ]
+          },
+          {
+            "id": "hontou-desu-ka",
+            "timingAndContext": [
+              "Phản ứng khi nghe một tin bất ngờ/vui, xác nhận lại."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Phản ứng khi nghe một tin bất ngờ/vui, xác nhận lại."
+              ],
+              "en": [
+                "A reaction to hearing surprising/happy news, confirming it."
+              ],
+              "ja": [
+                "驚き・うれしい知らせを聞いた時の反応、確認する。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "",
+            "formal": [],
+            "casual": [],
+            "overview": "Thật à? (phản ứng ngạc nhiên/vui).",
+            "overviewByNative": {
+              "vi": "Thật à? (phản ứng ngạc nhiên/vui).",
+              "en": "Really? (surprised/happy reaction).",
+              "ja": "本当ですか（驚き・うれしい反応）。"
+            },
+            "examples": [
+              {
+                "text": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+                "reading": "ほんとうですか？かしてもらえませんか？",
+                "translation": "Thật à? Cho tôi mượn được không?",
+                "translationByNative": {
+                  "vi": "Thật à? Cho tôi mượn được không?",
+                  "en": "Really? Could you lend it to me?",
+                  "ja": "本当ですか？貸してもらえませんか？"
+                },
+                "speechText": "ほんとうですか？かしてもらえませんか？"
+              }
+            ]
+          },
+          {
+            "id": "onegai-shimasu",
+            "timingAndContext": [
+              "Câu nhờ vả ngắn gọn, hay đi kèm hoặc kết thúc một lượt nhờ."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Câu nhờ vả ngắn gọn, hay đi kèm hoặc kết thúc một lượt nhờ."
+              ],
+              "en": [
+                "A brief request phrase, often accompanying or closing a request turn."
+              ],
+              "ja": [
+                "簡潔なお願いの言葉、お願いの発話に添えたり締めくくったりします。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "",
+            "formal": [],
+            "casual": [],
+            "overview": "Xin nhờ / làm ơn (nhờ vả ngắn gọn).",
+            "overviewByNative": {
+              "vi": "Xin nhờ / làm ơn (nhờ vả ngắn gọn).",
+              "en": "Please (a brief request).",
+              "ja": "お願いします（簡潔なお願い）。"
+            },
+            "examples": [
+              {
+                "text": "お願（ねが）いします。",
+                "reading": "おねがいします。",
+                "translation": "Xin nhờ nhé.",
+                "translationByNative": {
+                  "vi": "Xin nhờ nhé.",
+                  "en": "Please.",
+                  "ja": "お願いします。"
+                },
+                "speechText": "おねがいします。"
+              }
+            ]
+          },
+          {
+            "id": "kasu",
+            "timingAndContext": [
+              "Cho ai đó mượn một vật gì đó — dạng từ điển của động từ."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Cho ai đó mượn một vật gì đó — dạng từ điển của động từ."
+              ],
+              "en": [
+                "Lending something to someone — the dictionary form of the verb."
+              ],
+              "ja": [
+                "誰かに物を貸す——動詞の辞書形。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "",
+            "formal": [],
+            "casual": [],
+            "overview": "Cho mượn (dạng từ điển).",
+            "overviewByNative": {
+              "vi": "Cho mượn (dạng từ điển).",
+              "en": "To lend (dictionary form).",
+              "ja": "貸す（辞書形）。"
+            },
+            "examples": [
+              {
+                "text": "貸（か）してもらえませんか。",
+                "reading": "かしてもらえませんか。",
+                "translation": "Cho tôi mượn được không?",
+                "translationByNative": {
+                  "vi": "Cho tôi mượn được không?",
+                  "en": "Could you lend it to me?",
+                  "ja": "貸してもらえませんか。"
+                },
+                "speechText": "かしてもらえませんか。"
+              }
+            ],
+            "notes": [
+              "Dạng từ điển 貸す — mức lịch sự nằm ở cách chia đi kèm: 貸してもらえませんか (lịch sự) ・ 貸してくれない？ (thân mật)."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Dạng từ điển 貸す — mức lịch sự nằm ở cách chia đi kèm: 貸してもらえませんか (lịch sự) ・ 貸してくれない？ (thân mật)."
+              ],
+              "en": [
+                "The dictionary form 貸す — the politeness level lies in the conjugation used with it: 貸してもらえませんか (polite) ・ 貸してくれない？ (casual)."
+              ],
+              "ja": [
+                "辞書形の貸す——丁寧さは一緒に使う活用形にあります：貸してもらえませんか（丁寧）・貸してくれない？（気軽）。"
+              ]
+            }
+          },
+          {
+            "id": "tetsudau",
+            "timingAndContext": [
+              "Giúp ai đó làm một việc gì đó — dạng từ điển của động từ."
+            ],
+            "timingAndContextByNative": {
+              "vi": [
+                "Giúp ai đó làm một việc gì đó — dạng từ điển của động từ."
+              ],
+              "en": [
+                "Helping someone do something — the dictionary form of the verb."
+              ],
+              "ja": [
+                "誰かが何かをするのを手伝う——動詞の辞書形。"
+              ]
+            },
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "appropriateForByNative": {
+              "vi": [
+                "Mọi đối tượng"
+              ],
+              "en": [
+                "Anyone"
+              ],
+              "ja": [
+                "誰にでも"
+              ]
+            },
+            "avoid": [],
+            "register": "",
+            "formal": [],
+            "casual": [],
+            "overview": "Giúp đỡ (dạng từ điển).",
+            "overviewByNative": {
+              "vi": "Giúp đỡ (dạng từ điển).",
+              "en": "To help (dictionary form).",
+              "ja": "手伝う（辞書形）。"
+            },
+            "examples": [
+              {
+                "text": "梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+                "reading": "うめしゅづくりをてつだってくれませんか。",
+                "translation": "Giúp tôi làm rượu mơ được không?",
+                "translationByNative": {
+                  "vi": "Giúp tôi làm rượu mơ được không?",
+                  "en": "Could you help me make plum wine?",
+                  "ja": "梅酒づくりを手伝ってくれませんか。"
+                },
+                "speechText": "うめしゅづくりをてつだってくれませんか。"
+              }
+            ],
+            "notes": [
+              "Dạng từ điển 手伝う — mức lịch sự nằm ở cách chia đi kèm: 手伝ってもらえませんか (lịch sự) ・ 手伝ってくれませんか (thân mật)."
+            ],
+            "notesByNative": {
+              "vi": [
+                "Dạng từ điển 手伝う — mức lịch sự nằm ở cách chia đi kèm: 手伝ってもらえませんか (lịch sự) ・ 手伝ってくれませんか (thân mật)."
+              ],
+              "en": [
+                "The dictionary form 手伝う — the politeness level lies in the conjugation used with it: 手伝ってもらえませんか (polite) ・ 手伝ってくれませんか (casual)."
+              ],
+              "ja": [
+                "辞書形の手伝う——丁寧さは一緒に使う活用形にあります：手伝ってもらえませんか（丁寧）・手伝ってくれませんか（気軽）。"
+              ]
+            }
+          }
+        ],
+        "vocabularyReferences": [
+          {
+            "term": "曲（きょく）",
+            "reading": "きょく",
+            "speechText": "きょく",
+            "meaning": "Bài hát, bản nhạc.",
+            "meaningByNative": {
+              "vi": "Bài hát, bản nhạc.",
+              "en": "A song, a piece of music.",
+              "ja": "曲、音楽の一曲。"
+            },
+            "register": "",
+            "example": {
+              "text": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+              "reading": "このきょくなら、いえにCDがありますよ。",
+              "translation": "Bài này thì nhà tôi có đĩa CD đấy.",
+              "translationByNative": {
+                "vi": "Bài này thì nhà tôi có đĩa CD đấy.",
+                "en": "If it is this song, I have the CD at home.",
+                "ja": "この曲なら、家にCDがありますよ。"
+              },
+              "speechText": "このきょくなら、いえにシーディーがありますよ。"
+            }
+          },
+          {
+            "term": "造（つく）り",
+            "reading": "つくり",
+            "speechText": "つくり",
+            "meaning": "Cách làm, món ăn được làm (trong お造り = món sashimi).",
+            "meaningByNative": {
+              "vi": "Cách làm, món ăn được làm (trong お造り = món sashimi).",
+              "en": "The way something is made, a prepared dish (in お造り = sashimi dish).",
+              "ja": "作り方、作られた料理（お造り＝刺身の料理）。"
+            },
+            "register": "",
+            "example": {
+              "text": "お造（つく）りにしていただけますか。",
+              "reading": "おつくりにしていただけますか。",
+              "translation": "Làm sashimi giúp tôi được không ạ?",
+              "translationByNative": {
+                "vi": "Làm sashimi giúp tôi được không ạ?",
+                "en": "Could you make it into sashimi for me?",
+                "ja": "お造りにしていただけますか。"
+              },
+              "speechText": "おつくりにしていただけますか。"
+            }
+          },
+          {
+            "term": "汁（じる）",
+            "reading": "じる",
+            "speechText": "じる",
+            "meaning": "Canh, nước dùng.",
+            "meaningByNative": {
+              "vi": "Canh, nước dùng.",
+              "en": "Soup, broth.",
+              "ja": "汁、スープ。"
+            },
+            "register": "",
+            "example": {
+              "text": "アラ汁（じる）にしようと思（おも）います。",
+              "reading": "あらじるにしようとおもいます。",
+              "translation": "Tôi định nấu canh xương cá.",
+              "translationByNative": {
+                "vi": "Tôi định nấu canh xương cá.",
+                "en": "I'm planning to make fish bone soup.",
+                "ja": "アラ汁にしようと思います。"
+              },
+              "speechText": "あらじるにしようとおもいます。"
+            }
+          },
+          {
+            "term": "思（おも）い",
+            "reading": "おもい",
+            "speechText": "おもい",
+            "meaning": "Nghĩ, định (trong 思います = tôi nghĩ/tôi định).",
+            "meaningByNative": {
+              "vi": "Nghĩ, định (trong 思います = tôi nghĩ/tôi định).",
+              "en": "To think, to intend (in 思います = I think/I intend).",
+              "ja": "思う、つもりだ（思います＝そう考えている）。"
+            },
+            "register": "",
+            "example": {
+              "text": "アラ汁（じる）にしようと思（おも）います。",
+              "reading": "あらじるにしようとおもいます。",
+              "translation": "Tôi định nấu canh xương cá.",
+              "translationByNative": {
+                "vi": "Tôi định nấu canh xương cá.",
+                "en": "I'm planning to make fish bone soup.",
+                "ja": "アラ汁にしようと思います。"
+              },
+              "speechText": "あらじるにしようとおもいます。"
+            }
+          },
+          {
+            "term": "梅酒（うめしゅ）",
+            "reading": "うめしゅ",
+            "speechText": "うめしゅ",
+            "meaning": "Rượu mơ.",
+            "meaningByNative": {
+              "vi": "Rượu mơ.",
+              "en": "Plum wine.",
+              "ja": "梅酒。"
+            },
+            "register": "",
+            "example": {
+              "text": "梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+              "reading": "うめしゅづくりをてつだってくれませんか。",
+              "translation": "Giúp tôi làm rượu mơ được không?",
+              "translationByNative": {
+                "vi": "Giúp tôi làm rượu mơ được không?",
+                "en": "Could you help me make plum wine?",
+                "ja": "梅酒づくりを手伝ってくれませんか。"
+              },
+              "speechText": "うめしゅづくりをてつだってくれませんか。"
+            }
+          },
+          {
+            "term": "づくり",
+            "reading": "づくり",
+            "speechText": "づくり",
+            "meaning": "Việc làm/chế biến ra (hậu tố ghép sau danh từ, như 梅酒づくり = làm rượu mơ).",
+            "meaningByNative": {
+              "vi": "Việc làm/chế biến ra (hậu tố ghép sau danh từ, như 梅酒づくり = làm rượu mơ).",
+              "en": "Making/producing (a suffix attached after a noun, as in 梅酒づくり = making plum wine).",
+              "ja": "作ること（名詞の後に付く接尾語、梅酒づくり＝梅酒を作ること）。"
+            },
+            "register": "",
+            "example": {
+              "text": "梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか。",
+              "reading": "うめしゅづくりをてつだってくれませんか。",
+              "translation": "Giúp tôi làm rượu mơ được không?",
+              "translationByNative": {
+                "vi": "Giúp tôi làm rượu mơ được không?",
+                "en": "Could you help me make plum wine?",
+                "ja": "梅酒づくりを手伝ってくれませんか。"
+              },
+              "speechText": "うめしゅづくりをてつだってくれませんか。"
+            }
+          },
+          {
+            "term": "ば",
+            "reading": "ば",
+            "speechText": "ば",
+            "meaning": "Nếu... thì (thể giả định).",
+            "meaningByNative": {
+              "vi": "Nếu... thì (thể giả định).",
+              "en": "If... then (conditional form).",
+              "ja": "もし～なら（仮定形）。"
+            },
+            "register": "",
+            "example": {
+              "text": "なにをすればよいのですか。",
+              "reading": "なにをすればよいのですか。",
+              "translation": "Tôi nên làm gì vậy?",
+              "translationByNative": {
+                "vi": "Tôi nên làm gì vậy?",
+                "en": "What should I do?",
+                "ja": "何をすればよいのですか。"
+              },
+              "speechText": "なにをすればよいのですか。"
+            }
+          }
+        ],
+        "dialogueGroups": [
+          {
+            "id": "favor-polite",
+            "title": "Lịch sự — nhờ mượn CD",
+            "titleByNative": {
+              "vi": "Lịch sự — nhờ mượn CD",
+              "en": "Polite — asking to borrow a CD",
+              "ja": "丁寧——CDを借りるお願い"
+            },
+            "situation": "Vai vế: hai người quen (đồng nghiệp/bạn), giữ thể lịch sự. 田中 muốn mượn đĩa CD từ 伊藤.",
+            "situationByNative": {
+              "vi": "Vai vế: hai người quen (đồng nghiệp/bạn), giữ thể lịch sự. 田中 muốn mượn đĩa CD từ 伊藤.",
+              "en": "Relationship: two acquaintances (colleagues/friends), keeping the polite register. 田中 wants to borrow a CD from 伊藤.",
+              "ja": "関係性：知人同士（同僚・友人）、丁寧体を保つ。田中さんは伊藤さんからCDを借りたいと思っています。"
+            },
+            "lines": [
+              {
+                "targetText": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+                "displayText": "この曲（きょく）なら、家（いえ）にCDがありますよ。",
+                "reading": "このきょくなら、いえにCDがありますよ。",
+                "speechText": "このきょくなら、いえにシーディーがありますよ",
+                "translationByNative": {
+                  "vi": "Bài này thì nhà tôi có đĩa CD đấy.",
+                  "en": "If it is this song, I have the CD at home.",
+                  "ja": "この曲なら、家にCDがありますよ。"
+                },
+                "translations": {
+                  "vi": "Bài này thì nhà tôi có đĩa CD đấy.",
+                  "en": "If it is this song, I have the CD at home.",
+                  "ja": "この曲なら、家にCDがありますよ。"
+                },
+                "meaningVi": "Bài này thì nhà tôi có đĩa CD đấy.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+                "displayText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+                "reading": "ほんとうですか？かしてもらえませんか？",
+                "speechText": "ほんとうですか かしてもらえませんか",
+                "translationByNative": {
+                  "vi": "Thật à? Cho tôi mượn được không?",
+                  "en": "Really? Could you lend it to me?",
+                  "ja": "本当ですか？貸してもらえませんか？"
+                },
+                "translations": {
+                  "vi": "Thật à? Cho tôi mượn được không?",
+                  "en": "Really? Could you lend it to me?",
+                  "ja": "本当ですか？貸してもらえませんか？"
+                },
+                "meaningVi": "Thật à? Cho tôi mượn được không?",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
+              {
+                "targetText": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+                "displayText": "よいですよ。明日（あした）、CDを持（も）ってきますね。",
+                "reading": "よいですよ。あした、CDをもってきますね。",
+                "speechText": "よいですよ あした シーディーをもってきますね",
+                "translationByNative": {
+                  "vi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+                  "en": "Sure. I'll bring the CD tomorrow.",
+                  "ja": "よいですよ。明日、CDを持ってきますね。"
+                },
+                "translations": {
+                  "vi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+                  "en": "Sure. I'll bring the CD tomorrow.",
+                  "ja": "よいですよ。明日、CDを持ってきますね。"
+                },
+                "meaningVi": "Được thôi. Mai tôi mang đĩa CD tới nhé.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "ありがとうございます。助（たす）かります。",
+                "displayText": "ありがとうございます。助（たす）かります。",
+                "reading": "ありがとうございます。たすかります。",
+                "speechText": "ありがとうございます たすかります",
+                "translationByNative": {
+                  "vi": "Cảm ơn bạn. Giúp mình nhiều lắm.",
+                  "en": "Thank you. That helps me a lot.",
+                  "ja": "ありがとうございます。助かります。"
+                },
+                "translations": {
+                  "vi": "Cảm ơn bạn. Giúp mình nhiều lắm.",
+                  "en": "Thank you. That helps me a lot.",
+                  "ja": "ありがとうございます。助かります。"
+                },
+                "meaningVi": "Cảm ơn bạn. Giúp mình nhiều lắm.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              }
+            ],
+            "explanation": [
+              "貸してもらえませんか dùng để nhờ vả lịch sự — hợp với quan hệ đồng nghiệp/bạn bè chưa quá thân.",
+              "助かります là câu cảm ơn khi được giúp — đã học ở bài trước (m02-u1-l1), tái dùng ở đây để đáp lại lời nhờ được đồng ý."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "貸してもらえませんか dùng để nhờ vả lịch sự — hợp với quan hệ đồng nghiệp/bạn bè chưa quá thân.",
+                "助かります là câu cảm ơn khi được giúp — đã học ở bài trước (m02-u1-l1), tái dùng ở đây để đáp lại lời nhờ được đồng ý."
+              ],
+              "en": [
+                "貸してもらえませんか is used to ask a favor politely — fitting for colleagues/friends who are not extremely close.",
+                "助かります is a thank-you phrase for being helped — learned in the previous lesson (m02-u1-l1), reused here to respond after a favor is granted."
+              ],
+              "ja": [
+                "貸してもらえませんかは丁寧にお願いする表現——あまり親しくない同僚・友人に合います。",
+                "助かりますは助けてもらった時のお礼の言葉——前のレッスン（m02-u1-l1）で学んだ表現を、お願いが受け入れられた後の返事として再利用しています。"
+              ]
+            }
+          },
+          {
+            "id": "favor-very-polite",
+            "title": "Rất lịch sự — nhờ nhân viên cửa hàng cá",
+            "titleByNative": {
+              "vi": "Rất lịch sự — nhờ nhân viên cửa hàng cá",
+              "en": "Very polite — asking a fishmonger for a favor",
+              "ja": "とても丁寧——魚屋の店員へのお願い"
+            },
+            "situation": "Vai vế: khách và nhân viên cửa hàng cá, chưa quen biết — cả hai giữ thể rất lịch sự. Khách nhờ nhân viên làm sashimi.",
+            "situationByNative": {
+              "vi": "Vai vế: khách và nhân viên cửa hàng cá, chưa quen biết — cả hai giữ thể rất lịch sự. Khách nhờ nhân viên làm sashimi.",
+              "en": "Relationship: a customer and a fishmonger, not previously acquainted — both keep the very polite register. The customer asks the staff to make sashimi.",
+              "ja": "関係性：客と魚屋の店員、初対面——両方ともとても丁寧な言葉遣いを保つ。客は店員に刺身にしてもらうようお願いします。"
+            },
+            "lines": [
+              {
+                "targetText": "お造（つく）りにしていただけますか？",
+                "displayText": "お造（つく）りにしていただけますか？",
+                "reading": "おつくりにしていただけますか？",
+                "speechText": "おつくりにしていただけますか",
+                "translationByNative": {
+                  "vi": "Làm sashimi giúp tôi được không ạ?",
+                  "en": "Could you make it into sashimi for me?",
+                  "ja": "お造りにしていただけますか。"
+                },
+                "translations": {
+                  "vi": "Làm sashimi giúp tôi được không ạ?",
+                  "en": "Could you make it into sashimi for me?",
+                  "ja": "お造りにしていただけますか。"
+                },
+                "meaningVi": "Làm sashimi giúp tôi được không ạ?",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "はい。アラはどうしますか？",
+                "displayText": "はい。アラはどうしますか？",
+                "reading": "はい。あらはどうしますか？",
+                "speechText": "はい あらはどうしますか",
+                "translationByNative": {
+                  "vi": "Vâng. Phần xương thì làm sao ạ?",
+                  "en": "Understood. What should we do with the bones?",
+                  "ja": "かしこまりました。アラはどうしますか。"
+                },
+                "translations": {
+                  "vi": "Vâng. Phần xương thì làm sao ạ?",
+                  "en": "Understood. What should we do with the bones?",
+                  "ja": "かしこまりました。アラはどうしますか。"
+                },
+                "meaningVi": "Vâng. Phần xương thì làm sao ạ?",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
+              {
+                "targetText": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+                "displayText": "アラも付（つ）けてください。アラ汁（じる）にしようと思（おも）います。",
+                "reading": "あらもつけてください。あらじるにしようとおもいます。",
+                "speechText": "あらもつけてください あらじるにしようとおもいます",
+                "translationByNative": {
+                  "vi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+                  "en": "Please add the fish bones too. I'm planning to make fish bone soup.",
+                  "ja": "アラも付けてください。アラ汁にしようと思います。"
+                },
+                "translations": {
+                  "vi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+                  "en": "Please add the fish bones too. I'm planning to make fish bone soup.",
+                  "ja": "アラも付けてください。アラ汁にしようと思います。"
+                },
+                "meaningVi": "Xin thêm cả phần xương vào. Tôi định nấu canh xương cá.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "かしこまりました。",
+                "displayText": "かしこまりました。",
+                "reading": "かしこまりました。",
+                "speechText": "かしこまりました",
+                "translationByNative": {
+                  "vi": "Vâng ạ, tôi hiểu rồi.",
+                  "en": "Certainly, understood.",
+                  "ja": "かしこまりました。"
+                },
+                "translations": {
+                  "vi": "Vâng ạ, tôi hiểu rồi.",
+                  "en": "Certainly, understood.",
+                  "ja": "かしこまりました。"
+                },
+                "meaningVi": "Vâng ạ, tôi hiểu rồi.",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              }
+            ],
+            "explanation": [
+              "お造りにしていただけますか rất lịch sự — hợp với quan hệ khách hàng/nhân viên chưa quen biết.",
+              "かしこまりました là cách nhân viên đồng ý một cách rất lịch sự — mức lịch sự cao nhất trong ba cách đồng ý giúp đã học ở bài này."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "お造りにしていただけますか rất lịch sự — hợp với quan hệ khách hàng/nhân viên chưa quen biết.",
+                "かしこまりました là cách nhân viên đồng ý một cách rất lịch sự — mức lịch sự cao nhất trong ba cách đồng ý giúp đã học ở bài này."
+              ],
+              "en": [
+                "お造りにしていただけますか is very polite — fitting for a customer/staff relationship between strangers.",
+                "かしこまりました is how the staff agrees very politely — the most polite of the three ways to agree to help learned in this lesson."
+              ],
+              "ja": [
+                "お造りにしていただけますかはとても丁寧——初対面の客と店員の関係に合います。",
+                "かしこまりましたは店員がとても丁寧に承諾する言い方——このレッスンで学んだ三つの承諾の言い方の中で最も丁寧です。"
+              ]
+            }
+          },
+          {
+            "id": "favor-casual",
+            "title": "Thân mật — nhờ bạn giúp làm rượu mơ",
+            "titleByNative": {
+              "vi": "Thân mật — nhờ bạn giúp làm rượu mơ",
+              "en": "Casual — asking a friend to help make plum wine",
+              "ja": "気軽——梅酒作りを手伝ってもらうお願い"
+            },
+            "situation": "Vai vế: hai người bạn thân — thân mật. 佐藤 nhờ 伊藤 giúp làm rượu mơ.",
+            "situationByNative": {
+              "vi": "Vai vế: hai người bạn thân — thân mật. 佐藤 nhờ 伊藤 giúp làm rượu mơ.",
+              "en": "Relationship: two close friends — casual. 佐藤 asks 伊藤 to help make plum wine.",
+              "ja": "関係性：親しい友人同士——気軽。佐藤さんは伊藤さんに梅酒作りを手伝ってもらうようお願いします。"
+            },
+            "lines": [
+              {
+                "targetText": "今日（きょう）は暇（ひま）ですか？",
+                "displayText": "今日（きょう）は暇（ひま）ですか？",
+                "reading": "きょうはひまですか？",
+                "speechText": "きょうはひまですか",
+                "translationByNative": {
+                  "vi": "Hôm nay bạn rảnh không?",
+                  "en": "Are you free today?",
+                  "ja": "今日は暇ですか。"
+                },
+                "translations": {
+                  "vi": "Hôm nay bạn rảnh không?",
+                  "en": "Are you free today?",
+                  "ja": "今日は暇ですか。"
+                },
+                "meaningVi": "Hôm nay bạn rảnh không?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "休（やす）みですから暇（ひま）ですよ。",
+                "displayText": "休（やす）みですから暇（ひま）ですよ。",
+                "reading": "やすみですからひまですよ。",
+                "speechText": "やすみですから ひまですよ",
+                "translationByNative": {
+                  "vi": "Tôi nghỉ nên rảnh đấy.",
+                  "en": "I'm off work, so I'm free.",
+                  "ja": "休みですから暇ですよ。"
+                },
+                "translations": {
+                  "vi": "Tôi nghỉ nên rảnh đấy.",
+                  "en": "I'm off work, so I'm free.",
+                  "ja": "休みですから暇ですよ。"
+                },
+                "meaningVi": "Tôi nghỉ nên rảnh đấy.",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              },
+              {
+                "targetText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+                "displayText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+                "reading": "では、うめしゅづくりをてつだってくれませんか？",
+                "speechText": "では うめしゅづくりを てつだってくれませんか",
+                "translationByNative": {
+                  "vi": "Vậy giúp tôi làm rượu mơ được không?",
+                  "en": "So, could you help me make plum wine?",
+                  "ja": "では、梅酒づくりを手伝ってくれませんか。"
+                },
+                "translations": {
+                  "vi": "Vậy giúp tôi làm rượu mơ được không?",
+                  "en": "So, could you help me make plum wine?",
+                  "ja": "では、梅酒づくりを手伝ってくれませんか。"
+                },
+                "meaningVi": "Vậy giúp tôi làm rượu mơ được không?",
+                "audioLocale": "ja-JP",
+                "speakerId": "sato"
+              },
+              {
+                "targetText": "もちろんです。なにをすればよいのですか？",
+                "displayText": "もちろんです。なにをすればよいのですか？",
+                "reading": "もちろんです。なにをすればよいのですか？",
+                "speechText": "もちろんです なにをすればよいのですか",
+                "translationByNative": {
+                  "vi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+                  "en": "Of course. What should I do?",
+                  "ja": "もちろんです。何をすればよいのですか。"
+                },
+                "translations": {
+                  "vi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+                  "en": "Of course. What should I do?",
+                  "ja": "もちろんです。何をすればよいのですか。"
+                },
+                "meaningVi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+                "audioLocale": "ja-JP",
+                "speakerId": "ito"
+              }
+            ],
+            "explanation": [
+              "手伝ってくれませんか (thân mật) khác 手伝っていただけますか (rất lịch sự, dùng ở nhóm trước) — bạn bè thân mật thì dùng thể ngắn gọn hơn."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "手伝ってくれませんか (thân mật) khác 手伝っていただけますか (rất lịch sự, dùng ở nhóm trước) — bạn bè thân mật thì dùng thể ngắn gọn hơn."
+              ],
+              "en": [
+                "手伝ってくれませんか (casual) differs from 手伝っていただけますか (very polite, used in the earlier group) — close friends use the shorter, casual form."
+              ],
+              "ja": [
+                "手伝ってくれませんか（気軽）は手伝っていただけますか（とても丁寧、前のグループで使用）とは異なります——親しい友人には短い気軽な形を使います。"
+              ]
+            }
+          }
+        ],
+        "grammarPatterns": [
+          {
+            "title": "てもらえませんか ↔ ていただけますか ↔ てくれませんか",
+            "formula": "［どうしのてけい］＋ もらえませんか ／ いただけますか ／ くれませんか",
+            "formulaReading": "［どうしのてけい］＋ もらえませんか ／ いただけますか ／ くれませんか",
+            "meaning": "Cùng ý nhờ vả, ba mức lịch sự khác nhau.",
+            "meaningByNative": {
+              "vi": "Cùng ý nhờ vả, ba mức lịch sự khác nhau.",
+              "en": "Same meaning of asking a favor, three different politeness levels.",
+              "ja": "お願いするという同じ意味で、丁寧さが三段階違います。"
+            },
+            "examples": [
+              {
+                "text": "貸（か）してもらえませんか。",
+                "reading": "かしてもらえませんか。",
+                "translation": "Cho tôi mượn được không?",
+                "translationByNative": {
+                  "vi": "Cho tôi mượn được không?",
+                  "en": "Could you lend it to me?",
+                  "ja": "貸してもらえませんか。"
+                },
+                "speechText": "かしてもらえませんか。"
+              },
+              {
+                "text": "お造（つく）りにしていただけますか。",
+                "reading": "おつくりにしていただけますか。",
+                "translation": "Làm sashimi giúp tôi được không ạ?",
+                "translationByNative": {
+                  "vi": "Làm sashimi giúp tôi được không ạ?",
+                  "en": "Could you make it into sashimi for me?",
+                  "ja": "お造りにしていただけますか。"
+                },
+                "speechText": "おつくりにしていただけますか。"
+              },
+              {
+                "text": "手伝（てつだ）ってくれませんか。",
+                "reading": "てつだってくれませんか。",
+                "translation": "Giúp tôi được không?",
+                "translationByNative": {
+                  "vi": "Giúp tôi được không?",
+                  "en": "Could you help me?",
+                  "ja": "手伝ってくれませんか。"
+                },
+                "speechText": "てつだってくれませんか。"
+              }
+            ],
+            "explanation": [
+              "てくれませんか dùng với bạn bè/người thân; てもらえませんか dùng khi cần lịch sự; ていただけますか lịch sự nhất, hay dùng với người lạ/khách hàng/cấp trên."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "てくれませんか dùng với bạn bè/người thân; てもらえませんか dùng khi cần lịch sự; ていただけますか lịch sự nhất, hay dùng với người lạ/khách hàng/cấp trên."
+              ],
+              "en": [
+                "てくれませんか is used with friends/family; てもらえませんか is used when politeness is needed; ていただけますか is the most polite, often used with strangers/customers/superiors."
+              ],
+              "ja": [
+                "てくれませんかは友人・家族に、てもらえませんかは丁寧さが必要な時に、ていただけますかは最も丁寧で初対面の人・客・目上の人によく使います。"
+              ]
+            }
+          },
+          {
+            "title": "～てくれる (đứng riêng, ai đó làm gì cho mình)",
+            "titleByNative": {
+              "vi": "～てくれる (đứng riêng, ai đó làm gì cho mình)",
+              "en": "～てくれる (standalone, someone does something for you)",
+              "ja": "～てくれる（単独、誰かが自分のために何かをする）"
+            },
+            "formula": "［người khác］が＋［động từ thể て］＋ くれる",
+            "formulaByNative": {
+              "vi": "［người khác］が＋［động từ thể て］＋ くれる",
+              "en": "［someone else］が＋［verb て-form］＋ くれる",
+              "ja": "［他の人］が＋［動詞のて形］＋ くれる"
+            },
+            "formulaReading": "［ひと］が＋［どうしのてけい］＋ くれる",
+            "meaning": "Ai đó làm một việc gì đó cho mình (câu kể, không phải câu hỏi).",
+            "meaningByNative": {
+              "vi": "Ai đó làm một việc gì đó cho mình (câu kể, không phải câu hỏi).",
+              "en": "Someone does something for you (a statement, not a question).",
+              "ja": "誰かが自分のために何かをする（質問ではなく叙述文）。"
+            },
+            "examples": [
+              {
+                "text": "母（はは）がお弁当（べんとう）を作（つく）ってくれた。",
+                "reading": "ははがおべんとうをつくってくれた。",
+                "translation": "Mẹ đã làm cơm hộp cho tôi.",
+                "translationByNative": {
+                  "vi": "Mẹ đã làm cơm hộp cho tôi.",
+                  "en": "My mother made a bento box for me.",
+                  "ja": "母がお弁当を作ってくれた。"
+                },
+                "speechText": "ははがおべんとうをつくってくれた。"
+              },
+              {
+                "text": "友達（ともだち）が買（か）い物（もの）をしてくれました。",
+                "reading": "ともだちがかいものをしてくれました。",
+                "translation": "Bạn tôi đã đi chợ giúp tôi.",
+                "translationByNative": {
+                  "vi": "Bạn tôi đã đi chợ giúp tôi.",
+                  "en": "My friend went shopping for me.",
+                  "ja": "友達が買い物をしてくれました。"
+                },
+                "speechText": "ともだちがかいものをしてくれました。"
+              }
+            ],
+            "explanation": [
+              "Đây là câu KỂ về việc ai đó làm giúp mình — khác với てくれませんか, vốn là câu HỎI để nhờ vả."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Đây là câu KỂ về việc ai đó làm giúp mình — khác với てくれませんか, vốn là câu HỎI để nhờ vả."
+              ],
+              "en": [
+                "This is a STATEMENT about someone doing something to help you — different from てくれませんか, which is a QUESTION used to ask a favor."
+              ],
+              "ja": [
+                "これは誰かが助けてくれたことについての叙述文——お願いするための疑問文てくれませんかとは異なります。"
+              ]
+            }
+          },
+          {
+            "title": "かしこまりました ↔ 了解しました ↔ よいですよ",
+            "titleByNative": {
+              "vi": "かしこまりました ↔ 了解しました ↔ よいですよ",
+              "en": "かしこまりました ↔ 了解しました ↔ よいですよ",
+              "ja": "かしこまりました ↔ 了解しました ↔ よいですよ"
+            },
+            "formula": "かしこまりました ／ 了解（りょうかい）しました ／ よいですよ",
+            "formulaReading": "かしこまりました ／ りょうかいしました ／ よいですよ",
+            "meaning": "Ba cách đồng ý giúp, cùng ý nghĩa chấp thuận.",
+            "meaningByNative": {
+              "vi": "Ba cách đồng ý giúp, cùng ý nghĩa chấp thuận.",
+              "en": "Three ways to agree to help, all meaning acceptance.",
+              "ja": "手伝うことに同意する三つの言い方、同じ承諾の意味。"
+            },
+            "examples": [
+              {
+                "text": "かしこまりました。",
+                "reading": "かしこまりました。",
+                "translation": "Vâng ạ, tôi hiểu rồi.",
+                "translationByNative": {
+                  "vi": "Vâng ạ, tôi hiểu rồi.",
+                  "en": "Certainly, understood.",
+                  "ja": "かしこまりました。"
+                },
+                "speechText": "かしこまりました。"
+              },
+              {
+                "text": "了解（りょうかい）しました。",
+                "reading": "りょうかいしました。",
+                "translation": "Được, tôi hiểu rồi.",
+                "translationByNative": {
+                  "vi": "Được, tôi hiểu rồi.",
+                  "en": "Got it, understood.",
+                  "ja": "了解しました。"
+                },
+                "speechText": "りょうかいしました。"
+              },
+              {
+                "text": "よいですよ。",
+                "reading": "よいですよ。",
+                "translation": "Được đấy.",
+                "translationByNative": {
+                  "vi": "Được đấy.",
+                  "en": "Sure.",
+                  "ja": "よいですよ。"
+                },
+                "speechText": "よいですよ。"
+              }
+            ],
+            "explanation": [
+              "Cả ba đều đáp 'được' cho một lời nhờ vả — かしこまりました rất lịch sự (dịch vụ), 了解しました thân mật/thông thường hơn, よいですよ trung tính."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "Cả ba đều đáp 'được' cho một lời nhờ vả — かしこまりました rất lịch sự (dịch vụ), 了解しました thân mật/thông thường hơn, よいですよ trung tính."
+              ],
+              "en": [
+                "All three agree to a request — かしこまりました is very polite (service context), 了解しました is more casual/ordinary, よいですよ is neutral."
+              ],
+              "ja": [
+                "三つとも依頼を引き受ける言葉です——かしこまりましたはとても丁寧（接客場面）、了解しましたはより気軽・普通、よいですよは中立です。"
+              ]
+            }
+          },
+          {
+            "title": "本当ですか (đứng riêng, phản ứng ngạc nhiên)",
+            "titleByNative": {
+              "vi": "本当ですか (đứng riêng, phản ứng ngạc nhiên)",
+              "en": "本当ですか (standalone, a surprised reaction)",
+              "ja": "本当ですか（単独、驚きの反応）"
+            },
+            "formula": "本当（ほんとう）ですか",
+            "formulaReading": "ほんとうですか",
+            "meaning": "Phản ứng khi nghe một tin bất ngờ/vui, xác nhận lại.",
+            "meaningByNative": {
+              "vi": "Phản ứng khi nghe một tin bất ngờ/vui, xác nhận lại.",
+              "en": "A reaction to hearing surprising/happy news, confirming it.",
+              "ja": "驚き・うれしい知らせを聞いた時の反応、確認する。"
+            },
+            "examples": [
+              {
+                "text": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+                "reading": "ほんとうですか？かしてもらえませんか？",
+                "translation": "Thật à? Cho tôi mượn được không?",
+                "translationByNative": {
+                  "vi": "Thật à? Cho tôi mượn được không?",
+                  "en": "Really? Could you lend it to me?",
+                  "ja": "本当ですか？貸してもらえませんか？"
+                },
+                "speechText": "ほんとうですか？かしてもらえませんか？"
+              }
+            ],
+            "explanation": [
+              "本当ですか thường đứng ở đầu câu, trước khi nói tiếp — không phải câu nhờ vả hay xin lỗi."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "本当ですか thường đứng ở đầu câu, trước khi nói tiếp — không phải câu nhờ vả hay xin lỗi."
+              ],
+              "en": [
+                "本当ですか usually stands at the start of a sentence, before continuing — it is not a request or an apology."
+              ],
+              "ja": [
+                "本当ですかは通常文の初めに置かれ、その後に続けます——お願いや謝罪の言葉ではありません。"
+              ]
+            }
+          },
+          {
+            "title": "お願いします (đứng riêng, nhờ vả ngắn gọn)",
+            "titleByNative": {
+              "vi": "お願いします (đứng riêng, nhờ vả ngắn gọn)",
+              "en": "お願いします (standalone, a brief request)",
+              "ja": "お願いします（単独、簡潔なお願い）"
+            },
+            "formula": "お願（ねが）いします",
+            "formulaReading": "おねがいします",
+            "meaning": "Câu nhờ vả ngắn gọn, hay đi kèm hoặc kết thúc một lượt nhờ.",
+            "meaningByNative": {
+              "vi": "Câu nhờ vả ngắn gọn, hay đi kèm hoặc kết thúc một lượt nhờ.",
+              "en": "A brief request phrase, often accompanying or closing a request turn.",
+              "ja": "簡潔なお願いの言葉、お願いの発話に添えたり締めくくったりします。"
+            },
+            "examples": [
+              {
+                "text": "お願（ねが）いします。",
+                "reading": "おねがいします。",
+                "translation": "Xin nhờ nhé.",
+                "translationByNative": {
+                  "vi": "Xin nhờ nhé.",
+                  "en": "Please.",
+                  "ja": "お願いします。"
+                },
+                "speechText": "おねがいします。"
+              }
+            ],
+            "explanation": [
+              "お願いします không nêu rõ việc nhờ là gì — thường dùng SAU khi đã nói rõ việc cần nhờ, hoặc khi ngữ cảnh đã đủ rõ."
+            ],
+            "explanationByNative": {
+              "vi": [
+                "お願いします không nêu rõ việc nhờ là gì — thường dùng SAU khi đã nói rõ việc cần nhờ, hoặc khi ngữ cảnh đã đủ rõ."
+              ],
+              "en": [
+                "お願いします does not specify what the favor is — usually used AFTER the request has already been stated, or when the context is already clear."
+              ],
+              "ja": [
+                "お願いしますは何を頼むのか明示しません——通常、お願いの内容を述べた後、または文脈が十分に明らかな時に使います。"
+              ]
+            }
+          }
+        ],
+        "practice": {
+          "title": "Bài tập",
+          "titleByNative": {
+            "vi": "Bài tập",
+            "en": "Exercises",
+            "ja": "練習"
+          },
+          "japaneseTitle": "練習（れんしゅう）",
+          "totalQuestions": 14,
+          "estimatedMinutes": "Khoảng 8–10 phút",
+          "estimatedMinutesByNative": {
+            "vi": "Khoảng 8–10 phút",
+            "en": "About 8–10 minutes",
+            "ja": "約8〜10分"
+          },
+          "reviewTopics": "Từ vựng · Hội thoại · Ngữ pháp",
+          "reviewTopicsByNative": {
+            "vi": "Từ vựng · Hội thoại · Ngữ pháp",
+            "en": "Vocabulary · Dialogue · Grammar",
+            "ja": "語彙・会話・文法"
+          },
+          "groups": [
+            {
+              "id": "free",
+              "number": "01",
+              "title": "Luyện tập cơ bản",
+              "titleByNative": {
+                "vi": "Luyện tập cơ bản",
+                "en": "Basic practice",
+                "ja": "基本練習"
+              },
+              "range": "Câu 1–9",
+              "rangeByNative": {
+                "vi": "Câu 1–9",
+                "en": "Questions 1–9",
+                "ja": "問題1〜9"
+              },
+              "details": "Từ vựng · Nghe · Ngữ pháp\nHội thoại",
+              "detailsByNative": {
+                "vi": "Từ vựng · Nghe · Ngữ pháp\nHội thoại",
+                "en": "Vocabulary · Listening · Grammar\nDialogue",
+                "ja": "語彙・リスニング・文法\n会話"
+              },
+              "start": 1,
+              "end": 9,
+              "plan": "free"
+            },
+            {
+              "id": "plus",
+              "number": "02",
+              "title": "Luyện tập nâng cao",
+              "titleByNative": {
+                "vi": "Luyện tập nâng cao",
+                "en": "Advanced practice",
+                "ja": "応用練習"
+              },
+              "range": "Câu 10–14",
+              "rangeByNative": {
+                "vi": "Câu 10–14",
+                "en": "Questions 10–14",
+                "ja": "問題10〜14"
+              },
+              "details": "Tình huống thực tế\nHội thoại thực hành nâng cao",
+              "detailsByNative": {
+                "vi": "Tình huống thực tế\nHội thoại thực hành nâng cao",
+                "en": "Real-world situations\nAdvanced practice dialogue",
+                "ja": "実際の場面\n応用会話練習"
+              },
+              "start": 10,
+              "end": 14,
+              "plan": "plus"
+            }
+          ],
+          "exercises": [
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-1",
+              "order": 1,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Bạn muốn mượn một cuốn sách của đồng nghiệp, lịch sự.",
+              "contextByNative": {
+                "vi": "Bạn muốn mượn một cuốn sách của đồng nghiệp, lịch sự.",
+                "en": "You want to borrow a book from a colleague, politely.",
+                "ja": "同僚から本を借りたい、丁寧に。"
+              },
+              "prompt": "Bạn muốn mượn một cuốn sách của đồng nghiệp, lịch sự. Nói gì?",
+              "promptByNative": {
+                "vi": "Bạn muốn mượn một cuốn sách của đồng nghiệp, lịch sự. Nói gì?",
+                "en": "You want to borrow a book from a colleague, politely. What do you say?",
+                "ja": "同僚から本を借りたい、丁寧に。何と言いますか？"
+              },
+              "options": [
+                {
+                  "id": "temo_moraemasenka",
+                  "text": "貸（か）してもらえませんか。",
+                  "canonicalText": "貸してもらえませんか。",
+                  "audioText": "貸してもらえませんか。"
+                },
+                {
+                  "id": "teitadakemasuka",
+                  "text": "貸（か）していただけますか。",
+                  "canonicalText": "貸していただけますか。",
+                  "audioText": "貸していただけますか。"
+                },
+                {
+                  "id": "tekuremasenka",
+                  "text": "貸（か）してくれませんか。",
+                  "canonicalText": "貸してくれませんか。",
+                  "audioText": "貸してくれませんか。"
+                },
+                {
+                  "id": "onegai",
+                  "text": "お願（ねが）いします。",
+                  "canonicalText": "お願いします。",
+                  "audioText": "お願いします。"
+                }
+              ],
+              "correctOptionId": "temo_moraemasenka",
+              "feedback": {
+                "correctAnswer": "貸してもらえませんか。",
+                "canonicalAnswer": "貸してもらえませんか。",
+                "audioText": "かしてもらえませんか",
+                "explanation": "～てもらえませんか đúng mức lịch sự với đồng nghiệp. ～ていただけますか lịch sự hơn mức cần. ～てくれませんか là thể thân mật. お願いします đứng riêng không nêu rõ việc nhờ là gì.",
+                "explanationByNative": {
+                  "vi": "～てもらえませんか đúng mức lịch sự với đồng nghiệp. ～ていただけますか lịch sự hơn mức cần. ～てくれませんか là thể thân mật. お願いします đứng riêng không nêu rõ việc nhờ là gì.",
+                  "en": "～てもらえませんか is the right politeness level with a colleague. ～ていただけますか is more polite than needed. ～てくれませんか is casual. お願いします alone does not specify what the favor is.",
+                  "ja": "～てもらえませんかは同僚にちょうど良い丁寧さです。～ていただけますかは必要以上に丁寧です。～てくれませんかは気軽な形です。お願いしますは単独では何を頼むのか明示しません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-2",
+              "order": 2,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Một người bạn thân. Bạn nhờ bạn ấy giúp một việc nhỏ, thân mật.",
+              "contextByNative": {
+                "vi": "Một người bạn thân. Bạn nhờ bạn ấy giúp một việc nhỏ, thân mật.",
+                "en": "A close friend. You ask them to help with a small favor, casually.",
+                "ja": "親しい友人。ちょっとしたことを気軽に手伝ってもらいます。"
+              },
+              "prompt": "Một người bạn thân. Bạn nhờ bạn ấy giúp một việc nhỏ, thân mật. Nói gì?",
+              "promptByNative": {
+                "vi": "Một người bạn thân. Bạn nhờ bạn ấy giúp một việc nhỏ, thân mật. Nói gì?",
+                "en": "A close friend. You ask them to help with a small favor, casually. What do you say?",
+                "ja": "親しい友人。ちょっとしたことを気軽に手伝ってもらいます。何と言いますか？"
+              },
+              "options": [
+                {
+                  "id": "tekuremasenka",
+                  "text": "手伝（てつだ）ってくれませんか。",
+                  "canonicalText": "手伝ってくれませんか。",
+                  "audioText": "手伝ってくれませんか。"
+                },
+                {
+                  "id": "temo_moraemasenka",
+                  "text": "手伝（てつだ）ってもらえませんか。",
+                  "canonicalText": "手伝ってもらえませんか。",
+                  "audioText": "手伝ってもらえませんか。"
+                },
+                {
+                  "id": "teitadakemasuka",
+                  "text": "手伝（てつだ）っていただけますか。",
+                  "canonicalText": "手伝っていただけますか。",
+                  "audioText": "手伝っていただけますか。"
+                },
+                {
+                  "id": "kashikomarimashita",
+                  "text": "かしこまりました。",
+                  "canonicalText": "かしこまりました。",
+                  "audioText": "かしこまりました。"
+                }
+              ],
+              "correctOptionId": "tekuremasenka",
+              "feedback": {
+                "correctAnswer": "手伝ってくれませんか。",
+                "canonicalAnswer": "手伝ってくれませんか。",
+                "audioText": "てつだってくれませんか",
+                "explanation": "Với bạn thân dùng thể thân mật ～てくれませんか. ～てもらえませんか／～ていただけますか đều lịch sự hơn mức cần. かしこまりました là câu người ĐƯỢC nhờ nói, không phải câu đi nhờ.",
+                "explanationByNative": {
+                  "vi": "Với bạn thân dùng thể thân mật ～てくれませんか. ～てもらえませんか／～ていただけますか đều lịch sự hơn mức cần. かしこまりました là câu người ĐƯỢC nhờ nói, không phải câu đi nhờ.",
+                  "en": "With a close friend, use the casual form ～てくれませんか. ～てもらえませんか／～ていただけますか are both more polite than needed. かしこまりました is what the PERSON BEING ASKED says, not the requester.",
+                  "ja": "親しい友人には気軽な形～てくれませんかを使います。～てもらえませんか／～ていただけますかはどちらも必要以上に丁寧です。かしこまりましたは頼まれた人が言う言葉で、頼む人の言葉ではありません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-3",
+              "order": 3,
+              "plan": "free",
+              "type": "matching",
+              "prompt": "Nối mỗi câu với mức lịch sự của nó.",
+              "promptByNative": {
+                "vi": "Nối mỗi câu với mức lịch sự của nó.",
+                "en": "Match each sentence with its politeness level.",
+                "ja": "それぞれの文をその丁寧さのレベルと結び付けてください。"
+              },
+              "pairs": [
+                {
+                  "id": "teitadakemasuka",
+                  "left": {
+                    "id": "teitadakemasuka_l",
+                    "text": "ていただけますか"
+                  },
+                  "right": {
+                    "id": "teitadakemasuka_r",
+                    "text": "Nhờ vả — rất lịch sự",
+                    "textByNative": {
+                      "vi": "Nhờ vả — rất lịch sự",
+                      "en": "Asking a favor — very polite",
+                      "ja": "お願い——とても丁寧"
+                    }
+                  }
+                },
+                {
+                  "id": "temo_moraemasenka",
+                  "left": {
+                    "id": "temo_moraemasenka_l",
+                    "text": "てもらえませんか"
+                  },
+                  "right": {
+                    "id": "temo_moraemasenka_r",
+                    "text": "Nhờ vả — lịch sự",
+                    "textByNative": {
+                      "vi": "Nhờ vả — lịch sự",
+                      "en": "Asking a favor — polite",
+                      "ja": "お願い——丁寧"
+                    }
+                  }
+                },
+                {
+                  "id": "tekuremasenka",
+                  "left": {
+                    "id": "tekuremasenka_l",
+                    "text": "てくれませんか"
+                  },
+                  "right": {
+                    "id": "tekuremasenka_r",
+                    "text": "Nhờ vả — thân mật",
+                    "textByNative": {
+                      "vi": "Nhờ vả — thân mật",
+                      "en": "Asking a favor — casual",
+                      "ja": "お願い——気軽"
+                    }
+                  }
+                },
+                {
+                  "id": "kashikomarimashita",
+                  "left": {
+                    "id": "kashikomarimashita_l",
+                    "text": "かしこまりました"
+                  },
+                  "right": {
+                    "id": "kashikomarimashita_r",
+                    "text": "Đồng ý giúp — rất lịch sự",
+                    "textByNative": {
+                      "vi": "Đồng ý giúp — rất lịch sự",
+                      "en": "Agreeing to help — very polite",
+                      "ja": "承諾——とても丁寧"
+                    }
+                  }
+                }
+              ],
+              "feedback": {
+                "explanation": "Cùng ý nhờ vả nhưng khác nhau ở mức lịch sự cần dùng theo đối tượng.",
+                "explanationByNative": {
+                  "vi": "Cùng ý nhờ vả nhưng khác nhau ở mức lịch sự cần dùng theo đối tượng.",
+                  "en": "Same meaning of asking a favor but differ in the politeness level needed for the listener.",
+                  "ja": "お願いするという同じ意味ですが、相手によって必要な丁寧さが違います。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-4",
+              "order": 4,
+              "plan": "free",
+              "type": "sentence_ordering",
+              "prompt": "Sắp xếp thành câu nhờ mượn đồ.",
+              "promptByNative": {
+                "vi": "Sắp xếp thành câu nhờ mượn đồ.",
+                "en": "Arrange into a sentence asking to borrow something.",
+                "ja": "物を借りるお願いの文に並べ替えてください。"
+              },
+              "tokens": [
+                {
+                  "id": "kore_wo",
+                  "text": "これを",
+                  "canonicalText": "これを",
+                  "audioText": "これを"
+                },
+                {
+                  "id": "kashite",
+                  "text": "貸（か）して",
+                  "canonicalText": "貸して",
+                  "audioText": "貸して"
+                },
+                {
+                  "id": "moraemasen",
+                  "text": "もらえません",
+                  "canonicalText": "もらえません",
+                  "audioText": "もらえません"
+                },
+                {
+                  "id": "ka",
+                  "text": "か",
+                  "canonicalText": "か",
+                  "audioText": "か"
+                }
+              ],
+              "correctTokenIds": [
+                "kore_wo",
+                "kashite",
+                "moraemasen",
+                "ka"
+              ],
+              "feedback": {
+                "correctAnswer": "これを貸してもらえませんか。",
+                "canonicalAnswer": "これを貸してもらえませんか。",
+                "audioText": "これをかしてもらえませんか",
+                "explanation": "貸して + もらえません + か → 貸してもらえませんか, câu nhờ vả lịch sự.",
+                "explanationByNative": {
+                  "vi": "貸して + もらえません + か → 貸してもらえませんか, câu nhờ vả lịch sự.",
+                  "en": "貸して + もらえません + か → 貸してもらえませんか, a polite request sentence.",
+                  "ja": "貸して + もらえません + か → 貸してもらえませんか、丁寧なお願いの文。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-5",
+              "order": 5,
+              "plan": "free",
+              "type": "dialogue_fill",
+              "context": "Hai người bạn thân: một người nhờ giúp một việc.",
+              "contextByNative": {
+                "vi": "Hai người bạn thân: một người nhờ giúp một việc.",
+                "en": "Two close friends: one asks the other for help.",
+                "ja": "親しい友人二人：一人がもう一人に手伝いを頼みます。"
+              },
+              "prompt": "Điền chỗ trống để hoàn thành hội thoại.",
+              "promptByNative": {
+                "vi": "Điền chỗ trống để hoàn thành hội thoại.",
+                "en": "Fill in the blank to complete the dialogue.",
+                "ja": "空欄を埋めて会話を完成させてください。"
+              },
+              "dialogue": [
+                "伊藤: 手伝（てつだ）ってくれない？",
+                "田中: {{slot_1}}。"
+              ],
+              "slots": [
+                {
+                  "id": "slot_1",
+                  "answerId": "yoi",
+                  "placeholder": "________"
+                }
+              ],
+              "wordBank": [
+                {
+                  "id": "yoi",
+                  "text": "いいよ",
+                  "canonicalText": "いいよ",
+                  "audioText": "いいよ"
+                },
+                {
+                  "id": "kashikomarimashita",
+                  "text": "かしこまりました",
+                  "canonicalText": "かしこまりました",
+                  "audioText": "かしこまりました"
+                },
+                {
+                  "id": "teitadakemasuka",
+                  "text": "いただけますか",
+                  "canonicalText": "いただけますか",
+                  "audioText": "いただけますか"
+                }
+              ],
+              "feedback": {
+                "correctAnswer": "いいよ。",
+                "canonicalAnswer": "いいよ。",
+                "audioText": "いいよ",
+                "explanation": "Bạn thân đáp thân mật いいよ, không dùng かしこまりました (quá lịch sự) hay いただけますか (đó là câu ĐI nhờ, không phải câu đồng ý).",
+                "explanationByNative": {
+                  "vi": "Bạn thân đáp thân mật いいよ, không dùng かしこまりました (quá lịch sự) hay いただけますか (đó là câu ĐI nhờ, không phải câu đồng ý).",
+                  "en": "A close friend replies casually with いいよ, not かしこまりました (too polite) or いただけますか (that's the request itself, not an agreement).",
+                  "ja": "親しい友人は気軽にいいよと答えます。かしこまりました（丁寧すぎる）やいただけますか（それはお願いする側の言葉で、承諾の言葉ではない）は使いません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-6",
+              "order": 6,
+              "plan": "free",
+              "type": "listening_multiple_choice",
+              "prompt": "Bạn vừa nghe câu nào?",
+              "promptByNative": {
+                "vi": "Bạn vừa nghe câu nào?",
+                "en": "Which sentence did you just hear?",
+                "ja": "今、どの文が聞こえましたか？"
+              },
+              "audioText": "かしこまりました",
+              "options": [
+                {
+                  "id": "very_polite",
+                  "text": "Đồng ý giúp — rất lịch sự",
+                  "textByNative": {
+                    "vi": "Đồng ý giúp — rất lịch sự",
+                    "en": "Agreeing to help — very polite",
+                    "ja": "承諾——とても丁寧"
+                  },
+                  "canonicalText": "Đồng ý giúp — rất lịch sự",
+                  "canonicalTextByNative": {
+                    "vi": "Đồng ý giúp — rất lịch sự",
+                    "en": "Agreeing to help — very polite",
+                    "ja": "承諾——とても丁寧"
+                  },
+                  "audioText": "Đồng ý giúp — rất lịch sự",
+                  "audioTextByNative": {
+                    "vi": "Đồng ý giúp — rất lịch sự",
+                    "en": "Agreeing to help — very polite",
+                    "ja": "承諾——とても丁寧"
+                  }
+                },
+                {
+                  "id": "polite",
+                  "text": "Đồng ý giúp — lịch sự",
+                  "textByNative": {
+                    "vi": "Đồng ý giúp — lịch sự",
+                    "en": "Agreeing to help — polite",
+                    "ja": "承諾——丁寧"
+                  },
+                  "canonicalText": "Đồng ý giúp — lịch sự",
+                  "canonicalTextByNative": {
+                    "vi": "Đồng ý giúp — lịch sự",
+                    "en": "Agreeing to help — polite",
+                    "ja": "承諾——丁寧"
+                  },
+                  "audioText": "Đồng ý giúp — lịch sự",
+                  "audioTextByNative": {
+                    "vi": "Đồng ý giúp — lịch sự",
+                    "en": "Agreeing to help — polite",
+                    "ja": "承諾——丁寧"
+                  }
+                },
+                {
+                  "id": "casual",
+                  "text": "Đồng ý giúp — thân mật",
+                  "textByNative": {
+                    "vi": "Đồng ý giúp — thân mật",
+                    "en": "Agreeing to help — casual",
+                    "ja": "承諾——気軽"
+                  },
+                  "canonicalText": "Đồng ý giúp — thân mật",
+                  "canonicalTextByNative": {
+                    "vi": "Đồng ý giúp — thân mật",
+                    "en": "Agreeing to help — casual",
+                    "ja": "承諾——気軽"
+                  },
+                  "audioText": "Đồng ý giúp — thân mật",
+                  "audioTextByNative": {
+                    "vi": "Đồng ý giúp — thân mật",
+                    "en": "Agreeing to help — casual",
+                    "ja": "承諾——気軽"
+                  }
+                },
+                {
+                  "id": "ask",
+                  "text": "Nhờ vả",
+                  "textByNative": {
+                    "vi": "Nhờ vả",
+                    "en": "Asking a favor",
+                    "ja": "お願い"
+                  },
+                  "canonicalText": "Nhờ vả",
+                  "canonicalTextByNative": {
+                    "vi": "Nhờ vả",
+                    "en": "Asking a favor",
+                    "ja": "お願い"
+                  },
+                  "audioText": "Nhờ vả",
+                  "audioTextByNative": {
+                    "vi": "Nhờ vả",
+                    "en": "Asking a favor",
+                    "ja": "お願い"
+                  }
+                }
+              ],
+              "correctOptionId": "very_polite",
+              "feedback": {
+                "correctAnswer": "Đồng ý giúp — rất lịch sự",
+                "correctAnswerByNative": {
+                  "vi": "Đồng ý giúp — rất lịch sự",
+                  "en": "Agreeing to help — very polite",
+                  "ja": "承諾——とても丁寧"
+                },
+                "explanation": "Câu nghe được là かしこまりました — mức lịch sự cao nhất khi đồng ý giúp, hay dùng trong dịch vụ.",
+                "explanationByNative": {
+                  "vi": "Câu nghe được là かしこまりました — mức lịch sự cao nhất khi đồng ý giúp, hay dùng trong dịch vụ.",
+                  "en": "The sentence you heard was かしこまりました — the most polite way to agree to help, often used in service contexts.",
+                  "ja": "聞こえた文はかしこまりました——手伝うことに同意する最も丁寧な言い方で、接客でよく使います。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-7",
+              "order": 7,
+              "plan": "free",
+              "type": "multiple_choice",
+              "context": "Bạn muốn nhờ nhân viên cửa hàng làm gì đó cho mình, rất lịch sự.",
+              "contextByNative": {
+                "vi": "Bạn muốn nhờ nhân viên cửa hàng làm gì đó cho mình, rất lịch sự.",
+                "en": "You want to ask a shop employee to do something for you, very politely.",
+                "ja": "店員に何かをしてもらいたい、とても丁寧に。"
+              },
+              "prompt": "Bạn muốn nhờ nhân viên cửa hàng làm gì đó cho mình, rất lịch sự. Nói gì?",
+              "promptByNative": {
+                "vi": "Bạn muốn nhờ nhân viên cửa hàng làm gì đó cho mình, rất lịch sự. Nói gì?",
+                "en": "You want to ask a shop employee to do something for you, very politely. What do you say?",
+                "ja": "店員に何かをしてもらいたい、とても丁寧に。何と言いますか？"
+              },
+              "options": [
+                {
+                  "id": "teitadakemasuka",
+                  "text": "していただけますか。",
+                  "canonicalText": "していただけますか。",
+                  "audioText": "していただけますか。"
+                },
+                {
+                  "id": "temo_moraemasenka",
+                  "text": "してもらえませんか。",
+                  "canonicalText": "してもらえませんか。",
+                  "audioText": "してもらえませんか。"
+                },
+                {
+                  "id": "tekuremasenka",
+                  "text": "してくれませんか。",
+                  "canonicalText": "してくれませんか。",
+                  "audioText": "してくれませんか。"
+                },
+                {
+                  "id": "shite_ii",
+                  "text": "してもいいですか。",
+                  "canonicalText": "してもいいですか。",
+                  "audioText": "してもいいですか。"
+                }
+              ],
+              "correctOptionId": "teitadakemasuka",
+              "feedback": {
+                "correctAnswer": "していただけますか。",
+                "explanation": "していただけますか lịch sự nhất trong ba cách nhờ, đúng mức cần cho nhân viên cửa hàng. してもいいですか dùng để XIN PHÉP cho CHÍNH MÌNH làm gì, không phải nhờ NGƯỜI KHÁC làm.",
+                "explanationByNative": {
+                  "vi": "していただけますか lịch sự nhất trong ba cách nhờ, đúng mức cần cho nhân viên cửa hàng. してもいいですか dùng để XIN PHÉP cho CHÍNH MÌNH làm gì, không phải nhờ NGƯỜI KHÁC làm.",
+                  "en": "していただけますか is the most polite of the three ways to ask, the right level for a shop employee. してもいいですか is used to ask PERMISSION for YOURSELF to do something, not to ask SOMEONE ELSE to do it.",
+                  "ja": "していただけますかは三つの頼み方の中で最も丁寧で、店員に合ったレベルです。してもいいですかは自分が何かをする許可を求める表現で、他の人に頼むものではありません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-8",
+              "order": 8,
+              "plan": "free",
+              "type": "multiple_choice",
+              "prompt": "本当ですか dùng khi nào?",
+              "promptByNative": {
+                "vi": "本当ですか dùng khi nào?",
+                "en": "When is 本当ですか used?",
+                "ja": "本当ですかはいつ使いますか？"
+              },
+              "options": [
+                {
+                  "id": "surprise",
+                  "text": "Phản ứng khi nghe tin bất ngờ/vui, xác nhận lại",
+                  "textByNative": {
+                    "vi": "Phản ứng khi nghe tin bất ngờ/vui, xác nhận lại",
+                    "en": "A reaction to hearing surprising/happy news, confirming it",
+                    "ja": "驚き・うれしい知らせを聞いた時の反応、確認する"
+                  },
+                  "canonicalText": "Phản ứng khi nghe tin bất ngờ/vui, xác nhận lại",
+                  "canonicalTextByNative": {
+                    "vi": "Phản ứng khi nghe tin bất ngờ/vui, xác nhận lại",
+                    "en": "A reaction to hearing surprising/happy news, confirming it",
+                    "ja": "驚き・うれしい知らせを聞いた時の反応、確認する"
+                  },
+                  "audioText": "Phản ứng khi nghe tin bất ngờ/vui, xác nhận lại",
+                  "audioTextByNative": {
+                    "vi": "Phản ứng khi nghe tin bất ngờ/vui, xác nhận lại",
+                    "en": "A reaction to hearing surprising/happy news, confirming it",
+                    "ja": "驚き・うれしい知らせを聞いた時の反応、確認する"
+                  }
+                },
+                {
+                  "id": "ask",
+                  "text": "Khi nhờ vả ai đó",
+                  "textByNative": {
+                    "vi": "Khi nhờ vả ai đó",
+                    "en": "When asking someone a favor",
+                    "ja": "誰かにお願いする時"
+                  },
+                  "canonicalText": "Khi nhờ vả ai đó",
+                  "canonicalTextByNative": {
+                    "vi": "Khi nhờ vả ai đó",
+                    "en": "When asking someone a favor",
+                    "ja": "誰かにお願いする時"
+                  },
+                  "audioText": "Khi nhờ vả ai đó",
+                  "audioTextByNative": {
+                    "vi": "Khi nhờ vả ai đó",
+                    "en": "When asking someone a favor",
+                    "ja": "誰かにお願いする時"
+                  }
+                },
+                {
+                  "id": "grant",
+                  "text": "Khi đồng ý giúp",
+                  "textByNative": {
+                    "vi": "Khi đồng ý giúp",
+                    "en": "When agreeing to help",
+                    "ja": "手伝うことに同意する時"
+                  },
+                  "canonicalText": "Khi đồng ý giúp",
+                  "canonicalTextByNative": {
+                    "vi": "Khi đồng ý giúp",
+                    "en": "When agreeing to help",
+                    "ja": "手伝うことに同意する時"
+                  },
+                  "audioText": "Khi đồng ý giúp",
+                  "audioTextByNative": {
+                    "vi": "Khi đồng ý giúp",
+                    "en": "When agreeing to help",
+                    "ja": "手伝うことに同意する時"
+                  }
+                },
+                {
+                  "id": "apologize",
+                  "text": "Khi xin lỗi",
+                  "textByNative": {
+                    "vi": "Khi xin lỗi",
+                    "en": "When apologizing",
+                    "ja": "謝る時"
+                  },
+                  "canonicalText": "Khi xin lỗi",
+                  "canonicalTextByNative": {
+                    "vi": "Khi xin lỗi",
+                    "en": "When apologizing",
+                    "ja": "謝る時"
+                  },
+                  "audioText": "Khi xin lỗi",
+                  "audioTextByNative": {
+                    "vi": "Khi xin lỗi",
+                    "en": "When apologizing",
+                    "ja": "謝る時"
+                  }
+                }
+              ],
+              "correctOptionId": "surprise",
+              "feedback": {
+                "correctAnswer": "Phản ứng khi nghe tin bất ngờ/vui, xác nhận lại",
+                "correctAnswerByNative": {
+                  "vi": "Phản ứng khi nghe tin bất ngờ/vui, xác nhận lại",
+                  "en": "A reaction to hearing surprising/happy news, confirming it",
+                  "ja": "驚き・うれしい知らせを聞いた時の反応、確認する"
+                },
+                "explanation": "本当ですか là câu người NGHE nói để xác nhận lại một tin bất ngờ/vui, không phải câu nhờ vả hay xin lỗi.",
+                "explanationByNative": {
+                  "vi": "本当ですか là câu người NGHE nói để xác nhận lại một tin bất ngờ/vui, không phải câu nhờ vả hay xin lỗi.",
+                  "en": "本当ですか is said by the LISTENER to confirm surprising/happy news, not a request or an apology.",
+                  "ja": "本当ですかは聞き手が驚き・うれしい知らせを確認するために言う言葉で、お願いや謝罪の言葉ではありません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-9",
+              "order": 9,
+              "plan": "free",
+              "type": "checkpoint",
+              "prompt": "Checkpoint 5 câu nhỏ",
+              "promptByNative": {
+                "vi": "Checkpoint 5 câu nhỏ",
+                "en": "Checkpoint: 5 short questions",
+                "ja": "チェックポイント5問"
+              },
+              "subQuestions": [
+                {
+                  "id": "q9_1",
+                  "prompt": "てくれませんか thuộc mức nào?",
+                  "promptByNative": {
+                    "vi": "てくれませんか thuộc mức nào?",
+                    "en": "What level does てくれませんか belong to?",
+                    "ja": "てくれませんかはどのレベルに属しますか？"
+                  },
+                  "options": [
+                    {
+                      "id": "casual",
+                      "text": "Thân mật",
+                      "textByNative": {
+                        "vi": "Thân mật",
+                        "en": "Casual",
+                        "ja": "気軽"
+                      },
+                      "canonicalText": "Thân mật",
+                      "canonicalTextByNative": {
+                        "vi": "Thân mật",
+                        "en": "Casual",
+                        "ja": "気軽"
+                      },
+                      "audioText": "Thân mật",
+                      "audioTextByNative": {
+                        "vi": "Thân mật",
+                        "en": "Casual",
+                        "ja": "気軽"
+                      }
+                    },
+                    {
+                      "id": "polite",
+                      "text": "Lịch sự",
+                      "textByNative": {
+                        "vi": "Lịch sự",
+                        "en": "Polite",
+                        "ja": "丁寧"
+                      },
+                      "canonicalText": "Lịch sự",
+                      "canonicalTextByNative": {
+                        "vi": "Lịch sự",
+                        "en": "Polite",
+                        "ja": "丁寧"
+                      },
+                      "audioText": "Lịch sự",
+                      "audioTextByNative": {
+                        "vi": "Lịch sự",
+                        "en": "Polite",
+                        "ja": "丁寧"
+                      }
+                    },
+                    {
+                      "id": "very_polite",
+                      "text": "Rất lịch sự",
+                      "textByNative": {
+                        "vi": "Rất lịch sự",
+                        "en": "Very polite",
+                        "ja": "とても丁寧"
+                      },
+                      "canonicalText": "Rất lịch sự",
+                      "canonicalTextByNative": {
+                        "vi": "Rất lịch sự",
+                        "en": "Very polite",
+                        "ja": "とても丁寧"
+                      },
+                      "audioText": "Rất lịch sự",
+                      "audioTextByNative": {
+                        "vi": "Rất lịch sự",
+                        "en": "Very polite",
+                        "ja": "とても丁寧"
+                      }
+                    },
+                    {
+                      "id": "none",
+                      "text": "Không thuộc mức nào",
+                      "textByNative": {
+                        "vi": "Không thuộc mức nào",
+                        "en": "None of these levels",
+                        "ja": "どのレベルにも属さない"
+                      },
+                      "canonicalText": "Không thuộc mức nào",
+                      "canonicalTextByNative": {
+                        "vi": "Không thuộc mức nào",
+                        "en": "None of these levels",
+                        "ja": "どのレベルにも属さない"
+                      },
+                      "audioText": "Không thuộc mức nào",
+                      "audioTextByNative": {
+                        "vi": "Không thuộc mức nào",
+                        "en": "None of these levels",
+                        "ja": "どのレベルにも属さない"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "casual",
+                  "feedback": {
+                    "correctAnswer": "Thân mật",
+                    "correctAnswerByNative": {
+                      "vi": "Thân mật",
+                      "en": "Casual",
+                      "ja": "気軽"
+                    },
+                    "explanation": "てくれませんか là mức thân mật trong ba cách nhờ vả.",
+                    "explanationByNative": {
+                      "vi": "てくれませんか là mức thân mật trong ba cách nhờ vả.",
+                      "en": "てくれませんか is the casual level among the three ways to ask a favor.",
+                      "ja": "てくれませんかは三つのお願いの言い方の中で気軽なレベルです。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_2",
+                  "prompt": "ていただけますか lịch sự hơn hay kém lịch sự hơn てもらえませんか?",
+                  "promptByNative": {
+                    "vi": "ていただけますか lịch sự hơn hay kém lịch sự hơn てもらえませんか?",
+                    "en": "Is ていただけますか more polite or less polite than てもらえませんか?",
+                    "ja": "ていただけますかはてもらえませんかより丁寧ですか、それとも丁寧さが低いですか？"
+                  },
+                  "options": [
+                    {
+                      "id": "more",
+                      "text": "Lịch sự hơn",
+                      "textByNative": {
+                        "vi": "Lịch sự hơn",
+                        "en": "More polite",
+                        "ja": "より丁寧"
+                      },
+                      "canonicalText": "Lịch sự hơn",
+                      "canonicalTextByNative": {
+                        "vi": "Lịch sự hơn",
+                        "en": "More polite",
+                        "ja": "より丁寧"
+                      },
+                      "audioText": "Lịch sự hơn",
+                      "audioTextByNative": {
+                        "vi": "Lịch sự hơn",
+                        "en": "More polite",
+                        "ja": "より丁寧"
+                      }
+                    },
+                    {
+                      "id": "less",
+                      "text": "Kém lịch sự hơn",
+                      "textByNative": {
+                        "vi": "Kém lịch sự hơn",
+                        "en": "Less polite",
+                        "ja": "丁寧さが低い"
+                      },
+                      "canonicalText": "Kém lịch sự hơn",
+                      "canonicalTextByNative": {
+                        "vi": "Kém lịch sự hơn",
+                        "en": "Less polite",
+                        "ja": "丁寧さが低い"
+                      },
+                      "audioText": "Kém lịch sự hơn",
+                      "audioTextByNative": {
+                        "vi": "Kém lịch sự hơn",
+                        "en": "Less polite",
+                        "ja": "丁寧さが低い"
+                      }
+                    },
+                    {
+                      "id": "same",
+                      "text": "Bằng nhau",
+                      "textByNative": {
+                        "vi": "Bằng nhau",
+                        "en": "The same",
+                        "ja": "同じ"
+                      },
+                      "canonicalText": "Bằng nhau",
+                      "canonicalTextByNative": {
+                        "vi": "Bằng nhau",
+                        "en": "The same",
+                        "ja": "同じ"
+                      },
+                      "audioText": "Bằng nhau",
+                      "audioTextByNative": {
+                        "vi": "Bằng nhau",
+                        "en": "The same",
+                        "ja": "同じ"
+                      }
+                    },
+                    {
+                      "id": "none",
+                      "text": "Không so sánh được",
+                      "textByNative": {
+                        "vi": "Không so sánh được",
+                        "en": "Cannot be compared",
+                        "ja": "比較できない"
+                      },
+                      "canonicalText": "Không so sánh được",
+                      "canonicalTextByNative": {
+                        "vi": "Không so sánh được",
+                        "en": "Cannot be compared",
+                        "ja": "比較できない"
+                      },
+                      "audioText": "Không so sánh được",
+                      "audioTextByNative": {
+                        "vi": "Không so sánh được",
+                        "en": "Cannot be compared",
+                        "ja": "比較できない"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "more",
+                  "feedback": {
+                    "correctAnswer": "Lịch sự hơn",
+                    "correctAnswerByNative": {
+                      "vi": "Lịch sự hơn",
+                      "en": "More polite",
+                      "ja": "より丁寧"
+                    },
+                    "explanation": "いただく là thể khiêm nhường, lịch sự hơn もらう — đúng cho cả cặp này.",
+                    "explanationByNative": {
+                      "vi": "いただく là thể khiêm nhường, lịch sự hơn もらう — đúng cho cả cặp này.",
+                      "en": "いただく is a humble form, more polite than もらう — this holds true for this pair too.",
+                      "ja": "いただくは謙譲語で、もらうより丁寧です——このペアにも当てはまります。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_3",
+                  "prompt": "かしこまりました và 了解しました khác nhau ở điểm nào?",
+                  "promptByNative": {
+                    "vi": "かしこまりました và 了解しました khác nhau ở điểm nào?",
+                    "en": "How do かしこまりました and 了解しました differ?",
+                    "ja": "かしこまりましたと了解しましたはどこが違いますか？"
+                  },
+                  "options": [
+                    {
+                      "id": "nuance",
+                      "text": "かしこまりました rất lịch sự (dịch vụ); 了解（りょうかい）しました thân mật/thông thường hơn",
+                      "textByNative": {
+                        "vi": "かしこまりました rất lịch sự (dịch vụ); 了解しました thân mật/thông thường hơn",
+                        "en": "かしこまりました is very polite (service context); 了解しました is more casual/ordinary",
+                        "ja": "かしこまりましたはとても丁寧（接客場面）；了解しましたはより気軽・普通"
+                      },
+                      "canonicalText": "かしこまりました rất lịch sự (dịch vụ); 了解しました thân mật/thông thường hơn",
+                      "canonicalTextByNative": {
+                        "vi": "かしこまりました rất lịch sự (dịch vụ); 了解しました thân mật/thông thường hơn",
+                        "en": "かしこまりました is very polite (service context); 了解しました is more casual/ordinary",
+                        "ja": "かしこまりましたはとても丁寧（接客場面）；了解しましたはより気軽・普通"
+                      },
+                      "audioText": "かしこまりました rất lịch sự (dịch vụ); 了解しました thân mật/thông thường hơn",
+                      "audioTextByNative": {
+                        "vi": "かしこまりました rất lịch sự (dịch vụ); 了解しました thân mật/thông thường hơn",
+                        "en": "かしこまりました is very polite (service context); 了解しました is more casual/ordinary",
+                        "ja": "かしこまりましたはとても丁寧（接客場面）；了解しましたはより気軽・普通"
+                      }
+                    },
+                    {
+                      "id": "meaning",
+                      "text": "Nghĩa hoàn toàn khác nhau",
+                      "textByNative": {
+                        "vi": "Nghĩa hoàn toàn khác nhau",
+                        "en": "Completely different meanings",
+                        "ja": "意味が全く違う"
+                      },
+                      "canonicalText": "Nghĩa hoàn toàn khác nhau",
+                      "canonicalTextByNative": {
+                        "vi": "Nghĩa hoàn toàn khác nhau",
+                        "en": "Completely different meanings",
+                        "ja": "意味が全く違う"
+                      },
+                      "audioText": "Nghĩa hoàn toàn khác nhau",
+                      "audioTextByNative": {
+                        "vi": "Nghĩa hoàn toàn khác nhau",
+                        "en": "Completely different meanings",
+                        "ja": "意味が全く違う"
+                      }
+                    },
+                    {
+                      "id": "polite_less",
+                      "text": "了解（りょうかい）しました lịch sự hơn",
+                      "textByNative": {
+                        "vi": "了解しました lịch sự hơn",
+                        "en": "了解しました is more polite",
+                        "ja": "了解しましたの方が丁寧"
+                      },
+                      "canonicalText": "了解しました lịch sự hơn",
+                      "canonicalTextByNative": {
+                        "vi": "了解しました lịch sự hơn",
+                        "en": "了解しました is more polite",
+                        "ja": "了解しましたの方が丁寧"
+                      },
+                      "audioText": "了解しました lịch sự hơn",
+                      "audioTextByNative": {
+                        "vi": "了解しました lịch sự hơn",
+                        "en": "了解しました is more polite",
+                        "ja": "了解しましたの方が丁寧"
+                      }
+                    },
+                    {
+                      "id": "not_grant",
+                      "text": "Không dùng để đồng ý giúp",
+                      "textByNative": {
+                        "vi": "Không dùng để đồng ý giúp",
+                        "en": "Not used to agree to help",
+                        "ja": "手伝うことに同意する時には使わない"
+                      },
+                      "canonicalText": "Không dùng để đồng ý giúp",
+                      "canonicalTextByNative": {
+                        "vi": "Không dùng để đồng ý giúp",
+                        "en": "Not used to agree to help",
+                        "ja": "手伝うことに同意する時には使わない"
+                      },
+                      "audioText": "Không dùng để đồng ý giúp",
+                      "audioTextByNative": {
+                        "vi": "Không dùng để đồng ý giúp",
+                        "en": "Not used to agree to help",
+                        "ja": "手伝うことに同意する時には使わない"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "nuance",
+                  "feedback": {
+                    "correctAnswer": "かしこまりました rất lịch sự (dịch vụ); 了解しました thân mật/thông thường hơn",
+                    "correctAnswerByNative": {
+                      "vi": "かしこまりました rất lịch sự (dịch vụ); 了解しました thân mật/thông thường hơn",
+                      "en": "かしこまりました is very polite (service context); 了解しました is more casual/ordinary",
+                      "ja": "かしこまりましたはとても丁寧（接客場面）；了解しましたはより気軽・普通"
+                    },
+                    "explanation": "Cả hai đều đáp 'được' cho lời nhờ vả, chỉ khác mức lịch sự.",
+                    "explanationByNative": {
+                      "vi": "Cả hai đều đáp 'được' cho lời nhờ vả, chỉ khác mức lịch sự.",
+                      "en": "Both agree to a request, they just differ in politeness.",
+                      "ja": "どちらも依頼を引き受ける言葉で、丁寧さだけが違います。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_4",
+                  "prompt": "お願いします thường nói khi nào?",
+                  "promptByNative": {
+                    "vi": "お願いします thường nói khi nào?",
+                    "en": "When is お願いします usually said?",
+                    "ja": "お願いしますは普通いつ言いますか？"
+                  },
+                  "options": [
+                    {
+                      "id": "after_ask",
+                      "text": "Kèm/kết thúc một lượt nhờ vả",
+                      "textByNative": {
+                        "vi": "Kèm/kết thúc một lượt nhờ vả",
+                        "en": "Accompanying/closing a request turn",
+                        "ja": "お願いの発話に添える・締めくくる"
+                      },
+                      "canonicalText": "Kèm/kết thúc một lượt nhờ vả",
+                      "canonicalTextByNative": {
+                        "vi": "Kèm/kết thúc một lượt nhờ vả",
+                        "en": "Accompanying/closing a request turn",
+                        "ja": "お願いの発話に添える・締めくくる"
+                      },
+                      "audioText": "Kèm/kết thúc một lượt nhờ vả",
+                      "audioTextByNative": {
+                        "vi": "Kèm/kết thúc một lượt nhờ vả",
+                        "en": "Accompanying/closing a request turn",
+                        "ja": "お願いの発話に添える・締めくくる"
+                      }
+                    },
+                    {
+                      "id": "apologize",
+                      "text": "Khi xin lỗi",
+                      "textByNative": {
+                        "vi": "Khi xin lỗi",
+                        "en": "When apologizing",
+                        "ja": "謝る時"
+                      },
+                      "canonicalText": "Khi xin lỗi",
+                      "canonicalTextByNative": {
+                        "vi": "Khi xin lỗi",
+                        "en": "When apologizing",
+                        "ja": "謝る時"
+                      },
+                      "audioText": "Khi xin lỗi",
+                      "audioTextByNative": {
+                        "vi": "Khi xin lỗi",
+                        "en": "When apologizing",
+                        "ja": "謝る時"
+                      }
+                    },
+                    {
+                      "id": "grant",
+                      "text": "Khi đồng ý giúp",
+                      "textByNative": {
+                        "vi": "Khi đồng ý giúp",
+                        "en": "When agreeing to help",
+                        "ja": "手伝うことに同意する時"
+                      },
+                      "canonicalText": "Khi đồng ý giúp",
+                      "canonicalTextByNative": {
+                        "vi": "Khi đồng ý giúp",
+                        "en": "When agreeing to help",
+                        "ja": "手伝うことに同意する時"
+                      },
+                      "audioText": "Khi đồng ý giúp",
+                      "audioTextByNative": {
+                        "vi": "Khi đồng ý giúp",
+                        "en": "When agreeing to help",
+                        "ja": "手伝うことに同意する時"
+                      }
+                    },
+                    {
+                      "id": "surprise",
+                      "text": "Khi ngạc nhiên",
+                      "textByNative": {
+                        "vi": "Khi ngạc nhiên",
+                        "en": "When surprised",
+                        "ja": "驚いた時"
+                      },
+                      "canonicalText": "Khi ngạc nhiên",
+                      "canonicalTextByNative": {
+                        "vi": "Khi ngạc nhiên",
+                        "en": "When surprised",
+                        "ja": "驚いた時"
+                      },
+                      "audioText": "Khi ngạc nhiên",
+                      "audioTextByNative": {
+                        "vi": "Khi ngạc nhiên",
+                        "en": "When surprised",
+                        "ja": "驚いた時"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "after_ask",
+                  "feedback": {
+                    "correctAnswer": "Kèm/kết thúc một lượt nhờ vả",
+                    "correctAnswerByNative": {
+                      "vi": "Kèm/kết thúc một lượt nhờ vả",
+                      "en": "Accompanying/closing a request turn",
+                      "ja": "お願いの発話に添える・締めくくる"
+                    },
+                    "explanation": "お願いします là câu nhờ vả ngắn gọn, hay đi kèm hoặc kết thúc một lượt nhờ.",
+                    "explanationByNative": {
+                      "vi": "お願いします là câu nhờ vả ngắn gọn, hay đi kèm hoặc kết thúc một lượt nhờ.",
+                      "en": "お願いします is a brief request phrase, often accompanying or closing a request turn.",
+                      "ja": "お願いしますは簡潔なお願いの言葉で、お願いの発話に添えたり締めくくったりします。"
+                    }
+                  }
+                },
+                {
+                  "id": "q9_5",
+                  "prompt": "てくれませんか thuộc mức nào?",
+                  "promptByNative": {
+                    "vi": "てくれませんか thuộc mức nào?",
+                    "en": "What level does てくれませんか belong to?",
+                    "ja": "てくれませんかはどのレベルに属しますか？"
+                  },
+                  "options": [
+                    {
+                      "id": "casual2",
+                      "text": "Thân mật",
+                      "textByNative": {
+                        "vi": "Thân mật",
+                        "en": "Casual",
+                        "ja": "気軽"
+                      },
+                      "canonicalText": "Thân mật",
+                      "canonicalTextByNative": {
+                        "vi": "Thân mật",
+                        "en": "Casual",
+                        "ja": "気軽"
+                      },
+                      "audioText": "Thân mật",
+                      "audioTextByNative": {
+                        "vi": "Thân mật",
+                        "en": "Casual",
+                        "ja": "気軽"
+                      }
+                    },
+                    {
+                      "id": "polite2",
+                      "text": "Lịch sự",
+                      "textByNative": {
+                        "vi": "Lịch sự",
+                        "en": "Polite",
+                        "ja": "丁寧"
+                      },
+                      "canonicalText": "Lịch sự",
+                      "canonicalTextByNative": {
+                        "vi": "Lịch sự",
+                        "en": "Polite",
+                        "ja": "丁寧"
+                      },
+                      "audioText": "Lịch sự",
+                      "audioTextByNative": {
+                        "vi": "Lịch sự",
+                        "en": "Polite",
+                        "ja": "丁寧"
+                      }
+                    },
+                    {
+                      "id": "very_polite2",
+                      "text": "Rất lịch sự",
+                      "textByNative": {
+                        "vi": "Rất lịch sự",
+                        "en": "Very polite",
+                        "ja": "とても丁寧"
+                      },
+                      "canonicalText": "Rất lịch sự",
+                      "canonicalTextByNative": {
+                        "vi": "Rất lịch sự",
+                        "en": "Very polite",
+                        "ja": "とても丁寧"
+                      },
+                      "audioText": "Rất lịch sự",
+                      "audioTextByNative": {
+                        "vi": "Rất lịch sự",
+                        "en": "Very polite",
+                        "ja": "とても丁寧"
+                      }
+                    },
+                    {
+                      "id": "none2",
+                      "text": "Không thuộc mức nào",
+                      "textByNative": {
+                        "vi": "Không thuộc mức nào",
+                        "en": "None of these levels",
+                        "ja": "どのレベルにも属さない"
+                      },
+                      "canonicalText": "Không thuộc mức nào",
+                      "canonicalTextByNative": {
+                        "vi": "Không thuộc mức nào",
+                        "en": "None of these levels",
+                        "ja": "どのレベルにも属さない"
+                      },
+                      "audioText": "Không thuộc mức nào",
+                      "audioTextByNative": {
+                        "vi": "Không thuộc mức nào",
+                        "en": "None of these levels",
+                        "ja": "どのレベルにも属さない"
+                      }
+                    }
+                  ],
+                  "correctOptionId": "casual2",
+                  "feedback": {
+                    "correctAnswer": "Thân mật",
+                    "correctAnswerByNative": {
+                      "vi": "Thân mật",
+                      "en": "Casual",
+                      "ja": "気軽"
+                    },
+                    "explanation": "てくれませんか là mức thân mật trong ba cách nhờ vả.",
+                    "explanationByNative": {
+                      "vi": "てくれませんか là mức thân mật trong ba cách nhờ vả.",
+                      "en": "てくれませんか is the casual level among the three ways to ask a favor.",
+                      "ja": "てくれませんかは三つのお願いの言い方の中で気軽なレベルです。"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-10",
+              "order": 10,
+              "plan": "plus",
+              "type": "chat_text_fill",
+              "prompt": "Hoàn thành đoạn chat",
+              "promptByNative": {
+                "vi": "Hoàn thành đoạn chat",
+                "en": "Complete the chat",
+                "ja": "チャットを完成させてください"
+              },
+              "chat": {
+                "timestamp": "14:05",
+                "context": "Hai đồng nghiệp nhắn tin, một người nhờ việc lịch sự, người kia đồng ý rất lịch sự. Nhập từ phù hợp vào hai ô trống.",
+                "contextByNative": {
+                  "vi": "Hai đồng nghiệp nhắn tin, một người nhờ việc lịch sự, người kia đồng ý rất lịch sự. Nhập từ phù hợp vào hai ô trống.",
+                  "en": "Two colleagues are texting, one politely asks a favor, the other agrees very politely. Fill in the two blanks with the right words.",
+                  "ja": "同僚二人がメッセージのやり取りをしています。一人が丁寧にお願いし、もう一人がとても丁寧に承諾します。二つの空欄に合う言葉を入れてください。"
+                },
+                "speakers": [
+                  {
+                    "id": "a",
+                    "label": "A",
+                    "alignment": "right"
+                  },
+                  {
+                    "id": "b",
+                    "label": "B",
+                    "alignment": "left"
+                  }
+                ],
+                "messages": [
+                  {
+                    "id": "message_1",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "slotId": "chat_moraemasenka_slot"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_2",
+                    "speakerId": "b",
+                    "segments": [
+                      {
+                        "slotId": "chat_kashikomari_slot"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "message_3",
+                    "speakerId": "a",
+                    "segments": [
+                      {
+                        "displayText": "ありがとうございます。"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "slots": [
+                {
+                  "id": "chat_moraemasenka_slot",
+                  "displayText": "資料（しりょう）を明日（あした）までに送（おく）ってもらえませんか",
+                  "canonicalText": "資料を明日までに送ってもらえませんか",
+                  "audioText": "しりょうをあしたまでにおくってもらえませんか",
+                  "acceptedAnswers": [
+                    "資料を明日までに送ってもらえませんか"
+                  ]
+                },
+                {
+                  "id": "chat_kashikomari_slot",
+                  "displayText": "かしこまりました",
+                  "canonicalText": "かしこまりました",
+                  "audioText": "かしこまりました",
+                  "acceptedAnswers": [
+                    "かしこまりました"
+                  ]
+                }
+              ],
+              "feedback": {
+                "correctAnswer": "資料を明日までに送ってもらえませんか\nかしこまりました",
+                "canonicalAnswer": "資料を明日までに送ってもらえませんか／かしこまりました",
+                "audioText": "しりょうをあしたまでに…／かしこまりました",
+                "correctMessage": "Bạn làm tốt lắm!",
+                "correctMessageByNative": {
+                  "vi": "Bạn làm tốt lắm!",
+                  "en": "Great job!",
+                  "ja": "よくできました！"
+                },
+                "slotFeedback": {
+                  "chat_moraemasenka_slot": {
+                    "incorrectMessage": "Ô này nhờ gửi tài liệu, lịch sự.",
+                    "incorrectMessageByNative": {
+                      "vi": "Ô này nhờ gửi tài liệu, lịch sự.",
+                      "en": "This blank asks to send materials, politely.",
+                      "ja": "このマスは資料を送ってもらうことを丁寧に頼みます。"
+                    },
+                    "correctAnswer": "資料を明日までに送ってもらえませんか",
+                    "explanation": "Ô này nhờ gửi tài liệu, dùng thể てもらえませんか vì đồng nghiệp.",
+                    "explanationByNative": {
+                      "vi": "Ô này nhờ gửi tài liệu, dùng thể てもらえませんか vì đồng nghiệp.",
+                      "en": "This blank asks to send materials, using てもらえませんか because it is a colleague.",
+                      "ja": "このマスは資料を送ってもらうことを頼み、同僚なのでてもらえませんかを使います。"
+                    }
+                  },
+                  "chat_kashikomari_slot": {
+                    "incorrectMessage": "Ô này đồng ý giúp, rất lịch sự.",
+                    "incorrectMessageByNative": {
+                      "vi": "Ô này đồng ý giúp, rất lịch sự.",
+                      "en": "This blank agrees to help, very politely.",
+                      "ja": "このマスはとても丁寧に手伝うことを承諾します。"
+                    },
+                    "correctAnswer": "かしこまりました",
+                    "explanation": "Ô này đồng ý giúp, mức rất lịch sự bằng かしこまりました.",
+                    "explanationByNative": {
+                      "vi": "Ô này đồng ý giúp, mức rất lịch sự bằng かしこまりました.",
+                      "en": "This blank agrees to help, at the very polite level with かしこまりました.",
+                      "ja": "このマスはかしこまりましたでとても丁寧に手伝うことを承諾します。"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-11",
+              "order": 11,
+              "plan": "plus",
+              "type": "slot_ordering",
+              "prompt": "Sắp xếp thành câu nhờ giúp mang đồ, thân mật. Có thẻ không cần dùng.",
+              "promptByNative": {
+                "vi": "Sắp xếp thành câu nhờ giúp mang đồ, thân mật. Có thẻ không cần dùng.",
+                "en": "Arrange into a casual sentence asking for help carrying something. There are unused tiles.",
+                "ja": "物を運んでもらう気軽なお願いの文に並べ替えてください。使わない札があります。"
+              },
+              "tokens": [
+                {
+                  "id": "nimotsu_wo",
+                  "text": "荷物（にもつ）を",
+                  "canonicalText": "荷物を",
+                  "audioText": "荷物を"
+                },
+                {
+                  "id": "hakonde",
+                  "text": "運（はこ）んで",
+                  "canonicalText": "運んで",
+                  "audioText": "運んで"
+                },
+                {
+                  "id": "kurenai",
+                  "text": "くれない",
+                  "canonicalText": "くれない",
+                  "audioText": "くれない"
+                },
+                {
+                  "id": "itadake_distractor",
+                  "text": "いただけ",
+                  "canonicalText": "いただけ",
+                  "audioText": "いただけ"
+                },
+                {
+                  "id": "kashikomari_distractor",
+                  "text": "かしこまり",
+                  "canonicalText": "かしこまり",
+                  "audioText": "かしこまり"
+                }
+              ],
+              "answerSlots": [
+                {
+                  "id": "s1",
+                  "expectedTokenId": "nimotsu_wo"
+                },
+                {
+                  "id": "s2",
+                  "expectedTokenId": "hakonde"
+                },
+                {
+                  "id": "s3",
+                  "expectedTokenId": "kurenai",
+                  "afterText": "？"
+                }
+              ],
+              "unusedTokenIds": [
+                "itadake_distractor",
+                "kashikomari_distractor"
+              ],
+              "feedback": {
+                "correctAnswer": "荷物を運んでくれない？",
+                "canonicalAnswer": "荷物を運んでくれない？",
+                "audioText": "にもつをはこんでくれない",
+                "explanation": "Nhờ vả thân mật dùng てくれない. いただけ quá lịch sự cho bạn thân, かしこまり không hợp câu nhờ (đó là câu ĐÁP).",
+                "explanationByNative": {
+                  "vi": "Nhờ vả thân mật dùng てくれない. いただけ quá lịch sự cho bạn thân, かしこまり không hợp câu nhờ (đó là câu ĐÁP).",
+                  "en": "A casual request uses てくれない. いただけ is too polite for a close friend, かしこまり does not fit a request (that is the RESPONSE).",
+                  "ja": "気軽なお願いにはてくれないを使います。いただけは親しい友人には丁寧すぎ、かしこまりはお願いの文には合いません（それは返事の言葉です）。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-12",
+              "order": 12,
+              "plan": "plus",
+              "type": "multiple_choice",
+              "prompt": "Chọn đoạn hội thoại tự nhiên nhất.",
+              "promptByNative": {
+                "vi": "Chọn đoạn hội thoại tự nhiên nhất.",
+                "en": "Choose the most natural dialogue.",
+                "ja": "最も自然な会話を選んでください。"
+              },
+              "options": [
+                {
+                  "id": "natural",
+                  "text": "A: 貸（か）してくれない？\nB: いいよ。",
+                  "canonicalText": "A: 貸（か）してくれない？\nB: いいよ。",
+                  "audioText": "A: 貸（か）してくれない？\nB: いいよ。"
+                },
+                {
+                  "id": "mixed_up",
+                  "text": "A: 貸（か）していただけますか。\nB: いいよ。",
+                  "canonicalText": "A: 貸（か）していただけますか。\nB: いいよ。",
+                  "audioText": "A: 貸（か）していただけますか。\nB: いいよ。"
+                },
+                {
+                  "id": "mixed_down",
+                  "text": "A: 貸（か）してくれない？\nB: かしこまりました。",
+                  "canonicalText": "A: 貸（か）してくれない？\nB: かしこまりました。",
+                  "audioText": "A: 貸（か）してくれない？\nB: かしこまりました。"
+                },
+                {
+                  "id": "wrong_function",
+                  "text": "A: 本当（ほんとう）ですか。\nB: いいよ。",
+                  "canonicalText": "A: 本当（ほんとう）ですか。\nB: いいよ。",
+                  "audioText": "A: 本当（ほんとう）ですか。\nB: いいよ。"
+                }
+              ],
+              "correctOptionId": "natural",
+              "feedback": {
+                "correctAnswer": "A: 貸（か）してくれない？\nB: いいよ。",
+                "explanation": "A tự nhiên: cả hai giữ thể thân mật xuyên suốt. B lệch vì A hỏi rất lịch sự mà B đáp thân mật. C lệch tương tự, ngược lại. D sai chức năng hoàn toàn — A đang xác nhận tin bất ngờ chứ không nhờ vả.",
+                "explanationByNative": {
+                  "vi": "A tự nhiên: cả hai giữ thể thân mật xuyên suốt. B lệch vì A hỏi rất lịch sự mà B đáp thân mật. C lệch tương tự, ngược lại. D sai chức năng hoàn toàn — A đang xác nhận tin bất ngờ chứ không nhờ vả.",
+                  "en": "A is natural: both keep the casual register throughout. B is off because A asks very politely but B replies casually. C is similarly off, in reverse. D is completely wrong in function — A is confirming surprising news, not asking a favor.",
+                  "ja": "Aは自然です：両方とも気軽な言葉遣いを保っています。Bはずれています。Aはとても丁寧に尋ねているのにBが気軽に答えています。Cも同様に逆方向でずれています。Dは機能が全く違います——Aは驚きの知らせを確認しているのであってお願いしているのではありません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-13",
+              "order": 13,
+              "plan": "plus",
+              "type": "slot_ordering",
+              "prompt": "Sắp xếp thành câu nhờ vả rất lịch sự. Có thẻ không cần dùng.",
+              "promptByNative": {
+                "vi": "Sắp xếp thành câu nhờ vả rất lịch sự. Có thẻ không cần dùng.",
+                "en": "Arrange into a very polite request sentence. There are unused tiles.",
+                "ja": "とても丁寧なお願いの文に並べ替えてください。使わない札があります。"
+              },
+              "tokens": [
+                {
+                  "id": "oshiete",
+                  "text": "教（おし）えて",
+                  "canonicalText": "教えて",
+                  "audioText": "教えて"
+                },
+                {
+                  "id": "itadakemasu",
+                  "text": "いただけます",
+                  "canonicalText": "いただけます",
+                  "audioText": "いただけます"
+                },
+                {
+                  "id": "ka",
+                  "text": "か",
+                  "canonicalText": "か",
+                  "audioText": "か"
+                },
+                {
+                  "id": "kurenai_distractor",
+                  "text": "くれない",
+                  "canonicalText": "くれない",
+                  "audioText": "くれない"
+                },
+                {
+                  "id": "kashikomari_distractor",
+                  "text": "かしこまり",
+                  "canonicalText": "かしこまり",
+                  "audioText": "かしこまり"
+                }
+              ],
+              "answerSlots": [
+                {
+                  "id": "s1",
+                  "expectedTokenId": "oshiete"
+                },
+                {
+                  "id": "s2",
+                  "expectedTokenId": "itadakemasu"
+                },
+                {
+                  "id": "s3",
+                  "expectedTokenId": "ka",
+                  "afterText": "。"
+                }
+              ],
+              "unusedTokenIds": [
+                "kurenai_distractor",
+                "kashikomari_distractor"
+              ],
+              "feedback": {
+                "correctAnswer": "教えていただけますか。",
+                "canonicalAnswer": "教えていただけますか。",
+                "audioText": "おしえていただけますか",
+                "explanation": "教えて + いただけます + か → 教えていただけますか. くれない thân mật kém hơn, かしこまり không đi cùng câu nhờ.",
+                "explanationByNative": {
+                  "vi": "教えて + いただけます + か → 教えていただけますか. くれない thân mật kém hơn, かしこまり không đi cùng câu nhờ.",
+                  "en": "教えて + いただけます + か → 教えていただけますか. くれない is less polite (casual), かしこまり does not go with a request sentence.",
+                  "ja": "教えて + いただけます + か → 教えていただけますか。くれないは気軽で丁寧さが低く、かしこまりはお願いの文には合いません。"
+                }
+              }
+            },
+            {
+              "id": "ja-daily_life-m02-u2-l2-practice-14",
+              "order": 14,
+              "plan": "plus",
+              "type": "real_world_practice_dialogue",
+              "nonGraded": true,
+              "scenarioTitle": "Ba cách nhờ vả khác mức độ",
+              "scenarioTitleByNative": {
+                "vi": "Ba cách nhờ vả khác mức độ",
+                "en": "Three ways to ask a favor at different levels",
+                "ja": "違うレベルの三つのお願いの仕方"
+              },
+              "scenarioDescription": "Vai vế: ba tình huống khác nhau — một lần với đồng nghiệp, lịch sự; một lần với nhân viên cửa hàng cá, rất lịch sự; và một lần với bạn bè nhờ giúp làm rượu mơ, thân mật. Cùng là nhờ vả, nhưng mức lịch sự khác nhau tùy quan hệ.",
+              "scenarioDescriptionByNative": {
+                "vi": "Vai vế: ba tình huống khác nhau — một lần với đồng nghiệp, lịch sự; một lần với nhân viên cửa hàng cá, rất lịch sự; và một lần với bạn bè nhờ giúp làm rượu mơ, thân mật. Cùng là nhờ vả, nhưng mức lịch sự khác nhau tùy quan hệ.",
+                "en": "Relationship: three different situations — once with a colleague, politely; once with a fishmonger, very politely; and once with a friend asking for help making plum wine, casually. Same act of asking a favor, but the politeness level differs by relationship.",
+                "ja": "関係性：三つの異なる場面——同僚にお願いする場面（丁寧）、魚屋の店員にお願いする場面（とても丁寧）、友人に梅酒作りを手伝ってもらう場面（気軽）。同じお願いですが、関係によって丁寧さが違います。"
+              },
+              "characterIds": [
+                "tanaka",
+                "ito",
+                "sato"
+              ],
+              "dialogueLines": [
+                {
+                  "targetText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+                  "displayText": "本当（ほんとう）ですか？貸（か）してもらえませんか？",
+                  "reading": "ほんとうですか？かしてもらえませんか？",
+                  "speechText": "ほんとうですか かしてもらえませんか",
+                  "translationByNative": {
+                    "vi": "Thật à? Cho tôi mượn được không?",
+                    "en": "Really? Could you lend it to me?",
+                    "ja": "本当ですか？貸してもらえませんか？"
+                  },
+                  "translations": {
+                    "vi": "Thật à? Cho tôi mượn được không?",
+                    "en": "Really? Could you lend it to me?",
+                    "ja": "本当ですか？貸してもらえませんか？"
+                  },
+                  "meaningVi": "Thật à? Cho tôi mượn được không?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "tanaka",
+                  "romanization": "hontō desu ka? kashite moraemasen ka?"
+                },
+                {
+                  "targetText": "お造（つく）りにしていただけますか？",
+                  "displayText": "お造（つく）りにしていただけますか？",
+                  "reading": "おつくりにしていただけますか？",
+                  "speechText": "おつくりにしていただけますか",
+                  "translationByNative": {
+                    "vi": "Làm sashimi giúp tôi được không ạ?",
+                    "en": "Could you make it into sashimi for me?",
+                    "ja": "お造りにしていただけますか。"
+                  },
+                  "translations": {
+                    "vi": "Làm sashimi giúp tôi được không ạ?",
+                    "en": "Could you make it into sashimi for me?",
+                    "ja": "お造りにしていただけますか。"
+                  },
+                  "meaningVi": "Làm sashimi giúp tôi được không ạ?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "otsukuri ni shite itadakemasu ka?"
+                },
+                {
+                  "targetText": "今日（きょう）は暇（ひま）ですか？",
+                  "displayText": "今日（きょう）は暇（ひま）ですか？",
+                  "reading": "きょうはひまですか？",
+                  "speechText": "きょうはひまですか",
+                  "translationByNative": {
+                    "vi": "Hôm nay bạn rảnh không?",
+                    "en": "Are you free today?",
+                    "ja": "今日は暇ですか。"
+                  },
+                  "translations": {
+                    "vi": "Hôm nay bạn rảnh không?",
+                    "en": "Are you free today?",
+                    "ja": "今日は暇ですか。"
+                  },
+                  "meaningVi": "Hôm nay bạn rảnh không?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "kyō wa hima desu ka?"
+                },
+                {
+                  "targetText": "休（やす）みですから暇（ひま）ですよ。",
+                  "displayText": "休（やす）みですから暇（ひま）ですよ。",
+                  "reading": "やすみですからひまですよ。",
+                  "speechText": "やすみですから ひまですよ",
+                  "translationByNative": {
+                    "vi": "Tôi nghỉ nên rảnh đấy.",
+                    "en": "I'm off work, so I'm free.",
+                    "ja": "休みですから暇ですよ。"
+                  },
+                  "translations": {
+                    "vi": "Tôi nghỉ nên rảnh đấy.",
+                    "en": "I'm off work, so I'm free.",
+                    "ja": "休みですから暇ですよ。"
+                  },
+                  "meaningVi": "Tôi nghỉ nên rảnh đấy.",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "yasumi desu kara hima desu yo."
+                },
+                {
+                  "targetText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+                  "displayText": "では、梅酒（うめしゅ）づくりを手伝（てつだ）ってくれませんか？",
+                  "reading": "では、うめしゅづくりをてつだってくれませんか？",
+                  "speechText": "では うめしゅづくりを てつだってくれませんか",
+                  "translationByNative": {
+                    "vi": "Vậy giúp tôi làm rượu mơ được không?",
+                    "en": "So, could you help me make plum wine?",
+                    "ja": "では、梅酒づくりを手伝ってくれませんか。"
+                  },
+                  "translations": {
+                    "vi": "Vậy giúp tôi làm rượu mơ được không?",
+                    "en": "So, could you help me make plum wine?",
+                    "ja": "では、梅酒づくりを手伝ってくれませんか。"
+                  },
+                  "meaningVi": "Vậy giúp tôi làm rượu mơ được không?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "sato",
+                  "romanization": "deha, umeshuzukuri o tetsudatte kuremasen ka?"
+                },
+                {
+                  "targetText": "もちろんです。なにをすればよいのですか？",
+                  "displayText": "もちろんです。なにをすればよいのですか？",
+                  "reading": "もちろんです。なにをすればよいのですか？",
+                  "speechText": "もちろんです なにをすればよいのですか",
+                  "translationByNative": {
+                    "vi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+                    "en": "Of course. What should I do?",
+                    "ja": "もちろんです。何をすればよいのですか。"
+                  },
+                  "translations": {
+                    "vi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+                    "en": "Of course. What should I do?",
+                    "ja": "もちろんです。何をすればよいのですか。"
+                  },
+                  "meaningVi": "Tất nhiên rồi. Tôi nên làm gì vậy?",
+                  "audioLocale": "ja-JP",
+                  "speakerId": "ito",
+                  "romanization": "mochiron desu. nani o sure ba yoi no desu ka?"
+                }
+              ],
+              "sceneDividers": [
+                {
+                  "afterDialogueLine": 1,
+                  "targetText": "べつの日（ひ）",
+                  "translationByNative": {
+                    "vi": "Một ngày khác",
+                    "en": "Another day",
+                    "ja": "別の日"
+                  }
+                },
+                {
+                  "afterDialogueLine": 2,
+                  "targetText": "べつの日（ひ）",
+                  "translationByNative": {
+                    "vi": "Một ngày khác",
+                    "en": "Another day",
+                    "ja": "別の日"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "contentStatus": "ready",
+      "playable": true,
+      "comingSoon": false,
+      "canSkip": false,
+      "exerciseStatus": "ready",
+      "learnSection": {
+        "lessonIntro": {
+          "status": "ready"
+        },
+        "vocabularyPhraseCards": {
+          "status": "ready"
         },
         "miniDialogue": {
-          "status": "placeholder"
+          "status": "ready",
+          "dialogueGroupCount": 3
         },
-        "cultureNuanceNote": {
-          "status": "placeholder"
+        "grammarSentencePatterns": {
+          "status": "ready"
         },
-        "contextualVariations": {
-          "status": "placeholder"
-        },
-        "communicationStrategy": {
-          "status": "placeholder"
+        "practiceExercises": {
+          "status": "ready"
         }
       },
-      "practiceStages": [
-        {
-          "key": "warmup",
-          "labelByNative": {
-            "en": "Warm-up",
-            "vi": "Khởi động",
-            "ja": "ウォームアップ",
-            "ko": "워밍업",
-            "zh": "热身"
-          },
-          "goalByNative": {
-            "en": "Recognize phrases, listen basically, understand meaning, and use simple patterns.",
-            "vi": "Nhận diện từ/cụm câu, nghe cơ bản, hiểu nghĩa, dùng mẫu câu đơn giản.",
-            "ja": "フレーズを認識し、基本の聞き取りと意味理解、簡単な文型を使います。",
-            "ko": "표현을 인식하고 기본 듣기·의미 이해·간단한 문형을 사용합니다.",
-            "zh": "识别短语，进行基础听力与意义理解，并使用简单句型。"
-          },
-          "exerciseOrders": [
-            1,
-            2,
-            3,
-            4,
-            5
-          ],
-          "exercises": [
-            {
-              "order": 1,
-              "type": "matchPairs",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 2,
-              "type": "listenAndChoose",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 3,
-              "type": "multipleChoiceMeaning",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 4,
-              "type": "fillBlank",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 5,
-              "type": "arrangeWords",
-              "plan": "free",
-              "status": "placeholder"
-            }
-          ]
-        },
-        {
-          "key": "real_world",
-          "labelByNative": {
-            "en": "Real-world Practice",
-            "vi": "Thực chiến",
-            "ja": "実践練習",
-            "ko": "실전 연습",
-            "zh": "实战练习"
-          },
-          "goalByNative": {
-            "en": "Use sentences in dialogue, choose natural responses, advanced listening, AI Q&A, and checkpoint.",
-            "vi": "Dùng câu trong hội thoại, chọn phản hồi tự nhiên, nghe nâng cao, AI Q&A và checkpoint.",
-            "ja": "会話で文を使い、自然な返事を選び、高度な聞き取り・AI質問・チェックを行います。",
-            "ko": "대화에서 문장을 쓰고 자연스러운 대답을 고르며 심화 듣기·AI Q&A·체크포인트를 합니다.",
-            "zh": "在对话中用句，选择自然回应，完成进阶听力、AI问答与检查点。"
-          },
-          "exerciseOrders": [
-            6,
-            7,
-            8,
-            9,
-            10
-          ],
-          "exercises": [
-            {
-              "order": 6,
-              "type": "dialogueCompletion",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 7,
-              "type": "naturalResponseChoice",
-              "plan": "free",
-              "status": "placeholder"
-            },
-            {
-              "order": 8,
-              "type": "plusListeningVocabularyChallenge",
-              "plan": "plus",
-              "status": "placeholder"
-            },
-            {
-              "order": 9,
-              "type": "controlledAiQa",
-              "plan": "plus",
-              "status": "placeholder"
-            },
-            {
-              "order": 10,
-              "type": "reviewCheckpoint",
-              "plan": "plus",
-              "status": "placeholder"
-            }
-          ]
-        }
-      ],
       "saveToReview": {
-        "status": "placeholder"
+        "status": "ready",
+        "itemIds": [
+          "temo-moraemasenka",
+          "teitadakemasu-ka",
+          "tekuremasenka",
+          "kashikomarimashita",
+          "ryoukai-shimashita",
+          "yoi-desu-yo",
+          "hontou-desu-ka",
+          "onegai-shimasu",
+          "kasu",
+          "tetsudau"
+        ]
       },
-      "unlockRequirement": "core_foundation_completed",
-      "courseType": "communication",
-      "exercises": [
-        {
-          "id": "ja-daily_life-m02-u2-l2-e1",
-          "order": 1,
-          "type": "matchPairs",
-          "titleByNative": {
-            "en": "Match phrase and meaning",
-            "vi": "Nối cụm câu với nghĩa",
-            "ja": "フレーズと意味をつなげる",
-            "ko": "표현과 뜻 연결하기",
-            "zh": "匹配短语和意思"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u2-l2-e2",
-          "order": 2,
-          "type": "listenAndChoose",
-          "titleByNative": {
-            "en": "Listen and choose",
-            "vi": "Nghe và chọn",
-            "ja": "聞いて選ぶ",
-            "ko": "듣고 고르기",
-            "zh": "听音选择"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u2-l2-e3",
-          "order": 3,
-          "type": "multipleChoiceMeaning",
-          "titleByNative": {
-            "en": "Choose the correct meaning",
-            "vi": "Chọn nghĩa đúng",
-            "ja": "正しい意味を選ぶ",
-            "ko": "맞는 뜻 고르기",
-            "zh": "选择正确意思"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u2-l2-e4",
-          "order": 4,
-          "type": "fillBlank",
-          "titleByNative": {
-            "en": "Fill the missing word",
-            "vi": "Điền từ còn thiếu",
-            "ja": "空欄を埋める",
-            "ko": "빈칸 채우기",
-            "zh": "填空"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u2-l2-e5",
-          "order": 5,
-          "type": "arrangeWords",
-          "titleByNative": {
-            "en": "Arrange the sentence",
-            "vi": "Sắp xếp câu",
-            "ja": "文を並べる",
-            "ko": "문장 배열하기",
-            "zh": "排列句子"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "warmup",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u2-l2-e6",
-          "order": 6,
-          "type": "dialogueCompletion",
-          "titleByNative": {
-            "en": "Complete the dialogue",
-            "vi": "Hoàn thành hội thoại",
-            "ja": "会話を完成させる",
-            "ko": "대화 완성하기",
-            "zh": "完成对话"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u2-l2-e7",
-          "order": 7,
-          "type": "naturalResponseChoice",
-          "titleByNative": {
-            "en": "Choose a natural response",
-            "vi": "Chọn phản hồi tự nhiên",
-            "ja": "自然な返事を選ぶ",
-            "ko": "자연스러운 대답 고르기",
-            "zh": "选择自然回应"
-          },
-          "plan": "free",
-          "access": "free",
-          "plusOnly": false,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u2-l2-e8",
-          "order": 8,
-          "type": "plusListeningVocabularyChallenge",
-          "titleByNative": {
-            "en": "Plus · Listening challenge",
-            "vi": "Plus · Thử thách nghe",
-            "ja": "Plus・リスニングチャレンジ",
-            "ko": "Plus · 듣기 챌린지",
-            "zh": "Plus · 听力挑战"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u2-l2-e9",
-          "order": 9,
-          "type": "controlledAiQa",
-          "titleByNative": {
-            "en": "Plus · AI Q&A practice",
-            "vi": "Plus · Luyện hỏi đáp AI",
-            "ja": "Plus・AI質問練習",
-            "ko": "Plus · AI 질의응답 연습",
-            "zh": "Plus · AI问答练习"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        },
-        {
-          "id": "ja-daily_life-m02-u2-l2-e10",
-          "order": 10,
-          "type": "reviewCheckpoint",
-          "titleByNative": {
-            "en": "Plus · Review checkpoint",
-            "vi": "Plus · Kiểm tra tổng hợp",
-            "ja": "Plus・復習チェック",
-            "ko": "Plus · 복습 체크",
-            "zh": "Plus · 复习检查"
-          },
-          "plan": "plus",
-          "access": "plus",
-          "plusOnly": true,
-          "stage": "real_world",
-          "status": "placeholder"
-        }
-      ],
+      "exercises": [],
       "displayOrder": 2
     },
     {
