@@ -96806,6 +96806,82 @@
             "ja": "役に立てて嬉しい（丁寧）。"
           },
           "audioLocale": "ja-JP"
+        },
+        {
+          "id": "sorenara",
+          "displayText": "それなら",
+          "reading": "それなら",
+          "romanization": "sorenara",
+          "speechText": "それなら",
+          "meaningVi": "Nếu vậy thì, trong trường hợp đó.",
+          "translationByNative": {
+            "vi": "Nếu vậy thì, trong trường hợp đó.",
+            "en": "In that case, if so.",
+            "ja": "それなら。"
+          },
+          "translations": {
+            "vi": "Nếu vậy thì, trong trường hợp đó.",
+            "en": "In that case, if so.",
+            "ja": "それなら。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "sagasu",
+          "displayText": "探（さが）す",
+          "reading": "さがす",
+          "romanization": "sagasu",
+          "speechText": "さがす",
+          "meaningVi": "Tìm kiếm.",
+          "translationByNative": {
+            "vi": "Tìm kiếm.",
+            "en": "To search, to look for.",
+            "ja": "探す。"
+          },
+          "translations": {
+            "vi": "Tìm kiếm.",
+            "en": "To search, to look for.",
+            "ja": "探す。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "kanji",
+          "displayText": "感（かん）じ",
+          "reading": "かんじ",
+          "romanization": "kanji",
+          "speechText": "かんじ",
+          "meaningVi": "Cảm giác, kiểu/dáng vẻ thế này.",
+          "translationByNative": {
+            "vi": "Cảm giác, kiểu/dáng vẻ thế này.",
+            "en": "A feeling, a look/style like this.",
+            "ja": "感じ。"
+          },
+          "translations": {
+            "vi": "Cảm giác, kiểu/dáng vẻ thế này.",
+            "en": "A feeling, a look/style like this.",
+            "ja": "感じ。"
+          },
+          "audioLocale": "ja-JP"
+        },
+        {
+          "id": "osewa",
+          "displayText": "お世話（せわ）",
+          "reading": "おせわ",
+          "romanization": "osewa",
+          "speechText": "おせわ",
+          "meaningVi": "Sự giúp đỡ, chăm sóc.",
+          "translationByNative": {
+            "vi": "Sự giúp đỡ, chăm sóc.",
+            "en": "Help, care.",
+            "ja": "お世話。"
+          },
+          "translations": {
+            "vi": "Sự giúp đỡ, chăm sóc.",
+            "en": "Help, care.",
+            "ja": "お世話。"
+          },
+          "audioLocale": "ja-JP"
         }
       ],
       "keyPhrases": [],
@@ -96911,6 +96987,26 @@
           "id": "ja-daily_life-m02-u1-l2-lost-eraser-help-5"
         },
         {
+          "targetText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+          "displayText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+          "reading": "ハチこうといっしょにしゃしんをとってもらえませんか？",
+          "speechText": "ハチこうといっしょにしゃしんをとってもらえませんか",
+          "translationByNative": {
+            "vi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+            "en": "Could you take a photo of me with the Hachiko statue?",
+            "ja": "ハチ公と一緒に写真を撮ってもらえませんか？"
+          },
+          "translations": {
+            "vi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+            "en": "Could you take a photo of me with the Hachiko statue?",
+            "ja": "ハチ公と一緒に写真を撮ってもらえませんか？"
+          },
+          "meaningVi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+          "audioLocale": "ja-JP",
+          "speakerId": "tanaka",
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-1"
+        },
+        {
           "targetText": "よいですよ。シャッターはどこですか？",
           "displayText": "よいですよ。シャッターはどこですか？",
           "reading": "よいですよ。シャッターはどこですか？",
@@ -96928,7 +97024,7 @@
           "meaningVi": "Được chứ. Nút chụp ở đâu vậy?",
           "audioLocale": "ja-JP",
           "speakerId": "sato",
-          "id": "ja-daily_life-m02-u1-l2-photo-help-done-1"
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-2"
         },
         {
           "targetText": "右上（みぎうえ）にあります。",
@@ -96948,7 +97044,7 @@
           "meaningVi": "Ở phía trên bên phải.",
           "audioLocale": "ja-JP",
           "speakerId": "tanaka",
-          "id": "ja-daily_life-m02-u1-l2-photo-help-done-2"
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-3"
         },
         {
           "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
@@ -96968,7 +97064,7 @@
           "meaningVi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
           "audioLocale": "ja-JP",
           "speakerId": "sato",
-          "id": "ja-daily_life-m02-u1-l2-photo-help-done-3"
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-4"
         },
         {
           "targetText": "はい、ありがとうございました。",
@@ -96988,7 +97084,7 @@
           "meaningVi": "Vâng, cảm ơn anh/chị nhiều ạ.",
           "audioLocale": "ja-JP",
           "speakerId": "tanaka",
-          "id": "ja-daily_life-m02-u1-l2-photo-help-done-4"
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-5"
         },
         {
           "targetText": "どういたしまして。",
@@ -97008,7 +97104,7 @@
           "meaningVi": "Không có gì đâu.",
           "audioLocale": "ja-JP",
           "speakerId": "sato",
-          "id": "ja-daily_life-m02-u1-l2-photo-help-done-5"
+          "id": "ja-daily_life-m02-u1-l2-photo-help-done-6"
         },
         {
           "targetText": "田中（たなか）さんには、いつもお世話（せわ）になっています。",
@@ -97180,16 +97276,36 @@
             "ja": "丁寧 — 終わったこと（前のレッスンの続き）"
           },
           "situationByNative": {
-            "vi": "Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).",
-            "en": "Relationship: as already established in the previous lesson (m02-u1-l1) — two people of equal standing on a trip, keeping the polite register. Situation: this continues RIGHT AFTER the passage already taught in the previous lesson — Sato has just finished taking a photo for Tanaka, is thanked, and THIS TIME replies with どういたしまして (the reply that lesson left out).",
-            "ja": "関係性：前のレッスン（m02-u1-l1）ですでに設定した通り — 旅行中の対等な二人、丁寧体を保っています。場面：前のレッスンで習った箇所のすぐ続き — 佐藤が田中の写真を撮り終えてお礼を言われ、今回は「どういたしまして」と返事をします（前のレッスンでは抜けていた返事）。"
+            "vi": "Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY từ lượt nhờ chụp ảnh đã học ở bài trước — 田中 nhờ 佐藤 chụp giúp, 佐藤 nhận lời và chụp xong, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).",
+            "en": "Relationship: as already established in the previous lesson (m02-u1-l1) — two people of equal standing on a trip, keeping the polite register. Situation: this continues RIGHT FROM the turn where Tanaka asks for the photo, already taught in the previous lesson — Tanaka asks Sato to take the photo, Sato agrees and finishes taking it, is thanked, and THIS TIME replies with どういたしまして (the reply that lesson left out).",
+            "ja": "関係性：前のレッスン（m02-u1-l1）ですでに設定した通り — 旅行中の対等な二人、丁寧体を保っています。場面：前のレッスンで習った、田中が写真をお願いするところから続きます — 田中が佐藤に撮影を頼み、佐藤が引き受けて撮り終え、お礼を言われ、今回は「どういたしまして」と返事をします（前のレッスンでは抜けていた返事）。"
           },
           "explanationByNative": {
-            "vi": "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.\nCùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.",
-            "en": "This continues the previous lesson — the first turns (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) were already taught in m02-u1-l1; どういたしまして is new in this lesson.\nThe same どういたしまして, but a different situation from group 1 (one is travel/photos, the other is helping find something in class) — showing this phrase works across many situations.",
-            "ja": "これは前のレッスンの続きです — 最初のやり取り（シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました）はm02-u1-l1ですでに習っており、「どういたしまして」がこのレッスンの新しい部分です。\n同じ「どういたしまして」ですが、グループ1とは場面が異なります（一方は旅行・写真、もう一方は教室で物を探す手伝い）— この表現が様々な場面で使えることが分かります。"
+            "vi": "Đây là đoạn nối tiếp bài trước — 5 lượt đầu (ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.\nCùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.",
+            "en": "This continues the previous lesson — the first turns (ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) were already taught in m02-u1-l1; どういたしまして is new in this lesson.\nThe same どういたしまして, but a different situation from group 1 (one is travel/photos, the other is helping find something in class) — showing this phrase works across many situations.",
+            "ja": "これは前のレッスンの続きです — 最初のやり取り（ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました）はm02-u1-l1ですでに習っており、「どういたしまして」がこのレッスンの新しい部分です。\n同じ「どういたしまして」ですが、グループ1とは場面が異なります（一方は旅行・写真、もう一方は教室で物を探す手伝い）— この表現が様々な場面で使えることが分かります。"
           },
           "lines": [
+            {
+              "targetText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+              "displayText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+              "reading": "ハチこうといっしょにしゃしんをとってもらえませんか？",
+              "speechText": "ハチこうといっしょにしゃしんをとってもらえませんか",
+              "translationByNative": {
+                "vi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+                "en": "Could you take a photo of me with the Hachiko statue?",
+                "ja": "ハチ公と一緒に写真を撮ってもらえませんか？"
+              },
+              "translations": {
+                "vi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+                "en": "Could you take a photo of me with the Hachiko statue?",
+                "ja": "ハチ公と一緒に写真を撮ってもらえませんか？"
+              },
+              "meaningVi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+              "audioLocale": "ja-JP",
+              "speakerId": "tanaka",
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-1"
+            },
             {
               "targetText": "よいですよ。シャッターはどこですか？",
               "displayText": "よいですよ。シャッターはどこですか？",
@@ -97208,7 +97324,7 @@
               "meaningVi": "Được chứ. Nút chụp ở đâu vậy?",
               "audioLocale": "ja-JP",
               "speakerId": "sato",
-              "id": "ja-daily_life-m02-u1-l2-photo-help-done-1"
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-2"
             },
             {
               "targetText": "右上（みぎうえ）にあります。",
@@ -97228,7 +97344,7 @@
               "meaningVi": "Ở phía trên bên phải.",
               "audioLocale": "ja-JP",
               "speakerId": "tanaka",
-              "id": "ja-daily_life-m02-u1-l2-photo-help-done-2"
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-3"
             },
             {
               "targetText": "右上（みぎうえ）ですね。では撮（と）りますよ。このような感（かん）じでどうですか？",
@@ -97248,7 +97364,7 @@
               "meaningVi": "Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?",
               "audioLocale": "ja-JP",
               "speakerId": "sato",
-              "id": "ja-daily_life-m02-u1-l2-photo-help-done-3"
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-4"
             },
             {
               "targetText": "はい、ありがとうございました。",
@@ -97268,7 +97384,7 @@
               "meaningVi": "Vâng, cảm ơn anh/chị nhiều ạ.",
               "audioLocale": "ja-JP",
               "speakerId": "tanaka",
-              "id": "ja-daily_life-m02-u1-l2-photo-help-done-4"
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-5"
             },
             {
               "targetText": "どういたしまして。",
@@ -97288,7 +97404,7 @@
               "meaningVi": "Không có gì đâu.",
               "audioLocale": "ja-JP",
               "speakerId": "sato",
-              "id": "ja-daily_life-m02-u1-l2-photo-help-done-5"
+              "id": "ja-daily_life-m02-u1-l2-photo-help-done-6"
             }
           ]
         },
@@ -97934,6 +98050,137 @@
                 "speechText": "おやくにたててよかったです。"
               }
             ]
+          },
+          {
+            "id": "sorenara",
+            "timingAndContext": [
+              "Dùng để nối tiếp ý, dựa trên điều vừa nghe để đề xuất hoặc kết luận."
+            ],
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "avoid": [],
+            "register": "",
+            "formal": [],
+            "casual": [],
+            "overview": "Nếu vậy thì.",
+            "overviewByNative": {
+              "vi": "Nếu vậy thì.",
+              "en": "In that case.",
+              "ja": "それなら。"
+            },
+            "examples": [
+              {
+                "text": "それなら、近（ちか）くにあるはずですね。",
+                "reading": "それなら、ちかくにあるはずですね。",
+                "translation": "Nếu vậy thì chắc nó ở gần đây thôi.",
+                "translationByNative": {
+                  "vi": "Nếu vậy thì chắc nó ở gần đây thôi.",
+                  "en": "Then it should be nearby.",
+                  "ja": "それなら、近くにあるはずですね。"
+                },
+                "speechText": "それなら、ちかくにあるはずですね。"
+              }
+            ]
+          },
+          {
+            "id": "sagasu",
+            "timingAndContext": [
+              "Nói về việc tìm kiếm một vật hoặc một người."
+            ],
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "avoid": [],
+            "register": "",
+            "formal": [],
+            "casual": [],
+            "overview": "Tìm kiếm.",
+            "overviewByNative": {
+              "vi": "Tìm kiếm.",
+              "en": "To search, to look for.",
+              "ja": "探す。"
+            },
+            "examples": [
+              {
+                "text": "私（わたし）も探（さが）します。",
+                "reading": "わたしもさがします。",
+                "translation": "Tôi cũng đi tìm giúp.",
+                "translationByNative": {
+                  "vi": "Tôi cũng đi tìm giúp.",
+                  "en": "I'll help look too.",
+                  "ja": "私も探します。"
+                },
+                "speechText": "わたしもさがします。"
+              }
+            ],
+            "notes": [
+              "Dạng từ điển — mức lịch sự nằm ở cách chia: 探します (lịch sự) ・ 探す／探した (thân mật)."
+            ]
+          },
+          {
+            "id": "kanji",
+            "timingAndContext": [
+              "Mô tả cảm giác hoặc kiểu/dáng vẻ của một việc, thường dùng trong このような感じで (kiểu như thế này)."
+            ],
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "avoid": [],
+            "register": "",
+            "formal": [],
+            "casual": [],
+            "overview": "Cảm giác, kiểu/dáng vẻ.",
+            "overviewByNative": {
+              "vi": "Cảm giác, kiểu/dáng vẻ.",
+              "en": "A feeling, a look/style.",
+              "ja": "感じ。"
+            },
+            "examples": [
+              {
+                "text": "このような感（かん）じでどうですか？",
+                "reading": "このようなかんじでどうですか？",
+                "translation": "Kiểu này được không?",
+                "translationByNative": {
+                  "vi": "Kiểu này được không?",
+                  "en": "Is this look okay?",
+                  "ja": "このような感じでどうですか？"
+                },
+                "speechText": "このようなかんじでどうですか？"
+              }
+            ]
+          },
+          {
+            "id": "osewa",
+            "timingAndContext": [
+              "Nói về sự giúp đỡ/chăm sóc nhận được, thường dùng trong お世話になっています (được giúp đỡ/mang ơn)."
+            ],
+            "appropriateFor": [
+              "Mọi đối tượng"
+            ],
+            "avoid": [],
+            "register": "",
+            "formal": [],
+            "casual": [],
+            "overview": "Sự giúp đỡ, chăm sóc.",
+            "overviewByNative": {
+              "vi": "Sự giúp đỡ, chăm sóc.",
+              "en": "Help, care.",
+              "ja": "お世話。"
+            },
+            "examples": [
+              {
+                "text": "いつもお世話（せわ）になっています。",
+                "reading": "いつもおせわになっています。",
+                "translation": "Luôn được anh/chị giúp đỡ nhiều.",
+                "translationByNative": {
+                  "vi": "Luôn được anh/chị giúp đỡ nhiều.",
+                  "en": "I am always helped by you a lot.",
+                  "ja": "いつもお世話になっています。"
+                },
+                "speechText": "いつもおせわになっています。"
+              }
+            ]
           }
         ],
         "vocabularyReferences": [
@@ -98040,29 +98287,6 @@
             }
           },
           {
-            "term": "それなら",
-            "reading": "それなら",
-            "speechText": "それなら",
-            "meaning": "Nếu vậy thì, trong trường hợp đó.",
-            "meaningByNative": {
-              "vi": "Nếu vậy thì, trong trường hợp đó.",
-              "en": "In that case, if so.",
-              "ja": "それなら。"
-            },
-            "register": "",
-            "example": {
-              "text": "それなら、近（ちか）くにあるはずですね。",
-              "reading": "それなら、ちかくにあるはずですね。",
-              "translation": "Nếu vậy thì chắc nó ở gần đây thôi.",
-              "translationByNative": {
-                "vi": "Nếu vậy thì chắc nó ở gần đây thôi.",
-                "en": "Then it should be nearby.",
-                "ja": "それなら、近くにあるはずですね。"
-              },
-              "speechText": "それなら、ちかくにあるはずですね。"
-            }
-          },
-          {
             "term": "はず",
             "reading": "はず",
             "speechText": "はず",
@@ -98083,29 +98307,6 @@
                 "ja": "近くにあるはずですね。"
               },
               "speechText": "ちかくにあるはずですね。"
-            }
-          },
-          {
-            "term": "探（さが）す",
-            "reading": "さがす",
-            "speechText": "さがす",
-            "meaning": "Tìm kiếm.",
-            "meaningByNative": {
-              "vi": "Tìm kiếm.",
-              "en": "To search, to look for.",
-              "ja": "探す。"
-            },
-            "register": "",
-            "example": {
-              "text": "私（わたし）も探（さが）します。",
-              "reading": "わたしもさがします。",
-              "translation": "Tôi cũng đi tìm giúp.",
-              "translationByNative": {
-                "vi": "Tôi cũng đi tìm giúp.",
-                "en": "I'll help look too.",
-                "ja": "私も探します。"
-              },
-              "speechText": "わたしもさがします。"
             }
           },
           {
@@ -98132,49 +98333,49 @@
             }
           },
           {
-            "term": "感（かん）じ",
-            "reading": "かんじ",
-            "speechText": "かんじ",
-            "meaning": "Cảm giác, kiểu/dáng vẻ thế này.",
+            "term": "ハチ公（こう）",
+            "reading": "ハチこう",
+            "speechText": "ハチこう",
+            "meaning": "Tượng chú chó Hachiko, nổi tiếng ở nhà ga Shibuya.",
             "meaningByNative": {
-              "vi": "Cảm giác, kiểu/dáng vẻ thế này.",
-              "en": "A feeling, a look/style like this.",
-              "ja": "感じ。"
+              "vi": "Tượng chú chó Hachiko, nổi tiếng ở nhà ga Shibuya.",
+              "en": "The Hachiko dog statue, famous at Shibuya station.",
+              "ja": "ハチ公。"
             },
             "register": "",
             "example": {
-              "text": "このような感（かん）じでどうですか？",
-              "reading": "このようなかんじでどうですか？",
-              "translation": "Kiểu này được không?",
+              "text": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+              "reading": "ハチこうといっしょにしゃしんをとってもらえませんか？",
+              "translation": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
               "translationByNative": {
-                "vi": "Kiểu này được không?",
-                "en": "Is this look okay?",
-                "ja": "このような感じでどうですか？"
+                "vi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+                "en": "Could you take a photo of me with the Hachiko statue?",
+                "ja": "ハチ公と一緒に写真を撮ってもらえませんか？"
               },
-              "speechText": "このようなかんじでどうですか？"
+              "speechText": "ハチこうといっしょにしゃしんをとってもらえませんか？"
             }
           },
           {
-            "term": "お世話（せわ）",
-            "reading": "おせわ",
-            "speechText": "おせわ",
-            "meaning": "Sự giúp đỡ, chăm sóc — thường dùng trong お世話になっています (được giúp đỡ/mang ơn).",
+            "term": "もらえる",
+            "reading": "もらえる",
+            "speechText": "もらえる",
+            "meaning": "Có thể nhờ ai làm gì cho mình (thể khả năng của もらう — nhận được).",
             "meaningByNative": {
-              "vi": "Sự giúp đỡ, chăm sóc — thường dùng trong お世話になっています (được giúp đỡ/mang ơn).",
-              "en": "Help, care — usually used in お世話になっています (being helped/indebted).",
-              "ja": "お世話。"
+              "vi": "Có thể nhờ ai làm gì cho mình (thể khả năng của もらう — nhận được).",
+              "en": "To be able to have someone do something for you (potential form of もらう — to receive).",
+              "ja": "もらえる。"
             },
             "register": "",
             "example": {
-              "text": "いつもお世話（せわ）になっています。",
-              "reading": "いつもおせわになっています。",
-              "translation": "Luôn được anh/chị giúp đỡ nhiều.",
+              "text": "写真（しゃしん）を撮（と）ってもらえませんか？",
+              "reading": "しゃしんをとってもらえませんか？",
+              "translation": "Anh/chị chụp giúp tôi tấm ảnh được không?",
               "translationByNative": {
-                "vi": "Luôn được anh/chị giúp đỡ nhiều.",
-                "en": "I am always helped by you a lot.",
-                "ja": "いつもお世話になっています。"
+                "vi": "Anh/chị chụp giúp tôi tấm ảnh được không?",
+                "en": "Could you take a photo for me?",
+                "ja": "写真を撮ってもらえませんか？"
               },
-              "speechText": "いつもおせわになっています。"
+              "speechText": "しゃしんをとってもらえませんか？"
             }
           }
         ],
@@ -98317,13 +98518,32 @@
               "en": "Polite — something finished (continuing the previous lesson)",
               "ja": "丁寧 — 終わったこと（前のレッスンの続き）"
             },
-            "situation": "Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).",
+            "situation": "Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY từ lượt nhờ chụp ảnh đã học ở bài trước — 田中 nhờ 佐藤 chụp giúp, 佐藤 nhận lời và chụp xong, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).",
             "situationByNative": {
-              "vi": "Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).",
-              "en": "Relationship: as already established in the previous lesson (m02-u1-l1) — two people of equal standing on a trip, keeping the polite register. Situation: this continues RIGHT AFTER the passage already taught in the previous lesson — Sato has just finished taking a photo for Tanaka, is thanked, and THIS TIME replies with どういたしまして (the reply that lesson left out).",
-              "ja": "関係性：前のレッスン（m02-u1-l1）ですでに設定した通り — 旅行中の対等な二人、丁寧体を保っています。場面：前のレッスンで習った箇所のすぐ続き — 佐藤が田中の写真を撮り終えてお礼を言われ、今回は「どういたしまして」と返事をします（前のレッスンでは抜けていた返事）。"
+              "vi": "Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY từ lượt nhờ chụp ảnh đã học ở bài trước — 田中 nhờ 佐藤 chụp giúp, 佐藤 nhận lời và chụp xong, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).",
+              "en": "Relationship: as already established in the previous lesson (m02-u1-l1) — two people of equal standing on a trip, keeping the polite register. Situation: this continues RIGHT FROM the turn where Tanaka asks for the photo, already taught in the previous lesson — Tanaka asks Sato to take the photo, Sato agrees and finishes taking it, is thanked, and THIS TIME replies with どういたしまして (the reply that lesson left out).",
+              "ja": "関係性：前のレッスン（m02-u1-l1）ですでに設定した通り — 旅行中の対等な二人、丁寧体を保っています。場面：前のレッスンで習った、田中が写真をお願いするところから続きます — 田中が佐藤に撮影を頼み、佐藤が引き受けて撮り終え、お礼を言われ、今回は「どういたしまして」と返事をします（前のレッスンでは抜けていた返事）。"
             },
             "lines": [
+              {
+                "targetText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+                "displayText": "ハチ公（こう）と一緒（いっしょ）に写真（しゃしん）を撮（と）ってもらえませんか？",
+                "reading": "ハチこうといっしょにしゃしんをとってもらえませんか？",
+                "speechText": "ハチこうといっしょにしゃしんをとってもらえませんか",
+                "translationByNative": {
+                  "vi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+                  "en": "Could you take a photo of me with the Hachiko statue?",
+                  "ja": "ハチ公と一緒に写真を撮ってもらえませんか？"
+                },
+                "translations": {
+                  "vi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+                  "en": "Could you take a photo of me with the Hachiko statue?",
+                  "ja": "ハチ公と一緒に写真を撮ってもらえませんか？"
+                },
+                "meaningVi": "Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?",
+                "audioLocale": "ja-JP",
+                "speakerId": "tanaka"
+              },
               {
                 "targetText": "よいですよ。シャッターはどこですか？",
                 "displayText": "よいですよ。シャッターはどこですか？",
@@ -98421,20 +98641,20 @@
               }
             ],
             "explanation": [
-              "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
+              "Đây là đoạn nối tiếp bài trước — 5 lượt đầu (ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
               "Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống."
             ],
             "explanationByNative": {
               "vi": [
-                "Đây là đoạn nối tiếp bài trước — 4 lượt đầu (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
+                "Đây là đoạn nối tiếp bài trước — 5 lượt đầu (ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.",
                 "Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống."
               ],
               "en": [
-                "This continues the previous lesson — the first turns (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) were already taught in m02-u1-l1; どういたしまして is new in this lesson.",
+                "This continues the previous lesson — the first turns (ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) were already taught in m02-u1-l1; どういたしまして is new in this lesson.",
                 "The same どういたしまして, but a different situation from group 1 (one is travel/photos, the other is helping find something in class) — showing this phrase works across many situations."
               ],
               "ja": [
-                "これは前のレッスンの続きです — 最初のやり取り（シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました）はm02-u1-l1ですでに習っており、「どういたしまして」がこのレッスンの新しい部分です。",
+                "これは前のレッスンの続きです — 最初のやり取り（ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました）はm02-u1-l1ですでに習っており、「どういたしまして」がこのレッスンの新しい部分です。",
                 "同じ「どういたしまして」ですが、グループ1とは場面が異なります（一方は旅行・写真、もう一方は教室で物を探す手伝い）— この表現が様々な場面で使えることが分かります。"
               ]
             }
@@ -100293,7 +100513,11 @@
           "tondemonai",
           "tondemogozaimasen",
           "kininaide",
-          "oyakunitatete"
+          "oyakunitatete",
+          "sorenara",
+          "sagasu",
+          "kanji",
+          "osewa"
         ]
       },
       "exercises": [],

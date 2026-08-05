@@ -274,6 +274,15 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
         { id: 'tondemogozaimasen', timingAndContext: ['Khiêm tốn từ chối lời khen hoặc lời cảm ơn quá lời, lịch sự.'], appropriateFor: ['Thầy cô', 'Người trên', 'Người quen', 'Đồng nghiệp'], avoid: [], register: 'Lịch sự.', formal: [], casual: ['Cách thân mật chuẩn:', 'とんでもない', 'Dùng với:', 'Bạn bè', 'Người ngang hàng đã thân'], overview: 'Từ chối lời khen/cảm ơn quá lời (lịch sự).', examples: [example('とんでもございません', 'とんでもございません', 'Đâu có ạ, không có gì đâu ạ.')], notes: ['とんでもない vốn là MỘT tính từ trọn vẹn, nên とんでもございません (đổi phần ない) tuy phổ biến nhưng bị coi là chưa chuẩn; dạng CHUẨN là とんでもないです／とんでもないことでございます.'] },
         { id: 'kininaide', timingAndContext: ['Trấn an người khác rằng một chút phiền phức không đáng bận tâm.'], appropriateFor: ['Thầy cô', 'Người trên', 'Người quen', 'Đồng nghiệp'], avoid: [], register: 'Lịch sự.', formal: [], casual: [], overview: 'Đừng bận tâm về việc đó (lịch sự).', examples: [example('気にしないでください。', 'きにしないでください。', 'Xin đừng bận tâm ạ.')] },
         { id: 'oyakunitatete', timingAndContext: ['Bày tỏ niềm vui vì vừa giúp được ai đó việc gì, lịch sự.'], appropriateFor: ['Thầy cô', 'Người trên', 'Người quen', 'Đồng nghiệp'], avoid: ['Không dùng khi bản thân vừa được người khác giúp — đây là câu MÌNH nói khi MÌNH giúp được người khác.'], register: 'Lịch sự.', formal: [], casual: [], overview: 'Vui vì đã giúp được (lịch sự).', examples: [example('お役に立てて良かったです。', 'おやくにたててよかったです。', 'Tôi vui vì đã giúp được ạ.')] },
+        // 4 thẻ nâng từ "từ lạ vùng B" lên "từ chính" (owner chốt 2026-08-02,
+        // đo tần suất thật trên 41.737 lượt kho topic1-5.json: それなら 198 ·
+        // 探す 173 · 感じ 287 · お世話 38 nhưng bám chủ đề nhất). Đều là LEMMA
+        // (liên từ/danh từ/động từ nguyên gốc), không phải một lời nói —
+        // register: '' theo Thẻ LEMMA §G14-R8.
+        { id: 'sorenara', timingAndContext: ['Dùng để nối tiếp ý, dựa trên điều vừa nghe để đề xuất hoặc kết luận.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Nếu vậy thì.', examples: [example('それなら、近くにあるはずですね。', 'それなら、ちかくにあるはずですね。', 'Nếu vậy thì chắc nó ở gần đây thôi.')] },
+        { id: 'sagasu', timingAndContext: ['Nói về việc tìm kiếm một vật hoặc một người.'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Tìm kiếm.', examples: [example('私も探します。', 'わたしもさがします。', 'Tôi cũng đi tìm giúp.')], notes: ['Dạng từ điển — mức lịch sự nằm ở cách chia: 探します (lịch sự) ・ 探す／探した (thân mật).'] },
+        { id: 'kanji', timingAndContext: ['Mô tả cảm giác hoặc kiểu/dáng vẻ của một việc, thường dùng trong このような感じで (kiểu như thế này).'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Cảm giác, kiểu/dáng vẻ.', examples: [example('このような感じでどうですか？', 'このようなかんじでどうですか？', 'Kiểu này được không?')] },
+        { id: 'osewa', timingAndContext: ['Nói về sự giúp đỡ/chăm sóc nhận được, thường dùng trong お世話になっています (được giúp đỡ/mang ơn).'], appropriateFor: ['Mọi đối tượng'], avoid: [], register: '', formal: [], casual: [], overview: 'Sự giúp đỡ, chăm sóc.', examples: [example('いつもお世話になっています。', 'いつもおせわになっています。', 'Luôn được anh/chị giúp đỡ nhiều.')] },
       ],
       // "Tham khảo thêm" (§B2b) — こちらこそ ĐÃ DẠY TRƯỚC (Golden L1), ở đây
       // dạy CÁCH DÙNG MỚI (đáp lễ lòng biết ơn, không phải đáp lễ lời chào),
@@ -282,19 +291,19 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
         { term: 'こちらこそ', reading: 'こちらこそ', speechText: 'こちらこそ', meaning: 'Cách dùng MỚI của từ đã học ở bài chào hỏi: đáp lễ khi ai đó bày tỏ lòng biết ơn với mình, không chỉ dùng khi đáp lễ よろしくお願いします. Khác どういたしまして／いえいえ ở chỗ: こちらこそ ngụ ý "chính TÔI mới là người phải cảm ơn/mang ơn BẠN".', register: 'Lịch sự.', example: example('こちらこそ、お世話になっています。', 'こちらこそ、おせわになっています。', 'Không, chính tôi mới là người phải cảm ơn anh/chị.') },
         { term: 'こちらこそよろしく', reading: 'こちらこそよろしく', speechText: 'こちらこそよろしく', meaning: 'Đối chiếu: đây LÀ cách dùng こちらこそ đã học ở bài chào hỏi (đáp lễ よろしくお願いします) — khác với cách dùng MỚI ở bài này (đáp lễ lòng biết ơn お世話になっています, không có よろしく).', register: 'Trang trọng.', example: example('こちらこそよろしく。', 'こちらこそよろしく。', 'Chính tôi mới là người phải nhờ anh/chị giúp đỡ.') },
         // §G7 vùng B điều kiện 3 (§B2f, owner chốt 2026-08-02) — nghĩa của
-        // từ lạ xuất hiện trong dialogueGroups (card 3), đúng mức "dư ≤4 từ
-        // lạ/khối" mà G14-R5 cho phép. Cùng cơ chế/hình dạng với 半年/なんとか
-        // ở m01-u2-l2 — không phải "cách dùng mới của từ đã dạy" (đó là 2
-        // mục こちらこそ ở trên); đây là 7 từ CHƯA từng dạy, gặp trong hội
-        // thoại đọc hiểu, không dùng ở Q1–Q13.
+        // từ lạ CÒN LẠI xuất hiện trong dialogueGroups (card 3), sau khi 4
+        // từ tần suất cao/bám chủ đề nhất (それなら/探す/感じ/お世話) đã được
+        // nâng lên thẻ chính ở vocabularyDetails — xem ghi chú ở đó. Cùng
+        // cơ chế/hình dạng với 半年/なんとか ở m01-u2-l2. 見つける/足元/はず/
+        // シャッター vẫn là từ lạ (見つける/はず tần suất thấp hơn 4 từ đã
+        // nâng, はず hơi nâng cao ngữ pháp cho A0-A1; 足元/シャッター quá hẹp
+        // — dưới 10 lượt/41.737 lượt kho, không nâng thành thẻ chính).
         { term: '見（み）つける', reading: 'みつける', speechText: 'みつける', meaning: 'Tìm thấy.', register: '', example: example('あ、見つけました。', 'あ、みつけました。', 'À, tìm thấy rồi.') },
         { term: '足元（あしもと）', reading: 'あしもと', speechText: 'あしもと', meaning: 'Dưới chân, ngay chỗ mình đứng.', register: '', example: example('私の足元にありましたよ。', 'わたしのあしもとにありましたよ。', 'Nó ở dưới chân tôi này.') },
-        { term: 'それなら', reading: 'それなら', speechText: 'それなら', meaning: 'Nếu vậy thì, trong trường hợp đó.', register: '', example: example('それなら、近くにあるはずですね。', 'それなら、ちかくにあるはずですね。', 'Nếu vậy thì chắc nó ở gần đây thôi.') },
         { term: 'はず', reading: 'はず', speechText: 'はず', meaning: 'Hẳn là, chắc là (dự đoán có căn cứ).', register: '', example: example('近くにあるはずですね。', 'ちかくにあるはずですね。', 'Chắc nó ở gần đây thôi.') },
-        { term: '探（さが）す', reading: 'さがす', speechText: 'さがす', meaning: 'Tìm kiếm.', register: '', example: example('私も探します。', 'わたしもさがします。', 'Tôi cũng đi tìm giúp.') },
         { term: 'シャッター', reading: 'シャッター', speechText: 'シャッター', meaning: 'Nút chụp (máy ảnh).', register: '', example: example('シャッターはどこですか？', 'シャッターはどこですか？', 'Nút chụp ở đâu vậy?') },
-        { term: '感（かん）じ', reading: 'かんじ', speechText: 'かんじ', meaning: 'Cảm giác, kiểu/dáng vẻ thế này.', register: '', example: example('このような感じでどうですか？', 'このようなかんじでどうですか？', 'Kiểu này được không?') },
-        { term: 'お世話（せわ）', reading: 'おせわ', speechText: 'おせわ', meaning: 'Sự giúp đỡ, chăm sóc — thường dùng trong お世話になっています (được giúp đỡ/mang ơn).', register: '', example: example('いつもお世話になっています。', 'いつもおせわになっています。', 'Luôn được anh/chị giúp đỡ nhiều.') },
+        { term: 'ハチ公（こう）', reading: 'ハチこう', speechText: 'ハチこう', meaning: 'Tượng chú chó Hachiko, nổi tiếng ở nhà ga Shibuya.', register: '', example: example('ハチ公と一緒に写真を撮ってもらえませんか？', 'ハチこうといっしょにしゃしんをとってもらえませんか？', 'Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?') },
+        { term: 'もらえる', reading: 'もらえる', speechText: 'もらえる', meaning: 'Có thể nhờ ai làm gì cho mình (thể khả năng của もらう — nhận được).', register: '', example: example('写真を撮ってもらえませんか？', 'しゃしんをとってもらえませんか？', 'Anh/chị chụp giúp tôi tấm ảnh được không?') },
       ],
       dialogueGroups: [
         {
@@ -309,15 +318,16 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
           explanation: ['どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.', 'Cả hai giữ thể lịch sự vì là bạn học chưa thân.'],
         },
         {
-          id: 'photo-help-done', title: 'Lịch sự — việc đã xong (nối tiếp bài trước)', situation: 'Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).',
+          id: 'photo-help-done', title: 'Lịch sự — việc đã xong (nối tiếp bài trước)', situation: 'Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY từ lượt nhờ chụp ảnh đã học ở bài trước — 田中 nhờ 佐藤 chụp giúp, 佐藤 nhận lời và chụp xong, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).',
           lines: [
+            dialogueLine('tanaka', 'ハチ公と一緒に写真を撮ってもらえませんか？', 'ハチこうといっしょにしゃしんをとってもらえませんか？', 'Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?', 'ハチこうといっしょにしゃしんをとってもらえませんか'),
             dialogueLine('sato', 'よいですよ。シャッターはどこですか？', 'よいですよ。シャッターはどこですか？', 'Được chứ. Nút chụp ở đâu vậy?', 'よいですよ。シャッターはどこですか'),
             dialogueLine('tanaka', '右上にあります。', 'みぎうえにあります。', 'Ở phía trên bên phải.', 'みぎうえにあります'),
             dialogueLine('sato', '右上ですね。では撮りますよ。このような感じでどうですか？', 'みぎうえですね。ではとりますよ。このようなかんじでどうですか？', 'Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?', 'みぎうえですね。ではとりますよ。このようなかんじでどうですか'),
             dialogueLine('tanaka', 'はい、ありがとうございました。', 'はい、ありがとうございました。', 'Vâng, cảm ơn anh/chị nhiều ạ.', 'はい、ありがとうございました'),
             dialogueLine('sato', 'どういたしまして。', 'どういたしまして。', 'Không có gì đâu.', 'どういたしまして'),
           ],
-          explanation: ['Đây là đoạn nối tiếp bài trước — 4 lượt đầu (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.', 'Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.'],
+          explanation: ['Đây là đoạn nối tiếp bài trước — 5 lượt đầu (ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.', 'Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.'],
         },
         {
           id: 'ongoing-gratitude', title: 'こちらこそ — đáp lễ lòng biết ơn (KHÁC bài trước)', situation: 'Vai vế: hai đồng nghiệp/người quen đã biết nhau lâu. Bối cảnh: KHÔNG PHẢI đáp lại một lời cảm ơn cụ thể vừa xảy ra như hai nhóm trên — đây là cách bày tỏ lòng biết ơn/thiện chí CHUNG khi nhắc tới mối quan hệ đôi bên, một tình huống KHÁC. こちらこそ ở đây KHÔNG phải đáp lễ lời chào よろしくお願いします như đã học ở bài chào hỏi.',
@@ -370,6 +380,10 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
     { id: 'tondemogozaimasen', displayText: 'とんでもございません', reading: 'とんでもございません', romanization: 'tondemo gozaimasen', speechText: 'とんでもございません', meaningVi: 'Từ chối lời khen/cảm ơn quá lời (lịch sự).', translationByNative: vi('Từ chối lời khen/cảm ơn quá lời (lịch sự).'), translations: vi('Từ chối lời khen/cảm ơn quá lời (lịch sự).'), audioLocale: 'ja-JP' },
     { id: 'kininaide', displayText: '気にしないでください', reading: 'きにしないでください', romanization: 'ki ni shinaide kudasai', speechText: 'きにしないでください', meaningVi: 'Đừng bận tâm về việc đó (lịch sự).', translationByNative: vi('Đừng bận tâm về việc đó (lịch sự).'), translations: vi('Đừng bận tâm về việc đó (lịch sự).'), audioLocale: 'ja-JP' },
     { id: 'oyakunitatete', displayText: 'お役に立てて良かったです', reading: 'おやくにたててよかったです', romanization: 'oyaku ni tatete yokatta desu', speechText: 'おやくにたててよかったです', meaningVi: 'Vui vì đã giúp được (lịch sự).', translationByNative: vi('Vui vì đã giúp được (lịch sự).'), translations: vi('Vui vì đã giúp được (lịch sự).'), audioLocale: 'ja-JP' },
+    { id: 'sorenara', displayText: 'それなら', reading: 'それなら', romanization: 'sorenara', speechText: 'それなら', meaningVi: 'Nếu vậy thì, trong trường hợp đó.', translationByNative: vi('Nếu vậy thì, trong trường hợp đó.'), translations: vi('Nếu vậy thì, trong trường hợp đó.'), audioLocale: 'ja-JP' },
+    { id: 'sagasu', displayText: '探す', reading: 'さがす', romanization: 'sagasu', speechText: 'さがす', meaningVi: 'Tìm kiếm.', translationByNative: vi('Tìm kiếm.'), translations: vi('Tìm kiếm.'), audioLocale: 'ja-JP' },
+    { id: 'kanji', displayText: '感じ', reading: 'かんじ', romanization: 'kanji', speechText: 'かんじ', meaningVi: 'Cảm giác, kiểu/dáng vẻ thế này.', translationByNative: vi('Cảm giác, kiểu/dáng vẻ thế này.'), translations: vi('Cảm giác, kiểu/dáng vẻ thế này.'), audioLocale: 'ja-JP' },
+    { id: 'osewa', displayText: 'お世話', reading: 'おせわ', romanization: 'osewa', speechText: 'おせわ', meaningVi: 'Sự giúp đỡ, chăm sóc.', translationByNative: vi('Sự giúp đỡ, chăm sóc.'), translations: vi('Sự giúp đỡ, chăm sóc.'), audioLocale: 'ja-JP' },
   ],
 };
 
