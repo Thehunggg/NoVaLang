@@ -289,16 +289,18 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
         // thoại đọc hiểu, không dùng ở Q1–Q13.
         { term: '見（み）つける', reading: 'みつける', speechText: 'みつける', meaning: 'Tìm thấy.', register: '', example: example('あ、見つけました。', 'あ、みつけました。', 'À, tìm thấy rồi.') },
         { term: '足元（あしもと）', reading: 'あしもと', speechText: 'あしもと', meaning: 'Dưới chân, ngay chỗ mình đứng.', register: '', example: example('私の足元にありましたよ。', 'わたしのあしもとにありましたよ。', 'Nó ở dưới chân tôi này.') },
+        { term: 'それなら', reading: 'それなら', speechText: 'それなら', meaning: 'Nếu vậy thì, trong trường hợp đó.', register: '', example: example('それなら、近くにあるはずですね。', 'それなら、ちかくにあるはずですね。', 'Nếu vậy thì chắc nó ở gần đây thôi.') },
+        { term: 'はず', reading: 'はず', speechText: 'はず', meaning: 'Hẳn là, chắc là (dự đoán có căn cứ).', register: '', example: example('近くにあるはずですね。', 'ちかくにあるはずですね。', 'Chắc nó ở gần đây thôi.') },
+        { term: '探（さが）す', reading: 'さがす', speechText: 'さがす', meaning: 'Tìm kiếm.', register: '', example: example('私も探します。', 'わたしもさがします。', 'Tôi cũng đi tìm giúp.') },
         { term: 'シャッター', reading: 'シャッター', speechText: 'シャッター', meaning: 'Nút chụp (máy ảnh).', register: '', example: example('シャッターはどこですか？', 'シャッターはどこですか？', 'Nút chụp ở đâu vậy?') },
         { term: '感（かん）じ', reading: 'かんじ', speechText: 'かんじ', meaning: 'Cảm giác, kiểu/dáng vẻ thế này.', register: '', example: example('このような感じでどうですか？', 'このようなかんじでどうですか？', 'Kiểu này được không?') },
         { term: 'お世話（せわ）', reading: 'おせわ', speechText: 'おせわ', meaning: 'Sự giúp đỡ, chăm sóc — thường dùng trong お世話になっています (được giúp đỡ/mang ơn).', register: '', example: example('いつもお世話になっています。', 'いつもおせわになっています。', 'Luôn được anh/chị giúp đỡ nhiều.') },
-        { term: 'ハチ公（こう）', reading: 'ハチこう', speechText: 'ハチこう', meaning: 'Tượng chú chó Hachiko, nổi tiếng ở nhà ga Shibuya.', register: '', example: example('ハチ公と一緒に写真を撮ってもらえませんか？', 'ハチこうといっしょにしゃしんをとってもらえませんか？', 'Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?') },
-        { term: 'もらえる', reading: 'もらえる', speechText: 'もらえる', meaning: 'Có thể nhờ ai làm gì cho mình (thể khả năng của もらう — nhận được).', register: '', example: example('写真を撮ってもらえませんか？', 'しゃしんをとってもらえませんか？', 'Anh/chị chụp giúp tôi tấm ảnh được không?') },
       ],
       dialogueGroups: [
         {
-          id: 'lost-eraser-help', title: 'Lịch sự — được giúp tìm đồ', situation: 'Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự. Bối cảnh: 佐藤 làm rơi cục tẩy, 伊藤 giúp tìm và tìm thấy.',
+          id: 'lost-eraser-help', title: 'Lịch sự — được giúp tìm đồ', situation: 'Vai vế: hai bạn học cùng lớp, chưa thân — giữ thể lịch sự. Bối cảnh: 佐藤 làm rơi cục tẩy; 伊藤 nhận thấy và đề nghị cùng tìm, rồi tìm thấy.',
           lines: [
+            dialogueLine('ito', 'それなら、近くにあるはずですね。私も探します。', 'それなら、ちかくにあるはずですね。わたしもさがします。', 'Nếu vậy thì chắc nó ở gần đây thôi. Để tôi tìm giúp.', 'それなら、ちかくにあるはずですね。わたしもさがします'),
             dialogueLine('sato', 'すみません。', 'すみません。', 'Phiền chị quá.', 'すみません'),
             dialogueLine('ito', 'あ、見つけました。私の足元にありましたよ。', 'あ、みつけました。わたしのあしもとにありましたよ。', 'À, tìm thấy rồi. Nó ở dưới chân tôi này.', 'あ、みつけました。わたしのあしもとにありましたよ'),
             dialogueLine('sato', 'どうもありがとうございます。', 'どうもありがとうございます。', 'Cảm ơn chị nhiều ạ.', 'どうもありがとうございます'),
@@ -307,16 +309,15 @@ const JA_M02_UNIT1_LESSON2_SOURCE = {
           explanation: ['どういたしまして là câu đáp lịch sự tiêu chuẩn, dùng được cho hầu hết mọi lời cảm ơn, không cần nêu cụ thể.', 'Cả hai giữ thể lịch sự vì là bạn học chưa thân.'],
         },
         {
-          id: 'photo-help-done', title: 'Lịch sự — việc đã xong (nối tiếp bài trước)', situation: 'Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY từ lượt nhờ chụp ảnh đã học ở bài trước — 田中 nhờ 佐藤 chụp giúp, 佐藤 nhận lời và chụp xong, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).',
+          id: 'photo-help-done', title: 'Lịch sự — việc đã xong (nối tiếp bài trước)', situation: 'Vai vế: như đã thiết lập ở bài trước (m02-u1-l1) — hai người ngang vai trong chuyến du lịch, giữ thể lịch sự. Bối cảnh: nối tiếp NGAY SAU đoạn đã học ở bài trước — 佐藤 vừa chụp ảnh xong cho 田中, được cảm ơn, và LẦN NÀY đáp lại どういたしまして (câu đáp còn thiếu ở bài trước).',
           lines: [
-            dialogueLine('tanaka', 'ハチ公と一緒に写真を撮ってもらえませんか？', 'ハチこうといっしょにしゃしんをとってもらえませんか？', 'Anh/chị chụp giúp tôi một tấm ảnh với tượng Hachiko được không?', 'ハチこうといっしょにしゃしんをとってもらえませんか'),
             dialogueLine('sato', 'よいですよ。シャッターはどこですか？', 'よいですよ。シャッターはどこですか？', 'Được chứ. Nút chụp ở đâu vậy?', 'よいですよ。シャッターはどこですか'),
             dialogueLine('tanaka', '右上にあります。', 'みぎうえにあります。', 'Ở phía trên bên phải.', 'みぎうえにあります'),
             dialogueLine('sato', '右上ですね。では撮りますよ。このような感じでどうですか？', 'みぎうえですね。ではとりますよ。このようなかんじでどうですか？', 'Phía trên bên phải, rõ rồi. Tôi chụp đây. Kiểu này được không?', 'みぎうえですね。ではとりますよ。このようなかんじでどうですか'),
             dialogueLine('tanaka', 'はい、ありがとうございました。', 'はい、ありがとうございました。', 'Vâng, cảm ơn anh/chị nhiều ạ.', 'はい、ありがとうございました'),
             dialogueLine('sato', 'どういたしまして。', 'どういたしまして。', 'Không có gì đâu.', 'どういたしまして'),
           ],
-          explanation: ['Đây là đoạn nối tiếp bài trước — 5 lượt đầu (ハチ公と一緒に写真を撮ってもらえませんか／シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.', 'Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.'],
+          explanation: ['Đây là đoạn nối tiếp bài trước — 4 lượt đầu (シャッターはどこですか／右上にあります／では撮りますよ／ありがとうございました) đã học ở m02-u1-l1, câu どういたしまして là câu MỚI của bài này.', 'Cùng là どういたしまして nhưng ngữ cảnh khác nhóm 1 (một bên là du lịch/chụp ảnh, một bên là giúp tìm đồ trong lớp) — cho thấy câu này dùng chung được cho nhiều tình huống.'],
         },
         {
           id: 'ongoing-gratitude', title: 'こちらこそ — đáp lễ lòng biết ơn (KHÁC bài trước)', situation: 'Vai vế: hai đồng nghiệp/người quen đã biết nhau lâu. Bối cảnh: KHÔNG PHẢI đáp lại một lời cảm ơn cụ thể vừa xảy ra như hai nhóm trên — đây là cách bày tỏ lòng biết ơn/thiện chí CHUNG khi nhắc tới mối quan hệ đôi bên, một tình huống KHÁC. こちらこそ ở đây KHÔNG phải đáp lễ lời chào よろしくお願いします như đã học ở bài chào hỏi.',
