@@ -1,0 +1,96 @@
+{
+  "lessonId": "ja-daily_life-m02-u2-l1",
+  "ngày": "2026-08-05",
+  "nguồn": [
+    {
+      "path": "local-sources/ja/topic1.json",
+      "coHang": true,
+      "soCauQuaLoc": 24,
+      "cachQuet": "grep 10 cụm (すみません・ごめん・申し訳・失礼・てもいいですか・てもよろしいですか・てもかまいません・ても構いません・お許し・許可) trên field utterance, loại các dialogue nằm trong ten-lech-nhan.json; 24 dòng khớp gồm cả ごめんなさい (casual, nhiều cảnh gia đình) và 持ってもよろしいですか (dialogue_id 237, dùng làm khối 2 cho m02-u2-l1... — thực ra khối chọn cuối cùng của m02-u2-l1 lấy từ topic4/topic5, xem ghi chú PHA B nếu đổi)"
+    },
+    {
+      "path": "local-sources/ja/topic2.json",
+      "coHang": true,
+      "soCauQuaLoc": 20,
+      "cachQuet": "như trên; có dialogue_id 348 (đàm phán xin phép giúp bạn, 9 lượt, quá nhiều từ lạ vựng may) và dialogue_id 1039 (ごめんなさい casual, 8 lượt, cũng quá nhiều từ lạ ở phần đầu — không dùng làm khối chính vì vượt ≤6/khối dù đã tính thẻ mới)"
+    },
+    {
+      "path": "local-sources/ja/topic3.json",
+      "coHang": true,
+      "soCauQuaLoc": 16,
+      "cachQuet": "như trên; dialogue_id 213 dòng 9382 '大変申し訳ございませんでした。' — PHA B dùng làm ví dụ verbatim cho thẻ 申し訳ございません"
+    },
+    {
+      "path": "local-sources/ja/topic4.json",
+      "coHang": true,
+      "soCauQuaLoc": 21,
+      "cachQuet": "như trên; PHA B dùng: dialogue_id 812 turns 1-4 (dòng 37769-37784, 申し訳ありませんが...それは仕方ありませんね) làm khối 1 (xin lỗi lịch sự, 4 lượt, từ lạ union=5); dialogue_id 77 turn 7 dòng 2954 '大丈夫です。' làm ví dụ thẻ 大丈夫です"
+    },
+    {
+      "path": "local-sources/ja/topic5.json",
+      "coHang": true,
+      "soCauQuaLoc": 19,
+      "cachQuet": "như trên; PHA B dùng: dialogue_id 186 turns 3-6 (dòng 7486-7501, 私は青系統の...もちろんです。あちらが試着室です) làm khối 2 (xin phép lịch sự, mua sắm, 4 lượt, union=4); dialogue_id 821 turns 2-5 (dòng 38566-38581, お父さん、私の拾ってきた...) làm khối 3 (xin phép thân mật, gia đình, 4 lượt, union=5); dialogue_id 821 turn 6 dòng 38586 '3つまででしたら使っても構いません。' làm ví dụ thẻ 構いません"
+    },
+    {
+      "path": "local-sources/ja/n5/n5_ngu-phap-vi.txt",
+      "coHang": true,
+      "soCauQuaLoc": 6,
+      "cachQuet": "grep 'てもいいですか' + 'xin phép' — dòng 191-201: mẫu '4. ~てもいいですか。Xin phép làm việc gì đó' với 3 ví dụ nguyên văn (このケーキを食べてもいいですか。／ここで座ってもいいですか。／6時に来てもいいですか。) và mẫu đáp lại (はい、いいですよ／いいえ、いけませんよ／いいえ、だめですよ). PHA B dùng làm nguồn chính cho grammarPatterns てもいいですか."
+    },
+    {
+      "path": "local-sources/ja/ban1.txt",
+      "coHang": true,
+      "soCauQuaLoc": 3,
+      "cachQuet": "grep 'ごめん' + 'てもいいです' + 'すみません'; dòng 443-450 mục từ vựng ごめん/ごめんなさい (register: cả hai 'casual', ごめんなさい 'gentle' hơn) + dòng 11355 hội thoại thật '写真、撮ってもいいですか。' → 'どうぞ。でも、フラッシュはご遠慮ください。' (dialogue Minna no Nihongo, PHA B dùng làm ví dụ thẻ てもいいですか)"
+    },
+    {
+      "path": "local-sources/ja/irodori/markdown/IRODORI_Nhap_mon_A1.md",
+      "coHang": true,
+      "soCauQuaLoc": 16,
+      "cachQuet": "grep 'てもいいですか|てもよろしいですか|申し訳|ごめんなさい' — 16 dòng khớp, chưa cần dùng vì topic1-5.json + n5_ngu-phap-vi.txt + ban1.txt đã đủ chất liệu cho cấu hình A (đúng tinh thần G14-R3b, tránh phình bài không cần thiết)"
+    },
+    {
+      "path": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md",
+      "coHang": true,
+      "soCauQuaLoc": 34,
+      "cachQuet": "như trên — 34 dòng khớp, chưa cần dùng"
+    },
+    {
+      "path": "local-sources/ja/irodori/markdown/IRODORI_So_cap_2_A2.md",
+      "coHang": true,
+      "soCauQuaLoc": 28,
+      "cachQuet": "như trên — 28 dòng khớp, chưa cần dùng"
+    },
+    {
+      "path": "local-sources/ja/irodori/markdown/IRODORI_So_trung_cap_A2-B1.md",
+      "coHang": true,
+      "soCauQuaLoc": 32,
+      "cachQuet": "như trên — 32 dòng khớp, chưa cần dùng"
+    },
+    {
+      "path": "local-sources/ja/hanabira.org-main/frontend-next/content/markdown_grammar_japanese/～てもいい_(〜temo_ii).md",
+      "coHang": true,
+      "soCauQuaLoc": 1,
+      "cachQuet": "mở trực tiếp file (tên khớp chủ đề) — có bảng 4 tầng lịch sự (～てもいい？casual／～てもいいですか？polite／～てもよろしいですか？formal polite／～てもよろしいでしょうか？very formal) dòng 92-97, dùng làm cơ sở giải thích register cho grammarPatterns てもよろしいですか（KHÔNG dùng câu 'Comparative Analysis' về 敬語の指針 vì đó là sắc thái khác — xem New Tài liệu văn bản.txt bên dưới）"
+    },
+    {
+      "path": "local-sources/ja/New Tài liệu văn bản.txt",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "grep 'てもいいです|てもよろしい|申し訳' — có khớp (dòng 2325-2405) nhưng nội dung là về dùng THỂ XIN PHÉP để GIÁN TIẾP NHỜ VẢ người khác làm gì (敬語 nâng cao, ví dụ 取ってもらってもいいですか), KHÁC với ngữ nghĩa cơ bản 'xin phép cho CHÍNH MÌNH làm gì' mà bài A0-A1 này cần — không dùng để tránh lẫn hai sắc thái"
+    },
+    {
+      "path": "local-sources/ja/grammar-books/N5 Grammar Master (japanvitta.com).pdf",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "pdftotext rồi grep '申し訳|ごめんなさい|てもいいです' — chỉ có trong câu ví dụ của các điểm ngữ pháp KHÁC (không phải điểm ngữ pháp riêng cho xin lỗi/xin phép), không dùng làm nguồn chính"
+    },
+    {
+      "path": "local-sources/ja/jmdict/jmdict-eng-3.6.2.json",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "CLOSED_FACT — không tra theo chủ đề, chỉ dùng để xác nhận loại từ khi cần (chưa cần ở bài này)"
+    }
+  ]
+}

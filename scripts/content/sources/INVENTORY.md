@@ -1566,3 +1566,90 @@ sẵn, không tự đặt.
 3. **Bug tooling B1.2** (taught-vocabulary.json không tự cập nhật) — đề xuất
    thêm bước `node scripts/build-taught-vocabulary.mjs` vào cổng PHA B của
    `/build-lesson` để không tái diễn lần ba.
+
+---
+
+# ĐO TRƯỚC KHI VIẾT — m02-u2-l1 (2026-08-05)
+
+Chủ đề blueprint: "Xin lỗi & xin phép" (Apologize & Ask Permission,
+謝ることと許可を求めること). Cấu hình A owner chốt cho bài này: **8-10 thẻ từ
+vựng NGAY TỪ ĐẦU** (rút kinh nghiệm m02-u1-l2 chỉ có 6, phải sửa sau).
+
+## Cân nguồn (bước 1) — xem `scripts/content/sources/scan/ja-daily_life-m02-u2-l1.scan.json`
+
+14 nguồn đã quét, `coHang=true` ở 11/14 (3 nguồn 0 hàng: New Tài liệu văn bản.txt
+— có khớp nhưng SAI SẮC THÁI [thể xin phép dùng để NHỜ VẢ gián tiếp, không phải
+"xin phép cho chính mình"]; N5 Grammar Master PDF — chỉ xuất hiện trong ví dụ
+của điểm ngữ pháp khác; JMdict — CLOSED_FACT, chưa cần tra).
+
+## Đo hội thoại mức khối (bước 3) — 10 từ chính coi là "đã biết" khi đo
+
+Đã thử ~12 ứng viên hội thoại (topic1-5.json, lọc qua ten-lech-nhan.json).
+Hầu hết KHÔNG đạt ≤6 từ lạ/khối trong phạm vi 4-6 lượt (domain vocabulary quá
+rộng — nồi chiên, phòng gym, thư viện...). **3 khối đạt, đều đúng 4 lượt (mức
+trần của giới hạn, không nới thêm được vì nguồn xung quanh vượt ≤6 ngay lượt
+kế tiếp — đã thử cả hai hướng nới lui/nới tới cho từng khối):**
+
+| khối | nguồn | lượt | từ lạ (union) | chủ đề/vai vế |
+|---|---|---|---|---|
+| 1 — xin lỗi lịch sự | topic4.json:812, turns 1-4 (dòng 37769-37784) | 4 | 5 (お出かけ,キャンセル,楽しみ,のに,具合) | 佐藤 huỷ hẹn vì mệt, 伊藤 hỏi thăm — lịch sự, chưa rõ thân sơ |
+| 2 — xin phép lịch sự | topic5.json:186, turns 3-6 (dòng 7486-7501) | 4 | 4 (系統,紺色,着,室) | 伊藤 (khách) xin phép thử áo, 田中 (nhân viên) đồng ý — khách hàng/nhân viên |
+| 3 — xin phép thân mật | topic5.json:821, turns 2-5 (dòng 38566-38581) | 4 | 5 (拾っ,貝殻,カ所,寂しい,ので) | 伊藤 xin phép 佐藤 (bố, xưng "お父さん") gắn vỏ sò trang trí — gia đình, thân mật |
+
+**Tổng từ lạ toàn bài (union 3 khối, khử trùng lặp): 14** — trần 1,5×10 = 15,
+còn dư 1. ≥1 đoạn ≥4 lượt cho Q14: cả 3 khối đều đạt (chọn khối dài nhất/nhiều
+chất liệu nhất khi build Q14 ở PHA B).
+
+**ĐIỀU KIỆN ĐẠT (owner chốt 2026-08-02): ĐẠT** — 3 khối 4-6 lượt (đúng 4/4/4)
+từ 2 hội thoại nguồn khác nhau (topic4, topic5 — thực ra 3 dialogue_id khác
+nhau: 812/186/821) ✓, có đoạn ≥4 lượt cho Q14 ✓.
+
+## Đo từ vựng (bước 5) — 10 từ chính, đối chiếu taught-vocabulary.json
+
+Kiểm `すみません,ごめんなさい,ごめん,申し訳ありません,申し訳ございません,
+てもいいですか,てもよろしいですか,もちろん,大丈夫,構いません,いいですか`:
+CHỈ すみません đã dạy (m02-u1-l1, vocabularyReferences, nghĩa "cảm ơn vì làm
+phiền" — KHÁC nghĩa "xin lỗi" ở bài này, có thể tính "cách dùng mới" nếu dùng
+lại, nhưng bài này CHỌN không dùng lại để giữ đơn giản). 10 từ còn lại đều MỚI:
+
+1. **ごめんなさい** (xin lỗi, thân mật) — verbatim `topic1.json:12` turn 7 (ごomenなさい、今度からは気を付けます) hoặc `ban1.txt:447` (mục từ)
+2. **申し訳ありません** (xin lỗi, lịch sự) — verbatim `topic4.json:812` turn 1 (khối 1)
+3. **申し訳ございません** (xin lỗi, rất lịch sự) — verbatim `topic3.json:213`, dòng 9382 (大変申し訳ございませんでした)
+4. **てもいいですか** (xin phép, trung tính) — verbatim `n5/n5_ngu-phap-vi.txt:192` + `ban1.txt:11355` (写真、撮ってもいいですか)
+5. **てもよろしいですか** (xin phép, lịch sự hơn) — verbatim `topic5.json:186` turn 5 (khối 2)
+6. **もちろんです** (đồng ý, "tất nhiên") — verbatim `topic5.json:186` turn 6 (khối 2)
+7. **大丈夫です** (đồng ý/trấn an, "được mà") — verbatim `topic4.json:77` turn 7, dòng 2954
+8. **構いません** (đồng ý, "không sao") — verbatim `topic5.json:821` turn 6, dòng 38586
+9. **仕方ありません** (trấn an/thông cảm, "không sao đâu, chuyện đó chịu thôi") — verbatim `topic4.json:812` turn 4 (khối 1) — ĐỒNG THỜI làm giảm từ lạ khối 1 (từ 6 xuống 5) vì chính chuỗi này xuất hiện trong khối
+10. **気を付けます** (hứa cẩn thận hơn, follow-up sau lời xin lỗi) — verbatim `topic2.json:1039` turn 8, dòng 48495 (ごめんなさい。次から気を付けます。)
+
+Chọn TỪ ĐANG DÙNG TRONG 3 KHỐI làm ưu tiên đầu (giống bài học rút ra từ
+m02-u1-l2: nâng từ lạ trong hội thoại lên thành thẻ chính vừa tăng thẻ vừa hạ
+trần) — 4/10 từ (2,4[một phần],5,6,9) đã trực tiếp nằm trong 3 khối.
+
+## Grammar patterns (bước 2)
+
+- **てもいいですか / てはいけません** — `n5/n5_ngu-phap-vi.txt` dòng 191-207,
+  cặp hỏi-xin phép/cấm, có 6 ví dụ nguyên văn tiếng Nhật + dịch Việt sẵn, và
+  mẫu đáp lại 「はい、いいですよ」／「いいえ、いけませんよ」／「いいえ、だめですよ」.
+- **てもいいですか ↔ てもよろしいですか** (register) — bảng 4 tầng lịch sự
+  trong `hanabira.../～てもいい_(〜temo_ii).md` dòng 92-97 (casual/polite/
+  formal polite/very formal), dùng làm khung giải thích — KHÔNG dùng phần
+  "Comparative Analysis" của New Tài liệu văn bản.txt (sắc thái khác, xem
+  scan.json).
+- **ごめんなさい ↔ 申し訳ありません ↔ 申し訳ございません** (register 3 tầng) —
+  quan sát được: `ban1.txt:443-450` mô tả ごめん/ごめんなさい là "casual"; 申し
+  訳ありません/ございません xuất hiện nhất quán trong ngữ cảnh dịch vụ khách
+  hàng/nơi làm việc/cấp trên trên khắp topic1-4.json (hàng chục lượt).
+
+## B — Can-do đề xuất (CẦN MẮT NGƯỜI mục 1)
+
+**Tên bài:** Xin lỗi & xin phép (謝ることと許可を求めること) — khớp blueprint.
+
+**Mục tiêu đề xuất:**
+- Xin lỗi thân mật bằng ごめんなさい.
+- Xin lỗi lịch sự bằng 申し訳ありません／申し訳ございません.
+- Xin phép làm việc gì đó bằng ～てもいいですか／～てもよろしいですか.
+- Đồng ý cho phép bằng もちろんです／大丈夫です／構いません.
+- Trấn an/thông cảm khi ai đó gặp chuyện không hay bằng 仕方ありません.
+- Hứa sẽ cẩn thận hơn sau khi xin lỗi bằng 気を付けます.
