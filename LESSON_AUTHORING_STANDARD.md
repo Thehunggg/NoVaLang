@@ -1563,6 +1563,7 @@ G14-R3b từ thang tuần tự sang cân nguồn):**
 | `ja-daily_life-m01-u2-l2` | lesson | có provenance thật (166/166, commit `8edb029`, 2026-07-28) — xây trước khi `scan.json`/cổng cân nguồn tồn tại |
 | `ja-daily_life-m01-u2-comprehensive` | bài tổng hợp | có provenance thật (220 mục, 2026-07-31) — xây trước khi `scan.json`/cổng cân nguồn tồn tại |
 | `ja-daily_life-m02-u1-l1` | lesson | build 2026-07-31 trước khi có luật cân nguồn; PHA A của bài đó không quét Irodori nên 0% Irodori là chưa-tra chứ không phải không-có. Owner chốt giữ nguyên bài, luật mới áp từ `m02-u1-l2` (2026-08-01) |
+| `ja-daily_life-m02-u1-comprehensive` | bài tổng hợp | có provenance thật (100% `from_lesson` dẫn từ m02-u1-l1/l2, cả hai đã cân nguồn) — KHÔNG miễn scope `provenance` (đã ĐÓNG cho m01). Không mở nguồn ngoài mới nên không có `scan.json` riêng cho ID này |
 
 Bài xây SAU 2026-08-01 bắt buộc có `scan.json` — không được thêm vào scope
 `source-balance` chỉ vì tiện.
