@@ -1193,6 +1193,34 @@ xong tạm biệt ngay). **Cụm có nguồn KHÔNG làm cho đoạn ghép có n
   thuẫn giữa §D và §G10 thì **DỪNG, hỏi owner** — không tự nới sàn, cũng không
   tự kéo dài đoạn nguồn cho đủ số lượt.
 
+**§G10a — ĐỔI TÊN NHÂN VẬT KHI NỚI ĐOẠN (owner chốt 2026-08-02).** Ca thật:
+`ja-daily_life-m02-u1-l2` khối こちらこそ chỉ trích được 2 lượt từ Irodori vì
+đoạn liền kề (cảnh chào hỏi ở nhà, nhiều lượt) dùng nhân vật NGOÀI roster đã
+duyệt (トアン／福田／福田の妻／タケル) — nới đoạn bị ROSTER chặn, không phải bị
+ngưỡng từ lạ (§G14-R5) chặn. Hai giới hạn này ĐỘC LẬP, đừng lẫn.
+
+- **Khi nới đoạn** (đã đủ điều kiện §G7 vùng B, kể cả ngưỡng từ lạ) **mà lượt
+  liền kề trong nguồn dùng tên nhân vật NGOÀI `approvedCharacterNamePool`**,
+  được phép **ĐỔI TÊN NGƯỜI** sang một tên trong roster đã duyệt, để dùng
+  được đoạn dài hơn.
+- **Chỉ đổi TÊN NGƯỜI** (phần chỉ đích danh nhân vật) — **không đổi bất kỳ
+  chữ nào khác** trong câu (không đổi thể, không đổi trợ từ, không thêm bớt
+  từ). Đây vẫn là trích **NGUYÊN VĂN** theo §G10, chỉ khác ở nhãn người nói.
+- **Tên mới phải NHẤT QUÁN trong cả khối** (một nhân vật gốc → luôn cùng một
+  tên roster trong toàn khối, không đổi giữa chừng) **và HỢP VAI VẾ** đã khai
+  ở `situation` (§G6) — không đổi một nhân vật ngoài roster thành một tên
+  roster mà quan hệ/mức thân sơ không khớp bối cảnh đã dựng.
+- **Provenance:** vẫn khai `verbatim: true` + `source`/`line` như bình
+  thường (không phát minh trường mới) — thêm dòng `reason` hoặc mở rộng
+  `note` ghi rõ **đã đổi tên nào thành tên nào** (vd "nguyên bản Irodori
+  dùng トアン, đổi thành 田中 cho hợp roster — không đổi gì khác trong câu").
+  Đúng mẫu đã dùng không chính thức ở `ja-daily_life-m02-u1-l2` cho
+  こちらこそ／お世話になっています trước khi luật này tồn tại thành văn.
+- **Áp dụng:** khối hội thoại (card 3) và Q14. **KHÔNG áp cho chuỗi vùng A**
+  (§G7 vùng A) — đáp án/ô điền/phương án chấm điểm không được đổi tên nhân
+  vật của câu nguồn, vì đó không còn là "trích nguyên văn" theo nghĩa vùng A
+  đòi hỏi.
+
 **G8 — LUẬT TẦNG X (XÁC MINH NGÔN NGỮ) — MỌI ngôn ngữ.** Ba câu hỏi **bắt buộc
 tra NGUỒN DỮ LIỆU (KHÔNG dựa trí nhớ mô hình):**
 - **X1:** từ này **BẮT BUỘC** đi với cấu trúc / thành phần ngữ pháp nào? (và khi
@@ -1383,14 +1411,15 @@ không dò bằng regex dòng, đọc thẳng trường.
   câu** (「元気？」 khớp 「元気」).
 - Nguồn **có phân từ sẵn** (`n5_ngu-phap-vi`: 「わたしは ケーキを たべました」 — cố
   ý, không phải lỗi) → tách token **theo phân từ của nguồn**, chính xác hơn bộ thô.
-- **Dư ≤4 từ lạ DUY NHẤT trên cả khối** (mức khối — khử trùng lặp qua UNION,
-  KHÔNG cộng dồn theo từng lượt riêng; owner chốt 2026-08-02, nâng từ ≤2 —
-  bản ≤2 SIẾT CHẶT HƠN chính §G7 vùng B đòi hỏi, khiến gần như mọi khối
-  hội thoại bị cắt ngắn vào đúng chỗ "chưa tới nội dung mới": owner duyệt
-  preview `m02-u1-l2` thấy hội thoại CỤT, đo lại thì 2/3 khối bị chặn bởi
-  ngưỡng ≤2 chứ không phải do kho nguồn thiếu hàng) → nhận, với điều kiện
-  **đủ CẢ 4 điều khoản §G7 vùng B** (không phải luật mới, nhắc lại vì hay bị
-  bỏ sót điều kiện 3):
+- **Dư ≤6 từ lạ DUY NHẤT trên cả khối** (mức khối — khử trùng lặp qua UNION,
+  KHÔNG cộng dồn theo từng lượt riêng; owner chốt 2026-08-02, nâng lần 2
+  trong cùng ngày, từ ≤4 lên ≤6 — sau lượt nới ≤2→≤4, owner duyệt preview
+  `m02-u1-l2` vẫn thấy hội thoại CỤT ở khối 1 (topic2:575, cần thêm 5 từ lạ
+  mới đạt độ dài mong muốn, vượt ≤4) và khối 3 (chặn bởi ROSTER, xem §G10a,
+  không phải bởi ngưỡng từ). Owner ưu tiên hội thoại đủ dài, đánh
+  đổi bằng nhiều từ tra hơn — bù lại bằng TRẦN TOÀN BÀI ngay dưới đây để bài
+  không loãng) → nhận, với điều kiện **đủ CẢ 4 điều khoản §G7 vùng B**
+  (không phải luật mới, nhắc lại vì hay bị bỏ sót điều kiện 3):
   1. Đoạn lấy NGUYÊN VĂN từ nguồn (§G10) — không tự chế câu chứa từ lạ.
   2. Mọi kanji có furigana (§B2d).
   3. **Từ lạ phải có NGHĨA hiển thị cho người học** — cơ chế: mục
@@ -1401,11 +1430,20 @@ không dò bằng regex dòng, đọc thẳng trường.
      trường" — đã LỖI THỜI kể từ chính lượt build đó; §B2f đã cập nhật lại
      cho khớp thực tế.
   4. Không lạm dụng — từ lạ là ngữ cảnh, không phải trọng tâm bài.
-  **Dư >4** → loại. **Dạng chia của từ đã biết** (たべました←たべる) không tính là từ mới.
-  > **NGƯỠNG "≤4" CHỈ CHO VÙNG B.** Theo **§G7**, ngưỡng này áp cho **vùng B**
+  **Dư >6** → loại. **Dạng chia của từ đã biết** (たべました←たべる) không tính là từ mới.
+  > **NGƯỠNG "≤6" CHỈ CHO VÙNG B.** Theo **§G7**, ngưỡng này áp cho **vùng B**
   > (câu đọc hiểu). **Vùng A** — mọi chuỗi bị CHẤM: Q1–Q13, đáp án, ô trống,
   > phương án, token — theo **§G7 vùng A**: **chỉ vốn đã dạy, không có ngoại lệ
   > dư từ**. Đừng mang ngưỡng B sang A.
+
+  **TRẦN TOÀN BÀI (owner chốt 2026-08-02, cổng CỨNG) — ngưỡng ≤6/khối chỉ
+  chặn TỪNG khối riêng lẻ; không có gì ngăn 3 khối cộng lại làm bài loãng
+  từ tra cứu. Tổng từ lạ DUY NHẤT của CẢ BÀI (union tất cả `dialogueGroups`,
+  khử trùng lặp giữa các khối) phải ≤ 1,5 × số từ vựng chính
+  (`vocabulary[].length`).** Vượt trần → **RÚT NGẮN khối dài nhất** cho tới
+  khi đạt, không được nới tiếp khối khác để bù. Đây là cổng CỨNG
+  (`verify-provenance.mjs`), không phải cảnh báo mềm — khác hẳn ngưỡng
+  ≤6/khối vốn chỉ là mức soạn mặc định.
 - **[JA]** Câu có **kính ngữ cấp cao** (される・いらっしゃいます・でございます…) →
   **loại khỏi A0–A1** bất kể vốn từ.
 - `sentences_*.json` (khi dùng lại từ N4): khoá bỏ `_` cuối + **bắt buộc** kiểm

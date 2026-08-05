@@ -733,12 +733,18 @@ function checkSourceBalance(lessonId, uniqBySource, totU) {
  * chiều "chứa nhau" thay vì đòi khớp tuyệt đối, để không bắt oan một mục
  * nghĩa đã khai đúng nhưng khác dạng chia.
  *
+ * Cũng trả về `allUnique` — TOÀN BỘ từ lạ duy nhất trong bài (union mọi
+ * khối, khử trùng lặp giữa các khối, glossed hay chưa) — dùng cho TRẦN TOÀN
+ * BÀI (G14-R5, owner chốt 2026-08-02): tổng ≤ 1,5 × `vocabulary[].length`.
+ * Ngưỡng ≤6/khối chỉ chặn TỪNG khối; trần này chặn CỘNG DỒN nhiều khối làm
+ * bài loãng từ tra cứu — hai cổng độc lập, kiểm cả hai.
+ *
  * @param {object} lesson
- * @returns {Promise<{missing: string[], checked: number}>}
+ * @returns {Promise<{missing: string[], checked: number, allUnique: string[]}>}
  */
 async function checkDialogueUnknownWordsHaveGloss(lesson) {
   const groups = lesson?.fiveCardContent?.dialogueGroups ?? [];
-  if (groups.length === 0) return { missing: [], checked: 0 };
+  if (groups.length === 0) return { missing: [], checked: 0, allUnique: [] };
 
   const tokenizer = await jaPronunciationInternal.getTokenizer();
   const known = await buildKnownTokenSet();
@@ -756,6 +762,7 @@ async function checkDialogueUnknownWordsHaveGloss(lesson) {
     );
 
   const missing = new Set();
+  const allUnique = new Set();
   let checked = 0;
   for (const group of groups) {
     for (const line of group.lines ?? []) {
@@ -766,11 +773,12 @@ async function checkDialogueUnknownWordsHaveGloss(lesson) {
       const plain = stripFurigana(line.targetText ?? "");
       for (const { surface, basic } of unknownTokenDetailsIn(plain, tokenizer, known)) {
         checked += 1;
+        allUnique.add(surface);
         if (!hasGloss(surface, basic)) missing.add(surface);
       }
     }
   }
-  return { missing: [...missing], checked };
+  return { missing: [...missing], checked, allUnique: [...allUnique] };
 }
 
 async function main() {
@@ -977,6 +985,24 @@ async function main() {
       console.log(`  FAIL  từ lạ "${w}" trong dialogueGroups chưa có mục trong vocabularyReferences`);
     }
     fail += glossCheck.missing.length;
+  } else {
+    console.log("  BỎ QUA (không phải Lesson thật, hoặc chưa có bài trong lessons.json)");
+  }
+
+  console.log("── TRẦN TOÀN BÀI (G14-R5, owner chốt 2026-08-02) ──");
+  if (lessonObj && !isUnit) {
+    const vocabCount = (lessonObj.vocabulary ?? []).length;
+    const cap = Math.floor(vocabCount * 1.5);
+    const total = glossCheck.allUnique.length;
+    if (total > cap) {
+      fail += 1;
+      console.log(
+        `  FAIL  tổng từ lạ toàn bài ${total} > trần ${cap} (1,5 × ${vocabCount} từ chính) —` +
+          ` [${glossCheck.allUnique.join(", ")}]`,
+      );
+    } else {
+      console.log(`  PASS — tổng từ lạ toàn bài ${total} ≤ trần ${cap} (1,5 × ${vocabCount} từ chính)`);
+    }
   } else {
     console.log("  BỎ QUA (không phải Lesson thật, hoặc chưa có bài trong lessons.json)");
   }
