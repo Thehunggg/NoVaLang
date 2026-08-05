@@ -2169,6 +2169,7 @@ async function main() {
       "ja-daily_life-m01-u2-l2",
       "ja-daily_life-m02-u1-l1",
       "ja-daily_life-m02-u1-l2",
+      "ja-daily_life-m02-u2-l1",
     ]);
     const unexpectedReady = dailyLessons.filter(
       (l) =>
