@@ -1653,3 +1653,104 @@ trần) — 4/10 từ (2,4[một phần],5,6,9) đã trực tiếp nằm trong 3
 - Đồng ý cho phép bằng もちろんです／大丈夫です／構いません.
 - Trấn an/thông cảm khi ai đó gặp chuyện không hay bằng 仕方ありません.
 - Hứa sẽ cẩn thận hơn sau khi xin lỗi bằng 気を付けます.
+
+# ĐO TRƯỚC KHI VIẾT — m02-u2-l2 (2026-08-05)
+
+Chủ đề blueprint: "Nhờ ai đó việc nhỏ" (Ask Someone for a Small Favor,
+ちょっとしたお願いをする). Cấu hình A owner chốt: 8-10 thẻ từ vựng NGAY TỪ ĐẦU.
+
+## Cân nguồn (bước 1) — xem `scripts/content/sources/scan/ja-daily_life-m02-u2-l2.scan.json`
+
+14 nguồn đã quét, `coHang=true` ở 12/14 (2 nguồn 0 hàng: New Tài liệu văn
+bản.txt — có khớp nhưng là lý thuyết 敬語の指針 nâng cao, không phải hội
+thoại/mẫu câu A0-A1; N5 Grammar Master PDF — 0 khớp).
+
+## Đo hội thoại mức khối (bước 3) — sửa `estimate-source-coverage.mjs` thêm
+entry chủ đề mới (`m02-u2-l2 · Nhờ ai đó việc nhỏ`, keyword
+`てもらえ|ていただけ|てくれ(ない|ません)`), phá thật lại `--self-test` — XANH
+(3 ca test cũ dùng もちろんです làm "từ chắc chắn chưa dạy" đã LỖI THỜI vì
+もちろん nay đã dạy thật ở m02-u2-l1; đổi từ mẫu sang ホッチキス — từ chắc chắn
+không bao giờ được dạy trong khoá lịch sự/xã giao — 3 ca lại xanh).
+
+10 từ chính coi là "đã biết" khi đo. **3 khối đạt, đều 4 lượt:**
+
+| khối | nguồn | lượt | từ lạ (union) | chủ đề/vai vế |
+|---|---|---|---|---|
+| 1 — nhờ vả lịch sự | topic2.json:378, turns 5-8 (dòng 16467-16482) | 4 | 3 (曲,本当,もらえ) | 伊藤 mượn đĩa CD của 田中, đồng nghiệp/bạn — lịch sự, tái dùng 助かります đã dạy ở m02-u1-l1 |
+| 2 — nhờ vả rất lịch sự | topic1.json:882, turns 5-8 (dòng 41314-41329) | 4 | 5 (造り,いただけ,汁,思い,かしこまり) | khách (伊藤) nhờ nhân viên cá (田中) làm sashimi — khách hàng/dịch vụ |
+| 3 — nhờ vả thân mật | topic1.json:839, turns 1-4 (dòng 39245-39260) | 4 | 5 (梅酒,づくり,手伝っ,くれ,ば) | 佐藤 nhờ 伊藤 giúp làm rượu mơ — bạn bè, thân mật, tái dùng もちろんです đã dạy ở m02-u2-l1 |
+
+**Tổng từ lạ toàn bài (union 3 khối, khử trùng lặp): 13** — trần 1,5×10 = 15,
+còn dư 2. ≥1 đoạn ≥4 lượt cho Q14: cả 3 khối đều đạt (4/4/4).
+
+**ĐIỀU KIỆN ĐẠT (owner chốt 2026-08-02): ĐẠT** — 3 khối 4-6 lượt (đúng 4/4/4)
+từ 2 hội thoại nguồn khác nhau (topic1, topic2 — 3 dialogue_id khác nhau:
+378/882/839) ✓, có đoạn ≥4 lượt cho Q14 ✓.
+
+**Đoạn dài nhất đo được** (không chỉ đoạn vừa đủ ngưỡng, G14-R3b PHA A bước 4):
+- Khối 1 (topic2:378): thử nới lên turns 4-8 (5 lượt) → union tăng lên
+  (thêm 4曲分/既に/用意/できて từ turn 4) — vượt trần dư còn lại nếu cộng cả 3
+  khối; giữ 4 lượt (đã đo, đủ ≥4 cho Q14, không cần dài hơn).
+- Khối 2 (topic1:882): turns 4-8 (5 lượt, thêm turn 4 田中 "毎度ありがとう
+  ございます。何枚かにおろしますか？") đo union = 8 từ lạ — vượt ≤6; giữ 4
+  lượt (turns 5-8).
+- Khối 3 (topic1:839): dialogue chỉ có 6 lượt; turns 1-6 (cả bài) đo union =
+  9 từ lạ — vượt ≤6 vì turn 5 thêm 3 từ lạ specific (ウメ,実,ようじ); giữ 4
+  lượt (turns 1-4), dừng ở câu hỏi mở "もちろんです。何をすればよいのですか？"
+  (giống cách khối 1 m02-u2-l1 dừng ở câu hỏi mở).
+
+## Đo từ vựng (bước 5) — 10 từ chính, đối chiếu taught-vocabulary.json
+
+Kiểm `もらえ,いただけ,くれ,かしこまりました,了解しました,よいですよ,本当ですか,
+お願いします,貸す,手伝う`: `もちろんです` và `助かります` đã dạy (m02-u2-l1 /
+m02-u1-l1) — CHỌN KHÔNG tính vào 10 từ mới, chỉ tái dùng trong hội thoại
+(đúng bài học rút ra từ m02-u1-l2: giảm từ lạ bằng cách tái dùng từ đã dạy).
+10 từ còn lại đều MỚI:
+
+1. **～てもらえませんか** (nhờ vả, lịch sự) — verbatim `topic2.json:378` turn 6
+   (khối 1, dòng 16472: 貸してもらえませんか？)
+2. **～ていただけますか** (nhờ vả, rất lịch sự) — verbatim `topic1.json:882`
+   turn 5 (khối 2, dòng 41314: お造りにしていただけますか？)
+3. **～てくれませんか** (nhờ vả, thân mật) — verbatim `topic1.json:839` turn 3
+   (khối 3, dòng 39255: 梅酒づくりを手伝ってくれませんか？)
+4. **かしこまりました** (đồng ý giúp, rất lịch sự — dịch vụ) — verbatim
+   `topic1.json:882` turn 8, dòng 41329
+5. **了解しました** (đồng ý giúp, thân mật/thông thường) — verbatim
+   `topic1.json:839` turn 6, dòng 39270 (không nằm trong khối 3 đã chọn —
+   trích riêng làm ví dụ thẻ)
+6. **よいですよ** (đồng ý giúp, trung tính) — verbatim `topic2.json:378`
+   turn 7, dòng 16477
+7. **本当ですか** (Thật à? — phản ứng khi nghe tin vui) — verbatim
+   `topic2.json:378` turn 6, dòng 16472 (cùng dòng với てもらえませんか)
+8. **お願いします** (câu nhờ vả ngắn gọn, hay đi kèm/kết thúc lượt nhờ) —
+   verbatim `topic5.json:229` turn 9, dòng 9525
+9. **貸す** (cho mượn, dạng từ điển) — verbatim ví dụ `topic2.json:378`
+   turn 6, dòng 16472 (貸してもらえませんか — dạng chia)
+10. **手伝う** (giúp đỡ, dạng từ điển) — verbatim ví dụ `topic1.json:839`
+    turn 3, dòng 39255 (手伝ってくれませんか — dạng chia)
+
+## Grammar patterns (bước 2)
+
+- **てくれる (đứng riêng)** — `n5/n5_ngu-phap-vi.txt` dòng 291-304, mẫu
+  「Vてくれる」 với 3 ví dụ nguyên văn tiếng Nhật + dịch Việt sẵn (母がお弁当を
+  作ってくれた。／友達が買い物をしてくれました。／山田さんが息子にお菓子を
+  買ってくれました。).
+- **てもらう ↔ てくれる ↔ ていただく** (register 3 tầng) — bảng so sánh trong
+  `hanabira.../Verb_ていただく_(〜te_itadaku).md` dòng 28-38 (3 ví dụ song song:
+  田中さんが教えてくれました。／友達に手伝ってもらいました。／先生にご説明
+  していただきました。), dùng làm khung giải thích register.
+- **ていただけますか (bổ sung)** — `ban1.txt` dòng 7709/7780 (来月からの
+  スケジュールですけど、ちょっと見ていただけませんか。／コーヒー、いただけ
+  ませんか。), dùng làm ví dụ bổ sung register rất lịch sự.
+
+## B — Can-do đề xuất (CẦN MẮT NGƯỜI mục 1)
+
+**Tên bài:** Nhờ ai đó việc nhỏ (ちょっとしたお願いをする) — khớp blueprint.
+
+**Mục tiêu đề xuất:**
+- Nhờ vả lịch sự bằng ～てもらえませんか.
+- Nhờ vả rất lịch sự bằng ～ていただけますか.
+- Nhờ vả thân mật bằng ～てくれませんか.
+- Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).
+- Phản ứng khi nghe tin vui bằng 本当ですか.
+- Nhờ vả ngắn gọn bằng お願いします.

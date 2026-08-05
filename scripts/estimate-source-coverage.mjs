@@ -195,7 +195,7 @@ const PROBES = {
 async function selfTest(tokenizer, known) {
   console.log("── PHÁ THẬT — câu có từ kana chắc chắn chưa dạy phải bị bắt ──");
   const cases = [
-    { text: "もちろんです。", mustFlag: "もちろん" },
+    { text: "ホッチキスです。", mustFlag: "ホッチキス" },
     { text: "コンビニで買います。", mustFlag: "コンビニ" },
   ];
   let allOk = true;
@@ -220,7 +220,7 @@ async function selfTest(tokenizer, known) {
   // nhận đủ. Đây đúng lỗ hổng owner chỉ ra 2026-07-31.
   const blockDialogue = {
     utterances: [
-      { turn_num: 1, speaker: "田中", utterance: "もちろんです。" },
+      { turn_num: 1, speaker: "田中", utterance: "ホッチキスです。" },
       { turn_num: 2, speaker: "佐藤", utterance: "コンビニで買います。" },
       { turn_num: 3, speaker: "田中", utterance: "パスポートを見せます。" },
     ],
@@ -297,14 +297,14 @@ async function selfTest(tokenizer, known) {
   // đối chứng khử trùng lặp: 2 lượt CÙNG NHẮC một từ lạ phải tính là 1, không phải 2.
   const dupDialogue = {
     utterances: [
-      { turn_num: 1, speaker: "田中", utterance: "もちろんです。" },
-      { turn_num: 2, speaker: "佐藤", utterance: "もちろん、いいですよ。" },
+      { turn_num: 1, speaker: "田中", utterance: "ホッチキスです。" },
+      { turn_num: 2, speaker: "佐藤", utterance: "ホッチキス、いいですよ。" },
     ],
   };
   const spanDup = bestQualifyingSpan(dupDialogue, tokenizer, known, 1, anyText);
   const okDedupe = !!spanDup && spanDup.len === 2 && spanDup.unk.length === 1;
   console.log(
-    `  ${okDedupe ? "OK  " : "FAIL"} 2 lượt cùng nhắc "もちろん", ngưỡng≤1 -> union = [${spanDup?.unk.join(", ") ?? ""}]` +
+    `  ${okDedupe ? "OK  " : "FAIL"} 2 lượt cùng nhắc "ホッチキス", ngưỡng≤1 -> union = [${spanDup?.unk.join(", ") ?? ""}]` +
       ` (phải khử trùng lặp còn 1, không phải 2 — nếu không cả đoạn sẽ bị từ chối oan)`,
   );
   if (!okDedupe) allOk = false;
@@ -362,6 +362,7 @@ async function main() {
   const BLOCK_LEVEL_TOPICS = [
     { label: "m02-u1-l1 · Cảm ơn theo mức độ", keyword: /ありがとう|どうも|恐れ入り|恐縮|助かり|感謝/ },
     { label: "m02-u1-l2 · Đáp khi được cảm ơn", keyword: /どういたしまして|こちらこそ|お役に立て|とんでもな|いえいえ/ },
+    { label: "m02-u2-l2 · Nhờ ai đó việc nhỏ", keyword: /てもらえ|ていただけ|てくれ|貸して|貸してもらえ|手伝って|お願いします|お願いできます/ },
   ];
   for (const { label, keyword } of BLOCK_LEVEL_TOPICS) {
     await blockLevelReport(tokenizer, known, dialogues, label, keyword);

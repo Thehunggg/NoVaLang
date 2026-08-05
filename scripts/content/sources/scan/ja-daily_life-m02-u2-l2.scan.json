@@ -1,0 +1,96 @@
+{
+  "lessonId": "ja-daily_life-m02-u2-l2",
+  "ngày": "2026-08-05",
+  "nguồn": [
+    {
+      "path": "local-sources/ja/topic1.json",
+      "coHang": true,
+      "soCauQuaLoc": 80,
+      "cachQuet": "grep '(てもらえ|ていただけ|てくれ(ない|ません))' trên field utterance, loại dialogue nằm trong ten-lech-nhan.json; 80 dòng khớp. PHA B dùng: dialogue_id 882 turns 5-8 (dòng 41314-41329, お造りにしていただけますか...かしこまりました) làm khối 2 (nhờ vả rất lịch sự, dịch vụ); dialogue_id 839 turns 1-4 (dòng 39245-39260, 今日は暇ですか...もちろんです) làm khối 3 (nhờ vả thân mật, bạn bè); dialogue_id 839 turn 6 dòng 39270 (了解しました) làm ví dụ thẻ 了解しました."
+    },
+    {
+      "path": "local-sources/ja/topic2.json",
+      "coHang": true,
+      "soCauQuaLoc": 72,
+      "cachQuet": "như trên; PHA B dùng: dialogue_id 378 turns 5-8 (dòng 16467-16482, この曲なら...助かります) làm khối 1 (nhờ vả lịch sự, mượn CD, tái dùng 助かります đã dạy ở m02-u1-l1)."
+    },
+    {
+      "path": "local-sources/ja/topic3.json",
+      "coHang": true,
+      "soCauQuaLoc": 66,
+      "cachQuet": "như trên; 66 dòng khớp (chủ đề Travel — đặt vé tàu/khách sạn, từ lạ quá đặc thù cho bài A0-A1 này), chưa cần dùng vì topic1/topic2/topic5 đã đủ chất liệu cho cấu hình A."
+    },
+    {
+      "path": "local-sources/ja/topic4.json",
+      "coHang": true,
+      "soCauQuaLoc": 75,
+      "cachQuet": "như trên; 75 dòng khớp (chủ đề Health — chia sẻ thuốc, xin bác sĩ..., từ lạ y tế quá đặc thù), chưa cần dùng."
+    },
+    {
+      "path": "local-sources/ja/topic5.json",
+      "coHang": true,
+      "soCauQuaLoc": 59,
+      "cachQuet": "như trên; PHA B dùng: dialogue_id 229 turn 9 dòng 9525 (お願いします。) làm ví dụ thẻ お願いします."
+    },
+    {
+      "path": "local-sources/ja/n5/n5_ngu-phap-vi.txt",
+      "coHang": true,
+      "soCauQuaLoc": 6,
+      "cachQuet": "grep 'もらえ|いただけ|てくれ' — dòng 291-304: mẫu ngữ pháp てくれる (「Vてくれる」) với 3 ví dụ nguyên văn (母がお弁当を作ってくれた。／友達が買い物をしてくれました。／山田さんが息子にお菓子を買ってくれました。). PHA B dùng làm nguồn chính cho grammarPatterns てくれる／てくれませんか."
+    },
+    {
+      "path": "local-sources/ja/ban1.txt",
+      "coHang": true,
+      "soCauQuaLoc": 4,
+      "cachQuet": "grep 'もらえ|いただけ|てくれ' — dòng 7709/7745/7750/7752/7780: mục từ vựng và ví dụ 見ていただけませんか／コーヒー、いただけませんか。 PHA B dùng làm ví dụ bổ sung cho grammarPatterns ていただけますか (đăng ký câu mẹ, xem mục grammarPatterns)."
+    },
+    {
+      "path": "local-sources/ja/irodori/markdown/IRODORI_Nhap_mon_A1.md",
+      "coHang": true,
+      "soCauQuaLoc": 36,
+      "cachQuet": "grep 'もらえ|いただけ|てくれ' — 36 dòng khớp, chưa cần dùng vì topic1/2/5 + n5 + ban1 đã đủ chất liệu cho cấu hình A."
+    },
+    {
+      "path": "local-sources/ja/irodori/markdown/IRODORI_So_cap_1_A2.md",
+      "coHang": true,
+      "soCauQuaLoc": 82,
+      "cachQuet": "như trên — 82 dòng khớp, chưa cần dùng."
+    },
+    {
+      "path": "local-sources/ja/irodori/markdown/IRODORI_So_cap_2_A2.md",
+      "coHang": true,
+      "soCauQuaLoc": 89,
+      "cachQuet": "như trên — 89 dòng khớp, chưa cần dùng."
+    },
+    {
+      "path": "local-sources/ja/irodori/markdown/IRODORI_So_trung_cap_A2-B1.md",
+      "coHang": true,
+      "soCauQuaLoc": 291,
+      "cachQuet": "như trên — 291 dòng khớp (mức trung cấp, nhiều mẫu ていただけないでしょうか cao hơn A0-A1 cần), chưa cần dùng."
+    },
+    {
+      "path": "local-sources/ja/hanabira.org-main/frontend-next/content/markdown_grammar_japanese/Verb_ていただく_(〜te_itadaku).md",
+      "coHang": true,
+      "soCauQuaLoc": 1,
+      "cachQuet": "tìm file tên khớp chủ đề — tồn tại 6 file liên quan (Verb_て_もらう, Verb_ていただく, Verb_て_くれる, Verb_て_くださいませんか, Noun_もらう, Nounをいただく); chọn Verb_ていただく làm khung giải thích register てもらう/てくれる/ていただく cho grammarPatterns (nội dung bảng so sánh 3 mức)."
+    },
+    {
+      "path": "local-sources/ja/New Tài liệu văn bản.txt",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "grep 'もらえ|いただけ' — có 13 khớp nhưng nội dung là 敬語の指針 (lý thuyết kính ngữ nâng cao, không phải hội thoại/mẫu câu A0-A1) — cùng lý do loại như đã ghi ở scan m02-u2-l1, không dùng để tránh lẫn sắc thái."
+    },
+    {
+      "path": "local-sources/ja/grammar-books/N5 Grammar Master (japanvitta.com).pdf",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "pdftotext rồi grep 'もらえ|いただけ|てくれ' — 0 khớp, không dùng."
+    },
+    {
+      "path": "local-sources/ja/jmdict/jmdict-eng-3.6.2.json",
+      "coHang": false,
+      "soCauQuaLoc": 0,
+      "cachQuet": "CLOSED_FACT — không tra theo chủ đề, chưa cần ở bài này."
+    }
+  ]
+}
