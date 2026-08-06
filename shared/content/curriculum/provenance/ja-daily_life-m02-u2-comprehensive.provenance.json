@@ -1,0 +1,1437 @@
+{
+  "lessonId": "ja-daily_life-m02-u2-comprehensive",
+  "items": [
+    {
+      "path": "questions[0].explanation",
+      "targetText": "申し訳ありません (b) là thể lịch sự, lệch với bạn thân đang dùng thể thân mật. 仕方ありません (c) là câu người NGHE nói để thông cảm, không phải lời hứa của người xin lỗi. 大丈夫です (d) dùng để đồng ý cho phép/trấn an, không phải lời hứa cẩn thận hơn.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[0].blanks[0].displayAnswer",
+      "targetText": "ごめんなさい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[0].blanks[0].canonicalAnswer",
+      "targetText": "ごめんなさい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[0].blanks[1].displayAnswer",
+      "targetText": "気を付けます",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[9].displayText"
+      }
+    },
+    {
+      "path": "questions[0].blanks[1].canonicalAnswer",
+      "targetText": "気を付けます",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[9].displayText"
+      }
+    },
+    {
+      "path": "questions[0].options[0].text",
+      "targetText": "ごめんなさい / 気を付けます",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[0].options[1].text",
+      "targetText": "申し訳ありません / 気を付けます",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[0].options[2].text",
+      "targetText": "ごめんなさい / 仕方ありません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[0].options[3].text",
+      "targetText": "ごめんなさい / 大丈夫です",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[1].explanation",
+      "targetText": "かしこまりました (b) là câu người ĐƯỢC nhờ nói để đồng ý, không phải phản ứng ngạc nhiên. いただけますか (c) lịch sự hơn mức cần với đồng nghiệp. くれませんか (d) là thể thân mật, cũng lệch mức lịch sự cần cho đồng nghiệp.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[1].segments[1].displayText",
+      "targetText": "？この本（ほん）、貸して",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[1].blanks[0].displayAnswer",
+      "targetText": "本当ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[1].blanks[0].canonicalAnswer",
+      "targetText": "本当ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[1].blanks[1].displayAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[1].blanks[1].canonicalAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[1].options[0].text",
+      "targetText": "本当ですか / もらえませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[1].options[1].text",
+      "targetText": "かしこまりました / もらえませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[1].options[2].text",
+      "targetText": "本当ですか / いただけますか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[1].options[3].text",
+      "targetText": "本当ですか / くれませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[2].explanation",
+      "targetText": "してもいいですか (b) chưa đủ lịch sự cho người lạ ở cửa hàng — lệch mức với ô đầu cần dùng. いいですか (c) cũng chưa đủ lịch sự, không khớp mức đã chọn ở ô đầu. してもらえませんか (d) là NHỜ NGƯỜI KHÁC làm gì đó, không phải XIN PHÉP cho CHÍNH MÌNH làm gì.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[2].segments[0].displayText",
+      "targetText": "試着",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[2].segments[2].displayText",
+      "targetText": "。写真も",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[2].blanks[0].displayAnswer",
+      "targetText": "してもよろしいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもよろしいですか\" (ja-daily_life-m02-u2-l1:vocabulary[4]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[2].blanks[0].canonicalAnswer",
+      "targetText": "してもよろしいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもよろしいですか\" (ja-daily_life-m02-u2-l1:vocabulary[4]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[2].blanks[1].displayAnswer",
+      "targetText": "よろしいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもよろしいですか\" (ja-daily_life-m02-u2-l1:vocabulary[4]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[2].blanks[1].canonicalAnswer",
+      "targetText": "よろしいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもよろしいですか\" (ja-daily_life-m02-u2-l1:vocabulary[4]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[2].options[0].text",
+      "targetText": "してもよろしいですか / よろしいですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[2].options[1].text",
+      "targetText": "してもいいですか / よろしいですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[2].options[2].text",
+      "targetText": "してもよろしいですか / いいですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[2].options[3].text",
+      "targetText": "してもらえませんか / よろしいですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[3].explanation",
+      "targetText": "構いません (b) không sai nghĩa nhưng thiếu sự DỨT KHOÁT mà もちろんです có — đề bài cần nhấn mạnh. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải trấn an một lời xin phép bình thường. かしこまりました (d) là cách nhân viên/dịch vụ đồng ý rất lịch sự, không hợp giữa bạn bè.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[3].segments[3].displayText",
+      "targetText": "、心配（しんぱい）しないで。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[3].blanks[0].displayAnswer",
+      "targetText": "もちろんです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[3].blanks[0].canonicalAnswer",
+      "targetText": "もちろんです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[3].blanks[1].displayAnswer",
+      "targetText": "大丈夫です",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[3].blanks[1].canonicalAnswer",
+      "targetText": "大丈夫です",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[3].options[0].text",
+      "targetText": "もちろんです / 大丈夫です",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[3].options[1].text",
+      "targetText": "構いません / 大丈夫です",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[3].options[2].text",
+      "targetText": "もちろんです / 仕方ありません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[3].options[3].text",
+      "targetText": "もちろんです / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[4].explanation",
+      "targetText": "かしこまりました (b) là câu ĐỒNG Ý giúp, không phải phản ứng ngạc nhiên trước lý do — đặt sai vị trí ô đầu. かしこまりました (c) rất lịch sự kiểu dịch vụ, lệch với mức trung tính giữa hai bạn cùng lớp. 了解しました (d) thân mật/thông thường hơn mức trung tính đã thiết lập.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[4].blanks[0].displayAnswer",
+      "targetText": "本当ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[4].blanks[0].canonicalAnswer",
+      "targetText": "本当ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[4].blanks[1].displayAnswer",
+      "targetText": "よいですよ",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[4].blanks[1].canonicalAnswer",
+      "targetText": "よいですよ",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[4].options[0].text",
+      "targetText": "本当ですか / よいですよ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[4].options[1].text",
+      "targetText": "かしこまりました / よいですよ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[4].options[2].text",
+      "targetText": "本当ですか / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[4].options[3].text",
+      "targetText": "本当ですか / 了解しました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[5].explanation",
+      "targetText": "くれませんか (b) là thể thân mật, lệch với người lạ cần mức rất lịch sự. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. かしこまりました (d) là câu người ĐƯỢC nhờ nói để đồng ý, không phải câu người ĐI nhờ dùng để kết lời.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[5].segments[0].displayText",
+      "targetText": "傘（かさ）を貸して",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[5].blanks[0].displayAnswer",
+      "targetText": "いただけますか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～ていただけますか\" (ja-daily_life-m02-u2-l2:vocabulary[1]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[5].blanks[0].canonicalAnswer",
+      "targetText": "いただけますか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～ていただけますか\" (ja-daily_life-m02-u2-l2:vocabulary[1]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[5].blanks[1].displayAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[5].blanks[1].canonicalAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[5].options[0].text",
+      "targetText": "いただけますか / お願いします",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[5].options[1].text",
+      "targetText": "くれませんか / お願いします",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[5].options[2].text",
+      "targetText": "いただけますか / 本当ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[5].options[3].text",
+      "targetText": "いただけますか / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[6].context",
+      "targetText": "Vai vế: hai đồng nghiệp chưa thân, giữ thể lịch sự. 伊藤 vừa đến muộn cuộc họp.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào chỉ là TÊN NHÂN VẬT trong approvedCharacterNamePool (伊藤／佐藤／田中), không phải câu trích nguồn."
+    },
+    {
+      "path": "questions[6].explanation",
+      "targetText": "ごめんなさい (b) là thể thân mật, lệch với hai đồng nghiệp chưa thân đang giữ lịch sự. 大丈夫です (c) dùng để đồng ý cho phép/trấn an, không phải câu thông cảm cho một lời xin lỗi. もちろんです (d) là câu đồng ý dứt khoát, không phải lời hứa cẩn thận hơn.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[6].dialogue[0].segments[1].displayText",
+      "targetText": "、電車（でんしゃ）が遅（おく）れました。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[6].dialogue[1].segments[1].displayText",
+      "targetText": "。今から始（はじ）めましょう。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[6].dialogue[2].segments[0].displayText",
+      "targetText": "はい、",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[6].blanks[0].displayAnswer",
+      "targetText": "申し訳ありません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[6].blanks[0].canonicalAnswer",
+      "targetText": "申し訳ありません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[6].blanks[1].displayAnswer",
+      "targetText": "仕方ありませんね",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"仕方ありません\" (ja-daily_life-m02-u2-l1:vocabulary[8]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó. khớp đúng câu VÍ DỤ đã dạy trong vocabularyDetails của mục này (それは仕方ありませんね。), không phải headword trần."
+    },
+    {
+      "path": "questions[6].blanks[1].canonicalAnswer",
+      "targetText": "仕方ありませんね",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"仕方ありません\" (ja-daily_life-m02-u2-l1:vocabulary[8]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó. khớp đúng câu VÍ DỤ đã dạy trong vocabularyDetails của mục này (それは仕方ありませんね。), không phải headword trần."
+    },
+    {
+      "path": "questions[6].blanks[2].displayAnswer",
+      "targetText": "気を付けます",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[9].displayText"
+      }
+    },
+    {
+      "path": "questions[6].blanks[2].canonicalAnswer",
+      "targetText": "気を付けます",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[9].displayText"
+      }
+    },
+    {
+      "path": "questions[6].options[0].text",
+      "targetText": "申し訳ありません / 仕方ありませんね / 気を付けます",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[6].options[1].text",
+      "targetText": "ごめんなさい / 仕方ありませんね / 気を付けます",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[6].options[2].text",
+      "targetText": "申し訳ありません / 大丈夫です / 気を付けます",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[6].options[3].text",
+      "targetText": "申し訳ありません / 仕方ありませんね / もちろんです",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[7].explanation",
+      "targetText": "くれますか (b) là thể thân mật, lệch với khách hàng đang giữ thể rất lịch sự với người lạ. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. 了解しました (d) là cách đồng ý thân mật/thông thường, không đúng mức rất lịch sự mà nhân viên cần giữ.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[7].dialogue[0].segments[0].displayText",
+      "targetText": "これを包（つつ）んで",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[7].dialogue[1].segments[1].displayText",
+      "targetText": "。少々（しょうしょう）お待（ま）ちください。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[7].blanks[0].displayAnswer",
+      "targetText": "いただけますか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～ていただけますか\" (ja-daily_life-m02-u2-l2:vocabulary[1]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[7].blanks[0].canonicalAnswer",
+      "targetText": "いただけますか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～ていただけますか\" (ja-daily_life-m02-u2-l2:vocabulary[1]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[7].blanks[1].displayAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[7].blanks[1].canonicalAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[7].blanks[2].displayAnswer",
+      "targetText": "かしこまりました",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[3].displayText"
+      }
+    },
+    {
+      "path": "questions[7].blanks[2].canonicalAnswer",
+      "targetText": "かしこまりました",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[3].displayText"
+      }
+    },
+    {
+      "path": "questions[7].options[0].text",
+      "targetText": "いただけますか / お願いします / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[7].options[1].text",
+      "targetText": "くれますか / お願いします / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[7].options[2].text",
+      "targetText": "いただけますか / 本当ですか / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[7].options[3].text",
+      "targetText": "いただけますか / お願いします / 了解しました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[8].context",
+      "targetText": "Vai vế: hai bạn thân, thân mật. 伊藤 muốn ăn một miếng bánh của 田中.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào chỉ là TÊN NHÂN VẬT trong approvedCharacterNamePool (伊藤／佐藤／田中), không phải câu trích nguồn."
+    },
+    {
+      "path": "questions[8].explanation",
+      "targetText": "よろしいですか (b) lịch sự hơn mức cần giữa hai bạn thân — mức trung tính (いいですか) đã đủ. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải lời trấn an cho một lời xin phép bình thường. かしこまりました (d) là cách nhân viên/dịch vụ đồng ý rất lịch sự, không hợp giữa bạn bè.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[8].dialogue[0].segments[0].displayText",
+      "targetText": "このケーキ、食（た）べても",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[8].blanks[0].displayAnswer",
+      "targetText": "いいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもいいですか\" (ja-daily_life-m02-u2-l1:vocabulary[3]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[8].blanks[0].canonicalAnswer",
+      "targetText": "いいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもいいですか\" (ja-daily_life-m02-u2-l1:vocabulary[3]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[8].blanks[1].displayAnswer",
+      "targetText": "もちろんです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[8].blanks[1].canonicalAnswer",
+      "targetText": "もちろんです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[8].blanks[2].displayAnswer",
+      "targetText": "構いません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[8].blanks[2].canonicalAnswer",
+      "targetText": "構いません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[8].options[0].text",
+      "targetText": "いいですか / もちろんです / 構いません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[8].options[1].text",
+      "targetText": "よろしいですか / もちろんです / 構いません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[8].options[2].text",
+      "targetText": "いいですか / もちろんです / 仕方ありません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[8].options[3].text",
+      "targetText": "いいですか / かしこまりました / 構いません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[9].context",
+      "targetText": "Vai vế: hai đồng nghiệp ngang hàng, lịch sự nhưng không quá thân. 田中 nhờ 伊藤 giúp mang đồ.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào chỉ là TÊN NHÂN VẬT trong approvedCharacterNamePool (伊藤／佐藤／田中), không phải câu trích nguồn."
+    },
+    {
+      "path": "questions[9].explanation",
+      "targetText": "いただけますか (b) lịch sự hơn mức cần giữa hai đồng nghiệp ngang hàng. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. かしこまりました (d) là cách đồng ý rất lịch sự kiểu dịch vụ, lệch với quan hệ đồng nghiệp ngang hàng đã thiết lập.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[9].dialogue[0].segments[0].displayText",
+      "targetText": "荷物を運んで",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[9].blanks[0].displayAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[9].blanks[0].canonicalAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[9].blanks[1].displayAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[9].blanks[1].canonicalAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[9].blanks[2].displayAnswer",
+      "targetText": "よいですよ",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[9].blanks[2].canonicalAnswer",
+      "targetText": "よいですよ",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[9].options[0].text",
+      "targetText": "もらえませんか / お願いします / よいですよ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[9].options[1].text",
+      "targetText": "いただけますか / お願いします / よいですよ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[9].options[2].text",
+      "targetText": "もらえませんか / 本当ですか / よいですよ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[9].options[3].text",
+      "targetText": "もらえませんか / お願いします / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[10].context",
+      "targetText": "Vai vế: hai bạn thân, thân mật. 佐藤 đến muộn, rồi nhờ 伊藤 giúp một việc nhỏ.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào chỉ là TÊN NHÂN VẬT trong approvedCharacterNamePool (伊藤／佐藤／田中), không phải câu trích nguồn."
+    },
+    {
+      "path": "questions[10].explanation",
+      "targetText": "申し訳ありません (b) là thể lịch sự, lệch với hai bạn thân đang dùng thể thân mật. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải lời trấn an nhẹ nhàng \"không sao đâu\" giữa bạn bè. いただけますか (d) rất lịch sự, lệch hẳn với mức thân mật \"くれませんか？\" đã dùng trong cùng lượt.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[10].dialogue[0].segments[1].displayText",
+      "targetText": "、遅（おそ）くなった。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[10].dialogue[2].segments[0].displayText",
+      "targetText": "ちょっと手伝って",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[10].blanks[0].displayAnswer",
+      "targetText": "ごめんなさい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[10].blanks[0].canonicalAnswer",
+      "targetText": "ごめんなさい",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[0].displayText"
+      }
+    },
+    {
+      "path": "questions[10].blanks[1].displayAnswer",
+      "targetText": "大丈夫です",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[10].blanks[1].canonicalAnswer",
+      "targetText": "大丈夫です",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[10].blanks[2].displayAnswer",
+      "targetText": "くれませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てくれませんか\" (ja-daily_life-m02-u2-l2:vocabulary[2]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[10].blanks[2].canonicalAnswer",
+      "targetText": "くれませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てくれませんか\" (ja-daily_life-m02-u2-l2:vocabulary[2]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[10].options[0].text",
+      "targetText": "ごめんなさい / 大丈夫です / くれませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[10].options[1].text",
+      "targetText": "申し訳ありません / 大丈夫です / くれませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[10].options[2].text",
+      "targetText": "ごめんなさい / 仕方ありません / くれませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[10].options[3].text",
+      "targetText": "ごめんなさい / 大丈夫です / いただけますか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[11].explanation",
+      "targetText": "もいいですか (b) chưa đủ lịch sự cho quan hệ khách hàng/nhân viên mới gặp. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải câu đồng ý cho một lời xin phép bình thường. かしこまりました (d) hợp nhưng ở đây cần từ khác đã dạy trong CHÍNH câu này để tránh lặp — 構いません mới đúng cụm còn lại của bài.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[11].dialogue[0].segments[0].displayText",
+      "targetText": "これ、交換（こうかん）して",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[11].blanks[0].displayAnswer",
+      "targetText": "もよろしいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもよろしいですか\" (ja-daily_life-m02-u2-l1:vocabulary[4]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[11].blanks[0].canonicalAnswer",
+      "targetText": "もよろしいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもよろしいですか\" (ja-daily_life-m02-u2-l1:vocabulary[4]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[11].blanks[1].displayAnswer",
+      "targetText": "大丈夫です",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[11].blanks[1].canonicalAnswer",
+      "targetText": "大丈夫です",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[11].blanks[2].displayAnswer",
+      "targetText": "構いません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[11].blanks[2].canonicalAnswer",
+      "targetText": "構いません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[11].options[0].text",
+      "targetText": "もよろしいですか / 大丈夫です / 構いません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[11].options[1].text",
+      "targetText": "もいいですか / 大丈夫です / 構いません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[11].options[2].text",
+      "targetText": "もよろしいですか / 仕方ありません / 構いません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[11].options[3].text",
+      "targetText": "もよろしいですか / 大丈夫です / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[12].context",
+      "targetText": "Vai vế: hai đồng nghiệp, mức lịch sự bình thường — không quá xa lạ, không quá thân. 田中 vừa nói rảnh hôm nay.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào chỉ là TÊN NHÂN VẬT trong approvedCharacterNamePool (伊藤／佐藤／田中), không phải câu trích nguồn."
+    },
+    {
+      "path": "questions[12].explanation",
+      "targetText": "かしこまりました (b) là câu người ĐƯỢC nhờ nói để đồng ý, không phải phản ứng ngạc nhiên. いただけますか (c) lịch sự hơn mức cần giữa hai đồng nghiệp bình thường. かしこまりました (d) lại là cách đồng ý rất lịch sự kiểu dịch vụ, lệch với mức bình thường đã thiết lập.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[12].dialogue[0].segments[1].displayText",
+      "targetText": "？暇なんですか？",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[12].dialogue[1].segments[0].displayText",
+      "targetText": "では、これ、貸して",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[12].blanks[0].displayAnswer",
+      "targetText": "本当ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[12].blanks[0].canonicalAnswer",
+      "targetText": "本当ですか",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[6].displayText"
+      }
+    },
+    {
+      "path": "questions[12].blanks[1].displayAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[12].blanks[1].canonicalAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[12].blanks[2].displayAnswer",
+      "targetText": "よいですよ",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[12].blanks[2].canonicalAnswer",
+      "targetText": "よいですよ",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[12].options[0].text",
+      "targetText": "本当ですか / もらえませんか / よいですよ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[12].options[1].text",
+      "targetText": "かしこまりました / もらえませんか / よいですよ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[12].options[2].text",
+      "targetText": "本当ですか / いただけますか / よいですよ",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[12].options[3].text",
+      "targetText": "本当ですか / もらえませんか / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[13].explanation",
+      "targetText": "ごめんなさい (b) là thể thân mật, lệch hẳn với quan hệ khách hàng/nhân viên mới gặp cần rất lịch sự. もいいですか (c) chưa đủ lịch sự so với mức đã thiết lập ở ô đầu. 了解しました (d) là cách đồng ý thân mật/thông thường, không đúng mức rất lịch sự mà nhân viên cần giữ.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[13].dialogue[0].segments[1].displayText",
+      "targetText": "が、試着して",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[13].blanks[0].displayAnswer",
+      "targetText": "申し訳ございません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[13].blanks[0].canonicalAnswer",
+      "targetText": "申し訳ございません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[2].displayText"
+      }
+    },
+    {
+      "path": "questions[13].blanks[1].displayAnswer",
+      "targetText": "もよろしいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもよろしいですか\" (ja-daily_life-m02-u2-l1:vocabulary[4]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[13].blanks[1].canonicalAnswer",
+      "targetText": "もよろしいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもよろしいですか\" (ja-daily_life-m02-u2-l1:vocabulary[4]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[13].blanks[2].displayAnswer",
+      "targetText": "かしこまりました",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[3].displayText"
+      }
+    },
+    {
+      "path": "questions[13].blanks[2].canonicalAnswer",
+      "targetText": "かしこまりました",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[3].displayText"
+      }
+    },
+    {
+      "path": "questions[13].options[0].text",
+      "targetText": "申し訳ございません / もよろしいですか / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[13].options[1].text",
+      "targetText": "ごめんなさい / もよろしいですか / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[13].options[2].text",
+      "targetText": "申し訳ございません / もいいですか / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[13].options[3].text",
+      "targetText": "申し訳ございません / もよろしいですか / 了解しました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[14].context",
+      "targetText": "Vai vế: hai bạn thân, thân mật. 伊藤 muốn mượn một món đồ của 田中.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào chỉ là TÊN NHÂN VẬT trong approvedCharacterNamePool (伊藤／佐藤／田中), không phải câu trích nguồn."
+    },
+    {
+      "path": "questions[14].explanation",
+      "targetText": "よろしいですか (b) lịch sự hơn mức cần giữa hai bạn thân — mức trung tính (いいですか) đã đủ. 構いません (c) không sai nghĩa nhưng thiếu sự DỨT KHOÁT mà もちろんです có ở vị trí này. 仕方ありません (d) dùng để thông cảm một chuyện không hay, không phải lời hứa cẩn thận hơn với đồ mượn.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[14].dialogue[0].segments[0].displayText",
+      "targetText": "これ、借りても",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[14].blanks[0].displayAnswer",
+      "targetText": "いいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもいいですか\" (ja-daily_life-m02-u2-l1:vocabulary[3]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[14].blanks[0].canonicalAnswer",
+      "targetText": "いいですか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもいいですか\" (ja-daily_life-m02-u2-l1:vocabulary[3]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[14].blanks[1].displayAnswer",
+      "targetText": "もちろんです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[14].blanks[1].canonicalAnswer",
+      "targetText": "もちろんです",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[5].displayText"
+      }
+    },
+    {
+      "path": "questions[14].blanks[2].displayAnswer",
+      "targetText": "気を付けます",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[9].displayText"
+      }
+    },
+    {
+      "path": "questions[14].blanks[2].canonicalAnswer",
+      "targetText": "気を付けます",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[9].displayText"
+      }
+    },
+    {
+      "path": "questions[14].options[0].text",
+      "targetText": "いいですか / もちろんです / 気を付けます",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[14].options[1].text",
+      "targetText": "よろしいですか / もちろんです / 気を付けます",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[14].options[2].text",
+      "targetText": "いいですか / 構いません / 気を付けます",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[14].options[3].text",
+      "targetText": "いいですか / もちろんです / 仕方ありません",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[15].context",
+      "targetText": "Vai vế: hai bạn cùng lớp, chưa thân lắm, mức lịch sự bình thường. 佐藤 nhờ 田中 giúp bài tập.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào chỉ là TÊN NHÂN VẬT trong approvedCharacterNamePool (伊藤／佐藤／田中), không phải câu trích nguồn."
+    },
+    {
+      "path": "questions[15].explanation",
+      "targetText": "いただけますか (b) lịch sự hơn mức cần giữa hai bạn cùng lớp chưa thân lắm. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. かしこまりました (d) là cách đồng ý rất lịch sự kiểu dịch vụ, lệch với quan hệ bạn học đã thiết lập.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[15].dialogue[0].segments[0].displayText",
+      "targetText": "宿題（しゅくだい）を手伝って",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[15].blanks[0].displayAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[15].blanks[0].canonicalAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[15].blanks[1].displayAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[15].blanks[1].canonicalAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[15].blanks[2].displayAnswer",
+      "targetText": "了解しました",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[15].blanks[2].canonicalAnswer",
+      "targetText": "了解しました",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[4].displayText"
+      }
+    },
+    {
+      "path": "questions[15].options[0].text",
+      "targetText": "もらえませんか / お願いします / 了解しました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[15].options[1].text",
+      "targetText": "いただけますか / お願いします / 了解しました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[15].options[2].text",
+      "targetText": "もらえませんか / 本当ですか / 了解しました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[15].options[3].text",
+      "targetText": "もらえませんか / お願いします / かしこまりました",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[16].context",
+      "targetText": "Vai vế: hai đồng nghiệp bình thường, giữ thể lịch sự vừa phải. 田中 xin lỗi vì đến muộn cuộc họp, rồi nhờ 伊藤 gửi giúp tài liệu.",
+      "authored": true,
+      "reason": "câu dẫn tình huống do người viết soạn cho bài tổng hợp; phần tiếng Nhật chèn vào chỉ là TÊN NHÂN VẬT trong approvedCharacterNamePool (伊藤／佐藤／田中), không phải câu trích nguồn."
+    },
+    {
+      "path": "questions[16].explanation",
+      "targetText": "ごめんなさい (b) là thể thân mật, lệch với hai đồng nghiệp đang giữ thể lịch sự. 大丈夫です (c) dùng để đồng ý cho phép/trấn an, không phải câu thông cảm cho một lời xin lỗi. くれませんか (d) là thể thân mật, lệch với mức lịch sự đã giữ suốt cuộc hội thoại.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[16].dialogue[0].segments[1].displayText",
+      "targetText": "。会議（かいぎ）に遅（おく）れてしまいました。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[16].dialogue[1].segments[1].displayText",
+      "targetText": "。始（はじ）めましょう。",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[16].dialogue[2].segments[0].displayText",
+      "targetText": "それから、資料を送って",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[16].blanks[0].displayAnswer",
+      "targetText": "申し訳ありません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[16].blanks[0].canonicalAnswer",
+      "targetText": "申し訳ありません",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l1",
+        "path": "vocabulary[1].displayText"
+      }
+    },
+    {
+      "path": "questions[16].blanks[1].displayAnswer",
+      "targetText": "仕方ありませんね",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"仕方ありません\" (ja-daily_life-m02-u2-l1:vocabulary[8]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó. khớp đúng câu VÍ DỤ đã dạy trong vocabularyDetails của mục này (それは仕方ありませんね。), không phải headword trần."
+    },
+    {
+      "path": "questions[16].blanks[1].canonicalAnswer",
+      "targetText": "仕方ありませんね",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"仕方ありません\" (ja-daily_life-m02-u2-l1:vocabulary[8]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó. khớp đúng câu VÍ DỤ đã dạy trong vocabularyDetails của mục này (それは仕方ありませんね。), không phải headword trần."
+    },
+    {
+      "path": "questions[16].blanks[2].displayAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[16].blanks[2].canonicalAnswer",
+      "targetText": "もらえませんか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～てもらえませんか\" (ja-daily_life-m02-u2-l2:vocabulary[0]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[16].options[0].text",
+      "targetText": "申し訳ありません / 仕方ありませんね / もらえませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[16].options[1].text",
+      "targetText": "ごめんなさい / 仕方ありませんね / もらえませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[16].options[2].text",
+      "targetText": "申し訳ありません / 大丈夫です / もらえませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[16].options[3].text",
+      "targetText": "申し訳ありません / 仕方ありませんね / くれませんか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[17].explanation",
+      "targetText": "もらえますか (b) chưa đủ lịch sự cho dịch vụ trịnh trọng với người lạ. 了解しました (c) là cách đồng ý thân mật/thông thường, không đúng mức rất lịch sự cần giữ trong dịch vụ trang trọng. 本当ですか (d) là phản ứng ngạc nhiên, không hợp làm câu kết lời sau khi được đồng ý giúp.",
+      "authored": true,
+      "reason": "giải thích do người viết soạn cho bài tổng hợp; phần tiếng Nhật trong đó là TRÍCH LẠI từ/câu đã khai riêng ở blanks[]/context/dialogue của câu này."
+    },
+    {
+      "path": "questions[17].dialogue[0].segments[0].displayText",
+      "targetText": "これを直（なお）して",
+      "authored": true,
+      "reason": "câu nối/khung hội thoại do người viết dựng cho bài tổng hợp, ghép quanh ô trống — từ vựng trong ô đã khai riêng ở blanks[]."
+    },
+    {
+      "path": "questions[17].blanks[0].displayAnswer",
+      "targetText": "いただけますか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～ていただけますか\" (ja-daily_life-m02-u2-l2:vocabulary[1]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[17].blanks[0].canonicalAnswer",
+      "targetText": "いただけますか",
+      "authored": true,
+      "reason": "ô trống mang phần đuôi/biến thể chia của mẫu đã dạy \"～ていただけますか\" (ja-daily_life-m02-u2-l2:vocabulary[1]) — ghép với văn bản nối xung quanh (đã khai authored) tạo thành câu hoàn chỉnh đúng mẫu đã dạy; review() của câu này đã trỏ đúng id vocabulary đó."
+    },
+    {
+      "path": "questions[17].blanks[1].displayAnswer",
+      "targetText": "かしこまりました",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[3].displayText"
+      }
+    },
+    {
+      "path": "questions[17].blanks[1].canonicalAnswer",
+      "targetText": "かしこまりました",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[3].displayText"
+      }
+    },
+    {
+      "path": "questions[17].blanks[2].displayAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[17].blanks[2].canonicalAnswer",
+      "targetText": "お願いします",
+      "from_lesson": {
+        "lessonId": "ja-daily_life-m02-u2-l2",
+        "path": "vocabulary[7].displayText"
+      }
+    },
+    {
+      "path": "questions[17].options[0].text",
+      "targetText": "いただけますか / かしこまりました / お願いします",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[17].options[1].text",
+      "targetText": "もらえますか / かしこまりました / お願いします",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[17].options[2].text",
+      "targetText": "いただけますか / 了解しました / お願いします",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    },
+    {
+      "path": "questions[17].options[3].text",
+      "targetText": "いただけますか / かしこまりました / 本当ですか",
+      "authored": true,
+      "reason": "nhãn phương án ghép các đáp án từng ô bằng ' / ' — quy ước hiển thị bài tổng hợp; từng đáp án đã khai riêng ở blanks[] (đúng) hoặc là từ vựng đã dạy dùng làm phương án gây nhiễu (sai)."
+    }
+  ]
+}

@@ -314,6 +314,7 @@ function assertTestWideRules(questions, { unitId }) {
 import { JA_M01_U1_COMPREHENSIVE } from '../content/daily-life/module-1/ja-unit1-comprehensive.mjs';
 import { JA_M01_U2_COMPREHENSIVE } from '../content/daily-life/module-1/ja-unit2-comprehensive.mjs';
 import { JA_M02_U1_COMPREHENSIVE } from '../content/daily-life/module-1/ja-unit1-comprehensive-m02.mjs';
+import { JA_M02_U2_COMPREHENSIVE } from '../content/daily-life/module-1/ja-unit2-comprehensive-m02.mjs';
 
 /* ── Đăng ký nội dung đã duyệt ───────────────────────────────────────────── */
 
@@ -331,6 +332,7 @@ export const UNIT_COMPREHENSIVE_REGISTRY = {
     'ja-daily_life-m01-u1': JA_M01_U1_COMPREHENSIVE,
     'ja-daily_life-m01-u2': JA_M01_U2_COMPREHENSIVE,
     'ja-daily_life-m02-u1': JA_M02_U1_COMPREHENSIVE,
+    'ja-daily_life-m02-u2': JA_M02_U2_COMPREHENSIVE,
   },
 };
 

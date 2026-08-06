@@ -56,6 +56,12 @@
       "type": "comprehensive",
       "scope": ["source-balance"],
       "reason": "có provenance thật (100% from_lesson dẫn từ m02-u1-l1/l2, cả hai đều đã cân nguồn — l1 qua scope source-balance ở trên, l2 đủ scan.json) — KHÔNG miễn scope 'provenance' (đã ĐÓNG cho m01, owner chốt 2026-07-30; bài này build sau mốc đó). Bài không mở nguồn ngoài mới (mọi câu ghép lại từ vốn đã dạy trong hai bài), nên không có nguồn mới nào cần scan.json riêng cho ID này. Owner giao PHA làm — tiền lệ 2 bài m01-u1/m01-u2-comprehensive."
+    },
+    {
+      "id": "ja-daily_life-m02-u2-comprehensive",
+      "type": "comprehensive",
+      "scope": ["source-balance"],
+      "reason": "có provenance thật (100% from_lesson dẫn từ m02-u2-l1/l2, cả hai đều có scan.json thật, xây sau mốc 2026-08-01) — KHÔNG miễn scope 'provenance' (đã ĐÓNG cho m01, owner chốt 2026-07-30; bài này build sau mốc đó). Bài không mở nguồn ngoài mới (mọi câu ghép lại từ vốn đã dạy trong hai bài), nên không có nguồn mới nào cần scan.json riêng cho ID này. Owner chốt 2026-08-06, cùng tiền lệ m02-u1-comprehensive."
     }
   ]
 }

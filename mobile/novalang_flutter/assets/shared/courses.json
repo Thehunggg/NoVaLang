@@ -10472,7 +10472,2410 @@
           "lessonIds": [
             "ja-daily_life-m02-u2-l1",
             "ja-daily_life-m02-u2-l2"
-          ]
+          ],
+          "comprehensiveTest": {
+            "id": "ja-daily_life-m02-u2-comprehensive",
+            "unitId": "ja-daily_life-m02-u2",
+            "format": "unit_comprehensive_cloze",
+            "languageCode": "ja",
+            "targetLocale": "ja-JP",
+            "plan": "plus",
+            "graded": true,
+            "title": "Bài tổng hợp Unit 2",
+            "titleByNative": {
+              "vi": "Bài tổng hợp Unit 2",
+              "en": "Unit 2 Comprehensive Test",
+              "ja": "第2ユニット総合テスト"
+            },
+            "description": "Ôn lại toàn bộ Unit 2 của Module 2: xin lỗi/xin phép đúng mức độ, và nhờ vả người khác đúng tình huống.",
+            "descriptionByNative": {
+              "vi": "Ôn lại toàn bộ Unit 2 của Module 2: xin lỗi/xin phép đúng mức độ, và nhờ vả người khác đúng tình huống.",
+              "en": "Reviews all of Module 2 Unit 2: apologizing/asking permission at the right level, and asking others for favors in the right situation.",
+              "ja": "モジュール2・第2ユニット全体の復習：適切な度合いでの謝罪・許可の求め方と、状況に合ったお願いの仕方。"
+            },
+            "estimatedMinutes": "12",
+            "totalQuestions": 18,
+            "sourceLessonIds": [
+              "ja-daily_life-m02-u2-l1",
+              "ja-daily_life-m02-u2-l2"
+            ],
+            "questions": [
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q1",
+                "order": 1,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Bạn vô tình làm ồn ảnh hưởng bạn thân đang học bài. Bạn xin lỗi thân mật, rồi hứa sẽ cẩn thận hơn.",
+                "contextByNative": {
+                  "vi": "Bạn vô tình làm ồn ảnh hưởng bạn thân đang học bài. Bạn xin lỗi thân mật, rồi hứa sẽ cẩn thận hơn.",
+                  "en": "You've accidentally made noise that disturbed a close friend who is studying. You apologize casually, then promise to be more careful.",
+                  "ja": "親しい友だちが勉強しているときに、うっかり音を立てて邪魔してしまいました。気軽に謝り、これから気を付けると約束します。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q1b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q1b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q1b1",
+                    "displayAnswer": "ごめんなさい",
+                    "canonicalAnswer": "ごめんなさい",
+                    "audioText": "ごめんなさい",
+                    "acceptedAnswers": [
+                      "ごめんなさい"
+                    ]
+                  },
+                  {
+                    "id": "q1b2",
+                    "displayAnswer": "気（き）を付（つ）けます",
+                    "canonicalAnswer": "気を付けます",
+                    "audioText": "きをつけます",
+                    "acceptedAnswers": [
+                      "気を付けます"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q1a",
+                    "text": "ごめんなさい / 気（き）を付（つ）けます",
+                    "answersByBlankId": {
+                      "q1b1": "ごめんなさい",
+                      "q1b2": "気を付けます"
+                    }
+                  },
+                  {
+                    "id": "q1b",
+                    "text": "申（もう）し訳（わけ）ありません / 気（き）を付（つ）けます",
+                    "answersByBlankId": {
+                      "q1b1": "申し訳ありません",
+                      "q1b2": "気を付けます"
+                    }
+                  },
+                  {
+                    "id": "q1c",
+                    "text": "ごめんなさい / 仕方（しかた）ありません",
+                    "answersByBlankId": {
+                      "q1b1": "ごめんなさい",
+                      "q1b2": "仕方ありません"
+                    }
+                  },
+                  {
+                    "id": "q1d",
+                    "text": "ごめんなさい / 大丈夫（だいじょうぶ）です",
+                    "answersByBlankId": {
+                      "q1b1": "ごめんなさい",
+                      "q1b2": "大丈夫です"
+                    }
+                  }
+                ],
+                "correctOptionId": "q1a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "gomennasai"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "ki-wo-tsukemasu"
+                  }
+                ],
+                "explanation": "申し訳ありません (b) là thể lịch sự, lệch với bạn thân đang dùng thể thân mật. 仕方ありません (c) là câu người NGHE nói để thông cảm, không phải lời hứa của người xin lỗi. 大丈夫です (d) dùng để đồng ý cho phép/trấn an, không phải lời hứa cẩn thận hơn.",
+                "explanationByNative": {
+                  "vi": "申し訳ありません (b) là thể lịch sự, lệch với bạn thân đang dùng thể thân mật. 仕方ありません (c) là câu người NGHE nói để thông cảm, không phải lời hứa của người xin lỗi. 大丈夫です (d) dùng để đồng ý cho phép/trấn an, không phải lời hứa cẩn thận hơn.",
+                  "en": "申し訳ありません (b) is polite, mismatched with a close friend using the casual form. 仕方ありません (c) is said by the LISTENER to show sympathy, not a promise from the apologizer. 大丈夫です (d) grants permission/reassures, it is not a promise to be careful.",
+                  "ja": "「申し訳ありません」(b)は丁寧体で、気軽な言葉を使う親しい友だちには合いません。「仕方ありません」(c)は聞き手が同情を示すために言う言葉で、謝る人の約束ではありません。「大丈夫です」(d)は許可を出す・安心させるときの言葉で、気を付けるという約束ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q2",
+                "order": 2,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Đồng nghiệp vừa khoe có một cuốn sách hay. Bạn ngạc nhiên, rồi hỏi mượn một cách lịch sự.",
+                "contextByNative": {
+                  "vi": "Đồng nghiệp vừa khoe có một cuốn sách hay. Bạn ngạc nhiên, rồi hỏi mượn một cách lịch sự.",
+                  "en": "A colleague has just mentioned having a great book. You react with surprise, then politely ask to borrow it.",
+                  "ja": "同僚がいい本を持っていると話してくれました。驚いた様子を見せ、丁寧に貸してほしいと頼みます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q2b1"
+                  },
+                  {
+                    "displayText": "？この本（ほん）、貸して"
+                  },
+                  {
+                    "blankId": "q2b2"
+                  },
+                  {
+                    "displayText": "？"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q2b1",
+                    "displayAnswer": "本当（ほんとう）ですか",
+                    "canonicalAnswer": "本当ですか",
+                    "audioText": "ほんとうですか",
+                    "acceptedAnswers": [
+                      "本当ですか"
+                    ]
+                  },
+                  {
+                    "id": "q2b2",
+                    "displayAnswer": "もらえませんか",
+                    "canonicalAnswer": "もらえませんか",
+                    "audioText": "もらえませんか",
+                    "acceptedAnswers": [
+                      "もらえませんか"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q2a",
+                    "text": "本当（ほんとう）ですか / もらえませんか",
+                    "answersByBlankId": {
+                      "q2b1": "本当ですか",
+                      "q2b2": "もらえませんか"
+                    }
+                  },
+                  {
+                    "id": "q2b",
+                    "text": "かしこまりました / もらえませんか",
+                    "answersByBlankId": {
+                      "q2b1": "かしこまりました",
+                      "q2b2": "もらえませんか"
+                    }
+                  },
+                  {
+                    "id": "q2c",
+                    "text": "本当（ほんとう）ですか / いただけますか",
+                    "answersByBlankId": {
+                      "q2b1": "本当ですか",
+                      "q2b2": "いただけますか"
+                    }
+                  },
+                  {
+                    "id": "q2d",
+                    "text": "本当（ほんとう）ですか / くれませんか",
+                    "answersByBlankId": {
+                      "q2b1": "本当ですか",
+                      "q2b2": "くれませんか"
+                    }
+                  }
+                ],
+                "correctOptionId": "q2a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "hontou-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "temo-moraemasenka"
+                  }
+                ],
+                "explanation": "かしこまりました (b) là câu người ĐƯỢC nhờ nói để đồng ý, không phải phản ứng ngạc nhiên. いただけますか (c) lịch sự hơn mức cần với đồng nghiệp. くれませんか (d) là thể thân mật, cũng lệch mức lịch sự cần cho đồng nghiệp.",
+                "explanationByNative": {
+                  "vi": "かしこまりました (b) là câu người ĐƯỢC nhờ nói để đồng ý, không phải phản ứng ngạc nhiên. いただけますか (c) lịch sự hơn mức cần với đồng nghiệp. くれませんか (d) là thể thân mật, cũng lệch mức lịch sự cần cho đồng nghiệp.",
+                  "en": "かしこまりました (b) is said by the person being asked to agree, not a reaction of surprise. いただけますか (c) is more polite than needed with a colleague. くれませんか (d) is casual, also mismatched with the politeness needed for a colleague.",
+                  "ja": "「かしこまりました」(b)は頼まれた人が承諾するときの言葉で、驚きの反応ではありません。「いただけますか」(c)は同僚に必要な丁寧さより丁寧すぎます。「くれませんか」(d)は気軽な言い方で、これも同僚に必要な丁寧さに合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q3",
+                "order": 3,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Bạn ở cửa hàng quần áo, hỏi nhân viên (người lạ) rất lịch sự xem có được thử đồ không, rồi hỏi thêm liệu có được chụp ảnh không.",
+                "contextByNative": {
+                  "vi": "Bạn ở cửa hàng quần áo, hỏi nhân viên (người lạ) rất lịch sự xem có được thử đồ không, rồi hỏi thêm liệu có được chụp ảnh không.",
+                  "en": "You're at a clothing shop, very politely asking the staff (a stranger) if you may try something on, then also asking if you may take a photo.",
+                  "ja": "洋服店で、店員（初対面）にとても丁寧に試着してもよいか尋ね、さらに写真を撮ってもよいか尋ねます。"
+                },
+                "segments": [
+                  {
+                    "displayText": "試着（しちゃく）"
+                  },
+                  {
+                    "blankId": "q3b1"
+                  },
+                  {
+                    "displayText": "。写真（しゃしん）も"
+                  },
+                  {
+                    "blankId": "q3b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q3b1",
+                    "displayAnswer": "してもよろしいですか",
+                    "canonicalAnswer": "してもよろしいですか",
+                    "audioText": "してもよろしいですか",
+                    "acceptedAnswers": [
+                      "してもよろしいですか"
+                    ]
+                  },
+                  {
+                    "id": "q3b2",
+                    "displayAnswer": "よろしいですか",
+                    "canonicalAnswer": "よろしいですか",
+                    "audioText": "よろしいですか",
+                    "acceptedAnswers": [
+                      "よろしいですか"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q3a",
+                    "text": "してもよろしいですか / よろしいですか",
+                    "answersByBlankId": {
+                      "q3b1": "してもよろしいですか",
+                      "q3b2": "よろしいですか"
+                    }
+                  },
+                  {
+                    "id": "q3b",
+                    "text": "してもいいですか / よろしいですか",
+                    "answersByBlankId": {
+                      "q3b1": "してもいいですか",
+                      "q3b2": "よろしいですか"
+                    }
+                  },
+                  {
+                    "id": "q3c",
+                    "text": "してもよろしいですか / いいですか",
+                    "answersByBlankId": {
+                      "q3b1": "してもよろしいですか",
+                      "q3b2": "いいですか"
+                    }
+                  },
+                  {
+                    "id": "q3d",
+                    "text": "してもらえませんか / よろしいですか",
+                    "answersByBlankId": {
+                      "q3b1": "してもらえませんか",
+                      "q3b2": "よろしいですか"
+                    }
+                  }
+                ],
+                "correctOptionId": "q3a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "temo-yoroshii-desu-ka"
+                  }
+                ],
+                "explanation": "してもいいですか (b) chưa đủ lịch sự cho người lạ ở cửa hàng — lệch mức với ô đầu cần dùng. いいですか (c) cũng chưa đủ lịch sự, không khớp mức đã chọn ở ô đầu. してもらえませんか (d) là NHỜ NGƯỜI KHÁC làm gì đó, không phải XIN PHÉP cho CHÍNH MÌNH làm gì.",
+                "explanationByNative": {
+                  "vi": "してもいいですか (b) chưa đủ lịch sự cho người lạ ở cửa hàng — lệch mức với ô đầu cần dùng. いいですか (c) cũng chưa đủ lịch sự, không khớp mức đã chọn ở ô đầu. してもらえませんか (d) là NHỜ NGƯỜI KHÁC làm gì đó, không phải XIN PHÉP cho CHÍNH MÌNH làm gì.",
+                  "en": "してもいいですか (b) is not polite enough for a stranger at a shop — it mismatches the level needed at the first blank. いいですか (c) is likewise not polite enough, inconsistent with the level chosen at the first blank. してもらえませんか (d) is asking SOMEONE ELSE to do something, not asking PERMISSION for yourself.",
+                  "ja": "「してもいいですか」(b)は初対面の店員に必要な丁寧さが足りません——最初の空欄で選んだレベルと合いません。「いいですか」(c)も丁寧さが足りず、最初の空欄で選んだレベルと一致しません。「してもらえませんか」(d)は他の人に何かをしてもらうお願いで、自分がすることの許可を求める言葉ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q4",
+                "order": 4,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Bạn bè xin phép mượn đồ. Bạn đồng ý dứt khoát, rồi trấn an thêm rằng không sao cả.",
+                "contextByNative": {
+                  "vi": "Bạn bè xin phép mượn đồ. Bạn đồng ý dứt khoát, rồi trấn an thêm rằng không sao cả.",
+                  "en": "A friend asks permission to borrow something. You agree decisively, then reassure them it is no problem at all.",
+                  "ja": "友だちが物を借りる許可を求めています。はっきりと同意し、さらに全く問題ないと安心させます。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q4b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q4b2"
+                  },
+                  {
+                    "displayText": "、心配（しんぱい）しないで。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q4b1",
+                    "displayAnswer": "もちろんです",
+                    "canonicalAnswer": "もちろんです",
+                    "audioText": "もちろんです",
+                    "acceptedAnswers": [
+                      "もちろんです"
+                    ]
+                  },
+                  {
+                    "id": "q4b2",
+                    "displayAnswer": "大丈夫（だいじょうぶ）です",
+                    "canonicalAnswer": "大丈夫です",
+                    "audioText": "だいじょうぶです",
+                    "acceptedAnswers": [
+                      "大丈夫です"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q4a",
+                    "text": "もちろんです / 大丈夫（だいじょうぶ）です",
+                    "answersByBlankId": {
+                      "q4b1": "もちろんです",
+                      "q4b2": "大丈夫です"
+                    }
+                  },
+                  {
+                    "id": "q4b",
+                    "text": "構（かま）いません / 大丈夫（だいじょうぶ）です",
+                    "answersByBlankId": {
+                      "q4b1": "構いません",
+                      "q4b2": "大丈夫です"
+                    }
+                  },
+                  {
+                    "id": "q4c",
+                    "text": "もちろんです / 仕方（しかた）ありません",
+                    "answersByBlankId": {
+                      "q4b1": "もちろんです",
+                      "q4b2": "仕方ありません"
+                    }
+                  },
+                  {
+                    "id": "q4d",
+                    "text": "もちろんです / かしこまりました",
+                    "answersByBlankId": {
+                      "q4b1": "もちろんです",
+                      "q4b2": "かしこまりました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q4a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "mochiron-desu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "daijoubu-desu"
+                  }
+                ],
+                "explanation": "構いません (b) không sai nghĩa nhưng thiếu sự DỨT KHOÁT mà もちろんです có — đề bài cần nhấn mạnh. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải trấn an một lời xin phép bình thường. かしこまりました (d) là cách nhân viên/dịch vụ đồng ý rất lịch sự, không hợp giữa bạn bè.",
+                "explanationByNative": {
+                  "vi": "構いません (b) không sai nghĩa nhưng thiếu sự DỨT KHOÁT mà もちろんです có — đề bài cần nhấn mạnh. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải trấn an một lời xin phép bình thường. かしこまりました (d) là cách nhân viên/dịch vụ đồng ý rất lịch sự, không hợp giữa bạn bè.",
+                  "en": "構いません (b) is not wrong in meaning but lacks the DECISIVENESS that もちろんです has — the situation calls for emphasis. 仕方ありません (c) is for sympathizing about something unfortunate, not reassuring an ordinary request. かしこまりました (d) is how service staff agree very formally, not fitting between friends.",
+                  "ja": "「構いません」(b)は意味は間違っていませんが、「もちろんです」にある「はっきりとした」感じがありません——この場面は強調が必要です。「仕方ありません」(c)は良くないことに同情するときに使うもので、普通のお願いを安心させる言葉ではありません。「かしこまりました」(d)は店員・接客業がとても丁寧に承諾する言い方で、友だち同士には合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q5",
+                "order": 5,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Bạn cùng lớp, mức lịch sự trung tính (không quá thân, không cần trang trọng), nhờ bạn giúp một việc nhỏ. Bạn phản ứng ngạc nhiên nhẹ, rồi đồng ý giúp.",
+                "contextByNative": {
+                  "vi": "Bạn cùng lớp, mức lịch sự trung tính (không quá thân, không cần trang trọng), nhờ bạn giúp một việc nhỏ. Bạn phản ứng ngạc nhiên nhẹ, rồi đồng ý giúp.",
+                  "en": "A classmate at a neutral politeness level (not too close, no need to be very formal) asks you for a small favor. You react with mild surprise, then agree to help.",
+                  "ja": "あまり親しくなく、丁寧さも中立的なクラスメートが、ちょっとしたお願いをしてきました。少し驚いた様子を見せてから、手伝うことに同意します。"
+                },
+                "segments": [
+                  {
+                    "blankId": "q5b1"
+                  },
+                  {
+                    "displayText": "？"
+                  },
+                  {
+                    "blankId": "q5b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q5b1",
+                    "displayAnswer": "本当（ほんとう）ですか",
+                    "canonicalAnswer": "本当ですか",
+                    "audioText": "ほんとうですか",
+                    "acceptedAnswers": [
+                      "本当ですか"
+                    ]
+                  },
+                  {
+                    "id": "q5b2",
+                    "displayAnswer": "よいですよ",
+                    "canonicalAnswer": "よいですよ",
+                    "audioText": "よいですよ",
+                    "acceptedAnswers": [
+                      "よいですよ"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q5a",
+                    "text": "本当（ほんとう）ですか / よいですよ",
+                    "answersByBlankId": {
+                      "q5b1": "本当ですか",
+                      "q5b2": "よいですよ"
+                    }
+                  },
+                  {
+                    "id": "q5b",
+                    "text": "かしこまりました / よいですよ",
+                    "answersByBlankId": {
+                      "q5b1": "かしこまりました",
+                      "q5b2": "よいですよ"
+                    }
+                  },
+                  {
+                    "id": "q5c",
+                    "text": "本当（ほんとう）ですか / かしこまりました",
+                    "answersByBlankId": {
+                      "q5b1": "本当ですか",
+                      "q5b2": "かしこまりました"
+                    }
+                  },
+                  {
+                    "id": "q5d",
+                    "text": "本当（ほんとう）ですか / 了解（りょうかい）しました",
+                    "answersByBlankId": {
+                      "q5b1": "本当ですか",
+                      "q5b2": "了解しました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q5a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "hontou-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "yoi-desu-yo"
+                  }
+                ],
+                "explanation": "かしこまりました (b) là câu ĐỒNG Ý giúp, không phải phản ứng ngạc nhiên trước lý do — đặt sai vị trí ô đầu. かしこまりました (c) rất lịch sự kiểu dịch vụ, lệch với mức trung tính giữa hai bạn cùng lớp. 了解しました (d) thân mật/thông thường hơn mức trung tính đã thiết lập.",
+                "explanationByNative": {
+                  "vi": "かしこまりました (b) là câu ĐỒNG Ý giúp, không phải phản ứng ngạc nhiên trước lý do — đặt sai vị trí ô đầu. かしこまりました (c) rất lịch sự kiểu dịch vụ, lệch với mức trung tính giữa hai bạn cùng lớp. 了解しました (d) thân mật/thông thường hơn mức trung tính đã thiết lập.",
+                  "en": "かしこまりました (b) is a reply that AGREES to help, not a reaction of surprise at the reason — wrong fit for the first blank. かしこまりました (c) is very polite, service-style, mismatched with the neutral level between two classmates. 了解しました (d) is more casual/ordinary than the neutral level established here.",
+                  "ja": "「かしこまりました」(b)は手伝うことに同意する返事で、理由への驚きの反応ではありません——最初の空欄には合いません。「かしこまりました」(c)は接客業のようなとても丁寧な言い方で、クラスメート同士の中立的なレベルには合いません。「了解しました」(d)はここで設定された中立的なレベルより気軽・普通です。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q6",
+                "order": 6,
+                "kind": "sentence_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả hai ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả hai ô.",
+                  "en": "Choose the option that fills both blanks correctly.",
+                  "ja": "二つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Trời đang mưa to, bạn hỏi mượn ô của một người lạ, rất lịch sự, rồi kết thúc lời nhờ bằng một câu ngắn gọn.",
+                "contextByNative": {
+                  "vi": "Trời đang mưa to, bạn hỏi mượn ô của một người lạ, rất lịch sự, rồi kết thúc lời nhờ bằng một câu ngắn gọn.",
+                  "en": "It's raining hard, and you very politely ask a stranger to lend you an umbrella, then close the request with a short phrase.",
+                  "ja": "雨が強く降っていて、初対面の人にとても丁寧に傘を貸してほしいと頼み、短い言葉でお願いを締めくくります。"
+                },
+                "segments": [
+                  {
+                    "displayText": "傘（かさ）を貸して"
+                  },
+                  {
+                    "blankId": "q6b1"
+                  },
+                  {
+                    "displayText": "。"
+                  },
+                  {
+                    "blankId": "q6b2"
+                  },
+                  {
+                    "displayText": "。"
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q6b1",
+                    "displayAnswer": "いただけますか",
+                    "canonicalAnswer": "いただけますか",
+                    "audioText": "いただけますか",
+                    "acceptedAnswers": [
+                      "いただけますか"
+                    ]
+                  },
+                  {
+                    "id": "q6b2",
+                    "displayAnswer": "お願（ねが）いします",
+                    "canonicalAnswer": "お願いします",
+                    "audioText": "おねがいします",
+                    "acceptedAnswers": [
+                      "お願いします"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q6a",
+                    "text": "いただけますか / お願（ねが）いします",
+                    "answersByBlankId": {
+                      "q6b1": "いただけますか",
+                      "q6b2": "お願いします"
+                    }
+                  },
+                  {
+                    "id": "q6b",
+                    "text": "くれませんか / お願（ねが）いします",
+                    "answersByBlankId": {
+                      "q6b1": "くれませんか",
+                      "q6b2": "お願いします"
+                    }
+                  },
+                  {
+                    "id": "q6c",
+                    "text": "いただけますか / 本当（ほんとう）ですか",
+                    "answersByBlankId": {
+                      "q6b1": "いただけますか",
+                      "q6b2": "本当ですか"
+                    }
+                  },
+                  {
+                    "id": "q6d",
+                    "text": "いただけますか / かしこまりました",
+                    "answersByBlankId": {
+                      "q6b1": "いただけますか",
+                      "q6b2": "かしこまりました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q6a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "teitadakemasu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "onegai-shimasu"
+                  }
+                ],
+                "explanation": "くれませんか (b) là thể thân mật, lệch với người lạ cần mức rất lịch sự. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. かしこまりました (d) là câu người ĐƯỢC nhờ nói để đồng ý, không phải câu người ĐI nhờ dùng để kết lời.",
+                "explanationByNative": {
+                  "vi": "くれませんか (b) là thể thân mật, lệch với người lạ cần mức rất lịch sự. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. かしこまりました (d) là câu người ĐƯỢC nhờ nói để đồng ý, không phải câu người ĐI nhờ dùng để kết lời.",
+                  "en": "くれませんか (b) is casual, mismatched with a stranger who needs a very polite level. 本当ですか (c) is a reaction of surprise, not fitting as a closing to a request. かしこまりました (d) is said by the person being asked to agree, not by the requester closing their request.",
+                  "ja": "「くれませんか」(b)は気軽な言い方で、とても丁寧さが必要な初対面の人には合いません。「本当ですか」(c)は驚きの反応で、お願いを締めくくる言葉としては合いません。「かしこまりました」(d)は頼まれた人が承諾するときの言葉で、お願いする人が締めくくりに使う言葉ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q7",
+                "order": 7,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai đồng nghiệp chưa thân, giữ thể lịch sự. 伊藤 vừa đến muộn cuộc họp.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai đồng nghiệp chưa thân, giữ thể lịch sự. 伊藤 vừa đến muộn cuộc họp.",
+                  "en": "Roles: two not-yet-close colleagues, keeping polite form. Itō has just arrived late to a meeting.",
+                  "ja": "関係：まだ親しくない同僚同士で、丁寧体を保ちます。伊藤さんは会議に遅れて来たところです。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q7t1",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q7b1"
+                      },
+                      {
+                        "displayText": "、電車（でんしゃ）が遅（おく）れました。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q7t2",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q7b2"
+                      },
+                      {
+                        "displayText": "。今から始（はじ）めましょう。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q7t3",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "displayText": "はい、"
+                      },
+                      {
+                        "blankId": "q7b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q7b1",
+                    "displayAnswer": "申（もう）し訳（わけ）ありません",
+                    "canonicalAnswer": "申し訳ありません",
+                    "audioText": "もうしわけありません",
+                    "acceptedAnswers": [
+                      "申し訳ありません"
+                    ]
+                  },
+                  {
+                    "id": "q7b2",
+                    "displayAnswer": "仕方（しかた）ありませんね",
+                    "canonicalAnswer": "仕方ありませんね",
+                    "audioText": "しかたありませんね",
+                    "acceptedAnswers": [
+                      "仕方ありませんね"
+                    ]
+                  },
+                  {
+                    "id": "q7b3",
+                    "displayAnswer": "気（き）を付（つ）けます",
+                    "canonicalAnswer": "気を付けます",
+                    "audioText": "きをつけます",
+                    "acceptedAnswers": [
+                      "気を付けます"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q7a",
+                    "text": "申（もう）し訳（わけ）ありません / 仕方（しかた）ありませんね / 気（き）を付（つ）けます",
+                    "answersByBlankId": {
+                      "q7b1": "申し訳ありません",
+                      "q7b2": "仕方ありませんね",
+                      "q7b3": "気を付けます"
+                    }
+                  },
+                  {
+                    "id": "q7b",
+                    "text": "ごめんなさい / 仕方（しかた）ありませんね / 気（き）を付（つ）けます",
+                    "answersByBlankId": {
+                      "q7b1": "ごめんなさい",
+                      "q7b2": "仕方ありませんね",
+                      "q7b3": "気を付けます"
+                    }
+                  },
+                  {
+                    "id": "q7c",
+                    "text": "申（もう）し訳（わけ）ありません / 大丈夫（だいじょうぶ）です / 気（き）を付（つ）けます",
+                    "answersByBlankId": {
+                      "q7b1": "申し訳ありません",
+                      "q7b2": "大丈夫です",
+                      "q7b3": "気を付けます"
+                    }
+                  },
+                  {
+                    "id": "q7d",
+                    "text": "申（もう）し訳（わけ）ありません / 仕方（しかた）ありませんね / もちろんです",
+                    "answersByBlankId": {
+                      "q7b1": "申し訳ありません",
+                      "q7b2": "仕方ありませんね",
+                      "q7b3": "もちろんです"
+                    }
+                  }
+                ],
+                "correctOptionId": "q7a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "moushiwake-arimasen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "shikata-arimasen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "ki-wo-tsukemasu"
+                  }
+                ],
+                "explanation": "ごめんなさい (b) là thể thân mật, lệch với hai đồng nghiệp chưa thân đang giữ lịch sự. 大丈夫です (c) dùng để đồng ý cho phép/trấn an, không phải câu thông cảm cho một lời xin lỗi. もちろんです (d) là câu đồng ý dứt khoát, không phải lời hứa cẩn thận hơn.",
+                "explanationByNative": {
+                  "vi": "ごめんなさい (b) là thể thân mật, lệch với hai đồng nghiệp chưa thân đang giữ lịch sự. 大丈夫です (c) dùng để đồng ý cho phép/trấn an, không phải câu thông cảm cho một lời xin lỗi. もちろんです (d) là câu đồng ý dứt khoát, không phải lời hứa cẩn thận hơn.",
+                  "en": "ごめんなさい (b) is casual, mismatched with two not-yet-close colleagues keeping polite form. 大丈夫です (c) grants permission/reassures, it is not a sympathetic reply to an apology. もちろんです (d) is a decisive agreement, not a promise to be more careful.",
+                  "ja": "「ごめんなさい」(b)は気軽な言い方で、丁寧体を保つまだ親しくない同僚には合いません。「大丈夫です」(c)は許可を出す・安心させる言葉で、謝罪への同情の返事ではありません。「もちろんです」(d)ははっきりとした同意の言葉で、気を付けるという約束ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q8",
+                "order": 8,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: khách hàng và nhân viên cửa hàng, chưa quen biết — cả hai giữ thể rất lịch sự. Khách nhờ nhân viên gói quà.",
+                "contextByNative": {
+                  "vi": "Vai vế: khách hàng và nhân viên cửa hàng, chưa quen biết — cả hai giữ thể rất lịch sự. Khách nhờ nhân viên gói quà.",
+                  "en": "Roles: a customer and a shop employee, strangers — both keep the very polite register. The customer asks the employee to wrap a gift.",
+                  "ja": "関係：客と店員で、初対面です。二人ともとても丁寧な言葉遣いを保ちます。客は店員に贈り物を包んでもらうようお願いします。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q8t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "これを包（つつ）んで"
+                      },
+                      {
+                        "blankId": "q8b1"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q8b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q8t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q8b3"
+                      },
+                      {
+                        "displayText": "。少々（しょうしょう）お待（ま）ちください。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q8b1",
+                    "displayAnswer": "いただけますか",
+                    "canonicalAnswer": "いただけますか",
+                    "audioText": "いただけますか",
+                    "acceptedAnswers": [
+                      "いただけますか"
+                    ]
+                  },
+                  {
+                    "id": "q8b2",
+                    "displayAnswer": "お願（ねが）いします",
+                    "canonicalAnswer": "お願いします",
+                    "audioText": "おねがいします",
+                    "acceptedAnswers": [
+                      "お願いします"
+                    ]
+                  },
+                  {
+                    "id": "q8b3",
+                    "displayAnswer": "かしこまりました",
+                    "canonicalAnswer": "かしこまりました",
+                    "audioText": "かしこまりました",
+                    "acceptedAnswers": [
+                      "かしこまりました"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q8a",
+                    "text": "いただけますか / お願（ねが）いします / かしこまりました",
+                    "answersByBlankId": {
+                      "q8b1": "いただけますか",
+                      "q8b2": "お願いします",
+                      "q8b3": "かしこまりました"
+                    }
+                  },
+                  {
+                    "id": "q8b",
+                    "text": "くれますか / お願（ねが）いします / かしこまりました",
+                    "answersByBlankId": {
+                      "q8b1": "くれますか",
+                      "q8b2": "お願いします",
+                      "q8b3": "かしこまりました"
+                    }
+                  },
+                  {
+                    "id": "q8c",
+                    "text": "いただけますか / 本当（ほんとう）ですか / かしこまりました",
+                    "answersByBlankId": {
+                      "q8b1": "いただけますか",
+                      "q8b2": "本当ですか",
+                      "q8b3": "かしこまりました"
+                    }
+                  },
+                  {
+                    "id": "q8d",
+                    "text": "いただけますか / お願（ねが）いします / 了解（りょうかい）しました",
+                    "answersByBlankId": {
+                      "q8b1": "いただけますか",
+                      "q8b2": "お願いします",
+                      "q8b3": "了解しました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q8a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "teitadakemasu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "onegai-shimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "kashikomarimashita"
+                  }
+                ],
+                "explanation": "くれますか (b) là thể thân mật, lệch với khách hàng đang giữ thể rất lịch sự với người lạ. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. 了解しました (d) là cách đồng ý thân mật/thông thường, không đúng mức rất lịch sự mà nhân viên cần giữ.",
+                "explanationByNative": {
+                  "vi": "くれますか (b) là thể thân mật, lệch với khách hàng đang giữ thể rất lịch sự với người lạ. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. 了解しました (d) là cách đồng ý thân mật/thông thường, không đúng mức rất lịch sự mà nhân viên cần giữ.",
+                  "en": "くれますか (b) is casual, mismatched with a customer keeping a very polite register with a stranger. 本当ですか (c) is a reaction of surprise, not fitting as a closing to a request. 了解しました (d) is a casual/ordinary way to agree, not the very polite level the employee needs to keep.",
+                  "ja": "「くれますか」(b)は気軽な言い方で、初対面の相手にとても丁寧な言葉遣いを保つ客には合いません。「本当ですか」(c)は驚きの反応で、お願いを締めくくる言葉としては合いません。「了解しました」(d)は気軽・普通の同意の言い方で、店員が保つべきとても丁寧なレベルとは合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q9",
+                "order": 9,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai bạn thân, thân mật. 伊藤 muốn ăn một miếng bánh của 田中.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai bạn thân, thân mật. 伊藤 muốn ăn một miếng bánh của 田中.",
+                  "en": "Roles: two close friends, casual. Itō wants to eat a piece of Tanaka's cake.",
+                  "ja": "関係：親しい友だち同士で、気軽な間柄です。伊藤さんは田中さんのケーキを一切れ食べたいと思っています。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q9t1",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "displayText": "このケーキ、食（た）べても"
+                      },
+                      {
+                        "blankId": "q9b1"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q9t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q9b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q9b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q9b1",
+                    "displayAnswer": "いいですか",
+                    "canonicalAnswer": "いいですか",
+                    "audioText": "いいですか",
+                    "acceptedAnswers": [
+                      "いいですか"
+                    ]
+                  },
+                  {
+                    "id": "q9b2",
+                    "displayAnswer": "もちろんです",
+                    "canonicalAnswer": "もちろんです",
+                    "audioText": "もちろんです",
+                    "acceptedAnswers": [
+                      "もちろんです"
+                    ]
+                  },
+                  {
+                    "id": "q9b3",
+                    "displayAnswer": "構（かま）いません",
+                    "canonicalAnswer": "構いません",
+                    "audioText": "かまいません",
+                    "acceptedAnswers": [
+                      "構いません"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q9a",
+                    "text": "いいですか / もちろんです / 構（かま）いません",
+                    "answersByBlankId": {
+                      "q9b1": "いいですか",
+                      "q9b2": "もちろんです",
+                      "q9b3": "構いません"
+                    }
+                  },
+                  {
+                    "id": "q9b",
+                    "text": "よろしいですか / もちろんです / 構（かま）いません",
+                    "answersByBlankId": {
+                      "q9b1": "よろしいですか",
+                      "q9b2": "もちろんです",
+                      "q9b3": "構いません"
+                    }
+                  },
+                  {
+                    "id": "q9c",
+                    "text": "いいですか / もちろんです / 仕方（しかた）ありません",
+                    "answersByBlankId": {
+                      "q9b1": "いいですか",
+                      "q9b2": "もちろんです",
+                      "q9b3": "仕方ありません"
+                    }
+                  },
+                  {
+                    "id": "q9d",
+                    "text": "いいですか / かしこまりました / 構（かま）いません",
+                    "answersByBlankId": {
+                      "q9b1": "いいですか",
+                      "q9b2": "かしこまりました",
+                      "q9b3": "構いません"
+                    }
+                  }
+                ],
+                "correctOptionId": "q9a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "temo-ii-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "mochiron-desu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "kamaimasen"
+                  }
+                ],
+                "explanation": "よろしいですか (b) lịch sự hơn mức cần giữa hai bạn thân — mức trung tính (いいですか) đã đủ. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải lời trấn an cho một lời xin phép bình thường. かしこまりました (d) là cách nhân viên/dịch vụ đồng ý rất lịch sự, không hợp giữa bạn bè.",
+                "explanationByNative": {
+                  "vi": "よろしいですか (b) lịch sự hơn mức cần giữa hai bạn thân — mức trung tính (いいですか) đã đủ. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải lời trấn an cho một lời xin phép bình thường. かしこまりました (d) là cách nhân viên/dịch vụ đồng ý rất lịch sự, không hợp giữa bạn bè.",
+                  "en": "よろしいですか (b) is more polite than needed between close friends — the neutral level (いいですか) is already enough. 仕方ありません (c) is for sympathizing about something unfortunate, not reassurance for an ordinary request. かしこまりました (d) is how service staff agree very formally, not fitting between friends.",
+                  "ja": "「よろしいですか」(b)は親しい友だち同士に必要な丁寧さより丁寧すぎます——中立的な「いいですか」で十分です。「仕方ありません」(c)は良くないことに同情するときに使うもので、普通のお願いを安心させる言葉ではありません。「かしこまりました」(d)は店員・接客業がとても丁寧に承諾する言い方で、友だち同士には合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q10",
+                "order": 10,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai đồng nghiệp ngang hàng, lịch sự nhưng không quá thân. 田中 nhờ 伊藤 giúp mang đồ.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai đồng nghiệp ngang hàng, lịch sự nhưng không quá thân. 田中 nhờ 伊藤 giúp mang đồ.",
+                  "en": "Roles: two colleagues of equal standing, polite but not too close. Tanaka asks Itō to help carry something.",
+                  "ja": "関係：対等な同僚同士で、丁寧ですがあまり親しくありません。田中さんは伊藤さんに荷物を運んでもらうよう頼みます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q10t1",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "displayText": "荷物（にもつ）を運（はこ）んで"
+                      },
+                      {
+                        "blankId": "q10b1"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q10b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q10t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q10b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q10b1",
+                    "displayAnswer": "もらえませんか",
+                    "canonicalAnswer": "もらえませんか",
+                    "audioText": "もらえませんか",
+                    "acceptedAnswers": [
+                      "もらえませんか"
+                    ]
+                  },
+                  {
+                    "id": "q10b2",
+                    "displayAnswer": "お願（ねが）いします",
+                    "canonicalAnswer": "お願いします",
+                    "audioText": "おねがいします",
+                    "acceptedAnswers": [
+                      "お願いします"
+                    ]
+                  },
+                  {
+                    "id": "q10b3",
+                    "displayAnswer": "よいですよ",
+                    "canonicalAnswer": "よいですよ",
+                    "audioText": "よいですよ",
+                    "acceptedAnswers": [
+                      "よいですよ"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q10a",
+                    "text": "もらえませんか / お願（ねが）いします / よいですよ",
+                    "answersByBlankId": {
+                      "q10b1": "もらえませんか",
+                      "q10b2": "お願いします",
+                      "q10b3": "よいですよ"
+                    }
+                  },
+                  {
+                    "id": "q10b",
+                    "text": "いただけますか / お願（ねが）いします / よいですよ",
+                    "answersByBlankId": {
+                      "q10b1": "いただけますか",
+                      "q10b2": "お願いします",
+                      "q10b3": "よいですよ"
+                    }
+                  },
+                  {
+                    "id": "q10c",
+                    "text": "もらえませんか / 本当（ほんとう）ですか / よいですよ",
+                    "answersByBlankId": {
+                      "q10b1": "もらえませんか",
+                      "q10b2": "本当ですか",
+                      "q10b3": "よいですよ"
+                    }
+                  },
+                  {
+                    "id": "q10d",
+                    "text": "もらえませんか / お願（ねが）いします / かしこまりました",
+                    "answersByBlankId": {
+                      "q10b1": "もらえませんか",
+                      "q10b2": "お願いします",
+                      "q10b3": "かしこまりました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q10a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "temo-moraemasenka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "onegai-shimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "yoi-desu-yo"
+                  }
+                ],
+                "explanation": "いただけますか (b) lịch sự hơn mức cần giữa hai đồng nghiệp ngang hàng. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. かしこまりました (d) là cách đồng ý rất lịch sự kiểu dịch vụ, lệch với quan hệ đồng nghiệp ngang hàng đã thiết lập.",
+                "explanationByNative": {
+                  "vi": "いただけますか (b) lịch sự hơn mức cần giữa hai đồng nghiệp ngang hàng. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. かしこまりました (d) là cách đồng ý rất lịch sự kiểu dịch vụ, lệch với quan hệ đồng nghiệp ngang hàng đã thiết lập.",
+                  "en": "いただけますか (b) is more polite than needed between two equal-standing colleagues. 本当ですか (c) is a reaction of surprise, not fitting as a closing to a request. かしこまりました (d) is a very polite service-style agreement, mismatched with the equal-colleague relationship already established.",
+                  "ja": "「いただけますか」(b)は対等な同僚同士に必要な丁寧さより丁寧すぎます。「本当ですか」(c)は驚きの反応で、お願いを締めくくる言葉としては合いません。「かしこまりました」(d)は接客業のようなとても丁寧な同意の仕方で、すでに設定された対等な同僚の関係には合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q11",
+                "order": 11,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai bạn thân, thân mật. 佐藤 đến muộn, rồi nhờ 伊藤 giúp một việc nhỏ.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai bạn thân, thân mật. 佐藤 đến muộn, rồi nhờ 伊藤 giúp một việc nhỏ.",
+                  "en": "Roles: two close friends, casual. Satō has arrived late, then asks Itō for a small favor.",
+                  "ja": "関係：親しい友だち同士で、気軽な間柄です。佐藤さんは遅れて来て、伊藤さんにちょっとしたお願いをします。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q11t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q11b1"
+                      },
+                      {
+                        "displayText": "、遅（おそ）くなった。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q11t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q11b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q11t3",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "ちょっと手伝（てつだ）って"
+                      },
+                      {
+                        "blankId": "q11b3"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q11b1",
+                    "displayAnswer": "ごめんなさい",
+                    "canonicalAnswer": "ごめんなさい",
+                    "audioText": "ごめんなさい",
+                    "acceptedAnswers": [
+                      "ごめんなさい"
+                    ]
+                  },
+                  {
+                    "id": "q11b2",
+                    "displayAnswer": "大丈夫（だいじょうぶ）です",
+                    "canonicalAnswer": "大丈夫です",
+                    "audioText": "だいじょうぶです",
+                    "acceptedAnswers": [
+                      "大丈夫です"
+                    ]
+                  },
+                  {
+                    "id": "q11b3",
+                    "displayAnswer": "くれませんか",
+                    "canonicalAnswer": "くれませんか",
+                    "audioText": "くれませんか",
+                    "acceptedAnswers": [
+                      "くれませんか"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q11a",
+                    "text": "ごめんなさい / 大丈夫（だいじょうぶ）です / くれませんか",
+                    "answersByBlankId": {
+                      "q11b1": "ごめんなさい",
+                      "q11b2": "大丈夫です",
+                      "q11b3": "くれませんか"
+                    }
+                  },
+                  {
+                    "id": "q11b",
+                    "text": "申（もう）し訳（わけ）ありません / 大丈夫（だいじょうぶ）です / くれませんか",
+                    "answersByBlankId": {
+                      "q11b1": "申し訳ありません",
+                      "q11b2": "大丈夫です",
+                      "q11b3": "くれませんか"
+                    }
+                  },
+                  {
+                    "id": "q11c",
+                    "text": "ごめんなさい / 仕方（しかた）ありません / くれませんか",
+                    "answersByBlankId": {
+                      "q11b1": "ごめんなさい",
+                      "q11b2": "仕方ありません",
+                      "q11b3": "くれませんか"
+                    }
+                  },
+                  {
+                    "id": "q11d",
+                    "text": "ごめんなさい / 大丈夫（だいじょうぶ）です / いただけますか",
+                    "answersByBlankId": {
+                      "q11b1": "ごめんなさい",
+                      "q11b2": "大丈夫です",
+                      "q11b3": "いただけますか"
+                    }
+                  }
+                ],
+                "correctOptionId": "q11a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "gomennasai"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "daijoubu-desu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "tekuremasenka"
+                  }
+                ],
+                "explanation": "申し訳ありません (b) là thể lịch sự, lệch với hai bạn thân đang dùng thể thân mật. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải lời trấn an nhẹ nhàng \"không sao đâu\" giữa bạn bè. いただけますか (d) rất lịch sự, lệch hẳn với mức thân mật \"くれませんか？\" đã dùng trong cùng lượt.",
+                "explanationByNative": {
+                  "vi": "申し訳ありません (b) là thể lịch sự, lệch với hai bạn thân đang dùng thể thân mật. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải lời trấn an nhẹ nhàng \"không sao đâu\" giữa bạn bè. いただけますか (d) rất lịch sự, lệch hẳn với mức thân mật \"くれませんか？\" đã dùng trong cùng lượt.",
+                  "en": "申し訳ありません (b) is polite, mismatched with two close friends using casual form. 仕方ありません (c) is for sympathizing about something unfortunate, not a light \"it's fine\" reassurance between friends. いただけますか (d) is very polite, clashing with the casual \"くれませんか？\" level already used in the same exchange.",
+                  "ja": "「申し訳ありません」(b)は丁寧体で、気軽な言葉を使う親しい友だち同士には合いません。「仕方ありません」(c)は良くないことに同情するときに使うもので、友だち同士の軽い「大丈夫だよ」という言葉ではありません。「いただけますか」(d)はとても丁寧で、同じやり取りの中ですでに使われている気軽な「くれませんか？」のレベルと合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q12",
+                "order": 12,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: khách hàng và nhân viên cửa hàng, chưa quen biết — cả hai giữ thể rất lịch sự. Khách xin phép đổi một món đồ.",
+                "contextByNative": {
+                  "vi": "Vai vế: khách hàng và nhân viên cửa hàng, chưa quen biết — cả hai giữ thể rất lịch sự. Khách xin phép đổi một món đồ.",
+                  "en": "Roles: a customer and a shop employee, strangers — both keep the very polite register. The customer asks permission to exchange an item.",
+                  "ja": "関係：客と店員で、初対面です。二人ともとても丁寧な言葉遣いを保ちます。客は品物の交換の許可を求めます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q12t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "これ、交換（こうかん）して"
+                      },
+                      {
+                        "blankId": "q12b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q12t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q12b2"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q12b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q12b1",
+                    "displayAnswer": "もよろしいですか",
+                    "canonicalAnswer": "もよろしいですか",
+                    "audioText": "もよろしいですか",
+                    "acceptedAnswers": [
+                      "もよろしいですか"
+                    ]
+                  },
+                  {
+                    "id": "q12b2",
+                    "displayAnswer": "大丈夫（だいじょうぶ）です",
+                    "canonicalAnswer": "大丈夫です",
+                    "audioText": "だいじょうぶです",
+                    "acceptedAnswers": [
+                      "大丈夫です"
+                    ]
+                  },
+                  {
+                    "id": "q12b3",
+                    "displayAnswer": "構（かま）いません",
+                    "canonicalAnswer": "構いません",
+                    "audioText": "かまいません",
+                    "acceptedAnswers": [
+                      "構いません"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q12a",
+                    "text": "もよろしいですか / 大丈夫（だいじょうぶ）です / 構（かま）いません",
+                    "answersByBlankId": {
+                      "q12b1": "もよろしいですか",
+                      "q12b2": "大丈夫です",
+                      "q12b3": "構いません"
+                    }
+                  },
+                  {
+                    "id": "q12b",
+                    "text": "もいいですか / 大丈夫（だいじょうぶ）です / 構（かま）いません",
+                    "answersByBlankId": {
+                      "q12b1": "もいいですか",
+                      "q12b2": "大丈夫です",
+                      "q12b3": "構いません"
+                    }
+                  },
+                  {
+                    "id": "q12c",
+                    "text": "もよろしいですか / 仕方（しかた）ありません / 構（かま）いません",
+                    "answersByBlankId": {
+                      "q12b1": "もよろしいですか",
+                      "q12b2": "仕方ありません",
+                      "q12b3": "構いません"
+                    }
+                  },
+                  {
+                    "id": "q12d",
+                    "text": "もよろしいですか / 大丈夫（だいじょうぶ）です / かしこまりました",
+                    "answersByBlankId": {
+                      "q12b1": "もよろしいですか",
+                      "q12b2": "大丈夫です",
+                      "q12b3": "かしこまりました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q12a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "temo-yoroshii-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "daijoubu-desu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "kamaimasen"
+                  }
+                ],
+                "explanation": "もいいですか (b) chưa đủ lịch sự cho quan hệ khách hàng/nhân viên mới gặp. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải câu đồng ý cho một lời xin phép bình thường. かしこまりました (d) hợp nhưng ở đây cần từ khác đã dạy trong CHÍNH câu này để tránh lặp — 構いません mới đúng cụm còn lại của bài.",
+                "explanationByNative": {
+                  "vi": "もいいですか (b) chưa đủ lịch sự cho quan hệ khách hàng/nhân viên mới gặp. 仕方ありません (c) dùng để thông cảm một chuyện không hay, không phải câu đồng ý cho một lời xin phép bình thường. かしこまりました (d) hợp nhưng ở đây cần từ khác đã dạy trong CHÍNH câu này để tránh lặp — 構いません mới đúng cụm còn lại của bài.",
+                  "en": "もいいですか (b) is not polite enough for a new customer/employee relationship. 仕方ありません (c) is for sympathizing about something unfortunate, not agreeing to an ordinary request. かしこまりました (d) would fit in general, but this slot needs the OTHER taught word from this same question to avoid repetition — 構いません is the correct remaining item.",
+                  "ja": "「もいいですか」(b)は初対面の客と店員の関係には丁寧さが足りません。「仕方ありません」(c)は良くないことに同情するときに使うもので、普通のお願いに同意する言葉ではありません。「かしこまりました」(d)は一般には合いますが、この空欄にはこの問題で学んだもう一つの語が必要です——正しくは「構いません」です。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q13",
+                "order": 13,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai đồng nghiệp, mức lịch sự bình thường — không quá xa lạ, không quá thân. 田中 vừa nói rảnh hôm nay.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai đồng nghiệp, mức lịch sự bình thường — không quá xa lạ, không quá thân. 田中 vừa nói rảnh hôm nay.",
+                  "en": "Roles: two colleagues, ordinary politeness — not too distant, not too close. Tanaka has just said they are free today.",
+                  "ja": "関係：普通の丁寧さの同僚同士で、遠すぎず親しすぎません。田中さんは今日暇だと言ったところです。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q13t1",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q13b1"
+                      },
+                      {
+                        "displayText": "？暇（ひま）なんですか？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q13t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "displayText": "では、これ、貸（か）して"
+                      },
+                      {
+                        "blankId": "q13b2"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q13t3",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q13b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q13b1",
+                    "displayAnswer": "本当（ほんとう）ですか",
+                    "canonicalAnswer": "本当ですか",
+                    "audioText": "ほんとうですか",
+                    "acceptedAnswers": [
+                      "本当ですか"
+                    ]
+                  },
+                  {
+                    "id": "q13b2",
+                    "displayAnswer": "もらえませんか",
+                    "canonicalAnswer": "もらえませんか",
+                    "audioText": "もらえませんか",
+                    "acceptedAnswers": [
+                      "もらえませんか"
+                    ]
+                  },
+                  {
+                    "id": "q13b3",
+                    "displayAnswer": "よいですよ",
+                    "canonicalAnswer": "よいですよ",
+                    "audioText": "よいですよ",
+                    "acceptedAnswers": [
+                      "よいですよ"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q13a",
+                    "text": "本当（ほんとう）ですか / もらえませんか / よいですよ",
+                    "answersByBlankId": {
+                      "q13b1": "本当ですか",
+                      "q13b2": "もらえませんか",
+                      "q13b3": "よいですよ"
+                    }
+                  },
+                  {
+                    "id": "q13b",
+                    "text": "かしこまりました / もらえませんか / よいですよ",
+                    "answersByBlankId": {
+                      "q13b1": "かしこまりました",
+                      "q13b2": "もらえませんか",
+                      "q13b3": "よいですよ"
+                    }
+                  },
+                  {
+                    "id": "q13c",
+                    "text": "本当（ほんとう）ですか / いただけますか / よいですよ",
+                    "answersByBlankId": {
+                      "q13b1": "本当ですか",
+                      "q13b2": "いただけますか",
+                      "q13b3": "よいですよ"
+                    }
+                  },
+                  {
+                    "id": "q13d",
+                    "text": "本当（ほんとう）ですか / もらえませんか / かしこまりました",
+                    "answersByBlankId": {
+                      "q13b1": "本当ですか",
+                      "q13b2": "もらえませんか",
+                      "q13b3": "かしこまりました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q13a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "hontou-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "temo-moraemasenka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "yoi-desu-yo"
+                  }
+                ],
+                "explanation": "かしこまりました (b) là câu người ĐƯỢC nhờ nói để đồng ý, không phải phản ứng ngạc nhiên. いただけますか (c) lịch sự hơn mức cần giữa hai đồng nghiệp bình thường. かしこまりました (d) lại là cách đồng ý rất lịch sự kiểu dịch vụ, lệch với mức bình thường đã thiết lập.",
+                "explanationByNative": {
+                  "vi": "かしこまりました (b) là câu người ĐƯỢC nhờ nói để đồng ý, không phải phản ứng ngạc nhiên. いただけますか (c) lịch sự hơn mức cần giữa hai đồng nghiệp bình thường. かしこまりました (d) lại là cách đồng ý rất lịch sự kiểu dịch vụ, lệch với mức bình thường đã thiết lập.",
+                  "en": "かしこまりました (b) is said by the person being asked to agree, not a reaction of surprise. いただけますか (c) is more polite than needed between two ordinary colleagues. かしこまりました (d) is again a very polite service-style agreement, mismatched with the ordinary level established here.",
+                  "ja": "「かしこまりました」(b)は頼まれた人が承諾するときの言葉で、驚きの反応ではありません。「いただけますか」(c)は普通の同僚同士に必要な丁寧さより丁寧すぎます。「かしこまりました」(d)もまた接客業のようなとても丁寧な同意の仕方で、ここで設定された普通のレベルとは合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q14",
+                "order": 14,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: khách hàng và nhân viên cửa hàng, chưa quen biết — cả hai giữ thể rất lịch sự. Khách xin lỗi vì làm phiền, rồi xin phép thử đồ.",
+                "contextByNative": {
+                  "vi": "Vai vế: khách hàng và nhân viên cửa hàng, chưa quen biết — cả hai giữ thể rất lịch sự. Khách xin lỗi vì làm phiền, rồi xin phép thử đồ.",
+                  "en": "Roles: a customer and a shop employee, strangers — both keep the very polite register. The customer apologizes for the trouble, then asks permission to try something on.",
+                  "ja": "関係：客と店員で、初対面です。二人ともとても丁寧な言葉遣いを保ちます。客は迷惑をかけることを謝り、試着の許可を求めます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q14t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q14b1"
+                      },
+                      {
+                        "displayText": "が、試着（しちゃく）して"
+                      },
+                      {
+                        "blankId": "q14b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q14t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q14b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q14b1",
+                    "displayAnswer": "申（もう）し訳（わけ）ございません",
+                    "canonicalAnswer": "申し訳ございません",
+                    "audioText": "もうしわけございません",
+                    "acceptedAnswers": [
+                      "申し訳ございません"
+                    ]
+                  },
+                  {
+                    "id": "q14b2",
+                    "displayAnswer": "もよろしいですか",
+                    "canonicalAnswer": "もよろしいですか",
+                    "audioText": "もよろしいですか",
+                    "acceptedAnswers": [
+                      "もよろしいですか"
+                    ]
+                  },
+                  {
+                    "id": "q14b3",
+                    "displayAnswer": "かしこまりました",
+                    "canonicalAnswer": "かしこまりました",
+                    "audioText": "かしこまりました",
+                    "acceptedAnswers": [
+                      "かしこまりました"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q14a",
+                    "text": "申（もう）し訳（わけ）ございません / もよろしいですか / かしこまりました",
+                    "answersByBlankId": {
+                      "q14b1": "申し訳ございません",
+                      "q14b2": "もよろしいですか",
+                      "q14b3": "かしこまりました"
+                    }
+                  },
+                  {
+                    "id": "q14b",
+                    "text": "ごめんなさい / もよろしいですか / かしこまりました",
+                    "answersByBlankId": {
+                      "q14b1": "ごめんなさい",
+                      "q14b2": "もよろしいですか",
+                      "q14b3": "かしこまりました"
+                    }
+                  },
+                  {
+                    "id": "q14c",
+                    "text": "申（もう）し訳（わけ）ございません / もいいですか / かしこまりました",
+                    "answersByBlankId": {
+                      "q14b1": "申し訳ございません",
+                      "q14b2": "もいいですか",
+                      "q14b3": "かしこまりました"
+                    }
+                  },
+                  {
+                    "id": "q14d",
+                    "text": "申（もう）し訳（わけ）ございません / もよろしいですか / 了解（りょうかい）しました",
+                    "answersByBlankId": {
+                      "q14b1": "申し訳ございません",
+                      "q14b2": "もよろしいですか",
+                      "q14b3": "了解しました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q14a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "moushiwake-gozaimasen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "temo-yoroshii-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "kashikomarimashita"
+                  }
+                ],
+                "explanation": "ごめんなさい (b) là thể thân mật, lệch hẳn với quan hệ khách hàng/nhân viên mới gặp cần rất lịch sự. もいいですか (c) chưa đủ lịch sự so với mức đã thiết lập ở ô đầu. 了解しました (d) là cách đồng ý thân mật/thông thường, không đúng mức rất lịch sự mà nhân viên cần giữ.",
+                "explanationByNative": {
+                  "vi": "ごめんなさい (b) là thể thân mật, lệch hẳn với quan hệ khách hàng/nhân viên mới gặp cần rất lịch sự. もいいですか (c) chưa đủ lịch sự so với mức đã thiết lập ở ô đầu. 了解しました (d) là cách đồng ý thân mật/thông thường, không đúng mức rất lịch sự mà nhân viên cần giữ.",
+                  "en": "ごめんなさい (b) is casual, clashing badly with a brand-new customer/employee relationship that needs to be very polite. もいいですか (c) is not polite enough compared to the level established at the first blank. 了解しました (d) is a casual/ordinary way to agree, not the very polite level the employee needs to keep.",
+                  "ja": "「ごめんなさい」(b)は気軽な言い方で、とても丁寧さが必要な初対面の客と店員の関係には全く合いません。「もいいですか」(c)は最初の空欄で設定されたレベルに比べて丁寧さが足りません。「了解しました」(d)は気軽・普通の同意の言い方で、店員が保つべきとても丁寧なレベルとは合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q15",
+                "order": 15,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai bạn thân, thân mật. 伊藤 muốn mượn một món đồ của 田中.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai bạn thân, thân mật. 伊藤 muốn mượn một món đồ của 田中.",
+                  "en": "Roles: two close friends, casual. Itō wants to borrow something from Tanaka.",
+                  "ja": "関係：親しい友だち同士で、気軽な間柄です。伊藤さんは田中さんの物を借りたいと思っています。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q15t1",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "displayText": "これ、借（か）りても"
+                      },
+                      {
+                        "blankId": "q15b1"
+                      },
+                      {
+                        "displayText": "？"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q15t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q15b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q15t3",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q15b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q15b1",
+                    "displayAnswer": "いいですか",
+                    "canonicalAnswer": "いいですか",
+                    "audioText": "いいですか",
+                    "acceptedAnswers": [
+                      "いいですか"
+                    ]
+                  },
+                  {
+                    "id": "q15b2",
+                    "displayAnswer": "もちろんです",
+                    "canonicalAnswer": "もちろんです",
+                    "audioText": "もちろんです",
+                    "acceptedAnswers": [
+                      "もちろんです"
+                    ]
+                  },
+                  {
+                    "id": "q15b3",
+                    "displayAnswer": "気（き）を付（つ）けます",
+                    "canonicalAnswer": "気を付けます",
+                    "audioText": "きをつけます",
+                    "acceptedAnswers": [
+                      "気を付けます"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q15a",
+                    "text": "いいですか / もちろんです / 気（き）を付（つ）けます",
+                    "answersByBlankId": {
+                      "q15b1": "いいですか",
+                      "q15b2": "もちろんです",
+                      "q15b3": "気を付けます"
+                    }
+                  },
+                  {
+                    "id": "q15b",
+                    "text": "よろしいですか / もちろんです / 気（き）を付（つ）けます",
+                    "answersByBlankId": {
+                      "q15b1": "よろしいですか",
+                      "q15b2": "もちろんです",
+                      "q15b3": "気を付けます"
+                    }
+                  },
+                  {
+                    "id": "q15c",
+                    "text": "いいですか / 構（かま）いません / 気（き）を付（つ）けます",
+                    "answersByBlankId": {
+                      "q15b1": "いいですか",
+                      "q15b2": "構いません",
+                      "q15b3": "気を付けます"
+                    }
+                  },
+                  {
+                    "id": "q15d",
+                    "text": "いいですか / もちろんです / 仕方（しかた）ありません",
+                    "answersByBlankId": {
+                      "q15b1": "いいですか",
+                      "q15b2": "もちろんです",
+                      "q15b3": "仕方ありません"
+                    }
+                  }
+                ],
+                "correctOptionId": "q15a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "temo-ii-desu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "mochiron-desu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "ki-wo-tsukemasu"
+                  }
+                ],
+                "explanation": "よろしいですか (b) lịch sự hơn mức cần giữa hai bạn thân — mức trung tính (いいですか) đã đủ. 構いません (c) không sai nghĩa nhưng thiếu sự DỨT KHOÁT mà もちろんです có ở vị trí này. 仕方ありません (d) dùng để thông cảm một chuyện không hay, không phải lời hứa cẩn thận hơn với đồ mượn.",
+                "explanationByNative": {
+                  "vi": "よろしいですか (b) lịch sự hơn mức cần giữa hai bạn thân — mức trung tính (いいですか) đã đủ. 構いません (c) không sai nghĩa nhưng thiếu sự DỨT KHOÁT mà もちろんです có ở vị trí này. 仕方ありません (d) dùng để thông cảm một chuyện không hay, không phải lời hứa cẩn thận hơn với đồ mượn.",
+                  "en": "よろしいですか (b) is more polite than needed between close friends — the neutral level (いいですか) is already enough. 構いません (c) is not wrong in meaning but lacks the DECISIVENESS that もちろんです has in this slot. 仕方ありません (d) is for sympathizing about something unfortunate, not a promise to be careful with a borrowed item.",
+                  "ja": "「よろしいですか」(b)は親しい友だち同士に必要な丁寧さより丁寧すぎます——中立的な「いいですか」で十分です。「構いません」(c)は意味は間違っていませんが、この位置に必要な「もちろんです」のはっきりとした感じがありません。「仕方ありません」(d)は良くないことに同情するときに使うもので、借りた物を大切にするという約束ではありません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q16",
+                "order": 16,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai bạn cùng lớp, chưa thân lắm, mức lịch sự bình thường. 佐藤 nhờ 田中 giúp bài tập.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai bạn cùng lớp, chưa thân lắm, mức lịch sự bình thường. 佐藤 nhờ 田中 giúp bài tập.",
+                  "en": "Roles: two classmates, not very close yet, ordinary politeness. Satō asks Tanaka for help with homework.",
+                  "ja": "関係：まだあまり親しくないクラスメート同士で、普通の丁寧さです。佐藤さんは田中さんに宿題を手伝ってもらうよう頼みます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q16t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "宿題（しゅくだい）を手伝って"
+                      },
+                      {
+                        "blankId": "q16b1"
+                      },
+                      {
+                        "displayText": "。"
+                      },
+                      {
+                        "blankId": "q16b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q16t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q16b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q16b1",
+                    "displayAnswer": "もらえませんか",
+                    "canonicalAnswer": "もらえませんか",
+                    "audioText": "もらえませんか",
+                    "acceptedAnswers": [
+                      "もらえませんか"
+                    ]
+                  },
+                  {
+                    "id": "q16b2",
+                    "displayAnswer": "お願（ねが）いします",
+                    "canonicalAnswer": "お願いします",
+                    "audioText": "おねがいします",
+                    "acceptedAnswers": [
+                      "お願いします"
+                    ]
+                  },
+                  {
+                    "id": "q16b3",
+                    "displayAnswer": "了解（りょうかい）しました",
+                    "canonicalAnswer": "了解しました",
+                    "audioText": "りょうかいしました",
+                    "acceptedAnswers": [
+                      "了解しました"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q16a",
+                    "text": "もらえませんか / お願（ねが）いします / 了解（りょうかい）しました",
+                    "answersByBlankId": {
+                      "q16b1": "もらえませんか",
+                      "q16b2": "お願いします",
+                      "q16b3": "了解しました"
+                    }
+                  },
+                  {
+                    "id": "q16b",
+                    "text": "いただけますか / お願（ねが）いします / 了解（りょうかい）しました",
+                    "answersByBlankId": {
+                      "q16b1": "いただけますか",
+                      "q16b2": "お願いします",
+                      "q16b3": "了解しました"
+                    }
+                  },
+                  {
+                    "id": "q16c",
+                    "text": "もらえませんか / 本当（ほんとう）ですか / 了解（りょうかい）しました",
+                    "answersByBlankId": {
+                      "q16b1": "もらえませんか",
+                      "q16b2": "本当ですか",
+                      "q16b3": "了解しました"
+                    }
+                  },
+                  {
+                    "id": "q16d",
+                    "text": "もらえませんか / お願（ねが）いします / かしこまりました",
+                    "answersByBlankId": {
+                      "q16b1": "もらえませんか",
+                      "q16b2": "お願いします",
+                      "q16b3": "かしこまりました"
+                    }
+                  }
+                ],
+                "correctOptionId": "q16a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "temo-moraemasenka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "onegai-shimasu"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "ryoukai-shimashita"
+                  }
+                ],
+                "explanation": "いただけますか (b) lịch sự hơn mức cần giữa hai bạn cùng lớp chưa thân lắm. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. かしこまりました (d) là cách đồng ý rất lịch sự kiểu dịch vụ, lệch với quan hệ bạn học đã thiết lập.",
+                "explanationByNative": {
+                  "vi": "いただけますか (b) lịch sự hơn mức cần giữa hai bạn cùng lớp chưa thân lắm. 本当ですか (c) là phản ứng ngạc nhiên, không hợp làm câu kết thúc lời nhờ. かしこまりました (d) là cách đồng ý rất lịch sự kiểu dịch vụ, lệch với quan hệ bạn học đã thiết lập.",
+                  "en": "いただけますか (b) is more polite than needed between two not-very-close classmates. 本当ですか (c) is a reaction of surprise, not fitting as a closing to a request. かしこまりました (d) is a very polite service-style agreement, mismatched with the classmate relationship already established.",
+                  "ja": "「いただけますか」(b)はまだあまり親しくないクラスメート同士に必要な丁寧さより丁寧すぎます。「本当ですか」(c)は驚きの反応で、お願いを締めくくる言葉としては合いません。「かしこまりました」(d)は接客業のようなとても丁寧な同意の仕方で、すでに設定されたクラスメートの関係には合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q17",
+                "order": 17,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: hai đồng nghiệp bình thường, giữ thể lịch sự vừa phải. 田中 xin lỗi vì đến muộn cuộc họp, rồi nhờ 伊藤 gửi giúp tài liệu.",
+                "contextByNative": {
+                  "vi": "Vai vế: hai đồng nghiệp bình thường, giữ thể lịch sự vừa phải. 田中 xin lỗi vì đến muộn cuộc họp, rồi nhờ 伊藤 gửi giúp tài liệu.",
+                  "en": "Roles: two ordinary colleagues, keeping a moderately polite register. Tanaka apologizes for being late to a meeting, then asks Itō to send some materials.",
+                  "ja": "関係：普通の丁寧さを保つ普通の同僚同士です。田中さんは会議に遅れたことを謝り、伊藤さんに資料を送ってもらうよう頼みます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q17t1",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q17b1"
+                      },
+                      {
+                        "displayText": "。会議（かいぎ）に遅（おく）れてしまいました。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q17t2",
+                    "speakerId": "ito",
+                    "segments": [
+                      {
+                        "blankId": "q17b2"
+                      },
+                      {
+                        "displayText": "。始（はじ）めましょう。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q17t3",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "displayText": "それから、資料（しりょう）を送（おく）って"
+                      },
+                      {
+                        "blankId": "q17b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q17b1",
+                    "displayAnswer": "申（もう）し訳（わけ）ありません",
+                    "canonicalAnswer": "申し訳ありません",
+                    "audioText": "もうしわけありません",
+                    "acceptedAnswers": [
+                      "申し訳ありません"
+                    ]
+                  },
+                  {
+                    "id": "q17b2",
+                    "displayAnswer": "仕方（しかた）ありませんね",
+                    "canonicalAnswer": "仕方ありませんね",
+                    "audioText": "しかたありませんね",
+                    "acceptedAnswers": [
+                      "仕方ありませんね"
+                    ]
+                  },
+                  {
+                    "id": "q17b3",
+                    "displayAnswer": "もらえませんか",
+                    "canonicalAnswer": "もらえませんか",
+                    "audioText": "もらえませんか",
+                    "acceptedAnswers": [
+                      "もらえませんか"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q17a",
+                    "text": "申（もう）し訳（わけ）ありません / 仕方（しかた）ありませんね / もらえませんか",
+                    "answersByBlankId": {
+                      "q17b1": "申し訳ありません",
+                      "q17b2": "仕方ありませんね",
+                      "q17b3": "もらえませんか"
+                    }
+                  },
+                  {
+                    "id": "q17b",
+                    "text": "ごめんなさい / 仕方（しかた）ありませんね / もらえませんか",
+                    "answersByBlankId": {
+                      "q17b1": "ごめんなさい",
+                      "q17b2": "仕方ありませんね",
+                      "q17b3": "もらえませんか"
+                    }
+                  },
+                  {
+                    "id": "q17c",
+                    "text": "申（もう）し訳（わけ）ありません / 大丈夫（だいじょうぶ）です / もらえませんか",
+                    "answersByBlankId": {
+                      "q17b1": "申し訳ありません",
+                      "q17b2": "大丈夫です",
+                      "q17b3": "もらえませんか"
+                    }
+                  },
+                  {
+                    "id": "q17d",
+                    "text": "申（もう）し訳（わけ）ありません / 仕方（しかた）ありませんね / くれませんか",
+                    "answersByBlankId": {
+                      "q17b1": "申し訳ありません",
+                      "q17b2": "仕方ありませんね",
+                      "q17b3": "くれませんか"
+                    }
+                  }
+                ],
+                "correctOptionId": "q17a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "moushiwake-arimasen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l1",
+                    "kind": "vocabulary",
+                    "ref": "shikata-arimasen"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "temo-moraemasenka"
+                  }
+                ],
+                "explanation": "ごめんなさい (b) là thể thân mật, lệch với hai đồng nghiệp đang giữ thể lịch sự. 大丈夫です (c) dùng để đồng ý cho phép/trấn an, không phải câu thông cảm cho một lời xin lỗi. くれませんか (d) là thể thân mật, lệch với mức lịch sự đã giữ suốt cuộc hội thoại.",
+                "explanationByNative": {
+                  "vi": "ごめんなさい (b) là thể thân mật, lệch với hai đồng nghiệp đang giữ thể lịch sự. 大丈夫です (c) dùng để đồng ý cho phép/trấn an, không phải câu thông cảm cho một lời xin lỗi. くれませんか (d) là thể thân mật, lệch với mức lịch sự đã giữ suốt cuộc hội thoại.",
+                  "en": "ごめんなさい (b) is casual, mismatched with two colleagues keeping polite form. 大丈夫です (c) grants permission/reassures, it is not a sympathetic reply to an apology. くれませんか (d) is casual, mismatched with the polite level kept throughout the exchange.",
+                  "ja": "「ごめんなさい」(b)は気軽な言い方で、丁寧体を保つ同僚同士には合いません。「大丈夫です」(c)は許可を出す・安心させる言葉で、謝罪への同情の返事ではありません。「くれませんか」(d)は気軽な言い方で、この会話全体で保たれている丁寧さのレベルに合いません。"
+                }
+              },
+              {
+                "id": "ja-daily_life-m02-u2-comprehensive-q18",
+                "order": 18,
+                "kind": "dialogue_multi_blank_choice",
+                "prompt": "Chọn phương án điền đúng cả ba ô.",
+                "promptByNative": {
+                  "vi": "Chọn phương án điền đúng cả ba ô.",
+                  "en": "Choose the option that fills all three blanks correctly.",
+                  "ja": "三つの空欄に正しく入る組み合わせを選んでください。"
+                },
+                "context": "Vai vế: khách hàng và nhân viên trong một dịch vụ trịnh trọng, chưa quen biết — cả hai giữ thể rất lịch sự. Khách nhờ nhân viên sửa một món đồ.",
+                "contextByNative": {
+                  "vi": "Vai vế: khách hàng và nhân viên trong một dịch vụ trịnh trọng, chưa quen biết — cả hai giữ thể rất lịch sự. Khách nhờ nhân viên sửa một món đồ.",
+                  "en": "Roles: a customer and an employee in a formal service, strangers — both keep the very polite register. The customer asks the employee to fix an item.",
+                  "ja": "関係：改まったサービスの客と店員で、初対面です。二人ともとても丁寧な言葉遣いを保ちます。客は店員に品物を直してもらうよう頼みます。"
+                },
+                "dialogue": [
+                  {
+                    "id": "q18t1",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "displayText": "これを直（なお）して"
+                      },
+                      {
+                        "blankId": "q18b1"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q18t2",
+                    "speakerId": "tanaka",
+                    "segments": [
+                      {
+                        "blankId": "q18b2"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "q18t3",
+                    "speakerId": "sato",
+                    "segments": [
+                      {
+                        "blankId": "q18b3"
+                      },
+                      {
+                        "displayText": "。"
+                      }
+                    ]
+                  }
+                ],
+                "blanks": [
+                  {
+                    "id": "q18b1",
+                    "displayAnswer": "いただけますか",
+                    "canonicalAnswer": "いただけますか",
+                    "audioText": "いただけますか",
+                    "acceptedAnswers": [
+                      "いただけますか"
+                    ]
+                  },
+                  {
+                    "id": "q18b2",
+                    "displayAnswer": "かしこまりました",
+                    "canonicalAnswer": "かしこまりました",
+                    "audioText": "かしこまりました",
+                    "acceptedAnswers": [
+                      "かしこまりました"
+                    ]
+                  },
+                  {
+                    "id": "q18b3",
+                    "displayAnswer": "お願（ねが）いします",
+                    "canonicalAnswer": "お願いします",
+                    "audioText": "おねがいします",
+                    "acceptedAnswers": [
+                      "お願いします"
+                    ]
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "q18a",
+                    "text": "いただけますか / かしこまりました / お願（ねが）いします",
+                    "answersByBlankId": {
+                      "q18b1": "いただけますか",
+                      "q18b2": "かしこまりました",
+                      "q18b3": "お願いします"
+                    }
+                  },
+                  {
+                    "id": "q18b",
+                    "text": "もらえますか / かしこまりました / お願（ねが）いします",
+                    "answersByBlankId": {
+                      "q18b1": "もらえますか",
+                      "q18b2": "かしこまりました",
+                      "q18b3": "お願いします"
+                    }
+                  },
+                  {
+                    "id": "q18c",
+                    "text": "いただけますか / 了解（りょうかい）しました / お願（ねが）いします",
+                    "answersByBlankId": {
+                      "q18b1": "いただけますか",
+                      "q18b2": "了解しました",
+                      "q18b3": "お願いします"
+                    }
+                  },
+                  {
+                    "id": "q18d",
+                    "text": "いただけますか / かしこまりました / 本当（ほんとう）ですか",
+                    "answersByBlankId": {
+                      "q18b1": "いただけますか",
+                      "q18b2": "かしこまりました",
+                      "q18b3": "本当ですか"
+                    }
+                  }
+                ],
+                "correctOptionId": "q18a",
+                "reviews": [
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "teitadakemasu-ka"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "kashikomarimashita"
+                  },
+                  {
+                    "lessonId": "ja-daily_life-m02-u2-l2",
+                    "kind": "vocabulary",
+                    "ref": "onegai-shimasu"
+                  }
+                ],
+                "explanation": "もらえますか (b) chưa đủ lịch sự cho dịch vụ trịnh trọng với người lạ. 了解しました (c) là cách đồng ý thân mật/thông thường, không đúng mức rất lịch sự cần giữ trong dịch vụ trang trọng. 本当ですか (d) là phản ứng ngạc nhiên, không hợp làm câu kết lời sau khi được đồng ý giúp.",
+                "explanationByNative": {
+                  "vi": "もらえますか (b) chưa đủ lịch sự cho dịch vụ trịnh trọng với người lạ. 了解しました (c) là cách đồng ý thân mật/thông thường, không đúng mức rất lịch sự cần giữ trong dịch vụ trang trọng. 本当ですか (d) là phản ứng ngạc nhiên, không hợp làm câu kết lời sau khi được đồng ý giúp.",
+                  "en": "もらえますか (b) is not polite enough for a formal service with a stranger. 了解しました (c) is a casual/ordinary way to agree, not the very polite level needed in a formal service. 本当ですか (d) is a reaction of surprise, not fitting as a closing after being agreed to help.",
+                  "ja": "「もらえますか」(b)は初対面の相手への改まったサービスには丁寧さが足りません。「了解しました」(c)は気軽・普通の同意の言い方で、改まったサービスで保つべきとても丁寧なレベルとは合いません。「本当ですか」(d)は驚きの反応で、手伝ってもらえることに同意された後の締めくくりの言葉としては合いません。"
+                }
+              }
+            ]
+          }
         }
       ]
     },
