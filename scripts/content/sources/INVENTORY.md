@@ -1754,3 +1754,52 @@ m02-u1-l1) — CHỌN KHÔNG tính vào 10 từ mới, chỉ tái dùng trong h�
 - Đồng ý giúp bằng かしこまりました／了解しました／よいですよ (tuỳ mức lịch sự).
 - Phản ứng khi nghe tin vui bằng 本当ですか.
 - Nhờ vả ngắn gọn bằng お願いします.
+
+# LÀM SAU — việc dời lại, chưa xử lý trong lượt build bài (2026-08-05)
+
+## Sổ tra furigana dùng CHUNG cho cả kho, không xử được kanji đa âm theo bài
+
+**Phát hiện khi build `ja-daily_life-m02-u2-l2`.** `generate-curriculum.mjs`
+xây MỘT `furiganaIndex` (Map) DÙNG CHUNG cho toàn bộ `lessonsPayload` +
+`coursesPayload` (không cắt theo từng bài — xem comment tại chỗ khai báo:
+"Sổ tra dùng CHUNG cho cả kho, không cắt theo từng bài... cắt theo bài thì
+nó không tra được 田中 / 何 mà chính 3 bài kia đã ghi rõ cách đọc"). Cơ chế:
+lượt 1 quét TOÀN BỘ kho, gom mọi cặp kanji→kana đã khai furigana tường minh
+vào sổ; lượt 2 dùng sổ đó để tự động gắn furigana cho chuỗi bare (chưa có
+furigana) ở MỌI bài. Nếu MỘT kanji được khai với **hai cách đọc khác nhau**
+ở hai bài khác nhau (đúng cả hai, vì đó là kanji đa âm — ví dụ 何 đọc なん
+trong 何ですか nhưng đọc なに trong 何をすれば), sổ tra ghi nhận
+`index.get('何') = {なん, なに}`, và MỌI chuỗi bare 何 ở BẤT KỲ bài nào
+(kể cả bài đã duyệt từ lâu, không đụng tới trong lượt build) đều bị
+`annotateFromIndex` THROW ("ghi cụm đó bằng NHIỀU cách đọc, không chọn hộ").
+
+**Ca thật đo được:** `ja-daily_life-m01-u1-l2` (bài đã duyệt) dùng 何 với âm
+なん ở nhiều chỗ (`何ですか`, `お名前は何ですか`) qua khai furigana tường minh
+ở nơi khác trong CHÍNH bài đó (`token('nan', '何（なん）', '何', 'なん')`),
+nhưng các chuỗi hiển thị khác trong CÙNG bài lại để 何 BARE (không furigana
+tường minh tại chỗ), dựa vào cơ chế lượt-2 tự gắn hộ. Khi `m02-u2-l2` cần
+何 đọc なに (một câu hỏi 「何をすればよいのですか」, trích nguyên văn từ
+`topic1.json:39260`) và khai furigana tường minh cho cách đọc đó, sổ tra
+toàn kho lập tức có 2 cách đọc cho 何 → mọi chuỗi bare 何 ở `m01-u1-l2` (và
+`m01-u1-comprehensive`, dùng lại nội dung từ `m01-u1-l2` qua cơ chế
+review/reuse) đồng loạt FAIL, dù KHÔNG file nào của `m01-u1-l2` bị đụng tới
+trong lượt build này. **Đã né bằng cách đổi 何 → hiragana なに trong nội
+dung của `m02-u2-l2`** (xem provenance + ghi chú trong
+`ja-unit2-lesson2-m02.mjs`), không sửa `m01-u1-l2`. Cách né này chỉ dùng
+được khi từ đang cần CÓ thể viết hiragana thuần tự nhiên (何 → なに hợp lệ);
+với kanji đa âm mà bài BẮT BUỘC phải hiện kanji (ví dụ tên riêng, thuật ngữ
+cố định), cách né này sẽ không dùng được.
+
+**Việc cần làm (chưa làm, ngoài phạm vi build bài):**
+- Cắt sổ tra `furiganaIndex` theo TỪNG BÀI (mỗi lesson + phần
+  comprehensiveTest liên quan của nó dùng sổ riêng), thay vì một Map dùng
+  chung toàn kho — đúng với ý định nêu trong docstring của
+  `annotateFromIndex` ("SỔ TRA CỦA CHÍNH BÀI ĐÓ"), vốn hiện KHÔNG khớp với
+  cách gọi thực tế trong `generate-curriculum.mjs`.
+- HOẶC: cho phép một kanji có NHIỀU cách đọc trong sổ tra toàn kho, miễn
+  MỖI BÀI chỉ dùng một cách đọc bare (tách sổ theo `(kanji, lessonId)` thay
+  vì chỉ `kanji`).
+- Cả hai hướng đều cần rà lại toàn bộ 172 bài đã sinh để chắc không phát
+  sinh xung đột mới, và cần owner quyết hướng nào trước khi sửa
+  `generate-curriculum.mjs`/`japanese-furigana.mjs` (nằm ngoài phạm vi file
+  được phép sửa của lệnh `/build-lesson`).

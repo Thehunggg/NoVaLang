@@ -177,5 +177,12 @@ WORKING_RULES §f: **điểm dừng hợp lệ DUY NHẤT là sau commit PHA A.*
    - `scripts/preview/<lessonId>.html` — chỉ qua `preview-lesson.mjs`
    - `scripts/content/sources/INVENTORY.md` (mục đo của bài này)
    - `scripts/estimate-source-coverage.mjs` — chỉ khi cần thêm entry chủ đề mới, kèm phá thật self-test
+   - `scripts/validate-curriculum.mjs` — **CHỈ** dòng đăng ký lessonId mới vào
+     `APPROVED_READY_DAILY_LESSON_IDS` (một dòng `"<lessonId>",` nối vào Set có
+     sẵn, giống cách `FIVE_CARDS_REGISTRY` đăng ký trong `helpers.mjs`). Đây là
+     bước đăng ký bắt buộc để bài được coi là ready/playable — không có dòng
+     này thì `validate:curriculum` tự chặn bài mới. **Không đụng bất kỳ chỗ
+     nào khác** trong file (owner chốt 2026-08-05, sau khi xác nhận đây là
+     bước đăng ký hợp lệ ở bài m02-u2-l1/l2).
    **Cấm đụng:** mọi rule trong `LESSON_AUTHORING_STANDARD.md`/`.cursor/rules/**` (đổi rule là việc của owner, không phải của lệnh build bài), Golden Reference Lesson, và **cấm tự sửa `.claude/commands/build-lesson.md`** — phát hiện chỗ lệnh này sai/thiếu thì ghi thành đề xuất ở cuối báo cáo, owner tự dán bản sửa.
 6. Mọi ràng buộc chung của WORKING_RULES.md vẫn áp dụng nguyên vẹn: fetch-check trước MỌI commit, Write/Edit không heredoc, commit tách nhóm, không bịa số liệu.
